@@ -33,6 +33,18 @@ FORBIDDEN = [
 ]
 
 
+# Exact paths that legitimately contain these phrases as patterns or prose
+# about the rule, rather than as College Board content.
+EXEMPT = {
+    "docs/LICENSING.md",
+    "tools/check_licensing.py",
+    "tools/parse_explanations.py",
+    "tools/build_keys.py",
+    "tools/rationales.py",            # regexes that split CB's own structure
+    "tools/classify_misconceptions.py",
+}
+
+
 def tracked():
     out = subprocess.run(["git", "ls-files"], cwd=ROOT,
                          capture_output=True, text=True, check=True)
@@ -52,9 +64,11 @@ def main():
         full = os.path.join(ROOT, path)
         if not os.path.exists(full) or os.path.getsize(full) > 8_000_000:
             continue
-        # Skip the documents that necessarily quote these phrases to explain them.
-        if path in ("docs/LICENSING.md", "tools/check_licensing.py",
-                    "tools/parse_explanations.py", "tools/build_keys.py"):
+        # Parsers necessarily contain these phrases as patterns that match
+        # College Board's structure, and the licensing docs quote them to
+        # explain the rule. Exempt by exact path - never by directory, or the
+        # guard would stop looking where content actually lands.
+        if path in EXEMPT:
             continue
         try:
             text = open(full, encoding="utf-8", errors="ignore").read()
