@@ -90,7 +90,7 @@ LESSONS = [
  ]},
 
 {
- "id": "lesson-H.A", "skill_cd": "H.A", "title": "Linear equations in one variable",
+ "id": "lesson-H.A.", "skill_cd": "H.A.", "title": "Linear equations in one variable",
  "subtitle": "112 items, and the cheapest points on the test",
  "sections": [
   {"id": "ha-what", "always": True,
@@ -127,7 +127,7 @@ LESSONS = [
  ]},
 
 {
- "id": "lesson-H.B", "skill_cd": "H.B", "title": "Linear functions",
+ "id": "lesson-H.B.", "skill_cd": "H.B.", "title": "Linear functions",
  "subtitle": "170 items - the largest single skill in Algebra",
  "sections": [
   {"id": "hb-what", "always": True,
@@ -173,7 +173,7 @@ LESSONS = [
  ]},
 
 {
- "id": "lesson-H.C", "skill_cd": "H.C",
+ "id": "lesson-H.C.", "skill_cd": "H.C.",
  "title": "Linear equations in two variables",
  "subtitle": "130 items",
  "sections": [
@@ -208,7 +208,7 @@ LESSONS = [
  ]},
 
 {
- "id": "lesson-H.D", "skill_cd": "H.D",
+ "id": "lesson-H.D.", "skill_cd": "H.D.",
  "title": "Systems of two linear equations",
  "subtitle": "126 items",
  "sections": [
@@ -242,7 +242,7 @@ LESSONS = [
  ]},
 
 {
- "id": "lesson-H.E", "skill_cd": "H.E",
+ "id": "lesson-H.E.", "skill_cd": "H.E.",
  "title": "Linear inequalities",
  "subtitle": "78 items",
  "sections": [
