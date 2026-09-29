@@ -339,6 +339,7 @@ function screenPractice() {
   const item = r.items[r.at];
   const picked = r.answers[r.at];
   const revealed = picked !== undefined;
+  const correctNow = picked === item.answer;
 
   app.innerHTML = `<div class="wrap${item.figure || item.table ? ' wide' : ''}">
     ${previewBanner()}
@@ -362,7 +363,7 @@ function screenPractice() {
         return `<button class="${cls}" data-key="${key}" ${revealed ? 'disabled' : ''}>
           <span class="k">${key}</span><span class="ctext">${renderHtml(c)}</span></button>`;
       }).join('')}
-      ${revealed ? `<div class="why">${renderHtml(item.rationale ?? '')}</div>` : ''}
+      ${revealed ? explanation(item, picked, correctNow) : ''}
     </div>
 
     ${revealed ? `<div class="row" style="margin-top:12px">
@@ -399,6 +400,49 @@ async function answer(key) {
     await store.saveMastery(cellKey, cell);
     await store.logAttempt(row);
   } catch { /* queued by the store */ }
+}
+
+/**
+ * What to show once an answer is revealed.
+ *
+ * College Board writes a separate paragraph for each wrong choice, explaining
+ * the specific error that produces it. Shown whole, a student who picked B
+ * reads four paragraphs hunting for the one about B. Shown split, they are told
+ * why *their* answer was wrong first, then why the right one is right - which
+ * is the difference between being corrected and being diagnosed.
+ *
+ * These are College Board's own words, not ours. Items without a per-choice
+ * structure fall back to the whole rationale rather than to anything invented.
+ */
+function explanation(item, picked, correct) {
+  const parts = item.per_choice;
+  if (!parts) {
+    return `<div class="why">${renderHtml(item.rationale ?? '')}</div>`;
+  }
+  const mine = !correct && parts[picked] ? `
+    <div class="why why-yours">
+      <div class="why-h">Why ${esc(picked)} is wrong</div>
+      ${renderHtml(parts[picked])}
+    </div>` : '';
+  return `${mine}
+    <div class="why">
+      <div class="why-h">${correct ? 'Why that is right' : `Why ${esc(item.answer)} is right`}</div>
+      ${renderHtml(parts.correct ?? item.rationale ?? '')}
+    </div>
+    ${otherChoices(item, picked)}`;
+}
+
+/** The remaining wrong choices, folded away - available, not shouting. */
+function otherChoices(item, picked) {
+  const parts = item.per_choice ?? {};
+  const rest = ['A', 'B', 'C', 'D']
+    .filter((k) => k !== item.answer && k !== picked && parts[k]);
+  if (!rest.length) return '';
+  return `<details class="why-more">
+    <summary>Why the other choices are wrong</summary>
+    ${rest.map((k) => `<div class="why-alt">
+      <div class="why-h">${esc(k)}</div>${renderHtml(parts[k])}</div>`).join('')}
+  </details>`;
 }
 
 function screenResult() {

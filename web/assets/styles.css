@@ -313,3 +313,28 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 .viewport iframe{
   display:block;width:100%;height:78vh;min-height:560px;border:0;background:#fff;
 }
+
+/* ---- answer explanations ------------------------------------------------ */
+.why-h{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:.7rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--purple-d);margin-bottom:7px;
+}
+/* The student's own wrong answer leads, and is tinted so it reads as the
+   diagnosis rather than as more of the same prose. */
+.why-yours{
+  background:var(--bad-bg);border:1px solid var(--bad-ln);border-radius:14px;
+  padding:14px 16px;margin-top:14px;border-top:1px solid var(--bad-ln);
+}
+.why-yours .why-h{color:#c9344c}
+.why-more{margin-top:12px}
+.why-more summary{
+  font-size:.8rem;font-weight:700;color:var(--purple-d);cursor:pointer;padding:6px 0;
+}
+.why-alt{
+  font-family:var(--serif);font-size:.9rem;line-height:1.66;
+  padding:11px 14px;margin-top:8px;
+  background:var(--panel2);border:1px solid var(--line);border-radius:12px;
+}
+.why-alt .why-h{color:var(--dim);margin-bottom:4px}
+.why p:last-child, .why-alt p:last-child{margin-bottom:0}

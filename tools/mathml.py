@@ -12,8 +12,26 @@ msqrt mover menclose mroot mstyle. Anything unexpected falls back to its text
 content rather than raising, so a new element degrades instead of breaking the
 item.
 """
+import html
 import re
 import xml.etree.ElementTree as ET
+
+# The bank's MathML is served as HTML, so it uses named entities like &deg; and
+# &nbsp;. XML defines only five, and an undefined entity is a hard parse error -
+# this alone accounted for every conversion failure in the corpus (354 blocks).
+# Unescape everything except the five XML keeps, which must survive as entities.
+_XML_SAFE = {"&amp;": "\x00AMP\x00", "&lt;": "\x00LT\x00", "&gt;": "\x00GT\x00",
+             "&quot;": "\x00QUOT\x00", "&apos;": "\x00APOS\x00"}
+
+
+def _unescape_html_entities(fragment):
+    s = fragment
+    for ent, hold in _XML_SAFE.items():
+        s = s.replace(ent, hold)
+    s = html.unescape(s)
+    for ent, hold in _XML_SAFE.items():
+        s = s.replace(hold, ent)
+    return s
 
 # Unicode operators the bank uses, mapped to LaTeX.
 OPS = {
@@ -144,7 +162,7 @@ def _node(el):
 def convert(fragment):
     """One <math>...</math> element -> a LaTeX string."""
     try:
-        root = ET.fromstring(fragment)
+        root = ET.fromstring(_unescape_html_entities(fragment))
     except ET.ParseError:
         return None
     latex = _node(root)

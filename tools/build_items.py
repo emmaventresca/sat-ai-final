@@ -14,11 +14,17 @@ engine rank it.
 import glob, html, json, os, re, sys
 from collections import Counter
 
+from rationales import annotate
 from sanitize import sanitize, to_text, has_figure, has_table
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 BANK = os.path.join(ROOT, "corpus", "bank")
+
+# Spoken-maths phrasing that only appears when a MathML block failed to convert.
+ALTTEXT_LEAK = re.compile(
+    r"left parenthesis|right parenthesis|StartFraction|Superscript|Baseline|"
+    r"StartRoot|EndRoot", re.I)
 
 def build_one(path):
     try:
@@ -52,7 +58,13 @@ def build_one(path):
     if not to_text(stem):
         return None
 
-    return {
+    # A handful of items carry MathML we cannot convert, and fall back to its
+    # spoken alttext - "f left parenthesis 400 right parenthesis". That is worse
+    # than one fewer question, so drop them rather than show them.
+    if ALTTEXT_LEAK.search(to_text(stem) + " ".join(to_text(c) for c in choices)):
+        return None
+
+    record = {
         "id": d.get("externalid") or os.path.basename(path)[:-5],
         "type": "item",
         "skill_cd": skill,
@@ -71,6 +83,10 @@ def build_one(path):
         "source": "College Board SAT educator question bank",
         "license": "College Board copyright - cached for use with own students",
     }
+    # Split the rationale per answer choice, so a student who picks B is shown
+    # why B is wrong rather than four paragraphs to search through.
+    annotate(record)
+    return record
 
 
 def main():
@@ -93,6 +109,8 @@ def main():
         json.dump({"items": items,
                    "note": "College Board content. Not for redistribution."}, fh)
 
+    split = sum(1 for i in items if i.get("per_choice"))
+    tagged = sum(1 for i in items if i.get("misconceptions"))
     figures = sum(1 for i in items if i["figure"])
     tables = sum(1 for i in items if i["table"])
     by_skill = Counter(i["skill_cd"] for i in items)
@@ -103,6 +121,9 @@ def main():
         print(f"{skill:8} {c['E']:5} {c['M']:5} {c['H']:5} {by_skill[skill]:6}")
     print(f"\n{len(items)} items  (E {by_tier['E']} / M {by_tier['M']} / H {by_tier['H']})")
     print(f"{figures} with a figure, {tables} with a data table")
+    print(f"{split} split into per-choice explanations ({split / len(items):.0%})")
+    print(f"{tagged} carry a misconception tag College Board's wording actually "
+          f"supports ({tagged / len(items):.0%}); the rest are left unlabelled")
     if skipped:
         print("skipped (grid-ins and malformed):",
               ", ".join(f"{k} {v}" for k, v in sorted(skipped.items())))
