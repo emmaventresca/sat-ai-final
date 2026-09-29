@@ -12,6 +12,7 @@ const read = (f) => JSON.parse(readFileSync(join(ROOT, 'data', f), 'utf8'));
 const bands = read('bands.json');
 const lessons = read('lessons.json').lessons;
 const skills = Object.fromEntries(read('skills.json').skills.map((s) => [s.skill_cd, s]));
+const families = new Set(read('misconceptions.json').families.map((f) => f.slug));
 
 let pass = 0, fail = 0;
 const test = (name, fn) => {
@@ -83,8 +84,8 @@ test('a mastered student does not get the remediation', () => {
   assert.ok(!headings('lesson-WIC', ctx(climber, strong)).includes('wic-struggle'));
 });
 test('a misconception section needs the error to have been made enough times', () => {
-  const two = Array.from({ length: 2 }, () => ({ misconception: 'contrast-vs-addition' }));
-  const three = Array.from({ length: 3 }, () => ({ misconception: 'contrast-vs-addition' }));
+  const two = Array.from({ length: 2 }, () => ({ misconception: 'transition-logic' }));
+  const three = Array.from({ length: 3 }, () => ({ misconception: 'transition-logic' }));
   assert.ok(!headings('lesson-TRA', ctx(climber, {}, two)).includes('tra-restatement'));
   assert.ok(headings('lesson-TRA', ctx(climber, {}, three)).includes('tra-restatement'));
 });
@@ -135,6 +136,20 @@ test('every non-pinned lesson maps to a real skill', () => {
     if (l.pinned) continue;
     assert.ok(known.has(l.skill_cd) || l.skill_cd?.startsWith('H.'),
       `${l.id}: unknown skill ${l.skill_cd}`);
+  }
+});
+test('every trigger names a misconception that actually exists', () => {
+  // A trigger naming a slug outside the taxonomy can never fire, and the
+  // section would simply never appear - no error anywhere. This caught a real
+  // drift when the taxonomy was replaced by the derived one.
+  for (const l of lessons) {
+    for (const s of l.sections) {
+      const slugs = [s.when?.missed, s.when?.count?.misconception].filter(Boolean);
+      for (const slug of slugs) {
+        assert.ok(families.has(slug),
+          `${l.id}/${s.id}: trigger references '${slug}', not in misconceptions.json`);
+      }
+    }
   }
 });
 test('every lesson carries source and licence provenance', () => {

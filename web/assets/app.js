@@ -395,10 +395,26 @@ async function answer(key) {
                 ms: Date.now() - (r.itemStart ?? r.startedAt) };
   state.attempts.unshift({ ...row, created_at: new Date().toISOString() });
 
+  // A miss whose wrong choice is tagged becomes a fingerprint, so practice
+  // feeds the same pattern detection as an uploaded Bluebook result. Three
+  // transition-logic misses surface the trap card whether they happened here
+  // or on a real test.
+  const family = !correct ? item.misconceptions?.[key] : null;
+  let fingerprint = null;
+  if (family) {
+    fingerprint = {
+      test_label: 'Practice', module: null, question_no: null,
+      skill_cd: item.skill_cd, difficulty: item.difficulty,
+      chosen: key, correct_answer: item.answer, misconception: family,
+    };
+    state.fingerprints.unshift({ ...fingerprint, created_at: new Date().toISOString() });
+  }
+
   render();
   try {
     await store.saveMastery(cellKey, cell);
     await store.logAttempt(row);
+    if (fingerprint) await store.addFingerprints([fingerprint]);
   } catch { /* queued by the store */ }
 }
 
@@ -419,9 +435,12 @@ function explanation(item, picked, correct) {
   if (!parts) {
     return `<div class="why">${renderHtml(item.rationale ?? '')}</div>`;
   }
+  const family = !correct ? item.misconceptions?.[picked] : null;
+  const named = family ? state.misconceptions?.[family] : null;
   const mine = !correct && parts[picked] ? `
     <div class="why why-yours">
       <div class="why-h">Why ${esc(picked)} is wrong</div>
+      ${named ? `<p class="why-name">${md(named.label)}</p>` : ''}
       ${renderHtml(parts[picked])}
     </div>` : '';
   return `${mine}
@@ -483,12 +502,14 @@ function render() {
 }
 
 async function loadData() {
-  const [bands, skills, lessons, items] = await Promise.all([
+  const [bands, skills, lessons, items, misc] = await Promise.all([
     fetch('../data/bands.json').then((r) => r.json()),
     fetch('../data/skills.json').then((r) => r.json()),
     fetch('../data/lessons.json').then((r) => r.json()),
     fetch('../data/items.json').then((r) => r.json()).catch(() => ({ items: [] })),
+    fetch('../data/misconceptions.json').then((r) => r.json()).catch(() => ({ families: [] })),
   ]);
+  state.misconceptions = Object.fromEntries((misc.families ?? []).map((f) => [f.slug, f]));
   state.bands = bands;
   state.skills = Object.fromEntries(skills.skills.map((s) => [s.skill_cd, s]));
   state.lessons = lessons.lessons;

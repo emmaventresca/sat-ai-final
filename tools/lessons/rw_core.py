@@ -131,7 +131,7 @@ LESSONS = [
     "between families first and members second."]},
 
   {"id": "tra-restatement",
-   "when": {"count": {"misconception": "contrast-vs-addition", "atLeast": 3}},
+   "when": {"count": {"misconception": "transition-logic", "atLeast": 3}},
    "heading": "You keep confusing contrast with addition",
    "body": [
     "This is the most common way to lose a transition question, and it has a "

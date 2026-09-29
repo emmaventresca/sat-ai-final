@@ -35,7 +35,7 @@ LESSONS = [
     "requires no grammar vocabulary at all."]},
 
   {"id": "bou-comma-splice",
-   "when": {"count": {"misconception": "comma-splice", "atLeast": 3}},
+   "when": {"count": {"misconception": "sentence-boundary", "atLeast": 3}},
    "heading": "You are accepting comma splices",
    "body": [
     "A comma cannot join two complete sentences. Not when they are short, not "

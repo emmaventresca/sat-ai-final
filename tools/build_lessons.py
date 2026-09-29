@@ -20,6 +20,14 @@ TIERS = {"E", "M", "H"}
 WHEN_KEYS = {"unseen", "struggling", "mastered", "missed", "count"}
 
 
+def load_misconceptions():
+    """The slugs a trigger may reference, from the derived taxonomy."""
+    path = os.path.join(ROOT, "data", "misconceptions.json")
+    if not os.path.exists(path):
+        return None
+    return {f["slug"] for f in json.load(open(path))["families"]}
+
+
 def load_skills():
     path = os.path.join(ROOT, "data", "skills.json")
     if not os.path.exists(path):
@@ -29,7 +37,7 @@ def load_skills():
             blob.get("incomplete_domains", []))
 
 
-def validate(lesson, skills, incomplete, problems, warnings):
+def validate(lesson, skills, incomplete, problems, warnings, misconceptions=None):
     lid = lesson["id"]
     cd = lesson.get("skill_cd")
 
@@ -69,6 +77,16 @@ def validate(lesson, skills, incomplete, problems, warnings):
             unknown = set(when) - WHEN_KEYS
             if unknown:
                 problems.append(f"{sid}: unknown gate(s) {sorted(unknown)}")
+            # A trigger naming a misconception outside the taxonomy can never
+            # fire, and nothing would report it - the section would simply never
+            # appear. Same silent-failure class as an unknown skill code.
+            if misconceptions is not None:
+                for slug in filter(None, [when.get("missed"),
+                                          (when.get("count") or {}).get("misconception")]):
+                    if slug not in misconceptions:
+                        problems.append(
+                            f"{sid}: trigger references {slug!r}, which is not in "
+                            f"data/misconceptions.json - it could never fire")
 
     # A lesson every one of whose sections is gated can render empty.
     if not any(s.get("always") for s in lesson["sections"]):
@@ -77,6 +95,7 @@ def validate(lesson, skills, incomplete, problems, warnings):
 
 def main():
     skills, incomplete = load_skills()
+    misconceptions = load_misconceptions()
     lessons, problems, warnings = [], [], []
 
     for name in MODULES:
@@ -85,7 +104,7 @@ def main():
             lesson.setdefault("type", "lesson")
             lesson.setdefault("source", "original")
             lesson.setdefault("license", "proprietary")
-            validate(lesson, skills, incomplete, problems, warnings)
+            validate(lesson, skills, incomplete, problems, warnings, misconceptions)
             skill = skills.get(lesson.get("skill_cd"))
             if skill and not lesson.get("section"):
                 lesson["section"] = skill["section"]

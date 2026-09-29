@@ -259,10 +259,24 @@ Five content types, all tagged to the same taxonomy:
 
 Two things make `strategy` adaptive rather than static:
 
-1. **Trigger-based surfacing.** A strategy card carries a trigger condition. Miss
-   three transitions that are all contrast-vs-addition confusions, and the
-   "restatement trap" card surfaces — because the *pattern* of the errors was
-   detected, not just their count.
+1. **Trigger-based surfacing.** A strategy card carries a trigger condition.
+   Miss three transitions that are all the same error, and the trap card
+   surfaces — because the *pattern* was detected, not just the count.
+
+   The tags come from `data/misconceptions.json`, a 14-family taxonomy derived
+   from a stratified sample of College Board's own wrong-choice rationales
+   rather than invented, then applied across the corpus by a model (see
+   `tools/classify_misconceptions.py`). 76% of items carry at least one
+   high-confidence tag. Regex managed 7% — the prose is too varied.
+
+   Only high-confidence labels count. Measured against a second model on 240
+   items, the classifier's "high" labels agreed 91% of the time and its "low"
+   labels 57%, so the confidence flag is calibrated and the low ones are stored
+   but never shown.
+
+   **Practice feeds this, not just uploads.** A miss whose wrong choice is
+   tagged writes a fingerprint, so three transition-logic errors surface the
+   trap card whether they happened here or on a real Bluebook test.
 2. **Band-specific variants.** The triage advice for 1000→1300 ("guess and move
    on Hard") is *wrong advice* for 1400→1550. Same slot, different card, selected
    by band.

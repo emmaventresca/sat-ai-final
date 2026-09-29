@@ -63,7 +63,7 @@ LESSONS = [
     "level than any content review."]},
 
   {"id": "dis-strength",
-   "when": {"count": {"misconception": "too-strong", "atLeast": 3}},
+   "when": {"count": {"misconception": "overreach-beyond-evidence", "atLeast": 3}},
    "heading": "You are picking answers that overclaim",
    "body": [
     "Three of your recent misses were the strong version of a true idea. That "
@@ -74,7 +74,7 @@ LESSONS = [
     "In this section the cautious answer wins far more often than it loses."]},
 
   {"id": "dis-topic",
-   "when": {"count": {"misconception": "topic-not-claim", "atLeast": 3}},
+   "when": {"count": {"misconception": "off-focus", "atLeast": 3}},
    "heading": "You are matching the topic, not the claim",
    "body": [
     "Your recent misses share a shape: the choice was about the right subject "
