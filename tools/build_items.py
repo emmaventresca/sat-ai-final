@@ -14,29 +14,11 @@ engine rank it.
 import glob, html, json, os, re, sys
 from collections import Counter
 
+from sanitize import sanitize, to_text, has_figure, has_table
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 BANK = os.path.join(ROOT, "corpus", "bank")
-
-# The bank's HTML is simple: paragraphs, emphasis, blockquotes, underlines and
-# the occasional table. Keep the inline emphasis, drop the structure.
-BLOCK = re.compile(r"</(p|div|blockquote|tr|li|h\d)>", re.I)
-BR    = re.compile(r"<br\s*/?>", re.I)
-TAG   = re.compile(r"<[^>]+>")
-WS    = re.compile(r"[ \t]+")
-
-
-def text(fragment):
-    if not fragment:
-        return ""
-    s = BR.sub("\n", fragment)
-    s = BLOCK.sub("\n", s)
-    s = TAG.sub("", s)
-    s = html.unescape(s)
-    s = WS.sub(" ", s)
-    s = re.sub(r"\n{3,}", "\n\n", s)
-    return s.strip()
-
 
 def build_one(path):
     try:
@@ -57,16 +39,17 @@ def build_one(path):
     options = d.get("answerOptions") or []
     if len(options) != 4:
         return None
-    choices = [text(o.get("content")) for o in options]
-    if not all(choices):
+    choices = [sanitize(o.get("content")) for o in options]
+    if not all(to_text(c) for c in choices):
         return None
 
     answer = (d.get("correct_answer") or [None])[0]
     if answer not in ("A", "B", "C", "D"):
         return None
 
-    stem = text(d.get("stem"))
-    if not stem:
+    stem = sanitize(d.get("stem"))
+    stimulus = sanitize(d.get("stimulus"))
+    if not to_text(stem):
         return None
 
     return {
@@ -76,11 +59,15 @@ def build_one(path):
         "difficulty": tier,
         "score_band": meta.get("score_band_range_cd"),
         "band_floor": 200, "band_ceiling": 1600,
-        "stimulus": text(d.get("stimulus")) or None,
+        "stimulus": stimulus or None,
         "stem": stem,
         "choices": choices,
         "answer": answer,
-        "rationale": text(d.get("rationale")) or None,
+        "rationale": sanitize(d.get("rationale")) or None,
+        # Flags the app uses to lay the item out: a question built around a
+        # figure or a table needs more width than a one-line equation.
+        "figure": has_figure(stimulus) or has_figure(stem),
+        "table": has_table(stimulus) or has_table(stem),
         "source": "College Board SAT educator question bank",
         "license": "College Board copyright - cached for use with own students",
     }
@@ -106,6 +93,8 @@ def main():
         json.dump({"items": items,
                    "note": "College Board content. Not for redistribution."}, fh)
 
+    figures = sum(1 for i in items if i["figure"])
+    tables = sum(1 for i in items if i["table"])
     by_skill = Counter(i["skill_cd"] for i in items)
     by_tier = Counter(i["difficulty"] for i in items)
     print(f"{'skill':8} {'E':>5} {'M':>5} {'H':>5} {'total':>6}")
@@ -113,6 +102,7 @@ def main():
         c = Counter(i["difficulty"] for i in items if i["skill_cd"] == skill)
         print(f"{skill:8} {c['E']:5} {c['M']:5} {c['H']:5} {by_skill[skill]:6}")
     print(f"\n{len(items)} items  (E {by_tier['E']} / M {by_tier['M']} / H {by_tier['H']})")
+    print(f"{figures} with a figure, {tables} with a data table")
     if skipped:
         print("skipped (grid-ins and malformed):",
               ", ".join(f"{k} {v}" for k, v in sorted(skipped.items())))

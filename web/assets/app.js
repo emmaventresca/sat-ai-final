@@ -10,6 +10,7 @@
 import { makeStore, configured } from './store.js';
 import { scoreItem, selectRound, updateMastery, bandWeights, TIERS } from './engine.js';
 import { buildLesson, focusTier, rankLessons } from './lessons.js';
+import { renderText as md, renderBody, renderHtml, escapeHtml as esc } from './mathfmt.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -24,32 +25,6 @@ const state = {
 // ---------------------------------------------------------------------------
 // helpers
 // ---------------------------------------------------------------------------
-
-const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) =>
-  ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-
-/** Minimal inline markdown: **bold** and *italic*. Input is our own content. */
-function md(s) {
-  return esc(s)
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/(^|[^*])\*([^*]+)\*/g, '$1<em>$2</em>');
-}
-
-/** Body lines beginning "- " become a list; the rest become paragraphs. */
-function renderBody(lines) {
-  const out = [];
-  let list = null;
-  for (const line of lines) {
-    if (line.startsWith('- ')) {
-      (list ??= []).push(`<li>${md(line.slice(2))}</li>`);
-    } else {
-      if (list) { out.push(`<ul>${list.join('')}</ul>`); list = null; }
-      out.push(`<p>${md(line)}</p>`);
-    }
-  }
-  if (list) out.push(`<ul>${list.join('')}</ul>`);
-  return out.join('');
-}
 
 const totalScore = (p) => (p?.current_rw ?? 0) + (p?.current_math ?? 0);
 const targetTotal = (p) => (p?.target_rw ?? 0) + (p?.target_math ?? 0);
@@ -344,7 +319,7 @@ function screenPractice() {
   const picked = r.answers[r.at];
   const revealed = picked !== undefined;
 
-  app.innerHTML = `<div class="wrap">
+  app.innerHTML = `<div class="wrap${item.figure || item.table ? ' wide' : ''}">
     <div class="spread" style="margin-bottom:12px">
       <button class="btn-sm" id="quit">&larr; Back</button>
       <span class="tiny muted">${r.at + 1} of ${r.items.length}
@@ -353,8 +328,8 @@ function screenPractice() {
     <div class="bar thin"><i style="width:${Math.round(r.at / r.items.length * 100)}%"></i></div>
 
     <div class="card" style="margin-top:14px">
-      ${item.stimulus ? `<p class="small">${md(item.stimulus)}</p>` : ''}
-      <div class="q">${md(item.stem)}</div>
+      ${item.stimulus ? `<div class="stim">${renderHtml(item.stimulus)}</div>` : ''}
+      <div class="q">${renderHtml(item.stem)}</div>
       ${item.choices.map((c, i) => {
         const key = 'ABCD'[i];
         let cls = 'choice';
@@ -363,9 +338,9 @@ function screenPractice() {
           else if (key === picked) cls += ' wrong';
         } else if (key === picked) cls += ' picked';
         return `<button class="${cls}" data-key="${key}" ${revealed ? 'disabled' : ''}>
-          <span class="k">${key}</span>${md(c)}</button>`;
+          <span class="k">${key}</span><span class="ctext">${renderHtml(c)}</span></button>`;
       }).join('')}
-      ${revealed ? `<div class="why">${md(item.rationale ?? '')}</div>` : ''}
+      ${revealed ? `<div class="why">${renderHtml(item.rationale ?? '')}</div>` : ''}
     </div>
 
     ${revealed ? `<div class="row" style="margin-top:12px">

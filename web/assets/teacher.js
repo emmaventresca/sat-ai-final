@@ -15,6 +15,7 @@
 import { makeStore, configured } from './store.js';
 import { scoreItem, bandWeights, TIERS } from './engine.js';
 import { focusTier, rankLessons } from './lessons.js';
+import { escapeHtml as esc, renderText as md } from './mathfmt.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -23,8 +24,6 @@ const store = makeStore();
 const state = { me: null, roster: [], student: null, detail: null,
                 bands: null, skills: {}, lessons: [] };
 
-const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) =>
-  ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const pct = (n) => `${Math.round(n * 100)}%`;
 const total = (p) => (p?.current_rw ?? 0) + (p?.current_math ?? 0);
 const targetTotal = (p) => (p?.target_rw ?? 0) + (p?.target_math ?? 0);
