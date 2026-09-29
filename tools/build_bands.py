@@ -84,17 +84,39 @@ def difficulty_mix():
     return mix, complete
 
 
-def band_weights(frac_needed, mix, n_questions):
-    """Fill the requirement from the cheapest tier upward."""
+# Four-choice questions yield ~25% by guessing. Math student-produced responses
+# (grid-ins) yield ~0, and they are 14 of the 54 math questions on the linear
+# form, so math's effective guessing rate is lower.
+GUESS_RATE = {"rw": 0.25, "math": 0.1875}
+
+
+def band_weights(frac_needed, mix, n_questions, guess):
+    """How much of each tier the student must actually *study*.
+
+    The subtlety is that unstudied questions are not worth zero - a guessed
+    four-choice question pays 25%. If you study s questions and guess the rest:
+
+        correct = N*guess + (1 - guess) * s
+
+    so the studied total needed is (need - N*guess) / (1 - guess). Fill that
+    from the cheapest tier upward.
+
+    This is what reproduces the advice in the Mills deck rather than merely
+    approximating it. At a 600 math target the Easy and Medium tiers alone
+    exceed the studied requirement, so the Hard tier comes out at zero - which
+    is the deck's "deliberately guess-and-move on Hard", derived instead of
+    asserted."""
     need = frac_needed * n_questions
+    studied = max(0.0, (need - n_questions * guess) / (1 - guess))
+
     weights, detail = {}, {}
     for tier in TIERS:
         available = mix[tier] * n_questions
-        take = max(0.0, min(available, need))
+        take = max(0.0, min(available, studied))
         weights[tier] = round(take / available, 4) if available else 0.0
         detail[tier] = round(take, 1)
-        need -= take
-    return weights, detail, round(need, 1)
+        studied -= take
+    return weights, detail, round(studied, 1)
 
 
 def main():
@@ -108,10 +130,11 @@ def main():
         curve, rows = curves[section], []
         for target in range(300, 801, 10):
             frac = fraction_needed(curve, target)
-            w, detail, short = band_weights(frac, mix[section], n)
+            w, detail, short = band_weights(frac, mix[section], n, GUESS_RATE[section])
             rows.append({"target": target,
                          "questions_needed": round(frac * n, 1),
                          "accuracy_needed": round(frac, 3),
+                         "guess_rate": GUESS_RATE[section],
                          "must_win": detail,
                          "band_weight": w,
                          "unreachable_by": short})

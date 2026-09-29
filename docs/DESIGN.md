@@ -179,6 +179,19 @@ questions they actually need, which becomes a **difficulty budget**:
 This is the `00 TRIAGE` card from the Mills math deck, generalized into a
 function. It is what stops the system from over-teaching.
 
+**Guessing yield matters, and including it is what makes the numbers match the
+deck's advice.** An unstudied question is not worth zero — a four-choice
+question pays 25% by guessing (grid-ins pay ~0, and they are 14 of 54 math
+items, so math's effective rate is 18.75%). If you study `s` questions and guess
+the rest, `correct = N·guess + (1−guess)·s`, so the studied requirement is
+`(need − N·guess) / (1 − guess)`.
+
+With that term in, the Hard tier comes out at **exactly zero for every math
+target up to 600**, and only 9% at 650. That is the deck's "deliberately
+guess-and-move on Hard" — derived from the official conversion tables rather
+than asserted. Without the term, the model demanded 26% of Hard at a 650 target
+and would have marched a 1300-bound student into circle equations.
+
 ### 4b. Mastery
 
 Per `(skill_cd, difficulty)` cell: a Leitner box plus rolling accuracy. Simple
@@ -201,9 +214,29 @@ value = P(student misses it) × how often that skill appears on the test × band
 - A 1400-level student is never served Easy linear-equation drill, because
   `P(miss)` is near zero — even though those items are frequent.
 
-**Promotion is automatic.** As a cell saturates, `band_weight` shifts upward and
-harder material enters the queue on its own. That is the "decks get harder as you
-improve" behavior, with no manual reassignment.
+### 4d. Reachability — which part of a partial tier to spend on
+
+When a band requires only *part* of a tier — 9% of Hard at a 650 math target —
+those points should come from skills the student is already close in, not from
+their worst skill. So there is a fourth term: **Hard is earned by mastering
+Medium in the same skill, and Medium by mastering Easy.**
+
+This is not decoration. Without it the engine sends a student who is shaky
+everywhere straight at Hard circle questions, because circles are *hard-weighted
+in the item pool* and therefore score well on frequency. That is precisely the
+over-teaching the design exists to prevent, and it showed up as a failing test
+before it showed up in front of a student.
+
+The full score is:
+
+```
+value = P(miss) × skill frequency × band_weight(difficulty) × reachability × type boost
+```
+
+**Promotion is automatic**, and now happens two ways. As a cell saturates,
+`P(miss)` falls and `reachability` at the tier above rises; as the student's
+score rises, `band_weight` shifts upward. Harder material enters the queue on
+its own, with no manual reassignment.
 
 ---
 
