@@ -16,6 +16,7 @@ import { makeStore, configured } from './store.js';
 import { scoreItem, bandWeights, TIERS } from './engine.js';
 import { focusTier, rankLessons } from './lessons.js';
 import { escapeHtml as esc, renderText as md } from './mathfmt.js';
+import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -144,7 +145,15 @@ function screenStudent() {
   const rwW = bandWeights(state.bands, 'rw', profile.target_rw ?? 600);
   const plan = (w) => TIERS.filter((t) => (w[t] ?? 0) > 0.02).join(' + ') || 'E';
 
-  app.innerHTML = `<div class="wrap">
+  const days = byDay(attempts, 30);
+  const weeks = byWeek(attempts, 8);
+  const activeDays = days.filter((d) => d.value > 0).length;
+  const last7 = days.slice(-7).reduce((n, d) => n + d.value, 0);
+  const prev7 = days.slice(-14, -7).reduce((n, d) => n + d.value, 0);
+  const trend = prev7 ? Math.round((last7 - prev7) / prev7 * 100) : null;
+  const run = streak(attempts);
+
+  app.innerHTML = `<div class="wrap wide">
     <div class="row" style="margin-bottom:14px">
       <button class="btn-sm" id="back">&larr; All students</button></div>
     <h1>${esc(profile.full_name ?? profile.email ?? 'Student')}</h1>
@@ -167,6 +176,45 @@ function screenStudent() {
         ${(mathW.H ?? 0) <= 0.02
           ? 'The Hard math tier is not required at their target, so the app does not serve it.'
           : `They need about ${pct(mathW.H)} of the Hard math tier.`}</p>
+    </div>
+
+    <h2>Practice by day</h2>
+    <div class="card">
+      <div class="kpis">
+        <div class="kpi"><div class="kpi-n">${last7}</div>
+          <div class="kpi-l">questions this week</div>
+          ${trend === null ? '' : `<div class="kpi-d ${trend >= 0 ? 'up' : 'down'}">
+            ${trend >= 0 ? '+' : ''}${trend}% vs last week</div>`}</div>
+        <div class="kpi"><div class="kpi-n">${activeDays}</div>
+          <div class="kpi-l">days practiced of the last 30</div></div>
+        <div class="kpi"><div class="kpi-n">${run}</div>
+          <div class="kpi-l">day streak</div></div>
+      </div>
+      ${columnChart(days, { id: 'days', title: 'Questions answered per day, last 30 days' })}
+      ${chartTable(days.filter((d) => d.value > 0).reverse(), {
+        caption: 'Show the daily numbers',
+        columns: [
+          { label: 'Day', get: (r) => r.label },
+          { label: 'Answered', num: true, get: (r) => r.value },
+          { label: 'Correct', num: true, get: (r) => r.correct },
+          { label: 'Accuracy', num: true, get: (r) => r.accuracy === null ? '—' : pct(r.accuracy) },
+        ] })}
+    </div>
+
+    <h2>By week</h2>
+    <div class="card">
+      ${columnChart(weeks, { id: 'weeks', title: 'Questions answered per week, last 8 weeks' })}
+      <table style="margin-top:14px"><thead><tr>
+        <th>Week</th><th class="num">Answered</th><th class="num">Accuracy</th>
+        <th class="num">Days active</th><th>Consistency</th>
+      </tr></thead><tbody>${weeks.slice().reverse().map((w) => `<tr>
+        <td>${esc(w.range)}</td>
+        <td class="num">${w.value || '—'}</td>
+        <td class="num">${w.accuracy === null ? '—' : pct(w.accuracy)}</td>
+        <td class="num">${w.activeDays || '—'}</td>
+        <td><div class="bar thin ${w.activeDays >= 4 ? 'good' : ''}" style="margin:0">
+          <i style="width:${Math.round(w.activeDays / 7 * 100)}%"></i></div></td>
+      </tr>`).join('')}</tbody></table>
     </div>
 
     <h2>What to work on next</h2>
@@ -221,6 +269,7 @@ function screenStudent() {
   </div>`;
 
   $('#back').onclick = () => { state.detail = null; screenRoster(); };
+  mountCharts(app);
   window.scrollTo(0, 0);
 }
 

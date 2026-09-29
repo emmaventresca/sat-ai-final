@@ -243,3 +243,50 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
   position:absolute;width:1px;height:1px;padding:0;margin:-1px;
   overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
 }
+
+/* =========================================================================
+   Teacher panel: KPIs and charts
+   ========================================================================= */
+
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.kpi{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:13px 15px}
+.kpi-n{font-size:1.7rem;font-weight:800;letter-spacing:-.035em;line-height:1.1}
+.kpi-l{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;
+  color:var(--dim);font-weight:800;margin-top:3px}
+.kpi-d{font-size:.78rem;font-weight:700;margin-top:5px}
+.kpi-d.up{color:#0b7a55}
+.kpi-d.down{color:#c9344c}
+
+.chart{position:relative}
+.chart-svg{width:100%;height:auto;display:block;overflow:visible}
+/* The hit area is the whole column band, not just the painted bar. */
+.chart .col{cursor:default;outline:none}
+/* Named col-bar, not bar: `.bar` is the progress-bar component, and its
+   height:9px applies to an SVG <rect> as a geometry property - which silently
+   flattened every column to 9px. */
+.chart .col-bar{transition:fill .12s ease}
+.chart .col.on .col-bar,
+.chart .col:focus-visible .col-bar{fill:var(--purple-d)}
+.chart .col:focus-visible .hit{stroke:var(--purple);stroke-width:1.5}
+
+.tip{
+  position:absolute;top:2px;transform:translateX(-50%);
+  background:var(--panel);border:1px solid var(--line2);border-radius:11px;
+  padding:8px 12px;box-shadow:var(--shadow-lg);pointer-events:none;
+  white-space:nowrap;z-index:5;
+}
+/* Value leads, label follows: the reader has the day and wants the number. */
+.tip-v{font-weight:800;font-size:1.02rem;letter-spacing:-.02em}
+.tip-l{font-size:.78rem;color:var(--dim);font-weight:600}
+.tip-s{font-size:.75rem;color:var(--dim);margin-top:3px}
+
+/* Every chart ships a table view, so no value is reachable only by hovering. */
+.tableview{margin-top:14px}
+.tableview summary{
+  font-size:.8rem;font-weight:700;color:var(--purple-d);cursor:pointer;
+  padding:6px 0;list-style:revert;
+}
+.tableview[open] summary{margin-bottom:8px}
+.tableview table{margin-top:4px}
+
+@media (max-width:560px){ .kpis{grid-template-columns:1fr} }
