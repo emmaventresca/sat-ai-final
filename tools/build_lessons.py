@@ -13,7 +13,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, os.path.join(HERE, "lessons"))
 
-MODULES = ["rw_core", "rw_evidence", "rw_grammar", "math_algebra", "triage"]
+MODULES = ["rw_core", "rw_evidence", "rw_grammar",
+           "math_algebra", "math_advanced", "math_data", "math_geometry",
+           "triage"]
 TIERS = {"E", "M", "H"}
 WHEN_KEYS = {"unseen", "struggling", "mastered", "missed", "count"}
 

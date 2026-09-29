@@ -929,6 +929,635 @@
    "section": "math"
   },
   {
+   "id": "lesson-P.C.",
+   "skill_cd": "P.C.",
+   "title": "Nonlinear functions",
+   "subtitle": "259 items - the largest single skill in Math",
+   "sections": [
+    {
+     "id": "pc-what",
+     "always": true,
+     "heading": "Quadratics, exponentials, and reading a graph",
+     "body": [
+      "The biggest skill in the whole math section. Most of it is quadratics, and most quadratic questions are asking for one of four things: the **roots**, the **vertex**, the **y-intercept**, or the **number of solutions**.",
+      "Every one of those is a grey dot in Desmos. Graph it, click the dot, read the coordinates. You almost never need the quadratic formula."
+     ]
+    },
+    {
+     "id": "pc-forms",
+     "tier": "E",
+     "heading": "Each form hands you one answer free",
+     "body": [
+      "This is the single most useful thing to know about quadratics on this test:",
+      "- **Standard, y = ax\u00b2 + bx + c** - c *is* the y-intercept.",
+      "- **Factored, y = a(x - p)(x - q)** - p and q *are* the roots.",
+      "- **Vertex, y = a(x - h)\u00b2 + k** - (h, k) *is* the vertex.",
+      "So the question 'which form displays the vertex as constants' answers itself once you know the three names. These appear constantly and are free points.",
+      "Also: **a positive opens upward** (the vertex is a minimum), a negative opens downward (a maximum)."
+     ]
+    },
+    {
+     "id": "pc-vertex",
+     "tier": "M",
+     "heading": "The vertex, without completing the square",
+     "body": [
+      "The vertex sits exactly halfway between the two roots. So if you can see the roots, average them for the x-coordinate and substitute back for the y.",
+      "Algebraically it is x = -b/(2a), but you rarely need that. **Graph it and click the vertex dot.**",
+      "'Maximum height', 'minimum cost', 'greatest area' are all vertex questions in words. Recognise the wording and go straight to the dot."
+     ]
+    },
+    {
+     "id": "pc-exp",
+     "tier": "M",
+     "heading": "Exponential growth and decay",
+     "body": [
+      "**y = a\u00b7b^x.** a is the starting value, b is the multiplier per step.",
+      "- b > 1 is growth; b < 1 is decay.",
+      "- *increases by 8%* means b = 1.08. *decreases by 8%* means b = 0.92.",
+      "The most common error is writing 0.08 instead of 1.08. Read b as 'what I multiply by each time', which can never be near zero for growth.",
+      "**Linear versus exponential:** a constant *amount* added each time is linear; a constant *percentage* is exponential. That phrase is the test."
+     ]
+    },
+    {
+     "id": "pc-struggle",
+     "when": {
+      "struggling": {
+       "tier": "M",
+       "below": 0.65
+      }
+     },
+     "heading": "If these keep going wrong",
+     "body": [
+      "Check whether you are answering the question that was asked. In this skill specifically:",
+      "- asked for the **vertex** but gave only the x-coordinate",
+      "- asked for the **roots** but gave the factors (x - 3 rather than 3)",
+      "- asked when height is **zero** (a root) but found the maximum instead",
+      "Underline the thing being asked for before you graph anything, and check your answer against it at the end."
+     ]
+    },
+    {
+     "id": "pc-hard",
+     "tier": "H",
+     "heading": "Discriminant and parameter questions",
+     "body": [
+      "*For what value of k does this have exactly one solution?* That is a **tangency** question. Put a slider on k and drag until the curve just touches the line - one intersection dot.",
+      "Algebraically it is the discriminant b\u00b2 - 4ac: positive gives two solutions, zero gives one, negative gives none. Know it, but reach for the slider first, because it is faster and you can see when you are right."
+     ]
+    }
+   ],
+   "type": "lesson",
+   "source": "original",
+   "license": "proprietary",
+   "section": "math"
+  },
+  {
+   "id": "lesson-P.B.",
+   "skill_cd": "P.B.",
+   "title": "Nonlinear equations and systems",
+   "subtitle": "165 items, and heavily Hard-weighted",
+   "sections": [
+    {
+     "id": "pb-what",
+     "always": true,
+     "heading": "One move handles nearly all of it",
+     "body": [
+      "Graph the left side, graph the right side, click the intersections. This works for quadratics, radicals, absolute value, rational equations and systems mixing a line with a curve - the same technique every time.",
+      "**'How many solutions'** is then just counting intersection dots, which is far more reliable than reasoning about it."
+     ]
+    },
+    {
+     "id": "pb-extraneous",
+     "tier": "M",
+     "heading": "Extraneous solutions",
+     "body": [
+      "When you square both sides of a radical equation, or clear a denominator, you can create solutions that do not satisfy the original.",
+      "**The graph never lies.** If the algebra gives you x = 2 and x = 5 but the graphs only cross once, only that crossing is a real solution.",
+      "This is the entire point of many Medium and Hard items in this skill, so always check the count against the picture."
+     ]
+    },
+    {
+     "id": "pb-hard",
+     "tier": "H",
+     "heading": "Systems of a line and a curve",
+     "body": [
+      "A line and a parabola meet twice, once, or not at all. Questions asking *for what value of c does the system have exactly one solution* are tangency questions - slider on c, drag until they just touch.",
+      "When the answer choices are **expressions rather than numbers**, Desmos stops helping. Fall back to substituting a specific value of x into the original and into each choice, and keep whichever matches. Avoid 0 and 1."
+     ]
+    }
+   ],
+   "type": "lesson",
+   "source": "original",
+   "license": "proprietary",
+   "section": "math"
+  },
+  {
+   "id": "lesson-P.A.",
+   "skill_cd": "P.A.",
+   "title": "Equivalent expressions",
+   "subtitle": "116 items - the one place Desmos does not help",
+   "sections": [
+    {
+     "id": "pa-what",
+     "always": true,
+     "heading": "Symbolic, so use a different tool",
+     "body": [
+      "*Which expression is equivalent to...* - the answer choices are expressions, not numbers, so there is nothing to graph and click.",
+      "**Pick a number instead.** Substitute x = 2 into the original, then into each choice, and keep the ones that match. Avoid 0 and 1, which make too many wrong choices agree, and avoid any value that makes a denominator zero.",
+      "If two choices survive, try a second number. This is faster and far more reliable than doing the algebra under time pressure."
+     ]
+    },
+    {
+     "id": "pa-rules",
+     "tier": "M",
+     "heading": "The rules actually tested",
+     "body": [
+      "- **Exponents:** x^a \u00b7 x^b = x^(a+b); (x^a)^b = x^(ab); x^(-a) = 1/x^a.",
+      "- **Fractional exponents:** x^(1/2) is \u221ax, x^(2/3) is the cube root of x\u00b2, which is the most commonly tested conversion.",
+      "- **Difference of squares:** a\u00b2 - b\u00b2 = (a + b)(a - b). Recognising this on sight saves whole questions.",
+      "- **Rational expressions:** factor first, then cancel. Never cancel across an addition sign."
+     ]
+    },
+    {
+     "id": "pa-hard",
+     "tier": "H",
+     "heading": "When picking a number is awkward",
+     "body": [
+      "With two variables, pick two different numbers - say x = 2 and y = 3. Using the same value for both is how you get two choices matching.",
+      "For expressions with several restricted values, choose something deliberately unusual like x = 5 or x = 7. The traps are usually built around small numbers."
+     ]
+    }
+   ],
+   "type": "lesson",
+   "source": "original",
+   "license": "proprietary",
+   "section": "math"
+  },
+  {
+   "id": "lesson-Q.A.",
+   "skill_cd": "Q.A.",
+   "title": "Ratios, rates, and units",
+   "subtitle": "93 items, and mostly a units exercise",
+   "sections": [
+    {
+     "id": "qa-what",
+     "always": true,
+     "heading": "Set it up as a proportion and let the units check it",
+     "body": [
+      "Write the proportion with **matching units diagonally**, cross-multiply, solve. Almost every question in this skill is that, once.",
+      "The most reliable habit: write the units next to every number. If your setup produces 'miles per gallon per hour', the setup is wrong and you have caught it before doing any arithmetic."
+     ]
+    },
+    {
+     "id": "qa-convert",
+     "tier": "E",
+     "heading": "Unit conversion is a multiplication chain",
+     "body": [
+      "Multiply by fractions equal to 1, arranged so the unit you do not want cancels:",
+      "*60 miles/hour \u00d7 (1 hour / 60 minutes) = 1 mile/minute.*",
+      "Set up the chain so everything cancels except the unit the answer needs. Then do the arithmetic once, at the end.",
+      "**Wrong answers are usually the right number with the wrong conversion** - multiplied where you should have divided. The cancelling check catches exactly that."
+     ]
+    },
+    {
+     "id": "qa-struggle",
+     "when": {
+      "struggling": {
+       "tier": "E",
+       "below": 0.7
+      }
+     },
+     "heading": "If these are going wrong",
+     "body": [
+      "It is nearly always one of two things, and neither is the maths:",
+      "1. **You did not write the units down.** Do it. It takes five seconds and it is the entire error-check.",
+      "2. **You answered a different question.** These problems often ask for a total when you have computed a rate, or the other way round. Reread the last line before choosing."
+     ]
+    }
+   ],
+   "type": "lesson",
+   "source": "original",
+   "license": "proprietary",
+   "section": "math"
+  },
+  {
+   "id": "lesson-Q.B.",
+   "skill_cd": "Q.B.",
+   "title": "Percentages",
+   "subtitle": "84 items",
+   "sections": [
+    {
+     "id": "qb-what",
+     "always": true,
+     "heading": "Translate the sentence literally",
+     "body": [
+      "**is** means =, **of** means \u00d7, **what** means your variable. *What percent of 300 is 75* becomes (x/100)(300) = 75.",
+      "Doing the translation word by word removes almost all the difficulty in this skill."
+     ]
+    },
+    {
+     "id": "qb-change",
+     "tier": "M",
+     "heading": "Percent change, and why it is not symmetric",
+     "body": [
+      "**Percent change = (new \u2212 old) / old.** The denominator is always the **original** value, and that is where the points are lost.",
+      "A rise from 40 to 50 is a 25% increase. A fall from 50 back to 40 is a **20%** decrease, not 25%. Different starting points, different denominators.",
+      "**Increase by 20%** is \u00d7 1.2. **Decrease by 20%** is \u00d7 0.8. Successive changes multiply: up 20% then down 20% gives 0.96, not 1."
+     ]
+    },
+    {
+     "id": "qb-hard",
+     "tier": "H",
+     "heading": "Working backwards",
+     "body": [
+      "*After a 15% discount the price is $68. What was the original?* The answer is **not** 68 \u00d7 1.15.",
+      "68 is 85% of the original, so the original is 68 / 0.85. Write the equation 0.85x = 68 rather than trying to reverse the percentage in your head - reversing it in your head is the trap the question is built on."
+     ]
+    }
+   ],
+   "type": "lesson",
+   "source": "original",
+   "license": "proprietary",
+   "section": "math"
+  },
+  {
+   "id": "lesson-Q.C.",
+   "skill_cd": "Q.C.",
+   "title": "One-variable data: center and spread",
+   "subtitle": "84 items",
+   "sections": [
+    {
+     "id": "qc-what",
+     "always": true,
+     "heading": "Mean, median, and which one the question wants",
+     "body": [
+      "**Mean** is the average. **Median** is the middle value once sorted. **Mode** is the most frequent. **Range** is max minus min.",
+      "Sorting first is not optional for median questions, and forgetting to sort is the single most common error in this skill."
+     ]
+    },
+    {
+     "id": "qc-outlier",
+     "tier": "M",
+     "heading": "What outliers do",
+     "body": [
+      "**An outlier drags the mean and barely moves the median.** That one sentence answers a large share of the questions here.",
+      "So: *which measure best represents a typical value when the data contains an extreme value* - the median, always.",
+      "Adding a very large value increases the mean and leaves the median roughly where it was. Expect to be asked exactly that."
+     ]
+    },
+    {
+     "id": "qc-spread",
+     "tier": "M",
+     "heading": "Standard deviation without computing it",
+     "body": [
+      "**You are never asked to calculate standard deviation.** You are asked to compare two data sets and say which has more.",
+      "More spread out from the centre means larger. Tightly clustered means smaller. That is the whole skill.",
+      "Two sets can have the same mean and very different spreads - and that is usually the point of the question."
+     ]
+    }
+   ],
+   "type": "lesson",
+   "source": "original",
+   "license": "proprietary",
+   "section": "math"
+  },
+  {
+   "id": "lesson-Q.D.",
+   "skill_cd": "Q.D.",
+   "title": "Two-variable data and scatterplots",
+   "subtitle": "71 items",
+   "sections": [
+    {
+     "id": "qd-what",
+     "always": true,
+     "heading": "Read the axes before anything else",
+     "body": [
+      "Ten seconds on what is measured, in what units, over what range. Most errors in this skill are made before any thinking starts.",
+      "**Line of best fit questions are linear-function questions in disguise**: the slope is a rate per unit of x, the intercept is the value at x = 0."
+     ]
+    },
+    {
+     "id": "qd-predict",
+     "tier": "M",
+     "heading": "Predicted versus actual",
+     "body": [
+      "*According to the line of best fit, what is the predicted value at x = 8?* Read the **line**, not the dots.",
+      "*By how much does the actual value differ from the prediction?* Read **both**, and subtract.",
+      "Getting these two confused is the standard error here. Underline whether the question says 'predicted' or 'actual'."
+     ]
+    },
+    {
+     "id": "qd-hard",
+     "tier": "H",
+     "heading": "Choosing a model",
+     "body": [
+      "Roughly constant increase per step is **linear**. Increasingly steep, multiplying each step, is **exponential**. Rising then falling (or the reverse) is **quadratic**.",
+      "You can also just type the table into Desmos and fit each candidate with `y_1 ~ mx_1 + b` and `y_1 ~ ab^{x_1}`, then compare how well each tracks the points."
+     ]
+    }
+   ],
+   "type": "lesson",
+   "source": "original",
+   "license": "proprietary",
+   "section": "math"
+  },
+  {
+   "id": "lesson-Q.E.",
+   "skill_cd": "Q.E.",
+   "title": "Probability and conditional probability",
+   "subtitle": "49 items, nearly all two-way tables",
+   "sections": [
+    {
+     "id": "qe-what",
+     "always": true,
+     "heading": "The only difficulty is the denominator",
+     "body": [
+      "Probability is *the count you want over the total that could happen*. The arithmetic is trivial; picking the right total is the question.",
+      "In a two-way table, find the number you want, then decide carefully whether the denominator is the **whole table**, one **row**, or one **column**."
+     ]
+    },
+    {
+     "id": "qe-conditional",
+     "tier": "M",
+     "heading": "\"Given that\" changes the denominator",
+     "body": [
+      "*What is the probability a student plays an instrument, **given that** they are in year 11?* You are no longer looking at the whole table - only at the year 11 row.",
+      "**The words after 'given that' tell you which row or column is now your entire world.** Circle that row before computing anything.",
+      "Wrong answers are almost always the same numerator over the grand total."
+     ]
+    },
+    {
+     "id": "qe-hard",
+     "tier": "H",
+     "heading": "Wording that reverses the fraction",
+     "body": [
+      "*Of the students who play an instrument, what fraction are in year 11?* is a different question from *of the year 11 students, what fraction play an instrument?* - same two numbers, denominators swapped.",
+      "Read the phrase beginning **'of the'**: that group is the denominator."
+     ]
+    }
+   ],
+   "type": "lesson",
+   "source": "original",
+   "license": "proprietary",
+   "section": "math"
+  },
+  {
+   "id": "lesson-Q.F.",
+   "skill_cd": "Q.F.",
+   "title": "Sample statistics and margin of error",
+   "subtitle": "28 items - small pool, predictable questions",
+   "sections": [
+    {
+     "id": "qf-what",
+     "always": true,
+     "heading": "Three facts cover almost all of it",
+     "body": [
+      "- **A margin of error gives an interval:** estimate \u00b1 margin. An estimate of 47% with a margin of 3% means the plausible range is 44% to 50%.",
+      "- **A bigger sample gives a smaller margin.** That relationship is the most frequently tested idea in this skill.",
+      "- **Conclusions only extend to the population actually sampled.** If the sample was drawn from one school, the conclusion is about that school."
+     ]
+    },
+    {
+     "id": "qf-hard",
+     "tier": "H",
+     "heading": "Over-claiming",
+     "body": [
+      "The standard wrong answer states a result with more certainty than the interval supports, or extends it to a population that was never sampled.",
+      "Prefer the cautious choice. In this skill the hedged answer is usually the correct one."
+     ]
+    }
+   ],
+   "type": "lesson",
+   "source": "original",
+   "license": "proprietary",
+   "section": "math"
+  },
+  {
+   "id": "lesson-Q.G.",
+   "skill_cd": "Q.G.",
+   "title": "Evaluating statistical claims",
+   "subtitle": "Only 12 items, but one rule answers nearly all of them",
+   "sections": [
+    {
+     "id": "qg-what",
+     "always": true,
+     "heading": "Random assignment versus random selection",
+     "body": [
+      "This is the whole skill, and it is worth two minutes of your life:",
+      "- **Random *selection*** (who is in the study) lets you **generalise** to the wider population.",
+      "- **Random *assignment*** (who gets the treatment) lets you claim **cause**.",
+      "An observational study has no random assignment, so it can never establish causation - however strong the association. Any answer choice claiming one thing *caused* another from an observational study is wrong.",
+      "With only 12 items in the bank this will not decide your score, but it is the cheapest rule on the test to learn."
+     ]
+    }
+   ],
+   "type": "lesson",
+   "source": "original",
+   "license": "proprietary",
+   "section": "math"
+  },
+  {
+   "id": "lesson-S.B.",
+   "skill_cd": "S.B.",
+   "title": "Lines, angles, and triangles",
+   "subtitle": "102 items - start here in Geometry",
+   "sections": [
+    {
+     "id": "sb-what",
+     "always": true,
+     "heading": "The most balanced skill in the domain",
+     "body": [
+      "40 Easy, 29 Medium, 33 Hard - the only Geometry skill with a real Easy tier. If you are building a floor in Geometry, build it here rather than in circles or trigonometry.",
+      "**Always mark the diagram.** Write every angle you work out onto the figure as you go. Geometry questions are chains, and the marked diagram is how you avoid restarting the chain."
+     ]
+    },
+    {
+     "id": "sb-facts",
+     "tier": "E",
+     "heading": "The facts that actually get used",
+     "body": [
+      "- Angles in a triangle sum to **180**; on a straight line, **180**; around a point, **360**.",
+      "- **Vertical angles are equal.** Where two lines cross, opposite angles match.",
+      "- Parallel lines cut by a transversal: corresponding and alternate angles are **equal**, co-interior angles sum to **180**.",
+      "- An exterior angle equals the **sum of the two opposite interior angles** - this shortcut saves a step constantly.",
+      "- Isosceles triangles have equal base angles, and that is usually what unlocks the question."
+     ]
+    },
+    {
+     "id": "sb-similar",
+     "tier": "M",
+     "heading": "Similar triangles",
+     "body": [
+      "Equal angles means similar, which means **corresponding sides are in proportion**.",
+      "Set up the proportion with corresponding sides in matching positions, then cross-multiply. The usual error is pairing the wrong sides - so identify which angle each side is opposite before writing anything.",
+      "A triangle sitting inside another with a parallel line across it is the standard setup, and it is worth recognising on sight."
+     ]
+    },
+    {
+     "id": "sb-hard",
+     "tier": "H",
+     "heading": "Multi-step chains",
+     "body": [
+      "Hard items here are three or four easy steps stacked. There is no hard idea - the difficulty is entirely in not losing track.",
+      "Work outward from whatever you were given, writing each new angle on the figure. If you stall, look for an isosceles triangle or a pair of parallel lines you have not used yet: the question always needs every piece of information it gave you."
+     ]
+    }
+   ],
+   "type": "lesson",
+   "source": "original",
+   "license": "proprietary",
+   "section": "math"
+  },
+  {
+   "id": "lesson-S.A.",
+   "skill_cd": "S.A.",
+   "title": "Area and volume",
+   "subtitle": "110 items - the largest Geometry skill",
+   "sections": [
+    {
+     "id": "sa-what",
+     "always": true,
+     "heading": "The formulas are given to you",
+     "body": [
+      "There is a reference sheet in the app with every area and volume formula on it. **Do not memorise them, and do not work from memory** - open the sheet and read the formula.",
+      "What is not on the sheet is knowing which one you need and what the question is really asking, and that is where the work is."
+     ]
+    },
+    {
+     "id": "sa-method",
+     "tier": "E",
+     "heading": "The method",
+     "body": [
+      "1. Identify the shape and open the formula.",
+      "2. Write down what each letter is, with units.",
+      "3. Substitute, then solve.",
+      "**Watch for radius versus diameter.** A question giving you the diameter and a formula wanting the radius is the most common trap in this skill, and it is deliberate. Halve it before substituting."
+     ]
+    },
+    {
+     "id": "sa-scale",
+     "tier": "M",
+     "heading": "What scaling actually does",
+     "body": [
+      "Double every length and the **area goes up \u00d74**, the **volume \u00d78**. Lengths scale by k, areas by k\u00b2, volumes by k\u00b3.",
+      "This is tested directly and often, and guessing it wrong is a guaranteed loss. Multiply the scale factor by itself once for area, twice for volume.",
+      "Composite figures: break them into shapes you have formulas for, then add or subtract. Shaded-region questions are almost always 'big shape minus small shape'."
+     ]
+    },
+    {
+     "id": "sa-hard",
+     "tier": "H",
+     "heading": "Working backwards, and units",
+     "body": [
+      "Given a volume and asked for a dimension, substitute what you know and solve - do not try to rearrange the formula first, which is where sign and root errors come from.",
+      "**Check the units in the answer choices.** Area is square units, volume cubic. If a question mixes centimetres and metres, convert before substituting, not after."
+     ]
+    }
+   ],
+   "type": "lesson",
+   "source": "original",
+   "license": "proprietary",
+   "section": "math"
+  },
+  {
+   "id": "lesson-S.C.",
+   "skill_cd": "S.C.",
+   "title": "Right triangles and trigonometry",
+   "subtitle": "Only 8 Easy items of 69 - a top-tier skill",
+   "sections": [
+    {
+     "id": "sc-what",
+     "always": true,
+     "heading": "Where this sits for you",
+     "body": [
+      "69 items, of which 42 are Hard and just 8 are Easy. Along with circles, this is the most top-weighted skill on the test.",
+      "If your target does not require the Hard tier, **this is a skill to leave alone** until everything cheaper is secure. The app will not put it in front of you until you have shown you own the Medium tier here, and that is deliberate rather than an oversight."
+     ]
+    },
+    {
+     "id": "sc-basics",
+     "tier": "M",
+     "heading": "SOH-CAH-TOA, and the two triangles worth knowing",
+     "body": [
+      "sin = opposite/hypotenuse, cos = adjacent/hypotenuse, tan = opposite/adjacent. Label the three sides **relative to the angle you are using** before writing any ratio - the same side is 'opposite' for one angle and 'adjacent' for the other.",
+      "**Special triangles**, which appear constantly:",
+      "- **30-60-90** has sides in the ratio 1 : \u221a3 : 2",
+      "- **45-45-90** has sides in the ratio 1 : 1 : \u221a2",
+      "Spotting these answers the question with no trigonometry at all.",
+      "Also worth recognising: **3-4-5** and **5-12-13** right triangles, and their multiples."
+     ]
+    },
+    {
+     "id": "sc-hard",
+     "tier": "H",
+     "heading": "The complementary angle identity",
+     "body": [
+      "**sin(x) = cos(90 \u2212 x).** This is tested directly and often, and it is the single highest-value fact in the skill.",
+      "*If sin(a) = 0.6, what is cos(90 \u2212 a)?* The answer is 0.6, with no computation at all. Questions that look like they need a calculator frequently reduce to this identity.",
+      "Make sure your calculator is in **degrees**, not radians, whenever you do compute."
+     ]
+    }
+   ],
+   "type": "lesson",
+   "source": "original",
+   "license": "proprietary",
+   "section": "math"
+  },
+  {
+   "id": "lesson-S.D.",
+   "skill_cd": "S.D.",
+   "title": "Circles",
+   "subtitle": "Only 4 Easy items of 67 - the most top-weighted skill on the test",
+   "sections": [
+    {
+     "id": "sd-what",
+     "always": true,
+     "heading": "Where this sits for you",
+     "body": [
+      "67 items: 41 Hard, 22 Medium, and **4 Easy**. There is no cheap tier here at all.",
+      "That makes circles a genuine trap in planning. It *feels* like a topic you should study because it is distinctive and has its own formulas - but unless you are going for a top score, the same hours spent on Linear Functions or Words in Context buy several times the points.",
+      "If your target needs it, the material below is the whole skill."
+     ]
+    },
+    {
+     "id": "sd-equation",
+     "tier": "M",
+     "heading": "The equation of a circle",
+     "body": [
+      "**(x \u2212 h)\u00b2 + (y \u2212 k)\u00b2 = r\u00b2**, centre (h, k), radius r.",
+      "Two things to be careful about, and they account for most losses here:",
+      "- The **signs are flipped**: (x \u2212 3)\u00b2 means the centre's x is +3.",
+      "- The right side is **r squared**. If it says 25, the radius is 5, not 25.",
+      "**Desmos:** type the equation straight in and look at it. The centre and radius are visible immediately, which beats reading them off by eye."
+     ]
+    },
+    {
+     "id": "sd-complete",
+     "tier": "H",
+     "heading": "Completing the square",
+     "body": [
+      "When the equation arrives as x\u00b2 + y\u00b2 + 6x \u2212 4y = 12, it has to be rearranged into centre-radius form. Halve the coefficient of x, square it, add to both sides; repeat for y.",
+      "**Or type it into Desmos exactly as given** and read the centre off the graph. Desmos plots implicit equations, so this works, and it is far faster than the algebra under time pressure."
+     ]
+    },
+    {
+     "id": "sd-arcs",
+     "tier": "H",
+     "heading": "Arcs, sectors, and radians",
+     "body": [
+      "An arc or sector is just a **fraction of the whole circle**, and the fraction is (central angle / 360).",
+      "- arc length = (angle/360) \u00d7 2\u03c0r",
+      "- sector area = (angle/360) \u00d7 \u03c0r\u00b2",
+      "Do not memorise these as separate formulas - find the fraction, then take that fraction of the circumference or the area.",
+      "**Radians:** a full circle is 2\u03c0. Multiply by 180/\u03c0 to get degrees, by \u03c0/180 to go the other way. Arc length in radians is simply r\u03b8."
+     ]
+    }
+   ],
+   "type": "lesson",
+   "source": "original",
+   "license": "proprietary",
+   "section": "math"
+  },
+  {
    "id": "lesson-TRIAGE",
    "skill_cd": null,
    "type": "triage",
