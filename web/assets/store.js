@@ -83,7 +83,22 @@ class LocalStore {
     writeLS(LS.fingerprints, f.concat(rows));
   }
 
-  async roster() { return []; }
+  /**
+   * Local mode has no roster, but returning the single local student lets the
+   * teacher view be demonstrated and tested without a backend.
+   */
+  async roster() {
+    const p = readLS(LS.profile, null);
+    return p ? [p] : [];
+  }
+
+  async studentData(id) {
+    return {
+      mastery: readLS(LS.mastery, {}),
+      attempts: readLS(LS.attempts, []),
+      fingerprints: readLS(LS.fingerprints, []),
+    };
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -189,6 +204,24 @@ class SupabaseStore {
     const { error } = await this.sb.from('fingerprints')
       .insert(rows.map((r) => ({ ...r, student_id: this.uid })));
     if (error) throw error;
+  }
+
+  /** Everything the teacher view needs for one student. RLS decides what
+   *  actually comes back; this code does not filter. */
+  async studentData(id) {
+    const [m, a, f] = await Promise.all([
+      this.sb.from('mastery').select('*').eq('student_id', id),
+      this.sb.from('attempts').select('correct, created_at').eq('student_id', id)
+        .order('created_at', { ascending: false }).limit(2000),
+      this.sb.from('fingerprints').select('*').eq('student_id', id)
+        .order('created_at', { ascending: false }).limit(200),
+    ]);
+    return {
+      mastery: Object.fromEntries((m.data ?? [])
+        .map((r) => [`${r.skill_cd}|${r.difficulty}`, r])),
+      attempts: a.data ?? [],
+      fingerprints: f.data ?? [],
+    };
   }
 
   /** Teacher view: the students on this teacher's roster. */

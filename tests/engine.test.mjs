@@ -83,19 +83,21 @@ test('a 1300-bound student is not sent at Hard circles before mastering Medium',
   assert.ok(!round.some((i) => i.id === 'cir-h'),
     `served: ${round.map((i) => i.id).join(', ')}`);
 });
+const advancedMastery = {
+  'H.C.|E': { seen: 20, correct: 20, box: 5, due_at: '2020-01-01T00:00:00Z' },
+  'H.C.|M': { seen: 10, correct: 9, box: 3, due_at: '2020-01-01T00:00:00Z' },
+  'S.C.|E': { seen: 8, correct: 7, box: 3, due_at: '2020-01-01T00:00:00Z' },
+  'S.C.|M': { seen: 12, correct: 11, box: 4, due_at: '2020-01-01T00:00:00Z' },
+};
 test('a 1550-bound student ranks mastered Easy below the work that pays', () => {
-  const mastered = { 'H.C.|E': { seen: 20, correct: 20, box: 5, due_at: '2020-01-01T00:00:00Z' },
-                     'H.C.|M': { seen: 10, correct: 9, box: 3, due_at: '2020-01-01T00:00:00Z' } };
-  const ids = E.selectRound(catalogue, ctx(advanced, mastered), { size: 5 }).map((i) => i.id);
+  const ids = E.selectRound(catalogue, ctx(advanced, advancedMastery), { size: 5 }).map((i) => i.id);
   for (const better of ['alg-m', 'alg-h', 'cir-h']) {
     assert.ok(ids.indexOf(better) < ids.indexOf('alg-e'),
       `${better} should outrank alg-e; order: ${ids.join(', ')}`);
   }
 });
 test('...and excludes it once the round is competitive', () => {
-  const mastered = { 'H.C.|E': { seen: 20, correct: 20, box: 5, due_at: '2020-01-01T00:00:00Z' },
-                     'H.C.|M': { seen: 10, correct: 9, box: 3, due_at: '2020-01-01T00:00:00Z' } };
-  const round = E.selectRound(catalogue, ctx(advanced, mastered), { size: 3 });
+  const round = E.selectRound(catalogue, ctx(advanced, advancedMastery), { size: 3 });
   assert.ok(!round.some((i) => i.id === 'alg-e'),
     `served: ${round.map((i) => i.id).join(', ')}`);
 });
@@ -132,6 +134,16 @@ test('Hard is heavily discounted with no Medium evidence', () => {
 test('Hard opens up as Medium in that skill is mastered', () => {
   const m = { 'S.C.|M': { seen: 10, correct: 10 } };
   assert.equal(E.reachability({ skill_cd: 'S.C.', difficulty: 'H' }, ctx(climber, m)), 1);
+});
+test('the discount compounds: unproven Hard is far worse off than unproven Medium', () => {
+  const c = ctx(climber);
+  const m = E.reachability({ skill_cd: 'S.C.', difficulty: 'M' }, c);
+  const h = E.reachability({ skill_cd: 'S.C.', difficulty: 'H' }, c);
+  assert.ok(h < m / 10, `H ${h} should be far below M ${m}`);
+});
+test('weak evidence below does not settle the tiers under it', () => {
+  const weak = { 'S.C.|M': { seen: 10, correct: 5 } };
+  assert.ok(E.reachability({ skill_cd: 'S.C.', difficulty: 'H' }, ctx(climber, weak)) < 0.1);
 });
 
 console.log('\nmastery');

@@ -83,12 +83,36 @@ function clamp(x, lo, hi) { return Math.max(lo, Math.min(hi, x)); }
  * meant to prevent.
  */
 export function reachability(item, ctx) {
-  const tier = item.difficulty ?? 'M';
+  return tierReachability(item.skill_cd, item.difficulty ?? 'M', ctx);
+}
+
+// With no evidence at the tier below, a tier is open only for exploration.
+const UNPROVEN = 0.05;
+
+/**
+ * Compounds down the ladder: Hard is reachable only to the extent Medium is
+ * proven *and* Medium was itself reachable, which needs Easy.
+ *
+ * Compounding rather than looking one tier down is what keeps a hard-weighted
+ * skill out of a beginner's queue. Circles have 41 Hard items against 4 Easy
+ * ones, so on frequency alone a Hard circle question outscores a Medium one -
+ * and a flat one-tier discount scales both equally and cannot separate them.
+ * Two steps of discount can: an unproven Hard tier is penalised 20x more than
+ * an unproven Medium one.
+ */
+export function tierReachability(skill_cd, tier, ctx) {
   if (tier === 'E') return 1;
   const below = tier === 'H' ? 'M' : 'E';
-  const cell = ctx.mastery[`${item.skill_cd}|${below}`];
-  if (!cell || !cell.seen) return 0.2;            // unproven at the tier below
-  return clamp(cell.correct / cell.seen, 0.1, 1);
+  const cell = ctx.mastery[`${skill_cd}|${below}`];
+  if (!cell || !cell.seen) return UNPROVEN * tierReachability(skill_cd, below, ctx);
+
+  const acc = clamp(cell.correct / cell.seen, 0.1, 1);
+  // Strong evidence at the tier below settles the tiers under it too: a student
+  // at 90% on Medium is not in doubt at Easy, whether or not we ever saw them
+  // answer an Easy question. Without this, a student who started partway up the
+  // ladder could never open the tier above.
+  if (cell.seen >= 5 && acc >= 0.85) return acc;
+  return acc * tierReachability(skill_cd, below, ctx);
 }
 
 export function isDue(cell, now = new Date()) {
