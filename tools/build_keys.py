@@ -15,6 +15,10 @@ Neither source is usable alone:
 Together they settle each other: the explanations pick which scoring page is
 real (it is the one whose multiple-choice letters agree), and that page then
 supplies the grid-in strings. Disagreement after that is reported, not hidden.
+The output deliberately holds no rationale text. Which letter is correct is a
+fact about the test; College Board's explanation of *why* is their expression,
+and it stays in corpus/ (git-ignored) rather than in a tracked file. See
+docs/LICENSING.md.
 """
 import json, os, sys
 
@@ -73,7 +77,7 @@ def build(n):
                 answer = best[(m, q)]           # scoring guide renders these correctly
                 source = "scoring-guide"
             key.append({"module": m, "q": q, "answer": answer, "kind": e["kind"],
-                        "source": source, "rationale": e["rationale"]})
+                        "source": source})
     return key, mcq_rate
 
 
