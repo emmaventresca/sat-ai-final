@@ -105,6 +105,7 @@ function screenSetup() {
   const p = state.profile ?? {};
   app.innerHTML = `
   <div class="center"><div class="card">
+    ${previewBanner()}
     <h1>Where are you now?</h1>
     <p class="muted small">Your most recent practice test, and what you are aiming
       at. These two numbers decide everything the app shows you, and you can
@@ -150,6 +151,15 @@ function screenSetup() {
   };
 }
 
+/** Shown on every screen in preview mode, so it is never mistaken for live. */
+function previewBanner() {
+  if (store.mode !== 'preview') return '';
+  const who = state.profile?.full_name ?? 'this student';
+  return `<div class="banner preview-banner">Student view &mdash; this is
+    ${esc(who)}'s app as they see it. Nothing here is saved, and their progress
+    is not affected.</div>`;
+}
+
 function screenHome() {
   const p = state.profile;
   const withSkill = state.lessons.filter((l) => l.skill_cd && state.skills[l.skill_cd]);
@@ -169,13 +179,14 @@ function screenHome() {
   const right = state.attempts.filter((a) => a.correct).length;
 
   app.innerHTML = `<div class="wrap">
+    ${previewBanner()}
     <div class="top">
       <div><h1>SAT Practice</h1>
         <p class="who">${esc(p.full_name ?? p.email ?? 'Signed in')}${
           store.mode === 'local' ? ' &middot; local mode' : ''}</p></div>
       <div class="row tight">
         <button class="btn-sm" id="settings">Scores</button>
-        <button class="btn-sm" id="out">Sign out</button>
+        ${store.mode === 'preview' ? '' : '<button class="btn-sm" id="out">Sign out</button>'}
       </div>
     </div>
 
@@ -212,7 +223,8 @@ function screenHome() {
       : '<div class="card empty">No lessons available yet.</div>'}
   </div>`;
 
-  $('#out').onclick = async () => { await store.signOut(); location.reload(); };
+  const out = $('#out');
+  if (out) out.onclick = async () => { await store.signOut(); location.reload(); };
   $('#settings').onclick = () => { state.screen = 'setup'; render(); };
   for (const el of document.querySelectorAll('[data-lesson]')) {
     el.onclick = () => {
@@ -245,6 +257,7 @@ function screenLesson() {
   const skill = state.skills[source.skill_cd];
 
   app.innerHTML = `<div class="wrap">
+    ${previewBanner()}
     <div class="row" style="margin-bottom:14px">
       <button class="btn-sm" id="back">&larr; All lessons</button>
     </div>
@@ -328,6 +341,7 @@ function screenPractice() {
   const revealed = picked !== undefined;
 
   app.innerHTML = `<div class="wrap${item.figure || item.table ? ' wide' : ''}">
+    ${previewBanner()}
     <div class="spread" style="margin-bottom:12px">
       <button class="btn-sm" id="quit">&larr; Back</button>
       <span class="tiny muted">${r.at + 1} of ${r.items.length}
@@ -392,7 +406,8 @@ function screenResult() {
   const right = r.items.filter((it, i) => r.answers[i] === it.answer).length;
   const pct = Math.round(right / r.items.length * 100);
 
-  app.innerHTML = `<div class="wrap"><div class="card" style="text-align:center">
+  app.innerHTML = `<div class="wrap">${previewBanner()}
+    <div class="card" style="text-align:center">
     <h1>${right} of ${r.items.length}</h1>
     <div class="bar good" style="max-width:280px;margin:14px auto"><i style="width:${pct}%"></i></div>
     <p class="muted small">${

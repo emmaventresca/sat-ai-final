@@ -17,6 +17,7 @@ import { scoreItem, bandWeights, TIERS } from './engine.js';
 import { focusTier, rankLessons } from './lessons.js';
 import { escapeHtml as esc, renderText as md } from './mathfmt.js';
 import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js';
+import { PREVIEW_KEY } from './store.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -158,6 +159,11 @@ function screenStudent() {
       <button class="btn-sm" id="back">&larr; All students</button></div>
     <h1>${esc(profile.full_name ?? profile.email ?? 'Student')}</h1>
 
+    <div class="tabs" role="tablist">
+      <button class="tab on" id="tab-progress" role="tab" aria-selected="true">Progress</button>
+      <button class="tab" id="tab-view" role="tab" aria-selected="false">Student view</button>
+    </div>
+
     <div class="card">
       <div class="scores">
         <div class="score"><div class="l">Reading &amp; Writing</div>
@@ -269,7 +275,55 @@ function screenStudent() {
   </div>`;
 
   $('#back').onclick = () => { state.detail = null; screenRoster(); };
+  $('#tab-view').onclick = () => screenStudentView();
   mountCharts(app);
+  window.scrollTo(0, 0);
+}
+
+/**
+ * Show what this student sees, by loading the actual student app in an iframe.
+ *
+ * Deliberately not a re-implementation. A second rendering of the lesson list
+ * would drift from the real one the first time either changed, and then the
+ * teacher would be looking at something no student sees. The iframe runs the
+ * same code with a PreviewStore, whose writes go nowhere.
+ */
+function screenStudentView() {
+  const { profile, mastery, attempts, fingerprints } = state.detail;
+
+  // Same-origin sessionStorage hands the seed to the iframe. It is this
+  // student's own data, which the teacher is already authorised to read.
+  sessionStorage.setItem(PREVIEW_KEY, JSON.stringify({
+    profile, mastery, attempts, fingerprints,
+  }));
+
+  app.innerHTML = `<div class="wrap wide">
+    <div class="row" style="margin-bottom:14px">
+      <button class="btn-sm" id="back">&larr; All students</button></div>
+    <h1>${esc(profile.full_name ?? profile.email ?? 'Student')}</h1>
+
+    <div class="tabs" role="tablist">
+      <button class="tab" id="tab-progress" role="tab" aria-selected="false">Progress</button>
+      <button class="tab on" id="tab-view" role="tab" aria-selected="true">Student view</button>
+    </div>
+
+    <div class="banner">This is their app exactly as they see it, seeded with
+      their real scores and progress. You can click through lessons and answer
+      practice questions &mdash; <strong>nothing is saved</strong> and their own
+      progress is untouched.</div>
+
+    <div class="card flat viewport">
+      <iframe id="studentview" title="Student view"
+              src="index.html?preview=1"
+              referrerpolicy="no-referrer"></iframe>
+    </div>
+
+    <p class="tiny muted">Their target drives what appears here. Change it on the
+      Progress tab and this view changes with it.</p>
+  </div>`;
+
+  $('#back').onclick = () => { state.detail = null; screenRoster(); };
+  $('#tab-progress').onclick = () => screenStudent();
   window.scrollTo(0, 0);
 }
 

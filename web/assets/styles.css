@@ -290,3 +290,26 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 .tableview table{margin-top:4px}
 
 @media (max-width:560px){ .kpis{grid-template-columns:1fr} }
+
+/* The preview banner is deliberately loud: a teacher must never mistake the
+   student view for the student's real, saved session. */
+.preview-banner{
+  background:#eef3ff;border-color:#c9daff;color:#2d5fc4;
+  font-weight:700;
+}
+
+/* ---- teacher tabs and the student-view viewport ------------------------- */
+.tabs{display:flex;gap:6px;margin:14px 0 16px;border-bottom:1.5px solid var(--line)}
+.tab{
+  background:none;border:none;border-bottom:2.5px solid transparent;
+  border-radius:9px 9px 0 0;padding:9px 15px;font-size:.9rem;font-weight:700;
+  color:var(--dim);box-shadow:none;
+}
+.tab:hover{background:var(--panel2);border-color:transparent;color:var(--ink);
+  border-bottom-color:var(--line2);box-shadow:none}
+.tab.on{color:var(--purple-d);border-bottom-color:var(--purple);background:none}
+
+.viewport{padding:0;overflow:hidden}
+.viewport iframe{
+  display:block;width:100%;height:78vh;min-height:560px;border:0;background:#fff;
+}

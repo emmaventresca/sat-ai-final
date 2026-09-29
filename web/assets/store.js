@@ -236,7 +236,61 @@ class SupabaseStore {
 
 // ---------------------------------------------------------------------------
 
+/**
+ * A store for the teacher's "Student view" preview.
+ *
+ * Seeded from one student's real profile and mastery, and **every write is a
+ * no-op**. A teacher looking at what a student sees must not be able to move
+ * that student's spaced-repetition schedule or log practice in their name, and
+ * the safest way to guarantee that is a store with nowhere to write to - rather
+ * than a flag that some future call site forgets to check.
+ *
+ * It also touches no localStorage key, so previewing on a shared browser cannot
+ * disturb a real session.
+ */
+export class PreviewStore {
+  constructor(seed) {
+    this.mode = 'preview';
+    this.seed = seed ?? {};
+    this._mastery = { ...(seed?.mastery ?? {}) };
+  }
+
+  async session() { return { user: { id: 'preview' } }; }
+  async profile() { return this.seed.profile ?? null; }
+  async mastery() { return this._mastery; }
+  async attempts() { return this.seed.attempts ?? []; }
+  async fingerprints() { return this.seed.fingerprints ?? []; }
+  async roster() { return []; }
+  async studentData() { return { mastery: {}, attempts: [], fingerprints: [] }; }
+
+  // Writes are accepted and discarded, so the preview behaves normally on
+  // screen - a practice round still grades and advances - while nothing leaves
+  // this tab.
+  async saveProfile(patch) {
+    this.seed.profile = { ...(this.seed.profile ?? {}), ...patch };
+    return this.seed.profile;
+  }
+  async saveMastery(key, cell) { this._mastery[key] = cell; }
+  async logAttempt() { /* discarded by design */ }
+  async addFingerprints() { /* discarded by design */ }
+  async signOut() { /* nothing to sign out of */ }
+  async signIn() { throw new Error('Preview mode has no accounts.'); }
+  async signUp() { throw new Error('Preview mode has no accounts.'); }
+}
+
+/** The seed the teacher page hands to a preview, via sessionStorage. */
+export const PREVIEW_KEY = 'satai.preview';
+
+export function previewSeed() {
+  try { return JSON.parse(sessionStorage.getItem(PREVIEW_KEY)); }
+  catch { return null; }
+}
+
 export function makeStore() {
+  // A preview is requested by the teacher page opening this app in an iframe.
+  if (new URLSearchParams(location.search).get('preview') === '1') {
+    return new PreviewStore(previewSeed() ?? {});
+  }
   if (!configured() || !window.supabase) return new LocalStore();
   const client = window.supabase.createClient(
     window.CONFIG.SUPABASE_URL, window.CONFIG.SUPABASE_ANON_KEY);
