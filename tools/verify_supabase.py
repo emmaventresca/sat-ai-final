@@ -70,15 +70,18 @@ def main():
         print("Supabase -> SQL Editor -> New query -> Run, then re-run this.")
         sys.exit(1)
 
+    # skills and content are readable `to authenticated`, so an anonymous caller
+    # sees zero rows whether or not the seed ran. That is the policy working,
+    # not a missing seed - the count has to be confirmed while signed in.
     print("\nseed data")
+    expected = len(json.load(open(os.path.join(ROOT, "data", "skills.json")))["skills"])
     status, body = get(url, key, "skills?select=skill_cd")
     n = len(body) if isinstance(body, list) else 0
-    expected = len(json.load(open(os.path.join(ROOT, "data", "skills.json")))["skills"])
-    if n == expected:
-        print(f"  ok       skills: {n}")
-    else:
-        ok = False
-        print(f"  PROBLEM  skills: {n}, expected {expected}")
+    print(f"  note     skills: anonymous callers see {n} rows, by policy "
+          f"(select is granted to authenticated only)")
+    print(f"           expected once signed in: {expected}")
+    print("           to confirm now, run in the SQL editor:")
+    print("             select count(*) from public.skills;")
 
     print("\nrow-level security (anonymous caller must see no student data)")
     for t in PRIVATE:
@@ -95,11 +98,13 @@ def main():
             ok = False
             print(f"  EXPOSED  {t}: returned {rows} row(s) to an anonymous caller")
 
-    # Content is meant to be readable by signed-in users only.
     status, body = get(url, key, "content?select=id&limit=5")
     rows = len(body) if isinstance(body, list) else None
-    print(f"  {'ok      ' if rows in (0, None) else 'note    '} content: "
-          f"{rows if rows is not None else status}")
+    if rows in (0, None):
+        print("  ok       content: returns no rows anonymously")
+    else:
+        ok = False
+        print(f"  EXPOSED  content: returned {rows} row(s) to an anonymous caller")
 
     print("\nauth")
     try:
