@@ -154,7 +154,12 @@ function screenHome() {
   const p = state.profile;
   const withSkill = state.lessons.filter((l) => l.skill_cd && state.skills[l.skill_cd]);
   const ranked = rankLessons(withSkill, ctx(), scoreItem);
+  // Triage is band-specific and changes as the student's target moves, so it
+  // leads on its own. The rest of the cross-cutting strategy sits together
+  // below it rather than pushing the skill lessons off the screen.
   const pinned = state.lessons.filter((l) => l.pinned);
+  const lead = pinned.filter((l) => l.type === 'triage');
+  const strategy = pinned.filter((l) => l.type !== 'triage');
 
   const mathW = bandWeights(state.bands, 'math', p.target_math);
   const rwW = bandWeights(state.bands, 'rw', p.target_rw);
@@ -195,8 +200,11 @@ function screenHome() {
         <p class="tiny muted" style="margin:6px 0 0">${right} of ${done} correct so far</p>` : ''}
     </div>
 
-    ${pinned.length ? `<h2>Start here</h2>
-      ${pinned.map((l) => tile(l, null)).join('')}` : ''}
+    ${lead.length ? `<h2>Start here</h2>
+      ${lead.map((l) => tile(l, null)).join('')}` : ''}
+
+    ${strategy.length ? `<h2>Strategy and test intuition</h2>
+      ${strategy.map((l) => tile(l, null)).join('')}` : ''}
 
     <h2>Your lessons, in the order that pays</h2>
     ${ranked.length
