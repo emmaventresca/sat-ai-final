@@ -18,6 +18,8 @@ import { focusTier, rankLessons } from './lessons.js';
 import { escapeHtml as esc, renderText as md } from './mathfmt.js';
 import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js';
 import { PREVIEW_KEY } from './store.js';
+import { plannerState, plannerHealthy, sendToPlanner, renderPlan, STARTERS }
+  from './planner.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -95,6 +97,11 @@ function screenRoster() {
         <button class="btn-sm" id="out">Sign out</button></div>
     </div>
 
+    <div class="tabs" role="tablist">
+      <button class="tab on" id="tab-roster" role="tab" aria-selected="true">Students</button>
+      <button class="tab" id="tab-plan" role="tab" aria-selected="false">Plan a lesson</button>
+    </div>
+
     ${rows.length ? `<div class="card">
       <table>
         <thead><tr>
@@ -126,6 +133,7 @@ function screenRoster() {
 
   $('#out').onclick = async () => { await store.signOut(); location.reload(); };
   $('#refresh').onclick = boot;
+  $('#tab-plan').onclick = () => screenPlanner();
   for (const tr of document.querySelectorAll('[data-student]')) {
     tr.onclick = () => openStudent(tr.dataset.student);
   }
@@ -324,6 +332,133 @@ function screenStudentView() {
 
   $('#back').onclick = () => { state.detail = null; screenRoster(); };
   $('#tab-progress').onclick = () => screenStudent();
+  window.scrollTo(0, 0);
+}
+
+/**
+ * The lesson planner. Grounded in the project's own analysis - the subtype
+ * taxonomy, the band model, the misconception families and the verified item
+ * bank - so a plan names real recognitions rather than giving generic advice.
+ *
+ * An assignment it proposes is never written to a student's account directly.
+ * The teacher approves it first; the model only ever drafts.
+ */
+async function screenPlanner(note) {
+  const up = await plannerHealthy();
+  const students = state.roster.map((r) => r.profile);
+
+  app.innerHTML = `<div class="wrap wide">
+    <div class="top">
+      <div><h1>Plan a lesson</h1>
+        <p class="who">Grounded in your own subtype taxonomy, band model and item bank</p></div>
+      <div class="row tight"><button class="btn-sm" id="out">Sign out</button></div>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab" id="tab-roster" role="tab" aria-selected="false">Students</button>
+      <button class="tab on" id="tab-plan" role="tab" aria-selected="true">Plan a lesson</button>
+    </div>
+
+    ${up ? '' : `<div class="plan-offline">
+      <strong>The planner is not running.</strong> It is a local helper that uses
+      your own Claude session, so there is no API key and nothing leaves this
+      machine. Start it with:
+      <div style="margin-top:8px"><code>python3 tools/planner_server.py</code></div>
+      then reload this tab.</div>`}
+
+    <div class="plan-wrap" style="margin-top:14px">
+      <div class="plan-thread" id="thread">
+        ${plannerState.messages.length ? plannerState.messages.map((m) => `
+          <div class="plan-msg ${m.role === 'user' ? 'you' : 'bot'}">
+            <div class="who">${m.role === 'user' ? 'You' : 'Planner'}</div>
+            ${m.role === 'user' ? `<p>${esc(m.content)}</p>` : renderPlan(m.content)}
+          </div>`).join('') : `
+          <div class="plan-msg bot">
+            <div class="who">Planner</div>
+            <p>Tell me what you are teaching, who it is for, and how long you
+               have. I know the 181 question subtypes, what each score target
+               actually requires, and which practice items exist.</p>
+          </div>`}
+        ${plannerState.busy ? `<div class="plan-msg bot"><div class="who">Planner</div>
+          <p class="muted"><span class="spin"></span> Thinking…</p></div>` : ''}
+        ${plannerState.error ? `<p class="err">${esc(plannerState.error)}</p>` : ''}
+      </div>
+
+      ${plannerState.pending ? `<div class="plan-approve">
+        <div class="t">Proposed assignment: ${esc(plannerState.pending.title ?? 'Untitled')}</div>
+        <p class="small" style="margin:0 0 4px">
+          ${esc((plannerState.pending.subtypes ?? []).join(', '))}
+          ${plannerState.pending.difficulty ? `· ${esc(plannerState.pending.difficulty)} tier` : ''}
+          ${plannerState.pending.item_ids?.length ? `· ${plannerState.pending.item_ids.length} items` : ''}
+        </p>
+        ${plannerState.pending.notes ? `<p class="small muted" style="margin:0 0 10px">
+          ${esc(plannerState.pending.notes)}</p>` : ''}
+        <div class="row">
+          <select id="assign-to" style="max-width:260px">
+            ${students.map((p) => `<option value="${esc(p.id)}">
+              ${esc(p.full_name ?? p.email ?? 'Student')}</option>`).join('')}
+          </select>
+          <button class="btn-primary" id="approve"
+            ${students.length ? '' : 'disabled'}>Approve and assign</button>
+          <button id="discard">Discard</button>
+        </div>
+        ${students.length ? '' : '<p class="tiny muted" style="margin:8px 0 0">No students on your roster yet.</p>'}
+      </div>` : ''}
+
+      ${note ? `<p class="small" style="color:#0b7a55;font-weight:700">${esc(note)}</p>` : ''}
+
+      ${plannerState.messages.length ? '' : `<div class="plan-starters">
+        ${STARTERS.map((s, i) => `<button data-starter="${i}">${esc(s)}</button>`).join('')}
+      </div>`}
+
+      <div class="plan-ask">
+        <textarea id="ask" placeholder="Plan a one-hour lesson on…"
+          ${up ? '' : 'disabled'}></textarea>
+        <button class="btn-primary" id="send" ${up && !plannerState.busy ? '' : 'disabled'}>Send</button>
+      </div>
+      <p class="tiny muted">Runs on your machine against your own Claude
+        session. Nothing here is visible to students, and an assignment only
+        reaches them after you approve it.</p>
+    </div>
+  </div>`;
+
+  const thread = $('#thread');
+  if (thread) thread.scrollTop = thread.scrollHeight;
+
+  $('#out').onclick = async () => { await store.signOut(); location.reload(); };
+  $('#tab-roster').onclick = () => screenRoster();
+
+  const send = async (text) => {
+    if (!text?.trim()) return;
+    await sendToPlanner(text.trim());
+    screenPlanner();
+  };
+  $('#send').onclick = () => send($('#ask').value);
+  $('#ask').onkeydown = (e) => {
+    if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) send($('#ask').value);
+  };
+  for (const b of document.querySelectorAll('[data-starter]')) {
+    b.onclick = () => send(STARTERS[Number(b.dataset.starter)]);
+  }
+  const disc = $('#discard');
+  if (disc) disc.onclick = () => { plannerState.pending = null; screenPlanner(); };
+  const ok = $('#approve');
+  if (ok) ok.onclick = async () => {
+    const p = plannerState.pending;
+    try {
+      await store.createAssignment({
+        student_id: $('#assign-to').value,
+        title: p.title ?? 'Assigned practice',
+        filter: { subtypes: p.subtypes ?? [], difficulty: p.difficulty ?? null,
+                  item_ids: p.item_ids ?? [] },
+      });
+      plannerState.pending = null;
+      screenPlanner('Assigned. It will appear in their account.');
+    } catch (e) {
+      plannerState.error = e.message;
+      screenPlanner();
+    }
+  };
   window.scrollTo(0, 0);
 }
 

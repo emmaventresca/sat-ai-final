@@ -344,3 +344,40 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   font-weight:700;font-size:.93rem;color:#a52740;margin:0 0 9px;line-height:1.5;
 }
+
+/* ---- lesson planner ----------------------------------------------------- */
+.plan-wrap{display:flex;flex-direction:column;gap:12px}
+.plan-thread{display:flex;flex-direction:column;gap:12px;max-height:62vh;overflow-y:auto;padding-right:4px}
+.plan-msg{border-radius:16px;padding:14px 17px;border:1px solid var(--line)}
+.plan-msg.you{background:var(--panel2);border-color:var(--line2);align-self:flex-end;max-width:82%}
+.plan-msg.bot{background:var(--panel);box-shadow:var(--shadow)}
+.plan-msg .who{font-size:.68rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:7px}
+.plan-msg.bot .who{color:var(--purple-d)}
+.plan-msg p{margin:0 0 9px;font-family:var(--serif);line-height:1.7;font-size:.97rem}
+.plan-msg p:last-child{margin-bottom:0}
+.plan-msg ul{margin:0 0 9px;padding-left:20px;font-family:var(--serif);line-height:1.66}
+.plan-msg li{margin-bottom:5px}
+.plan-h{font-size:.82rem;text-transform:uppercase;letter-spacing:.09em;
+  color:var(--purple-d);margin:14px 0 7px;font-weight:800}
+.plan-msg .plan-h:first-child{margin-top:0}
+.plan-code{background:var(--panel2);border:1px solid var(--line);border-radius:11px;
+  padding:11px 13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.79rem;overflow-x:auto;white-space:pre-wrap;color:var(--dim)}
+
+.plan-ask{display:flex;gap:9px;align-items:flex-end}
+.plan-ask textarea{flex:1;font:inherit;font-family:var(--serif);color:var(--ink);
+  background:#fcfaff;border:1.5px solid var(--line2);border-radius:14px;
+  padding:12px 15px;resize:vertical;min-height:62px;line-height:1.55}
+.plan-ask textarea:focus{outline:none;border-color:var(--purple);
+  box-shadow:0 0 0 4px rgba(124,92,255,.15)}
+.plan-starters{display:flex;flex-wrap:wrap;gap:7px}
+.plan-starters button{font-size:.82rem;padding:8px 13px;border-radius:11px;
+  text-align:left;max-width:100%;font-weight:600}
+.plan-approve{background:var(--good-bg);border:1px solid var(--good-ln);
+  border-radius:14px;padding:14px 16px;margin-top:12px}
+.plan-approve .t{font-weight:800;color:#0b7a55;margin-bottom:6px}
+.plan-offline{background:var(--flag-bg);border:1px solid var(--flag-ln);color:#8a5406;
+  border-radius:14px;padding:14px 16px;font-size:.9rem;line-height:1.6}
+.plan-offline code{background:#fff;border:1px solid var(--flag-ln);border-radius:6px;
+  padding:2px 6px;font-size:.86em}

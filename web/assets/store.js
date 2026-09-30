@@ -92,6 +92,15 @@ class LocalStore {
     return p ? [p] : [];
   }
 
+  async createAssignment(row) {
+    const a = readLS('satai.assignments', []);
+    a.push({ ...row, id: Date.now(), created_at: new Date().toISOString() });
+    writeLS('satai.assignments', a);
+    return a[a.length - 1];
+  }
+
+  async assignments() { return readLS('satai.assignments', []); }
+
   async studentData(id) {
     return {
       mastery: readLS(LS.mastery, {}),
@@ -222,6 +231,23 @@ class SupabaseStore {
       attempts: a.data ?? [],
       fingerprints: f.data ?? [],
     };
+  }
+
+  /** Draft an assignment for a student. Only a teacher can write these, and
+   *  only after approving what the planner proposed. */
+  async createAssignment(row) {
+    const { data, error } = await this.sb.from('assignments')
+      .insert({ ...row, teacher_id: this.uid }).select().maybeSingle();
+    if (error) throw error;
+    return data;
+  }
+
+  async assignments() {
+    const { data, error } = await this.sb.from('assignments')
+      .select('*').eq('teacher_id', this.uid)
+      .order('created_at', { ascending: false });
+    if (error) throw error;
+    return data ?? [];
   }
 
   /** Teacher view: the students on this teacher's roster. */
