@@ -107,7 +107,7 @@ function screenRoster() {
         <thead><tr>
           <th>Student</th><th class="num">Now</th><th class="num">Goal</th>
           <th class="num">Gap</th><th class="num">Answered</th>
-          <th class="num">Accuracy</th><th>Weakest</th><th>Last seen</th>
+          <th class="num">Accuracy</th><th>Assigned</th><th>Weakest</th><th>Last seen</th>
         </tr></thead>
         <tbody>${rows.map((r) => {
           const gap = targetTotal(r.profile) - total(r.profile);
@@ -119,6 +119,7 @@ function screenRoster() {
             <td class="num">${gap > 0 ? `+${gap}` : '&mdash;'}</td>
             <td class="num">${r.answered}</td>
             <td class="num">${r.answered ? pct(r.accuracy) : '&mdash;'}</td>
+            <td>${assignedCell(r.assigned)}</td>
             <td>${weak ? `${esc(state.skills[weak.skill_cd]?.skill_name ?? weak.skill_cd)}
                  <span class="badge ${weak.tier.toLowerCase()}">${weak.tier}</span>
                  ${pct(weak.accuracy)}` : '<span class="muted">&mdash;</span>'}</td>
@@ -137,6 +138,15 @@ function screenRoster() {
   for (const tr of document.querySelectorAll('[data-student]')) {
     tr.onclick = () => openStudent(tr.dataset.student);
   }
+}
+
+/** How much of what a teacher set has actually been done. */
+function assignedCell(list) {
+  const all = list ?? [];
+  if (!all.length) return '<span class="muted">&mdash;</span>';
+  const done = all.filter((a) => a.completed_at).length;
+  const cls = done === all.length ? 'e' : done ? 'm' : 'on';
+  return `<span class="badge ${cls}">${done}/${all.length} done</span>`;
 }
 
 function screenStudent() {
@@ -191,6 +201,28 @@ function screenStudent() {
           ? 'The Hard math tier is not required at their target, so the app does not serve it.'
           : `They need about ${pct(mathW.H)} of the Hard math tier.`}</p>
     </div>
+
+    ${(state.detail.assigned ?? []).length ? `<h2>What you assigned</h2>
+    <div class="card">
+      <table><thead><tr>
+        <th>Assignment</th><th>Focus</th><th class="num">Questions</th>
+        <th>Set</th><th>Status</th>
+      </tr></thead><tbody>${state.detail.assigned.map((a) => {
+        const f = a.filter ?? {};
+        const subs = (f.subtypes ?? []).map((sl) =>
+          state.subtypeNames?.[sl] ?? sl).join(', ');
+        return `<tr>
+          <td><strong>${esc(a.title ?? 'Assigned practice')}</strong>
+            ${f.notes ? `<div class="tiny muted">${esc(f.notes.slice(0, 110))}</div>` : ''}</td>
+          <td class="small">${esc(subs || '&mdash;')}
+            ${f.difficulty ? `<span class="badge ${f.difficulty.toLowerCase()}">${esc(f.difficulty)}</span>` : ''}</td>
+          <td class="num">${(f.item_ids ?? []).length || '&mdash;'}</td>
+          <td class="small muted">${esc(when(a.created_at))}</td>
+          <td>${a.completed_at
+            ? `<span class="badge e">Done ${esc(when(a.completed_at))}</span>`
+            : '<span class="badge on">Not started</span>'}</td>
+        </tr>`; }).join('')}</tbody></table>
+    </div>` : ''}
 
     <h2>Practice by day</h2>
     <div class="card">
@@ -468,19 +500,25 @@ async function openStudent(id) {
   const row = state.roster.find((r) => r.profile.id === id);
   app.innerHTML = '<div class="center"><p class="muted"><span class="spin"></span> Loading…</p></div>';
   state.detail = { profile: row.profile, mastery: row.mastery,
-                   attempts: row.attempts, fingerprints: row.fingerprints };
+                   attempts: row.attempts, fingerprints: row.fingerprints,
+                   assigned: row.assigned ?? [] };
   screenStudent();
 }
 
 async function loadData() {
-  const [bands, skills, lessons] = await Promise.all([
+  const [bands, skills, lessons, subtax] = await Promise.all([
     fetch('../data/bands.json').then((r) => r.json()),
     fetch('../data/skills.json').then((r) => r.json()),
     fetch('../data/lessons.json').then((r) => r.json()),
+    fetch('../data/subtypes.json').then((r) => r.json()).catch(() => ({ skills: {} })),
   ]);
   state.bands = bands;
   state.skills = Object.fromEntries(skills.skills.map((s) => [s.skill_cd, s]));
   state.lessons = lessons.lessons;
+  state.subtypeNames = {};
+  for (const v of Object.values(subtax.skills ?? {})) {
+    for (const st of v.subtypes ?? []) state.subtypeNames[st.slug] = st.name;
+  }
 }
 
 /** Pull each student's rows. RLS decides what comes back, not this code. */
@@ -489,9 +527,11 @@ async function loadRoster() {
   const out = [];
   for (const profile of students) {
     const { mastery, attempts, fingerprints } = await store.studentData(profile.id);
+    const assigned = (await store.assignments().catch(() => []))
+      .filter((a) => String(a.student_id) === String(profile.id));
     const weakest = skillTable(mastery).filter((r) => r.seen >= 3)[0] ?? null;
     out.push({
-      profile, mastery, attempts, fingerprints,
+      profile, mastery, attempts, fingerprints, assigned,
       answered: attempts.length,
       accuracy: attempts.length ? attempts.filter((x) => x.correct).length / attempts.length : 0,
       lastSeen: attempts[0]?.created_at ?? null,

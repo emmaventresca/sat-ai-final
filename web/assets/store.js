@@ -94,7 +94,9 @@ class LocalStore {
 
   async createAssignment(row) {
     const a = readLS('satai.assignments', []);
-    a.push({ ...row, id: Date.now(), created_at: new Date().toISOString() });
+    // student_id must survive: the roster filters on it.
+    a.push({ student_id: 'local', ...row, id: Date.now(),
+             created_at: new Date().toISOString() });
     writeLS('satai.assignments', a);
     return a[a.length - 1];
   }
