@@ -25,9 +25,13 @@ Where those two land differently for the same file, the file gets split.
 
 ## Inventory
 
+> **Read §4 first if students will use this.** The inventory below describes a
+> local, undistributed cache. Serving any of it to other people is a different
+> question with a different answer.
+
 | What | Source | Basis | Where it lives |
 |---|---|---|---|
-| ~3,300 bank items (stems, passages, choices) | CB educator question bank | CB copyright. The bank exists for educators to use with students; that is this. | `corpus/bank/` — **git-ignored** |
+| ~3,300 bank items (stems, passages, choices) | CB educator question bank | CB copyright. **Their educator terms prohibit reproducing, uploading, reposting or distributing this content without express written permission, and prohibit scraping or data-mining.** An undistributed local cache used for analysis is defensible as research; serving it to students is not. See §4. | `corpus/bank/` — **git-ignored** |
 | Practice pool served to students | derived from the above | same | `data/items.json` — **git-ignored** |
 | CB's per-item rationales | question bank + answer-explanation PDFs | same | git-ignored; shown in-app after an answer |
 | Practice-test PDFs 4–10 | `satsuite.collegeboard.org` | published free by CB | `corpus/tests/*.pdf` — **git-ignored** |
@@ -70,17 +74,26 @@ is processed in memory and discarded.
 That is also why the engine reasons about skills rather than items — which is
 what makes it generalise to the next student.
 
-### 3. Khan Academy's non-commercial clause
+### 3. Khan Academy is NOT a usable source — corrected
 
-Khan's Official SAT Practice is **CC BY-NC-SA 4.0**. Reusable with attribution,
-share-alike, **non-commercially**.
+An earlier version of this document said Khan's Official SAT Practice is
+CC BY-NC-SA 4.0 and therefore reusable with attribution. **That was wrong.**
 
-Nothing currently in this project is Khan-derived. If any is added, tag it in
-`content.source` and `content.license` at the moment it is added — those columns
-exist precisely so "what would we have to strip if this became paid?" is a
-query rather than an archaeology project.
+Khan's site-wide Creative Commons licence explicitly carves out the College
+Board partnership content. Their own licence notice for it reads, in full:
 
-**If this is ever monetised, NC content has to come out.**
+> "This content is copyrighted by Khan Academy and the College Board. Creative
+> Commons licenses do not apply."
+> — <https://cdn.kastatic.org/KA-share/sat/KA_CB_license.pdf>
+
+So Khan's SAT material is doubly restricted, not openly licensed. Do not treat
+it as a source. Khan's *non-SAT* content (and OpenStax, CC BY) remains usable
+under its own terms.
+
+The `source` / `license` columns still exist and are still mandatory — the
+lesson from this correction is that a source's headline licence may not cover
+the specific content you want, so record the licence of the **content**, not of
+the site it came from.
 
 ---
 
@@ -123,3 +136,38 @@ affiliation, or that this is an official product. Don't name the app after them.
   page is not that.
 - Expose a bulk item export or a public searchable clone of the question bank.
 - Present generated questions as College Board's.
+
+
+---
+
+## 4. Serving items to students — the line that actually matters
+
+College Board's [educator legal terms](https://privacy.collegeboard.org/educator-legal-terms)
+state that educators may not "distribute, downloaded, uploaded, modified,
+reused, performed, reproduced, reposted, retransmitted, disseminated, sold,
+published, broadcast, or circulated" their content without permission, nor
+"attempt to decompile, reverse engineer, scrape, or data-mine" it.
+
+Two things follow, and neither is cured by putting a login in front:
+
+- **Serving bank items to students is distribution.** Access control governs
+  *who* receives a copy, not *whether* copies are made and sent. A login does
+  not convert redistribution into private use.
+- **`tools/fetch_bank.py` is bulk retrieval**, which is what the scraping clause
+  names. The sanctioned route is the bank's own export, for your own materials.
+
+**Therefore: do not wire the item pool into the app for other people to use.**
+No Supabase `content` load, no published `data/items.json`, no authenticated
+item endpoint. The schema supports it; the licence does not.
+
+What remains fully available, because none of it is College Board's expression:
+
+- the 35 lessons, strategy and triage — original writing
+- the band model — derived from published scoring tables (facts)
+- the skill taxonomy and item counts (facts)
+- the misconception taxonomy — our categories, derived from reading their prose
+- the adaptive engine, mastery model, and teacher dashboard
+
+An interactive student platform is buildable on all of that. What it needs is an
+item source we are allowed to distribute — originally authored items, or
+students practising in College Board's own tools and uploading their results.
