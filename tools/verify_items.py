@@ -34,6 +34,9 @@ ROOT = os.path.dirname(HERE)
 BANK = os.path.join(ROOT, "data", "bank")
 CORPUS = os.path.join(ROOT, "corpus", "bank")
 
+sys.path.insert(0, HERE)
+from sanitize import sanitize, to_text                  # noqa: E402
+
 _lock = threading.Lock()
 LETTERS = "ABCD"
 TAG = re.compile(r"<[^>]+>")
@@ -46,6 +49,12 @@ TAG = re.compile(r"<[^>]+>")
 VAR = re.compile(r"\$[^$]*\$|\\\(.*?\\\)")
 NUM = re.compile(r"\b\d[\d,.]*\b")
 
+
+
+# A sequence of nothing but number placeholders is data, not expression. Two
+# tables of unrelated figures can collide on one, and a match there says
+# nothing about copying.
+NUMERIC_ONLY = re.compile(r"^(?:__num__\s*)+$")
 
 def normalize(text):
     """Lowercase, with variable and number slots collapsed to sentinels.
@@ -106,6 +115,52 @@ def check_structure(it, families):
 # 2 & 3. Blind solve
 # ---------------------------------------------------------------------------
 
+def _one(it, n=None):
+    body = []
+    if n is not None:
+        body.append(f'<question id="{it["id"]}">')
+    if it.get("stimulus"):
+        body.append(it["stimulus"])
+    body.append(it["stem"])
+    for i, c in enumerate(it["choices"]):
+        body.append(f"{LETTERS[i]}) {c}")
+    if n is not None:
+        body.append("</question>")
+    return "\n".join(body)
+
+
+def blind_batch_prompt(items):
+    """Blind-solve several items in one call.
+
+    Each is answered on its own terms - the model never sees our intended
+    answer, the explanations or the distractor tags, which is what makes this
+    an independent check. Batching costs one call per N items instead of one
+    per item, and the check is unchanged.
+    """
+    return f"""Answer each SAT-style multiple-choice question below.
+
+You are being used as a check on question quality, so be exacting. Judge each
+question independently; do not let one influence another.
+
+{chr(10).join(_one(it, i) for i, it in enumerate(items))}
+
+For EACH question respond with one object, in the same order, as a JSON array:
+[{{"id": "<the question's id>",
+   "answer": "A"|"B"|"C"|"D",
+   "confident": true|false,
+   "ambiguous": true|false,
+   "second_defensible": "<letter or null>",
+   "problem": "<null, or one sentence on what is wrong with this question>"}}]
+
+On "ambiguous": set it true only if a careful, well-prepared student could
+reasonably choose a different answer and be right. A choice you can construct
+an argument for, but which is clearly worse once the deciding detail is
+noticed, is NOT ambiguous - that is what a good distractor is supposed to do.
+Name it in second_defensible and leave ambiguous false.
+
+Respond with ONLY the JSON array."""
+
+
 def blind_prompt(it):
     body = []
     if it.get("stimulus"):
@@ -131,6 +186,20 @@ reasonably choose a different answer and be right. A choice you can construct
 an argument for, but which is clearly worse once the deciding detail is
 noticed, is NOT ambiguous - that is what a good distractor is supposed to do.
 Name it in second_defensible and leave ambiguous false."""
+
+
+def call_list(prompt, model):
+    proc = subprocess.run(
+        ["claude", "-p", prompt, "--model", model],
+        capture_output=True, text=True, timeout=900,
+        env={**os.environ, "PATH": os.environ["PATH"] + ":" + os.path.expanduser("~/.local/bin")},
+    )
+    if proc.returncode != 0:
+        raise RuntimeError(proc.stderr[:200])
+    i = proc.stdout.find("[")
+    if i == -1:
+        raise ValueError("no JSON array")
+    return json.JSONDecoder().raw_decode(proc.stdout[i:])[0]
 
 
 def call(prompt, model):
@@ -174,7 +243,13 @@ def corpus_shingles(n=8):
         except Exception:
             continue
         for field in ("stem", "stimulus"):
-            w = re.findall(r"[a-z']+|__var__|__num__", normalize(d.get(field)))
+            # Sanitize first, exactly as tools/build_stem_allowlist.py does.
+            # Indexing the raw field matched the figure's SVG text and table
+            # markup, which the allowlist builder never sees and therefore can
+            # never exempt - so those matches could only ever fail, no matter
+            # how standard the phrasing was.
+            w = re.findall(r"[a-z']+|__var__|__num__",
+                           normalize(to_text(sanitize(d.get(field)))))
             for i in range(len(w) - n + 1):
                 out.add(" ".join(w[i:i + n]))
     return out
@@ -183,12 +258,44 @@ def corpus_shingles(n=8):
 def overlap(it, shingles, n=8):
     w = re.findall(r"[a-z']+|__var__|__num__",
                    normalize((it.get("stimulus") or "") + " " + it["stem"]))
-    hits = [" ".join(w[i:i + n]) for i in range(len(w) - n + 1)
-            if " ".join(w[i:i + n]) in shingles]
+    hits = []
+    for i in range(len(w) - n + 1):
+        sh = " ".join(w[i:i + n])
+        if sh in shingles and not NUMERIC_ONLY.match(sh):
+            hits.append(sh)
     return hits
 
 
 # ---------------------------------------------------------------------------
+
+def verify_batch(items, families, shingles, model):
+    """Structure and originality are local and free; only the solve costs a call."""
+    reports = {it["id"]: {"id": it["id"],
+                          "structure": check_structure(it, families)}
+               for it in items}
+    try:
+        solved = {r.get("id"): r for r in call_list(blind_batch_prompt(items), model)}
+    except Exception as exc:
+        for r in reports.values():
+            r["solve_error"] = str(exc)[:120]
+        solved = {}
+
+    for it in items:
+        rep = reports[it["id"]]
+        r = solved.get(it["id"])
+        if r is None:
+            rep.setdefault("solve_error", "no result for this id in the batch")
+        else:
+            rep["solver_answer"] = r.get("answer")
+            rep["agrees"] = r.get("answer") == it["answer"]
+            rep["confident"] = bool(r.get("confident"))
+            rep["ambiguous"] = bool(r.get("ambiguous"))
+            rep["second_defensible"] = r.get("second_defensible")
+            rep["problem"] = r.get("problem")
+        if shingles is not None:
+            rep["overlap"] = overlap(it, shingles)
+    return list(reports.values())
+
 
 def verify_one(it, families, shingles, model):
     report = {"id": it["id"], "structure": check_structure(it, families)}
@@ -232,6 +339,8 @@ def main():
     ap.add_argument("--model", default="claude-sonnet-5-5")
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--skip-originality", action="store_true")
+    ap.add_argument("--batch", type=int, default=6,
+                    help="items per blind-solve call (1 = one call per item)")
     args = ap.parse_args()
 
     families = {f["slug"] for f in
@@ -259,9 +368,11 @@ def main():
         todo = [it for it in items if it.get("status") != "verified"]
         if not todo:
             continue
+        groups = [todo[i:i + args.batch] for i in range(0, len(todo), args.batch)]
         with ThreadPoolExecutor(max_workers=args.workers) as pool:
-            reports = list(pool.map(
-                lambda it: verify_one(it, families, shingles, args.model), todo))
+            reports = [r for g in pool.map(
+                lambda grp: verify_batch(grp, families, shingles, args.model),
+                groups) for r in g]
 
         by_id = {r["id"]: r for r in reports}
         for it in items:

@@ -1,0 +1,242 @@
+[
+ {
+  "stem": "The table shows three values of $x$ and their corresponding values of $f(x)$. Which equation defines $f$?",
+  "stimulus": "A folklore archive is digitizing its field notebooks. The number of variants of one trickster tale in its online catalogue, $f(x)$, is a linear function of $x$, the number of years since the project began.\n\n| $x$ | $f(x)$ |\n|---|---|\n| 2 | 31 |\n| 5 | 49 |\n| 9 | 73 |",
+  "choices": [
+   "$f(x) = 6x + 19$",
+   "$f(x) = 4.5x + 22$",
+   "$f(x) = 6x + 31$",
+   "$f(x) = 19x + 6$"
+  ],
+  "answer": "A",
+  "explanation": "Use the first two rows. The slope is $\\frac{49 - 31}{5 - 2} = \\frac{18}{3} = 6$. Put $(2, 31)$ into $f(x) = 6x + b$: $31 = 12 + b$, so $b = 19$. Check the third row: $6(9) + 19 = 73$. So $f(x) = 6x + 19$ fits every row.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You took the output change from rows 1 and 2 ($18$) and divided it by the input change from rows 2 and 3 ($4$), which gives $4.5$. That line fits the first row, but it gives $44.5$ at $x = 5$, not $49$. Test a choice against every row before you pick it."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used 31, the first output in the table, as the y-intercept. But 31 is the value at $x = 2$, not at $x = 0$. You have to step back two years to reach the starting value."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the right numbers but swapped them. The rate of change, 6, is the coefficient on $x$, and the starting value, 19, is the constant."
+   }
+  },
+  "id": "orig-equation-from--M-c6d23d",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-c6d23d",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "Which equation represents this situation, where $h$ is the number of overtime hours?",
+  "stimulus": "A labour economist models a warehouse worker's weekly earnings $E$, in dollars, as a linear function of overtime hours worked that week. Each overtime hour adds $\\$36$ to weekly earnings. A worker who put in 5 overtime hours in a week earned $\\$1{,}020$.",
+  "choices": [
+   "$E = 204h$",
+   "$E = 36h + 1{,}020$",
+   "$E = 36h + 1{,}200$",
+   "$E = 36h + 840$"
+  ],
+  "answer": "D",
+  "explanation": "The rate is $\\$36$ per overtime hour, so $m = 36$. Put the point $(5, 1{,}020)$ into $E = 36h + b$: $1{,}020 = 180 + b$, so $b = 840$. That is the worker's pay with no overtime. So $E = 36h + 840$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You divided $1{,}020$ by 5. The resulting line does pass through $(5, 1{,}020)$, but its rate is $\\$204$ per hour, not $\\$36$. It meets only one of the two facts you were given."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated $\\$1{,}020$ as the starting amount. It is the pay after 5 overtime hours, so it cannot be the value at $h = 0$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $36 \\times 5 = 180$ to $1{,}020$ when you should have subtracted it. Pay with no overtime has to be lower than pay with 5 overtime hours."
+   }
+  },
+  "id": "orig-equation-from--M-f0af2c",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "fail",
+  "verification": {
+   "id": "orig-equation-from--M-f0af2c",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __num__ __var__ __var__ which equation represents this",
+    "__num__ __var__ __var__ which equation represents this situation",
+    "__var__ __var__ which equation represents this situation where",
+    "__var__ which equation represents this situation where __var__",
+    "which equation represents this situation where __var__ is",
+    "equation represents this situation where __var__ is the"
+   ]
+  }
+ },
+ {
+  "stem": "If $f(t) = at + b$, where $a$ and $b$ are constants, what is the value of $a + b$?",
+  "stimulus": "In a vaccine study, an immunologist models a participant's antibody level, in units per millilitre, as a linear function $f$ of $t$, the number of days after the booster dose. The model gives $f(4) = 58$ and $f(10) = 106$.",
+  "choices": [
+   "$8$",
+   "$26$",
+   "$34$",
+   "$98$"
+  ],
+  "answer": "C",
+  "explanation": "The slope is $a = \\frac{106 - 58}{10 - 4} = \\frac{48}{6} = 8$. Put in $t = 4$: $58 = 8(4) + b$, so $b = 26$. The question asks for the sum, and $a + b = 8 + 26 = 34$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "8 is $a$, the slope, which is only the first step. The question asks for $a + b$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "26 is $b$, the antibody level at day 0. You stopped before adding the slope to it."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $b$ as $58 + 32 = 90$ when it should be $58 - 32$. Then you added $a$ to get 98. The level rises over time, so the day-0 value has to be below 58."
+   }
+  },
+  "id": "orig-equation-from--M-e64105",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-e64105",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "The table shows three values of $t$ and their corresponding values of $A(t)$. What is the value of $A(20)$?",
+  "stimulus": "Ecologists are tracking a coastal salt marsh that is shrinking. The area of the marsh, $A(t)$, in hectares, is a linear function of $t$, the number of years since the survey began.\n\n| $t$ | $A(t)$ |\n|---|---|\n| 3 | 212 |\n| 7 | 188 |\n| 12 | 158 |",
+  "choices": [
+   "$92$",
+   "$110$",
+   "$230$",
+   "$314$"
+  ],
+  "answer": "B",
+  "explanation": "The slope is $\\frac{188 - 212}{7 - 3} = \\frac{-24}{4} = -6$ hectares per year. Put in $(3, 212)$: $212 = -6(3) + b$, so $b = 230$. Check the last row: $-6(12) + 230 = 158$. Then $A(20) = -6(20) + 230 = 110$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You treated the first row as year 0 and computed $212 - 6(20)$. That row is year 3, so you took off three years' worth of loss too many."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "230 is the intercept, the marsh's area when $t = 0$. You found it but didn't go on to evaluate the function at $t = 20$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the outputs in one order and the inputs in the other, $\\frac{188 - 212}{3 - 7}$, which gives a slope of $+6$. The marsh is shrinking, so the slope has to be negative."
+   }
+  },
+  "id": "orig-equation-from--M-1d5cef",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-1d5cef",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "In the xy-plane, a line passes through the points $(8, 30)$ and $(12, 44)$. Which equation defines the line?",
+  "stimulus": "In a treadmill test, a sports scientist models a runner's oxygen uptake $y$, in millilitres per kilogram per minute, as a linear function of running speed $x$, in kilometres per hour. The model's graph is the line described below.",
+  "choices": [
+   "$y = 3.75x$",
+   "$y = 3.5x + 30$",
+   "$y = 3.5x - 2$",
+   "$y = 3.5x + 2$"
+  ],
+  "answer": "D",
+  "explanation": "The slope is $\\frac{44 - 30}{12 - 8} = \\frac{14}{4} = 3.5$. Put $(8, 30)$ into $y = 3.5x + b$: $30 = 28 + b$, so $b = 2$. Check the other point: $3.5(12) + 2 = 44$. So the line is $y = 3.5x + 2$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You divided 30 by 8, which gives a line through the origin and $(8, 30)$. At $x = 12$ it gives 45, not 44, so it misses the second point."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used 30 as the y-intercept. But 30 is the uptake at 8 km/h, not at $x = 0$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "When you solved $30 = 28 + b$, you computed $28 - 30$ when it should be $30 - 28$, so the intercept came out with the wrong sign. Put $(8, 30)$ back in: $3.5(8) - 2 = 26$, not 30."
+   }
+  },
+  "id": "orig-equation-from--M-c07fd0",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "fail",
+  "verification": {
+   "id": "orig-equation-from--M-c07fd0",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "a line passes through the points __var__ and",
+    "line passes through the points __var__ and __var__"
+   ]
+  }
+ }
+]

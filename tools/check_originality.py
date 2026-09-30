@@ -29,6 +29,12 @@ VAR = re.compile(r"\$[^$]*\$|\\\(.*?\\\)")
 NUM = re.compile(r"\b\d[\d,.]*\b")
 
 
+
+# A sequence of nothing but number placeholders is data, not expression. Two
+# tables of unrelated figures can collide on one, and a match there says
+# nothing about copying.
+NUMERIC_ONLY = re.compile(r"^(?:__num__\s*)+$")
+
 def normalize(text):
     """Lowercase, with variable and number slots collapsed to sentinels.
 
@@ -116,7 +122,8 @@ def main():
         found = Counter()
         for label, text in texts_from(path):
             n += 1
-            over = shingles(text) & idx
+            over = {o for o in (shingles(text) & idx)
+                    if not NUMERIC_ONLY.match(o)}
             if over:
                 hits += 1
                 for o in list(over)[:3]:

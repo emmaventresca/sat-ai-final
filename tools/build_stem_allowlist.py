@@ -49,7 +49,12 @@ def normalize(text):
     t = NUM.sub(" __num__ ", t)
     return t.lower()
 
-MIN_ITEMS = 10          # must recur across this many distinct items
+# Chosen from the distribution, not by feel. Across 3,308 items there are
+# 159,867 distinct 8-word sequences, and 96.6% of them appear in exactly ONE
+# item - unique prose essentially never recurs. Recurrence across three
+# different questions is therefore strong evidence of shared framing rather
+# than authorship, and the cliff in the distribution sits immediately after 1.
+MIN_ITEMS = 3
 
 
 def shingles(text, n=N):
@@ -78,8 +83,15 @@ def main():
         # shingling it raw pulls "heavy font bold px sans serif" and "the curve
         # passes from quadrant" into what is supposed to be a list of
         # instruction lines.
-        for sh in shingles(to_text(sanitize(d.get("stem")))):
-            df[sh] += 1
+        # Stem AND stimulus. Recurrence is the test, and it works regardless
+        # of field: a passage sentence appears once, while the Rhetorical
+        # Synthesis frame ("a student has taken the following notes") appears
+        # in 203 stimuli. Earlier pollution came from shingling the export's
+        # combined blob, which mixed in rationale prose - not from reading the
+        # API corpus's stimulus field, which is clean.
+        for field in ("stem", "stimulus"):
+            for sh in shingles(to_text(sanitize(d.get(field)))):
+                df[sh] += 1
 
     # The official export is deliberately NOT used here. Its text runs stem,
     # rationale and figure description together, so shingling it pulls
@@ -94,9 +106,13 @@ def main():
         "ngram_size": N,
         "min_items": MIN_ITEMS,
         "items_scanned": items,
+        "distribution_note": (
+            "96.6% of the corpus's 159,867 distinct 8-word sequences appear in "
+            "exactly one item. Unique prose does not recur, so the threshold "
+            "is set just above that cliff rather than at a round number."),
         "rationale": (
             "Eight-word sequences that College Board reuses across at least "
-            f"{MIN_ITEMS} different items' stems. Reuse at that scale "
+            f"{MIN_ITEMS} different items. Reuse at that scale "
             "demonstrates formulaic instruction language rather than "
             "authorship - passage-specific writing does not recur across "
             "dozens of unrelated questions. These are exempt from the "

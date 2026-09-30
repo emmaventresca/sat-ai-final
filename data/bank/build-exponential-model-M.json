@@ -1,0 +1,238 @@
+[
+ {
+  "stem": "Which equation represents this situation, where $L$ is the number of power looms in the region $t$ years after 1820?",
+  "stimulus": "A historian of the textile industry estimates that 2,400 power looms were in use in a certain weaving region in 1820. For the next several decades, the number of power looms in the region increased by 15% every 4 years.",
+  "choices": [
+   "$L = 2{,}400(1.15)^{t}$",
+   "$L = 2{,}400(1.15)^{t/4}$",
+   "$L = 2{,}400(0.15)^{t/4}$",
+   "$L = 2{,}400(1.15)^{4t}$"
+  ],
+  "answer": "B",
+  "explanation": "The starting amount in 1820 ($t = 0$) is 2,400. An increase of 15% means you multiply by $1 + 0.15 = 1.15$. That multiplication happens once every 4 years, so after $t$ years it has happened $t/4$ times. That gives $L = 2{,}400(1.15)^{t/4}$. As a check, at $t = 4$ you get $2{,}400(1.15)^1 = 2{,}760$, which is 15% more than 2,400.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You used the right growth factor but ignored the 'every 4 years' condition. This model grows by 15% every single year, so at $t = 4$ it already gives about 4,198 looms instead of 2,760. You need to divide the exponent by 4."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used the rate 0.15 as the factor instead of $1 + 0.15 = 1.15$. Multiplying by 0.15 keeps only 15% of the looms each period. That is steep decay, the opposite of the growth the historian describes."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You knew the 4-year interval belongs in the exponent, but you multiplied $t$ by 4 instead of dividing. This model applies the 15% increase four times every year, not once every 4 years."
+   }
+  },
+  "id": "orig-build-exponent-M-4581ba",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "fail",
+  "verification": {
+   "id": "orig-build-exponent-M-4581ba",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which equation represents this situation where __var__ is",
+    "equation represents this situation where __var__ is the"
+   ]
+  }
+ },
+ {
+  "stem": "Which equation represents this situation, where $w$ is the number of weeks after the booster dose?",
+  "stimulus": "After a booster dose, the concentration of a certain antibody in a patient's blood decreases by the same percentage each week. The table shows the concentration $C$, in arbitrary units, measured at three times after the booster.\n\n| Weeks after booster, $w$ | Concentration, $C$ |\n|---|---|\n| 2 | 1,600 |\n| 3 | 1,280 |\n| 4 | 1,024 |",
+  "choices": [
+   "$C = 2{,}500(0.8)^{w}$",
+   "$C = 1{,}600(0.8)^{w}$",
+   "$C = 2{,}500(0.2)^{w}$",
+   "$C = 2{,}500(1.25)^{w}$"
+  ],
+  "answer": "A",
+  "explanation": "Each week the concentration is multiplied by $1{,}280 \\div 1{,}600 = 0.8$, which is a 20% decrease. The table starts at week 2, not week 0, so work backwards two steps: $1{,}600 \\div 0.8 = 2{,}000$ at week 1, and $2{,}000 \\div 0.8 = 2{,}500$ at week 0. The model is $C = 2{,}500(0.8)^w$. As a check, $2{,}500(0.8)^2 = 1{,}600$.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You took the first row of the table as the starting amount, but that row is week 2, not week 0. Put $w = 2$ into this model and you get 1,024, not 1,600."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the 20% decrease, 0.2, as the factor. The factor is what you multiply by each week, which is $1 - 0.2 = 0.8$. Multiplying by 0.2 would leave only a fifth of the antibody each week."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You found the ratio the wrong way round ($1{,}600 \\div 1{,}280 = 1.25$). A factor above 1 means growth, but the concentrations in the table are falling."
+   }
+  },
+  "id": "orig-build-exponent-M-98e5e6",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "fail",
+  "verification": {
+   "id": "orig-build-exponent-M-98e5e6",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which equation represents this situation where __var__ is",
+    "equation represents this situation where __var__ is the"
+   ]
+  }
+ },
+ {
+  "stem": "According to the model, how many workers will be registered on the platform 4.5 years after the start of 2022?",
+  "stimulus": "A labour economist models the number of workers registered on a gig-work platform in one region. At the start of 2022, 5,000 workers were registered. In the model, the number of registered workers triples every 18 months.",
+  "choices": [
+   "35,000",
+   "45,000",
+   "130,000",
+   "135,000"
+  ],
+  "answer": "D",
+  "explanation": "The tripling interval is in months, so convert first: 4.5 years is $4.5 \\times 12 = 54$ months. That is $54 \\div 18 = 3$ tripling periods. The model gives $5{,}000(3)^3 = 5{,}000 \\times 27 = 135{,}000$ workers.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used a linear model, adding a fixed 10,000 workers every 18 months ($5{,}000 + 3 \\times 10{,}000$). 'Triples' means you multiply by 3 each period, so the increase gets bigger every time."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You counted 3 periods correctly but multiplied by $3 \\times 3$ instead of raising 3 to the third power. Three triplings means $3^3 = 27$, not 9."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the increase in registered workers ($135{,}000 - 5{,}000$), not the total. The question asks how many workers are registered in total."
+   }
+  },
+  "id": "orig-build-exponent-M-1c45bb",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-1c45bb",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "Which of the following is closest to the vitamin C content, in milligrams per serving, 9 days after bottling?",
+  "stimulus": "A nutrition scientist is studying how vitamin C breaks down in refrigerated orange juice. When the juice is bottled, it contains 80 milligrams of vitamin C per serving. After that, the vitamin C content decreases by 10% every 3 days.",
+  "choices": [
+   "31.0",
+   "56.0",
+   "58.3",
+   "106.5"
+  ],
+  "answer": "C",
+  "explanation": "The model is $V = 80(0.9)^{d/3}$, where $d$ is the number of days after bottling. A 10% decrease leaves 90%, so the factor is 0.9. The decrease happens once every 3 days, so after 9 days it has happened $9 \\div 3 = 3$ times. That gives $80(0.9)^3 = 80(0.729) \\approx 58.3$ milligrams.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You applied the 10% decrease once a day for 9 days ($80(0.9)^9 \\approx 31.0$). The decrease happens every 3 days, so you need to divide the exponent by 3."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You subtracted a fixed 8 mg (10% of the original 80 mg) three times. That is a linear model. Each 10% decrease applies to the amount left at that point, which keeps shrinking, so less is lost each time."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used a growth factor of 1.1 instead of the decay factor 0.9. The vitamin C content is going down, so the result has to be less than 80 mg."
+   }
+  },
+  "id": "orig-build-exponent-M-0ed401",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-0ed401",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "According to the model, how many days after the survey began will the population first reach 4,800 jellyfish?",
+  "stimulus": "A marine biologist surveying a coastal lagoon estimates that it contains 300 moon jellyfish when the survey begins. During a warm-water bloom, the biologist models the population as doubling every 5 days.",
+  "choices": [
+   "4",
+   "20",
+   "75",
+   "80"
+  ],
+  "answer": "B",
+  "explanation": "The model is $P = 300(2)^{t/5}$. Set it equal to 4,800: $(2)^{t/5} = 4{,}800 \\div 300 = 16$. Since $16 = 2^4$, you get $t/5 = 4$, so $t = 20$ days. As a check, $300 \\to 600 \\to 1{,}200 \\to 2{,}400 \\to 4{,}800$ takes four doublings of 5 days each.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "4 is the number of doublings. Each doubling takes 5 days, so you still need to multiply by 5 to get the number of days."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated the growth as linear, adding 300 jellyfish every 5 days. Reaching 4,800 that way takes 15 periods, or 75 days. 'Doubling' means you multiply by 2 each period, so the population grows much faster."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated the ratio 16 as the number of doublings and multiplied it by 5. The ratio 16 is $2^4$, which means 4 doublings, not 16."
+   }
+  },
+  "id": "orig-build-exponent-M-2660e2",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-2660e2",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ }
+]
