@@ -155,6 +155,9 @@ Two things follow, and neither is cured by putting a login in front:
   not convert redistribution into private use.
 - **`tools/fetch_bank.py` is bulk retrieval**, which is what the scraping clause
   names. The sanctioned route is the bank's own export, for your own materials.
+  The retrieval scripts are therefore **no longer published** - they are
+  git-ignored and stay on the machine that ran them. Publishing a working
+  how-to for scraping someone's service is downside with no upside.
 
 **Therefore: do not wire the item pool into the app for other people to use.**
 No Supabase `content` load, no published `data/items.json`, no authenticated
