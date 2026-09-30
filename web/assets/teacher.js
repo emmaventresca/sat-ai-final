@@ -100,6 +100,8 @@ function screenRoster() {
     <div class="tabs" role="tablist">
       <button class="tab on" id="tab-roster" role="tab" aria-selected="true">Students</button>
       <button class="tab" id="tab-plan" role="tab" aria-selected="false">Plan a lesson</button>
+      <button class="tab" id="tab-agents" role="tab" aria-selected="false">Agents${
+        agentAlertCount() ? ` <span class="pill">${agentAlertCount()}</span>` : ''}</button>
     </div>
 
     ${rows.length ? `<div class="card">
@@ -135,6 +137,7 @@ function screenRoster() {
   $('#out').onclick = async () => { await store.signOut(); location.reload(); };
   $('#refresh').onclick = boot;
   $('#tab-plan').onclick = () => screenPlanner();
+  $('#tab-agents').onclick = () => screenAgents();
   for (const tr of document.querySelectorAll('[data-student]')) {
     tr.onclick = () => openStudent(tr.dataset.student);
   }
@@ -367,6 +370,83 @@ function screenStudentView() {
   window.scrollTo(0, 0);
 }
 
+/** How many runs are currently flagged - drives the badge on the tab. */
+function agentAlertCount() {
+  return (state.agentFeed?.runs ?? []).filter((r) => r.alerts?.length).length;
+}
+
+const AGENT_KIND = {
+  author: 'Writing items', verify: 'Checking items',
+  adjudicate: 'Settling disagreements', classify: 'Classifying',
+};
+
+/**
+ * Agent runs, newest first, with anything flagged pulled to the top.
+ *
+ * These agents fail quietly: a stale allowlist rejects everything, a call
+ * errors with an empty message and 219 untested items get filed as quality
+ * failures. Every one of those happened here and was found by accident. This
+ * is where they surface instead.
+ */
+function screenAgents() {
+  const feed = state.agentFeed ?? { runs: [], summary: {} };
+  const flagged = feed.runs.filter((r) => r.alerts?.length);
+  const clean = feed.runs.filter((r) => !r.alerts?.length);
+
+  const card = (r) => {
+    const label = (k) => k.replace(/_/g, ' ').replace(/\s-\s/g, ' \u2014 ');
+    const c = Object.entries(r.counts ?? {})
+      .map(([k, v]) => `<span class="badge">${esc(label(k))} ${v}</span>`).join('');
+    const m = r.meta ?? {};
+    const what = [m.subtype ?? m.skill, m.difficulty, m.model]
+      .filter(Boolean).map(esc).join(' &middot; ');
+    return `<div class="agent-run ${r.alerts?.length ? 'flagged' : ''}">
+      <div class="spread">
+        <div><strong>${esc(AGENT_KIND[r.kind] ?? r.kind ?? 'run')}</strong>
+          ${what ? `<div class="tiny muted">${what}</div>` : ''}</div>
+        <div class="tiny muted">${esc(when(new Date((r.started_at ?? 0) * 1000).toISOString()))}
+          ${r.seconds != null ? ` &middot; ${Math.round(r.seconds)}s` : ''}</div>
+      </div>
+      ${c ? `<div class="meta" style="margin-top:8px">${c}</div>` : ''}
+      ${(r.alerts ?? []).map((a) => `<div class="agent-alert ${esc(a.level)}">
+        ${esc(a.text)}</div>`).join('')}
+    </div>`;
+  };
+
+  app.innerHTML = `<div class="wrap wide">
+    <div class="top">
+      <div><h1>Agents</h1>
+        <p class="who">Every batch the system runs, and anything that looks wrong</p></div>
+      <div class="row tight">
+        <button class="btn-sm" id="refresh">Refresh</button>
+        <button class="btn-sm" id="out">Sign out</button></div>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab" id="tab-roster" role="tab">Students</button>
+      <button class="tab" id="tab-plan" role="tab">Plan a lesson</button>
+      <button class="tab on" id="tab-agents" role="tab" aria-selected="true">Agents</button>
+    </div>
+
+    ${flagged.length ? `<h2>Needs a look</h2>
+      <div class="card">${flagged.map(card).join('')}</div>`
+      : `<div class="card"><p class="small muted" style="margin:0">
+          Nothing flagged. ${feed.runs.length} run${feed.runs.length === 1 ? '' : 's'} recorded.</p></div>`}
+
+    ${clean.length ? `<h2>Recent runs</h2>
+      <div class="card">${clean.slice(0, 25).map(card).join('')}</div>` : ''}
+
+    <p class="tiny muted">Rebuild this with
+      <code>python3 tools/build_agent_feed.py</code> after a batch.</p>
+  </div>`;
+
+  $('#out').onclick = async () => { await store.signOut(); location.reload(); };
+  $('#refresh').onclick = boot;
+  $('#tab-roster').onclick = () => screenRoster();
+  $('#tab-plan').onclick = () => screenPlanner();
+  window.scrollTo(0, 0);
+}
+
 /**
  * The lesson planner. Grounded in the project's own analysis - the subtype
  * taxonomy, the band model, the misconception families and the verified item
@@ -389,6 +469,8 @@ async function screenPlanner(note) {
     <div class="tabs" role="tablist">
       <button class="tab" id="tab-roster" role="tab" aria-selected="false">Students</button>
       <button class="tab on" id="tab-plan" role="tab" aria-selected="true">Plan a lesson</button>
+      <button class="tab" id="tab-agents" role="tab">Agents${
+        agentAlertCount() ? ` <span class="pill">${agentAlertCount()}</span>` : ''}</button>
     </div>
 
     ${up ? '' : `<div class="plan-offline">
@@ -459,6 +541,7 @@ async function screenPlanner(note) {
 
   $('#out').onclick = async () => { await store.signOut(); location.reload(); };
   $('#tab-roster').onclick = () => screenRoster();
+  $('#tab-agents').onclick = () => screenAgents();
 
   const send = async (text) => {
     if (!text?.trim()) return;
@@ -506,15 +589,18 @@ async function openStudent(id) {
 }
 
 async function loadData() {
-  const [bands, skills, lessons, subtax] = await Promise.all([
+  const [bands, skills, lessons, subtax, agentFeed] = await Promise.all([
     fetch('../data/bands.json').then((r) => r.json()),
     fetch('../data/skills.json').then((r) => r.json()),
     fetch('../data/lessons.json').then((r) => r.json()),
     fetch('../data/subtypes.json').then((r) => r.json()).catch(() => ({ skills: {} })),
+    fetch('../data/agent_feed.json').then((r) => r.json())
+      .catch(() => ({ runs: [], summary: {} })),
   ]);
   state.bands = bands;
   state.skills = Object.fromEntries(skills.skills.map((s) => [s.skill_cd, s]));
   state.lessons = lessons.lessons;
+  state.agentFeed = agentFeed;
   state.subtypeNames = {};
   for (const v of Object.values(subtax.skills ?? {})) {
     for (const st of v.subtypes ?? []) state.subtypeNames[st.slug] = st.name;

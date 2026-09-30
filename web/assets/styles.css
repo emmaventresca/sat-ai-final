@@ -386,3 +386,17 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 .tile.assigned{border-color:var(--line2);
   background:linear-gradient(180deg,#fbfaff 0%,var(--panel) 60%)}
 .tile.assigned:hover{border-color:var(--purple)}
+
+/* ---- agent runs --------------------------------------------------------- */
+.agent-run{padding:13px 0;border-bottom:1px solid var(--line)}
+.agent-run:last-child{border-bottom:none}
+.agent-run.flagged{border-left:3px solid var(--flag);padding-left:13px;
+  background:linear-gradient(90deg,var(--flag-bg) 0%,transparent 60%);
+  border-radius:8px;margin-bottom:6px}
+.agent-alert{font-size:.86rem;line-height:1.55;margin-top:8px;padding:9px 12px;
+  border-radius:10px;font-weight:600}
+.agent-alert.warn{background:var(--flag-bg);border:1px solid var(--flag-ln);color:#8a5406}
+.agent-alert.bad{background:var(--bad-bg);border:1px solid var(--bad-ln);color:#c9344c}
+.pill{display:inline-block;min-width:18px;padding:1px 6px;border-radius:999px;
+  background:var(--bad);color:#fff;font-size:.68rem;font-weight:800;
+  vertical-align:1px;margin-left:5px}

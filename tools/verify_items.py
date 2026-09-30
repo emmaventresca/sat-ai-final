@@ -36,6 +36,7 @@ CORPUS = os.path.join(ROOT, "corpus", "bank")
 
 sys.path.insert(0, HERE)
 from sanitize import sanitize, to_text                  # noqa: E402
+from agentlog import run                                # noqa: E402
 
 _lock = threading.Lock()
 LETTERS = "ABCD"
@@ -222,10 +223,15 @@ def call_list(prompt, model):
         env={**os.environ, "PATH": os.environ["PATH"] + ":" + os.path.expanduser("~/.local/bin")},
     )
     if proc.returncode != 0:
-        raise RuntimeError(proc.stderr[:200])
+        # stderr is sometimes empty on a failed call, and an empty message
+        # then reads as falsy everywhere downstream - which is how 219 items
+        # were recorded as quality failures when they had simply never been
+        # solved. Always carry something truthy.
+        raise RuntimeError(proc.stderr.strip()[:200]
+                           or f"claude CLI exited {proc.returncode} with no message")
     i = proc.stdout.find("[")
     if i == -1:
-        raise ValueError("no JSON array")
+        raise ValueError(f"no JSON array in output (got {len(proc.stdout)} chars)")
     return json.JSONDecoder().raw_decode(proc.stdout[i:])[0]
 
 
@@ -304,8 +310,9 @@ def verify_batch(items, families, shingles, model, fragments=frozenset()):
     try:
         solved = {r.get("id"): r for r in call_list(blind_batch_prompt(items), model)}
     except Exception as exc:
+        msg = str(exc)[:160] or f"{type(exc).__name__} with no message"
         for r in reports.values():
-            r["solve_error"] = str(exc)[:120]
+            r["solve_error"] = msg
         solved = {}
 
     for it in items:
@@ -344,7 +351,11 @@ def verify_one(it, families, shingles, model):
 
 
 def verdict(rep):
-    if rep.get("solve_error"):
+    # "error" covers any run where the solve did not happen, including the
+    # empty-message case. An item that was never solved has not failed a
+    # quality gate - it has not been tested - and must be retried rather than
+    # discarded.
+    if "solve_error" in rep or rep.get("solver_answer") is None:
         return "error"
     if rep["structure"]:
         return "fail"
@@ -399,6 +410,7 @@ def main():
              else sorted(glob.glob(os.path.join(BANK, "*.json"))))
     totals = {"pass": 0, "review": 0, "fail": 0, "error": 0}
 
+
     for path in files:
         items = json.load(open(path))
         todo = [it for it in items if it.get("status") != "verified"]
@@ -439,6 +451,19 @@ def main():
     print(f"\ntotal: {totals['pass']} pass, {totals['review']} review, "
           f"{totals['fail']} fail, {totals['error']} error")
     print("Only 'verified' items are served to students.")
+
+    with run("verify", model=args.model, batch=args.batch,
+             files=len(files)) as r:
+        r.count(**totals)
+        checked = sum(totals.values())
+        if checked:
+            rate = totals["pass"] / checked
+            if rate < 0.7:
+                r.note(f"pass rate {rate:.0%} - unusually low, check for a "
+                       f"systematic cause before authoring more")
+        if totals["error"]:
+            r.note(f"{totals['error']} items could not be solved at all - "
+                   f"these are untested, not failed")
 
 
 if __name__ == "__main__":

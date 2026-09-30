@@ -1,0 +1,374 @@
+[
+ {
+  "stem": "Which equation represents this situation, where $w(t)$ is the hourly wage, in dollars, $t$ years after the contract begins?",
+  "stimulus": "A new labour contract at a regional warehouse sets a starting hourly wage of $\\$20.00$ for all loaders. Under the contract, the hourly wage increases by $4\\%$ every $2$ years.",
+  "choices": [
+   "$w(t) = 20(1.04)^{2t}$",
+   "$w(t) = 20(1.04)^{t/2}$",
+   "$w(t) = 20(0.04)^{t/2}$",
+   "$w(t) = 20 + 0.8\\left(\\frac{t}{2}\\right)$"
+  ],
+  "answer": "B",
+  "explanation": "The starting wage is 20 and each raise multiplies the wage by $1 + 0.04 = 1.04$. A raise happens once every 2 years, so after $t$ years there have been $\\frac{t}{2}$ raises. That gives $w(t) = 20(1.04)^{t/2}$. As a check, $w(2) = 20(1.04) = 20.80$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $t$ by the 2-year interval when you should have divided by it. With this model the wage would go up four times in 2 years instead of once."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the percent, 0.04, as the growth factor. Each raise multiplies the wage by $1.04$. Multiplying by 0.04 would cut the wage to almost nothing."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You added a fixed $\\$0.80$ for each 2-year period, which makes the model linear. A raise of a constant percentage compounds, so the model has to be exponential."
+   }
+  },
+  "id": "orig-build-exponent-H-21611d",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "fail",
+  "verification": {
+   "id": "orig-build-exponent-H-21611d",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "A",
+   "problem": null,
+   "overlap": [
+    "of __var__ __num__ __var__ __num__ __var__ __num__ __var__"
+   ]
+  }
+ },
+ {
+  "stem": "Which of the following functions models this relationship, where $u(t)$ is the number of registered users $t$ years after 2020?",
+  "stimulus": "A city's planning office tracks the number of registered users of its bike-share program. The table shows the number of users $t$ years after 2020. The number of users increased by the same percentage each year.\n\n| $t$ | Registered users |\n|---|---|\n| 2 | 1,800 |\n| 3 | 2,160 |\n| 4 | 2,592 |",
+  "choices": [
+   "$u(t) = 1{,}250(1.2)^{t}$",
+   "$u(t) = 1{,}800(1.2)^{t}$",
+   "$u(t) = 1{,}500(1.2)^{t}$",
+   "$u(t) = 1{,}080 + 360t$"
+  ],
+  "answer": "A",
+  "explanation": "Each value is 1.2 times the one before it, since $2{,}160 \\div 1{,}800 = 1.2$ and $2{,}592 \\div 2{,}160 = 1.2$. The table starts at $t = 2$, so work back two years to get the value at $t = 0$: $1{,}800 \\div 1.2^2 = 1{,}800 \\div 1.44 = 1{,}250$. So $u(t) = 1{,}250(1.2)^t$. As a check, $u(3) = 1{,}250(1.728) = 2{,}160$.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used the first row of the table as the starting amount. That row is $t = 2$, not $t = 0$, so this model gives 1,800 users in 2020."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You worked back only one year, from $t = 2$ to $t = 1$. You need one more step to reach $t = 0$."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You drew a straight line through the first two rows. It predicts 2,520 users at $t = 4$ instead of 2,592, because the users grow by a constant percentage, not a constant number."
+   }
+  },
+  "id": "orig-build-exponent-H-bfaeb4",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-H-bfaeb4",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "How many years after the sample is sealed will exactly $6$ micrograms of the compound remain?",
+  "stimulus": "Archaeologists studying a sealed storage jar estimate that its residue first contained $96$ micrograms of an organic marker compound. The amount of the compound halves every $1{,}400$ years.",
+  "choices": [
+   "$4$",
+   "$2{,}625$",
+   "$5{,}600$",
+   "$22{,}400$"
+  ],
+  "answer": "C",
+  "explanation": "The model is $A(t) = 96(0.5)^{t/1{,}400}$. Halving from 96 goes 48, 24, 12, 6, so it takes 4 half-lives to reach 6 micrograms. Four half-lives is $4 \\times 1{,}400 = 5{,}600$ years.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "4 is the number of half-lives, which is the value of $\\frac{t}{1{,}400}$. You forgot to multiply by 1,400 to turn it into years."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You assumed the sample loses a fixed 48 micrograms every 1,400 years, which is a linear model. Halving removes less each time as the amount shrinks."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the ratio $96 \\div 6 = 16$ as the number of half-lives. It actually means the amount was halved until it was $\\frac{1}{16}$ of the start, and since $2^4 = 16$, that is 4 half-lives."
+   }
+  },
+  "id": "orig-build-exponent-H-42b41b",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-H-42b41b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "What is the frequency, in hertz, of a note that is $36$ semitones above the reference pitch?",
+  "stimulus": "In the tuning system used for a study of piano repertoire, the reference pitch has a frequency of $220$ hertz. Each time a note is $12$ semitones higher, its frequency doubles.",
+  "choices": [
+   "$660$",
+   "$880$",
+   "$1{,}760$",
+   "$3{,}520$"
+  ],
+  "answer": "C",
+  "explanation": "The model is $f(n) = 220(2)^{n/12}$, where $n$ is the number of semitones above the reference pitch. For $n = 36$ the exponent is $\\frac{36}{12} = 3$, so $f(36) = 220(2)^3 = 220 \\times 8 = 1{,}760$ hertz.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied 220 by 3, the number of doublings. Three doublings multiply by $2^3 = 8$, not by 3."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You added 220 hertz for every 12 semitones, as if the change were linear. Doubling is a constant factor, so each step adds more hertz than the one before."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You doubled four times instead of three. 36 semitones is $\\frac{36}{12} = 3$ doublings."
+   }
+  },
+  "id": "orig-build-exponent-H-3dbdcc",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-H-3dbdcc",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "Which of the following is closest to the concentration of dye, in milligrams per liter, in the bath at the start of the process?",
+  "stimulus": "A textile historian recreates a nineteenth-century madder dyeing process. As wool soaks in the dye bath, the concentration of dye left in the bath decreases by $20\\%$ each hour. After $3$ hours, the concentration is $256$ milligrams per liter.",
+  "choices": [
+   "$442.4$",
+   "$500.0$",
+   "$640.0$",
+   "$32{,}000$"
+  ],
+  "answer": "B",
+  "explanation": "Each hour the concentration is multiplied by $1 - 0.20 = 0.8$, so $C_0(0.8)^3 = 256$. Since $0.8^3 = 0.512$, you get $C_0 = 256 \\div 0.512 = 500$ milligrams per liter.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You tried to undo each 20% decrease by multiplying by 1.2. A 20% increase does not reverse a 20% decrease. To go back one hour, divide by 0.8."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You added the three 20% losses to get 60% and divided 256 by 0.4. That treats the decrease as linear. Each 20% is taken from a smaller amount than the last."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used 0.2 as the hourly factor, so you divided 256 by $0.2^3 = 0.008$. The bath keeps 80% each hour, so the factor is 0.8."
+   }
+  },
+  "id": "orig-build-exponent-H-48c771",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-H-48c771",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "Which equation represents this situation, where $N(t)$ is the number of ice crystals per liter $t$ hours after the measurement begins?",
+  "stimulus": "In a laboratory cloud chamber that simulates the upper part of a thunderstorm, a meteorologist measures $5{,}000$ ice crystals per liter at the start of an observation. Under the chamber's conditions, the number of ice crystals per liter triples every $20$ minutes.",
+  "choices": [
+   "$N(t) = 5{,}000(3)^{3t}$",
+   "$N(t) = 5{,}000(3)^{t/20}$",
+   "$N(t) = 5{,}000(3)^{t/3}$",
+   "$N(t) = 5{,}000 + 10{,}000(3t)$"
+  ],
+  "answer": "A",
+  "explanation": "Here $t$ is in hours, and there are three 20-minute periods in each hour, so after $t$ hours the count has tripled $3t$ times. That gives $N(t) = 5{,}000(3)^{3t}$. As a check, 20 minutes is $t = \\frac{1}{3}$, and $N\\left(\\frac{1}{3}\\right) = 5{,}000(3) = 15{,}000$, which is triple the start.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You divided by 20 as if $t$ were in minutes. The question measures $t$ in hours, so this model triples only once every 20 hours."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided $t$ by 3 when you should have multiplied by 3. With this model the count triples once every 3 hours, not three times per hour."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You added 10,000 crystals for each 20-minute period, which is linear. Tripling multiplies the current count, so the amount added keeps getting larger."
+   }
+  },
+  "id": "orig-build-exponent-H-5655e3",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-H-5655e3",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "The function $P$ is defined by $P(d) = a(b)^{d/10}$, where $a$ and $b$ are constants, and it models the number of spores per gram at a depth of $d$ centimeters. What is the value of $a$?",
+  "stimulus": "Paleobotanists count fossil fern spores in a lake-sediment core. The table shows the number of spores per gram of sediment at three depths. The count decreases by the same percentage for every $10$ centimeters of depth.\n\n| Depth (cm) | Spores per gram |\n|---|---|\n| 10 | 4,000 |\n| 20 | 3,200 |\n| 30 | 2,560 |",
+  "choices": [
+   "$3{,}200$",
+   "$4{,}000$",
+   "$4{,}800$",
+   "$5{,}000$"
+  ],
+  "answer": "D",
+  "explanation": "Each deeper row is 0.8 times the row above it, since $3{,}200 \\div 4{,}000 = 0.8$, so $b = 0.8$. The constant $a$ is the value at $d = 0$, which is one 10-centimeter step above the first row: $a = 4{,}000 \\div 0.8 = 5{,}000$. As a check, $P(20) = 5{,}000(0.8)^2 = 3{,}200$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You moved from the first row in the wrong direction and multiplied by 0.8. Depth 0 is shallower than depth 10, so you need to divide by 0.8."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used the first row as the starting amount. That row is at $d = 10$, not $d = 0$, so it gives $P(10)$ rather than $a$."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You added back the 800-spore drop between the first two rows, which treats the change as linear. A 20% decrease undone from 4,000 means dividing by 0.8, and that gives 5,000."
+   }
+  },
+  "id": "orig-build-exponent-H-dd4dde",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "fail",
+  "verification": {
+   "id": "orig-build-exponent-H-dd4dde",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "B",
+   "problem": null,
+   "overlap": [
+    "__var__ centimeters what is the value of __var__"
+   ]
+  }
+ },
+ {
+  "stem": "Which of the following is closest to the number of fluent speakers of the language in 2030?",
+  "stimulus": "A linguist documenting an endangered language estimates that it had $12{,}000$ fluent speakers in 2000. The linguist projects that the number of fluent speakers will decrease by $10\\%$ each decade.",
+  "choices": [
+   "$509$",
+   "$3{,}252$",
+   "$8{,}400$",
+   "$8{,}748$"
+  ],
+  "answer": "D",
+  "explanation": "The model is $S(t) = 12{,}000(0.9)^{t/10}$, where $t$ is years after 2000. 2030 is $t = 30$, which is 3 decades, so $S(30) = 12{,}000(0.9)^3 = 12{,}000(0.729) = 8{,}748$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used 30 as the exponent, applying the 10% decrease every year. It happens once per decade, so the exponent is $\\frac{30}{10} = 3$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the number of speakers lost, $12{,}000 - 8{,}748$. The question asks how many speakers remain."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You subtracted a fixed 1,200 speakers each decade, taking 10% of the original 12,000 every time. That is a linear model. Each 10% is taken from the current, smaller number of speakers."
+   }
+  },
+  "id": "orig-build-exponent-H-c01b16",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-H-c01b16",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ }
+]

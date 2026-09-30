@@ -28,6 +28,8 @@ import argparse, json, os, random, re, subprocess, sys, threading
 from concurrent.futures import ThreadPoolExecutor
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+from agentlog import run                                # noqa: E402
 ROOT = os.path.dirname(HERE)
 OUT_DIR = os.path.join(ROOT, "data", "bank")
 LICENSE = "CC BY 4.0 - original item, not College Board content"
@@ -287,9 +289,14 @@ def main():
         patterns = pp.get("patterns", [])[:4]
 
     rng = random.Random(args.seed or None)
-    items = author(skill, lesson_for(args.skill, lessons),
-                   families, args.difficulty, args.n, args.model, rng,
-                   subtype, patterns)
+    with run("author", skill=args.skill, subtype=args.subtype,
+             difficulty=args.difficulty, model=args.model, asked=args.n) as r:
+        items = author(skill, lesson_for(args.skill, lessons),
+                       families, args.difficulty, args.n, args.model, rng,
+                       subtype, patterns)
+        r.count(authored=len(items))
+        if len(items) < args.n:
+            r.note(f"asked for {args.n}, got {len(items)}")
 
     os.makedirs(OUT_DIR, exist_ok=True)
     stem = (args.subtype if args.subtype else args.skill.replace(".", ""))

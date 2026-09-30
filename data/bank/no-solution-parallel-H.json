@@ -1,0 +1,375 @@
+[
+ {
+  "stem": "In the given system of equations, $k$ is a constant. If the system has no solution, what is the value of $k$?",
+  "stimulus": "A hydrologist models the depths of two drainage channels during a storm. In the models below, $x$ is the time in hours since the rain began and $y$ is the depth in centimeters.\n\n$y = \\frac{2}{3}x + 5$\n\n$kx - 6y = 12$",
+  "choices": [
+   "$-4$",
+   "$\\frac{2}{3}$",
+   "$4$",
+   "$9$"
+  ],
+  "answer": "C",
+  "explanation": "Put the second equation in slope-intercept form. $kx - 6y = 12$ becomes $6y = kx - 12$, so $y = \\frac{k}{6}x - 2$. For no solution, the slopes must be equal: $\\frac{k}{6} = \\frac{2}{3}$, so $k = 4$. Now check the intercepts. They are $5$ and $-2$, which are different, so the lines are parallel and never meet. The system has no solution when $k = 4$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You compared the slopes before rearranging the second equation properly. You read the slope of $kx - 6y = 12$ as $\\frac{k}{-6}$ instead of $\\frac{k}{6}$, which gave the wrong sign. That is the trap of comparing an equation in $y = mx + b$ form with one that has not been rearranged."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$\\frac{2}{3}$ is the slope the second line needs. The question asks for $k$, and $k$ is 6 times that slope."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the slope of the second line as $\\frac{6}{k}$ instead of $\\frac{k}{6}$. Solving $\\frac{6}{k} = \\frac{2}{3}$ gives 9, but with $k = 9$ the slope is $\\frac{3}{2}$ and the lines cross."
+   }
+  },
+  "id": "orig-no-solution-pa-H-2b46ee",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-H-2b46ee",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "One of the two equations in a system of linear equations is given. The system has no solution. Which equation could be the second equation in this system?",
+  "stimulus": "A meteorology student writes a linear relationship between $x$, the wind speed in meters per second at a coastal station, and $y$, the wind speed in meters per second at an inland station.\n\n$4x - 6y = 10$",
+  "choices": [
+   "$6x - 9y = 15$",
+   "$6x + 9y = 15$",
+   "$3x - 2y = 5$",
+   "$-2x + 3y = 5$"
+  ],
+  "answer": "D",
+  "explanation": "Multiply $-2x + 3y = 5$ by $-2$ to get $4x - 6y = -10$. The left side is the same as the given equation's, so the slopes are equal. The right side is $-10$, not $10$, so the lines are different. Parallel, distinct lines never meet, so the system has no solution.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "Multiplying the given equation by $\\frac{3}{2}$ gives exactly $6x - 9y = 15$. That is the same line, so the system has infinitely many solutions, not none. You checked that the slopes match but not that the constants are out of ratio."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The coefficients are in proportion, but the sign of the $y$-term flipped. This line has slope $-\\frac{2}{3}$ while the given line has slope $\\frac{2}{3}$, so the lines cross once."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You swapped the coefficients of $x$ and $y$. This line has slope $\\frac{3}{2}$, not $\\frac{2}{3}$, so it crosses the given line at one point."
+   }
+  },
+  "id": "orig-no-solution-pa-H-cf593b",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-H-cf593b",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "Which of the following systems of linear equations has no solution?",
+  "stimulus": "A seismology student is checking whether pairs of linear models for seismic wave arrival times ever agree. Each choice below is a system of equations in $x$ and $y$.",
+  "choices": [
+   "$y = 3x + 2$ and $6x - 2y = -4$",
+   "$y = 3x + 2$ and $6x - 2y = 4$",
+   "$y = 3x + 2$ and $6x + 2y = 4$",
+   "$y = 3x + 2$ and $2x - 6y = 4$"
+  ],
+  "answer": "B",
+  "explanation": "Rewrite the second equation: $6x - 2y = 4$ becomes $-2y = -6x + 4$, so $y = 3x - 2$. Both lines have slope 3, but their $y$-intercepts are 2 and $-2$. The lines are parallel and distinct, so the system has no solution.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "$6x - 2y = -4$ rearranges to $y = 3x + 2$, which is the first equation again. The lines are the same, so there are infinitely many solutions. You matched the slopes without checking the intercepts."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "$6x + 2y = 4$ rearranges to $y = -3x + 2$. Its slope is $-3$, not 3, so it crosses the first line once. The sign of the $y$-term changes the sign of the slope."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "$2x - 6y = 4$ rearranges to $y = \\frac{1}{3}x - \\frac{2}{3}$. You mixed up which coefficient goes with which variable, so the slope is $\\frac{1}{3}$ and the lines intersect."
+   }
+  },
+  "id": "orig-no-solution-pa-H-ec16a5",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "fail",
+  "verification": {
+   "id": "orig-no-solution-pa-H-ec16a5",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which of the following systems of linear equations",
+    "of the following systems of linear equations has",
+    "the following systems of linear equations has no",
+    "following systems of linear equations has no solution"
+   ]
+  }
+ },
+ {
+  "stem": "In the given system of equations, $k$ is a constant. If the system has no solution, what is the value of $k$?",
+  "stimulus": "An astronomy student models the apparent brightness of two variable stars. In the models, $x$ and $y$ are brightness readings taken with two different filters.\n\n$\\frac{1}{2}x - \\frac{3}{4}y = 5$\n\n$kx - 9y = 20$",
+  "choices": [
+   "$6$",
+   "$-6$",
+   "$2$",
+   "$3$"
+  ],
+  "answer": "A",
+  "explanation": "Clear the fractions by multiplying the first equation by 4: $2x - 3y = 20$. For the lines to be parallel, the coefficients must be in proportion. The $y$-coefficient goes from $-3$ to $-9$, a factor of 3, so $k = 3 \\cdot 2 = 6$. Check the constants: 3 times the first equation gives $6x - 9y = 60$, and $60 \\neq 20$. The lines are distinct, so the system has no solution.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You made a sign error when you set up the proportion, as if $-9$ divided by $-3$ were $-3$. With $k = -6$ the slopes have opposite signs and the lines cross."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "After scaling the first equation to $2x - 3y = 20$, you matched it to the second equation by its constant, 20, instead of by its $y$-coefficient. So you copied $k = 2$ unchanged. The $y$-coefficients are $-3$ and $-9$, so the $x$-coefficient must also be tripled."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "3 is the scale factor between the two equations, not $k$. Stopping there leaves out the last step, multiplying the $x$-coefficient 2 by 3."
+   }
+  },
+  "id": "orig-no-solution-pa-H-4ade62",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-H-4ade62",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "One of the two equations in a system of linear equations is given. The system has no solution. Which equation could be the second equation in this system?",
+  "stimulus": "A paleobotanist models the relationship between $x$, the depth in meters of a sediment layer, and $y$, the number of fossil pollen grains per gram found in that layer.\n\n$y = -\\frac{3}{5}x + 4$",
+  "choices": [
+   "$3x + 5y = 15$",
+   "$3x + 5y = 20$",
+   "$5x + 3y = 15$",
+   "$3x - 5y = 15$"
+  ],
+  "answer": "A",
+  "explanation": "Rearrange $3x + 5y = 15$: $5y = -3x + 15$, so $y = -\\frac{3}{5}x + 3$. The slope matches the given line, $-\\frac{3}{5}$, but the $y$-intercept is 3 instead of 4. The lines are parallel and distinct, so the system has no solution.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "$3x + 5y = 20$ rearranges to $y = -\\frac{3}{5}x + 4$, which is the given line. Identical lines give infinitely many solutions. The intercept has to be different too."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You put the 5 on $x$ and the 3 on $y$. This line has slope $-\\frac{5}{3}$, so it crosses the given line once."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The minus sign in front of $5y$ makes the slope $+\\frac{3}{5}$. The given slope is $-\\frac{3}{5}$, so the lines cross. The signs matter when you move from $y = mx + b$ form to standard form."
+   }
+  },
+  "id": "orig-no-solution-pa-H-0ff206",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-H-0ff206",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "In the given system of equations, $a$ and $b$ are constants. If the system has no solution, which of the following could be the values of $a$ and $b$?",
+  "stimulus": "A materials scientist models two properties of an experimental alloy, where $x$ is the percent of nickel and $y$ is the percent of chromium.\n\n$3x - 2y = 8$\n\n$ax - 6y = b$",
+  "choices": [
+   "$a = 9$ and $b = 24$",
+   "$a = 9$ and $b = 20$",
+   "$a = -9$ and $b = 20$",
+   "$a = 6$ and $b = 16$"
+  ],
+  "answer": "B",
+  "explanation": "The $y$-coefficient goes from $-2$ to $-6$, a factor of 3. For parallel lines the $x$-coefficient must also triple, so $a = 9$. If $b$ were $3 \\cdot 8 = 24$, the lines would be identical, so $b$ must be some other number. With $a = 9$ and $b = 20$, the lines are parallel and distinct, so there is no solution.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "$9x - 6y = 24$ is exactly 3 times the first equation. It is the same line, so there are infinitely many solutions. Tripling the constant as well is the trap. It must not be in the same ratio."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "With $a = -9$, the second line has slope $-\\frac{3}{2}$ while the first has slope $\\frac{3}{2}$. The lines cross once, so there is a solution."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You doubled the $x$-coefficient and the constant but ignored that the $y$-coefficient tripled. $6x - 6y = 16$ has slope 1, not $\\frac{3}{2}$, so the lines intersect."
+   }
+  },
+  "id": "orig-no-solution-pa-H-a1e89b",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-H-a1e89b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "In the given system of equations, $k$ is a constant. If the system has no solution, what is the value of $k$?",
+  "stimulus": "A folklore studies researcher models how two versions of a folktale spread, where $x$ is the number of decades since the tale was first recorded and $y$ is the number of villages where a version is told.\n\n$2y = 5x - 7$\n\n$kx - 4y = 9$",
+  "choices": [
+   "$\\frac{5}{2}$",
+   "$-10$",
+   "$5$",
+   "$10$"
+  ],
+  "answer": "D",
+  "explanation": "The first equation gives $y = \\frac{5}{2}x - \\frac{7}{2}$. The second gives $4y = kx - 9$, so $y = \\frac{k}{4}x - \\frac{9}{4}$. Setting the slopes equal, $\\frac{k}{4} = \\frac{5}{2}$, so $k = 10$. The intercepts, $-\\frac{7}{2}$ and $-\\frac{9}{4}$, are different, so the lines are parallel and distinct and the system has no solution.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$\\frac{5}{2}$ is the slope both lines must share. $k$ is the $x$-coefficient in the second equation, which is 4 times that slope."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost a sign when moving terms across the equals sign. The first equation rearranges to $5x - 2y = 7$. Doubling it gives $10x - 4y = 14$, so $k$ is $+10$. With $-10$ the slopes have opposite signs."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You matched the $x$-coefficients directly even though the equations are in different forms. The $y$-coefficient doubles from $-2$ to $-4$, so the $x$-coefficient must double too. With $k = 5$ the slope is $\\frac{5}{4}$ and the lines cross."
+   }
+  },
+  "id": "orig-no-solution-pa-H-240cbb",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-H-240cbb",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "In the given system of equations, $k$ is a constant. If the system has no solution, what is the value of $k$?",
+  "stimulus": "A textile historian models the output of two weaving workshops, where $x$ is the number of bolts of linen and $y$ is the number of bolts of wool produced in a season.\n\n$\\frac{x}{4} + \\frac{y}{6} = 1$\n\n$3x + ky = 5$",
+  "choices": [
+   "$-2$",
+   "$\\frac{2}{3}$",
+   "$2$",
+   "$\\frac{9}{2}$"
+  ],
+  "answer": "C",
+  "explanation": "Multiply the first equation by 12 to clear the fractions: $3x + 2y = 12$. The $x$-coefficient already matches the second equation, so parallel lines need $k = 2$. The equations are then $3x + 2y = 12$ and $3x + 2y = 5$. Subtracting gives $0 = 7$, which is false, so the system has no solution.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You made a sign error. Both $y$-terms are positive, so $k$ must be positive. With $k = -2$ the slopes have opposite signs and the lines cross."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "$\\frac{2}{3}$ is the ratio of the $y$-coefficient to the $x$-coefficient after you clear the fractions. The $x$-coefficient in the second equation is 3, so $k$ must be $3 \\cdot \\frac{2}{3} = 2$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You read $\\frac{x}{4} + \\frac{y}{6}$ as $4x + 6y$ and solved $\\frac{k}{3} = \\frac{6}{4}$. Dividing by 4 is multiplying by $\\frac{1}{4}$, so the coefficients are in the ratio $\\frac{1}{4} : \\frac{1}{6}$, which is $3 : 2$."
+   }
+  },
+  "id": "orig-no-solution-pa-H-b7ae49",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-H-b7ae49",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ }
+]

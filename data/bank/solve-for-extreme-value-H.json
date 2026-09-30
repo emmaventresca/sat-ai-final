@@ -1,0 +1,381 @@
+[
+ {
+  "stem": "What is the maximum number of benches the planner can include in the design?",
+  "stimulus": "An urban planner is redesigning a pedestrian plaza with a budget of $\\$12{,}000$ for trees and benches. Each tree costs $\\$450$ to plant, and each bench costs $\\$320$ to install. The city's green-space rule requires the plaza to have at least $12$ trees.",
+  "choices": [
+   "$20$",
+   "$21$",
+   "$32$",
+   "$37$"
+  ],
+  "answer": "A",
+  "explanation": "To leave as much money as possible for benches, you plant only the required minimum of $12$ trees, which costs $12(450) = 5{,}400$ dollars. That leaves $12{,}000 - 5{,}400 = 6{,}600$ dollars, so $320b \\le 6{,}600$ and $b \\le 20.625$. The number of benches must be a whole number, and this is a maximum, so you round down to $20$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You rounded $20.625$ up to $21$. Twenty-one benches cost $6{,}720$ dollars, which goes over the $6{,}600$ dollars left for benches. For a maximum, you have to round down."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the $12$ trees to the $20$ benches and gave the total number of items. The question asks only for the number of benches."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You divided the whole budget by the bench price, $12{,}000 \\div 320 = 37.5$, and ignored the rule that the plaza must have at least $12$ trees."
+   }
+  },
+  "id": "orig-solve-for-extr-H-2716c0",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-H-2716c0",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "What is the greatest altitude, in whole kilometers, at which the sensor will still read accurately?",
+  "stimulus": "A meteorologist launches a weather balloon from a site where the air temperature is $18^{\\circ}\\text{C}$. On this day, the temperature falls by $6.5^{\\circ}\\text{C}$ for each kilometer of altitude gained. The balloon's humidity sensor reads accurately only when the air temperature is $-40^{\\circ}\\text{C}$ or warmer.",
+  "choices": [
+   "$3$",
+   "$8$",
+   "$9$",
+   "$58$"
+  ],
+  "answer": "B",
+  "explanation": "The temperature at altitude $h$ kilometers is $18 - 6.5h$, and it must satisfy $18 - 6.5h \\ge -40$. Subtracting $18$ gives $-6.5h \\ge -58$. When you divide by $-6.5$, the sign flips: $h \\le 8.92$. For a maximum, you round down, so the answer is $8$ kilometers.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the temperature gap as $40 - 18 = 22$ degrees, which drops the negative sign on $-40$. The temperature actually has to fall $18 - (-40) = 58$ degrees."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You rounded $8.92$ up to $9$, or you forgot to flip the sign when you divided by $-6.5$. At $9$ km the temperature is $-40.5^{\\circ}\\text{C}$, which is too cold for the sensor."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$58$ is the total temperature drop the sensor can handle, in degrees. You still need to divide it by $6.5$ degrees per kilometer to get the altitude."
+   }
+  },
+  "id": "orig-solve-for-extr-H-cd7c5b",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-H-cd7c5b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "What is the minimum number of parts for which Service A costs less than Service B?",
+  "stimulus": "An orchestra's librarian is choosing between two services for renting the instrumental parts of a newly rediscovered symphony. Service A charges a flat fee of $\\$60$ plus $\\$4.50$ per part. Service B has no flat fee and charges $\\$12$ per part.",
+  "choices": [
+   "$4$",
+   "$5$",
+   "$8$",
+   "$9$"
+  ],
+  "answer": "D",
+  "explanation": "Set up $60 + 4.5p < 12p$. Subtracting $4.5p$ from both sides gives $60 < 7.5p$, so $p > 8$. At exactly $8$ parts the two services both cost $\\$96$, so Service A is not yet cheaper. The smallest whole number greater than $8$ is $9$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the per-part rates, $60 \\div (12 + 4.5) \\approx 3.6$, and rounded up. You should subtract them, because Service A saves $12 - 4.5 = 7.5$ dollars on each part."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You divided the flat fee by Service B's rate, $60 \\div 12 = 5$, and ignored the $\\$4.50$ per part that Service A also charges."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You kept the boundary value. At $8$ parts both services cost $\\$96$, so Service A is equal to Service B, not less. The strict inequality $p > 8$ rules out $8$."
+   }
+  },
+  "id": "orig-solve-for-extr-H-a9f304",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-H-a9f304",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "What is the minimum number of hours the technician must work in a week to earn at least $\\$1{,}150$?",
+  "stimulus": "A warehouse technician earns $\\$22$ per hour for the first $40$ hours worked in a week. Every hour beyond $40$ in that week is paid at an overtime rate of $\\$33$ per hour.",
+  "choices": [
+   "$9$",
+   "$48$",
+   "$49$",
+   "$53$"
+  ],
+  "answer": "C",
+  "explanation": "The first $40$ hours pay $40(22) = 880$ dollars, which leaves $1{,}150 - 880 = 270$ dollars to earn at the overtime rate. Solving $33x \\ge 270$ gives $x \\ge 8.18$, and because this is a minimum you round up to $9$ overtime hours. The total is $40 + 9 = 49$ hours, which pays $880 + 297 = 1{,}177$ dollars.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$9$ is the number of overtime hours only. The question asks for the total hours worked, so you still need to add the first $40$ hours."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You rounded $8.18$ down to $8$ overtime hours. Forty-eight hours pay only $880 + 264 = 1{,}144$ dollars, which is short of $\\$1{,}150$. For a minimum, you round up."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You paid every hour at $\\$22$, so $1{,}150 \\div 22 \\approx 52.3$ and you rounded up to $53$. This ignores the higher overtime rate for hours beyond $40$."
+   }
+  },
+  "id": "orig-solve-for-extr-H-31bfa2",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "fail",
+  "verification": {
+   "id": "orig-solve-for-extr-H-31bfa2",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __num__ __var__ __num__ __var__ __num__ __var__ __var__",
+    "__var__ __num__ __var__ __num__ __var__ __var__ per hour",
+    "per hour what is the minimum number of",
+    "hour what is the minimum number of hours"
+   ]
+  }
+ },
+ {
+  "stem": "What is the maximum number of whole hours the bird can fly nonstop while keeping its body mass at least $215$ grams?",
+  "stimulus": "An ornithologist tracking a migrating godwit estimates that the bird begins a nonstop flight with a body mass of $320$ grams and burns off $7.5$ grams of mass for each hour it flies. To survive the journey, the bird's body mass must stay at least $215$ grams.",
+  "choices": [
+   "$13$",
+   "$14$",
+   "$15$",
+   "$42$"
+  ],
+  "answer": "B",
+  "explanation": "Set up $320 - 7.5h \\ge 215$. Subtracting $320$ gives $-7.5h \\ge -105$. Dividing by $-7.5$ flips the sign: $h \\le 14$. \"At least\" means $\\ge$, so the boundary is allowed. At $14$ hours the mass is exactly $215$ grams, so the maximum is $14$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You treated \"at least $215$ grams\" as a strict inequality and threw out the boundary. At $14$ hours the mass is exactly $215$ grams, and that is allowed."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You probably didn't flip the sign when you divided by $-7.5$, which gives $h \\ge 14$, and then picked the next whole number. At $15$ hours the mass is $207.5$ grams, which is below the limit."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You divided the starting mass by the hourly loss, $320 \\div 7.5 \\approx 42.7$. That is how long it would take the bird to lose all of its mass, and it ignores the $215$-gram floor."
+   }
+  },
+  "id": "orig-solve-for-extr-H-e742ee",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-H-e742ee",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "What is the minimum number of prints the printmaker must sell to guarantee a profit greater than $\\$600$, no matter which price in the range each print sells for?",
+  "stimulus": "A printmaker is producing an edition of linocut prints. Carving the block costs $\\$420$ once, and each print costs $\\$6$ in paper and ink. Depending on the venue, each print sells for anywhere from $\\$35$ to $\\$50$. Profit equals total sales minus total costs.",
+  "choices": [
+   "$24$",
+   "$30$",
+   "$35$",
+   "$36$"
+  ],
+  "answer": "D",
+  "explanation": "To guarantee the profit, you assume every print sells at the lowest price, $\\$35$. The profit on $n$ prints is $35n - 6n - 420 = 29n - 420$, and you need $29n - 420 > 600$. That gives $29n > 1{,}020$, so $n > 35.17$. Rounding up gives $36$ prints, for a profit of $29(36) - 420 = 624$ dollars.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used the highest price, $\\$50$. That gives $44n > 1{,}020$ and $n > 23.2$. A guarantee has to hold even when every print sells for only $\\$35$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You left out the $\\$6$ cost per print and solved $35n > 1{,}020$. Each print actually adds only $35 - 6 = 29$ dollars of profit."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You rounded $35.17$ down. Thirty-five prints give a profit of $29(35) - 420 = 595$ dollars, which is not greater than $\\$600$. For a minimum, you round up."
+   }
+  },
+  "id": "orig-solve-for-extr-H-0a5b99",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-H-0a5b99",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "What is the maximum number of whole days the station can record before its data card must be replaced?",
+  "stimulus": "A remote seismograph station stores its readings on a $32$-gigabyte (GB) data card. Calibration files that take up $2$ GB are loaded onto the card before recording begins, and the station then records $0.4$ GB of ground-motion data per day. To prevent write errors, at least $3$ GB of the card must remain free at all times.",
+  "choices": [
+   "$27$",
+   "$67$",
+   "$68$",
+   "$75$"
+  ],
+  "answer": "B",
+  "explanation": "The data used after $d$ days is $2 + 0.4d$, and it can be at most $32 - 3 = 29$ GB. So $2 + 0.4d \\le 29$, which gives $0.4d \\le 27$ and $d \\le 67.5$. For a maximum, you round down to $67$ days.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$27$ is the number of gigabytes available for daily recordings. You still need to divide it by $0.4$ GB per day to get the number of days."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You rounded $67.5$ up. After $68$ days the card holds $29.2$ GB, which leaves less than the required $3$ GB free."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You divided $30$ GB by $0.4$. That subtracts the calibration files but forgets the $3$ GB that must stay free."
+   }
+  },
+  "id": "orig-solve-for-extr-H-41f93a",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-H-41f93a",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "Which inequality gives all values of $w$ for which Team B's dictionary has more entries than Team A's?",
+  "stimulus": "Two teams of linguists are compiling dictionaries of an endangered language. Team A's dictionary currently has $2{,}600$ entries, and the team adds $50$ entries per week. Team B's dictionary currently has $1{,}850$ entries, and the team adds $75$ entries per week. Let $w$ be the number of weeks from now.",
+  "choices": [
+   "$w > 10$",
+   "$w < 30$",
+   "$w > 30$",
+   "$w \\ge 30$"
+  ],
+  "answer": "C",
+  "explanation": "Set up $1{,}850 + 75w > 2{,}600 + 50w$. Subtracting $50w$ and $1{,}850$ from both sides gives $25w > 750$, so $w > 30$. At exactly $30$ weeks both dictionaries have $4{,}100$ entries, so $30$ itself is not included.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You divided the $750$-entry gap by Team B's rate alone, $750 \\div 75 = 10$. This ignores that Team A keeps adding $50$ entries per week, so Team B closes the gap by only $25$ entries per week."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You reversed the direction of the inequality. Before week $30$, Team A is still ahead, so $w < 30$ gives the weeks when Team B has fewer entries."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You kept the boundary. At $w = 30$ the two dictionaries are tied at $4{,}100$ entries, and \"more than\" calls for a strict inequality."
+   }
+  },
+  "id": "orig-solve-for-extr-H-b53e00",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-H-b53e00",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": false,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "adjudication": {
+    "id": "orig-solve-for-extr-H-b53e00",
+    "answer": "C",
+    "verdict": "clear",
+    "why": "1850 + 75w > 2600 + 50w gives 25w > 750, so w > 30; A is wrong, and D is wrong because the counts are equal at w = 30."
+   }
+  }
+ }
+]

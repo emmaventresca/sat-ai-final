@@ -1,0 +1,374 @@
+[
+ {
+  "stem": "What is the distance, in kilometers, between station B and the hypocenter?",
+  "stimulus": "An earthquake's hypocenter is $F$, which lies directly below its epicenter $E$ on the ground. Seismic station A is on level ground $20$ kilometers from $E$, and the straight-line distance from station A to $F$ is $29$ kilometers. Seismic station B is also on level ground, $72$ kilometers from $E$. Treat the ground as a flat plane.",
+  "choices": [
+   "$21$",
+   "$75$",
+   "$\\sqrt{6025}$",
+   "$\\sqrt{6425}$"
+  ],
+  "answer": "B",
+  "explanation": "Segment $EF$ is vertical, so it makes a right angle with the ground. In the triangle with station A, the $29$ km distance to $F$ is the hypotenuse, so you subtract to find the depth: $EF = \\sqrt{29^2 - 20^2} = \\sqrt{841 - 400} = \\sqrt{441} = 21$ km. For station B, the two legs are $72$ and $21$, so the distance is $\\sqrt{72^2 + 21^2} = \\sqrt{5184 + 441} = \\sqrt{5625} = 75$ km.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$21$ km is the depth of the hypocenter. You found that from station A and stopped there, before using it as a leg in station B's triangle."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You used $29$ as the depth. But $29$ km is the slanted distance from station A to the hypocenter, not $EF$, so you got $\\sqrt{72^2 + 29^2}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "In station A's triangle you added the squares, $29^2 + 20^2 = 1241$, when you should have subtracted. The $29$ km distance is the hypotenuse, so the depth is a leg. That wrong depth squared then carried into $\\sqrt{5184 + 1241}$."
+   }
+  },
+  "id": "orig-pythagorean-mi-H-f9e455",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-H-f9e455",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "Which equation correctly expresses $h$ in terms of $c$ and $w$?",
+  "stimulus": "A textile historian is restoring a rectangular tapestry that is $w$ feet wide and $h$ feet tall. A support cord of length $c$ feet is stretched diagonally from one corner of the tapestry to the opposite corner, where $c$, $w$, and $h$ are positive numbers.",
+  "choices": [
+   "$h = c^2 - w^2$",
+   "$h = \\sqrt{c^2 + w^2}$",
+   "$h = \\sqrt{c^2 - w^2}$",
+   "$h = \\sqrt{w^2 - c^2}$"
+  ],
+  "answer": "C",
+  "explanation": "The diagonal cord cuts the rectangle into two right triangles, and the cord is the hypotenuse of each. So $w^2 + h^2 = c^2$. Subtract $w^2$ from both sides to get $h^2 = c^2 - w^2$. Then take the positive square root: $h = \\sqrt{c^2 - w^2}$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$c^2 - w^2$ equals $h^2$, not $h$. You set up the equation correctly but did not take the square root at the end."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the squares, which treats the diagonal as a leg. The diagonal of a rectangle is always the hypotenuse, and this expression would give a length longer than the cord itself."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted in the wrong order. Since the hypotenuse $c$ is longer than $w$, $w^2 - c^2$ is negative, and this expression isn't even a real number."
+   }
+  },
+  "id": "orig-pythagorean-mi-H-c3a76d",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "fail",
+  "verification": {
+   "id": "orig-pythagorean-mi-H-c3a76d",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __var__ and __var__ are positive numbers which"
+   ]
+  }
+ },
+ {
+  "stem": "Which of the following is closest to the number of meters saved by walking the diagonal path instead of walking along the two sides?",
+  "stimulus": "A city planner is designing a rectangular plaza. One side of the plaza is $50$ meters long. A straight pedestrian path will run diagonally across the plaza from one corner to the opposite corner, and the path will be $130$ meters long. A pedestrian could walk the diagonal path or walk along two adjacent sides of the plaza between the same two corners.",
+  "choices": [
+   "$40$",
+   "$59$",
+   "$120$",
+   "$170$"
+  ],
+  "answer": "A",
+  "explanation": "The diagonal path is the hypotenuse, so the missing side is a leg: $\\sqrt{130^2 - 50^2} = \\sqrt{16900 - 2500} = \\sqrt{14400} = 120$ meters. Walking along two sides covers $50 + 120 = 170$ meters. The diagonal saves $170 - 130 = 40$ meters.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the squares to find the missing side, getting $\\sqrt{19400} \\approx 139.3$, as if the diagonal were a leg. Then $50 + 139.3 - 130 \\approx 59$. The diagonal is the hypotenuse, so you should have subtracted."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "$120$ meters is the length of the unknown side. You found it correctly but didn't go on to compare the two routes."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$170$ meters is the full length of the route along the two sides. The question asks how much shorter the diagonal is, not how long the side route is."
+   }
+  },
+  "id": "orig-pythagorean-mi-H-718724",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-H-718724",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "What is the distance, in kilometers, that the worker travels due north?",
+  "stimulus": "A labour economist studying commuting costs maps one factory worker's daily route. The worker travels $8$ kilometers due east from home and then travels due north until reaching the factory. The straight-line distance from the worker's home to the factory is $4\\sqrt{5}$ kilometers.",
+  "choices": [
+   "$16$",
+   "$12$",
+   "$6\\sqrt{2}$",
+   "$4$"
+  ],
+  "answer": "D",
+  "explanation": "The east and north legs meet at a right angle, so the straight-line distance of $4\\sqrt{5}$ km is the hypotenuse. First, $(4\\sqrt{5})^2 = 16 \\cdot 5 = 80$. The north leg is $\\sqrt{80 - 8^2} = \\sqrt{80 - 64} = \\sqrt{16} = 4$ km.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$16$ is the square of the north distance. You correctly got $80 - 64 = 16$ but didn't take the square root."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $80 + 64 = 144$ and took the square root. That treats the straight-line distance as a leg, when it's the hypotenuse, so you should have subtracted."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted $8$ instead of $8^2$, getting $\\sqrt{80 - 8} = \\sqrt{72}$. Every side has to be squared before you subtract."
+   }
+  },
+  "id": "orig-pythagorean-mi-H-fe7f1f",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-H-fe7f1f",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "Which of the following is closest to the length, in meters, of the training field?",
+  "stimulus": "A sports scientist marks out a rectangular training field for a sprint drill. The field is $11$ meters wide, and an athlete sprints along a diagonal of the field, from one corner to the opposite corner, a distance of $25$ meters.",
+  "choices": [
+   "$14.0$",
+   "$22.4$",
+   "$27.3$",
+   "$36.0$"
+  ],
+  "answer": "B",
+  "explanation": "The diagonal of a rectangle is the hypotenuse of the right triangle it forms with the length and the width. So the length is $\\sqrt{25^2 - 11^2} = \\sqrt{625 - 121} = \\sqrt{504} \\approx 22.4$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the side lengths directly, $25 - 11 = 14$, without squaring them first. The Pythagorean theorem works with the squares of the sides."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You calculated $\\sqrt{625 + 121} = \\sqrt{746}$, which treats the $25$ m diagonal as a leg. The diagonal is the hypotenuse, so the missing length must be shorter than $25$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the two given lengths, $25 + 11 = 36$. That isn't a Pythagorean relationship, and no side of the field can be longer than its diagonal."
+   }
+  },
+  "id": "orig-pythagorean-mi-H-509d9f",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "fail",
+  "verification": {
+   "id": "orig-pythagorean-mi-H-509d9f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "of the following is closest to the length"
+   ]
+  }
+ },
+ {
+  "stem": "What is the length, in decimeters, of the slab?",
+  "stimulus": "A paleobotanist is cataloguing a rectangular slab of shale that holds a fossilized fern frond. The slab is $3\\sqrt{2}$ decimeters wide. The frond lies along a diagonal of the slab, which runs from one corner to the opposite corner and is $3\\sqrt{6}$ decimeters long.",
+  "choices": [
+   "$2\\sqrt{3}$",
+   "$6\\sqrt{2}$",
+   "$6$",
+   "$36$"
+  ],
+  "answer": "C",
+  "explanation": "The diagonal is the hypotenuse. Square each given side: $(3\\sqrt{6})^2 = 9 \\cdot 6 = 54$ and $(3\\sqrt{2})^2 = 9 \\cdot 2 = 18$. The length is $\\sqrt{54 - 18} = \\sqrt{36} = 6$ decimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You squared only the radicals and not the coefficient $3$, so you got $18$ and $6$ instead of $54$ and $18$. That gave $\\sqrt{18 - 6} = \\sqrt{12}$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added $54 + 18 = 72$, which treats the diagonal as a leg. The diagonal of a rectangle is the hypotenuse, so the missing side comes from subtracting."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$36$ is the square of the length. You found $54 - 18 = 36$ but didn't take the square root."
+   }
+  },
+  "id": "orig-pythagorean-mi-H-5cea0a",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-H-5cea0a",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "What is the straight-line distance, in paces, between the standing stone and the hawthorn?",
+  "stimulus": "A folklorist is retracing a village legend on flat ground. According to the legend, a traveler starts at a standing stone, walks $24$ paces due north, and then walks due east until reaching a well that is exactly $40$ paces from the stone in a straight line. From the well, the traveler walks $36$ paces due north to an old hawthorn tree.",
+  "choices": [
+   "$68$",
+   "$32$",
+   "$76$",
+   "$60$"
+  ],
+  "answer": "A",
+  "explanation": "In the first triangle, the $40$ paces from stone to well is the hypotenuse, so the eastward leg is $\\sqrt{40^2 - 24^2} = \\sqrt{1600 - 576} = \\sqrt{1024} = 32$ paces. The hawthorn is $24 + 36 = 60$ paces north of the stone and $32$ paces east of it. The distance is $\\sqrt{60^2 + 32^2} = \\sqrt{3600 + 1024} = \\sqrt{4624} = 68$ paces.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "$32$ paces is how far east the traveler walks. You found it correctly and stopped before finding the distance to the hawthorn."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "In the first triangle you added the squares, $40^2 + 24^2 = 2176$, as if the $40$ paces were a leg. Using that as the east distance squared gives $\\sqrt{3600 + 2176} = 76$. The $40$ paces is the hypotenuse, so you should have subtracted."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "$60$ paces is only the total northward distance. The hawthorn is also $32$ paces east of the stone, so the straight-line distance has to include that leg."
+   }
+  },
+  "id": "orig-pythagorean-mi-H-74a885",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-H-74a885",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "Which of the following is closest to the decrease, in meters, in the balloon's height above the ground?",
+  "stimulus": "A meteorologist launches a weather balloon attached to the ground by a taut, straight $260$-meter cable. At first, the balloon is directly above a point on level ground $100$ meters from the cable's anchor. After the wind strengthens, the cable is still taut and straight, and the balloon is directly above a point $140$ meters from the anchor.",
+  "choices": [
+   "$16.7$",
+   "$20.9$",
+   "$40.0$",
+   "$219.1$"
+  ],
+  "answer": "B",
+  "explanation": "The cable is the hypotenuse both times. The first height is $\\sqrt{260^2 - 100^2} = \\sqrt{57600} = 240$ meters. The second height is $\\sqrt{260^2 - 140^2} = \\sqrt{48000} \\approx 219.1$ meters. The height decreases by about $240 - 219.1 = 20.9$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the squares both times, getting $\\sqrt{77600} \\approx 278.6$ and $\\sqrt{87200} \\approx 295.3$. That treats the cable as a leg. The cable is the hypotenuse, so each height is found by subtracting."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "$40$ meters is how much the horizontal distance changed, from $100$ to $140$. A change in one leg doesn't produce the same change in the other leg."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$219.1$ meters is the balloon's new height. You still need to subtract it from the original height of $240$ meters to get the decrease."
+   }
+  },
+  "id": "orig-pythagorean-mi-H-c5f35a",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-H-c5f35a",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ }
+]

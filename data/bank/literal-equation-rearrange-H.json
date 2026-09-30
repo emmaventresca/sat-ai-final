@@ -1,0 +1,373 @@
+[
+ {
+  "stem": "The given equation relates the positive numbers $T$, $a$, and $b$. Which equation correctly expresses $a$ in terms of $T$ and $b$?",
+  "stimulus": "A printmaking studio has two etching presses. Working alone, the older press finishes a run of posters in $a$ hours and the newer press finishes the same run in $b$ hours. Working together, they finish the run in $T$ hours, where $\\frac{1}{T} = \\frac{1}{a} + \\frac{1}{b}$.",
+  "choices": [
+   "$a = T - b$",
+   "$a = \\frac{b - T}{Tb}$",
+   "$a = \\frac{Tb}{b - T}$",
+   "$a = \\frac{Tb}{T - b}$"
+  ],
+  "answer": "C",
+  "explanation": "First isolate the reciprocal: $\\frac{1}{a} = \\frac{1}{T} - \\frac{1}{b}$. Over the common denominator $Tb$ this is $\\frac{1}{a} = \\frac{b - T}{Tb}$. Then take reciprocals of both sides to get $a = \\frac{Tb}{b - T}$. As a check, with $T = 2$ and $b = 3$ the original equation gives $\\frac{1}{a} = \\frac{1}{6}$, so $a = 6$, and $\\frac{2 \\cdot 3}{3 - 2} = 6$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped each fraction separately, turning $\\frac{1}{T} = \\frac{1}{a} + \\frac{1}{b}$ into $T = a + b$. You can't undo a sum of reciprocals one term at a time."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is $\\frac{1}{a}$, not $a$. You combined the fractions correctly but skipped the last step of taking the reciprocal."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You reversed the subtraction when combining $\\frac{1}{T} - \\frac{1}{b}$. The numerator should be $b - T$. Your version gives a negative time, because two presses together finish faster than either press alone, so $T < b$."
+   }
+  },
+  "id": "orig-literal-equati-H-7b6dc7",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-H-7b6dc7",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "The given equation relates the positive numbers $P$, $d$, $v$, and $s$. Which equation correctly expresses $v$ in terms of $P$, $d$, and $s$?",
+  "stimulus": "A meteorologist estimates the total pressure $P$ on a weather-station sensor using $P = \\frac{d v^2}{2} + s$. Here $d$ is the air density, $v$ is the wind speed, and $s$ is the static air pressure.",
+  "choices": [
+   "$v = \\sqrt{\\frac{2(P - s)}{d}}$",
+   "$v = \\sqrt{\\frac{2P}{d} - s}$",
+   "$v = \\sqrt{\\frac{P - s}{2d}}$",
+   "$v = \\frac{2(P - s)}{d}$"
+  ],
+  "answer": "A",
+  "explanation": "First subtract $s$ to get $P - s = \\frac{d v^2}{2}$. Multiply both sides by $2$ and divide by $d$: $v^2 = \\frac{2(P - s)}{d}$. Because $v$ is positive, keep the positive square root: $v = \\sqrt{\\frac{2(P - s)}{d}}$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by $\\frac{2}{d}$ before moving $s$, so $\\frac{2}{d}$ never reached $s$. Move $s$ first, then undo the coefficient on $v^2$, so that it applies to the whole of $P - s$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided by 2 when you should have multiplied. Because $v^2$ is divided by 2, the 2 has to go into the numerator on the other side."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "This is $v^2$, not $v$. You isolated the squared term correctly but left out the final square root."
+   }
+  },
+  "id": "orig-literal-equati-H-b3d8cd",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-H-b3d8cd",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "The given equation relates the positive numbers $R$, $w$, and $n$. Which equation correctly expresses $w$ in terms of $R$ and $n$?",
+  "stimulus": "A linguist compares a bilingual corpus in which $w$ sentences are in Welsh and $n$ sentences are in English, where $w > n$. The linguist measures the corpus's imbalance with the index $R = \\frac{w - n}{w + n}$.",
+  "choices": [
+   "$w = \\frac{n(1 - R)}{1 + R}$",
+   "$w = n(1 + R)$",
+   "$w = \\frac{n(1 + R)}{R - 1}$",
+   "$w = \\frac{n(1 + R)}{1 - R}$"
+  ],
+  "answer": "D",
+  "explanation": "Multiply both sides by $w + n$ to get $Rw + Rn = w - n$. Collect the $w$ terms on one side: $Rn + n = w - Rw$. Factor both sides: $n(1 + R) = w(1 - R)$. Divide by $1 - R$: $w = \\frac{n(1 + R)}{1 - R}$. As a check, with $n = 1$ and $R = \\frac{1}{2}$ this gives $w = 3$, and $\\frac{3 - 1}{3 + 1} = \\frac{1}{2}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You mixed up the signs when collecting terms, so the numerator and denominator traded places. Test $n = 1$ and $R = \\frac{1}{2}$: this choice gives $w = \\frac{1}{3}$, which is smaller than $n$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You moved $Rw$ but then treated $w - Rw$ as just $w$. Because $w$ appears in two terms, you have to factor it out as $w(1 - R)$ and divide by $1 - R$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You dropped a sign when you moved $Rw$ across. Since $R < 1$, the denominator $R - 1$ is negative, so this choice makes $w$ negative, which breaks the condition that $w$ is positive."
+   }
+  },
+  "id": "orig-literal-equati-H-2a73eb",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-H-2a73eb",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "The given equation relates the positive numbers $C$, $a$, $b$, $x$, and $y$. Which equation correctly expresses $x$ in terms of $C$, $a$, $b$, and $y$?",
+  "stimulus": "An agricultural scientist blends $x$ kilograms of fertilizer that is $a$ percent nitrogen with $y$ kilograms of fertilizer that is $b$ percent nitrogen, where $b < a$. The blend is $C$ percent nitrogen, where $b < C < a$ and $C = \\frac{ax + by}{x + y}$.",
+  "choices": [
+   "$x = \\frac{Cy - by}{a}$",
+   "$x = \\frac{y(C - b)}{a - C}$",
+   "$x = \\frac{y(a - C)}{C - b}$",
+   "$x = \\frac{C - b}{a - C}$"
+  ],
+  "answer": "B",
+  "explanation": "Multiply both sides by $x + y$ to get $Cx + Cy = ax + by$. Collect the $x$ terms on one side: $Cy - by = ax - Cx$. Factor both sides: $y(C - b) = x(a - C)$. Divide by $a - C$: $x = \\frac{y(C - b)}{a - C}$. As a check, with $a = 10$, $b = 2$, $C = 6$ and $y = 1$ this gives $x = 1$, and $\\frac{10 + 2}{2} = 6$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided by $a$ before collecting every $x$ term, so the $Cx$ from the left side was lost. Collect $ax - Cx$ first, then factor out $x$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the fraction in the last step. From $y(C - b) = x(a - C)$, dividing by $a - C$ puts $C - b$ in the numerator."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the factor $y$. This choice is $\\frac{x}{y}$, the ratio of the two amounts, not $x$ itself."
+   }
+  },
+  "id": "orig-literal-equati-H-651974",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-H-651974",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "The given equation relates the positive numbers $U$, $V$, $s$, and $K$. Which equation correctly expresses $s$ in terms of $U$, $V$, and $K$?",
+  "stimulus": "An ecologist models how quickly a pond alga absorbs phosphate. The uptake rate is $U = \\frac{Vs}{K + s}$, where $s$ is the phosphate concentration, $V$ is the maximum possible uptake rate, and $K$ is a constant for the species. The uptake rate $U$ is always less than $V$.",
+  "choices": [
+   "$s = \\frac{UK}{V}$",
+   "$s = \\frac{UK}{U - V}$",
+   "$s = \\frac{UK}{V - U}$",
+   "$s = \\frac{K(V - U)}{U}$"
+  ],
+  "answer": "C",
+  "explanation": "Multiply both sides by $K + s$ to get $UK + Us = Vs$. Collect the $s$ terms on one side: $UK = Vs - Us = s(V - U)$. Divide by $V - U$: $s = \\frac{UK}{V - U}$. This is positive because $U < V$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided by $V$ without collecting both $s$ terms, so you lost the $Us$ term. Because $s$ appears on both sides, you have to move $Us$ across and factor out $s$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You reversed the subtraction when factoring. Since $U < V$, the denominator $U - V$ is negative, so this choice makes the concentration negative."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "This expression is $K$ with $s$ written in place of $K$. Solving the equation for $K$ gives $K = \\frac{s(V - U)}{U}$, and this choice is that result with the two letters swapped, so you answered for the wrong variable."
+   }
+  },
+  "id": "orig-literal-equati-H-0de4fa",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-H-0de4fa",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "The given equation relates the positive numbers $d$, $p$, and $q$. Which equation correctly expresses $d$ in terms of $p$ and $q$?",
+  "stimulus": "A folklorist builds a spread index $d$ for a trickster tale. It combines $p$, the number of villages where the tale was recorded in spoken form, and $q$, the number of villages where it appears in written collections, using $\\frac{1}{d^2} = \\frac{1}{p} + \\frac{1}{q}$.",
+  "choices": [
+   "$d = \\sqrt{p + q}$",
+   "$d = \\frac{pq}{p + q}$",
+   "$d = \\sqrt{\\frac{p + q}{pq}}$",
+   "$d = \\sqrt{\\frac{pq}{p + q}}$"
+  ],
+  "answer": "D",
+  "explanation": "Combine the right side over the common denominator $pq$: $\\frac{1}{d^2} = \\frac{p + q}{pq}$. Take reciprocals to get $d^2 = \\frac{pq}{p + q}$. Because $d$ is positive, keep the positive root: $d = \\sqrt{\\frac{pq}{p + q}}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped each fraction separately, turning $\\frac{1}{d^2} = \\frac{1}{p} + \\frac{1}{q}$ into $d^2 = p + q$. You have to combine the sum of reciprocals into a single fraction before you take the reciprocal."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is $d^2$, not $d$. You took the reciprocal correctly but left out the final square root."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the square root without taking the reciprocal first. Your expression is actually $\\frac{1}{d}$, not $d$."
+   }
+  },
+  "id": "orig-literal-equati-H-78eed1",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-H-78eed1",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ },
+ {
+  "stem": "The given equation relates the positive numbers $S$, $a$, and $b$. Which equation correctly expresses $a$ in terms of $S$ and $b$?",
+  "stimulus": "An urban planner studies a bus route. Buses travel outbound at an average speed of $a$ kilometers per hour and return along the same streets at $b$ kilometers per hour. The average speed for the whole round trip is $S = \\frac{2ab}{a + b}$ kilometers per hour.",
+  "choices": [
+   "$a = \\frac{Sb}{2b - S}$",
+   "$a = 2S - b$",
+   "$a = \\frac{Sb}{2b + S}$",
+   "$a = \\frac{2b - S}{Sb}$"
+  ],
+  "answer": "A",
+  "explanation": "Multiply both sides by $a + b$ to get $Sa + Sb = 2ab$. Collect the $a$ terms on one side: $Sb = 2ab - Sa = a(2b - S)$. Divide by $2b - S$: $a = \\frac{Sb}{2b - S}$. As a check, with $a = 2$ and $b = 6$ the formula gives $S = 3$, and $\\frac{3 \\cdot 6}{12 - 3} = 2$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated $S$ as the ordinary average $\\frac{a + b}{2}$ and solved that equation instead. The given formula is a product divided by a sum, so you have to clear the denominator and factor out $a$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the minus sign when you moved $Sa$ to the side with $2ab$. The factored form is $a(2b - S)$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the fraction when you divided. This choice is $\\frac{1}{a}$, not $a$."
+   }
+  },
+  "id": "orig-literal-equati-H-4dbc72",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "fail",
+  "verification": {
+   "id": "orig-literal-equati-H-4dbc72",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "at an average speed of __var__ kilometers per",
+    "an average speed of __var__ kilometers per hour"
+   ]
+  }
+ },
+ {
+  "stem": "The given equation relates the positive numbers $M$, $R$, and $r$. Which equation correctly expresses $r$ in terms of $M$ and $R$?",
+  "stimulus": "An archaeologist excavates the ring-shaped floor of a round house, between an outer wall of radius $R$ meters and a central hearth of radius $r$ meters, where $r < R$. The area of the excavated ring, in square meters, is $M = \\pi(R^2 - r^2)$.",
+  "choices": [
+   "$r = R - \\sqrt{\\frac{M}{\\pi}}$",
+   "$r = \\sqrt{R^2 - \\frac{M}{\\pi}}$",
+   "$r = \\sqrt{\\frac{M}{\\pi} - R^2}$",
+   "$r = \\sqrt{\\frac{M - R^2}{\\pi}}$"
+  ],
+  "answer": "B",
+  "explanation": "Divide both sides by $\\pi$ to get $\\frac{M}{\\pi} = R^2 - r^2$. Rearrange: $r^2 = R^2 - \\frac{M}{\\pi}$. Because $r$ is positive, keep the positive root: $r = \\sqrt{R^2 - \\frac{M}{\\pi}}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the square root of each term separately, as if $\\sqrt{R^2 - r^2}$ were $R - r$. A square root doesn't split across a subtraction."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You got the signs backwards when you isolated $r^2$. Since the ring's area is less than the full circle's area $\\pi R^2$, the quantity $\\frac{M}{\\pi} - R^2$ is negative, and you can't take its square root."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You rearranged before dividing by $\\pi$, as if $\\pi$ multiplied only $r^2$. Because $\\pi$ multiplies all of $R^2 - r^2$, you have to divide $M$ by $\\pi$ first."
+   }
+  },
+  "id": "orig-literal-equati-H-ec0ba7",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-H-ec0ba7",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": []
+  }
+ }
+]
