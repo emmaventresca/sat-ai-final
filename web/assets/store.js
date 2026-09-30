@@ -101,6 +101,19 @@ class LocalStore {
 
   async assignments() { return readLS('satai.assignments', []); }
 
+  /** What this student has been assigned, newest first. */
+  async myAssignments() {
+    return readLS('satai.assignments', [])
+      .slice().reverse();
+  }
+
+  async completeAssignment(id) {
+    const a = readLS('satai.assignments', []);
+    const row = a.find((x) => String(x.id) === String(id));
+    if (row) { row.completed_at = new Date().toISOString(); writeLS('satai.assignments', a); }
+    return row;
+  }
+
   async studentData(id) {
     return {
       mastery: readLS(LS.mastery, {}),
@@ -250,6 +263,24 @@ class SupabaseStore {
     return data ?? [];
   }
 
+  /** What this student has been assigned. RLS scopes it to them. */
+  async myAssignments() {
+    const { data, error } = await this.sb.from('assignments')
+      .select('*').eq('student_id', this.uid)
+      .order('created_at', { ascending: false });
+    if (error) throw error;
+    return data ?? [];
+  }
+
+  /** Marking an assignment done is the one student-side write allowed on it. */
+  async completeAssignment(id) {
+    const { data, error } = await this.sb.from('assignments')
+      .update({ completed_at: new Date().toISOString() })
+      .eq('id', id).eq('student_id', this.uid).select().maybeSingle();
+    if (error) throw error;
+    return data;
+  }
+
   /** Teacher view: the students on this teacher's roster. */
   async roster() {
     const { data, error } = await this.sb.from('roster')
@@ -288,6 +319,8 @@ export class PreviewStore {
   async fingerprints() { return this.seed.fingerprints ?? []; }
   async roster() { return []; }
   async studentData() { return { mastery: {}, attempts: [], fingerprints: [] }; }
+  async myAssignments() { return this.seed.assignments ?? []; }
+  async completeAssignment() { /* discarded, like every preview write */ }
 
   // Writes are accepted and discarded, so the preview behaves normally on
   // screen - a practice round still grades and advances - while nothing leaves

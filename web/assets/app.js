@@ -212,6 +212,9 @@ function screenHome() {
         <p class="tiny muted" style="margin:6px 0 0">${right} of ${done} correct so far</p>` : ''}
     </div>
 
+    ${openAssignments().length ? `<h2>Set by your teacher</h2>
+      ${openAssignments().map((a) => assignmentTile(a)).join('')}` : ''}
+
     ${lead.length ? `<h2>Start here</h2>
       ${lead.map((l) => tile(l, null)).join('')}` : ''}
 
@@ -227,6 +230,9 @@ function screenHome() {
   const out = $('#out');
   if (out) out.onclick = async () => { await store.signOut(); location.reload(); };
   $('#settings').onclick = () => { state.screen = 'setup'; render(); };
+  for (const el of document.querySelectorAll('[data-assignment]')) {
+    el.onclick = () => startAssignment(el.dataset.assignment);
+  }
   for (const el of document.querySelectorAll('[data-lesson]')) {
     el.onclick = () => {
       state.lesson = el.dataset.lesson;
@@ -234,6 +240,39 @@ function screenHome() {
       render();
     };
   }
+}
+
+/** Assignments not yet finished, newest first. */
+function openAssignments() {
+  return (state.assignments ?? []).filter((a) => !a.completed_at);
+}
+
+/** The items an assignment covers: explicit ids first, else its filter. */
+export function assignedItems(a, items) {
+  const f = a.filter ?? {};
+  if (f.item_ids?.length) {
+    const want = new Set(f.item_ids);
+    const hit = items.filter((i) => want.has(i.id));
+    if (hit.length) return hit;
+  }
+  const subs = new Set(f.subtypes ?? []);
+  return items.filter((i) =>
+    (!subs.size || subs.has(i.subtype)) &&
+    (!f.difficulty || i.difficulty === f.difficulty));
+}
+
+function assignmentTile(a) {
+  const n = assignedItems(a, state.items).length;
+  const f = a.filter ?? {};
+  return `<button class="tile assigned" data-assignment="${esc(String(a.id))}">
+    <div class="t">${esc(a.title ?? 'Assigned practice')}</div>
+    <div class="d">${n ? `${n} question${n === 1 ? '' : 's'}` : 'No questions available yet'}
+      ${f.difficulty ? ` &middot; ${esc(f.difficulty)} tier` : ''}</div>
+    ${f.notes || a.notes ? `<div class="d" style="margin-top:6px">${esc(f.notes ?? a.notes)}</div>` : ''}
+    <div class="meta"><span class="badge on">Assigned</span>
+      ${(f.subtypes ?? []).slice(0, 3).map((sl) =>
+        `<span class="badge">${esc(state.subtypeInfo?.[sl]?.name ?? sl)}</span>`).join('')}</div>
+  </button>`;
 }
 
 function tile(lesson, tier) {
@@ -316,6 +355,27 @@ function tierExplanation(lesson, tier) {
 // practice
 // ---------------------------------------------------------------------------
 
+/**
+ * Practise an assignment. The set is what the teacher approved, so it is used
+ * as given rather than re-ranked - the engine chooses what to study when
+ * nobody has chosen for the student, not instead of them.
+ */
+function startAssignment(id) {
+  const a = (state.assignments ?? []).find((x) => String(x.id) === String(id));
+  if (!a) return;
+  const items = assignedItems(a, state.items);
+  if (!items.length) {
+    alert('No questions are available for this assignment yet.');
+    return;
+  }
+  state.round = {
+    items: items.slice(0, 40), at: 0, answers: [],
+    startedAt: Date.now(), assignment: a,
+  };
+  state.screen = 'practice';
+  render();
+}
+
 function startRound(skill_cd, tier) {
   const pool = state.items.filter((i) => i.skill_cd === skill_cd);
   const chosen = selectRound(pool, ctx(), { size: window.CONFIG.ROUND_SIZE, maxPerSkill: 99 });
@@ -373,7 +433,10 @@ function screenPractice() {
     </div>` : ''}
   </div>`;
 
-  $('#quit').onclick = () => { state.round = null; state.screen = 'lesson'; render(); };
+  $('#quit').onclick = () => {
+    const back = state.round?.assignment ? 'home' : 'lesson';
+    state.round = null; state.screen = back; render();
+  };
   for (const b of document.querySelectorAll('.choice')) {
     b.onclick = () => answer(b.dataset.key);
   }
@@ -467,6 +530,10 @@ function otherChoices(item, picked) {
 
 function screenResult() {
   const r = state.round;
+  if (r.assignment && !r.assignment.completed_at) {
+    r.assignment.completed_at = new Date().toISOString();
+    store.completeAssignment(r.assignment.id).catch(() => {});
+  }
   const right = r.items.filter((it, i) => r.answers[i] === it.answer).length;
   const pct = Math.round(right / r.items.length * 100);
 
@@ -486,7 +553,9 @@ function screenResult() {
   </div></div>`;
 
   const src = state.lessons.find((l) => l.id === state.lesson);
-  $('#again').onclick = () => startRound(src.skill_cd, focusTier(src, ctx()));
+  $('#again').onclick = () => (r.assignment
+    ? startAssignment(r.assignment.id)
+    : startRound(src.skill_cd, focusTier(src, ctx())));
   $('#lesson').onclick = () => { state.round = null; state.screen = 'lesson'; render(); };
   $('#home').onclick = () => { state.round = null; state.screen = 'home'; render(); };
 }
@@ -547,9 +616,11 @@ async function boot() {
     state.profile = await store.profile();
     if (!state.profile) { state.screen = 'signin'; return render(); }
 
-    [state.mastery, state.attempts, state.fingerprints] = await Promise.all([
-      store.mastery(), store.attempts(), store.fingerprints(),
-    ]);
+    [state.mastery, state.attempts, state.fingerprints, state.assignments] =
+      await Promise.all([
+        store.mastery(), store.attempts(), store.fingerprints(),
+        store.myAssignments().catch(() => []),
+      ]);
 
     state.screen = state.profile.target_rw && state.profile.target_math ? 'home' : 'setup';
     render();
