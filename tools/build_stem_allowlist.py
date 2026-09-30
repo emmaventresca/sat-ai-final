@@ -19,6 +19,9 @@ what "feels generic".
 import glob, json, os, re, sys
 from collections import Counter
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from sanitize import sanitize, to_text
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CORPUS = os.path.join(ROOT, "corpus", "bank")
 TAG = re.compile(r"<[^>]+>")
@@ -60,6 +63,8 @@ def main():
 
     df = Counter()
     items = 0
+    # Instruction language lives in the stem. Passages and rationales are never
+    # boilerplate, so they are not considered.
     for p in glob.glob(os.path.join(CORPUS, "*", "*.json")):
         if os.path.basename(p).startswith("_"):
             continue
@@ -68,10 +73,21 @@ def main():
         except Exception:
             continue
         items += 1
-        # Instruction language lives in the stem. Passages and rationales are
-        # never boilerplate, so they are not considered.
-        for sh in shingles(d.get("stem")):
+        # Through the sanitizer first: the raw stem field carries the figure's
+        # SVG, its <style> block and its screen-reader description, so
+        # shingling it raw pulls "heavy font bold px sans serif" and "the curve
+        # passes from quadrant" into what is supposed to be a list of
+        # instruction lines.
+        for sh in shingles(to_text(sanitize(d.get("stem")))):
             df[sh] += 1
+
+    # The official export is deliberately NOT used here. Its text runs stem,
+    # rationale and figure description together, so shingling it pulls
+    # explanation prose ("from each side of this equation yields") and chart
+    # descriptions into the allowlist. Exempting those would let an authored
+    # item reuse College Board's teaching language and still pass the
+    # originality check. The API corpus gives the stem as its own field, which
+    # is the only text that is genuinely boilerplate.
 
     keep = {s: n for s, n in df.items() if n >= MIN_ITEMS}
     blob = {

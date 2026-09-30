@@ -55,6 +55,30 @@ def lesson_for(skill_cd, lessons):
     return None
 
 
+def subtype_spec(st, patterns):
+    """The brief for one subtype: what it is, how it is recognised and solved,
+    and what it is designed to catch. This is what makes an authored item a
+    specific recognition rather than a generic question about the skill."""
+    lines = [
+        f"SUBTYPE: {st['name']} ({st['slug']})",
+        f"HOW A STUDENT RECOGNISES IT: {st['tell']}",
+        f"THE METHOD: {st['method']}",
+        f"THE TRAP IT IS BUILT TO CATCH: {st['trap']}",
+    ]
+    if st.get("desmos"):
+        lines.append(f"DESMOS: {st['desmos']}")
+    if st.get("count_total"):
+        lines.append(f"FREQUENCY: {st['count_total']} of this skill's questions "
+                     f"are this subtype "
+                     f"(E{st['count_e']}/M{st['count_m']}/H{st['count_h']})")
+    if patterns:
+        lines.append("\nPASSAGE CONSTRUCTION PATTERNS to build in, where they fit "
+                     "naturally. Use at least one:")
+        for p in patterns:
+            lines.append(f"  - {p['name']}: {p['what']}")
+    return "\n".join(lines)
+
+
 def spec_text(skill, lesson):
     """Our own description of the skill - never College Board's item text."""
     lines = [f"SKILL: {skill['skill_name']} ({skill['skill_cd']})",
@@ -85,7 +109,8 @@ SKILL_STEMS = {
 }
 
 
-def build_prompt(skill, lesson, families, difficulty, n, seed_topics):
+def build_prompt(skill, lesson, families, difficulty, n, seed_topics,
+                 subtype=None, patterns=None):
     stem_line = SKILL_STEMS.get(skill["skill_cd"])
     stem_line = (f'"{stem_line}"' if stem_line else
                  "write the instruction the test would use for this skill, in "
@@ -97,6 +122,8 @@ def build_prompt(skill, lesson, families, difficulty, n, seed_topics):
 licensed SAT-aligned item bank used in an academic project.
 
 {spec_text(skill, lesson)}
+
+{subtype_spec(subtype, patterns) if subtype else ""}
 
 DIFFICULTY: {difficulty} - {DIFFICULTY_GUIDE[difficulty]}
 
@@ -111,20 +138,25 @@ Hard requirements:
 2. FOUR choices, exactly one defensible answer. A knowledgeable person must not
    be able to argue for a second choice.
 
-3. EVERY DISTRACTOR CATCHES A NAMED ERROR. Pick from these families and say
-   which one each distractor targets:
+3. EVERY ITEM MUST BE THIS SUBTYPE. A student should be able to read it and
+   recognise the subtype from the tell above. Do not drift into a neighbouring
+   subtype of the same skill.
+
+4. EVERY DISTRACTOR CATCHES A NAMED ERROR. Pick from these families and say
+   which one each distractor targets. At least one distractor per item must
+   be the subtype's own trap, described above:
 {chr(10).join(f"     {f['slug']}: {f['when']}" for f in fams)}
 
-4. Choices length-matched and parallel in form. The correct answer must not be
+5. Choices length-matched and parallel in form. The correct answer must not be
    distinguishable by being longest, most hedged, or most detailed.
 
-5. Write a short explanation for the correct answer, and for each distractor an
+6. Write a short explanation for the correct answer, and for each distractor an
    explanation naming the error a student made to land there. Second person.
 
-6. Topical variety - use these subject areas, one per item, in order:
+7. Topical variety - use these subject areas, one per item, in order:
    {", ".join(seed_topics[:n])}
 
-7. USE THE REAL INSTRUCTION LINE. For this skill, ask the question exactly as
+8. USE THE REAL INSTRUCTION LINE. For this skill, ask the question exactly as
    the test asks it:
 
        {stem_line}
@@ -133,10 +165,10 @@ Hard requirements:
    These lines are standard boilerplate - see data/standard_stems.json. Every
    other word of the item must be yours.
 {'''
-8. MATHS: write expressions in LaTeX between single dollar signs, e.g. $f(x) =
+9. MATHS: write expressions in LaTeX between single dollar signs, e.g. $f(x) =
    3x + 7$. Keep numbers clean enough to work without a calculator where the
    skill allows. State any needed units.''' if is_math else '''
-8. READING AND WRITING: write the passage yourself, 40-110 words, in the
+9. READING AND WRITING: write the passage yourself, 40-110 words, in the
    register of published nonfiction. Blanks are marked with ______.'''}
 
 Respond with ONLY a JSON array, no prose:
@@ -186,15 +218,21 @@ def call(prompt, model):
     return parsed
 
 
-def author(skill, lesson, families, difficulty, n, model, rng):
+def author(skill, lesson, families, difficulty, n, model, rng,
+           subtype=None, patterns=None):
     topics = rng.sample(TOPICS, min(n, len(TOPICS)))
-    prompt = build_prompt(skill, lesson, families, difficulty, n, topics)
+    prompt = build_prompt(skill, lesson, families, difficulty, n, topics,
+                          subtype, patterns)
     assert_no_cb_text(prompt)
     items = call(prompt, model)
     out = []
     for i, it in enumerate(items):
-        it["id"] = f"orig-{skill['skill_cd'].replace('.', '')}-{difficulty}-{rng.randrange(16**6):06x}"
+        tag = (subtype["slug"][:14] if subtype
+               else skill["skill_cd"].replace(".", ""))
+        it["id"] = f"orig-{tag}-{difficulty}-{rng.randrange(16**6):06x}"
         it["skill_cd"] = skill["skill_cd"]
+        it["subtype"] = subtype["slug"] if subtype else None
+        it["subtype_name"] = subtype["name"] if subtype else None
         it["difficulty"] = difficulty
         it["section"] = skill["section"]
         it["source"] = "original - written for this project"
@@ -207,6 +245,8 @@ def author(skill, lesson, families, difficulty, n, model, rng):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--skill", required=True)
+    ap.add_argument("--subtype", help="slug from data/subtypes.json")
+    ap.add_argument("--list-subtypes", action="store_true")
     ap.add_argument("--difficulty", default="E", choices=list(DIFFICULTY_GUIDE))
     ap.add_argument("--n", type=int, default=6)
     ap.add_argument("--model", default="claude-opus-5-5")
@@ -219,12 +259,41 @@ def main():
     families = load("misconceptions.json")["families"]
     lessons = load("lessons.json")
 
+    skill = skills[args.skill]
+    tax = load("subtypes.json")["skills"]
+    entry = next((v for k, v in tax.items()
+                  if v.get("section") == skill["section"]
+                  and k.lower().startswith(skill["skill_name"].lower()[:18])), None)
+    if entry is None:
+        entry = tax.get(skill["skill_name"])
+
+    if args.list_subtypes:
+        if not entry:
+            sys.exit(f"no subtypes derived for {skill['skill_name']!r}")
+        for st in entry["subtypes"]:
+            print(f"  {st['count_total']:4}  {st['slug']:34} {st['name'][:44]}")
+        return
+
+    subtype = None
+    if args.subtype:
+        subtype = next((st for st in (entry or {}).get("subtypes", [])
+                        if st["slug"] == args.subtype), None)
+        if not subtype:
+            sys.exit(f"unknown subtype {args.subtype!r}; try --list-subtypes")
+
+    patterns = None
+    if skill["section"] == "rw":
+        pp = load("passage_patterns.json")["skills"].get(skill["skill_name"], {})
+        patterns = pp.get("patterns", [])[:4]
+
     rng = random.Random(args.seed or None)
-    items = author(skills[args.skill], lesson_for(args.skill, lessons),
-                   families, args.difficulty, args.n, args.model, rng)
+    items = author(skill, lesson_for(args.skill, lessons),
+                   families, args.difficulty, args.n, args.model, rng,
+                   subtype, patterns)
 
     os.makedirs(OUT_DIR, exist_ok=True)
-    path = os.path.join(OUT_DIR, f"{args.skill.replace('.', '')}-{args.difficulty}.json")
+    stem = (args.subtype if args.subtype else args.skill.replace(".", ""))
+    path = os.path.join(OUT_DIR, f"{stem}-{args.difficulty}.json")
     existing = json.load(open(path)) if os.path.exists(path) else []
     existing += items
     json.dump(existing, open(path, "w"), indent=1)
