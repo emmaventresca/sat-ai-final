@@ -102,11 +102,19 @@ Hard requirements:
 
 6. Topical variety - use these subject areas, one per item, in order:
    {", ".join(seed_topics[:n])}
+
+7. WRITE YOUR OWN INSTRUCTION LINE. Do not use College Board's standard stem
+   wordings ("Which choice completes the text with the most logical
+   transition?", "Which choice most logically completes the text?", "As used in
+   the text, what does the word X most nearly mean?"). Ask the same thing in
+   your own words - "Which transition best fits the blank?", "Which word best
+   fits the blank in context?". The instruction is not what is being taught, so
+   there is no reason to borrow its phrasing.
 {'''
-7. MATHS: write expressions in LaTeX between single dollar signs, e.g. $f(x) =
+8. MATHS: write expressions in LaTeX between single dollar signs, e.g. $f(x) =
    3x + 7$. Keep numbers clean enough to work without a calculator where the
    skill allows. State any needed units.''' if is_math else '''
-7. READING AND WRITING: write the passage yourself, 40-110 words, in the
+8. READING AND WRITING: write the passage yourself, 40-110 words, in the
    register of published nonfiction. Blanks are marked with ______.'''}
 
 Respond with ONLY a JSON array, no prose:
