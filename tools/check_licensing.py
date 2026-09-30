@@ -42,6 +42,8 @@ EXEMPT = {
     "tools/build_keys.py",
     "tools/rationales.py",            # regexes that split CB's own structure
     "tools/classify_misconceptions.py",
+    "tools/author_items.py",          # the regex that detects CB text leaking in
+    "tools/verify_items.py",
 }
 
 
