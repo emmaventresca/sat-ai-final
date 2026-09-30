@@ -174,3 +174,50 @@ What remains fully available, because none of it is College Board's expression:
 An interactive student platform is buildable on all of that. What it needs is an
 item source we are allowed to distribute — originally authored items, or
 students practising in College Board's own tools and uploading their results.
+
+
+---
+
+## 5. Standard instruction lines — used verbatim, deliberately
+
+Original items use the test's **real instruction line**:
+
+> "Which choice completes the text with the most logical transition?"
+
+This is a deliberate exception to "write everything ourselves", on two
+independent grounds.
+
+**It is not protectable expression.** The US Copyright Office does not register
+"words and short phrases" (37 CFR 202.1(a)), and merger applies where an idea
+has only a few natural expressions — there are not many ways to ask a student to
+pick the transition that fits. College Board's own usage settles the character
+of the text: **420 items in the bank carry one identical instruction line**, and
+ten lines account for over 1,100 items. A sentence repeated verbatim across
+hundreds of items is a form field, not authorship.
+
+**Paraphrasing it would cost something real.** Recognising the actual stem is
+part of the skill being practised. A student who has only ever seen reworded
+instructions is measurably less prepared on test day, and trading exam fidelity
+to avoid reusing one functional sentence is a bad trade.
+
+The allowlist is in `data/standard_stems.json`, built from the corpus by
+reuse count (≥10 items) rather than by judgement, and both originality checkers
+exempt exactly those lines — 47 eight-word sequences out of 167,458.
+
+**The exemption covers instruction lines only.** Passages, answer choices and
+rationales are where the expression actually lives, and the check stays strict
+on every one of them. Our items currently show zero overlap outside the
+allowlist.
+
+### The same reasoning, applied to sat-mills
+
+An audit of all 882 live Mills cards found 872 with zero overlap. The ten
+matches are standard mathematical statements — "is perpendicular to the radius
+at the point", "the x-coordinate of the vertex is -b/2a", "What is the minimum
+value of f?" — two of which are theorems. There is no other way to say them in
+English, and a signal-to-method card exists precisely to show the phrasing a
+student will meet.
+
+They were left as they are. Rewording would cost exam fidelity to fix a
+non-problem, and a documented measurement is a better position than a
+silent assumption.

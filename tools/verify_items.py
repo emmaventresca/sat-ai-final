@@ -128,6 +128,20 @@ def call(prompt, model):
 # 4. Originality
 # ---------------------------------------------------------------------------
 
+def standard_stem_shingles(n=8):
+    """Instruction lines exempt from the overlap check. See
+    data/standard_stems.json for why; the short version is that they are short
+    functional phrases College Board itself repeats across hundreds of items."""
+    p = os.path.join(ROOT, "data", "standard_stems.json")
+    if not os.path.exists(p):
+        return set()
+    out = set()
+    for s in json.load(open(p))["stems"]:
+        w = re.findall(r"[a-z']+", s["text"].lower())
+        out |= {" ".join(w[i:i + n]) for i in range(len(w) - n + 1)}
+    return out
+
+
 def corpus_shingles(n=8):
     """Every n-word sequence in the cached College Board corpus."""
     out = set()
@@ -209,7 +223,11 @@ def main():
         if os.path.isdir(CORPUS):
             print("indexing the College Board corpus for overlap checking...", flush=True)
             shingles = corpus_shingles()
-            print(f"  {len(shingles):,} 8-word sequences indexed\n", flush=True)
+            exempt = standard_stem_shingles()
+            shingles -= exempt
+            print(f"  {len(shingles):,} 8-word sequences indexed "
+                  f"({len(exempt):,} excluded as standard instruction lines)\n",
+                  flush=True)
         else:
             print("no local corpus - skipping the originality check\n")
 

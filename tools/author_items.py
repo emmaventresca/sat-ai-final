@@ -68,7 +68,28 @@ def spec_text(skill, lesson):
     return "\n".join(lines)
 
 
+# The instruction line the real test uses for each skill. Recognising it is
+# part of what a student is practising, and these are standard boilerplate
+# (data/standard_stems.json), so items use them verbatim.
+SKILL_STEMS = {
+    "TRA": "Which choice completes the text with the most logical transition?",
+    "WIC": "Which choice completes the text with the most logical and precise word or phrase?",
+    "BOU": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "FSS": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "SYN": None,   # the goal statement carries the instruction
+    "CID": "Which choice best states the main idea of the text?",
+    "TSP": "Which choice best states the main purpose of the text?",
+    "INF": "Which choice most logically completes the text?",
+    "COE": None,
+    "CTC": "Based on the texts, both authors would most likely agree with which statement?",
+}
+
+
 def build_prompt(skill, lesson, families, difficulty, n, seed_topics):
+    stem_line = SKILL_STEMS.get(skill["skill_cd"])
+    stem_line = (f'"{stem_line}"' if stem_line else
+                 "write the instruction the test would use for this skill, in "
+                 "its plain standard form")
     fams = [f for f in families if f["section"] in (skill["section"], "both")
             and f["slug"] != "other"]
     is_math = skill["section"] == "math"
@@ -103,13 +124,14 @@ Hard requirements:
 6. Topical variety - use these subject areas, one per item, in order:
    {", ".join(seed_topics[:n])}
 
-7. WRITE YOUR OWN INSTRUCTION LINE. Do not use College Board's standard stem
-   wordings ("Which choice completes the text with the most logical
-   transition?", "Which choice most logically completes the text?", "As used in
-   the text, what does the word X most nearly mean?"). Ask the same thing in
-   your own words - "Which transition best fits the blank?", "Which word best
-   fits the blank in context?". The instruction is not what is being taught, so
-   there is no reason to borrow its phrasing.
+7. USE THE REAL INSTRUCTION LINE. For this skill, ask the question exactly as
+   the test asks it:
+
+       {stem_line}
+
+   Recognising the real stem is part of the skill, so do not paraphrase it.
+   These lines are standard boilerplate - see data/standard_stems.json. Every
+   other word of the item must be yours.
 {'''
 8. MATHS: write expressions in LaTeX between single dollar signs, e.g. $f(x) =
    3x + 7$. Keep numbers clean enough to work without a calculator where the

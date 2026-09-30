@@ -30,6 +30,21 @@ def shingles(t, n=N):
     return {" ".join(w[i:i + n]) for i in range(len(w) - n + 1)}
 
 
+def standard_stems():
+    """Instruction lines exempt from the overlap check - see the rationale in
+    data/standard_stems.json. Short functional phrases, established as
+    boilerplate by College Board's own reuse of them across hundreds of items.
+    The exemption is for instruction lines only; passages, choices and
+    rationales stay strictly checked."""
+    p = os.path.join(ROOT, "data", "standard_stems.json")
+    if not os.path.exists(p):
+        return set()
+    out = set()
+    for s in json.load(open(p))["stems"]:
+        out |= shingles(s["text"])
+    return out
+
+
 def corpus_index():
     out = set()
     for p in glob.glob(os.path.join(CORPUS, "*", "*.json")):
@@ -70,7 +85,10 @@ def main():
 
     print("indexing College Board corpus...", flush=True)
     idx = corpus_index()
-    print(f"  {len(idx):,} 8-word sequences\n")
+    exempt = standard_stems()
+    idx -= exempt
+    print(f"  {len(idx):,} 8-word sequences "
+          f"({len(exempt):,} excluded as standard instruction lines)\n")
 
     grand = 0
     for path in paths:
