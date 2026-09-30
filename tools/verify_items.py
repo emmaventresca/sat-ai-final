@@ -56,6 +56,33 @@ NUM = re.compile(r"\b\d[\d,.]*\b")
 # nothing about copying.
 NUMERIC_ONLY = re.compile(r"^(?:__num__\s*)+$")
 
+
+def _subgrams(phrase, k=5):
+    w = phrase.split()
+    return {" ".join(w[i:i + k]) for i in range(len(w) - k + 1)}
+
+
+def exempt_fragments(allowlist, k=5):
+    """Every k-word fragment appearing inside an allowlisted phrase.
+
+    The allowlist stores 8-word windows, but an authored item lands its
+    variables at different offsets than the corpus did, so the same standard
+    phrasing produces a *shifted* window that never matches exactly - "the
+    function f is defined by f(x)" against "f the function f is defined by".
+    Comparing constituent fragments makes the test window-independent: an
+    8-gram is exempt when every 5-word run inside it also appears inside some
+    allowlisted phrase, which means the whole span is made of boilerplate.
+    """
+    out = set()
+    for p in allowlist:
+        out |= _subgrams(p, k)
+    return out
+
+
+def is_boilerplate(shingle, fragments, k=5):
+    subs = _subgrams(shingle, k)
+    return bool(subs) and subs <= fragments
+
 def normalize(text):
     """Lowercase, with variable and number slots collapsed to sentinels.
 
@@ -255,20 +282,21 @@ def corpus_shingles(n=8):
     return out
 
 
-def overlap(it, shingles, n=8):
+def overlap(it, shingles, n=8, fragments=frozenset()):
     w = re.findall(r"[a-z']+|__var__|__num__",
                    normalize((it.get("stimulus") or "") + " " + it["stem"]))
     hits = []
     for i in range(len(w) - n + 1):
         sh = " ".join(w[i:i + n])
-        if sh in shingles and not NUMERIC_ONLY.match(sh):
+        if (sh in shingles and not NUMERIC_ONLY.match(sh)
+                and not is_boilerplate(sh, fragments)):
             hits.append(sh)
     return hits
 
 
 # ---------------------------------------------------------------------------
 
-def verify_batch(items, families, shingles, model):
+def verify_batch(items, families, shingles, model, fragments=frozenset()):
     """Structure and originality are local and free; only the solve costs a call."""
     reports = {it["id"]: {"id": it["id"],
                           "structure": check_structure(it, families)}
@@ -293,7 +321,7 @@ def verify_batch(items, families, shingles, model):
             rep["second_defensible"] = r.get("second_defensible")
             rep["problem"] = r.get("problem")
         if shingles is not None:
-            rep["overlap"] = overlap(it, shingles)
+            rep["overlap"] = overlap(it, shingles, fragments=fragments)
     return list(reports.values())
 
 
@@ -353,12 +381,14 @@ def main():
                 json.load(open(os.path.join(ROOT, "data", "misconceptions.json")))["families"]}
 
     shingles = None
+    fragments = frozenset()
     if not args.skip_originality:
         if os.path.isdir(CORPUS):
             print("indexing the College Board corpus for overlap checking...", flush=True)
             shingles = corpus_shingles()
             exempt = standard_stem_shingles()
             shingles -= exempt
+            fragments = exempt_fragments(exempt)
             print(f"  {len(shingles):,} 8-word sequences indexed "
                   f"({len(exempt):,} excluded as standard instruction lines)\n",
                   flush=True)
@@ -377,7 +407,7 @@ def main():
         groups = [todo[i:i + args.batch] for i in range(0, len(todo), args.batch)]
         with ThreadPoolExecutor(max_workers=args.workers) as pool:
             reports = [r for g in pool.map(
-                lambda grp: verify_batch(grp, families, shingles, args.model),
+                lambda grp: verify_batch(grp, families, shingles, args.model, fragments),
                 groups) for r in g]
 
         by_id = {r["id"]: r for r in reports}

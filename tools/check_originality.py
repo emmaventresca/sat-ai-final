@@ -35,6 +35,33 @@ NUM = re.compile(r"\b\d[\d,.]*\b")
 # nothing about copying.
 NUMERIC_ONLY = re.compile(r"^(?:__num__\s*)+$")
 
+
+def _subgrams(phrase, k=5):
+    w = phrase.split()
+    return {" ".join(w[i:i + k]) for i in range(len(w) - k + 1)}
+
+
+def exempt_fragments(allowlist, k=5):
+    """Every k-word fragment appearing inside an allowlisted phrase.
+
+    The allowlist stores 8-word windows, but an authored item lands its
+    variables at different offsets than the corpus did, so the same standard
+    phrasing produces a *shifted* window that never matches exactly - "the
+    function f is defined by f(x)" against "f the function f is defined by".
+    Comparing constituent fragments makes the test window-independent: an
+    8-gram is exempt when every 5-word run inside it also appears inside some
+    allowlisted phrase, which means the whole span is made of boilerplate.
+    """
+    out = set()
+    for p in allowlist:
+        out |= _subgrams(p, k)
+    return out
+
+
+def is_boilerplate(shingle, fragments, k=5):
+    subs = _subgrams(shingle, k)
+    return bool(subs) and subs <= fragments
+
 def normalize(text):
     """Lowercase, with variable and number slots collapsed to sentinels.
 
