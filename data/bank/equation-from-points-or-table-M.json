@@ -1,221 +1,30 @@
 [
  {
-  "stem": "The table shows three values of $x$ and their corresponding values of $f(x)$. Which equation defines $f$?",
-  "stimulus": "A folklore archive is digitizing its field notebooks. The number of variants of one trickster tale in its online catalogue, $f(x)$, is a linear function of $x$, the number of years since the project began.\n\n| $x$ | $f(x)$ |\n|---|---|\n| 2 | 31 |\n| 5 | 49 |\n| 9 | 73 |",
+  "stem": "The table shows three values of $x$ and their corresponding values of $f(x)$, where $f$ is a linear function. Which equation defines $f$?",
+  "stimulus": "In a treadmill trial, a sports scientist found that a runner's steady-state heart rate, in beats per minute, is a linear function $f$ of running speed $x$, in kilometers per hour.\n\n| $x$ | $f(x)$ |\n|---|---|\n| 2 | 110 |\n| 4 | 126 |\n| 6 | 142 |",
   "choices": [
-   "$f(x) = 6x + 19$",
-   "$f(x) = 4.5x + 22$",
-   "$f(x) = 6x + 31$",
-   "$f(x) = 19x + 6$"
-  ],
-  "answer": "A",
-  "explanation": "Use the first two rows. The slope is $\\frac{49 - 31}{5 - 2} = \\frac{18}{3} = 6$. Put $(2, 31)$ into $f(x) = 6x + b$: $31 = 12 + b$, so $b = 19$. Check the third row: $6(9) + 19 = 73$. So $f(x) = 6x + 19$ fits every row.",
-  "distractors": {
-   "B": {
-    "misconception": "missed-condition",
-    "why": "You took the output change from rows 1 and 2 ($18$) and divided it by the input change from rows 2 and 3 ($4$), which gives $4.5$. That line fits the first row, but it gives $44.5$ at $x = 5$, not $49$. Test a choice against every row before you pick it."
-   },
-   "C": {
-    "misconception": "graph-feature-mismatch",
-    "why": "You used 31, the first output in the table, as the y-intercept. But 31 is the value at $x = 2$, not at $x = 0$. You have to step back two years to reach the starting value."
-   },
-   "D": {
-    "misconception": "algebra-manipulation",
-    "why": "You found the right numbers but swapped them. The rate of change, 6, is the coefficient on $x$, and the starting value, 19, is the constant."
-   }
-  },
-  "id": "orig-equation-from--M-c6d23d",
-  "skill_cd": "H.B.",
-  "subtype": "equation-from-points-or-table",
-  "subtype_name": "Build the line from two points, a table, or slope plus a point",
-  "difficulty": "M",
-  "section": "math",
-  "source": "original - written for this project",
-  "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "verified",
-  "verification": {
-   "id": "orig-equation-from--M-c6d23d",
-   "structure": [],
-   "solver_answer": "A",
-   "agrees": true,
-   "confident": true,
-   "ambiguous": false,
-   "second_defensible": null,
-   "problem": null,
-   "overlap": []
-  }
- },
- {
-  "stem": "Which equation represents this situation, where $h$ is the number of overtime hours?",
-  "stimulus": "A labour economist models a warehouse worker's weekly earnings $E$, in dollars, as a linear function of overtime hours worked that week. Each overtime hour adds $\\$36$ to weekly earnings. A worker who put in 5 overtime hours in a week earned $\\$1{,}020$.",
-  "choices": [
-   "$E = 204h$",
-   "$E = 36h + 1{,}020$",
-   "$E = 36h + 1{,}200$",
-   "$E = 36h + 840$"
-  ],
-  "answer": "D",
-  "explanation": "The rate is $\\$36$ per overtime hour, so $m = 36$. Put the point $(5, 1{,}020)$ into $E = 36h + b$: $1{,}020 = 180 + b$, so $b = 840$. That is the worker's pay with no overtime. So $E = 36h + 840$.",
-  "distractors": {
-   "A": {
-    "misconception": "missed-condition",
-    "why": "You divided $1{,}020$ by 5. The resulting line does pass through $(5, 1{,}020)$, but its rate is $\\$204$ per hour, not $\\$36$. It meets only one of the two facts you were given."
-   },
-   "B": {
-    "misconception": "graph-feature-mismatch",
-    "why": "You treated $\\$1{,}020$ as the starting amount. It is the pay after 5 overtime hours, so it cannot be the value at $h = 0$."
-   },
-   "C": {
-    "misconception": "algebra-manipulation",
-    "why": "You added $36 \\times 5 = 180$ to $1{,}020$ when you should have subtracted it. Pay with no overtime has to be lower than pay with 5 overtime hours."
-   }
-  },
-  "id": "orig-equation-from--M-f0af2c",
-  "skill_cd": "H.B.",
-  "subtype": "equation-from-points-or-table",
-  "subtype_name": "Build the line from two points, a table, or slope plus a point",
-  "difficulty": "M",
-  "section": "math",
-  "source": "original - written for this project",
-  "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "fail",
-  "verification": {
-   "id": "orig-equation-from--M-f0af2c",
-   "structure": [],
-   "solver_answer": "D",
-   "agrees": true,
-   "confident": true,
-   "ambiguous": false,
-   "second_defensible": null,
-   "problem": null,
-   "overlap": [
-    "__var__ __num__ __var__ __var__ which equation represents this",
-    "__num__ __var__ __var__ which equation represents this situation",
-    "__var__ __var__ which equation represents this situation where",
-    "__var__ which equation represents this situation where __var__",
-    "which equation represents this situation where __var__ is",
-    "equation represents this situation where __var__ is the"
-   ]
-  }
- },
- {
-  "stem": "If $f(t) = at + b$, where $a$ and $b$ are constants, what is the value of $a + b$?",
-  "stimulus": "In a vaccine study, an immunologist models a participant's antibody level, in units per millilitre, as a linear function $f$ of $t$, the number of days after the booster dose. The model gives $f(4) = 58$ and $f(10) = 106$.",
-  "choices": [
-   "$8$",
-   "$26$",
-   "$34$",
-   "$98$"
-  ],
-  "answer": "C",
-  "explanation": "The slope is $a = \\frac{106 - 58}{10 - 4} = \\frac{48}{6} = 8$. Put in $t = 4$: $58 = 8(4) + b$, so $b = 26$. The question asks for the sum, and $a + b = 8 + 26 = 34$.",
-  "distractors": {
-   "A": {
-    "misconception": "wrong-target-quantity",
-    "why": "8 is $a$, the slope, which is only the first step. The question asks for $a + b$."
-   },
-   "B": {
-    "misconception": "wrong-target-quantity",
-    "why": "26 is $b$, the antibody level at day 0. You stopped before adding the slope to it."
-   },
-   "D": {
-    "misconception": "algebra-manipulation",
-    "why": "You found $b$ as $58 + 32 = 90$ when it should be $58 - 32$. Then you added $a$ to get 98. The level rises over time, so the day-0 value has to be below 58."
-   }
-  },
-  "id": "orig-equation-from--M-e64105",
-  "skill_cd": "H.B.",
-  "subtype": "equation-from-points-or-table",
-  "subtype_name": "Build the line from two points, a table, or slope plus a point",
-  "difficulty": "M",
-  "section": "math",
-  "source": "original - written for this project",
-  "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "verified",
-  "verification": {
-   "id": "orig-equation-from--M-e64105",
-   "structure": [],
-   "solver_answer": "C",
-   "agrees": true,
-   "confident": true,
-   "ambiguous": false,
-   "second_defensible": null,
-   "problem": null,
-   "overlap": []
-  }
- },
- {
-  "stem": "The table shows three values of $t$ and their corresponding values of $A(t)$. What is the value of $A(20)$?",
-  "stimulus": "Ecologists are tracking a coastal salt marsh that is shrinking. The area of the marsh, $A(t)$, in hectares, is a linear function of $t$, the number of years since the survey began.\n\n| $t$ | $A(t)$ |\n|---|---|\n| 3 | 212 |\n| 7 | 188 |\n| 12 | 158 |",
-  "choices": [
-   "$92$",
-   "$110$",
-   "$230$",
-   "$314$"
+   "$f(x) = 16x + 78$",
+   "$f(x) = 8x + 94$",
+   "$f(x) = \\frac{1}{8}x + 94$",
+   "$f(x) = 8x + 110$"
   ],
   "answer": "B",
-  "explanation": "The slope is $\\frac{188 - 212}{7 - 3} = \\frac{-24}{4} = -6$ hectares per year. Put in $(3, 212)$: $212 = -6(3) + b$, so $b = 230$. Check the last row: $-6(12) + 230 = 158$. Then $A(20) = -6(20) + 230 = 110$.",
-  "distractors": {
-   "A": {
-    "misconception": "misread-given",
-    "why": "You treated the first row as year 0 and computed $212 - 6(20)$. That row is year 3, so you took off three years' worth of loss too many."
-   },
-   "C": {
-    "misconception": "intermediate-step",
-    "why": "230 is the intercept, the marsh's area when $t = 0$. You found it but didn't go on to evaluate the function at $t = 20$."
-   },
-   "D": {
-    "misconception": "algebra-manipulation",
-    "why": "You subtracted the outputs in one order and the inputs in the other, $\\frac{188 - 212}{3 - 7}$, which gives a slope of $+6$. The marsh is shrinking, so the slope has to be negative."
-   }
-  },
-  "id": "orig-equation-from--M-1d5cef",
-  "skill_cd": "H.B.",
-  "subtype": "equation-from-points-or-table",
-  "subtype_name": "Build the line from two points, a table, or slope plus a point",
-  "difficulty": "M",
-  "section": "math",
-  "source": "original - written for this project",
-  "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "verified",
-  "verification": {
-   "id": "orig-equation-from--M-1d5cef",
-   "structure": [],
-   "solver_answer": "B",
-   "agrees": true,
-   "confident": true,
-   "ambiguous": false,
-   "second_defensible": null,
-   "problem": null,
-   "overlap": []
-  }
- },
- {
-  "stem": "In the xy-plane, a line passes through the points $(8, 30)$ and $(12, 44)$. Which equation defines the line?",
-  "stimulus": "In a treadmill test, a sports scientist models a runner's oxygen uptake $y$, in millilitres per kilogram per minute, as a linear function of running speed $x$, in kilometres per hour. The model's graph is the line described below.",
-  "choices": [
-   "$y = 3.75x$",
-   "$y = 3.5x + 30$",
-   "$y = 3.5x - 2$",
-   "$y = 3.5x + 2$"
-  ],
-  "answer": "D",
-  "explanation": "The slope is $\\frac{44 - 30}{12 - 8} = \\frac{14}{4} = 3.5$. Put $(8, 30)$ into $y = 3.5x + b$: $30 = 28 + b$, so $b = 2$. Check the other point: $3.5(12) + 2 = 44$. So the line is $y = 3.5x + 2$.",
+  "explanation": "When $x$ goes up by 2, $f(x)$ goes up by 16, so the slope is $\\frac{16}{2} = 8$. Substitute the first row: $110 = 8(2) + b$, so $b = 94$. That gives $f(x) = 8x + 94$, and it checks against all three rows.",
   "distractors": {
    "A": {
     "misconception": "missed-condition",
-    "why": "You divided 30 by 8, which gives a line through the origin and $(8, 30)$. At $x = 12$ it gives 45, not 44, so it misses the second point."
-   },
-   "B": {
-    "misconception": "graph-feature-mismatch",
-    "why": "You used 30 as the y-intercept. But 30 is the uptake at 8 km/h, not at $x = 0$."
+    "why": "You used the 16-beat jump as the slope without dividing by the 2-unit change in $x$. This equation fits the first row, since $16(2) + 78 = 110$, but it fails the other two, because $16(4) + 78 = 142$, not 126."
    },
    "C": {
-    "misconception": "algebra-manipulation",
-    "why": "When you solved $30 = 28 + b$, you computed $28 - 30$ when it should be $30 - 28$, so the intercept came out with the wrong sign. Put $(8, 30)$ back in: $3.5(8) - 2 = 26$, not 30."
+    "misconception": "graph-feature-mismatch",
+    "why": "You worked out the slope as change in $x$ over change in $f(x)$, $\\frac{2}{16}$, so the rate is upside down. Slope is always the change in output divided by the change in input."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You took 110 as the y-intercept, but 110 is the value when $x = 2$, not when $x = 0$. To get the intercept, go back one step of 2 from the first row: $110 - 16 = 94$."
    }
   },
-  "id": "orig-equation-from--M-c07fd0",
+  "id": "orig-equation-from--M-9d53e0",
   "skill_cd": "H.B.",
   "subtype": "equation-from-points-or-table",
   "subtype_name": "Build the line from two points, a table, or slope plus a point",
@@ -223,20 +32,251 @@
   "section": "math",
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "fail",
-  "verification": {
-   "id": "orig-equation-from--M-c07fd0",
-   "structure": [],
-   "solver_answer": "D",
-   "agrees": true,
-   "confident": true,
-   "ambiguous": false,
-   "second_defensible": null,
-   "problem": null,
-   "overlap": [
-    "a line passes through the points __var__ and",
-    "line passes through the points __var__ and __var__"
-   ]
-  }
+  "status": "unverified"
+ },
+ {
+  "stem": "The graph of the linear function $g$ in the xy-plane passes through the points $(4, 23)$ and $(10, 8)$. Which equation defines $g$?",
+  "stimulus": "A civil engineer models the elevation of a drainage culvert's floor, in centimeters above a fixed reference mark, with the linear function $g$, where $x$ is the distance in meters along the culvert from its inlet.",
+  "choices": [
+   "$g(x) = \\frac{5}{2}x + 13$",
+   "$g(x) = -\\frac{5}{2}x + 23$",
+   "$g(x) = -\\frac{5}{2}x + 33$",
+   "$g(x) = -\\frac{2}{5}x + \\frac{123}{5}$"
+  ],
+  "answer": "C",
+  "explanation": "The slope is $\\frac{8 - 23}{10 - 4} = \\frac{-15}{6} = -\\frac{5}{2}$. Substitute $(4, 23)$: $23 = -\\frac{5}{2}(4) + b = -10 + b$, so $b = 33$. That gives $g(x) = -\\frac{5}{2}x + 33$. The elevation drops along the culvert, so a negative slope makes sense.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You mismatched the subtraction order, taking $8 - 23$ over $4 - 10$ in effect, and got a positive slope. The output falls from 23 to 8 as $x$ rises, so the slope has to be negative."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used the y-coordinate of $(4, 23)$ as the y-intercept. The intercept is the value when $x = 0$, and this point has $x = 4$."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You found the slope as change in $x$ over change in $y$, $\\frac{6}{-15}$, and then solved for $b$ from one point. The line goes through $(4, 23)$ but misses $(10, 8)$."
+   }
+  },
+  "id": "orig-equation-from--M-52997c",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "The function $f$ is defined by $f(x) = ax + b$, where $a$ and $b$ are constants. The graph of $y = f(x)$ in the xy-plane has a slope of 6 and passes through the point $(5, 47)$. What is the value of $a + b$?",
+  "stimulus": "In a vaccine study, an immunologist models a participant's antibody concentration, in arbitrary units, $x$ days after a booster dose with the linear function $f$.",
+  "choices": [
+   "17",
+   "23",
+   "53",
+   "83"
+  ],
+  "answer": "B",
+  "explanation": "The slope gives you $a = 6$. Substitute the point: $47 = 6(5) + b$, so $b = 47 - 30 = 17$. The question asks for the sum, so $a + b = 6 + 17 = 23$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "17 is $b$, the y-intercept. The question asked for $a + b$, so you still have to add the slope, 6."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You took 47 as $b$ and added the slope to it. But 47 is the output when $x = 5$, not when $x = 0$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added 30 to 47 when solving for $b$ instead of subtracting it, which gave $b = 77$ and $a + b = 83$. From $47 = 30 + b$, you get $b = 17$."
+   }
+  },
+  "id": "orig-equation-from--M-0264a7",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "The table shows three values of $x$ and their corresponding values of $h(x)$, where $h$ is a linear function. What is the value of $k$?",
+  "stimulus": "On a trail map, a cartographer labels elevations using the linear function $h$, where $h(x)$ is the elevation in meters at a point $x$ kilometers along a straight ridge trail from its trailhead.\n\n| $x$ | $h(x)$ |\n|---|---|\n| 1 | 412 |\n| 3 | 448 |\n| 7 | $k$ |",
+  "choices": [
+   "394",
+   "484",
+   "520",
+   "538"
+  ],
+  "answer": "C",
+  "explanation": "Going from $x = 1$ to $x = 3$, the elevation rises 36 meters, so the slope is $\\frac{36}{2} = 18$ meters per kilometer. Going from $x = 3$ to $x = 7$ is 4 more kilometers, so $k = 448 + 18(4) = 520$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "394 is the y-intercept, $h(0) = 412 - 18$. You found a constant of the equation, but the question asked for the output when $x = 7$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You assumed the rows were evenly spaced and added another 36. The step from $x = 3$ to $x = 7$ is 4 kilometers, not 2, so the rise is $18 \\times 4 = 72$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You treated 412 as the elevation at $x = 0$ and calculated $412 + 18(7)$. But 412 is the elevation at $x = 1$."
+   }
+  },
+  "id": "orig-equation-from--M-087a2a",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "The graph of the linear function $L$ in the xy-plane passes through the points $(20, 1004)$ and $(80, 1016)$. Which equation defines $L$?",
+  "stimulus": "A materials scientist heats a metal rod and models its length, in millimeters, with the linear function $L$, where $T$ is the rod's temperature in degrees Celsius.",
+  "choices": [
+   "$L(T) = 5T + 904$",
+   "$L(T) = 12T + 764$",
+   "$L(T) = 0.2T + 1004$",
+   "$L(T) = 0.2T + 1000$"
+  ],
+  "answer": "D",
+  "explanation": "The slope is $\\frac{1016 - 1004}{80 - 20} = \\frac{12}{60} = 0.2$ millimeters per degree. Substitute $(20, 1004)$: $1004 = 0.2(20) + b = 4 + b$, so $b = 1000$. That gives $L(T) = 0.2T + 1000$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You divided the change in temperature by the change in length, $\\frac{60}{12} = 5$, which flips the slope. Slope is the change in output divided by the change in input."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the 12-millimeter change as the slope without dividing it by the 60-degree change in temperature."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You used 1004 as the intercept. But 1004 is the length at $20^\\circ$C, not at $0^\\circ$C."
+   }
+  },
+  "id": "orig-equation-from--M-b220a9",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "The table shows three values of $t$ and their corresponding values of $w(t)$, where $w$ is a linear function. What is the value of $w(15)$?",
+  "stimulus": "A hydrologist tracks the depth of water, in meters, at a gauge in a draining retention basin. The depth $t$ hours after the outlet gate opens is modeled by the linear function $w$.\n\n| $t$ | $w(t)$ |\n|---|---|\n| 0 | 52 |\n| 3 | 46 |\n| 8 | 36 |",
+  "choices": [
+   "22",
+   "30",
+   "44.5",
+   "82"
+  ],
+  "answer": "A",
+  "explanation": "The row $t = 0$ gives the intercept, 52. The depth falls 6 meters over 3 hours, so the slope is $-2$. That makes $w(t) = -2t + 52$, and $w(15) = -30 + 52 = 22$ meters.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "30 is how far the water level drops over 15 hours. The question asks for the depth that remains, so you have to subtract 30 from 52."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You computed the slope as change in $t$ over change in $w$, $-\\frac{1}{2}$, and got $52 - 7.5$. Slope is the change in depth divided by the change in time."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used a positive slope, so your water level rises. The table shows the depth going down, so the slope must be negative."
+   }
+  },
+  "id": "orig-equation-from--M-c259f4",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "The graph of the linear function $p$ in the xy-plane has a slope of $-3$ and passes through the point $(12, 40)$. Which equation defines $p$?",
+  "stimulus": "In a digestion study, nutrition scientists model the percent of a test meal's starch still present in the stomach with the linear function $p$, where $x$ is the number of minutes since the first measurement.",
+  "choices": [
+   "$p(x) = 3x + 4$",
+   "$p(x) = -3x + 76$",
+   "$p(x) = -3x + 40$",
+   "$p(x) = -3x + 4$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute the point into $p(x) = -3x + b$: $40 = -3(12) + b = -36 + b$, so $b = 76$. That gives $p(x) = -3x + 76$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This line goes through $(12, 40)$, but its slope is $+3$, not $-3$. You dropped the negative sign, so your model has the starch increasing when it should be decreasing."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You used 40 as the y-intercept. But 40 is the value when $x = 12$, not when $x = 0$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted 36 from 40 instead of adding it. From $40 = -36 + b$, you get $b = 76$."
+   }
+  },
+  "id": "orig-equation-from--M-82ed97",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "The function $f$ is defined by $f(x) = ax + b$, where $a$ and $b$ are constants. The graph of $y = f(x)$ in the xy-plane passes through the points $(3, 17)$ and $(7, 29)$. What is the value of $ab$?",
+  "stimulus": "A printmaker models the total time, in minutes, needed to pull $x$ prints from an inked linocut block with the linear function $f$. The time includes a fixed setup period.",
+  "choices": [
+   "$\\frac{16}{3}$",
+   "8",
+   "11",
+   "24"
+  ],
+  "answer": "D",
+  "explanation": "The slope is $\\frac{29 - 17}{7 - 3} = \\frac{12}{4} = 3$, so $a = 3$. Substitute $(3, 17)$: $17 = 9 + b$, so $b = 8$. The question asks for the product, so $ab = 3 \\times 8 = 24$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You computed the slope as change in $x$ over change in $y$, $\\frac{4}{12} = \\frac{1}{3}$. That gives $b = 16$ and $ab = \\frac{16}{3}$. Slope is the change in output divided by the change in input."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "8 is $b$, the setup time. The question asks for $ab$, so you still have to multiply by the slope, 3."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "11 is $a + b$. You found both constants correctly, but the question asks for their product, not their sum."
+   }
+  },
+  "id": "orig-equation-from--M-3aa91f",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
  }
 ]

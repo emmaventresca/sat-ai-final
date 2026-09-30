@@ -336,10 +336,16 @@ def verdict(rep):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--file")
-    ap.add_argument("--model", default="claude-sonnet-5-5")
+    # Haiku by default, on measurement rather than on price. Re-verifying 60
+    # items with both: the blind-solve answer agreed 98% of the time, the gate
+    # verdict agreed 98%, and - the direction that matters - Haiku never passed
+    # an item the stronger model failed. Its one disagreement was stricter.
+    # Verification is the bulk of this pipeline's calls, so this is where cost
+    # actually lives.
+    ap.add_argument("--model", default="claude-haiku-4-5")
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--skip-originality", action="store_true")
-    ap.add_argument("--batch", type=int, default=6,
+    ap.add_argument("--batch", type=int, default=10,
                     help="items per blind-solve call (1 = one call per item)")
     args = ap.parse_args()
 

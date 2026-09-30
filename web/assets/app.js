@@ -32,6 +32,7 @@ const targetTotal = (p) => (p?.target_rw ?? 0) + (p?.target_math ?? 0);
 function ctx() {
   return {
     bands: state.bands, skills: state.skills, mastery: state.mastery,
+    subtypes: state.subtypes, subtypesOf: state.subtypesOf,
     student: state.profile ?? {}, fingerprints: state.fingerprints, now: new Date(),
   };
 }
@@ -502,14 +503,34 @@ function render() {
 }
 
 async function loadData() {
-  const [bands, skills, lessons, items, misc] = await Promise.all([
+  const [bands, skills, lessons, items, misc, subtax, subcounts] = await Promise.all([
     fetch('../data/bands.json').then((r) => r.json()),
     fetch('../data/skills.json').then((r) => r.json()),
     fetch('../data/lessons.json').then((r) => r.json()),
-    fetch('../data/items.json').then((r) => r.json()).catch(() => ({ items: [] })),
+    // Our own CC BY items. The College Board pool is deliberately not loaded:
+    // it cannot be served to students (docs/LICENSING.md section 4).
+    fetch('../data/practice.json').then((r) => r.json()).catch(() => ({ items: [] })),
     fetch('../data/misconceptions.json').then((r) => r.json()).catch(() => ({ families: [] })),
+    fetch('../data/subtypes.json').then((r) => r.json()).catch(() => ({ skills: {} })),
+    fetch('../data/subtype_counts.json').then((r) => r.json()).catch(() => ({ subtypes: {} })),
   ]);
   state.misconceptions = Object.fromEntries((misc.families ?? []).map((f) => [f.slug, f]));
+  // Subtype metadata: the engine keys mastery on it, and the lesson view names
+  // the recognition a student is practising.
+  state.subtypes = subcounts.subtypes ?? {};
+  state.subtypeInfo = {};
+  state.subtypesOf = {};
+  for (const [skill, v] of Object.entries(subtax.skills ?? {})) {
+    for (const st of v.subtypes ?? []) {
+      state.subtypeInfo[st.slug] = { ...st, skill };
+      const cd = st.skill_cd ?? state.subtypes[st.slug]?.skill;
+    }
+  }
+  for (const [slug, c] of Object.entries(state.subtypes)) {
+    const sk = Object.values(state.skills).find((s) => s.skill_name === c.skill);
+    if (!sk) continue;
+    (state.subtypesOf[sk.skill_cd] ??= []).push({ ...c, slug });
+  }
   state.bands = bands;
   state.skills = Object.fromEntries(skills.skills.map((s) => [s.skill_cd, s]));
   state.lessons = lessons.lessons;

@@ -1,174 +1,30 @@
 [
  {
-  "stem": "Which equation represents this situation, where $L$ is the number of power looms in the region $t$ years after 1820?",
-  "stimulus": "A historian of the textile industry estimates that 2,400 power looms were in use in a certain weaving region in 1820. For the next several decades, the number of power looms in the region increased by 15% every 4 years.",
+  "stem": "Which equation represents this situation, where $L$ is the athlete's blood lactate level above baseline, in millimoles per liter, $t$ minutes after the sprint ends?",
+  "stimulus": "In a sports science lab, a sprinter's blood lactate level is measured right after an all-out 400-meter run. At the moment the sprint ends, the level is 12 millimoles per liter above the sprinter's resting baseline. During recovery, the amount above baseline falls by 20% every 10 minutes.",
   "choices": [
-   "$L = 2{,}400(1.15)^{t}$",
-   "$L = 2{,}400(1.15)^{t/4}$",
-   "$L = 2{,}400(0.15)^{t/4}$",
-   "$L = 2{,}400(1.15)^{4t}$"
+   "$L = 12(0.2)^{t/10}$",
+   "$L = 12(0.8)^{t/10}$",
+   "$L = 12(0.8)^{t}$",
+   "$L = 12(1.2)^{t/10}$"
   ],
   "answer": "B",
-  "explanation": "The starting amount in 1820 ($t = 0$) is 2,400. An increase of 15% means you multiply by $1 + 0.15 = 1.15$. That multiplication happens once every 4 years, so after $t$ years it has happened $t/4$ times. That gives $L = 2{,}400(1.15)^{t/4}$. As a check, at $t = 4$ you get $2{,}400(1.15)^1 = 2{,}760$, which is 15% more than 2,400.",
+  "explanation": "The starting amount is 12. A 20% decrease means you keep 100% \u2212 20% = 80% of the amount, so the factor is 0.8. The decrease happens once every 10 minutes, so after $t$ minutes there have been $t/10$ decreases. That gives $L = 12(0.8)^{t/10}$.",
   "distractors": {
    "A": {
-    "misconception": "missed-condition",
-    "why": "You used the right growth factor but ignored the 'every 4 years' condition. This model grows by 15% every single year, so at $t = 4$ it already gives about 4,198 looms instead of 2,760. You need to divide the exponent by 4."
-   },
-   "C": {
-    "misconception": "graph-feature-mismatch",
-    "why": "You used the rate 0.15 as the factor instead of $1 + 0.15 = 1.15$. Multiplying by 0.15 keeps only 15% of the looms each period. That is steep decay, the opposite of the growth the historian describes."
-   },
-   "D": {
     "misconception": "algebra-manipulation",
-    "why": "You knew the 4-year interval belongs in the exponent, but you multiplied $t$ by 4 instead of dividing. This model applies the 15% increase four times every year, not once every 4 years."
-   }
-  },
-  "id": "orig-build-exponent-M-4581ba",
-  "skill_cd": "P.C.",
-  "subtype": "build-exponential-model",
-  "subtype_name": "Write or use an exponential growth or decay model",
-  "difficulty": "M",
-  "section": "math",
-  "source": "original - written for this project",
-  "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "fail",
-  "verification": {
-   "id": "orig-build-exponent-M-4581ba",
-   "structure": [],
-   "solver_answer": "B",
-   "agrees": true,
-   "confident": true,
-   "ambiguous": false,
-   "second_defensible": null,
-   "problem": null,
-   "overlap": [
-    "which equation represents this situation where __var__ is",
-    "equation represents this situation where __var__ is the"
-   ]
-  }
- },
- {
-  "stem": "Which equation represents this situation, where $w$ is the number of weeks after the booster dose?",
-  "stimulus": "After a booster dose, the concentration of a certain antibody in a patient's blood decreases by the same percentage each week. The table shows the concentration $C$, in arbitrary units, measured at three times after the booster.\n\n| Weeks after booster, $w$ | Concentration, $C$ |\n|---|---|\n| 2 | 1,600 |\n| 3 | 1,280 |\n| 4 | 1,024 |",
-  "choices": [
-   "$C = 2{,}500(0.8)^{w}$",
-   "$C = 1{,}600(0.8)^{w}$",
-   "$C = 2{,}500(0.2)^{w}$",
-   "$C = 2{,}500(1.25)^{w}$"
-  ],
-  "answer": "A",
-  "explanation": "Each week the concentration is multiplied by $1{,}280 \\div 1{,}600 = 0.8$, which is a 20% decrease. The table starts at week 2, not week 0, so work backwards two steps: $1{,}600 \\div 0.8 = 2{,}000$ at week 1, and $2{,}000 \\div 0.8 = 2{,}500$ at week 0. The model is $C = 2{,}500(0.8)^w$. As a check, $2{,}500(0.8)^2 = 1{,}600$.",
-  "distractors": {
-   "B": {
-    "misconception": "misread-given",
-    "why": "You took the first row of the table as the starting amount, but that row is week 2, not week 0. Put $w = 2$ into this model and you get 1,024, not 1,600."
+    "why": "You used the percent lost, 0.2, as the factor. A 20% decrease means you multiply by what is left, 1 \u2212 0.2 = 0.8."
    },
    "C": {
     "misconception": "algebra-manipulation",
-    "why": "You used the 20% decrease, 0.2, as the factor. The factor is what you multiply by each week, which is $1 - 0.2 = 0.8$. Multiplying by 0.2 would leave only a fifth of the antibody each week."
-   },
-   "D": {
-    "misconception": "graph-feature-mismatch",
-    "why": "You found the ratio the wrong way round ($1{,}600 \\div 1{,}280 = 1.25$). A factor above 1 means growth, but the concentrations in the table are falling."
-   }
-  },
-  "id": "orig-build-exponent-M-98e5e6",
-  "skill_cd": "P.C.",
-  "subtype": "build-exponential-model",
-  "subtype_name": "Write or use an exponential growth or decay model",
-  "difficulty": "M",
-  "section": "math",
-  "source": "original - written for this project",
-  "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "fail",
-  "verification": {
-   "id": "orig-build-exponent-M-98e5e6",
-   "structure": [],
-   "solver_answer": "A",
-   "agrees": true,
-   "confident": true,
-   "ambiguous": false,
-   "second_defensible": null,
-   "problem": null,
-   "overlap": [
-    "which equation represents this situation where __var__ is",
-    "equation represents this situation where __var__ is the"
-   ]
-  }
- },
- {
-  "stem": "According to the model, how many workers will be registered on the platform 4.5 years after the start of 2022?",
-  "stimulus": "A labour economist models the number of workers registered on a gig-work platform in one region. At the start of 2022, 5,000 workers were registered. In the model, the number of registered workers triples every 18 months.",
-  "choices": [
-   "35,000",
-   "45,000",
-   "130,000",
-   "135,000"
-  ],
-  "answer": "D",
-  "explanation": "The tripling interval is in months, so convert first: 4.5 years is $4.5 \\times 12 = 54$ months. That is $54 \\div 18 = 3$ tripling periods. The model gives $5{,}000(3)^3 = 5{,}000 \\times 27 = 135{,}000$ workers.",
-  "distractors": {
-   "A": {
-    "misconception": "graph-feature-mismatch",
-    "why": "You used a linear model, adding a fixed 10,000 workers every 18 months ($5{,}000 + 3 \\times 10{,}000$). 'Triples' means you multiply by 3 each period, so the increase gets bigger every time."
-   },
-   "B": {
-    "misconception": "algebra-manipulation",
-    "why": "You counted 3 periods correctly but multiplied by $3 \\times 3$ instead of raising 3 to the third power. Three triplings means $3^3 = 27$, not 9."
-   },
-   "C": {
-    "misconception": "wrong-target-quantity",
-    "why": "You found the increase in registered workers ($135{,}000 - 5{,}000$), not the total. The question asks how many workers are registered in total."
-   }
-  },
-  "id": "orig-build-exponent-M-1c45bb",
-  "skill_cd": "P.C.",
-  "subtype": "build-exponential-model",
-  "subtype_name": "Write or use an exponential growth or decay model",
-  "difficulty": "M",
-  "section": "math",
-  "source": "original - written for this project",
-  "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "verified",
-  "verification": {
-   "id": "orig-build-exponent-M-1c45bb",
-   "structure": [],
-   "solver_answer": "D",
-   "agrees": true,
-   "confident": true,
-   "ambiguous": false,
-   "second_defensible": null,
-   "problem": null,
-   "overlap": []
-  }
- },
- {
-  "stem": "Which of the following is closest to the vitamin C content, in milligrams per serving, 9 days after bottling?",
-  "stimulus": "A nutrition scientist is studying how vitamin C breaks down in refrigerated orange juice. When the juice is bottled, it contains 80 milligrams of vitamin C per serving. After that, the vitamin C content decreases by 10% every 3 days.",
-  "choices": [
-   "31.0",
-   "56.0",
-   "58.3",
-   "106.5"
-  ],
-  "answer": "C",
-  "explanation": "The model is $V = 80(0.9)^{d/3}$, where $d$ is the number of days after bottling. A 10% decrease leaves 90%, so the factor is 0.9. The decrease happens once every 3 days, so after 9 days it has happened $9 \\div 3 = 3$ times. That gives $80(0.9)^3 = 80(0.729) \\approx 58.3$ milligrams.",
-  "distractors": {
-   "A": {
-    "misconception": "missed-condition",
-    "why": "You applied the 10% decrease once a day for 9 days ($80(0.9)^9 \\approx 31.0$). The decrease happens every 3 days, so you need to divide the exponent by 3."
-   },
-   "B": {
-    "misconception": "graph-feature-mismatch",
-    "why": "You subtracted a fixed 8 mg (10% of the original 80 mg) three times. That is a linear model. Each 10% decrease applies to the amount left at that point, which keeps shrinking, so less is lost each time."
+    "why": "You didn't divide the exponent by 10. This model drops by 20% every minute, not every 10 minutes."
    },
    "D": {
     "misconception": "complement-or-direction-flip",
-    "why": "You used a growth factor of 1.1 instead of the decay factor 0.9. The vitamin C content is going down, so the result has to be less than 80 mg."
+    "why": "You used 1 + 0.2, which is the factor for a 20% increase. The lactate level is falling, so the factor has to be less than 1."
    }
   },
-  "id": "orig-build-exponent-M-0ed401",
+  "id": "orig-build-exponent-M-a702e2",
   "skill_cd": "P.C.",
   "subtype": "build-exponential-model",
   "subtype_name": "Write or use an exponential growth or decay model",
@@ -176,45 +32,69 @@
   "section": "math",
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "verified",
-  "verification": {
-   "id": "orig-build-exponent-M-0ed401",
-   "structure": [],
-   "solver_answer": "C",
-   "agrees": true,
-   "confident": true,
-   "ambiguous": false,
-   "second_defensible": null,
-   "problem": null,
-   "overlap": []
-  }
+  "status": "unverified"
  },
  {
-  "stem": "According to the model, how many days after the survey began will the population first reach 4,800 jellyfish?",
-  "stimulus": "A marine biologist surveying a coastal lagoon estimates that it contains 300 moon jellyfish when the survey begins. During a warm-water bloom, the biologist models the population as doubling every 5 days.",
+  "stem": "Which equation could represent the relationship between $t$ and $B$?",
+  "stimulus": "Astronomers tracked the fading of a supernova after its peak brightness. The table shows its relative brightness $B$, in arbitrary units, $t$ days after the peak. The brightness falls by the same factor over each equal time interval.\n\n| $t$ (days) | $B$ |\n|---|---|\n| 20 | 400 |\n| 40 | 200 |\n| 60 | 100 |",
   "choices": [
-   "4",
-   "20",
-   "75",
-   "80"
+   "$B = 400(0.5)^{t/20}$",
+   "$B = 800(0.5)^{t/20}$",
+   "$B = 800(0.5)^{t}$",
+   "$B = 600 - 10t$"
   ],
   "answer": "B",
-  "explanation": "The model is $P = 300(2)^{t/5}$. Set it equal to 4,800: $(2)^{t/5} = 4{,}800 \\div 300 = 16$. Since $16 = 2^4$, you get $t/5 = 4$, so $t = 20$ days. As a check, $300 \\to 600 \\to 1{,}200 \\to 2{,}400 \\to 4{,}800$ takes four doublings of 5 days each.",
+  "explanation": "Every 20 days the brightness halves, so the factor is 0.5 and the exponent is $t/20$. The table starts at $t = 20$, not $t = 0$. To find the value at $t = 0$, go back one 20-day step by doubling 400, which gives 800. Check: $800(0.5)^{1} = 400$, $800(0.5)^{2} = 200$, and $800(0.5)^{3} = 100$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You took the first row, 400, as the starting value. That row is at $t = 20$. The value at $t = 0$ is one halving earlier, which is 800."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You didn't divide the exponent by the 20-day interval. This model halves every day, so at $t = 20$ it would give almost nothing instead of 400."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This is a linear model built from the first two rows. It gives 0 at $t = 60$ instead of 100, because the brightness drops by a constant factor, not a constant amount."
+   }
+  },
+  "id": "orig-build-exponent-M-1c2d5f",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "Based on this prediction, what will be the average number of vehicles per day crossing the bridge in 2026?",
+  "stimulus": "A civil engineering firm counted an average of 25,000 vehicles per day crossing a river bridge in 2024. For its maintenance plan, the firm predicts that the average daily traffic will increase by 4% each year after 2024.",
+  "choices": [
+   "26,000",
+   "27,000",
+   "27,040",
+   "2,040"
+  ],
+  "answer": "C",
+  "explanation": "A 4% increase means the factor is 1.04. The year 2026 is 2 years after 2024, so compute $25{,}000(1.04)^{2} = 25{,}000(1.0816) = 27{,}040$ vehicles per day.",
   "distractors": {
    "A": {
     "misconception": "intermediate-step",
-    "why": "4 is the number of doublings. Each doubling takes 5 days, so you still need to multiply by 5 to get the number of days."
+    "why": "$25{,}000(1.04) = 26{,}000$ is the value for 2025. You stopped after one year, but 2026 is two years after 2024."
    },
-   "C": {
+   "B": {
     "misconception": "graph-feature-mismatch",
-    "why": "You treated the growth as linear, adding 300 jellyfish every 5 days. Reaching 4,800 that way takes 15 periods, or 75 days. 'Doubling' means you multiply by 2 each period, so the population grows much faster."
+    "why": "You added 4% of 25,000 (1,000 vehicles) each year. That is a linear model. Each year's 4% is taken of the previous year's larger total, so the second increase is 1,040."
    },
    "D": {
-    "misconception": "algebra-manipulation",
-    "why": "You treated the ratio 16 as the number of doublings and multiplied it by 5. The ratio 16 is $2^4$, which means 4 doublings, not 16."
+    "misconception": "wrong-target-quantity",
+    "why": "2,040 is how much the traffic increases over the two years. The question asks for the total daily traffic in 2026."
    }
   },
-  "id": "orig-build-exponent-M-2660e2",
+  "id": "orig-build-exponent-M-b4b20f",
   "skill_cd": "P.C.",
   "subtype": "build-exponential-model",
   "subtype_name": "Write or use an exponential growth or decay model",
@@ -222,17 +102,181 @@
   "section": "math",
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "verified",
-  "verification": {
-   "id": "orig-build-exponent-M-2660e2",
-   "structure": [],
-   "solver_answer": "B",
-   "agrees": true,
-   "confident": true,
-   "ambiguous": false,
-   "second_defensible": null,
-   "problem": null,
-   "overlap": []
-  }
+  "status": "unverified"
+ },
+ {
+  "stem": "Based on this model, in what year did the mill's annual output first reach 12,000 bolts of cloth?",
+  "stimulus": "A textile historian studying the ledgers of an early cotton mill models its growth this way: the mill produced 1,500 bolts of cloth in 1800, and its annual output doubled every 6 years after that.",
+  "choices": [
+   "1803",
+   "1818",
+   "1824",
+   "1842"
+  ],
+  "answer": "B",
+  "explanation": "The model is $y = 1{,}500(2)^{t/6}$, where $t$ is years after 1800. Set $1{,}500(2)^{t/6} = 12{,}000$. Dividing by 1,500 gives $2^{t/6} = 8 = 2^{3}$, so $t/6 = 3$ and $t = 18$. The year is 1800 + 18 = 1818.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You solved $2^{t} = 8$ and got $t = 3$, forgetting that each doubling takes 6 years. Three doublings take 18 years, not 3."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated $2^{t/6} = 8$ as $t/6 = 8 \\div 2 = 4$. The exponent that turns 2 into 8 is 3, not 4."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You added 1,500 bolts every 6 years, which is a linear model. The output doubles, so each 6-year period adds more than the one before it."
+   }
+  },
+  "id": "orig-build-exponent-M-82c99f",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which equation represents this situation, where $w$ is the average hourly wage, in dollars, $t$ years after 2018?",
+  "stimulus": "A labor economist studied the pay of warehouse workers in one region. The average hourly wage increased by 5% each year from 2018 to 2024. In 2020, the average hourly wage was \\$22.05.",
+  "choices": [
+   "$w = 22.05(1.05)^{t}$",
+   "$w = 21(1.05)^{t}$",
+   "$w = 20(1.05)^{t}$",
+   "$w = 20(0.05)^{t}$"
+  ],
+  "answer": "C",
+  "explanation": "The year 2020 is $t = 2$, so the given wage is two yearly increases after the starting wage. Divide by the factor twice: $22.05 \\div 1.05^{2} = 22.05 \\div 1.1025 = 20$. The model is $w = 20(1.05)^{t}$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used the 2020 wage as the starting amount. That wage is at $t = 2$. The starting amount is the wage at $t = 0$, which is 2018."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You divided 22.05 by 1.05 only once, which gives the 2019 wage. You need to go back two years to reach 2018."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the rate, 0.05, as the factor. A 5% increase means you multiply by 1.05 each year. A factor of 0.05 would make the wage almost vanish."
+   }
+  },
+  "id": "orig-build-exponent-M-48ffdb",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the model, after which print does the plate's quality score first fall below 50?",
+  "stimulus": "Drypoint plates in printmaking wear down as prints are pulled from them. A printmaking studio gives a new plate a quality score of 100. Its model says that each print reduces the score by 10% of the score just before that print.",
+  "choices": [
+   "The 1st print",
+   "The 5th print",
+   "The 6th print",
+   "The 7th print"
+  ],
+  "answer": "D",
+  "explanation": "After $n$ prints, the score is $100(0.9)^{n}$. After the 6th print it is $100(0.9)^{6} \\approx 53.1$, which is still above 50. After the 7th print it is $100(0.9)^{7} \\approx 47.8$. So the 7th print is the first one that brings the score below 50.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used 0.1 as the factor, so $100(0.1)^{1} = 10$ after one print. Losing 10% means you keep 90%, so the factor is 0.9."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You subtracted 10 points per print, which is a linear model, and solved $100 - 10n = 50$. Each 10% is taken from a smaller score, so the losses shrink and the score falls more slowly."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "After the 6th print the score is about 53.1, which is not yet below 50. That is the last print that keeps the score above 50, not the first one that drops it below."
+   }
+  },
+  "id": "orig-build-exponent-M-74c335",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which equation represents this model, where $V$ is the number of recorded versions $t$ years after 1850?",
+  "stimulus": "A folklore studies archive tracks written versions of a riddle tale. In 1850, 4 versions had been recorded. By 1900, 36 had been recorded. A researcher models the count as tripling over a fixed number of years.",
+  "choices": [
+   "$V = 4(3)^{t/50}$",
+   "$V = 4(3)^{t/25}$",
+   "$V = 4(3)^{t}$",
+   "$V = 36(3)^{t/25}$"
+  ],
+  "answer": "B",
+  "explanation": "From 4 to 36 is a factor of 9, and $9 = 3^{2}$, so the count tripled twice in 50 years. Each tripling takes 25 years. Starting from 4 in 1850, the model is $V = 4(3)^{t/25}$. Check: at $t = 50$, $4(3)^{2} = 36$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You treated the whole 50-year span as one tripling. That model gives only 12 versions in 1900, not 36."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You didn't divide the exponent by the tripling interval. This model triples every year, so it would give far more than 36 by 1900."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used the 1900 count as the starting amount. At $t = 0$, which is 1850, only 4 versions had been recorded."
+   }
+  },
+  "id": "orig-build-exponent-M-24cc54",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which expression represents the city's tree canopy area, in hectares, in 2030?",
+  "stimulus": "An urban planning office reported that a city's tree canopy covered 1,200 hectares in 2020. The office projects that the canopy area will decrease by 2% each year after 2020 unless a planting program is funded.",
+  "choices": [
+   "$1{,}200(0.02)^{10}$",
+   "$1{,}200(0.98)^{10}$",
+   "$1{,}200(0.98)^{2030}$",
+   "$1{,}200(1 - 0.02 \\cdot 10)$"
+  ],
+  "answer": "B",
+  "explanation": "A 2% decrease means each year's area is 98% of the year before, so the factor is 0.98. The year 2030 is 10 years after 2020, so the exponent is 10. The area is $1{,}200(0.98)^{10}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the percent lost, 0.02, as the factor. For a 2% decrease you multiply by 1 \u2212 0.02 = 0.98 each year."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the calendar year as the exponent. The exponent counts years since the starting year, and 2030 \u2212 2020 = 10."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This subtracts 2% of the original 1,200 hectares each year, which is a linear model. The projection takes 2% of each year's new, smaller area, so it needs a repeated factor."
+   }
+  },
+  "id": "orig-build-exponent-M-c67202",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
  }
 ]

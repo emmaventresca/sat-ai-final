@@ -248,7 +248,7 @@ def main():
     ap.add_argument("--subtype", help="slug from data/subtypes.json")
     ap.add_argument("--list-subtypes", action="store_true")
     ap.add_argument("--difficulty", default="E", choices=list(DIFFICULTY_GUIDE))
-    ap.add_argument("--n", type=int, default=6)
+    ap.add_argument("--n", type=int, default=10)
     ap.add_argument("--model", default="claude-opus-5-5")
     ap.add_argument("--seed", type=int, default=0)
     args = ap.parse_args()

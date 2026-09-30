@@ -1,0 +1,282 @@
+[
+ {
+  "stem": "The function $f$ is defined by $f(x) = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. What is the value of $a + b$?",
+  "stimulus": "An agronomist models the yield of a test plot of sorghum, in bushels per acre, as $f(x)$, where $x$ is the amount of nitrogen fertilizer applied, in hundreds of kilograms per hectare. The model gives a yield of 40 bushels per acre when no fertilizer is applied, 64 bushels per acre when $x = 2$, and 72 bushels per acre when $x = 4$.",
+  "choices": [
+   "10",
+   "14",
+   "16",
+   "54"
+  ],
+  "answer": "B",
+  "explanation": "Start with the y-intercept. $f(0) = 40$ gives $c = 40$. Substituting $x = 2$ gives $4a + 2b + 40 = 64$, so $2a + b = 12$. Substituting $x = 4$ gives $16a + 4b + 40 = 72$, so $4a + b = 8$. Subtracting the first equation from the second gives $2a = -4$, so $a = -2$ and $b = 16$. Then $a + b = -2 + 16 = 14$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You solved $2a = -4$ as $a = 2$, dropping the negative sign. That made $b = 8$ and $a + b = 10$. A negative $a$ also fits the story: yield rises and then levels off, so the parabola opens downward."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "16 is the value of $b$ alone. The question asks for $a + b$, so you still need to add $a = -2$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "54 is $a + b + c$. You included the constant term $c = 40$, but the question asks only for $a + b$."
+   }
+  },
+  "id": "orig-find-constants-H-eab942",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "The function $P$ is defined by $P(h) = a \\cdot b^h$, where $a$ and $b$ are positive constants. What is the value of $a$?",
+  "stimulus": "A meteorologist uses the function $P$ to estimate atmospheric pressure, in hectopascals (hPa), at an altitude of $h$ kilometers above sea level over a particular weather station. According to the model, the pressure is 900 hPa at an altitude of 1 kilometer and 729 hPa at an altitude of 3 kilometers.",
+  "choices": [
+   "0.9",
+   "900",
+   "985.5",
+   "1,000"
+  ],
+  "answer": "D",
+  "explanation": "Divide the two conditions: $\\frac{a \\cdot b^3}{a \\cdot b^1} = \\frac{729}{900}$, so $b^2 = 0.81$ and $b = 0.9$. Then $a \\cdot 0.9 = 900$, so $a = 1{,}000$. This is the modeled pressure at sea level, where $h = 0$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "0.9 is the value of $b$, the multiplier per kilometer. The question asks for $a$, the starting value."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You treated the pressure at $h = 1$ as the starting value. But $a$ is the value at $h = 0$, so you have to undo one factor of $b$: $900 \\div 0.9 = 1{,}000$."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You assumed the pressure drops by the same amount each kilometer, $171 \\div 2 = 85.5$ hPa, and added that to 900. The model is exponential, so the pressure falls by a constant factor per kilometer, not a constant amount."
+   }
+  },
+  "id": "orig-find-constants-H-a50dba",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "The function $f$ is defined by $f(x) = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. What is the value of $c$?",
+  "stimulus": "A marine biologist models the density of copepods in a tidal inlet as $f(x)$, in hundreds of organisms per liter, where $x$ is the number of hours after low tide. Negative values of $x$ are hours before low tide. The model gives $f(-1) = 9$, $f(1) = 1$, and $f(2) = 3$.",
+  "choices": [
+   "$-4$",
+   "$2$",
+   "$3$",
+   "$5$"
+  ],
+  "answer": "C",
+  "explanation": "Substitute each point. From $x = -1$: $a(-1)^2 + b(-1) + c = a - b + c = 9$. From $x = 1$: $a + b + c = 1$. Subtracting these gives $2b = -8$, so $b = -4$ and $a + c = 5$. From $x = 2$: $4a + 2b + c = 3$, so $4a + c = 11$. Subtracting $a + c = 5$ gives $3a = 6$, so $a = 2$ and $c = 3$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$-4$ is the value of $b$, which comes out first when you subtract the first two equations. The question asks for $c$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "2 is the value of $a$. You solved the system correctly but reported the wrong constant."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $a(-1)^2$ as $-a$. That turns the first equation into $-a - b + c = 9$, and adding it to $a + b + c = 1$ gives $c = 5$. A negative number squared is positive, so the term is $+a$."
+   }
+  },
+  "id": "orig-find-constants-H-9a5038",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "For the function $f$, the table shows three values of $x$ and their corresponding values of $f(x)$. The function $f$ is defined by $f(x) = a \\cdot b^x$, where $a$ and $b$ are positive constants. Which equation defines $f$?",
+  "stimulus": "A labor economist models the number of workers registered on a regional freelance platform, in thousands, as $f(x)$, where $x$ is the number of years since the platform launched.\n\n$x$ | $f(x)$\n1 | 24\n2 | 36\n3 | 54",
+  "choices": [
+   "$f(x) = 16(1.5)^x$",
+   "$f(x) = 24(1.5)^x$",
+   "$f(x) = 16(0.5)^x$",
+   "$f(x) = 12x + 12$"
+  ],
+  "answer": "A",
+  "explanation": "Each value is 1.5 times the one before it ($36 \\div 24 = 1.5$ and $54 \\div 36 = 1.5$), so $b = 1.5$. Then $a \\cdot 1.5 = 24$, so $a = 16$. Check the last row: $16(1.5)^3 = 16(3.375) = 54$. The equation is $f(x) = 16(1.5)^x$.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used $f(1) = 24$ as the starting value $a$. The starting value is $f(0)$, which is one step earlier: $24 \\div 1.5 = 16$. This equation gives $f(1) = 36$, which does not match the table."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You saw that the count grows by 50% each year and wrote 0.5 as the multiplier. A 50% increase means multiplying by $1 + 0.5 = 1.5$. With 0.5, the count would shrink every year."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "This line goes through the first two rows, but it gives $f(3) = 48$, not 54. The increases are not constant (12, then 18), so the relationship is not linear."
+   }
+  },
+  "id": "orig-find-constants-H-34501b",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "The function $f$ is defined by $f(x) = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. What is the value of $b$?",
+  "stimulus": "A civil engineer models the main cable of a small suspension footbridge. The height of the cable above the bridge deck is $f(x)$ meters at a horizontal distance of $x$ meters from the left tower. The cable is attached to the left tower 20 meters above the deck. It is 12 meters above the deck at $x = 10$ and again at $x = 40$.",
+  "choices": [
+   "$1.5$",
+   "$1$",
+   "$0.02$",
+   "$-1$"
+  ],
+  "answer": "D",
+  "explanation": "The attachment point gives $f(0) = 20$, so $c = 20$. From $x = 10$: $100a + 10b + 20 = 12$, so $100a + 10b = -8$. From $x = 40$: $1{,}600a + 40b + 20 = 12$, so $1{,}600a + 40b = -8$. Multiply the first equation by 4 to get $400a + 40b = -32$, then subtract it from the second: $1{,}200a = 24$, so $a = 0.02$. Then $10b = -8 - 2 = -10$, so $b = -1$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You left out the tower condition and set $100a + 10b = 12$ and $1{,}600a + 40b = 12$ as if $c = 0$. Those equations give $a = -0.03$ and $b = 1.5$, but the cable would then start at the deck instead of 20 meters above it."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You moved the 20 to the other side with the wrong sign and wrote $100a + 10b = 8$ and $1{,}600a + 40b = 8$. That gives $a = -0.02$ and $b = 1$. Subtracting 20 from 12 gives $-8$, not 8."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "0.02 is the value of $a$, which you find first when you eliminate $b$. The question asks for $b$."
+   }
+  },
+  "id": "orig-find-constants-H-57831b",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "The function $f$ is defined by $f(x) = a(x + 2)(x - b)$, where $a$ and $b$ are positive constants. What is the value of $a + b$?",
+  "stimulus": "A paleobotanist compares fossil fern spores in a core sample with a reference layer. The paleobotanist models the change in relative abundance of the spores, in percentage points, as $f(x)$, where $x$ is the depth of a layer below the reference layer, in meters. According to the model, $f(0) = -20$ and $f(4) = -12$.",
+  "choices": [
+   "3",
+   "5",
+   "7",
+   "10"
+  ],
+  "answer": "C",
+  "explanation": "Substituting $x = 0$ gives $a(2)(-b) = -20$, so $ab = 10$. Substituting $x = 4$ gives $a(6)(4 - b) = -12$, so $a(4 - b) = -2$, which expands to $4a - ab = -2$. Replace $ab$ with 10: $4a - 10 = -2$, so $a = 2$. Then $b = 10 \\div 2 = 5$, and $a + b = 7$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "3 is the sum of the x-intercepts, $-2 + 5$. You found the roots of the function, but the question asks for $a + b$, where $a$ is the leading coefficient."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "5 is the value of $b$ alone. You still need to add $a = 2$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "10 is the product $ab$, which comes from the first substitution. You stopped before using the second point to separate $a$ from $b$."
+   }
+  },
+  "id": "orig-find-constants-H-c64d38",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "For the quadratic function $f$, the table shows three values of $x$ and their corresponding values of $f(x)$. Which equation defines $f$?",
+  "stimulus": "An immunologist models the count of a certain type of activated T cell in a volunteer's blood as $f(x)$, in hundreds of cells per microliter, where $x$ is the number of days after a booster vaccination. Negative values of $x$ are days before the booster.\n\n$x$ | $f(x)$\n$-1$ | 7\n0 | 4\n2 | 10",
+  "choices": [
+   "$f(x) = 6x^2 - 9x + 4$",
+   "$f(x) = 2x^2 - x + 4$",
+   "$f(x) = x^2 - 2x + 4$",
+   "$f(x) = 2x^2 - x + 7$"
+  ],
+  "answer": "B",
+  "explanation": "The row $x = 0$ gives the y-intercept, so the constant term is 4. With $f(x) = ax^2 + bx + 4$, the row $x = -1$ gives $a - b + 4 = 7$, so $a - b = 3$. The row $x = 2$ gives $4a + 2b + 4 = 10$, so $2a + b = 3$. Adding the two equations gives $3a = 6$, so $a = 2$ and $b = -1$. Check: $f(-1) = 2 + 1 + 4 = 7$ and $f(2) = 8 - 2 + 4 = 10$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $a(-1)^2$ as $-a$, which gave $-a - b = 3$ and led to $a = 6$ and $b = -9$. This equation fits the rows for $x = 0$ and $x = 2$, but it gives $f(-1) = 6 + 9 + 4 = 19$, not 7."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "This equation fits the rows for $x = -1$ and $x = 0$, but it gives $f(2) = 4 - 4 + 4 = 4$, not 10. It has to fit every row in the table."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the first value in the table, 7, as the y-intercept. The y-intercept is $f(0)$, which is 4. This equation gives $f(0) = 7$."
+   }
+  },
+  "id": "orig-find-constants-H-f62146",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "The function $f$ is defined by $f(t) = a \\cdot b^{\\frac{t}{4}}$, where $a$ and $b$ are positive constants. What is the value of $b$?",
+  "stimulus": "A nutrition scientist studies how vitamin C breaks down in bottled orange juice kept in the refrigerator. The scientist models the concentration of vitamin C as $f(t)$, in milligrams per liter, $t$ days after bottling. The juice has 200 milligrams per liter when it is bottled and 50 milligrams per liter 8 days later.",
+  "choices": [
+   "0.25",
+   "0.5",
+   "0.75",
+   "200"
+  ],
+  "answer": "B",
+  "explanation": "At bottling, $t = 0$, so $f(0) = a \\cdot b^0 = a = 200$. At $t = 8$, the exponent is $\\frac{8}{4} = 2$, so $200 \\cdot b^2 = 50$. Then $b^2 = 0.25$, and because $b$ is positive, $b = 0.5$. The concentration halves every 4 days.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "0.25 is $b^2$, the total factor over 8 days, which is two 4-day periods. You found $\\frac{50}{200}$ but did not take the square root to get the factor for a single period."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "0.75 is the fraction of vitamin C lost over 8 days. The base $b$ is the fraction that remains, which you multiply by each period, not the fraction that disappears."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "200 is the value of $a$, the concentration at bottling, which you get by setting $t = 0$. The question asks for the base $b$."
+   }
+  },
+  "id": "orig-find-constants-H-590ff2",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ }
+]
