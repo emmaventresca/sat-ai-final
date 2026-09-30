@@ -27,8 +27,15 @@ SKILL_RE = re.compile(
 DIFF_RE = re.compile(r"\b(Eas y|Easy|Medium|Har d|Hard)\b")
 
 
+# PDF text extraction can emit NUL and other control bytes. They are invisible
+# in the output and then crash subprocess with "embedded null byte" when the
+# text reaches a command line, so strip them at the source.
+CONTROL = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]")
+
+
 def despace(t):
     """The export letter-spaces words for kerning: 'Inf er ences'."""
+    t = CONTROL.sub(" ", t or "")
     t = re.sub(r"\s+", " ", t)
     for a, b in [("Eas y", "Easy"), ("Har d", "Hard"), ("Medi um", "Medium")]:
         t = t.replace(a, b)
@@ -146,6 +153,9 @@ def main():
     ap.add_argument("--chars", type=int, default=900)
     ap.add_argument("--model", default="claude-opus-5-5")
     ap.add_argument("--list", action="store_true")
+    ap.add_argument("--out-file", help="write this skill's result here instead "
+                                       "of merging into data/subtypes.json "
+                                       "(lets skills run in parallel)")
     args = ap.parse_args()
 
     rows = [json.loads(l) for l in open(os.path.join(EXPORT, f"{args.section}.jsonl"))]
@@ -163,8 +173,9 @@ def main():
         return
 
     skills = [args.skill] if args.skill else list(by_skill)
-    out_path = os.path.join(ROOT, "data", "subtypes.json")
-    existing = json.load(open(out_path)) if os.path.exists(out_path) else {"skills": {}}
+    out_path = args.out_file or os.path.join(ROOT, "data", "subtypes.json")
+    existing = (json.load(open(out_path))
+                if os.path.exists(out_path) and not args.out_file else {"skills": {}})
 
     for skill in skills:
         rs = by_skill.get(skill)
