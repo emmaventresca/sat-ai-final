@@ -26,6 +26,44 @@
 
 export const TIERS = ['E', 'M', 'H'];
 
+// ---------------------------------------------------------------------------
+// Units of mastery
+//
+// The engine tracks a student at SUBTYPE level, not skill level. College
+// Board's published skills are too coarse to diagnose with: "Systems of two
+// linear equations" covers solving a bare system, translating a word problem
+// into one, and finding the parameter that makes it have no solution. A
+// student can be fluent at one and lost at another, and a skill-level score
+// averages that into something that names no action.
+//
+// So a cell is keyed (subtype, difficulty), and a skill's mastery is derived
+// from its subtypes rather than measured directly. "You are fine on bare
+// systems, you are losing the ones that ask for x+y" is a lesson plan; "you
+// are at 62% on Systems of Equations" is not.
+// ---------------------------------------------------------------------------
+
+/** The mastery key for a unit of practice. */
+export function cellKey(item, tier = item.difficulty) {
+  return `${item.subtype ?? item.skill_cd}|${tier}`;
+}
+
+/**
+ * Roll a skill's subtype cells up into one number, weighted by how often each
+ * subtype actually appears. Used for display and for teacher reporting - never
+ * for selection, which always works at subtype level.
+ */
+export function skillAccuracy(skill_cd, ctx) {
+  const subs = ctx.subtypesOf?.[skill_cd] ?? [];
+  let seen = 0, correct = 0;
+  for (const st of subs) {
+    for (const tier of TIERS) {
+      const cell = ctx.mastery[`${st.slug}|${tier}`];
+      if (cell?.seen) { seen += cell.seen; correct += cell.correct; }
+    }
+  }
+  return seen ? correct / seen : null;
+}
+
 // Leitner intervals in days. A miss drops to box 1 and requeues within the
 // session; this mirrors what worked in sat-mills.
 const BOX_DAYS = [0, 1, 3, 7, 21, 60];
@@ -83,7 +121,10 @@ function clamp(x, lo, hi) { return Math.max(lo, Math.min(hi, x)); }
  * meant to prevent.
  */
 export function reachability(item, ctx) {
-  return tierReachability(item.skill_cd, item.difficulty ?? 'M', ctx);
+  // The ladder is climbed within a subtype: being fluent at bare systems says
+  // nothing about whether the word-problem version is reachable.
+  return tierReachability(item.subtype ?? item.skill_cd,
+                          item.difficulty ?? 'M', ctx);
 }
 
 // With no evidence at the tier below, a tier is open only for exploration.
@@ -162,11 +203,11 @@ export function scoreItem(item, ctx) {
   const weight = bandWeights(ctx.bands, section, target)[tier] ?? 0;
   if (weight <= 0.02) return 0;                        // they do not need this tier
 
-  const cell = ctx.mastery[`${item.skill_cd}|${tier}`];
+  const cell = ctx.mastery[cellKey(item, tier)];
   if (!isDue(cell, ctx.now)) return 0;                 // not yet due for review
 
   const miss = pMiss(cell, tier);
-  const frequency = skillFrequency(skill, tier);
+  const frequency = skillFrequency(skill, tier, item, ctx);
 
   // Strategy and triage cards are force-multipliers rather than single points,
   // so they carry a premium over a single practice item.
@@ -175,29 +216,48 @@ export function scoreItem(item, ctx) {
   return miss * frequency * weight * reachability(item, ctx) * (typeBoost[item.type] ?? 1);
 }
 
-/** Share of the section's official item pool that this skill and tier occupy. */
-export function skillFrequency(skill, tier) {
+/**
+ * Share of the section's official item pool this unit occupies.
+ *
+ * Prefers the measured subtype counts when the item names a subtype, and falls
+ * back to the skill's counts otherwise. The counts are measured rather than
+ * estimated: every question in the official export was classified into a
+ * subtype, because the engine multiplies by frequency and a guessed share
+ * sends students at the wrong thing.
+ */
+export function skillFrequency(skill, tier, item = null, ctx = null) {
+  const sub = item?.subtype && ctx?.subtypes?.[item.subtype];
+  if (sub) {
+    const n = { E: sub.count_e, M: sub.count_m, H: sub.count_h }[tier] ?? 0;
+    return n / (sub.section_total || skill.section_total || 1);
+  }
   const n = { E: skill.bank_count_e, M: skill.bank_count_m, H: skill.bank_count_h }[tier] ?? 0;
-  const total = skill.section_total || 1;
-  return n / total;
+  return n / (skill.section_total || 1);
 }
 
 /**
  * Build the next round. Takes the highest-value items, but caps how many come
  * from any one skill so a session does not become twenty circle questions.
  */
-export function selectRound(candidates, ctx, { size = 20, maxPerSkill = 4 } = {}) {
+export function selectRound(candidates, ctx,
+                            { size = 20, maxPerSkill = 4, maxPerSubtype = 3 } = {}) {
   const scored = candidates
     .map((item) => ({ item, value: scoreItem(item, ctx) }))
     .filter((x) => x.value > 0)
     .sort((a, b) => b.value - a.value);
 
+  // Cap per skill AND per subtype. Without the second cap a round can be four
+  // different skills and still be four copies of the same recognition.
   const perSkill = new Map();
+  const perSubtype = new Map();
   const out = [];
   for (const { item, value } of scored) {
     const used = perSkill.get(item.skill_cd) ?? 0;
     if (used >= maxPerSkill) continue;
+    const usedSub = item.subtype ? (perSubtype.get(item.subtype) ?? 0) : 0;
+    if (item.subtype && usedSub >= maxPerSubtype) continue;
     perSkill.set(item.skill_cd, used + 1);
+    if (item.subtype) perSubtype.set(item.subtype, usedSub + 1);
     out.push({ ...item, _value: value });
     if (out.length >= size) break;
   }
