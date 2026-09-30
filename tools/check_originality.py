@@ -20,9 +20,32 @@ CORPUS = os.path.join(ROOT, "corpus", "bank")
 TAG = re.compile(r"<[^>]+>")
 N = 8
 
+# Math stems are templates: "the best interpretation of $m$ in this context"
+# and "...of $b$ in this context" are the same sentence with a different
+# variable spliced in. Comparing them raw makes each look rare, so a stem that
+# is plainly formulaic never clears a reuse threshold. Normalising the variable
+# and number slots first lets the template be counted as the one thing it is.
+VAR = re.compile(r"\$[^$]*\$|\\\(.*?\\\)")
+NUM = re.compile(r"\b\d[\d,.]*\b")
+
+
+def normalize(text):
+    """Lowercase, with variable and number slots collapsed to sentinels.
+
+    The sentinels are lowercase and underscore-delimited so that the word regex
+    can match them without needing a capital-letter class - an earlier version
+    used bare VAR/NUM and a `[a-z']+` regex, which silently dropped the first
+    letter of every capitalised word ("Which" -> "hich") and corrupted every
+    comparison in both directions."""
+    t = TAG.sub(" ", text or "")
+    t = VAR.sub(" __var__ ", t)
+    t = NUM.sub(" __num__ ", t)
+    return t.lower()
+
+
 
 def words(t):
-    return re.findall(r"[a-z']+", TAG.sub(" ", t or "").lower())
+    return re.findall(r"[a-z']+|__var__|__num__", normalize(t))
 
 
 def shingles(t, n=N):
@@ -39,10 +62,7 @@ def standard_stems():
     p = os.path.join(ROOT, "data", "standard_stems.json")
     if not os.path.exists(p):
         return set()
-    out = set()
-    for s in json.load(open(p))["stems"]:
-        out |= shingles(s["text"])
-    return out
+    return {e["text"] for e in json.load(open(p))["phrases"]}
 
 
 def corpus_index():

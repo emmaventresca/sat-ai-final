@@ -36,6 +36,30 @@ CORPUS = os.path.join(ROOT, "corpus", "bank")
 
 _lock = threading.Lock()
 LETTERS = "ABCD"
+TAG = re.compile(r"<[^>]+>")
+
+# Math stems are templates: "the best interpretation of $m$ in this context"
+# and "...of $b$ in this context" are the same sentence with a different
+# variable spliced in. Comparing them raw makes each look rare, so a stem that
+# is plainly formulaic never clears a reuse threshold. Normalising the variable
+# and number slots first lets the template be counted as the one thing it is.
+VAR = re.compile(r"\$[^$]*\$|\\\(.*?\\\)")
+NUM = re.compile(r"\b\d[\d,.]*\b")
+
+
+def normalize(text):
+    """Lowercase, with variable and number slots collapsed to sentinels.
+
+    The sentinels are lowercase and underscore-delimited so that the word regex
+    can match them without needing a capital-letter class - an earlier version
+    used bare VAR/NUM and a `[a-z']+` regex, which silently dropped the first
+    letter of every capitalised word ("Which" -> "hich") and corrupted every
+    comparison in both directions."""
+    t = TAG.sub(" ", text or "")
+    t = VAR.sub(" __var__ ", t)
+    t = NUM.sub(" __num__ ", t)
+    return t.lower()
+
 
 
 # ---------------------------------------------------------------------------
@@ -129,23 +153,19 @@ def call(prompt, model):
 # ---------------------------------------------------------------------------
 
 def standard_stem_shingles(n=8):
-    """Instruction lines exempt from the overlap check. See
-    data/standard_stems.json for why; the short version is that they are short
-    functional phrases College Board itself repeats across hundreds of items."""
+    """Phrases exempt from the overlap check: sequences College Board reuses
+    across at least ten different item stems, which is what makes them
+    formulaic instruction language rather than authorship. Built by
+    tools/build_stem_allowlist.py; rationale in data/standard_stems.json."""
     p = os.path.join(ROOT, "data", "standard_stems.json")
     if not os.path.exists(p):
         return set()
-    out = set()
-    for s in json.load(open(p))["stems"]:
-        w = re.findall(r"[a-z']+", s["text"].lower())
-        out |= {" ".join(w[i:i + n]) for i in range(len(w) - n + 1)}
-    return out
+    return {e["text"] for e in json.load(open(p))["phrases"]}
 
 
 def corpus_shingles(n=8):
     """Every n-word sequence in the cached College Board corpus."""
     out = set()
-    tag = re.compile(r"<[^>]+>")
     for p in glob.glob(os.path.join(CORPUS, "*", "*.json")):
         if os.path.basename(p).startswith("_"):
             continue
@@ -154,16 +174,15 @@ def corpus_shingles(n=8):
         except Exception:
             continue
         for field in ("stem", "stimulus"):
-            t = tag.sub(" ", d.get(field) or "")
-            w = re.findall(r"[a-z']+", t.lower())
+            w = re.findall(r"[a-z']+|__var__|__num__", normalize(d.get(field)))
             for i in range(len(w) - n + 1):
                 out.add(" ".join(w[i:i + n]))
     return out
 
 
 def overlap(it, shingles, n=8):
-    w = re.findall(r"[a-z']+",
-                   ((it.get("stimulus") or "") + " " + it["stem"]).lower())
+    w = re.findall(r"[a-z']+|__var__|__num__",
+                   normalize((it.get("stimulus") or "") + " " + it["stem"]))
     hits = [" ".join(w[i:i + n]) for i in range(len(w) - n + 1)
             if " ".join(w[i:i + n]) in shingles]
     return hits
