@@ -12,7 +12,7 @@
 // model never writes to a student's account directly.
 // ---------------------------------------------------------------------------
 
-import { escapeHtml as esc, renderText } from './mathfmt.js?v=916c1252c3';
+import { escapeHtml as esc, renderText } from './mathfmt.js?v=c982f96cf1';
 
 const PLANNER = 'http://localhost:8791';
 
@@ -126,7 +126,31 @@ export function renderPlan(md) {
   return out.join('');
 }
 
+/**
+ * Split a reply into units, when it is a multi-week course.
+ *
+ * The planner emits "## Unit N: title (45 min)" headings; each becomes a panel
+ * the teacher can open on its own rather than scrolling one long document.
+ * Anything before the first unit is the course overview.
+ */
+export function splitUnits(md) {
+  const text = String(md ?? '');
+  const re = /^##\s*Unit\s*(\d+)\s*:\s*(.+?)\s*(?:\((\d+)\s*min\))?\s*$/gim;
+  const marks = [...text.matchAll(re)];
+  if (marks.length < 2) return null;
+  const units = marks.map((m, i) => ({
+    n: Number(m[1]),
+    title: m[2],
+    minutes: m[3] ? Number(m[3]) : null,
+    body: text.slice(m.index + m[0].length,
+                     i + 1 < marks.length ? marks[i + 1].index : text.length).trim(),
+  }));
+  return { intro: text.slice(0, marks[0].index).trim(), units };
+}
+
 export const STARTERS = [
+  'Build a four-week course, four hours a week, on circles and geometry for a ' +
+    'student at 1000 aiming for 1300. One unit per session.',
   'Plan a one-hour lesson on circles for a student at 1000 aiming for 1300. ' +
     'Separate the geometry ones from the graph ones and tell me where Desmos is the fast route.',
   'My student keeps missing transitions. What is the overarching structure ' +

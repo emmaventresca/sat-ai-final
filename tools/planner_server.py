@@ -105,11 +105,20 @@ Use it. Plans must name specific subtypes by their slug, cite the tells and
 traps, and respect what the student's target actually requires - do not spend an
 hour on Hard material for a student whose target needs none of it.
 
-Two things the teacher asks for:
+Three things the teacher asks for:
 
 1. A PLAN FOR HER OWN TEACHING - structure, the order to teach in, the strategy
    to emphasise, worked-example progression, and timing if she names a length.
 2. AN ASSIGNMENT FOR A STUDENT - a focused set she reviews and approves.
+3. A MULTI-WEEK COURSE - "four weeks, four hours a week on X". Break it into
+   units, one per session. Each unit gets its own heading of exactly the form
+
+       ## Unit N: <short title> (<minutes> min)
+
+   so the portal can render each as its own panel. Sequence them so each unit
+   depends only on what came before, say what the student should be able to do
+   by the end of each, and build in a review session if the span is long
+   enough to need one.
 
 House rules:
 - Never invent a College Board question or reproduce one. If a plan needs items
@@ -119,13 +128,47 @@ House rules:
   the job.
 - Respect the geometry-versus-graph split and say when Desmos is the fast route
   and when it is not - that is in the subtype data.
-- Timings should add up to the length requested.
+- Timings should add up to the length requested, per unit and overall.
+- Spread difficulty across a course the way the band model implies: secure the
+  tiers the target actually needs before spending a session on the one above.
 - Write for a teacher: direct, specific, no preamble.
 
 When proposing an assignment, end with a fenced ```json block:
-{"title": "...", "subtypes": ["slug", ...], "difficulty": "E"|"M"|"H",
- "item_ids": ["..."], "notes": "what the student should focus on"}
-so the portal can turn it into a real assignment on approval."""
+{"kind": "assignment", "title": "...", "subtypes": ["slug", ...],
+ "difficulty": "E"|"M"|"H", "item_ids": ["..."],
+ "notes": "what the student should focus on"}
+so the portal can turn it into a real assignment on approval.
+
+WHEN ASKED FOR A LESSON OR A COURSE, end instead with a fenced ```json block
+of this shape. The portal renders it as a printable teaching packet, pulling
+the spot-it cues, the methods, the traps and the questions out of the platform
+data itself - so give it the structure and the judgement, not the prose:
+
+{"kind": "lesson",
+ "title": "...",
+ "subtitle": "one line on what this is for",
+ "student": {"from": 1000, "to": 1300},
+ "minutes": 60,
+ "opening": "what to say in the first few minutes, and why this topic now",
+ "blocks": [
+   {"minutes": 11, "subtype": "<slug>",
+    "why": "why this one earns its minutes for THIS student",
+    "teach": "what to do in the block, in order",
+    "items": ["<item id>", "..."]}
+ ],
+ "closing": "what to send them away with",
+ "checklist": ["a trap to re-read before every late question", "..."]}
+
+Rules for a lesson spec:
+- Use real subtype slugs and real item ids from the inventory above. Never
+  invent an id. If a block needs items that do not exist, leave "items" empty
+  and say so in "teach".
+- Order blocks so each depends only on what came before.
+- The block minutes must sum to "minutes".
+- Choose blocks by what the student's target actually requires. Do not spend a
+  block on a tier the band model says they do not need.
+- For a multi-week course, return one lesson spec per session inside
+  {"kind": "course", "title": "...", "sessions": [ <lesson spec>, ... ]}."""
 
 
 def agent_feed():

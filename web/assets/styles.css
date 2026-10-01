@@ -432,3 +432,100 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 .stim-eq{text-align:center;margin:10px 0}
 .stim-eq .mth{margin:0 auto}
 .stim p + p{margin-top:10px}
+
+/* =========================================================================
+   Teaching packet - reads on screen, prints as a handout
+   ========================================================================= */
+.packet{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:34px 38px;box-shadow:var(--shadow);font-family:var(--serif);color:var(--ink)}
+.packet-head{border-bottom:2px solid var(--purple);padding-bottom:16px;margin-bottom:22px}
+.packet-kicker{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:.68rem;
+  font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--purple-d)}
+.packet-title{font-family:var(--serif);font-size:1.9rem;font-weight:700;margin:6px 0 4px;
+  letter-spacing:-.02em;background:none;-webkit-text-fill-color:initial;color:var(--ink)}
+.packet-sub{font-size:.95rem;color:var(--dim);margin:0 0 4px;line-height:1.6}
+.packet-section{margin:26px 0}
+.packet-section > h2{font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;color:var(--purple-d);
+  font-weight:800;margin:0 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+.packet-table{width:100%;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:.86rem}
+.packet-table th{font-size:.64rem}
+
+.packet-block{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:14px;
+  break-inside:avoid}
+.packet-block-head{display:flex;align-items:baseline;gap:10px;margin-bottom:9px}
+.packet-num{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:50%;
+  background:var(--purple);color:#fff;font-size:.8rem;font-weight:800;flex:none;
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.packet-block-head h3{margin:0;font-size:1.08rem;flex:1;font-family:var(--serif)}
+.packet-min{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:.72rem;
+  font-weight:800;color:var(--dim);letter-spacing:.06em}
+.packet-why{font-size:.92rem;color:var(--dim);margin:0 0 11px;line-height:1.65}
+.packet-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:10px}
+.packet-label{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:.63rem;
+  font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--purple-d);margin-bottom:6px}
+.packet-cols ul{margin:0;padding-left:17px}
+.packet-cols li{font-size:.9rem;line-height:1.58;margin-bottom:5px}
+.packet-desmos,.packet-trap,.packet-teach{font-size:.89rem;line-height:1.6;margin:8px 0 0;
+  padding:9px 12px;border-radius:10px}
+.packet-desmos{background:#eef3ff;border:1px solid #c9daff}
+.packet-trap{background:var(--bad-bg);border:1px solid var(--bad-ln)}
+.packet-teach{background:var(--panel2);border:1px solid var(--line)}
+.packet-seen{font-size:.76rem;color:var(--dim);margin:9px 0 0;
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.packet-checklist{background:var(--flag-bg);border:1px solid var(--flag-ln);border-radius:14px;
+  padding:15px 18px;margin:22px 0}
+.packet-checklist h3{margin:0 0 8px;font-size:.95rem;color:#8a5406}
+.packet-checklist ul{margin:0;padding-left:18px}
+.packet-checklist li{font-size:.9rem;line-height:1.6;margin-bottom:5px;color:#8a5406}
+.packet-note{background:var(--panel2);border:1px solid var(--line);border-radius:14px;
+  padding:15px 18px;margin:20px 0}
+.packet-note h3{margin:0 0 6px;font-size:.95rem}
+.packet-note p{margin:0;font-size:.93rem;line-height:1.68}
+
+.packet-q{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);
+  break-inside:avoid}
+.packet-q-num{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-weight:800;
+  font-size:1rem;min-width:34px;text-align:right;color:var(--purple-d)}
+.packet-q-tier{display:block;font-size:.6rem;letter-spacing:.1em;color:var(--dim);font-weight:700}
+.packet-q-body{flex:1}
+.packet-stim{background:var(--panel2);border:1px solid var(--line);border-radius:12px;
+  padding:13px 15px;margin-bottom:11px;font-size:.94rem;line-height:1.7}
+.packet-stem{font-size:1rem;line-height:1.65;margin-bottom:10px}
+.packet-choices{list-style:upper-alpha;margin:0;padding-left:24px}
+.packet-choices li{margin-bottom:6px;font-size:.96rem;line-height:1.55}
+.packet-sol{padding:13px 0;border-bottom:1px solid var(--line);break-inside:avoid}
+.packet-sol-body{font-size:.92rem;line-height:1.66}
+.packet-sol-wrong{margin:8px 0 0;padding-left:18px}
+.packet-sol-wrong li{font-size:.88rem;line-height:1.6;color:var(--dim);margin-bottom:5px}
+
+/* Print: the packet alone, on paper. */
+@media print {
+  body{background:#fff}
+  .wrap{max-width:none;padding:0}
+  .top,.tabs,.plan-ask,.plan-starters,.plan-thread,.agent-banner,
+  .packet-actions,.plan-approve,button{display:none !important}
+  .packet{border:none;box-shadow:none;padding:0;border-radius:0}
+  .packet-break{break-before:page}
+  .packet-block,.packet-q,.packet-sol{break-inside:avoid}
+  a{text-decoration:none;color:inherit}
+}
+
+/* ---- chat list and course units ----------------------------------------- */
+.plan-layout{display:grid;grid-template-columns:210px 1fr;gap:18px;margin-top:14px}
+.chat-list{display:flex;flex-direction:column;gap:6px;max-height:72vh;overflow-y:auto}
+.chat-item{position:relative;text-align:left;padding:9px 26px 9px 12px;border-radius:11px;
+  font-size:.84rem;font-weight:600;line-height:1.35;background:var(--panel);box-shadow:none}
+.chat-item.on{background:var(--panel2);border-color:var(--purple)}
+.chat-title{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chat-who{display:block;font-size:.7rem;color:var(--dim);font-weight:700;margin-top:2px}
+.chat-del{position:absolute;right:8px;top:7px;color:var(--dim);font-size:1.05rem;line-height:1}
+.chat-del:hover{color:var(--bad)}
+.packet-wrap{margin-top:14px}
+.packet-actions{display:flex;justify-content:flex-end;margin-bottom:8px}
+.unit-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 12px}
+.unit-tab{font-size:.82rem;padding:7px 12px;border-radius:10px;font-weight:700}
+.unit-tab.on{background:var(--purple);color:#fff;border-color:transparent}
+.unit-body.hidden{display:none}
+.course{margin-top:14px}
+@media (max-width:760px){ .plan-layout{grid-template-columns:1fr} .chat-list{max-height:none} }

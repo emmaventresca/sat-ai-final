@@ -12,15 +12,15 @@
 // here that could fake a student's history.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=916c1252c3';
-import { scoreItem, bandWeights, TIERS } from './engine.js?v=916c1252c3';
-import { focusTier, rankLessons } from './lessons.js?v=916c1252c3';
-import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=916c1252c3';
-import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=916c1252c3';
-import { PREVIEW_KEY } from './store.js?v=916c1252c3';
+import { makeStore, configured } from './store.js?v=c982f96cf1';
+import { scoreItem, bandWeights, TIERS } from './engine.js?v=c982f96cf1';
+import { focusTier, rankLessons } from './lessons.js?v=c982f96cf1';
+import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=c982f96cf1';
+import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=c982f96cf1';
+import { PREVIEW_KEY } from './store.js?v=c982f96cf1';
 import { plannerState, plannerHealthy, sendToPlanner, renderPlan, STARTERS,
          fetchAgentFeed, newAlerts, markSeen, popDesktop,
-         enableDesktopAlerts, desktopAlertsOn } from './planner.js?v=916c1252c3';
+         enableDesktopAlerts, desktopAlertsOn } from './planner.js?v=c982f96cf1';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -478,6 +478,46 @@ function watchAgents() {
   tick();
 }
 
+/**
+ * Render any lesson or course spec embedded in a reply as a packet.
+ *
+ * The model returns structure; the packet's teaching content comes from the
+ * platform's own subtype data and verified items, so nothing in it is
+ * invented at render time.
+ */
+function renderSpecs(reply) {
+  const specs = [];
+  for (const m of String(reply ?? '').matchAll(/```json\s*(\{[\s\S]*?\})\s*```/g)) {
+    try { specs.push(JSON.parse(m[1])); } catch { /* not a spec */ }
+  }
+  const data = { subtypeInfo: state.subtypeInfo ?? {}, items: state.practiceItems ?? [] };
+  const out = [];
+  for (const spec of specs) {
+    if (spec.kind === 'lesson') {
+      out.push(packetShell(renderPacket(spec, data), spec.title));
+    } else if (spec.kind === 'course' && Array.isArray(spec.sessions)) {
+      out.push(`<div class="course">
+        <div class="packet-label">${esc(spec.title ?? 'Course')} &middot;
+          ${spec.sessions.length} sessions</div>
+        <div class="unit-tabs">${spec.sessions.map((ses, i) =>
+          `<button class="unit-tab ${i === 0 ? 'on' : ''}" data-unit="${i}">
+            ${esc(ses.title ?? `Unit ${i + 1}`)}</button>`).join('')}</div>
+        ${spec.sessions.map((ses, i) =>
+          `<div class="unit-body ${i === 0 ? '' : 'hidden'}" data-unit-body="${i}">
+            ${packetShell(renderPacket(ses, data), ses.title)}</div>`).join('')}
+      </div>`);
+    }
+  }
+  return out.join('');
+}
+
+function packetShell(html, title) {
+  return `<div class="packet-wrap">
+    <div class="packet-actions">
+      <button class="btn-sm" data-print>Save as PDF</button>
+    </div>${html}</div>`;
+}
+
 /** How many runs are currently flagged - drives the badge on the tab. */
 function agentAlertCount() {
   return (state.agentFeed?.runs ?? []).filter((r) => r.alerts?.length).length;
@@ -577,6 +617,16 @@ function screenAgents() {
  */
 async function screenPlanner(note) {
   state.screen = 'planner';
+  // Restore the open conversation. Chats persist until deleted.
+  if (!plannerState.loaded) {
+    const active = chats.resolveActive();
+    if (active) plannerState.messages = [...active.messages];
+    plannerState.loaded = true;
+  }
+  if (!state.practiceItems) {
+    state.practiceItems = await fetch('../data/practice.json')
+      .then((r) => r.json()).then((d) => d.items).catch(() => []);
+  }
   const up = await plannerHealthy();
   const students = state.roster.map((r) => r.profile);
 
@@ -602,12 +652,26 @@ async function screenPlanner(note) {
       <div style="margin-top:8px"><code>python3 tools/planner_server.py</code></div>
       then reload this tab.</div>`}
 
-    <div class="plan-wrap" style="margin-top:14px">
+    <div class="plan-layout">
+    <aside class="chat-list">
+      <button class="btn-primary btn-sm" id="chat-new" style="width:100%">New chat</button>
+      ${chats.listChats().map((c) => `
+        <button class="chat-item ${c.id === chats.activeChatId() ? 'on' : ''}"
+                data-chat="${esc(c.id)}">
+          <span class="chat-title">${esc(c.title)}</span>
+          ${c.studentName ? `<span class="chat-who">${esc(c.studentName)}</span>` : ''}
+          <span class="chat-del" data-del="${esc(c.id)}" title="Delete">&times;</span>
+        </button>`).join('')}
+      ${chats.listChats().length ? '' : '<p class="tiny muted">No chats yet.</p>'}
+    </aside>
+
+    <div class="plan-wrap" style="margin-top:0">
       <div class="plan-thread" id="thread">
         ${plannerState.messages.length ? plannerState.messages.map((m) => `
           <div class="plan-msg ${m.role === 'user' ? 'you' : 'bot'}">
             <div class="who">${m.role === 'user' ? 'You' : 'Planner'}</div>
-            ${m.role === 'user' ? `<p>${esc(m.content)}</p>` : renderPlan(m.content)}
+            ${m.role === 'user' ? `<p>${esc(m.content)}</p>`
+              : renderPlan(m.content) + renderSpecs(m.content)}
           </div>`).join('') : `
           <div class="plan-msg bot">
             <div class="who">Planner</div>
@@ -659,6 +723,7 @@ async function screenPlanner(note) {
         session. Nothing here is visible to students, and an assignment only
         reaches them after you approve it.</p>
     </div>
+    </div>
   </div>`;
 
   const thread = $('#thread');
@@ -680,11 +745,51 @@ async function screenPlanner(note) {
   $('#tab-agents').onclick = () => screenAgents();
   wireBanner();
 
+  for (const b of document.querySelectorAll('[data-chat]')) {
+    b.onclick = (e) => {
+      if (e.target.dataset.del) {
+        chats.deleteChat(e.target.dataset.del);
+        const next = chats.resolveActive();
+        plannerState.messages = next ? [...next.messages] : [];
+        plannerState.pending = null;
+        chats.setActive(next?.id ?? null);
+        return screenPlanner();
+      }
+      chats.setActive(b.dataset.chat);
+      plannerState.messages = [...(chats.getChat(b.dataset.chat)?.messages ?? [])];
+      plannerState.pending = null;
+      screenPlanner();
+    };
+  }
+  const nb = $('#chat-new');
+  if (nb) nb.onclick = () => {
+    chats.newChat();
+    plannerState.messages = [];
+    plannerState.pending = null;
+    screenPlanner();
+  };
+  for (const t of document.querySelectorAll('[data-unit]')) {
+    t.onclick = () => {
+      const scope = t.closest('.course');
+      for (const x of scope.querySelectorAll('[data-unit]')) x.classList.remove('on');
+      t.classList.add('on');
+      for (const b of scope.querySelectorAll('[data-unit-body]')) {
+        b.classList.toggle('hidden', b.dataset.unitBody !== t.dataset.unit);
+      }
+    };
+  }
+  for (const b of document.querySelectorAll('[data-print]')) {
+    b.onclick = () => window.print();
+  }
+
   const send = async (text) => {
     if (!text?.trim() || plannerState.busy) return;
     // Paint the pending state first, then await. Otherwise the only redraw
     // happens after the call returns and the page looks dead meanwhile.
+    const chat = chats.resolveActive() ?? chats.newChat();
+    chats.setActive(chat.id);
     await sendToPlanner(text.trim(), undefined, () => screenPlanner());
+    chats.saveMessages(chat.id, plannerState.messages);
     screenPlanner();
   };
   $('#send').onclick = () => send($('#ask').value);
@@ -741,8 +846,12 @@ async function loadData() {
   state.lessons = lessons.lessons;
   state.agentFeed = agentFeed;
   state.subtypeNames = {};
+  state.subtypeInfo = {};
   for (const v of Object.values(subtax.skills ?? {})) {
-    for (const st of v.subtypes ?? []) state.subtypeNames[st.slug] = st.name;
+    for (const st of v.subtypes ?? []) {
+      state.subtypeNames[st.slug] = st.name;
+      state.subtypeInfo[st.slug] = st;
+    }
   }
   setSubtypeNames(state.subtypeNames);
 }
