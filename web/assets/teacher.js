@@ -12,15 +12,17 @@
 // here that could fake a student's history.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=c982f96cf1';
-import { scoreItem, bandWeights, TIERS } from './engine.js?v=c982f96cf1';
-import { focusTier, rankLessons } from './lessons.js?v=c982f96cf1';
-import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=c982f96cf1';
-import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=c982f96cf1';
-import { PREVIEW_KEY } from './store.js?v=c982f96cf1';
+import { makeStore, configured } from './store.js?v=1ca24ebc7b';
+import { scoreItem, bandWeights, TIERS } from './engine.js?v=1ca24ebc7b';
+import { focusTier, rankLessons } from './lessons.js?v=1ca24ebc7b';
+import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=1ca24ebc7b';
+import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=1ca24ebc7b';
+import { PREVIEW_KEY } from './store.js?v=1ca24ebc7b';
+import * as chats from './chats.js?v=1ca24ebc7b';
+import { renderPacket } from './packet.js?v=1ca24ebc7b';
 import { plannerState, plannerHealthy, sendToPlanner, renderPlan, STARTERS,
          fetchAgentFeed, newAlerts, markSeen, popDesktop,
-         enableDesktopAlerts, desktopAlertsOn } from './planner.js?v=c982f96cf1';
+         enableDesktopAlerts, desktopAlertsOn, setSubtypeNames } from './planner.js?v=1ca24ebc7b';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');

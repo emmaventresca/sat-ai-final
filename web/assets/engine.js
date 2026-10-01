@@ -166,14 +166,89 @@ export function updateMastery(cell, correct, now = new Date()) {
   const seen = (cell?.seen ?? 0) + 1;
   const got = (cell?.correct ?? 0) + (correct ? 1 : 0);
   const box = correct ? Math.min(5, (cell?.box ?? 1) + 1) : 1;
+  // A run of correct answers, for deciding when to offer the next tier.
+  const streak = correct ? (cell?.streak ?? 0) + 1 : 0;
+  const bestStreak = Math.max(cell?.bestStreak ?? 0, streak);
   const due = new Date(now);
   if (correct) due.setDate(due.getDate() + BOX_DAYS[box]);
   else due.setMinutes(due.getMinutes() + 10);
   return {
-    ...cell, seen, correct: got, box,
+    ...cell, seen, correct: got, box, streak, bestStreak,
     rolling_accuracy: got / seen,
     due_at: due.toISOString(),
     updated_at: now.toISOString(),
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Tier promotion
+//
+// A student starts at Easy because that is where the cheap points are, but
+// they should not have to grind the whole tier to move up. Two ways out,
+// whichever comes first: a run of correct answers, or exhausting the tier.
+//
+// The run is the important one. Eight Easy in a row is strong evidence the
+// tier is secure; working through 180 questions to prove the same thing is a
+// waste of the hours they have.
+//
+// Nothing is locked. These thresholds decide when the app OFFERS the next
+// tier; a student who feels ready can jump at any time, and the tier they
+// came from stays available with its progress intact.
+// ---------------------------------------------------------------------------
+
+export const PROMOTION = { E: { streak: 8, next: 'M' }, M: { streak: 10, next: 'H' } };
+
+/** Consecutive correct answers in this cell. */
+export function streakAt(mastery, unit, tier) {
+  return mastery[`${unit}|${tier}`]?.streak ?? 0;
+}
+
+/**
+ * Should the app offer the next tier? Returns null, or the reason it is
+ * offering, which is worth telling the student - "eight in a row" is
+ * motivating in a way that "you are ready" is not.
+ */
+export function promotionOffer(unit, tier, ctx, poolSize = null) {
+  const rule = PROMOTION[tier];
+  if (!rule) return null;
+  if (ctx.unlocked?.[`${unit}|${rule.next}`]) return null;     // already taken
+
+  const cell = ctx.mastery[`${unit}|${tier}`];
+  if (!cell?.seen) return null;
+
+  if ((cell.streak ?? 0) >= rule.streak) {
+    return { from: tier, to: rule.next, reason: `${cell.streak} in a row`,
+             kind: 'streak' };
+  }
+  // Exhausting the tier counts too, as long as they are actually getting them
+  // right - otherwise finishing a tier badly would promote them.
+  if (poolSize && cell.seen >= poolSize && cell.correct / cell.seen >= 0.8) {
+    return { from: tier, to: rule.next,
+             reason: `every ${TIER_NAME[tier]} question in this skill`,
+             kind: 'exhausted' };
+  }
+  return null;
+}
+
+const TIER_NAME = { E: 'Easy', M: 'Medium', H: 'Hard' };
+
+/**
+ * The tiers a student may choose from: everything up to their highest
+ * unlocked one, plus the next as a "try it" option. Lower tiers never
+ * disappear - going back for more practice is a legitimate choice, not a
+ * demotion.
+ */
+export function availableTiers(unit, ctx) {
+  const unlocked = ['E'];
+  for (const t of ['M', 'H']) {
+    if (ctx.unlocked?.[`${unit}|${t}`]) unlocked.push(t);
+  }
+  const highest = unlocked[unlocked.length - 1];
+  const next = PROMOTION[highest]?.next;
+  return {
+    unlocked,
+    current: highest,
+    tryable: next && !unlocked.includes(next) ? next : null,
   };
 }
 

@@ -7,10 +7,10 @@
 // do not teach what they have already shown they know.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=c982f96cf1';
-import { scoreItem, selectRound, updateMastery, bandWeights, TIERS } from './engine.js?v=c982f96cf1';
-import { buildLesson, focusTier, rankLessons } from './lessons.js?v=c982f96cf1';
-import { renderText as md, renderBody, renderHtml, renderStimulus, escapeHtml as esc } from './mathfmt.js?v=c982f96cf1';
+import { makeStore, configured } from './store.js?v=1ca24ebc7b';
+import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=1ca24ebc7b';
+import { buildLesson, focusTier, rankLessons } from './lessons.js?v=1ca24ebc7b';
+import { renderText as md, renderBody, renderHtml, renderStimulus, escapeHtml as esc } from './mathfmt.js?v=1ca24ebc7b';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -33,7 +33,8 @@ function ctx() {
   return {
     bands: state.bands, skills: state.skills, mastery: state.mastery,
     subtypes: state.subtypes, subtypesOf: state.subtypesOf,
-    student: state.profile ?? {}, fingerprints: state.fingerprints, now: new Date(),
+    student: state.profile ?? {}, fingerprints: state.fingerprints,
+    unlocked: state.unlocked ?? {}, now: new Date(),
   };
 }
 
@@ -329,16 +330,49 @@ function screenLesson() {
 
     ${skill ? `<h2>Practice</h2>
     <div class="card">
-      <p class="small muted">Questions drawn from this skill at the level you are
-        working at. ${esc(skill.bank_total ?? 0)} official items exist for it.</p>
-      <button class="btn-primary" id="practice">Practice ${esc(tier)} questions</button>
+      ${levelPicker(source, tier)}
     </div>` : ''}
   </div>`;
 
   $('#back').onclick = () => { state.screen = 'home'; render(); };
-  const pb = $('#practice');
-  if (pb) pb.onclick = () => startRound(source.skill_cd, tier);
+  for (const b of document.querySelectorAll('[data-tier]')) {
+    b.onclick = () => startRound(source.skill_cd, b.dataset.tier);
+  }
   window.scrollTo(0, 0);
+}
+
+const TIER_NAME = { E: 'Easy', M: 'Medium', H: 'Hard' };
+
+/**
+ * Choose a level.
+ *
+ * The app still points at the tier it thinks pays, but every tier already
+ * reached stays on offer - coming back for more practice is a choice, not a
+ * demotion - and the next one up is always there to try. Progress at each
+ * level is kept separately, so nothing is lost by moving on.
+ */
+function levelPicker(lesson, recommended) {
+  const unit = lesson.skill_cd;
+  const { unlocked, tryable } = availableTiers(unit, ctx());
+  const btn = (t, kind) => {
+    const cell = state.mastery[`${unit}|${t}`];
+    const acc = cell?.seen ? Math.round((cell.correct / cell.seen) * 100) : null;
+    const n = state.items.filter((i) => i.skill_cd === unit && i.difficulty === t).length;
+    return `<button class="level ${kind}" data-tier="${t}" ${n ? '' : 'disabled'}>
+      <span class="level-t">${TIER_NAME[t]}</span>
+      <span class="level-d">${n ? `${n} questions` : 'none yet'}${
+        acc !== null ? ` &middot; ${acc}% so far` : ''}</span>
+      ${t === recommended ? '<span class="level-tag">Suggested</span>' : ''}
+      ${kind === 'try' ? '<span class="level-tag try">Try it</span>' : ''}
+    </button>`;
+  };
+  return `
+    <p class="small muted">Start where it pays, and move up when you are ready.
+      Everything you have practised stays here &mdash; come back any time.</p>
+    <div class="levels">
+      ${unlocked.map((t) => btn(t, 'open')).join('')}
+      ${tryable ? btn(tryable, 'try') : ''}
+    </div>`;
 }
 
 function tierExplanation(lesson, tier) {
@@ -377,12 +411,13 @@ function startAssignment(id) {
 }
 
 function startRound(skill_cd, tier) {
-  const pool = state.items.filter((i) => i.skill_cd === skill_cd);
-  const chosen = selectRound(pool, ctx(), { size: window.CONFIG.ROUND_SIZE, maxPerSkill: 99 });
-  const fallback = pool.filter((i) => i.difficulty === tier);
+  // A chosen tier is honoured as chosen. The engine ranks within it rather
+  // than overriding it - the student asked for this level.
+  const pool = state.items.filter((i) => i.skill_cd === skill_cd && i.difficulty === tier);
+  const ranked = selectRound(pool, ctx(), { size: window.CONFIG.ROUND_SIZE, maxPerSkill: 99 });
   state.round = {
-    items: (chosen.length ? chosen : fallback).slice(0, window.CONFIG.ROUND_SIZE),
-    at: 0, answers: [], startedAt: Date.now(),
+    items: (ranked.length ? ranked : pool).slice(0, window.CONFIG.ROUND_SIZE),
+    at: 0, answers: [], startedAt: Date.now(), tier,
   };
   if (!state.round.items.length) {
     state.round = null;
@@ -530,6 +565,10 @@ function otherChoices(item, picked) {
 
 function screenResult() {
   const r = state.round;
+  const unit = r.items[0]?.subtype ?? r.items[0]?.skill_cd;
+  const poolAt = unit ? state.items.filter((i) =>
+    (i.subtype ?? i.skill_cd) === unit && i.difficulty === r.tier).length : 0;
+  const offer = unit && r.tier ? promotionOffer(unit, r.tier, ctx(), poolAt) : null;
   if (r.assignment && !r.assignment.completed_at) {
     r.assignment.completed_at = new Date().toISOString();
     store.completeAssignment(r.assignment.id).catch(() => {});
@@ -545,6 +584,16 @@ function screenResult() {
       pct >= 85 ? 'Strong. This tier is close to secure &mdash; the next round will move you up.'
       : pct >= 60 ? 'Solid. The ones you missed are back in the queue and will come round again soon.'
       : 'Worth slowing down here. Reread the lesson before the next round.'}</p>
+    ${offer ? `<div class="promote">
+      <div class="promote-t">That is ${esc(offer.reason)}.</div>
+      <p class="small">Ready for ${esc(TIER_NAME[offer.to])}? Your
+        ${esc(TIER_NAME[offer.from])} progress is saved either way, and you can
+        come back to it whenever you want.</p>
+      <div class="row" style="justify-content:center">
+        <button class="btn-primary" id="level-up">Try ${esc(TIER_NAME[offer.to])}</button>
+        <button id="stay">Stay on ${esc(TIER_NAME[offer.from])}</button>
+      </div>
+    </div>` : ''}
     <div class="row" style="justify-content:center;margin-top:16px">
       <button class="btn-primary" id="again">Another round</button>
       <button id="lesson">Back to the lesson</button>
@@ -552,10 +601,20 @@ function screenResult() {
     </div>
   </div></div>`;
 
+  const up = $('#level-up');
+  if (up) up.onclick = async () => {
+    const key = `${unit}|${offer.to}`;
+    state.unlocked = { ...(state.unlocked ?? {}), [key]: new Date().toISOString() };
+    try { await store.unlock(key); } catch { /* kept locally regardless */ }
+    startRound(r.items[0].skill_cd, offer.to);
+  };
+  const stay = $('#stay');
+  if (stay) stay.onclick = () => startRound(r.items[0].skill_cd, r.tier);
+
   const src = state.lessons.find((l) => l.id === state.lesson);
   $('#again').onclick = () => (r.assignment
     ? startAssignment(r.assignment.id)
-    : startRound(src.skill_cd, focusTier(src, ctx())));
+    : startRound(src.skill_cd, r.tier ?? focusTier(src, ctx())));
   $('#lesson').onclick = () => { state.round = null; state.screen = 'lesson'; render(); };
   $('#home').onclick = () => { state.round = null; state.screen = 'home'; render(); };
 }

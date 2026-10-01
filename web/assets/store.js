@@ -62,6 +62,14 @@ class LocalStore {
 
   async mastery() { return readLS(LS.mastery, {}); }
 
+  async unlocked() { return readLS('satai.unlocked', {}); }
+
+  async unlock(key) {
+    const u = readLS('satai.unlocked', {});
+    u[key] = new Date().toISOString();
+    writeLS('satai.unlocked', u);
+  }
+
   async saveMastery(key, cell) {
     const m = readLS(LS.mastery, {});
     m[key] = cell;
@@ -179,6 +187,20 @@ class SupabaseStore {
       .select('*').eq('student_id', this.uid);
     if (error) throw error;
     return Object.fromEntries((data ?? []).map((r) => [`${r.skill_cd}|${r.difficulty}`, r]));
+  }
+
+  async unlocked() {
+    // Stored alongside mastery: a cell that exists at a tier means the tier
+    // was opened. Explicit unlocks are kept in the profile so a student who
+    // tests up keeps the choice across devices.
+    const p = await this.profile();
+    return p?.unlocked_tiers ?? {};
+  }
+
+  async unlock(key) {
+    const u = await this.unlocked();
+    u[key] = new Date().toISOString();
+    await this.saveProfile({ unlocked_tiers: u });
   }
 
   async saveMastery(key, cell) {
@@ -346,6 +368,8 @@ export class PreviewStore {
   async session() { return { user: { id: 'preview' } }; }
   async profile() { return this.seed.profile ?? null; }
   async mastery() { return this._mastery; }
+  async unlocked() { return this.seed.unlocked ?? {}; }
+  async unlock() { /* discarded, like every preview write */ }
   async attempts() { return this.seed.attempts ?? []; }
   async fingerprints() { return this.seed.fingerprints ?? []; }
   async roster() { return []; }
