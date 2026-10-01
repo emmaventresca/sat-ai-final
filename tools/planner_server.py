@@ -128,6 +128,21 @@ When proposing an assignment, end with a fenced ```json block:
 so the portal can turn it into a real assignment on approval."""
 
 
+def agent_feed():
+    """Build the agent feed fresh on every request.
+
+    The dashboard polls this, so a run that starts misbehaving surfaces while
+    it is still running rather than after someone remembers to rebuild a file.
+    """
+    import importlib, io, contextlib
+    sys.path.insert(0, os.path.join(ROOT, "tools"))
+    mod = importlib.import_module("build_agent_feed")
+    importlib.reload(mod)
+    with contextlib.redirect_stdout(io.StringIO()):
+        mod.main()
+    return load("agent_feed.json", {"runs": [], "summary": {}})
+
+
 def ask(messages, focus=None):
     convo = []
     for m in messages[-12:]:
@@ -161,8 +176,14 @@ class Handler(BaseHTTPRequestHandler):
         self._send(204, {})
 
     def do_GET(self):
-        if urlparse(self.path).path == "/health":
+        path = urlparse(self.path).path
+        if path == "/health":
             return self._send(200, {"ok": True, "model": MODEL})
+        if path == "/agents":
+            try:
+                return self._send(200, agent_feed())
+            except Exception as exc:
+                return self._send(500, {"error": str(exc)[:300]})
         self._send(404, {"error": "not found"})
 
     def do_POST(self):

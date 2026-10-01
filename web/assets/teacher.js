@@ -12,14 +12,15 @@
 // here that could fake a student's history.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js';
-import { scoreItem, bandWeights, TIERS } from './engine.js';
-import { focusTier, rankLessons } from './lessons.js';
-import { escapeHtml as esc, renderText as md } from './mathfmt.js';
-import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js';
-import { PREVIEW_KEY } from './store.js';
-import { plannerState, plannerHealthy, sendToPlanner, renderPlan, STARTERS }
-  from './planner.js';
+import { makeStore, configured } from './store.js?v=956c26ba84';
+import { scoreItem, bandWeights, TIERS } from './engine.js?v=956c26ba84';
+import { focusTier, rankLessons } from './lessons.js?v=956c26ba84';
+import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=956c26ba84';
+import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=956c26ba84';
+import { PREVIEW_KEY } from './store.js?v=956c26ba84';
+import { plannerState, plannerHealthy, sendToPlanner, renderPlan, STARTERS,
+         fetchAgentFeed, newAlerts, markSeen, popDesktop,
+         enableDesktopAlerts, desktopAlertsOn } from './planner.js?v=956c26ba84';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -87,8 +88,10 @@ function screenSignIn(message = '') {
 }
 
 function screenRoster() {
+  state.screen = 'roster';
   const rows = state.roster;
   app.innerHTML = `<div class="wrap">
+    ${agentBanner()}
     <div class="top">
       <div><h1>Your students</h1>
         <p class="who">${esc(state.me.full_name ?? state.me.email ?? '')}</p></div>
@@ -138,6 +141,7 @@ function screenRoster() {
   $('#refresh').onclick = boot;
   $('#tab-plan').onclick = () => screenPlanner();
   $('#tab-agents').onclick = () => screenAgents();
+  wireBanner();
   for (const tr of document.querySelectorAll('[data-student]')) {
     tr.onclick = () => openStudent(tr.dataset.student);
   }
@@ -153,6 +157,7 @@ function assignedCell(list) {
 }
 
 function screenStudent() {
+  state.screen = 'student';
   const { profile, mastery, attempts, fingerprints } = state.detail;
   const ctx = ctxFor(profile, mastery, fingerprints);
   const rows = skillTable(mastery);
@@ -176,6 +181,7 @@ function screenStudent() {
   const run = streak(attempts);
 
   app.innerHTML = `<div class="wrap wide">
+    ${agentBanner()}
     <div class="row" style="margin-bottom:14px">
       <button class="btn-sm" id="back">&larr; All students</button></div>
     <h1>${esc(profile.full_name ?? profile.email ?? 'Student')}</h1>
@@ -370,6 +376,74 @@ function screenStudentView() {
   window.scrollTo(0, 0);
 }
 
+/**
+ * The alert banner.
+ *
+ * Shown on every screen, not just the Agents tab - a badge you have to go
+ * looking for is not a notification. It names the newest problem, says how
+ * many others there are, and links straight to the queue.
+ */
+function agentBanner() {
+  const flagged = (state.agentFeed?.runs ?? []).filter((r) => r.alerts?.length);
+  if (!flagged.length || state.bannerDismissed) return '';
+  const worst = flagged.find((r) => r.alerts.some((a) => a.level === 'bad')) ?? flagged[0];
+  const alert = worst.alerts.find((a) => a.level === 'bad') ?? worst.alerts[0];
+  const others = flagged.length - 1;
+  return `<div class="agent-banner ${esc(alert.level)}">
+    <div>
+      <strong>${esc(AGENT_KIND[worst.kind] ?? worst.kind)} needs a look.</strong>
+      ${esc(alert.text)}
+      ${others > 0 ? `<span class="muted"> &middot; ${others} other run${others === 1 ? '' : 's'} flagged</span>` : ''}
+    </div>
+    <div class="row tight">
+      <button class="btn-sm" id="banner-open">Open queue</button>
+      <button class="btn-sm" id="banner-hide">Dismiss</button>
+    </div>
+  </div>`;
+}
+
+function wireBanner() {
+  const open = $('#banner-open');
+  if (open) open.onclick = () => screenAgents();
+  const hide = $('#banner-hide');
+  if (hide) hide.onclick = () => {
+    state.bannerDismissed = true;
+    markSeen((state.agentFeed?.runs ?? [])
+      .flatMap((r) => (r.alerts ?? []).map((a) => `${r.id}:${a.text.slice(0, 60)}`)));
+    render();
+  };
+}
+
+/** Re-render whichever screen is showing. */
+function render() {
+  if (state.screen === 'agents') return screenAgents();
+  if (state.screen === 'planner') return screenPlanner();
+  if (state.detail) return screenStudent();
+  return screenRoster();
+}
+
+/**
+ * Poll the feed so a run that goes wrong surfaces while it is still running.
+ * Only new alerts pop; ones already seen stay in the queue quietly.
+ */
+function watchAgents() {
+  if (state.agentTimer) clearInterval(state.agentTimer);
+  const tick = async () => {
+    const feed = await fetchAgentFeed();
+    const before = JSON.stringify(state.agentFeed?.summary ?? {});
+    state.agentFeed = feed;
+    const fresh = newAlerts(feed);
+    if (fresh.length) {
+      state.bannerDismissed = false;
+      popDesktop(fresh);
+      markSeen(fresh.map((f) => f.key));
+    }
+    if (fresh.length || JSON.stringify(feed.summary ?? {}) !== before) render();
+  };
+  state.agentTimer = setInterval(tick, 20000);
+  tick();
+}
+
 /** How many runs are currently flagged - drives the badge on the tab. */
 function agentAlertCount() {
   return (state.agentFeed?.runs ?? []).filter((r) => r.alerts?.length).length;
@@ -389,6 +463,7 @@ const AGENT_KIND = {
  * is where they surface instead.
  */
 function screenAgents() {
+  state.screen = 'agents';
   const feed = state.agentFeed ?? { runs: [], summary: {} };
   const flagged = feed.runs.filter((r) => r.alerts?.length);
   const clean = feed.runs.filter((r) => !r.alerts?.length);
@@ -418,6 +493,8 @@ function screenAgents() {
       <div><h1>Agents</h1>
         <p class="who">Every batch the system runs, and anything that looks wrong</p></div>
       <div class="row tight">
+        <button class="btn-sm" id="bell">${desktopAlertsOn()
+          ? 'Desktop alerts on' : 'Notify me'}</button>
         <button class="btn-sm" id="refresh">Refresh</button>
         <button class="btn-sm" id="out">Sign out</button></div>
     </div>
@@ -427,6 +504,12 @@ function screenAgents() {
       <button class="tab" id="tab-plan" role="tab">Plan a lesson</button>
       <button class="tab on" id="tab-agents" role="tab" aria-selected="true">Agents</button>
     </div>
+
+    <p class="tiny muted" style="margin:0 0 10px">
+      ${state.agentFeed?.live
+        ? 'Live &mdash; checking every 20 seconds.'
+        : 'Not live. Start <code>python3 tools/planner_server.py</code> to watch runs as they happen.'}
+    </p>
 
     ${flagged.length ? `<h2>Needs a look</h2>
       <div class="card">${flagged.map(card).join('')}</div>`
@@ -444,7 +527,10 @@ function screenAgents() {
   $('#refresh').onclick = boot;
   $('#tab-roster').onclick = () => screenRoster();
   $('#tab-plan').onclick = () => screenPlanner();
+  const bell = $('#bell');
+  if (bell) bell.onclick = async () => { await enableDesktopAlerts(); screenAgents(); };
   window.scrollTo(0, 0);
+  wireBanner();
 }
 
 /**
@@ -456,10 +542,12 @@ function screenAgents() {
  * The teacher approves it first; the model only ever drafts.
  */
 async function screenPlanner(note) {
+  state.screen = 'planner';
   const up = await plannerHealthy();
   const students = state.roster.map((r) => r.profile);
 
   app.innerHTML = `<div class="wrap wide">
+    ${agentBanner()}
     <div class="top">
       <div><h1>Plan a lesson</h1>
         <p class="who">Grounded in your own subtype taxonomy, band model and item bank</p></div>
@@ -542,6 +630,7 @@ async function screenPlanner(note) {
   $('#out').onclick = async () => { await store.signOut(); location.reload(); };
   $('#tab-roster').onclick = () => screenRoster();
   $('#tab-agents').onclick = () => screenAgents();
+  wireBanner();
 
   const send = async (text) => {
     if (!text?.trim()) return;
@@ -646,6 +735,7 @@ async function boot() {
 
     state.roster = await loadRoster();
     screenRoster();
+    watchAgents();
   } catch (e) {
     app.innerHTML = `<div class="center"><div class="card">
       <h1>Something went wrong</h1><p class="err">${esc(e.message ?? e)}</p></div></div>`;

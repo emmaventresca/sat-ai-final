@@ -13,7 +13,7 @@
 // view, so no value is reachable only by hovering.
 // ---------------------------------------------------------------------------
 
-import { escapeHtml as esc } from './mathfmt.js';
+import { escapeHtml as esc } from './mathfmt.js?v=956c26ba84';
 
 const HUE = '#7c5cff';
 const GRID = '#e6ddfb';

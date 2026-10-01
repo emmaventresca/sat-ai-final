@@ -400,3 +400,15 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 .pill{display:inline-block;min-width:18px;padding:1px 6px;border-radius:999px;
   background:var(--bad);color:#fff;font-size:.68rem;font-weight:800;
   vertical-align:1px;margin-left:5px}
+
+/* A flagged run is announced on whatever screen you are on, not hidden behind
+   a tab you have to remember to open. */
+.agent-banner{
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+  flex-wrap:wrap;border-radius:14px;padding:13px 16px;margin-bottom:16px;
+  font-size:.9rem;line-height:1.55;font-weight:600;
+}
+.agent-banner.warn{background:var(--flag-bg);border:1px solid var(--flag-ln);color:#8a5406}
+.agent-banner.bad{background:var(--bad-bg);border:1px solid var(--bad-ln);color:#c9344c}
+.agent-banner strong{display:block}
+.agent-banner button{background:rgba(255,255,255,.75)}

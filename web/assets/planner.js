@@ -12,7 +12,7 @@
 // model never writes to a student's account directly.
 // ---------------------------------------------------------------------------
 
-import { escapeHtml as esc, renderText } from './mathfmt.js';
+import { escapeHtml as esc, renderText } from './mathfmt.js?v=956c26ba84';
 
 const PLANNER = 'http://localhost:8791';
 
@@ -84,3 +84,84 @@ export const STARTERS = [
     'ask for x+y rather than x.',
   'What should I teach first to move a 1150 student to 1300? Rank by points per hour.',
 ];
+
+
+// ---------------------------------------------------------------------------
+// Live agent feed
+//
+// Polled rather than loaded once, so a run that starts misbehaving surfaces
+// while it is still running. Falls back to the static data/agent_feed.json
+// when the local helper is not up, so the tab still works - it just stops
+// being live.
+// ---------------------------------------------------------------------------
+
+export async function fetchAgentFeed() {
+  try {
+    const r = await fetch(`${PLANNER}/agents`, { signal: AbortSignal.timeout(8000) });
+    if (r.ok) return { ...(await r.json()), live: true };
+  } catch { /* helper not running */ }
+  try {
+    const r = await fetch('../data/agent_feed.json', { cache: 'no-store' });
+    if (r.ok) return { ...(await r.json()), live: false };
+  } catch { /* no feed yet */ }
+  return { runs: [], summary: {}, live: false };
+}
+
+/** Alert ids already shown, so the same one does not pop twice. */
+const SEEN_KEY = 'satai.seenAlerts';
+
+function seen() {
+  try { return new Set(JSON.parse(localStorage.getItem(SEEN_KEY)) ?? []); }
+  catch { return new Set(); }
+}
+
+export function alertKey(run, alert) {
+  return `${run.id}:${alert.text.slice(0, 60)}`;
+}
+
+/** Alerts that have appeared since the last time the dashboard looked. */
+export function newAlerts(feed) {
+  const already = seen();
+  const out = [];
+  for (const r of feed.runs ?? []) {
+    for (const a of r.alerts ?? []) {
+      const k = alertKey(r, a);
+      if (!already.has(k)) out.push({ run: r, alert: a, key: k });
+    }
+  }
+  return out;
+}
+
+export function markSeen(keys) {
+  const all = seen();
+  for (const k of keys) all.add(k);
+  // Keep the list from growing without bound.
+  localStorage.setItem(SEEN_KEY, JSON.stringify([...all].slice(-400)));
+}
+
+/**
+ * A desktop notification, so a bad run is caught even when the dashboard is
+ * not the focused tab. Permission is only ever requested after the teacher
+ * clicks the bell - asking on page load is the behaviour everyone blocks.
+ */
+export async function enableDesktopAlerts() {
+  if (!('Notification' in window)) return 'unsupported';
+  if (Notification.permission === 'granted') return 'granted';
+  return Notification.requestPermission();
+}
+
+export function desktopAlertsOn() {
+  return 'Notification' in window && Notification.permission === 'granted';
+}
+
+export function popDesktop(items) {
+  if (!desktopAlertsOn()) return;
+  for (const { run, alert } of items.slice(0, 3)) {
+    try {
+      new Notification('SAT platform — agent needs a look', {
+        body: `${run.kind}: ${alert.text}`.slice(0, 180),
+        tag: alertKey(run, alert),
+      });
+    } catch { /* notification blocked */ }
+  }
+}
