@@ -71,7 +71,7 @@ def render(it):
 def call(prompt, model):
     proc = subprocess.run(
         ["claude", "-p", prompt, "--model", model],
-        capture_output=True, text=True, timeout=900,
+        capture_output=True, text=True, timeout=240,
         env={**os.environ,
              "PATH": os.environ["PATH"] + ":" + os.path.expanduser("~/.local/bin")})
     if proc.returncode != 0:
@@ -99,11 +99,39 @@ def main():
         print("every verified item already has an independent rating")
         return
 
-    groups = [todo[i:i + args.batch] for i in range(0, len(todo), args.batch)]
-    print(f"rating {len(todo)} items in {len(groups)} calls ({args.model})", flush=True)
+    # Skip anything already cached from a previous run.
+    cached_path = os.path.join(ROOT, "corpus", "classify", "difficulty.jsonl")
+    done_ids = set()
+    if os.path.exists(cached_path):
+        for line in open(cached_path):
+            try:
+                done_ids.add(json.loads(line)["id"])
+            except Exception:
+                continue
+    pending = [(f, it) for f, it in todo if it["id"] not in done_ids]
+    groups = [pending[i:i + args.batch] for i in range(0, len(pending), args.batch)]
+    print(f"rating {len(pending)} of {len(todo)} items in {len(groups)} calls "
+          f"({args.model})", flush=True)
 
+    # Persist as results arrive. An earlier run stalled with 15 of 75 calls
+    # outstanding and lost all 600 ratings it had already paid for, because
+    # nothing was written until every call returned.
     lock = threading.Lock()
     ratings = {}
+    cache_path = os.path.join(ROOT, "corpus", "classify", "difficulty.jsonl")
+    os.makedirs(os.path.dirname(cache_path), exist_ok=True)
+    if os.path.exists(cache_path):
+        for line in open(cache_path):
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                r = json.loads(line)
+                ratings[r["id"]] = r
+            except json.JSONDecodeError:
+                continue
+        if ratings:
+            print(f"  resuming with {len(ratings)} ratings already cached", flush=True)
 
     def do(group):
         try:
@@ -112,9 +140,11 @@ def main():
         except Exception as exc:
             return str(exc)[:120]
         with lock:
-            for r in res:
-                if r.get("level") in ORDER:
-                    ratings[r.get("id")] = r
+            with open(cache_path, "a") as fh:
+                for r in res:
+                    if r.get("level") in ORDER:
+                        ratings[r.get("id")] = r
+                        fh.write(json.dumps(r) + "\n")
         return None
 
     errs = 0
