@@ -455,15 +455,8 @@ def main():
     with run("verify", model=args.model, batch=args.batch,
              files=len(files)) as r:
         r.count(**totals)
-        checked = sum(totals.values())
-        if checked:
-            rate = totals["pass"] / checked
-            if rate < 0.7:
-                r.note(f"pass rate {rate:.0%} - unusually low, check for a "
-                       f"systematic cause before authoring more")
-        if totals["error"]:
-            r.note(f"{totals['error']} items could not be solved at all - "
-                   f"these are untested, not failed")
+        # The alert rules live in build_agent_feed.py, in one place. Noting
+        # the same condition here too just prints it twice on the dashboard.
 
 
 if __name__ == "__main__":
