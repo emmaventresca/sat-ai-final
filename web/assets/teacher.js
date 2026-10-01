@@ -12,17 +12,17 @@
 // here that could fake a student's history.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=1ca24ebc7b';
-import { scoreItem, bandWeights, TIERS } from './engine.js?v=1ca24ebc7b';
-import { focusTier, rankLessons } from './lessons.js?v=1ca24ebc7b';
-import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=1ca24ebc7b';
-import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=1ca24ebc7b';
-import { PREVIEW_KEY } from './store.js?v=1ca24ebc7b';
-import * as chats from './chats.js?v=1ca24ebc7b';
-import { renderPacket } from './packet.js?v=1ca24ebc7b';
+import { makeStore, configured } from './store.js?v=745b6cc0d2';
+import { scoreItem, bandWeights, TIERS } from './engine.js?v=745b6cc0d2';
+import { focusTier, rankLessons } from './lessons.js?v=745b6cc0d2';
+import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=745b6cc0d2';
+import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=745b6cc0d2';
+import { PREVIEW_KEY } from './store.js?v=745b6cc0d2';
+import * as chats from './chats.js?v=745b6cc0d2';
+import { renderPacket } from './packet.js?v=745b6cc0d2';
 import { plannerState, plannerHealthy, sendToPlanner, renderPlan, STARTERS,
          fetchAgentFeed, newAlerts, markSeen, popDesktop,
-         enableDesktopAlerts, desktopAlertsOn, setSubtypeNames } from './planner.js?v=1ca24ebc7b';
+         enableDesktopAlerts, desktopAlertsOn, setSubtypeNames } from './planner.js?v=745b6cc0d2';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -516,7 +516,7 @@ function renderSpecs(reply) {
 function packetShell(html, title) {
   return `<div class="packet-wrap">
     <div class="packet-actions">
-      <button class="btn-sm" data-print>Save as PDF</button>
+      <button class="btn-primary btn-sm" data-print>&#8681; Download PDF</button>
     </div>${html}</div>`;
 }
 
@@ -662,6 +662,7 @@ async function screenPlanner(note) {
                 data-chat="${esc(c.id)}">
           <span class="chat-title">${esc(c.title)}</span>
           ${c.studentName ? `<span class="chat-who">${esc(c.studentName)}</span>` : ''}
+          <span class="chat-edit" data-rename="${esc(c.id)}" title="Rename">&#9998;</span>
           <span class="chat-del" data-del="${esc(c.id)}" title="Delete">&times;</span>
         </button>`).join('')}
       ${chats.listChats().length ? '' : '<p class="tiny muted">No chats yet.</p>'}
@@ -749,6 +750,13 @@ async function screenPlanner(note) {
 
   for (const b of document.querySelectorAll('[data-chat]')) {
     b.onclick = (e) => {
+      if (e.target.dataset.rename) {
+        const id = e.target.dataset.rename;
+        const current = chats.getChat(id)?.title ?? '';
+        const next = window.prompt('Name this chat', current);
+        if (next && next.trim()) chats.renameChat(id, next.trim());
+        return screenPlanner();
+      }
       if (e.target.dataset.del) {
         chats.deleteChat(e.target.dataset.del);
         const next = chats.resolveActive();

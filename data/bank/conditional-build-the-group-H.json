@@ -1,0 +1,282 @@
+[
+ {
+  "stem": "In a vaccine trial, 120 participants were classified by dosing schedule and by antibody titer level, as shown in the table. If one of the participants whose titer level is at least moderate is selected at random, what is the probability of selecting a participant who received the two-dose schedule?",
+  "stimulus": "| Schedule | Low | Moderate | High | Very high | Total |\n|---|---|---|---|---|---|\n| One-dose | 18 | 24 | 12 | 6 | 60 |\n| Two-dose | 10 | 15 | 20 | 15 | 60 |\n| Total | 28 | 39 | 32 | 21 | 120 |",
+  "choices": [
+   "$\\frac{25}{46}$",
+   "$\\frac{35}{53}$",
+   "$\\frac{5}{12}$",
+   "$\\frac{5}{6}$"
+  ],
+  "answer": "A",
+  "explanation": "\"At least moderate\" covers the Moderate, High and Very high columns, so the group you choose from has $39 + 32 + 21 = 92$ participants. Of those, $15 + 20 + 15 = 50$ received two doses. The probability is $\\frac{50}{92} = \\frac{25}{46}$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You read \"at least moderate\" as \"more than moderate\" and left out the Moderate column. That gave you $\\frac{20+15}{32+21} = \\frac{35}{53}$, but \"at least\" includes the boundary level."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the right numerator, 50, but divided by all 120 participants. That is the probability of being two-dose and at least moderate. It is not the probability among the at-least-moderate participants."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided 50 by the 60 two-dose participants. That answers the reverse question: of the two-dose participants, what fraction had at least moderate titers?"
+   }
+  },
+  "id": "orig-conditional-bu-H-5c90c4",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "A linguist analyzed recorded utterances from four regions and noted whether each utterance contained a glottal stop. The table shows the proportion of all recorded utterances that fall into each category. If one of the utterances not from the Central region is selected at random, what is the probability of selecting an utterance that contains a glottal stop?",
+  "stimulus": "| Region | Glottal stop | No glottal stop |\n|---|---|---|\n| North | 0.12 | 0.08 |\n| Central | 0.10 | 0.20 |\n| South | 0.06 | 0.14 |\n| Coastal | 0.18 | 0.12 |",
+  "choices": [
+   "$\\frac{1}{3}$",
+   "$\\frac{9}{25}$",
+   "$\\frac{18}{35}$",
+   "$\\frac{18}{23}$"
+  ],
+  "answer": "C",
+  "explanation": "\"Not from the Central region\" means North, South and Coastal together. That group makes up $0.20 + 0.20 + 0.30 = 0.70$ of all utterances. The glottal-stop part of it is $0.12 + 0.06 + 0.18 = 0.36$. Treat the proportions like counts, because the scaling cancels: $\\frac{0.36}{0.70} = \\frac{18}{35}$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You worked with the Central region instead of the regions that are not Central, and got $\\frac{0.10}{0.30} = \\frac{1}{3}$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the correct glottal-stop proportions, 0.36, but used the whole table (total 1) as the denominator. You need to divide by the non-Central group, 0.70."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided 0.36 by the total glottal-stop proportion, 0.46. That gives the fraction of glottal-stop utterances that are not from Central, which is the reverse question."
+   }
+  },
+  "id": "orig-conditional-bu-H-09e1e5",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "A seismology station recorded 130 earthquakes and classified each one by focal depth and by magnitude, rounded to the nearest whole number. If one of the earthquakes with a rounded magnitude greater than or equal to 5 is selected at random, what is the probability of selecting a shallow earthquake?",
+  "stimulus": "| Depth | Magnitude 3 | Magnitude 4 | Magnitude 5 | Magnitude 6 | Total |\n|---|---|---|---|---|---|\n| Shallow | 40 | 25 | 10 | 3 | 78 |\n| Deep | 20 | 15 | 10 | 7 | 52 |\n| Total | 60 | 40 | 20 | 10 | 130 |",
+  "choices": [
+   "$\\frac{3}{10}$",
+   "$\\frac{1}{10}$",
+   "$\\frac{13}{30}$",
+   "$\\frac{1}{6}$"
+  ],
+  "answer": "C",
+  "explanation": "\"Greater than or equal to 5\" includes magnitudes 5 and 6, so the group has $20 + 10 = 30$ earthquakes. Of those, $10 + 3 = 13$ are shallow. The probability is $\\frac{13}{30}$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You dropped the boundary column and used only magnitude 6, which gave $\\frac{3}{10}$. \"Greater than or equal to 5\" includes the magnitude 5 column."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the 13 shallow earthquakes of magnitude 5 or more by all 130 earthquakes. That is a whole-table probability. The question limits you to the 30 earthquakes of magnitude 5 or more."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided 13 by the 78 shallow earthquakes. That tells you what fraction of shallow earthquakes had magnitude 5 or more, which is the reverse of what was asked."
+   }
+  },
+  "id": "orig-conditional-bu-H-1212e2",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "If one of the recordings not from Region Y is selected at random, what is the probability of selecting an animal tale?",
+  "stimulus": "A folklore archive stores its field recordings in boxes. Region X has 8 boxes, and each box holds 12 recordings, 3 of which are animal tales. Region Y has 5 boxes, and each box holds 12 recordings, 4 of which are animal tales. Region Z has 6 boxes, and each box holds 10 recordings, 2 of which are animal tales.",
+  "choices": [
+   "$\\frac{1}{3}$",
+   "$\\frac{1}{6}$",
+   "$\\frac{5}{22}$",
+   "$\\frac{3}{13}$"
+  ],
+  "answer": "D",
+  "explanation": "Build the group by multiplying boxes by recordings per box. Region X has $8 \\times 12 = 96$ recordings and Region Z has $6 \\times 10 = 60$, so 156 recordings are not from Region Y. Their animal tales number $8 \\times 3 + 6 \\times 2 = 24 + 12 = 36$. The probability is $\\frac{36}{156} = \\frac{3}{13}$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You read \"not from Region Y\" as \"from Region Y\" and got $\\frac{5 \\times 4}{5 \\times 12} = \\frac{1}{3}$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the 36 animal tales from Regions X and Z by all 216 recordings in the archive. You should have divided by only the 156 recordings that are not from Region Y."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the per-box numbers, $\\frac{3+2}{12+10}$, without multiplying by the number of boxes. The regions have different numbers of boxes, so the totals have to be built first."
+   }
+  },
+  "id": "orig-conditional-bu-H-26381c",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "If one of the prints on a line numbered 3 or higher is selected at random, what is the probability of selecting a smudged print?",
+  "stimulus": "A printmaker hung a full edition of prints to dry on 8 lines, numbered 1 through 8, with 12 prints on each line. When the prints were inspected, each of lines 1, 2 and 3 had exactly 2 smudged prints, and each of lines 4 through 8 had exactly 3 smudged prints.",
+  "choices": [
+   "$\\frac{1}{4}$",
+   "$\\frac{17}{72}$",
+   "$\\frac{17}{96}$",
+   "$\\frac{17}{21}$"
+  ],
+  "answer": "B",
+  "explanation": "Lines 3 through 8 make up 6 lines, so the group has $6 \\times 12 = 72$ prints. The smudged prints in that group are the 2 on line 3 plus $5 \\times 3 = 15$ on lines 4 through 8, which is 17. The probability is $\\frac{17}{72}$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You treated \"3 or higher\" as \"higher than 3\" and left out line 3. That gave $\\frac{15}{60} = \\frac{1}{4}$, but line 3 belongs in the group."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You counted the 17 smudged prints correctly but divided by all 96 prints. You should have divided by the 72 prints on lines 3 through 8."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided 17 by the 21 smudged prints in the whole edition. That answers a different question: of the smudged prints, what fraction are on line 3 or higher?"
+   }
+  },
+  "id": "orig-conditional-bu-H-71f8f9",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "If one of the swatches with a catalog number of at least 50 is selected at random, what is the probability of selecting an indigo-dyed swatch?",
+  "stimulus": "A textile history collection contains 80 fabric swatches, numbered consecutively from 1 through 80. Every swatch whose catalog number is a multiple of 4 was dyed with indigo, and no other swatch was.",
+  "choices": [
+   "$\\frac{4}{15}$",
+   "$\\frac{1}{10}$",
+   "$\\frac{2}{5}$",
+   "$\\frac{8}{31}$"
+  ],
+  "answer": "D",
+  "explanation": "The integers from 50 through 80 inclusive number $80 - 50 + 1 = 31$, so that is your group. The multiples of 4 in that range are 52, 56, 60, 64, 68, 72, 76 and 80, which is 8 swatches. The probability is $\\frac{8}{31}$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You counted only the numbers greater than 50, which gives 30 swatches, and got $\\frac{8}{30} = \\frac{4}{15}$. \"At least 50\" includes swatch 50, so the group has 31 swatches."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the 8 indigo swatches numbered 50 or more by all 80 swatches. The condition limits you to the swatches numbered 50 through 80."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided 8 by the 20 indigo swatches in the whole collection. That tells you what fraction of indigo swatches are numbered 50 or more, which is the reverse question."
+   }
+  },
+  "id": "orig-conditional-bu-H-ba5975",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "An ecologist surveyed 120 quadrats and recorded each quadrat's habitat type and whether an invasive plant species was present, as shown in the table. If one of the quadrats in either a wetland or a woodland edge habitat is selected at random, what is the probability of selecting a quadrat where an invasive species was present?",
+  "stimulus": "| Habitat | Invasive present | Invasive absent | Total |\n|---|---|---|---|\n| Meadow | 14 | 26 | 40 |\n| Wetland | 9 | 21 | 30 |\n| Woodland edge | 15 | 10 | 25 |\n| Forest | 3 | 22 | 25 |\n| Total | 41 | 79 | 120 |",
+  "choices": [
+   "$\\frac{3}{5}$",
+   "$\\frac{1}{5}$",
+   "$\\frac{24}{55}$",
+   "$\\frac{24}{41}$"
+  ],
+  "answer": "C",
+  "explanation": "The condition covers two rows, so the group has $30 + 25 = 55$ quadrats. In that group, $9 + 15 = 24$ quadrats had an invasive species. The probability is $\\frac{24}{55}$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You used only the woodland edge row and got $\\frac{15}{25} = \\frac{3}{5}$. The condition says wetland or woodland edge, so both rows belong in the group."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the 24 quadrats correctly but divided by all 120. You should have divided by the 55 wetland and woodland edge quadrats."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided 24 by the 41 quadrats with an invasive species. That gives the fraction of invaded quadrats that are wetland or woodland edge, which is the reverse question."
+   }
+  },
+  "id": "orig-conditional-bu-H-a7794d",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "A musicologist classified the compositions in a choral archive by number of voice parts and by key. The table shows the proportion of all compositions in the archive that fall into each category. If one of the compositions with at least 3 voice parts is selected at random, what is the probability of selecting a composition in a minor key?",
+  "stimulus": "| Voice parts | Minor key | Major key |\n|---|---|---|\n| 1 | 0.10 | 0.15 |\n| 2 | 0.08 | 0.22 |\n| 3 | 0.09 | 0.11 |\n| 4 or more | 0.05 | 0.20 |",
+  "choices": [
+   "$\\frac{14}{45}$",
+   "$\\frac{1}{5}$",
+   "$\\frac{7}{50}$",
+   "$\\frac{7}{16}$"
+  ],
+  "answer": "A",
+  "explanation": "\"At least 3 voice parts\" covers the 3 row and the 4 or more row, so the group is $0.20 + 0.25 = 0.45$ of the archive. The minor-key part of that group is $0.09 + 0.05 = 0.14$. Treat the proportions like counts: $\\frac{0.14}{0.45} = \\frac{14}{45}$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You read \"at least 3\" as \"more than 3\" and used only the 4 or more row, which gave $\\frac{0.05}{0.25} = \\frac{1}{5}$. The 3 row belongs in the group."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You stopped at 0.14, which is the proportion of the whole archive that is minor key with at least 3 parts. You still need to divide by the group's own share, 0.45."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided 0.14 by the total minor-key proportion, 0.32. That gives the fraction of minor-key compositions with at least 3 parts, which is the reverse question."
+   }
+  },
+  "id": "orig-conditional-bu-H-dd3809",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ }
+]

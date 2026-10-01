@@ -14,8 +14,8 @@
 // the corpus.
 // ---------------------------------------------------------------------------
 
-import { renderText, escapeHtml as esc } from './mathfmt.js?v=1ca24ebc7b';
-import { renderStimulus } from './mathfmt.js?v=1ca24ebc7b';
+import { renderText, escapeHtml as esc } from './mathfmt.js?v=745b6cc0d2';
+import { renderStimulus } from './mathfmt.js?v=745b6cc0d2';
 
 const LETTERS = 'ABCD';
 const TIER = { E: 'Easy', M: 'Medium', H: 'Hard' };
@@ -43,7 +43,11 @@ export function renderPacket(spec, data) {
     return { ...b, from, to: clock };
   });
 
-  const allQuestions = schedule.flatMap((b) => b.questions);
+  // The worksheet claims increasing difficulty, so order it that way rather
+  // than by whichever block happened to come first.
+  const RANK = { E: 0, M: 1, H: 2 };
+  const allQuestions = schedule.flatMap((b) => b.questions)
+    .sort((a, b) => (RANK[a.difficulty] ?? 1) - (RANK[b.difficulty] ?? 1));
 
   return `
 <article class="packet">
@@ -86,7 +90,7 @@ export function renderPacket(spec, data) {
     <h2>Part 2 &middot; Worksheet</h2>
     <p class="packet-sub">In increasing difficulty. Answers and full
       explanations follow.</p>
-    ${allQuestions.map((q, i) => renderQuestion(q, i + 1)).join('')}
+    ${allQuestions.map((q, i) => renderQuestion(q, i + 1, subtypeInfo)).join('')}
   </section>
 
   <section class="packet-section packet-break">
@@ -141,11 +145,17 @@ function renderBlock(b, n) {
   </div>`;
 }
 
-function renderQuestion(q, n) {
+function renderQuestion(q, n, subtypeInfo = {}) {
+  const cat = subtypeInfo[q.subtype]?.name ?? q.subtype ?? '';
   return `
   <div class="packet-q">
-    <div class="packet-q-num">${n}<span class="packet-q-tier">${esc(q.difficulty)}</span></div>
+    <div class="packet-q-num">${n}</div>
     <div class="packet-q-body">
+      <div class="packet-q-meta">
+        ${cat ? `<span class="packet-q-cat">${esc(cat)}</span>` : ''}
+        <span class="packet-q-level ${esc((q.difficulty || '').toLowerCase())}">${
+          esc(TIER[q.difficulty] ?? q.difficulty)}</span>
+      </div>
       ${q.stimulus ? `<div class="packet-stim">${renderStimulus(q.stimulus)}</div>` : ''}
       <div class="packet-stem">${renderStimulus(q.stem)}</div>
       <ol class="packet-choices">

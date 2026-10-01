@@ -26,7 +26,7 @@
 // A section with no gates is always shown. Gates are AND-ed.
 // ---------------------------------------------------------------------------
 
-import { bandWeights } from './engine.js?v=1ca24ebc7b';
+import { bandWeights } from './engine.js?v=745b6cc0d2';
 
 const TIER_ORDER = { E: 0, M: 1, H: 2 };
 
