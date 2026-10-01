@@ -1,0 +1,282 @@
+[
+ {
+  "stem": "Which of the following best describes how the mean and the median of the commute times change when the tenth resident's time is included?",
+  "stimulus": "An urban planner surveyed 9 residents of a new housing development about their one-way commute times, in minutes: 25, 38, 12, 30, 47, 21, 34, 18, 27. A tenth resident, who commutes from the development to a city 2 hours away, is then added to the data set with a commute time of 138 minutes.",
+  "choices": [
+   "The mean increases by 11, and the median increases by 1.5.",
+   "The mean increases by 11, and the median increases by 11.",
+   "The mean increases by 11, and the median does not change.",
+   "The mean increases by 13.8, and the median increases by 1.5."
+  ],
+  "answer": "A",
+  "explanation": "The original 9 times add up to 252, so the mean is 28. With 138 added, the total is 390 and the mean is $390 \\div 10 = 39$, an increase of 11. Sorted, the original times are 12, 18, 21, 25, 27, 30, 34, 38, 47, so the median is 27. With 10 values, the median is the average of the 5th and 6th values: $(27 + 30) \\div 2 = 28.5$. That is an increase of 1.5. The outlier pulls the mean up a lot but moves the median only half a position.",
+  "distractors": {
+   "B": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You assumed the median moves as much as the mean. The new value goes on the end of the sorted list, so it shifts the middle by only half a position, from 27 to 28.5."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You remembered that outliers barely move the median and decided it can't change at all. With 10 values, the median becomes the average of 27 and 30, which is 28.5."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the new value, 138, by 10 and called that the change in the mean. The actual change is the new mean, 39, minus the old mean, 28."
+   }
+  },
+  "id": "orig-effect-on-cent-H-f51716",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which of the following must be true?\n\nI. The median sprint time for Group A is less than the median sprint time for Group B.\nII. The mean sprint time for Group A is less than the mean sprint time for Group B.",
+  "stimulus": "A sports scientist timed 100-meter sprints for two groups of athletes and summarized each group's times, in seconds, with a box plot. The five-number summaries shown by the box plots are:\n\nGroup A: minimum 10.8, first quartile 11.2, median 11.6, third quartile 12.1, maximum 13.0\nGroup B: minimum 11.0, first quartile 11.4, median 11.9, third quartile 12.3, maximum 12.6",
+  "choices": [
+   "I only",
+   "II only",
+   "I and II",
+   "Neither I nor II"
+  ],
+  "answer": "A",
+  "explanation": "A box plot shows the median directly. Group A's median is 11.6 seconds and Group B's is 11.9 seconds, so statement I must be true. A box plot doesn't show the mean, and it doesn't show the individual values that would determine it. Group A's long upper whisker, reaching 13.0, could pull its mean up, so you can't conclude that statement II must be true.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You reversed which statement the box plots support. The medians can be read straight off the plots. The means can't be read at all."
+   },
+   "C": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You inferred something about the means from the box plots. They show medians and quartiles only. A lower median is consistent with a higher mean, especially since Group A's maximum is larger."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the wrong marks on the box plots, for example comparing Group A's third quartile, 12.1, with Group B's first quartile, 11.4. The line inside each box is the median, and 11.6 < 11.9."
+   }
+  },
+  "id": "orig-effect-on-cent-H-1823a3",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "For which segment is the mean deflection the greatest?",
+  "stimulus": "A civil engineer measured the deflection, in millimeters, of four bridge segments under repeated test loads. Each measurement was rounded to a whole number. The table shows how many times each deflection was recorded for each segment.\n\n| Deflection (mm) | Segment P | Segment Q | Segment R | Segment S |\n|---|---|---|---|---|\n| 2 | 4 | 5 | 4 | 1 |\n| 3 | 2 | 4 | 0 | 2 |\n| 4 | 1 | 3 | 0 | 3 |\n| 5 | 2 | 2 | 1 | 4 |\n| 6 | 4 | 1 | 5 | 5 |",
+  "choices": [
+   "Segment P",
+   "Segment Q",
+   "Segment R",
+   "Segment S"
+  ],
+  "answer": "D",
+  "explanation": "Segment P's frequencies are symmetric around 4 mm, so its mean is 4. Segment Q leans toward the small values, so its mean is below 4: $50 \\div 15 \\approx 3.33$. That leaves R and S, and you have to compute both. For Segment R, $(8 + 5 + 30) \\div 10 = 4.3$. For Segment S, $(2 + 6 + 12 + 20 + 30) \\div 15 = 70 \\div 15 \\approx 4.67$. Segment S has the greatest mean.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You picked the segment with the most spread-out data. Its frequencies are symmetric around 4, so its mean is exactly 4. Spread and center are different measures."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You noticed that Segment Q isn't symmetric but read its lean the wrong way. Its largest frequencies are at the small deflections, which pulls its mean below 4."
+   },
+   "C": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You picked the segment with the greatest median. Segment R's median is 5.5, but its four 2 mm readings pull its mean down to 4.3, which is below Segment S's mean of about 4.67."
+   }
+  },
+  "id": "orig-effect-on-cent-H-579ed3",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which of the following must be true?\n\nI. The mean of the 12 counts is greater than 16.\nII. The median of the 12 counts is greater than 14.\nIII. The median of the 12 counts is not less than 14.",
+  "stimulus": "A folklorist counted the number of distinct versions of a trickster tale recorded in each of 11 villages. The 11 counts have a mean of 16 and a median of 14. The folklorist then adds a twelfth village, where 60 versions of the tale were recorded.",
+  "choices": [
+   "I only",
+   "I and III only",
+   "I, II, and III",
+   "II and III only"
+  ],
+  "answer": "B",
+  "explanation": "The original total is $11 \\times 16 = 176$. Adding 60 gives 236, and $236 \\div 12 \\approx 19.7$, which is greater than 16. So statement I must be true. Before the twelfth village, the median, 14, was the 6th of 11 sorted values. The new value goes at the top of the list, so the new median is the average of 14 and the old 7th value. That 7th value is at least 14, so the median can't drop below 14 (III must be true). However, the 7th value could equal 14, which would leave the median at exactly 14, so II need not be true.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You treated the median as completely unknown after the change. The new value sits above every old value, so the new median is the average of 14 and a value that is at least 14. It can't fall below 14."
+   },
+   "C": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You assumed the median must rise because the mean does. That's possible, but if the 7th sorted value is also 14, the median stays at 14. 'Must be true' rules out claims that are only possible."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the roles of the two measures and treated the mean as the resistant one. A value of 60, far above the mean of 16, must pull the mean up."
+   }
+  },
+  "id": "orig-effect-on-cent-H-480c8d",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which of the following best describes the effect of correcting the error on the mean and the median of the drying times?",
+  "stimulus": "A printmaker recorded the drying times, in minutes, of 8 linocut prints: 42, 31, 95, 45, 38, 47, 34, 40. The printmaker later finds that the time recorded as 95 minutes was actually 59 minutes and corrects it.",
+  "choices": [
+   "The mean decreases by 4.5, and the median does not change.",
+   "The mean decreases by 36, and the median does not change.",
+   "The mean decreases by 4.5, and the median decreases by 4.5.",
+   "The mean does not change, and the median decreases by 4.5."
+  ],
+  "answer": "A",
+  "explanation": "The correction lowers the total by $95 - 59 = 36$ minutes, so the mean drops by $36 \\div 8 = 4.5$ minutes. Sorted, the corrected times are 31, 34, 38, 40, 42, 45, 47, 59. The value 59 is still the largest, so the 4th and 5th values are still 40 and 42, and the median stays at 41.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at the change in the total, 36 minutes, and didn't divide by the 8 values to get the change in the mean."
+   },
+   "C": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You assumed the median shifts as much as the mean. The corrected value is still the largest, so the two middle values, 40 and 42, are unchanged."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You reversed which measure is sensitive to an extreme value. Changing the largest value changes the total and therefore the mean. The median depends only on the middle values."
+   }
+  },
+  "id": "orig-effect-on-cent-H-4ea000",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which of the following must be true?\n\nI. The mean of data set B is greater than the mean of data set A.\nII. The median of data set B is greater than the median of data set A.",
+  "stimulus": "In a nutrition study, data set A lists the daily fiber intake, in grams, of 9 participants: 14, 16, 17, 19, 21, 22, 24, 26, 30. Data set B consists of the same 9 values plus the intake of one more participant, $k$ grams, where $k > 30$.",
+  "choices": [
+   "I only",
+   "II only",
+   "I and II",
+   "Neither I nor II"
+  ],
+  "answer": "C",
+  "explanation": "The values in data set A add up to 189, so its mean is 21. Since $k > 30 > 21$, adding $k$ must raise the mean, so I is true. Data set A's median is its 5th value, 21. In data set B, $k$ is the largest of 10 values, so the median is the average of the 5th and 6th values: $(21 + 22) \\div 2 = 21.5$. That is greater than 21 whatever $k$ is, so II is also true.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You applied 'outliers barely move the median' as 'outliers never move the median.' With an even number of values, the median becomes the average of 21 and 22, which is a real increase."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You reversed which measure the new value must affect. Any value above the current mean of 21 raises the mean, and $k$ is above 30."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You decided nothing is certain because $k$ isn't given. You only need to know that $k > 30$: that puts it above the mean and at the top of the sorted list."
+   }
+  },
+  "id": "orig-effect-on-cent-H-96a086",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which of the following correctly compares the mean and the median of the hourly meteor counts at the two observatories?",
+  "stimulus": "Two observatories each recorded the number of meteors seen per hour during a meteor shower. The table shows how many hours produced each count.\n\n| Meteors per hour | Observatory K (hours) | Observatory L (hours) |\n|---|---|---|\n| 10 | 2 | 2 |\n| 12 | 4 | 4 |\n| 14 | 7 | 7 |\n| 16 | 4 | 4 |\n| 18 | 2 | 8 |",
+  "choices": [
+   "L's mean is greater than K's mean, and the two medians are equal.",
+   "L's mean is greater than K's mean, and L's median is greater than K's median.",
+   "The two means are equal, and the two medians are equal.",
+   "The two means are equal, and L's median is greater than K's median."
+  ],
+  "answer": "A",
+  "explanation": "K's frequencies are symmetric around 14, so its mean and median are both 14. L has 6 extra hours at 18, so its data leans high and its mean is greater: $374 \\div 25 = 14.96$. L has 25 hours, so its median is the 13th value. The cumulative counts are 2, 6, and 13, so the 13th value is still in the 14 row, and L's median is 14. The means differ, but the medians are equal.",
+  "distractors": {
+   "B": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You assumed the median rises along with the mean. The extra hours at 18 push the middle position only to the 13th value, which is still 14."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You saw that both tables peak at 14 and treated them as the same distribution. L's six extra hours at 18 make it lopsided, and that pulls its mean above 14."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped which measure responds to the extra high counts. Adding values at the top raises the mean. Here, the median stays at 14."
+   }
+  },
+  "id": "orig-effect-on-cent-H-129a54",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which of the following best describes the effect of the corrections on the mean and the median of the 12 counts?",
+  "stimulus": "A public health department recorded the number of emergency room visits for respiratory illness at a hospital on each of 12 days: 41, 44, 46, 52, 55, 57, 58, 60, 63, 65, 68, 71. An audit later finds that each of the three smallest counts was recorded 15 visits too low, and the department corrects those three values.",
+  "choices": [
+   "The mean increases by 3.75, and the median increases by 2.",
+   "The mean increases by 3.75, and the median does not change.",
+   "The mean increases by 3.75, and the median increases by 3.75.",
+   "The mean increases by 15, and the median increases by 2."
+  ],
+  "answer": "A",
+  "explanation": "The corrections add $3 \\times 15 = 45$ visits to the total, so the mean rises by $45 \\div 12 = 3.75$. The original median is $(57 + 58) \\div 2 = 57.5$. The corrected values are 56, 59, and 61. Re-sorting gives 52, 55, 56, 57, 58, 59, 60, 61, 63, 65, 68, 71. The 6th and 7th values are now 59 and 60, so the median is 59.5, an increase of 2.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You didn't re-sort after correcting the values. You assumed the three smallest counts stay at the bottom, but 59 and 61 move into the middle of the list and change the 6th and 7th values."
+   },
+   "C": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You assumed the median shifts by the same amount as the mean. The median depends only on which values land in the 6th and 7th positions after sorting, and that gives an increase of 2."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the correction to each individual value, 15, as the change in the mean. The total rises by 45 across 12 days, so the mean rises by 3.75."
+   }
+  },
+  "id": "orig-effect-on-cent-H-b3974c",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "status": "unverified"
+ }
+]

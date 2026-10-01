@@ -12,15 +12,15 @@
 // here that could fake a student's history.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=956c26ba84';
-import { scoreItem, bandWeights, TIERS } from './engine.js?v=956c26ba84';
-import { focusTier, rankLessons } from './lessons.js?v=956c26ba84';
-import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=956c26ba84';
-import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=956c26ba84';
-import { PREVIEW_KEY } from './store.js?v=956c26ba84';
+import { makeStore, configured } from './store.js?v=8c395fa588';
+import { scoreItem, bandWeights, TIERS } from './engine.js?v=8c395fa588';
+import { focusTier, rankLessons } from './lessons.js?v=8c395fa588';
+import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=8c395fa588';
+import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=8c395fa588';
+import { PREVIEW_KEY } from './store.js?v=8c395fa588';
 import { plannerState, plannerHealthy, sendToPlanner, renderPlan, STARTERS,
          fetchAgentFeed, newAlerts, markSeen, popDesktop,
-         enableDesktopAlerts, desktopAlertsOn } from './planner.js?v=956c26ba84';
+         enableDesktopAlerts, desktopAlertsOn } from './planner.js?v=8c395fa588';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');

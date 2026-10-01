@@ -112,3 +112,60 @@ function mathOnly(s) {
   }
   return out + s.slice(last);
 }
+
+
+// ---------------------------------------------------------------------------
+// Item stimulus
+//
+// Authored items store their passage as plain text with real line breaks,
+// which HTML collapses into one run-on block - a cross-text pair ran together
+// as a single paragraph, and a system of equations lost the break between its
+// two lines. Four shapes occur and each needs its own treatment:
+//
+//   Text 1 / Text 2   a labelled heading, then its passage, clearly separated
+//   notes             the lead-in, then the bullets as a list
+//   bare equations    each on its own centred line, not inline in a sentence
+//   prose             blank lines are paragraph breaks
+//
+// Content that already carries HTML (the figures and tables) is passed
+// through untouched.
+// ---------------------------------------------------------------------------
+
+const TEXT_LABEL = /^\s*(Text\s*\d+|Passage\s*\d+)\s*:?\s*$/i;
+const BULLET = /^\s*[-\u2022*]\s+/;
+const BARE_MATH = /^\s*\$[^$]+\$\s*$/;
+
+export function renderStimulus(raw) {
+  const text = String(raw ?? '');
+  if (!text) return '';
+  if (text.includes('<')) return renderHtml(text);     // already markup
+
+  const out = [];
+  let list = null;
+  const flushList = () => {
+    if (list) { out.push(`<ul class="stim-notes">${list.join('')}</ul>`); list = null; }
+  };
+
+  for (const line of text.split('\n')) {
+    const t = line.trim();
+    if (!t) { flushList(); continue; }
+
+    if (TEXT_LABEL.test(t)) {
+      flushList();
+      out.push(`<div class="stim-label">${renderText(t.replace(/:$/, ''))}</div>`);
+      continue;
+    }
+    if (BULLET.test(t)) {
+      (list ??= []).push(`<li>${renderText(t.replace(BULLET, ''))}</li>`);
+      continue;
+    }
+    flushList();
+    if (BARE_MATH.test(t)) {
+      out.push(`<div class="stim-eq">${renderText(t)}</div>`);
+      continue;
+    }
+    out.push(`<p>${renderText(t)}</p>`);
+  }
+  flushList();
+  return out.join('');
+}

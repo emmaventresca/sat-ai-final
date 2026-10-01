@@ -412,3 +412,23 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 .agent-banner.bad{background:var(--bad-bg);border:1px solid var(--bad-ln);color:#c9344c}
 .agent-banner strong{display:block}
 .agent-banner button{background:rgba(255,255,255,.75)}
+
+/* ---- stimulus structure ------------------------------------------------- */
+/* A cross-text pair needs the two passages visibly separate, not run together. */
+.stim-label{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--purple-d);margin:16px 0 7px;
+}
+.stim .stim-label:first-child{margin-top:0}
+.stim-label + p{margin-top:0}
+/* The second passage gets a rule above it, so the boundary is unmissable. */
+.stim-label ~ .stim-label{
+  padding-top:15px;border-top:1px solid var(--line2);
+}
+.stim-notes{margin:8px 0 10px;padding-left:20px}
+.stim-notes li{margin-bottom:6px;font-family:var(--serif);line-height:1.66}
+/* An equation that is the whole line gets its own line, centred. */
+.stim-eq{text-align:center;margin:10px 0}
+.stim-eq .mth{margin:0 auto}
+.stim p + p{margin-top:10px}

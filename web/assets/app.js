@@ -7,10 +7,10 @@
 // do not teach what they have already shown they know.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=956c26ba84';
-import { scoreItem, selectRound, updateMastery, bandWeights, TIERS } from './engine.js?v=956c26ba84';
-import { buildLesson, focusTier, rankLessons } from './lessons.js?v=956c26ba84';
-import { renderText as md, renderBody, renderHtml, escapeHtml as esc } from './mathfmt.js?v=956c26ba84';
+import { makeStore, configured } from './store.js?v=8c395fa588';
+import { scoreItem, selectRound, updateMastery, bandWeights, TIERS } from './engine.js?v=8c395fa588';
+import { buildLesson, focusTier, rankLessons } from './lessons.js?v=8c395fa588';
+import { renderText as md, renderBody, renderHtml, escapeHtml as esc } from './mathfmt.js?v=8c395fa588';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -412,8 +412,8 @@ function screenPractice() {
     <div class="bar thin"><i style="width:${Math.round(r.at / r.items.length * 100)}%"></i></div>
 
     <div class="card" style="margin-top:14px">
-      ${item.stimulus ? `<div class="stim">${renderHtml(item.stimulus)}</div>` : ''}
-      <div class="q">${renderHtml(item.stem)}</div>
+      ${item.stimulus ? `<div class="stim">${renderStimulus(item.stimulus)}</div>` : ''}
+      <div class="q">${renderStimulus(item.stem)}</div>
       ${item.choices.map((c, i) => {
         const key = 'ABCD'[i];
         let cls = 'choice';
