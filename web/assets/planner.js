@@ -12,7 +12,7 @@
 // model never writes to a student's account directly.
 // ---------------------------------------------------------------------------
 
-import { escapeHtml as esc, renderText } from './mathfmt.js?v=8c395fa588';
+import { escapeHtml as esc, renderText } from './mathfmt.js?v=916c1252c3';
 
 const PLANNER = 'http://localhost:8791';
 
@@ -25,10 +25,20 @@ export async function plannerHealthy() {
   } catch { return false; }
 }
 
-export async function sendToPlanner(text, focus) {
+/**
+ * Send a message to the planner.
+ *
+ * `onStart` fires before the request so the caller can paint the pending state.
+ * Without it the UI only redraws once the whole call returns, which on a
+ * planning request is one to three minutes of the page looking dead - you
+ * click Send and nothing happens.
+ */
+export async function sendToPlanner(text, focus, onStart) {
   plannerState.messages.push({ role: 'user', content: text });
   plannerState.busy = true;
   plannerState.error = null;
+  plannerState.startedAt = Date.now();
+  if (onStart) onStart();
   try {
     const r = await fetch(`${PLANNER}/plan`, {
       method: 'POST',
@@ -43,19 +53,55 @@ export async function sendToPlanner(text, focus) {
     plannerState.error = e.message;
   } finally {
     plannerState.busy = false;
+    plannerState.startedAt = null;
   }
 }
 
-/** Light markdown for the reply: headings, bold, lists, and fenced blocks. */
+/** Subtype slug -> the name a teacher would say. Set once the data loads. */
+export const subtypeNames = {};
+
+export function setSubtypeNames(map) {
+  Object.assign(subtypeNames, map);
+}
+
+/**
+ * Replace bare subtype slugs with their plain names.
+ *
+ * The planner cites slugs because that is how the data is keyed, but
+ * "read-center-radius-standard-form" is not how a teacher reads a lesson plan.
+ */
+function humanizeSlugs(line) {
+  return line.replace(/`?\b([a-z0-9]+(?:-[a-z0-9]+){2,})\b`?/g, (m, slug) =>
+    subtypeNames[slug] ? subtypeNames[slug] : m);
+}
+
+/**
+ * Light markdown for the reply: headings, bold, lists, and fenced blocks.
+ *
+ * The ```json block is dropped. It is the machine-readable assignment, already
+ * parsed and shown as the approval card above - printing it again dumps a wall
+ * of ids and quoting into the middle of a lesson plan.
+ */
 export function renderPlan(md) {
   const out = [];
   let list = null, code = null;
   const flush = () => { if (list) { out.push(`<ul>${list.join('')}</ul>`); list = null; } };
 
+  let fenceLang = '';
   for (const raw of String(md ?? '').split('\n')) {
     if (raw.trim().startsWith('```')) {
-      if (code === null) { flush(); code = []; }
-      else { out.push(`<pre class="plan-code">${esc(code.join('\n'))}</pre>`); code = null; }
+      if (code === null) {
+        flush();
+        code = [];
+        fenceLang = raw.trim().slice(3).trim().toLowerCase();
+      } else {
+        // The JSON payload belongs to the approval card, not the transcript.
+        if (fenceLang !== 'json') {
+          out.push(`<pre class="plan-code">${esc(code.join('\n'))}</pre>`);
+        }
+        code = null;
+        fenceLang = '';
+      }
       continue;
     }
     if (code !== null) { code.push(raw); continue; }
@@ -63,15 +109,20 @@ export function renderPlan(md) {
     const line = raw.trim();
     if (!line) { flush(); continue; }
     const h = line.match(/^(#{1,4})\s+(.*)$/);
-    if (h) { flush(); out.push(`<h4 class="plan-h">${renderText(h[2])}</h4>`); continue; }
-    if (/^[-*]\s+/.test(line)) { (list ??= []).push(`<li>${renderText(line.replace(/^[-*]\s+/, ''))}</li>`); continue; }
+    if (h) { flush(); out.push(`<h4 class="plan-h">${renderText(humanizeSlugs(h[2]))}</h4>`); continue; }
+    if (/^[-*]\s+/.test(line)) {
+      (list ??= []).push(`<li>${renderText(humanizeSlugs(line.replace(/^[-*]\s+/, '')))}</li>`);
+      continue;
+    }
     const n = line.match(/^(\d+)[.)]\s+(.*)$/);
-    if (n) { (list ??= []).push(`<li>${renderText(n[2])}</li>`); continue; }
+    if (n) { (list ??= []).push(`<li>${renderText(humanizeSlugs(n[2]))}</li>`); continue; }
     flush();
-    out.push(`<p>${renderText(line)}</p>`);
+    out.push(`<p>${renderText(humanizeSlugs(line))}</p>`);
   }
   flush();
-  if (code) out.push(`<pre class="plan-code">${esc(code.join('\n'))}</pre>`);
+  if (code && fenceLang !== 'json') {
+    out.push(`<pre class="plan-code">${esc(code.join('\n'))}</pre>`);
+  }
   return out.join('');
 }
 

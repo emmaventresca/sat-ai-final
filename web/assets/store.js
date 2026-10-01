@@ -92,6 +92,10 @@ class LocalStore {
     return p ? [p] : [];
   }
 
+  async addStudentByEmail(email) {
+    throw new Error('Local mode has no accounts - configure Supabase to add students.');
+  }
+
   async createAssignment(row) {
     const a = readLS('satai.assignments', []);
     // student_id must survive: the roster filters on it.
@@ -281,6 +285,31 @@ class SupabaseStore {
       .eq('id', id).eq('student_id', this.uid).select().maybeSingle();
     if (error) throw error;
     return data;
+  }
+
+  /**
+   * Add a student to this teacher's roster by email.
+   *
+   * The student must already have signed up: their profile row is created by
+   * a trigger on the auth account, and row-level security does not let a
+   * teacher create accounts for other people. So this links an existing
+   * account rather than inviting one.
+   */
+  async addStudentByEmail(email) {
+    const clean = String(email).trim().toLowerCase();
+    const { data: found, error: lookupErr } = await this.sb.from('profiles')
+      .select('id, email, full_name').ilike('email', clean).maybeSingle();
+    if (lookupErr) throw lookupErr;
+    if (!found) {
+      throw new Error(
+        `No account for ${clean} yet. Ask them to sign up at the student app ` +
+        `first, then add them here.`);
+    }
+    const { error } = await this.sb.from('roster')
+      .upsert({ teacher_id: this.uid, student_id: found.id },
+              { onConflict: 'teacher_id,student_id' });
+    if (error) throw error;
+    return found;
   }
 
   /** Teacher view: the students on this teacher's roster. */

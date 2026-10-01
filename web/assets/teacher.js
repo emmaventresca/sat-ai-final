@@ -12,15 +12,15 @@
 // here that could fake a student's history.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=8c395fa588';
-import { scoreItem, bandWeights, TIERS } from './engine.js?v=8c395fa588';
-import { focusTier, rankLessons } from './lessons.js?v=8c395fa588';
-import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=8c395fa588';
-import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=8c395fa588';
-import { PREVIEW_KEY } from './store.js?v=8c395fa588';
+import { makeStore, configured } from './store.js?v=916c1252c3';
+import { scoreItem, bandWeights, TIERS } from './engine.js?v=916c1252c3';
+import { focusTier, rankLessons } from './lessons.js?v=916c1252c3';
+import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=916c1252c3';
+import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=916c1252c3';
+import { PREVIEW_KEY } from './store.js?v=916c1252c3';
 import { plannerState, plannerHealthy, sendToPlanner, renderPlan, STARTERS,
          fetchAgentFeed, newAlerts, markSeen, popDesktop,
-         enableDesktopAlerts, desktopAlertsOn } from './planner.js?v=8c395fa588';
+         enableDesktopAlerts, desktopAlertsOn } from './planner.js?v=916c1252c3';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -133,8 +133,24 @@ function screenRoster() {
       </table>
     </div>` : `<div class="card empty">
       <p>No students on your roster yet.</p>
-      <p class="small">Add rows to the <code>roster</code> table linking your
-        teacher id to each student id.</p></div>`}
+      <p class="small">Add one below once they have signed up.</p></div>`}
+
+    <h2>Add a student</h2>
+    <div class="card">
+      <p class="small muted">They sign up at the student app first &mdash; an
+        account can only be created by the person using it. Then add their
+        email here to put them on your roster.</p>
+      <div class="row">
+        <input id="add-email" type="email" placeholder="student@example.com"
+          style="max-width:320px" ${configured() ? '' : 'disabled'}>
+        <button class="btn-primary" id="add-student"
+          ${configured() ? '' : 'disabled'}>Add to my roster</button>
+      </div>
+      ${configured() ? '' : `<p class="tiny muted" style="margin:10px 0 0">
+        Running without a backend, so there are no accounts to add.</p>`}
+      <p class="err" id="add-err" hidden></p>
+      <p class="small" id="add-ok" hidden style="color:#0b7a55;font-weight:700"></p>
+    </div>
   </div>`;
 
   $('#out').onclick = async () => { await store.signOut(); location.reload(); };
@@ -145,6 +161,24 @@ function screenRoster() {
   for (const tr of document.querySelectorAll('[data-student]')) {
     tr.onclick = () => openStudent(tr.dataset.student);
   }
+  const addBtn = $('#add-student');
+  if (addBtn) addBtn.onclick = async () => {
+    const err = $('#add-err'), ok = $('#add-ok');
+    err.hidden = ok.hidden = true;
+    const email = $('#add-email').value.trim();
+    if (!email) return;
+    addBtn.disabled = true;
+    try {
+      const who = await store.addStudentByEmail(email);
+      ok.textContent = `Added ${who.full_name || who.email}. Refreshing\u2026`;
+      ok.hidden = false;
+      await boot();
+    } catch (e) {
+      err.textContent = e.message;
+      err.hidden = false;
+      addBtn.disabled = false;
+    }
+  };
 }
 
 /** How much of what a teacher set has actually been done. */
@@ -582,7 +616,9 @@ async function screenPlanner(note) {
                actually requires, and which practice items exist.</p>
           </div>`}
         ${plannerState.busy ? `<div class="plan-msg bot"><div class="who">Planner</div>
-          <p class="muted"><span class="spin"></span> Thinking…</p></div>` : ''}
+          <p class="muted"><span class="spin"></span> Working on it… a full lesson
+            plan usually takes one to three minutes.</p>
+          <p class="tiny muted" id="plan-elapsed" style="margin:0">0s</p></div>` : ''}
         ${plannerState.error ? `<p class="err">${esc(plannerState.error)}</p>` : ''}
       </div>
 
@@ -616,7 +652,8 @@ async function screenPlanner(note) {
       <div class="plan-ask">
         <textarea id="ask" placeholder="Plan a one-hour lesson on…"
           ${up ? '' : 'disabled'}></textarea>
-        <button class="btn-primary" id="send" ${up && !plannerState.busy ? '' : 'disabled'}>Send</button>
+        <button class="btn-primary" id="send" ${up && !plannerState.busy ? '' : 'disabled'}>${
+          plannerState.busy ? 'Working\u2026' : 'Send'}</button>
       </div>
       <p class="tiny muted">Runs on your machine against your own Claude
         session. Nothing here is visible to students, and an assignment only
@@ -627,14 +664,27 @@ async function screenPlanner(note) {
   const thread = $('#thread');
   if (thread) thread.scrollTop = thread.scrollHeight;
 
+  if (state.planTimer) { clearInterval(state.planTimer); state.planTimer = null; }
+  if (plannerState.busy && plannerState.startedAt) {
+    const tick = () => {
+      const el = $('#plan-elapsed');
+      if (!el) return;
+      el.textContent = `${Math.round((Date.now() - plannerState.startedAt) / 1000)}s`;
+    };
+    tick();
+    state.planTimer = setInterval(tick, 1000);
+  }
+
   $('#out').onclick = async () => { await store.signOut(); location.reload(); };
   $('#tab-roster').onclick = () => screenRoster();
   $('#tab-agents').onclick = () => screenAgents();
   wireBanner();
 
   const send = async (text) => {
-    if (!text?.trim()) return;
-    await sendToPlanner(text.trim());
+    if (!text?.trim() || plannerState.busy) return;
+    // Paint the pending state first, then await. Otherwise the only redraw
+    // happens after the call returns and the page looks dead meanwhile.
+    await sendToPlanner(text.trim(), undefined, () => screenPlanner());
     screenPlanner();
   };
   $('#send').onclick = () => send($('#ask').value);
@@ -694,6 +744,7 @@ async function loadData() {
   for (const v of Object.values(subtax.skills ?? {})) {
     for (const st of v.subtypes ?? []) state.subtypeNames[st.slug] = st.name;
   }
+  setSubtypeNames(state.subtypeNames);
 }
 
 /** Pull each student's rows. RLS decides what comes back, not this code. */

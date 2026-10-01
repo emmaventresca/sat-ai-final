@@ -7,10 +7,10 @@
 // do not teach what they have already shown they know.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=8c395fa588';
-import { scoreItem, selectRound, updateMastery, bandWeights, TIERS } from './engine.js?v=8c395fa588';
-import { buildLesson, focusTier, rankLessons } from './lessons.js?v=8c395fa588';
-import { renderText as md, renderBody, renderHtml, escapeHtml as esc } from './mathfmt.js?v=8c395fa588';
+import { makeStore, configured } from './store.js?v=916c1252c3';
+import { scoreItem, selectRound, updateMastery, bandWeights, TIERS } from './engine.js?v=916c1252c3';
+import { buildLesson, focusTier, rankLessons } from './lessons.js?v=916c1252c3';
+import { renderText as md, renderBody, renderHtml, renderStimulus, escapeHtml as esc } from './mathfmt.js?v=916c1252c3';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
