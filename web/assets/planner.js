@@ -12,7 +12,7 @@
 // model never writes to a student's account directly.
 // ---------------------------------------------------------------------------
 
-import { escapeHtml as esc, renderText } from './mathfmt.js?v=ffa4598a1b';
+import { escapeHtml as esc, renderText } from './mathfmt.js?v=3af15722b1';
 
 const PLANNER = 'http://localhost:8791';
 
@@ -176,7 +176,7 @@ export async function fetchAgentFeed() {
     if (r.ok) return { ...(await r.json()), live: true };
   } catch { /* helper not running */ }
   try {
-    const r = await fetch('../data/agent_feed.json?v=2a76efb2fa', { cache: 'no-store' });
+    const r = await fetch('../data/agent_feed.json?v=09dea318bb', { cache: 'no-store' });
     if (r.ok) return { ...(await r.json()), live: false };
   } catch { /* no feed yet */ }
   return { runs: [], summary: {}, live: false };

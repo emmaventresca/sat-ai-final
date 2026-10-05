@@ -7,15 +7,15 @@
 // do not teach what they have already shown they know.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=ffa4598a1b';
-import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=ffa4598a1b';
-import { buildLesson, focusTier, rankLessons } from './lessons.js?v=ffa4598a1b';
+import { makeStore, configured } from './store.js?v=3af15722b1';
+import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=3af15722b1';
+import { buildLesson, focusTier, rankLessons } from './lessons.js?v=3af15722b1';
 import {
   missGroups, missCount, reinforcementSet, generatorAvailable, generateMore,
   familyName,
-} from './review.js?v=ffa4598a1b';
-import { isGrid, matches as gridMatches, diagnose as gridDiagnose, MAX_LEN } from './grid.js?v=ffa4598a1b';
-import { renderText as md, renderBody, renderHtml, renderStimulus, renderFigure, escapeHtml as esc } from './mathfmt.js?v=ffa4598a1b';
+} from './review.js?v=3af15722b1';
+import { isGrid, matches as gridMatches, diagnose as gridDiagnose, MAX_LEN } from './grid.js?v=3af15722b1';
+import { renderText as md, renderBody, renderHtml, renderStimulus, renderFigure, escapeHtml as esc } from './mathfmt.js?v=3af15722b1';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -285,7 +285,7 @@ function assignmentTile(a) {
     ${f.notes || a.notes ? `<div class="d" style="margin-top:6px">${esc(f.notes ?? a.notes)}</div>` : ''}
     <div class="meta"><span class="badge on">Assigned</span>
       ${(f.subtypes ?? []).slice(0, 3).map((sl) =>
-        `<span class="badge">${esc(state.subtypeInfo?.[sl]?.name ?? sl)}</span>`).join('')}</div>
+        `<span class="badge name">${esc(state.subtypeInfo?.[sl]?.name ?? sl)}</span>`).join('')}</div>
   </button>`;
 }
 
@@ -324,7 +324,7 @@ function reviewCard() {
     <div class="d">${n} missed question${n === 1 ? '' : 's'}, sorted by what keeps
       catching you. Each one comes with ten more to lock it in.</div>
     <div class="meta">${top.map((g) =>
-      `<span class="badge on">${esc(g.title)} &middot; ${g.count}</span>`).join('')}
+      `<span class="badge on name">${esc(g.title)} &middot; ${g.count}</span>`).join('')}
       ${groups.length > 3 ? `<span class="badge">+${groups.length - 3} more</span>` : ''}</div>
   </button>`;
 }
@@ -444,7 +444,7 @@ function reviewCardFor(m) {
   return `<div class="card">
     <div class="meta" style="margin-bottom:10px">
       <span class="badge ${i.difficulty.toLowerCase()}">${TIER_WORD[i.difficulty]}</span>
-      ${m.family ? `<span class="badge on">${esc(familyName(m.family, ctx()))}</span>` : ''}
+      ${m.family ? `<span class="badge on name">${esc(familyName(m.family, ctx()))}</span>` : ''}
     </div>
     ${i.stimulus || i.figure ? `<div class="stim">${
       renderStimulus(i.stimulus)}${renderFigure(i.figure)}</div>` : ''}
@@ -1014,17 +1014,17 @@ function render() {
 async function loadData() {
   const [bands, skills, lessons, sublessons, items, misc, subtax, subcounts] =
     await Promise.all([
-    fetch('../data/bands.json?v=2a76efb2fa').then((r) => r.json()),
-    fetch('../data/skills.json?v=2a76efb2fa').then((r) => r.json()),
-    fetch('../data/lessons.json?v=2a76efb2fa').then((r) => r.json()),
-    fetch('../data/subtype_lessons.json?v=2a76efb2fa').then((r) => r.json())
+    fetch('../data/bands.json?v=09dea318bb').then((r) => r.json()),
+    fetch('../data/skills.json?v=09dea318bb').then((r) => r.json()),
+    fetch('../data/lessons.json?v=09dea318bb').then((r) => r.json()),
+    fetch('../data/subtype_lessons.json?v=09dea318bb').then((r) => r.json())
       .catch(() => ({ lessons: [] })),
     // Our own CC BY items. The College Board pool is deliberately not loaded:
     // it cannot be served to students (docs/LICENSING.md section 4).
-    fetch('../data/practice.json?v=2a76efb2fa').then((r) => r.json()).catch(() => ({ items: [] })),
-    fetch('../data/misconceptions.json?v=2a76efb2fa').then((r) => r.json()).catch(() => ({ families: [] })),
-    fetch('../data/subtypes.json?v=2a76efb2fa').then((r) => r.json()).catch(() => ({ skills: {} })),
-    fetch('../data/subtype_counts.json?v=2a76efb2fa').then((r) => r.json()).catch(() => ({ subtypes: {} })),
+    fetch('../data/practice.json?v=09dea318bb').then((r) => r.json()).catch(() => ({ items: [] })),
+    fetch('../data/misconceptions.json?v=09dea318bb').then((r) => r.json()).catch(() => ({ families: [] })),
+    fetch('../data/subtypes.json?v=09dea318bb').then((r) => r.json()).catch(() => ({ skills: {} })),
+    fetch('../data/subtype_counts.json?v=09dea318bb').then((r) => r.json()).catch(() => ({ subtypes: {} })),
   ]);
   state.misconceptions = Object.fromEntries((misc.families ?? []).map((f) => [f.slug, f]));
   state.bands = bands;

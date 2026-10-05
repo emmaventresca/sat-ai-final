@@ -635,3 +635,25 @@ input.grid-box:focus{outline:none;border-color:var(--purple);
   text-transform:uppercase;color:var(--dim);font-weight:800}
 .packet-grid-box{display:inline-block;width:150px;height:34px;
   border:1.5px solid var(--line2);border-radius:8px;background:var(--panel)}
+
+/* ---- style corrections -------------------------------------------------- */
+
+/* The badge is built for short labels - uppercase, letter-spaced, tiny. A
+   full subtype name set in it ("STRAIGHT UNIT CONVERSION (ONE OR CHAINED
+   FACTORS)") reads as shouting and runs past the card. Names get their own
+   variant: normal case, and truncated rather than wrapped. */
+.badge.name{
+  text-transform:none;letter-spacing:0;font-size:.74rem;font-weight:700;
+  max-width:min(100%,280px);overflow:hidden;text-overflow:ellipsis;
+  white-space:nowrap;vertical-align:bottom;
+}
+
+/* The level tiles sat at different heights because only Hard carries a note,
+   which left the row ragged. Stretch them and push the note to the bottom. */
+.levels{align-items:stretch}
+.level{display:flex;flex-direction:column}
+.level .level-note{margin-top:auto;padding-top:6px}
+
+/* A tile's badges were floating a long way under its text. */
+.tile .meta{margin-top:7px}
+.tile .meta:empty{display:none}
