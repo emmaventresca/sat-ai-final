@@ -12,17 +12,17 @@
 // here that could fake a student's history.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=ef746b66db';
-import { scoreItem, bandWeights, TIERS } from './engine.js?v=ef746b66db';
-import { focusTier, rankLessons } from './lessons.js?v=ef746b66db';
-import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=ef746b66db';
-import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=ef746b66db';
-import { PREVIEW_KEY } from './store.js?v=ef746b66db';
-import * as chats from './chats.js?v=ef746b66db';
-import { renderPacket } from './packet.js?v=ef746b66db';
+import { makeStore, configured } from './store.js?v=062e47ade1';
+import { scoreItem, bandWeights, TIERS } from './engine.js?v=062e47ade1';
+import { focusTier, rankLessons } from './lessons.js?v=062e47ade1';
+import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=062e47ade1';
+import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=062e47ade1';
+import { PREVIEW_KEY } from './store.js?v=062e47ade1';
+import * as chats from './chats.js?v=062e47ade1';
+import { renderPacket } from './packet.js?v=062e47ade1';
 import { plannerState, plannerHealthy, sendToPlanner, renderPlan, STARTERS,
          fetchAgentFeed, newAlerts, markSeen, popDesktop,
-         enableDesktopAlerts, desktopAlertsOn, setSubtypeNames } from './planner.js?v=ef746b66db';
+         enableDesktopAlerts, desktopAlertsOn, setSubtypeNames } from './planner.js?v=062e47ade1';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');

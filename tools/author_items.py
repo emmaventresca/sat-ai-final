@@ -111,8 +111,27 @@ SKILL_STEMS = {
 }
 
 
+def focus_block(families, focus):
+    """Aim the distractors at the error this student keeps making.
+
+    Reinforcement rounds exist because one wrong move keeps recurring. A set
+    of ten that never offers that move again does not test whether they have
+    stopped making it.
+    """
+    if not focus:
+        return ""
+    by = {f["slug"]: f for f in families}
+    named = [by[s] for s in focus if s in by]
+    if not named:
+        return ""
+    lines = "\n".join(f"     {f['slug']}: {f['when']}" for f in named)
+    return ("0. AIM AT THESE ERRORS. This student keeps making them, so every\n"
+            "   item must offer at least one distractor that is exactly this\n"
+            "   move - tempting, not obviously wrong:\n" + lines + "\n\n")
+
+
 def build_prompt(skill, lesson, families, difficulty, n, seed_topics,
-                 subtype=None, patterns=None):
+                 subtype=None, patterns=None, focus=None):
     stem_line = SKILL_STEMS.get(skill["skill_cd"])
     stem_line = (f'"{stem_line}"' if stem_line else
                  "write the instruction the test would use for this skill, in "
@@ -144,7 +163,7 @@ Hard requirements:
    recognise the subtype from the tell above. Do not drift into a neighbouring
    subtype of the same skill.
 
-4. EVERY DISTRACTOR CATCHES A NAMED ERROR. Pick from these families and say
+{focus_block(families, focus)}4. EVERY DISTRACTOR CATCHES A NAMED ERROR. Pick from these families and say
    which one each distractor targets. At least one distractor per item must
    be the subtype's own trap, described above:
 {chr(10).join(f"     {f['slug']}: {f['when']}" for f in fams)}
@@ -221,10 +240,10 @@ def call(prompt, model):
 
 
 def author(skill, lesson, families, difficulty, n, model, rng,
-           subtype=None, patterns=None):
+           subtype=None, patterns=None, focus=None):
     topics = rng.sample(TOPICS, min(n, len(TOPICS)))
     prompt = build_prompt(skill, lesson, families, difficulty, n, topics,
-                          subtype, patterns)
+                          subtype, patterns, focus)
     assert_no_cb_text(prompt)
     items = call(prompt, model)
     out = []
@@ -253,6 +272,9 @@ def main():
     ap.add_argument("--n", type=int, default=10)
     ap.add_argument("--model", default="claude-opus-5-5")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--misconceptions",
+                    help="comma-separated family slugs to aim the distractors "
+                         "at - used when a student keeps making one error")
     args = ap.parse_args()
 
     skills = {s["skill_cd"]: s for s in load("skills.json")["skills"]}
@@ -293,7 +315,8 @@ def main():
              difficulty=args.difficulty, model=args.model, asked=args.n) as r:
         items = author(skill, lesson_for(args.skill, lessons),
                        families, args.difficulty, args.n, args.model, rng,
-                       subtype, patterns)
+                       subtype, patterns,
+                       focus=[f.strip() for f in (args.misconceptions or "").split(",") if f.strip()])
         r.count(authored=len(items))
         if len(items) < args.n:
             r.note(f"asked for {args.n}, got {len(items)}")

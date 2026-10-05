@@ -20,11 +20,12 @@ request is answered with the project's own derived material in context:
 
   python3 tools/planner_server.py          # then open the Plan tab
 """
-import json, os, re, subprocess, sys, threading
+import json, os, re, subprocess, sys, threading, time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TOOLS = os.path.join(ROOT, "tools")
 PORT = int(os.environ.get("PLANNER_PORT", "8791"))
 MODEL = os.environ.get("PLANNER_MODEL", "claude-opus-5-5")
 
@@ -203,6 +204,76 @@ def ask(messages, focus=None):
     return proc.stdout.strip()
 
 
+# ---------------------------------------------------------------------------
+# Reinforcement
+#
+# A student who keeps missing one recognition wants ten more of exactly that,
+# and the bank runs out long before the mistake does. This writes them with
+# the same authoring tool the bank was built with - same subtype brief, same
+# misconception taxonomy, same originality rule - so a question written at
+# 9pm for one student is the same kind of object as the rest.
+#
+# It is deliberately a local endpoint. Generating items needs a model, and
+# students never reach this machine.
+# ---------------------------------------------------------------------------
+
+def generate_items(req):
+    subtype = req.get("subtype")
+    skill_cd = req.get("skill_cd")
+    if not skill_cd:
+        raise ValueError("skill_cd is required")
+    n = max(1, min(int(req.get("n") or 10), 20))
+    difficulty = req.get("difficulty") or "M"
+    if difficulty not in ("E", "M", "H"):
+        raise ValueError(f"unknown difficulty {difficulty!r}")
+
+    # author_items.py appends to data/bank/<stem>-<tier>.json. Diff the file
+    # around the call rather than parsing stdout: the tool's job is to write
+    # items, and reading what it wrote is the only honest way to know.
+    stem = subtype or skill_cd.replace(".", "")
+    out_path = os.path.join(ROOT, "data", "bank", f"{stem}-{difficulty}.json")
+    before = set()
+    if os.path.exists(out_path):
+        before = {i["id"] for i in json.load(open(out_path))}
+
+    cmd = [sys.executable, os.path.join(TOOLS, "author_items.py"),
+           "--skill", skill_cd, "--difficulty", difficulty, "--n", str(n),
+           "--seed", str(int(time.time()) % 100000)]
+    if subtype:
+        cmd += ["--subtype", subtype]
+    focus = [f for f in (req.get("misconceptions") or []) if isinstance(f, str)]
+    if focus:
+        cmd += ["--misconceptions", ",".join(focus[:3])]
+
+    proc = subprocess.run(cmd, capture_output=True, text=True, timeout=900)
+    if proc.returncode != 0:
+        raise RuntimeError((proc.stderr or proc.stdout)[-400:] or "authoring failed")
+
+    if not os.path.exists(out_path):
+        raise RuntimeError("the authoring tool wrote no items")
+    fresh = [i for i in json.load(open(out_path)) if i["id"] not in before]
+    if not fresh:
+        raise RuntimeError("the authoring tool produced nothing new")
+
+    # Verify before serving. A question written on demand is still a question
+    # a student will trust, and an unverified item can have two defensible
+    # answers - which teaches them to doubt a correct instinct. Originality is
+    # skipped here only because the corpus index takes longer than the whole
+    # rest of the call; these never leave the teacher's machine until the
+    # normal build runs it.
+    subprocess.run(
+        [sys.executable, os.path.join(TOOLS, "verify_items.py"),
+         "--file", out_path, "--skip-originality"],
+        capture_output=True, text=True, timeout=900)
+    verified = {i["id"]: i for i in json.load(open(out_path))}
+    passed = [verified[i["id"]] for i in fresh
+              if verified.get(i["id"], {}).get("status") == "verified"]
+    if not passed:
+        raise RuntimeError(f"wrote {len(fresh)} questions but none passed "
+                           f"verification; nothing was served")
+    return passed[:n]
+
+
 class Handler(BaseHTTPRequestHandler):
     def _send(self, code, payload):
         body = json.dumps(payload).encode()
@@ -230,7 +301,15 @@ class Handler(BaseHTTPRequestHandler):
         self._send(404, {"error": "not found"})
 
     def do_POST(self):
-        if urlparse(self.path).path != "/plan":
+        path = urlparse(self.path).path
+        if path == "/generate":
+            try:
+                n = int(self.headers.get("Content-Length", 0))
+                req = json.loads(self.rfile.read(n) or b"{}")
+                return self._send(200, {"items": generate_items(req)})
+            except Exception as exc:
+                return self._send(500, {"error": str(exc)[:400]})
+        if path != "/plan":
             return self._send(404, {"error": "not found"})
         try:
             n = int(self.headers.get("Content-Length", 0))

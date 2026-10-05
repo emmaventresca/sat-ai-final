@@ -237,6 +237,12 @@ const TIER_NAME = { E: 'Easy', M: 'Medium', H: 'Hard' };
  * unlocked one, plus the next as a "try it" option. Lower tiers never
  * disappear - going back for more practice is a legitimate choice, not a
  * demotion.
+ *
+ * Hard is never actually locked. Telling a student they may not attempt the
+ * hard questions is a worse failure than letting them attempt them early: the
+ * ladder exists to point at what pays, not to withhold. So when Hard has not
+ * been earned it comes back as `challenge`, shown with the warning rather
+ * than hidden.
  */
 export function availableTiers(unit, ctx) {
   const unlocked = ['E'];
@@ -245,10 +251,12 @@ export function availableTiers(unit, ctx) {
   }
   const highest = unlocked[unlocked.length - 1];
   const next = PROMOTION[highest]?.next;
+  const tryable = next && !unlocked.includes(next) ? next : null;
   return {
     unlocked,
     current: highest,
-    tryable: next && !unlocked.includes(next) ? next : null,
+    tryable,
+    challenge: unlocked.includes('H') || tryable === 'H' ? null : 'H',
   };
 }
 

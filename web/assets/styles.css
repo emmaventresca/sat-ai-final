@@ -591,3 +591,19 @@ table.stim-table tbody tr:nth-child(even) td{background:rgba(0,0,0,.015)}
 .stim-chart .ln{fill:none;stroke:var(--purple);stroke-width:2}
 .stim-chart text{font-family:var(--ui);font-size:11px;fill:var(--dim)}
 .stim-chart text.val{fill:var(--ink);font-size:11px}
+
+/* Hard is offered to everyone, with the warning attached. Withholding it is a
+   worse failure than letting a student find out it is hard. */
+.level.challenge{border-style:dashed;border-color:var(--flag-ln);background:var(--flag-bg)}
+.level-tag.challenge{color:var(--flag)}
+.level-note{display:block;font-size:.7rem;color:var(--dim);font-weight:600;margin-top:6px;line-height:1.45}
+
+/* Review. The mistakes get the warm-flag treatment rather than the alarm one:
+   this is the most useful list in the app, not a scolding. */
+.tile.review{border-color:var(--flag-ln);background:linear-gradient(180deg,var(--flag-bg),var(--panel))}
+.fam{padding:12px 0;border-top:1px solid var(--line)}
+.fam:first-of-type{border-top:0;padding-top:0}
+.fam-h{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.fam p{margin:4px 0 0}
+.bad-text{color:var(--bad)}
+.btn.ghost{background:transparent;border:1px solid var(--line2);color:var(--ink)}

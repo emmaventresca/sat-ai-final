@@ -12,7 +12,7 @@
 // model never writes to a student's account directly.
 // ---------------------------------------------------------------------------
 
-import { escapeHtml as esc, renderText } from './mathfmt.js?v=ef746b66db';
+import { escapeHtml as esc, renderText } from './mathfmt.js?v=062e47ade1';
 
 const PLANNER = 'http://localhost:8791';
 

@@ -7,10 +7,14 @@
 // do not teach what they have already shown they know.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=ef746b66db';
-import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=ef746b66db';
-import { buildLesson, focusTier, rankLessons } from './lessons.js?v=ef746b66db';
-import { renderText as md, renderBody, renderHtml, renderStimulus, renderFigure, escapeHtml as esc } from './mathfmt.js?v=ef746b66db';
+import { makeStore, configured } from './store.js?v=062e47ade1';
+import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=062e47ade1';
+import { buildLesson, focusTier, rankLessons } from './lessons.js?v=062e47ade1';
+import {
+  missGroups, missCount, reinforcementSet, generatorAvailable, generateMore,
+  familyName,
+} from './review.js?v=062e47ade1';
+import { renderText as md, renderBody, renderHtml, renderStimulus, renderFigure, escapeHtml as esc } from './mathfmt.js?v=062e47ade1';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -18,6 +22,7 @@ const store = makeStore();
 
 const state = {
   profile: null, mastery: {}, attempts: [], fingerprints: [],
+  reviewGroup: null, reviewGen: null,
   bands: null, skills: {}, lessons: [],
   screen: 'loading', lesson: null, round: null,
 };
@@ -35,6 +40,9 @@ function ctx() {
     subtypes: state.subtypes, subtypesOf: state.subtypesOf,
     student: state.profile ?? {}, fingerprints: state.fingerprints,
     unlocked: state.unlocked ?? {}, now: new Date(),
+    // Review joins attempts back to the items that produced them.
+    items: state.items, attempts: state.attempts,
+    misconceptions: state.misconceptions,
   };
 }
 
@@ -213,6 +221,8 @@ function screenHome() {
         <p class="tiny muted" style="margin:6px 0 0">${right} of ${done} correct so far</p>` : ''}
     </div>
 
+    ${reviewCard()}
+
     ${openAssignments().length ? `<h2>Set by your teacher</h2>
       ${openAssignments().map((a) => assignmentTile(a)).join('')}` : ''}
 
@@ -231,6 +241,8 @@ function screenHome() {
   const out = $('#out');
   if (out) out.onclick = async () => { await store.signOut(); location.reload(); };
   $('#settings').onclick = () => { state.screen = 'setup'; render(); };
+  const rv = $('#review');
+  if (rv) rv.onclick = () => { state.reviewGroup = null; state.screen = 'review'; render(); };
   for (const el of document.querySelectorAll('[data-assignment]')) {
     el.onclick = () => startAssignment(el.dataset.assignment);
   }
@@ -289,6 +301,200 @@ function tile(lesson, tier) {
     <div class="meta">${badge}${tier ? seen : ''}
       ${lesson.type !== 'lesson' ? `<span class="badge">${esc(lesson.type)}</span>` : ''}</div>
   </button>`;
+}
+
+// ---------------------------------------------------------------------------
+// review
+//
+// The mistakes, kept and organised. A wrong answer is the most useful thing a
+// student produces and it used to vanish when the round ended.
+// ---------------------------------------------------------------------------
+
+const TIER_WORD = { E: 'Easy', M: 'Medium', H: 'Hard' };
+
+/** The home-screen entry point. Absent until there is something to review. */
+function reviewCard() {
+  const groups = missGroups(ctx());
+  if (!groups.length) return '';
+  const n = missCount(ctx());
+  const top = groups.slice(0, 3);
+  return `<button class="tile review" id="review">
+    <div class="t">Review your mistakes</div>
+    <div class="d">${n} missed question${n === 1 ? '' : 's'}, sorted by what keeps
+      catching you. Each one comes with ten more to lock it in.</div>
+    <div class="meta">${top.map((g) =>
+      `<span class="badge on">${esc(g.title)} &middot; ${g.count}</span>`).join('')}
+      ${groups.length > 3 ? `<span class="badge">+${groups.length - 3} more</span>` : ''}</div>
+  </button>`;
+}
+
+function screenReview() {
+  const groups = missGroups(ctx());
+  app.innerHTML = `<div class="wrap">
+    ${previewBanner()}
+    <div class="spread" style="margin-bottom:12px">
+      <button class="btn-sm" id="back">&larr; Home</button>
+    </div>
+    <h1>Your mistakes</h1>
+    <p class="muted">Grouped by the kind of question, then by the specific wrong
+      move inside it. Worst first &mdash; this list is about you, not about what
+      the test asks most.</p>
+
+    ${groups.length ? groups.map((g) => `
+      <button class="tile" data-group="${esc(g.key)}">
+        <div class="t">${esc(g.title)}</div>
+        <div class="d">${esc(g.skill_name)}${g.section
+          ? ` &middot; ${g.section === 'rw' ? 'Reading &amp; Writing' : 'Math'}` : ''}</div>
+        <div class="meta">
+          <span class="badge on">${g.count} missed</span>
+          ${TIERS.filter((t) => g.tiers[t]).map((t) =>
+            `<span class="badge ${t.toLowerCase()}">${g.tiers[t]} at ${TIER_WORD[t]}</span>`).join('')}
+        </div>
+        ${g.topFamilies.length ? `<div class="d" style="margin-top:8px">Usually:
+          ${g.topFamilies.slice(0, 2).map((f) =>
+            `${esc(f.name)}${f.n > 1 ? ` (${f.n}&times;)` : ''}`).join(', ')}</div>` : ''}
+      </button>`).join('')
+      : '<div class="card empty">Nothing missed yet. Come back after some practice.</div>'}
+  </div>`;
+
+  $('#back').onclick = () => { state.screen = 'home'; render(); };
+  for (const b of document.querySelectorAll('[data-group]')) {
+    b.onclick = () => { state.reviewGroup = b.dataset.group; render(); };
+  }
+  window.scrollTo(0, 0);
+}
+
+function screenReviewGroup() {
+  const g = missGroups(ctx()).find((x) => x.key === state.reviewGroup);
+  if (!g) { state.reviewGroup = null; return screenReview(); }
+  const set = reinforcementSet(g, ctx());
+  const lesson = g.subtype ? state.subLessons?.[g.subtype] : null;
+  const gen = state.reviewGen ?? {};
+
+  app.innerHTML = `<div class="wrap">
+    ${previewBanner()}
+    <div class="spread" style="margin-bottom:12px">
+      <button class="btn-sm" id="back">&larr; All mistakes</button>
+      ${lesson ? '<button class="btn-sm" id="teach">Read the lesson</button>' : ''}
+    </div>
+    <h1>${esc(g.title)}</h1>
+    <p class="muted">${g.count} missed${g.skill_name ? ` in ${esc(g.skill_name)}` : ''}.</p>
+
+    ${g.topFamilies.length ? `<div class="card">
+      <h2 style="margin-top:0">What goes wrong</h2>
+      ${g.topFamilies.map((f) => {
+        // `label` is written to the student. `when` is an instruction to the
+        // item author and is deliberately not shown here.
+        const fam = state.misconceptions?.[f.slug];
+        return `<div class="fam">
+          <div class="fam-h"><strong>${esc(familyName(f.slug, ctx()))}</strong>
+            <span class="badge on">${f.n}&times;</span></div>
+          ${fam?.label ? `<p class="small">${esc(fam.label)}</p>` : ''}
+        </div>`;
+      }).join('')}
+    </div>` : ''}
+
+    <div class="card">
+      <h2 style="margin-top:0">Ten more, aimed at this</h2>
+      <p class="small muted">Same question type, built to catch the same
+        error${g.topFamilies.length ? `s (${esc(g.topFamilies.slice(0, 2)
+          .map((f) => familyName(f.slug, ctx()).toLowerCase()).join(', '))})` : ''}.
+        ${set.fresh >= 10
+          ? 'All ten are ones you have not seen.'
+          : set.fresh
+            ? `${set.fresh} of these are new to you; the rest are ones you have
+               already seen once, which is still worth doing.`
+            : 'You have seen all of these before &mdash; worth a second pass.'}</p>
+      <div class="row tight" style="margin-top:12px">
+        <button class="btn" id="practice" ${set.items.length ? '' : 'disabled'}>
+          Practise ${Math.min(10, set.items.length)} question${
+            set.items.length === 1 ? '' : 's'}</button>
+        ${set.shortfall ? `<button class="btn ghost" id="more" ${
+          gen.busy ? 'disabled' : ''}>${gen.busy
+            ? '<span class="spin"></span> Writing new ones…'
+            : `Write ${set.shortfall} new one${set.shortfall === 1 ? '' : 's'}`}</button>` : ''}
+      </div>
+      ${gen.error ? `<p class="small bad-text" style="margin:10px 0 0">${esc(gen.error)}</p>` : ''}
+      ${gen.added ? `<p class="small" style="margin:10px 0 0">Added ${gen.added}
+        new question${gen.added === 1 ? '' : 's'} to your bank.</p>` : ''}
+    </div>
+
+    <h2>The ones you missed</h2>
+    ${g.misses.map((m) => reviewCardFor(m)).join('')}
+  </div>`;
+
+  $('#back').onclick = () => { state.reviewGroup = null; render(); };
+  const t = $('#teach');
+  if (t) t.onclick = () => {
+    state.lesson = `sub:${g.subtype}`; state.screen = 'lesson'; render();
+  };
+  const p = $('#practice');
+  if (p) p.onclick = () => startReinforcement(g);
+  const more = $('#more');
+  if (more) more.onclick = () => writeMore(g, set.shortfall);
+  window.scrollTo(0, 0);
+}
+
+/** One missed question, with what they picked and why it was wrong. */
+function reviewCardFor(m) {
+  const i = m.item;
+  const fam = m.family ? state.misconceptions?.[m.family] : null;
+  const choice = (key) => i.choices['ABCD'.indexOf(key)];
+  return `<div class="card">
+    <div class="meta" style="margin-bottom:10px">
+      <span class="badge ${i.difficulty.toLowerCase()}">${TIER_WORD[i.difficulty]}</span>
+      ${m.family ? `<span class="badge on">${esc(familyName(m.family, ctx()))}</span>` : ''}
+    </div>
+    ${i.stimulus || i.figure ? `<div class="stim">${
+      renderStimulus(i.stimulus)}${renderFigure(i.figure)}</div>` : ''}
+    <div class="q">${renderStimulus(i.stem)}</div>
+    <div class="choice wrong"><b>${esc(m.attempt.chosen)}</b>
+      <span>${renderStimulus(choice(m.attempt.chosen) ?? '')}</span></div>
+    <div class="choice right"><b>${esc(i.answer)}</b>
+      <span>${renderStimulus(choice(i.answer) ?? '')}</span></div>
+    ${i.per_choice?.[m.attempt.chosen] ? `<p class="small muted" style="margin-top:10px">
+      <strong>Why yours was wrong.</strong> ${renderStimulus(i.per_choice[m.attempt.chosen])}</p>` : ''}
+    ${i.explanation ? `<p class="small" style="margin-top:8px">${renderStimulus(i.explanation)}</p>` : ''}
+  </div>`;
+}
+
+/** Ten more of exactly this, in the order the engine thinks pays. */
+function startReinforcement(g) {
+  const set = reinforcementSet(g, ctx());
+  if (!set.items.length) return;
+  state.round = {
+    items: set.items, at: 0, answers: [], startedAt: Date.now(),
+    tier: g.worstTier, reviewGroup: g.key,
+  };
+  state.screen = 'practice';
+  render();
+}
+
+/**
+ * Ask the local generator for the questions the bank cannot field.
+ *
+ * Only works where tools/planner_server.py is running. Rather than silently
+ * serving repeats as if they were new, a student without it is told the bank
+ * is out.
+ */
+async function writeMore(g, n) {
+  state.reviewGen = { busy: true };
+  render();
+  try {
+    if (!(await generatorAvailable())) {
+      throw new Error('The question writer is not running on this machine, so '
+        + 'no new questions can be written right now. Everything already in '
+        + 'your bank is still available above.');
+    }
+    const fresh = await generateMore(g, ctx(), n);
+    const have = new Set(state.items.map((i) => i.id));
+    const added = fresh.filter((i) => !have.has(i.id));
+    state.items = state.items.concat(added);
+    state.reviewGen = { busy: false, added: added.length };
+  } catch (e) {
+    state.reviewGen = { busy: false, error: String(e.message ?? e) };
+  }
+  render();
 }
 
 function screenLesson() {
@@ -406,7 +612,7 @@ function subtypeList(skill_cd) {
  */
 function levelPicker(lesson, recommended) {
   const unit = lesson.skill_cd;
-  const { unlocked, tryable } = availableTiers(unit, ctx());
+  const { unlocked, tryable, challenge } = availableTiers(unit, ctx());
   const btn = (t, kind) => {
     const cell = state.mastery[`${unit}|${t}`];
     const acc = cell?.seen ? Math.round((cell.correct / cell.seen) * 100) : null;
@@ -417,6 +623,9 @@ function levelPicker(lesson, recommended) {
         acc !== null ? ` &middot; ${acc}% so far` : ''}</span>
       ${t === recommended ? '<span class="level-tag">Suggested</span>' : ''}
       ${kind === 'try' ? '<span class="level-tag try">Try it</span>' : ''}
+      ${kind === 'challenge' ? '<span class="level-tag challenge">Challenge</span>' : ''}
+      ${kind === 'challenge' ? `<span class="level-note">Only try once you have
+        completed Easy and Medium.</span>` : ''}
     </button>`;
   };
   return `
@@ -425,6 +634,7 @@ function levelPicker(lesson, recommended) {
     <div class="levels">
       ${unlocked.map((t) => btn(t, 'open')).join('')}
       ${tryable ? btn(tryable, 'try') : ''}
+      ${challenge ? btn(challenge, 'challenge') : ''}
     </div>`;
 }
 
@@ -523,7 +733,8 @@ function screenPractice() {
   </div>`;
 
   $('#quit').onclick = () => {
-    const back = state.round?.assignment ? 'home' : 'lesson';
+    const back = state.round?.reviewGroup ? 'review'
+      : state.round?.assignment ? 'home' : 'lesson';
     state.round = null; state.screen = back; render();
   };
   for (const b of document.querySelectorAll('.choice')) {
@@ -650,7 +861,8 @@ function screenResult() {
     </div>` : ''}
     <div class="row" style="justify-content:center;margin-top:16px">
       <button class="btn-primary" id="again">Another round</button>
-      <button id="lesson">Back to the lesson</button>
+      <button id="lesson">${r.reviewGroup
+        ? 'Back to your mistakes' : 'Back to the lesson'}</button>
       <button id="home">All lessons</button>
     </div>
   </div></div>`;
@@ -666,10 +878,22 @@ function screenResult() {
   if (stay) stay.onclick = () => startRound(r.items[0].skill_cd, r.tier);
 
   const src = state.lessons.find((l) => l.id === state.lesson);
-  $('#again').onclick = () => (r.assignment
-    ? startAssignment(r.assignment.id)
-    : startRound(src.skill_cd, r.tier ?? focusTier(src, ctx())));
-  $('#lesson').onclick = () => { state.round = null; state.screen = 'lesson'; render(); };
+  // A review round came from a mistake, not from a lesson, so "another round"
+  // means ten more of that mistake - and there may be no lesson to go back to.
+  const group = r.reviewGroup
+    ? missGroups(ctx()).find((g) => g.key === r.reviewGroup) : null;
+  $('#again').onclick = () => {
+    state.round = null;
+    if (group) return startReinforcement(group);
+    if (r.assignment) return startAssignment(r.assignment.id);
+    if (src) return startRound(src.skill_cd, r.tier ?? focusTier(src, ctx()));
+    state.screen = 'home'; render();
+  };
+  $('#lesson').onclick = () => {
+    state.round = null;
+    state.screen = r.reviewGroup ? 'review' : 'lesson';
+    render();
+  };
   $('#home').onclick = () => { state.round = null; state.screen = 'home'; render(); };
 }
 
@@ -681,6 +905,7 @@ function render() {
   if (s === 'setup') return screenSetup();
   if (s === 'lesson') return screenLesson();
   if (s === 'practice') return screenPractice();
+  if (s === 'review') return state.reviewGroup ? screenReviewGroup() : screenReview();
   return screenHome();
 }
 
