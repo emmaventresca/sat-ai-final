@@ -508,8 +508,14 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
   .packet-actions,.plan-approve,button{display:none !important}
   .packet{border:none;box-shadow:none;padding:0;border-radius:0}
   .packet-break{break-before:page}
-  .packet-block,.packet-q,.packet-sol{break-inside:avoid}
+  .packet-block,.packet-q,.packet-sol,.stim-figure{break-inside:avoid}
   a{text-decoration:none;color:inherit}
+  /* Browsers drop background fills when printing; a bar chart printed
+     without its bars is a blank grid, so the colours are forced. */
+  .stim-chart,.stim-chart *,table.stim-table th{
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;
+  }
+  .stim-chart{max-width:420px}
 }
 
 /* ---- chat list and course units ----------------------------------------- */

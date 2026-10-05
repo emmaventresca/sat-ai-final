@@ -192,16 +192,65 @@ Hard requirements:
 9. READING AND WRITING: write the passage yourself, 40-110 words, in the
    register of published nonfiction. Blanks are marked with ______.'''}
 
+{FIGURE_RULES}
 Respond with ONLY a JSON array, no prose:
 [{{
   "stem": "the question being asked",
   "stimulus": "the passage or setup, or null if the stem is self-contained",
+  "figure": null,
   "choices": ["A text", "B text", "C text", "D text"],
   "answer": "A"|"B"|"C"|"D",
   "explanation": "why the answer is right, second person",
   "distractors": {{"<letter>": {{"misconception": "<slug>", "why": "..."}}}}
 }}]"""
 
+
+# ---------------------------------------------------------------------------
+# Figures
+#
+# A large share of the real test shows the student something: a two-way table,
+# a bar graph, a scatterplot with a line of best fit. Those questions cannot
+# be written as prose - "the bar for week 3 reaches the 10th gridline" does
+# the reading for the student and leaves them arithmetic - so the item carries
+# a declarative spec the app draws.
+#
+# Specs are small on purpose. Anything we cannot draw is the same as no
+# picture at all, so check_figures.py rejects it and the item is dropped
+# rather than shipped unanswerable.
+# ---------------------------------------------------------------------------
+
+FIGURE_RULES = """
+10. SHOWING SOMETHING. If the question needs the student to READ a display -
+   a table, a bar graph, a scatterplot - give it one. Never describe the
+   picture in words ("the bar reaches the 4th gridline"): that does the
+   reading for them. Two ways to do it:
+
+   TABLE: write it in the stimulus as pipe rows, header row first, with a
+   short caption line directly above it. Nothing else on those lines.
+
+       Average Corn Yield (bushels per acre)
+       Season type | Bare soil | After rye
+       Wet | 182 | 176
+       Dry | 131 | 154
+
+   CHART: set "figure" to one of these, and leave the picture out of the
+   stimulus prose entirely.
+
+       {"type":"bar","caption":"...","x_label":"...","y_label":"...",
+        "categories":["A","B"],"values":[12,18],
+        "y_min":0,"y_max":24,"y_step":3,"alt":"..."}
+
+       {"type":"scatter","caption":"...","x_label":"...","y_label":"...",
+        "points":[[1,4],[2,7]],"x_min":0,"x_max":10,"x_step":2,
+        "y_min":0,"y_max":20,"y_step":5,"alt":"..."}
+
+       "line" joins the points in order; "curve" draws a smooth sampled curve
+       with no point markers (sample 40+ points yourself).
+
+   Every value the question asks about must land exactly on a gridline, so
+   choose y_step to divide your values. Set "figure" to null when the question
+   needs no display - most do not.
+"""
 
 TOPICS = [
     "marine biology", "urban planning", "archaeology", "materials science",
@@ -216,6 +265,37 @@ TOPICS = [
 CB_MARKERS = re.compile(
     r"is the best answer because|Choice [A-D] is incorrect|"
     r"may result from conceptual", re.I)
+
+
+FIGURE_TYPES = {"bar", "line", "scatter", "curve"}
+
+
+def clean_figure(fig):
+    """Keep a figure only if it is one we can actually draw.
+
+    A spec the renderer skips leaves a question that says "based on the bar
+    graph" with no bar graph - worse than no figure at all, because the item
+    still reads as if there were one. Dropping it here means check_figures.py
+    catches the item instead of a student catching it.
+    """
+    if not isinstance(fig, dict) or fig.get("type") not in FIGURE_TYPES:
+        return None
+    if fig["type"] == "bar":
+        cats, vals = fig.get("categories"), fig.get("values")
+        if not isinstance(cats, list) or not isinstance(vals, list):
+            return None
+        if not cats or len(cats) != len(vals):
+            return None
+        if not all(isinstance(v, (int, float)) for v in vals):
+            return None
+        return fig
+    pts = fig.get("points")
+    if not isinstance(pts, list) or len(pts) < 2:
+        return None
+    if not all(isinstance(p, list) and len(p) == 2
+               and all(isinstance(v, (int, float)) for v in p) for p in pts):
+        return None
+    return fig
 
 
 def assert_no_cb_text(prompt):
@@ -259,6 +339,11 @@ def author(skill, lesson, families, difficulty, n, model, rng,
         it["source"] = "original - written for this project"
         it["license"] = LICENSE
         it["status"] = "unverified"
+        fig = clean_figure(it.get("figure"))
+        if fig:
+            it["figure"] = fig
+        else:
+            it.pop("figure", None)
         out.append(it)
     return out
 

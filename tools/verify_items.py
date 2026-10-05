@@ -143,12 +143,36 @@ def check_structure(it, families):
 # 2 & 3. Blind solve
 # ---------------------------------------------------------------------------
 
+def figure_text(it):
+    """The figure as the solver would read it off the page.
+
+    A chart item without this is unanswerable, and a solver that cannot
+    answer it looks exactly like an item with no defensible answer - the
+    verification would reject good items for a reason that is ours.
+    """
+    fig = it.get("figure")
+    if not isinstance(fig, dict):
+        return None
+    head = f"[{fig.get('type')} chart] {fig.get('caption') or ''}".strip()
+    axes = " / ".join(x for x in (fig.get("x_label"), fig.get("y_label")) if x)
+    if fig.get("type") == "bar":
+        rows = ", ".join(f"{c}: {v}" for c, v in
+                         zip(fig.get("categories") or [], fig.get("values") or []))
+    else:
+        pts = fig.get("points") or []
+        rows = ", ".join(f"({a}, {b})" for a, b in pts[:60])
+    return "\n".join(x for x in (head, axes, rows) if x)
+
+
 def _one(it, n=None):
     body = []
     if n is not None:
         body.append(f'<question id="{it["id"]}">')
     if it.get("stimulus"):
         body.append(it["stimulus"])
+    fig = figure_text(it)
+    if fig:
+        body.append(fig)
     body.append(it["stem"])
     for i, c in enumerate(it["choices"]):
         body.append(f"{LETTERS[i]}) {c}")
@@ -193,6 +217,9 @@ def blind_prompt(it):
     body = []
     if it.get("stimulus"):
         body.append(it["stimulus"])
+    fig = figure_text(it)
+    if fig:
+        body.append(fig)
     body.append(it["stem"])
     for i, c in enumerate(it["choices"]):
         body.append(f"{LETTERS[i]}) {c}")
