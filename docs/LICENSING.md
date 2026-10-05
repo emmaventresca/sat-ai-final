@@ -248,6 +248,60 @@ the rule was firing on mathematical formulation, not on expression. Every
 matching window is still recorded on the item either way, so nothing is
 hidden by the change.
 
+## 5b. Third-party books — read for facts, checked against for expression
+
+Three commercial/institutional SAT books were read while extending the
+taxonomy. All three are fully copyrighted:
+
+| Book | Rights holder |
+|---|---|
+| *Acing the New SAT Math* (2016) | Greenhall Publishing |
+| *Barron's SAT Math Workbook* (Lawrence S. Leff) | Barron's Educational Series |
+| *UC San Diego SAT Workbook* (2025) | © 2025 UC San Diego, all rights reserved |
+
+**What was taken.** Which recognitions the exam contains, how a question is
+framed, and what formats exist — including the one finding that mattered,
+that **27% of the real math section is student-produced response** and our
+bank had none. Facts, methods and systems, which 17 U.S.C. §102(b) places
+outside copyright. Their prose, worked examples, strategies and questions are
+theirs and none of it was used.
+
+**None of their text enters an authoring prompt.** The same rule that has
+always held for College Board. The books informed *what to write about*; the
+writing is grounded in our own corpus analysis.
+
+**The books are not in this repository** and never will be. `corpus/books/`
+is git-ignored and stores **hashes, not text** — an index of their sentences
+would be a copy of their book with extra steps. What is committed is
+`data/book_provenance.json`: titles, authors, page counts and file hashes.
+
+**`tools/check_books.py` is the gate.** Every string we wrote is tested
+against 239,183 eight-word sequences from the three books. Two exemptions,
+both evidenced:
+
+- **College Board's own wording is exempt.** Our items use the exam's real
+  instruction lines deliberately (§5), and the books carry them for the same
+  reason — they teach the same test. A sequence in College Board's bank is
+  the exam's wording, not the book author's. Without this exemption the check
+  fires on exactly the phrasing we decided to keep.
+- **Two reviewed spans**, listed with reasons in
+  `data/formulation_allowlist.json`. Both are the canonical coefficient-matching
+  stem. A list of specific reviewed spans, not a loosened threshold.
+
+**Calibration.** Scoring 400 real College Board items against the books the
+same way gives **0 for all 400** — a genuine exam item was certainly not
+copied from Barron's, so that is the noise floor. Our own items sit at 0 for
+98% and shoulder off above 11 words, so the gate reports at 12. It currently
+passes with nothing outstanding.
+
+**What was deliberately not added.** The books' chapter lists contain topics
+the current digital SAT does not ask — complex numbers, inverse variation,
+line-meets-parabola systems — and two of the three are written for the 2016
+paper exam. Every candidate recognition was checked against our own College
+Board corpus before being added, and the ones with no evidence were dropped.
+Teaching a student a category the test does not contain is a real cost, not
+a neutral one.
+
 ### The same reasoning, applied to sat-mills
 
 An audit of all 882 live Mills cards found 872 with zero overlap. The ten

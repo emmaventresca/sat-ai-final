@@ -10,7 +10,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CHECKS = ["check_licensing.py", "check_derived.py", "check_imports.py", "check_figures.py"]
+CHECKS = ["check_licensing.py", "check_derived.py", "check_books.py",
+          "check_imports.py", "check_figures.py"]
 
 
 def main():
