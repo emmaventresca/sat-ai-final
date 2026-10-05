@@ -7,6 +7,7 @@
   --good:#17b881; --good-bg:#e6f9f2; --good-ln:#a9e8cf;
   --bad:#ec5f75;  --bad-bg:#fdeef1;  --bad-ln:#f6c2cc;
   --flag:#e8930c; --flag-bg:#fff5e2; --flag-ln:#f7d79a;
+  --ui:ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --radius:18px;
   --shadow:0 2px 4px rgba(88,63,182,.05), 0 10px 26px rgba(88,63,182,.09);
   --shadow-lg:0 4px 8px rgba(88,63,182,.07), 0 18px 42px rgba(88,63,182,.14);
@@ -558,3 +559,35 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 .chat-edit{position:absolute;right:26px;top:8px;color:var(--dim);font-size:.82rem;line-height:1}
 .chat-edit:hover{color:var(--purple-d)}
 .chat-item{padding-right:44px}
+/* A recognition inside a skill - indented, so the hierarchy reads. */
+.tile.sub{margin-left:14px;border-left:3px solid var(--line2)}
+.tile.sub:hover{border-left-color:var(--purple)}
+
+/* Tables authored as pipe rows. A data question is a reading task: the row
+   and the column have to line up on screen or the student is doing the
+   display's job in their head. */
+.stim-figure{margin:14px 0}
+.stim-figure figcaption{
+  font-family:var(--ui);font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--dim);margin-bottom:6px;
+}
+table.stim-table{border-collapse:collapse;width:auto;min-width:min(100%,320px)}
+table.stim-table th, table.stim-table td{
+  padding:8px 14px;border:1px solid var(--line);text-align:left;
+}
+table.stim-table th{
+  font-family:var(--ui);font-size:.72rem;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--dim);background:var(--panel2);
+}
+table.stim-table td{font-variant-numeric:tabular-nums}
+table.stim-table tbody tr:nth-child(even) td{background:rgba(0,0,0,.015)}
+
+/* Charts drawn from a figure spec. */
+.stim-chart{display:block;max-width:100%;height:auto;margin:0}
+.stim-chart .ax{stroke:var(--line2);stroke-width:1}
+.stim-chart .grid{stroke:var(--line);stroke-width:1}
+.stim-chart .chart-bar{fill:var(--purple)}
+.stim-chart .pt{fill:var(--purple)}
+.stim-chart .ln{fill:none;stroke:var(--purple);stroke-width:2}
+.stim-chart text{font-family:var(--ui);font-size:11px;fill:var(--dim)}
+.stim-chart text.val{fill:var(--ink);font-size:11px}

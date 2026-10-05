@@ -14,8 +14,8 @@
 // the corpus.
 // ---------------------------------------------------------------------------
 
-import { renderText, escapeHtml as esc } from './mathfmt.js?v=745b6cc0d2';
-import { renderStimulus } from './mathfmt.js?v=745b6cc0d2';
+import { renderText, escapeHtml as esc } from './mathfmt.js?v=ef746b66db';
+import { renderStimulus, renderFigure } from './mathfmt.js?v=ef746b66db';
 
 const LETTERS = 'ABCD';
 const TIER = { E: 'Easy', M: 'Medium', H: 'Hard' };
@@ -156,7 +156,8 @@ function renderQuestion(q, n, subtypeInfo = {}) {
         <span class="packet-q-level ${esc((q.difficulty || '').toLowerCase())}">${
           esc(TIER[q.difficulty] ?? q.difficulty)}</span>
       </div>
-      ${q.stimulus ? `<div class="packet-stim">${renderStimulus(q.stimulus)}</div>` : ''}
+      ${q.stimulus || q.figure ? `<div class="packet-stim">${
+        renderStimulus(q.stimulus)}${renderFigure(q.figure)}</div>` : ''}
       <div class="packet-stem">${renderStimulus(q.stem)}</div>
       <ol class="packet-choices">
         ${q.choices.map((c) => `<li>${renderStimulus(c)}</li>`).join('')}

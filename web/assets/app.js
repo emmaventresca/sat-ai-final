@@ -7,10 +7,10 @@
 // do not teach what they have already shown they know.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=745b6cc0d2';
-import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=745b6cc0d2';
-import { buildLesson, focusTier, rankLessons } from './lessons.js?v=745b6cc0d2';
-import { renderText as md, renderBody, renderHtml, renderStimulus, escapeHtml as esc } from './mathfmt.js?v=745b6cc0d2';
+import { makeStore, configured } from './store.js?v=ef746b66db';
+import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=ef746b66db';
+import { buildLesson, focusTier, rankLessons } from './lessons.js?v=ef746b66db';
+import { renderText as md, renderBody, renderHtml, renderStimulus, renderFigure, escapeHtml as esc } from './mathfmt.js?v=ef746b66db';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -292,9 +292,15 @@ function tile(lesson, tier) {
 }
 
 function screenLesson() {
-  const source = state.lessons.find((l) => l.id === state.lesson);
+  const subSlug = String(state.lesson ?? '').startsWith('sub:')
+    ? state.lesson.slice(4) : null;
+  const source = subSlug
+    ? state.subLessons[subSlug]
+    : state.lessons.find((l) => l.id === state.lesson);
+  if (!source) { state.screen = 'home'; return render(); }
   const built = buildLesson(source, ctx());
   const tier = built.focus;
+  const unit = source.subtype ?? source.skill_cd;
   const skill = state.skills[source.skill_cd];
 
   app.innerHTML = `<div class="wrap">
@@ -332,16 +338,63 @@ function screenLesson() {
     <div class="card">
       ${levelPicker(source, tier)}
     </div>` : ''}
+
+    ${skill ? subtypeList(source.skill_cd) : ''}
   </div>`;
 
   $('#back').onclick = () => { state.screen = 'home'; render(); };
   for (const b of document.querySelectorAll('[data-tier]')) {
     b.onclick = () => startRound(source.skill_cd, b.dataset.tier);
   }
+  for (const b of document.querySelectorAll('[data-sublesson]')) {
+    b.onclick = () => {
+      state.lesson = `sub:${b.dataset.sublesson}`;
+      state.screen = 'lesson';
+      render();
+    };
+  }
   window.scrollTo(0, 0);
 }
 
 const TIER_NAME = { E: 'Easy', M: 'Medium', H: 'Hard' };
+
+/**
+ * The recognitions inside a skill, each with its own progress.
+ *
+ * This is where a diagnosis becomes actionable: "you are fine on bare systems,
+ * you are losing the ones that ask for x+y" only helps if the student can open
+ * the second one on its own.
+ */
+function subtypeList(skill_cd) {
+  const subs = (state.subtypesOf?.[skill_cd] ?? [])
+    .map((c) => ({ ...c, lesson: state.subLessons?.[c.slug] }))
+    .filter((c) => c.lesson)
+    .sort((a, b) => (b.count_total ?? 0) - (a.count_total ?? 0));
+  if (!subs.length) return '';
+
+  const row = (c) => {
+    let seen = 0, correct = 0;
+    for (const t of TIERS) {
+      const cell = state.mastery[`${c.slug}|${t}`];
+      if (cell?.seen) { seen += cell.seen; correct += cell.correct; }
+    }
+    const acc = seen ? Math.round((correct / seen) * 100) : null;
+    const n = state.items.filter((i) => i.subtype === c.slug).length;
+    return `<button class="tile sub" data-sublesson="${esc(c.slug)}">
+      <div class="t">${esc(c.lesson.title)}</div>
+      <div class="d">${c.count_total ?? 0} on the real test${
+        n ? ` &middot; ${n} here to practise` : ' &middot; none written yet'}</div>
+      <div class="meta">
+        ${acc === null ? '<span class="badge">Not started</span>'
+          : `<span class="badge ${acc >= 85 ? 'e' : acc >= 60 ? 'm' : 'on'}">${acc}% of ${seen}</span>`}
+      </div>
+    </button>`;
+  };
+  return `<h2>The kinds of question inside this skill</h2>
+    <p class="small muted" style="margin:-4px 0 10px">Each one is recognised and
+      solved differently. Your progress is tracked separately for each.</p>
+    ${subs.map(row).join('')}`;
+}
 
 /**
  * Choose a level.
@@ -447,7 +500,8 @@ function screenPractice() {
     <div class="bar thin"><i style="width:${Math.round(r.at / r.items.length * 100)}%"></i></div>
 
     <div class="card" style="margin-top:14px">
-      ${item.stimulus ? `<div class="stim">${renderStimulus(item.stimulus)}</div>` : ''}
+      ${item.stimulus || item.figure ? `<div class="stim">${
+        renderStimulus(item.stimulus)}${renderFigure(item.figure)}</div>` : ''}
       <div class="q">${renderStimulus(item.stem)}</div>
       ${item.choices.map((c, i) => {
         const key = 'ABCD'[i];
@@ -631,10 +685,13 @@ function render() {
 }
 
 async function loadData() {
-  const [bands, skills, lessons, items, misc, subtax, subcounts] = await Promise.all([
+  const [bands, skills, lessons, sublessons, items, misc, subtax, subcounts] =
+    await Promise.all([
     fetch('../data/bands.json').then((r) => r.json()),
     fetch('../data/skills.json').then((r) => r.json()),
     fetch('../data/lessons.json').then((r) => r.json()),
+    fetch('../data/subtype_lessons.json').then((r) => r.json())
+      .catch(() => ({ lessons: [] })),
     // Our own CC BY items. The College Board pool is deliberately not loaded:
     // it cannot be served to students (docs/LICENSING.md section 4).
     fetch('../data/practice.json').then((r) => r.json()).catch(() => ({ items: [] })),
@@ -643,25 +700,29 @@ async function loadData() {
     fetch('../data/subtype_counts.json').then((r) => r.json()).catch(() => ({ subtypes: {} })),
   ]);
   state.misconceptions = Object.fromEntries((misc.families ?? []).map((f) => [f.slug, f]));
+  state.bands = bands;
+  state.skills = Object.fromEntries(skills.skills.map((s) => [s.skill_cd, s]));
+  state.lessons = lessons.lessons;
+
   // Subtype metadata: the engine keys mastery on it, and the lesson view names
-  // the recognition a student is practising.
+  // the recognition a student is practising. Built after state.skills, since
+  // the counts name their skill in prose and have to be joined back to a code.
   state.subtypes = subcounts.subtypes ?? {};
   state.subtypeInfo = {};
-  state.subtypesOf = {};
   for (const [skill, v] of Object.entries(subtax.skills ?? {})) {
-    for (const st of v.subtypes ?? []) {
-      state.subtypeInfo[st.slug] = { ...st, skill };
-      const cd = st.skill_cd ?? state.subtypes[st.slug]?.skill;
-    }
+    for (const st of v.subtypes ?? []) state.subtypeInfo[st.slug] = { ...st, skill };
   }
+  state.subtypesOf = {};
   for (const [slug, c] of Object.entries(state.subtypes)) {
     const sk = Object.values(state.skills).find((s) => s.skill_name === c.skill);
     if (!sk) continue;
     (state.subtypesOf[sk.skill_cd] ??= []).push({ ...c, slug });
   }
-  state.bands = bands;
-  state.skills = Object.fromEntries(skills.skills.map((s) => [s.skill_cd, s]));
-  state.lessons = lessons.lessons;
+
+  // One lesson per recognition, so what the diagnosis names is what the
+  // student can open. Keyed by subtype, shown inside the skill's lesson.
+  state.subLessons = {};
+  for (const l of sublessons.lessons ?? []) state.subLessons[l.subtype] = l;
   state.items = items.items ?? [];
 }
 
