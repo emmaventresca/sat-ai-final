@@ -28,8 +28,9 @@ file - run them afterwards:
     python3 tools/check_difficulty.py
     python3 tools/build_bank_index.py
 """
-import argparse, glob, json, os, subprocess, sys
+import argparse, glob, json, os, subprocess, sys, threading
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -144,6 +145,9 @@ def main():
     ap.add_argument("--floor", type=int, default=6,
                     help="real-test frequency a subtype needs to earn a Hard tier")
     ap.add_argument("--limit", type=int, default=0, help="stop after N jobs")
+    ap.add_argument("--workers", type=int, default=6,
+                    help="authoring calls to run at once. Each job writes its "
+                         "own bank file, so they do not contend.")
     ap.add_argument("--model", default="claude-opus-5-5")
     ap.add_argument("--mode", default="empty",
                     choices=("empty", "broken", "thin", "all"),
@@ -173,17 +177,25 @@ def main():
     if args.dry_run:
         return 0
 
-    print()
+    print(f"\nrunning {args.workers} at a time\n")
     done = failed = 0
-    for i, j in enumerate(jobs, 1):
-        head = f"[{i}/{len(jobs)}] {j['subtype']} {j['tier']} +{j['n']}"
-        ok, msg = author(j, args.model)
-        if ok:
-            done += 1
-            print(f"{head:62} {msg}", flush=True)
-        else:
-            failed += 1
-            print(f"{head:62} FAILED: {msg}", flush=True)
+    lock = threading.Lock()
+    with ThreadPoolExecutor(max_workers=args.workers) as pool:
+        futures = {pool.submit(author, j, args.model): j for j in jobs}
+        for k, fut in enumerate(as_completed(futures), 1):
+            j = futures[fut]
+            head = f"[{k}/{len(jobs)}] {j['subtype']} {j['tier']} +{j['n']}"
+            try:
+                ok, msg = fut.result()
+            except Exception as exc:
+                ok, msg = False, str(exc)[:160]
+            with lock:
+                if ok:
+                    done += 1
+                    print(f"{head:62} {msg}", flush=True)
+                else:
+                    failed += 1
+                    print(f"{head:62} FAILED: {msg}", flush=True)
 
     print(f"\n{done} cells written, {failed} failed")
     print("now run: verify_items.py, then check_difficulty.py, "
