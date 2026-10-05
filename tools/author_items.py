@@ -369,12 +369,17 @@ def main():
     lessons = load("lessons.json")
 
     skill = skills[args.skill]
+    # The taxonomy is keyed by skill name. Match it exactly first: the prefix
+    # fallback below picks whichever key comes first, and "Linear equations in
+    # two variables" shares its first eighteen characters with "Linear
+    # equations in one variable" - so every subtype of the larger skill
+    # resolved against the wrong entry and came back "unknown subtype".
     tax = load("subtypes.json")["skills"]
-    entry = next((v for k, v in tax.items()
-                  if v.get("section") == skill["section"]
-                  and k.lower().startswith(skill["skill_name"].lower()[:18])), None)
+    entry = tax.get(skill["skill_name"])
     if entry is None:
-        entry = tax.get(skill["skill_name"])
+        entry = next((v for k, v in tax.items()
+                      if v.get("section") == skill["section"]
+                      and k.lower().startswith(skill["skill_name"].lower()[:18])), None)
 
     if args.list_subtypes:
         if not entry:
