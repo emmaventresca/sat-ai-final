@@ -7,14 +7,14 @@
 // do not teach what they have already shown they know.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=062e47ade1';
-import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=062e47ade1';
-import { buildLesson, focusTier, rankLessons } from './lessons.js?v=062e47ade1';
+import { makeStore, configured } from './store.js?v=2dd0772f3b';
+import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=2dd0772f3b';
+import { buildLesson, focusTier, rankLessons } from './lessons.js?v=2dd0772f3b';
 import {
   missGroups, missCount, reinforcementSet, generatorAvailable, generateMore,
   familyName,
-} from './review.js?v=062e47ade1';
-import { renderText as md, renderBody, renderHtml, renderStimulus, renderFigure, escapeHtml as esc } from './mathfmt.js?v=062e47ade1';
+} from './review.js?v=2dd0772f3b';
+import { renderText as md, renderBody, renderHtml, renderStimulus, renderFigure, escapeHtml as esc } from './mathfmt.js?v=2dd0772f3b';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -545,12 +545,12 @@ function screenLesson() {
       ${levelPicker(source, tier)}
     </div>` : ''}
 
-    ${skill ? subtypeList(source.skill_cd) : ''}
+    ${skill && !subSlug ? subtypeList(source.skill_cd) : ''}
   </div>`;
 
   $('#back').onclick = () => { state.screen = 'home'; render(); };
   for (const b of document.querySelectorAll('[data-tier]')) {
-    b.onclick = () => startRound(source.skill_cd, b.dataset.tier);
+    b.onclick = () => startRound(unit, b.dataset.tier);
   }
   for (const b of document.querySelectorAll('[data-sublesson]')) {
     b.onclick = () => {
@@ -611,12 +611,13 @@ function subtypeList(skill_cd) {
  * level is kept separately, so nothing is lost by moving on.
  */
 function levelPicker(lesson, recommended) {
-  const unit = lesson.skill_cd;
+  const unit = lesson.subtype ?? lesson.skill_cd;
   const { unlocked, tryable, challenge } = availableTiers(unit, ctx());
   const btn = (t, kind) => {
     const cell = state.mastery[`${unit}|${t}`];
     const acc = cell?.seen ? Math.round((cell.correct / cell.seen) * 100) : null;
-    const n = state.items.filter((i) => i.skill_cd === unit && i.difficulty === t).length;
+    const n = state.items.filter((i) =>
+      (i.subtype === unit || i.skill_cd === unit) && i.difficulty === t).length;
     return `<button class="level ${kind}" data-tier="${t}" ${n ? '' : 'disabled'}>
       <span class="level-t">${TIER_NAME[t]}</span>
       <span class="level-d">${n ? `${n} questions` : 'none yet'}${
@@ -642,7 +643,7 @@ function tierExplanation(lesson, tier) {
   const skill = state.skills[lesson.skill_cd];
   if (!skill) return '';
   const section = skill.section === 'rw' ? 'Reading & Writing' : 'Math';
-  const acc = accuracyFor(lesson.skill_cd, tier);
+  const acc = accuracyFor(lesson.subtype ?? lesson.skill_cd, tier);
   if (acc === null) return `You have not practiced this skill yet, so start at ${tier}.`;
   if (acc < 0.85) return `You are at ${Math.round(acc * 100)}% on ${tier} here. Secure it before moving up.`;
   return `Your ${section} target does not require anything above ${tier} in this skill.`;
@@ -673,14 +674,23 @@ function startAssignment(id) {
   render();
 }
 
-function startRound(skill_cd, tier) {
+/**
+ * A round at one level.
+ *
+ * `unit` is a skill code or a subtype slug - the same two things mastery is
+ * keyed on. Opening the Transitions lesson should practise all of
+ * Transitions; opening "expectation, then surprise" should practise only
+ * that, or the recognition lesson is decoration.
+ */
+function startRound(unit, tier) {
   // A chosen tier is honoured as chosen. The engine ranks within it rather
   // than overriding it - the student asked for this level.
-  const pool = state.items.filter((i) => i.skill_cd === skill_cd && i.difficulty === tier);
+  const pool = state.items.filter((i) =>
+    (i.subtype === unit || i.skill_cd === unit) && i.difficulty === tier);
   const ranked = selectRound(pool, ctx(), { size: window.CONFIG.ROUND_SIZE, maxPerSkill: 99 });
   state.round = {
     items: (ranked.length ? ranked : pool).slice(0, window.CONFIG.ROUND_SIZE),
-    at: 0, answers: [], startedAt: Date.now(), tier,
+    at: 0, answers: [], startedAt: Date.now(), tier, unit,
   };
   if (!state.round.items.length) {
     state.round = null;
@@ -751,9 +761,20 @@ async function answer(key) {
   const correct = key === item.answer;
   r.answers[r.at] = key;
 
+  // Mastery is recorded at both levels, because both are real units of
+  // progress. The skill drives the home ranking; the recognition drives its
+  // own lesson, its promotion streak and the review screen. Recording only
+  // the skill is what left every subtype reading "Not started" no matter how
+  // much the student practised it.
+  const units = [item.skill_cd, item.subtype].filter(Boolean);
+  const cells = {};
+  for (const u of units) {
+    const k = `${u}|${item.difficulty}`;
+    cells[k] = updateMastery(state.mastery[k], correct);
+    state.mastery[k] = cells[k];
+  }
   const cellKey = `${item.skill_cd}|${item.difficulty}`;
-  const cell = updateMastery(state.mastery[cellKey], correct);
-  state.mastery[cellKey] = cell;
+  const cell = cells[cellKey];
 
   const row = { content_id: item.id, correct, chosen: key,
                 ms: Date.now() - (r.itemStart ?? r.startedAt) };
@@ -776,7 +797,7 @@ async function answer(key) {
 
   render();
   try {
-    await store.saveMastery(cellKey, cell);
+    for (const [k, c] of Object.entries(cells)) await store.saveMastery(k, c);
     await store.logAttempt(row);
     if (fingerprint) await store.addFingerprints([fingerprint]);
   } catch { /* queued by the store */ }
@@ -830,7 +851,10 @@ function otherChoices(item, picked) {
 
 function screenResult() {
   const r = state.round;
-  const unit = r.items[0]?.subtype ?? r.items[0]?.skill_cd;
+  // Promotion belongs to whatever the student chose to practise, which the
+  // round recorded. Falling back to the first item's subtype would promote a
+  // skill-wide round on the strength of one recognition.
+  const unit = r.unit ?? r.items[0]?.subtype ?? r.items[0]?.skill_cd;
   const poolAt = unit ? state.items.filter((i) =>
     (i.subtype ?? i.skill_cd) === unit && i.difficulty === r.tier).length : 0;
   const offer = unit && r.tier ? promotionOffer(unit, r.tier, ctx(), poolAt) : null;
@@ -872,10 +896,10 @@ function screenResult() {
     const key = `${unit}|${offer.to}`;
     state.unlocked = { ...(state.unlocked ?? {}), [key]: new Date().toISOString() };
     try { await store.unlock(key); } catch { /* kept locally regardless */ }
-    startRound(r.items[0].skill_cd, offer.to);
+    startRound(unit, offer.to);
   };
   const stay = $('#stay');
-  if (stay) stay.onclick = () => startRound(r.items[0].skill_cd, r.tier);
+  if (stay) stay.onclick = () => startRound(unit, r.tier);
 
   const src = state.lessons.find((l) => l.id === state.lesson);
   // A review round came from a mistake, not from a lesson, so "another round"
@@ -886,6 +910,7 @@ function screenResult() {
     state.round = null;
     if (group) return startReinforcement(group);
     if (r.assignment) return startAssignment(r.assignment.id);
+    if (r.unit) return startRound(r.unit, r.tier);
     if (src) return startRound(src.skill_cd, r.tier ?? focusTier(src, ctx()));
     state.screen = 'home'; render();
   };

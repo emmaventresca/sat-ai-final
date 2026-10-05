@@ -12,17 +12,17 @@
 // here that could fake a student's history.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=062e47ade1';
-import { scoreItem, bandWeights, TIERS } from './engine.js?v=062e47ade1';
-import { focusTier, rankLessons } from './lessons.js?v=062e47ade1';
-import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=062e47ade1';
-import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=062e47ade1';
-import { PREVIEW_KEY } from './store.js?v=062e47ade1';
-import * as chats from './chats.js?v=062e47ade1';
-import { renderPacket } from './packet.js?v=062e47ade1';
+import { makeStore, configured } from './store.js?v=2dd0772f3b';
+import { scoreItem, bandWeights, TIERS } from './engine.js?v=2dd0772f3b';
+import { focusTier, rankLessons } from './lessons.js?v=2dd0772f3b';
+import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=2dd0772f3b';
+import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=2dd0772f3b';
+import { PREVIEW_KEY } from './store.js?v=2dd0772f3b';
+import * as chats from './chats.js?v=2dd0772f3b';
+import { renderPacket } from './packet.js?v=2dd0772f3b';
 import { plannerState, plannerHealthy, sendToPlanner, renderPlan, STARTERS,
          fetchAgentFeed, newAlerts, markSeen, popDesktop,
-         enableDesktopAlerts, desktopAlertsOn, setSubtypeNames } from './planner.js?v=062e47ade1';
+         enableDesktopAlerts, desktopAlertsOn, setSubtypeNames } from './planner.js?v=2dd0772f3b';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -47,17 +47,30 @@ function when(iso) {
 
 // ---------------------------------------------------------------------------
 
-/** Per-skill, per-tier accuracy for one student, from their mastery rows. */
-function skillTable(mastery) {
+/**
+ * Per-unit, per-tier accuracy for one student, from their mastery rows.
+ *
+ * Mastery is keyed on two kinds of unit - a skill code and a subtype slug -
+ * because both are real units of progress. They are split apart here: a
+ * subtype slug rendered in the skill table shows up as an unknown skill, and
+ * the two answer different questions anyway ("they are weak on Transitions"
+ * versus "they are weak on the contrast ones").
+ */
+function masteryRows(mastery, wantSubtypes) {
   const rows = [];
   for (const [key, cell] of Object.entries(mastery)) {
-    const [skill_cd, tier] = key.split('|');
+    const [unit, tier] = key.split('|');
     if (!cell.seen) continue;
-    rows.push({ skill_cd, tier, seen: cell.seen, correct: cell.correct,
+    const isSkill = Boolean(state.skills[unit]);
+    if (isSkill === wantSubtypes) continue;
+    rows.push({ skill_cd: unit, unit, tier, seen: cell.seen, correct: cell.correct,
                 accuracy: cell.correct / cell.seen, box: cell.box, due_at: cell.due_at });
   }
   return rows.sort((a, b) => a.accuracy - b.accuracy);
 }
+
+function skillTable(mastery) { return masteryRows(mastery, false); }
+function subtypeRows(mastery) { return masteryRows(mastery, true); }
 
 function ctxFor(student, mastery, fingerprints) {
   return { bands: state.bands, skills: state.skills, mastery,
@@ -326,6 +339,28 @@ function screenStudent() {
           <td class="num muted">${value.toFixed(4)}</td></tr>`;
       }).join('')}</tbody></table>` : '<p class="muted small">Nothing to rank yet.</p>'}
     </div>
+
+    ${subtypeRows(mastery).length ? `<h2>Question type by question type</h2>
+    <div class="card">
+      <p class="small muted">The recognitions inside each skill, tracked
+        separately. "Weak on Transitions" is a starting point; this is where
+        it actually goes wrong.</p>
+      <table><thead><tr>
+        <th>Question type</th><th>Skill</th><th>Tier</th><th class="num">Seen</th>
+        <th class="num">Accuracy</th><th>Progress</th>
+      </tr></thead><tbody>${subtypeRows(mastery).map((r) => {
+        const info = state.subtypeInfo?.[r.unit];
+        return `<tr>
+          <td>${esc(state.subtypeNames?.[r.unit] ?? r.unit)}</td>
+          <td class="muted small">${esc(info?.skill ?? '')}</td>
+          <td><span class="badge ${r.tier.toLowerCase()}">${r.tier}</span></td>
+          <td class="num">${r.seen}</td>
+          <td class="num">${pct(r.accuracy)}</td>
+          <td><div class="bar thin ${r.accuracy >= 0.85 ? 'good' : ''}" style="margin:0">
+            <i style="width:${Math.round(r.accuracy * 100)}%"></i></div></td>
+        </tr>`;
+      }).join('')}</tbody></table>
+    </div>` : ''}
 
     <h2>Skill by skill</h2>
     <div class="card">
@@ -857,10 +892,12 @@ async function loadData() {
   state.agentFeed = agentFeed;
   state.subtypeNames = {};
   state.subtypeInfo = {};
-  for (const v of Object.values(subtax.skills ?? {})) {
+  // The taxonomy is keyed by skill name, and the per-subtype table needs to
+  // say which skill a recognition belongs to.
+  for (const [skill, v] of Object.entries(subtax.skills ?? {})) {
     for (const st of v.subtypes ?? []) {
       state.subtypeNames[st.slug] = st.name;
-      state.subtypeInfo[st.slug] = st;
+      state.subtypeInfo[st.slug] = { ...st, skill };
     }
   }
   setSubtypeNames(state.subtypeNames);
