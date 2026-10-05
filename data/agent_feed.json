@@ -1,45 +1,64 @@
 {
  "runs": [
   {
-   "id": "1925944f26",
-   "kind": "verify",
+   "id": "535c2c2e7e",
+   "kind": "author",
    "status": "ok",
-   "started_at": 1791234561.4553778,
-   "seconds": 0.0,
+   "started_at": 1791243276.584963,
+   "seconds": 16.1,
    "meta": {
-    "model": "claude-haiku-4-5",
-    "batch": 2,
-    "files": 1
+    "skill": "TRA",
+    "subtype": "cause-and-consequence",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 1,
+    "fmt": "mc"
    },
    "counts": {
-    "pass": 2,
-    "review": 0,
-    "fail": 0,
-    "error": 0
+    "authored": 1
    },
    "alerts": []
   },
   {
-   "id": "3f9e2eaf72",
+   "id": "dde950766c",
+   "kind": "author",
+   "status": "ok",
+   "started_at": 1791243177.348212,
+   "seconds": 16.6,
+   "meta": {
+    "skill": "TRA",
+    "subtype": "cause-and-consequence",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 1,
+    "fmt": "mc"
+   },
+   "counts": {
+    "authored": 1
+   },
+   "alerts": []
+  },
+  {
+   "id": "14b277afcc",
    "kind": "verify",
    "status": "ok",
-   "started_at": 1791234520.559674,
+   "started_at": 1791239567.908046,
    "seconds": 0.0,
    "meta": {
     "model": "claude-haiku-4-5",
-    "batch": 2,
-    "files": 1
+    "batch": 8,
+    "files": 232
    },
    "counts": {
     "pass": 0,
     "review": 0,
     "fail": 0,
-    "error": 2
+    "error": 410
    },
    "alerts": [
     {
      "level": "bad",
-     "text": "2 items were never solved - untested, not failed. Re-run rather than discarding them."
+     "text": "410 items were never solved - untested, not failed. Re-run rather than discarding them."
     },
     {
      "level": "warn",
@@ -48,11 +67,1931 @@
    ]
   },
   {
-   "id": "65fa722acb",
+   "id": "c0a22611f4",
    "kind": "author",
-   "status": "ok",
-   "started_at": 1791234438.975146,
-   "seconds": 37.7,
+   "status": "error",
+   "started_at": 1791239532.301001,
+   "seconds": 3.4,
+   "meta": {
+    "skill": "Q.C.",
+    "subtype": "reverse-mean-find-unknown",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "cebd72374e",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239531.8007848,
+   "seconds": 3.5,
+   "meta": {
+    "skill": "Q.C.",
+    "subtype": "reverse-mean-find-unknown",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "fb5ac75106",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239531.393285,
+   "seconds": 3.9,
+   "meta": {
+    "skill": "Q.B.",
+    "subtype": "growth-multiplier-expression",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "4bdb02e37e",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239530.218956,
+   "seconds": 4.6,
+   "meta": {
+    "skill": "S.D.",
+    "subtype": "arc-length-sector-proportion",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "1fc472a853",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239530.488941,
+   "seconds": 4.3,
+   "meta": {
+    "skill": "Q.B.",
+    "subtype": "growth-multiplier-expression",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "f26c9fc76a",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239530.130965,
+   "seconds": 3.6,
+   "meta": {
+    "skill": "S.D.",
+    "subtype": "arc-length-sector-proportion",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "5ad86e6b96",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239529.617144,
+   "seconds": 4.1,
+   "meta": {
+    "skill": "H.D.",
+    "subtype": "word-problem-build-the-system",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "66c0a4e64c",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239529.2809112,
+   "seconds": 3.1,
+   "meta": {
+    "skill": "P.B.",
+    "subtype": "system-graph-match-or-read",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "44046decef",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239528.815518,
+   "seconds": 3.2,
+   "meta": {
+    "skill": "P.B.",
+    "subtype": "rational-radical-extraneous",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "6273ae5d88",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239528.395443,
+   "seconds": 3.1,
+   "meta": {
+    "skill": "P.B.",
+    "subtype": "rational-radical-extraneous",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "a88147f45b",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239528.131382,
+   "seconds": 3.0,
+   "meta": {
+    "skill": "S.B.",
+    "subtype": "sufficient-information-proof",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "fa19c6b009",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239526.747767,
+   "seconds": 3.4,
+   "meta": {
+    "skill": "S.B.",
+    "subtype": "sufficient-information-proof",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "d7b7dacf1d",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239526.519537,
+   "seconds": 3.4,
+   "meta": {
+    "skill": "S.C.",
+    "subtype": "similar-triangles-transfer",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "8c6fc93d77",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239526.5552158,
+   "seconds": 3.3,
+   "meta": {
+    "skill": "S.C.",
+    "subtype": "similar-triangles-transfer",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "40ba391283",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239525.873512,
+   "seconds": 3.4,
+   "meta": {
+    "skill": "P.A.",
+    "subtype": "rational-expression-rewrite",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "ced77eb848",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239525.663139,
+   "seconds": 3.4,
+   "meta": {
+    "skill": "P.A.",
+    "subtype": "rational-expression-rewrite",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "027a8b415f",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239525.2421272,
+   "seconds": 3.3,
+   "meta": {
+    "skill": "H.D.",
+    "subtype": "infinitely-many-same-line",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "6441d98589",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239524.861866,
+   "seconds": 3.2,
+   "meta": {
+    "skill": "H.D.",
+    "subtype": "infinitely-many-same-line",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "5e77a9a8cf",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239524.759221,
+   "seconds": 3.0,
+   "meta": {
+    "skill": "H.B.",
+    "subtype": "graph-read-or-match",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "e0857d168c",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239523.881036,
+   "seconds": 2.6,
+   "meta": {
+    "skill": "H.B.",
+    "subtype": "graph-read-or-match",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "b6374e1a41",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239523.081114,
+   "seconds": 3.1,
+   "meta": {
+    "skill": "Q.A.",
+    "subtype": "density-per-unit",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "80afc8f39f",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239523.380439,
+   "seconds": 2.7,
+   "meta": {
+    "skill": "Q.A.",
+    "subtype": "density-per-unit",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "7f14742d34",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239522.785536,
+   "seconds": 2.9,
+   "meta": {
+    "skill": "H.D.",
+    "subtype": "word-problem-solve-for-one-quantity",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "dff947041d",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239522.628319,
+   "seconds": 2.8,
+   "meta": {
+    "skill": "H.D.",
+    "subtype": "word-problem-solve-for-one-quantity",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "b48812e0e2",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239522.292141,
+   "seconds": 2.7,
+   "meta": {
+    "skill": "H.D.",
+    "subtype": "graph-intersection",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "20ab277cfa",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239522.321412,
+   "seconds": 2.3,
+   "meta": {
+    "skill": "H.D.",
+    "subtype": "graph-intersection",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "1a31c9c9ff",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239522.027222,
+   "seconds": 2.5,
+   "meta": {
+    "skill": "P.C.",
+    "subtype": "geometry-to-function",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "e048ed37bc",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239521.721416,
+   "seconds": 2.0,
+   "meta": {
+    "skill": "P.C.",
+    "subtype": "geometry-to-function",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "a82e77e626",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239520.936172,
+   "seconds": 2.3,
+   "meta": {
+    "skill": "H.B.",
+    "subtype": "find-constant-from-one-value",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "2d0ab8b3dd",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239520.57309,
+   "seconds": 2.3,
+   "meta": {
+    "skill": "H.B.",
+    "subtype": "find-constant-from-one-value",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "57354e89f0",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239520.132364,
+   "seconds": 2.5,
+   "meta": {
+    "skill": "P.A.",
+    "subtype": "factor-special-forms",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "db7e451ad4",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239520.263291,
+   "seconds": 2.2,
+   "meta": {
+    "skill": "P.A.",
+    "subtype": "factor-special-forms",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "70d185ca3f",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239519.896889,
+   "seconds": 2.3,
+   "meta": {
+    "skill": "H.C.",
+    "subtype": "write-equation-from-words",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "b81584ce79",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239519.867004,
+   "seconds": 2.3,
+   "meta": {
+    "skill": "P.B.",
+    "subtype": "sum-or-structure-of-solutions",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "7bf8bf73d5",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239519.647299,
+   "seconds": 2.2,
+   "meta": {
+    "skill": "P.B.",
+    "subtype": "sum-or-structure-of-solutions",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "12fffb5ad8",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239519.590073,
+   "seconds": 2.0,
+   "meta": {
+    "skill": "S.D.",
+    "subtype": "complete-square-expanded-circle",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "fb1cc5ab4a",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239518.344456,
+   "seconds": 2.4,
+   "meta": {
+    "skill": "S.B.",
+    "subtype": "multi-step-angle-chase",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "4593d3d122",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239518.77918,
+   "seconds": 1.6,
+   "meta": {
+    "skill": "S.D.",
+    "subtype": "complete-square-expanded-circle",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "2f4c5b80c2",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239518.2147489,
+   "seconds": 1.8,
+   "meta": {
+    "skill": "S.B.",
+    "subtype": "multi-step-angle-chase",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "e219b68889",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239517.313497,
+   "seconds": 2.7,
+   "meta": {
+    "skill": "Q.A.",
+    "subtype": "compound-and-squared-units",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "c7c22ec124",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239517.6747231,
+   "seconds": 2.1,
+   "meta": {
+    "skill": "Q.A.",
+    "subtype": "compound-and-squared-units",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "ea787a45ef",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239517.225389,
+   "seconds": 2.5,
+   "meta": {
+    "skill": "P.C.",
+    "subtype": "zeros-and-factored-form",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "c33a305a4e",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239517.191246,
+   "seconds": 2.4,
+   "meta": {
+    "skill": "P.C.",
+    "subtype": "zeros-and-factored-form",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "9499676a7b",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239517.1303449,
+   "seconds": 2.4,
+   "meta": {
+    "skill": "H.A.",
+    "subtype": "word-problem-solve",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "a109a5c7a2",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239516.925379,
+   "seconds": 1.7,
+   "meta": {
+    "skill": "H.A.",
+    "subtype": "word-problem-solve",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "e72a380078",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239516.611122,
+   "seconds": 1.6,
+   "meta": {
+    "skill": "S.B.",
+    "subtype": "triangle-angle-sum-direct",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "2285f50e2a",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239516.422953,
+   "seconds": 1.7,
+   "meta": {
+    "skill": "S.B.",
+    "subtype": "triangle-angle-sum-direct",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "127f11cb22",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239515.780256,
+   "seconds": 1.6,
+   "meta": {
+    "skill": "S.C.",
+    "subtype": "special-right-triangles",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "eb9db32886",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239515.565044,
+   "seconds": 1.6,
+   "meta": {
+    "skill": "S.C.",
+    "subtype": "special-right-triangles",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "d456496a93",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239514.54816,
+   "seconds": 2.5,
+   "meta": {
+    "skill": "H.C.",
+    "subtype": "read-slope-or-intercept",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "e0e3e46d64",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239515.403378,
+   "seconds": 1.7,
+   "meta": {
+    "skill": "S.A.",
+    "subtype": "scale-factor-similar-figures",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "d5c50fa7a4",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239515.398863,
+   "seconds": 1.6,
+   "meta": {
+    "skill": "S.A.",
+    "subtype": "scale-factor-similar-figures",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "b64296fb67",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239514.116107,
+   "seconds": 2.7,
+   "meta": {
+    "skill": "S.C.",
+    "subtype": "pythagorean-missing-side",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "1bd09fe2ec",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791239514.497792,
+   "seconds": 2.0,
+   "meta": {
+    "skill": "H.C.",
+    "subtype": "read-slope-or-intercept",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "1db3ddcbb3",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238204.266189,
+   "seconds": 1312.1,
+   "meta": {
+    "skill": "S.C.",
+    "subtype": "pythagorean-missing-side",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "7ecb40976b",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238203.7946482,
+   "seconds": 1311.9,
+   "meta": {
+    "skill": "P.A.",
+    "subtype": "factor-out-gcf",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "78f160ab24",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238203.787323,
+   "seconds": 1311.7,
+   "meta": {
+    "skill": "P.A.",
+    "subtype": "exponent-radical-rewrite",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "98e4ea9395",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238203.6962519,
+   "seconds": 1311.6,
+   "meta": {
+    "skill": "P.A.",
+    "subtype": "exponent-radical-rewrite",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "6198186488",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238203.674973,
+   "seconds": 1311.6,
+   "meta": {
+    "skill": "S.C.",
+    "subtype": "trig-ratio-from-sides",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "a2e6e0154e",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238202.801839,
+   "seconds": 1311.5,
+   "meta": {
+    "skill": "S.C.",
+    "subtype": "trig-ratio-from-sides",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "51a00b4b30",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238201.672927,
+   "seconds": 1312.4,
+   "meta": {
+    "skill": "H.A.",
+    "subtype": "number-of-solutions",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "a74ef79392",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238201.273251,
+   "seconds": 2.9,
+   "meta": {
+    "skill": "H.C.",
+    "subtype": "interpret-coefficient-difference",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "b3079cc254",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238201.7141562,
+   "seconds": 2.4,
+   "meta": {
+    "skill": "H.A.",
+    "subtype": "number-of-solutions",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "c66500425c",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238199.956223,
+   "seconds": 3.8,
+   "meta": {
+    "skill": "H.C.",
+    "subtype": "interpret-coefficient-difference",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "d815679879",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238199.20228,
+   "seconds": 4.5,
    "meta": {
     "skill": "Q.A.",
     "subtype": "single-unit-conversion",
@@ -61,2262 +2000,3988 @@
     "asked": 2,
     "fmt": "grid"
    },
-   "counts": {
-    "authored": 2
-   },
-   "alerts": []
-  },
-  {
-   "id": "2f3560f7a2",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791233683.713498,
-   "seconds": 120.3,
-   "meta": {
-    "skill": "Q.G.",
-    "subtype": "experiment-vs-observational-causation",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "750398f926",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791233578.444384,
-   "seconds": 105.2,
-   "meta": {
-    "skill": "Q.G.",
-    "subtype": "experiment-vs-observational-causation",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "1cf6779b01",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791233437.8167381,
-   "seconds": 140.5,
-   "meta": {
-    "skill": "CTC",
-    "subtype": "both-authors-agree",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "cbd3328fc9",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791233331.36694,
-   "seconds": 106.3,
-   "meta": {
-    "skill": "CTC",
-    "subtype": "both-authors-agree",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "ce12be74a7",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791233254.883565,
-   "seconds": 76.4,
-   "meta": {
-    "skill": "Q.F.",
-    "subtype": "scope-of-generalization",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "6d2545a948",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791233188.694283,
-   "seconds": 66.1,
-   "meta": {
-    "skill": "Q.F.",
-    "subtype": "scope-of-generalization",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "370e8b68d4",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791233087.440296,
-   "seconds": 101.1,
-   "meta": {
-    "skill": "Q.F.",
-    "subtype": "moe-interval-as-a-count",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "b87af3252a",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791233011.953092,
-   "seconds": 75.4,
-   "meta": {
-    "skill": "Q.F.",
-    "subtype": "moe-interval-as-a-count",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "6a23fcfc7c",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791232895.665219,
-   "seconds": 116.2,
-   "meta": {
-    "skill": "Q.G.",
-    "subtype": "appropriate-inference-statement",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "f645e665b1",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791232809.150113,
-   "seconds": 86.4,
-   "meta": {
-    "skill": "Q.G.",
-    "subtype": "appropriate-inference-statement",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "2e926ceb24",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791232734.556101,
-   "seconds": 74.5,
-   "meta": {
-    "skill": "Q.G.",
-    "subtype": "must-be-true-sample-to-population",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "e5e0335479",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791232668.796093,
-   "seconds": 65.6,
-   "meta": {
-    "skill": "Q.G.",
-    "subtype": "must-be-true-sample-to-population",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "15221788aa",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791232527.986337,
-   "seconds": 140.7,
-   "meta": {
-    "skill": "CTC",
-    "subtype": "literary-excerpt-and-critic",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "219185b66d",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791232440.038738,
-   "seconds": 87.8,
-   "meta": {
-    "skill": "CTC",
-    "subtype": "literary-excerpt-and-critic",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "b0aad93169",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791232348.475244,
-   "seconds": 91.5,
-   "meta": {
-    "skill": "S.A.",
-    "subtype": "circle-from-coordinate-points",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "42dda31a32",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791232259.783227,
-   "seconds": 88.6,
-   "meta": {
-    "skill": "S.A.",
-    "subtype": "circle-from-coordinate-points",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "a91c400ada",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791232169.8655858,
-   "seconds": 89.8,
-   "meta": {
-    "skill": "Q.F.",
-    "subtype": "back-out-moe-from-interval",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "9886d63f64",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791232082.631541,
-   "seconds": 87.1,
-   "meta": {
-    "skill": "Q.F.",
-    "subtype": "back-out-moe-from-interval",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "d6c76690e0",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791231981.946765,
-   "seconds": 100.6,
-   "meta": {
-    "skill": "Q.F.",
-    "subtype": "sample-size-effect-on-moe",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "104ea5dc53",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791231878.3883321,
-   "seconds": 103.4,
-   "meta": {
-    "skill": "Q.F.",
-    "subtype": "sample-size-effect-on-moe",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "e9dcf9fdcf",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791231712.830872,
-   "seconds": 165.5,
-   "meta": {
-    "skill": "Q.C.",
-    "subtype": "compare-spread-standard-deviation",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "487a7d5854",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791231533.1088908,
-   "seconds": 179.6,
-   "meta": {
-    "skill": "Q.C.",
-    "subtype": "compare-spread-standard-deviation",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "6fabad6ebe",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791231445.255096,
-   "seconds": 87.7,
-   "meta": {
-    "skill": "H.B.",
-    "subtype": "change-in-output",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "2dd3fb6242",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791231345.7875369,
-   "seconds": 99.3,
-   "meta": {
-    "skill": "H.B.",
-    "subtype": "change-in-output",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "0a25e32d30",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791231225.207867,
-   "seconds": 120.5,
-   "meta": {
-    "skill": "Q.G.",
-    "subtype": "biased-sampling-method",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "b1bdb7f509",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791229623.285127,
-   "seconds": 1601.7,
-   "meta": {
-    "skill": "Q.G.",
-    "subtype": "biased-sampling-method",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "98af0bce9d",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791225554.3548899,
-   "seconds": 4068.8,
-   "meta": {
-    "skill": "Q.E.",
-    "subtype": "reverse-probability-find-count",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "f909bdc0ca",
-   "kind": "verify",
-   "status": "ok",
-   "started_at": 1791226865.2741098,
-   "seconds": 0.0,
-   "meta": {
-    "model": "claude-haiku-4-5",
-    "batch": 8,
-    "files": 186
-   },
-   "counts": {
-    "pass": 677,
-    "review": 15,
-    "fail": 14,
-    "error": 0
-   },
-   "alerts": []
-  },
-  {
-   "id": "0ac9976f78",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791225376.236076,
-   "seconds": 178.0,
-   "meta": {
-    "skill": "Q.E.",
-    "subtype": "reverse-probability-find-count",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "bdea4864cd",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791225261.293868,
-   "seconds": 114.8,
-   "meta": {
-    "skill": "S.D.",
-    "subtype": "unit-circle-trig-value",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "04c7a2f6df",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791225191.687328,
-   "seconds": 69.5,
-   "meta": {
-    "skill": "S.D.",
-    "subtype": "unit-circle-trig-value",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "eefacc1f06",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791225091.4014258,
-   "seconds": 100.2,
-   "meta": {
-    "skill": "H.E.",
-    "subtype": "shaded-graph-to-inequality",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "78b1460747",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791225006.313143,
-   "seconds": 85.0,
-   "meta": {
-    "skill": "H.E.",
-    "subtype": "shaded-graph-to-inequality",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "e103143643",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791224924.751211,
-   "seconds": 81.5,
-   "meta": {
-    "skill": "Q.G.",
-    "subtype": "largest-population-generalization",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "b1e960d215",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1791224868.993255,
-   "seconds": 55.7,
-   "meta": {
-    "skill": "Q.G.",
-    "subtype": "largest-population-generalization",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "e58246fec7",
-   "kind": "verify",
-   "status": "ok",
-   "started_at": 1791224769.648184,
-   "seconds": 0.0,
-   "meta": {
-    "model": "claude-haiku-4-5",
-    "batch": 5,
-    "files": 1
-   },
-   "counts": {
-    "pass": 4,
-    "review": 0,
-    "fail": 0,
-    "error": 0
-   },
-   "alerts": []
-  },
-  {
-   "id": "5ff8d4204a",
-   "kind": "difficulty",
-   "status": "ok",
-   "started_at": 1790863244.753098,
-   "seconds": 0.0,
-   "meta": {
-    "model": "claude-haiku-4-5",
-    "rated": 1
-   },
-   "counts": {
-    "agreed": 1
-   },
-   "alerts": []
-  },
-  {
-   "id": "4613c82443",
-   "kind": "difficulty",
-   "status": "ok",
-   "started_at": 1790863230.642273,
-   "seconds": 0.1,
-   "meta": {
-    "model": "claude-haiku-4-5",
-    "rated": 744
-   },
-   "counts": {
-    "two_tiers_off_-_flagged": 39,
-    "agreed": 520,
-    "re-tiered_M_to_E": 29,
-    "re-tiered_H_to_M": 150,
-    "re-tiered_E_to_M": 5,
-    "no_rating": 1
-   },
-   "alerts": []
-  },
-  {
-   "id": "fecf2ece11",
-   "kind": "difficulty",
-   "status": "ok",
-   "started_at": 1790821366.810165,
-   "seconds": 0.0,
-   "meta": {
-    "model": "claude-haiku-4-5",
-    "rated": 660
-   },
-   "counts": {
-    "two_tiers_off_-_flagged": 28,
-    "agreed": 441,
-    "would_re-tier_M_to_E": 44,
-    "no_rating": 85,
-    "would_re-tier_H_to_M": 141,
-    "would_re-tier_E_to_M": 5
-   },
-   "alerts": []
-  },
-  {
-   "id": "d0d5be8ee8",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790821038.001788,
-   "seconds": 168.8,
-   "meta": {
-    "skill": "COE",
-    "subtype": "finding-weakens-claim",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "266dd056e5",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790821037.944156,
-   "seconds": 103.9,
-   "meta": {
-    "skill": "CID",
-    "subtype": "dialogue-point-made",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "d619cd678a",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790821037.9443789,
-   "seconds": 94.9,
-   "meta": {
-    "skill": "Q.B.",
-    "subtype": "percent-change-between-two-values",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "955e184448",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820864.077278,
-   "seconds": 172.2,
-   "meta": {
-    "skill": "S.A.",
-    "subtype": "surface-area-chain",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "fa218d2d7d",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820864.0772412,
-   "seconds": 135.6,
-   "meta": {
-    "skill": "S.C.",
-    "subtype": "sin-cos-complement",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "1142402348",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820864.077464,
-   "seconds": 129.9,
-   "meta": {
-    "skill": "TSP",
-    "subtype": "underlined-function-literary",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "6327faa2e1",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820864.0772412,
-   "seconds": 110.3,
-   "meta": {
-    "skill": "S.D.",
-    "subtype": "tangent-radius-perpendicular",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "812d3ced41",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820864.077635,
-   "seconds": 104.8,
-   "meta": {
-    "skill": "CID",
-    "subtype": "researcher-would-agree",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "0956ce8844",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820864.077622,
-   "seconds": 62.1,
-   "meta": {
-    "skill": "WIC",
-    "subtype": "evidence-relationship-verb",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "29ebc35255",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820704.1577542,
-   "seconds": 159.8,
-   "meta": {
-    "skill": "Q.D.",
-    "subtype": "line-graph-intervals",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "e8b77b574e",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820704.157696,
-   "seconds": 122.8,
-   "meta": {
-    "skill": "Q.E.",
-    "subtype": "two-way-table-conditional",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "2d24d7b558",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820704.157695,
-   "seconds": 110.3,
-   "meta": {
-    "skill": "Q.E.",
-    "subtype": "conditional-build-the-group",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "071d90e3b9",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820704.1576939,
-   "seconds": 100.9,
-   "meta": {
-    "skill": "Q.E.",
-    "subtype": "two-way-table-whole-population",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "dd4ca8a5e9",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820704.157693,
-   "seconds": 68.3,
-   "meta": {
-    "skill": "BOU",
-    "subtype": "title-before-proper-noun",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "94059921c3",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820557.0893672,
-   "seconds": 146.9,
-   "meta": {
-    "skill": "CTC",
-    "subtype": "text2-qualifies-text1",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "a5f4464857",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820557.088788,
-   "seconds": 136.6,
-   "meta": {
-    "skill": "S.D.",
-    "subtype": "radian-degree-conversion",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "fd3a3ee111",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820557.089618,
-   "seconds": 108.5,
-   "meta": {
-    "skill": "COE",
-    "subtype": "direct-data-lookup",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "6589e37dd4",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820557.088605,
-   "seconds": 105.8,
-   "meta": {
-    "skill": "Q.F.",
-    "subtype": "scale-sample-proportion-to-population",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "ca7e17a126",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820557.0892,
-   "seconds": 105.3,
-   "meta": {
-    "skill": "INF",
-    "subtype": "limits-of-the-evidence",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "aa5f5c55c9",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820557.089022,
-   "seconds": 70.0,
-   "meta": {
-    "skill": "Q.B.",
-    "subtype": "reverse-percent-find-whole",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "045e4847b0",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820414.698775,
-   "seconds": 142.3,
-   "meta": {
-    "skill": "CTC",
-    "subtype": "same-evidence-rival-explanation",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "a81ff0888a",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820414.698369,
-   "seconds": 130.6,
-   "meta": {
-    "skill": "Q.C.",
-    "subtype": "reverse-mean-find-unknown",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "eb72abe7d3",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820414.698397,
-   "seconds": 123.4,
-   "meta": {
-    "skill": "S.D.",
-    "subtype": "arc-length-sector-proportion",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "6326626d1c",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820414.699035,
-   "seconds": 118.0,
-   "meta": {
-    "skill": "CID",
-    "subtype": "describe-a-specific-item",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "9fecac19bb",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820414.6983712,
-   "seconds": 81.9,
-   "meta": {
-    "skill": "Q.D.",
-    "subtype": "classify-function-growth",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "91b336002f",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820414.69888,
-   "seconds": 80.8,
-   "meta": {
-    "skill": "Q.B.",
-    "subtype": "growth-multiplier-expression",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "e939e1ffdb",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820300.954496,
-   "seconds": 113.6,
-   "meta": {
-    "skill": "P.B.",
-    "subtype": "rational-radical-extraneous",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "c0271244a3",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820300.954491,
-   "seconds": 106.7,
-   "meta": {
-    "skill": "P.B.",
-    "subtype": "system-graph-match-or-read",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "e1e7a9c1a9",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820300.954877,
-   "seconds": 99.1,
-   "meta": {
-    "skill": "Q.F.",
-    "subtype": "interpret-estimate-plus-minus-moe",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "65eec641dc",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820300.955029,
-   "seconds": 85.0,
-   "meta": {
-    "skill": "CID",
-    "subtype": "stated-detail-retrieval",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "cb0167a966",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820300.9551868,
-   "seconds": 80.7,
-   "meta": {
-    "skill": "BOU",
-    "subtype": "colon-or-dash-before-explanation",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "c74703ea28",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820300.954491,
-   "seconds": 77.5,
-   "meta": {
-    "skill": "H.D.",
-    "subtype": "word-problem-build-the-system",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "fd78a7c2c5",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820074.7782772,
-   "seconds": 226.0,
-   "meta": {
-    "skill": "S.B.",
-    "subtype": "sufficient-information-proof",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "bcef4f56db",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820074.778271,
-   "seconds": 171.1,
-   "meta": {
-    "skill": "H.D.",
-    "subtype": "infinitely-many-same-line",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "201da50691",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820074.7789812,
-   "seconds": 135.8,
-   "meta": {
-    "skill": "P.A.",
-    "subtype": "rational-expression-rewrite",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "7c0554a8cb",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820074.778381,
-   "seconds": 103.9,
-   "meta": {
-    "skill": "S.C.",
-    "subtype": "similar-triangles-transfer",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "210708082d",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820074.778718,
-   "seconds": 98.8,
-   "meta": {
-    "skill": "Q.D.",
-    "subtype": "read-or-predict-from-plot",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "1ae4200a9e",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790820074.778234,
-   "seconds": 69.6,
-   "meta": {
-    "skill": "H.B.",
-    "subtype": "graph-read-or-match",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "66d35d9e02",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819932.776275,
-   "seconds": 141.9,
-   "meta": {
-    "skill": "H.D.",
-    "subtype": "word-problem-solve-for-one-quantity",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "8d3b3734cc",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819932.776594,
-   "seconds": 139.5,
-   "meta": {
-    "skill": "SYN",
-    "subtype": "emphasize-similarity",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "5123bea5be",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819932.776275,
-   "seconds": 115.1,
-   "meta": {
-    "skill": "Q.D.",
-    "subtype": "slope-of-best-fit-line",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "ff172f7a74",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819932.776284,
-   "seconds": 114.7,
-   "meta": {
-    "skill": "H.D.",
-    "subtype": "graph-intersection",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "95d644fc71",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819932.776275,
-   "seconds": 107.5,
-   "meta": {
-    "skill": "INF",
-    "subtype": "name-the-tension",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "36a14e98b1",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819932.776336,
-   "seconds": 99.1,
-   "meta": {
-    "skill": "TRA",
-    "subtype": "inferential-conclusion",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "96f0a2c0bf",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819784.022349,
-   "seconds": 148.6,
-   "meta": {
-    "skill": "P.B.",
-    "subtype": "sum-or-structure-of-solutions",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "c483b2a5a8",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819784.0234828,
-   "seconds": 121.5,
-   "meta": {
-    "skill": "INF",
-    "subtype": "apply-finding-to-new-case",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "f4ea13b300",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819784.022352,
-   "seconds": 111.7,
-   "meta": {
-    "skill": "H.E.",
-    "subtype": "compound-range-to-inequality",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "00e8a3e95a",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819784.0228438,
-   "seconds": 110.6,
-   "meta": {
-    "skill": "H.B.",
-    "subtype": "find-constant-from-one-value",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "54f1f43830",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819784.022348,
-   "seconds": 101.0,
-   "meta": {
-    "skill": "P.A.",
-    "subtype": "factor-special-forms",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "4324aefb13",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819784.022829,
-   "seconds": 100.7,
-   "meta": {
-    "skill": "P.C.",
-    "subtype": "geometry-to-function",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "3d9bca82d1",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819605.251491,
-   "seconds": 178.7,
-   "meta": {
-    "skill": "S.B.",
-    "subtype": "multi-step-angle-chase",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "719221f25c",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819605.251698,
-   "seconds": 121.7,
-   "meta": {
-    "skill": "Q.A.",
-    "subtype": "compound-and-squared-units",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "a7ba8180e9",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819605.251683,
-   "seconds": 120.2,
-   "meta": {
-    "skill": "SYN",
-    "subtype": "introduce-to-audience",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "90fc4db2d9",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819605.251325,
-   "seconds": 96.6,
-   "meta": {
-    "skill": "S.D.",
-    "subtype": "complete-square-expanded-circle",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "67843a4946",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819605.251604,
-   "seconds": 80.8,
-   "meta": {
-    "skill": "BOU",
-    "subtype": "complex-series-semicolons",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "28906c00aa",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819450.2287722,
-   "seconds": 154.9,
-   "meta": {
-    "skill": "CTC",
-    "subtype": "describe-relationship-between-texts",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "9edf235ef7",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819450.22839,
-   "seconds": 144.2,
-   "meta": {
-    "skill": "P.C.",
-    "subtype": "zeros-and-factored-form",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "32a1e32b58",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819450.2291782,
-   "seconds": 120.3,
-   "meta": {
-    "skill": "TSP",
-    "subtype": "overall-structure-sequence",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "8d2aca9bcb",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819450.229503,
-   "seconds": 116.2,
-   "meta": {
-    "skill": "BOU",
-    "subtype": "conjunctive-adverb-placement",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "e25fb7e372",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819450.2288399,
-   "seconds": 104.8,
-   "meta": {
-    "skill": "INF",
-    "subtype": "implied-belief-from-action",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "8b128643c8",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819450.22839,
-   "seconds": 104.4,
-   "meta": {
-    "skill": "S.C.",
-    "subtype": "special-right-triangles",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "c01c489c9c",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819316.301831,
-   "seconds": 133.8,
-   "meta": {
-    "skill": "P.A.",
-    "subtype": "exponent-radical-rewrite",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "d1006d03c7",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819316.301872,
-   "seconds": 116.5,
-   "meta": {
-    "skill": "S.A.",
-    "subtype": "scale-factor-similar-figures",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "4e5deff0f5",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819316.302805,
-   "seconds": 83.9,
-   "meta": {
-    "skill": "S.B.",
-    "subtype": "triangle-angle-sum-direct",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "ae75d045f8",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819316.302516,
-   "seconds": 80.6,
-   "meta": {
-    "skill": "H.A.",
-    "subtype": "word-problem-solve",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "c332f3dfc7",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819316.301953,
-   "seconds": 75.5,
-   "meta": {
-    "skill": "P.A.",
-    "subtype": "factor-out-gcf",
-    "difficulty": "E",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "d6c7804461",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819145.374453,
-   "seconds": 170.8,
-   "meta": {
-    "skill": "H.A.",
-    "subtype": "number-of-solutions",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "ec1e8037c5",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819145.374453,
-   "seconds": 146.6,
-   "meta": {
-    "skill": "SYN",
-    "subtype": "emphasize-significance-or-achievement",
-    "difficulty": "M",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "9e9272f99f",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819145.374343,
-   "seconds": 110.5,
-   "meta": {
-    "skill": "S.C.",
-    "subtype": "trig-ratio-from-sides",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "bbae76d4c3",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819145.3744159,
-   "seconds": 110.2,
-   "meta": {
-    "skill": "SYN",
-    "subtype": "generalization-vs-example",
-    "difficulty": "H",
-    "model": "claude-opus-5-5",
-    "asked": 8
-   },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "4f9c569921",
-   "kind": "author",
-   "status": "ok",
-   "started_at": 1790819145.37397,
-   "seconds": 94.7,
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "b6e19d2d1e",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238199.501529,
+   "seconds": 4.1,
    "meta": {
     "skill": "Q.A.",
     "subtype": "constant-rate-times-amount",
-    "difficulty": "E",
+    "difficulty": "H",
     "model": "claude-opus-5-5",
-    "asked": 8
+    "asked": 4,
+    "fmt": "grid"
    },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
   },
   {
-   "id": "4fe557bafb",
+   "id": "c266bb97d3",
    "kind": "author",
-   "status": "ok",
-   "started_at": 1790819021.696376,
-   "seconds": 123.5,
+   "status": "error",
+   "started_at": 1791238199.632991,
+   "seconds": 4.0,
    "meta": {
     "skill": "Q.A.",
-    "subtype": "single-unit-conversion",
-    "difficulty": "E",
+    "subtype": "constant-rate-times-amount",
+    "difficulty": "M",
     "model": "claude-opus-5-5",
-    "asked": 8
+    "asked": 4,
+    "fmt": "grid"
    },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
   },
   {
-   "id": "2fd75487fc",
+   "id": "fa232325b9",
    "kind": "author",
-   "status": "ok",
-   "started_at": 1790819021.69627,
-   "seconds": 114.7,
+   "status": "error",
+   "started_at": 1791238198.825804,
+   "seconds": 3.8,
+   "meta": {
+    "skill": "P.A.",
+    "subtype": "match-coefficients-find-constant",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "14f32bbfb2",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238197.41274,
+   "seconds": 4.0,
    "meta": {
     "skill": "P.A.",
     "subtype": "match-coefficients-find-constant",
     "difficulty": "H",
     "model": "claude-opus-5-5",
-    "asked": 8
+    "asked": 4,
+    "fmt": "grid"
    },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
   },
   {
-   "id": "23008ade96",
+   "id": "02082b6598",
    "kind": "author",
-   "status": "ok",
-   "started_at": 1790819021.696495,
-   "seconds": 113.4,
+   "status": "error",
+   "started_at": 1791238196.414243,
+   "seconds": 4.8,
    "meta": {
-    "skill": "WIC",
-    "subtype": "negation-polarity-flip",
+    "skill": "S.A.",
+    "subtype": "solid-volume-plug-in",
     "difficulty": "H",
     "model": "claude-opus-5-5",
-    "asked": 8
+    "asked": 4,
+    "fmt": "grid"
    },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
   },
   {
-   "id": "a2e6259dbf",
+   "id": "599368edc6",
    "kind": "author",
-   "status": "ok",
-   "started_at": 1790819021.6968708,
-   "seconds": 105.4,
+   "status": "error",
+   "started_at": 1791238197.075372,
+   "seconds": 3.9,
    "meta": {
-    "skill": "TSP",
-    "subtype": "view-then-challenge",
-    "difficulty": "H",
+    "skill": "S.A.",
+    "subtype": "solid-volume-plug-in",
+    "difficulty": "M",
     "model": "claude-opus-5-5",
-    "asked": 8
+    "asked": 4,
+    "fmt": "grid"
    },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
   },
   {
-   "id": "5722e8ebd9",
+   "id": "e30a28ec57",
    "kind": "author",
-   "status": "ok",
-   "started_at": 1790819021.696272,
-   "seconds": 101.5,
+   "status": "error",
+   "started_at": 1791238195.741565,
+   "seconds": 3.9,
    "meta": {
-    "skill": "Q.D.",
-    "subtype": "choose-model-equation",
-    "difficulty": "E",
+    "skill": "Q.C.",
+    "subtype": "effect-on-center-and-comparisons",
+    "difficulty": "M",
     "model": "claude-opus-5-5",
-    "asked": 8
+    "asked": 4,
+    "fmt": "grid"
    },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
   },
   {
-   "id": "6455a53c47",
+   "id": "5bc8b3a302",
    "kind": "author",
-   "status": "ok",
-   "started_at": 1790819021.696564,
-   "seconds": 80.8,
+   "status": "error",
+   "started_at": 1791238195.783963,
+   "seconds": 3.6,
    "meta": {
-    "skill": "FSS",
-    "subtype": "plural-vs-possessive-nouns",
-    "difficulty": "E",
+    "skill": "Q.E.",
+    "subtype": "simple-count-over-total",
+    "difficulty": "M",
     "model": "claude-opus-5-5",
-    "asked": 8
+    "asked": 4,
+    "fmt": "grid"
    },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
   },
   {
-   "id": "bc8deb8222",
+   "id": "dc7e38448b",
    "kind": "author",
-   "status": "ok",
-   "started_at": 1790818843.636726,
-   "seconds": 177.9,
+   "status": "error",
+   "started_at": 1791238194.870523,
+   "seconds": 4.3,
+   "meta": {
+    "skill": "H.C.",
+    "subtype": "perpendicular-parallel-slope",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "ed13c4f024",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238195.089605,
+   "seconds": 3.8,
    "meta": {
     "skill": "Q.C.",
     "subtype": "effect-on-center-and-comparisons",
     "difficulty": "H",
     "model": "claude-opus-5-5",
-    "asked": 8
+    "asked": 4,
+    "fmt": "grid"
    },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
   },
   {
-   "id": "66a6727cd4",
+   "id": "2c2a808241",
    "kind": "author",
-   "status": "ok",
-   "started_at": 1790818843.637281,
-   "seconds": 127.1,
+   "status": "error",
+   "started_at": 1791238194.816096,
+   "seconds": 3.5,
    "meta": {
-    "skill": "CID",
-    "subtype": "suggest-or-infer-about",
+    "skill": "H.C.",
+    "subtype": "perpendicular-parallel-slope",
     "difficulty": "H",
     "model": "claude-opus-5-5",
-    "asked": 8
+    "asked": 4,
+    "fmt": "grid"
    },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
   },
   {
-   "id": "74e8784633",
+   "id": "6fcba10527",
    "kind": "author",
-   "status": "ok",
-   "started_at": 1790818843.636726,
-   "seconds": 75.2,
+   "status": "error",
+   "started_at": 1791238192.873884,
+   "seconds": 4.0,
    "meta": {
-    "skill": "Q.E.",
-    "subtype": "simple-count-over-total",
+    "skill": "H.D.",
+    "subtype": "no-solution-parallel",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "e8ee205ad7",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238192.931057,
+   "seconds": 3.9,
+   "meta": {
+    "skill": "H.D.",
+    "subtype": "no-solution-parallel",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "266585c7a5",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238191.432518,
+   "seconds": 4.6,
+   "meta": {
+    "skill": "Q.C.",
+    "subtype": "compute-mean-or-median",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "e97ceb1fd6",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238191.432678,
+   "seconds": 4.0,
+   "meta": {
+    "skill": "Q.C.",
+    "subtype": "compute-mean-or-median",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "8874ebee3e",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238191.302589,
+   "seconds": 4.1,
+   "meta": {
+    "skill": "H.C.",
+    "subtype": "substitute-into-context-equation",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "fa5fb9712b",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238190.495327,
+   "seconds": 4.3,
+   "meta": {
+    "skill": "H.C.",
+    "subtype": "substitute-into-context-equation",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "05532293d9",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238190.355506,
+   "seconds": 4.3,
+   "meta": {
+    "skill": "Q.C.",
+    "subtype": "read-value-from-display",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "c44b1520e3",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238190.181799,
+   "seconds": 4.4,
+   "meta": {
+    "skill": "Q.C.",
+    "subtype": "read-value-from-display",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "a47023c450",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238188.802232,
+   "seconds": 3.7,
+   "meta": {
+    "skill": "P.C.",
+    "subtype": "read-key-point-off-graph",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "c83e44af84",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238188.834269,
+   "seconds": 3.7,
+   "meta": {
+    "skill": "S.D.",
+    "subtype": "read-center-radius-standard-form",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "d8ff7bfdc2",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238186.724036,
+   "seconds": 4.4,
+   "meta": {
+    "skill": "S.B.",
+    "subtype": "parallel-transversal-single-step",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "2844919431",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238186.72516,
+   "seconds": 4.3,
+   "meta": {
+    "skill": "S.B.",
+    "subtype": "parallel-transversal-single-step",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "ab94b20d8d",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238186.815735,
+   "seconds": 4.2,
+   "meta": {
+    "skill": "S.D.",
+    "subtype": "read-center-radius-standard-form",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "e731e8ebce",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238186.074156,
+   "seconds": 4.1,
+   "meta": {
+    "skill": "P.B.",
+    "subtype": "discriminant-number-of-solutions",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "da50162c21",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238185.223008,
+   "seconds": 4.8,
+   "meta": {
+    "skill": "H.A.",
+    "subtype": "solve-for-expression",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "ca2f3442f0",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238185.241442,
+   "seconds": 4.7,
+   "meta": {
+    "skill": "P.B.",
+    "subtype": "discriminant-number-of-solutions",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "9981baac89",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238183.976914,
+   "seconds": 4.5,
+   "meta": {
+    "skill": "H.D.",
+    "subtype": "combine-equations-shortcut",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "21b2aa56ed",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238184.0504708,
+   "seconds": 4.4,
+   "meta": {
+    "skill": "H.D.",
+    "subtype": "combine-equations-shortcut",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "4f5e2c1792",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238182.182959,
+   "seconds": 4.3,
+   "meta": {
+    "skill": "S.A.",
+    "subtype": "reverse-solve-dimension",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "de9ee77b96",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238181.469825,
+   "seconds": 5.0,
+   "meta": {
+    "skill": "H.B.",
+    "subtype": "model-from-words",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "f459c40b06",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238182.3379169,
+   "seconds": 4.0,
+   "meta": {
+    "skill": "S.A.",
+    "subtype": "reverse-solve-dimension",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "6915c6ab82",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238181.450422,
+   "seconds": 4.4,
+   "meta": {
+    "skill": "H.B.",
+    "subtype": "model-from-words",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "1d4266651f",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238180.5521631,
+   "seconds": 4.4,
+   "meta": {
+    "skill": "H.B.",
+    "subtype": "interpret-slope-intercept-in-context",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "ab0ed07c23",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238180.545132,
+   "seconds": 4.3,
+   "meta": {
+    "skill": "H.B.",
+    "subtype": "interpret-slope-intercept-in-context",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "e4b5cb3ba4",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238179.7365031,
+   "seconds": 4.0,
+   "meta": {
+    "skill": "H.C.",
+    "subtype": "equation-from-table-or-graph",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "527b3642c1",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238179.4448352,
+   "seconds": 4.1,
+   "meta": {
+    "skill": "H.C.",
+    "subtype": "equation-from-table-or-graph",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "188a7160ae",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238177.351308,
+   "seconds": 4.7,
+   "meta": {
+    "skill": "Q.B.",
+    "subtype": "chained-percent-relationships",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "1537cf9779",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238177.377116,
+   "seconds": 4.5,
+   "meta": {
+    "skill": "Q.B.",
+    "subtype": "chained-percent-relationships",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "a982333b4a",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238176.459254,
+   "seconds": 4.7,
+   "meta": {
+    "skill": "Q.A.",
+    "subtype": "ratio-proportion-scaling",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "fd10fca141",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238176.6180081,
+   "seconds": 4.5,
+   "meta": {
+    "skill": "Q.A.",
+    "subtype": "ratio-proportion-scaling",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "40cb11bfc6",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238175.466615,
+   "seconds": 4.8,
+   "meta": {
+    "skill": "P.B.",
+    "subtype": "system-substitution-algebraic",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "4cf7e5b180",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238175.1704571,
+   "seconds": 5.1,
+   "meta": {
+    "skill": "Q.B.",
+    "subtype": "percent-of-a-quantity",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "2cf6250ec1",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238175.47425,
+   "seconds": 4.0,
+   "meta": {
+    "skill": "P.B.",
+    "subtype": "system-substitution-algebraic",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "573abc7495",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238174.7917671,
+   "seconds": 4.4,
+   "meta": {
+    "skill": "Q.B.",
+    "subtype": "percent-of-a-quantity",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "d58711a117",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238172.921553,
+   "seconds": 4.0,
+   "meta": {
+    "skill": "P.C.",
+    "subtype": "quadratic-vertex-symmetry",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "0b4cd52dd3",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238173.374099,
+   "seconds": 3.5,
+   "meta": {
+    "skill": "P.C.",
+    "subtype": "quadratic-vertex-symmetry",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "d01a366853",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238172.238065,
+   "seconds": 4.0,
+   "meta": {
+    "skill": "S.B.",
+    "subtype": "corresponding-parts-similar-congruent",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "e6c76a1589",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238172.825707,
+   "seconds": 3.3,
+   "meta": {
+    "skill": "S.B.",
+    "subtype": "corresponding-parts-similar-congruent",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "7aec3363ba",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238169.868973,
+   "seconds": 5.1,
+   "meta": {
+    "skill": "P.C.",
+    "subtype": "find-constants-from-points",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "de0ff5e881",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238169.926327,
+   "seconds": 5.0,
+   "meta": {
+    "skill": "P.C.",
+    "subtype": "find-constants-from-points",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "e8e40ef365",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238170.0650098,
+   "seconds": 4.8,
+   "meta": {
+    "skill": "H.D.",
+    "subtype": "bare-system-substitute",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "864ccb2dd3",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238170.033795,
+   "seconds": 4.5,
+   "meta": {
+    "skill": "H.D.",
+    "subtype": "bare-system-substitute",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "10cc467ee7",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238168.962168,
+   "seconds": 4.0,
+   "meta": {
+    "skill": "P.B.",
+    "subtype": "literal-equation-rearrange",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "833fa0c244",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238168.785297,
+   "seconds": 3.9,
+   "meta": {
+    "skill": "S.A.",
+    "subtype": "flat-figure-plug-in",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "ad9d830734",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238169.0744152,
+   "seconds": 3.4,
+   "meta": {
+    "skill": "P.B.",
+    "subtype": "literal-equation-rearrange",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "278fc92f7c",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238168.206353,
+   "seconds": 3.6,
+   "meta": {
+    "skill": "S.A.",
+    "subtype": "flat-figure-plug-in",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "c25f2da1ae",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238165.116,
+   "seconds": 4.7,
+   "meta": {
+    "skill": "P.C.",
+    "subtype": "interpret-feature-in-context",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "1de4cb8848",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238165.0950541,
+   "seconds": 4.6,
+   "meta": {
+    "skill": "P.C.",
+    "subtype": "interpret-feature-in-context",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "3be7edbdba",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238165.176957,
+   "seconds": 4.4,
+   "meta": {
+    "skill": "P.B.",
+    "subtype": "direct-solve-quadratic",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "ab48887dcb",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238165.54786,
+   "seconds": 3.9,
+   "meta": {
+    "skill": "P.B.",
+    "subtype": "direct-solve-quadratic",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "9ca7240e27",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238164.6431072,
+   "seconds": 4.0,
+   "meta": {
+    "skill": "H.A.",
+    "subtype": "solve-bare-equation",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "3465173224",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238164.730595,
+   "seconds": 3.7,
+   "meta": {
+    "skill": "H.B.",
+    "subtype": "evaluate-at-input",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "9b87b013e0",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238164.691551,
+   "seconds": 3.6,
+   "meta": {
+    "skill": "H.B.",
+    "subtype": "evaluate-at-input",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "644f66e0dd",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238164.601293,
+   "seconds": 3.1,
+   "meta": {
+    "skill": "H.A.",
+    "subtype": "solve-bare-equation",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "76e53789a3",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238161.032908,
+   "seconds": 4.1,
+   "meta": {
+    "skill": "P.A.",
+    "subtype": "expand-and-combine-like-terms",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "41ce3676c4",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238161.0284421,
+   "seconds": 3.9,
+   "meta": {
+    "skill": "H.B.",
+    "subtype": "equation-from-points-or-table",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "2e7dfe833f",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238161.028667,
+   "seconds": 3.9,
+   "meta": {
+    "skill": "P.A.",
+    "subtype": "expand-and-combine-like-terms",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "55d070be9b",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238161.017602,
+   "seconds": 3.9,
+   "meta": {
+    "skill": "P.C.",
+    "subtype": "build-exponential-model",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "15c3b945c3",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238161.000899,
+   "seconds": 3.6,
+   "meta": {
+    "skill": "P.C.",
+    "subtype": "build-exponential-model",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "ae79204f62",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238161.0145001,
+   "seconds": 3.5,
+   "meta": {
+    "skill": "H.B.",
+    "subtype": "equation-from-points-or-table",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "061c12a3ab",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238161.005675,
+   "seconds": 3.5,
+   "meta": {
+    "skill": "P.C.",
+    "subtype": "evaluate-or-invert-function",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "1001c6c990",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238161.0015008,
+   "seconds": 3.5,
+   "meta": {
+    "skill": "P.C.",
+    "subtype": "evaluate-or-invert-function",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 4,
+    "fmt": "grid"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "2e0cc902a3",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238158.649584,
+   "seconds": 1.8,
+   "meta": {
+    "skill": "P.C.",
+    "subtype": "translate-or-reflect-graph",
     "difficulty": "E",
     "model": "claude-opus-5-5",
-    "asked": 8
+    "asked": 5,
+    "fmt": "mc"
    },
-   "counts": {
-    "authored": 8
-   },
-   "alerts": []
-  },
-  {
-   "id": "e5025adae9",
-   "kind": "verify",
-   "status": "ok",
-   "started_at": 1790818543.479118,
-   "seconds": 0.0,
-   "meta": {
-    "model": "claude-haiku-4-5",
-    "batch": 10,
-    "files": 106
-   },
-   "counts": {
-    "pass": 0,
-    "review": 0,
-    "fail": 112,
-    "error": 0
-   },
+   "counts": {},
    "alerts": [
     {
-     "level": "warn",
-     "text": "pass rate 0% - look for a systematic cause before authoring more"
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
     },
     {
      "level": "warn",
-     "text": "pass rate 0% - unusually low, check for a systematic cause before authoring more"
+     "text": "RuntimeError: "
     }
    ]
   },
   {
-   "id": "195f5416e5",
-   "kind": "adjudicate",
-   "status": "ok",
-   "started_at": 1790818419.242489,
-   "seconds": 12.7,
+   "id": "0cc263a957",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238158.6960971,
+   "seconds": 1.4,
    "meta": {
+    "skill": "P.C.",
+    "subtype": "translate-or-reflect-graph",
+    "difficulty": "M",
     "model": "claude-opus-5-5",
-    "disputed": 1
+    "asked": 5,
+    "fmt": "mc"
    },
-   "counts": {
-    "ambiguous_-_stays_failed": 1
-   },
-   "alerts": []
-  },
-  {
-   "id": "0d4d00ba43",
-   "kind": "verify",
-   "status": "ok",
-   "started_at": 1790812409.3500319,
-   "seconds": 0.0,
-   "meta": {
-    "model": "claude-haiku-4-5",
-    "batch": 10,
-    "files": 106
-   },
-   "counts": {
-    "pass": 214,
-    "review": 0,
-    "fail": 116,
-    "error": 0
-   },
+   "counts": {},
    "alerts": [
     {
-     "level": "warn",
-     "text": "pass rate 65% - look for a systematic cause before authoring more"
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
     },
     {
      "level": "warn",
-     "text": "pass rate 65% - unusually low, check for a systematic cause before authoring more"
+     "text": "RuntimeError: "
     }
    ]
   },
   {
-   "id": "dfd054ba62",
-   "kind": "adjudicate",
-   "status": "ok",
-   "started_at": 1790808311.3031738,
-   "seconds": 1023.4,
+   "id": "1d3e846c90",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238158.631723,
+   "seconds": 1.4,
    "meta": {
+    "skill": "Q.B.",
+    "subtype": "percent-change-between-two-values",
+    "difficulty": "H",
     "model": "claude-opus-5-5",
-    "disputed": 4
+    "asked": 5,
+    "fmt": "mc"
    },
-   "counts": {
-    "generator_was_right_-_restored": 4
-   },
-   "alerts": []
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
   },
   {
-   "id": "13cb0bd51b",
-   "kind": "adjudicate",
-   "status": "ok",
-   "started_at": 1790799760.841162,
-   "seconds": 18.1,
+   "id": "0686ab69e0",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238157.9627242,
+   "seconds": 1.6,
    "meta": {
+    "skill": "Q.B.",
+    "subtype": "percent-change-between-two-values",
+    "difficulty": "E",
     "model": "claude-opus-5-5",
-    "disputed": 3
+    "asked": 5,
+    "fmt": "mc"
    },
-   "counts": {
-    "generator_was_right_-_restored": 3
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "eeeeca5ccd",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791238157.9410748,
+   "seconds": 1.5,
+   "meta": {
+    "skill": "COE",
+    "subtype": "finding-weakens-claim",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
    },
-   "alerts": []
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "3a977f2edc",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237811.391701,
+   "seconds": 348.1,
+   "meta": {
+    "skill": "COE",
+    "subtype": "finding-weakens-claim",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "2a73f31576",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237811.206548,
+   "seconds": 347.7,
+   "meta": {
+    "skill": "CID",
+    "subtype": "dialogue-point-made",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "be64d389f6",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237811.113271,
+   "seconds": 347.6,
+   "meta": {
+    "skill": "CID",
+    "subtype": "dialogue-point-made",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "1962c03f2b",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237810.8417711,
+   "seconds": 347.8,
+   "meta": {
+    "skill": "S.D.",
+    "subtype": "tangent-radius-perpendicular",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "f5eefbff1c",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237811.010596,
+   "seconds": 347.5,
+   "meta": {
+    "skill": "S.D.",
+    "subtype": "tangent-radius-perpendicular",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "adc26c135d",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237810.591993,
+   "seconds": 347.9,
+   "meta": {
+    "skill": "S.A.",
+    "subtype": "surface-area-chain",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "abc98ee5a7",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237810.032243,
+   "seconds": 347.5,
+   "meta": {
+    "skill": "S.A.",
+    "subtype": "surface-area-chain",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "54eb70f727",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237809.4501498,
+   "seconds": 348.1,
+   "meta": {
+    "skill": "S.C.",
+    "subtype": "sin-cos-complement",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "df41cc5168",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237809.172225,
+   "seconds": 2.1,
+   "meta": {
+    "skill": "S.C.",
+    "subtype": "sin-cos-complement",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "815671afe0",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237808.2659252,
+   "seconds": 2.8,
+   "meta": {
+    "skill": "TSP",
+    "subtype": "underlined-function-literary",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "0dea8b6711",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237807.528192,
+   "seconds": 3.5,
+   "meta": {
+    "skill": "Q.E.",
+    "subtype": "two-way-table-whole-population",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "62d64f99c2",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237806.7539551,
+   "seconds": 4.2,
+   "meta": {
+    "skill": "Q.E.",
+    "subtype": "two-way-table-conditional",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "1acc730e29",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237806.776611,
+   "seconds": 4.0,
+   "meta": {
+    "skill": "Q.E.",
+    "subtype": "two-way-table-conditional",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "d427b885f1",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237806.4631228,
+   "seconds": 4.0,
+   "meta": {
+    "skill": "BOU",
+    "subtype": "title-before-proper-noun",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "3ca94abf57",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237805.283915,
+   "seconds": 4.3,
+   "meta": {
+    "skill": "CID",
+    "subtype": "researcher-would-agree",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "92d2cf475d",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237805.258754,
+   "seconds": 3.9,
+   "meta": {
+    "skill": "BOU",
+    "subtype": "title-before-proper-noun",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "53e9dd1260",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237804.430964,
+   "seconds": 4.3,
+   "meta": {
+    "skill": "CID",
+    "subtype": "researcher-would-agree",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "83357189e0",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237804.028666,
+   "seconds": 4.0,
+   "meta": {
+    "skill": "S.D.",
+    "subtype": "radian-degree-conversion",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "cd9a88a9a8",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237803.2204978,
+   "seconds": 4.0,
+   "meta": {
+    "skill": "S.D.",
+    "subtype": "radian-degree-conversion",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "8e4304f51b",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237802.6446831,
+   "seconds": 3.8,
+   "meta": {
+    "skill": "Q.D.",
+    "subtype": "line-graph-intervals",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "efeb88f819",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237802.508964,
+   "seconds": 3.8,
+   "meta": {
+    "skill": "WIC",
+    "subtype": "evidence-relationship-verb",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "103ba59d5d",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237802.3658051,
+   "seconds": 3.8,
+   "meta": {
+    "skill": "WIC",
+    "subtype": "evidence-relationship-verb",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "6a0a5f7cf9",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237801.246644,
+   "seconds": 3.7,
+   "meta": {
+    "skill": "Q.E.",
+    "subtype": "conditional-build-the-group",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "60f99f2ce6",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237800.639773,
+   "seconds": 4.0,
+   "meta": {
+    "skill": "Q.E.",
+    "subtype": "conditional-build-the-group",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "ca928cdf16",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237799.908345,
+   "seconds": 4.0,
+   "meta": {
+    "skill": "H.C.",
+    "subtype": "build-line-then-find-point",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "72cfbb6d3e",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237799.244399,
+   "seconds": 4.3,
+   "meta": {
+    "skill": "H.C.",
+    "subtype": "build-line-then-find-point",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "45f6110af8",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237798.84576,
+   "seconds": 4.0,
+   "meta": {
+    "skill": "H.C.",
+    "subtype": "build-line-then-find-point",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "a17ea80e03",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237798.008471,
+   "seconds": 4.2,
+   "meta": {
+    "skill": "CTC",
+    "subtype": "text2-qualifies-text1",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "c837b2caad",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237797.9627671,
+   "seconds": 4.2,
+   "meta": {
+    "skill": "CTC",
+    "subtype": "text2-qualifies-text1",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "8aff0edcee",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237797.61774,
+   "seconds": 4.4,
+   "meta": {
+    "skill": "Q.F.",
+    "subtype": "scale-sample-proportion-to-population",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "7c8c44f166",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237796.934497,
+   "seconds": 4.0,
+   "meta": {
+    "skill": "Q.F.",
+    "subtype": "scale-sample-proportion-to-population",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "807183dff6",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237796.240673,
+   "seconds": 4.1,
+   "meta": {
+    "skill": "Q.B.",
+    "subtype": "reverse-percent-find-whole",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "dd659657ce",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237795.7497978,
+   "seconds": 3.9,
+   "meta": {
+    "skill": "Q.B.",
+    "subtype": "reverse-percent-find-whole",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "976ddc1b68",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237795.430176,
+   "seconds": 3.5,
+   "meta": {
+    "skill": "INF",
+    "subtype": "limits-of-the-evidence",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "cbc2fe6d4e",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237794.651882,
+   "seconds": 3.9,
+   "meta": {
+    "skill": "INF",
+    "subtype": "limits-of-the-evidence",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "e1d1ef1cae",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237793.022712,
+   "seconds": 4.6,
+   "meta": {
+    "skill": "CTC",
+    "subtype": "same-evidence-rival-explanation",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "a45bf27b9d",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237793.367168,
+   "seconds": 4.2,
+   "meta": {
+    "skill": "COE",
+    "subtype": "direct-data-lookup",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "dbc712dd7c",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237793.132138,
+   "seconds": 4.2,
+   "meta": {
+    "skill": "CTC",
+    "subtype": "same-evidence-rival-explanation",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "317962651f",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237792.039396,
+   "seconds": 4.6,
+   "meta": {
+    "skill": "Q.C.",
+    "subtype": "reverse-mean-find-unknown",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "a20f14d138",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237791.3290398,
+   "seconds": 4.6,
+   "meta": {
+    "skill": "Q.C.",
+    "subtype": "reverse-mean-find-unknown",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "9674bb2b49",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237790.699618,
+   "seconds": 4.7,
+   "meta": {
+    "skill": "Q.B.",
+    "subtype": "growth-multiplier-expression",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "583ec2e879",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237791.097981,
+   "seconds": 4.1,
+   "meta": {
+    "skill": "Q.B.",
+    "subtype": "growth-multiplier-expression",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "5a19323cc1",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237790.6826408,
+   "seconds": 3.6,
+   "meta": {
+    "skill": "Q.D.",
+    "subtype": "classify-function-growth",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "7948680e96",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237789.195476,
+   "seconds": 3.7,
+   "meta": {
+    "skill": "S.D.",
+    "subtype": "arc-length-sector-proportion",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "7ee10e3545",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237789.2011478,
+   "seconds": 3.7,
+   "meta": {
+    "skill": "Q.D.",
+    "subtype": "classify-function-growth",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "c734d8d050",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237788.43282,
+   "seconds": 4.1,
+   "meta": {
+    "skill": "S.D.",
+    "subtype": "arc-length-sector-proportion",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "2061888803",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237787.450013,
+   "seconds": 4.3,
+   "meta": {
+    "skill": "H.D.",
+    "subtype": "word-problem-build-the-system",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "f841c0af72",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237786.607195,
+   "seconds": 4.4,
+   "meta": {
+    "skill": "CID",
+    "subtype": "stated-detail-retrieval",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "bb309e2994",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237786.606476,
+   "seconds": 4.1,
+   "meta": {
+    "skill": "P.B.",
+    "subtype": "system-graph-match-or-read",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "6196769bf0",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237786.2787058,
+   "seconds": 4.2,
+   "meta": {
+    "skill": "P.B.",
+    "subtype": "rational-radical-extraneous",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "4515399796",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237786.2033,
+   "seconds": 4.2,
+   "meta": {
+    "skill": "P.B.",
+    "subtype": "rational-radical-extraneous",
+    "difficulty": "E",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "cb691ed30f",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237784.89585,
+   "seconds": 4.1,
+   "meta": {
+    "skill": "Q.F.",
+    "subtype": "interpret-estimate-plus-minus-moe",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "a82ff660ca",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237784.519233,
+   "seconds": 4.2,
+   "meta": {
+    "skill": "Q.F.",
+    "subtype": "interpret-estimate-plus-minus-moe",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
+  },
+  {
+   "id": "3bd1efae80",
+   "kind": "author",
+   "status": "error",
+   "started_at": 1791237784.0191722,
+   "seconds": 4.0,
+   "meta": {
+    "skill": "CID",
+    "subtype": "describe-a-specific-item",
+    "difficulty": "H",
+    "model": "claude-opus-5-5",
+    "asked": 5,
+    "fmt": "mc"
+   },
+   "counts": {},
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "the run raised an error"
+    },
+    {
+     "level": "bad",
+     "text": "produced no items"
+    },
+    {
+     "level": "warn",
+     "text": "RuntimeError: "
+    }
+   ]
   }
  ],
  "summary": {
-  "ok": 127,
-  "alert:bad": 1,
-  "alert:warn": 5
+  "ok": 3,
+  "alert:bad": 395,
+  "alert:warn": 198,
+  "error": 197
  },
- "generated_at": 1791235049.264941
+ "generated_at": 1791243315.6588721
 }

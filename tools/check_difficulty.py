@@ -27,6 +27,7 @@ from concurrent.futures import ThreadPoolExecutor
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
+from cli import call_json_array               # noqa: E402
 from agentlog import run                                # noqa: E402
 
 BANK = os.path.join(ROOT, "data", "bank")
@@ -69,17 +70,7 @@ def render(it):
 
 
 def call(prompt, model):
-    proc = subprocess.run(
-        ["claude", "-p", prompt, "--model", model],
-        capture_output=True, text=True, timeout=240,
-        env={**os.environ,
-             "PATH": os.environ["PATH"] + ":" + os.path.expanduser("~/.local/bin")})
-    if proc.returncode != 0:
-        raise RuntimeError(proc.stderr.strip()[:200] or f"exit {proc.returncode}")
-    i = proc.stdout.find("[")
-    if i == -1:
-        raise ValueError("no JSON array")
-    return json.JSONDecoder().raw_decode(proc.stdout[i:])[0]
+    return call_json_array(prompt, model, timeout=240)
 
 
 def main():

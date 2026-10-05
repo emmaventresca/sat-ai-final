@@ -1,0 +1,403 @@
+[
+ {
+  "stem": "Line $j$ is perpendicular to line $k$ in the $xy$-plane and passes through the point $(6, 4)$. What is the $y$-coordinate of the $y$-intercept of line $j$?",
+  "stimulus": "On a site plan for a new overpass, a civil engineer models the centerline of a concrete drainage culvert as line $k$, defined by $3x + 5y = 15$, where both axes are measured in meters. A steel service pipe, modeled by line $j$, must meet the culvert at a right angle.",
+  "choices": [
+   "$-6$",
+   "$\\frac{2}{5}$",
+   "$\\frac{38}{5}$",
+   "$14$"
+  ],
+  "answer": "A",
+  "explanation": "For $Ax + By = C$ the slope is $-\\frac{A}{B}$, so line $k$ has slope $-\\frac{3}{5}$. A perpendicular line uses the negative reciprocal, so line $j$ has slope $\\frac{5}{3}$. Put $(6, 4)$ into $y = \\frac{5}{3}x + b$: $4 = 10 + b$, so $b = -6$.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You changed the sign of $-\\frac{3}{5}$ but didn't flip the fraction, so you used slope $\\frac{3}{5}$. Then $4 = \\frac{18}{5} + b$ gives $b = \\frac{2}{5}$."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You kept the original slope $-\\frac{3}{5}$. That builds a line parallel to the culvert, not perpendicular to it: $4 = -\\frac{18}{5} + b$ gives $\\frac{38}{5}$."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You flipped the fraction to $\\frac{5}{3}$ but kept the negative sign, so you used slope $-\\frac{5}{3}$. Then $4 = -10 + b$ gives $14$."
+   }
+  },
+  "id": "orig-perpendicular--H-748688",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-perpendicular--H-748688",
+   "structure": [],
+   "solve_error": "claude CLI exited 1 with no message",
+   "overlap": [
+    "__var__ what is the __var__ coordinate of the",
+    "what is the __var__ coordinate of the __var__",
+    "is the __var__ coordinate of the __var__ intercept",
+    "the __var__ coordinate of the __var__ intercept of"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Line $q$ is parallel to line $p$ and passes through the point $(2, 5)$. If the point $(8, b)$ lies on line $q$, what is the value of $b$?",
+  "stimulus": "An ornithologist plots the flight paths of migrating Arctic terns on a coordinate grid laid over a coastal map, with both axes in kilometers. One tern's straight path is modeled by line $p$, which passes through the points $(-2, 7)$ and $(4, -2)$. A second tern flew a straight path, modeled by line $q$.",
+  "choices": [
+   "$-8$",
+   "$-4$",
+   "$1$",
+   "$9$"
+  ],
+  "answer": "B",
+  "explanation": "The slope of line $p$ is $\\frac{-2 - 7}{4 - (-2)} = \\frac{-9}{6} = -\\frac{3}{2}$. Parallel lines have the same slope. Moving from $x = 2$ to $x = 8$ is a run of $6$, so $y$ changes by $-\\frac{3}{2}(6) = -9$. That gives $b = 5 - 9 = -4$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You found the $y$-value at $x = 8$ on line $p$, starting from $(-2, 7)$: $7 - \\frac{3}{2}(10) = -8$. The question asks about line $q$, which goes through $(2, 5)$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided run by rise and got a slope of $-\\frac{2}{3}$. Then $5 - \\frac{2}{3}(6) = 1$. Slope is rise over run."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the negative reciprocal, $\\frac{2}{3}$, which is the slope of a perpendicular line. Then $5 + 4 = 9$. Parallel lines keep the original slope."
+   }
+  },
+  "id": "orig-perpendicular--H-30b5af",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-perpendicular--H-30b5af",
+   "structure": [],
+   "solve_error": "claude CLI exited 1 with no message",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Line $n$ is perpendicular to line $m$ and intersects line $m$ at the $x$-intercept of line $m$. Which equation defines line $n$?",
+  "stimulus": "A city planner's map of a riverside district uses a coordinate grid in hundreds of meters. Line $m$, shown, represents Harbor Road. Line $n$ represents a planned protected bike lane.",
+  "figure": {
+   "type": "line",
+   "caption": "Harbor Road (line $m$)",
+   "x_label": "x",
+   "y_label": "y",
+   "points": [
+    [
+     -3,
+     6
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     9,
+     -2
+    ]
+   ],
+   "x_min": -3,
+   "x_max": 9,
+   "x_step": 3,
+   "y_min": -4,
+   "y_max": 8,
+   "y_step": 2,
+   "alt": "A straight line in the xy-plane passing through the plotted points (-3, 6), (0, 4), (3, 2), (6, 0), and (9, -2)."
+  },
+  "choices": [
+   "$y = -\\frac{3}{2}x + 9$",
+   "$y = \\frac{2}{3}x - 4$",
+   "$y = \\frac{3}{2}x - 9$",
+   "$y = \\frac{3}{2}x + 4$"
+  ],
+  "answer": "C",
+  "explanation": "Line $m$ passes through $(0, 4)$ and $(6, 0)$, so its slope is $\\frac{0 - 4}{6 - 0} = -\\frac{2}{3}$, and its $x$-intercept is $(6, 0)$. The perpendicular slope is $\\frac{3}{2}$. Substitute $(6, 0)$ into $y = \\frac{3}{2}x + b$: $0 = 9 + b$, so $b = -9$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You flipped $-\\frac{2}{3}$ to $-\\frac{3}{2}$ but didn't change the sign. This line goes through $(6, 0)$, but it is not perpendicular to line $m$."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You changed the sign to $\\frac{2}{3}$ but didn't flip the fraction. This line goes through $(6, 0)$, but its slope isn't the negative reciprocal."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "The slope $\\frac{3}{2}$ is correct, but you used line $m$'s $y$-intercept, $4$. Line $n$ must cross line $m$ at the $x$-intercept $(6, 0)$, and this line doesn't pass through that point."
+   }
+  },
+  "id": "orig-perpendicular--H-14ef4f",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-perpendicular--H-14ef4f",
+   "structure": [],
+   "solve_error": "claude CLI exited 1 with no message",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Line $s$ is parallel to line $r$ and passes through the points $(0, 3)$ and $(14, k)$, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "A meteorologist plots weather features on a regional forecast grid in which each unit is 50 kilometers. The leading edge of a cold front is modeled by line $r$, defined by $2x - 7y = 14$. A trailing squall line, modeled by line $s$, is moving in the same direction as the front.",
+  "choices": [
+   "$-1$",
+   "$2$",
+   "$7$",
+   "$31$"
+  ],
+  "answer": "C",
+  "explanation": "For $2x - 7y = 14$, the slope is $-\\frac{A}{B} = -\\frac{2}{-7} = \\frac{2}{7}$. Line $s$ is parallel, so it has slope $\\frac{2}{7}$, and its $y$-intercept is $3$. At $x = 14$: $k = \\frac{2}{7}(14) + 3 = 4 + 3 = 7$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost the sign of $B = -7$ when you computed $-\\frac{A}{B}$, so you got a slope of $-\\frac{2}{7}$. Then $-4 + 3 = -1$."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You found the $y$-value of line $r$ at $x = 14$: $28 - 7y = 14$ gives $y = 2$. The point $(14, k)$ is on line $s$, which is shifted to pass through $(0, 3)$."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the coefficient $A = 2$ as the slope, then computed $2(14) + 3 = 31$. In standard form, the slope is $-\\frac{A}{B}$, not $A$."
+   }
+  },
+  "id": "orig-perpendicular--H-0a908a",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-perpendicular--H-0a908a",
+   "structure": [],
+   "solve_error": "claude CLI exited 1 with no message",
+   "overlap": [
+    "__var__ and passes through the points __var__ and",
+    "and passes through the points __var__ and __var__",
+    "__var__ and __var__ where __var__ is a constant",
+    "and __var__ where __var__ is a constant what"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Line $f$ is defined by $ax + 4y = 12$, where $a$ is a constant. Line $g$ is perpendicular to line $f$ in the $xy$-plane and has a slope of $\\frac{2}{3}$. What is the value of $a$?",
+  "stimulus": "A seismologist maps the surface trace of a strike-slip fault as line $f$ on a grid measured in kilometers. A line of seismometers, modeled by line $g$, is laid out at right angles to the fault trace.",
+  "choices": [
+   "$-6$",
+   "$-\\frac{8}{3}$",
+   "$\\frac{8}{3}$",
+   "$6$"
+  ],
+  "answer": "D",
+  "explanation": "Line $f$ must have the negative reciprocal of $\\frac{2}{3}$ as its slope, which is $-\\frac{3}{2}$. The slope of $ax + 4y = 12$ is $-\\frac{a}{4}$. Setting $-\\frac{a}{4} = -\\frac{3}{2}$ gives $a = 6$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You flipped $\\frac{2}{3}$ to $\\frac{3}{2}$ but didn't change the sign. Then $-\\frac{a}{4} = \\frac{3}{2}$ gives $a = -6$, and with that value the two lines aren't perpendicular."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You set line $f$'s slope equal to $\\frac{2}{3}$. That is the condition for parallel lines: $-\\frac{a}{4} = \\frac{2}{3}$ gives $a = -\\frac{8}{3}$."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You changed the sign of $\\frac{2}{3}$ but didn't flip it. Then $-\\frac{a}{4} = -\\frac{2}{3}$ gives $a = \\frac{8}{3}$."
+   }
+  },
+  "id": "orig-perpendicular--H-598672",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-perpendicular--H-598672",
+   "structure": [],
+   "solve_error": "claude CLI exited 1 with no message",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Line $v$ is perpendicular to line $u$ and passes through the point $(-1, 6)$. What is the $x$-coordinate of the $x$-intercept of line $v$?",
+  "stimulus": "A marine biologist surveying a coral reef lays a straight transect line, modeled by line $u$, on a seafloor grid measured in meters. Line $u$ passes through the points $(1, -3)$ and $(5, 3)$. A second transect, modeled by line $v$, is laid across the first to sample the reef's width.",
+  "choices": [
+   "$-5$",
+   "$3$",
+   "$\\frac{16}{3}$",
+   "$8$"
+  ],
+  "answer": "D",
+  "explanation": "Line $u$ has slope $\\frac{3 - (-3)}{5 - 1} = \\frac{6}{4} = \\frac{3}{2}$, so line $v$ has slope $-\\frac{2}{3}$. The equation is $y - 6 = -\\frac{2}{3}(x + 1)$. Set $y = 0$: $-6 = -\\frac{2}{3}(x + 1)$, so $x + 1 = 9$ and $x = 8$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You kept the slope $\\frac{3}{2}$, which makes a line parallel to $u$. Then $-6 = \\frac{3}{2}(x + 1)$ gives $x = -5$."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used $-\\frac{3}{2}$: you changed the sign but didn't flip the fraction. Then $-6 = -\\frac{3}{2}(x + 1)$ gives $x + 1 = 4$, so $x = 3$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the $y$-intercept instead. Setting $x = 0$ gives $y = 6 - \\frac{2}{3} = \\frac{16}{3}$. The question asks where the line crosses the $x$-axis, so set $y = 0$."
+   }
+  },
+  "id": "orig-perpendicular--H-79ff28",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-perpendicular--H-79ff28",
+   "structure": [],
+   "solve_error": "claude CLI exited 1 with no message",
+   "overlap": [
+    "__var__ what is the __var__ coordinate of the",
+    "what is the __var__ coordinate of the __var__",
+    "is the __var__ coordinate of the __var__ intercept",
+    "the __var__ coordinate of the __var__ intercept of"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Line $w$ is perpendicular to line $t$ and passes through the point $(10, 1)$. Which of the following points also lies on line $w$?",
+  "stimulus": "A textile historian studying an eighteenth-century wool coverlet places a coordinate grid over a photograph of the cloth, in millimeters. The diagonal rib of the twill weave follows line $t$, defined by $y - 2 = -\\frac{5}{4}(x + 3)$. A repair stitch, modeled by line $w$, crosses the rib at a right angle.",
+  "choices": [
+   "$(15, 5)$",
+   "$(14, 6)$",
+   "$(15, -3)$",
+   "$(14, -4)$"
+  ],
+  "answer": "A",
+  "explanation": "Point-slope form gives you the slope directly: line $t$ has slope $-\\frac{5}{4}$. The perpendicular slope is $\\frac{4}{5}$. From $(10, 1)$, a run of $5$ gives a rise of $4$, which lands on $(15, 5)$.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You changed the sign to $\\frac{5}{4}$ but didn't flip the fraction. From $(10, 1)$, a run of $4$ and a rise of $5$ lands on $(14, 6)$."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You flipped to $\\frac{4}{5}$ but kept the negative sign, so you used $-\\frac{4}{5}$. From $(10, 1)$, a run of $5$ and a drop of $4$ lands on $(15, -3)$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You kept the original slope $-\\frac{5}{4}$, which makes a line parallel to the rib. From $(10, 1)$, a run of $4$ and a drop of $5$ lands on $(14, -4)$."
+   }
+  },
+  "id": "orig-perpendicular--H-d87d35",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-perpendicular--H-d87d35",
+   "structure": [],
+   "solve_error": "claude CLI exited 1 with no message",
+   "overlap": [
+    "the point __var__ which of the following points",
+    "point __var__ which of the following points also",
+    "__var__ which of the following points also lies",
+    "which of the following points also lies on",
+    "of the following points also lies on line",
+    "the following points also lies on line __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "Line $h$ is perpendicular to line $g$ in the $xy$-plane and intersects line $g$ at the point $(4, 3)$. Which equation defines line $h$?",
+  "stimulus": "At an excavation of a Bronze Age settlement, archaeologists record finds on a site grid measured in meters. The buried foundation of a long wall runs along line $g$, which passes through the points $(-2, -1)$ and $(4, 3)$. A second wall, modeled by line $h$, meets the first at a corner.",
+  "choices": [
+   "$2x - 3y = -1$",
+   "$3x + 2y = 18$",
+   "$2x + 3y = 17$",
+   "$3x - 2y = 6$"
+  ],
+  "answer": "B",
+  "explanation": "Line $g$ has slope $\\frac{3 - (-1)}{4 - (-2)} = \\frac{4}{6} = \\frac{2}{3}$, so line $h$ needs slope $-\\frac{3}{2}$. All four equations pass through $(4, 3)$, so the slope decides it. For $3x + 2y = 18$, the slope is $-\\frac{A}{B} = -\\frac{3}{2}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "This equation has slope $-\\frac{2}{-3} = \\frac{2}{3}$, which is line $g$ itself. You matched the given slope instead of the perpendicular one."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This equation has slope $-\\frac{2}{3}$. You changed the sign of $\\frac{2}{3}$ but didn't flip it, or you read $A$ and $B$ in the wrong order when you checked $-\\frac{A}{B}$."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This equation has slope $-\\frac{3}{-2} = \\frac{3}{2}$. You flipped the fraction but didn't change the sign, so the lines aren't perpendicular."
+   }
+  },
+  "id": "orig-perpendicular--H-bf382d",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-perpendicular--H-bf382d",
+   "structure": [],
+   "solve_error": "claude CLI exited 1 with no message",
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

@@ -20,6 +20,7 @@ ROOT = os.path.dirname(HERE)
 BANK = os.path.join(ROOT, "data", "bank")
 CORPUS = os.path.join(ROOT, "corpus", "bank")
 sys.path.insert(0, HERE)
+from cli import Exhausted                               # noqa: E402
 from sanitize import sanitize                            # noqa: E402,F401
 
 
@@ -127,6 +128,15 @@ def main():
             head = f"[{k}/{len(jobs)}] {j['subtype']} {j['tier']} +{j['n']}"
             try:
                 ok, msg = fut.result()
+            except Exhausted as exc:
+                # The limit is gone, not the work. Stop asking, leave the rest
+                # on the to-do list, and say so plainly - a log full of
+                # "FAILED" reads like 287 bad cells when it is one outage.
+                with lock:
+                    print(f"\n{exc}", flush=True)
+                for f in futures:
+                    f.cancel()
+                break
             except Exception as exc:
                 ok, msg = False, str(exc)[:160]
             with lock:
@@ -136,7 +146,11 @@ def main():
                 else:
                     failed += 1
                     print(f"{head:62} FAILED: {msg}", flush=True)
+    from cli import BREAKER
     print(f"\n{done} cells written, {failed} failed")
+    if BREAKER.open:
+        print("the rest were not attempted - rerun this command when the "
+              "usage limit resets and it will pick up where it stopped")
     return 1 if failed and not done else 0
 
 

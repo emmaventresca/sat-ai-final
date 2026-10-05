@@ -38,6 +38,7 @@ CORPUS = os.path.join(ROOT, "corpus", "bank")
 sys.path.insert(0, HERE)
 from sanitize import sanitize, to_text                  # noqa: E402
 from agentlog import run                                # noqa: E402
+from cli import call_json_array, call_json_object       # noqa: E402
 
 _lock = threading.Lock()
 LETTERS = "ABCD"
@@ -433,37 +434,11 @@ Name it in second_defensible and leave ambiguous false."""
 
 
 def call_list(prompt, model):
-    proc = subprocess.run(
-        ["claude", "-p", prompt, "--model", model],
-        capture_output=True, text=True, timeout=900,
-        env={**os.environ, "PATH": os.environ["PATH"] + ":" + os.path.expanduser("~/.local/bin")},
-    )
-    if proc.returncode != 0:
-        # stderr is sometimes empty on a failed call, and an empty message
-        # then reads as falsy everywhere downstream - which is how 219 items
-        # were recorded as quality failures when they had simply never been
-        # solved. Always carry something truthy.
-        raise RuntimeError(proc.stderr.strip()[:200]
-                           or f"claude CLI exited {proc.returncode} with no message")
-    i = proc.stdout.find("[")
-    if i == -1:
-        raise ValueError(f"no JSON array in output (got {len(proc.stdout)} chars)")
-    return json.JSONDecoder().raw_decode(proc.stdout[i:])[0]
+    return call_json_array(prompt, model)
 
 
 def call(prompt, model):
-    proc = subprocess.run(
-        ["claude", "-p", prompt, "--model", model],
-        capture_output=True, text=True, timeout=600,
-        env={**os.environ, "PATH": os.environ["PATH"] + ":" + os.path.expanduser("~/.local/bin")},
-    )
-    if proc.returncode != 0:
-        raise RuntimeError(proc.stderr[:200])
-    i = proc.stdout.find("{")
-    if i == -1:
-        raise ValueError("no JSON")
-    parsed, _ = json.JSONDecoder().raw_decode(proc.stdout[i:])
-    return parsed
+    return call_json_object(prompt, model)
 
 
 # ---------------------------------------------------------------------------

@@ -35,6 +35,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 BANK = os.path.join(ROOT, "data", "bank")
+sys.path.insert(0, HERE)
+from cli import Exhausted                               # noqa: E402
 
 
 def load(name):
@@ -187,6 +189,15 @@ def main():
             head = f"[{k}/{len(jobs)}] {j['subtype']} {j['tier']} +{j['n']}"
             try:
                 ok, msg = fut.result()
+            except Exhausted as exc:
+                # The limit is gone, not the work. Stop asking, leave the rest
+                # on the to-do list, and say so plainly - a log full of
+                # "FAILED" reads like 287 bad cells when it is one outage.
+                with lock:
+                    print(f"\n{exc}", flush=True)
+                for f in futures:
+                    f.cancel()
+                break
             except Exception as exc:
                 ok, msg = False, str(exc)[:160]
             with lock:
@@ -197,7 +208,11 @@ def main():
                     failed += 1
                     print(f"{head:62} FAILED: {msg}", flush=True)
 
+    from cli import BREAKER
     print(f"\n{done} cells written, {failed} failed")
+    if BREAKER.open:
+        print("the rest were not attempted - rerun this command when the "
+              "usage limit resets and it will pick up where it stopped")
     print("now run: verify_items.py, then check_difficulty.py, "
           "then build_bank_index.py")
     return 1 if failed and not done else 0

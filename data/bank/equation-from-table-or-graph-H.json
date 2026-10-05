@@ -1,0 +1,454 @@
+[
+ {
+  "stem": "The table shows three values of $x$ and their corresponding values of $y$. Which equation represents the linear relationship between $x$ and $y$?",
+  "stimulus": "An archaeologist dating the sediment layers at an excavation uses a linear model relating $x$, the depth of a layer below the site's reference marker, in centimeters, and $y$, the estimated age of that layer, in years.\n\nSediment Layer Depth and Estimated Age\nDepth, $x$ (cm) | Age, $y$ (years)\n20 | 800\n35 | 1,100\n50 | 1,400",
+  "choices": [
+   "$y = 20x + 800$",
+   "$y = 20x + 400$",
+   "$y = 25x + 300$",
+   "$y = \\frac{1}{20}x + 799$"
+  ],
+  "answer": "B",
+  "explanation": "Use two rows to find the slope: $\\frac{1,100 - 800}{35 - 20} = \\frac{300}{15} = 20$. Then substitute $(20, 800)$ into $y = 20x + b$: $800 = 400 + b$, so $b = 400$. Check the third row: $20(50) + 400 = 1,400$. The equation is $y = 20x + 400$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used 800, the first age in the table, as the y-intercept. That age is for a depth of 20 cm, not 0 cm, so it isn't the starting value. At $x = 20$ this equation gives 1,200, not 800."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "This line passes through $(20, 800)$, so it works if you check only the first row. At $x = 35$ it gives 1,175, not 1,100. A correct equation has to work for every row."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the slope as run over rise ($\\frac{15}{300} = \\frac{1}{20}$) instead of rise over run, then picked the intercept so the line would pass through $(20, 800)$. It fails at $x = 35$."
+   }
+  },
+  "id": "orig-equation-from--H-26f0bb",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-equation-from--H-26f0bb",
+   "structure": [],
+   "solve_error": "claude CLI exited 1 with no message",
+   "overlap": [
+    "their corresponding values of __var__ which equation represents",
+    "corresponding values of __var__ which equation represents the",
+    "values of __var__ which equation represents the linear",
+    "of __var__ which equation represents the linear relationship",
+    "__var__ which equation represents the linear relationship between",
+    "which equation represents the linear relationship between __var__",
+    "equation represents the linear relationship between __var__ and",
+    "represents the linear relationship between __var__ and __var__"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which equation represents the linear relationship between $x$ and $y$?",
+  "stimulus": "A marine biologist recorded the water temperature at several depths during one descent of a research submersible through a thermocline. The graph shows the linear relationship between $x$, the depth, in meters, and $y$, the water temperature, in degrees Celsius.",
+  "figure": {
+   "type": "line",
+   "caption": "Water Temperature by Depth",
+   "x_label": "Depth, x (meters)",
+   "y_label": "Temperature, y (\u00b0C)",
+   "points": [
+    [
+     10,
+     26
+    ],
+    [
+     20,
+     22
+    ],
+    [
+     30,
+     18
+    ],
+    [
+     40,
+     14
+    ],
+    [
+     50,
+     10
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 60,
+   "x_step": 10,
+   "y_min": 0,
+   "y_max": 30,
+   "y_step": 2,
+   "alt": "A line falling from left to right through the points (10, 26), (20, 22), (30, 18), (40, 14), and (50, 10)."
+  },
+  "choices": [
+   "$5x + 2y = 60$",
+   "$2x - 5y = -150$",
+   "$2x + 5y = 150$",
+   "$2x + 5y = 130$"
+  ],
+  "answer": "C",
+  "explanation": "From $(10, 26)$ to $(20, 22)$, the slope is $\\frac{22 - 26}{20 - 10} = -\\frac{2}{5}$. Substitute $(10, 26)$: $26 = -\\frac{2}{5}(10) + b$, so $b = 30$. Multiply $y = -\\frac{2}{5}x + 30$ by 5 to get $5y = -2x + 150$, which is $2x + 5y = 150$. Check $(50, 10)$: $100 + 50 = 150$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You calculated the slope as run over rise, so you got $-\\frac{5}{2}$ instead of $-\\frac{2}{5}$. This line has the correct intercept, 30, but it drops far too steeply and misses every plotted point."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "Solving for $y$ gives $y = \\frac{2}{5}x + 30$. That slope is positive, but the temperature falls as depth increases. You made a sign error when you rearranged the equation."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This line has a y-intercept of 26, the temperature at the first plotted point. That point is at a depth of 10 meters, not 0, so 26 isn't the y-intercept. At $x = 10$ this equation gives $y = 22$."
+   }
+  },
+  "id": "orig-equation-from--H-502cf2",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-equation-from--H-502cf2",
+   "structure": [],
+   "solve_error": "claude CLI exited 1 with no message",
+   "overlap": [
+    "the graph shows the linear relationship between __var__",
+    "which equation represents the linear relationship between __var__",
+    "equation represents the linear relationship between __var__ and",
+    "represents the linear relationship between __var__ and __var__"
+   ],
+   "residue": 7
+  }
+ },
+ {
+  "stem": "Which table gives three values of $x$ and their corresponding values of $y$ for the given equation?",
+  "stimulus": "A cartographer represents the straight edge of a surveyed property boundary on a coordinate grid with the equation $3x - 4y = 24$, where $x$ and $y$ are grid coordinates, in kilometers, measured from a fixed benchmark.",
+  "choices": [
+   "$x$: $0, 4, 8$; $y$: $-6, -3, 0$",
+   "$x$: $0, 4, 8$; $y$: $6, 3, 0$",
+   "$x$: $0, 4, 8$; $y$: $-8, -5, -2$",
+   "$x$: $0, 4, 8$; $y$: $-6, -3, -1$"
+  ],
+  "answer": "A",
+  "explanation": "Substitute each x-value into $3x - 4y = 24$. When $x = 0$, $-4y = 24$, so $y = -6$. When $x = 4$, $12 - 4y = 24$, so $y = -3$. When $x = 8$, $24 - 4y = 24$, so $y = 0$. Only this table works for all three rows.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This table gets the signs of the y-intercept and the slope wrong. It does share the x-intercept $(8, 0)$, so it looks right if you check only that row. At $x = 0$, though, $3(0) - 4(6) = -24$, not 24."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided 24 by 3 instead of by 4 when you found the y-intercept, which gave $-8$. The slope of $\\frac{3}{4}$ is right, but $3(0) - 4(-8) = 32$, not 24."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "The first two rows fit the equation, but at $x = 8$ you get $24 - 4(-1) = 28$, not 24. You have to check every row before you choose a table."
+   }
+  },
+  "id": "orig-equation-from--H-0d6cd1",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-equation-from--H-0d6cd1",
+   "structure": [],
+   "solve_error": "claude CLI exited 1 with no message",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The table shows three values of $x$ and their corresponding values of $y$, where $k$ is a positive constant. Which equation represents the linear relationship between $x$ and $y$?",
+  "stimulus": "A materials scientist heats an alloy rod and records its length. In the table, $x$ is the increase in the rod's temperature, in degrees Celsius, and $y$ is the length of the rod, in millimeters.\n\nAlloy Rod Length During Heating\nTemperature increase, $x$ (\u00b0C) | Length, $y$ (mm)\n20 | $k + 1$\n60 | $k + 3$\n100 | $k + 5$",
+  "choices": [
+   "$y = 20x + k$",
+   "$y = \\frac{1}{20}(x + k)$",
+   "$y = \\frac{1}{20}x + k + 1$",
+   "$y = \\frac{1}{20}x + k$"
+  ],
+  "answer": "D",
+  "explanation": "The slope is $\\frac{(k + 3) - (k + 1)}{60 - 20} = \\frac{2}{40} = \\frac{1}{20}$. Substitute $(20, k + 1)$ into $y = \\frac{1}{20}x + b$: $k + 1 = 1 + b$, so $b = k$. Check $x = 100$: $5 + k$. The equation is $y = \\frac{1}{20}x + k$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You calculated the slope as run over rise, $\\frac{40}{2} = 20$. At $x = 20$ this equation gives $400 + k$, not $k + 1$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You put $k$ inside the parentheses, which divides it by 20 as well. At $x = 20$ this gives $1 + \\frac{k}{20}$, which equals $k + 1$ only if $k = 0$, and $k$ is positive."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took $k + 1$, the length in the first row, as the y-intercept. That length is for $x = 20$, not $x = 0$. At $x = 20$ this equation gives $k + 2$."
+   }
+  },
+  "id": "orig-equation-from--H-be8db6",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-equation-from--H-be8db6",
+   "structure": [],
+   "solve_error": "claude CLI exited 1 with no message",
+   "overlap": [
+    "__var__ where __var__ is a positive constant which",
+    "which equation represents the linear relationship between __var__",
+    "equation represents the linear relationship between __var__ and",
+    "represents the linear relationship between __var__ and __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "The table shows three values of $x$ and their corresponding values of $y$. Which equation represents the linear relationship between $x$ and $y$?",
+  "stimulus": "A paleobotanist analyzing a lake-sediment core estimated the percentage of fossil pollen grains that came from conifers. In the table, $x$ is the age of a sediment sample, in thousands of years, and $y$ is the percentage of conifer pollen in that sample.\n\nConifer Pollen in Sediment Samples\nAge, $x$ (thousands of years) | Conifer pollen, $y$ (%)\n6 | 41\n9 | 35\n15 | 23",
+  "choices": [
+   "$y = 2x + 29$",
+   "$y = -2x + 53$",
+   "$y = -\\frac{1}{2}x + 44$",
+   "$y = -2x + 41$"
+  ],
+  "answer": "B",
+  "explanation": "The slope is $\\frac{35 - 41}{9 - 6} = \\frac{-6}{3} = -2$. The rows are not evenly spaced, so check the next pair as well: $\\frac{23 - 35}{15 - 9} = -2$. Substitute $(6, 41)$: $41 = -12 + b$, so $b = 53$. The equation is $y = -2x + 53$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This line has the wrong sign of slope. It passes through $(6, 41)$, but y decreases as x increases. At $x = 9$ this equation gives 47, not 35."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You calculated the slope as run over rise, $\\frac{3}{-6} = -\\frac{1}{2}$, then forced the line through $(6, 41)$. At $x = 9$ it gives 39.5, not 35."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used 41, the y-value in the first row, as the y-intercept. That row has $x = 6$, not $x = 0$, so this line misses every point in the table."
+   }
+  },
+  "id": "orig-equation-from--H-20182e",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-equation-from--H-20182e",
+   "structure": [],
+   "solve_error": "claude CLI exited 1 with no message",
+   "overlap": [
+    "their corresponding values of __var__ which equation represents",
+    "corresponding values of __var__ which equation represents the",
+    "values of __var__ which equation represents the linear",
+    "of __var__ which equation represents the linear relationship",
+    "__var__ which equation represents the linear relationship between",
+    "which equation represents the linear relationship between __var__",
+    "equation represents the linear relationship between __var__ and",
+    "represents the linear relationship between __var__ and __var__"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which table gives three values of $x$ and their corresponding values of $y$ for the given equation?",
+  "stimulus": "A nutrition researcher models the protein in a lunch plan made of a fixed base meal plus $x$ servings of a protein bar. The total protein in the lunch, $y$, in grams, is given by the equation $y - 30 = 8(x - 2)$.",
+  "choices": [
+   "$x$: $0, 2, 4$; $y$: $28, 44, 60$",
+   "$x$: $0, 2, 4$; $y$: $30, 46, 62$",
+   "$x$: $0, 2, 4$; $y$: $14, 30, 46$",
+   "$x$: $0, 2, 4$; $y$: $-14, 2, 18$"
+  ],
+  "answer": "C",
+  "explanation": "The point-slope form tells you directly that the line passes through $(2, 30)$ and has a slope of 8. Expanding gives $y = 8x - 16 + 30 = 8x + 14$. So $x = 0, 2, 4$ give $y = 14, 30, 46$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You distributed 8 to $x$ but not to $-2$, which gives $y = 8x - 2 + 30 = 8x + 28$. At $x = 2$ this gives 44, but the equation requires 30."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You treated the 30 in the equation as the y-intercept. In this form, 30 is the y-value when $x = 2$, not when $x = 0$. This table has the right numbers paired with the wrong x-values."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This table has a slope of 8, but the intercept has the wrong sign: $-14$ instead of 14. You moved a term to the wrong side when you solved for $y$. At $x = 2$ it gives 2, not 30."
+   }
+  },
+  "id": "orig-equation-from--H-f0b186",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-equation-from--H-f0b186",
+   "structure": [],
+   "solve_error": "claude CLI exited 1 with no message",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation represents the linear relationship between $x$ and $y$?",
+  "stimulus": "During the rising phase of an immune response, a researcher measured the concentration of a specific antibody in a patient's blood. The graph shows the linear relationship between $x$, the number of days after vaccination, and $y$, the antibody concentration, in units per milliliter.",
+  "figure": {
+   "type": "line",
+   "caption": "Antibody Concentration After Vaccination",
+   "x_label": "Days after vaccination, x",
+   "y_label": "Concentration, y (units/mL)",
+   "points": [
+    [
+     4,
+     10
+    ],
+    [
+     8,
+     16
+    ],
+    [
+     12,
+     22
+    ],
+    [
+     16,
+     28
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 20,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 30,
+   "y_step": 2,
+   "alt": "A line rising from left to right through the points (4, 10), (8, 16), (12, 22), and (16, 28)."
+  },
+  "choices": [
+   "$y = \\frac{3}{2}x + 4$",
+   "$y = \\frac{2}{3}x + 4$",
+   "$y = 3x - 2$",
+   "$y = \\frac{3}{2}x + 10$"
+  ],
+  "answer": "A",
+  "explanation": "Between $(4, 10)$ and $(8, 16)$, the slope is $\\frac{16 - 10}{8 - 4} = \\frac{6}{4} = \\frac{3}{2}$. Substitute $(4, 10)$: $10 = 6 + b$, so $b = 4$. Check $(16, 28)$: $24 + 4 = 28$. The equation is $y = \\frac{3}{2}x + 4$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You calculated the slope as run over rise, $\\frac{4}{6} = \\frac{2}{3}$. The intercept matches, but at $x = 4$ this equation gives about 6.7, not 10."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "This line passes through $(4, 10)$, but you counted the 2 gridline intervals between $x = 4$ and $x = 8$ instead of the 4 days they represent, which doubled the slope. At $x = 8$ it gives 22, not 16."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used 10, the y-value of the first plotted point, as the y-intercept. That point is at $x = 4$, not $x = 0$. At $x = 4$ this equation gives 16."
+   }
+  },
+  "id": "orig-equation-from--H-f1c4a8",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-equation-from--H-f1c4a8",
+   "structure": [],
+   "solve_error": "claude CLI exited 1 with no message",
+   "overlap": [
+    "the graph shows the linear relationship between __var__",
+    "which equation represents the linear relationship between __var__",
+    "equation represents the linear relationship between __var__ and",
+    "represents the linear relationship between __var__ and __var__"
+   ],
+   "residue": 7
+  }
+ },
+ {
+  "stem": "The table shows three values of $x$ and their corresponding values of $y$. Which equation represents the linear relationship between $x$ and $y$?",
+  "stimulus": "At a warehouse, part-time workers earn a fixed hourly wage, and the same weekly equipment fee is deducted from every paycheck. In the table, $x$ is the number of hours a worker worked in a week, and $y$ is the worker's net pay for that week, in dollars.\n\nNet Weekly Pay\nHours worked, $x$ | Net pay, $y$ (dollars)\n10 | 120\n25 | 345\n40 | 570",
+  "choices": [
+   "$y = 15(x + 2)$",
+   "$y = 20(x - 4)$",
+   "$y = 15(x - 30)$",
+   "$y = 15(x - 2)$"
+  ],
+  "answer": "D",
+  "explanation": "The slope is $\\frac{345 - 120}{25 - 10} = \\frac{225}{15} = 15$. Substitute $(10, 120)$: $120 = 150 + b$, so $b = -30$. That gives $y = 15x - 30$, which factors as $y = 15(x - 2)$. Check $x = 40$: $15(38) = 570$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This is $y = 15x + 30$, so the intercept has the wrong sign. The fee is subtracted from pay, not added. At $x = 10$ this gives 180, not 120."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "This equation gives 120 at $x = 10$, so it passes the first row. At $x = 25$ it gives 420, not 345. Check at least two rows before you choose."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the intercept, $-30$, and then put it inside the parentheses. Factoring 15 out of $15x - 30$ leaves $x - 2$, not $x - 30$. At $x = 10$ this equation gives $-300$."
+   }
+  },
+  "id": "orig-equation-from--H-8b7886",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-equation-from--H-8b7886",
+   "structure": [],
+   "solve_error": "claude CLI exited 1 with no message",
+   "overlap": [
+    "their corresponding values of __var__ which equation represents",
+    "corresponding values of __var__ which equation represents the",
+    "values of __var__ which equation represents the linear",
+    "of __var__ which equation represents the linear relationship",
+    "__var__ which equation represents the linear relationship between",
+    "which equation represents the linear relationship between __var__",
+    "equation represents the linear relationship between __var__ and",
+    "represents the linear relationship between __var__ and __var__"
+   ],
+   "residue": 2
+  }
+ }
+]

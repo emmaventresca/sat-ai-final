@@ -30,6 +30,7 @@ from concurrent.futures import ThreadPoolExecutor
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from agentlog import run                                # noqa: E402
+from cli import call_json_array                         # noqa: E402
 ROOT = os.path.dirname(HERE)
 OUT_DIR = os.path.join(ROOT, "data", "bank")
 LICENSE = "CC BY 4.0 - original item, not College Board content"
@@ -340,18 +341,7 @@ def assert_no_cb_text(prompt):
 
 
 def call(prompt, model):
-    proc = subprocess.run(
-        ["claude", "-p", prompt, "--model", model],
-        capture_output=True, text=True, timeout=900,
-        env={**os.environ, "PATH": os.environ["PATH"] + ":" + os.path.expanduser("~/.local/bin")},
-    )
-    if proc.returncode != 0:
-        raise RuntimeError(proc.stderr[:300])
-    start = proc.stdout.find("[")
-    if start == -1:
-        raise ValueError(f"no JSON array: {proc.stdout[:200]}")
-    parsed, _ = json.JSONDecoder().raw_decode(proc.stdout[start:])
-    return parsed
+    return call_json_array(prompt, model)
 
 
 def author(skill, lesson, families, difficulty, n, model, rng,
