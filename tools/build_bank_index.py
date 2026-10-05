@@ -16,9 +16,11 @@ from collections import Counter
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BANK = os.path.join(ROOT, "data", "bank")
 
+# "figure" matters: an item that names a graph and ships without one is
+# unanswerable, and dropping the field here is a silent way to do that.
 KEEP = ("id", "type", "skill_cd", "subtype", "subtype_name", "difficulty",
         "stimulus", "stem", "choices", "answer", "explanation", "distractors",
-        "source", "license")
+        "figure", "authored_difficulty", "source", "license")
 
 
 def main():
