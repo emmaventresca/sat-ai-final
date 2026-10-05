@@ -27,7 +27,8 @@ run on every item and anything that fails is quarantined rather than shipped:
   python3 tools/verify_items.py --file TRA-M.json
 """
 import argparse, glob, json, os, re, subprocess, sys, threading
-from concurrent.futures import ThreadPoolExecutor
+from collections import Counter, defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -488,35 +489,80 @@ def main():
     totals = {"pass": 0, "review": 0, "fail": 0, "error": 0}
 
 
+    # One pool across every file, not a pool per file.
+    #
+    # A bank file holds eight to sixteen items, so batching inside a file gave
+    # one or two batches and eight workers sat idle while 140 files went
+    # through one at a time. Flattening the work list is the difference
+    # between hours and minutes, and the per-file write still happens the
+    # moment that file's last batch lands - so a run that dies partway keeps
+    # everything it has already proved.
+    jobs = []
+    pending = Counter()
+    loaded = {}
     for path in files:
         items = json.load(open(path))
         todo = [it for it in items if it.get("status") != "verified"]
         if not todo:
             continue
-        groups = [todo[i:i + args.batch] for i in range(0, len(todo), args.batch)]
-        with ThreadPoolExecutor(max_workers=args.workers) as pool:
-            reports = [r for g in pool.map(
-                lambda grp: verify_batch(grp, families, shingles, args.model, fragments),
-                groups) for r in g]
+        loaded[path] = items
+        for i in range(0, len(todo), args.batch):
+            jobs.append((path, todo[i:i + args.batch]))
+            pending[path] += 1
 
+    if not jobs:
+        print("nothing to verify")
+        return
+
+    print(f"{sum(len(b) for _, b in jobs)} items in {len(jobs)} batches "
+          f"across {len(loaded)} files, {args.workers} at a time\n", flush=True)
+
+    write_lock = threading.Lock()
+    reports_by_path = defaultdict(list)
+
+    def finish(path, reports):
+        """Write a file once every batch in it has come back."""
+        items = loaded[path]
         by_id = {r["id"]: r for r in reports}
+        counts = Counter()
         for it in items:
             r = by_id.get(it["id"])
             if not r:
                 continue
             v = verdict(r)
+            counts[v] += 1
             totals[v] += 1
             it["status"] = "verified" if v == "pass" else v
             it["verification"] = r
         json.dump(items, open(path, "w"), indent=1)
-
         name = os.path.basename(path)
-        counts = {k: sum(1 for r in reports if verdict(r) == k) for k in totals}
-        print(f"{name:22} pass {counts['pass']:3}  review {counts['review']:3}  "
-              f"fail {counts['fail']:3}  error {counts['error']:3}")
-        for r in reports:
-            v = verdict(r)
-            if v in ("fail", "review"):
+        print(f"{name:34} pass {counts['pass']:3}  review {counts['review']:3}  "
+              f"fail {counts['fail']:3}  error {counts['error']:3}", flush=True)
+        return reports
+
+    with ThreadPoolExecutor(max_workers=args.workers) as pool:
+        futures = {pool.submit(verify_batch, batch, families, shingles,
+                               args.model, fragments): path
+                   for path, batch in jobs}
+        for fut in as_completed(futures):
+            path = futures[fut]
+            try:
+                got = fut.result()
+            except Exception as exc:
+                print(f"  batch failed in {os.path.basename(path)}: "
+                      f"{str(exc)[:120]}", flush=True)
+                got = []
+            with write_lock:
+                reports_by_path[path] += got
+                pending[path] -= 1
+                if pending[path] == 0:
+                    reports = finish(path, reports_by_path.pop(path))
+                else:
+                    reports = []
+            for r in reports:
+                v = verdict(r)
+                if v not in ("fail", "review"):
+                    continue
                 why = (r["structure"] or
                        ([f"solver said {r.get('solver_answer')}"] if not r.get("agrees") else []) or
                        ([f"shares {r['residue']} words of original expression "
@@ -524,7 +570,7 @@ def main():
                        (["genuinely ambiguous: " + str(r.get("second_defensible"))]
                         if r.get("ambiguous") else []) or
                        ["solver not confident"])
-                print(f"   {v:6} {r['id']}: {why[0]}")
+                print(f"   {v:6} {r['id']}: {why[0]}", flush=True)
 
     print(f"\ntotal: {totals['pass']} pass, {totals['review']} review, "
           f"{totals['fail']} fail, {totals['error']} error")
