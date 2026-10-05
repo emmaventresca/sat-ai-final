@@ -206,8 +206,47 @@ exempt exactly those lines — 47 eight-word sequences out of 167,458.
 
 **The exemption covers instruction lines only.** Passages, answer choices and
 rationales are where the expression actually lives, and the check stays strict
-on every one of them. Our items currently show zero overlap outside the
-allowlist.
+on every one of them.
+
+### What counts as overlap — calibrated against the corpus itself
+
+The check originally failed any item sharing a single 8-word sequence with the
+corpus. That rejected **127 items that share no original expression at all**,
+for two mechanical reasons:
+
+- Normalisation collapses every variable and number to a sentinel, so
+  `triangle __var__ where __var__ __var__ and __var__ correspond` counts as a
+  match on four English words. Half the "matching" window is a placeholder.
+- A window that **straddles the boundary** between an allowlisted phrase and
+  our own content is not exempt, even when the matching half is entirely
+  boilerplate — `student has taken the following notes marine biologist`
+  matched because College Board also once wrote a notes question about a
+  marine biologist.
+
+So the gate now measures the **residue**: of the matched span, the longest run
+of consecutive words that is neither a sentinel nor inside an allowlisted
+phrase. That is the amount of original expression the two items genuinely
+share. Widening the allowlist instead would have been the wrong fix — an
+over-permissive allowlist fails open and silently.
+
+The threshold is calibrated, not chosen. Scoring **400 real College Board
+items against the rest of the corpus** gives the distribution a genuine item
+produces:
+
+| residue | share of real CB items |
+|---|---|
+| 0 words | 60% |
+| ≤4 words | 91% |
+| ≤8 words | 97% |
+| ≤12 words | 99% |
+
+Whatever a genuine College Board item scores against College Board's own bank
+cannot be evidence of copying. The gate therefore fails at **12 words** — just
+past where genuine items stop — and flags 8–11 for a human look. Of the 127
+items the old rule rejected, the worst scores **9**, and 92% score 4 or below:
+the rule was firing on mathematical formulation, not on expression. Every
+matching window is still recorded on the item either way, so nothing is
+hidden by the change.
 
 ### The same reasoning, applied to sat-mills
 

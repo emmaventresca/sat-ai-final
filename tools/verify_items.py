@@ -315,7 +315,30 @@ def corpus_shingles(n=8):
     return out
 
 
+SENTINEL = re.compile(r"^__(var|num)__$")
+
+# How much ORIGINAL expression a matching window actually shares, in
+# consecutive words. Calibrated against the corpus itself: scoring 400 real
+# College Board items against the rest of the corpus, 60% share nothing,
+# 91% stay at or below 4, and the 99th percentile is 12. Whatever a genuine
+# item scores against its own bank cannot be evidence of copying, so the gate
+# is set just past where genuine items stop.
+#
+# This replaced a plain "any 8-gram match fails" rule, which failed 127 items
+# that turned out to share no original expression at all. Two things inflated
+# the old count: normalisation collapses every variable and number to a
+# sentinel, so "triangle __var__ where __var__ __var__ and __var__ correspond"
+# counted as a match on four English words; and a window straddling the
+# boundary between an allowlisted phrase and our own content was never exempt
+# even when the matching half was entirely boilerplate. Measuring the residue
+# addresses both without widening the allowlist, which is the thing that fails
+# open and silently.
+RESIDUE_FAIL = 12
+RESIDUE_REVIEW = 8
+
+
 def overlap(it, shingles, n=8, fragments=frozenset()):
+    """Every matching window, for the record - the gate reads `residue`."""
     w = re.findall(r"[a-z']+|__var__|__num__",
                    normalize((it.get("stimulus") or "") + " " + it["stem"]))
     hits = []
@@ -325,6 +348,29 @@ def overlap(it, shingles, n=8, fragments=frozenset()):
                 and not is_boilerplate(sh, fragments)):
             hits.append(sh)
     return hits
+
+
+def residue(it, shingles, n=8, fragments=frozenset(), k=5):
+    """The longest run of matched words that is neither boilerplate nor a
+    sentinel - the original expression the two items genuinely share."""
+    w = re.findall(r"[a-z']+|__var__|__num__",
+                   normalize((it.get("stimulus") or "") + " " + it["stem"]))
+    if len(w) < n:
+        return 0
+    matched = [False] * len(w)
+    for i in range(len(w) - n + 1):
+        sh = " ".join(w[i:i + n])
+        if sh in shingles and not NUMERIC_ONLY.match(sh):
+            matched[i:i + n] = [True] * n
+    boiler = [False] * len(w)
+    for i in range(len(w) - k + 1):
+        if " ".join(w[i:i + k]) in fragments:
+            boiler[i:i + k] = [True] * k
+    best = cur = 0
+    for i, m in enumerate(matched):
+        cur = cur + 1 if (m and not boiler[i] and not SENTINEL.match(w[i])) else 0
+        best = max(best, cur)
+    return best
 
 
 # ---------------------------------------------------------------------------
@@ -356,6 +402,7 @@ def verify_batch(items, families, shingles, model, fragments=frozenset()):
             rep["problem"] = r.get("problem")
         if shingles is not None:
             rep["overlap"] = overlap(it, shingles, fragments=fragments)
+            rep["residue"] = residue(it, shingles, fragments=fragments)
     return list(reports.values())
 
 
@@ -374,6 +421,7 @@ def verify_one(it, families, shingles, model):
     report["problem"] = r.get("problem")
     if shingles is not None:
         report["overlap"] = overlap(it, shingles)
+        report["residue"] = residue(it, shingles)
     return report
 
 
@@ -388,10 +436,12 @@ def verdict(rep):
         return "fail"
     if not rep.get("agrees"):
         return "fail"
-    if rep.get("overlap"):
+    if rep.get("residue", 0) >= RESIDUE_FAIL:
         return "fail"
     # A merely *nameable* second choice is not a defect - that is a distractor
     # doing its job. Genuine ambiguity, or a solver that is not confident, is.
+    if rep.get("residue", 0) >= RESIDUE_REVIEW:
+        return "review"
     if rep.get("ambiguous"):
         return "review"
     if not rep.get("confident"):
@@ -469,7 +519,8 @@ def main():
             if v in ("fail", "review"):
                 why = (r["structure"] or
                        ([f"solver said {r.get('solver_answer')}"] if not r.get("agrees") else []) or
-                       (["verbatim overlap with CB corpus"] if r.get("overlap") else []) or
+                       ([f"shares {r['residue']} words of original expression "
+                         f"with the CB corpus"] if r.get("residue", 0) >= RESIDUE_REVIEW else []) or
                        (["genuinely ambiguous: " + str(r.get("second_defensible"))]
                         if r.get("ambiguous") else []) or
                        ["solver not confident"])
