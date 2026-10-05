@@ -176,7 +176,7 @@ export async function fetchAgentFeed() {
     if (r.ok) return { ...(await r.json()), live: true };
   } catch { /* helper not running */ }
   try {
-    const r = await fetch('../data/agent_feed.json', { cache: 'no-store' });
+    const r = await fetch('../data/agent_feed.json?v=0ecd31edc5', { cache: 'no-store' });
     if (r.ok) return { ...(await r.json()), live: false };
   } catch { /* no feed yet */ }
   return { runs: [], summary: {}, live: false };

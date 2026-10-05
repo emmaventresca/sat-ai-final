@@ -8,12 +8,19 @@ app.js. That cost an hour of debugging a feature that was already working: the
 store returned the assignment, the served file contained the code, and the page
 still rendered the previous build.
 
-Run after changing anything under web/assets/.
+The data files need the same treatment for the same reason. They are fetched
+by URL with no version on it, so a browser that loaded the bank yesterday
+keeps serving yesterday's bank - which looks exactly like a feature that does
+not work: questions whose figures "do not render" because the cached copy
+predates the figure field.
+
+Run after changing anything under web/assets/ or data/.
 """
-import hashlib, os, re
+import glob, hashlib, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WEB = os.path.join(ROOT, "web")
+DATA_FETCH = re.compile(r"""(fetch\(\s*)(['"])(\.\./data/[^'"?]+\.json)(\?v=[^'"]*)?\2""")
 REF = re.compile(r'(src|href)="(assets/[^"?]+)(\?v=[^"]*)?"')
 # Modules imported BY other modules never appear in the HTML, so stamping only
 # the HTML leaves them cached. A stale planner.js served against a fresh
@@ -22,7 +29,37 @@ REF = re.compile(r'(src|href)="(assets/[^"?]+)(\?v=[^"]*)?"')
 IMPORT = re.compile(r"""(from\s+|import\s*\(\s*)(['"])(\./[^'"?]+\.js)(\?v=[^'"]*)?\2""")
 
 
+def data_stamp():
+    """One version for the whole data directory.
+
+    Per-file stamps would be tidier, but the app loads these together and a
+    mixed set is the harder bug: a fresh practice.json against a stale
+    subtype_counts.json joins on keys that no longer line up.
+    """
+    digest = hashlib.sha1()
+    for path in sorted(glob.glob(os.path.join(ROOT, "data", "*.json"))):
+        digest.update(os.path.basename(path).encode())
+        digest.update(open(path, "rb").read())
+    return digest.hexdigest()[:10]
+
+
 def main():
+    # Data first: rewriting the fetch URLs changes the modules, and the asset
+    # stamp is a hash of the modules.
+    dstamp = data_stamp()
+    dtouched = 0
+    for name in sorted(os.listdir(os.path.join(WEB, "assets"))):
+        if not name.endswith(".js"):
+            continue
+        path = os.path.join(WEB, "assets", name)
+        s = open(path).read()
+        s2 = DATA_FETCH.sub(
+            lambda m: f"{m.group(1)}{m.group(2)}{m.group(3)}?v={dstamp}{m.group(2)}", s)
+        if s2 != s:
+            open(path, "w").write(s2)
+            dtouched += 1
+    print(f"data stamped ?v={dstamp} in {dtouched} module(s)")
+
     # Hash the content with any existing stamp stripped. Hashing the stamped
     # file means every run changes the content, which changes the hash, which
     # changes the stamp - the version churns on every invocation and busts the
