@@ -104,6 +104,42 @@ def normalize(text):
 # 1. Structure
 # ---------------------------------------------------------------------------
 
+DISPLAY = r"(table|graph|chart|figure|bar graph|scatterplot|histogram|diagram)"
+NAMES_DISPLAY = re.compile(
+    rf"(data (from|in) the {DISPLAY}"
+    rf"|the {DISPLAY} (shows|shown|above|below|displays|presents|gives)"
+    rf"|(shown|given|represented) in the {DISPLAY}"
+    rf"|according to the {DISPLAY}"
+    rf"|based on the {DISPLAY})", re.I)
+# Prose standing in for a picture instead of being one.
+NARRATES_DISPLAY = re.compile(
+    r"\b(gridlines?|the \d+(st|nd|rd|th) (horizontal|vertical) line)\b", re.I)
+DRAWABLE = {"bar", "line", "scatter", "curve"}
+
+
+def has_display(it):
+    stim = it.get("stimulus") or ""
+    if "<table" in stim:
+        return True
+    run = 0
+    for line in stim.split("\n"):          # a table is two adjacent pipe rows
+        run = run + 1 if "|" in line else 0
+        if run >= 2:
+            return True
+    fig = it.get("figure")
+    return isinstance(fig, dict) and fig.get("type") in DRAWABLE
+
+
+def figure_problems(it):
+    text = f"{it.get('stimulus') or ''}\n{it.get('stem') or ''}"
+    out = []
+    if NAMES_DISPLAY.search(text) and not has_display(it):
+        out.append("names a table or graph but shows none")
+    if NARRATES_DISPLAY.search(text):
+        out.append("describes the picture in prose instead of drawing it")
+    return out
+
+
 def check_structure(it, families):
     problems = []
     ch = it.get("choices") or []
@@ -137,6 +173,12 @@ def check_structure(it, families):
         others = [c for i, c in enumerate(ch) if i != LETTERS.index(it["answer"])]
         if others and len(correct) > 1.6 * max(len(c) for c in others):
             problems.append("correct answer is far longer than every distractor")
+
+    # A question that names a display has to show one. The blind solver does
+    # not catch this: it reads the same prose the author wrote, so a picture
+    # described in words ("the bar reaches the 4th gridline") solves fine and
+    # is unanswerable only for the student who is shown a chart instead.
+    problems += figure_problems(it)
     return problems
 
 
@@ -450,6 +492,38 @@ def verdict(rep):
     return "pass"
 
 
+def recheck(families):
+    """Re-apply the free checks to the whole bank.
+
+    Structural checks cost nothing, so whenever one is tightened it should be
+    re-applied to items that already passed - otherwise a rule added today
+    only ever guards items authored tomorrow, and the ones already marked
+    verified keep going out to students. That is exactly what happened with
+    the figure rule: twenty-one items naming a table or a graph that does not
+    exist were sitting in the served pool.
+    """
+    demoted = Counter()
+    for path in sorted(glob.glob(os.path.join(BANK, "*.json"))):
+        items = json.load(open(path))
+        changed = False
+        for it in items:
+            problems = check_structure(it, families)
+            if problems and it.get("status") == "verified":
+                it["status"] = "fail"
+                it.setdefault("verification", {})["structure"] = problems
+                demoted[problems[0]] += 1
+                changed = True
+                print(f"  demoted {it['id']}: {problems[0]}")
+        if changed:
+            json.dump(items, open(path, "w"), indent=1)
+
+    total = sum(demoted.values())
+    print(f"\n{total} previously verified item(s) demoted")
+    for why, n in demoted.most_common():
+        print(f"  {n:4}  {why}")
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--file")
@@ -464,10 +538,16 @@ def main():
     ap.add_argument("--skip-originality", action="store_true")
     ap.add_argument("--batch", type=int, default=10,
                     help="items per blind-solve call (1 = one call per item)")
+    ap.add_argument("--recheck", action="store_true",
+                    help="re-apply the structural checks to every item, "
+                         "including verified ones, and make no model calls")
     args = ap.parse_args()
 
     families = {f["slug"] for f in
                 json.load(open(os.path.join(ROOT, "data", "misconceptions.json")))["families"]}
+
+    if args.recheck:
+        return recheck(families)
 
     shingles = None
     fragments = frozenset()
