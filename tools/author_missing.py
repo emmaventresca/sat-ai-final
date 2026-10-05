@@ -41,30 +41,40 @@ def load(name):
 
 
 def authored_counts():
-    """What is already in the bank, by subtype and tier - any status.
+    """What is in the bank by subtype and tier: everything, and what passed.
 
-    Status is deliberately ignored. An item that failed verification still
-    cost a call to write, and authoring ten more on top of it is how you end
-    up paying twice for the same gap.
+    The gap-finding modes count everything, because an item that failed
+    verification still cost a call to write and authoring ten more on top of
+    it is how you pay twice for the same gap. `broken` is the exception - a
+    cell whose items were all demoted has nothing a student can actually
+    practise, however much it cost.
     """
-    counts = Counter()
+    total, good, pending = Counter(), Counter(), Counter()
     for path in glob.glob(os.path.join(BANK, "*.json")):
         for it in json.load(open(path)):
-            if it.get("subtype"):
-                counts[(it["subtype"], it["difficulty"])] += 1
-    return counts
+            if not it.get("subtype"):
+                continue
+            key = (it["subtype"], it["difficulty"])
+            total[key] += 1
+            status = it.get("status")
+            if status == "verified":
+                good[key] += 1
+            elif status in (None, "unverified"):
+                pending[key] += 1
+    return total, good, pending
 
 
-def plan(counts, per_tier, floor, mode):
+def plan(counts, good, pending, per_tier, floor, mode):
     """What to author: (skill_cd, subtype, tier, n), worst gap first.
 
     `mode` decides what counts as a gap, and it matters a lot - topping every
     cell in the taxonomy up to eight is two and a half thousand items, which
     is not the same job as giving the empty subtypes something to practise.
 
-      empty  subtypes with no questions at all - the student-visible hole
-      thin   those, plus any cell below half the target
-      all    every cell below the target
+      empty   subtypes with no questions at all - the student-visible hole
+      broken  cells where most of what exists failed verification
+      thin    empty, plus any cell below half the target
+      all     every cell below the target
     """
     freq = load("subtype_counts.json")["subtypes"]
     skills = {s["skill_name"]: s for s in load("skills.json")["skills"]}
@@ -81,10 +91,28 @@ def plan(counts, per_tier, floor, mode):
         if total >= floor and meta.get("count_h", 0):
             tiers.append("H")
         in_subtype = sum(counts[(slug, t)] for t in ("E", "M", "H"))
-        if mode == "empty" and in_subtype:
+        if mode in ("empty", "thin") and mode == "empty" and in_subtype:
             continue
         for tier in tiers:
             have = counts[(slug, tier)]
+            usable = good[(slug, tier)]
+            if mode == "broken":
+                # The cell exists and most of it did not survive. A cell that
+                # is merely small is not broken - it was authored small - so
+                # the test is the failure rate, not the count.
+                # An item that has not been verified yet has not failed. A
+                # cell with work still in the queue is not broken, it is
+                # untested - re-authoring it would double-pay for the gap.
+                if pending[(slug, tier)]:
+                    continue
+                if not have or usable * 2 >= have:
+                    continue
+                jobs.append({
+                    "skill_cd": skill["skill_cd"], "subtype": slug, "tier": tier,
+                    "n": per_tier - usable, "frequency": total, "have": usable,
+                    "name": meta["skill"],
+                })
+                continue
             if have >= per_tier:
                 continue
             if mode == "thin" and in_subtype and have >= per_tier // 2:
@@ -117,13 +145,16 @@ def main():
                     help="real-test frequency a subtype needs to earn a Hard tier")
     ap.add_argument("--limit", type=int, default=0, help="stop after N jobs")
     ap.add_argument("--model", default="claude-opus-5-5")
-    ap.add_argument("--mode", default="empty", choices=("empty", "thin", "all"),
+    ap.add_argument("--mode", default="empty",
+                    choices=("empty", "broken", "thin", "all"),
                     help="empty: subtypes with nothing (default); "
+                         "broken: cells where nothing survived verification; "
                          "thin: those plus half-full cells; all: every gap")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
-    jobs = plan(authored_counts(), args.per_tier, args.floor, args.mode)
+    total, good, pending = authored_counts()
+    jobs = plan(total, good, pending, args.per_tier, args.floor, args.mode)
     if args.limit:
         jobs = jobs[:args.limit]
 
