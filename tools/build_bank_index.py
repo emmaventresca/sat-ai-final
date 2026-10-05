@@ -20,7 +20,10 @@ BANK = os.path.join(ROOT, "data", "bank")
 # unanswerable, and dropping the field here is a silent way to do that.
 KEEP = ("id", "type", "skill_cd", "subtype", "subtype_name", "difficulty",
         "stimulus", "stem", "choices", "answer", "explanation", "distractors",
-        "figure", "authored_difficulty", "source", "license")
+        "figure", "authored_difficulty", "source", "license",
+        # Student-produced response: no choices, a list of acceptable answers,
+        # and the wrong values a student actually types.
+        "format", "keys", "any_of", "common_errors")
 
 
 def main():
@@ -32,15 +35,26 @@ def main():
                 continue
             rec = {k: it.get(k) for k in KEEP if it.get(k) is not None}
             rec["type"] = "item"
+            rec["format"] = rec.get("format") or ("grid" if rec.get("keys") else "mc")
             rec["band_floor"], rec["band_ceiling"] = 200, 1600
             # Per-choice explanations, in the shape the app already renders.
-            d = it.get("distractors") or {}
             rec["per_choice"] = {"correct": f"<p>{it.get('explanation','')}</p>"}
             rec["misconceptions"] = {}
-            for letter, v in d.items():
-                rec["per_choice"][letter] = f"<p>{v.get('why','')}</p>"
-                if v.get("misconception"):
-                    rec["misconceptions"][letter] = v["misconception"]
+            if rec["format"] == "grid":
+                # Keyed by the value a student types rather than by a letter,
+                # so a wrong entry still gets its diagnosis.
+                for e in it.get("common_errors") or []:
+                    value = str(e.get("value", "")).strip()
+                    if not value:
+                        continue
+                    rec["per_choice"][value] = f"<p>{e.get('why','')}</p>"
+                    if e.get("misconception"):
+                        rec["misconceptions"][value] = e["misconception"]
+            else:
+                for letter, v in (it.get("distractors") or {}).items():
+                    rec["per_choice"][letter] = f"<p>{v.get('why','')}</p>"
+                    if v.get("misconception"):
+                        rec["misconceptions"][letter] = v["misconception"]
             items.append(rec)
 
     out = os.path.join(ROOT, "data", "practice.json")

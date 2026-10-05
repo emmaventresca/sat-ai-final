@@ -7,14 +7,15 @@
 // do not teach what they have already shown they know.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=36292bdd1f';
-import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=36292bdd1f';
-import { buildLesson, focusTier, rankLessons } from './lessons.js?v=36292bdd1f';
+import { makeStore, configured } from './store.js?v=ffa4598a1b';
+import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=ffa4598a1b';
+import { buildLesson, focusTier, rankLessons } from './lessons.js?v=ffa4598a1b';
 import {
   missGroups, missCount, reinforcementSet, generatorAvailable, generateMore,
   familyName,
-} from './review.js?v=36292bdd1f';
-import { renderText as md, renderBody, renderHtml, renderStimulus, renderFigure, escapeHtml as esc } from './mathfmt.js?v=36292bdd1f';
+} from './review.js?v=ffa4598a1b';
+import { isGrid, matches as gridMatches, diagnose as gridDiagnose, MAX_LEN } from './grid.js?v=ffa4598a1b';
+import { renderText as md, renderBody, renderHtml, renderStimulus, renderFigure, escapeHtml as esc } from './mathfmt.js?v=ffa4598a1b';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -708,7 +709,8 @@ function screenPractice() {
   const item = r.items[r.at];
   const picked = r.answers[r.at];
   const revealed = picked !== undefined;
-  const correctNow = picked === item.answer;
+  const grid = isGrid(item);
+  const correctNow = grid ? gridMatches(picked, item.keys) : picked === item.answer;
 
   app.innerHTML = `<div class="wrap${item.figure || item.table ? ' wide' : ''}">
     ${previewBanner()}
@@ -723,7 +725,8 @@ function screenPractice() {
       ${item.stimulus || item.figure ? `<div class="stim">${
         renderStimulus(item.stimulus)}${renderFigure(item.figure)}</div>` : ''}
       <div class="q">${renderStimulus(item.stem)}</div>
-      ${item.choices.map((c, i) => {
+      ${grid ? gridEntry(item, picked, revealed, correctNow)
+        : (item.choices ?? []).map((c, i) => {
         const key = 'ABCD'[i];
         let cls = 'choice';
         if (revealed) {
@@ -750,6 +753,13 @@ function screenPractice() {
   for (const b of document.querySelectorAll('.choice')) {
     b.onclick = () => answer(b.dataset.key);
   }
+  const box = $('#grid-in');
+  if (box) {
+    box.focus();
+    const send = () => { if (box.value.trim()) answer(box.value.trim()); };
+    $('#grid-go').onclick = send;
+    box.onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); send(); } };
+  }
   const n = $('#next');
   if (n) n.onclick = () => { r.at++; render(); };
   window.scrollTo(0, 0);
@@ -758,7 +768,8 @@ function screenPractice() {
 async function answer(key) {
   const r = state.round;
   const item = r.items[r.at];
-  const correct = key === item.answer;
+  const grid = isGrid(item);
+  const correct = grid ? gridMatches(key, item.keys) : key === item.answer;
   r.answers[r.at] = key;
 
   // Mastery is recorded at both levels, because both are real units of
@@ -784,7 +795,12 @@ async function answer(key) {
   // feeds the same pattern detection as an uploaded Bluebook result. Three
   // transition-logic misses surface the trap card whether they happened here
   // or on a real test.
-  const family = !correct ? item.misconceptions?.[key] : null;
+  // A grid-in has no letters, so the diagnosis is keyed on the value typed.
+  // Without this a wrong entry would be recorded as an untagged miss and the
+  // review screen would have nothing to say about it.
+  const family = correct ? null
+    : grid ? gridDiagnose(key, item)?.family ?? null
+    : item.misconceptions?.[key];
   let fingerprint = null;
   if (family) {
     fingerprint = {
@@ -820,6 +836,7 @@ function explanation(item, picked, correct) {
   if (!parts) {
     return `<div class="why">${renderHtml(item.rationale ?? '')}</div>`;
   }
+  if (isGrid(item)) return gridExplanation(item, picked, correct);
   const family = !correct ? item.misconceptions?.[picked] : null;
   const named = family ? state.misconceptions?.[family] : null;
   const mine = !correct && parts[picked] ? `
@@ -834,6 +851,66 @@ function explanation(item, picked, correct) {
       ${renderHtml(parts.correct ?? item.rationale ?? '')}
     </div>
     ${otherChoices(item, picked)}`;
+}
+
+/**
+ * The entry box for a student-produced response.
+ *
+ * Deliberately not an input that validates as you type. The exam gives you a
+ * box and no feedback until you move on, and a field that goes green early
+ * hands back the confirmation the format is designed to withhold.
+ */
+function gridEntry(item, typed, revealed, correct) {
+  if (revealed) {
+    return `<div class="grid-row">
+      <div class="grid-box ${correct ? 'right' : 'wrong'}">${esc(typed)}</div>
+      ${correct ? '' : `<div class="grid-ans">Answer:
+        <strong>${esc(String(item.keys?.[0] ?? ''))}</strong>${
+        (item.keys ?? []).length > 1
+          ? ` <span class="tiny muted">(or ${(item.keys ?? []).slice(1)
+              .map((k) => esc(String(k))).join(', ')})</span>` : ''}</div>`}
+    </div>`;
+  }
+  return `<div class="grid-row">
+    <input id="grid-in" class="grid-box" type="text" inputmode="decimal"
+      maxlength="${MAX_LEN}" autocomplete="off" spellcheck="false"
+      aria-label="Your answer" placeholder="&mdash;">
+    <button class="btn-primary" id="grid-go">Check</button>
+  </div>
+  <p class="tiny muted" style="margin:8px 0 0">No choices &mdash; type the
+    value. A fraction or a decimal is fine${item.any_of
+      ? ', and more than one answer is correct here, so give one'
+      : ''}. No units, no commas.</p>`;
+}
+
+/** The same diagnosis a four-choice item gets, keyed on the value typed. */
+function gridExplanation(item, typed, correct) {
+  const parts = item.per_choice ?? {};
+  const hit = correct ? null : gridDiagnose(typed, item);
+  const named = hit ? state.misconceptions?.[hit.family] : null;
+  const mine = hit && parts[hit.value] ? `
+    <div class="why why-yours">
+      <div class="why-h">Where ${esc(String(typed))} comes from</div>
+      ${named ? `<p class="why-name">${md(named.label)}</p>` : ''}
+      ${renderHtml(parts[hit.value])}
+    </div>` : (!correct ? `
+    <div class="why why-yours">
+      <div class="why-h">Not quite</div>
+      <p class="small">That is not one of the values this question can produce.
+        Work back through the method below and find where yours diverged.</p>
+    </div>` : '');
+  const others = Object.keys(item.misconceptions ?? {})
+    .filter((v) => v !== hit?.value && parts[v]);
+  return `${mine}
+    <div class="why">
+      <div class="why-h">${correct ? 'Why that is right' : 'How to get there'}</div>
+      ${renderHtml(parts.correct ?? '')}
+    </div>
+    ${others.length ? `<details class="why-more">
+      <summary>Values students often land on instead</summary>
+      ${others.map((v) => `<div class="why-alt">
+        <div class="why-h">${esc(v)}</div>${renderHtml(parts[v])}</div>`).join('')}
+    </details>` : ''}`;
 }
 
 /** The remaining wrong choices, folded away - available, not shouting. */
@@ -937,17 +1014,17 @@ function render() {
 async function loadData() {
   const [bands, skills, lessons, sublessons, items, misc, subtax, subcounts] =
     await Promise.all([
-    fetch('../data/bands.json?v=0ecd31edc5').then((r) => r.json()),
-    fetch('../data/skills.json?v=0ecd31edc5').then((r) => r.json()),
-    fetch('../data/lessons.json?v=0ecd31edc5').then((r) => r.json()),
-    fetch('../data/subtype_lessons.json?v=0ecd31edc5').then((r) => r.json())
+    fetch('../data/bands.json?v=2a76efb2fa').then((r) => r.json()),
+    fetch('../data/skills.json?v=2a76efb2fa').then((r) => r.json()),
+    fetch('../data/lessons.json?v=2a76efb2fa').then((r) => r.json()),
+    fetch('../data/subtype_lessons.json?v=2a76efb2fa').then((r) => r.json())
       .catch(() => ({ lessons: [] })),
     // Our own CC BY items. The College Board pool is deliberately not loaded:
     // it cannot be served to students (docs/LICENSING.md section 4).
-    fetch('../data/practice.json?v=0ecd31edc5').then((r) => r.json()).catch(() => ({ items: [] })),
-    fetch('../data/misconceptions.json?v=0ecd31edc5').then((r) => r.json()).catch(() => ({ families: [] })),
-    fetch('../data/subtypes.json?v=0ecd31edc5').then((r) => r.json()).catch(() => ({ skills: {} })),
-    fetch('../data/subtype_counts.json?v=0ecd31edc5').then((r) => r.json()).catch(() => ({ subtypes: {} })),
+    fetch('../data/practice.json?v=2a76efb2fa').then((r) => r.json()).catch(() => ({ items: [] })),
+    fetch('../data/misconceptions.json?v=2a76efb2fa').then((r) => r.json()).catch(() => ({ families: [] })),
+    fetch('../data/subtypes.json?v=2a76efb2fa').then((r) => r.json()).catch(() => ({ skills: {} })),
+    fetch('../data/subtype_counts.json?v=2a76efb2fa').then((r) => r.json()).catch(() => ({ subtypes: {} })),
   ]);
   state.misconceptions = Object.fromEntries((misc.families ?? []).map((f) => [f.slug, f]));
   state.bands = bands;

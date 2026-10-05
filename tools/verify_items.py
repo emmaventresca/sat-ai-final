@@ -140,7 +140,120 @@ def figure_problems(it):
     return out
 
 
+def grid_match(given, keys):
+    """Does a typed answer match one of the acceptable forms?
+
+    The real exam accepts a fraction or a decimal, and accepts a decimal that
+    has been truncated or rounded at the width of the entry box - .8823 and
+    .8824 are both 15/17. So compare numerically at the precision the key
+    itself carries, rather than as strings. A student who did the work right
+    and wrote it a different way has not got it wrong.
+    """
+    def value(s):
+        s = str(s).strip().replace(" ", "")
+        if not s:
+            return None
+        try:
+            if "/" in s:
+                a, b = s.split("/", 1)
+                return float(a) / float(b)
+            return float(s)
+        except (ValueError, ZeroDivisionError):
+            return None
+
+    g = value(given)
+    if g is None:
+        return False
+    exact = 1e-9
+    for k in keys:
+        ks = str(k).strip()
+        v = value(ks)
+        if v is None:
+            continue
+        if abs(g - v) <= max(abs(v), 1.0) * exact:
+            return True
+        if "/" in ks:
+            continue                       # a fraction key is exact
+        decimals = len(ks.split(".")[1]) if "." in ks else 0
+        if not decimals:
+            continue
+        scale = 10 ** decimals
+        if (abs(round(g * scale) / scale - v) <= exact
+                or abs(int(g * scale) / scale - v) <= exact):
+            return True
+    return False
+
+
+def is_grid(it):
+    """Student-produced response: the student types a number, no choices."""
+    return it.get("format") == "grid" or ("keys" in it and not it.get("choices"))
+
+
+NUMERIC_KEY = re.compile(r"^-?(\d+(\.\d*)?|\.\d+)(/-?\d+(\.\d*)?)?$")
+
+
+def check_grid(it, families):
+    """A grid-in fails differently from a four-choice question.
+
+    There is nothing to eliminate, so the defects that matter are a key the
+    app cannot grade and an answer form the real exam would not accept: no
+    units, no commas, no percent signs, no mixed numbers. Six characters is
+    the exam's own limit.
+    """
+    problems = []
+    keys = it.get("keys") or []
+    if not keys:
+        problems.append("no acceptable answer given")
+    for k in keys:
+        k = str(k).strip()
+        if not NUMERIC_KEY.match(k):
+            problems.append(f"key {k!r} is not a plain number or fraction")
+        elif len(k) > (7 if k.startswith("-") else 6):
+            problems.append(f"key {k!r} is longer than the entry box allows")
+    if it.get("choices"):
+        problems.append("a student-produced response must have no choices")
+
+    # A fraction key is matched exactly, so an answer that does not terminate
+    # must also be given as the decimal the box actually holds - otherwise a
+    # student who types what the exam tells them to type is marked wrong.
+    def terminates(k):
+        if "/" not in k:
+            return True
+        try:
+            _, b = k.split("/", 1)
+            b = abs(int(b))
+        except ValueError:
+            return True
+        while b % 2 == 0:
+            b //= 2
+        while b % 5 == 0:
+            b //= 5
+        return b == 1
+
+    has_decimal = any("/" not in str(k) for k in keys)
+    if keys and not has_decimal and not all(terminates(str(k).strip()) for k in keys):
+        problems.append("a non-terminating fraction needs its decimal form too")
+
+    for e in it.get("common_errors") or []:
+        if e.get("misconception") not in families:
+            problems.append(f"common error: unknown family "
+                            f"{e.get('misconception')!r}")
+        if str(e.get("value", "")).strip() in {str(k).strip() for k in keys}:
+            problems.append(f"common error {e.get('value')!r} is a correct answer")
+    return problems
+
+
 def check_structure(it, families):
+    if is_grid(it):
+        problems = []
+        if not (it.get("stem") or "").strip():
+            problems.append("empty stem")
+        if not (it.get("explanation") or "").strip():
+            problems.append("no explanation")
+        problems += check_grid(it, families)
+        problems += figure_problems(it)
+        return problems
+
     problems = []
     ch = it.get("choices") or []
     if len(ch) != 4:
@@ -217,8 +330,14 @@ def _one(it, n=None):
     if fig:
         body.append(fig)
     body.append(it["stem"])
-    for i, c in enumerate(it["choices"]):
-        body.append(f"{LETTERS[i]}) {c}")
+    # A grid-in has nothing to list. Printing an empty choice block would tell
+    # the solver it was looking at a four-choice question with its options
+    # missing, which is a different defect from the one we are testing for.
+    if is_grid(it):
+        body.append("(student-produced response: give the number)")
+    else:
+        for i, c in enumerate(it["choices"]):
+            body.append(f"{LETTERS[i]}) {c}")
     if n is not None:
         body.append("</question>")
     return "\n".join(body)
@@ -232,7 +351,10 @@ def blind_batch_prompt(items):
     an independent check. Batching costs one call per N items instead of one
     per item, and the check is unchanged.
     """
-    return f"""Answer each SAT-style multiple-choice question below.
+    return f"""Answer each SAT-style question below.
+
+Most have four choices. Any marked "student-produced response" have none -
+work those out and give the number, as a decimal or a fraction.
 
 You are being used as a check on question quality, so be exacting. Judge each
 question independently; do not let one influence another.
@@ -241,10 +363,10 @@ question independently; do not let one influence another.
 
 For EACH question respond with one object, in the same order, as a JSON array:
 [{{"id": "<the question's id>",
-   "answer": "A"|"B"|"C"|"D",
+   "answer": "A"|"B"|"C"|"D", or the number for a student-produced response,
    "confident": true|false,
    "ambiguous": true|false,
-   "second_defensible": "<letter or null>",
+   "second_defensible": "<letter, value, or null>",
    "problem": "<null, or one sentence on what is wrong with this question>"}}]
 
 On "ambiguous": set it true only if a careful, well-prepared student could
@@ -256,7 +378,31 @@ Name it in second_defensible and leave ambiguous false.
 Respond with ONLY the JSON array."""
 
 
+def blind_grid_prompt(it):
+    body = [x for x in (it.get("stimulus"), figure_text(it), it["stem"]) if x]
+    return f"""Answer this SAT-style question. There are no answer choices -
+work it out and give the number.
+
+You are being used as a check on question quality, so be exacting.
+
+{chr(10).join(body)}
+
+Respond with ONLY JSON:
+{{"answer": "<the number, as a decimal or a fraction>",
+  "confident": true|false,
+  "ambiguous": true|false,
+  "second_defensible": "<another defensible value, or null>",
+  "problem": "<null, or one sentence on what is wrong with this question>"}}
+
+On "ambiguous": set it true only if the question genuinely admits more than
+one value - a missing condition, an unstated unit, a rounding instruction it
+needed and did not give. Needing to choose a form (0.75 against 3/4) is not
+ambiguity."""
+
+
 def blind_prompt(it):
+    if is_grid(it):
+        return blind_grid_prompt(it)
     body = []
     if it.get("stimulus"):
         body.append(it["stimulus"])
@@ -438,7 +584,8 @@ def verify_batch(items, families, shingles, model, fragments=frozenset()):
             rep.setdefault("solve_error", "no result for this id in the batch")
         else:
             rep["solver_answer"] = r.get("answer")
-            rep["agrees"] = r.get("answer") == it["answer"]
+            rep["agrees"] = (grid_match(r.get("answer"), it.get("keys") or [])
+                             if is_grid(it) else r.get("answer") == it["answer"])
             rep["confident"] = bool(r.get("confident"))
             rep["ambiguous"] = bool(r.get("ambiguous"))
             rep["second_defensible"] = r.get("second_defensible")
@@ -457,7 +604,8 @@ def verify_one(it, families, shingles, model):
         report["solve_error"] = str(exc)[:120]
         return report
     report["solver_answer"] = r.get("answer")
-    report["agrees"] = r.get("answer") == it["answer"]
+    report["agrees"] = (grid_match(r.get("answer"), it.get("keys") or [])
+                        if is_grid(it) else r.get("answer") == it["answer"])
     report["confident"] = bool(r.get("confident"))
     report["second_defensible"] = r.get("second_defensible")
     report["ambiguous"] = bool(r.get("ambiguous"))

@@ -1,6 +1,72 @@
 {
  "runs": [
   {
+   "id": "1925944f26",
+   "kind": "verify",
+   "status": "ok",
+   "started_at": 1791234561.4553778,
+   "seconds": 0.0,
+   "meta": {
+    "model": "claude-haiku-4-5",
+    "batch": 2,
+    "files": 1
+   },
+   "counts": {
+    "pass": 2,
+    "review": 0,
+    "fail": 0,
+    "error": 0
+   },
+   "alerts": []
+  },
+  {
+   "id": "3f9e2eaf72",
+   "kind": "verify",
+   "status": "ok",
+   "started_at": 1791234520.559674,
+   "seconds": 0.0,
+   "meta": {
+    "model": "claude-haiku-4-5",
+    "batch": 2,
+    "files": 1
+   },
+   "counts": {
+    "pass": 0,
+    "review": 0,
+    "fail": 0,
+    "error": 2
+   },
+   "alerts": [
+    {
+     "level": "bad",
+     "text": "2 items were never solved - untested, not failed. Re-run rather than discarding them."
+    },
+    {
+     "level": "warn",
+     "text": "pass rate 0% - look for a systematic cause before authoring more"
+    }
+   ]
+  },
+  {
+   "id": "65fa722acb",
+   "kind": "author",
+   "status": "ok",
+   "started_at": 1791234438.975146,
+   "seconds": 37.7,
+   "meta": {
+    "skill": "Q.A.",
+    "subtype": "single-unit-conversion",
+    "difficulty": "M",
+    "model": "claude-opus-5-5",
+    "asked": 2,
+    "fmt": "grid"
+   },
+   "counts": {
+    "authored": 2
+   },
+   "alerts": []
+  },
+  {
    "id": "2f3560f7a2",
    "kind": "author",
    "status": "ok",
@@ -2248,8 +2314,9 @@
   }
  ],
  "summary": {
-  "ok": 124,
-  "alert:warn": 4
+  "ok": 127,
+  "alert:bad": 1,
+  "alert:warn": 5
  },
- "generated_at": 1791234329.2427578
+ "generated_at": 1791234749.251727
 }

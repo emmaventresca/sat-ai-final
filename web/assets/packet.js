@@ -14,8 +14,9 @@
 // the corpus.
 // ---------------------------------------------------------------------------
 
-import { renderText, escapeHtml as esc } from './mathfmt.js?v=36292bdd1f';
-import { renderStimulus, renderFigure } from './mathfmt.js?v=36292bdd1f';
+import { renderText, escapeHtml as esc } from './mathfmt.js?v=ffa4598a1b';
+import { isGrid } from './grid.js?v=ffa4598a1b';
+import { renderStimulus, renderFigure } from './mathfmt.js?v=ffa4598a1b';
 
 const LETTERS = 'ABCD';
 const TIER = { E: 'Easy', M: 'Medium', H: 'Hard' };
@@ -159,9 +160,12 @@ function renderQuestion(q, n, subtypeInfo = {}) {
       ${q.stimulus || q.figure ? `<div class="packet-stim">${
         renderStimulus(q.stimulus)}${renderFigure(q.figure)}</div>` : ''}
       <div class="packet-stem">${renderStimulus(q.stem)}</div>
-      <ol class="packet-choices">
-        ${q.choices.map((c) => `<li>${renderStimulus(c)}</li>`).join('')}
-      </ol>
+      ${isGrid(q) ? `<div class="packet-grid">
+        <span class="packet-grid-label">Answer</span>
+        <span class="packet-grid-box"></span>
+      </div>` : `<ol class="packet-choices">
+        ${(q.choices ?? []).map((c) => `<li>${renderStimulus(c)}</li>`).join('')}
+      </ol>`}
     </div>
   </div>`;
 }

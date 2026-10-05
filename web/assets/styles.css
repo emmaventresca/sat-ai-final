@@ -613,3 +613,25 @@ table.stim-table tbody tr:nth-child(even) td{background:rgba(0,0,0,.015)}
 .fam p{margin:4px 0 0}
 .bad-text{color:var(--bad)}
 .btn.ghost{background:transparent;border:1px solid var(--line2);color:var(--ink)}
+
+/* Student-produced response. The box is the point: no choices to lean on. */
+.grid-row{display:flex;align-items:center;gap:10px;margin-top:14px}
+input.grid-box,.grid-box{
+  font-family:var(--serif);font-size:1.35rem;font-variant-numeric:tabular-nums;
+  letter-spacing:.06em;text-align:center;padding:12px 14px;min-width:170px;
+  border:2px solid var(--line2);border-radius:14px;background:var(--panel);
+  color:var(--ink);
+}
+input.grid-box:focus{outline:none;border-color:var(--purple);
+  box-shadow:0 0 0 4px rgba(124,92,255,.14)}
+.grid-box.right{border-color:var(--good-ln);background:var(--good-bg);color:var(--good)}
+.grid-box.wrong{border-color:var(--bad-ln);background:var(--bad-bg);color:var(--bad)}
+.grid-ans{font-size:.88rem;color:var(--dim);font-weight:600}
+.grid-ans strong{color:var(--ink);font-family:var(--serif);font-size:1.05rem}
+
+/* A grid-in on paper: a ruled box to write the number in. */
+.packet-grid{display:flex;align-items:center;gap:10px;margin-top:10px}
+.packet-grid-label{font-family:var(--ui);font-size:.68rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--dim);font-weight:800}
+.packet-grid-box{display:inline-block;width:150px;height:34px;
+  border:1.5px solid var(--line2);border-radius:8px;background:var(--panel)}

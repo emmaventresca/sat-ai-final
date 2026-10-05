@@ -1,0 +1,114 @@
+[
+ {
+  "stem": "What is the width of the paper, in yards?",
+  "stimulus": "A printmaker orders a roll of heavyweight paper for pulling large woodcut prints. The roll is 54 inches wide.",
+  "keys": [
+   "1.5",
+   "3/2"
+  ],
+  "any_of": false,
+  "explanation": "This question gives you a measurement in one unit and asks for it in another. There is no rate and no story to model. You need the standard factor 1 yard = 36 inches (3 feet per yard \u00d7 12 inches per foot). Write the conversion fraction with inches on the bottom so that inches cancel: $54 \\text{ in} \\times \\dfrac{1 \\text{ yd}}{36 \\text{ in}} = \\dfrac{54}{36} \\text{ yd} = 1.5 \\text{ yd}$. Check the direction: a yard is bigger than an inch, so the number of yards has to be smaller than 54. It is. If you prefer to chain through feet, do $54 \\text{ in} \\times \\dfrac{1 \\text{ ft}}{12 \\text{ in}} \\times \\dfrac{1 \\text{ yd}}{3 \\text{ ft}} = 1.5 \\text{ yd}$. Don't stop after the first factor.",
+  "common_errors": [
+   {
+    "value": "1944",
+    "misconception": "complement-or-direction-flip",
+    "why": "Multiplied 54 by 36 instead of dividing. That converts the wrong way and makes the yard count larger than the inch count."
+   },
+   {
+    "value": "4.5",
+    "misconception": "intermediate-step",
+    "why": "Divided 54 by 12 to get feet and stopped there, without the second factor that converts feet to yards."
+   },
+   {
+    "value": "18",
+    "misconception": "misread-given",
+    "why": "Used the wrong standard factor from memory, 3 inches per yard (mixing it up with 3 feet per yard), and computed 54 \u00f7 3."
+   },
+   {
+    "value": "4.5",
+    "misconception": "misread-given",
+    "why": "Used 12 inches per yard instead of 36 and computed 54 \u00f7 12. This gives the same value as stopping at feet."
+   }
+  ],
+  "id": "orig-single-unit-co-M-b6447d",
+  "skill_cd": "Q.A.",
+  "subtype": "single-unit-conversion",
+  "subtype_name": "Straight unit conversion (one or chained factors)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-single-unit-co-M-b6447d",
+   "structure": [],
+   "solver_answer": 1.5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many gallons of water does the tank hold when it is full?",
+  "stimulus": "A hydrologist stores groundwater samples in a holding tank with a volume of 77 cubic feet. One gallon is equal to 231 cubic inches.",
+  "keys": [
+   "576"
+  ],
+  "any_of": false,
+  "explanation": "This is a straight conversion from cubic feet to gallons. The question gives you the gallon in cubic inches, so you chain through cubic inches. First you need the cubic factor. Since 1 foot = 12 inches, 1 cubic foot = $12 \\times 12 \\times 12 = 1{,}728$ cubic inches, not 12. Then set up the chain so that each unwanted unit cancels: $77 \\text{ ft}^3 \\times \\dfrac{1{,}728 \\text{ in}^3}{1 \\text{ ft}^3} \\times \\dfrac{1 \\text{ gal}}{231 \\text{ in}^3}$. Simplify before you multiply: $\\dfrac{77}{231} = \\dfrac{1}{3}$, so the result is $\\dfrac{1{,}728}{3} = 576$ gallons. Check the direction: a gallon is smaller than a cubic foot, so the number of gallons should be larger than 77. It is.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "misread-given",
+    "why": "Used the linear factor 12 inches per foot instead of the cubic factor 1,728 cubic inches per cubic foot: 77 \u00d7 12 \u00f7 231 = 4."
+   },
+   {
+    "value": "48",
+    "misconception": "misread-given",
+    "why": "Used the square factor 144 instead of the cubic factor 1,728: 77 \u00d7 144 \u00f7 231 = 48."
+   },
+   {
+    "value": "133056",
+    "misconception": "intermediate-step",
+    "why": "Converted to cubic inches (77 \u00d7 1,728) and stopped there, without dividing by 231 to get gallons."
+   },
+   {
+    "value": "10.29",
+    "misconception": "complement-or-direction-flip",
+    "why": "Flipped both conversion fractions, computing 77 \u00d7 231 \u00f7 1,728 \u2248 10.29. That converts the wrong way at each step."
+   },
+   {
+    "value": "1/3",
+    "misconception": "algebra-manipulation",
+    "why": "Divided 77 by 231 and forgot to multiply by the cubic-inch factor at all."
+   }
+  ],
+  "id": "orig-single-unit-co-M-d0e2c1",
+  "skill_cd": "Q.A.",
+  "subtype": "single-unit-conversion",
+  "subtype_name": "Straight unit conversion (one or chained factors)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-single-unit-co-M-d0e2c1",
+   "structure": [],
+   "solver_answer": 576,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

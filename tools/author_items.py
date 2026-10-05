@@ -130,8 +130,33 @@ def focus_block(families, focus):
             "   move - tempting, not obviously wrong:\n" + lines + "\n\n")
 
 
+GRID_RULES = """
+THIS IS A STUDENT-PRODUCED RESPONSE SET. There are NO answer choices. The
+student types the answer into a box, so:
+
+  - There is nothing to eliminate and nothing to backsolve from. The question
+    must be answerable forwards, and must have a determinate answer.
+  - Give every acceptable form in "keys": the exact decimal, a truncated and
+    a rounded four-character decimal where the value does not terminate, and
+    the fraction in lowest terms. 15/17 and .8823 and .8824 are all the same
+    answer and all three must be accepted.
+  - The answer must be a single number. No units, no commas, no percent
+    signs, no mixed numbers, no variables. If the natural answer is negative
+    or longer than six characters, change the numbers.
+  - "If the question has more than one correct answer, give only one" is a
+    real format on this exam. Use it where the mathematics genuinely allows
+    several, and then set "any_of" true and put several in "keys".
+
+The distractor taxonomy still applies, because the point of it is diagnosis.
+Instead of four choices, give "common_errors": the WRONG VALUES a student
+actually produces here, each with the misconception it comes from. Those are
+what the app matches a wrong entry against, so they must be the values the
+named error really yields - compute them, do not invent them.
+"""
+
+
 def build_prompt(skill, lesson, families, difficulty, n, seed_topics,
-                 subtype=None, patterns=None, focus=None):
+                 subtype=None, patterns=None, focus=None, fmt="mc"):
     stem_line = SKILL_STEMS.get(skill["skill_cd"])
     stem_line = (f'"{stem_line}"' if stem_line else
                  "write the instruction the test would use for this skill, in "
@@ -156,8 +181,7 @@ Hard requirements:
    adapt any question you have seen from College Board or any other test
    publisher. If an item feels familiar, change it.
 
-2. FOUR choices, exactly one defensible answer. A knowledgeable person must not
-   be able to argue for a second choice.
+{"2. ONE defensible answer, reachable by a correct method. A knowledgeable person must not be able to argue for a different value." if fmt == "grid" else "2. FOUR choices, exactly one defensible answer. A knowledgeable person must not be able to argue for a second choice."}
 
 3. EVERY ITEM MUST BE THIS SUBTYPE. A student should be able to read it and
    recognise the subtype from the tell above. Do not drift into a neighbouring
@@ -168,19 +192,16 @@ Hard requirements:
    be the subtype's own trap, described above:
 {chr(10).join(f"     {f['slug']}: {f['when']}" for f in fams)}
 
-5. Choices length-matched and parallel in form. The correct answer must not be
-   distinguishable by being longest, most hedged, or most detailed.
+{"5. Nothing in the wording may give the answer away, and nothing may make it ambiguous - say what form you want only when the mathematics leaves a real choice." if fmt == "grid" else "5. Choices length-matched and parallel in form. The correct answer must not be distinguishable by being longest, most hedged, or most detailed."}
 
-6. Write a short explanation for the correct answer, and for each distractor an
-   explanation naming the error a student made to land there. Second person.
+{"6. Write a short explanation of the method, second person, and list the wrong values a student actually produces with the error each comes from." if fmt == "grid" else "6. Write a short explanation for the correct answer, and for each distractor an explanation naming the error a student made to land there. Second person."}
 
 7. Topical variety - use these subject areas, one per item, in order:
    {", ".join(seed_topics[:n])}
 
-8. USE THE REAL INSTRUCTION LINE. For this skill, ask the question exactly as
-   the test asks it:
+8. {"ASK IT PLAINLY. A student-produced response has no instruction line of its own - the question simply asks for the value." if fmt == "grid" else "USE THE REAL INSTRUCTION LINE. For this skill, ask the question exactly as the test asks it:"}
 
-       {stem_line}
+       {"" if fmt == "grid" else stem_line}
 
    Recognising the real stem is part of the skill, so do not paraphrase it.
    These lines are standard boilerplate - see data/standard_stems.json. Every
@@ -193,16 +214,9 @@ Hard requirements:
    register of published nonfiction. Blanks are marked with ______.'''}
 
 {FIGURE_RULES}
+{GRID_RULES if fmt == "grid" else ""}
 Respond with ONLY a JSON array, no prose:
-[{{
-  "stem": "the question being asked",
-  "stimulus": "the passage or setup, or null if the stem is self-contained",
-  "figure": null,
-  "choices": ["A text", "B text", "C text", "D text"],
-  "answer": "A"|"B"|"C"|"D",
-  "explanation": "why the answer is right, second person",
-  "distractors": {{"<letter>": {{"misconception": "<slug>", "why": "..."}}}}
-}}]"""
+{GRID_SHAPE if fmt == "grid" else MC_SHAPE}"""
 
 
 # ---------------------------------------------------------------------------
@@ -251,6 +265,27 @@ FIGURE_RULES = """
    choose y_step to divide your values. Set "figure" to null when the question
    needs no display - most do not.
 """
+
+MC_SHAPE = """[{
+  "stem": "the question being asked",
+  "stimulus": "the passage or setup, or null if the stem is self-contained",
+  "figure": null,
+  "choices": ["A text", "B text", "C text", "D text"],
+  "answer": "A"|"B"|"C"|"D",
+  "explanation": "why the answer is right, second person",
+  "distractors": {"<letter>": {"misconception": "<slug>", "why": "..."}}
+}]"""
+
+GRID_SHAPE = """[{
+  "stem": "the question being asked",
+  "stimulus": "the passage or setup, or null if the stem is self-contained",
+  "figure": null,
+  "keys": ["every acceptable form of the answer, as strings"],
+  "any_of": false,
+  "explanation": "how to get there, second person",
+  "common_errors": [{"value": "17/15", "misconception": "<slug>",
+                     "why": "what the student did to land here"}]
+}]"""
 
 TOPICS = [
     "marine biology", "urban planning", "archaeology", "materials science",
@@ -320,10 +355,10 @@ def call(prompt, model):
 
 
 def author(skill, lesson, families, difficulty, n, model, rng,
-           subtype=None, patterns=None, focus=None):
+           subtype=None, patterns=None, focus=None, fmt="mc"):
     topics = rng.sample(TOPICS, min(n, len(TOPICS)))
     prompt = build_prompt(skill, lesson, families, difficulty, n, topics,
-                          subtype, patterns, focus)
+                          subtype, patterns, focus, fmt)
     assert_no_cb_text(prompt)
     items = call(prompt, model)
     out = []
@@ -338,6 +373,7 @@ def author(skill, lesson, families, difficulty, n, model, rng,
         it["section"] = skill["section"]
         it["source"] = "original - written for this project"
         it["license"] = LICENSE
+        it["format"] = fmt
         it["status"] = "unverified"
         fig = clean_figure(it.get("figure"))
         if fig:
@@ -357,6 +393,10 @@ def main():
     ap.add_argument("--n", type=int, default=10)
     ap.add_argument("--model", default="claude-opus-5-5")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--format", default="mc", choices=("mc", "grid"),
+                    dest="fmt",
+                    help="grid: student-produced response, no answer choices. "
+                         "27%% of the real math section.")
     ap.add_argument("--misconceptions",
                     help="comma-separated family slugs to aim the distractors "
                          "at - used when a student keeps making one error")
@@ -402,18 +442,23 @@ def main():
 
     rng = random.Random(args.seed or None)
     with run("author", skill=args.skill, subtype=args.subtype,
-             difficulty=args.difficulty, model=args.model, asked=args.n) as r:
+             difficulty=args.difficulty, model=args.model, asked=args.n,
+             fmt=args.fmt) as r:
         items = author(skill, lesson_for(args.skill, lessons),
                        families, args.difficulty, args.n, args.model, rng,
                        subtype, patterns,
-                       focus=[f.strip() for f in (args.misconceptions or "").split(",") if f.strip()])
+                       focus=[f.strip() for f in (args.misconceptions or "").split(",") if f.strip()],
+                       fmt=args.fmt)
         r.count(authored=len(items))
         if len(items) < args.n:
             r.note(f"asked for {args.n}, got {len(items)}")
 
     os.makedirs(OUT_DIR, exist_ok=True)
     stem = (args.subtype if args.subtype else args.skill.replace(".", ""))
-    path = os.path.join(OUT_DIR, f"{stem}-{args.difficulty}.json")
+    # Grid-ins live in their own file: they are a different format of the same
+    # recognition, and keeping them apart means a cell's counts stay readable.
+    suffix = "-grid" if args.fmt == "grid" else ""
+    path = os.path.join(OUT_DIR, f"{stem}-{args.difficulty}{suffix}.json")
     existing = json.load(open(path)) if os.path.exists(path) else []
     existing += items
     json.dump(existing, open(path, "w"), indent=1)
