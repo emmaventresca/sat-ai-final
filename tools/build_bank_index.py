@@ -52,6 +52,12 @@ def main():
                         rec["misconceptions"][value] = e["misconception"]
             else:
                 for letter, v in (it.get("distractors") or {}).items():
+                    # Authors sometimes emit a null entry for the CORRECT
+                    # letter, which is harmless - it has its own explanation -
+                    # but iterating it blindly crashed the whole build on one
+                    # malformed item out of three thousand.
+                    if letter == rec.get("answer") or not isinstance(v, dict):
+                        continue
                     rec["per_choice"][letter] = f"<p>{v.get('why','')}</p>"
                     if v.get("misconception"):
                         rec["misconceptions"][letter] = v["misconception"]

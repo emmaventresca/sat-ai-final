@@ -1,0 +1,211 @@
+[
+ {
+  "stem": "According to the model, how many meters of yarn does the loom use each minute?",
+  "stimulus": "In a reconstruction of an 1830s power loom, a museum tracks the yarn left on one large feed spool while the loom runs. The length of yarn remaining on the spool, $R$, in meters, $h$ hours after the loom is started is modeled by the equation $R = 2400 - 150h$.",
+  "keys": [
+   "2.5",
+   "5/2"
+  ],
+  "any_of": false,
+  "explanation": "The question says \"each minute,\" so it is asking for the rate, which is the coefficient on $h$. That coefficient is $-150$, which means the spool loses 150 meters of yarn every hour. The question asks how much yarn is used, so you want the size of the change: 150 meters per hour. The model works in hours, but the question asks about minutes, so divide by 60: $150 \\div 60 = 2.5$ meters per minute. The 2400 is the yarn on the spool when the loom starts, not a rate.",
+  "common_errors": [
+   {
+    "value": "150",
+    "misconception": "missed-condition",
+    "why": "You read the hourly rate correctly but answered per hour instead of converting to per minute."
+   },
+   {
+    "value": "-2.5",
+    "misconception": "complement-or-direction-flip",
+    "why": "You reported the change in remaining yarn, which is negative, when the question asked how much yarn is used. That is a positive amount."
+   },
+   {
+    "value": "2400",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the constant term, the starting length on the spool, instead of the rate."
+   },
+   {
+    "value": "40",
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the starting length, 2400, by 60 instead of dividing the hourly rate."
+   },
+   {
+    "value": "9000",
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied 150 by 60 instead of dividing when you converted from hours to minutes."
+   }
+  ],
+  "id": "orig-interpret-slop-M-020676",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the graph, by how many beats per minute does the runner's heart rate decrease for each minute of recovery?",
+  "stimulus": "A sports scientist records a runner's heart rate during the first 10 minutes of recovery after a hard interval session. The graph shows a linear model of the runner's heart rate, in beats per minute, against time since the session ended, in minutes.",
+  "figure": {
+   "type": "line",
+   "caption": "Heart Rate During Recovery",
+   "x_label": "Time since session ended (minutes)",
+   "y_label": "Heart rate (beats per minute)",
+   "points": [
+    [
+     0,
+     180
+    ],
+    [
+     2,
+     170
+    ],
+    [
+     4,
+     160
+    ],
+    [
+     6,
+     150
+    ],
+    [
+     8,
+     140
+    ],
+    [
+     10,
+     130
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 2,
+   "y_min": 120,
+   "y_max": 190,
+   "y_step": 10,
+   "alt": "A straight line falling from (0, 180) to (10, 130), passing through (2, 170), (4, 160), (6, 150), and (8, 140)."
+  },
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "\"For each minute\" means the slope. Pick two points where the line crosses gridlines exactly, such as $(0, 180)$ and $(10, 130)$. The slope is $\\frac{130 - 180}{10 - 0} = \\frac{-50}{10} = -5$. The question asks how much the heart rate decreases, so give the size of the change: 5 beats per minute each minute. Watch the horizontal axis. Its gridlines are 2 minutes apart, so a drop of one gridline on the vertical axis covers 2 minutes, not 1.",
+  "common_errors": [
+   {
+    "value": "-5",
+    "misconception": "complement-or-direction-flip",
+    "why": "You gave the signed slope when the question asked for the size of the decrease."
+   },
+   {
+    "value": "180",
+    "misconception": "wrong-target-quantity",
+    "why": "You read the y-intercept, the heart rate when recovery starts, instead of the rate of change."
+   },
+   {
+    "value": "50",
+    "misconception": "intermediate-step",
+    "why": "You found the total drop over the 10 minutes and did not divide by the 10 minutes."
+   },
+   {
+    "value": "10",
+    "misconception": "graph-feature-mismatch",
+    "why": "You saw a drop of 10 beats per minute from one gridline to the next and treated each gridline as 1 minute, but the horizontal gridlines are 2 minutes apart."
+   },
+   {
+    "value": "0.2",
+    "misconception": "algebra-manipulation",
+    "why": "You calculated run over rise (10 \u00f7 50) instead of rise over run."
+   }
+  ],
+  "id": "orig-interpret-slop-M-18f0fc",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the model, how many grams of protein are in the smoothie when no hemp seed is added?",
+  "stimulus": "A nutrition science student designs a basic smoothie recipe and adds hemp seed to it. The total protein in the smoothie, $P$, in grams, when $s$ tablespoons of hemp seed are added is modeled by the equation $P = 3(s + 6)$.",
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "\"When no hemp seed is added\" means $s = 0$, so you want the intercept. The equation is not in $y = mx + b$ form, so you cannot read the intercept straight off it. Either substitute $s = 0$, which gives $P = 3(0 + 6) = 18$, or distribute first, which gives $P = 3s + 18$. Both show the smoothie has 18 grams of protein before any hemp seed goes in. The 3 is the rate: each tablespoon of hemp seed adds 3 grams of protein.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "You took the constant inside the parentheses as the intercept and did not distribute the 3."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the coefficient, the protein added per tablespoon, when the question asked for the starting amount."
+   },
+   {
+    "value": "9",
+    "misconception": "algebra-manipulation",
+    "why": "You added 3 and 6 instead of multiplying them when you expanded the expression."
+   }
+  ],
+  "id": "orig-interpret-slop-M-7daff8",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the model, by how many meters does the elevation decrease for each kilometer of horizontal distance from the trailhead?",
+  "stimulus": "A cartographer is making a topographic map of a straight mountain trail. Along the trail, the relationship between the elevation $E$, in meters, and the horizontal distance $d$, in kilometers, from the trailhead is modeled by the equation $3E + 90d = 4350$.",
+  "keys": [
+   "30"
+  ],
+  "any_of": false,
+  "explanation": "\"For each kilometer\" means the slope, but the equation is not solved for $E$, so you cannot read the slope straight off it. First isolate $E$: $3E = 4350 - 90d$, then divide every term by 3 to get $E = 1450 - 30d$. The coefficient on $d$ is $-30$, so the elevation drops 30 meters for each kilometer. The question asks how much it decreases, so the answer is 30. The 1450 is the elevation at the trailhead, not a rate.",
+  "common_errors": [
+   {
+    "value": "90",
+    "misconception": "algebra-manipulation",
+    "why": "You read the coefficient on $d$ before solving for $E$, so you forgot to divide by 3."
+   },
+   {
+    "value": "-30",
+    "misconception": "complement-or-direction-flip",
+    "why": "You gave the signed slope when the question asked for the size of the decrease."
+   },
+   {
+    "value": "1450",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the intercept, the elevation at the trailhead, instead of the rate."
+   },
+   {
+    "value": "4350",
+    "misconception": "misread-given",
+    "why": "You took the constant from the standard-form equation as though it were already a meaningful quantity, without isolating $E$."
+   }
+  ],
+  "id": "orig-interpret-slop-M-42baa8",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

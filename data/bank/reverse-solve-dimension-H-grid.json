@@ -1,0 +1,182 @@
+[
+ {
+  "stem": "What is the diameter, in feet, of the dome's circular floor?",
+  "stimulus": "A planetarium's projection dome has the shape of a hemisphere resting on a flat circular floor. The dome and its floor enclose a volume of $18{,}000\\pi$ cubic feet.",
+  "keys": [
+   "60"
+  ],
+  "any_of": false,
+  "explanation": "A hemisphere is half of a sphere, so its volume is $\\frac{1}{2}\\cdot\\frac{4}{3}\\pi r^3 = \\frac{2}{3}\\pi r^3$. Set this equal to the given volume: $\\frac{2}{3}\\pi r^3 = 18{,}000\\pi$. Divide both sides by $\\pi$, then multiply by $\\frac{3}{2}$ to get $r^3 = 27{,}000$. Take the cube root: $r = 30$. The question asks for the diameter of the floor, not the radius, so double it: $2(30) = 60$ feet. In Desmos, type $(2/3)\\pi x^3 = 18000\\pi$ and read off $x = 30$. Then double it.",
+  "common_errors": [
+   {
+    "value": "30",
+    "misconception": "wrong-target-quantity",
+    "why": "You solved correctly for the radius but did not double it to get the diameter the question asks for."
+   },
+   {
+    "value": "27000",
+    "misconception": "intermediate-step",
+    "why": "You isolated $r^3$ and stopped before taking the cube root."
+   },
+   {
+    "value": "47.62",
+    "misconception": "algebra-manipulation",
+    "why": "You used the full-sphere formula $\\frac{4}{3}\\pi r^3$ without halving it for a hemisphere. That gives $r^3 = 13{,}500$, so $r \\approx 23.81$ and the diameter is about $47.62$."
+   },
+   {
+    "value": "23.81",
+    "misconception": "algebra-manipulation",
+    "why": "You used the full-sphere formula instead of the hemisphere formula and also reported the radius instead of the diameter."
+   }
+  ],
+  "id": "orig-reverse-solve--H-da51a9",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the diameter, in meters, of the basin's circular rim?",
+  "stimulus": "A sediment-settling basin at a water treatment plant has the shape of a right circular cone with its point facing down and its circular rim level with the ground. When full, the basin holds $96\\pi$ cubic meters of water. The vertical distance from the rim down to the point is $800$ centimeters.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "First convert the depth to meters so it matches the cubic meters: $800$ cm $= 8$ m. The volume of a cone is $\\frac{1}{3}\\pi r^2 h$. Set it equal to the given volume: $\\frac{1}{3}\\pi r^2(8) = 96\\pi$. Divide by $\\pi$ and multiply by $3$: $8r^2 = 288$, so $r^2 = 36$. Keep the positive root: $r = 6$. The rim's diameter is $2r = 12$ meters. In Desmos, type $(1/3)\\pi x^2(8) = 96\\pi$ and read off the positive solution, $x = 6$. Then double it.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the radius but did not double it to get the diameter."
+   },
+   {
+    "value": "1.2",
+    "misconception": "misread-given",
+    "why": "You substituted $h = 800$ without converting centimeters to meters. That gives $r^2 = 0.36$, so $r = 0.6$ and the diameter is $1.2$."
+   },
+   {
+    "value": "6.928",
+    "misconception": "algebra-manipulation",
+    "why": "You left out the $\\frac{1}{3}$ in the cone formula. That gives $8r^2 = 96$, so $r = \\sqrt{12} \\approx 3.464$ and the diameter is about $6.928$."
+   },
+   {
+    "value": "3.464",
+    "misconception": "algebra-manipulation",
+    "why": "You left out the $\\frac{1}{3}$ and also reported the radius instead of the diameter."
+   },
+   {
+    "value": "36",
+    "misconception": "intermediate-step",
+    "why": "You found $r^2 = 36$ and stopped before taking the square root."
+   }
+  ],
+  "id": "orig-reverse-solve--H-eccc61",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the height, in inches, of the triangular piece?",
+  "stimulus": "In some nineteenth-century hand-sewn smocks, a triangular piece of linen was set into the side seam to give more room at the hem. One such triangular piece has an area of $108$ square inches. Its height, measured perpendicular to the hem edge, is $\\frac{3}{2}$ times the length of the hem edge, which serves as its base.",
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "Let the base be $b$ inches, so the height is $\\frac{3}{2}b$. The area of a triangle is $\\frac{1}{2}\\cdot\\text{base}\\cdot\\text{height}$, so $\\frac{1}{2}\\cdot b\\cdot\\frac{3}{2}b = 108$. This simplifies to $\\frac{3}{4}b^2 = 108$. Multiply by $\\frac{4}{3}$: $b^2 = 144$. Keep the positive root: $b = 12$. The question asks for the height, so $h = \\frac{3}{2}(12) = 18$ inches. In Desmos, type $(1/2)x(1.5x) = 108$, read off $x = 12$, then multiply by $1.5$.",
+  "common_errors": [
+   {
+    "value": "12",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the base and did not go on to find the height."
+   },
+   {
+    "value": "144",
+    "misconception": "intermediate-step",
+    "why": "You found $b^2 = 144$ and stopped before taking the square root."
+   },
+   {
+    "value": "12.73",
+    "misconception": "algebra-manipulation",
+    "why": "You left out the $\\frac{1}{2}$ in the triangle area formula. That gives $\\frac{3}{2}b^2 = 108$, so $b^2 = 72$, $b \\approx 8.485$ and $h \\approx 12.73$."
+   },
+   {
+    "value": "8.485",
+    "misconception": "algebra-manipulation",
+    "why": "You left out the $\\frac{1}{2}$ and also reported the base instead of the height."
+   },
+   {
+    "value": "216",
+    "misconception": "intermediate-step",
+    "why": "You doubled the area to undo the $\\frac{1}{2}$ and reported that product, $2 \\times 108$, as the answer."
+   }
+  ],
+  "id": "orig-reverse-solve--H-369153",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the length, in meters, of the longer of the two parallel walls?",
+  "stimulus": "A labor regulation for a garment workshop requires at least $5.4$ square meters of floor space for each worker. A workshop that employs $30$ workers has a floor area exactly equal to this minimum. The floor is a trapezoid whose two parallel walls are $12$ meters apart. The longer parallel wall is $10$ meters longer than the shorter one.",
+  "keys": [
+   "18.5",
+   "37/2"
+  ],
+  "any_of": false,
+  "explanation": "First find the floor area: $30 \\times 5.4 = 162$ square meters. Let the shorter parallel wall be $x$ meters, so the longer one is $x + 10$. The area of a trapezoid is $\\frac{1}{2}(b_1 + b_2)h$, so $\\frac{1}{2}(x + x + 10)(12) = 162$. This simplifies to $6(2x + 10) = 162$, so $2x + 10 = 27$, $2x = 17$ and $x = 8.5$. The longer wall is $8.5 + 10 = 18.5$ meters. In Desmos, type $(1/2)(2x+10)(12) = 162$, read off $x = 8.5$, then add $10$.",
+  "common_errors": [
+   {
+    "value": "8.5",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the shorter parallel wall instead of the longer one."
+   },
+   {
+    "value": "11.75",
+    "misconception": "algebra-manipulation",
+    "why": "You left out the $\\frac{1}{2}$ in the trapezoid formula. That gives $12(2x + 10) = 162$, so $x = 1.75$ and the longer wall is $11.75$."
+   },
+   {
+    "value": "1.75",
+    "misconception": "algebra-manipulation",
+    "why": "You left out the $\\frac{1}{2}$ and also reported the shorter wall."
+   },
+   {
+    "value": "27",
+    "misconception": "intermediate-step",
+    "why": "You found the sum of the two parallel walls, $2x + 10 = 27$, and stopped there."
+   },
+   {
+    "value": "13.5",
+    "misconception": "intermediate-step",
+    "why": "You divided the area by the height and reported the average of the two parallel walls, $162 \\div 12$, instead of the longer wall."
+   }
+  ],
+  "id": "orig-reverse-solve--H-0baec1",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

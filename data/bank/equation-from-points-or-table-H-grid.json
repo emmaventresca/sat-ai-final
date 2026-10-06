@@ -1,0 +1,178 @@
+[
+ {
+  "stem": "What is the value of $a + b$?",
+  "stimulus": "A county health department tracks the number of unfilled appointment slots at a walk-in vaccination clinic. The number of unfilled slots $t$ days after online booking opened is modeled by the linear function $f(t) = at + b$, where $a$ and $b$ are constants. The table shows three values of $f(t)$.\n\nUnfilled Appointment Slots\n$t$ (days) | $f(t)$\n2 | 146\n5 | 125\n9 | 97",
+  "keys": [
+   "153"
+  ],
+  "any_of": false,
+  "explanation": "First find the slope from any two rows: $a = \\frac{125 - 146}{5 - 2} = \\frac{-21}{3} = -7$. Check it against the third row: $\\frac{97 - 125}{9 - 5} = \\frac{-28}{4} = -7$, so the function really is linear with slope $-7$. The number of slots is falling, so a negative slope makes sense. Next, put one row into $f(t) = -7t + b$: $146 = -7(2) + b$, so $b = 160$. The question asks for the sum, not either constant alone, so $a + b = -7 + 160 = 153$.",
+  "common_errors": [
+   {
+    "value": "160",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the intercept $b$ correctly and stopped there, without adding $a$."
+   },
+   {
+    "value": "139",
+    "misconception": "graph-feature-mismatch",
+    "why": "Got the sign of the slope wrong and used $a = 7$, even though the slots are going down. That gives $b = 146 - 14 = 132$ and $a + b = 139$."
+   },
+   {
+    "value": "167",
+    "misconception": "algebra-manipulation",
+    "why": "Took the change in output, $-21$, as the slope without dividing by the change in $t$, which is 3. Then $b = 146 + 42 = 188$ and $a + b = -21 + 188 = 167$."
+   },
+   {
+    "value": "-7",
+    "misconception": "wrong-target-quantity",
+    "why": "Answered with the slope $a$ alone, not the sum."
+   },
+   {
+    "value": "160.2857",
+    "misconception": "graph-feature-mismatch",
+    "why": "Found the slope as change in $t$ over change in $f(t)$, giving $-\\frac{1}{7}$. That makes $b = 146 + \\frac{2}{7}$, and $a + b$ comes out to about 160.29."
+   }
+  ],
+  "id": "orig-equation-from--H-e636fb",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the model, at what distance from the source, in kilometers, does the shear wave reach a station 50 seconds after the recorder started?",
+  "stimulus": "A seismologist models the time $T$, in seconds after a recorder was started, at which a shear wave from a small earthquake reaches a station $d$ kilometers from the source. The model is linear in $d$. The wave reached a station 40 kilometers from the source at $T = 13$, and a station 100 kilometers from the source at $T = 28$.",
+  "keys": [
+   "188"
+  ],
+  "any_of": false,
+  "explanation": "Write the model as $T = md + b$. The slope is the change in time over the change in distance: $m = \\frac{28 - 13}{100 - 40} = \\frac{15}{60} = \\frac{1}{4}$ second per kilometer. Put in the point $(40, 13)$: $13 = \\frac{1}{4}(40) + b$, so $b = 3$. The model is $T = \\frac{1}{4}d + 3$. Now set $T = 50$ and solve for $d$: $50 = \\frac{1}{4}d + 3$, so $\\frac{1}{4}d = 47$ and $d = 188$.",
+  "common_errors": [
+   {
+    "value": "49.25",
+    "misconception": "graph-feature-mismatch",
+    "why": "Found the slope as change in distance over change in time, $\\frac{60}{15} = 4$. Then $b = 13 - 160 = -147$, and $50 = 4d - 147$ gives $d = 49.25$."
+   },
+   {
+    "value": "200",
+    "misconception": "missed-condition",
+    "why": "Left out the intercept and solved $50 = \\frac{1}{4}d$. That line does not pass through the given points."
+   },
+   {
+    "value": "212",
+    "misconception": "algebra-manipulation",
+    "why": "Made a sign slip when finding the intercept and got $b = -3$. Then $50 = \\frac{1}{4}d - 3$ gives $d = 212$."
+   },
+   {
+    "value": "15.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Put 50 in for $d$ instead of $T$ and worked out a time, $\\frac{1}{4}(50) + 3$."
+   }
+  ],
+  "id": "orig-equation-from--H-3cbc8b",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "A materials scientist is testing a hydrogel strip that shrinks as it warms. Over the range tested, the strip's length is a linear function of temperature. The length decreases by 0.4 millimeter for every 5\u00b0C increase in temperature. At 35\u00b0C, the strip is 86 millimeters long. The length $L$, in millimeters, at temperature $T$, in degrees Celsius, can be written as $L = mT + b$, where $m$ and $b$ are constants.",
+  "keys": [
+   "88.8",
+   "444/5"
+  ],
+  "any_of": false,
+  "explanation": "The slope is the change in length per one degree: $m = \\frac{-0.4}{5} = -0.08$ millimeter per \u00b0C. It is negative because the strip shrinks as it warms. Put the point $(35, 86)$ into $L = -0.08T + b$: $86 = -0.08(35) + b = -2.8 + b$, so $b = 88.8$. A quick check: at 0\u00b0C, the strip should be longer than at 35\u00b0C, and 88.8 is longer than 86.",
+  "common_errors": [
+   {
+    "value": "83.2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Used a positive slope of $+0.08$, as if the strip grew when heated. That gives $86 = 2.8 + b$, so $b = 83.2$."
+   },
+   {
+    "value": "100",
+    "misconception": "misread-given",
+    "why": "Took the 0.4 mm change as the change per single degree, not per 5 degrees. That gives $b = 86 + 0.4(35) = 100$."
+   },
+   {
+    "value": "523.5",
+    "misconception": "graph-feature-mismatch",
+    "why": "Found the slope as change in temperature over change in length, $\\frac{5}{-0.4} = -12.5$. That gives $b = 86 + 12.5(35) = 523.5$."
+   },
+   {
+    "value": "86",
+    "misconception": "missed-condition",
+    "why": "Treated the length at 35\u00b0C as the intercept, even though the intercept is the length at 0\u00b0C."
+   }
+  ],
+  "id": "orig-equation-from--H-2faf6c",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A hydrologist records the water level of a reservoir during a dry spell. The level, in meters above a reference datum, is a linear function of the number of days $t$ since measurements began. The table shows some of the recorded values.\n\nReservoir Water Level\n$t$ (days) | Level (meters)\n3 | 412\n7 | 396\n$k$ | 370",
+  "keys": [
+   "13.5",
+   "27/2"
+  ],
+  "any_of": false,
+  "explanation": "First use the two complete rows to find the slope: $m = \\frac{396 - 412}{7 - 3} = \\frac{-16}{4} = -4$ meters per day. Next, put in $(3, 412)$ to find the intercept: $412 = -4(3) + b$, so $b = 424$. The level is $y = -4t + 424$. Set the level to 370: $370 = -4k + 424$, so $4k = 54$ and $k = 13.5$.",
+  "common_errors": [
+   {
+    "value": "171",
+    "misconception": "graph-feature-mismatch",
+    "why": "Found the slope as change in $t$ over change in level, $-\\frac{1}{4}$. Then $b = 412.75$, and $370 = -\\frac{1}{4}k + 412.75$ gives $k = 171$."
+   },
+   {
+    "value": "5.625",
+    "misconception": "algebra-manipulation",
+    "why": "Used the 16-meter drop as the slope without dividing by the 4 days. Then $b = 412 + 48 = 460$, and $370 = -16k + 460$ gives $k = 5.625$."
+   },
+   {
+    "value": "424",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the intercept, which is the level when $t = 0$, and gave that as the answer, not the value of $t$."
+   },
+   {
+    "value": "6.5",
+    "misconception": "intermediate-step",
+    "why": "Found how many days it takes to fall from 396 to 370, which is $\\frac{26}{4} = 6.5$, and forgot to add that to $t = 7$."
+   },
+   {
+    "value": "10.5",
+    "misconception": "intermediate-step",
+    "why": "Found how many days it takes to fall from 412 to 370, which is $\\frac{42}{4} = 10.5$, and forgot to add that to $t = 3$."
+   }
+  ],
+  "id": "orig-equation-from--H-51fb68",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

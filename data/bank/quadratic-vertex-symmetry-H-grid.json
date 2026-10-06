@@ -1,0 +1,188 @@
+[
+ {
+  "stem": "According to the model, in what year was the percentage of speakers using the vowel the greatest?",
+  "stimulus": "A linguist studying a regional dialect modeled the percentage of speakers who use a particular vowel sound, based on the year each speaker was born. The model is $P(t) = -0.02t^2 + 3t - 88$, where $P(t)$ is the percentage of speakers born $t$ years after 1900 who use the vowel, for $40 \\le t \\le 110$.",
+  "keys": [
+   "1975"
+  ],
+  "any_of": false,
+  "explanation": "A downward-opening parabola is greatest at its vertex. Find the vertex's t-coordinate with $t = -\\frac{b}{2a} = -\\frac{3}{2(-0.02)} = \\frac{3}{0.04} = 75$. You can check this another way: the roots of $P$ are $t = 40$ and $t = 110$, and the vertex sits halfway between them at 75. The question asks for a year, and t counts years after 1900, so the answer is $1900 + 75 = 1975$. In Desmos, graph $y = -0.02x^2 + 3x - 88$ and click the top of the curve to see (75, 24.5). The 24.5 is the greatest percentage, but the question asks for the year.",
+  "common_errors": [
+   {
+    "value": "75",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the vertex's t-value but didn't turn it into a year by adding 1900."
+   },
+   {
+    "value": "24.5",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the vertex's y-coordinate, which is the greatest percentage, instead of when it happens."
+   },
+   {
+    "value": "1825",
+    "misconception": "algebra-manipulation",
+    "why": "You lost the negative sign in $-\\frac{b}{2a}$ and got $t = -75$, then added 1900."
+   },
+   {
+    "value": "2050",
+    "misconception": "algebra-manipulation",
+    "why": "You divided by $a$ instead of $2a$ ($3/0.02 = 150$), then added 1900."
+   },
+   {
+    "value": "1940",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the year of a root, where the percentage is 0, instead of the year of the maximum."
+   }
+  ],
+  "id": "orig-quadratic-vert-H-370d35",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The model predicts that the temperature at $h = 9$ will occur again at $h = k$, where $k \\ne 9$. What is the value of $k$?",
+  "stimulus": "A meteorologist modeled the air temperature at a weather station on one summer day with $T(h) = -0.25h^2 + 7h + 31$, where $T(h)$ is the temperature, in degrees Fahrenheit, $h$ hours after midnight, for $6 \\le h \\le 22$.",
+  "keys": [
+   "19"
+  ],
+  "any_of": false,
+  "explanation": "A parabola is symmetric about the vertical line through its vertex. The vertex is at $h = -\\frac{7}{2(-0.25)} = 14$. The time $h = 9$ is 5 hours before the vertex, so the same temperature comes back 5 hours after it, at $h = 14 + 5 = 19$. As a formula, $k = 2(14) - 9 = 19$. To check, $T(9) = -20.25 + 63 + 31 = 73.75$ and $T(19) = -90.25 + 133 + 31 = 73.75$. In Desmos, graph T, add the line $y = 73.75$, and read the second intersection point.",
+  "common_errors": [
+   {
+    "value": "14",
+    "misconception": "wrong-target-quantity",
+    "why": "You stopped at the vertex time, when the temperature is highest, without using symmetry."
+   },
+   {
+    "value": "5",
+    "misconception": "intermediate-step",
+    "why": "You gave the distance from 9 to the vertex instead of the time on the other side."
+   },
+   {
+    "value": "73.75",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the shared temperature instead of the time it happens again."
+   },
+   {
+    "value": "23",
+    "misconception": "algebra-manipulation",
+    "why": "You added the vertex time to 9 ($14 + 9$) instead of reflecting 9 across 14."
+   },
+   {
+    "value": "47",
+    "misconception": "algebra-manipulation",
+    "why": "You divided by $a$ instead of $2a$ and got a vertex at $h = 28$, then calculated $2(28) - 9$."
+   }
+  ],
+  "id": "orig-quadratic-vert-H-270833",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the x-coordinate of the vertex of the graph of $y = g(x)$?",
+  "stimulus": "In a model a nutrition scientist uses to describe how a nutrient's concentration changes during digestion, the function $g$ is defined by $g(x) = px^2 - 12x + p$, where $p$ is a nonzero constant. In the xy-plane, the graph of $y = g(x)$ has no x-intercepts, and the y-coordinate of its vertex is 5.",
+  "keys": [
+   "2/3",
+   ".6666",
+   ".6667"
+  ],
+  "any_of": false,
+  "explanation": "The vertex's x-coordinate is $-\\frac{-12}{2p} = \\frac{6}{p}$. Substitute that into g to get the vertex's y-coordinate: $p\\left(\\frac{6}{p}\\right)^2 - 12\\left(\\frac{6}{p}\\right) + p = \\frac{36}{p} - \\frac{72}{p} + p = p - \\frac{36}{p}$. Set this equal to 5 to get $p^2 - 5p - 36 = 0$, so $(p - 9)(p + 4) = 0$ and $p = 9$ or $p = -4$. The vertex is above the x-axis (y = 5). For the graph to have no x-intercepts it must open upward, so $p > 0$ and $p = 9$. If $p = -4$, the parabola opens downward from a point above the axis and crosses the x-axis twice. The x-coordinate of the vertex is $\\frac{6}{9} = \\frac{2}{3}$. In Desmos, put a slider on p and check which value puts the turning point at height 5 without the curve touching the x-axis.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the constant p but not the vertex's x-coordinate, which the question asks for."
+   },
+   {
+    "value": "5",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the vertex's y-coordinate instead of its x-coordinate."
+   },
+   {
+    "value": "-3/2",
+    "misconception": "missed-condition",
+    "why": "You used $p = -4$ without checking that a downward-opening parabola with its vertex at y = 5 has two x-intercepts. That gives $6/(-4) = -1.5$."
+   },
+   {
+    "value": "4/3",
+    "misconception": "algebra-manipulation",
+    "why": "You divided by $p$ instead of $2p$, so you got $12/9$."
+   },
+   {
+    "value": "-2/3",
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the negative sign in $-\\frac{b}{2a}$ and used $\\frac{-12}{2p}$."
+   }
+  ],
+  "id": "orig-quadratic-vert-H-d10441",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the maximum height, in millimeters, of the arch?",
+  "stimulus": "A printmaker carves a parabolic arch into a woodblock. The arch's height above the bottom edge of the block, in millimeters, is a quadratic function of $x$, the horizontal distance in millimeters from the block's left edge. The arch meets the bottom edge (height 0) at $x = 10$ and at one other point. Its height is 21 millimeters at both $x = 17$ and $x = 59$.",
+  "keys": [
+   "48"
+  ],
+  "any_of": false,
+  "explanation": "Points at the same height are symmetric about the vertex, so the vertex is at $x = \\frac{17 + 59}{2} = 38$. The arch meets the bottom edge at $x = 10$, which is 28 mm to the left of the vertex, so it meets it again 28 mm to the right, at $x = 66$. Write $h(x) = a(x - 10)(x - 66)$. Then use $h(17) = 21$: $a(7)(-49) = 21$, so $a = -\\frac{3}{49}$. The maximum height is $h(38) = -\\frac{3}{49}(28)(-28) = \\frac{3 \\cdot 784}{49} = 48$.",
+  "common_errors": [
+   {
+    "value": "38",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the x-coordinate of the vertex instead of the height there."
+   },
+   {
+    "value": "66",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the second point where the arch meets the bottom edge."
+   },
+   {
+    "value": "28",
+    "misconception": "intermediate-step",
+    "why": "You gave the horizontal distance from a base point to the vertex, which is half the arch's width."
+   },
+   {
+    "value": "784",
+    "misconception": "algebra-manipulation",
+    "why": "You calculated $(38 - 10)(66 - 38)$ and left out the leading coefficient $a$."
+   },
+   {
+    "value": "-48",
+    "misconception": "algebra-manipulation",
+    "why": "You got the sign of $a$ wrong ($\\frac{3}{49}$), which makes the parabola open upward and gives a negative height."
+   }
+  ],
+  "id": "orig-quadratic-vert-H-b14c32",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

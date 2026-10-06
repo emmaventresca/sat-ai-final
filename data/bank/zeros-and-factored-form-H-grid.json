@@ -1,0 +1,166 @@
+[
+ {
+  "stem": "What is the value of $S(0)$?",
+  "stimulus": "A materials scientist models the net internal stress in a polymer strip, in megapascals, as a function of $x$, the temperature in degrees Celsius above a reference temperature. The model is a cubic polynomial function $S$ with a leading coefficient of $2$. In the model, the stress is zero only at $x = -3$, $x = \\frac{1}{2}$, and $x = 4$.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "Each zero $r$ gives a factor $(x - r)$, and the leading coefficient goes in front: $S(x) = 2(x + 3)\\left(x - \\frac{1}{2}\\right)(x - 4)$. You don't need to expand it. Substitute $x = 0$: $S(0) = 2(3)\\left(-\\frac{1}{2}\\right)(-4) = 12$. There are two negative factors, so the product is positive.",
+  "common_errors": [
+   {
+    "value": "-12",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote each factor as $(x + r)$ instead of $(x - r)$, giving $2(x - 3)\\left(x + \\frac{1}{2}\\right)(x + 4)$, so $S(0) = 2(-3)\\left(\\frac{1}{2}\\right)(4) = -12$."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Built the factors correctly but left out the leading coefficient 2: $(3)\\left(-\\frac{1}{2}\\right)(-4) = 6$."
+   },
+   {
+    "value": "24",
+    "misconception": "algebra-manipulation",
+    "why": "Cleared the fraction by writing the factor as $(2x - 1)$ but still multiplied by the leading coefficient 2. That doubles the function: $2(3)(-1)(-4) = 24$."
+   }
+  ],
+  "id": "orig-zeros-and-fact-H-ecf359",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the model, at what positive value of $t$ is the brightness change equal to zero?",
+  "stimulus": "An astronomer models the change in brightness of a variable star, relative to its baseline brightness, with the function $f(t) = (3t - a)(t + 4)$, where $t$ is the number of days after a reference observation and $a$ is a positive constant. According to the model, the brightness change at $t = 0$ is $-20$.",
+  "keys": [
+   "5/3",
+   "1.666",
+   "1.667"
+  ],
+  "any_of": false,
+  "explanation": "Start by using the given point. $f(0) = (-a)(4) = -4a$. Set it equal to $-20$ to get $a = 5$, so $f(t) = (3t - 5)(t + 4)$. Now set each factor equal to zero: $t + 4 = 0$ gives $t = -4$, and $3t - 5 = 0$ gives $t = \\frac{5}{3}$. The positive zero is $\\frac{5}{3}$. To check in Desmos, graph $(3x - 5)(x + 4)$ and click the right-hand x-intercept.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Found $a = 5$ correctly but took the zero of $(3t - 5)$ to be 5. You need to divide by the coefficient 3."
+   },
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "Read the factor $(t + 4)$ as giving the zero $t = 4$ instead of $t = -4$. That made it look like the positive zero."
+   },
+   {
+    "value": "-5/3",
+    "misconception": "algebra-manipulation",
+    "why": "Made a sign slip in $f(0)$ by writing $4a = -20$. That gives $a = -5$ and a zero of $-\\frac{5}{3}$, which isn't positive."
+   }
+  ],
+  "id": "orig-zeros-and-fact-H-b8819e",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "A sports scientist models the height, in meters, of a ball thrown upward from a platform with the equation $h(t) = -5t^2 + bt + c$, where $t$ is the time in seconds after release and $b$ and $c$ are constants. The equation $h(t) = 0$ has exactly two solutions: $t = 4$ and $t = -\\frac{1}{2}$.",
+  "keys": [
+   "17.5",
+   "35/2"
+  ],
+  "any_of": false,
+  "explanation": "The solutions of $h(t) = 0$ are the zeros, so $h(t) = -5(t - 4)\\left(t + \\frac{1}{2}\\right)$. Expand: $\\left(t - 4\\right)\\left(t + \\frac{1}{2}\\right) = t^2 - \\frac{7}{2}t - 2$. Multiplying by $-5$ gives $-5t^2 + \\frac{35}{2}t + 10$. So $b = \\frac{35}{2} = 17.5$. As a check, the zeros add to $-\\frac{b}{a}$: $4 - \\frac{1}{2} = \\frac{b}{5}$, so $b = 17.5$.",
+  "common_errors": [
+   {
+    "value": "-17.5",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote the factors as $(t + 4)\\left(t - \\frac{1}{2}\\right)$. Flipping both signs flips the sign of $b$."
+   },
+   {
+    "value": "22.5",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped only the sign of the fractional zero, using $(t - 4)\\left(t - \\frac{1}{2}\\right) = t^2 - \\frac{9}{2}t + 2$. Multiplying by $-5$ gives $b = 22.5$."
+   },
+   {
+    "value": "3.5",
+    "misconception": "algebra-manipulation",
+    "why": "Expanded $(t - 4)\\left(t + \\frac{1}{2}\\right)$ but forgot to multiply by the leading coefficient $-5$, then dropped the sign."
+   },
+   {
+    "value": "35",
+    "misconception": "algebra-manipulation",
+    "why": "Cleared the fraction by writing the factor as $(2t + 1)$ but kept the $-5$ in front. That doubles the function: $-5(2t^2 - 7t - 4)$ gives $b = 35$."
+   },
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "Expanded correctly but reported the constant term $c = 10$ instead of $b$."
+   }
+  ],
+  "id": "orig-zeros-and-fact-H-fd69da",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the sum of the $x$-coordinates of all the $x$-intercepts of the graph of $y = f(x)$ in the $xy$-plane?",
+  "stimulus": "A paleobotanist models how the relative abundance of fossil fern spores changes with depth in a sediment core using the function $f(x) = (3x - 2)(x^2 + kx - 20)$. Here $x$ is the depth, in meters, measured from a marker ash layer, and $k$ is a constant. The graph of $y = f(x)$ in the $xy$-plane has an $x$-intercept at $(-4, 0)$.",
+  "keys": [
+   "5/3",
+   "1.666",
+   "1.667"
+  ],
+  "any_of": false,
+  "explanation": "$x = -4$ doesn't make $3x - 2$ equal zero, so it must be a zero of the quadratic factor. Substitute it: $16 - 4k - 20 = 0$, so $k = -1$. Then $x^2 - x - 20 = (x - 5)(x + 4)$, which gives zeros $5$ and $-4$. The factor $3x - 2$ gives the zero $\\frac{2}{3}$. The sum is $5 + (-4) + \\frac{2}{3} = \\frac{5}{3}$. To check in Desmos, graph $(3x - 2)(x^2 - x - 20)$ and click all three intercepts.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Took the zero of $(3x - 2)$ to be 2 instead of $\\frac{2}{3}$: $5 - 4 + 2 = 3$."
+   },
+   {
+    "value": "-1/3",
+    "misconception": "algebra-manipulation",
+    "why": "Substituted $x = 4$ instead of $-4$. That gives $k = 1$, so $x^2 + x - 20 = (x + 5)(x - 4)$, with zeros $-5$ and $4$. The sum is then $-5 + 4 + \\frac{2}{3} = -\\frac{1}{3}$."
+   },
+   {
+    "value": "17/3",
+    "misconception": "missed-condition",
+    "why": "Added only the newly found zero and the zero of the linear factor, $5 + \\frac{2}{3}$, and left out the given intercept at $-4$."
+   },
+   {
+    "value": "1",
+    "misconception": "missed-condition",
+    "why": "Added only the two zeros of the quadratic factor, $5 + (-4)$, and left out the zero of $3x - 2$."
+   }
+  ],
+  "id": "orig-zeros-and-fact-H-3d4708",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

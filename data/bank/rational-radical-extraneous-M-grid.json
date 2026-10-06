@@ -1,0 +1,141 @@
+[
+ {
+  "stem": "What is the solution to the equation?",
+  "stimulus": "A paleobotanist uses a model to estimate how many centuries a fossilized seed bed took to form. The number of centuries, $x$, satisfies the equation $\\sqrt{x+7} = x - 5$.",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "The square root is already alone on the left, so square both sides: $x + 7 = (x-5)^2 = x^2 - 10x + 25$. Move everything to one side to get $x^2 - 11x + 18 = 0$, which factors as $(x-2)(x-9) = 0$. That gives two candidates, $x = 2$ and $x = 9$. Check each one in the original equation. For $x = 9$: $\\sqrt{16} = 4$ and $9 - 5 = 4$, so it works. For $x = 2$: $\\sqrt{9} = 3$ but $2 - 5 = -3$. A square root can't equal a negative number, so $x = 2$ is extraneous. In Desmos, $y = \\sqrt{x+7}$ and $y = x - 5$ cross only once, at $x = 9$. Wrong values students enter: 2 (keeping the extraneous root), 11 (adding the roots instead of solving) and 4 (giving the value of the square root instead of $x$).",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "missed-condition",
+    "why": "Solved $(x-2)(x-9)=0$ but didn't check the roots in the original equation. At $x = 2$ the right side is $-3$, and a square root can't equal that."
+   },
+   {
+    "value": "11",
+    "misconception": "intermediate-step",
+    "why": "Took the coefficient from $x^2 - 11x + 18 = 0$, which is the sum of the two roots, rather than solving for $x$."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the value of $\\sqrt{x+7}$ (and of $x - 5$) at the solution, not the value of $x$."
+   }
+  ],
+  "id": "orig-rational-radic-M-b006a7",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the solution to the equation?",
+  "stimulus": "A nutrition scientist comparing two diets sets up the equation below, where $x$ is a dosage level.\n\n$\\dfrac{x}{x-5} - \\dfrac{8}{x+1} = \\dfrac{30}{x^2 - 4x - 5}$",
+  "keys": [
+   "2"
+  ],
+  "any_of": false,
+  "explanation": "First factor the denominator on the right: $x^2 - 4x - 5 = (x-5)(x+1)$. This tells you $x$ can't be 5 or $-1$. Multiply every term by $(x-5)(x+1)$ to get $x(x+1) - 8(x-5) = 30$. Expand: $x^2 + x - 8x + 40 = 30$, so $x^2 - 7x + 10 = 0$, which factors as $(x-2)(x-5) = 0$. The candidates are $x = 2$ and $x = 5$. Since $x = 5$ makes two of the denominators zero, throw it out. Check $x = 2$: the left side is $\\frac{2}{-3} - \\frac{8}{3} = -\\frac{10}{3}$, and the right side is $\\frac{30}{-9} = -\\frac{10}{3}$. Wrong values students enter: 5 (keeping the value that zeroes a denominator) and 7 (adding the roots).",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "missed-condition",
+    "why": "Solved $(x-2)(x-5)=0$ and kept $x = 5$, which makes $x-5$ and $x^2-4x-5$ equal zero in the original equation."
+   },
+   {
+    "value": "7",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $x^2 - 7x + 10 = 0$ and reported 7, which is the sum of the roots, not a solution."
+   }
+  ],
+  "id": "orig-rational-radic-M-e75d8b",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the solution to the equation?",
+  "stimulus": "A printmaker cuts a square linocut block and leaves a border around the image. The width of the border, $x$ centimeters, satisfies the equation $\\sqrt{x+3} + 3 = x$.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "Get the square root alone first by subtracting 3: $\\sqrt{x+3} = x - 3$. Then square both sides: $x + 3 = x^2 - 6x + 9$, so $x^2 - 7x + 6 = 0$, which factors as $(x-1)(x-6) = 0$. Check both candidates in the original equation. For $x = 6$: $\\sqrt{9} + 3 = 6$, so it works. For $x = 1$: $\\sqrt{4} + 3 = 5$, which isn't 1, so $x = 1$ is extraneous. Squaring brought it in because it solves $-\\sqrt{x+3} = x - 3$. Wrong values students enter: 1 (keeping the extraneous root), 4 (squaring before isolating the root, and squaring term by term) and 7 (adding the roots).",
+  "common_errors": [
+   {
+    "value": "1",
+    "misconception": "missed-condition",
+    "why": "Didn't check the roots. At $x = 1$ the root would have to equal $1 - 3 = -2$, which a square root can't do."
+   },
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "Squared both sides without isolating the root and squared each term separately: $x + 3 + 9 = x^2$. That gives $x^2 - x - 12 = 0$, so $x = 4$ or $x = -3$, and the student kept 4."
+   },
+   {
+    "value": "7",
+    "misconception": "intermediate-step",
+    "why": "Reported the coefficient from $x^2 - 7x + 6 = 0$, which is the sum of the roots, rather than solving."
+   }
+  ],
+  "id": "orig-rational-radic-M-48b8fd",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the solution to the equation?",
+  "stimulus": "A linguist modeling how quickly two dialects borrow words from each other arrives at the equation below.\n\n$\\dfrac{x}{x-2} - \\dfrac{5}{x} = \\dfrac{4}{x^2 - 2x}$",
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "Factor the denominator on the right: $x^2 - 2x = x(x-2)$. This tells you $x$ can't be 0 or 2. Multiply every term by $x(x-2)$ to get $x^2 - 5(x-2) = 4$, so $x^2 - 5x + 10 = 4$, which simplifies to $x^2 - 5x + 6 = 0$. That factors as $(x-2)(x-3) = 0$. Throw out $x = 2$, because it makes $x - 2$ and $x^2 - 2x$ equal zero. Check $x = 3$: the left side is $3 - \\frac{5}{3} = \\frac{4}{3}$, and the right side is $\\frac{4}{3}$. Wrong values students enter: 2 (keeping the value that zeroes a denominator), 5 (adding the roots) and 14 (dropping the distributed sign).",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "missed-condition",
+    "why": "Solved $(x-2)(x-3)=0$ and kept $x = 2$, which makes two of the original denominators zero."
+   },
+   {
+    "value": "5",
+    "misconception": "intermediate-step",
+    "why": "Took the coefficient 5 from $x^2 - 5x + 6 = 0$, which is the sum of the roots, rather than solving."
+   },
+   {
+    "value": "14",
+    "misconception": "algebra-manipulation",
+    "why": "Distributed the $-5$ as $-5x - 10$ instead of $-5x + 10$. That gives $x^2 - 5x - 14 = 0$, so $x = 7$ or $x = -2$. Checking 7 in the original fails, so a student who notices the mismatch often enters the constant 14 instead."
+   }
+  ],
+  "id": "orig-rational-radic-M-090947",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

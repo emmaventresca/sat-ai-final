@@ -1,0 +1,193 @@
+[
+ {
+  "stem": "What is the median number of applications submitted by these job seekers?",
+  "stimulus": "A labour economist surveyed 40 people who had recently found full-time work. Each was asked how many job applications they had submitted before receiving the offer they accepted. The results are shown in the table.\n\nApplications Submitted Before Hiring\nNumber of applications | Number of people\n1 | 4\n2 | 5\n3 | 5\n4 | 6\n6 | 12\n10 | 8",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "The table holds 40 people, not 6 values, so the median is the mean of the 20th and 21st values once all 40 are in order. Keep a running total of the frequencies: 4 people submitted 1 application, which brings the count to 4. The 2s take it to 9 and the 3s to 14. The 4s take it to 20, so the 20th value is 4. The next group starts at the 21st person, so the 21st value is 6. The median is $\\frac{4+6}{2} = 5$. In Desmos, put the values in one column and the frequencies in another and use median(L1,L2) to check.",
+  "common_errors": [
+   {
+    "value": "3.5",
+    "misconception": "algebra-manipulation",
+    "why": "Took the median of the six distinct values 1, 2, 3, 4, 6, 10 and ignored the frequencies: $\\frac{3+4}{2} = 3.5$."
+   },
+   {
+    "value": "4",
+    "misconception": "intermediate-step",
+    "why": "Found that the 20th value is 4 and stopped, without averaging it with the 21st value because the count is even."
+   },
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the mode, the value with the largest frequency (12 people). This is also what you get if you take only the 21st value."
+   },
+   {
+    "value": "5.125",
+    "misconception": "wrong-target-quantity",
+    "why": "Worked out the weighted mean, $\\frac{205}{40}$, when the question asked for the median."
+   },
+   {
+    "value": "4.333",
+    "misconception": "wrong-target-quantity",
+    "why": "Averaged the six distinct values without weighting, $\\frac{26}{6}$, which answers neither the mean nor the median question correctly."
+   },
+   {
+    "value": "5.5",
+    "misconception": "misread-given",
+    "why": "Read across to the median of the frequency column (4, 5, 5, 6, 8, 12) instead of working with the number of applications."
+   }
+  ],
+  "id": "orig-compute-mean-o-H-55bb0d",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the median of the nine weekly counts?",
+  "stimulus": "A county health clinic recorded the number of new influenza cases it diagnosed in each of 9 consecutive weeks. In order by week, the counts were 12, 7, 19, $x$, 22, 9, 15, 11, and 14. The mean of the nine weekly counts is 15.",
+  "keys": [
+   "14"
+  ],
+  "any_of": false,
+  "explanation": "Start by finding $x$. A mean of 15 over 9 weeks means the counts add to $9 \\times 15 = 135$. The eight known counts add to 109, so $x = 135 - 109 = 26$. Now sort all nine counts: 7, 9, 11, 12, 14, 15, 19, 22, 26. With nine values, the median is the 5th one, which is 14. You have to sort first, because the 5th count in week order is 22 and has nothing to do with the median.",
+  "common_errors": [
+   {
+    "value": "22",
+    "misconception": "algebra-manipulation",
+    "why": "Took the 5th value of the list in week order without sorting it."
+   },
+   {
+    "value": "26",
+    "misconception": "intermediate-step",
+    "why": "Solved for the missing count $x$ and gave that as the answer."
+   },
+   {
+    "value": "15",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the mean, which the question had already stated, instead of the median."
+   },
+   {
+    "value": "13",
+    "misconception": "missed-condition",
+    "why": "Sorted only the eight known counts, 7, 9, 11, 12, 14, 15, 19, 22, and averaged the two middle ones, leaving out $x$."
+   },
+   {
+    "value": "19",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the range of the full sorted data, $26 - 7$, instead of the median."
+   }
+  ],
+  "id": "orig-compute-mean-o-H-6dd04f",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the mean number of cracks per girder for these 25 girders?",
+  "stimulus": "During a bridge inspection, an engineer counted the visible fatigue cracks on each of the 25 steel girders that support the deck. The results are shown in the table.\n\nFatigue Cracks per Girder\nNumber of cracks | Number of girders\n0 | 6\n1 | 8\n2 | 5\n3 | 4\n7 | 2",
+  "keys": [
+   "1.76",
+   "44/25"
+  ],
+  "any_of": false,
+  "explanation": "Each row stands for several girders, so weight every crack count by its frequency. The total number of cracks is $0(6) + 1(8) + 2(5) + 3(4) + 7(2) = 0 + 8 + 10 + 12 + 14 = 44$. Divide by the number of girders, which is 25, not by the 5 rows: $\\frac{44}{25} = 1.76$. In Desmos, use mean(L1,L2) with the crack counts in L1 and the frequencies in L2.",
+  "common_errors": [
+   {
+    "value": "2.6",
+    "misconception": "algebra-manipulation",
+    "why": "Averaged the five distinct crack counts, $\\frac{0+1+2+3+7}{5}$, without weighting them by frequency."
+   },
+   {
+    "value": "8.8",
+    "misconception": "algebra-manipulation",
+    "why": "Found the correct total of 44 cracks but divided by the 5 rows instead of the 25 girders."
+   },
+   {
+    "value": "44",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the total number of cracks and did not divide by the number of girders."
+   },
+   {
+    "value": "5",
+    "misconception": "misread-given",
+    "why": "Averaged the frequency column, $\\frac{25}{5}$, instead of the crack counts."
+   },
+   {
+    "value": "1",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the median (the 13th girder falls in the 1-crack group) or the mode instead of the mean."
+   }
+  ],
+  "id": "orig-compute-mean-o-H-aa6c83",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the median number of recorded variants for these 10 villages?",
+  "stimulus": "A folklorist collected versions of a regional trickster tale in 10 villages. The table shows how many distinct variants of the tale were recorded in each village.\n\nRecorded Variants of the Trickster Tale\nVillage | Number of variants\nAshford | 14\nBrennan's Cross | 3\nCaldwick | 8\nDunmere | 21\nElsby | 5\nFarrow | 8\nGlenholt | 30\nHaverlee | 11\nIrwen | 6\nJessop Mill | 17",
+  "keys": [
+   "9.5",
+   "19/2"
+  ],
+  "any_of": false,
+  "explanation": "The villages are listed alphabetically, not by count, so sort the counts first: 3, 5, 6, 8, 8, 11, 14, 17, 21, 30. There are 10 values, so the median is the mean of the 5th and 6th: $\\frac{8 + 11}{2} = 9.5$. If you take the middle of the table as printed, you get the wrong pair.",
+  "common_errors": [
+   {
+    "value": "6.5",
+    "misconception": "algebra-manipulation",
+    "why": "Averaged the 5th and 6th values in table order (Elsby 5 and Farrow 8) without sorting."
+   },
+   {
+    "value": "8",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the mode, or used only the 5th sorted value instead of averaging the two middle values."
+   },
+   {
+    "value": "11",
+    "misconception": "intermediate-step",
+    "why": "Found the middle of the sorted list but used only the 6th value instead of averaging it with the 5th."
+   },
+   {
+    "value": "12.3",
+    "misconception": "wrong-target-quantity",
+    "why": "Worked out the mean, $\\frac{123}{10}$, instead of the median."
+   },
+   {
+    "value": "27",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the range, $30 - 3$, instead of the median."
+   }
+  ],
+  "id": "orig-compute-mean-o-H-23b10e",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

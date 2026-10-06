@@ -1,0 +1,213 @@
+[
+ {
+  "stem": "What is the nesting density, in nesting pairs per square kilometer of land, in the preserve?",
+  "stimulus": "A coastal bird preserve covers a total area of 18 square kilometers. Of that area, 6 square kilometers are open water, and the rest is land. A spring survey counted 840 nesting pairs of terns, all nesting on the land.",
+  "keys": [
+   "70"
+  ],
+  "any_of": false,
+  "explanation": "Density = amount \u00f7 space, and the question asks about land only. First find the land area: 18 \u2212 6 = 12 square kilometers. Then divide the count by the land area: 840 pairs \u00f7 12 km\u00b2 = 70 pairs per square kilometer. Write the units as you go. The answer is pairs per km\u00b2, so pairs go on top and area on the bottom.",
+  "common_errors": [
+   {
+    "value": "140/3",
+    "misconception": "missed-condition",
+    "why": "Divided by the total area, 840 \u00f7 18 = 46.67, but the question asks per square kilometer of land, so the water should have been taken out."
+   },
+   {
+    "value": "46.66",
+    "misconception": "missed-condition",
+    "why": "Truncated decimal of 840 \u00f7 18. Used the total area instead of the land area."
+   },
+   {
+    "value": "46.67",
+    "misconception": "missed-condition",
+    "why": "Rounded decimal of 840 \u00f7 18. Used the total area instead of the land area."
+   },
+   {
+    "value": "1/70",
+    "misconception": "complement-or-direction-flip",
+    "why": "Flipped the quotient and found land area \u00f7 pairs, 12 \u00f7 840, which gives square kilometers per pair."
+   },
+   {
+    "value": ".0142",
+    "misconception": "complement-or-direction-flip",
+    "why": "Truncated decimal of 12 \u00f7 840. The quotient is flipped."
+   },
+   {
+    "value": ".0143",
+    "misconception": "complement-or-direction-flip",
+    "why": "Rounded decimal of 12 \u00f7 840. The quotient is flipped."
+   },
+   {
+    "value": "140",
+    "misconception": "misread-given",
+    "why": "Divided by the water area, 840 \u00f7 6, instead of the land area."
+   },
+   {
+    "value": "12",
+    "misconception": "intermediate-step",
+    "why": "Stopped after finding the land area and did not divide the count by it."
+   }
+  ],
+  "id": "orig-density-per-un-M-b5c61b",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the length, in meters, of each edge of the block?",
+  "stimulus": "A civil engineer is testing a solid concrete block in the shape of a cube. The concrete has a density of 2,400 kilograms per cubic meter, and the block has a mass of 300 kilograms.",
+  "keys": [
+   ".5",
+   "0.5",
+   "1/2"
+  ],
+  "any_of": false,
+  "explanation": "This time you are given the density, so rearrange it: volume = mass \u00f7 density. That gives 300 kg \u00f7 2,400 kg/m\u00b3 = 0.125 m\u00b3. The kilograms cancel and cubic meters are left, which tells you the setup is right. The question asks for an edge length, not a volume, so take the cube root: \u221b0.125 = 0.5 meter. In Desmos, you can graph y = x^3 and y = 300/2400 and read the x-value where they cross.",
+  "common_errors": [
+   {
+    "value": ".125",
+    "misconception": "intermediate-step",
+    "why": "Found the volume, 300 \u00f7 2,400 = 0.125 m\u00b3, and stopped without taking the cube root to get the edge."
+   },
+   {
+    "value": "1/8",
+    "misconception": "intermediate-step",
+    "why": "Fraction form of the volume, 0.125 m\u00b3, entered as if it were the edge length."
+   },
+   {
+    "value": "2",
+    "misconception": "complement-or-direction-flip",
+    "why": "Flipped the quotient, 2,400 \u00f7 300 = 8, and then took the cube root of 8."
+   },
+   {
+    "value": "8",
+    "misconception": "complement-or-direction-flip",
+    "why": "Flipped the quotient to density \u00f7 mass, 2,400 \u00f7 300, and also skipped the cube root."
+   },
+   {
+    "value": ".3535",
+    "misconception": "algebra-manipulation",
+    "why": "Took the square root of 0.125 instead of the cube root (truncated)."
+   },
+   {
+    "value": ".3536",
+    "misconception": "algebra-manipulation",
+    "why": "Took the square root of 0.125 instead of the cube root (rounded)."
+   }
+  ],
+  "id": "orig-density-per-un-M-b77336",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the paper's weight, in grams per square meter?",
+  "stimulus": "Printmakers describe paper by its weight in grams per square meter. A single rectangular sheet of printmaking paper measures 50 centimeters by 80 centimeters and has a mass of 120 grams.",
+  "keys": [
+   "300"
+  ],
+  "any_of": false,
+  "explanation": "Paper weight here is a per-unit quotient: grams \u00f7 area. The question wants square meters, so convert the side lengths first: 50 cm = 0.5 m and 80 cm = 0.8 m. The area is 0.5 \u00d7 0.8 = 0.4 m\u00b2. Then divide: 120 g \u00f7 0.4 m\u00b2 = 300 g/m\u00b2. Watch out if you find the area in square centimeters first (4,000 cm\u00b2). There are 10,000 cm\u00b2 in one square meter, not 100, so 4,000 cm\u00b2 = 0.4 m\u00b2.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Converted 4,000 cm\u00b2 to square meters by dividing by 100 instead of 10,000, which gives 40 m\u00b2. Then 120 \u00f7 40 = 3."
+   },
+   {
+    "value": ".03",
+    "misconception": "wrong-target-quantity",
+    "why": "Never converted units and computed 120 \u00f7 4,000, which is grams per square centimeter."
+   },
+   {
+    "value": "1/300",
+    "misconception": "complement-or-direction-flip",
+    "why": "Flipped the quotient and found area \u00f7 mass, 0.4 \u00f7 120, which gives square meters per gram."
+   },
+   {
+    "value": ".0033",
+    "misconception": "complement-or-direction-flip",
+    "why": "Truncated decimal of 0.4 \u00f7 120. The quotient is flipped."
+   },
+   {
+    "value": ".4",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the area of the sheet in square meters and did not divide the mass by it."
+   }
+  ],
+  "id": "orig-density-per-un-M-396607",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the side length, in kilometers, of the study region?",
+  "stimulus": "Hydrologists measure the drainage density of a region as the total length of its streams divided by the region's area. A square study region has a drainage density of 2.5 kilometers of stream per square kilometer, and the total length of all streams in the region is 360 kilometers.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "Drainage density = stream length \u00f7 area. You know the density and the length, so rearrange: area = length \u00f7 density. That gives 360 km \u00f7 2.5 km/km\u00b2 = 144 km\u00b2. Kilometers cancel and km\u00b2 is left, so the setup checks out. The region is a square and the question asks for a side length, so take the square root: \u221a144 = 12 kilometers.",
+  "common_errors": [
+   {
+    "value": "144",
+    "misconception": "intermediate-step",
+    "why": "Found the area, 360 \u00f7 2.5 = 144 km\u00b2, and stopped without taking the square root to get the side length."
+   },
+   {
+    "value": "30",
+    "misconception": "complement-or-direction-flip",
+    "why": "Multiplied instead of dividing, 360 \u00d7 2.5 = 900, as if area were length \u00d7 density. Then took \u221a900."
+   },
+   {
+    "value": "900",
+    "misconception": "complement-or-direction-flip",
+    "why": "Multiplied length by density instead of dividing, and also skipped the square root."
+   },
+   {
+    "value": "36",
+    "misconception": "wrong-target-quantity",
+    "why": "Treated 144 as the perimeter of the square and divided by 4, instead of treating it as the area and taking the square root."
+   },
+   {
+    "value": "1/144",
+    "misconception": "complement-or-direction-flip",
+    "why": "Flipped the quotient to density \u00f7 length, 2.5 \u00f7 360, and stopped there."
+   },
+   {
+    "value": ".0069",
+    "misconception": "complement-or-direction-flip",
+    "why": "Truncated decimal of 2.5 \u00f7 360. The quotient is flipped."
+   }
+  ],
+  "id": "orig-density-per-un-M-f6302b",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

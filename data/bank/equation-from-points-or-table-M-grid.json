@@ -1,0 +1,166 @@
+[
+ {
+  "stem": "The length $L(t)$, in millimeters, of the fragment $t$ weeks after transplanting is given by $L(t) = at + b$, where $a$ and $b$ are constants. What is the value of $a + b$?",
+  "stimulus": "A marine biologist transplants a fragment of staghorn coral onto a nursery frame. The fragment's length grows linearly over time. The table shows its length at three points after transplanting.\n\nStaghorn Coral Fragment Length\nWeeks after transplanting, $t$ | Length, $L(t)$ (mm)\n2 | 19\n6 | 31\n10 | 43",
+  "keys": [
+   "16"
+  ],
+  "any_of": false,
+  "explanation": "First find the slope from any two rows: change in length over change in weeks. From $t = 2$ to $t = 6$, $\\frac{31 - 19}{6 - 2} = \\frac{12}{4} = 3$, so $a = 3$. Check it against the third row: $\\frac{43 - 31}{10 - 6} = 3$. Next, substitute a row into $L(t) = 3t + b$: $19 = 3(2) + b$, so $b = 13$. The question asks for $a + b$, so the answer is $3 + 13 = 16$.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope $a$ alone and never added $b$."
+   },
+   {
+    "value": "13",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the intercept $b$ alone and never added $a$."
+   },
+   {
+    "value": "56/3",
+    "misconception": "algebra-manipulation",
+    "why": "Calculated the slope as change in $t$ over change in $L$ and got $\\frac{4}{12} = \\frac{1}{3}$. Then $b = 19 - \\frac{2}{3} = \\frac{55}{3}$, which makes $a + b = \\frac{56}{3}$."
+   },
+   {
+    "value": "28",
+    "misconception": "algebra-manipulation",
+    "why": "Added instead of subtracting when solving for $b$: $b = 19 + 6 = 25$, so $a + b = 28$."
+   }
+  ],
+  "id": "orig-equation-from--M-1bfe92",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the model, what is the age, in years, of sediment at a depth of 72 centimeters?",
+  "stimulus": "At an excavation site, an archaeologist models the age $A$, in years, of a sediment layer as a linear function of its depth $d$, in centimeters, below the surface. The model gives an age of 1,150 years at a depth of 20 centimeters and an age of 2,050 years at a depth of 50 centimeters.",
+  "keys": [
+   "2710"
+  ],
+  "any_of": false,
+  "explanation": "Treat the two facts as the points $(20, 1150)$ and $(50, 2050)$. The slope is $\\frac{2050 - 1150}{50 - 20} = \\frac{900}{30} = 30$ years per centimeter. Substitute one point into $A = 30d + b$: $1150 = 30(20) + b$, so $b = 550$. The model is $A = 30d + 550$. At $d = 72$, $A = 30(72) + 550 = 2160 + 550 = 2710$.",
+  "common_errors": [
+   {
+    "value": "2160",
+    "misconception": "intermediate-step",
+    "why": "Calculated $30 \\times 72$ but left out the intercept of 550."
+   },
+   {
+    "value": "3310",
+    "misconception": "misread-given",
+    "why": "Used 1,150 years as the starting value at depth 0 and calculated $1150 + 30(72)$, although 1,150 is the age at 20 cm."
+   },
+   {
+    "value": "-410",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted in mismatched order, $\\frac{2050 - 1150}{20 - 50} = -30$. Then $b = 1150 + 600 = 1750$, and $A(72) = 1750 - 2160 = -410$."
+   },
+   {
+    "value": "550",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the intercept, the age at depth 0, and stopped there instead of evaluating at 72 cm."
+   }
+  ],
+  "id": "orig-equation-from--M-d7126b",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The length $L$, in millimeters, of the strip at a temperature of $T$ degrees Celsius is given by $L = mT + b$, where $m$ and $b$ are constants. What is the value of $b$?",
+  "stimulus": "A materials scientist is testing a heat-shrink polymer strip. Over the tested range, the strip's length decreases by 0.15 millimeter for each increase of 1 degree Celsius in temperature. At 40 degrees Celsius, the strip is 312 millimeters long.",
+  "keys": [
+   "318"
+  ],
+  "any_of": false,
+  "explanation": "The length goes down as the temperature goes up, so the slope is negative: $m = -0.15$. Substitute the point $(40, 312)$: $312 = -0.15(40) + b$, which is $312 = -6 + b$, so $b = 318$. This makes sense because the strip was longer at 0 degrees, before it had shrunk.",
+  "common_errors": [
+   {
+    "value": "306",
+    "misconception": "graph-feature-mismatch",
+    "why": "Used a positive slope, $m = 0.15$, so $312 = 6 + b$ and $b = 306$."
+   },
+   {
+    "value": "312",
+    "misconception": "misread-given",
+    "why": "Took the length at 40 degrees as the intercept, as if 40 were 0."
+   },
+   {
+    "value": "312.15",
+    "misconception": "algebra-manipulation",
+    "why": "Added the per-degree change once instead of multiplying it by 40 degrees."
+   },
+   {
+    "value": "-0.15",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope $m$ instead of the intercept $b$."
+   }
+  ],
+  "id": "orig-equation-from--M-662cd1",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A labor economist finds that, at one firm, the hourly wage $W(x)$, in dollars, of a technician with $x$ years of experience is a linear function of $x$. The table shows four values of $x$ and $W(x)$.\n\nTechnician Hourly Wage by Experience\nYears of experience, $x$ | Hourly wage, $W(x)$ (dollars)\n3 | 21.50\n7 | 25.10\n12 | 29.60\n$k$ | 34.10",
+  "keys": [
+   "17"
+  ],
+  "any_of": false,
+  "explanation": "Find the slope from two complete rows: $\\frac{25.10 - 21.50}{7 - 3} = \\frac{3.60}{4} = 0.9$ dollars per year. Check it with the third row: $\\frac{29.60 - 25.10}{12 - 7} = \\frac{4.50}{5} = 0.9$. Substitute $(3, 21.50)$ into $W(x) = 0.9x + b$: $21.50 = 2.7 + b$, so $b = 18.80$. Now set $W(k) = 34.10$: $0.9k + 18.80 = 34.10$, which gives $0.9k = 15.30$, so $k = 17$.",
+  "common_errors": [
+   {
+    "value": "14",
+    "misconception": "intermediate-step",
+    "why": "Calculated $\\frac{34.10 - 21.50}{0.9} = 14$, the extra years after the first row, and forgot to add the 3 years that row already starts at."
+   },
+   {
+    "value": "341/9",
+    "misconception": "algebra-manipulation",
+    "why": "Left out the intercept and solved $0.9k = 34.10$, which gives $k \\approx 37.89$."
+   },
+   {
+    "value": "14.34",
+    "misconception": "algebra-manipulation",
+    "why": "Calculated the slope as change in $x$ over change in $W$, $\\frac{4}{3.6} = \\frac{10}{9}$. Then $b = 21.50 - \\frac{10}{3} \\approx 18.17$, and $k = 0.9(34.10 - 18.1\\overline{6}) = 14.34$."
+   },
+   {
+    "value": "0.9",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope, the raise per year of experience, instead of the missing number of years."
+   }
+  ],
+  "id": "orig-equation-from--M-73d2f6",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

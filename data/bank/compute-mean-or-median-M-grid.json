@@ -1,0 +1,197 @@
+[
+ {
+  "stem": "What is the mean number of school days missed per student?",
+  "stimulus": "A school nurse recorded how many school days each of 20 students missed because of illness during one month. The results are shown in the frequency table.\n\nSchool Days Missed Because of Illness\nDays missed | Number of students\n0 | 6\n1 | 8\n2 | 3\n3 | 2\n4 | 1",
+  "keys": [
+   "1.2",
+   "6/5"
+  ],
+  "any_of": false,
+  "explanation": "In a frequency table, each value counts once for every student who has it. First find the total number of days missed: $0(6) + 1(8) + 2(3) + 3(2) + 4(1) = 0 + 8 + 6 + 6 + 4 = 24$. Next find the number of students: $6 + 8 + 3 + 2 + 1 = 20$. Then divide: $\\frac{24}{20} = 1.2$. In Desmos, put the days in one column and the counts in another, then type mean(x_1, y_1).",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "You averaged the five distinct values 0, 1, 2, 3, 4 and ignored the frequencies: $\\frac{10}{5} = 2$."
+   },
+   {
+    "value": "4.8",
+    "misconception": "algebra-manipulation",
+    "why": "You found the correct total of 24 days but divided by the 5 rows instead of the 20 students."
+   },
+   {
+    "value": "24",
+    "misconception": "intermediate-step",
+    "why": "You stopped at the total number of days missed and never divided by the number of students."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "You averaged the frequency column instead of the data values: $\\frac{20}{5} = 4$."
+   },
+   {
+    "value": "1",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the median. The 10th and 11th students both fall in the 1-day row, but the question asks for the mean."
+   }
+  ],
+  "id": "orig-compute-mean-o-M-0ab08d",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the median tempo, in beats per minute, of all 8 pieces?",
+  "stimulus": "A musicologist measured the tempo of four pieces by each of two composers. The tempos are shown in the table.\n\nTempo of Each Piece (beats per minute)\nComposer | Piece 1 | Piece 2 | Piece 3 | Piece 4\nComposer A | 132 | 96 | 120 | 88\nComposer B | 144 | 108 | 126 | 100",
+  "keys": [
+   "114"
+  ],
+  "any_of": false,
+  "explanation": "Combine all 8 tempos into one list and sort them: 88, 96, 100, 108, 120, 126, 132, 144. There is an even number of values, so the median is the mean of the 4th and 5th values: $\\frac{108 + 120}{2} = 114$. Don't take the middle of the table as it is printed, because the values there are not in order. Desmos: median([132,96,120,88,144,108,126,100]).",
+  "common_errors": [
+   {
+    "value": "116",
+    "misconception": "algebra-manipulation",
+    "why": "You didn't sort. The 4th and 5th values in the order the table lists them are 88 and 144, and $\\frac{88 + 144}{2} = 116$."
+   },
+   {
+    "value": "112.5",
+    "misconception": "wrong-target-quantity",
+    "why": "You found each composer's median (108 and 117) and averaged them. That is not the median of the 8 pieces together."
+   },
+   {
+    "value": "114.25",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the mean: $\\frac{914}{8} = 114.25$."
+   },
+   {
+    "value": "108",
+    "misconception": "missed-condition",
+    "why": "You sorted correctly but took only the 4th value, without averaging the two middle values of an even-sized list."
+   },
+   {
+    "value": "120",
+    "misconception": "missed-condition",
+    "why": "You sorted correctly but took only the 5th value, without averaging the two middle values."
+   },
+   {
+    "value": "56",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the range: $144 - 88 = 56$."
+   }
+  ],
+  "id": "orig-compute-mean-o-M-863dc7",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the median number of docks per station?",
+  "stimulus": "A city planning office counted the bicycle docks at each of the 24 bike-share stations in one district. The results are shown in the frequency table.\n\nDocks at Bike-Share Stations\nNumber of docks | Number of stations\n10 | 5\n12 | 7\n16 | 5\n18 | 4\n20 | 2\n24 | 1",
+  "keys": [
+   "14"
+  ],
+  "any_of": false,
+  "explanation": "There are $5 + 7 + 5 + 4 + 2 + 1 = 24$ stations, so the median is the mean of the 12th and 13th values in order. Count the frequencies cumulatively. Stations 1\u20135 have 10 docks and stations 6\u201312 have 12 docks, so the 12th value is 12. Stations 13\u201317 have 16 docks, so the 13th value is 16. The median is $\\frac{12 + 16}{2} = 14$.",
+  "common_errors": [
+   {
+    "value": "17",
+    "misconception": "algebra-manipulation",
+    "why": "You took the median of the six distinct dock counts and ignored the frequencies: $\\frac{16 + 18}{2} = 17$."
+   },
+   {
+    "value": "12.5",
+    "misconception": "intermediate-step",
+    "why": "You found the median's position, halfway between the 12th and 13th values, and gave that position instead of the data value there."
+   },
+   {
+    "value": "12",
+    "misconception": "missed-condition",
+    "why": "You used only the 12th value and didn't average it with the 13th, even though the count is even."
+   },
+   {
+    "value": "16",
+    "misconception": "missed-condition",
+    "why": "You used only the 13th value and didn't average it with the 12th."
+   },
+   {
+    "value": "14.58",
+    "misconception": "wrong-target-quantity",
+    "why": "You computed the weighted mean, $\\frac{350}{24} \\approx 14.58$, when the question asks for the median."
+   },
+   {
+    "value": "16.67",
+    "misconception": "wrong-target-quantity",
+    "why": "You averaged the six distinct dock counts without weighting them: $\\frac{100}{6} \\approx 16.67$."
+   }
+  ],
+  "id": "orig-compute-mean-o-M-bfd2df",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the mean tensile strength, in megapascals (MPa), of the samples with a tensile strength greater than 400 MPa?",
+  "stimulus": "A materials scientist tested 8 samples of a new aluminum alloy. The tensile strengths, in megapascals (MPa), were as follows.\n\n412, 386, 455, 430, 371, 418, 445, 398",
+  "keys": [
+   "432"
+  ],
+  "any_of": false,
+  "explanation": "First keep only the samples above 400 MPa: 412, 455, 430, 418, and 445. That is 5 samples. Their sum is $412 + 455 + 430 + 418 + 445 = 2160$. Divide by the number of samples you kept: $\\frac{2160}{5} = 432$.",
+  "common_errors": [
+   {
+    "value": "414.375",
+    "misconception": "missed-condition",
+    "why": "You ignored the 'greater than 400 MPa' condition and averaged all 8 samples: $\\frac{3315}{8} = 414.375$."
+   },
+   {
+    "value": "385",
+    "misconception": "complement-or-direction-flip",
+    "why": "You averaged the samples below 400 MPa instead: $\\frac{386 + 371 + 398}{3} = 385$."
+   },
+   {
+    "value": "270",
+    "misconception": "algebra-manipulation",
+    "why": "You added the 5 qualifying samples correctly but divided by 8, the total number of samples: $\\frac{2160}{8} = 270$."
+   },
+   {
+    "value": "430",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the median of the 5 qualifying samples (412, 418, 430, 445, 455) instead of the mean."
+   },
+   {
+    "value": "2160",
+    "misconception": "intermediate-step",
+    "why": "You stopped at the sum of the qualifying samples and never divided by 5."
+   }
+  ],
+  "id": "orig-compute-mean-o-M-13965e",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

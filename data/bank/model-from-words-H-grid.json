@@ -1,0 +1,171 @@
+[
+ {
+  "stem": "What is $T(3)$?",
+  "stimulus": "A meteorologist launches a weather balloon carrying a temperature sensor. At the moment of launch, the sensor reads $22^\\circ\\text{C}$. As the balloon rises, the temperature it records drops by $3^\\circ\\text{C}$ for every $500$ meters of altitude it gains. The function $T$ gives the temperature, in degrees Celsius, recorded by the sensor when the balloon is $h$ kilometers above the launch site.",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "Start with the value when the input is 0. At $h = 0$ the sensor reads $22$, so that is the constant term. Next, find the rate per single unit of the input. The input is in kilometers, but the drop is given per $500$ meters. One kilometer is two lots of $500$ meters, so the temperature drops $2 \\times 3 = 6$ degrees per kilometer. The temperature is falling, so the rate is negative: $T(h) = 22 - 6h$. Then $T(3) = 22 - 18 = 4$.",
+  "common_errors": [
+   {
+    "value": "13",
+    "misconception": "algebra-manipulation",
+    "why": "Used 3 degrees per kilometer without converting from 'per 500 meters', so got 22 - 3(3) = 13."
+   },
+   {
+    "value": "17.5",
+    "misconception": "algebra-manipulation",
+    "why": "Converted the wrong way and halved the rate to 1.5 degrees per kilometer instead of doubling it: 22 - 1.5(3) = 17.5."
+   },
+   {
+    "value": "40",
+    "misconception": "graph-feature-mismatch",
+    "why": "Gave the slope the wrong sign and added the drop even though the temperature is falling: 22 + 6(3) = 40."
+   },
+   {
+    "value": "31",
+    "misconception": "graph-feature-mismatch",
+    "why": "Made both errors: no unit conversion and a positive slope, so 22 + 3(3) = 31."
+   }
+  ],
+  "id": "orig-model-from-wor-H-1a88df",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "For $n \\ge 4$, the total fee $C$, in dollars, for the laboratory to analyze $n$ samples can be written as $C = 12n + k$, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "A nutrition science laboratory measures the vitamin content of food samples for outside researchers. The laboratory charges a flat fee of $\\$90$, which covers the analysis of up to $4$ samples. Each sample beyond the first $4$ costs an additional $\\$12$.",
+  "keys": [
+   "42"
+  ],
+  "any_of": false,
+  "explanation": "The $\\$12$ charge applies only to samples after the first $4$, so the number of extra samples is $n - 4$. That gives $C = 90 + 12(n - 4)$. Distribute: $C = 90 + 12n - 48 = 12n + 42$. So $k = 42$. Check with $n = 4$: $12(4) + 42 = 90$, which is the flat fee, as it should be.",
+  "common_errors": [
+   {
+    "value": "90",
+    "misconception": "missed-condition",
+    "why": "Ignored the threshold and charged $12 for every sample, including the 4 already covered: C = 90 + 12n."
+   },
+   {
+    "value": "138",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote 90 + 12(n - 4) but distributed the -4 with the wrong sign, adding 48 instead of subtracting it."
+   },
+   {
+    "value": "78",
+    "misconception": "missed-condition",
+    "why": "Treated only the first sample as covered and used (n - 1), so got 90 - 12 = 78."
+   },
+   {
+    "value": "48",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the 12 \u00d7 4 = 48 adjustment and reported it as the constant."
+   }
+  ],
+  "id": "orig-model-from-wor-H-4729cb",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $m$?",
+  "stimulus": "A paleobotanist studies fossil pollen in a sediment core taken from a lake bed. The sediment at the top of the core, at a depth of $0$ centimeters, was deposited $1{,}200$ years ago. Going deeper into the core, every $5$ centimeters of depth represents another $200$ years. The age $A$, in years, of the sediment at a depth of $d$ centimeters is modeled by $A(d) = md + c$, where $m$ and $c$ are constants.",
+  "keys": [
+   "40"
+  ],
+  "any_of": false,
+  "explanation": "The input is depth in centimeters and the output is age in years, so $m$ is years per centimeter. You are told the age rises $200$ years for every $5$ centimeters. Divide to get the rate for one centimeter: $200 \\div 5 = 40$ years per centimeter. The constant is the age at depth $0$, so $c = 1200$, and the model is $A(d) = 40d + 1200$. The question asks for $m$, which is $40$.",
+  "common_errors": [
+   {
+    "value": "0.025",
+    "misconception": "algebra-manipulation",
+    "why": "Inverted the rate and computed centimeters per year (5 \u00f7 200) instead of years per centimeter."
+   },
+   {
+    "value": "200",
+    "misconception": "algebra-manipulation",
+    "why": "Used the 'per 5 centimeters' figure as if it were per centimeter and did not divide by 5."
+   },
+   {
+    "value": "1000",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 200 by 5 instead of dividing."
+   },
+   {
+    "value": "1200",
+    "misconception": "wrong-target-quantity",
+    "why": "Swapped the starting value and the rate, giving the age at the top of the core as the slope."
+   }
+  ],
+  "id": "orig-model-from-wor-H-61aa03",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "A printmaker is producing an edition of two-color relief prints and starts with $400$ milliliters of ink. Before printing, $25$ milliliters are used to roll out the inking slab. Each print is made from two separate blocks, one for each color, and each block uses $9$ milliliters of ink for every $3$ prints. The amount of ink $I$, in milliliters, left after $p$ prints is modeled by $I(p) = a - bp$, where $a$ and $b$ are constants.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "$b$ is the amount of ink used per print. For one block, $9$ milliliters covers $3$ prints, which is $9 \\div 3 = 3$ milliliters per print. Every print uses two blocks, so the total is $2 \\times 3 = 6$ milliliters per print. The setup ink only changes the starting amount: $a = 400 - 25 = 375$. So $I(p) = 375 - 6p$, and $b = 6$.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "missed-condition",
+    "why": "Found the per-print rate for one block but ignored that each print uses two blocks."
+   },
+   {
+    "value": "18",
+    "misconception": "algebra-manipulation",
+    "why": "Doubled for the two blocks but did not divide the 'per 3 prints' figure: 2 \u00d7 9 = 18."
+   },
+   {
+    "value": "27",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 9 by 3 instead of dividing and also ignored the second block."
+   },
+   {
+    "value": "54",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 9 by 3 instead of dividing, then doubled for the two blocks."
+   },
+   {
+    "value": "375",
+    "misconception": "wrong-target-quantity",
+    "why": "Swapped the starting value and the rate, giving a (the ink left after setup) instead of b."
+   }
+  ],
+  "id": "orig-model-from-wor-H-0f778f",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

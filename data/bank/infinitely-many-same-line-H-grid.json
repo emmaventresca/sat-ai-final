@@ -1,0 +1,167 @@
+[
+ {
+  "stem": "What is the value of $a + b$?",
+  "stimulus": "A nutrition scientist writes two equations relating $x$, the grams of carbohydrate in a snack bar, and $y$, the grams of fiber. The equations are\n\n$\\frac{3}{4}x - \\frac{1}{2}y = 6$\n\n$ax - 4y = b$\n\nIn this system, $a$ and $b$ are constants. The system has infinitely many solutions.",
+  "keys": [
+   "54"
+  ],
+  "any_of": false,
+  "explanation": "If the system has infinitely many solutions, the two equations describe the same line. That means the second equation is a constant multiple of the first. Compare the $y$-coefficients: $-\\frac{1}{2}$ becomes $-4$ when you multiply by 8. Multiply the whole first equation by 8, including the constant: $6x - 4y = 48$. So $a = 6$ and $b = 48$, and $a + b = 54$. You can check this in Desmos: graph both equations with sliders for $a$ and $b$, and the lines lie on top of each other only when $a = 6$ and $b = 48$.",
+  "common_errors": [
+   {
+    "value": "12",
+    "misconception": "missed-condition",
+    "why": "Scaled the $x$-coefficient to get $a = 6$ but left the constant as 6. That gives $6x - 4y = 6$, which is parallel to the first line, not the same line."
+   },
+   {
+    "value": "27",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the first equation by 4 to clear the fractions, getting $3x - 2y = 24$, and read off $a = 3$ and $b = 24$ without matching the $-4y$ term."
+   },
+   {
+    "value": "48",
+    "misconception": "intermediate-step",
+    "why": "Found $b = 48$ correctly and entered it without adding $a$."
+   },
+   {
+    "value": "6",
+    "misconception": "intermediate-step",
+    "why": "Found $a = 6$ correctly and entered it without adding $b$."
+   }
+  ],
+  "id": "orig-infinitely-man-H-c772ac",
+  "skill_cd": "H.D.",
+  "subtype": "infinitely-many-same-line",
+  "subtype_name": "Infinitely many solutions (the same line)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "For a folklore studies project, a student builds a model of how often two motifs appear across a collection of tales. The model uses this system of equations, where $k$ is a constant:\n\n$kx + 6y = 15$\n\n$2x + (k - 4)y = 5$\n\nThe system has infinitely many solutions.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "Infinitely many solutions means one equation is a constant multiple of the other. The $x$-coefficients, the $y$-coefficients and the constants must all be in the same ratio. The constants are fully known, so start there: $\\frac{15}{5} = 3$. Then $\\frac{k}{2} = 3$ gives $k = 6$. Check the $y$-coefficients: $\\frac{6}{k - 4} = \\frac{6}{2} = 3$. That matches. If you match only the slopes by solving $\\frac{k}{2} = \\frac{6}{k-4}$, you get $k^2 - 4k - 12 = 0$, so $k = 6$ or $k = -2$. But $k = -2$ gives $-2x + 6y = 15$ and $2x - 6y = 5$. Their coefficients are in the ratio $-1$ and their constants are in the ratio $3$, so those lines are parallel and have no solution. In Desmos, put a slider on $k$: at $k = -2$ the lines are parallel, and at $k = 6$ they coincide.",
+  "common_errors": [
+   {
+    "value": "-2",
+    "misconception": "missed-condition",
+    "why": "Set the coefficient ratios equal, solved $k^2 - 4k - 12 = 0$, and kept the root $k = -2$. That root makes the slopes match but not the constants, which gives parallel lines with no solution."
+   },
+   {
+    "value": "22",
+    "misconception": "algebra-manipulation",
+    "why": "Solved $\\frac{6}{k-4} = 3$ by writing $k - 4 = 18$, multiplying instead of dividing."
+   },
+   {
+    "value": "4",
+    "misconception": "missed-condition",
+    "why": "Set the coefficients equal term by term ($k = 2$ from the $x$-terms and $k - 4 = 6$, so $k = 10$), saw they disagree, and settled on a value without using the ratio of the constants."
+   }
+  ],
+  "id": "orig-infinitely-man-H-b6b21c",
+  "skill_cd": "H.D.",
+  "subtype": "infinitely-many-same-line",
+  "subtype_name": "Infinitely many solutions (the same line)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $c$?",
+  "stimulus": "A linguist models a relationship between $x$, the number of loanwords, and $y$, the number of native words, in a set of short text samples. Two different methods give these equations, where $c$ is a constant:\n\n$\\frac{x}{3} + \\frac{y}{4} = c$\n\n$8x + 6y = 36$\n\nThe system has infinitely many solutions.",
+  "keys": [
+   "3/2",
+   "1.5"
+  ],
+  "any_of": false,
+  "explanation": "For infinitely many solutions, the first equation must be a constant multiple of the second. Find the multiplier that turns the first equation's coefficients into $8$ and $6$: $\\frac{1}{3} \\cdot 24 = 8$ and $\\frac{1}{4} \\cdot 24 = 6$. Multiply the whole first equation by 24, constant included: $8x + 6y = 24c$. Set this equal to the second equation's constant: $24c = 36$, so $c = \\frac{3}{2}$. Be careful: clearing fractions with the least common denominator, 12, gives $4x + 3y = 12c$. That is only half of the second equation, not the same equation.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied by 12 to clear the fractions, getting $4x + 3y = 12c$, then set $12c = 36$ without noticing that the coefficients are half of 8 and 6."
+   },
+   {
+    "value": "2/3",
+    "misconception": "algebra-manipulation",
+    "why": "Set up the ratio upside down and computed $\\frac{24}{36}$ instead of $\\frac{36}{24}$."
+   },
+   {
+    "value": ".6666",
+    "misconception": "algebra-manipulation",
+    "why": "Set up the ratio upside down and computed $\\frac{24}{36}$ instead of $\\frac{36}{24}$ (truncated decimal)."
+   },
+   {
+    "value": ".6667",
+    "misconception": "algebra-manipulation",
+    "why": "Set up the ratio upside down and computed $\\frac{24}{36}$ instead of $\\frac{36}{24}$ (rounded decimal)."
+   },
+   {
+    "value": "36",
+    "misconception": "missed-condition",
+    "why": "Assumed that the same line means the same constant and copied 36, ignoring that the coefficients are scaled by 24."
+   }
+  ],
+  "id": "orig-infinitely-man-H-44d4b5",
+  "skill_cd": "H.D.",
+  "subtype": "infinitely-many-same-line",
+  "subtype_name": "Infinitely many solutions (the same line)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $a + b$?",
+  "stimulus": "A printmaker mixes $x$ ounces of black ink and $y$ ounces of extender for a relief print. Two recipe constraints are written as the following system, where $a$ and $b$ are constants:\n\n$(a - 3)x + 15y = 30$\n\n$2x + by = 6$\n\nThe system has infinitely many solutions.",
+  "keys": [
+   "16"
+  ],
+  "any_of": false,
+  "explanation": "Infinitely many solutions means the first equation is a constant multiple of the second, so every pair of matching terms is in the same ratio. The constants are both known: $\\frac{30}{6} = 5$. So the first equation is 5 times the second. From the $y$-terms, $15 = 5b$, so $b = 3$. From the $x$-terms, $a - 3 = 5 \\cdot 2 = 10$, so $a = 13$. Then $a + b = 16$. Check: $10x + 15y = 30$ is exactly 5 times $2x + 3y = 6$. Same line does not mean equal coefficients. It means proportional coefficients and a proportional constant.",
+  "common_errors": [
+   {
+    "value": "20",
+    "misconception": "missed-condition",
+    "why": "Treated the same line as identical coefficients: set $a - 3 = 2$ and $15 = b$, so $a = 5$ and $b = 15$. That ignores the 5-to-1 ratio of the constants."
+   },
+   {
+    "value": "13",
+    "misconception": "algebra-manipulation",
+    "why": "Found $a - 3 = 10$ but reported $a = 10$ by dropping the $-3$, then added $b = 3$."
+   },
+   {
+    "value": "10",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $a - 3 = 10$ and entered 10."
+   },
+   {
+    "value": "5",
+    "misconception": "intermediate-step",
+    "why": "Entered the scale factor 5 between the equations instead of finishing for $a$ and $b$."
+   }
+  ],
+  "id": "orig-infinitely-man-H-7bbf00",
+  "skill_cd": "H.D.",
+  "subtype": "infinitely-many-same-line",
+  "subtype_name": "Infinitely many solutions (the same line)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

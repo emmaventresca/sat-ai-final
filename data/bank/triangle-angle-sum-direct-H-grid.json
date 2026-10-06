@@ -1,0 +1,166 @@
+[
+ {
+  "stem": "What is the measure, in degrees, of angle $R$?",
+  "stimulus": "A marine biologist tags three coral heads on a reef, labeled $P$, $Q$, and $R$, and treats them as the vertices of triangle $PQR$. The distance from $P$ to $Q$ equals the distance from $P$ to $R$. The measure of angle $P$ is $(2x + 10)^\\circ$, and the measure of angle $Q$ is $(x + 25)^\\circ$.",
+  "keys": [
+   "55"
+  ],
+  "any_of": false,
+  "explanation": "Because $PQ = PR$, the angles opposite those sides are equal. Angle $R$ is opposite $PQ$ and angle $Q$ is opposite $PR$, so angle $R$ is also $(x + 25)^\\circ$. Write the triangle sum: $(2x + 10) + (x + 25) + (x + 25) = 180$, which gives $4x + 60 = 180$, so $x = 30$. The question asks for angle $R$, not $x$, so substitute: $30 + 25 = 55$. Common wrong answers: 30 (you stopped at $x$), 70 (you gave angle $P$), 100 (you set angle $P$ equal to angle $Q$ because $P$ and $Q$ both name the equal side $PQ$), 64 (you set angle $P$ equal to angle $R$), and 125 (you subtracted only angle $Q$ from 180).",
+  "common_errors": [
+   {
+    "value": "30",
+    "misconception": "intermediate-step",
+    "why": "Solved $4x + 60 = 180$ for $x$ and stopped without finding angle $R = x + 25$."
+   },
+   {
+    "value": "70",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved correctly but reported angle $P = 2(30) + 10$ instead of angle $R$."
+   },
+   {
+    "value": "100",
+    "misconception": "missed-condition",
+    "why": "Read $PQ = PR$ as making angles $P$ and $Q$ equal. That gives $2x + 10 = x + 25$, so $x = 15$, $P = Q = 40$, and $R = 180 - 80 = 100$."
+   },
+   {
+    "value": "64",
+    "misconception": "missed-condition",
+    "why": "Set angle $R$ equal to angle $P$ instead of angle $Q$. That gives $2(2x + 10) + (x + 25) = 180$, so $x = 27$ and $R = 2(27) + 10 = 64$."
+   },
+   {
+    "value": "125",
+    "misconception": "algebra-manipulation",
+    "why": "Found angle $Q = 55$ and then subtracted only that one angle from 180."
+   }
+  ],
+  "id": "orig-triangle-angle-H-043242",
+  "skill_cd": "S.B.",
+  "subtype": "triangle-angle-sum-direct",
+  "subtype_name": "Triangle angle sum: find the missing angle",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the measure, in degrees, of the angle at $M$?",
+  "stimulus": "On a fossilized fern frond, a paleobotanist traces a triangle whose vertices are points $K$, $L$, and $M$ where veins branch. The angle at $K$ measures $\\left(\\frac{1}{2}x + 20\\right)^\\circ$, the angle at $L$ measures $(x + 30)^\\circ$, and the angle at $M$ measures $\\left(\\frac{3}{4}x - 5\\right)^\\circ$.",
+  "keys": [
+   "40"
+  ],
+  "any_of": false,
+  "explanation": "Add the three angle expressions and set the total equal to 180: $\\frac{1}{2}x + 20 + x + 30 + \\frac{3}{4}x - 5 = 180$. The $x$-terms combine to $\\frac{9}{4}x$ and the constants to $45$, so $\\frac{9}{4}x = 135$ and $x = 60$. The question asks for the angle at $M$: $\\frac{3}{4}(60) - 5 = 45 - 5 = 40$. (In Desmos, type the sum of the expressions $= 180$ to get $x = 60$ directly.) Common wrong answers: 60 (you stopped at $x$), 50 or 90 (you evaluated the wrong angle), and 55 (you dropped the constants and solved $\\frac{9}{4}x = 180$).",
+  "common_errors": [
+   {
+    "value": "60",
+    "misconception": "intermediate-step",
+    "why": "Solved for $x$ and reported it instead of evaluating $\\frac{3}{4}x - 5$."
+   },
+   {
+    "value": "50",
+    "misconception": "wrong-target-quantity",
+    "why": "Evaluated the angle at $K$: $\\frac{1}{2}(60) + 20$."
+   },
+   {
+    "value": "90",
+    "misconception": "wrong-target-quantity",
+    "why": "Evaluated the angle at $L$: $60 + 30$."
+   },
+   {
+    "value": "55",
+    "misconception": "algebra-manipulation",
+    "why": "Ignored the constants, solved $\\frac{9}{4}x = 180$ to get $x = 80$, then computed $\\frac{3}{4}(80) - 5 = 55$."
+   }
+  ],
+  "id": "orig-triangle-angle-H-c689a0",
+  "skill_cd": "S.B.",
+  "subtype": "triangle-angle-sum-direct",
+  "subtype_name": "Triangle angle sum: find the missing angle",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the measure, in degrees, of the vertex angle?",
+  "stimulus": "A nineteenth-century quilt pattern is built from identical triangular patches, each with two sides of equal length. In each patch, the vertex angle between the two equal sides is $36^\\circ$ less than twice the measure of one base angle.",
+  "keys": [
+   "72"
+  ],
+  "any_of": false,
+  "explanation": "Let each base angle be $b$ degrees. Because the two sides are equal, the triangle is isosceles and has two base angles of $b$, not one. The vertex angle is $2b - 36$. The triangle sum is $b + b + (2b - 36) = 180$, so $4b = 216$ and $b = 54$. The question asks for the vertex angle: $2(54) - 36 = 72$. Common wrong answers: 54 (you gave the base angle), 108 (you counted only one base angle), and 144 (you subtracted 36 from 180 and stopped).",
+  "common_errors": [
+   {
+    "value": "54",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved $4b - 36 = 180$ correctly but reported the base angle $b$ instead of the vertex angle."
+   },
+   {
+    "value": "108",
+    "misconception": "missed-condition",
+    "why": "Used only one base angle: $b + (2b - 36) = 180$ gives $b = 72$, so the vertex angle is $2(72) - 36 = 108$."
+   },
+   {
+    "value": "144",
+    "misconception": "intermediate-step",
+    "why": "Computed $180 - 36$ as the space left for the angles and reported that partial total."
+   }
+  ],
+  "id": "orig-triangle-angle-H-53476d",
+  "skill_cd": "S.B.",
+  "subtype": "triangle-angle-sum-direct",
+  "subtype_name": "Triangle angle sum: find the missing angle",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $B$?",
+  "stimulus": "Seismologists locate an earthquake using three monitoring stations, $A$, $B$, and $C$, which form triangle $ABC$ on a map. The distance from station $A$ to station $B$ equals the distance from station $B$ to station $C$. In the triangle, angle $A$ measures $(3x + 6)^\\circ$ and angle $B$ measures $(4x - 2)^\\circ$.",
+  "keys": [
+   "66"
+  ],
+  "any_of": false,
+  "explanation": "Because $AB = BC$, the equal angles are the ones opposite those sides. Angle $C$ is opposite $AB$ and angle $A$ is opposite $BC$, so angle $C$ equals angle $A$, $(3x + 6)^\\circ$. Write the triangle sum: $2(3x + 6) + (4x - 2) = 180$, which simplifies to $10x + 10 = 180$, so $x = 17$. The question asks for angle $B$: $4(17) - 2 = 66$. Check: $57 + 66 + 57 = 180$. Common wrong answers: 17 (you stopped at $x$), 57 (you gave angle $A$ or $C$), 30 (you set angles $A$ and $B$ equal because $A$ and $B$ name one of the equal sides), and 123 (you subtracted only angle $A$ from 180).",
+  "common_errors": [
+   {
+    "value": "17",
+    "misconception": "intermediate-step",
+    "why": "Solved $10x + 10 = 180$ for $x$ and stopped without evaluating $4x - 2$."
+   },
+   {
+    "value": "57",
+    "misconception": "wrong-target-quantity",
+    "why": "Reported angle $A$ (equal to angle $C$), $3(17) + 6$, instead of angle $B$."
+   },
+   {
+    "value": "30",
+    "misconception": "missed-condition",
+    "why": "Treated $AB = BC$ as making angles $A$ and $B$ equal: $3x + 6 = 4x - 2$ gives $x = 8$ and angle $B = 30$. That ignores which angles are opposite the equal sides."
+   },
+   {
+    "value": "123",
+    "misconception": "algebra-manipulation",
+    "why": "Found angle $A = 57$ and subtracted only that angle from 180."
+   }
+  ],
+  "id": "orig-triangle-angle-H-e385c2",
+  "skill_cd": "S.B.",
+  "subtype": "triangle-angle-sum-direct",
+  "subtype_name": "Triangle angle sum: find the missing angle",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

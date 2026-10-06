@@ -1,0 +1,167 @@
+[
+ {
+  "stem": "The number of sheets of paper remaining, $S$, after $h$ hours of printing can be modeled by the function $S(h) = b - ah$, where $a$ and $b$ are positive constants. What is the value of $a$?",
+  "stimulus": "A printmaker starts a long relief-printing session with a stack of 240 sheets of paper. During the session, the printmaker uses 18 sheets every 4 hours, at a constant rate.",
+  "keys": [
+   "4.5",
+   "9/2"
+  ],
+  "any_of": false,
+  "explanation": "The starting amount, 240 sheets, is the constant $b$. The rate $a$ has to be in sheets per single hour, but you are given 18 sheets per 4 hours, so divide: $a = \\frac{18}{4} = 4.5$. The stack is shrinking, which is why the model subtracts: $S(h) = 240 - 4.5h$. To check, after 4 hours you get $S(4) = 240 - 18 = 222$, so exactly 18 sheets have been used.",
+  "common_errors": [
+   {
+    "value": "18",
+    "misconception": "missed-condition",
+    "why": "Used the 18 sheets as the hourly rate without noticing that it covers 4 hours, not 1."
+   },
+   {
+    "value": "72",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 18 by 4 when converting 'per 4 hours' into a per-hour rate, instead of dividing."
+   },
+   {
+    "value": "2/9",
+    "misconception": "algebra-manipulation",
+    "why": "Divided upside down, 4 \u00f7 18, which gives hours per sheet instead of sheets per hour. Also entered as .2222."
+   },
+   {
+    "value": "240",
+    "misconception": "wrong-target-quantity",
+    "why": "Swapped the roles of the constants and gave the starting stack, b, as the rate."
+   }
+  ],
+  "id": "orig-model-from-wor-M-00c67d",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "For $t \\geq 3$, the length $L$, in millimeters, of the strip $t$ minutes after the test begins can be modeled by $L(t) = 2t + c$, where $c$ is a constant. What is the value of $c$?",
+  "stimulus": "In a creep test, an engineer puts a 150-millimeter polymer strip under a constant load. For the first 3 minutes of the test, the strip's length does not change. After that, the strip gets longer by 2 millimeters per minute.",
+  "keys": [
+   "144"
+  ],
+  "any_of": false,
+  "explanation": "The stretching only starts after minute 3, so the time that counts is $t - 3$, not $t$. The length is the starting 150 mm plus 2 mm for each minute past 3: $L(t) = 150 + 2(t - 3)$. Distribute and simplify: $150 + 2t - 6 = 2t + 144$, so $c = 144$. To check, at $t = 3$ you get $L = 6 + 144 = 150$, which is correct because nothing has happened yet.",
+  "common_errors": [
+   {
+    "value": "150",
+    "misconception": "missed-condition",
+    "why": "Wrote L = 150 + 2t, which ignores the 3 minutes when the strip does not stretch, as if the stretching began at t = 0."
+   },
+   {
+    "value": "147",
+    "misconception": "algebra-manipulation",
+    "why": "Distributed incorrectly, subtracting just 3 instead of 2 \u00d7 3 = 6 from 150."
+   },
+   {
+    "value": "156",
+    "misconception": "complement-or-direction-flip",
+    "why": "Shifted the wrong way and used 2(t + 3), which adds 6 instead of subtracting it."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the stretching rate, which is the coefficient of t, rather than the constant term."
+   }
+  ],
+  "id": "orig-model-from-wor-M-73c1fe",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The number of doses remaining, $D$, after $x$ days of the campaign can be modeled by $D(x) = 2{,}400 - kx$, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "A county health department starts a vaccination campaign with 2,400 doses of a vaccine in storage. Each person vaccinated during the campaign receives 2 doses. The department vaccinates 60 people per day, and no new doses arrive during the campaign.",
+  "keys": [
+   "120"
+  ],
+  "any_of": false,
+  "explanation": "The supply goes down every day, so $k$ is the number of doses used per day. It is not the number of people. Each of the 60 people a day gets 2 doses, so $k = 60 \\times 2 = 120$ doses per day, and $D(x) = 2400 - 120x$. To check, after 1 day $D(1) = 2280$, and 60 people \u00d7 2 doses = 120 doses have been used.",
+  "common_errors": [
+   {
+    "value": "60",
+    "misconception": "missed-condition",
+    "why": "Used the number of people per day as the rate and ignored the 2 doses each person receives."
+   },
+   {
+    "value": "30",
+    "misconception": "algebra-manipulation",
+    "why": "Divided 60 by 2 instead of multiplying when accounting for the two doses."
+   },
+   {
+    "value": "2400",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the starting supply, which is the constant term, instead of the daily rate."
+   },
+   {
+    "value": "2280",
+    "misconception": "intermediate-step",
+    "why": "Worked out the doses left after one day, 2400 \u2212 120, and entered that instead of the rate itself."
+   }
+  ],
+  "id": "orig-model-from-wor-M-519f4d",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The length $L$, in centimeters, of the frond $d$ days after it was first measured can be modeled by $L(d) = kd + 30$, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "A marine biologist tags a single frond of giant kelp and measures it at 30 centimeters long. Over the following month, the frond grows 14 centimeters per week, at a constant rate.",
+  "keys": [
+   "2"
+  ],
+  "any_of": false,
+  "explanation": "In this model the input $d$ is in days, but the growth rate is given per week, so you need to convert before you use it. A week has 7 days, so the frond grows $\\frac{14}{7} = 2$ cm per day, and $k = 2$. The model is $L(d) = 2d + 30$. To check, after one week $L(7) = 14 + 30 = 44$ cm, which is 14 cm more than at the start.",
+  "common_errors": [
+   {
+    "value": "14",
+    "misconception": "misread-given",
+    "why": "Used the weekly growth as the coefficient even though the input d counts days."
+   },
+   {
+    "value": "98",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 14 by 7 when converting from weeks to days, instead of dividing."
+   },
+   {
+    "value": "1/2",
+    "misconception": "algebra-manipulation",
+    "why": "Divided upside down, 7 \u00f7 14, which gives days per centimeter. Also entered as .5."
+   },
+   {
+    "value": "30",
+    "misconception": "wrong-target-quantity",
+    "why": "Swapped the starting length and the rate, and gave the constant term as k."
+   }
+  ],
+  "id": "orig-model-from-wor-M-858cf2",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

@@ -1,0 +1,168 @@
+[
+ {
+  "stem": "What is the value of $P(15)$?",
+  "stimulus": "A city planner is converting curbside parking on a downtown block into bike-share stations. The planner models the number of parking spaces left on the block, $P(x)$, after $x$ bike-share stations have been installed as $P(x) = 260 - kx$, where $k$ is a constant. For this model, $P(6) = 218$.",
+  "keys": [
+   "155"
+  ],
+  "any_of": false,
+  "explanation": "First find the hidden constant. Substitute the known input and output: $218 = 260 - k(6)$. Then $6k = 42$, so $k = 7$. That is not the answer, because the question asks for a different output. Rewrite the model as $P(x) = 260 - 7x$ and evaluate it at 15: $P(15) = 260 - 105 = 155$. As a check, the number of spaces should go down as stations are added, and 155 is less than 218.",
+  "common_errors": [
+   {
+    "value": "7",
+    "misconception": "intermediate-step",
+    "why": "Solved $218 = 260 - 6k$ for $k$ and stopped, when the question asked for $P(15)$."
+   },
+   {
+    "value": "105",
+    "misconception": "intermediate-step",
+    "why": "Worked out the 105 spaces lost to 15 stations, $7 \\cdot 15$, but did not subtract that from 260."
+   },
+   {
+    "value": "365",
+    "misconception": "algebra-manipulation",
+    "why": "Made a sign error and wrote $260 + 6k = 218$, getting $k = -7$, then $P(15) = 260 + 105 = 365$. That has the number of spaces going up."
+   },
+   {
+    "value": "113",
+    "misconception": "graph-feature-mismatch",
+    "why": "Used 218 as the starting value and calculated $218 - 7 \\cdot 15$. That counts all 15 stations from $x = 6$ rather than from $x = 0$."
+   }
+  ],
+  "id": "orig-find-constant--H-e2df92",
+  "skill_cd": "H.B.",
+  "subtype": "find-constant-from-one-value",
+  "subtype_name": "Find the hidden constant from one known output",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $h(30)$?",
+  "stimulus": "An agronomist tracking sorghum seedlings models the height of a seedling, in centimeters, $d$ days after it emerges as $h(d) = md + 4.5$, where $m$ is a constant. For this model, $h(12) = 22.5$.",
+  "keys": [
+   "49.5",
+   "99/2"
+  ],
+  "any_of": false,
+  "explanation": "Substitute the known pair into the rule: $22.5 = 12m + 4.5$. Subtract 4.5 to get $12m = 18$, so $m = 1.5$ cm per day. The question wants a new output, so rewrite the rule as $h(d) = 1.5d + 4.5$ and evaluate at 30: $h(30) = 45 + 4.5 = 49.5$.",
+  "common_errors": [
+   {
+    "value": "1.5",
+    "misconception": "intermediate-step",
+    "why": "Found the growth rate $m$ and stopped, without evaluating $h(30)$."
+   },
+   {
+    "value": "45",
+    "misconception": "algebra-manipulation",
+    "why": "Found $m = 1.5$ but then left out the constant 4.5 when evaluating, calculating only $1.5 \\cdot 30$."
+   },
+   {
+    "value": "60.75",
+    "misconception": "algebra-manipulation",
+    "why": "Calculated $m$ as $22.5 \\div 12 = 1.875$ without subtracting the 4.5 first, then got $h(30) = 1.875 \\cdot 30 + 4.5 = 60.75$."
+   },
+   {
+    "value": "56.25",
+    "misconception": "algebra-manipulation",
+    "why": "Used $m = 22.5 \\div 12 = 1.875$, which ignores the intercept, and then also left out the 4.5: $1.875 \\cdot 30 = 56.25$."
+   }
+  ],
+  "id": "orig-find-constant--H-8e20f1",
+  "skill_cd": "H.B.",
+  "subtype": "find-constant-from-one-value",
+  "subtype_name": "Find the hidden constant from one known output",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $t(180)$?",
+  "stimulus": "An observatory dome takes 1.5 minutes to unlock before it starts turning, and then it turns at a constant rate of $k$ degrees per minute. The total time, in minutes, needed to turn the dome through $\\theta$ degrees is $t(\\theta) = \\dfrac{\\theta}{k} + 1.5$. For this dome, $t(90) = 7.5$.",
+  "keys": [
+   "13.5",
+   "27/2"
+  ],
+  "any_of": false,
+  "explanation": "Substitute the known input and output: $7.5 = \\frac{90}{k} + 1.5$. Subtract 1.5 to get $\\frac{90}{k} = 6$, so $k = 15$ degrees per minute. The question asks for a new output, so write $t(\\theta) = \\frac{\\theta}{15} + 1.5$ and evaluate at 180: $t(180) = 12 + 1.5 = 13.5$ minutes.",
+  "common_errors": [
+   {
+    "value": "15",
+    "misconception": "intermediate-step",
+    "why": "Found the turning rate $k = 15$ and stopped, when the question asked for $t(180)$."
+   },
+   {
+    "value": "12",
+    "misconception": "algebra-manipulation",
+    "why": "Found $k = 15$ correctly but left out the 1.5-minute unlock time when evaluating, calculating only $180 \\div 15$."
+   },
+   {
+    "value": "16.5",
+    "misconception": "algebra-manipulation",
+    "why": "Ignored the 1.5 when solving for $k$, writing $\\frac{90}{k} = 7.5$ and getting $k = 12$. Then $t(180) = 15 + 1.5 = 16.5$."
+   },
+   {
+    "value": "15",
+    "misconception": "wrong-target-quantity",
+    "why": "Doubled the given output on the grounds that 180 is twice 90 ($2 \\cdot 7.5 = 15$). That also doubles the fixed 1.5 minutes, which should only be counted once."
+   }
+  ],
+  "id": "orig-find-constant--H-f18632",
+  "skill_cd": "H.B.",
+  "subtype": "find-constant-from-one-value",
+  "subtype_name": "Find the hidden constant from one known output",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the model, what is the air temperature, in degrees Fahrenheit, at an altitude of 8,000 feet?",
+  "stimulus": "A meteorologist analyzing a weather-balloon launch models the air temperature, in degrees Fahrenheit, at an altitude of $x$ thousand feet above sea level as $T(x) = 59 - kx$, where $k$ is a constant. For this model, $T(3) = 48.5$.",
+  "keys": [
+   "31"
+  ],
+  "any_of": false,
+  "explanation": "Substitute the known pair: $48.5 = 59 - 3k$. Then $3k = 10.5$, so $k = 3.5$ degrees per thousand feet. Because $x$ is measured in thousands of feet, 8,000 feet is $x = 8$. Rewrite the model as $T(x) = 59 - 3.5x$ and evaluate: $T(8) = 59 - 28 = 31$. Temperature falls as the balloon rises, so a value below 48.5 makes sense.",
+  "common_errors": [
+   {
+    "value": "3.5",
+    "misconception": "intermediate-step",
+    "why": "Solved for the lapse rate $k$ and stopped, without evaluating the temperature at 8,000 feet."
+   },
+   {
+    "value": "28",
+    "misconception": "intermediate-step",
+    "why": "Worked out the total drop of $3.5 \\cdot 8 = 28$ degrees but did not subtract it from 59."
+   },
+   {
+    "value": "87",
+    "misconception": "algebra-manipulation",
+    "why": "Made a sign error and wrote $59 + 3k = 48.5$, getting $k = -3.5$, so $T(8) = 59 + 28 = 87$. That has the temperature rising with altitude."
+   },
+   {
+    "value": "20.5",
+    "misconception": "graph-feature-mismatch",
+    "why": "Started from the 3,000-foot reading as if it were the sea-level value and calculated $48.5 - 3.5 \\cdot 8$, which counts the drop from 0 to 3,000 feet twice."
+   }
+  ],
+  "id": "orig-find-constant--H-18ab55",
+  "skill_cd": "H.B.",
+  "subtype": "find-constant-from-one-value",
+  "subtype_name": "Find the hidden constant from one known output",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

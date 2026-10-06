@@ -1,0 +1,166 @@
+[
+ {
+  "stem": "If the expression above is equivalent to $t^{k}$ for all positive values of $t$, what is the value of $k$?",
+  "stimulus": "An archaeologist estimating how quickly sediment buried a site uses a model that contains the expression $\\frac{\\sqrt[3]{t^{4}}\\cdot\\sqrt[4]{t}}{\\sqrt{t^{3}}}$, where $t$ is the time since the site was abandoned, in centuries, and $t>0$.",
+  "keys": [
+   "1/12",
+   ".0833",
+   "0.0833"
+  ],
+  "any_of": false,
+  "explanation": "Turn every root into a fractional exponent. The nth root of $t^{m}$ is $t^{m/n}$. So $\\sqrt[3]{t^{4}}=t^{4/3}$, $\\sqrt[4]{t}=t^{1/4}$ and $\\sqrt{t^{3}}=t^{3/2}$. When you multiply, add the exponents: $\\frac{4}{3}+\\frac{1}{4}=\\frac{16}{12}+\\frac{3}{12}=\\frac{19}{12}$. When you divide, subtract: $\\frac{19}{12}-\\frac{18}{12}=\\frac{1}{12}$. So $k=\\frac{1}{12}$. To check, put $t=2$ into the original and into $2^{1/12}$ in Desmos. Both give about 1.0595.",
+  "common_errors": [
+   {
+    "value": "49/12",
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the root conversion and wrote the nth root of $t^{m}$ as $t^{n/m}$. That gives $t^{3/4}\\cdot t^{4}\\div t^{2/3}$, and $\\frac{3}{4}+4-\\frac{2}{3}=\\frac{49}{12}$."
+   },
+   {
+    "value": "37/12",
+    "misconception": "algebra-manipulation",
+    "why": "You added the denominator's exponent when you should have subtracted it: $\\frac{4}{3}+\\frac{1}{4}+\\frac{3}{2}=\\frac{37}{12}$."
+   },
+   {
+    "value": "19/12",
+    "misconception": "intermediate-step",
+    "why": "You combined the numerator to get $t^{19/12}$ and then forgot to divide by $\\sqrt{t^{3}}$."
+   }
+  ],
+  "id": "orig-exponent-radic-H-26fc8a",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "For $k>0$, the expression above is equivalent to $ak^{b}$, where $a$ and $b$ are constants. What is the value of $a+b$?",
+  "stimulus": "A marine biologist models how fast a reef-building coral takes up calcium using the expression $\\frac{(16k^{6})^{3/4}}{\\sqrt{4k}}$, where $k$ is a measure of the water's carbonate concentration.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "Apply the outside exponent to the coefficient and to the variable. For the coefficient, $16^{3/4}=(\\sqrt[4]{16})^{3}=2^{3}=8$. For the variable, raising a power to a power means multiplying the exponents: $(k^{6})^{3/4}=k^{9/2}$. In the denominator, the root also applies to both factors: $\\sqrt{4k}=2k^{1/2}$. Now divide: $\\frac{8k^{9/2}}{2k^{1/2}}=4k^{4}$. So $a=4$, $b=4$ and $a+b=8$.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "You took the square root of $k$ in the denominator but not of 4. That gives $\\frac{8}{4}=2$ for $a$, so $a+b=2+4=6$."
+   },
+   {
+    "value": "12",
+    "misconception": "algebra-manipulation",
+    "why": "You applied the $\\frac{3}{4}$ power to $k^{6}$ but left the 16 unchanged. Then $a=\\frac{16}{2}=8$ and $a+b=8+4=12$."
+   },
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "You worked out $16^{3/4}$ as $16\\cdot\\frac{3}{4}=12$, so $a=\\frac{12}{2}=6$ and $a+b=6+4=10$."
+   },
+   {
+    "value": "41/4",
+    "misconception": "algebra-manipulation",
+    "why": "For the power of a power you added the exponents instead of multiplying them: $6+\\frac{3}{4}=\\frac{27}{4}$. Then $b=\\frac{27}{4}-\\frac{1}{2}=\\frac{25}{4}$, and $a+b=4+\\frac{25}{4}=\\frac{41}{4}$."
+   }
+  ],
+  "id": "orig-exponent-radic-H-33e53e",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The expression above is equivalent to $2^{kt}$ for all values of $t$, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "A public health team modeling how a seasonal virus spreads writes the growth factor after $t$ weeks as $\\frac{\\sqrt[4]{8^{3t}}}{\\sqrt{2^{t}}}$.",
+  "keys": [
+   "7/4",
+   "1.75"
+  ],
+  "any_of": false,
+  "explanation": "Write everything with base 2. Since $8=2^{3}$, $8^{3t}=(2^{3})^{3t}=2^{9t}$. Taking the fourth root gives $2^{9t/4}$. The denominator is $\\sqrt{2^{t}}=2^{t/2}$. When you divide, subtract the exponents: $\\frac{9t}{4}-\\frac{2t}{4}=\\frac{7t}{4}$. So $k=\\frac{7}{4}$. To check, let $t=1$. Then $\\sqrt[4]{512}\\div\\sqrt{2}\\approx 3.3636$, and $2^{1.75}\\approx 3.3636$.",
+  "common_errors": [
+   {
+    "value": "1/4",
+    "misconception": "misread-given",
+    "why": "You treated the 8 as if it were already a 2 and never rewrote it as $2^{3}$. That gives $\\frac{3}{4}-\\frac{1}{2}=\\frac{1}{4}$."
+   },
+   {
+    "value": "13/4",
+    "misconception": "algebra-manipulation",
+    "why": "For $(2^{3})^{3t/4}$ you added the exponents ($3+\\frac{3}{4}=\\frac{15}{4}$) instead of multiplying them. Then $\\frac{15}{4}-\\frac{1}{2}=\\frac{13}{4}$."
+   },
+   {
+    "value": "11/4",
+    "misconception": "algebra-manipulation",
+    "why": "You added the denominator's exponent instead of subtracting it: $\\frac{9}{4}+\\frac{1}{2}=\\frac{11}{4}$."
+   },
+   {
+    "value": "9/4",
+    "misconception": "intermediate-step",
+    "why": "You simplified the numerator to $2^{9t/4}$ but forgot to divide by $\\sqrt{2^{t}}$."
+   }
+  ],
+  "id": "orig-exponent-radic-H-bd5cd9",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "For positive values of $x$ and $y$, the expression above is equivalent to $x^{a}y^{b}$, where $a$ and $b$ are constants. What is the value of $a+b$?",
+  "stimulus": "A linguist modeling how often words appear in a large text corpus uses the expression $\\frac{\\sqrt[3]{x^{2}y}\\cdot\\sqrt{xy^{3}}}{x^{-1/6}\\,y}$, where $x$ is the number of distinct words and $y$ is the total number of words.",
+  "keys": [
+   "13/6",
+   "2.166",
+   "2.167"
+  ],
+  "any_of": false,
+  "explanation": "Turn the roots into exponents, and apply each root to every factor under it: $\\sqrt[3]{x^{2}y}=x^{2/3}y^{1/3}$ and $\\sqrt{xy^{3}}=x^{1/2}y^{3/2}$. Handle each variable separately. For $x$, dividing by $x^{-1/6}$ means subtracting $-\\frac{1}{6}$, so $a=\\frac{2}{3}+\\frac{1}{2}+\\frac{1}{6}=\\frac{4}{3}$. For $y$, $b=\\frac{1}{3}+\\frac{3}{2}-1=\\frac{5}{6}$. So $a+b=\\frac{8}{6}+\\frac{5}{6}=\\frac{13}{6}$. To check, let $x=2$ and $y=3$, and compare the original with $2^{4/3}3^{5/6}$. Both give about 6.22.",
+  "common_errors": [
+   {
+    "value": "11/6",
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted $\\frac{1}{6}$ when dividing by $x^{-1/6}$ instead of subtracting $-\\frac{1}{6}$. That gives $a=1$ and $a+b=1+\\frac{5}{6}=\\frac{11}{6}$."
+   },
+   {
+    "value": "17/6",
+    "misconception": "algebra-manipulation",
+    "why": "You applied the cube root to $x^{2}$ but not to $y$, so you used $y^{1}$. Then $b=1+\\frac{3}{2}-1=\\frac{3}{2}$, and $a+b=\\frac{4}{3}+\\frac{3}{2}=\\frac{17}{6}$."
+   },
+   {
+    "value": "11/3",
+    "misconception": "algebra-manipulation",
+    "why": "You applied the square root to $x$ but kept $y^{3}$ unchanged. Then $b=\\frac{1}{3}+3-1=\\frac{7}{3}$, and $a+b=\\frac{4}{3}+\\frac{7}{3}=\\frac{11}{3}$."
+   },
+   {
+    "value": "19/3",
+    "misconception": "algebra-manipulation",
+    "why": "You flipped every root conversion and wrote the nth root of $x^{m}$ as $x^{n/m}$. That gives $a=\\frac{3}{2}+2+\\frac{1}{6}=\\frac{11}{3}$ and $b=3+\\frac{2}{3}-1=\\frac{8}{3}$, so $a+b=\\frac{19}{3}$."
+   }
+  ],
+  "id": "orig-exponent-radic-H-7a6443",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

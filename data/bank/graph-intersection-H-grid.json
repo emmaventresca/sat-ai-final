@@ -1,0 +1,198 @@
+[
+ {
+  "stem": "If $(x, y)$ is the solution to the system, what is the value of $y$?",
+  "stimulus": "A folklore studies student graphed a system of two linear equations in the $xy$-plane while comparing how quickly two collections of folktales grew. The first line slants up from left to right and passes through the points $(0, 1)$, $(3, 2)$, and $(6, 3)$. The second line slants down from left to right and passes through the points $(0, 6)$, $(2, 4)$, and $(6, 0)$.",
+  "keys": [
+   "9/4",
+   "2.25"
+  ],
+  "any_of": false,
+  "explanation": "The solution is the one point that lies on both lines. That point is not a lattice point, so you need each line's equation first. The first line rises 1 for every 3 to the right and crosses the y-axis at 1, so $y = \\frac{1}{3}x + 1$. The second line falls 1 for every 1 to the right and crosses the y-axis at 6, so $y = -x + 6$. Set the two equal: $\\frac{1}{3}x + 1 = -x + 6$, so $\\frac{4}{3}x = 5$ and $x = \\frac{15}{4}$. Then $y = -\\frac{15}{4} + 6 = \\frac{9}{4}$. The question asks for $y$, so the answer is $\\frac{9}{4}$, or 2.25.",
+  "common_errors": [
+   {
+    "value": "15/4",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the crossing point but gave its x-coordinate. You swapped $(x, y)$ for $(y, x)$. 3.75 is the same error."
+   },
+   {
+    "value": "3.75",
+    "misconception": "wrong-target-quantity",
+    "why": "This is $\\frac{15}{4}$ as a decimal. It is the x-coordinate of the crossing point, not the y-coordinate."
+   },
+   {
+    "value": "6",
+    "misconception": "missed-condition",
+    "why": "You read the y-intercept of the falling line. $(0, 6)$ is on that line only. The rising line is at $y = 1$ when $x = 0$."
+   },
+   {
+    "value": "1",
+    "misconception": "missed-condition",
+    "why": "You read the y-intercept of the rising line. $(0, 1)$ is on that line only, so it is not the solution."
+   },
+   {
+    "value": "29/9",
+    "misconception": "algebra-manipulation",
+    "why": "From $\\frac{4}{3}x = 5$ you multiplied by $\\frac{4}{3}$ instead of dividing, which gives $x = \\frac{20}{3}$. Then $y = \\frac{20}{9} + 1 = \\frac{29}{9}$."
+   }
+  ],
+  "id": "orig-graph-intersec-H-88ebd7",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "One of the two graphed equations is $3x + ky = 12$, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "A meteorologist graphed a system of two linear equations in the $xy$-plane while comparing two pressure-trend models. The first line slants up from left to right and passes through the points $(0, -2)$, $(2, 1)$, and $(4, 4)$. The second line slants down from left to right and passes through the points $(-2, 3)$, $(0, 2)$, and $(4, 0)$.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "First work out which line $3x + ky = 12$ can be. Solving for $y$ gives $y = -\\frac{3}{k}x + \\frac{12}{k}$. For the rising line you would need $-\\frac{3}{k} = \\frac{3}{2}$, so $k = -2$, and also $\\frac{12}{k} = -2$, so $k = -6$. Those two values disagree, so the equation has to be the falling line. That line passes through $(0, 2)$. Substitute: $3(0) + k(2) = 12$, so $k = 6$. Check it with the slope: $-\\frac{3}{6} = -\\frac{1}{2}$. That matches the falling line, which drops 2 over a run of 4, from $(0, 2)$ to $(4, 0)$.",
+  "common_errors": [
+   {
+    "value": "-6",
+    "misconception": "graph-feature-mismatch",
+    "why": "You matched the equation to the wrong line. You used the rising line's y-intercept: $k(-2) = 12$. That line's slope does not fit $3x + ky = 12$ for this $k$."
+   },
+   {
+    "value": "-2",
+    "misconception": "graph-feature-mismatch",
+    "why": "You set $-\\frac{3}{k}$ equal to the rising line's slope, $\\frac{3}{2}$. You paired the equation with the line that increases."
+   },
+   {
+    "value": "3",
+    "misconception": "misread-given",
+    "why": "You read the x-intercept $(4, 0)$ as $(0, 4)$ and substituted it: $4k = 12$."
+   },
+   {
+    "value": "0",
+    "misconception": "missed-condition",
+    "why": "You substituted $(4, 4)$. That point is on the rising line only, so it does not have to satisfy this equation."
+   },
+   {
+    "value": "3/2",
+    "misconception": "algebra-manipulation",
+    "why": "You took the slope of $3x + ky = 12$ to be $-\\frac{k}{3}$ instead of $-\\frac{3}{k}$, and solved $-\\frac{k}{3} = -\\frac{1}{2}$. 1.5 is the same error."
+   },
+   {
+    "value": "1.5",
+    "misconception": "algebra-manipulation",
+    "why": "This is $\\frac{3}{2}$ as a decimal. It comes from flipping the slope of $3x + ky = 12$ to $-\\frac{k}{3}$."
+   }
+  ],
+  "id": "orig-graph-intersec-H-98599c",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The solution to the system is the point where the two models predict the same number of entries. How many entries does each model predict at that point?",
+  "stimulus": "A linguist modeled the number of entries, $y$, in two regional dialect dictionaries $x$ years after both projects began. Each model is linear, and both models are graphed in the $xy$-plane. The graph of the model for the Coastal dictionary passes through the points $(0, 200)$, $(10, 700)$, and $(20, 1{,}200)$. The graph of the model for the Upland dictionary passes through the points $(0, 500)$, $(10, 800)$, and $(20, 1{,}100)$.",
+  "keys": [
+   "950"
+  ],
+  "any_of": false,
+  "explanation": "The Coastal line rises 500 entries every 10 years, so $y = 50x + 200$. The Upland line rises 300 entries every 10 years, so $y = 30x + 500$. The lines cross where $50x + 200 = 30x + 500$. That gives $20x = 300$, so $x = 15$. Substitute back: $y = 50(15) + 200 = 950$. Check it with the other model: $30(15) + 500 = 950$. Both models predict 950 entries.",
+  "common_errors": [
+   {
+    "value": "15",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the x-coordinate of the crossing point, the number of years, instead of the number of entries."
+   },
+   {
+    "value": "500",
+    "misconception": "missed-condition",
+    "why": "You read the Upland line's y-intercept. $(0, 500)$ is on the Upland line only. The Coastal model gives 200 at $x = 0$."
+   },
+   {
+    "value": "200",
+    "misconception": "missed-condition",
+    "why": "You read the Coastal line's y-intercept. That point is on one line only."
+   },
+   {
+    "value": "300",
+    "misconception": "intermediate-step",
+    "why": "You stopped at $20x = 300$. 300 is the starting gap between the models, not the shared value."
+   },
+   {
+    "value": "750",
+    "misconception": "algebra-manipulation",
+    "why": "You found $x = 15$ but computed only $50(15)$ and dropped the $+200$ intercept."
+   }
+  ],
+  "id": "orig-graph-intersec-H-2868b0",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "If $(x, y)$ is the solution to the system, what is the value of $x + y$?",
+  "stimulus": "A nutrition science researcher graphed a system of two linear equations in the $xy$-plane while comparing two fiber-intake models. The first line slants up from left to right and passes through the points $(0, -1)$, $(3, 3)$, and $(6, 7)$. The second line slants down from left to right and passes through the points $(0, 4)$, $(3, 2)$, and $(6, 0)$.",
+  "keys": [
+   "29/6",
+   "4.833"
+  ],
+  "any_of": false,
+  "explanation": "The lines do not cross at a lattice point, so write each equation from two clear points. The first line rises 4 over a run of 3 from $(0, -1)$, so $y = \\frac{4}{3}x - 1$. The second line falls 2 over a run of 3 from $(0, 4)$, so $y = -\\frac{2}{3}x + 4$. Set them equal: $\\frac{4}{3}x - 1 = -\\frac{2}{3}x + 4$. That gives $2x = 5$, so $x = \\frac{5}{2}$. Then $y = -\\frac{2}{3} \\cdot \\frac{5}{2} + 4 = \\frac{7}{3}$. Add the two: $x + y = \\frac{5}{2} + \\frac{7}{3} = \\frac{29}{6}$.",
+  "common_errors": [
+   {
+    "value": "5/2",
+    "misconception": "intermediate-step",
+    "why": "You found $x$ and stopped. The question asks for $x + y$. 2.5 is the same error."
+   },
+   {
+    "value": "2.5",
+    "misconception": "intermediate-step",
+    "why": "This is $x = \\frac{5}{2}$ alone. You still need to add $y = \\frac{7}{3}$."
+   },
+   {
+    "value": "7/3",
+    "misconception": "intermediate-step",
+    "why": "You gave $y$ only, not $x + y$. 2.333 is the same error."
+   },
+   {
+    "value": "4",
+    "misconception": "missed-condition",
+    "why": "You used the falling line's y-intercept $(0, 4)$: $0 + 4$. That point is on one line only."
+   },
+   {
+    "value": "6",
+    "misconception": "missed-condition",
+    "why": "You used the falling line's x-intercept $(6, 0)$: $6 + 0$. The rising line is at $y = 7$ there, so this point is not on both lines."
+   },
+   {
+    "value": "33/2",
+    "misconception": "algebra-manipulation",
+    "why": "When you collected the x-terms you subtracted $\\frac{2}{3}x$ instead of adding it. That gives $\\frac{2}{3}x = 5$, so $x = \\frac{15}{2}$ and $y = 9$. 16.5 is the same error."
+   }
+  ],
+  "id": "orig-graph-intersec-H-48e371",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

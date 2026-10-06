@@ -1111,17 +1111,17 @@ function render() {
 async function loadData() {
   const [bands, skills, lessons, sublessons, items, misc, subtax, subcounts] =
     await Promise.all([
-    fetch('../data/bands.json?v=5aee4499f1').then((r) => r.json()),
-    fetch('../data/skills.json?v=5aee4499f1').then((r) => r.json()),
-    fetch('../data/lessons.json?v=5aee4499f1').then((r) => r.json()),
-    fetch('../data/subtype_lessons.json?v=5aee4499f1').then((r) => r.json())
+    fetch('../data/bands.json?v=9f94299437').then((r) => r.json()),
+    fetch('../data/skills.json?v=9f94299437').then((r) => r.json()),
+    fetch('../data/lessons.json?v=9f94299437').then((r) => r.json()),
+    fetch('../data/subtype_lessons.json?v=9f94299437').then((r) => r.json())
       .catch(() => ({ lessons: [] })),
     // Our own CC BY items. The College Board pool is deliberately not loaded:
     // it cannot be served to students (docs/LICENSING.md section 4).
-    fetch('../data/practice.json?v=5aee4499f1').then((r) => r.json()).catch(() => ({ items: [] })),
-    fetch('../data/misconceptions.json?v=5aee4499f1').then((r) => r.json()).catch(() => ({ families: [] })),
-    fetch('../data/subtypes.json?v=5aee4499f1').then((r) => r.json()).catch(() => ({ skills: {} })),
-    fetch('../data/subtype_counts.json?v=5aee4499f1').then((r) => r.json()).catch(() => ({ subtypes: {} })),
+    fetch('../data/practice.json?v=9f94299437').then((r) => r.json()).catch(() => ({ items: [] })),
+    fetch('../data/misconceptions.json?v=9f94299437').then((r) => r.json()).catch(() => ({ families: [] })),
+    fetch('../data/subtypes.json?v=9f94299437').then((r) => r.json()).catch(() => ({ skills: {} })),
+    fetch('../data/subtype_counts.json?v=9f94299437').then((r) => r.json()).catch(() => ({ subtypes: {} })),
   ]);
   state.misconceptions = Object.fromEntries((misc.families ?? []).map((f) => [f.slug, f]));
   state.bands = bands;

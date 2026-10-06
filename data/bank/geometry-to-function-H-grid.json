@@ -1,0 +1,161 @@
+[
+ {
+  "stem": "The function $V$ gives the volume of the tray, in cubic centimeters, in terms of its width $w$, in centimeters. If $V(w)$ is written in the form $V(w) = aw^2 + bw$, where $a$ and $b$ are constants, what is the value of $b$?",
+  "stimulus": "An agricultural research station starts seedlings in trays shaped like rectangular boxes. The width of each tray is 4 centimeters less than its length, and every tray has a depth of 6 centimeters.",
+  "keys": [
+   "24"
+  ],
+  "any_of": false,
+  "explanation": "The question names the width $w$ as the variable, so write every dimension in terms of $w$. The width is 4 less than the length, so the length is 4 more than the width: $w + 4$. The depth is fixed at 6. Volume is length \u00d7 width \u00d7 depth, so $V(w) = 6w(w + 4) = 6w^2 + 24w$. That makes $b = 24$. To check, pick $w = 1$: the tray is $5 \\times 1 \\times 6$, a volume of 30, and $6(1)^2 + 24(1) = 30$.",
+  "common_errors": [
+   {
+    "value": "-24",
+    "misconception": "graph-feature-mismatch",
+    "why": "You copied the phrase 'width is 4 less' onto the wrong dimension and wrote the length as $w - 4$, which gives $6w(w - 4) = 6w^2 - 24w$. This is the subtype's trap: the offset has the wrong sign."
+   },
+   {
+    "value": "4",
+    "misconception": "missed-condition",
+    "why": "You left out the fixed 6-centimeter depth and found the base area instead: $w(w + 4) = w^2 + 4w$."
+   },
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "You reported $a$, the coefficient of $w^2$, instead of $b$."
+   },
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "When you distributed $6w$ over $(w + 4)$, you added 6 and 4 instead of multiplying them."
+   }
+  ],
+  "id": "orig-geometry-to-fu-H-e3f198",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The function $V$ gives the volume of the tank, in cubic decimeters, in terms of its height $h$, in decimeters. If $V(h)$ is written in the form $V(h) = h^3 + bh^2 + ch$, where $b$ and $c$ are constants, what is the value of $c$?",
+  "stimulus": "Ecologists studying algae growth build a mesocosm, an outdoor tank shaped like a rectangular box. The tank's height is 5 decimeters less than its length, and its width is 2 decimeters more than its height.",
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "The question names the height $h$, so write the other two dimensions in terms of $h$. The height is 5 less than the length, so the length is $h + 5$. The width is 2 more than the height, so the width is $h + 2$. Then $V(h) = h(h + 5)(h + 2)$. Expand: $(h + 5)(h + 2) = h^2 + 7h + 10$, so $V(h) = h^3 + 7h^2 + 10h$, and $c = 10$. To check, pick $h = 1$: the tank is $6 \\times 3 \\times 1$, a volume of 18, and $1 + 7 + 10 = 18$.",
+  "common_errors": [
+   {
+    "value": "-10",
+    "misconception": "graph-feature-mismatch",
+    "why": "You wrote the length as $h - 5$ because the sentence says '5 less'. Then $h(h - 5)(h + 2) = h^3 - 3h^2 - 10h$. This is the subtype's trap: you wrote the dimension in the wrong direction."
+   },
+   {
+    "value": "35",
+    "misconception": "misread-given",
+    "why": "You read the width as 2 more than the length rather than the height. That makes the width $h + 7$, and $h(h + 5)(h + 7) = h^3 + 12h^2 + 35h$."
+   },
+   {
+    "value": "7",
+    "misconception": "wrong-target-quantity",
+    "why": "You expanded correctly but reported $b$, the coefficient of $h^2$, instead of $c$."
+   }
+  ],
+  "id": "orig-geometry-to-fu-H-581810",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The function $A$ gives the area, in square centimeters, of the region inside the margins of a page in terms of the page's height $h$, in centimeters. If $A(h)$ is written in the form $A(h) = h^2 + bh + c$, where $b$ and $c$ are constants, what is the value of $c$?",
+  "stimulus": "A linguist is printing a field dictionary of an endangered language. Each page is a rectangle whose height is 8 centimeters more than its width. Every page has a blank margin 2 centimeters wide along all four edges, and the entries are printed in the rectangular region inside the margins.",
+  "keys": [
+   "48"
+  ],
+  "any_of": false,
+  "explanation": "The question names the page height $h$. The height is 8 more than the width, so the page width is $h - 8$. Each dimension loses a 2-centimeter margin at both ends, so 4 centimeters in total. The printed region is therefore $(h - 4)$ tall and $(h - 8 - 4) = (h - 12)$ wide. So $A(h) = (h - 4)(h - 12) = h^2 - 16h + 48$, and $c = 48$. To check, pick $h = 20$: the page is $12 \\times 20$, the printed region is $8 \\times 16 = 128$, and $400 - 320 + 48 = 128$.",
+  "common_errors": [
+   {
+    "value": "-16",
+    "misconception": "graph-feature-mismatch",
+    "why": "You wrote the width as $h + 8$, which puts the offset on the wrong dimension. Then the region is $(h - 4)(h + 4) = h^2 - 16$. This is the subtype's trap."
+   },
+   {
+    "value": "20",
+    "misconception": "missed-condition",
+    "why": "You took off only one 2-centimeter margin from each dimension instead of two. That gives $(h - 2)(h - 10) = h^2 - 12h + 20$."
+   },
+   {
+    "value": "0",
+    "misconception": "intermediate-step",
+    "why": "You stopped at the area of the whole page, $h(h - 8) = h^2 - 8h$, and never took off the margins."
+   },
+   {
+    "value": "-16",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the correct expansion but reported $b$ instead of $c$. (The value is the same as the sign-flip error above.)"
+   }
+  ],
+  "id": "orig-geometry-to-fu-H-4601b3",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The function $V$ gives the volume of the vault, in cubic centimeters, in terms of the side length $s$ of its floor, in centimeters. If $V(s)$ is written in the form $V(s) = as^3 + bs^2$, where $a$ and $b$ are constants, what is the value of $b$?",
+  "stimulus": "A seismology team digs a vault for a broadband seismometer. The vault is a rectangular box with a square floor. The side length of the floor is 30 centimeters less than twice the vault's depth.",
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "The question names the floor side $s$, so you need the depth in terms of $s$. The sentence says $s = 2d - 30$. Solve for $d$: $2d = s + 30$, so $d = \\frac{s + 30}{2}$. Volume is floor area \u00d7 depth: $V(s) = s^2 \\cdot \\frac{s + 30}{2} = \\frac{1}{2}s^3 + 15s^2$. So $b = 15$. To check, pick $s = 10$: the depth is 20, the volume is $100 \\times 20 = 2000$, and $\\frac{1}{2}(1000) + 15(100) = 2000$.",
+  "common_errors": [
+   {
+    "value": "-30",
+    "misconception": "graph-feature-mismatch",
+    "why": "You copied '30 less than twice' straight onto the depth and wrote it as $2s - 30$. That writes the relationship in terms of the wrong dimension and gives $s^2(2s - 30) = 2s^3 - 30s^2$. This is the subtype's trap."
+   },
+   {
+    "value": "-15",
+    "misconception": "algebra-manipulation",
+    "why": "When you rearranged $s = 2d - 30$, you subtracted 30 instead of adding it. That gives $d = \\frac{s - 30}{2}$ and $V = \\frac{1}{2}s^3 - 15s^2$."
+   },
+   {
+    "value": "30",
+    "misconception": "algebra-manipulation",
+    "why": "You moved the 30 across correctly but forgot to divide by 2. That makes the depth $s + 30$ and $V = s^3 + 30s^2$."
+   },
+   {
+    "value": ".5",
+    "misconception": "wrong-target-quantity",
+    "why": "You reported $a$, the coefficient of $s^3$, instead of $b$."
+   }
+  ],
+  "id": "orig-geometry-to-fu-H-c166ba",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

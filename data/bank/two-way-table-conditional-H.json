@@ -1,0 +1,182 @@
+[
+ {
+  "stem": "If one of the garments made before the 19th century is selected at random, what is the probability of selecting a silk garment?",
+  "stimulus": "A museum catalogued the European garments in its textile collection by the main fiber used and the century in which each garment was made. Every garment in the collection appears in exactly one cell of the table.\n\nGarments in a Textile Collection, by Fiber and Century\nFiber | 17th century | 18th century | 19th century\nWool | 14 | 18 | 40\nLinen | 10 | 12 | 26\nSilk | 6 | 20 | 34",
+  "choices": [
+   "$\\frac{13}{40}$",
+   "$\\frac{2}{5}$",
+   "$\\frac{13}{30}$",
+   "$\\frac{27}{40}$"
+  ],
+  "answer": "A",
+  "explanation": "The condition is \"made before the 19th century,\" so you keep only the 17th- and 18th-century columns. Together they hold $30 + 50 = 80$ garments, and that is your denominator. The silk garments in those two columns number $6 + 20 = 26$. The probability is $\\frac{26}{80} = \\frac{13}{40}$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You used only the 18th-century column and got $\\frac{20}{50}$. \"Before the 19th century\" also includes the 17th century, so you needed both columns."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the condition and the target. You put the 26 early silk garments over all 60 silk garments, which answers \"of the silk garments, what fraction are pre-19th-century?\" The group you are choosing from is the 80 pre-19th-century garments."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the right denominator of 80 but counted the wool and linen garments ($54$) instead of the silk ones. That gives the probability of selecting a garment that is not silk."
+   }
+  },
+  "id": "orig-two-way-table--H-b5ed9e",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If one of the wells with a nitrate level at or above the limit is selected at random, what is the probability of selecting a well that draws from the shallow aquifer?",
+  "stimulus": "A county hydrologist tested 200 private drinking-water wells. Each well draws from either a shallow aquifer or a deep aquifer, and each well's nitrate level was classified against the drinking-water limit.\n\nNitrate Test Results for 200 Wells\nAquifer | Below limit | At or above limit\nShallow | 84 | 36\nDeep | 72 | 8",
+  "choices": [
+   "$\\frac{9}{50}$",
+   "$\\frac{2}{11}$",
+   "$\\frac{3}{10}$",
+   "$\\frac{9}{11}$"
+  ],
+  "answer": "D",
+  "explanation": "The condition is \"wells with a nitrate level at or above the limit,\" so you keep only that column. It contains $36 + 8 = 44$ wells, and that is your denominator. Of those, 36 draw from the shallow aquifer. The probability is $\\frac{36}{44} = \\frac{9}{11}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided 36 by the grand total of 200 wells. That is the probability that a well is both shallow and at or above the limit, not the probability given that it is at or above the limit."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the right column but took the deep-aquifer cell ($\\frac{8}{44}$), which answers the question for the other aquifer."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the condition and the target. You put the 36 over all 120 shallow wells, which answers \"of the shallow wells, what fraction are at or above the limit?\""
+   }
+  },
+  "id": "orig-two-way-table--H-763d20",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If one of the participants who ate breakfast is selected at random, what is the probability of selecting a participant who had a mid-morning snack?",
+  "stimulus": "In a nutrition study, 150 adults recorded what they ate for breakfast on a weekday and whether they ate a snack between breakfast and noon. A participant who ate either cereal or eggs is counted as having eaten breakfast.\n\nBreakfast Type and Mid-Morning Snacking\nBreakfast | Snack | No snack\nNone | 33 | 12\nCereal | 18 | 42\nEggs | 9 | 36",
+  "choices": [
+   "$\\frac{9}{50}$",
+   "$\\frac{9}{35}$",
+   "$\\frac{9}{20}$",
+   "$\\frac{26}{35}$"
+  ],
+  "answer": "B",
+  "explanation": "The condition is \"ate breakfast,\" which means the cereal row and the eggs row together. They hold $60 + 45 = 105$ participants, and that is your denominator. In those rows, $18 + 9 = 27$ participants had a snack. The probability is $\\frac{27}{105} = \\frac{9}{35}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided 27 by all 150 participants. That is the probability of ate breakfast and snacked, not snacked given that the participant ate breakfast."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the condition and the target. You put the 27 over all 60 snackers, which answers \"of the snackers, what fraction ate breakfast?\""
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the right denominator of 105 but counted the participants who did not snack ($42 + 36 = 78$), which is the complement of what was asked."
+   }
+  },
+  "id": "orig-two-way-table--H-50adb5",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If one of the speakers who reported code-switching often is selected at random, what is the probability of selecting a speaker whose home language is Tagalog?",
+  "stimulus": "A linguist surveyed 200 bilingual adults who use English at work. Each speaker reported a home language and whether they switch between that language and English within a single conversation often or rarely.\n\nCode-Switching Frequency by Home Language\nHome language | Often | Rarely\nSpanish | 45 | 35\nTagalog | 28 | 12\nVietnamese | 15 | 25\nArabic | 32 | 8",
+  "choices": [
+   "$\\frac{3}{20}$",
+   "$\\frac{7}{30}$",
+   "$\\frac{7}{10}$",
+   "$\\frac{23}{30}$"
+  ],
+  "answer": "B",
+  "explanation": "The condition is \"speakers who reported code-switching often,\" so you keep only the Often column. It totals $45 + 28 + 15 + 32 = 120$, and that is your denominator. Of those speakers, 28 have Tagalog as their home language. The probability is $\\frac{28}{120} = \\frac{7}{30}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You worked in the Rarely column instead of the Often column and got $\\frac{12}{80}$, which is the probability for the opposite group of speakers."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the condition and the target. You put the 28 over all 40 Tagalog speakers, which answers \"of the Tagalog speakers, what fraction code-switch often?\""
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the right denominator of 120 but counted the frequent code-switchers whose home language is not Tagalog ($92$)."
+   }
+  },
+  "id": "orig-two-way-table--H-cd2544",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If one of the prints that is not a woodcut is selected at random, what is the probability of selecting an unsigned print?",
+  "stimulus": "A gallery preparing a printmaking exhibition sorted its 140 prints by technique and by whether the artist had signed the print in pencil.\n\nExhibition Prints by Technique and Signature\nTechnique | Signed | Unsigned\nWoodcut | 26 | 14\nEtching | 30 | 6\nLithograph | 18 | 12\nScreenprint | 12 | 22",
+  "choices": [
+   "$\\frac{2}{7}$",
+   "$\\frac{7}{20}$",
+   "$\\frac{2}{5}$",
+   "$\\frac{20}{27}$"
+  ],
+  "answer": "C",
+  "explanation": "The condition is \"not a woodcut,\" so you cover the woodcut row and keep the etching, lithograph and screenprint rows. They hold $36 + 30 + 34 = 100$ prints, and that is your denominator. The unsigned prints in those rows number $6 + 12 + 22 = 40$. The probability is $\\frac{40}{100} = \\frac{2}{5}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the 40 unsigned non-woodcuts by all 140 prints. That is the probability of not a woodcut and unsigned, not unsigned given that the print is not a woodcut."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the woodcut row, the group the condition excludes, and got $\\frac{14}{40}$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the condition and the target. You put the 40 over all 54 unsigned prints, which answers \"of the unsigned prints, what fraction are not woodcuts?\""
+   }
+  },
+  "id": "orig-two-way-table--H-dde814",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

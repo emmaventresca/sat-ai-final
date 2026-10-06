@@ -1,0 +1,168 @@
+[
+ {
+  "stem": "What is the value of $\\cos(E)$?",
+  "stimulus": "A cartographer marks three landmarks on a map as points $A$, $B$, and $C$, forming right triangle $ABC$ with its right angle at $C$. On the map, $AB = 17$ centimeters and $AC = 8$ centimeters. The three landmarks themselves form triangle $DEF$ on the ground, which is similar to triangle $ABC$, where $A$ corresponds to $D$, $B$ corresponds to $E$, and $C$ corresponds to $F$. On the ground, $DE = 6.8$ kilometers.",
+  "keys": [
+   "15/17",
+   ".8823",
+   ".8824",
+   "0.8823",
+   "0.8824"
+  ],
+  "any_of": false,
+  "explanation": "Because $B$ corresponds to $E$, angle $E$ is congruent to angle $B$, so $\\cos(E) = \\cos(B)$. Similar triangles have the same trig values, so you can ignore the 6.8 km. Do the work in triangle $ABC$, where you know two sides. First find the missing leg: $BC = \\sqrt{17^2 - 8^2} = \\sqrt{225} = 15$. Measured from angle $B$, the adjacent leg is $BC$ and the hypotenuse is $AB$, so $\\cos(B) = \\frac{15}{17}$. That makes $\\cos(E) = \\frac{15}{17}$, or about 0.8824.",
+  "common_errors": [
+   {
+    "value": "8/17",
+    "misconception": "wrong-target-quantity",
+    "why": "Matched $E$ to the wrong vertex and found the cosine of angle $A$ ($AC/AB$) instead of angle $B$. This is the correspondence trap."
+   },
+   {
+    "value": "9/17",
+    "misconception": "algebra-manipulation",
+    "why": "Found the missing leg as $17 - 8 = 9$ instead of using the Pythagorean theorem, then used 9 as the adjacent side."
+   },
+   {
+    "value": "8/15",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the right angle but the wrong ratio, giving $\\tan(B) = AC/BC$ instead of the cosine."
+   },
+   {
+    "value": "15/8",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the wrong angle and the wrong ratio together, giving $\\tan(A) = BC/AC$."
+   }
+  ],
+  "id": "orig-similar-triang-M-27ad71",
+  "skill_cd": "S.C.",
+  "subtype": "similar-triangles-transfer",
+  "subtype_name": "Similar right triangles: carry a ratio or a side across",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the length, in meters, of $\\overline{TU}$?",
+  "stimulus": "An archaeologist sets out a small survey grid shaped like right triangle $PQR$, with its right angle at $R$, where $\\tan(Q) = \\frac{12}{5}$. A larger excavation trench is shaped like triangle $STU$, which is similar to triangle $PQR$, where $P$ corresponds to $S$, $Q$ corresponds to $T$, and $R$ corresponds to $U$. The hypotenuse $\\overline{ST}$ of the trench is 39 meters long.",
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "Because $Q$ corresponds to $T$, $\\tan(T) = \\tan(Q) = \\frac{12}{5}$. In triangle $STU$, the right angle is at $U$. Measured from angle $T$, the opposite leg is $SU$ and the adjacent leg is $TU$, so $SU : TU = 12 : 5$. The legs 12 and 5 go with a hypotenuse of $\\sqrt{12^2 + 5^2} = 13$, which makes the sides $SU : TU : ST = 12 : 5 : 13$. Since $ST = 39 = 3 \\times 13$, the scale factor is 3, and $TU = 3 \\times 5 = 15$ meters.",
+  "common_errors": [
+   {
+    "value": "36",
+    "misconception": "wrong-target-quantity",
+    "why": "Reversed opposite and adjacent relative to angle $T$, so they found $SU$ (the leg opposite $T$) instead of $TU$. This is the trap of matching sides by their place in the picture rather than to the angle."
+   },
+   {
+    "value": "3",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the scale factor $39 \\div 13$ and never multiplied it by the leg."
+   },
+   {
+    "value": "93.6",
+    "misconception": "algebra-manipulation",
+    "why": "Treated tangent as a ratio involving the hypotenuse and computed $39 \\times \\frac{12}{5}$."
+   },
+   {
+    "value": "16.25",
+    "misconception": "algebra-manipulation",
+    "why": "Computed $39 \\times \\frac{5}{12}$, which uses the tangent as if the hypotenuse were one of the legs."
+   }
+  ],
+  "id": "orig-similar-triang-M-df4a0b",
+  "skill_cd": "S.C.",
+  "subtype": "similar-triangles-transfer",
+  "subtype_name": "Similar right triangles: carry a ratio or a side across",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $\\sin(\\angle JKM)$?",
+  "stimulus": "For a poster on daily nutrient intake, a nutrition scientist draws right triangle $JKL$ with its right angle at $K$, where $JK = 20$ inches and $KL = 15$ inches. A segment is drawn from $K$ perpendicular to $\\overline{JL}$, meeting $\\overline{JL}$ at point $M$.",
+  "keys": [
+   "4/5",
+   ".8",
+   "0.8"
+  ],
+  "any_of": false,
+  "explanation": "The altitude $\\overline{KM}$ splits triangle $JKL$ into two smaller right triangles, and each one is similar to $JKL$. In triangle $JKM$, the angles at $J$ and $K$ add to $90^\\circ$, and in triangle $JKL$, angles $J$ and $L$ also add to $90^\\circ$. That means $\\angle JKM$ is congruent to $\\angle L$, so $\\sin(\\angle JKM) = \\sin(L)$. In triangle $JKL$, the hypotenuse is $JL = \\sqrt{20^2 + 15^2} = 25$. Measured from angle $L$, the opposite side is $JK$, so $\\sin(L) = \\frac{20}{25} = \\frac{4}{5}$. To check: $JM = \\frac{20^2}{25} = 16$, and in triangle $JKM$, $\\frac{JM}{JK} = \\frac{16}{20} = \\frac{4}{5}$.",
+  "common_errors": [
+   {
+    "value": "3/5",
+    "misconception": "wrong-target-quantity",
+    "why": "Matched $\\angle JKM$ with $\\angle J$ because the two angles are next to each other in the figure, and found $\\sin(J) = 15/25$. This is the correspondence trap."
+   },
+   {
+    "value": "4/3",
+    "misconception": "wrong-target-quantity",
+    "why": "Matched the correct angle but used tangent, giving $JK/KL = 20/15$."
+   },
+   {
+    "value": "3/4",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the wrong angle and tangent together, giving $\\tan(J) = KL/JK = 15/20$."
+   }
+  ],
+  "id": "orig-similar-triang-M-ab2e7e",
+  "skill_cd": "S.C.",
+  "subtype": "similar-triangles-transfer",
+  "subtype_name": "Similar right triangles: carry a ratio or a side across",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the length, in feet, of the ramp surface $\\overline{AB}$?",
+  "stimulus": "A public health clinic is adding a wheelchair ramp. From the side, the ramp forms right triangle $ABC$: $\\overline{AC}$ is level ground, $\\overline{BC}$ is a vertical post at the high end, and the right angle is at $C$. A vertical support brace $\\overline{DE}$ runs parallel to $\\overline{BC}$, with $D$ on $\\overline{AB}$ and $E$ on $\\overline{AC}$. The distance $AE$ is 12 feet, the brace $DE$ is 5 feet tall, and $AC = 30$ feet.",
+  "keys": [
+   "32.5",
+   "65/2"
+  ],
+  "any_of": false,
+  "explanation": "Because $\\overline{DE} \\parallel \\overline{BC}$, triangle $ADE$ is similar to triangle $ABC$, where $A$ corresponds to $A$, $D$ corresponds to $B$, and $E$ corresponds to $C$. In the small triangle, the hypotenuse is $AD = \\sqrt{12^2 + 5^2} = 13$ feet. The ground segments correspond, so the scale factor is $\\frac{AC}{AE} = \\frac{30}{12} = 2.5$. The ramp surface corresponds to $\\overline{AD}$, so $AB = 2.5 \\times 13 = 32.5$ feet.",
+  "common_errors": [
+   {
+    "value": "13",
+    "misconception": "intermediate-step",
+    "why": "Found the small triangle's hypotenuse $AD$ and stopped without scaling up to the full ramp."
+   },
+   {
+    "value": "12.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Scaled the brace instead of the hypotenuse, which gives the post height $BC = 2.5 \\times 5$."
+   },
+   {
+    "value": "78",
+    "misconception": "wrong-target-quantity",
+    "why": "Matched the brace $DE$ with the ground $AC$ instead of with $BC$, giving a scale factor of $30/5 = 6$ and then $6 \\times 13$. This is the correspondence trap."
+   },
+   {
+    "value": "31",
+    "misconception": "algebra-manipulation",
+    "why": "Added the extra ground length to the small hypotenuse, $13 + (30 - 12)$, instead of multiplying by the scale factor."
+   }
+  ],
+  "id": "orig-similar-triang-M-533e7b",
+  "skill_cd": "S.C.",
+  "subtype": "similar-triangles-transfer",
+  "subtype_name": "Similar right triangles: carry a ratio or a side across",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

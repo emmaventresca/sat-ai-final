@@ -1,0 +1,167 @@
+[
+ {
+  "stem": "What is the mean waiting time, in minutes, for the patients at Clinic B?",
+  "stimulus": "A county health department recorded how long walk-in patients waited before being seen at two clinics on the same day. Altogether, 50 patients were seen at the two clinics, and their mean waiting time was 16 minutes. Clinic A saw 30 of these patients, and their mean waiting time was 12 minutes. The rest of the patients were seen at Clinic B.",
+  "keys": [
+   "22"
+  ],
+  "any_of": false,
+  "explanation": "Turn each mean into a total. All 50 patients waited $50 \\times 16 = 800$ minutes in total. Clinic A's 30 patients waited $30 \\times 12 = 360$ minutes in total. That leaves $800 - 360 = 440$ minutes for Clinic B, which saw $50 - 30 = 20$ patients. Clinic B's mean is $\\frac{440}{20} = 22$ minutes. You can't treat 16 as the plain average of the two clinic means, because the clinics saw different numbers of patients.",
+  "common_errors": [
+   {
+    "value": "20",
+    "misconception": "missed-condition",
+    "why": "Treated the combined mean as the average of the two clinic means, as if the clinics were the same size: $\\frac{12 + x}{2} = 16$ gives $x = 20$."
+   },
+   {
+    "value": "440",
+    "misconception": "intermediate-step",
+    "why": "Found Clinic B's total waiting time and stopped before dividing by its 20 patients."
+   },
+   {
+    "value": "8.8",
+    "misconception": "algebra-manipulation",
+    "why": "Divided Clinic B's total of 440 minutes by all 50 patients instead of Clinic B's 20 patients."
+   },
+   {
+    "value": "800",
+    "misconception": "intermediate-step",
+    "why": "Gave the combined total waiting time for both clinics, $50 \\times 16$."
+   }
+  ],
+  "id": "orig-reverse-mean-f-M-403765",
+  "skill_cd": "Q.C.",
+  "subtype": "reverse-mean-find-unknown",
+  "subtype_name": "Work backward from a mean to a missing value",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What was the yield, in bushels per acre, of the sixth plot?",
+  "stimulus": "An agronomist is testing a drought-tolerant wheat variety. The mean yield of the first five test plots was 50.4 bushels per acre. After a sixth plot was harvested, the mean yield of all six plots was 51 bushels per acre.",
+  "keys": [
+   "54"
+  ],
+  "any_of": false,
+  "explanation": "Turn each mean into a total. The first five plots produced $5 \\times 50.4 = 252$ bushels per acre in total. All six plots produced $6 \\times 51 = 306$. The sixth plot accounts for the difference, so its yield is $306 - 252 = 54$ bushels per acre. Its yield is above both means, which is why it pulled the mean up.",
+  "common_errors": [
+   {
+    "value": "51.6",
+    "misconception": "missed-condition",
+    "why": "Averaged the old mean with the new value as if they carried equal weight: $\\frac{50.4 + x}{2} = 51$ gives $x = 51.6$. This ignores that 50.4 represents five plots."
+   },
+   {
+    "value": "0.6",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the change in the mean, $51 - 50.4$, instead of the sixth plot's yield."
+   },
+   {
+    "value": "306",
+    "misconception": "intermediate-step",
+    "why": "Gave the six-plot total and stopped before subtracting the first five plots' total."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Left the new plot out of the count and multiplied the new mean by 5: $5 \\times 51 - 252 = 3$."
+   }
+  ],
+  "id": "orig-reverse-mean-f-M-37a410",
+  "skill_cd": "Q.C.",
+  "subtype": "reverse-mean-find-unknown",
+  "subtype_name": "Work backward from a mean to a missing value",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "A nutrition researcher measured the protein content, in grams, of single servings of several snack bars. Brand P's five bars contained 12, 18, 15, 21, and 9 grams of protein. Brand Q's four bars contained 14, 10, 20, and $x$ grams of protein. The mean protein content of Brand Q's bars equals the mean protein content of Brand P's bars.",
+  "keys": [
+   "16"
+  ],
+  "any_of": false,
+  "explanation": "First find Brand P's mean: $\\frac{12 + 18 + 15 + 21 + 9}{5} = \\frac{75}{5} = 15$ grams. Brand Q must also have a mean of 15 across its 4 bars, so its total must be $4 \\times 15 = 60$ grams. The known Brand Q values add to $14 + 10 + 20 = 44$, so $x = 60 - 44 = 16$.",
+  "common_errors": [
+   {
+    "value": "1",
+    "misconception": "missed-condition",
+    "why": "Left $x$ out of Brand Q's count and used 3 bars: $3 \\times 15 - 44 = 1$."
+   },
+   {
+    "value": "31",
+    "misconception": "misread-given",
+    "why": "Used Brand P's total of 75, which is based on 5 bars, as Brand Q's required total: $75 - 44 = 31$."
+   },
+   {
+    "value": "60",
+    "misconception": "intermediate-step",
+    "why": "Found Brand Q's required total and stopped before subtracting the known values."
+   },
+   {
+    "value": "15",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the shared mean instead of the missing value $x$."
+   }
+  ],
+  "id": "orig-reverse-mean-f-M-e8a013",
+  "skill_cd": "Q.C.",
+  "subtype": "reverse-mean-find-unknown",
+  "subtype_name": "Work backward from a mean to a missing value",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "How many hours of overtime did the departing worker log that week?",
+  "stimulus": "A labour economist studying a warehouse found that the 10 workers on one shift logged a mean of 6 hours of overtime in a particular week. One of these workers then left the company. The mean overtime for the remaining 9 workers that same week was 5.5 hours.",
+  "keys": [
+   "10.5",
+   "21/2"
+  ],
+  "any_of": false,
+  "explanation": "Turn each mean into a total. All 10 workers logged $10 \\times 6 = 60$ hours of overtime. The remaining 9 logged $9 \\times 5.5 = 49.5$ hours. The departing worker accounts for the difference: $60 - 49.5 = 10.5$ hours. That is well above the mean, which is why removing this worker lowered the mean.",
+  "common_errors": [
+   {
+    "value": "6.5",
+    "misconception": "missed-condition",
+    "why": "Treated 6 as the plain average of 5.5 and the departing worker's hours, as if the groups were the same size: $\\frac{5.5 + x}{2} = 6$ gives $x = 6.5$."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Kept 10 as the count after the worker left: $60 - 10 \\times 5.5 = 5$."
+   },
+   {
+    "value": "0.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the drop in the mean, $6 - 5.5$, instead of the departing worker's hours."
+   },
+   {
+    "value": "49.5",
+    "misconception": "intermediate-step",
+    "why": "Gave the remaining workers' total and stopped before subtracting it from 60."
+   }
+  ],
+  "id": "orig-reverse-mean-f-M-252ac7",
+  "skill_cd": "Q.C.",
+  "subtype": "reverse-mean-find-unknown",
+  "subtype_name": "Work backward from a mean to a missing value",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

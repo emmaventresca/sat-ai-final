@@ -1,0 +1,166 @@
+[
+ {
+  "stem": "What is the width $w$, in meters, of the plot?",
+  "stimulus": "A rectangular test plot at an agricultural research station is 80 meters long from east to west and $w$ meters wide from north to south. A straight drip-irrigation line runs from the southwest corner of the plot to the midpoint of the plot's north side. The drip line is 41 meters long.",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "The drip line ends at the midpoint of the north side, so it does not run corner to corner. Its east-west distance is half of 80, which is 40 meters. Its north-south distance is the full width $w$. The drip line is the hypotenuse of a right triangle with legs 40 and $w$. The unknown is a leg, so you subtract: $w^2 = 41^2 - 40^2 = 1681 - 1600 = 81$. Then $w = 9$.",
+  "common_errors": [
+   {
+    "value": "57.28",
+    "misconception": "algebra-manipulation",
+    "why": "Added the squares instead of subtracting them, which treats 41 as a leg: $\\sqrt{41^2 + 40^2} = \\sqrt{3281} \\approx 57.28$."
+   },
+   {
+    "value": "81",
+    "misconception": "intermediate-step",
+    "why": "Found $w^2 = 81$ and stopped without taking the square root."
+   },
+   {
+    "value": "89.89",
+    "misconception": "misread-given",
+    "why": "Used the full 80 m length as a leg instead of half of it. With 80 as a leg, 41 can't be the hypotenuse, so the student added the squares: $\\sqrt{80^2 + 41^2} = \\sqrt{8081} \\approx 89.89$."
+   },
+   {
+    "value": "1",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the side lengths without squaring them: $41 - 40 = 1$."
+   }
+  ],
+  "id": "orig-pythagorean-mi-M-5033b8",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the length, in inches, of the brace?",
+  "stimulus": "A highway sign is mounted on a vertical post. A straight steel brace runs from the post to the bottom edge of the sign, and the post, the sign's edge and the brace form a right triangle. The brace meets the post 30 inches below the sign's edge, and it meets the sign's edge 6 feet out from the post.",
+  "keys": [
+   "78"
+  ],
+  "any_of": false,
+  "explanation": "First put both legs in the same unit: 6 feet is $6 \\times 12 = 72$ inches. The brace is across from the right angle, so it is the hypotenuse. $c^2 = 30^2 + 72^2 = 900 + 5184 = 6084$, so $c = 78$ inches. This is a 5-12-13 triangle scaled up by 6.",
+  "common_errors": [
+   {
+    "value": "30.59",
+    "misconception": "misread-given",
+    "why": "Did not convert 6 feet to inches: $\\sqrt{30^2 + 6^2} = \\sqrt{936} \\approx 30.59$."
+   },
+   {
+    "value": "65.45",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the squares as if one leg were the hypotenuse: $\\sqrt{72^2 - 30^2} = \\sqrt{4284} \\approx 65.45$."
+   },
+   {
+    "value": "6.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Worked the problem correctly in feet (2.5 and 6 give 6.5) but gave the answer in feet instead of inches."
+   },
+   {
+    "value": "102",
+    "misconception": "algebra-manipulation",
+    "why": "Added the two legs instead of their squares: $30 + 72 = 102$."
+   }
+  ],
+  "id": "orig-pythagorean-mi-M-b1e7c5",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the width, in meters, of the solar panel?",
+  "stimulus": "A rectangular solar panel on a space probe is 7 meters longer than it is wide. The diagonal of the panel is 13 meters long.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "Let the width be $x$, so the length is $x + 7$. The diagonal is the hypotenuse of a right triangle whose legs are the width and the length: $x^2 + (x + 7)^2 = 13^2$. Expand: $2x^2 + 14x + 49 = 169$, so $x^2 + 7x - 60 = 0$. This factors as $(x + 12)(x - 5) = 0$. A width can't be negative, so $x = 5$.",
+  "common_errors": [
+   {
+    "value": "12",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved correctly but reported the length, $x + 7 = 12$, instead of the width."
+   },
+   {
+    "value": "-12",
+    "misconception": "missed-condition",
+    "why": "Kept the negative root of the quadratic, which can't be a length."
+   },
+   {
+    "value": "7.745",
+    "misconception": "algebra-manipulation",
+    "why": "Expanded $(x + 7)^2$ as $x^2 + 49$, giving $2x^2 = 120$ and $x = \\sqrt{60} \\approx 7.745$."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Set the sides themselves, not their squares, equal to the diagonal: $x + (x + 7) = 13$."
+   }
+  ],
+  "id": "orig-pythagorean-mi-M-a8cd1e",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the actual length, in meters, of the plaza?",
+  "stimulus": "On a city planning map, 1 inch represents 20 meters. A proposed rectangular plaza is drawn on the map with a width of 1.5 inches. A straight walkway runs diagonally across the plaza from one corner to the opposite corner, and on the map the walkway is 3.9 inches long.",
+  "keys": [
+   "72"
+  ],
+  "any_of": false,
+  "explanation": "The walkway is the diagonal of the rectangle, so it is the hypotenuse. The length you want is a leg, so subtract: $\\ell^2 = 3.9^2 - 1.5^2 = 15.21 - 2.25 = 12.96$. That gives $\\ell = 3.6$ inches on the map. Convert with the scale: $3.6 \\times 20 = 72$ meters. You get the same answer if you convert first: $\\sqrt{78^2 - 30^2} = 72$.",
+  "common_errors": [
+   {
+    "value": "3.6",
+    "misconception": "intermediate-step",
+    "why": "Found the length on the map but did not apply the scale to convert it to meters."
+   },
+   {
+    "value": "83.57",
+    "misconception": "algebra-manipulation",
+    "why": "Added the squares, which treats the diagonal as a leg: $\\sqrt{3.9^2 + 1.5^2} \\approx 4.18$ inches, and $4.18 \\times 20 \\approx 83.57$ meters."
+   },
+   {
+    "value": "48",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the map lengths without squaring them: $3.9 - 1.5 = 2.4$, and $2.4 \\times 20 = 48$."
+   },
+   {
+    "value": "5184",
+    "misconception": "intermediate-step",
+    "why": "Converted to meters and found $\\ell^2 = 78^2 - 30^2 = 5184$, then did not take the square root."
+   }
+  ],
+  "id": "orig-pythagorean-mi-M-ffb989",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

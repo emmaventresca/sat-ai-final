@@ -1,0 +1,176 @@
+[
+ {
+  "stem": "What is the combined length, in feet, of the three outer steel members of the frame?",
+  "stimulus": "A civil engineer is designing a triangular steel frame to hold an overhead highway sign. The three outer members of the frame form an equilateral triangle, and the bottom member is horizontal. A vertical steel post runs from the top vertex of the frame straight down to the bottom member, meeting it at a right angle. The post is $15\\sqrt{3}$ feet long.",
+  "keys": [
+   "90"
+  ],
+  "any_of": false,
+  "explanation": "The vertical post is an altitude of the equilateral triangle. It splits the triangle into two 30-60-90 triangles, so each one has sides $x$, $x\\sqrt{3}$, $2x$. The altitude is opposite the 60\u00b0 angle, so it is the $x\\sqrt{3}$ side: $x\\sqrt{3} = 15\\sqrt{3}$, which gives $x = 15$. The short leg $x$ is half of the bottom member, and the hypotenuse $2x = 30$ is a full side of the frame. All three outer members are 30 feet long, so together they measure $3(30) = 90$ feet. The post is not one of the outer members, so it is not included.",
+  "common_errors": [
+   {
+    "value": "45",
+    "misconception": "misread-given",
+    "why": "Treats the altitude as if it were (side)\u00b7\u221a3, so 15\u221a3 = s\u221a3 gives a side of 15 instead of 30, then multiplies by 3. This puts the given length in the wrong slot of the 30-60-90 pattern."
+   },
+   {
+    "value": "30",
+    "misconception": "intermediate-step",
+    "why": "Correctly finds one side of the frame (2x = 30) and stops without adding the three members."
+   },
+   {
+    "value": "15",
+    "misconception": "intermediate-step",
+    "why": "Stops at x = 15, which is only half of the bottom member."
+   },
+   {
+    "value": "115.98",
+    "misconception": "wrong-target-quantity",
+    "why": "Adds the 15\u221a3-foot post to the 90-foot perimeter (90 + 25.98...), even though the question asks only about the outer members."
+   },
+   {
+    "value": "115.9",
+    "misconception": "wrong-target-quantity",
+    "why": "The same post-included total, truncated instead of rounded."
+   }
+  ],
+  "id": "orig-special-right--H-7b4e37",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the area, in square millimeters, of the cross section of the square bar?",
+  "stimulus": "A materials scientist machines a test bar from a solid cylindrical rod with a circular cross section that has a diameter of 10 millimeters. The bar's cross section is the largest square that fits inside the rod's circular cross section, so all four corners of the square touch the circle.",
+  "keys": [
+   "50"
+  ],
+  "any_of": false,
+  "explanation": "A square inscribed in a circle has its diagonal along a diameter, so the square's diagonal is 10 mm. The diagonal splits the square into two 45-45-90 triangles with sides $s$, $s$, $s\\sqrt{2}$, and the diagonal is the $s\\sqrt{2}$ side: $s\\sqrt{2} = 10$, so $s = \\frac{10}{\\sqrt{2}} = 5\\sqrt{2}$. The area is $s^2 = (5\\sqrt{2})^2 = 50$ square millimeters. As a check, the area of a square is $\\frac{d^2}{2} = \\frac{100}{2} = 50$.",
+  "common_errors": [
+   {
+    "value": "100",
+    "misconception": "misread-given",
+    "why": "Treats the 10 mm diameter as the side of the square instead of its diagonal, so the area is 10\u00b2 = 100."
+   },
+   {
+    "value": "200",
+    "misconception": "algebra-manipulation",
+    "why": "Knows the diagonal is involved but multiplies by \u221a2 instead of dividing, getting a side of 10\u221a2 and an area of 200. This is the hypotenuse-as-leg trap."
+   },
+   {
+    "value": "25",
+    "misconception": "misread-given",
+    "why": "Uses the 5 mm radius as the side of the square: 5\u00b2 = 25."
+   },
+   {
+    "value": "12.5",
+    "misconception": "misread-given",
+    "why": "Correctly treats the length as a diagonal but uses the radius (5) instead of the diameter: 5\u00b2/2 = 12.5."
+   }
+  ],
+  "id": "orig-special-right--H-05df9e",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the actual straight-line distance, in kilometers, between towns A and C?",
+  "stimulus": "On a regional map, town B is directly east of town A, and town C is directly north of town B. On the map, the angle at town A between the line segment to town B and the line segment to town C measures $60^\\circ$. The map distance from town B to town C is $3\\sqrt{3}$ centimeters. The map's scale is 1 centimeter = 5 kilometers.",
+  "keys": [
+   "30"
+  ],
+  "any_of": false,
+  "explanation": "East and north are perpendicular, so triangle ABC has its right angle at B. With a 60\u00b0 angle at A, it is a 30-60-90 triangle with sides $x$, $x\\sqrt{3}$, $2x$. Segment BC is opposite the 60\u00b0 angle, so it is the $x\\sqrt{3}$ side: $x\\sqrt{3} = 3\\sqrt{3}$, which gives $x = 3$ cm (that is AB). The hypotenuse AC is $2x = 6$ cm on the map. Using the scale, that is $6 \\times 5 = 30$ kilometers.",
+  "common_errors": [
+   {
+    "value": "51.96",
+    "misconception": "misread-given",
+    "why": "Puts BC in the short-leg slot, as if it were opposite the 30\u00b0 angle, so AC = 2(3\u221a3) = 6\u221a3 cm and the distance is 30\u221a3 \u2248 51.96 km. This is the wrong-slot trap."
+   },
+   {
+    "value": "51.98",
+    "misconception": "misread-given",
+    "why": "The same wrong-slot error with 30\u221a3 calculated using a rounded \u221a3 \u2248 1.733 (an alternate decimal for 51.96)."
+   },
+   {
+    "value": "6",
+    "misconception": "intermediate-step",
+    "why": "Finds the correct map length of AC (6 cm) and forgets to convert it with the scale."
+   },
+   {
+    "value": "15",
+    "misconception": "wrong-target-quantity",
+    "why": "Converts AB (3 cm) instead of AC: 3 \u00d7 5 = 15 km."
+   },
+   {
+    "value": "1.2",
+    "misconception": "algebra-manipulation",
+    "why": "Applies the scale backwards, dividing 6 cm by 5 instead of multiplying."
+   }
+  ],
+  "id": "orig-special-right--H-8062d0",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "How many calories are in one cracker?",
+  "stimulus": "A nutrition scientist is designing a snack cracker with a flat top surface shaped like a right triangle with two congruent legs. The longest side of the triangle is 6 centimeters. The cracker has a uniform thickness, and each square centimeter of its top surface corresponds to 6 calories.",
+  "keys": [
+   "54"
+  ],
+  "any_of": false,
+  "explanation": "A right triangle with two congruent legs is a 45-45-90 triangle with sides $x$, $x$, $x\\sqrt{2}$. The longest side is the hypotenuse, so $x\\sqrt{2} = 6$, which gives $x = \\frac{6}{\\sqrt{2}} = 3\\sqrt{2}$ cm. The area of the top surface is $\\frac{1}{2}x \\cdot x = \\frac{1}{2}(3\\sqrt{2})^2 = \\frac{1}{2}(18) = 9$ square centimeters. At 6 calories per square centimeter, the cracker has $9 \\times 6 = 54$ calories.",
+  "common_errors": [
+   {
+    "value": "108",
+    "misconception": "misread-given",
+    "why": "Treats the 6 cm hypotenuse as a leg, so the area is \u00bd(6)(6) = 18 cm\u00b2 and 18 \u00d7 6 = 108. The same value comes from finding the legs correctly but forgetting the \u00bd (area 18)."
+   },
+   {
+    "value": "216",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplies by \u221a2 instead of dividing, getting legs of 6\u221a2, an area of \u00bd(6\u221a2)\u00b2 = 36 cm\u00b2, and 36 \u00d7 6 = 216. This is the hypotenuse-as-leg trap."
+   },
+   {
+    "value": "9",
+    "misconception": "intermediate-step",
+    "why": "Finds the correct area of 9 cm\u00b2 and stops before converting it to calories."
+   },
+   {
+    "value": "18",
+    "misconception": "intermediate-step",
+    "why": "Uses the 6 cm side as a leg and gives the resulting area of 18 cm\u00b2 without converting it to calories."
+   }
+  ],
+  "id": "orig-special-right--H-8dd8ec",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

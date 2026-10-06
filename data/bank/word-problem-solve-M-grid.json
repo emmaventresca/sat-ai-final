@@ -1,0 +1,178 @@
+[
+ {
+  "stem": "According to the model, how many hours after the injection will the antibody concentration be 12 units per milliliter?",
+  "stimulus": "A patient receives an injection of antibodies, and an immunologist tracks the antibody concentration in the patient's blood over the following day. The concentration decreases by the same amount each hour. Three hours after the injection, the concentration is 46 units per milliliter. Seven hours after the injection, it is 30 units per milliliter.",
+  "keys": [
+   "11.5",
+   "23/2"
+  ],
+  "any_of": false,
+  "explanation": "First find the rate. Between hour 3 and hour 7 the concentration falls from 46 to 30. That is a drop of 16 units over 4 hours, so it falls 4 units per milliliter each hour. Use hour 7 as your starting point. You need the concentration to fall from 30 to 12, which is a drop of 18, so solve $30 - 4t = 18$... more simply $4t = 18$, giving $t = 4.5$ more hours. The question asks for the time after the injection, not the time after hour 7, so add: $7 + 4.5 = 11.5$. To check, write the whole model: at hour 0 the concentration is $46 + 3(4) = 58$, so $C = 58 - 4h$. Setting $58 - 4h = 12$ gives $h = 11.5$. In Desmos, put the points (3, 46) and (7, 30) in a table, fit $y_1 \\sim mx_1 + b$, and intersect the line with $y = 12$.",
+  "common_errors": [
+   {
+    "value": "4.5",
+    "misconception": "intermediate-step",
+    "why": "You found the extra hours after the 7-hour reading, (30 \u2212 12)/4, and forgot to add the 7 hours that had already passed."
+   },
+   {
+    "value": "8.5",
+    "misconception": "misread-given",
+    "why": "You treated 46 as the concentration at the moment of injection and solved 46 \u2212 4h = 12, but 46 was measured 3 hours later."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "You divided the target 12 by the rate 4 without working out how far the concentration has to fall from a known reading."
+   },
+   {
+    "value": "18",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the amount the concentration still has to fall after hour 7 (30 \u2212 12) instead of a time."
+   }
+  ],
+  "id": "orig-word-problem-s-M-28ff95",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "After how many weeks will the runner's weekly distance be 30 kilometers?",
+  "stimulus": "A sports scientist designs a training plan for a distance runner. The runner currently runs 12 kilometers per week. Under the plan, the runner's weekly distance increases by 1,500 meters each week.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "Put both quantities in the same unit first. 1,500 meters is 1.5 kilometers. Write starting amount + (rate)(weeks) = target: $12 + 1.5w = 30$. Subtract the starting distance to get $1.5w = 18$, then divide: $w = 12$. In Desmos, graph $y = 12 + 1.5x$ and $y = 30$ and click the intersection.",
+  "common_errors": [
+   {
+    "value": "18",
+    "misconception": "intermediate-step",
+    "why": "You found the extra distance needed (30 \u2212 12 kilometers) and stopped before dividing by the weekly increase."
+   },
+   {
+    "value": "20",
+    "misconception": "algebra-manipulation",
+    "why": "You left out the 12-kilometer starting distance and divided 30 by 1.5."
+   },
+   {
+    "value": ".012",
+    "misconception": "algebra-manipulation",
+    "why": "You did not convert units. You divided 18 kilometers by 1,500 as if both were in the same unit."
+   },
+   {
+    "value": "28",
+    "misconception": "algebra-manipulation",
+    "why": "You divided the target by the rate and added the start, 12 + 30/1.5 = 32, or you mixed up the terms some other way. Most often you get 30 \u2212 12/1.5 = 22 or this kind of value. Substitute your answer back into 12 + 1.5w to check it."
+   }
+  ],
+  "id": "orig-word-problem-s-M-3de03c",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the length of the bridge, in meters?",
+  "stimulus": "A city hires a contractor to install new guardrail along a pedestrian bridge. The contractor charges a one-time equipment fee of $6,000 plus $240 per meter of guardrail installed. The guardrail runs along both sides of the bridge for the bridge's full length and nowhere else. The city spends exactly $31,200 on the job.",
+  "keys": [
+   "52.5",
+   "105/2"
+  ],
+  "any_of": false,
+  "explanation": "Let $g$ be the meters of guardrail. Then $6000 + 240g = 31200$. Subtract the one-time fee: $240g = 25200$, so $g = 105$ meters of guardrail. Now reread the question. It asks for the length of the bridge, not the length of the guardrail. The guardrail covers both sides, so the bridge is half as long: $105 \\div 2 = 52.5$ meters. In Desmos, graph $y = 6000 + 240x$ and $y = 31200$, then halve the x-value at the intersection.",
+  "common_errors": [
+   {
+    "value": "105",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the total meters of guardrail and did not divide by 2 for the two sides of the bridge."
+   },
+   {
+    "value": "65",
+    "misconception": "algebra-manipulation",
+    "why": "You forgot to subtract the $6,000 fee. 31,200/240 = 130 meters of guardrail, and half of that is 65."
+   },
+   {
+    "value": "130",
+    "misconception": "algebra-manipulation",
+    "why": "You forgot to subtract the $6,000 fee and also did not halve the result: 31,200/240."
+   },
+   {
+    "value": "77.5",
+    "misconception": "algebra-manipulation",
+    "why": "You added the fee instead of subtracting it: (31,200 + 6,000)/240 = 155, and half of that is 77.5."
+   },
+   {
+    "value": "25200",
+    "misconception": "intermediate-step",
+    "why": "You stopped at the dollars spent on guardrail after removing the fee."
+   }
+  ],
+  "id": "orig-word-problem-s-M-160e7b",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "How many hours of transcription can the team pay for?",
+  "stimulus": "A linguistics team receives a $5,250 grant to document a regional dialect. The team buys 6 audio recorders at $175 each. It spends the rest of the grant on transcription services, which cost $35 per hour. After the transcription is paid for, none of the grant is left.",
+  "keys": [
+   "120"
+  ],
+  "any_of": false,
+  "explanation": "Let $h$ be the number of transcription hours. The recorders cost $6(175) = 1050$ dollars, so $1050 + 35h = 5250$. Subtract: $35h = 4200$. Divide: $h = 120$ hours. Check that you are answering with hours, not dollars. In Desmos, graph $y = 1050 + 35x$ and $y = 5250$ and click the intersection.",
+  "common_errors": [
+   {
+    "value": "4200",
+    "misconception": "intermediate-step",
+    "why": "You found the dollars left for transcription and did not divide by $35 per hour."
+   },
+   {
+    "value": "150",
+    "misconception": "algebra-manipulation",
+    "why": "You did not subtract the recorder cost first and divided the whole grant by 35."
+   },
+   {
+    "value": "145",
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the price of only one recorder, $175, instead of all six: (5,250 \u2212 175)/35."
+   },
+   {
+    "value": "1050",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the dollars spent on recorders instead of the number of transcription hours."
+   },
+   {
+    "value": "30",
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the recorder spending by the hourly rate (1,050/35). That is the number of hours the recorders' cost could have bought, not the hours actually paid for."
+   }
+  ],
+  "id": "orig-word-problem-s-M-40c01c",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

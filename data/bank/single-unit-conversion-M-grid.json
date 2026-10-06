@@ -110,5 +110,87 @@
    "overlap": [],
    "residue": 0
   }
+ },
+ {
+  "stem": "A labour economist studying unpaid overtime found that one employee worked a total of 7,200 minutes of unrecorded overtime in a year. The economist reports overtime in standard workdays, where 1 workday is 8 hours. How many workdays is 7,200 minutes equivalent to?",
+  "stimulus": null,
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "Write the amount with its unit, then multiply by fractions equal to 1 so that each unit you don't want cancels. First change minutes to hours, which you know: $7{,}200 \\text{ min} \\times \\frac{1 \\text{ hr}}{60 \\text{ min}} = 120 \\text{ hr}$. Then change hours to workdays using the factor given: $120 \\text{ hr} \\times \\frac{1 \\text{ workday}}{8 \\text{ hr}} = 15 \\text{ workdays}$. As one chain, that is $7{,}200 \\times \\frac{1}{60} \\times \\frac{1}{8} = 15$. Check the direction: a workday is a much larger unit than a minute, so the number should get much smaller, and it does.",
+  "common_errors": [
+   {
+    "value": "120",
+    "misconception": "intermediate-step",
+    "why": "You changed minutes to hours and stopped there, so you never used the 8-hour workday."
+   },
+   {
+    "value": "960",
+    "misconception": "complement-or-direction-flip",
+    "why": "You got 120 hours correctly, then multiplied by 8 instead of dividing. That converts the wrong way, as if a workday were smaller than an hour."
+   },
+   {
+    "value": "900",
+    "misconception": "missed-condition",
+    "why": "You divided 7,200 by 8 straight away and skipped the minutes-to-hours step, so you treated minutes as if they were hours."
+   },
+   {
+    "value": "5",
+    "misconception": "misread-given",
+    "why": "You used a 24-hour calendar day ($120 \\div 24$) in place of the stated 8-hour workday."
+   }
+  ],
+  "id": "orig-single-unit-co-M-726ea8",
+  "skill_cd": "Q.A.",
+  "subtype": "single-unit-conversion",
+  "subtype_name": "Straight unit conversion (one or chained factors)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "A printmaker carves an image into a rectangular linoleum block with an area of 2.25 square feet. What is the area of the block, in square inches?",
+  "stimulus": null,
+  "keys": [
+   "324"
+  ],
+  "any_of": false,
+  "explanation": "There are 12 inches in 1 foot. Square units hold one unit in each of two directions, so you need the conversion factor twice: $2.25 \\text{ ft}^2 \\times \\frac{12 \\text{ in}}{1 \\text{ ft}} \\times \\frac{12 \\text{ in}}{1 \\text{ ft}} = 2.25 \\times 144 \\text{ in}^2 = 324 \\text{ in}^2$. Check that the units cancel: both factors of ft cancel against $\\text{ft}^2$ and leave $\\text{in}^2$. Check the direction: an inch is smaller than a foot, so the number should get bigger.",
+  "common_errors": [
+   {
+    "value": "27",
+    "misconception": "intermediate-step",
+    "why": "You multiplied by 12 only once, so one ft is left uncancelled. You found $\\text{in}\\cdot\\text{ft}$, not square inches."
+   },
+   {
+    "value": ".0156",
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided by 144 instead of multiplying, which converts the wrong way. Going to a smaller unit must give a larger number. (Truncated value of $2.25/144 = 0.015625$.)"
+   },
+   {
+    "value": ".1875",
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided by 12 just once, so you made both mistakes: the conversion goes the wrong way and is missing its second factor."
+   },
+   {
+    "value": "81",
+    "misconception": "algebra-manipulation",
+    "why": "You applied the square to the 2.25 and the 12 together, as if the area were $(2.25 \\cdot 12)^2/9$ or $(1.5 \\cdot 6)^2$. Writing out the cancelling factors avoids this slip."
+   }
+  ],
+  "id": "orig-single-unit-co-M-6dbb98",
+  "skill_cd": "Q.A.",
+  "subtype": "single-unit-conversion",
+  "subtype_name": "Straight unit conversion (one or chained factors)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
  }
 ]

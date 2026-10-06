@@ -1,0 +1,174 @@
+[
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "An ornithologist models the number of nesting pairs of a heron species at a wetland reserve with the function $P(t) = a \\cdot b^t$, where $a$ and $b$ are positive constants and $t$ is the number of years after 2015. The model gives 640 nesting pairs in 2015 and 1,000 nesting pairs in 2017.",
+  "keys": [
+   "1.25",
+   "5/4"
+  ],
+  "any_of": false,
+  "explanation": "Start with $t = 0$. Because $b^0 = 1$, $P(0) = a$, so $a = 640$. The year 2017 is $t = 2$, so $640 \\cdot b^2 = 1000$. Divide both sides by 640 to get $b^2 = \\frac{1000}{640} = 1.5625$. Then take the square root. Since $b$ is positive, $b = 1.25$. Check: $640 \\times 1.25 = 800$ and $800 \\times 1.25 = 1000$.",
+  "common_errors": [
+   {
+    "value": "1.5625",
+    "misconception": "intermediate-step",
+    "why": "You found $b^2 = 1.5625$ and stopped before taking the square root. That number is the growth over two years, not over one."
+   },
+   {
+    "value": "640",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the starting value $a$, which comes from the y-intercept, instead of the multiplier $b$."
+   },
+   {
+    "value": "0.8",
+    "misconception": "algebra-manipulation",
+    "why": "You divided in the wrong order: $\\frac{640}{1000} = 0.64$, and $\\sqrt{0.64} = 0.8$. That would be decay, but the population grew."
+   },
+   {
+    "value": "180",
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated the growth as linear and used the yearly increase, $\\frac{1000 - 640}{2} = 180$. An exponential model multiplies by $b$ each year; it does not add a fixed amount."
+   },
+   {
+    "value": "0.25",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the 25% growth rate instead of the multiplier. The multiplier is $1 + 0.25 = 1.25$."
+   }
+  ],
+  "id": "orig-find-constants-M-2c554e",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $a$?",
+  "stimulus": "A seismologist models the depth of a buried rock layer along a straight survey line with the function $f(x) = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. In the model, $x$ is the horizontal distance, in kilometers, east of a monitoring station (negative values of $x$ are west of the station), and $f(x)$ is the depth of the layer, in meters. The table shows three values of $f(x)$.\n\nDepth of Rock Layer\n$x$ (kilometers) | $f(x)$ (meters)\n0 | 12\n1 | 15\n-2 | 30",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "Use the y-intercept first. $f(0) = c$, so $c = 12$. Next, substitute $x = 1$: $a + b + 12 = 15$, so $a + b = 3$. Then substitute $x = -2$. Because $(-2)^2 = 4$, you get $4a - 2b + 12 = 30$. This simplifies to $4a - 2b = 18$, or $2a - b = 9$. Add this to $a + b = 3$ to get $3a = 12$, so $a = 4$. Then $b = -1$. Check: $f(-2) = 16 + 2 + 12 = 30$. You can also enter the table in Desmos and run the regression $y_1 \\sim ax_1^2 + bx_1 + c$.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "intermediate-step",
+    "why": "You found $a + b = 3$ from the point $(1, 15)$ and stopped there instead of using the third point to separate $a$ from $b$."
+   },
+   {
+    "value": "-1",
+    "misconception": "wrong-target-quantity",
+    "why": "You solved the system correctly but gave the other constant, $b$."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "You made a sign error when substituting $x = -2$ and wrote $4a + 2b = 18$, which gives $2a + b = 9$. Combined with $a + b = 3$, that gives $a = 6$."
+   },
+   {
+    "value": "12",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the y-intercept $c$, which is the constant you get straight from the table, instead of $a$."
+   }
+  ],
+  "id": "orig-find-constants-M-38b473",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A linguist models the number of new English loanwords recorded each year in a corpus of Korean newspapers with the function $f(x) = a(x - 4)^2 + k$, where $a$ and $k$ are constants and $x$ is the number of years since the study began, for $0 \\le x \\le 8$. The model gives 30 new loanwords in year 2 and 18 new loanwords in year 5.",
+  "keys": [
+   "14"
+  ],
+  "any_of": false,
+  "explanation": "Substitute each point. For year 2, $(2 - 4)^2 = 4$, so $4a + k = 30$. For year 5, $(5 - 4)^2 = 1$, so $a + k = 18$. Subtract the second equation from the first to get $3a = 12$, so $a = 4$. Then $k = 18 - 4 = 14$. Check: $f(2) = 4 \\cdot 4 + 14 = 30$.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "You solved for $a$ and gave it as the answer instead of finishing the problem to find $k$."
+   },
+   {
+    "value": "18",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave $a + k$, which is the value of $f(5)$, instead of $k$ alone."
+   },
+   {
+    "value": "26",
+    "misconception": "algebra-manipulation",
+    "why": "You found $a = 4$ but substituted it into $4a + k = 30$ as $4 + k = 30$, dropping the coefficient 4."
+   },
+   {
+    "value": "78",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the y-intercept, $f(0) = 16a + k = 78$, by treating the question like a standard-form problem where the constant is the y-intercept. In vertex form, $k$ is not $f(0)$."
+   }
+  ],
+  "id": "orig-find-constants-M-f2588d",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $a$?",
+  "stimulus": "A civil engineer models the main cable of a small suspension footbridge with the function $h(x) = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants, $h(x)$ is the height of the cable above the deck, in meters, and $x$ is the horizontal distance, in meters, from the left tower. The cable is attached to the left tower at $x = 0$ and to the right tower at $x = 100$, and both attachment points are 40 meters above the deck. At $x = 50$, the cable is 15 meters above the deck.",
+  "keys": [
+   ".01",
+   "0.01",
+   "1/100"
+  ],
+  "any_of": false,
+  "explanation": "Start with $x = 0$: $h(0) = c$, so $c = 40$. Substitute $x = 100$: $10000a + 100b + 40 = 40$, so $10000a + 100b = 0$ and $b = -100a$. Substitute $x = 50$: $2500a + 50b + 40 = 15$. Replace $b$ with $-100a$ to get $2500a - 5000a = -25$, so $-2500a = -25$ and $a = 0.01$. Then $b = -1$. Check: $h(50) = 25 - 50 + 40 = 15$.",
+  "common_errors": [
+   {
+    "value": "-1",
+    "misconception": "wrong-target-quantity",
+    "why": "You solved the system but gave $b$ instead of $a$."
+   },
+   {
+    "value": "40",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave $c$, the height at the left tower, which is the one constant you can read straight from the setup."
+   },
+   {
+    "value": "-1/100",
+    "misconception": "missed-condition",
+    "why": "You used only $c = 40$ and the point at $x = 50$. You dropped the $bx$ term and wrote $2500a + 40 = 15$, ignoring the right-tower condition, which makes $b = -100a$."
+   },
+   {
+    "value": "-3/500",
+    "misconception": "algebra-manipulation",
+    "why": "You set up $b = -100a$ correctly but left out $c$ when you substituted $x = 50$: $2500a - 5000a = 15$, so $a = -0.006$."
+   }
+  ],
+  "id": "orig-find-constants-M-10bf49",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

@@ -1,0 +1,179 @@
+[
+ {
+  "stem": "What is the sum of all solutions to the equation?",
+  "stimulus": "While correcting distortion on a regional map projection, a cartographer arrives at the following equation.\n\n$2(x - 3)^2 - 7 = 43$",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "First isolate the squared term. Add 7 to both sides to get $2(x-3)^2 = 50$, then divide by 2 to get $(x-3)^2 = 25$. Take both square roots: $x - 3 = 5$ or $x - 3 = -5$, so $x = 8$ or $x = -2$. The sum of the solutions is $8 + (-2) = 6$. To check in Desmos, graph $y = 2(x-3)^2 - 7$ and $y = 43$. They cross at $x = -2$ and $x = 8$.",
+  "common_errors": [
+   {
+    "value": "8",
+    "misconception": "missed-condition",
+    "why": "You took only the positive square root, $x - 3 = 5$. That gives one solution, and you reported it as the sum."
+   },
+   {
+    "value": "-6",
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the sign inside the parentheses and solved $x + 3 = \\pm 5$. That gives $x = 2$ and $x = -8$, which sum to $-6$."
+   },
+   {
+    "value": "-16",
+    "misconception": "wrong-target-quantity",
+    "why": "You found both solutions correctly but multiplied them, $8 \\times (-2)$, when the question asks for their sum."
+   },
+   {
+    "value": "25",
+    "misconception": "intermediate-step",
+    "why": "You stopped at $(x-3)^2 = 25$ and reported the value of the squared term instead of solving for $x$."
+   },
+   {
+    "value": "5",
+    "misconception": "intermediate-step",
+    "why": "You stopped at $x - 3 = 5$ and reported the value of $x - 3$ instead of $x$."
+   }
+  ],
+  "id": "orig-direct-solve-q-H-262e7d",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the positive solution to the equation?",
+  "stimulus": "An agricultural scientist calibrating an irrigation schedule reduces the problem to the following equation.\n\n$x(6x + 7) = 20$",
+  "keys": [
+   "4/3",
+   "1.333"
+  ],
+  "any_of": false,
+  "explanation": "The zero-product property only works when one side is 0, so you can't set each factor equal to 20. Distribute and move everything to one side: $6x^2 + 7x - 20 = 0$. This factors as $(3x - 4)(2x + 5) = 0$, so $x = \\frac{4}{3}$ or $x = -\\frac{5}{2}$. The positive solution is $\\frac{4}{3}$. You can also use the quadratic formula: the discriminant is $49 + 480 = 529 = 23^2$, so $x = \\frac{-7 \\pm 23}{12}$, which gives $\\frac{16}{12} = \\frac{4}{3}$. To check in Desmos, graph $y = x(6x+7)$ and $y = 20$ and click the intersection on the right.",
+  "common_errors": [
+   {
+    "value": "13/6",
+    "misconception": "algebra-manipulation",
+    "why": "You applied the zero-product idea to a product equal to 20 and set $6x + 7 = 20$, so $x = \\frac{13}{6}$ (also entered as 2.166 or 2.167)."
+   },
+   {
+    "value": "20",
+    "misconception": "algebra-manipulation",
+    "why": "You set the factor $x$ equal to 20, treating the equation as if each factor could equal the right-hand side."
+   },
+   {
+    "value": "5/2",
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the signs when factoring, $(3x + 4)(2x - 5) = 0$, or used $+b$ in the quadratic formula. Either way you got the positive root of the sign-flipped equation, $\\frac{5}{2}$ (2.5)."
+   },
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "You factored correctly to $3x - 4 = 0$ but forgot to divide by the coefficient 3."
+   },
+   {
+    "value": "8/3",
+    "misconception": "algebra-manipulation",
+    "why": "In the quadratic formula you divided by $a = 6$ instead of $2a = 12$, getting $\\frac{-7 + 23}{6} = \\frac{8}{3}$ (2.666 or 2.667)."
+   }
+  ],
+  "id": "orig-direct-solve-q-H-6dcafd",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the positive solution to the equation?",
+  "stimulus": "A linguist fitting a model of vowel-length variation obtains the following equation.\n\n$9(x + 1)^2 = 64$",
+  "keys": [
+   "5/3",
+   "1.666",
+   "1.667"
+  ],
+  "any_of": false,
+  "explanation": "There's no separate $x$ term, so isolate the square and take both roots. Divide by 9 to get $(x + 1)^2 = \\frac{64}{9}$. Then $x + 1 = \\frac{8}{3}$ or $x + 1 = -\\frac{8}{3}$, so $x = \\frac{5}{3}$ or $x = -\\frac{11}{3}$. The positive solution is $\\frac{5}{3}$. To check in Desmos, graph $y = 9(x+1)^2$ and $y = 64$. The crossing on the right is at about $x = 1.667$.",
+  "common_errors": [
+   {
+    "value": "7",
+    "misconception": "algebra-manipulation",
+    "why": "You took the square root before dividing out the 9. You treated $(x+1)^2 = 64$ as if the coefficient weren't there, so $x + 1 = 8$."
+   },
+   {
+    "value": "11/3",
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the sign inside the parentheses and solved $x - 1 = \\frac{8}{3}$, getting $\\frac{11}{3}$ (3.666 or 3.667)."
+   },
+   {
+    "value": "8/3",
+    "misconception": "intermediate-step",
+    "why": "You stopped at $x + 1 = \\frac{8}{3}$ and forgot to subtract 1 (2.666 or 2.667)."
+   },
+   {
+    "value": "55/9",
+    "misconception": "algebra-manipulation",
+    "why": "You divided by 9 but never took the square root. You solved $x + 1 = \\frac{64}{9}$ (6.111)."
+   }
+  ],
+  "id": "orig-direct-solve-q-H-aa784c",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the positive solution to the equation?",
+  "stimulus": "A marine biologist analyzing kelp-forest growth data arrives at the following equation.\n\n$\\frac{1}{2}x^2 - 3x = 8$",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "Multiply every term on both sides by 2 to clear the fraction: $x^2 - 6x = 16$. Write it in standard form, $x^2 - 6x - 16 = 0$, and factor: $(x - 8)(x + 2) = 0$. So $x = 8$ or $x = -2$, and the positive solution is 8. If you'd rather keep the fraction, use the quadratic formula with $a = \\frac{1}{2}$, $b = -3$, $c = -8$. Then $b^2 - 4ac = 9 + 16 = 25$ and $2a = 1$, so $x = \\frac{3 \\pm 5}{1}$, which gives 8. To check in Desmos, graph $y = \\frac{1}{2}x^2 - 3x - 8$ and click the x-intercept on the right.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the signs when factoring, $(x + 8)(x - 2) = 0$, and took the positive root of that sign-flipped equation."
+   },
+   {
+    "value": "-2",
+    "misconception": "complement-or-direction-flip",
+    "why": "You solved correctly but reported the negative root instead of the positive one."
+   },
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "You used the quadratic formula with $a = \\frac{1}{2}$ but divided by 2 instead of $2a = 1$, so you got $\\frac{3 + 5}{2} = 4$."
+   },
+   {
+    "value": "7.123",
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied only the left side by 2 and left the 8 alone. That gives $x^2 - 6x - 8 = 0$, whose positive root is $3 + \\sqrt{17} \\approx 7.123$ (also entered as 7.124)."
+   }
+  ],
+  "id": "orig-direct-solve-q-H-4ff058",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

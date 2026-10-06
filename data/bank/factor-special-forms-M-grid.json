@@ -1,0 +1,176 @@
+[
+ {
+  "stem": "What is the value of $a + b$?",
+  "stimulus": "A civil engineer models the height, in meters, of a suspension cable above a roadway as $h(x) = x^2 - 14x + 61$, where $x$ is the horizontal distance, in meters, from the base of a tower. The expression $x^2 - 14x + 61$ can be rewritten as $(x - a)^2 + b$, where $a$ and $b$ are constants.",
+  "keys": [
+   "19"
+  ],
+  "any_of": false,
+  "explanation": "Complete the square. Take half of the x-coefficient: half of $-14$ is $-7$, so the squared part is $(x - 7)^2$. Expanding gives $(x - 7)^2 = x^2 - 14x + 49$. To match the original constant you need $61 - 49 = 12$, so $x^2 - 14x + 61 = (x - 7)^2 + 12$. Comparing this with $(x - a)^2 + b$ gives $a = 7$ (not $-7$, because the form already includes the minus sign) and $b = 12$. So $a + b = 19$. To check, expand $(x - 7)^2 + 12$ and confirm you get $-14x$ as the middle term. In Desmos, the vertex of the graph is at $(7, 12)$.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "graph-feature-mismatch",
+    "why": "Takes $a = -7$ from the $-7$ inside $(x - 7)^2$. That is the wrong sign of $h$ and gives $-7 + 12 = 5$."
+   },
+   {
+    "value": "117",
+    "misconception": "algebra-manipulation",
+    "why": "Adds 49 to 61 when it should subtract, so $b = 110$ and $7 + 110 = 117$."
+   },
+   {
+    "value": "56",
+    "misconception": "intermediate-step",
+    "why": "Uses the square of half the coefficient, 49, as $b$ instead of adjusting the constant: $7 + 49 = 56$."
+   },
+   {
+    "value": "12",
+    "misconception": "wrong-target-quantity",
+    "why": "Reports $b$ alone instead of $a + b$."
+   },
+   {
+    "value": "7",
+    "misconception": "wrong-target-quantity",
+    "why": "Reports $a$ alone instead of $a + b$."
+   }
+  ],
+  "id": "orig-factor-special-M-4eeee7",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $c + d$?",
+  "stimulus": "In a model of how an antibody response changes over time, an immunologist uses the expression $16x^4 - 81$. This expression is equivalent to $(4x^2 + 9)(cx + d)(cx - d)$, where $c$ and $d$ are positive constants.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "Start with a difference of squares. Since $16x^4 = (4x^2)^2$ and $81 = 9^2$, you get $16x^4 - 81 = (4x^2 + 9)(4x^2 - 9)$. The second factor is also a difference of squares, because $4x^2 = (2x)^2$ and $9 = 3^2$. That gives $4x^2 - 9 = (2x + 3)(2x - 3)$. So $c = 2$ and $d = 3$, and $c + d = 5$. To check, $(2x + 3)(2x - 3) = 4x^2 - 9$.",
+  "common_errors": [
+   {
+    "value": "13",
+    "misconception": "intermediate-step",
+    "why": "Stops after the first factoring and reads $c = 4$ and $d = 9$ from $4x^2 - 9$."
+   },
+   {
+    "value": "7",
+    "misconception": "algebra-manipulation",
+    "why": "Takes the square root of 9 but not of the coefficient 4, so $c = 4$ and $d = 3$."
+   },
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "Ignores the coefficient and factors $4x^2 - 9$ as if it were $x^2 - 9$, so $c = 1$ and $d = 3$."
+   },
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Multiplies $c$ and $d$ instead of adding them."
+   }
+  ],
+  "id": "orig-factor-special-M-e17af5",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "If $x - k$ is a factor of $f(x)$ and $k > 2$, what is the value of $k$?",
+  "stimulus": "A cartographer uses the function $f(x) = x^4 - 13x^2 + 36$ to model the elevation profile along a straight line on a relief map.",
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "The function has only even powers, so let $u = x^2$. That turns it into $u^2 - 13u + 36$. You need two numbers that multiply to 36 and add to $-13$, which are $-4$ and $-9$, so the expression is $(u - 4)(u - 9)$. Substitute $x^2$ back in to get $(x^2 - 4)(x^2 - 9)$. Each factor is a difference of squares: $(x - 2)(x + 2)(x - 3)(x + 3)$. The factors of the form $x - k$ have $k = 2, -2, 3, -3$. Only $k = 3$ is greater than 2. In Desmos, the graph crosses the x-axis at $\\pm 2$ and $\\pm 3$.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "intermediate-step",
+    "why": "Solves the quadratic in $u$ and reports $u = 9$ without taking the square root to get back to $x$."
+   },
+   {
+    "value": "4",
+    "misconception": "intermediate-step",
+    "why": "Stops at $u = 4$ and treats it as a root in $x$."
+   },
+   {
+    "value": "2",
+    "misconception": "missed-condition",
+    "why": "Finds a correct root but ignores the condition $k > 2$."
+   },
+   {
+    "value": "-3",
+    "misconception": "graph-feature-mismatch",
+    "why": "Reads $k$ from the factor $x + 3$ with the sign flipped, which is the vertex-form sign trap applied to a factor."
+   },
+   {
+    "value": "12",
+    "misconception": "algebra-manipulation",
+    "why": "Picks the factor pair 12 and 3, which multiplies to 36 but does not add to 13, and reports 12."
+   }
+  ],
+  "id": "orig-factor-special-M-5f9f91",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A printmaker models the area, in square centimeters, of a square linocut plate as $4x^2 + 28x + k$, where $k$ is a constant. This expression is equivalent to $(2x + m)^2$, where $m$ is a constant.",
+  "keys": [
+   "49"
+  ],
+  "any_of": false,
+  "explanation": "Expand the form you were given: $(2x + m)^2 = 4x^2 + 4mx + m^2$. Matching the middle terms gives $4m = 28$, so $m = 7$. Matching the constants gives $k = m^2 = 49$. To check, $(2x + 7)^2 = 4x^2 + 28x + 49$. A common slip is to halve 28 as if the leading coefficient were 1. Because the first term is $(2x)^2$, the middle term is $2 \\cdot 2x \\cdot m$.",
+  "common_errors": [
+   {
+    "value": "196",
+    "misconception": "algebra-manipulation",
+    "why": "Ignores the coefficient 4 in $4x^2$, halves 28 to get 14, and squares it."
+   },
+   {
+    "value": "7",
+    "misconception": "wrong-target-quantity",
+    "why": "Reports $m$ instead of $k$."
+   },
+   {
+    "value": "14",
+    "misconception": "intermediate-step",
+    "why": "Halves 28 and stops, reporting that value without squaring it or accounting for the 2."
+   },
+   {
+    "value": "784",
+    "misconception": "algebra-manipulation",
+    "why": "Takes the whole middle coefficient as $m$ and squares it: $28^2 = 784$."
+   }
+  ],
+  "id": "orig-factor-special-M-ed5373",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

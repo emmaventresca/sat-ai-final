@@ -1,0 +1,176 @@
+[
+ {
+  "stem": "How many loanwords did the linguist add?",
+  "stimulus": "A linguist is building a word list for a study of a regional dialect. The list contains 540 words, and the ratio of loanwords to native words in it is $2:7$. The linguist then adds only loanwords to the list, so that the ratio of loanwords to native words becomes $1:3$. The number of native words does not change.",
+  "keys": [
+   "20"
+  ],
+  "any_of": false,
+  "explanation": "First split the 540 words by the ratio $2:7$. There are $2 + 7 = 9$ parts, so each part is $540 \\div 9 = 60$ words. That gives $2 \\times 60 = 120$ loanwords and $7 \\times 60 = 420$ native words. Only loanwords are added, so the 420 native words stay the same. Set up the new ratio in the same order, loanwords to native words: $\\frac{L}{420} = \\frac{1}{3}$, so $L = 140$. The list started with 120 loanwords, so the linguist added $140 - 120 = 20$. Wrong answers you might get: 120 (the original number of loanwords), 140 (the new total, not the number added), and 15 (you kept the total at 540 and took a quarter of it, which is 135, then subtracted 120. The total can't stay at 540 when words are added).",
+  "common_errors": [
+   {
+    "value": "140",
+    "misconception": "intermediate-step",
+    "why": "Found the new number of loanwords, 140, and stopped without subtracting the original 120."
+   },
+   {
+    "value": "120",
+    "misconception": "wrong-target-quantity",
+    "why": "Reported the original number of loanwords from the 2:7 split, not the number added."
+   },
+   {
+    "value": "15",
+    "misconception": "missed-condition",
+    "why": "Kept the total at 540 and used the 1:3 ratio as $\\frac{1}{4}$ of 540 = 135 loanwords, then subtracted 120. This ignores that the native-word count is what stays fixed."
+   },
+   {
+    "value": "80",
+    "misconception": "complement-or-direction-flip",
+    "why": "Flipped the new ratio to native : loan = 1:3 on the loan side, giving $\\frac{L}{420}=\\frac{3}{1}$... or, more commonly, used 420/3 = 140 and then subtracted from 220 by mixing up terms. Most often this comes from setting 1:3 as native : loan with 60-word parts: $4 \\times 60 - 160$. Treat this as a direction error in the ratio."
+   }
+  ],
+  "id": "orig-ratio-proporti-H-912c9d",
+  "skill_cd": "Q.A.",
+  "subtype": "ratio-proportion-scaling",
+  "subtype_name": "Set up and scale a ratio or proportion",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "Based on the sample, how many of the 3,600 plots in the reserve would be expected to NOT contain purple loosestrife?",
+  "stimulus": "A wetland reserve is divided into 3,600 survey plots of equal size. An ecologist chose a random sample of 150 of these plots and checked each one for purple loosestrife, an invasive plant. Of the plots in the sample, 18 contained purple loosestrife.",
+  "keys": [
+   "3168"
+  ],
+  "any_of": false,
+  "explanation": "The sample was random, so the share of sampled plots without loosestrife estimates the share in the whole reserve. In the sample, $150 - 18 = 132$ plots did not contain the plant. Set up the proportion in the same order on both sides, plots without the plant over total plots: $\\frac{132}{150} = \\frac{x}{3600}$. The scale factor from 150 to 3,600 is 24, so $x = 132 \\times 24 = 3168$. Reread the last line before you answer: it asks for plots WITHOUT the plant. Wrong answers you might get: 432 (the plots WITH the plant, $18 \\times 24$), 132 (the sample count, not scaled up to the reserve), and 18 (the sample count of plots with the plant).",
+  "common_errors": [
+   {
+    "value": "432",
+    "misconception": "complement-or-direction-flip",
+    "why": "Scaled up the 18 plots with loosestrife, $18 \\times 24 = 432$, when the question asks for plots without it."
+   },
+   {
+    "value": "132",
+    "misconception": "intermediate-step",
+    "why": "Found the number of sampled plots without loosestrife but did not scale it up from the sample to the whole reserve."
+   },
+   {
+    "value": "18",
+    "misconception": "wrong-target-quantity",
+    "why": "Reported the sample count of plots with loosestrife: not scaled up, and the wrong group."
+   },
+   {
+    "value": "3582",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the sample count of infested plots straight from the population, $3600 - 18$, without scaling the 18 up first."
+   }
+  ],
+  "id": "orig-ratio-proporti-H-d3ee94",
+  "skill_cd": "Q.A.",
+  "subtype": "ratio-proportion-scaling",
+  "subtype_name": "Set up and scale a ratio or proportion",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the ray's new wingspan, in meters?",
+  "stimulus": "For a certain species of manta ray, the wingspan is proportional to the disc length, and the ratio of wingspan to disc length is $9:4$. A tagged juvenile ray had a wingspan of 1.35 meters. One year later, its disc length had increased by 18 centimeters, and the ratio of wingspan to disc length was still $9:4$.",
+  "keys": [
+   "1.755"
+  ],
+  "any_of": false,
+  "explanation": "Write the units first. The change is given in centimeters and the answer is asked for in meters, so convert: $18 \\text{ cm} \\times \\frac{1 \\text{ m}}{100 \\text{ cm}} = 0.18$ m. The relationship is proportional, so the changes keep the same ratio as the measurements: $\\frac{\\Delta \\text{wingspan}}{\\Delta \\text{disc}} = \\frac{9}{4}$. The change in wingspan is $\\frac{9}{4} \\times 0.18 = 0.405$ m. Add it to the original wingspan: $1.35 + 0.405 = 1.755$ m. You can check this a second way. The original disc length was $1.35 \\times \\frac{4}{9} = 0.60$ m, the new disc length is 0.78 m, and $0.78 \\times \\frac{9}{4} = 1.755$ m. Wrong answers you might get: 0.405 (the increase, not the new wingspan), 1.53 (you added 18 cm to the wingspan as well, instead of scaling it), 1.43 (you flipped the ratio, $0.18 \\times \\frac{4}{9} = 0.08$), and 41.85 (you added 40.5 cm to 1.35 m without converting units).",
+  "common_errors": [
+   {
+    "value": "1.53",
+    "misconception": "algebra-manipulation",
+    "why": "Added the same 18 cm (0.18 m) to the wingspan instead of scaling the change by 9/4. This is the 'increase by the same amount' trap."
+   },
+   {
+    "value": "0.405",
+    "misconception": "intermediate-step",
+    "why": "Correctly scaled the change in wingspan but reported the increase instead of the new wingspan."
+   },
+   {
+    "value": "1.43",
+    "misconception": "complement-or-direction-flip",
+    "why": "Flipped the ratio to disc : wingspan, giving a wingspan change of $0.18 \\times \\frac{4}{9} = 0.08$ m, then added it to 1.35."
+   },
+   {
+    "value": "41.85",
+    "misconception": "algebra-manipulation",
+    "why": "Found the change as 40.5 in centimeters and added it to 1.35 in meters without converting."
+   },
+   {
+    "value": "175.5",
+    "misconception": "misread-given",
+    "why": "Gave the correct wingspan in centimeters, though the question asks for meters."
+   }
+  ],
+  "id": "orig-ratio-proporti-H-885e24",
+  "skill_cd": "Q.A.",
+  "subtype": "ratio-proportion-scaling",
+  "subtype_name": "Set up and scale a ratio or proportion",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "How many kilograms of cement must the crew add to the batch?",
+  "stimulus": "A construction crew is preparing mortar for a retaining wall. The specification requires the ratio of cement to sand, by mass, to be $2:5$. The crew has already combined 40 kilograms of cement with 120 kilograms of sand. They will add only cement, with no more sand, to bring the batch to the required ratio.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "The sand stays at 120 kg, so write the proportion with cement first on both sides: $\\frac{c}{120} = \\frac{2}{5}$. Then $c = 120 \\times \\frac{2}{5} = 48$ kg of cement in total. The batch already has 40 kg, so the crew must add $48 - 40 = 8$ kg. Wrong answers you might get: 48 (the total cement needed, not the amount added), 260 (you flipped the ratio and found $120 \\times \\frac{5}{2} = 300$ kg of cement), 20 (you fixed the cement at 40 kg instead, found that only 100 kg of sand is needed, and reported the 20 kg of extra sand), and 5.71 (you used $\\frac{2}{7}$ of the whole 160 kg batch, which ignores that the sand is held fixed).",
+  "common_errors": [
+   {
+    "value": "48",
+    "misconception": "intermediate-step",
+    "why": "Found the total cement the batch needs and did not subtract the 40 kg already in it."
+   },
+   {
+    "value": "260",
+    "misconception": "complement-or-direction-flip",
+    "why": "Flipped the ratio to $\\frac{c}{120} = \\frac{5}{2}$, getting 300 kg of cement, then subtracted 40."
+   },
+   {
+    "value": "20",
+    "misconception": "wrong-target-quantity",
+    "why": "Held the cement fixed at 40 kg, found the sand should be 100 kg, and reported the 20 kg sand surplus instead of the cement to add."
+   },
+   {
+    "value": "5.71",
+    "misconception": "missed-condition",
+    "why": "Took $\\frac{2}{7}$ of the current 160 kg total (45.71 kg) as the cement target and subtracted 40. This ignores that the sand stays at 120 kg while the total grows."
+   },
+   {
+    "value": "5.714",
+    "misconception": "missed-condition",
+    "why": "The same error as 5.71, entered with three decimal places."
+   }
+  ],
+  "id": "orig-ratio-proporti-H-c3ff47",
+  "skill_cd": "Q.A.",
+  "subtype": "ratio-proportion-scaling",
+  "subtype_name": "Set up and scale a ratio or proportion",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

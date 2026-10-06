@@ -1,0 +1,166 @@
+[
+ {
+  "stem": "What is the width, in centimeters, of the flashcard?",
+  "stimulus": "A linguist prints vocabulary flashcards for a field study of an endangered language. Each card is a rectangle whose length is 7 centimeters greater than its width. The diagonal of each card measures 17 centimeters.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "The diagonal of a rectangle is the hypotenuse of the right triangle formed by the length and the width. Let the width be $w$, so the length is $w + 7$. Then $w^2 + (w+7)^2 = 17^2$. Expand: $w^2 + w^2 + 14w + 49 = 289$, which gives $2w^2 + 14w - 240 = 0$, or $w^2 + 7w - 120 = 0$. Factor: $(w + 15)(w - 8) = 0$. A width can't be negative, so $w = 8$ centimeters.",
+  "common_errors": [
+   {
+    "value": "15",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved correctly but reported the length, $w + 7 = 15$, instead of the width."
+   },
+   {
+    "value": "120/7",
+    "misconception": "wrong-target-quantity",
+    "why": "Didn't treat the diagonal as the hypotenuse. Wrote $w^2 + 17^2 = (w+7)^2$, making the length the hypotenuse, which gives $289 = 14w + 49$ and $w = 120/7 \\approx 17.14$."
+   },
+   {
+    "value": "17.14",
+    "misconception": "wrong-target-quantity",
+    "why": "Rounded form of 120/7. It comes from making the length, not the diagonal, the hypotenuse."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Treated the diagonal as if it were the sum of the sides and solved $w + (w + 7) = 17$, ignoring the squares."
+   }
+  ],
+  "id": "orig-pythagorean-mi-H-b92ad7",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the length, in millimeters, of the other side of the wafer?",
+  "stimulus": "A materials scientist cuts a rectangular silicon carbide wafer for a fracture test. One side of the wafer measures $\\sqrt{17}$ millimeters. During the test, a crack runs straight from one corner of the wafer to the opposite corner, and the crack measures $7\\sqrt{2}$ millimeters.",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "A crack from one corner to the opposite corner is the rectangle's diagonal, so it is the hypotenuse. The unknown side is a leg, so subtract: $x^2 = (7\\sqrt{2})^2 - (\\sqrt{17})^2 = 98 - 17 = 81$. Take the positive square root: $x = 9$ millimeters.",
+  "common_errors": [
+   {
+    "value": "10.72",
+    "misconception": "algebra-manipulation",
+    "why": "Added the squares as if the unknown side were the hypotenuse: $\\sqrt{98 + 17} = \\sqrt{115} \\approx 10.72$."
+   },
+   {
+    "value": "10.73",
+    "misconception": "algebra-manipulation",
+    "why": "Rounded form of $\\sqrt{115}$, from adding the squares when the unknown is a leg."
+   },
+   {
+    "value": "81",
+    "misconception": "intermediate-step",
+    "why": "Found $x^2 = 81$ and stopped before taking the square root."
+   },
+   {
+    "value": "9.899",
+    "misconception": "algebra-manipulation",
+    "why": "Squared $7\\sqrt{2}$ as $7 \\cdot 2 = 14$ instead of $49 \\cdot 2 = 98$, then added: $\\sqrt{14 + 17}$\u2026 or similar radical-squaring slips. The most common is $\\sqrt{98} \\approx 9.899$, which comes from ignoring the given side completely."
+   }
+  ],
+  "id": "orig-pythagorean-mi-H-29f490",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "How many meters shorter is walking the diagonal walkway than walking along the plaza's length and then its width?",
+  "stimulus": "A city planning office is redesigning a rectangular public plaza that is 48 meters long. A straight walkway will run diagonally across the plaza from one corner to the opposite corner, and the walkway will be 52 meters long.",
+  "keys": [
+   "16"
+  ],
+  "any_of": false,
+  "explanation": "The diagonal walkway is the hypotenuse. The width is a leg, so subtract: $w^2 = 52^2 - 48^2 = 2704 - 2304 = 400$, which gives $w = 20$ meters. Walking along the length and then the width covers $48 + 20 = 68$ meters. The walkway is 52 meters, so it is $68 - 52 = 16$ meters shorter.",
+  "common_errors": [
+   {
+    "value": "20",
+    "misconception": "intermediate-step",
+    "why": "Found the width correctly and stopped there."
+   },
+   {
+    "value": "68",
+    "misconception": "intermediate-step",
+    "why": "Found the total distance along the length and width but didn't subtract the walkway length."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Compared the walkway with the length alone: $52 - 48$."
+   },
+   {
+    "value": "66.76",
+    "misconception": "algebra-manipulation",
+    "why": "Added the squares to get the width, as if the width were the hypotenuse: $\\sqrt{2704 + 2304} \\approx 70.77$, then $48 + 70.77 - 52$. This is the truncated form."
+   },
+   {
+    "value": "66.77",
+    "misconception": "algebra-manipulation",
+    "why": "Same error as above (adding the squares when the width is a leg), rounded instead of truncated."
+   }
+  ],
+  "id": "orig-pythagorean-mi-H-f5d6cd",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "In this model, what is the distance, in units, from Earth to the Sun?",
+  "stimulus": "At first quarter phase, the angle formed at the Moon by the lines to Earth and to the Sun is a right angle. An astronomy student builds a scale model of this arrangement. In the model, Earth and the Moon are 9 units apart, and the distance from Earth to the Sun is 1 unit greater than the distance from the Moon to the Sun.",
+  "keys": [
+   "41"
+  ],
+  "any_of": false,
+  "explanation": "The right angle is at the Moon, so the side across from it, the Earth\u2013Sun distance, is the hypotenuse. Let the Moon\u2013Sun distance be $d$, so the Earth\u2013Sun distance is $d + 1$. Then $9^2 + d^2 = (d+1)^2$. Expand: $81 + d^2 = d^2 + 2d + 1$, so $80 = 2d$ and $d = 40$. The Earth\u2013Sun distance is $d + 1 = 41$ units.",
+  "common_errors": [
+   {
+    "value": "40",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved correctly for the Moon\u2013Sun distance $d$ but didn't add 1 to get the Earth\u2013Sun distance."
+   },
+   {
+    "value": "81",
+    "misconception": "algebra-manipulation",
+    "why": "Expanded $(d+1)^2$ as $d^2 + d + 1$, which gives $81 = d + 1$, so $d = 80$ and an Earth\u2013Sun distance of 81."
+   },
+   {
+    "value": "10",
+    "misconception": "misread-given",
+    "why": "Read '1 unit greater' as applying to the Earth\u2013Moon side and reported $9 + 1$ without setting up the Pythagorean relationship."
+   }
+  ],
+  "id": "orig-pythagorean-mi-H-e29907",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

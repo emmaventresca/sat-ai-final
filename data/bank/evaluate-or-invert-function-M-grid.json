@@ -1,0 +1,186 @@
+[
+ {
+  "stem": "If a worker's predicted hourly wage is $\\$50$, how many years of experience does the model predict the worker has?",
+  "stimulus": "A labour economist models the hourly wage, in dollars, of workers in a certain trade using the function $W(t) = 18 + 0.5t^2$, where $t$ is the worker's number of years of experience and $t \\geq 0$.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "Here you are given the output, the wage, so set the expression equal to it: $18 + 0.5t^2 = 50$. Work backwards through the operations. Subtract 18 to get $0.5t^2 = 32$. Divide by 0.5 to get $t^2 = 64$. Take the square root to get $t = 8$ or $t = -8$. Experience can't be negative, and the model says $t \\geq 0$, so $t = 8$. Check: $W(8) = 18 + 0.5(64) = 50$. In Desmos, graph $W(x)$ and $y = 50$, then click the intersection where $x \\geq 0$.",
+  "common_errors": [
+   {
+    "value": "1268",
+    "misconception": "wrong-target-quantity",
+    "why": "Substituted 50 as the input, $W(50) = 18 + 0.5(2500) = 1268$, which mixes up 'the wage when t is 50' with 't when the wage is 50'."
+   },
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "Skipped subtracting the 18 and solved $0.5t^2 = 50$, which gives $t^2 = 100$."
+   },
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 32 by 0.5 instead of dividing by 0.5, which gives $t^2 = 16$."
+   },
+   {
+    "value": "64",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $t^2 = 64$ and didn't take the square root."
+   },
+   {
+    "value": "-8",
+    "misconception": "missed-condition",
+    "why": "Took the negative root, which breaks the condition $t \\geq 0$ (experience can't be negative)."
+   }
+  ],
+  "id": "orig-evaluate-or-in-M-e2cbfb",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the model, what is the stiffness, in megapascals, of the polymer at $26^\\circ\\text{C}$?",
+  "stimulus": "A materials scientist models the stiffness, in megapascals, of a polymer sample at temperature $T$ degrees Celsius using the function $S(T) = 150 - \\frac{3}{4}(T - 30)^2$, for $20 \\leq T \\leq 40$.",
+  "keys": [
+   "138"
+  ],
+  "any_of": false,
+  "explanation": "You are given the input, $T = 26$, so substitute it for $T$ and follow the order of operations. First the parentheses: $26 - 30 = -4$. Then the exponent: $(-4)^2 = 16$. Then multiply: $\\frac{3}{4} \\cdot 16 = 12$. Finally subtract: $150 - 12 = 138$. In Desmos, type $S(x) = 150 - \\frac{3}{4}(x-30)^2$ and then $S(26)$.",
+  "common_errors": [
+   {
+    "value": "162",
+    "misconception": "algebra-manipulation",
+    "why": "Treated $(-4)^2$ as $-16$, which gives $150 - \\frac{3}{4}(-16) = 150 + 12$."
+   },
+   {
+    "value": "141",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied by $\\frac{3}{4}$ before squaring, $\\left(\\frac{3}{4} \\cdot (-4)\\right)^2 = 9$, which gives $150 - 9$."
+   },
+   {
+    "value": "153",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the square, so $\\frac{3}{4}(-4) = -3$ and $150 - (-3) = 153$."
+   },
+   {
+    "value": "150",
+    "misconception": "misread-given",
+    "why": "Evaluated at $T = 30$, the temperature written inside the parentheses, instead of at $T = 26$."
+   }
+  ],
+  "id": "orig-evaluate-or-in-M-ab9b9e",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the model, how many thousand years after the leaf was buried does the sample contain $40$ micrograms of the isotope?",
+  "stimulus": "A paleobotanist studies a fossilized leaf. The mass, in micrograms, of a certain radioactive isotope left in the sample is modeled by $P(t) = 640\\left(\\frac{1}{2}\\right)^{t/5}$, where $t$ is the number of thousands of years since the leaf was buried.",
+  "keys": [
+   "20"
+  ],
+  "any_of": false,
+  "explanation": "You are given the output, so set $640\\left(\\frac{1}{2}\\right)^{t/5} = 40$. Divide both sides by 640 to get $\\left(\\frac{1}{2}\\right)^{t/5} = \\frac{1}{16}$. Since $\\frac{1}{16} = \\left(\\frac{1}{2}\\right)^4$, the exponents are equal: $\\frac{t}{5} = 4$. Multiply by 5 to get $t = 20$. Check: $640\\left(\\frac{1}{2}\\right)^4 = 640 \\div 16 = 40$. In Desmos, graph $P(x)$ and $y = 40$, then click the intersection.",
+  "common_errors": [
+   {
+    "value": "2.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Substituted 40 as the input, $P(40) = 640\\left(\\frac{1}{2}\\right)^8 = 2.5$, which mixes up 'the mass when t is 40' with 't when the mass is 40'."
+   },
+   {
+    "value": "4",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $\\frac{t}{5} = 4$ (four halvings) and didn't multiply by 5."
+   },
+   {
+    "value": ".8",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the exponent value by 5 instead of multiplying, $4 \\div 5 = 0.8$."
+   },
+   {
+    "value": "16",
+    "misconception": "intermediate-step",
+    "why": "Gave the ratio $640 \\div 40 = 16$ instead of solving for $t$."
+   }
+  ],
+  "id": "orig-evaluate-or-in-M-82e93d",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the model, how many months after installation will $600$ juvenile fish be counted on the reef?",
+  "stimulus": "Marine biologists monitor an artificial reef. They model the number of juvenile fish counted on the reef $x$ months after it was installed using the function $N(x) = \\frac{900x}{x + 15}$.",
+  "keys": [
+   "30"
+  ],
+  "any_of": false,
+  "explanation": "You are given the output, so set $\\frac{900x}{x + 15} = 600$. Multiply both sides by $x + 15$: $900x = 600(x + 15) = 600x + 9000$. Subtract $600x$ to get $300x = 9000$, so $x = 30$. Check: $N(30) = \\frac{27000}{45} = 600$. In Desmos, graph $N(x)$ and $y = 600$, then click the intersection.",
+  "common_errors": [
+   {
+    "value": "878.0",
+    "misconception": "wrong-target-quantity",
+    "why": "Substituted 600 as the input, $N(600) = \\frac{540000}{615} \\approx 878.05$, which mixes up 'the count when x is 600' with 'x when the count is 600'."
+   },
+   {
+    "value": "878",
+    "misconception": "wrong-target-quantity",
+    "why": "Same input/output mix-up as above, $N(600) \\approx 878.05$, rounded to a whole number of fish."
+   },
+   {
+    "value": ".05",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied only the $x$ by 600 and not the 15, writing $900x = 600x + 15$, so $300x = 15$."
+   },
+   {
+    "value": "-45",
+    "misconception": "algebra-manipulation",
+    "why": "Cross-multiplied the wrong way, $600x = 900(x + 15)$, so $-300x = 13500$."
+   },
+   {
+    "value": "2/3",
+    "misconception": "algebra-manipulation",
+    "why": "Ignored the denominator and solved $900x = 600$."
+   },
+   {
+    "value": ".6666",
+    "misconception": "algebra-manipulation",
+    "why": "Ignored the denominator and solved $900x = 600$ (truncated decimal)."
+   },
+   {
+    "value": ".6667",
+    "misconception": "algebra-manipulation",
+    "why": "Ignored the denominator and solved $900x = 600$ (rounded decimal)."
+   }
+  ],
+  "id": "orig-evaluate-or-in-M-35faa9",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

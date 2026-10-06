@@ -1,0 +1,186 @@
+[
+ {
+  "stem": "The relationship between $x$ and $y$ is linear and can be written as $y = mx + b$, where $m$ and $b$ are constants. What is the value of $b$?",
+  "stimulus": "After a booster vaccination, an immunologist measures the concentration $y$, in micrograms per milliliter, of a specific antibody in a volunteer's blood $x$ days after the first measurement. For the period shown, the concentration increases linearly.\n\nAntibody Concentration\nDays, $x$ | Concentration (\u00b5g/mL), $y$\n2 | 14\n5 | 23\n8 | 32",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "Start with two rows to find the slope. From $(2, 14)$ to $(5, 23)$, $y$ goes up 9 while $x$ goes up 3, so $m = \\frac{9}{3} = 3$. The table has no row where $x = 0$, so you have to work backward to the intercept. Substitute one point into $y = 3x + b$: $14 = 3(2) + b$, so $b = 14 - 6 = 8$. Check it with another row: $3(8) + 8 = 32$. Wrong answers you might get: 14 if you take the first $y$-value in the table as the intercept even though that row has $x = 2$, not $x = 0$; 3 if you report the slope instead of $b$; 20 if you add $3 \\cdot 2$ instead of subtracting it; and $\\frac{40}{3}$ if you find the slope as run over rise ($\\frac{3}{9} = \\frac{1}{3}$) and then solve for $b$.",
+  "common_errors": [
+   {
+    "value": "14",
+    "misconception": "graph-feature-mismatch",
+    "why": "Takes the first y-value in the table as the y-intercept, although that row has x = 2, not x = 0."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Finds the slope m correctly and reports it instead of b."
+   },
+   {
+    "value": "20",
+    "misconception": "algebra-manipulation",
+    "why": "Gets the sign wrong when solving 14 = 3(2) + b and computes b = 14 + 6."
+   },
+   {
+    "value": "40/3",
+    "misconception": "graph-feature-mismatch",
+    "why": "Computes the slope as run over rise (3/9 = 1/3), then solves 14 = (1/3)(2) + b to get b = 40/3."
+   }
+  ],
+  "id": "orig-equation-from--M-43111a",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The line shown is the graph of $ax + 2y = 24$, where $a$ is a constant. What is the value of $a$?",
+  "stimulus": "A marine biologist seals several small reef fish in a respirometry chamber of seawater and records the dissolved oxygen level $y$, in milligrams per liter, $x$ hours after sealing. The graph models the relationship.",
+  "figure": {
+   "type": "line",
+   "caption": "Dissolved Oxygen in a Sealed Chamber",
+   "x_label": "Time since sealing (hours)",
+   "y_label": "Dissolved oxygen (mg/L)",
+   "points": [
+    [
+     0,
+     12
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     8,
+     0
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 15,
+   "y_step": 3,
+   "alt": "A line decreasing from (0, 12) to (8, 0), passing through (2, 9), (4, 6), and (6, 3)."
+  },
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "Read two clear points off the graph. The intercepts work well: $(0, 12)$ and $(8, 0)$. The equation is in standard form, and standard form is quickest with intercepts. Substitute the $x$-intercept $(8, 0)$: $8a + 2(0) = 24$, so $a = 3$. The $y$-intercept checks out: $3(0) + 2(12) = 24$. Using the slope gives the same result: $m = \\frac{0 - 12}{8 - 0} = -\\frac{3}{2}$, so $y = -\\frac{3}{2}x + 12$. Multiplying by 2 gives $3x + 2y = 24$. Wrong answers you might get: $\\frac{4}{3}$ if you find the slope as run over rise; $\\frac{3}{2}$ if you find the slope's size but don't multiply by 2 to match the $2y$; and $-3$ if you move the $x$-term across without changing its sign.",
+  "common_errors": [
+   {
+    "value": "4/3",
+    "misconception": "graph-feature-mismatch",
+    "why": "Computes the slope as run over rise (\u22128/12 = \u22122/3), writes y = \u2212(2/3)x + 12, and multiplies by 2 to get (4/3)x + 2y = 24."
+   },
+   {
+    "value": "3/2",
+    "misconception": "algebra-manipulation",
+    "why": "Finds the slope \u22123/2 and uses its size as a without multiplying through by 2 to match the 2y term."
+   },
+   {
+    "value": "-3",
+    "misconception": "algebra-manipulation",
+    "why": "Rewrites y = \u2212(3/2)x + 12 as 2y = \u22123x + 24 and keeps \u22123 without moving the x-term across, so the sign is wrong."
+   }
+  ],
+  "id": "orig-equation-from--M-d6e763",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The relationship between $x$ and $y$ can be represented by the equation $px + 12y = 144$, where $p$ is a constant. What is the value of $p$?",
+  "stimulus": "A dietitian is planning menus that each give a patient exactly the same total amount of protein from two foods. The table shows three menus, where $x$ is the number of servings of cooked lentils and $y$ is the number of servings of Greek yogurt. The relationship between $x$ and $y$ is linear.\n\nProtein-Matched Menus\nLentil servings, $x$ | Yogurt servings, $y$\n0 | 12\n4 | 9\n8 | 6",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "The fastest way is to substitute a row into the equation you are given. With $(4, 9)$: $4p + 12(9) = 144$, so $4p = 36$ and $p = 9$. Check with $(8, 6)$: $9(8) + 12(6) = 72 + 72 = 144$. The slope gives the same answer: $m = \\frac{9 - 12}{4 - 0} = -\\frac{3}{4}$ and the $y$-intercept is 12, so $y = -\\frac{3}{4}x + 12$. Multiply by 12 to get $9x + 12y = 144$. Wrong answers you might get: 16 if you find the slope as run over rise; 3 if you write $3x + 4y = 48$ but don't scale it to match the $12y$ in the given equation; and $\\frac{3}{4}$ if you report the slope's size as $p$.",
+  "common_errors": [
+   {
+    "value": "16",
+    "misconception": "graph-feature-mismatch",
+    "why": "Computes the slope as run over rise (\u22124/3), writes y = \u2212(4/3)x + 12, and multiplies by 12 to get 16x + 12y = 144."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Correctly gets 3x + 4y = 48 but does not multiply by 3 to match the 12y in the given equation."
+   },
+   {
+    "value": "3/4",
+    "misconception": "wrong-target-quantity",
+    "why": "Finds the slope \u22123/4 and reports its size as p, which treats the slope as the x-coefficient."
+   }
+  ],
+  "id": "orig-equation-from--M-052385",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The relationship between $x$ and $y$ is linear and can be written as $y = mx + b$, where $m$ and $b$ are constants. What is the value of $m$?",
+  "stimulus": "At a textile history museum, a demonstrator weaves wool cloth on a reconstructed 1820s handloom. The table shows the total length $y$, in centimeters, of cloth on the loom's cloth beam $x$ hours after a timer was started.\n\nHandloom Cloth Length\nHours, $x$ | Length (cm), $y$\n3 | 41\n7 | 69\n11 | 97",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "Pick two rows and divide the change in $y$ by the change in $x$. From $(3, 41)$ to $(7, 69)$: $m = \\frac{69 - 41}{7 - 3} = \\frac{28}{4} = 7$. Check with the next pair of rows: $\\frac{97 - 69}{11 - 7} = \\frac{28}{4} = 7$. The $x$-values go up by 4, not 1, so you have to divide by 4. Wrong answers you might get: 28 if you use only the change in $y$; $\\frac{1}{7}$ if you divide run by rise; and $\\frac{41}{3}$ (or 13.67) if you divide a single $y$-value by its $x$-value, which assumes the line passes through the origin when the cloth beam actually started with cloth already on it.",
+  "common_errors": [
+   {
+    "value": "28",
+    "misconception": "intermediate-step",
+    "why": "Finds the change in y between consecutive rows but does not divide by the change in x, which is 4."
+   },
+   {
+    "value": "1/7",
+    "misconception": "graph-feature-mismatch",
+    "why": "Computes the slope as run over rise: 4/28 = 1/7."
+   },
+   {
+    "value": "41/3",
+    "misconception": "missed-condition",
+    "why": "Divides y by x for the single point (3, 41) as if the line went through the origin. This ignores the nonzero starting length, and the result fails the other rows."
+   }
+  ],
+  "id": "orig-equation-from--M-45f5c7",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

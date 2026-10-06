@@ -1,0 +1,157 @@
+[
+ {
+  "stem": "Which statement, on its own, is sufficient to prove that line $\\ell$ is parallel to line $m$? (If there is more than one correct answer, enter only one.)",
+  "stimulus": "A historian is studying the wooden frame of an old hand loom. Two crossbeams of the frame lie along lines $\\ell$ and $m$, with $\\ell$ above $m$. A diagonal brace lies along line $t$ and crosses both crossbeams. Where $t$ crosses $\\ell$, the four angles formed are labeled $a$ (above $\\ell$, left of $t$), $b$ (above $\\ell$, right of $t$), $c$ (below $\\ell$, left of $t$), and $d$ (below $\\ell$, right of $t$). Where $t$ crosses $m$, the four angles are labeled the same way: $e$ (above $m$, left of $t$), $f$ (above $m$, right of $t$), $g$ (below $m$, left of $t$), and $h$ (below $m$, right of $t$).\n\nStatement 1: $a = d$\nStatement 2: $c + f = 180$\nStatement 3: $b = f$\nStatement 4: $d + f = 180$\nStatement 5: $a + b = 180$\nStatement 6: $c = h$",
+  "keys": [
+   "3",
+   "4"
+  ],
+  "any_of": true,
+  "explanation": "Sort each pair by position before you judge it. Angles $c$, $d$, $e$ and $f$ lie between the two lines, so they are the interior angles. Statement 3 pairs $b$ and $f$, which are both above their line and right of $t$. They are corresponding angles, and equal corresponding angles prove the lines parallel. Statement 4 pairs $d$ and $f$, which are both interior and both right of $t$. They are same-side interior angles, and if they add to 180 the lines are parallel. Either 3 or 4 is accepted. The other statements fail. Statement 1 is a vertical pair and Statement 5 is a linear pair, so both are true wherever two lines cross. Statement 2 pairs alternate interior angles $c$ and $f$: they must be equal, not supplementary. Statement 6 pairs $c$ with $h$, which is not one of the standard pairs. Since $h$ corresponds to $d$ and $c + d = 180$, saying $c = h$ means $d + h = 180$. That does not make the lines parallel.",
+  "common_errors": [
+   {
+    "value": "1",
+    "misconception": "missed-condition",
+    "why": "Accepts a vertical pair. $a = d$ is true whenever $t$ crosses $\\ell$, so it says nothing about line $m$."
+   },
+   {
+    "value": "5",
+    "misconception": "missed-condition",
+    "why": "Accepts a linear pair. $a + b = 180$ always holds on a straight line, so it cannot prove parallelism."
+   },
+   {
+    "value": "2",
+    "misconception": "misread-given",
+    "why": "Mixes up the criteria: uses 'sum to 180', which belongs to same-side interior angles, for an alternate interior pair, which must be equal."
+   },
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Treats $c$ and $h$ as alternate angles because they are on opposite sides of $t$. They are not a corresponding, alternate or same-side pair."
+   }
+  ],
+  "id": "orig-sufficient-inf-H-ec5da9",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which statement, on its own, is sufficient to prove that triangle $PQR$ is similar to triangle $STU$? Enter the number of the statement.",
+  "stimulus": "An ornithologist uses two triangular survey plots to compare nesting density. In triangle $PQR$, $PQ = 6$ meters and $PR = 9$ meters. In triangle $STU$, $ST = 8$ meters and $SU = 12$ meters.\n\nStatement 1: $\\angle R \\cong \\angle U$\nStatement 2: $QR = 10$ meters and $TU = 15$ meters\nStatement 3: $\\angle P \\cong \\angle S$\nStatement 4: $\\angle Q \\cong \\angle S$",
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "First check what you already have. Since $\\frac{PQ}{ST} = \\frac{6}{8} = \\frac{3}{4}$ and $\\frac{PR}{SU} = \\frac{9}{12} = \\frac{3}{4}$, two pairs of sides are already in proportion. To finish with SAS similarity, you need the angle between those sides to be equal. In triangle $PQR$, that angle is $\\angle P$. In triangle $STU$, it is $\\angle S$. So Statement 3 is the answer. Statement 1 gives equal angles that are not between the proportional sides. That is SSA, and it does not fix the shape of the triangle. Statement 2 tries SSS similarity, but $\\frac{10}{15} = \\frac{2}{3}$ does not equal $\\frac{3}{4}$. Statement 4 pairs angles that do not correspond, because $\\angle Q$ is not between the given sides but $\\angle S$ is.",
+  "common_errors": [
+   {
+    "value": "1",
+    "misconception": "missed-condition",
+    "why": "Accepts SSA: the sides are proportional, but the equal angle is not the one between them, so the triangles are not fixed."
+   },
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "Compares sides within one triangle instead of across triangles: $\\frac{6}{9} = \\frac{8}{12} = \\frac{10}{15} = \\frac{2}{3}$ looks consistent, but the cross-triangle ratio $\\frac{10}{15}$ is not $\\frac{3}{4}$."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Pairs the wrong angles. $\\angle S$ is between the given sides, but $\\angle Q$ is not, so the two angles do not correspond."
+   }
+  ],
+  "id": "orig-sufficient-inf-H-c94fd6",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "How many of the five statements are each, on their own, sufficient to prove that triangle $ABC$ is congruent to triangle $DEF$?",
+  "stimulus": "A public health department is printing triangular hand-washing reminder signs from two templates. Templates $ABC$ and $DEF$ are both right triangles, with the right angles at $C$ and $F$. It is also known that $AC = DF$.\n\nStatement 1: $AB = DE$\nStatement 2: $BC = EF$\nStatement 3: $\\angle A \\cong \\angle D$\nStatement 4: $\\angle B \\cong \\angle E$\nStatement 5: $m\\angle A + m\\angle B = m\\angle D + m\\angle E$",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "You start with one pair of equal angles ($\\angle C$ and $\\angle F$, both 90\u00b0) and one pair of equal sides ($AC$ and $DF$). Test each statement against a congruence criterion. Statement 1 gives equal hypotenuses, so HL works. Statement 2 gives the other legs, and the right angle sits between the two legs, so SAS works. Statement 3 puts $AC$ between $\\angle A$ and $\\angle C$, so ASA works. Statement 4 gives two angles and a side that is not between them, so AAS works. Statement 5 adds nothing, because in any right triangle the two acute angles sum to 90\u00b0. That makes Statement 5 true for every pair of right triangles. Four statements are sufficient.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "missed-condition",
+    "why": "Counts Statement 5. It is always true, since both sums are 90\u00b0, so it proves nothing."
+   },
+   {
+    "value": "3",
+    "misconception": "missed-condition",
+    "why": "Rejects AAS (Statement 4) because the given side is not between the two angles. AAS is a valid criterion."
+   },
+   {
+    "value": "1",
+    "misconception": "missed-condition",
+    "why": "Believes right triangles can only be proven congruent by HL, so counts only Statement 1."
+   },
+   {
+    "value": "2",
+    "misconception": "overreach-beyond-evidence",
+    "why": "Overextends 'angles alone can't prove congruence' and rejects both angle statements. They are not angles alone, because $AC = DF$ is already given."
+   }
+  ],
+  "id": "orig-sufficient-inf-H-0734d9",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which statement, on its own, is sufficient to prove that $\\overline{DE}$ is parallel to $\\overline{BC}$? Enter the number of the statement.",
+  "stimulus": "A hydrologist models a triangular floodplain as triangle $ABC$. Point $D$ lies on $\\overline{AB}$ and point $E$ lies on $\\overline{AC}$, and a levee runs along $\\overline{DE}$. The measurements are $AD = 6$, $AB = 15$, and $AE = 4$, in hundreds of meters.\n\nStatement 1: $EC = 10$\nStatement 2: $DE = 4$ and $BC = 10$\nStatement 3: $\\angle ADE \\cong \\angle ACB$\nStatement 4: $AC = 10$",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "Triangles $ADE$ and $ABC$ share $\\angle A$. If the sides on either side of $\\angle A$ are in proportion, then the triangles are similar by SAS similarity. That makes $\\angle ADE \\cong \\angle ABC$. These are corresponding angles along $\\overline{AB}$, so $\\overline{DE} \\parallel \\overline{BC}$. You have $\\frac{AD}{AB} = \\frac{6}{15} = \\frac{2}{5}$, so you need $\\frac{AE}{AC} = \\frac{2}{5}$, which means $AC = 10$. That is Statement 4. Statement 1 gives $AC = 4 + 10 = 14$, and $\\frac{4}{14}$ does not equal $\\frac{2}{5}$. Statement 2 gives sides that are proportional, but $\\angle A$ is not between $AD$ and $DE$, so this is SSA. Working the numbers, triangle $ABC$ could have $AC = 10$ or $AC = 12.5$, so parallel is not guaranteed. Statement 3 matches $\\angle ADE$ with $\\angle ACB$, which gives a flipped similarity. It forces $\\frac{6}{AC} = \\frac{4}{15}$, so $AC = 22.5$, and the levee is not parallel to $\\overline{BC}$.",
+  "common_errors": [
+   {
+    "value": "1",
+    "misconception": "algebra-manipulation",
+    "why": "Compares a part-to-whole ratio with a part-to-part ratio: $\\frac{AD}{AB} = \\frac{2}{5}$ and $\\frac{AE}{EC} = \\frac{4}{10} = \\frac{2}{5}$ look equal, but the comparison has to be with $AC = 14$."
+   },
+   {
+    "value": "2",
+    "misconception": "missed-condition",
+    "why": "Accepts SSA: $\\frac{DE}{BC} = \\frac{2}{5}$ matches $\\frac{AD}{AB}$, but the shared angle $A$ is not between $AD$ and $DE$, and $AC = 12.5$ is also possible."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Treats $\\angle ADE$ and $\\angle ACB$ as corresponding angles. The angle that corresponds to $\\angle ADE$ for parallel lines is $\\angle ABC$, so this statement gives a reversed similarity."
+   }
+  ],
+  "id": "orig-sufficient-inf-H-38b09c",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

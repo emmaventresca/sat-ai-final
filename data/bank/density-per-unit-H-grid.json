@@ -1,0 +1,193 @@
+[
+ {
+  "stem": "What is the length, in millimeters, of one edge of the sample?",
+  "stimulus": "An immunologist cuts a cube-shaped sample of tissue from a lymph node and stains it to count macrophages. The sample contains 5,000 macrophages. The density of macrophages in the sample is 40 macrophages per cubic millimeter.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "Here you are given the density and the amount, so work backward to the space. Volume = amount \u00f7 density = 5,000 macrophages \u00f7 (40 macrophages/mm\u00b3) = 125 mm\u00b3. Check the units: the macrophages cancel and you are left with mm\u00b3, which is a volume. The question asks for an edge length, not the volume. The sample is a cube, so take the cube root: $\\sqrt[3]{125} = 5$. Each edge is 5 millimeters long.",
+  "common_errors": [
+   {
+    "value": "125",
+    "misconception": "intermediate-step",
+    "why": "Found the volume, 5,000 \u00f7 40 = 125 mm\u00b3, and stopped without taking the cube root to get the edge length."
+   },
+   {
+    "value": "0.2",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the quotient to get 40 \u00f7 5,000 = 0.008, then took the cube root of that."
+   },
+   {
+    "value": ".2",
+    "misconception": "algebra-manipulation",
+    "why": "Same flipped quotient, 40 \u00f7 5,000 = 0.008, then its cube root, entered without the leading zero."
+   },
+   {
+    "value": ".008",
+    "misconception": "algebra-manipulation",
+    "why": "Divided density by amount (40 \u00f7 5,000) instead of amount by density, and stopped there."
+   },
+   {
+    "value": "11.18",
+    "misconception": "algebra-manipulation",
+    "why": "Got the volume of 125 mm\u00b3 but took a square root instead of a cube root: \u221a125 \u2248 11.18."
+   }
+  ],
+  "id": "orig-density-per-un-H-0056f1",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the number of earthquake epicenters recorded per square kilometer of land in the region?",
+  "stimulus": "A seismology team monitors a rectangular region that measures 50 kilometers by 40 kilometers. A lake covers 200 square kilometers of the region, and the rest of the region is land. During one year, the team recorded 360 earthquake epicenters, all located on land.",
+  "keys": [
+   "0.2",
+   ".2",
+   "1/5"
+  ],
+  "any_of": false,
+  "explanation": "Density is amount \u00f7 space, and the question asks per square kilometer of land, so first find the land area. The whole region is 50 km \u00d7 40 km = 2,000 km\u00b2. Subtract the lake: 2,000 \u2212 200 = 1,800 km\u00b2 of land. Then density = 360 epicenters \u00f7 1,800 km\u00b2 = 0.2 epicenters per square kilometer of land.",
+  "common_errors": [
+   {
+    "value": ".18",
+    "misconception": "missed-condition",
+    "why": "Divided by the total area of the region (360 \u00f7 2,000 = 0.18) instead of the land area."
+   },
+   {
+    "value": "0.18",
+    "misconception": "missed-condition",
+    "why": "Same error, 360 \u00f7 2,000, entered with a leading zero."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the quotient: 1,800 km\u00b2 \u00f7 360 = 5 square kilometers per epicenter."
+   },
+   {
+    "value": "5.555",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the quotient and also used the total area: 2,000 \u00f7 360 \u2248 5.555 (truncated)."
+   },
+   {
+    "value": "5.556",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the quotient and also used the total area: 2,000 \u00f7 360 \u2248 5.556 (rounded)."
+   }
+  ],
+  "id": "orig-density-per-un-H-a08497",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the population density of the county, in people per square kilometer?",
+  "stimulus": "On a map, 1 centimeter represents 5 kilometers. A county is shown on the map as a rectangle that measures 6 centimeters by 4 centimeters. The county has a population of 48,000 people.",
+  "keys": [
+   "80"
+  ],
+  "any_of": false,
+  "explanation": "Convert each map length to an actual length before you find the area: 6 cm \u00d7 (5 km / 1 cm) = 30 km, and 4 cm \u00d7 (5 km / 1 cm) = 20 km. The actual area is 30 km \u00d7 20 km = 600 km\u00b2. Population density = people \u00f7 area = 48,000 \u00f7 600 = 80 people per square kilometer. Be careful not to convert the map area of 24 cm\u00b2 with the scale only once: each square centimeter on the map stands for 5 \u00d7 5 = 25 km\u00b2, not 5 km\u00b2.",
+  "common_errors": [
+   {
+    "value": "400",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the map area by the linear scale only once: 24 cm\u00b2 \u00d7 5 = 120 km\u00b2, so 48,000 \u00f7 120 = 400."
+   },
+   {
+    "value": "2000",
+    "misconception": "misread-given",
+    "why": "Used the map area, 24 cm\u00b2, as if it were the actual area: 48,000 \u00f7 24 = 2,000."
+   },
+   {
+    "value": ".0125",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the quotient: 600 km\u00b2 \u00f7 48,000 people = 0.0125 square kilometers per person."
+   },
+   {
+    "value": "600",
+    "misconception": "intermediate-step",
+    "why": "Found the actual area of the county, 600 km\u00b2, and gave that instead of the density."
+   }
+  ],
+  "id": "orig-density-per-un-H-3351c4",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the side length, in meters, of the square base of the footing?",
+  "stimulus": "A civil engineer designs a concrete footing in the shape of a right rectangular prism with a square base. The footing is 25 centimeters tall and has a mass of 21,600 kilograms. The density of the concrete is 2,400 kilograms per cubic meter.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "Work backward from the density. Volume = mass \u00f7 density = 21,600 kg \u00f7 (2,400 kg/m\u00b3) = 9 m\u00b3. The height is in centimeters and the density is in cubic meters, so convert: 25 cm = 0.25 m. The volume is base area \u00d7 height, so the base area = 9 m\u00b3 \u00f7 0.25 m = 36 m\u00b2. The base is a square, so the side length is $\\sqrt{36} = 6$ meters.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "intermediate-step",
+    "why": "Found the volume, 21,600 \u00f7 2,400 = 9 m\u00b3, and stopped there."
+   },
+   {
+    "value": "36",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the area of the base, 36 m\u00b2, and did not take the square root to get the side length."
+   },
+   {
+    "value": "3",
+    "misconception": "missed-condition",
+    "why": "Ignored the height and took the square root of the volume: \u221a9 = 3."
+   },
+   {
+    "value": "2.080",
+    "misconception": "missed-condition",
+    "why": "Treated the footing as a cube and took the cube root of the volume: \u221b9 \u2248 2.080."
+   },
+   {
+    "value": ".6",
+    "misconception": "misread-given",
+    "why": "Used 25 as the height without converting centimeters to meters: 9 \u00f7 25 = 0.36, and \u221a0.36 = 0.6."
+   },
+   {
+    "value": ".6666",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the quotient: 2,400 \u00f7 21,600 = 1/9, then 1/9 \u00f7 0.25 = 4/9, and \u221a(4/9) \u2248 0.6666 (truncated)."
+   },
+   {
+    "value": ".6667",
+    "misconception": "algebra-manipulation",
+    "why": "Same flipped quotient, 2,400 \u00f7 21,600, carried through to \u221a(4/9) \u2248 0.6667 (rounded)."
+   }
+  ],
+  "id": "orig-density-per-un-H-ffa036",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

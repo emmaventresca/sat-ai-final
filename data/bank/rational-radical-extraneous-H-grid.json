@@ -1,0 +1,151 @@
+[
+ {
+  "stem": "What is the solution to the given equation?",
+  "stimulus": "A cartographer checking the scale on a coastal survey map found that the map distance $x$, in centimeters, between two lighthouses satisfies the equation below.\n\n$\\sqrt{2x + 7} = x - 4$",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "The square root is already alone on the left, so square both sides: $2x + 7 = (x - 4)^2 = x^2 - 8x + 16$. Move everything to one side to get $x^2 - 10x + 9 = 0$, which factors as $(x - 1)(x - 9) = 0$. That gives two candidates, $x = 1$ and $x = 9$. Check each one in the original equation. For $x = 9$, the left side is $\\sqrt{25} = 5$ and the right side is $9 - 4 = 5$, so it works. For $x = 1$, the left side is $\\sqrt{9} = 3$ but the right side is $1 - 4 = -3$. A square root can't equal a negative number, so $x = 1$ is extraneous. The only solution is $9$. In Desmos, graph $y = \\sqrt{2x+7}$ and $y = x - 4$. They cross only once, at $x = 9$.",
+  "common_errors": [
+   {
+    "value": "1",
+    "misconception": "missed-condition",
+    "why": "Kept the root that squaring added: at x = 1 the square root would have to equal -3."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Expanded (x - 4)^2 as x^2 - 4x + 16, which gives x^2 - 6x + 9 = 0, so x = 3."
+   },
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the sum of the roots of x^2 - 10x + 9 = 0 (the opposite of the x-coefficient) instead of solving for x."
+   }
+  ],
+  "id": "orig-rational-radic-H-b806fe",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the solution to the given equation?",
+  "stimulus": "At a dig site, an archaeologist uses the equation below to estimate $x$, the depth in meters at which a second layer of pottery shards begins.\n\n$\\dfrac{x}{x - 2} + \\dfrac{8}{(x - 2)(x - 6)} = \\dfrac{3}{x - 6}$",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "First note that $x$ can't be $2$ or $6$, because either value makes a denominator zero. Multiply every term by $(x - 2)(x - 6)$: $x(x - 6) + 8 = 3(x - 2)$. Expand to get $x^2 - 6x + 8 = 3x - 6$, so $x^2 - 9x + 14 = 0$. This factors as $(x - 2)(x - 7) = 0$. The candidate $x = 2$ is one of the excluded values, so throw it out. Check $x = 7$: the left side is $\\frac{7}{5} + \\frac{8}{5} = 3$ and the right side is $\\frac{3}{1} = 3$. The solution is $7$.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "missed-condition",
+    "why": "Kept both roots of x^2 - 9x + 14 = 0 without checking them, but x = 2 makes the denominators x - 2 equal zero."
+   },
+   {
+    "value": "9",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the sum of the roots of x^2 - 9x + 14 = 0 instead of the root that actually works."
+   },
+   {
+    "value": "14",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the product of the roots (the constant term) instead of solving for x."
+   }
+  ],
+  "id": "orig-rational-radic-H-5ce4a1",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the solution to the given equation?",
+  "stimulus": "In a model of a wetland frog population, an ecologist finds that the number of breeding pools surveyed, $x$, satisfies the equation below.\n\n$2x - 5\\sqrt{x} = 12$",
+  "keys": [
+   "16"
+  ],
+  "any_of": false,
+  "explanation": "Let $u = \\sqrt{x}$, so $x = u^2$ and $u \\ge 0$. The equation becomes $2u^2 - 5u - 12 = 0$, which factors as $(2u + 3)(u - 4) = 0$. A square root can't be negative, so $u = -\\frac{3}{2}$ is rejected and $u = 4$, which means $x = 16$. If you instead isolate the root and square, $(2x - 12)^2 = 25x$, you get $4x^2 - 73x + 144 = 0$, or $(x - 16)(4x - 9) = 0$. The extra candidate $x = \\frac{9}{4}$ fails the check: $2\\left(\\frac{9}{4}\\right) - 5\\left(\\frac{3}{2}\\right) = -3$, not $12$. Check $x = 16$: $32 - 20 = 12$. The solution is $16$.",
+  "common_errors": [
+   {
+    "value": "9/4",
+    "misconception": "missed-condition",
+    "why": "Squared both sides and kept both roots of 4x^2 - 73x + 144 = 0. At x = 9/4 the original left side equals -3."
+   },
+   {
+    "value": "2.25",
+    "misconception": "missed-condition",
+    "why": "The same extraneous root, 9/4, entered as a decimal."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved for u = sqrt(x) after substituting and forgot to square it to get x."
+   }
+  ],
+  "id": "orig-rational-radic-H-d2fddd",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "An immunologist models the time $x$, in days, at which two antibody measurements are equal with the equation below, where $k$ is a positive constant.\n\n$\\dfrac{x^2 + 2x}{x - 4} = \\dfrac{k}{x - 4}$\n\nThe equation has exactly one real solution.",
+  "keys": [
+   "24"
+  ],
+  "any_of": false,
+  "explanation": "Since $x \\ne 4$, multiply both sides by $x - 4$ to get $x^2 + 2x - k = 0$. Any root of this quadratic other than $4$ is a solution of the original equation. There are two ways to end up with exactly one solution. The first is a repeated root: the discriminant $4 + 4k = 0$ gives $k = -1$, but $k$ must be positive, so this is ruled out. The second is that the quadratic has two roots and one of them is the excluded value $4$. Then $16 + 8 - k = 0$, so $k = 24$. Check it: $x^2 + 2x - 24 = (x - 4)(x + 6)$. The root $4$ is thrown out, which leaves only $x = -6$. So $k = 24$.",
+  "common_errors": [
+   {
+    "value": "-1",
+    "misconception": "missed-condition",
+    "why": "Treated it as a tangency question and set the discriminant to zero, ignoring that k must be positive."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the excluded x-value that the root lands on instead of the constant k."
+   },
+   {
+    "value": "-6",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the one remaining solution x = -6 instead of k."
+   },
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Substituted x = 4 but dropped the x^2 term, writing 2(4) - k = 0."
+   }
+  ],
+  "id": "orig-rational-radic-H-6fbb16",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

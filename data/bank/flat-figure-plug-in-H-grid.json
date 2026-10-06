@@ -1,0 +1,181 @@
+[
+ {
+  "stem": "What is the perimeter, in meters, of the remaining basin?",
+  "stimulus": "A hydrologist is designing a stormwater retention basin. The plan starts as a rectangle 30 meters long and 16 meters wide. To make room for an inlet structure, a right triangle is cut off one corner of the rectangle. The triangle's two shorter sides lie along the rectangle's edges, one measuring 6 meters along the 30-meter side and the other 8 meters along the 16-meter side. Its longest side, 10 meters, becomes a new straight edge of the basin.",
+  "keys": [
+   "88"
+  ],
+  "any_of": false,
+  "explanation": "The question asks for perimeter, so you need lengths, not square units. Start with the rectangle's perimeter: $2(30 + 16) = 92$ meters. When you cut off the corner, the 6-meter and 8-meter pieces of the rectangle's edges are no longer part of the boundary, so subtract them: $92 - 6 - 8 = 78$. The cut leaves a new 10-meter edge, so add it back: $78 + 10 = 88$ meters.",
+  "common_errors": [
+   {
+    "value": "456",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the remaining area, $30 \\cdot 16 - \\tfrac{1}{2}(6)(8) = 480 - 24 = 456$, when the question asks for perimeter."
+   },
+   {
+    "value": "92",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the perimeter of the original rectangle and never accounted for the cut."
+   },
+   {
+    "value": "78",
+    "misconception": "missed-condition",
+    "why": "Removed the 6 m and 8 m pieces but forgot that the cut adds a new 10 m edge."
+   },
+   {
+    "value": "102",
+    "misconception": "missed-condition",
+    "why": "Added the 10 m edge to 92 without removing the 6 m and 8 m pieces that are no longer on the boundary."
+   },
+   {
+    "value": "480",
+    "misconception": "wrong-target-quantity",
+    "why": "Computed the area of the uncut rectangle, $30 \\cdot 16$."
+   }
+  ],
+  "id": "orig-flat-figure-pl-H-5d393f",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the total area, in square meters, of the excavation site?",
+  "stimulus": "An archaeological excavation site is laid out in two parts. The first part is a rectangle measuring 15 meters by 4 meters. The second part is a right triangle placed so that its longest side runs exactly along one of the rectangle's 15-meter sides, on the outside of the rectangle. One of the triangle's other two sides measures 9 meters. The two parts do not overlap.",
+  "keys": [
+   "114"
+  ],
+  "any_of": false,
+  "explanation": "Area is base times height for the rectangle: $15 \\cdot 4 = 60$ square meters. For the triangle, the 15-meter side is the hypotenuse, so it is not the height. Find the missing leg: $9^2 + b^2 = 15^2$, so $b^2 = 144$ and $b = 12$. The legs are perpendicular, so they are the base and height: $\\tfrac{1}{2}(9)(12) = 54$ square meters. Add the two parts: $60 + 54 = 114$ square meters.",
+  "common_errors": [
+   {
+    "value": "127.5",
+    "misconception": "algebra-manipulation",
+    "why": "Used the hypotenuse as the triangle's height, $\\tfrac{1}{2}(9)(15) = 67.5$, then added 60."
+   },
+   {
+    "value": "168",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the $\\tfrac{1}{2}$ and used $9 \\cdot 12 = 108$ for the triangle, then added 60."
+   },
+   {
+    "value": "150",
+    "misconception": "algebra-manipulation",
+    "why": "Used the hypotenuse and the 12 m leg as base and height, $\\tfrac{1}{2}(12)(15) = 90$, then added 60."
+   },
+   {
+    "value": "54",
+    "misconception": "intermediate-step",
+    "why": "Found only the triangle's area and forgot to add the rectangle."
+   },
+   {
+    "value": "44",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the perimeter of the combined site, $15 + 4 + 4 + 9 + 12$, instead of its area."
+   }
+  ],
+  "id": "orig-flat-figure-pl-H-d41e5d",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the area, in square meters, of the paved part of the plaza?",
+  "stimulus": "A city is building a rectangular public plaza. The plaza's length is 3 meters more than twice its width, and its perimeter is 96 meters. In the plaza there will be a square fountain with sides of 5 meters. Everything in the plaza except the fountain will be paved.",
+  "keys": [
+   "470"
+  ],
+  "any_of": false,
+  "explanation": "Let the width be $w$, so the length is $2w + 3$. The perimeter counts each side twice: $2(w + 2w + 3) = 96$, so $3w + 3 = 48$ and $w = 15$. The length is $2(15) + 3 = 33$. The plaza's area is $15 \\cdot 33 = 495$ square meters. The fountain covers $5^2 = 25$ square meters, so the paved area is $495 - 25 = 470$ square meters.",
+  "common_errors": [
+   {
+    "value": "495",
+    "misconception": "intermediate-step",
+    "why": "Found the whole plaza's area and did not subtract the fountain."
+   },
+   {
+    "value": "475",
+    "misconception": "wrong-target-quantity",
+    "why": "Subtracted the fountain's perimeter, $4 \\cdot 5 = 20$, instead of its area, $5^2 = 25$."
+   },
+   {
+    "value": "1990",
+    "misconception": "algebra-manipulation",
+    "why": "Set length plus width equal to 96 without doubling, so $3w + 3 = 96$, $w = 31$, length 65, area 2015, then subtracted 25."
+   },
+   {
+    "value": "485",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the fountain's side length twice, $2 \\cdot 5 = 10$, instead of squaring it."
+   }
+  ],
+  "id": "orig-flat-figure-pl-H-8ccbf0",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the area, in square centimeters, of the square?",
+  "stimulus": "A musicologist is building a museum display about orchestral percussion. On one panel, a historical triangle instrument is shown as an outline in the shape of an equilateral triangle with sides of 16 centimeters. Next to it, the outline of a square frame drum is drawn so that its perimeter is the same as the triangle's perimeter.",
+  "keys": [
+   "144"
+  ],
+  "any_of": false,
+  "explanation": "An equilateral triangle has three equal sides, so its perimeter is $3 \\cdot 16 = 48$ centimeters. The square has the same perimeter, and a square has four equal sides, so each side is $48 \\div 4 = 12$ centimeters. Its area is $12^2 = 144$ square centimeters.",
+  "common_errors": [
+   {
+    "value": "256",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the triangle's side by 4 as if it were a square, which gives a perimeter of 64, a square side of 16, and an area of $16^2 = 256$."
+   },
+   {
+    "value": "48",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the shared perimeter and never found the square's area."
+   },
+   {
+    "value": "12",
+    "misconception": "intermediate-step",
+    "why": "Found the square's side length but did not square it."
+   },
+   {
+    "value": "576",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the perimeter of 48 by 2 instead of 4, which gives a side of 24 and an area of $24^2 = 576$."
+   },
+   {
+    "value": "2304",
+    "misconception": "wrong-target-quantity",
+    "why": "Squared the perimeter, $48^2$, as if it were the square's side length."
+   }
+  ],
+  "id": "orig-flat-figure-pl-H-51b095",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

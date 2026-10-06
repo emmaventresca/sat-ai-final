@@ -1,0 +1,222 @@
+[
+ {
+  "stem": "The relationship between $h$ and $T$ shown in the table can be represented by the equation $13h + kT = c$, where $k$ and $c$ are constants. What is the value of $c$?",
+  "stimulus": "A weather balloon records the air temperature $T$, in degrees Celsius, at several altitudes $h$, in kilometers, above a launch site. Over this range of altitudes, the relationship between $h$ and $T$ is linear.\n\nWeather Balloon Readings\nAltitude, $h$ (km) | Temperature, $T$ (\u00b0C)\n1 | 9\n3 | -4\n5 | -17",
+  "keys": [
+   "31"
+  ],
+  "any_of": false,
+  "explanation": "The coefficient of $h$ is fixed at 13, so $k$ is not free. You have to find it from the table before you can find $c$. Substitute two rows. From $(1, 9)$: $13 + 9k = c$. From $(3, -4)$: $39 - 4k = c$. Set them equal: $13 + 9k = 39 - 4k$, so $13k = 26$ and $k = 2$. Then $c = 13 + 18 = 31$. Check with the third row: $13(5) + 2(-17) = 65 - 34 = 31$. Another route: the slope is $\\frac{-4 - 9}{3 - 1} = -\\frac{13}{2}$ and the $T$-intercept is $9 + \\frac{13}{2} = \\frac{31}{2}$, so $T = -\\frac{13}{2}h + \\frac{31}{2}$. Multiply by 2 and rearrange to get $13h + 2T = 31$.",
+  "common_errors": [
+   {
+    "value": "22",
+    "misconception": "missed-condition",
+    "why": "Treats $k$ as 1 instead of finding it from the table, then substitutes only $(1, 9)$: $13 + 9 = 22$. This equation passes through one point but not the others."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Correctly solves for $k = 2$ and enters that instead of $c$."
+   },
+   {
+    "value": "15.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Finds the $T$-intercept of $T = -6.5h + 15.5$ and enters it without rewriting the equation as $13h + 2T = 31$. Also entered as 31/2."
+   },
+   {
+    "value": "31/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Fraction form of the $T$-intercept $15.5$, entered in place of $c$."
+   },
+   {
+    "value": "119",
+    "misconception": "graph-feature-mismatch",
+    "why": "Finds the slope as run over rise, $-\\frac{2}{13}$, and gets $T = -\\frac{2}{13}h + \\frac{119}{13}$. Clearing denominators gives $2h + 13T = 119$, and the student enters the constant."
+   },
+   {
+    "value": "-31",
+    "misconception": "algebra-manipulation",
+    "why": "Moves the terms to the wrong sides when rearranging $2T = -13h + 31$, writes $13h + 2T = -31$, and keeps the sign error."
+   }
+  ],
+  "id": "orig-equation-from--H-633333",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "An equation of the line shown is $y = mx + b$, where $m$ and $b$ are constants. What is the value of $b$?",
+  "stimulus": "Paleobotanists estimate the climate of an ancient forest from its fossil leaves. The graph shows a linear model relating $x$, the percentage of woody plant species in a fossil flora whose leaves have smooth (untoothed) edges, to $y$, the estimated mean annual temperature, in degrees Celsius.",
+  "figure": {
+   "type": "line",
+   "caption": "Leaf-Margin Temperature Model",
+   "x_label": "Smooth-edged species (%)",
+   "y_label": "Mean annual temperature (\u00b0C)",
+   "points": [
+    [
+     10,
+     4
+    ],
+    [
+     30,
+     10
+    ],
+    [
+     50,
+     16
+    ],
+    [
+     70,
+     22
+    ]
+   ],
+   "x_min": 10,
+   "x_max": 80,
+   "x_step": 10,
+   "y_min": 0,
+   "y_max": 24,
+   "y_step": 2,
+   "alt": "A straight line rising from left to right. The horizontal axis starts at 10 and runs to 80 in steps of 10. The vertical axis runs from 0 to 24 in steps of 2. The line is marked at four points, at x-values of 10, 30, 50, and 70."
+  },
+  "keys": [
+   "1"
+  ],
+  "any_of": false,
+  "explanation": "The horizontal axis starts at 10, not 0, so the vertical axis is not where $x = 0$. The height where the line meets the vertical axis is not $b$. Read two marked points: $(10, 4)$ and $(30, 10)$. The slope is $m = \\frac{10 - 4}{30 - 10} = \\frac{6}{20} = \\frac{3}{10}$. Substitute $(10, 4)$ into $y = \\frac{3}{10}x + b$: $4 = 3 + b$, so $b = 1$. Check with $(70, 22)$: $\\frac{3}{10}(70) + 1 = 22$.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "graph-feature-mismatch",
+    "why": "Reads the height where the line meets the vertical axis as the y-intercept, without noticing that the axis is at $x = 10$, not $x = 0$."
+   },
+   {
+    "value": "7",
+    "misconception": "algebra-manipulation",
+    "why": "Finds $m = \\frac{3}{10}$ correctly, then adds when going back 10 units to $x = 0$: $4 + 3 = 7$ instead of $4 - 3$."
+   },
+   {
+    "value": "-88/3",
+    "misconception": "graph-feature-mismatch",
+    "why": "Finds the slope as run over rise, $\\frac{20}{6} = \\frac{10}{3}$, then solves $4 = \\frac{10}{3}(10) + b$ and gets $b = -\\frac{88}{3}$."
+   },
+   {
+    "value": "3/10",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the slope $m$ instead of $b$. Also entered as .3."
+   },
+   {
+    "value": ".3",
+    "misconception": "wrong-target-quantity",
+    "why": "Decimal form of the slope, entered in place of $b$."
+   }
+  ],
+  "id": "orig-equation-from--H-39ea26",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The relationship between $F$ and $L$ shown in the table can be represented by the equation $L = a(F + k)$, where $a$ and $k$ are positive constants. What is the value of $k$?",
+  "stimulus": "A materials scientist hangs different loads from a polymer strip and measures how long the strip stretches. For loads in this range, the length $L$ of the strip, in millimeters, is a linear function of the load $F$, in newtons.\n\nPolymer Strip Under Load\nLoad, $F$ (N) | Length, $L$ (mm)\n3 | 56\n8 | 66\n15 | 80",
+  "keys": [
+   "25"
+  ],
+  "any_of": false,
+  "explanation": "Find the slope from two rows: $\\frac{66 - 56}{8 - 3} = \\frac{10}{5} = 2$. Check it with the last two rows: $\\frac{80 - 66}{15 - 8} = 2$. Then find the intercept: $56 = 2(3) + b$, so $b = 50$ and $L = 2F + 50$. The question uses a different form, so match it. $a(F + k) = aF + ak$, so $a = 2$ and $ak = 50$, which gives $k = 25$. Faster: factor directly, $2F + 50 = 2(F + 25)$. The trap is entering 50. That is the intercept, which in this form equals $ak$, not $k$.",
+  "common_errors": [
+   {
+    "value": "50",
+    "misconception": "wrong-target-quantity",
+    "why": "Finds the intercept $b = 50$ and treats it as $k$, without factoring out the slope. In this form the intercept is $ak$."
+   },
+   {
+    "value": "28",
+    "misconception": "graph-feature-mismatch",
+    "why": "Takes the first row's length, 56, as the intercept, as if the table started at $F = 0$. Then factors $2F + 56 = 2(F + 28)$."
+   },
+   {
+    "value": "109",
+    "misconception": "graph-feature-mismatch",
+    "why": "Finds the slope as run over rise, $\\frac{5}{10} = \\frac{1}{2}$, so $b = 56 - 1.5 = 54.5$ and $L = \\frac{1}{2}(F + 109)$."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Enters the slope $a$ instead of $k$."
+   },
+   {
+    "value": "100",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplies instead of dividing when matching $ak = 50$: $k = 50 \\cdot 2$."
+   }
+  ],
+  "id": "orig-equation-from--H-c2603a",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The relationship between $x$ and $y$ shown in the table can be represented by the equation $ax + by = 84$, where $a$ and $b$ are constants. What is the value of $a$?",
+  "stimulus": "A city planner has a fixed budget of $84 thousand to spend on new bus shelters and bike-share docks for one neighborhood. The table shows several combinations that use the entire budget, where $x$ is the number of bus shelters and $y$ is the number of bike-share docks.\n\nBudget Combinations\nBus shelters, $x$ | Bike-share docks, $y$\n2 | 18\n6 | 12\n10 | 6",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "The slope from the table is $\\frac{12 - 18}{6 - 2} = -\\frac{3}{2}$. The intercept is $18 + \\frac{3}{2}(2) = 21$, so $y = -\\frac{3}{2}x + 21$. Multiply by 4 to clear the fraction and make the constant 84: $4y = -6x + 84$, so $6x + 4y = 84$ and $a = 6$. Alternatively, substitute two rows: $2a + 18b = 84$ and $6a + 12b = 84$. Solving gives $b = 4$ and $a = 6$. Check with $(10, 6)$: $60 + 24 = 84$. In context, each shelter costs $6 thousand and each dock costs $4 thousand.",
+  "common_errors": [
+   {
+    "value": "1.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Finds the magnitude of the slope and takes it as $a$, as if $b$ were 1. Doesn't scale the equation so that the constant is 84. Also entered as 3/2."
+   },
+   {
+    "value": "3/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Fraction form of the slope magnitude, entered as $a$."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Correctly finds $b = 4$ and enters it in place of $a$."
+   },
+   {
+    "value": "7",
+    "misconception": "graph-feature-mismatch",
+    "why": "Takes the first row's $y$-value, 18, as the intercept, so $b = \\frac{84}{18} = \\frac{14}{3}$ and $a = \\frac{3}{2} \\cdot \\frac{14}{3} = 7$."
+   },
+   {
+    "value": "-6",
+    "misconception": "algebra-manipulation",
+    "why": "Gets $4y = -6x + 84$, then keeps the minus sign on $x$ after moving it to the left side."
+   }
+  ],
+  "id": "orig-equation-from--H-85fad1",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

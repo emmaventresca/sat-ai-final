@@ -1,0 +1,182 @@
+[
+ {
+  "stem": "If one of these households that owns at least 2 cars is selected at random, what is the probability of selecting a household that uses public transit for the weekly commute?",
+  "stimulus": "A city planning office surveyed 250 households along a proposed light-rail corridor. Each household reported how many cars it owns and whether any member uses public transit for the weekly commute. The results are shown in the table.\n\nCorridor Household Survey\nTransit use | 0 cars | 1 car | 2 cars | 3 or more cars | Total\nUses transit | 48 | 36 | 10 | 6 | 100\nDoes not use transit | 12 | 74 | 50 | 14 | 150\nTotal | 60 | 110 | 60 | 20 | 250",
+  "choices": [
+   "$\\frac{8}{125}$",
+   "$\\frac{1}{5}$",
+   "$\\frac{4}{25}$",
+   "$\\frac{3}{10}$"
+  ],
+  "answer": "B",
+  "explanation": "\"At least 2 cars\" includes both the 2-cars column and the 3-or-more column, so you build that group first: $60 + 20 = 80$ households. Of those, $10 + 6 = 16$ use transit. The probability is $\\frac{16}{80} = \\frac{1}{5}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the right count of 16, but you divided by all 250 households, which gives $\\frac{16}{250} = \\frac{8}{125}$. The condition limits you to the 80 households with at least 2 cars, so 80 is the denominator."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided 16 by the 100 transit users. That gives $\\frac{16}{100} = \\frac{4}{25}$, which is the fraction of transit users who own at least 2 cars. That's the reverse question. The given group is the households with at least 2 cars."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You read \"at least 2\" as \"more than 2\" and used only the 3-or-more column, which gives $\\frac{6}{20} = \\frac{3}{10}$. Households with exactly 2 cars also meet the condition, so that column belongs in the group."
+   }
+  },
+  "id": "orig-conditional-bu-M-205057",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If one of these stars that is not class M is selected at random, what is the probability of selecting a star with a planet detected?",
+  "stimulus": "An astronomy team monitored 260 nearby stars for signs of orbiting planets. The table shows each star's spectral class and whether at least one planet was detected around it.\n\nPlanet Detections by Spectral Class\nSpectral class | Planet detected | No planet detected\nA | 3 | 27\nF | 8 | 32\nG | 14 | 46\nK | 10 | 50\nM | 25 | 45",
+  "choices": [
+   "$\\frac{5}{14}$",
+   "$\\frac{7}{52}$",
+   "$\\frac{7}{38}$",
+   "$\\frac{7}{12}$"
+  ],
+  "answer": "C",
+  "explanation": "\"Not class M\" means classes A, F, G and K together. That group has $30 + 40 + 60 + 60 = 190$ stars. Of those, $3 + 8 + 14 + 10 = 35$ have a planet detected. The probability is $\\frac{35}{190} = \\frac{7}{38}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the class M row, which gives $\\frac{25}{70} = \\frac{5}{14}$. The condition says *not* class M, so the group is the other four classes."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You counted the 35 non-M stars with planets correctly, but you divided by all 260 stars, which gives $\\frac{35}{260} = \\frac{7}{52}$. The denominator should be the 190 stars that are not class M."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided 35 by the 60 stars that have a planet detected. That gives $\\frac{35}{60} = \\frac{7}{12}$, which is the fraction of planet hosts that are not class M. That's the reverse question. The given group is the non-M stars, not the planet hosts."
+   }
+  },
+  "id": "orig-conditional-bu-M-1ac460",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If a word from the sample that has at least 3 syllables is selected at random, what is the probability of selecting a borrowed word?",
+  "stimulus": "A linguist sampled entries from a dictionary and classified each word by its number of syllables and by whether it is native to the language or borrowed from another language. The table shows the proportion of all sampled words in each category.\n\nProportion of Sampled Dictionary Words\nSyllables | Native | Borrowed\n1 | 0.18 | 0.02\n2 | 0.22 | 0.08\n3 | 0.10 | 0.15\n4 or more | 0.05 | 0.20",
+  "choices": [
+   "$\\frac{7}{10}$",
+   "$\\frac{4}{5}$",
+   "$\\frac{7}{20}$",
+   "$\\frac{7}{9}$"
+  ],
+  "answer": "A",
+  "explanation": "You can treat the proportions as counts, because the scaling cancels. \"At least 3 syllables\" covers the 3 row and the 4-or-more row: $0.10 + 0.15 + 0.05 + 0.20 = 0.50$. The borrowed words in that group make up $0.15 + 0.20 = 0.35$. The probability is $\\frac{0.35}{0.50} = \\frac{7}{10}$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You read \"at least 3\" as \"more than 3\" and used only the 4-or-more row, which gives $\\frac{0.20}{0.25} = \\frac{4}{5}$. Words with exactly 3 syllables also meet the condition."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "$0.35$ is the proportion of the *whole sample* that is borrowed and has at least 3 syllables. You stopped there. You still need to divide by the 0.50 that makes up the given group."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided 0.35 by the total borrowed proportion, $0.02 + 0.08 + 0.15 + 0.20 = 0.45$. That gives $\\frac{7}{9}$, which is the fraction of borrowed words that have at least 3 syllables. That's the reverse question."
+   }
+  },
+  "id": "orig-conditional-bu-M-7cb341",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If a package that is not a cracker package is selected at random, what is the probability of selecting a package that exceeds the sodium guideline?",
+  "stimulus": "A nutrition science lab received 12 crates of packaged snacks for sodium testing. Every crate holds 12 packages. There are 5 crates of crackers, 3 crates of pretzels and 4 crates of rice cakes. Testing found that each cracker crate contains 3 packages that exceed the lab's sodium guideline. Each pretzel crate contains 8 such packages, and each rice cake crate contains 2.",
+  "choices": [
+   "$\\frac{1}{4}$",
+   "$\\frac{2}{9}$",
+   "$\\frac{32}{47}$",
+   "$\\frac{8}{21}$"
+  ],
+  "answer": "D",
+  "explanation": "First build the group of packages that are not crackers. That's $3 + 4 = 7$ crates of 12 packages each, or $7 \\times 12 = 84$ packages. Inside that group, the pretzels have $3 \\times 8 = 24$ packages over the guideline and the rice cakes have $4 \\times 2 = 8$, for a total of 32. The probability is $\\frac{32}{84} = \\frac{8}{21}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the crackers: 3 of every 12 packages, which is $\\frac{1}{4}$. The condition says *not* a cracker package, so the group is the pretzels and rice cakes."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the 32 non-cracker packages over the guideline, but you divided by all $12 \\times 12 = 144$ packages, which gives $\\frac{32}{144} = \\frac{2}{9}$. The denominator should be the 84 packages that are not crackers."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided 32 by all the packages over the guideline, $15 + 24 + 8 = 47$. That gives the fraction of over-guideline packages that are not crackers, which is the reverse question. The given group is the non-cracker packages."
+   }
+  },
+  "id": "orig-conditional-bu-M-6d4495",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If a piece numbered 40 or greater is selected at random, what is the probability of selecting a piece written in a minor key?",
+  "stimulus": "A musicologist cataloguing a composer's surviving songbook gave its 60 pieces the numbers 1 through 60, with no number used twice. Every piece whose number is a multiple of 4 is written in a minor key, and no other piece is.",
+  "choices": [
+   "$\\frac{1}{10}$",
+   "$\\frac{2}{7}$",
+   "$\\frac{1}{4}$",
+   "$\\frac{2}{5}$"
+  ],
+  "answer": "B",
+  "explanation": "Build the given group by counting the integers from 40 through 60, including both ends: $60 - 40 + 1 = 21$ pieces. The multiples of 4 in that range are 40, 44, 48, 52, 56 and 60, so 6 pieces are in a minor key. The probability is $\\frac{6}{21} = \\frac{2}{7}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the 6 minor-key pieces by all 60 pieces, which gives $\\frac{6}{60} = \\frac{1}{10}$. The condition limits you to the 21 pieces numbered 40 or greater."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You treated \"40 or greater\" as \"greater than 40\" and counted only 41 through 60. That gives 5 multiples of 4 out of 20 pieces, or $\\frac{1}{4}$. Piece 40 meets the condition, and it is a multiple of 4."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided 6 by the 15 minor-key pieces. That gives $\\frac{6}{15} = \\frac{2}{5}$, which is the fraction of minor-key pieces numbered 40 or greater. That's the reverse question. The given group is the pieces numbered 40 or greater."
+   }
+  },
+  "id": "orig-conditional-bu-M-d52780",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

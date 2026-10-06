@@ -1,0 +1,181 @@
+[
+ {
+  "stem": "What is the value of $F$?",
+  "stimulus": "A civil engineer is designing a roundabout on a coordinate grid where each unit is 1 meter. The edge of the central island is modeled by the equation $x^2 + y^2 - 10x + 24y + 133 = 0$. The outer edge of the road around the island is a circle with the same center as the island. Its radius is twice the island's radius, and its equation is $x^2 + y^2 - 10x + 24y + F = 0$, where $F$ is a constant.",
+  "keys": [
+   "25"
+  ],
+  "any_of": false,
+  "explanation": "Group the x terms and the y terms, then complete the square on both. Half of \u221210 is \u22125, and (\u22125)\u00b2 = 25. Half of 24 is 12, and 12\u00b2 = 144. Add both to each side: $(x - 5)^2 + (y + 12)^2 = -133 + 25 + 144 = 36$. The center is (5, \u221212) and the radius is 6. The outer circle has the same center and radius 12, so $r^2 = 144$. Doubling the radius multiplies $r^2$ by 4, not by 2. The outer circle is $(x - 5)^2 + (y + 12)^2 = 144$. Expand it: $x^2 - 10x + 25 + y^2 + 24y + 144 = 144$, so $x^2 + y^2 - 10x + 24y + 25 = 0$. That makes $F = 25$. A quick shortcut: $F = h^2 + k^2 - r^2 = 25 + 144 - 144$.",
+  "common_errors": [
+   {
+    "value": "97",
+    "misconception": "algebra-manipulation",
+    "why": "Doubled r\u00b2 from 36 to 72 instead of multiplying it by 4, then got F = 169 \u2212 72."
+   },
+   {
+    "value": "-144",
+    "misconception": "algebra-manipulation",
+    "why": "Expanded the new circle but dropped the 25 + 144 that the center contributes, leaving F = \u2212r\u00b2."
+   },
+   {
+    "value": "144",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave r\u00b2 of the outer circle instead of the constant F."
+   },
+   {
+    "value": "12",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the outer circle's radius."
+   },
+   {
+    "value": "133",
+    "misconception": "missed-condition",
+    "why": "Kept the island's constant and ignored that the radius doubles."
+   }
+  ],
+  "id": "orig-complete-squar-H-2bd097",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the radius, in meters, of the circle?",
+  "stimulus": "In a sports science lab, the boundary of a circular agility-drill zone is modeled on a coordinate grid measured in meters by the equation $2x^2 + 2y^2 + 16x - 12y - 48 = 0$.",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "First divide every term by 2 so that $x^2$ and $y^2$ have coefficient 1: $x^2 + y^2 + 8x - 6y - 24 = 0$. Move the constant over: $x^2 + 8x + y^2 - 6y = 24$. Complete the square. Half of 8 is 4, and 4\u00b2 = 16. Half of \u22126 is \u22123, and (\u22123)\u00b2 = 9. Add both to each side: $(x + 4)^2 + (y - 3)^2 = 24 + 16 + 9 = 49$. The right side is $r^2$, so the radius is $\\sqrt{49} = 7$ meters.",
+  "common_errors": [
+   {
+    "value": "49",
+    "misconception": "wrong-target-quantity",
+    "why": "Read r\u00b2 as the radius."
+   },
+   {
+    "value": "14",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the diameter instead of the radius."
+   },
+   {
+    "value": "4.898",
+    "misconception": "algebra-manipulation",
+    "why": "Added 16 and 9 on the left side but not on the right, so took r\u00b2 = 24 and r = \u221a24 (truncated)."
+   },
+   {
+    "value": "4.899",
+    "misconception": "algebra-manipulation",
+    "why": "Same mistake: the completing-the-square constants were left off the right side, so r = \u221a24 (rounded)."
+   }
+  ],
+  "id": "orig-complete-squar-H-06bb47",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The outer circle intersects the line $y = 7$ at two points. What is the greater of the two x-coordinates of these points?",
+  "stimulus": "On an excavation site map where each unit is 1 meter, archaeologists outline a circular hearth ring with the equation $x^2 + y^2 - 18x - 14y + 114 = 0$. They mark off a protective zone bounded by an outer circle. The outer circle has the same center as the hearth ring, and its diameter is twice the diameter of the hearth ring.",
+  "keys": [
+   "17"
+  ],
+  "any_of": false,
+  "explanation": "Complete the square. Half of \u221218 is \u22129, and (\u22129)\u00b2 = 81. Half of \u221214 is \u22127, and (\u22127)\u00b2 = 49. Add both to each side: $(x - 9)^2 + (y - 7)^2 = -114 + 81 + 49 = 16$. The hearth ring has center (9, 7) and radius 4. Doubling the diameter doubles the radius, so the outer circle has radius 8: $(x - 9)^2 + (y - 7)^2 = 64$. The line $y = 7$ passes through the center, so it meets the outer circle 8 units left and right of it, at $x = 1$ and $x = 17$. The greater x-coordinate is 17.",
+  "common_errors": [
+   {
+    "value": "13",
+    "misconception": "missed-condition",
+    "why": "Used the hearth ring's radius of 4 and never doubled it."
+   },
+   {
+    "value": "25",
+    "misconception": "misread-given",
+    "why": "Took the outer diameter, 16, as the radius."
+   },
+   {
+    "value": "1",
+    "misconception": "complement-or-direction-flip",
+    "why": "Gave the smaller x-coordinate."
+   },
+   {
+    "value": "14.65",
+    "misconception": "algebra-manipulation",
+    "why": "Doubled r\u00b2 from 16 to 32 instead of multiplying by 4, so got 9 + \u221a32 (truncated)."
+   },
+   {
+    "value": "14.66",
+    "misconception": "algebra-manipulation",
+    "why": "Same mistake: doubled r\u00b2 instead of quadrupling it, so got 9 + \u221a32 (rounded)."
+   },
+   {
+    "value": "-1",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the signs and read the center as (\u22129, \u22127), so got \u22129 + 8."
+   }
+  ],
+  "id": "orig-complete-squar-H-81856b",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $c$?",
+  "stimulus": "An agricultural scientist maps the area watered by a center-pivot irrigation system on a coordinate grid where each unit is 10 meters. The edge of the watered area is modeled by $x^2 + y^2 + 6x + 10y + c = 0$, where $c$ is a constant. The circle is tangent to the x-axis.",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "Complete the square. Half of 6 is 3, and 3\u00b2 = 9. Half of 10 is 5, and 5\u00b2 = 25. Add both to each side: $(x + 3)^2 + (y + 5)^2 = 34 - c$. The center is (\u22123, \u22125). A circle that is tangent to the x-axis has a radius equal to the distance from its center to that axis, which is |\u22125| = 5. So $r^2 = 25$, which gives $34 - c = 25$ and $c = 9$.",
+  "common_errors": [
+   {
+    "value": "25",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the distance to the y-axis (3) as the radius, so got 34 \u2212 9. Setting c equal to r\u00b2 by mistake also gives 25."
+   },
+   {
+    "value": "29",
+    "misconception": "algebra-manipulation",
+    "why": "Set 34 \u2212 c equal to r = 5 instead of r\u00b2 = 25."
+   },
+   {
+    "value": "-25",
+    "misconception": "algebra-manipulation",
+    "why": "Did not add the completing-the-square constants to the right side, so took \u2212c = 25."
+   },
+   {
+    "value": "59",
+    "misconception": "algebra-manipulation",
+    "why": "Made a sign error moving c, writing r\u00b2 = c \u2212 34, so c = 34 + 25."
+   }
+  ],
+  "id": "orig-complete-squar-H-339190",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

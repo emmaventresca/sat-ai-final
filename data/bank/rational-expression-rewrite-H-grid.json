@@ -1,0 +1,166 @@
+[
+ {
+  "stem": "If $\\frac{6x^2 + 5x + 4}{2x + 3}$ is equivalent to $ax + b + \\frac{c}{2x + 3}$, where $a$, $b$, and $c$ are constants and $x > 0$, what is the value of $a + b + c$?",
+  "stimulus": "An astronomer models the ratio of a star's apparent brightness to a reference brightness with the expression $\\frac{6x^2 + 5x + 4}{2x + 3}$, where $x$ is a scaled observation time.",
+  "keys": [
+   "11"
+  ],
+  "any_of": false,
+  "explanation": "Write the numerator as a multiple of the divisor plus a remainder. Since $3x(2x + 3) = 6x^2 + 9x$, subtracting leaves $-4x + 4$. Since $-2(2x + 3) = -4x - 6$, subtracting leaves $4 - (-6) = 10$. So $6x^2 + 5x + 4 = (2x + 3)(3x - 2) + 10$, and the expression equals $3x - 2 + \\frac{10}{2x + 3}$. That makes $a = 3$, $b = -2$ and $c = 10$, so $a + b + c = 11$. To check, expand $(3x - 2)(2x + 3) + 10 = 6x^2 + 5x - 6 + 10 = 6x^2 + 5x + 4$.",
+  "common_errors": [
+   {
+    "value": "1",
+    "misconception": "intermediate-step",
+    "why": "You found the quotient $3x - 2$ but dropped the remainder. Then $a + b = 1$ with $c$ treated as 0."
+   },
+   {
+    "value": "12",
+    "misconception": "algebra-manipulation",
+    "why": "You used synthetic division with $-\\frac{3}{2}$ and got the row 6, \u22124, 10, but did not divide the quotient by 2. That reads as $a = 6$, $b = -4$, $c = 10$."
+   },
+   {
+    "value": "-1",
+    "misconception": "algebra-manipulation",
+    "why": "You made a sign slip in the last subtraction and computed $4 - 6 = -2$ instead of $4 - (-6) = 10$. That gives $3 - 2 - 2$."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "You substituted $x = 1$ into the original expression, $\\frac{15}{5} = 3$, and assumed this equals $a + b + c$. At $x = 1$ the remainder term is $\\frac{c}{5}$, not $c$."
+   }
+  ],
+  "id": "orig-rational-expre-H-ff31c2",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The expression $\\frac{4}{x - 3} - \\frac{3}{x + 5}$, where $x > 3$, is equivalent to $\\frac{ax + b}{x^2 + 2x - 15}$, where $a$ and $b$ are constants. What is the value of $b$?",
+  "stimulus": "A hydrologist combines two drainage-rate terms for a pair of connected wetland basins into a single expression, $\\frac{4}{x - 3} - \\frac{3}{x + 5}$, where $x$ is a scaled water depth.",
+  "keys": [
+   "29"
+  ],
+  "any_of": false,
+  "explanation": "Factor the target denominator: $x^2 + 2x - 15 = (x - 3)(x + 5)$, which is the common denominator. Rewrite each fraction over it: $\\frac{4(x + 5)}{(x - 3)(x + 5)} - \\frac{3(x - 3)}{(x - 3)(x + 5)}$. Combine the numerators and distribute the subtraction to every term: $4x + 20 - 3x + 9 = x + 29$. So $a = 1$ and $b = 29$.",
+  "common_errors": [
+   {
+    "value": "11",
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted only the first term of $3(x - 3)$ and wrote $4x + 20 - 3x - 9 = x + 11$."
+   },
+   {
+    "value": "-27",
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied each numerator by its own denominator instead of the other one: $4(x - 3) - 3(x + 5) = x - 27$."
+   },
+   {
+    "value": "1",
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the numerators straight across ($4 - 3 = 1$) and put the result over the product of the denominators, which gives $\\frac{1}{x^2 + 2x - 15}$."
+   },
+   {
+    "value": "29x",
+    "misconception": "wrong-target-quantity",
+    "why": "You entered a term that contains the variable. The answer box needs the constant $b$ alone, which is 29."
+   }
+  ],
+  "id": "orig-rational-expre-H-38fd28",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "For $x > 5$, the expression $\\frac{2x^2 + 7x - 15}{x^2 - 25}$ is equivalent to $2 + \\frac{c}{x - 5}$, where $c$ is a constant. What is the value of $c$?",
+  "stimulus": "A paleobotanist compares the leaf-margin measurements of fossil leaves from two rock layers using the ratio $\\frac{2x^2 + 7x - 15}{x^2 - 25}$, where $x$ is a scaled layer depth.",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "Factor the numerator and the denominator: $2x^2 + 7x - 15 = (2x - 3)(x + 5)$ and $x^2 - 25 = (x + 5)(x - 5)$. Cancel the shared factor $(x + 5)$ to get $\\frac{2x - 3}{x - 5}$. Then rewrite the numerator as a multiple of the denominator: $2x - 3 = 2(x - 5) + 7$. So the expression equals $2 + \\frac{7}{x - 5}$, and $c = 7$.",
+  "common_errors": [
+   {
+    "value": "-13",
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $2x - 3 = 2(x - 5) + c$ and solved it as $c = -3 - 10$. The correct step is $c = -3 + 10$."
+   },
+   {
+    "value": "35",
+    "misconception": "intermediate-step",
+    "why": "You divided the original expression straight away and got $2 + \\frac{7x + 35}{x^2 - 25}$, then took 35 from that numerator. You never cancelled the shared factor $(x + 5)$, which leaves $\\frac{7}{x - 5}$."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "You entered the whole-number part of the rewritten expression, not the remainder numerator $c$."
+   },
+   {
+    "value": "-3",
+    "misconception": "intermediate-step",
+    "why": "You stopped at $\\frac{2x - 3}{x - 5}$ and entered the numerator's constant term without rewriting it in the form $2 + \\frac{c}{x - 5}$."
+   }
+  ],
+  "id": "orig-rational-expre-H-420b63",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The expression $\\frac{6x^2 - 5x + k}{2x - 3}$ is equivalent to $3x + 2 + \\frac{13}{2x - 3}$ for $x > 2$, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "A musicologist models how the length of a repeated rhythmic phrase changes with tempo using the expression $\\frac{6x^2 - 5x + k}{2x - 3}$, where $x$ is a scaled tempo setting.",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "Multiply both forms by $2x - 3$. That gives $6x^2 - 5x + k = (3x + 2)(2x - 3) + 13$. Expand the product: $(3x + 2)(2x - 3) = 6x^2 - 9x + 4x - 6 = 6x^2 - 5x - 6$. Add the remainder: $6x^2 - 5x - 6 + 13 = 6x^2 - 5x + 7$. Match the constant terms to get $k = 7$.",
+  "common_errors": [
+   {
+    "value": "-6",
+    "misconception": "algebra-manipulation",
+    "why": "You expanded $(3x + 2)(2x - 3)$ but forgot to add the remainder 13 back into the numerator."
+   },
+   {
+    "value": "19",
+    "misconception": "algebra-manipulation",
+    "why": "You made a sign error in the product's constant term and used $+6$ instead of $2 \\cdot (-3) = -6$. That gives $6 + 13$."
+   },
+   {
+    "value": "-19",
+    "misconception": "complement-or-direction-flip",
+    "why": "You subtracted the remainder instead of adding it: $-6 - 13$."
+   },
+   {
+    "value": "13",
+    "misconception": "wrong-target-quantity",
+    "why": "You assumed the remainder is the constant term of the numerator and ignored the $-6$ that comes from expanding the quotient times the divisor."
+   }
+  ],
+  "id": "orig-rational-expre-H-489e33",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

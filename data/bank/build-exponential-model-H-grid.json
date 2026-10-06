@@ -1,0 +1,177 @@
+[
+ {
+  "stem": "If $V(t) = a \\cdot b^{t}$ models the number of recorded variants $t$ years after 1950, where $a$ and $b$ are positive constants, what is the value of $a$?",
+  "stimulus": "A folklore archive tracks how many written variants of a regional trickster tale have been collected. The number of variants grows exponentially. The table shows the number of variants, $V(t)$, recorded $t$ years after 1950 for two values of $t$.\n\nRecorded Variants of the Trickster Tale\n$t$ (years after 1950) | $V(t)$\n2 | 72\n4 | 162",
+  "keys": [
+   "32"
+  ],
+  "any_of": false,
+  "explanation": "In an exponential model, equal steps in $t$ multiply the output by the same factor. Going from $t = 2$ to $t = 4$ multiplies the count by $\\frac{162}{72} = 2.25$. That is two years of growth, so $b^2 = 2.25$ and $b = 1.5$. The table has no row for $t = 0$, so you have to work back to it. To get from $t = 2$ back to $t = 0$, divide by $b$ twice: $a = \\frac{72}{1.5^2} = \\frac{72}{2.25} = 32$. To check, $32(1.5)^4 = 32(5.0625) = 162$.",
+  "common_errors": [
+   {
+    "value": "72",
+    "misconception": "misread-given",
+    "why": "You took the first table row as the starting amount, but that row is $t = 2$, not $t = 0$."
+   },
+   {
+    "value": "48",
+    "misconception": "algebra-manipulation",
+    "why": "You found $b = 1.5$ but divided 72 by 1.5 only once. Going from $t = 2$ back to $t = 0$ takes two steps."
+   },
+   {
+    "value": "-18",
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated the growth as linear, adding 45 per year, and extrapolated back: $72 - 2(45) = -18$."
+   },
+   {
+    "value": "1.5",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the growth factor $b$ instead of the starting value $a$."
+   },
+   {
+    "value": "2.25",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the two-year ratio, which is $b^2$, instead of $a$."
+   }
+  ],
+  "id": "orig-build-exponent-H-8d2cc7",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the conservator's estimate, what will the saturation reading of the dye be 75 years after the measurement?",
+  "stimulus": "A conservator studying a seventeenth-century wool tapestry measures the saturation of its madder-red dye at 250 units. Based on samples of similar textiles, the conservator estimates that the dye loses 20% of its remaining saturation every 25 years.",
+  "keys": [
+   "128"
+  ],
+  "any_of": false,
+  "explanation": "Losing 20% each step means keeping 80%, so the growth factor is $1 - 0.20 = 0.8$. Each step is 25 years, so divide the exponent by 25: $S(t) = 250(0.8)^{t/25}$. When $t = 75$, the exponent is $\\frac{75}{25} = 3$. So $S(75) = 250(0.8)^3 = 250(0.512) = 128$.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "You used 0.2 as the factor instead of 0.8: $250(0.2)^3 = 2$."
+   },
+   {
+    "value": "100",
+    "misconception": "graph-feature-mismatch",
+    "why": "You used a linear model and subtracted 20% of the original amount (50 units) three times: $250 - 150 = 100$."
+   },
+   {
+    "value": "122",
+    "misconception": "complement-or-direction-flip",
+    "why": "You gave the saturation lost, $250 - 128$, instead of the saturation remaining."
+   },
+   {
+    "value": "200",
+    "misconception": "intermediate-step",
+    "why": "You stopped after one 25-year step: $250(0.8) = 200$."
+   },
+   {
+    "value": "160",
+    "misconception": "intermediate-step",
+    "why": "You stopped after two 25-year steps: $250(0.8)^2 = 160$."
+   }
+  ],
+  "id": "orig-build-exponent-H-9b423f",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "Based on this information, approximately how many years ago did the plant die?",
+  "stimulus": "A paleobotanist dates a fossilized seed from an ancient lakebed. Carbon-14 decays so that the amount remaining is cut in half every 5,730 years. Tests show that the seed now contains 12.5% of the carbon-14 it contained when the plant died.",
+  "keys": [
+   "17190"
+  ],
+  "any_of": false,
+  "explanation": "Model the fraction remaining as $(0.5)^{t/5730}$, where $t$ is the number of years since the plant died. Set it equal to 12.5%: $(0.5)^{t/5730} = 0.125$. Because $0.125 = (0.5)^3$, the exponent must be 3, so $\\frac{t}{5730} = 3$ and $t = 17{,}190$ years. The question asks for years, not for the number of halvings.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "intermediate-step",
+    "why": "You found the number of half-lives but didn't convert it to years."
+   },
+   {
+    "value": "10027.5",
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated the decay as linear, losing 50 percentage points per 5,730 years, so a loss of 87.5 points takes $1.75 \\times 5730$ years."
+   },
+   {
+    "value": "45840",
+    "misconception": "algebra-manipulation",
+    "why": "You read 12.5% as $\\frac{1}{8}$ and multiplied 5,730 by 8 instead of by the 3 halvings it takes to reach $\\frac{1}{8}$."
+   },
+   {
+    "value": "11460",
+    "misconception": "algebra-manipulation",
+    "why": "You counted only two halvings, which leaves 25%, not 12.5%."
+   }
+  ],
+  "id": "orig-build-exponent-H-b441df",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "Archaeologists studying household remains at an ancient river settlement estimate that its population grew by 44% every 50 years during its period of expansion. They model the population with the function $P(t) = 3{,}000 \\cdot b^{t/25}$, where $t$ is the number of years since the start of the expansion and $b$ is a positive constant.",
+  "keys": [
+   "1.2",
+   "6/5"
+  ],
+  "any_of": false,
+  "explanation": "Growing by 44% every 50 years means the population is multiplied by 1.44 every 50 years. In this model the exponent is $\\frac{t}{25}$, so 50 years makes the exponent 2. That gives $b^2 = 1.44$, and since $b$ is positive, $b = 1.2$. So the population grows 20% every 25 years, and two of those steps compound to 44%: $1.2 \\times 1.2 = 1.44$.",
+  "common_errors": [
+   {
+    "value": "1.44",
+    "misconception": "missed-condition",
+    "why": "You used the 50-year factor directly, ignoring that the exponent counts 25-year steps, not 50-year steps."
+   },
+   {
+    "value": "1.22",
+    "misconception": "algebra-manipulation",
+    "why": "You halved the percent (44% \u00f7 2 = 22%) instead of taking the square root of the factor. Percent growth compounds; it doesn't divide evenly."
+   },
+   {
+    "value": "0.44",
+    "misconception": "algebra-manipulation",
+    "why": "You used the rate 0.44 instead of the factor $1 + 0.44$, and also ignored the 25-year step."
+   },
+   {
+    "value": "0.2",
+    "misconception": "algebra-manipulation",
+    "why": "You found the 25-year rate correctly but gave $r$ instead of the factor $1 + r$."
+   }
+  ],
+  "id": "orig-build-exponent-H-38ac28",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

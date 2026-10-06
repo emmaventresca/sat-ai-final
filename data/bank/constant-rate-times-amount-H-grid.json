@@ -1,0 +1,166 @@
+[
+ {
+  "stem": "What is the least number of whole working days the cartographer needs to digitize all 100 sheets?",
+  "stimulus": "A cartographer is digitizing a collection of 100 paper survey map sheets. Working at a constant rate, she completes 1 sheet every 40 minutes. She works 6 hours per day and only on whole working days.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "Put the rate into the units the question needs. 6 hours per day \u00d7 60 minutes per hour = 360 minutes per day. At 1 sheet per 40 minutes, that is 360 \u00f7 40 = 9 sheets per day. The number of days is the total divided by the rate: 100 sheets \u00f7 9 sheets per day \u2248 11.11 days. After 11 days she has finished only 99 sheets, so she needs a 12th day. Here you have to round up, because 11 days leaves the job unfinished.",
+  "common_errors": [
+   {
+    "value": "11",
+    "misconception": "missed-condition",
+    "why": "Computes 100 \u00f7 9 \u2248 11.11 and rounds down. That leaves 1 sheet undone."
+   },
+   {
+    "value": "11.11",
+    "misconception": "intermediate-step",
+    "why": "Stops at 100 \u00f7 9 and does not turn it into a whole number of working days."
+   },
+   {
+    "value": "66.67",
+    "misconception": "wrong-target-quantity",
+    "why": "Computes 100 \u00d7 40 = 4000 minutes, then \u00f7 60 \u2248 66.67 hours, and gives the total hours instead of days."
+   },
+   {
+    "value": "1",
+    "misconception": "misread-given",
+    "why": "Reads '1 sheet every 40 minutes' as 40 sheets per hour. That gives 240 sheets per day, so 100 \u00f7 240 rounds up to 1 day."
+   }
+  ],
+  "id": "orig-constant-rate--H-7fc427",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the maximum number of complete hours of continuous recording the memory card can hold?",
+  "stimulus": "A field seismometer takes 40 ground-motion readings per second, and it stores each reading as 3 bytes of data. It saves the readings to a memory card with a capacity of 36 megabytes, where 1 megabyte = 1,000,000 bytes. The card starts empty.",
+  "keys": [
+   "83"
+  ],
+  "any_of": false,
+  "explanation": "Build the rate with units: 40 readings/second \u00d7 3 bytes/reading \u00d7 3600 seconds/hour = 432,000 bytes per hour. The card holds 36 \u00d7 1,000,000 = 36,000,000 bytes. Hours = total \u00f7 rate = 36,000,000 \u00f7 432,000 \u2248 83.33 hours. The question asks for complete hours the card can hold, so round down to 83. An 84th full hour would need more space than the card has.",
+  "common_errors": [
+   {
+    "value": "84",
+    "misconception": "missed-condition",
+    "why": "Rounds 83.33 up. The card fills partway through the 84th hour, so that hour is not complete."
+   },
+   {
+    "value": "83.33",
+    "misconception": "intermediate-step",
+    "why": "Gives the unrounded quotient and ignores 'complete hours'."
+   },
+   {
+    "value": "5000",
+    "misconception": "algebra-manipulation",
+    "why": "Converts seconds to hours with \u00d760 instead of \u00d73600: 40 \u00d7 3 \u00d7 60 = 7200 bytes per hour, and 36,000,000 \u00f7 7200 = 5000."
+   },
+   {
+    "value": "300000",
+    "misconception": "intermediate-step",
+    "why": "Computes 36,000,000 \u00f7 120 bytes per second = 300,000 seconds and does not convert to hours."
+   }
+  ],
+  "id": "orig-constant-rate--H-fc143d",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "How many more seconds does Storyteller Q take to tell the tale than Storyteller P?",
+  "stimulus": "A folklore studies team records two storytellers performing the same traditional tale, which is 5,400 words long. Storyteller P speaks at a constant rate of 150 words per minute. Storyteller Q speaks at a constant rate of 120 words per minute.",
+  "keys": [
+   "540"
+  ],
+  "any_of": false,
+  "explanation": "Time = words \u00f7 rate. P takes 5400 words \u00f7 150 words/minute = 36 minutes. Q takes 5400 \u00f7 120 = 45 minutes. The difference is 45 \u2212 36 = 9 minutes. The question asks for seconds: 9 minutes \u00d7 60 seconds/minute = 540 seconds.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "intermediate-step",
+    "why": "Finds the difference in minutes and does not convert to seconds."
+   },
+   {
+    "value": "2700",
+    "misconception": "intermediate-step",
+    "why": "Converts Storyteller Q's total time (45 minutes = 2700 seconds) and stops before taking the difference."
+   },
+   {
+    "value": "2160",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives Storyteller P's total time in seconds (36 \u00d7 60) instead of the difference."
+   },
+   {
+    "value": "180",
+    "misconception": "algebra-manipulation",
+    "why": "Divides the words by the difference in rates, 5400 \u00f7 (150 \u2212 120) = 180, which is not the difference in times."
+   }
+  ],
+  "id": "orig-constant-rate--H-c0cc58",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "How many euros does the worker's family receive?",
+  "stimulus": "A seasonal farm worker earns $18 per hour and works 35 hours per week for 6 weeks. At the end of the season, the worker sends all of these earnings to family abroad through a transfer service. The service converts dollars to euros at a rate of 1 euro = 1.20 dollars, then deducts a flat fee of 45 euros. There are no other deductions.",
+  "keys": [
+   "3105"
+  ],
+  "any_of": false,
+  "explanation": "Total earnings = $18/hour \u00d7 35 hours/week \u00d7 6 weeks = $3780. To convert, multiply by (1 euro / 1.20 dollars) so the dollars cancel: 3780 \u00f7 1.20 = 3150 euros. Then take off the fee: 3150 \u2212 45 = 3105 euros. Check the units on the conversion. Multiplying by 1.20 would leave dollars\u00b2/euro, which tells you the setup is wrong.",
+  "common_errors": [
+   {
+    "value": "3150",
+    "misconception": "intermediate-step",
+    "why": "Converts to euros correctly but forgets to subtract the 45-euro fee."
+   },
+   {
+    "value": "4491",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplies by 1.20 instead of dividing: 3780 \u00d7 1.20 = 4536, then 4536 \u2212 45 = 4491."
+   },
+   {
+    "value": "3735",
+    "misconception": "intermediate-step",
+    "why": "Subtracts the fee from the dollar total (3780 \u2212 45) and never converts to euros."
+   },
+   {
+    "value": "3780",
+    "misconception": "intermediate-step",
+    "why": "Gives total earnings in dollars, before the conversion and the fee."
+   }
+  ],
+  "id": "orig-constant-rate--H-c9bd69",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

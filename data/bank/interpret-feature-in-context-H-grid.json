@@ -1,0 +1,166 @@
+[
+ {
+  "stem": "According to the model, the median hourly wage in the region increases by $p\\%$ each year. What is the value of $p$?",
+  "stimulus": "A labour economist models the median hourly wage $W$, in dollars, for warehouse workers in a region $t$ years after 2015 with the function $W(t) = 22(1.21)^{t/2}$.",
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "The base 1.21 is the growth factor for every 2 years, not for every year, because the exponent is $t/2$. To get the factor for one year, rewrite the model as $W(t) = 22\\left(1.21^{1/2}\\right)^{t} = 22(1.1)^{t}$. A factor of 1.1 per year means the wage is multiplied by 1.1 each year, so it grows by 10% each year. That makes $p = 10$.",
+  "common_errors": [
+   {
+    "value": "21",
+    "misconception": "missed-condition",
+    "why": "You read the 21% increase from the base 1.21 but did not notice that the exponent $t/2$ makes it the increase over 2 years, not 1."
+   },
+   {
+    "value": "10.5",
+    "misconception": "algebra-manipulation",
+    "why": "You split the 2-year 21% increase evenly as $21 \\div 2$. Percent growth compounds, so the yearly factor is $\\sqrt{1.21} = 1.1$, not a factor that adds 10.5% each year."
+   },
+   {
+    "value": "1.21",
+    "misconception": "wrong-target-quantity",
+    "why": "You entered the growth factor as if it were the percent increase, which is the trap of treating the base as the amount of change."
+   },
+   {
+    "value": "22",
+    "misconception": "wrong-target-quantity",
+    "why": "You entered the 2015 starting wage, the initial value, instead of the growth rate."
+   }
+  ],
+  "id": "orig-interpret-feat-H-95bc27",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the model, how many dollars per acre greater is the maximum net return than the net return when no nitrogen fertilizer is applied?",
+  "stimulus": "An agronomist models the net return $R$, in dollars per acre, from a wheat field when $n$ pounds of nitrogen fertilizer per acre are applied with the function $R(n) = -0.04n^2 + 9.6n - 216$, for $0 \\le n \\le 240$.",
+  "keys": [
+   "576"
+  ],
+  "any_of": false,
+  "explanation": "This question involves two features of the model. 'No nitrogen applied' means $n = 0$, so $R(0) = -216$. The net return is negative because the field loses money. 'Maximum net return' is the vertex. Its $n$-coordinate is $n = -\\frac{9.6}{2(-0.04)} = 120$, and $R(120) = -0.04(14400) + 9.6(120) - 216 = -576 + 1152 - 216 = 360$. The difference is $360 - (-216) = 576$.",
+  "common_errors": [
+   {
+    "value": "360",
+    "misconception": "intermediate-step",
+    "why": "You found the maximum net return and stopped without comparing it with the return at $n = 0$."
+   },
+   {
+    "value": "144",
+    "misconception": "algebra-manipulation",
+    "why": "You calculated $360 - 216$ and dropped the negative sign on $R(0) = -216$."
+   },
+   {
+    "value": "120",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the vertex's input, the amount of fertilizer, instead of a net return in dollars."
+   },
+   {
+    "value": "216",
+    "misconception": "wrong-target-quantity",
+    "why": "You read the constant as the answer. It only describes the return at $n = 0$, as a loss, and does not answer the comparison."
+   }
+  ],
+  "id": "orig-interpret-feat-H-c81cc6",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the model, what was the temperature, in degrees Celsius, of the rod at the moment it was removed from the furnace?",
+  "stimulus": "A materials scientist removes a titanium alloy rod from a furnace and lets it cool in a lab. The temperature $T$ of the rod, in degrees Celsius, $m$ minutes after it is removed from the furnace is modeled by $T(m) = 20 + 480(0.5)^{m/12}$.",
+  "keys": [
+   "500"
+  ],
+  "any_of": false,
+  "explanation": "The moment the rod is removed is $m = 0$, so you need $T(0)$. Because $(0.5)^{0} = 1$, $T(0) = 20 + 480(1) = 500$. The 480 is not the starting temperature. It is how far the starting temperature is above 20\u00b0C, the room temperature that the rod approaches as it cools.",
+  "common_errors": [
+   {
+    "value": "480",
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the coefficient of the exponential as the starting value, as you could in $y = ab^x$, and missed the added 20 that raises the intercept."
+   },
+   {
+    "value": "20",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the room temperature the rod approaches over time, not its temperature at $m = 0$."
+   },
+   {
+    "value": "260",
+    "misconception": "wrong-target-quantity",
+    "why": "You calculated the temperature after 12 minutes, $20 + 480(0.5)$, which is one halving period and not the moment of removal."
+   },
+   {
+    "value": "250",
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $20 + 480$ by 0.5, as though $(0.5)^0$ were 0.5 instead of 1."
+   }
+  ],
+  "id": "orig-interpret-feat-H-c18dd2",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the model, each time $n$ increases by $d$, the frequency doubles. What is the value of $d$?",
+  "stimulus": "A musicologist studying tuning systems models the frequency $f$, in hertz, of the note that is $n$ semitones above a reference pitch with the function $f(n) = 110 \\cdot 4^{n/24}$.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "As written, the model shows that the frequency is multiplied by 4 every 24 semitones, but the question asks about doubling. Rewrite the base using $4 = 2^2$: $4^{n/24} = 2^{2n/24} = 2^{n/12}$. So $f(n) = 110 \\cdot 2^{n/12}$, and the frequency doubles each time $n$ increases by 12. That is the octave.",
+  "common_errors": [
+   {
+    "value": "24",
+    "misconception": "missed-condition",
+    "why": "You read the 24 in the exponent as the doubling interval, but the base is 4, so 24 semitones quadruple the frequency."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "You divided 24 by 4 instead of working out how many semitones produce a factor of 2."
+   },
+   {
+    "value": "48",
+    "misconception": "complement-or-direction-flip",
+    "why": "You went the wrong way, doubling the interval instead of halving it, as if a factor of 2 needed more steps than a factor of 4."
+   },
+   {
+    "value": "220",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the doubled frequency, $2 \\times 110$ Hz, instead of the number of semitones needed to reach it."
+   }
+  ],
+  "id": "orig-interpret-feat-H-a61fec",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

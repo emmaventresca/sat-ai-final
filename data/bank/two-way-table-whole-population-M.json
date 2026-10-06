@@ -1,0 +1,182 @@
+[
+ {
+  "stem": "If one of these words is selected at random, what is the probability of selecting a word of Latin origin that has at least 2 syllables?",
+  "stimulus": "A linguist classified 200 English words from a corpus by language of origin and by number of syllables. The results are shown in the table.\n\nWords by Origin and Number of Syllables\nOrigin | 1 syllable | 2 syllables | 3 or more syllables | Total\nGermanic | 46 | 30 | 4 | 80\nLatin | 8 | 34 | 38 | 80\nGreek | 2 | 14 | 24 | 40\nTotal | 56 | 78 | 66 | 200",
+  "choices": [
+   "$\\frac{19}{100}$",
+   "$\\frac{9}{25}$",
+   "$\\frac{18}{25}$",
+   "$\\frac{9}{10}$"
+  ],
+  "answer": "B",
+  "explanation": "The word is chosen from all 200 words, so the denominator is the grand total, 200. \"At least 2 syllables\" means the 2-syllable and 3-or-more-syllable columns together. In the Latin row that is $34 + 38 = 72$. The probability is $\\frac{72}{200} = \\frac{9}{25}$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You counted only the 3-or-more-syllable Latin words, $\\frac{38}{200}$. \"At least 2\" includes words with exactly 2 syllables too."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You added the 2-syllable and 3-or-more-syllable column totals, $\\frac{78 + 66}{200}$. That counts words of every origin, but the question asks only about Latin words."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the right count by the Latin row total, $\\frac{72}{80}$. That answers \"given that the word is Latin,\" but the word is chosen from all 200."
+   }
+  },
+  "id": "orig-two-way-table--M-e1d5f3",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If one of these residents is selected at random, what is the probability of selecting a resident who is 35 years or older and did not receive the flu vaccine?",
+  "stimulus": "A county health department surveyed residents about whether they received a flu vaccine last season. The results, by age group, are shown in the table.\n\nFlu Vaccination by Age Group\nAge group | Received vaccine | Did not receive vaccine\n18\u201334 | 42 | 78\n35\u201354 | 66 | 54\n55 and older | 96 | 24",
+  "choices": [
+   "$\\frac{13}{60}$",
+   "$\\frac{13}{40}$",
+   "$\\frac{9}{20}$",
+   "$\\frac{1}{2}$"
+  ],
+  "answer": "A",
+  "explanation": "The table has no totals, so first add all six cells to get everyone surveyed: $42 + 78 + 66 + 54 + 96 + 24 = 360$. Residents 35 or older who did not receive the vaccine are in two cells: $54 + 24 = 78$. The probability is $\\frac{78}{360} = \\frac{13}{60}$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by only the residents 35 or older, $\\frac{78}{240}$. That answers a \"given that\" question, but the resident is chosen from all 360."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You counted residents 35 or older who did receive the vaccine, $\\frac{66 + 96}{360}$. That is the opposite column."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by the total of the \"did not receive\" column, $\\frac{78}{156}$. That answers \"of those who were not vaccinated,\" which is a conditional question nobody asked."
+   }
+  },
+  "id": "orig-two-way-table--M-afc6b0",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If one of these specimens is selected at random, what is the probability of selecting a titanium specimen that did not crack?",
+  "stimulus": "Engineers put metal specimens through a repeated-bending fatigue test and recorded whether each specimen cracked. The results are shown in the table.\n\nFatigue Test Results by Alloy\nAlloy | Cracked | Did not crack | Total\nAluminum | 12 | 48 | 60\nTitanium | 6 | 84 | 90\nSteel | 18 | 132 | 150\nTotal | 36 | 264 | 300",
+  "choices": [
+   "$\\frac{1}{50}$",
+   "$\\frac{7}{25}$",
+   "$\\frac{7}{22}$",
+   "$\\frac{14}{15}$"
+  ],
+  "answer": "B",
+  "explanation": "No condition narrows the group, so the denominator is the grand total, 300. The titanium row and the \"did not crack\" column meet at 84. The probability is $\\frac{84}{300} = \\frac{7}{25}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the titanium specimens that cracked, $\\frac{6}{300}$. The question asks for the ones that did not crack."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by the \"did not crack\" column total, $\\frac{84}{264}$. That answers \"of the specimens that did not crack, what fraction are titanium,\" which is a different question."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by the titanium row total, $\\frac{84}{90}$. That treats the question as \"given that it is titanium,\" but the specimen is chosen from all 300."
+   }
+  },
+  "id": "orig-two-way-table--M-daa374",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If one of these artifacts is selected at random, what is the probability of selecting a bone artifact from either Layer II or Layer III?",
+  "stimulus": "Archaeologists recorded the material and the soil layer of every artifact recovered from one excavation trench. The results are shown in the table.\n\nArtifacts by Soil Layer and Material\nLayer | Ceramic | Bone | Stone | Total\nLayer I | 24 | 10 | 6 | 40\nLayer II | 30 | 18 | 12 | 60\nLayer III | 46 | 32 | 22 | 100\nTotal | 100 | 60 | 40 | 200",
+  "choices": [
+   "$\\frac{1}{20}$",
+   "$\\frac{1}{4}$",
+   "$\\frac{5}{16}$",
+   "$\\frac{5}{6}$"
+  ],
+  "answer": "B",
+  "explanation": "The artifact is chosen from all 200, so the denominator is 200. The bone artifacts in Layers II and III add to $18 + 32 = 50$. The probability is $\\frac{50}{200} = \\frac{1}{4}$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You read the neighbouring Layer I bone cell, $\\frac{10}{200}$. Those are the bone artifacts the question leaves out."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by only the Layer II and Layer III artifacts, $\\frac{50}{160}$. That answers a \"given that\" question, but the artifact is chosen from all 200."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by the bone column total, $\\frac{50}{60}$. That answers \"of the bone artifacts, what fraction come from Layers II and III.\" That denominator belongs to a different question."
+   }
+  },
+  "id": "orig-two-way-table--M-ac8dfb",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If one of these households is selected at random, what is the probability of selecting a household in Old Town that does not drive to work?",
+  "stimulus": "A city planning office surveyed households in three neighborhoods about how the main earner usually commutes to work. The results are shown in the table.\n\nUsual Commute Mode by Neighborhood\nNeighborhood | Drives | Public transit | Walks or bikes | Total\nRiverside | 54 | 30 | 16 | 100\nHillcrest | 76 | 18 | 6 | 100\nOld Town | 30 | 42 | 28 | 100\nTotal | 160 | 90 | 50 | 300",
+  "choices": [
+   "$\\frac{1}{10}$",
+   "$\\frac{7}{30}$",
+   "$\\frac{1}{2}$",
+   "$\\frac{7}{10}$"
+  ],
+  "answer": "B",
+  "explanation": "The household is chosen from all 300, so the denominator is 300. In Old Town, the households that do not drive are those that use public transit or walk or bike: $42 + 28 = 70$. The probability is $\\frac{70}{300} = \\frac{7}{30}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the Old Town households that do drive, $\\frac{30}{300}$. That is the opposite of \"does not drive.\""
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by every household that does not drive, $\\frac{70}{90 + 50}$. That answers \"of the households that don't drive, what fraction are in Old Town,\" which is a conditional question nobody asked."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by the Old Town row total, $\\frac{70}{100}$. That treats the question as \"given that the household is in Old Town,\" but the household is chosen from all 300."
+   }
+  },
+  "id": "orig-two-way-table--M-235e99",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

@@ -1,0 +1,152 @@
+[
+ {
+  "stem": "The expression $4x^2 - 24x + 41$ can be written in the form $a(x - h)^2 + k$, where $a$, $h$, and $k$ are constants. What is the value of $h + k$?",
+  "stimulus": "A printmaker estimates the cost, in dollars, of the ink and paper for a square linocut print with a side length of $x$ inches using the expression $4x^2 - 24x + 41$.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "First take the 4 out of the x-terms only: $4(x^2 - 6x) + 41$. Halve the $-6$ to get $-3$ and square it to get 9. Adding 9 inside the brackets really adds $4 \\cdot 9 = 36$, so subtract 36 outside: $4(x^2 - 6x + 9) + 41 - 36 = 4(x - 3)^2 + 5$. Compare this with $a(x - h)^2 + k$. Because the form already has a minus sign, $h = 3$, not $-3$. Also $k = 5$, so $h + k = 8$. To check with Desmos, graph $y = 4x^2 - 24x + 41$ and click the vertex. It is at $(3, 5)$.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "graph-feature-mismatch",
+    "why": "You read $(x - 3)^2$ as $h = -3$, which puts the vertex on the wrong side of the y-axis. Then $-3 + 5 = 2$."
+   },
+   {
+    "value": "35",
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted 9 instead of $4 \\cdot 9 = 36$ to balance the completed square, which gives $k = 41 - 9 = 32$. Then $3 + 32 = 35$."
+   },
+   {
+    "value": "80",
+    "misconception": "algebra-manipulation",
+    "why": "You added the 36 to the constant instead of subtracting it, which gives $k = 77$. Then $3 + 77 = 80$."
+   }
+  ],
+  "id": "orig-factor-special-H-1988e3",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "If $9x^4 - 37x^2 + 4 = (px + 1)(px - 1)(x + q)(x - q)$ for all values of $x$, where $p$ and $q$ are positive constants, what is the value of $p + q$?",
+  "stimulus": "A marine biologist uses the expression $9x^4 - 37x^2 + 4$ in a model of how the density of plankton changes with water depth.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "This expression has only even powers, so let $u = x^2$. It becomes $9u^2 - 37u + 4$. You need two numbers that multiply to $9 \\cdot 4 = 36$ and add to $-37$. These are $-36$ and $-1$, so the expression factors as $(9u - 1)(u - 4)$. Put $x^2$ back in place of $u$: $(9x^2 - 1)(x^2 - 4)$. Each bracket is a difference of squares. Note that $9x^2 = (3x)^2$. This gives $(3x + 1)(3x - 1)(x + 2)(x - 2)$, so $p = 3$ and $q = 2$, and $p + q = 5$. To check, expand $(9x^2 - 1)(x^2 - 4) = 9x^4 - 37x^2 + 4$.",
+  "common_errors": [
+   {
+    "value": "11",
+    "misconception": "algebra-manipulation",
+    "why": "You did not take the square root of the coefficient. You treated $9x^2 - 1$ as $(9x + 1)(9x - 1)$, which gives $p = 9$. Then $9 + 2 = 11$."
+   },
+   {
+    "value": "7",
+    "misconception": "intermediate-step",
+    "why": "You stopped at the quadratic in $u$ and took $q = 4$ from $u = 4$ without taking the square root. Then $3 + 4 = 7$."
+   },
+   {
+    "value": "13",
+    "misconception": "intermediate-step",
+    "why": "You read both constants straight from $(9u - 1)(u - 4)$ without going back to $x$, so $p = 9$ and $q = 4$. Then $9 + 4 = 13$."
+   }
+  ],
+  "id": "orig-factor-special-H-eed1b7",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The expression $49t^2 + 84t + 36 - 16s^2$ can be written as $(mt + ns + p)(mt - ns + p)$, where $m$, $n$, and $p$ are positive constants. What is the value of $m + n + p$?",
+  "stimulus": "In a sports science lab, a researcher models a sprinter's training load using the expression $49t^2 + 84t + 36 - 16s^2$, where $t$ is the session length and $s$ is the recovery score.",
+  "keys": [
+   "17"
+  ],
+  "any_of": false,
+  "explanation": "Look at the first three terms. $49t^2 = (7t)^2$ and $36 = 6^2$. The middle term is $2 \\cdot 7t \\cdot 6 = 84t$, so these three terms are a perfect square, $(7t + 6)^2$. The whole expression is then $(7t + 6)^2 - (4s)^2$. That is a difference of squares, so it factors as $(7t + 6 + 4s)(7t + 6 - 4s)$. Match this to the given form: $m = 7$, $n = 4$, and $p = 6$, so $m + n + p = 17$. To check, expand one factor pair: $(7t + 6)^2$ gives back $84t$ as the middle term.",
+  "common_errors": [
+   {
+    "value": "29",
+    "misconception": "algebra-manipulation",
+    "why": "You did not take the square root of the coefficient 16. You wrote $16s^2$ as $(16s)^2$, which gives $n = 16$. Then $7 + 16 + 6 = 29$."
+   },
+   {
+    "value": "23",
+    "misconception": "algebra-manipulation",
+    "why": "You found $p$ as $84 \\div 7 = 12$ and forgot the factor of 2 in the middle term $2ab$. Then $7 + 4 + 12 = 23$."
+   },
+   {
+    "value": "47",
+    "misconception": "algebra-manipulation",
+    "why": "You used the constant 36 as $p$ instead of its square root. Then $7 + 4 + 36 = 47$."
+   },
+   {
+    "value": "21",
+    "misconception": "algebra-manipulation",
+    "why": "You halved 16 instead of taking its square root, which gives $n = 8$. Then $7 + 8 + 6 = 21$."
+   }
+  ],
+  "id": "orig-factor-special-H-2da331",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The expression $3x^2 - 9x + 10$ can be written in the form $3(x - h)^2 + k$, where $h$ and $k$ are constants. What is the value of $k$?",
+  "stimulus": "An immunologist models the concentration of an antibody in a blood sample $x$ days after a booster dose using the expression $3x^2 - 9x + 10$.",
+  "keys": [
+   "13/4",
+   "3.25"
+  ],
+  "any_of": false,
+  "explanation": "First take the 3 out of the x-terms: $3(x^2 - 3x) + 10$. Halve the $-3$ to get $h = \\frac{3}{2}$ and square it to get $\\frac{9}{4}$. Adding $\\frac{9}{4}$ inside the brackets really adds $3 \\cdot \\frac{9}{4} = \\frac{27}{4}$, so subtract that outside: $3\\left(x - \\frac{3}{2}\\right)^2 + 10 - \\frac{27}{4} = 3\\left(x - \\frac{3}{2}\\right)^2 + \\frac{13}{4}$. So $k = \\frac{13}{4} = 3.25$. You can also substitute $x = h = \\frac{3}{2}$ into the original expression: $\\frac{27}{4} - \\frac{27}{2} + 10 = \\frac{13}{4}$. In Desmos, graph the expression and click the vertex, which is at $(1.5, 3.25)$.",
+  "common_errors": [
+   {
+    "value": "31/4",
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted $\\frac{9}{4}$ without multiplying it by the 3 you took out, so you got $10 - \\frac{9}{4}$. The app should also match 7.75."
+   },
+   {
+    "value": "121/4",
+    "misconception": "graph-feature-mismatch",
+    "why": "You took $h = -\\frac{3}{2}$ (the sign trap) and found k by evaluating the expression at $x = -\\frac{3}{2}$: $\\frac{27}{4} + \\frac{27}{2} + 10$. The app should also match 30.25."
+   },
+   {
+    "value": "67/4",
+    "misconception": "algebra-manipulation",
+    "why": "You added $\\frac{27}{4}$ to 10 instead of subtracting it to balance the square. The app should also match 16.75."
+   }
+  ],
+  "id": "orig-factor-special-H-810b8b",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

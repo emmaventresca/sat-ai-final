@@ -1,0 +1,187 @@
+[
+ {
+  "stem": "After the tenth plot is included, the mean yield of the 10 plots is how many bushels per acre greater than the median yield of the 10 plots?",
+  "stimulus": "An agronomist recorded the corn yield, in bushels per acre, of 9 test plots treated with a new fertilizer blend. The yields were 52, 45, 55, 40, 48, 53, 42, 50, and 47. A tenth plot was then added to the study. It had been irrigated by mistake, and its yield was 108 bushels per acre.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "Sort the original 9 yields first: 40, 42, 45, 47, 48, 50, 52, 53, 55. Their sum is 432. Adding the tenth plot makes the sum $432 + 108 = 540$, so the new mean is $540 \\div 10 = 54$. The extreme value 108 goes at the end of the sorted list. With 10 values, the median is the average of the 5th and 6th values: $\\frac{48 + 50}{2} = 49$. The outlier pulled the mean up from 48 to 54, but it moved the median up by only 1. The difference is $54 - 49 = 5$.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "intermediate-step",
+    "why": "Assumed the outlier leaves the median exactly where it was, at 48, and computed 54 - 48. With an even count the median becomes the average of two middle values, so it does move a little."
+   },
+   {
+    "value": "0",
+    "misconception": "wrong-target-quantity",
+    "why": "Assumed the median rises as much as the mean, so the gap between them stays at the original 48 - 48 = 0."
+   },
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "Took the 6th sorted value, 50, as the median of 10 values instead of averaging the 5th and 6th values, and computed 54 - 50."
+   },
+   {
+    "value": "3.5",
+    "misconception": "misread-given",
+    "why": "Did not sort. Averaged the 5th and 6th values of the list as given with 108 added at the end (48 and 53) to get 50.5, then computed 54 - 50.5."
+   }
+  ],
+  "id": "orig-effect-on-cent-H-1f7a54",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "After the correction, by how many millimeters does the median daily rainfall increase?",
+  "stimulus": "A weather station logged daily rainfall for 20 days. The results are shown in the table.\n\nDaily Rainfall\nRainfall (mm) | Number of days\n0 | 7\n2 | 4\n4 | 3\n6 | 3\n8 | 2\n10 | 1\n\nA technician later found that one of the days logged as 0 mm was actually a day with a 46 mm thunderstorm. The data were corrected, so that one 0 became 46 and all other values stayed the same.",
+  "keys": [
+   "1"
+  ],
+  "any_of": false,
+  "explanation": "There are 20 days, so the median is the average of the 10th and 11th values in order. Before the correction, the first 7 values are 0 and values 8 through 11 are 2, so the median is $\\frac{2+2}{2} = 2$. After the correction there are only 6 zeros. Values 7 through 10 are 2, values 11 through 13 are 4, and 46 is now the largest value. The median becomes $\\frac{2+4}{2} = 3$, an increase of 1 mm. The mean rises by $46 \\div 20 = 2.3$ mm, but the median moves only because every value shifted down one position. It does not move by the size of the change.",
+  "common_errors": [
+   {
+    "value": "2.3",
+    "misconception": "wrong-target-quantity",
+    "why": "Assumed the median shifts as much as the mean and computed 46 / 20, which is the mean's increase."
+   },
+   {
+    "value": "23/10",
+    "misconception": "wrong-target-quantity",
+    "why": "Same as 2.3, entered as a fraction: the mean's increase, 46/20, instead of the median's."
+   },
+   {
+    "value": "0",
+    "misconception": "missed-condition",
+    "why": "Assumed an outlier never changes the median. Removing one 0 shifts every position, so the 11th value changes from 2 to 4."
+   },
+   {
+    "value": "3",
+    "misconception": "intermediate-step",
+    "why": "Gave the new median instead of the amount it increased."
+   },
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "Used only the 11th value as the median (4 after, 2 before) instead of averaging the 10th and 11th values."
+   }
+  ],
+  "id": "orig-effect-on-cent-H-75062f",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the median height, in stories, of the 9 buildings?",
+  "stimulus": "An urban planner surveyed the 8 buildings on one city block. Their heights, in stories, are 7, 4, 10, 3, 6, 9, 4, and 5. A new residential tower was then built on the same block. When the tower is included, the mean height of the 9 buildings is 10 stories.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "First, find the tower's height. The 8 original heights sum to 48. For 9 buildings with a mean of 10, the total must be $9 \\times 10 = 90$, so the tower has $90 - 48 = 42$ stories. Now sort all 9 heights: 3, 4, 4, 5, 6, 7, 9, 10, 42. With 9 values, the median is the 5th value, which is 6. The tower raised the mean from 6 to 10. The median moved only from 5.5 (the average of 5 and 6) to 6, because the tower just adds one value to the top of the list.",
+  "common_errors": [
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the mean instead of the median, assuming the two measures stay together after an extreme value is added."
+   },
+   {
+    "value": "9.5",
+    "misconception": "intermediate-step",
+    "why": "Assumed the median shifts as much as the mean. The original median of 5.5 plus the mean's increase of 4 gives 9.5."
+   },
+   {
+    "value": "5.5",
+    "misconception": "missed-condition",
+    "why": "Gave the median of the original 8 buildings and assumed adding the tower leaves it unchanged. With 9 values, the median is now the single middle value, 6."
+   },
+   {
+    "value": "42",
+    "misconception": "wrong-target-quantity",
+    "why": "Stopped after finding the tower's height."
+   },
+   {
+    "value": "6.5",
+    "misconception": "algebra-manipulation",
+    "why": "Treated 9 values like an even count and averaged the 5th and 6th values, 6 and 7."
+   }
+  ],
+  "id": "orig-effect-on-cent-H-fc9bdb",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the mean of the 8 weekly counts?",
+  "stimulus": "A county clinic recorded the number of new influenza cases each week for 7 weeks: 14, 9, 21, 11, 17, 26, and 12. Then the count for an 8th week was added. When all 8 weeks are included, the median weekly count is 15.",
+  "keys": [
+   "15.75",
+   "63/4"
+  ],
+  "any_of": false,
+  "explanation": "Sort the 7 counts: 9, 11, 12, 14, 17, 21, 26. Their sum is 110. With 8 values, the median is the average of the 4th and 5th values. If the new count $n$ were 17 or more, those values would be 14 and 17, giving a median of 15.5. If $n$ were 14 or less, the median would be at most 14. So $n$ must fall between 14 and 17, which makes $\\frac{14 + n}{2} = 15$ and $n = 16$. The mean of the 8 counts is $\\frac{110 + 16}{8} = \\frac{126}{8} = 15.75$.",
+  "common_errors": [
+   {
+    "value": "15",
+    "misconception": "wrong-target-quantity",
+    "why": "Assumed the mean equals the given median of 15 instead of computing it."
+   },
+   {
+    "value": "15.625",
+    "misconception": "missed-condition",
+    "why": "Assumed the added week must equal the new median, so n = 15. That gives (110 + 15) / 8 = 15.625, but then the median would be (14 + 15) / 2 = 14.5, not 15."
+   },
+   {
+    "value": "125/8",
+    "misconception": "missed-condition",
+    "why": "Same as 15.625, entered as a fraction: used n = 15 instead of n = 16."
+   },
+   {
+    "value": "16",
+    "misconception": "wrong-target-quantity",
+    "why": "Stopped after finding the 8th week's count."
+   },
+   {
+    "value": "15.71",
+    "misconception": "intermediate-step",
+    "why": "Gave the mean of the original 7 weeks, 110 / 7, rounded, without including the 8th week."
+   },
+   {
+    "value": "110/7",
+    "misconception": "intermediate-step",
+    "why": "Gave the mean of the original 7 weeks without including the 8th week."
+   }
+  ],
+  "id": "orig-effect-on-cent-H-188181",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

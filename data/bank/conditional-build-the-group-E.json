@@ -1,0 +1,182 @@
+[
+ {
+  "stem": "If one of the buildings that is not in the industrial zone is selected at random, what is the probability that the building has 4 or more stories?",
+  "stimulus": "A city planning office recorded the zone and height of each of the 100 buildings that received new construction permits last year.\n\nNew Construction Permits by Zone and Height\nZone | 1 to 3 stories | 4 or more stories | Total\nResidential | 30 | 10 | 40\nCommercial | 14 | 6 | 20\nIndustrial | 25 | 15 | 40\nTotal | 69 | 31 | 100",
+  "choices": [
+   "$\\frac{1}{4}$",
+   "$\\frac{4}{25}$",
+   "$\\frac{4}{15}$",
+   "$\\frac{3}{8}$"
+  ],
+  "answer": "C",
+  "explanation": "\"Not in the industrial zone\" means the residential and commercial rows together. That makes your group $40 + 20 = 60$ buildings. Inside that group, $10 + 6 = 16$ buildings have 4 or more stories. The probability is $\\frac{16}{60} = \\frac{4}{15}$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You used only the residential row, $\\frac{10}{40}$. \"Not industrial\" also includes the commercial row, so you have to add both rows to build the group."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the right numerator, 16, but divided by all 100 buildings. The condition limits you to the 60 buildings outside the industrial zone, so 60 is the denominator."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You computed $\\frac{15}{40}$ for the industrial row, which is the group the question excludes. You read \"not in the industrial zone\" as \"in the industrial zone.\""
+   }
+  },
+  "id": "orig-conditional-bu-E-205057",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If one of the stars with at least 2 known planets is selected at random, what is the probability that the star is part of a binary system?",
+  "stimulus": "An astronomer catalogued 50 stars that are known to host planets. The table shows each star's type and its number of known planets.\n\nPlanet-Hosting Stars by Type and Number of Known Planets\nNumber of known planets | Single star | Binary system | Total\n1 | 18 | 7 | 25\n2 | 10 | 5 | 15\n3 or more | 6 | 4 | 10\nTotal | 34 | 16 | 50",
+  "choices": [
+   "$\\frac{9}{25}$",
+   "$\\frac{2}{5}$",
+   "$\\frac{9}{50}$",
+   "$\\frac{9}{16}$"
+  ],
+  "answer": "A",
+  "explanation": "\"At least 2\" includes the \"2\" row and the \"3 or more\" row, so your group is $15 + 10 = 25$ stars. Of these, $5 + 4 = 9$ are in binary systems. The probability is $\\frac{9}{25}$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You used only the \"3 or more\" row, $\\frac{4}{10}$, so you treated \"at least 2\" as \"more than 2.\" Stars with exactly 2 planets are part of the group too."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the 9 binary stars by all 50 stars. The condition limits your world to the 25 stars with at least 2 planets."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided by the 16 binary stars, which reverses the fraction. That answers \"Of the binary stars, what fraction have at least 2 planets?\" The question's group is stars with at least 2 planets."
+   }
+  },
+  "id": "orig-conditional-bu-E-1ac460",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If one of the words that is not a verb is selected at random from the sample, what is the probability that the word is borrowed?",
+  "stimulus": "A linguist classified every word in a large sample of a language's written texts by word class and by origin. A word was counted as borrowed if it entered the language from another language, and as native otherwise. The table shows the proportion of all words in the sample that fall into each category.\n\nProportion of Words in Sample by Class and Origin\nWord class | Borrowed | Native\nNoun | 0.15 | 0.25\nVerb | 0.05 | 0.20\nAdjective | 0.10 | 0.25",
+  "choices": [
+   "$\\frac{1}{5}$",
+   "$\\frac{1}{3}$",
+   "$\\frac{1}{4}$",
+   "$\\frac{3}{8}$"
+  ],
+  "answer": "B",
+  "explanation": "Treat the proportions as counts. Words that are not verbs are the nouns and adjectives: $0.40 + 0.35 = 0.75$. The borrowed words in that group make up $0.15 + 0.10 = 0.25$. The probability is $\\frac{0.25}{0.75} = \\frac{1}{3}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You computed $\\frac{0.05}{0.25}$ for the verb row, which is the group the question excludes. You read \"not a verb\" as \"a verb.\""
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You took 0.25, the share of all words that are borrowed non-verbs, and stopped there. That uses the whole sample as the denominator. You still need to divide by 0.75, the share that is not a verb."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You used only the noun row, $\\frac{0.15}{0.40}$. \"Not a verb\" also includes the adjectives, so you have to combine both rows."
+   }
+  },
+  "id": "orig-conditional-bu-E-7cb341",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If one of the high-fiber meals is selected at random, what is the probability that the meal contains legumes?",
+  "stimulus": "For a nutrition study, researchers prepared 4 trays of high-fiber meals and 5 trays of low-fiber meals. Each tray held 6 meals. Of the high-fiber meals, 10 contained legumes. None of the low-fiber meals contained legumes.",
+  "choices": [
+   "$\\frac{5}{27}$",
+   "$\\frac{1}{3}$",
+   "$\\frac{4}{9}$",
+   "$\\frac{5}{12}$"
+  ],
+  "answer": "D",
+  "explanation": "Build the group by multiplying trays by meals per tray: $4 \\times 6 = 24$ high-fiber meals. Of these, 10 contain legumes. The probability is $\\frac{10}{24} = \\frac{5}{12}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by all $9 \\times 6 = 54$ meals. The condition limits you to the 24 high-fiber meals, so 24 is the denominator."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided 10 by the $5 \\times 6 = 30$ low-fiber meals. The question asks about high-fiber meals, not the other group."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You computed $\\frac{24}{54}$, the probability that a randomly selected meal is high-fiber. That is the size of your group as a fraction of all meals, not the chance that a meal in the group contains legumes."
+   }
+  },
+  "id": "orig-conditional-bu-E-6d4495",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If one of the performances in a slot numbered greater than or equal to 25 is selected at random, what is the probability that the performance features a string quartet?",
+  "stimulus": "A music festival has 40 performances, assigned to slots numbered 1 through 40. A performance features a string quartet if and only if its slot number is a multiple of 4.",
+  "choices": [
+   "$\\frac{1}{10}$",
+   "$\\frac{4}{15}$",
+   "$\\frac{1}{4}$",
+   "$\\frac{2}{5}$"
+  ],
+  "answer": "C",
+  "explanation": "The slots numbered greater than or equal to 25 run from 25 through 40, which is $40 - 25 + 1 = 16$ slots. The multiples of 4 in that range are 28, 32, 36, and 40, so there are 4. The probability is $\\frac{4}{16} = \\frac{1}{4}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the 4 quartet slots by all 40 performances. The condition limits you to the 16 slots numbered 25 through 40."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You counted only the slots from 26 through 40, which gives 15. \"Greater than or equal to 25\" includes slot 25, so the group has 16 slots."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided by the 10 quartet performances across the whole festival, which reverses the fraction. That answers \"Of the quartet performances, what fraction are in slots 25 or higher?\""
+   }
+  },
+  "id": "orig-conditional-bu-E-d52780",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

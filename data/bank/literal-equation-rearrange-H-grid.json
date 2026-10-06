@@ -1,0 +1,153 @@
+[
+ {
+  "stem": "The equation can be rewritten as $w = \\frac{kdh}{2h - d}$, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "A meteorologist uses the equation $\\frac{1}{h} = \\frac{2}{d} - \\frac{5}{w}$ to relate three positive quantities measured during a sea-breeze event: $h$, the height of the marine layer; $d$, the distance the breeze front has travelled inland; and $w$, a wind-mixing length. All three are in kilometers, and $2h > d$.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "You are solving for $w$, and it appears in only one term, so isolate that term first. Move it to the left and $\\frac{1}{h}$ to the right: $\\frac{5}{w} = \\frac{2}{d} - \\frac{1}{h}$. Combine the right side over the common denominator $dh$ to get $\\frac{5}{w} = \\frac{2h - d}{dh}$. Now take reciprocals of both sides: $\\frac{w}{5} = \\frac{dh}{2h - d}$. Multiply by 5 and you get $w = \\frac{5dh}{2h - d}$, so $k = 5$. To check, pick $d = 2$ and $h = 3$. The original equation gives $\\frac{1}{3} = 1 - \\frac{5}{w}$, so $w = 7.5$, and $\\frac{5 \\cdot 2 \\cdot 3}{6 - 2} = 7.5$ as well.",
+  "common_errors": [
+   {
+    "value": "-5",
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the signs when moving the terms across and wrote $\\frac{5}{w} = \\frac{1}{h} - \\frac{2}{d} = \\frac{d - 2h}{dh}$. That gives $w = \\frac{5dh}{d - 2h} = \\frac{-5dh}{2h - d}$."
+   },
+   {
+    "value": "1/5",
+    "misconception": "algebra-manipulation",
+    "why": "You reached $\\frac{w}{5} = \\frac{dh}{2h - d}$ after taking reciprocals, then divided by 5 instead of multiplying. That gives $w = \\frac{dh}{5(2h - d)}$."
+   },
+   {
+    "value": ".2",
+    "misconception": "algebra-manipulation",
+    "why": "This is the same error as 1/5, entered as a decimal: you divided by 5 instead of multiplying by 5 at the last step."
+   }
+  ],
+  "id": "orig-literal-equati-H-0daf67",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which value of $k$ makes the equation $m = k\\sqrt{\\frac{P}{Q - P}}$ equivalent to the given equation?",
+  "stimulus": "An ecologist models how often a predator catches a prey species using $\\frac{1}{P} = \\frac{1}{Q} + \\frac{9}{Qm^2}$. Here $P$ is the number of prey caught per day, $Q$ is the most prey the predator could ever catch per day, and $m$ is the number of prey per square meter. Also $m > 0$ and $Q > P > 0$.",
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "Isolate the term that contains $m$. Subtract $\\frac{1}{Q}$ from both sides to get $\\frac{9}{Qm^2} = \\frac{1}{P} - \\frac{1}{Q} = \\frac{Q - P}{PQ}$. Take reciprocals: $\\frac{Qm^2}{9} = \\frac{PQ}{Q - P}$. Multiply by 9 and divide by $Q$ to get $m^2 = \\frac{9P}{Q - P}$. Because $m > 0$, keep only the positive square root: $m = \\sqrt{9}\\sqrt{\\frac{P}{Q - P}} = 3\\sqrt{\\frac{P}{Q - P}}$. So $k = 3$. Do not flip $\\frac{1}{Q} + \\frac{9}{Qm^2}$ term by term. You can only take a reciprocal after the side has been combined into a single fraction.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "intermediate-step",
+    "why": "You stopped at $m^2 = \\frac{9P}{Q - P}$ and took the square root of the fraction but not of the 9. You read off the coefficient from the $m^2$ step."
+   },
+   {
+    "value": "1/3",
+    "misconception": "algebra-manipulation",
+    "why": "You solved for $\\frac{1}{m^2} = \\frac{Q - P}{9P}$ and then took the square root without taking the reciprocal. That leaves $\\frac{1}{3}$ as the coefficient."
+   },
+   {
+    "value": ".3333",
+    "misconception": "algebra-manipulation",
+    "why": "This is the same error as 1/3, entered as a decimal: you forgot the final reciprocal step."
+   }
+  ],
+  "id": "orig-literal-equati-H-cda4fb",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The equation can be rewritten as $r = \\frac{d(E + a)}{E - b}$, where $a$ and $b$ are constants. What is the value of $a + b$?",
+  "stimulus": "A cartographer measures how much a map projection stretches shapes near its edge with $E = \\frac{3r + 2d}{r - d}$. Here $E$ is the stretch factor, $r$ is the distance from the map's center to a point, and $d$ is a fixed offset distance. Both $r$ and $d$ are in centimeters, $r > d > 0$, and $E > 3$.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "Clear the fraction by multiplying both sides by $r - d$: $Er - Ed = 3r + 2d$. The target $r$ appears in two terms, so move both $r$-terms to the left and everything else to the right before you divide: $Er - 3r = Ed + 2d$. Factor $r$ out of the left side and $d$ out of the right: $r(E - 3) = d(E + 2)$. Then divide: $r = \\frac{d(E + 2)}{E - 3}$. So $a = 2$ and $b = 3$, which gives $a + b = 5$. To check, take $r = 2$ and $d = 1$. Then $E = \\frac{8}{1} = 8$, and $\\frac{1 \\cdot 10}{5} = 2$.",
+  "common_errors": [
+   {
+    "value": "1",
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the sign of $-Ed$ when moving it to the right and got $r(E - 3) = d(E - 2)$. So you took $a = -2$ and $b = 3$."
+   },
+   {
+    "value": "-1",
+    "misconception": "algebra-manipulation",
+    "why": "You moved $3r$ to the left as $+3r$ and got $r(E + 3) = d(E + 2)$. So you took $a = 2$ and $b = -3$."
+   },
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "You found $a = 2$ and $b = 3$ correctly but multiplied them instead of adding."
+   }
+  ],
+  "id": "orig-literal-equati-H-a6010f",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "If $b = 3T$, then $a = kT$, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "An immunologist describes how long it takes the body to clear a vaccine antigen using $\\frac{4}{T} = \\frac{1}{a} + \\frac{3}{b}$. Here $T$ is the overall clearance time, $a$ is the clearance time due to antibodies alone, and $b$ is the clearance time due to immune cells alone. All three are positive and measured in days.",
+  "keys": [
+   "1/3",
+   ".3333",
+   "0.3333"
+  ],
+  "any_of": false,
+  "explanation": "Solve for $a$ by isolating its term: $\\frac{1}{a} = \\frac{4}{T} - \\frac{3}{b}$. Substitute $b = 3T$, so that $\\frac{3}{b} = \\frac{3}{3T} = \\frac{1}{T}$. That gives $\\frac{1}{a} = \\frac{4}{T} - \\frac{1}{T} = \\frac{3}{T}$. You have solved for $\\frac{1}{a}$, not $a$, so finish by taking reciprocals: $a = \\frac{T}{3}$. So $k = \\frac{1}{3}$. Flipping each fraction separately, as in $\\frac{T}{4} = a + \\frac{b}{3}$, is not a valid step.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "intermediate-step",
+    "why": "You reached $\\frac{1}{a} = \\frac{3}{T}$ and stopped there without taking the reciprocal."
+   },
+   {
+    "value": "-3/4",
+    "misconception": "algebra-manipulation",
+    "why": "You flipped each fraction separately and wrote $\\frac{T}{4} = a + \\frac{b}{3}$. Then $a = \\frac{T}{4} - T = -\\frac{3}{4}T$."
+   },
+   {
+    "value": "1/5",
+    "misconception": "algebra-manipulation",
+    "why": "You moved $\\frac{3}{b}$ without changing its sign and got $\\frac{1}{a} = \\frac{4}{T} + \\frac{1}{T} = \\frac{5}{T}$. Then you took the reciprocal."
+   },
+   {
+    "value": "1",
+    "misconception": "misread-given",
+    "why": "You used $b = T$ instead of $b = 3T$. That gives $\\frac{1}{a} = \\frac{4}{T} - \\frac{3}{T} = \\frac{1}{T}$."
+   }
+  ],
+  "id": "orig-literal-equati-H-f2053d",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

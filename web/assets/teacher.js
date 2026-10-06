@@ -661,7 +661,7 @@ async function screenPlanner(note) {
     plannerState.loaded = true;
   }
   if (!state.practiceItems) {
-    state.practiceItems = await fetch('../data/practice.json?v=5aee4499f1')
+    state.practiceItems = await fetch('../data/practice.json?v=9f94299437')
       .then((r) => r.json()).then((d) => d.items).catch(() => []);
   }
   const up = await plannerHealthy();
@@ -879,11 +879,11 @@ async function openStudent(id) {
 
 async function loadData() {
   const [bands, skills, lessons, subtax, agentFeed] = await Promise.all([
-    fetch('../data/bands.json?v=5aee4499f1').then((r) => r.json()),
-    fetch('../data/skills.json?v=5aee4499f1').then((r) => r.json()),
-    fetch('../data/lessons.json?v=5aee4499f1').then((r) => r.json()),
-    fetch('../data/subtypes.json?v=5aee4499f1').then((r) => r.json()).catch(() => ({ skills: {} })),
-    fetch('../data/agent_feed.json?v=5aee4499f1').then((r) => r.json())
+    fetch('../data/bands.json?v=9f94299437').then((r) => r.json()),
+    fetch('../data/skills.json?v=9f94299437').then((r) => r.json()),
+    fetch('../data/lessons.json?v=9f94299437').then((r) => r.json()),
+    fetch('../data/subtypes.json?v=9f94299437').then((r) => r.json()).catch(() => ({ skills: {} })),
+    fetch('../data/agent_feed.json?v=9f94299437').then((r) => r.json())
       .catch(() => ({ runs: [], summary: {} })),
   ]);
   state.bands = bands;

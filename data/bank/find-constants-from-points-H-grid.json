@@ -1,0 +1,152 @@
+[
+ {
+  "stem": "What is the value of $a - b$?",
+  "stimulus": "A materials scientist models the stiffness of a polymer sample with the function $S(x) = ax^2 + bx + c$, where $S(x)$ is the stiffness, in gigapascals, and $x$ is the sample's temperature difference from $25^\\circ\\text{C}$, measured in tens of degrees Celsius. The constants $a$, $b$, and $c$ are fixed. The model gives $S(0) = 15$, $S(-2) = 37$, and $S(3) = 12$.",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "Start with $x = 0$. Every term with $x$ drops out, so $c = 15$. Next substitute $x = -2$. Because $(-2)^2 = 4$, you get $4a - 2b + 15 = 37$, so $4a - 2b = 22$, which simplifies to $2a - b = 11$. Then substitute $x = 3$: $9a + 3b + 15 = 12$, so $9a + 3b = -3$, which simplifies to $3a + b = -1$. Add the two equations: $5a = 10$, so $a = 2$, and then $b = -1 - 3(2) = -7$. The question asks for $a - b$, which is $2 - (-7) = 9$. In Desmos you can enter the three points as a table and fit $y_1 \\sim ax_1^2 + bx_1 + c$ to read off $a$ and $b$ directly.",
+  "common_errors": [
+   {
+    "value": "41",
+    "misconception": "algebra-manipulation",
+    "why": "Squared $-2$ as $-4$, which gives $-4a - 2b = 22$. Solving that with $3a + b = -1$ gives $a = 10$ and $b = -31$, so $a - b = 41$."
+   },
+   {
+    "value": "-5",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved correctly for $a = 2$ and $b = -7$ but then added them ($a + b$) instead of subtracting."
+   },
+   {
+    "value": "2",
+    "misconception": "intermediate-step",
+    "why": "Found $a = 2$ and stopped before working out $b$ and combining the two."
+   }
+  ],
+  "id": "orig-find-constants-H-40c044",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $a$?",
+  "stimulus": "A marine biologist models the number of sea urchins on a monitored reef with the function $P(t) = a \\cdot b^t$, where $t$ is the number of years since monitoring began and $a$ and $b$ are positive constants. According to the model, there were $720$ sea urchins on the reef $2$ years after monitoring began and $1{,}620$ sea urchins $4$ years after monitoring began.",
+  "keys": [
+   "320"
+  ],
+  "any_of": false,
+  "explanation": "Write one equation for each point: $a \\cdot b^2 = 720$ and $a \\cdot b^4 = 1{,}620$. Divide the second equation by the first. The $a$ cancels and you get $b^2 = \\frac{1{,}620}{720} = 2.25$. Because $b$ is positive, $b = 1.5$. Now go back to the first equation. Since $b^2 = 2.25$, you have $a = \\frac{720}{2.25} = 320$. As a check, $320 \\cdot 1.5^4 = 320 \\cdot 5.0625 = 1{,}620$.",
+  "common_errors": [
+   {
+    "value": "480",
+    "misconception": "intermediate-step",
+    "why": "Found $b = 1.5$ but undid only one year of growth ($720 \\div 1.5$), which gives the population at $t = 1$, not at $t = 0$."
+   },
+   {
+    "value": "1.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the yearly multiplier $b$ instead of the starting value $a$."
+   },
+   {
+    "value": "142.2",
+    "misconception": "algebra-manipulation",
+    "why": "Took the ratio $2.25$ as $b$ itself instead of $b^2$, then computed $720 \\div 2.25^2 \\approx 142.22$."
+   }
+  ],
+  "id": "orig-find-constants-H-5efbbd",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "An immunologist models the concentration of an antibody in a patient's blood after a vaccination with the function $C(t) = at^2 + bt + c$, where $a$, $b$, and $c$ are constants. The table shows three values of $C(t)$, where $t$ is the number of days after vaccination.\n\nAntibody Concentration After Vaccination\nDays after vaccination, $t$ | Concentration, $C(t)$ (micrograms per milliliter)\n0 | 4\n2 | 40\n4 | 60",
+  "keys": [
+   "22"
+  ],
+  "any_of": false,
+  "explanation": "Use the row where $t = 0$ first. It gives $c = 4$. Substitute $t = 2$: $4a + 2b + 4 = 40$, so $4a + 2b = 36$, which simplifies to $2a + b = 18$. Substitute $t = 4$: $16a + 4b + 4 = 60$, so $16a + 4b = 56$, which simplifies to $4a + b = 14$. Subtract the first simplified equation from the second: $2a = -4$, so $a = -2$. Then $b = 18 - 2(-2) = 22$. In Desmos, enter the table and fit $y_1 \\sim ax_1^2 + bx_1 + c$, then read off $b$.",
+  "common_errors": [
+   {
+    "value": "25",
+    "misconception": "algebra-manipulation",
+    "why": "Left out the constant $c = 4$ when substituting. That gives $4a + 2b = 40$ and $16a + 4b = 60$, which lead to $a = -2.5$ and $b = 25$."
+   },
+   {
+    "value": "-2",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved the system correctly but reported $a$ instead of $b$."
+   },
+   {
+    "value": "18",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the simplified equation $2a + b = 18$ and treated its right-hand side as $b$."
+   }
+  ],
+  "id": "orig-find-constants-H-682c7d",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $a + b + c$?",
+  "stimulus": "A city planner is designing a cable-supported pedestrian walkway over a plaza. The height of the cable above the plaza is modeled by $h(x) = ax^2 + bx + c$, where $h(x)$ is the height, in meters, and $x$ is the horizontal distance from the west support tower, in tens of meters. The constants $a$, $b$, and $c$ are fixed. The cable is $30$ meters high at the west tower ($x = 0$) and also $30$ meters high at the east tower ($x = 10$). At $x = 2$ the cable is $23.6$ meters high.",
+  "keys": [
+   "26.4",
+   "132/5"
+  ],
+  "any_of": false,
+  "explanation": "Setting $x = 0$ gives $c = 30$. Substitute $x = 10$: $100a + 10b + 30 = 30$, so $100a + 10b = 0$, which means $b = -10a$. Substitute $x = 2$: $4a + 2b + 30 = 23.6$, so $4a + 2b = -6.4$. Replace $b$ with $-10a$: $4a - 20a = -6.4$, so $-16a = -6.4$ and $a = 0.4$. Then $b = -4$. The question asks for all three constants together: $a + b + c = 0.4 + (-4) + 30 = 26.4$. Note that this sum is also $h(1)$, which gives you a quick check once you have the function.",
+  "common_errors": [
+   {
+    "value": "30",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $c$, the height at the west tower, which comes straight from the $x = 0$ condition, instead of the sum of all three constants."
+   },
+   {
+    "value": "26",
+    "misconception": "missed-condition",
+    "why": "Added only $b + c = -4 + 30$ and left out $a$."
+   },
+   {
+    "value": "-3.6",
+    "misconception": "intermediate-step",
+    "why": "Added $a + b$ after solving the system and forgot to include $c$."
+   },
+   {
+    "value": "30.4",
+    "misconception": "missed-condition",
+    "why": "Added only $a + c$ and left out $b$."
+   }
+  ],
+  "id": "orig-find-constants-H-b97738",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

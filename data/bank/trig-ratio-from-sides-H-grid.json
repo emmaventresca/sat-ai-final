@@ -1,0 +1,174 @@
+[
+ {
+  "stem": "What is the length, in micrometers, of side $AC$?",
+  "stimulus": "An immunology lab designs a microfluidic channel to sort T cells by size. The channel's cross-section is right triangle $ABC$, with the right angle at $C$. In this triangle, $\\tan B = \\frac{12}{5}$, and the hypotenuse $AB$ is 39 micrometers long.",
+  "keys": [
+   "36"
+  ],
+  "any_of": false,
+  "explanation": "Start from angle $B$. Side $AC$ is opposite $B$, side $BC$ is adjacent to $B$, and $AB$ is the hypotenuse. Because $\\tan B = \\frac{AC}{BC} = \\frac{12}{5}$, you can write $AC = 12k$ and $BC = 5k$ for some positive $k$. By the Pythagorean theorem, the hypotenuse is $\\sqrt{(12k)^2 + (5k)^2} = 13k$. The hypotenuse is 39, so $13k = 39$ and $k = 3$. That makes $AC = 12(3) = 36$ micrometers.",
+  "common_errors": [
+   {
+    "value": "15",
+    "misconception": "wrong-target-quantity",
+    "why": "Labeled opposite and adjacent from angle A instead of angle B, so found BC = 5k = 15 when the question asks for AC."
+   },
+   {
+    "value": "12",
+    "misconception": "misread-given",
+    "why": "Took the numbers in the ratio 12/5 as the actual side lengths and never scaled by k."
+   },
+   {
+    "value": "3",
+    "misconception": "intermediate-step",
+    "why": "Solved 13k = 39 correctly and then entered k instead of 12k."
+   },
+   {
+    "value": "468/5",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the hypotenuse by the tangent (39 \u00d7 12/5 = 93.6), as if the tangent were opposite over hypotenuse."
+   }
+  ],
+  "id": "orig-trig-ratio-fro-H-62992e",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $\\tan F$?",
+  "stimulus": "A printmaker cuts a linoleum block in the shape of right triangle $DEF$, with the right angle at $E$. For the angle at corner $D$, $\\cos D = \\frac{20}{29}$.",
+  "keys": [
+   "20/21",
+   ".9523",
+   ".9524",
+   "0.9523",
+   "0.9524"
+  ],
+  "any_of": false,
+  "explanation": "From angle $D$, $\\cos D = \\frac{DE}{DF} = \\frac{20}{29}$. Let $DE = 20k$ and $DF = 29k$. The third side is $EF = \\sqrt{(29k)^2 - (20k)^2} = \\sqrt{441k^2} = 21k$. Now relabel from angle $F$, because that is the angle you're asked about. The side opposite $F$ is $DE = 20k$, and the side adjacent to $F$ is $EF = 21k$. So $\\tan F = \\frac{20k}{21k} = \\frac{20}{21}$.",
+  "common_errors": [
+   {
+    "value": "21/20",
+    "misconception": "wrong-target-quantity",
+    "why": "Labeled opposite and adjacent from angle D, the angle the cosine was given for, and so found tan D instead of tan F."
+   },
+   {
+    "value": "20/29",
+    "misconception": "wrong-target-quantity",
+    "why": "Used opposite over hypotenuse for angle F (sin F) instead of opposite over adjacent."
+   },
+   {
+    "value": "21/29",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the side opposite D over the hypotenuse (sin D), giving the wrong ratio for the wrong angle."
+   },
+   {
+    "value": "20/9",
+    "misconception": "algebra-manipulation",
+    "why": "Found the third side by subtracting lengths (29 \u2212 20 = 9) instead of using the Pythagorean theorem."
+   }
+  ],
+  "id": "orig-trig-ratio-fro-H-0ddb26",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the length, in millimeters, of side $AB$?",
+  "stimulus": "A paleobotanist describes a fossilized fern pinnule as roughly the shape of right triangle $ABC$, with the right angle at $C$. In this triangle, $\\sin A = \\frac{7}{25}$, and side $AC$ is 48 millimeters long.",
+  "keys": [
+   "50"
+  ],
+  "any_of": false,
+  "explanation": "From angle $A$, $\\sin A = \\frac{BC}{AB} = \\frac{7}{25}$, where $BC$ is opposite $A$ and $AB$ is the hypotenuse. Let $BC = 7k$ and $AB = 25k$. The remaining leg is $AC = \\sqrt{(25k)^2 - (7k)^2} = 24k$, and $AC$ is adjacent to $A$. You know $AC = 48$, so $24k = 48$ and $k = 2$. So $AB = 25(2) = 50$ millimeters.",
+  "common_errors": [
+   {
+    "value": "1200/7",
+    "misconception": "wrong-target-quantity",
+    "why": "Treated AC as the side opposite angle A (it is opposite angle B), set 7k = 48, and got AB = 25 \u00d7 48/7 \u2248 171.4."
+   },
+   {
+    "value": "25",
+    "misconception": "misread-given",
+    "why": "Took the denominator of 7/25 as the actual hypotenuse length without scaling by k."
+   },
+   {
+    "value": "14",
+    "misconception": "wrong-target-quantity",
+    "why": "Found k = 2 correctly but reported BC = 7k instead of the hypotenuse AB."
+   },
+   {
+    "value": "2",
+    "misconception": "intermediate-step",
+    "why": "Stopped after solving 24k = 48 and entered the scale factor k."
+   }
+  ],
+  "id": "orig-trig-ratio-fro-H-a14be4",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $\\cos(\\angle TBP)$?",
+  "stimulus": "A civil engineer is bracing a vertical utility pole $TP$ that stands 15 meters tall on level ground, with its base at $P$. Cable 1 runs from the top of the pole, $T$, to anchor $A$ on the ground. For the angle this cable makes with the ground, $\\sin(\\angle TAP) = \\frac{3}{5}$. Cable 2 runs from $T$ to anchor $B$, which lies on segment $AP$, 12 meters closer to the pole than $A$.",
+  "keys": [
+   "8/17",
+   ".4705",
+   ".4706",
+   "0.4705",
+   "0.4706"
+  ],
+  "any_of": false,
+  "explanation": "In right triangle $TPA$, $\\sin(\\angle TAP) = \\frac{TP}{TA} = \\frac{3}{5}$. Let $TP = 3k$ and $TA = 5k$, so $AP = 4k$. Because $TP = 15$, $k = 5$, which gives $TA = 25$ and $AP = 20$. Anchor $B$ is 12 meters closer to the pole, so $BP = 20 - 12 = 8$. In right triangle $TPB$, the cable length is $TB = \\sqrt{15^2 + 8^2} = 17$. From angle $TBP$, the adjacent side is $BP = 8$ and the hypotenuse is $TB = 17$, so $\\cos(\\angle TBP) = \\frac{8}{17}$.",
+  "common_errors": [
+   {
+    "value": "15/17",
+    "misconception": "wrong-target-quantity",
+    "why": "Labeled sides from the angle at the top of the pole, so the pole became 'adjacent', which gives sin(\u2220TBP) instead of cos(\u2220TBP)."
+   },
+   {
+    "value": "4/5",
+    "misconception": "intermediate-step",
+    "why": "Found the cosine of angle TAP for cable 1 and stopped before moving to anchor B."
+   },
+   {
+    "value": "8/15",
+    "misconception": "wrong-target-quantity",
+    "why": "Used adjacent over opposite (the reciprocal of tan) instead of adjacent over hypotenuse."
+   },
+   {
+    "value": "12/17",
+    "misconception": "misread-given",
+    "why": "Used the 12-meter shift as the distance from B to the pole, then divided by the 17-meter cable, mixing the two triangles."
+   }
+  ],
+  "id": "orig-trig-ratio-fro-H-91a542",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

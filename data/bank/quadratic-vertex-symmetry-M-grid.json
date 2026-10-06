@@ -1,0 +1,212 @@
+[
+ {
+  "stem": "According to the model, how many hours after 6:00 a.m. does the air temperature next equal the temperature it had at 8:00 a.m.?",
+  "stimulus": "A meteorologist models the air temperature at a weather station on a spring day with the function $T(t) = -0.5t^2 + 6t + 52$, where $T(t)$ is the temperature, in degrees Fahrenheit, $t$ hours after 6:00 a.m., for $0 \\le t \\le 14$.",
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "8:00 a.m. is $t = 2$. The parabola is symmetric about its vertex, so first find the vertex: $t = -\\frac{b}{2a} = -\\frac{6}{2(-0.5)} = 6$. The time $t = 2$ is 4 hours before the vertex, so the same temperature comes back 4 hours after it: $2(6) - 2 = 10$. You can check this: $T(2) = -2 + 12 + 52 = 62$ and $T(10) = -50 + 60 + 52 = 62$. In Desmos, graph $T$, draw the line $y = 62$, and click the second intersection point.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the time of the maximum temperature, the vertex, rather than the time the 8:00 a.m. temperature comes back."
+   },
+   {
+    "value": "62",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the temperature at 8:00 a.m., $T(2)$, rather than the time it is reached again."
+   },
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Adds the earlier time to the vertex ($2 + 6$) instead of reflecting across it ($2 \\cdot 6 - 2$)."
+   },
+   {
+    "value": "12",
+    "misconception": "intermediate-step",
+    "why": "Doubles the vertex time but never subtracts $t_1 = 2$."
+   },
+   {
+    "value": "4",
+    "misconception": "intermediate-step",
+    "why": "Stops at the distance from $t = 2$ to the vertex and does not add it to the vertex time."
+   },
+   {
+    "value": "-14",
+    "misconception": "algebra-manipulation",
+    "why": "Drops the negative sign in $-\\frac{b}{2a}$, so the vertex comes out as $t = -6$, then computes $2(-6) - 2$."
+   }
+  ],
+  "id": "orig-quadratic-vert-M-b5aef5",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the model, at what hourly wage, in dollars, is the firm's net benefit greatest?",
+  "stimulus": "A labor economist models the annual net benefit $B$, in thousands of dollars, that a warehouse firm gets from setting an hourly wage of $w$ dollars for its pickers: $B(w) = -2(w - 14)(w - 30)$.",
+  "keys": [
+   "22"
+  ],
+  "any_of": false,
+  "explanation": "The roots of $B$ are where each factor equals zero, so they are $w = 14$ and $w = 30$. Because the leading coefficient is negative, the parabola opens downward and its vertex is a maximum. The vertex lies halfway between the roots: $w = \\frac{14 + 30}{2} = 22$. The question asks for the wage, so the answer is 22, not the benefit $B(22) = 128$. In Desmos, graph $B$ and click the top of the curve.",
+  "common_errors": [
+   {
+    "value": "128",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the maximum net benefit, $B(22) = -2(8)(-8)$, which is the y-value of the vertex, rather than the wage where it happens."
+   },
+   {
+    "value": "14",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives an x-intercept, the wage where the net benefit is zero."
+   },
+   {
+    "value": "30",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the other x-intercept, the wage where the net benefit is zero."
+   },
+   {
+    "value": "44",
+    "misconception": "intermediate-step",
+    "why": "Adds the two roots and never divides by 2."
+   },
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Takes half the distance between the roots, $\\frac{30 - 14}{2}$, instead of their midpoint."
+   },
+   {
+    "value": "-22",
+    "misconception": "algebra-manipulation",
+    "why": "Reads the roots from the factors with the wrong sign ($-14$ and $-30$) and averages those."
+   }
+  ],
+  "id": "orig-quadratic-vert-M-579311",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "An urban planner designs a parabolic arch for a pedestrian bridge over a canal. The height of the arch, in meters, at a horizontal distance of $x$ meters from its west base is modeled by $h(x) = -0.05x^2 + bx$, where $b$ is a constant. The highest point of the arch is 30 meters, measured horizontally, from the west base.",
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "The highest point is the vertex, so its x-coordinate is $30$. For $h(x) = ax^2 + bx$, the vertex is at $x = -\\frac{b}{2a}$. Set $-\\frac{b}{2(-0.05)} = 30$, which gives $\\frac{b}{0.1} = 30$, so $b = 3$. Another route uses symmetry: the arch meets the ground at $x = 0$, so it meets it again at $x = 60$. Then $h(x) = -0.05x(x - 60) = -0.05x^2 + 3x$. In Desmos, put a slider on $b$ and drag it until the vertex sits at $x = 30$.",
+  "common_errors": [
+   {
+    "value": "-3",
+    "misconception": "algebra-manipulation",
+    "why": "Drops the negative sign in $x = -\\frac{b}{2a}$, so $\\frac{b}{-0.1} = 30$."
+   },
+   {
+    "value": "1.5",
+    "misconception": "algebra-manipulation",
+    "why": "Uses $x = -\\frac{b}{a}$ and forgets the 2, so $b = 0.05 \\cdot 30$."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplies by 2 instead of dividing, $b = 2 \\cdot 30 \\cdot 0.1$."
+   },
+   {
+    "value": "30",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the x-coordinate of the vertex rather than the coefficient $b$."
+   },
+   {
+    "value": "60",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the other base of the arch (the second x-intercept) rather than $b$."
+   },
+   {
+    "value": "45",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the maximum height, $h(30) = -45 + 90$, which is the y-value of the vertex."
+   }
+  ],
+  "id": "orig-quadratic-vert-M-a452e1",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "If $c$ is a positive integer, what is one possible value of $c$?",
+  "stimulus": "A materials scientist fits the function $g(x) = 2x^2 + bx + c$, where $b$ and $c$ are constants, to data from a strain test on a polymer sample. In the xy-plane, the graph of $y = g(x)$ has its minimum at $x = 3$ and crosses the x-axis at two points.",
+  "keys": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "11",
+   "12",
+   "13",
+   "14",
+   "15",
+   "16",
+   "17"
+  ],
+  "any_of": true,
+  "explanation": "The leading coefficient is 2 and the vertex is at $x = 3$, so in vertex form $g(x) = 2(x - 3)^2 + k$. The parabola opens upward, so it crosses the x-axis twice only if its minimum is below the axis, which means $k < 0$. Expanding gives $g(x) = 2x^2 - 12x + 18 + k$, so $c = 18 + k$. Since $k < 0$, $c < 18$. Any positive integer from 1 to 17 works. In Desmos, graph $y = 2x^2 - 12x + c$ with a slider on $c$ and watch the two x-intercepts merge at $c = 18$.",
+  "common_errors": [
+   {
+    "value": "18",
+    "misconception": "missed-condition",
+    "why": "Lets $k = 0$. Then the vertex touches the x-axis and there is only one x-intercept, not two."
+   },
+   {
+    "value": "19",
+    "misconception": "complement-or-direction-flip",
+    "why": "Ignores that an upward parabola must have its vertex below the axis to cross it twice and takes $k > 0$, so $c > 18$. Any value of 19 or more comes from this error."
+   },
+   {
+    "value": "-12",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives $b$, found from $-\\frac{b}{2 \\cdot 2} = 3$, instead of $c$."
+   },
+   {
+    "value": "12",
+    "misconception": "algebra-manipulation",
+    "why": "Gets the sign of $b$ wrong from $(x - 3)$ and reports $b = 12$ instead of finding $c$."
+   }
+  ],
+  "id": "orig-quadratic-vert-M-938b7f",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

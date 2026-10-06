@@ -1,0 +1,169 @@
+[
+ {
+  "stem": "What is the value of $\\tan X$?",
+  "stimulus": "A cartographer plots three survey markers on a map as triangle $PQR$, which has a right angle at $R$. On the map, $PR = 8$ centimeters and $PQ = 17$ centimeters. On the ground, the same three markers form triangle $XYZ$, which is similar to triangle $PQR$, with $P$ corresponding to $Z$, $Q$ corresponding to $X$, and $R$ corresponding to $Y$.",
+  "keys": [
+   "8/15",
+   ".5333",
+   "0.5333"
+  ],
+  "any_of": false,
+  "explanation": "Match the angles using the stated correspondence, not the alphabet. $X$ corresponds to $Q$, so $\\angle X \\cong \\angle Q$ and $\\tan X = \\tan Q$. In triangle $PQR$, use the Pythagorean theorem to find the missing leg: $QR = \\sqrt{17^2 - 8^2} = \\sqrt{225} = 15$. Relative to angle $Q$, the opposite side is $PR = 8$ and the adjacent side is $QR = 15$, so $\\tan Q = \\frac{8}{15}$. Similar triangles have the same trig ratios at corresponding angles, so the ground-scale triangle doesn't change this value: $\\tan X = \\frac{8}{15}$.",
+  "common_errors": [
+   {
+    "value": "15/8",
+    "misconception": "wrong-target-quantity",
+    "why": "You matched X to P because they come first in each name, then found tan P = QR/PR = 15/8. This is the subtype's trap: matching by position instead of by the stated correspondence. Also 1.875."
+   },
+   {
+    "value": "8/17",
+    "misconception": "wrong-target-quantity",
+    "why": "You used sine (opposite/hypotenuse = PR/PQ) instead of tangent, which also skips the Pythagorean step. Also .4705 or .4706."
+   },
+   {
+    "value": "15/17",
+    "misconception": "wrong-target-quantity",
+    "why": "You used angle P instead of angle Q and also took sine instead of tangent: sin P = QR/PQ = 15/17. Also .8823 or .8824."
+   },
+   {
+    "value": "8/17",
+    "misconception": "intermediate-step",
+    "why": "You stopped before finding the missing leg and used the hypotenuse 17 as if it were the adjacent side."
+   }
+  ],
+  "id": "orig-similar-triang-H-f2c59d",
+  "skill_cd": "S.C.",
+  "subtype": "similar-triangles-transfer",
+  "subtype_name": "Similar right triangles: carry a ratio or a side across",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $\\tan(\\angle MKL)$?",
+  "stimulus": "An immunologist marks a triangular sampling region $JKL$ on a magnified image of a lymph node. Triangle $JKL$ has a right angle at $K$. Segment $KM$ is drawn from $K$ perpendicular to hypotenuse $\\overline{JL}$, with point $M$ on $\\overline{JL}$. On the image, $JM = 9$ micrometers and $ML = 16$ micrometers.",
+  "keys": [
+   "4/3",
+   "1.333"
+  ],
+  "any_of": false,
+  "explanation": "The altitude $KM$ splits triangle $JKL$ into two smaller right triangles. Both are similar to $JKL$ and to each other. In right triangle $KML$, $\\angle MKL$ and $\\angle L$ are complementary. Since $\\angle J$ and $\\angle L$ are also complementary, $\\angle MKL \\cong \\angle J$. First, find the altitude. Triangles $JMK$ and $KML$ are similar, so $\\frac{JM}{KM} = \\frac{KM}{ML}$. That gives $KM^2 = 9 \\cdot 16 = 144$, so $KM = 12$. In right triangle $KML$, relative to $\\angle MKL$, the opposite side is $ML = 16$ and the adjacent side is $KM = 12$. So $\\tan(\\angle MKL) = \\frac{16}{12} = \\frac{4}{3}$. You can check this in the big triangle: $KL = \\sqrt{16 \\cdot 25} = 20$ and $JK = \\sqrt{9 \\cdot 25} = 15$, so $\\tan J = \\frac{20}{15} = \\frac{4}{3}$.",
+  "common_errors": [
+   {
+    "value": "3/4",
+    "misconception": "wrong-target-quantity",
+    "why": "Because the angle's name contains L, you treated angle MKL as if it were angle L and found tan L = KM/ML = 12/16. This is the subtype's trap: matching by where the angle sits instead of which angle it equals. Also .75."
+   },
+   {
+    "value": "16/9",
+    "misconception": "algebra-manipulation",
+    "why": "You treated the two segments of the hypotenuse, ML and JM, as if they were opposite and adjacent legs. Also 1.777 or 1.778."
+   },
+   {
+    "value": "12",
+    "misconception": "intermediate-step",
+    "why": "You found the altitude KM = 12 and entered it instead of building the ratio."
+   },
+   {
+    "value": "4/5",
+    "misconception": "wrong-target-quantity",
+    "why": "You found sine instead of tangent: ML/KL = 16/20. Also .8."
+   }
+  ],
+  "id": "orig-similar-triang-H-911742",
+  "skill_cd": "S.C.",
+  "subtype": "similar-triangles-transfer",
+  "subtype_name": "Similar right triangles: carry a ratio or a side across",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the length, in meters, of $\\overline{BC}$?",
+  "stimulus": "An urban planner sketches a triangular park $ABC$ with a right angle at $B$. A straight footpath runs from point $D$ on $\\overline{AB}$ to point $E$ on $\\overline{AC}$, and $\\overline{DE}$ is parallel to $\\overline{BC}$. On the plan, $AE = 26$ meters, $EC = 13$ meters, and $\\cos(\\angle AED) = \\frac{5}{13}$.",
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "Because $\\overline{DE} \\parallel \\overline{BC}$, triangle $ADE$ is similar to triangle $ABC$, with $D$ corresponding to $B$ and $E$ corresponding to $C$. So $\\angle AED \\cong \\angle ACB$, and $\\cos(\\angle ACB) = \\frac{5}{13}$. The scale factor between the triangles doesn't change this cosine. The hypotenuse of the large triangle is $AC = AE + EC = 26 + 13 = 39$. Relative to angle $C$, $\\overline{BC}$ is the adjacent side, so $BC = AC \\cos C = 39 \\cdot \\frac{5}{13} = 15$.",
+  "common_errors": [
+   {
+    "value": "36",
+    "misconception": "wrong-target-quantity",
+    "why": "You applied the cosine at angle A instead of the corresponding angle C, which gives AB = 15. Then you used the Pythagorean theorem to get BC = 36. Using sine at C (39 \u00b7 12/13) gives the same wrong value. This is the subtype's trap: using the ratio at the wrong angle."
+   },
+   {
+    "value": "10",
+    "misconception": "intermediate-step",
+    "why": "You found the footpath DE = 26 \u00b7 5/13 in the small triangle and stopped, or you used AE = 26 as the full hypotenuse."
+   },
+   {
+    "value": "5",
+    "misconception": "misread-given",
+    "why": "You used EC = 13 as the hypotenuse of the large triangle instead of AC = 39."
+   },
+   {
+    "value": "22.5",
+    "misconception": "algebra-manipulation",
+    "why": "You assumed the scale factor 39/26 also scales the cosine, giving cos C = 15/26 and BC = 39 \u00b7 15/26. Similar triangles keep the trig value the same."
+   }
+  ],
+  "id": "orig-similar-triang-H-4e04d9",
+  "skill_cd": "S.C.",
+  "subtype": "similar-triangles-transfer",
+  "subtype_name": "Similar right triangles: carry a ratio or a side across",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the length, in meters, of $\\overline{UW}$?",
+  "stimulus": "An ecology field team uses triangle $RST$ to lay out a small vegetation plot in a wetland. Triangle $RST$ has a right angle at $T$, and $\\tan R = \\frac{24}{7}$. A larger survey plot is laid out as triangle $UVW$, which is similar to triangle $RST$, with $R$ corresponding to $V$, $S$ corresponding to $W$, and $T$ corresponding to $U$. The longest side of triangle $UVW$, $\\overline{VW}$, is $75$ meters long.",
+  "keys": [
+   "72"
+  ],
+  "any_of": false,
+  "explanation": "Use the stated correspondence. $T$ matches $U$, so the right angle of triangle $UVW$ is at $U$, and $\\overline{VW}$ is its hypotenuse. $R$ matches $V$, so $\\tan V = \\tan R = \\frac{24}{7}$. Relative to angle $V$, the opposite side is $\\overline{UW}$ and the adjacent side is $\\overline{UV}$. So $UW = 24k$ and $UV = 7k$ for some $k$, and the hypotenuse is $\\sqrt{(24k)^2 + (7k)^2} = 25k$. Setting $25k = 75$ gives $k = 3$, so $UW = 24 \\cdot 3 = 72$.",
+  "common_errors": [
+   {
+    "value": "21",
+    "misconception": "wrong-target-quantity",
+    "why": "You attached the tangent 24/7 to angle W instead of angle V, so UW became the 7-part side: 7 \u00b7 3 = 21. This is the subtype's trap: matching angles by position instead of by the stated correspondence."
+   },
+   {
+    "value": "24",
+    "misconception": "algebra-manipulation",
+    "why": "You read the side straight off the ratio 24/7 as if the triangle were literally 7-24-25 and never scaled it to the 75-meter hypotenuse."
+   },
+   {
+    "value": "3",
+    "misconception": "intermediate-step",
+    "why": "You found the scale multiplier k = 75/25 and stopped."
+   },
+   {
+    "value": "25",
+    "misconception": "intermediate-step",
+    "why": "You found the hypotenuse of the basic 7-24-25 triangle and entered it instead of the scaled leg."
+   }
+  ],
+  "id": "orig-similar-triang-H-8ac9b9",
+  "skill_cd": "S.C.",
+  "subtype": "similar-triangles-transfer",
+  "subtype_name": "Similar right triangles: carry a ratio or a side across",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

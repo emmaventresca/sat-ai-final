@@ -1,0 +1,172 @@
+[
+ {
+  "stem": "What is the antibody concentration in sample A, in units per milliliter?",
+  "stimulus": "An immunology lab measured the concentration of a specific antibody in three blood samples. The concentration in sample A is 25% greater than the concentration in sample B. The concentration in sample B is 20% less than the concentration in sample C. The concentration in sample C is 800 units per milliliter.",
+  "keys": [
+   "800"
+  ],
+  "any_of": false,
+  "explanation": "Write each statement as a multiplier equation. 'B is 20% less than C' gives $B = 0.8C$, and 'A is 25% greater than B' gives $A = 1.25B$. Work through the chain from the known value: $B = 0.8(800) = 640$, then $A = 1.25(640) = 800$. You can also multiply the multipliers first: $A = (1.25)(0.8)C = 1.0C$, so A equals C. Do not add the percents: +25% and \u221220% is not a net +5%, because each percent is taken of a different base.",
+  "common_errors": [
+   {
+    "value": "840",
+    "misconception": "algebra-manipulation",
+    "why": "Added the percents (+25% \u2212 20% = +5%) and computed $1.05(800)$ instead of multiplying the multipliers $1.25 \\times 0.8$."
+   },
+   {
+    "value": "640",
+    "misconception": "intermediate-step",
+    "why": "Found sample B's concentration, $0.8(800)$, and stopped without applying the 25% increase to get A."
+   },
+   {
+    "value": "1000",
+    "misconception": "misread-given",
+    "why": "Applied the 25% increase directly to sample C, $1.25(800)$, and skipped the link through B."
+   },
+   {
+    "value": "2500/3",
+    "misconception": "misread-given",
+    "why": "Reversed the base in 'B is 20% less than C', treating it as 'C is 20% greater than B'. That gives $B = 800/1.2 \\approx 666.67$ and $A = 1.25B \\approx 833.33$."
+   }
+  ],
+  "id": "orig-chained-percen-M-9fa176",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The number of tales in archive P is what percent of the number of tales in archive R?",
+  "stimulus": "A folklore studies department keeps three archives of recorded folktales. Archive P contains 50% more tales than archive Q. Archive Q contains 40% fewer tales than archive R.",
+  "keys": [
+   "90"
+  ],
+  "any_of": false,
+  "explanation": "No counts are given, so let archive R hold 100 tales. 'Q contains 40% fewer than R' means $Q = 0.6R = 60$. 'P contains 50% more than Q' means $P = 1.5Q = 1.5(60) = 90$. So P is $90/100$, which is 90% of R. In one line: $P = (1.5)(0.6)R = 0.9R$. Multiply the multipliers. Adding +50% and \u221240% to get +10% is the trap, because the 50% is taken of Q and the 40% is taken of R.",
+  "common_errors": [
+   {
+    "value": "110",
+    "misconception": "algebra-manipulation",
+    "why": "Added the percents, +50% \u2212 40% = +10%, and concluded P is 110% of R."
+   },
+   {
+    "value": "60",
+    "misconception": "intermediate-step",
+    "why": "Found Q as a percent of R, 60%, and stopped before applying the 50% increase from Q to P."
+   },
+   {
+    "value": "10",
+    "misconception": "complement-or-direction-flip",
+    "why": "Found the correct relationship but reported how much smaller P is than R (10% less) instead of what percent of R it is."
+   },
+   {
+    "value": "107.1",
+    "misconception": "misread-given",
+    "why": "Used the wrong base in 'Q contains 40% fewer than R', treating it as 'R contains 40% more than Q'. That gives $Q = R/1.4$ and $P = 1.5R/1.4 \\approx 1.0714R$."
+   }
+  ],
+  "id": "orig-chained-percen-M-84b6e2",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What was the average peak-hour traffic volume on the bridge in 2020, in vehicles per hour?",
+  "stimulus": "Civil engineers monitoring a river bridge found that its average peak-hour traffic volume rose by 20% from 2020 to 2022. After a new bypass opened, the volume fell by 25% from 2022 to 2024. In 2024, the average peak-hour traffic volume was 1,710 vehicles per hour.",
+  "keys": [
+   "1900"
+  ],
+  "any_of": false,
+  "explanation": "Let $x$ be the 2020 volume. The 20% rise makes the 2022 volume $1.2x$. The 25% fall makes the 2024 volume $0.75(1.2x) = 0.9x$. Set up the equation $0.9x = 1710$, so $x = 1710 / 0.9 = 1900$. Write the equation rather than undoing the changes in your head. The 1,710 is 90% of the 2020 value, so you divide. Adding the percents (+20 \u2212 25 = \u22125) gives the wrong net multiplier.",
+  "common_errors": [
+   {
+    "value": "1800",
+    "misconception": "algebra-manipulation",
+    "why": "Added the percents to get a net 5% decrease and solved $0.95x = 1710$, instead of multiplying $1.2 \\times 0.75 = 0.9$."
+   },
+   {
+    "value": "2280",
+    "misconception": "intermediate-step",
+    "why": "Correctly undid the 25% decrease to find the 2022 volume, $1710 / 0.75$, but did not undo the 20% increase."
+   },
+   {
+    "value": "1710",
+    "misconception": "algebra-manipulation",
+    "why": "Tried to reverse the changes by applying the opposite percents, down 20% then up 25%. That gives $1710(0.8)(1.25) = 1710$, which does not undo the multipliers."
+   },
+   {
+    "value": "1539",
+    "misconception": "complement-or-direction-flip",
+    "why": "Applied the changes forward to the 2024 value, $1710(1.2)(0.75)$, instead of working backward to 2020."
+   }
+  ],
+  "id": "orig-chained-percen-M-d484fc",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The amount of protein in one serving of food X is how many times the amount of protein in one serving of food Z?",
+  "stimulus": "A nutrition science study compared the protein content of single servings of three foods. One serving of food X contains 60% more protein than one serving of food Y. One serving of food Y contains 25% less protein than one serving of food Z.",
+  "keys": [
+   "1.2",
+   "6/5"
+  ],
+  "any_of": false,
+  "explanation": "Turn each statement into a multiplier. 'Y contains 25% less than Z' gives $Y = 0.75Z$. 'X contains 60% more than Y' gives $X = 1.6Y$. Substitute: $X = 1.6(0.75Z) = 1.2Z$, so X is 1.2 times Z. To check, set Z = 100 grams. Then Y = 75 and X = 120, and $120/100 = 1.2$. Multiply the multipliers. Adding +60% and \u221225% gives the wrong answer.",
+  "common_errors": [
+   {
+    "value": "1.35",
+    "misconception": "algebra-manipulation",
+    "why": "Added the percents, +60% \u2212 25% = +35%, and gave the multiplier 1.35."
+   },
+   {
+    "value": "0.75",
+    "misconception": "intermediate-step",
+    "why": "Found Y as a multiple of Z and stopped before applying the 60% increase to get X."
+   },
+   {
+    "value": "1.28",
+    "misconception": "misread-given",
+    "why": "Used the wrong base in 'Y contains 25% less than Z', treating it as 'Z contains 25% more than Y'. That gives $Y = Z/1.25 = 0.8Z$ and $X = 1.6(0.8Z) = 1.28Z$."
+   },
+   {
+    "value": "5/6",
+    "misconception": "complement-or-direction-flip",
+    "why": "Inverted the ratio and reported Z as a multiple of X, $1/1.2 \\approx 0.8333$, instead of X as a multiple of Z."
+   },
+   {
+    "value": "120",
+    "misconception": "wrong-target-quantity",
+    "why": "Found that X is 120% of Z and entered the percent instead of the number of times."
+   }
+  ],
+  "id": "orig-chained-percen-M-595f0a",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

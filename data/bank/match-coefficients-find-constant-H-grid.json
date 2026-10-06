@@ -1,0 +1,166 @@
+[
+ {
+  "stem": "If $3(2x-5)^2 - 4(x+1)(x-3)$ is equivalent to $ax^2 + bx + c$, where $a$, $b$, and $c$ are constants, what is the value of $a + b + c$?",
+  "stimulus": "A folklore studies student models how many variants of a regional legend appear in an archive as a function of $x$, the number of decades since the legend was first written down. The student's model is built from two parts, and combining them gives the expression $3(2x-5)^2 - 4(x+1)(x-3)$.",
+  "keys": [
+   "43"
+  ],
+  "any_of": false,
+  "explanation": "First expand the squared part completely: $(2x-5)^2 = 4x^2 - 20x + 25$. The 3 multiplies all of it, so you get $12x^2 - 60x + 75$. Next, $(x+1)(x-3) = x^2 - 2x - 3$, and multiplying by 4 gives $4x^2 - 8x - 12$. When you subtract, the minus sign applies to every term: $12x^2 - 60x + 75 - 4x^2 + 8x + 12 = 8x^2 - 52x + 87$. Matching coefficients gives $a = 8$, $b = -52$, $c = 87$, so $a + b + c = 8 - 52 + 87 = 43$. Shortcut: $a + b + c$ is the value of the polynomial at $x = 1$. Substituting $x = 1$ into the original gives $3(-3)^2 - 4(2)(-2) = 27 + 16 = 43$.",
+  "common_errors": [
+   {
+    "value": "8",
+    "misconception": "intermediate-step",
+    "why": "Finds the leading coefficient $a = 8$ and stops, without adding $b$ and $c$ as the question asks."
+   },
+   {
+    "value": "33",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplies only the $4x^2$ term of $(2x-5)^2$ by the 3, which gives $12x^2 - 20x + 25$. After subtracting, this leads to $8x^2 - 12x + 37$."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Doesn't carry the subtraction to every term of $4x^2 - 8x - 12$, which gives $8x^2 - 68x + 63$."
+   },
+   {
+    "value": "103",
+    "misconception": "algebra-manipulation",
+    "why": "Expands $(2x-5)^2$ as $4x^2 + 25$ and leaves out the middle term, which gives $8x^2 + 8x + 87$."
+   },
+   {
+    "value": "-52",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the coefficient $b$ instead of the sum $a + b + c$."
+   }
+  ],
+  "id": "orig-match-coeffici-H-c88653",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "In the equation above, $a$, $b$, and $k$ are constants, and the equation is true for all values of $x$. What is the value of $k$?",
+  "stimulus": "An agricultural scientist lays out paired test plots of a drought-tolerant sorghum variety. The total planted area, in square meters, is modeled by the left side of the equation below, where $x$ is a design parameter.\n\n$2(ax + b)(3x - 4) = 24x^2 + kx - 56$",
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "Expand the left side and keep the factor of 2 on the whole product: $2(ax+b)(3x-4) = 2(3ax^2 - 4ax + 3bx - 4b) = 6ax^2 + 2(3b - 4a)x - 8b$. Match the $x^2$ terms: $6a = 24$, so $a = 4$. Match the constants: $-8b = -56$, so $b = 7$. Then match the $x$ terms: $k = 2(3b - 4a) = 2(21 - 16) = 10$.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Finds $a = 4$ and $b = 7$ correctly but then computes $k = 3b - 4a = 5$. The factor of 2 multiplies the whole product, but it was left off the middle term."
+   },
+   {
+    "value": "74",
+    "misconception": "algebra-manipulation",
+    "why": "Drops the negative sign on the 4 when finding the cross terms and computes $k = 2(3b + 4a) = 2(37)$."
+   },
+   {
+    "value": "11",
+    "misconception": "wrong-target-quantity",
+    "why": "Reports $a + b$, the two constants found first, instead of $k$."
+   },
+   {
+    "value": "7",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives $b$, the value found by matching constant terms, instead of $k$."
+   }
+  ],
+  "id": "orig-match-coeffici-H-d0a5de",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "For $x \\neq \\frac{3}{2}$, the expression $\\frac{8x^2 - 2x - 7}{2x - 3}$ is equivalent to $ax + b + \\frac{k}{2x - 3}$, where $a$, $b$, and $k$ are constants. What is the value of $a + b + k$?",
+  "stimulus": "An astronomy student simplifies a ratio that appears in a model of how a variable star's brightness changes over time.",
+  "keys": [
+   "17"
+  ],
+  "any_of": false,
+  "explanation": "Multiply both sides by $2x - 3$: $8x^2 - 2x - 7 = (ax + b)(2x - 3) + k$. Expanding the right side gives $2ax^2 + (2b - 3a)x - 3b + k$. Match the $x^2$ terms: $2a = 8$, so $a = 4$. Match the $x$ terms: $2b - 12 = -2$, so $b = 5$. Match the constants: $-15 + k = -7$, so $k = 8$. The question asks for the sum, so $a + b + k = 4 + 5 + 8 = 17$.",
+  "common_errors": [
+   {
+    "value": "8",
+    "misconception": "intermediate-step",
+    "why": "Finds the remainder $k = 8$ and stops, without adding $a$ and $b$."
+   },
+   {
+    "value": "9",
+    "misconception": "intermediate-step",
+    "why": "Adds only the quotient coefficients, $a + b = 4 + 5$, and leaves out the remainder $k$."
+   },
+   {
+    "value": "1",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracts in the wrong order to find the remainder, $-15 - (-7) = -8$, so $k = -8$ and the sum is $4 + 5 - 8$."
+   }
+  ],
+  "id": "orig-match-coeffici-H-1212e2",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "In the equation above, $p$ and $q$ are constants, and the equation is true for all values of $x$. What is the value of $q - p$?",
+  "stimulus": "A paleobotanist models the width, in millimeters, of fossilized growth rings in a petrified conifer as a quadratic function of $x$, the ring's position from the center of the trunk. To find the narrowest ring, the paleobotanist rewrites the model as shown.\n\n$2(x + p)^2 + q = 2x^2 - 12x + 23$",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "Expand the left side and keep the 2 on every term of the square: $2(x^2 + 2px + p^2) + q = 2x^2 + 4px + 2p^2 + q$. Match the $x$ terms: $4p = -12$, so $p = -3$. Match the constants: $2p^2 + q = 23$, so $18 + q = 23$ and $q = 5$. Then $q - p = 5 - (-3) = 8$.",
+  "common_errors": [
+   {
+    "value": "17",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplies the $x^2$ and $x$ terms by 2 but not $p^2$, so $p^2 + q = 23$ gives $q = 14$, and $14 - (-3) = 17$."
+   },
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "Assumes $p$ has the same sign as the $-12x$ term in reverse, taking $p = 3$ and then $q = 5$, so $q - p = 2$. Computing $p + q$ instead of $q - p$ also gives 2."
+   },
+   {
+    "value": "5",
+    "misconception": "intermediate-step",
+    "why": "Finds $q = 5$ and reports it without subtracting $p$."
+   },
+   {
+    "value": "-7",
+    "misconception": "algebra-manipulation",
+    "why": "Applies the 2 only to the $x^2$ term, which gives $2p = -12$ and $p = -6$, then $36 + q = 23$ and $q = -13$."
+   }
+  ],
+  "id": "orig-match-coeffici-H-8e6893",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

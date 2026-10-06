@@ -1,0 +1,182 @@
+[
+ {
+  "stem": "Which of the following best describes how the algae-covered area of the reef changes over time during the project?",
+  "stimulus": "When a reef restoration project began, algae covered 500 square meters of the reef. Each month, divers clear an area of algae equal to 4% of the area that was covered when the project began. Assume no new algae grows during the project.",
+  "choices": [
+   "Increasing linear",
+   "Increasing exponential",
+   "Decreasing linear",
+   "Decreasing exponential"
+  ],
+  "answer": "C",
+  "explanation": "The area goes down each month, so it is decreasing. The 4% is always taken of the starting area of 500 square meters, so the divers clear the same 0.04(500) = 20 square meters every month. Subtracting a constant amount each step is linear, so the area is decreasing linearly: $A(m) = 500 - 20m$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You got the type right, since a constant amount changes each month, but the wrong direction. The divers remove algae, so the covered area shrinks. You may have been tracking the cleared area, which grows."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You got the direction backward, because the algae-covered area falls rather than rises. You also called the change exponential just because a percent appeared, even though the percent is of a fixed starting amount."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This is the trap. You saw '4%' and assumed the area is multiplied by 0.96 each month. The percent is of the original 500 square meters, not of the current area, so the same 20 square meters goes each month. That is linear, not exponential."
+   }
+  },
+  "id": "orig-classify-funct-M-bdcda3",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which of the following best describes the relationship between t and N?",
+  "stimulus": "A folklore archive is cataloguing versions of a traditional trickster tale collected from storytellers. The table shows N, the total number of versions catalogued, t years after the project began.\n\nCatalogued Versions of a Trickster Tale\nYears since start, t | Versions catalogued, N\n0 | 10\n2 | 22\n3 | 28\n6 | 46",
+  "choices": [
+   "Increasing linear",
+   "Increasing exponential",
+   "Decreasing linear",
+   "Decreasing exponential"
+  ],
+  "answer": "A",
+  "explanation": "N rises as t rises, so the relationship is increasing. The t-values are not evenly spaced, so compare the change in N per year. From 0 to 2 it is 12 \u00f7 2 = 6, from 2 to 3 it is 6 \u00f7 1 = 6, and from 3 to 6 it is 18 \u00f7 3 = 6. A constant rate of 6 versions per year means the relationship is linear: $N = 10 + 6t$.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This is the trap. You compared the raw jumps between rows (12, 6, 18), saw they were unequal and growing at the end, and decided the growth was exponential. The rows cover different numbers of years. Once you divide each jump by its number of years, the rate is a constant 6 per year, which is linear."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You got the type right but read the direction backward, perhaps by scanning the table from bottom to top. As t increases, N goes from 10 up to 46, so it is increasing."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You reversed the direction, because N goes up as t goes up. You also called the pattern exponential, but the ratios (2.2, about 1.27, about 1.64) are not constant while the per-year differences are."
+   }
+  },
+  "id": "orig-classify-funct-M-a070d1",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which of the following statements is true?",
+  "stimulus": "An archaeology museum is comparing two plans for digitizing its artifact records. Under plan A, the total number of records digitized after w weeks is modeled by $A(w) = 200 + 50w$. Under plan B, the total number of records digitized after w weeks is modeled by $B(w) = 20(2)^w$. Here w is a whole number of weeks.",
+  "choices": [
+   "Plan B's total never exceeds plan A's total.",
+   "Plan B's total first exceeds plan A's total at week 5.",
+   "Plan B's total first exceeds plan A's total at week 3.",
+   "Plan A's total exceeds plan B's total from week 5 on."
+  ],
+  "answer": "B",
+  "explanation": "Compare the totals week by week. At w = 3, A = 350 and B = 160. At w = 4, A = 400 and B = 320. At w = 5, A = 450 and B = 640. Plan B is behind through week 4 and pulls ahead for the first time at week 5. Exponential growth always overtakes linear growth eventually, so B stays ahead after that.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "This is the trap. You saw that plan A starts far ahead (200 versus 20) and also adds more in the first weeks, so you assumed it stays ahead. Doubling eventually beats adding a fixed 50 per week, and B passes A at week 5."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You compared the weekly gains instead of the totals. From week 2 to week 3, plan B gains 160 \u2212 80 = 80 records, which is more than plan A's 50, but B's total of 160 is still far below A's total of 350."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the right crossover week but reversed who is ahead. From week 5 on, plan B's total (640, 1,280, and so on) exceeds plan A's, not the other way around."
+   }
+  },
+  "id": "orig-classify-funct-M-8f1788",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which of the following best describes the relationship between h and P?",
+  "stimulus": "A meteorologist uses the function $P(h) = 1{,}000(2)^{-h/5}$ to model the atmospheric pressure P, in hectopascals, at an altitude of h kilometers above sea level, for $0 \\le h \\le 15$.",
+  "choices": [
+   "Increasing linear",
+   "Increasing exponential",
+   "Decreasing linear",
+   "Decreasing exponential"
+  ],
+  "answer": "D",
+  "explanation": "The function has the variable in the exponent, so it is exponential. Because the exponent is negative, $P(h) = 1{,}000(2)^{-h/5} = 1{,}000\\left(\\tfrac{1}{2}\\right)^{h/5}$, so the pressure is cut in half for every 5 kilometers of altitude: 1,000, then 500, then 250, then 125. Multiplying by a constant factor less than 1 is exponential decrease.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got both the direction and the type wrong. The variable is in the exponent, which makes the function exponential, and the negative exponent makes the pressure fall as altitude rises."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You saw a base of 2, which is greater than 1, and concluded the function grows. You missed the negative sign in the exponent $-h/5$, which flips the base to $\\tfrac{1}{2}$ and makes P decrease."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This is the trap. You got the direction right but treated 'loses half every 5 km' as losing a fixed amount. The drops are 500, then 250, then 125: the same factor each time, not the same amount. That is exponential, not linear."
+   }
+  },
+  "id": "orig-classify-funct-M-7491b1",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which of the following best describes how the number of unvaccinated residents changes over time during the campaign?",
+  "stimulus": "A county public health department begins a vaccination campaign in a town of 8,000 residents, none of whom have received this year's vaccine. Each week of the campaign, the number of unvaccinated residents falls by 10% of the number of residents who were unvaccinated at the start of that week.",
+  "choices": [
+   "Increasing linear",
+   "Increasing exponential",
+   "Decreasing linear",
+   "Decreasing exponential"
+  ],
+  "answer": "D",
+  "explanation": "The number of unvaccinated residents goes down each week, so it is decreasing. The 10% is taken of whatever number was unvaccinated at the start of that week, not of the original 8,000, so each week the count is multiplied by 0.90: $U(w) = 8{,}000(0.9)^w$. A constant multiplier each step is exponential, so this is exponential decrease.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You described the wrong quantity and treated its change as a constant amount. The number of vaccinated residents goes up, but the question asks about unvaccinated residents, and their number goes down by a constant percent, not a constant amount."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You described the number of vaccinated residents, which rises, instead of the number of unvaccinated residents the question asks about. The unvaccinated count falls."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This is the trap. You read the drop as a fixed 800 people per week (10% of 8,000). The 10% is of the current week's unvaccinated count, so the drops shrink (800, then 720, then 648, and so on). That is exponential, not linear."
+   }
+  },
+  "id": "orig-classify-funct-M-746c92",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

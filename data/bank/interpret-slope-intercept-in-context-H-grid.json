@@ -1,0 +1,212 @@
+[
+ {
+  "stem": "According to the model, how many square kilometers of the survey area does the cartographer digitize each day?",
+  "stimulus": "A cartographer is converting a hand-drawn survey map of a region into a digital format. The equation $2R + 70d = 1680$ models the area $R$, in square kilometers, of the survey map that still has not been digitized $d$ days after the cartographer began the project.",
+  "keys": [
+   "35"
+  ],
+  "any_of": false,
+  "explanation": "Rewrite the equation in $y = mx + b$ form so you can read off the rate. Subtract $70d$ from both sides: $2R = 1680 - 70d$. Divide every term by 2: $R = 840 - 35d$. The coefficient of $d$ is the rate of change in the area left to digitize, so the remaining area goes down by 35 square kilometers each day. The question asks how much is digitized each day. That is the size of the decrease, so the answer is 35, not \u221235. The constant 840 is the area of the whole map at the start, and it does not answer this question.",
+  "common_errors": [
+   {
+    "value": "70",
+    "misconception": "algebra-manipulation",
+    "why": "Read the coefficient of $d$ straight from $2R + 70d = 1680$ without first dividing by the 2 on $R$."
+   },
+   {
+    "value": "-35",
+    "misconception": "complement-or-direction-flip",
+    "why": "Gave the slope of $R$ (the change in area still to be done) when the question asks for the amount digitized, which is the positive magnitude."
+   },
+   {
+    "value": "840",
+    "misconception": "wrong-target-quantity",
+    "why": "Reported the intercept (the area of the whole map at the start) when the question asks for the daily rate."
+   },
+   {
+    "value": "24",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved $840 - 35d = 0$ and gave the number of days needed to finish, not the area done per day."
+   },
+   {
+    "value": "1680",
+    "misconception": "misread-given",
+    "why": "Took the constant from the unrearranged equation as the quantity the question asked about."
+   }
+  ],
+  "id": "orig-interpret-slop-H-b18c8b",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the graph, by how many centimeters does the water depth of the pond decrease for each additional week?",
+  "stimulus": "During a drought, an ecologist recorded the water depth at the center of a seasonal pond. The graph shows a linear model of the depth $y$, in centimeters, $x$ weeks after the recording began.",
+  "figure": {
+   "type": "line",
+   "caption": "Pond Depth During a Drought",
+   "x_label": "Time (weeks)",
+   "y_label": "Water depth (centimeters)",
+   "points": [
+    [
+     0,
+     60
+    ],
+    [
+     4,
+     50
+    ],
+    [
+     8,
+     40
+    ],
+    [
+     12,
+     30
+    ],
+    [
+     16,
+     20
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 20,
+   "x_step": 4,
+   "y_min": 0,
+   "y_max": 70,
+   "y_step": 10,
+   "alt": "A straight line falling from left to right across a grid. The horizontal axis is time in weeks, from 0 to 20 in steps of 4. The vertical axis is water depth in centimeters, from 0 to 70 in steps of 10."
+  },
+  "keys": [
+   "2.5",
+   "5/2"
+  ],
+  "any_of": false,
+  "explanation": "You are asked about each additional week, so you need the slope. Pick two points where the line crosses gridlines exactly, such as $(0, 60)$ and $(8, 40)$. The slope is $\\frac{40 - 60}{8 - 0} = \\frac{-20}{8} = -2.5$. The depth falls by 2.5 centimeters per week. The question asks how much the depth decreases, so give the size of the change, 2.5. Notice that each horizontal gridline is 4 weeks, not 1 week, so the 10-centimeter drop from one gridline to the next is not the weekly rate.",
+  "common_errors": [
+   {
+    "value": "10",
+    "misconception": "intermediate-step",
+    "why": "Read the drop from one vertical gridline to the next (4 weeks) as if it were one week, and never divided by the run of 4."
+   },
+   {
+    "value": "-2.5",
+    "misconception": "complement-or-direction-flip",
+    "why": "Gave the signed slope when the question asks for the amount of the decrease."
+   },
+   {
+    "value": "60",
+    "misconception": "wrong-target-quantity",
+    "why": "Reported the y-intercept (the starting depth) instead of the rate per week."
+   },
+   {
+    "value": "0.4",
+    "misconception": "algebra-manipulation",
+    "why": "Computed run over rise, $8/20$, instead of rise over run."
+   },
+   {
+    "value": "24",
+    "misconception": "wrong-target-quantity",
+    "why": "Extended the line to the horizontal axis and gave the week at which the pond would be dry."
+   }
+  ],
+  "id": "orig-interpret-slop-H-f62e1b",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the model, how many yards of cloth were already on the loom's cloth beam at the start of the shift?",
+  "stimulus": "A textile historian is studying the output records of a power loom from an 1840s cotton mill. The historian models the total length $L$, in yards, of cloth wound onto the loom's cloth beam $h$ hours after the start of a shift with the equation $L = 18(h - 2) + 50$.",
+  "keys": [
+   "14"
+  ],
+  "any_of": false,
+  "explanation": "'At the start of the shift' means $h = 0$, so you are being asked for the y-intercept. The equation is not in $y = mx + b$ form, so the 50 is not the intercept. The 50 is the length when $h = 2$. Substitute $h = 0$: $L = 18(0 - 2) + 50 = -36 + 50 = 14$. Or distribute first: $L = 18h - 36 + 50 = 18h + 14$, so $b = 14$. In both cases, 14 yards were already on the beam when the shift began. The 18 is the rate, 18 yards woven per hour.",
+  "common_errors": [
+   {
+    "value": "50",
+    "misconception": "graph-feature-mismatch",
+    "why": "Treated the constant in point-slope form as the y-intercept. 50 is the length at $h = 2$, not at $h = 0$."
+   },
+   {
+    "value": "86",
+    "misconception": "algebra-manipulation",
+    "why": "Made a sign error when distributing: used $+36$ in place of $-36$ and got $18 \\cdot 2 + 50$."
+   },
+   {
+    "value": "18",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope (yards woven per hour) when the question asks for the starting amount."
+   },
+   {
+    "value": "32",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the $h$ and multiplied 18 by only the 2 in the wrong direction, getting $50 - 18 = 32$, or subtracted 18 once without the factor of 2."
+   }
+  ],
+  "id": "orig-interpret-slop-H-2cdc38",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the model, what is the width, in millimeters, of the expansion joint gap when the deck temperature is $0^\\circ\\text{C}$?",
+  "stimulus": "A civil engineer monitors an expansion joint, a small gap between two sections of a steel bridge deck. The joint lets the deck lengthen as it warms. The width of the gap is a linear function of the deck temperature. The table shows three of the engineer's measurements.\n\nExpansion Joint Measurements\nDeck temperature (\u00b0C) | Gap width (mm)\n10 | 38\n25 | 29\n40 | 20",
+  "keys": [
+   "44"
+  ],
+  "any_of": false,
+  "explanation": "The width at a temperature of 0 is the y-intercept, but the table does not start at 0, so you have to work back to it. First find the slope from two rows: $\\frac{29 - 38}{25 - 10} = \\frac{-9}{15} = -0.6$ millimeters per degree. The gap narrows as the deck warms, so the slope is negative. Going from $10^\\circ\\text{C}$ down to $0^\\circ\\text{C}$ is a change of $-10$ degrees, so the width changes by $(-0.6)(-10) = +6$ millimeters: $38 + 6 = 44$. As a check, the equation $G = -0.6T + 44$ gives 38, 29 and 20 at the three table temperatures.",
+  "common_errors": [
+   {
+    "value": "38",
+    "misconception": "misread-given",
+    "why": "Took the first row of the table as the starting value, though it is the width at $10^\\circ\\text{C}$, not $0^\\circ\\text{C}$."
+   },
+   {
+    "value": "32",
+    "misconception": "complement-or-direction-flip",
+    "why": "Got the sign of the slope backwards when stepping from 10 down to 0 degrees, so subtracted 6 instead of adding it."
+   },
+   {
+    "value": "0.6",
+    "misconception": "wrong-target-quantity",
+    "why": "Reported the rate (millimeters per degree) instead of the width at $0^\\circ\\text{C}$."
+   },
+   {
+    "value": "47",
+    "misconception": "algebra-manipulation",
+    "why": "Used the change of 9 millimeters over one 15-degree row as if it were the change over 10 degrees, giving $38 + 9$."
+   }
+  ],
+  "id": "orig-interpret-slop-H-1095f9",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

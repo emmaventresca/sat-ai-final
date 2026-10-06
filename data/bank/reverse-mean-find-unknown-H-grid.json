@@ -1,0 +1,187 @@
+[
+ {
+  "stem": "What is the mean tempo, in beats per minute, of the other 8 recordings by the remaining orchestras?",
+  "stimulus": "A musicologist studied 24 recordings of the same symphony movement and measured the opening tempo of each one in beats per minute. Fifteen of the recordings were made by European orchestras, and their mean tempo is 96 beats per minute. The other 9 recordings were made by orchestras from other regions. The mean tempo of all 24 recordings is 105 beats per minute. One of the 9 recordings by orchestras from other regions has a tempo of 150 beats per minute.",
+  "keys": [
+   "116.25",
+   "465/4"
+  ],
+  "any_of": false,
+  "explanation": "Turn each mean into a total. All 24 recordings add up to $24 \\times 105 = 2520$ beats per minute. The 15 European recordings add up to $15 \\times 96 = 1440$. That leaves $2520 - 1440 = 1080$ for the 9 recordings from other regions. Take away the 150 recording: $1080 - 150 = 930$ is left for the other 8 recordings. Their mean is $\\frac{930}{8} = 116.25$. Don't average the two group means. The groups are different sizes, so 105 is not halfway between 96 and the other group's mean.",
+  "common_errors": [
+   {
+    "value": "114",
+    "misconception": "missed-condition",
+    "why": "Treated the overall mean as the average of the two group means, $\\frac{96 + m}{2} = 105$, and stopped at $m = 114$. This is the subtype's main trap: the groups have different sizes, so this equation is wrong."
+   },
+   {
+    "value": "109.5",
+    "misconception": "missed-condition",
+    "why": "Averaged the means to get 114 for the 9 recordings, then carried it through: $9 \\times 114 = 1026$, $1026 - 150 = 876$, and $\\frac{876}{8} = 109.5$."
+   },
+   {
+    "value": "120",
+    "misconception": "intermediate-step",
+    "why": "Found the mean of all 9 recordings from other regions, $\\frac{1080}{9} = 120$, and never removed the 150 recording."
+   },
+   {
+    "value": "135",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the full 1080 by 8 without first subtracting the 150 recording."
+   },
+   {
+    "value": "310/3",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the 150 recording from the total but still divided by 9: $\\frac{930}{9} \\approx 103.33$."
+   },
+   {
+    "value": "930",
+    "misconception": "intermediate-step",
+    "why": "Gave the total tempo of the 8 recordings instead of their mean."
+   }
+  ],
+  "id": "orig-reverse-mean-f-H-03964c",
+  "skill_cd": "Q.C.",
+  "subtype": "reverse-mean-find-unknown",
+  "subtype_name": "Work backward from a mean to a missing value",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $y$?",
+  "stimulus": "A paleobotanist measured the lengths, in millimeters, of 6 fossilized leaves from the same rock layer. In order from least to greatest, the lengths are $14$, $18$, $x$, $26$, $y$, and $z$. The median length is $23$ millimeters, the range of the lengths is $24$ millimeters, and the mean length is $25$ millimeters.",
+  "keys": [
+   "34"
+  ],
+  "any_of": false,
+  "explanation": "First use the median and the range to find the constants you can pin down. There are 6 values, so the median is the average of the 3rd and 4th values: $\\frac{x + 26}{2} = 23$, so $x = 20$. The range is the maximum minus the minimum: $z - 14 = 24$, so $z = 38$. Next turn the mean into a total: $6 \\times 25 = 150$. Then $14 + 18 + 20 + 26 + y + 38 = 150$, so $116 + y = 150$ and $y = 34$. Check the order: $26 \\le 34 \\le 38$.",
+  "common_errors": [
+   {
+    "value": "31",
+    "misconception": "missed-condition",
+    "why": "Took the median to be the single value $x = 23$ instead of the average of the 3rd and 4th values. Then $14 + 18 + 23 + 26 + 38 = 119$ and $150 - 119 = 31$."
+   },
+   {
+    "value": "48",
+    "misconception": "misread-given",
+    "why": "Used 24 as the largest value instead of the range, so $z = 24$. Then $14 + 18 + 20 + 26 + 24 = 102$ and $150 - 102 = 48$."
+   },
+   {
+    "value": "9",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the mean by 5 instead of 6 and left the unknown out of the count. Then $125 - 116 = 9$."
+   },
+   {
+    "value": "38",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $z$, the value found from the range, instead of $y$."
+   },
+   {
+    "value": "150",
+    "misconception": "intermediate-step",
+    "why": "Gave the required total of all 6 lengths instead of solving for $y$."
+   }
+  ],
+  "id": "orig-reverse-mean-f-H-e55815",
+  "skill_cd": "Q.C.",
+  "subtype": "reverse-mean-find-unknown",
+  "subtype_name": "Work backward from a mean to a missing value",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "A sports scientist recorded the vertical jump heights, in centimeters, of 5 athletes. Four of the heights are $48$, $52$, $55$, and $61$. The fifth height is $x$ centimeters, where $x$ is an integer. The median of the 5 heights is $55$ centimeters, the mean of the 5 heights is an integer, and the range of the 5 heights is less than $15$ centimeters.",
+  "keys": [
+   "59"
+  ],
+  "any_of": false,
+  "explanation": "Apply each condition in turn. Median: with 5 values, the median is the 3rd value in order. For it to be 55, the value $x$ must be at least 55, so $x \\ge 55$. Range: the smallest value is 48, so $\\max - 48 < 15$. Because $x \\ge 55$, either 61 or $x$ is the largest value, which gives $x < 63$, so $55 \\le x \\le 62$. Mean: the sum is $216 + x$, and it must be divisible by 5. In that interval, only $x = 59$ works, since $\\frac{275}{5} = 55$. Check every condition: the sorted data are 48, 52, 55, 59, 61, so the median is 55, the mean is 55, and the range is 13.",
+  "common_errors": [
+   {
+    "value": "54",
+    "misconception": "missed-condition",
+    "why": "Found an $x$ that makes $216 + x$ divisible by 5 (mean 54) but didn't check the median. With $x = 54$, the median becomes 54."
+   },
+   {
+    "value": "64",
+    "misconception": "missed-condition",
+    "why": "Found the next $x$ that keeps the median at 55 and the mean an integer, but didn't check the range. The range would be $64 - 48 = 16$."
+   },
+   {
+    "value": "55",
+    "misconception": "missed-condition",
+    "why": "Picked the smallest $x$ that keeps the median at 55 and stopped there. The mean would be $\\frac{271}{5} = 54.2$, which is not an integer."
+   },
+   {
+    "value": "62",
+    "misconception": "missed-condition",
+    "why": "Took the largest $x$ the range allows and didn't check that the mean is an integer. The mean would be $\\frac{278}{5} = 55.6$."
+   },
+   {
+    "value": "275",
+    "misconception": "intermediate-step",
+    "why": "Gave the total of the 5 heights instead of $x$."
+   }
+  ],
+  "id": "orig-reverse-mean-f-H-44d4ac",
+  "skill_cd": "Q.C.",
+  "subtype": "reverse-mean-find-unknown",
+  "subtype_name": "Work backward from a mean to a missing value",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "A folklorist counted the number of distinct motifs in each tale in two collections of folktales. Collection A contains 9 tales, and the mean number of motifs per tale is $14$. Collection B contains 6 tales, which have $10$, $13$, $15$, $17$, $21$, and $x$ motifs. The mean number of motifs per tale in collection B is $2$ greater than the mean number of motifs per tale for all 15 tales from both collections combined.",
+  "keys": [
+   "28"
+  ],
+  "any_of": false,
+  "explanation": "Write each mean as a total divided by a count. Collection A has a total of $9 \\times 14 = 126$ motifs. Collection B has a total of $76 + x$, so its mean is $\\frac{76 + x}{6}$. The combined total is $126 + 76 + x = 202 + x$ across 15 tales, so the combined mean is $\\frac{202 + x}{15}$. Set up $\\frac{76 + x}{6} = \\frac{202 + x}{15} + 2$. Multiply by 30: $380 + 5x = 404 + 2x + 60$, so $3x = 84$ and $x = 28$. Check: collection B's mean is $\\frac{104}{6} = 17\\tfrac{1}{3}$, and the combined mean is $\\frac{230}{15} = 15\\tfrac{1}{3}$. The difference is 2.",
+  "common_errors": [
+   {
+    "value": "32",
+    "misconception": "missed-condition",
+    "why": "Took the combined mean to be the average of the two group means, $\\frac{14 + m_B}{2}$. Solving $m_B = \\frac{14 + m_B}{2} + 2$ gives $m_B = 18$, so $x = 108 - 76 = 32$. This ignores that the collections have different sizes."
+   },
+   {
+    "value": "-12",
+    "misconception": "complement-or-direction-flip",
+    "why": "Made collection B's mean 2 less than the combined mean instead of 2 greater: $380 + 5x = 404 + 2x - 60$ gives $x = -12$."
+   },
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "Left the unknown out of collection B's count and divided by 5: $\\frac{76 + x}{5} = \\frac{202 + x}{15} + 2$ gives $x = 2$."
+   },
+   {
+    "value": "104",
+    "misconception": "intermediate-step",
+    "why": "Gave collection B's total number of motifs, $76 + 28$, instead of $x$."
+   }
+  ],
+  "id": "orig-reverse-mean-f-H-a02243",
+  "skill_cd": "Q.C.",
+  "subtype": "reverse-mean-find-unknown",
+  "subtype_name": "Work backward from a mean to a missing value",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

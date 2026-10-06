@@ -1,0 +1,181 @@
+[
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. What is the value of $x$?",
+  "stimulus": "An immunologist fitting a simple model of T-cell response to a vaccine dose arrives at the following system, where $x$ and $y$ are model parameters.\n\n$x = 3y - 2$\n\n$4x + y = 12$",
+  "keys": [
+   "34/13",
+   "2.615",
+   "2.616"
+  ],
+  "any_of": false,
+  "explanation": "The first equation already gives $x$ in terms of $y$, so substitute $3y - 2$ for $x$ in the second equation: $4(3y - 2) + y = 12$. Distribute to get $12y - 8 + y = 12$, so $13y = 20$ and $y = \\frac{20}{13}$. The question asks for $x$, not $y$, so substitute back: $x = 3\\left(\\frac{20}{13}\\right) - 2 = \\frac{60}{13} - \\frac{26}{13} = \\frac{34}{13}$. You can also check it in Desmos: graph both lines and click the intersection, which is at about $(2.615, 1.538)$.",
+  "common_errors": [
+   {
+    "value": "20/13",
+    "misconception": "wrong-target-quantity",
+    "why": "You solved for $y$, which is the first value substitution gives you, and entered it without substituting back to find $x$."
+   },
+   {
+    "value": "1.538",
+    "misconception": "wrong-target-quantity",
+    "why": "This is the decimal form of $y = \\frac{20}{13}$, the variable you find first, not the $x$ the question asks for."
+   },
+   {
+    "value": "16/13",
+    "misconception": "algebra-manipulation",
+    "why": "You distributed $4(3y - 2)$ as $12y - 2$, which gives $13y = 14$, $y = \\frac{14}{13}$, and then $x = \\frac{42}{13} - 2 = \\frac{16}{13}$."
+   },
+   {
+    "value": "1.230",
+    "misconception": "algebra-manipulation",
+    "why": "This is the decimal form of $\\frac{16}{13}$, from distributing $4(3y - 2)$ as $12y - 2$."
+   }
+  ],
+  "id": "orig-bare-system-su-H-cb5f35",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. What is the value of $x$?",
+  "stimulus": "A hydrologist calibrating a stream-discharge model for a small watershed obtains the following system.\n\n$3(y - 2) = y + 5$\n\n$2x - 4y = 3$",
+  "keys": [
+   "25/2",
+   "12.5"
+  ],
+  "any_of": false,
+  "explanation": "The first equation has only $y$ in it, so solve it on its own: $3y - 6 = y + 5$, so $2y = 11$ and $y = \\frac{11}{2}$. Substitute that into the second equation: $2x - 4\\left(\\frac{11}{2}\\right) = 3$, so $2x - 22 = 3$ and $2x = 25$. Divide by 2 to get $x = \\frac{25}{2}$, or $12.5$. Don't stop at $y$. The question asks for $x$.",
+  "common_errors": [
+   {
+    "value": "11/2",
+    "misconception": "wrong-target-quantity",
+    "why": "You solved the one-variable equation for $y$ and entered that value without using it to find $x$."
+   },
+   {
+    "value": "5.5",
+    "misconception": "wrong-target-quantity",
+    "why": "This is the decimal form of $y = \\frac{11}{2}$, not $x$."
+   },
+   {
+    "value": "25",
+    "misconception": "intermediate-step",
+    "why": "You reached $2x = 25$ and entered $25$ without dividing by 2."
+   },
+   {
+    "value": "17/2",
+    "misconception": "algebra-manipulation",
+    "why": "You distributed $3(y - 2)$ as $3y - 2$, which gives $2y = 7$ and $y = \\frac{7}{2}$, so $2x = 3 + 14 = 17$ and $x = \\frac{17}{2}$."
+   },
+   {
+    "value": "8.5",
+    "misconception": "algebra-manipulation",
+    "why": "This is the decimal form of $\\frac{17}{2}$, from distributing $3(y - 2)$ as $3y - 2$."
+   }
+  ],
+  "id": "orig-bare-system-su-H-0b3721",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. What is the value of $y$?",
+  "stimulus": "In a field trial, an agricultural scientist models crop response to two fertilizer treatments with the following system.\n\n$y = \\frac{2}{3}x - 1$\n\n$5x - 6y = 14$",
+  "keys": [
+   "13/3",
+   "4.333"
+  ],
+  "any_of": false,
+  "explanation": "The first equation is already solved for $y$, so substitute $\\frac{2}{3}x - 1$ for $y$ in the second equation: $5x - 6\\left(\\frac{2}{3}x - 1\\right) = 14$. Distribute the $-6$ to both terms: $5x - 4x + 6 = 14$, so $x = 8$. The question asks for $y$, so substitute back: $y = \\frac{2}{3}(8) - 1 = \\frac{16}{3} - \\frac{3}{3} = \\frac{13}{3}$. In Desmos, the intersection is at about $(8, 4.333)$.",
+  "common_errors": [
+   {
+    "value": "8",
+    "misconception": "wrong-target-quantity",
+    "why": "You found $x = 8$ after substituting and entered it, but the question asks for $y$."
+   },
+   {
+    "value": "37/3",
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $-6$ by $-1$ and got $-6$ instead of $+6$, so $x - 6 = 14$ gives $x = 20$ and $y = \\frac{40}{3} - 1 = \\frac{37}{3}$."
+   },
+   {
+    "value": "12.33",
+    "misconception": "algebra-manipulation",
+    "why": "This is the decimal form of $\\frac{37}{3}$, from the sign slip on $-6 \\times -1$."
+   },
+   {
+    "value": "9",
+    "misconception": "algebra-manipulation",
+    "why": "You applied the $-6$ only to the $x$-term and kept the $-1$ as it was, writing $5x - 4x - 1 = 14$, so $x = 15$ and $y = 10 - 1 = 9$."
+   }
+  ],
+  "id": "orig-bare-system-su-H-a66c45",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. What is the value of $y$?",
+  "stimulus": "A labour economist studying hourly wages and weekly hours in a regional job market derives the following system.\n\n$\\frac{x}{4} + 3 = 2x - 11$\n\n$x + 3y = 30$",
+  "keys": [
+   "22/3",
+   "7.333"
+  ],
+  "any_of": false,
+  "explanation": "The first equation has only $x$ in it, so solve it first. Multiply every term by 4: $x + 12 = 8x - 44$, so $56 = 7x$ and $x = 8$. Substitute into the second equation: $8 + 3y = 30$, so $3y = 22$ and $y = \\frac{22}{3}$. The question asks for $y$, so $8$ is not the answer. In Desmos, the intersection is at about $(8, 7.333)$.",
+  "common_errors": [
+   {
+    "value": "8",
+    "misconception": "wrong-target-quantity",
+    "why": "You solved the one-variable equation for $x$ and entered that value instead of going on to find $y$."
+   },
+   {
+    "value": "22",
+    "misconception": "intermediate-step",
+    "why": "You reached $3y = 22$ and entered $22$ without dividing by 3."
+   },
+   {
+    "value": "163/21",
+    "misconception": "algebra-manipulation",
+    "why": "When you cleared the fraction, you multiplied only some terms by 4 and wrote $x + 3 = 8x - 44$. That gives $x = \\frac{47}{7}$, so $3y = 30 - \\frac{47}{7} = \\frac{163}{7}$ and $y = \\frac{163}{21}$."
+   },
+   {
+    "value": "7.761",
+    "misconception": "algebra-manipulation",
+    "why": "This is the truncated decimal of $\\frac{163}{21}$, from not multiplying the $3$ by 4 when you cleared the fraction."
+   },
+   {
+    "value": "7.762",
+    "misconception": "algebra-manipulation",
+    "why": "This is the rounded decimal of $\\frac{163}{21}$, from not multiplying the $3$ by 4 when you cleared the fraction."
+   }
+  ],
+  "id": "orig-bare-system-su-H-d0582c",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

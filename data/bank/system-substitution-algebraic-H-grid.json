@@ -1,0 +1,167 @@
+[
+ {
+  "stem": "For what values of $x$ do the two models give the same value of $y$? What is the sum of the values of $y$ that the models give at those values of $x$?",
+  "stimulus": "A public health analyst compares two models of weekly visits to a vaccination clinic. In each model, $x$ is the number of weeks after a campaign begins and $y$ is the number of visits, in hundreds.\n\nModel A: $y = 2x^2 - 5x + 6$\nModel B: $y = 3x + 6$",
+  "keys": [
+   "24"
+  ],
+  "any_of": false,
+  "explanation": "Set the two expressions for $y$ equal: $2x^2 - 5x + 6 = 3x + 6$. Subtract $3x + 6$ from both sides to get $2x^2 - 8x = 0$. Factor out the common factor instead of dividing by it: $2x(x - 4) = 0$, so $x = 0$ or $x = 4$. Put each value into the simpler equation, $y = 3x + 6$. At $x = 0$, $y = 6$. At $x = 4$, $y = 18$. The sum is $6 + 18 = 24$. If you have Desmos, graph both equations and click the two intersection points, $(0, 6)$ and $(4, 18)$.",
+  "common_errors": [
+   {
+    "value": "18",
+    "misconception": "algebra-manipulation",
+    "why": "Divided $2x^2 - 8x = 0$ by $x$ instead of factoring $x$ out. This loses the solution $x = 0$, so only $y = 18$ is found."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Added the $x$-values, $0 + 4$, instead of the $y$-values."
+   },
+   {
+    "value": "15",
+    "misconception": "algebra-manipulation",
+    "why": "Combined $-5x - 3x$ as $-2x$ and got $2x^2 - 2x = 0$, so $x = 0$ or $x = 1$. Then $y = 6$ and $y = 9$, and the sum is 15."
+   },
+   {
+    "value": "108",
+    "misconception": "wrong-target-quantity",
+    "why": "Multiplied the two $y$-values, $6 \\cdot 18$, instead of adding them."
+   }
+  ],
+  "id": "orig-system-substit-H-6db79e",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "If $(x, y)$ is a solution to the system, what is the greatest possible value of $x + y$?",
+  "stimulus": "On a coordinate map of a wetland study site, an ecologist marks a straight transect line and the curved edge of a beaver pond. The transect and the pond edge are modeled by the system below.\n\n$2x - y = 3$\n$y = x^2 - 4x + 5$",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "Solve the linear equation for $y$: $y = 2x - 3$. Substitute it into the second equation: $2x - 3 = x^2 - 4x + 5$, so $x^2 - 6x + 8 = 0$. This factors as $(x - 2)(x - 4) = 0$, which gives $x = 2$ or $x = 4$. Use $y = 2x - 3$ to find each $y$. At $x = 2$, $y = 1$. At $x = 4$, $y = 5$. Check that both points also satisfy the quadratic: $4 - 8 + 5 = 1$ and $16 - 16 + 5 = 5$. The solutions are $(2, 1)$ and $(4, 5)$, so $x + y$ is 3 or 9. The greatest value is 9.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the solution $(2, 1)$, which gives the least value of $x + y$ instead of the greatest."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Reported the $x$-coordinate of the solution instead of $x + y$."
+   },
+   {
+    "value": "5",
+    "misconception": "wrong-target-quantity",
+    "why": "Reported the $y$-coordinate of the solution instead of $x + y$."
+   },
+   {
+    "value": "15",
+    "misconception": "algebra-manipulation",
+    "why": "Found $x = 4$ correctly, then rearranged $2x - y = 3$ as $y = 2x + 3$ to get $y = 11$. The pair $(4, 11)$ does not satisfy either original equation."
+   }
+  ],
+  "id": "orig-system-substit-H-e1447c",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "If $(x, y)$ is a solution to the system, what is one possible value of $y$?",
+  "stimulus": "A hydrologist models the water depth at two gauges on the same river system between midnight and 8:00 a.m. In both equations, $x$ is the number of hours after midnight and $y$ is the depth, in feet, for $0 \\le x \\le 8$.\n\nStream gauge: $y = x^2 - 8x + 19$\nReservoir gauge: $y = x + 1$",
+  "keys": [
+   "4",
+   "7"
+  ],
+  "any_of": true,
+  "explanation": "Set the two expressions for $y$ equal: $x^2 - 8x + 19 = x + 1$. Move everything to one side to get $x^2 - 9x + 18 = 0$. This factors as $(x - 3)(x - 6) = 0$, so $x = 3$ or $x = 6$. Both times are within $0 \\le x \\le 8$. Put each value into the simpler equation, $y = x + 1$, to get $y = 4$ and $y = 7$. Check them in the quadratic: $9 - 24 + 19 = 4$ and $36 - 48 + 19 = 7$. Either 4 or 7 is correct. In Desmos, click the two intersection points, $(3, 4)$ and $(6, 7)$.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Reported the $x$-value of a solution, a number of hours, instead of the depth $y$."
+   },
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Reported the $x$-value of a solution, a number of hours, instead of the depth $y$."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Added the constants as $19 + 1$ instead of subtracting, so solved $x^2 - 9x + 20 = 0$. This gives $x = 4$, and then $y = 4 + 1 = 5$."
+   },
+   {
+    "value": "9",
+    "misconception": "intermediate-step",
+    "why": "Reported 9, the coefficient in $x^2 - 9x + 18 = 0$ and the sum of the two $x$-values, without solving the equation."
+   }
+  ],
+  "id": "orig-system-substit-H-288f02",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the sum of the $y$-coordinates of all the points where the street meets the walkway?",
+  "stimulus": "A city planner draws a straight street and a curved pedestrian walkway on a coordinate grid of a new district. Each unit on the grid is one block. The street and the walkway are modeled by the system below.\n\n$x + y = 11$\n$y = x^2 - 6x + 11$",
+  "keys": [
+   "17"
+  ],
+  "any_of": false,
+  "explanation": "Solve the linear equation for $y$: $y = 11 - x$. Substitute it into the second equation: $11 - x = x^2 - 6x + 11$, so $x^2 - 5x = 0$. Factor out $x$; do not divide by it. This gives $x(x - 5) = 0$, so $x = 0$ or $x = 5$. Use $y = 11 - x$ to find each $y$. At $x = 0$, $y = 11$. At $x = 5$, $y = 6$. The meeting points are $(0, 11)$ and $(5, 6)$. The sum of the $y$-coordinates is $11 + 6 = 17$.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Divided $x^2 - 5x = 0$ by $x$, which lost the solution $x = 0$. Only the point $(5, 6)$ was found."
+   },
+   {
+    "value": "5",
+    "misconception": "wrong-target-quantity",
+    "why": "Added the $x$-coordinates, $0 + 5$, instead of the $y$-coordinates."
+   },
+   {
+    "value": "29",
+    "misconception": "algebra-manipulation",
+    "why": "Rearranged $x + y = 11$ as $y = 11 + x$. That gives $x^2 - 7x = 0$, so $x = 0$ or $x = 7$, and $y = 11$ or $y = 18$, for a sum of 29."
+   },
+   {
+    "value": "22",
+    "misconception": "missed-condition",
+    "why": "Added $11 + 11$, using the $y$-intercepts of the two equations. Those values come from setting $x = 0$, not from points where the street and the walkway meet."
+   }
+  ],
+  "id": "orig-system-substit-H-b1ba6d",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

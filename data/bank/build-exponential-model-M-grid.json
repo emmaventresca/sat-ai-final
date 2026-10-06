@@ -1,0 +1,141 @@
+[
+ {
+  "stem": "How many years from now will the sample contain 60 micrograms of the isotope?",
+  "stimulus": "An archaeologist measures the radioactive isotope in a bone fragment from a burial site. Right now the fragment contains 960 micrograms of the isotope. The amount of the isotope halves every 40 years.",
+  "keys": [
+   "160"
+  ],
+  "any_of": false,
+  "explanation": "Write the model as $A(t) = 960\\left(\\frac{1}{2}\\right)^{t/40}$, where $t$ is the number of years from now. The exponent is $t/40$ because the amount halves once every 40 years, not once every year. Set $A(t) = 60$: $\\left(\\frac{1}{2}\\right)^{t/40} = \\frac{60}{960} = \\frac{1}{16} = \\left(\\frac{1}{2}\\right)^4$. So $t/40 = 4$, and $t = 160$ years. You can also count the halvings: 960 \u2192 480 \u2192 240 \u2192 120 \u2192 60 is 4 halvings, and 4 \u00d7 40 = 160. In Desmos, graph $y = 960(0.5)^{x/40}$ and $y = 60$, then read the x-coordinate where they cross.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved $t/40 = 4$ correctly but gave the number of halvings instead of multiplying by 40 to get years."
+   },
+   {
+    "value": "75",
+    "misconception": "graph-feature-mismatch",
+    "why": "Used a linear model: the first halving loses 480 micrograms in 40 years, which is 12 per year, so they solved $960 - 12t = 60$ and got $t = 75$."
+   },
+   {
+    "value": "120",
+    "misconception": "intermediate-step",
+    "why": "Stopped one halving early, at 960 \u2192 480 \u2192 240 \u2192 120, and reported 3 \u00d7 40 = 120 years. At that point 120 micrograms remain, not 60."
+   }
+  ],
+  "id": "orig-build-exponent-M-39c4e0",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to this model, how many objects will be in the catalog 1 year after the count?",
+  "stimulus": "An observatory keeps a catalog of faint objects found beyond the orbit of Neptune. When the catalog was last counted it held 640 objects. Astronomers model the size of the catalog as increasing by 25% every 6 months.",
+  "keys": [
+   "1000"
+  ],
+  "any_of": false,
+  "explanation": "The growth factor for each 6-month step is $1 + 0.25 = 1.25$. One year is two 6-month steps, so with $t$ in years the model is $N(t) = 640(1.25)^{2t}$. Then $N(1) = 640(1.25)^2 = 640(1.5625) = 1000$. Check it step by step: 640 \u00d7 1.25 = 800 after 6 months, and 800 \u00d7 1.25 = 1000 after a year.",
+  "common_errors": [
+   {
+    "value": "800",
+    "misconception": "algebra-manipulation",
+    "why": "Did not convert the 6-month step to years and applied the factor once, $640(1.25)^1$. That gives the size after 6 months, not 1 year."
+   },
+   {
+    "value": "960",
+    "misconception": "graph-feature-mismatch",
+    "why": "Used a linear model and added 25% of the starting 640, which is 160, twice. They did not take 25% of the new, larger total in the second step."
+   },
+   {
+    "value": "40",
+    "misconception": "algebra-manipulation",
+    "why": "Used 0.25 as the growth factor instead of 1.25: $640(0.25)^2 = 40$."
+   }
+  ],
+  "id": "orig-build-exponent-M-a78c9f",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the model, what was the athlete's blood lactate concentration, in millimoles per liter, at time $t = 0$?",
+  "stimulus": "After a sprint workout, a sports scientist measures an athlete's blood lactate concentration while the athlete rests. The concentration decreases exponentially with $t$, the number of minutes since the workout ended. The table shows three measurements.\n\nBlood Lactate During Recovery\nMinutes since workout, t | Concentration (mmol/L)\n10 | 12\n20 | 9\n30 | 6.75",
+  "keys": [
+   "16"
+  ],
+  "any_of": false,
+  "explanation": "Find the factor for each 10-minute step: $9 \\div 12 = 0.75$, and $6.75 \\div 9 = 0.75$. So the concentration is multiplied by 0.75 every 10 minutes. The table starts at $t = 10$, not $t = 0$, so work backwards one step by dividing: $12 \\div 0.75 = 16$. The model is $C(t) = 16(0.75)^{t/10}$. To check, $C(10) = 16(0.75) = 12$. In Desmos, enter the table and fit $y_1 \\sim a\\cdot b^{x_1}$, then read $a$.",
+  "common_errors": [
+   {
+    "value": "12",
+    "misconception": "misread-given",
+    "why": "Took the first row of the table as the starting amount, even though that row is at $t = 10$, not $t = 0$."
+   },
+   {
+    "value": "15",
+    "misconception": "graph-feature-mismatch",
+    "why": "Worked backwards linearly by adding the 3-unit drop to 12. Multiplying 12 by 1.25 also gives 15, because undoing a 25% decrease is not the same as a 25% increase."
+   }
+  ],
+  "id": "orig-build-exponent-M-6c3ed8",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $a$?",
+  "stimulus": "An agricultural researcher counts aphids on a test plot of soybeans. The aphid population increases by 8% per week. The function $P(w) = a\\cdot b^{w}$ models the population $w$ weeks after the researcher began counting, where $a$ and $b$ are constants. Exactly 2 weeks after counting began, there were 2,916 aphids on the plot.",
+  "keys": [
+   "2500"
+  ],
+  "any_of": false,
+  "explanation": "An 8% weekly increase means $b = 1.08$. The value $a$ is the population at $w = 0$, but you were given the population at $w = 2$. So set $P(2) = 2916$: $a(1.08)^2 = 2916$, which gives $a(1.1664) = 2916$ and $a = 2500$. Or step back one week at a time: $2916 \\div 1.08 = 2700$, and $2700 \\div 1.08 = 2500$.",
+  "common_errors": [
+   {
+    "value": "2916",
+    "misconception": "misread-given",
+    "why": "Treated the week-2 count as the starting value $a$, even though $a$ is the population at $w = 0$."
+   },
+   {
+    "value": "2700",
+    "misconception": "intermediate-step",
+    "why": "Divided by 1.08 only once, which gives the population at week 1 instead of week 0."
+   },
+   {
+    "value": "1.08",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the growth factor $b$ instead of the starting population $a$."
+   }
+  ],
+  "id": "orig-build-exponent-M-0994e6",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

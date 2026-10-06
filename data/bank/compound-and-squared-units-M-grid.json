@@ -1,0 +1,169 @@
+[
+ {
+  "stem": "What is the greatest number of workers the workshop can employ under this regulation?",
+  "stimulus": "A regional labor regulation requires a manufacturing workshop to provide at least 5 square yards of floor space for each worker employed there. A certain workshop has 1,215 square feet of floor space. (1 yard = 3 feet)",
+  "keys": [
+   "27"
+  ],
+  "any_of": false,
+  "explanation": "The floor space is in square feet, but the requirement is in square yards, so first convert the area. One yard is 3 feet, so 1 square yard is $3^2 = 9$ square feet. Apply the linear factor twice: $1{,}215 \\text{ ft}^2 \\times \\frac{1 \\text{ yd}^2}{9 \\text{ ft}^2} = 135 \\text{ yd}^2$. Each worker needs 5 square yards, so the workshop can employ $\\frac{135}{5} = 27$ workers. Reread the last line before you answer: the question asks for the number of workers, not the area.",
+  "common_errors": [
+   {
+    "value": "81",
+    "misconception": "algebra-manipulation",
+    "why": "Divided by the linear factor 3 instead of 9, treating 1 square yard as 3 square feet: $1{,}215 \\div 3 = 405$, then $405 \\div 5 = 81$."
+   },
+   {
+    "value": "243",
+    "misconception": "misread-given",
+    "why": "Ignored the unit mismatch and divided the area in square feet directly by 5: $1{,}215 \\div 5 = 243$."
+   },
+   {
+    "value": "135",
+    "misconception": "intermediate-step",
+    "why": "Converted the area to square yards correctly but stopped there, without dividing by 5 square yards per worker."
+   },
+   {
+    "value": "2187",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the conversion and multiplied by 9 instead of dividing: $1{,}215 \\times 9 \\div 5 = 2{,}187$."
+   }
+  ],
+  "id": "orig-compound-and-s-M-7587bd",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "Based on these measurements, what is the speaker's average rate, in phonemes per second?",
+  "stimulus": "A linguist recording a conversational speech sample finds that one speaker produced syllables at an average rate of 270 syllables per minute. In this speaker's language, each syllable contains an average of 2.5 phonemes (individual speech sounds).",
+  "keys": [
+   "11.25",
+   "45/4"
+  ],
+  "any_of": false,
+  "explanation": "Write the units down and set up a chain so that everything cancels except phonemes per second: $\\frac{270 \\text{ syllables}}{1 \\text{ min}} \\times \\frac{2.5 \\text{ phonemes}}{1 \\text{ syllable}} \\times \\frac{1 \\text{ min}}{60 \\text{ s}}$. Syllables cancel and minutes cancel, leaving phonemes per second. Do the arithmetic once at the end: $\\frac{270 \\times 2.5}{60} = \\frac{675}{60} = 11.25$.",
+  "common_errors": [
+   {
+    "value": "40500",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the time factor and multiplied by 60 instead of dividing: $270 \\times 2.5 \\times 60 = 40{,}500$."
+   },
+   {
+    "value": "4.5",
+    "misconception": "intermediate-step",
+    "why": "Converted minutes to seconds ($270 \\div 60 = 4.5$ syllables per second) but never converted syllables to phonemes."
+   },
+   {
+    "value": "675",
+    "misconception": "intermediate-step",
+    "why": "Converted syllables to phonemes ($270 \\times 2.5 = 675$ phonemes per minute) but left the rate per minute."
+   },
+   {
+    "value": "1.8",
+    "misconception": "algebra-manipulation",
+    "why": "Divided by the phonemes-per-syllable factor instead of multiplying: $270 \\div 2.5 \\div 60 = 1.8$."
+   }
+  ],
+  "id": "orig-compound-and-s-M-2903ac",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the volume of concrete needed for the slab, in cubic yards?",
+  "stimulus": "A civil engineering crew is pouring a rectangular concrete slab for a pedestrian bridge approach. The slab will be 24 feet long, 15 feet wide, and 6 inches thick. (1 foot = 12 inches, and 1 yard = 3 feet)",
+  "keys": [
+   "20/3",
+   "6.666",
+   "6.667"
+  ],
+  "any_of": false,
+  "explanation": "First put every dimension in feet: 6 inches is $\\frac{6}{12} = 0.5$ foot. The volume is $24 \\times 15 \\times 0.5 = 180$ cubic feet. One yard is 3 feet, so 1 cubic yard is $3^3 = 27$ cubic feet. Apply the linear factor three times: $180 \\text{ ft}^3 \\times \\frac{1 \\text{ yd}^3}{27 \\text{ ft}^3} = \\frac{180}{27} = \\frac{20}{3}$, which is about 6.667 cubic yards.",
+  "common_errors": [
+   {
+    "value": "60",
+    "misconception": "algebra-manipulation",
+    "why": "Applied the linear factor only once and divided cubic feet by 3: $180 \\div 3 = 60$."
+   },
+   {
+    "value": "20",
+    "misconception": "algebra-manipulation",
+    "why": "Squared the factor instead of cubing it and divided by 9: $180 \\div 9 = 20$."
+   },
+   {
+    "value": "180",
+    "misconception": "intermediate-step",
+    "why": "Found the volume in cubic feet but did not convert it to cubic yards."
+   },
+   {
+    "value": "80",
+    "misconception": "misread-given",
+    "why": "Used the 6-inch thickness as 6 feet: $24 \\times 15 \\times 6 = 2{,}160$ cubic feet, and $2{,}160 \\div 27 = 80$."
+   }
+  ],
+  "id": "orig-compound-and-s-M-325dc2",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "Based on the survey's density, how many shoots would be expected in a square quadrat measuring 20 centimeters on each side?",
+  "stimulus": "Marine biologists surveying a seagrass meadow in a shallow lagoon estimate an average density of 450 seagrass shoots per square meter. (1 meter = 100 centimeters)",
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "The density is per square meter, so convert only the area part of the rate and leave 'shoots' alone. One meter is 100 centimeters, so 1 square meter is $100^2 = 10{,}000$ square centimeters. The density is therefore $\\frac{450}{10{,}000} = 0.045$ shoot per square centimeter. The quadrat's area is $20 \\times 20 = 400$ square centimeters, so the expected count is $400 \\times 0.045 = 18$ shoots. Another way to check: the quadrat is $0.2 \\text{ m} \\times 0.2 \\text{ m} = 0.04 \\text{ m}^2$, and $450 \\times 0.04 = 18$.",
+  "common_errors": [
+   {
+    "value": "1800",
+    "misconception": "algebra-manipulation",
+    "why": "Applied the linear factor once and treated 1 square meter as 100 square centimeters: $450 \\div 100 = 4.5$ shoots per square centimeter, and $4.5 \\times 400 = 1{,}800$."
+   },
+   {
+    "value": "90",
+    "misconception": "algebra-manipulation",
+    "why": "Converted the side to 0.2 m but used 0.2 as the area instead of squaring it: $450 \\times 0.2 = 90$."
+   },
+   {
+    "value": "0.045",
+    "misconception": "wrong-target-quantity",
+    "why": "Converted the density to shoots per square centimeter but gave that rate instead of the expected count in the quadrat."
+   },
+   {
+    "value": "180",
+    "misconception": "algebra-manipulation",
+    "why": "Applied the linear factor once to the side and used $0.2 \\times 2 = 0.4$ m\u00b2 as the area: $450 \\times 0.4 = 180$."
+   }
+  ],
+  "id": "orig-compound-and-s-M-e6b5d1",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

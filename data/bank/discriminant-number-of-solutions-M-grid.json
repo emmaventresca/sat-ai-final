@@ -1,0 +1,166 @@
+[
+ {
+  "stem": "In the equation, $k$ is a constant. If the equation has exactly one real solution, what is the value of $k$?",
+  "stimulus": "An ornithologist models the height of a red-tailed hawk during a dive. The model leads to the equation $-2x^2 + 12x = k$.",
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "First get everything on one side: $-2x^2 + 12x - k = 0$. This gives $a = -2$, $b = 12$ and $c = -k$. For exactly one real solution, the discriminant must equal zero: $b^2 - 4ac = 144 - 4(-2)(-k) = 144 - 8k = 0$. So $k = 18$. To check this in Desmos, graph $y = -2x^2 + 12x$ and $y = k$ with a slider on $k$. The horizontal line just touches the top of the parabola, at $(3, 18)$, when $k = 18$.",
+  "common_errors": [
+   {
+    "value": "-18",
+    "misconception": "algebra-manipulation",
+    "why": "You moved $k$ to the left side but dropped the minus sign, so you took $c = k$. That gives $144 + 8k = 0$, so $k = -18$."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the x-value where the line touches the parabola, the vertex at $x = -\\frac{12}{2(-2)} = 3$, rather than the constant $k$."
+   },
+   {
+    "value": "144",
+    "misconception": "intermediate-step",
+    "why": "You stopped at $b^2 = 144$ and did not finish solving $144 - 8k = 0$."
+   },
+   {
+    "value": "36",
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the coefficient $a = -2$ and used $b^2 - 4c = 144 - 4k = 0$, which gives $k = 36$."
+   }
+  ],
+  "id": "orig-discriminant-n-M-9fac57",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "In the system of equations, $c$ is a constant. If the system has exactly one distinct real solution, what is the value of $c$?",
+  "stimulus": "A printmaker uses two models to estimate the cost of producing a run of linocut prints, and finds where they agree by solving this system:\n\n$y = x^2 + 6x + 20$\n$y = 2x + c$",
+  "keys": [
+   "16"
+  ],
+  "any_of": false,
+  "explanation": "Set the two expressions for $y$ equal: $x^2 + 6x + 20 = 2x + c$. Move everything to the left: $x^2 + 4x + (20 - c) = 0$. Here $a = 1$, $b = 4$ and $c_{\\text{std}} = 20 - c$. For exactly one solution, the discriminant must be zero: $16 - 4(20 - c) = 0$. This gives $20 - c = 4$, so $c = 16$. In Desmos, put a slider on $c$ and drag until the line is tangent to the parabola. That happens at $(-2, 12)$ when $c = 16$.",
+  "common_errors": [
+   {
+    "value": "11",
+    "misconception": "algebra-manipulation",
+    "why": "You moved $c$ across but left $2x$ on the right, so you used $b = 6$. Then $36 - 4(20 - c) = 0$ gives $c = 11$."
+   },
+   {
+    "value": "-16",
+    "misconception": "algebra-manipulation",
+    "why": "You lost the sign when moving $c$ and wrote the constant term as $20 + c$. Then $16 - 4(20 + c) = 0$ gives $c = -16$."
+   },
+   {
+    "value": "-2",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the x-coordinate of the point of tangency, $x = -\\frac{4}{2} = -2$, rather than the constant $c$."
+   },
+   {
+    "value": "4",
+    "misconception": "intermediate-step",
+    "why": "You solved $16 - 4(20 - c) = 0$ for the constant term, $20 - c = 4$, and gave that instead of $c$."
+   }
+  ],
+  "id": "orig-discriminant-n-M-991eff",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "In the equation, $k$ is an integer constant. If the equation has no real solutions, what is the smallest possible value of $k$?",
+  "stimulus": "A civil engineer checks whether a proposed support cable could ever reach a certain clearance. The check reduces to the equation $2x^2 + 3 = 12x - k$.",
+  "keys": [
+   "16"
+  ],
+  "any_of": false,
+  "explanation": "Move everything to the left: $2x^2 - 12x + (3 + k) = 0$. Here $a = 2$, $b = -12$ and $c = 3 + k$. No real solutions means the discriminant is negative: $144 - 8(3 + k) < 0$. So $3 + k > 18$, which means $k > 15$. Because $k$ must be an integer greater than 15, the smallest possible value is $16$. In Desmos, graph $y = 2x^2 - 12x + 3 + k$ with a slider on $k$. The parabola touches the x-axis at $k = 15$ and is clear of it for every larger value.",
+  "common_errors": [
+   {
+    "value": "15",
+    "misconception": "missed-condition",
+    "why": "You found the boundary, where the discriminant equals zero. At $k = 15$ the equation has exactly one solution, not none."
+   },
+   {
+    "value": "19",
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the $3$ when moving terms to one side and solved $144 - 8k < 0$, which gives $k > 18$."
+   },
+   {
+    "value": "14",
+    "misconception": "complement-or-direction-flip",
+    "why": "You reversed the inequality, using $> 0$ (two solutions) instead of $< 0$. That gives $k < 15$, and you took the nearest integer, $14$."
+   },
+   {
+    "value": "-20",
+    "misconception": "algebra-manipulation",
+    "why": "You moved $k$ without changing its sign and wrote the constant term as $3 - k$. Then $3 - k > 18$ gives $k < -15$, and you reported the nearest integer on the far side of that boundary, which is the wrong direction."
+   }
+  ],
+  "id": "orig-discriminant-n-M-43f2c0",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "In the equation, $k$ is a positive constant. If the equation has exactly one real solution, what is the value of $k$?",
+  "stimulus": "An agricultural scientist compares two models of how nitrogen dose affects a crop's yield. Setting the models equal gives the equation $x^2 + kx + 2 = 3x - 7$.",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "Move every term to the left: $x^2 + (k - 3)x + 9 = 0$. Here $a = 1$, $b = k - 3$ and $c = 9$. For exactly one solution, $(k - 3)^2 - 4(1)(9) = 0$, so $(k - 3)^2 = 36$. That means $k - 3 = 6$ or $k - 3 = -6$, so $k = 9$ or $k = -3$. Since $k$ is positive, $k = 9$. In Desmos, graph $y = x^2 + kx + 2 - (3x - 7)$ with a slider on $k$. The parabola just touches the x-axis at $k = 9$ and at $k = -3$, and only $k = 9$ is positive.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "You moved the $-7$ but left $3x$ on the right, so you took $b = k$. Then $k^2 - 36 = 0$ gives $k = 6$."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "You moved $3x$ with the wrong sign and wrote $b = k + 3$. Then $(k + 3)^2 = 36$ gives the positive value $k = 3$."
+   },
+   {
+    "value": "-3",
+    "misconception": "missed-condition",
+    "why": "You solved $(k - 3)^2 = 36$ correctly but gave the root that breaks the condition that $k$ is positive."
+   },
+   {
+    "value": "36",
+    "misconception": "intermediate-step",
+    "why": "You stopped at $(k - 3)^2 = 36$ and gave the value of the squared expression instead of solving for $k$."
+   }
+  ],
+  "id": "orig-discriminant-n-M-779e00",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

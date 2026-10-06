@@ -1,0 +1,161 @@
+[
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "A hydrologist surveys a cross-section of a stream. The function $d(x) = -2x^2 + bx + c$, where $b$ and $c$ are constants, gives the depth of the water, in centimeters, at a point $x$ meters from a survey stake on the bank. The water surface meets the stream banks at $x = -3$ and $x = 8$, which are the only zeros of $d$.",
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "Each zero gives a factor. A zero at $-3$ gives the factor $(x + 3)$, and a zero at $8$ gives the factor $(x - 8)$. The leading coefficient is $-2$, so $d(x) = -2(x + 3)(x - 8)$. Expand the factors: $(x + 3)(x - 8) = x^2 - 5x - 24$. Now multiply by $-2$: $d(x) = -2x^2 + 10x + 48$. The coefficient of $x$ is $b = 10$. To check, graph $y = -2x^2 + 10x + c$ in Desmos with a slider on $c$ and confirm that the x-intercepts are at $-3$ and $8$.",
+  "common_errors": [
+   {
+    "value": "-10",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote the factors as $(x - 3)(x + 8)$, using $(x + r)$ instead of $(x - r)$. That gives $-2(x^2 + 5x - 24)$, so $b = -10$."
+   },
+   {
+    "value": "-5",
+    "misconception": "intermediate-step",
+    "why": "Expanded $(x + 3)(x - 8) = x^2 - 5x - 24$ correctly but never multiplied by the leading coefficient $-2$."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the signs of both factors to get $(x - 3)(x + 8)$ and also dropped the leading coefficient, so they read $b$ from $x^2 + 5x - 24$."
+   },
+   {
+    "value": "48",
+    "misconception": "wrong-target-quantity",
+    "why": "Expanded correctly but gave the constant term $c$ instead of the coefficient $b$."
+   }
+  ],
+  "id": "orig-zeros-and-fact-M-950080",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $k + m$?",
+  "stimulus": "A public health analyst models the difference between the weekly number of reported flu cases in a county and a seasonal baseline using the function $p(t) = (4t - k)(t - m)$, where $t$ is the number of weeks after October 1, and $k$ and $m$ are positive integer constants. The graph of $y = p(t)$ in the $ty$-plane has $t$-intercepts at $\\left(\\frac{5}{2}, 0\\right)$ and $(8, 0)$.",
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "Each $t$-intercept makes one of the factors equal to $0$. The factor $(t - m)$ is zero at $t = m$. The factor $(4t - k)$ is zero at $t = \\frac{k}{4}$, so $k$ equals 4 times that zero. If $m = \\frac{5}{2}$, then $m$ would not be an integer, so $m = 8$ and $\\frac{5}{2}$ belongs to the other factor. Then $4\\left(\\frac{5}{2}\\right) - k = 0$, which gives $k = 10$. So $k + m = 10 + 8 = 18$. To check, graph $y = (4t - 10)(t - 8)$ in Desmos and click the two intercepts.",
+  "common_errors": [
+   {
+    "value": "10.5",
+    "misconception": "algebra-manipulation",
+    "why": "Treated the zero of $(4t - k)$ as $k$ itself and ignored the coefficient 4, giving $k = 2.5$ and $2.5 + 8 = 10.5$."
+   },
+   {
+    "value": "34.5",
+    "misconception": "missed-condition",
+    "why": "Paired $t = 8$ with $(4t - k)$, giving $k = 32$ and $m = 2.5$. That ignores the condition that $m$ is an integer."
+   },
+   {
+    "value": "-18",
+    "misconception": "algebra-manipulation",
+    "why": "Solved $4t + k = 0$ and $t + m = 0$, flipping the signs, so they got $k = -10$ and $m = -8$."
+   },
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "Found $k$ correctly but stopped there instead of adding $m$."
+   }
+  ],
+  "id": "orig-zeros-and-fact-M-a1ad01",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $d$?",
+  "stimulus": "A labor economist models the difference between a region's labor force participation rate and its long-run average, in tenths of a percentage point, $x$ years after 2020. The model is the cubic function $f(x) = -2x^3 + bx^2 + cx + d$, where $b$, $c$, and $d$ are constants. The zeros of $f$ are exactly $-4$, $-1$, and $5$.",
+  "keys": [
+   "40"
+  ],
+  "any_of": false,
+  "explanation": "Each zero $r$ gives a factor $(x - r)$, and the leading coefficient is $-2$. So $f(x) = -2(x + 4)(x + 1)(x - 5)$. The constant term $d$ is what you get when $x = 0$, so you don't need to expand everything. Just multiply the constants: $d = -2 \\cdot (4)(1)(-5) = -2 \\cdot (-20) = 40$. Watch the signs. There is one negative factor constant, and the negative leading coefficient flips the sign again, so the result is positive. To check, graph the factored form in Desmos and click the y-intercept, $(0, 40)$.",
+  "common_errors": [
+   {
+    "value": "-40",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote the factors as $(x - 4)(x - 1)(x + 5)$, using $(x + r)$ instead of $(x - r)$. Then $-2 \\cdot (-4)(-1)(5) = -40$."
+   },
+   {
+    "value": "-20",
+    "misconception": "intermediate-step",
+    "why": "Multiplied the factor constants $(4)(1)(-5) = -20$ but forgot the leading coefficient $-2$."
+   },
+   {
+    "value": "20",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the factor signs and dropped the leading coefficient: $(-4)(-1)(5) = 20$."
+   }
+  ],
+  "id": "orig-zeros-and-fact-M-daf0fc",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the $x$-coordinate of the other $x$-intercept of the graph?",
+  "stimulus": "An ornithologist models an osprey's plunge for a fish. The function $h(x) = 0.5x^2 - 7x + c$, where $c$ is a constant, gives the osprey's height relative to the water's surface, in decimeters, when the bird is $x$ meters horizontally from the point where it began its dive. The graph of $y = h(x)$ in the $xy$-plane has an $x$-intercept at $(4, 0)$, where the osprey enters the water, and one other $x$-intercept, where it leaves the water.",
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "$(4, 0)$ is on the graph, so $h(4) = 0$. Substitute: $0.5(16) - 7(4) + c = 0$, so $8 - 28 + c = 0$ and $c = 20$. Then $h(x) = 0.5x^2 - 7x + 20 = 0.5(x^2 - 14x + 40) = 0.5(x - 4)(x - 10)$. The other zero is $x = 10$. In Desmos, put a slider on $c$, drag it until the curve passes through $(4, 0)$, and click the second intercept.",
+  "common_errors": [
+   {
+    "value": "20",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the constant $c = 20$ and gave it as the answer instead of the other intercept."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Took the sum of the zeros to be 7, using $-b$ without dividing by $a = 0.5$. Then they subtracted: $7 - 4 = 3$."
+   },
+   {
+    "value": "18",
+    "misconception": "algebra-manipulation",
+    "why": "Used $x = -4$ for the given intercept, as if the factor were $(x + 4)$. That gives $8 + 28 + c = 0$, so $c = -36$, and $0.5x^2 - 7x - 36 = 0.5(x + 4)(x - 18)$ has the other zero 18."
+   },
+   {
+    "value": "7",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the x-coordinate of the vertex, the deepest point of the dive, instead of the point where the osprey leaves the water."
+   }
+  ],
+  "id": "orig-zeros-and-fact-M-6ebd48",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

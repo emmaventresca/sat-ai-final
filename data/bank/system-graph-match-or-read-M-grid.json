@@ -1,0 +1,374 @@
+[
+ {
+  "stem": "The two stations record the same temperature at two different times. How many hours after 6:00 a.m. is the later of these two times?",
+  "stimulus": "A meteorologist compares temperature readings from two weather stations on the same day. The graph shows the temperature $y$, in degrees Celsius, at Station A, $x$ hours after 6:00 a.m., for $0 \\le x \\le 10$. The graph is a parabola. The temperature at Station B over the same period is modeled by $y = x + 14$.",
+  "figure": {
+   "type": "curve",
+   "caption": "Station A Temperature",
+   "x_label": "Hours after 6:00 a.m.",
+   "y_label": "Temperature (\u00b0C)",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0.25,
+     2.4375
+    ],
+    [
+     0.5,
+     4.75
+    ],
+    [
+     0.75,
+     6.9375
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     1.25,
+     10.9375
+    ],
+    [
+     1.5,
+     12.75
+    ],
+    [
+     1.75,
+     14.4375
+    ],
+    [
+     2,
+     16
+    ],
+    [
+     2.25,
+     17.4375
+    ],
+    [
+     2.5,
+     18.75
+    ],
+    [
+     2.75,
+     19.9375
+    ],
+    [
+     3,
+     21
+    ],
+    [
+     3.25,
+     21.9375
+    ],
+    [
+     3.5,
+     22.75
+    ],
+    [
+     3.75,
+     23.4375
+    ],
+    [
+     4,
+     24
+    ],
+    [
+     4.25,
+     24.4375
+    ],
+    [
+     4.5,
+     24.75
+    ],
+    [
+     4.75,
+     24.9375
+    ],
+    [
+     5,
+     25
+    ],
+    [
+     5.25,
+     24.9375
+    ],
+    [
+     5.5,
+     24.75
+    ],
+    [
+     5.75,
+     24.4375
+    ],
+    [
+     6,
+     24
+    ],
+    [
+     6.25,
+     23.4375
+    ],
+    [
+     6.5,
+     22.75
+    ],
+    [
+     6.75,
+     21.9375
+    ],
+    [
+     7,
+     21
+    ],
+    [
+     7.25,
+     19.9375
+    ],
+    [
+     7.5,
+     18.75
+    ],
+    [
+     7.75,
+     17.4375
+    ],
+    [
+     8,
+     16
+    ],
+    [
+     8.25,
+     14.4375
+    ],
+    [
+     8.5,
+     12.75
+    ],
+    [
+     8.75,
+     10.9375
+    ],
+    [
+     9,
+     9
+    ],
+    [
+     9.25,
+     6.9375
+    ],
+    [
+     9.5,
+     4.75
+    ],
+    [
+     9.75,
+     2.4375
+    ],
+    [
+     10,
+     0
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 30,
+   "y_step": 5,
+   "alt": "A downward-opening parabola that starts at 0 degrees at hour 0, rises to a maximum, and falls back to 0 degrees at hour 10."
+  },
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "First write an equation for Station A from the graph. The parabola has its vertex at $(5, 25)$, so it has the form $y = a(x - 5)^2 + 25$. It passes through $(0, 0)$, so $0 = 25a + 25$, which gives $a = -1$. Station A is therefore modeled by $y = -(x - 5)^2 + 25$. The stations agree where the parabola and the line $y = x + 14$ intersect. Set the two expressions equal: $-(x-5)^2 + 25 = x + 14$. This simplifies to $-x^2 + 10x = x + 14$, or $x^2 - 9x + 14 = 0$, so $(x - 2)(x - 7) = 0$. The curves cross at $(2, 16)$ and $(7, 21)$. The later time is 7 hours after 6:00 a.m. In Desmos, enter $y = -(x-5)^2 + 25$ and $y = x + 14$, then click the right-hand intersection.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "missed-condition",
+    "why": "Gives the earlier of the two intersection times instead of the later one."
+   },
+   {
+    "value": "21",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the temperature at the later intersection, $(7, 21)$, instead of the time."
+   },
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives where Station A's parabola meets the horizontal axis, not where it crosses Station B's line."
+   },
+   {
+    "value": "5",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the x-coordinate of the parabola's vertex (Station A's warmest time) instead of an intersection."
+   }
+  ],
+  "id": "orig-system-graph-m-M-e1b977",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The graphs of the two equations intersect at two points. What is the y-coordinate of the intersection point with the greater x-coordinate?",
+  "stimulus": "A civil engineer models the cross-section of a sagging support cable and a straight diagonal strut on a pedestrian bridge. In the engineer's coordinate system, the cable is modeled by $y = (x - 5)^2 + 7$ and the strut lies along the line $y = -3x + 20$, where $x$ and $y$ are measured in meters.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "The intersection points are the solutions of the system. Set the expressions equal: $(x - 5)^2 + 7 = -3x + 20$. Expand: $x^2 - 10x + 32 = -3x + 20$, so $x^2 - 7x + 12 = 0$, which factors as $(x - 3)(x - 4) = 0$. The graphs meet at $x = 3$ and $x = 4$. The greater x-coordinate is 4, and $y = -3(4) + 20 = 8$. Check with the parabola: $(4 - 5)^2 + 7 = 8$. Note that the vertex of $y = (x - 5)^2 + 7$ is at $x = +5$, not $-5$. In Desmos, enter both equations and click the right-hand intersection to read $(4, 8)$.",
+  "common_errors": [
+   {
+    "value": "23",
+    "misconception": "graph-feature-mismatch",
+    "why": "Gets the sign of the vertex wrong and uses $(x + 5)^2 + 7$. That gives $x^2 + 13x + 12 = 0$, with roots $-1$ and $-12$. The greater one, $x = -1$, gives $y = 23$."
+   },
+   {
+    "value": "11",
+    "misconception": "missed-condition",
+    "why": "Gives the y-coordinate of the other intersection point, $(3, 11)$."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the x-coordinate of the correct intersection instead of the y-coordinate."
+   },
+   {
+    "value": "20",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the line's y-intercept instead of the point where the line crosses the parabola."
+   },
+   {
+    "value": "7",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the y-coordinate of the parabola's vertex (the cable's lowest point) instead of an intersection."
+   }
+  ],
+  "id": "orig-system-graph-m-M-dfbd65",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The system formed by line $\\ell$ and the parabola has two solutions. What is the y-coordinate of the solution with the greater x-coordinate?",
+  "stimulus": "A nutrition scientist compares two models relating a participant's daily fiber intake to a digestion score. The first model is line $\\ell$, shown in the graph. The second model is the parabola $y = (x - 4)^2 + 3$.",
+  "figure": {
+   "type": "line",
+   "caption": "Line \u2113",
+   "x_label": "x",
+   "y_label": "y",
+   "points": [
+    [
+     0,
+     -2
+    ],
+    [
+     8,
+     14
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 8,
+   "x_step": 1,
+   "y_min": -2,
+   "y_max": 14,
+   "y_step": 2,
+   "alt": "A straight line rising from the point (0, -2) at the left edge to the point (8, 14) at the right edge."
+  },
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "First find the equation of line $\\ell$ from the graph. It crosses the y-axis at $(0, -2)$ and also passes through $(1, 0)$, so its slope is $\\frac{0 - (-2)}{1 - 0} = 2$. The line is $y = 2x - 2$. Set it equal to the parabola: $(x - 4)^2 + 3 = 2x - 2$. Expand: $x^2 - 8x + 19 = 2x - 2$, so $x^2 - 10x + 21 = 0$, which factors as $(x - 3)(x - 7) = 0$. The solutions are $(3, 4)$ and $(7, 12)$. The one with the greater x-coordinate is $(7, 12)$, so the answer is 12. In Desmos, enter $y = 2x - 2$ and $y = (x-4)^2 + 3$ and click the right-hand intersection.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "missed-condition",
+    "why": "Gives the y-coordinate of the other solution, $(3, 4)$."
+   },
+   {
+    "value": "7",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the x-coordinate of the correct solution instead of the y-coordinate."
+   },
+   {
+    "value": "19",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the parabola's y-intercept, $(0 - 4)^2 + 3 = 19$, instead of a point where the two graphs cross."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the y-coordinate of the parabola's vertex $(4, 3)$ instead of an intersection."
+   }
+  ],
+  "id": "orig-system-graph-m-M-6d01f4",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "If $(x, y)$ is a solution to the system, what is one possible value of $x$?",
+  "stimulus": "A linguist fits two models to scaled data on how long speakers hold a vowel before a pause. The quadratic model is $y = (x - 6)^2 - 4$, and the linear model is $y = x - 4$. The system formed by these two equations is graphed in the $xy$-plane.",
+  "keys": [
+   "4",
+   "9"
+  ],
+  "any_of": true,
+  "explanation": "A solution to the system is a point where the parabola and the line intersect. Set the expressions equal: $(x - 6)^2 - 4 = x - 4$. Expand: $x^2 - 12x + 32 = x - 4$, so $x^2 - 13x + 36 = 0$, which factors as $(x - 4)(x - 9) = 0$. The graphs cross at $(4, 0)$ and $(9, 5)$, so $x$ can be 4 or 9. Either value is accepted. In Desmos, enter both equations and click either intersection.",
+  "common_errors": [
+   {
+    "value": "8",
+    "misconception": "wrong-target-quantity",
+    "why": "Solves $(x - 6)^2 - 4 = 0$ and gives an x-intercept of the parabola. The point $(8, 0)$ is on the parabola but not on the line."
+   },
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the x-coordinate of the parabola's vertex $(6, -4)$ instead of an intersection."
+   },
+   {
+    "value": "5",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the y-coordinate of the intersection $(9, 5)$ instead of an x-coordinate."
+   },
+   {
+    "value": "13",
+    "misconception": "algebra-manipulation",
+    "why": "Gives the sum of the roots, the coefficient in $x^2 - 13x + 36 = 0$, instead of solving the quadratic."
+   }
+  ],
+  "id": "orig-system-graph-m-M-7688d4",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

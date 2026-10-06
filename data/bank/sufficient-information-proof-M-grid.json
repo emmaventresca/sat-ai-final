@@ -1,0 +1,166 @@
+[
+ {
+  "stem": "What value of $x$ would be sufficient to prove that lines $\\ell$ and $m$ are parallel?",
+  "stimulus": "An ornithologist is building a flight cage for warblers, and two horizontal support rods lie along lines $\\ell$ and $m$. A diagonal brace along line $t$ crosses both rods. Angle $A$ is formed where $t$ meets $\\ell$, and angle $B$ is formed where $t$ meets $m$. Both angles lie between lines $\\ell$ and $m$ and on the same side of line $t$, so they are same-side interior angles. The measure of angle $A$ is $(3x + 14)^\\circ$, and the measure of angle $B$ is $(5x + 6)^\\circ$.",
+  "keys": [
+   "20"
+  ],
+  "any_of": false,
+  "explanation": "First, name the criterion. Angles $A$ and $B$ are same-side (co-interior) angles, and lines cut by a transversal are parallel exactly when their same-side interior angles add to $180^\\circ$. They do not need to be equal. Set up $(3x + 14) + (5x + 6) = 180$, so $8x + 20 = 180$, which gives $8x = 160$ and $x = 20$. Check it: the angles are $74^\\circ$ and $106^\\circ$, and $74 + 106 = 180$.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "missed-condition",
+    "why": "You set the two angles equal, $3x + 14 = 5x + 6$, as if they were corresponding or alternate angles. Same-side interior angles of parallel lines are supplementary, not equal."
+   },
+   {
+    "value": "74",
+    "misconception": "wrong-target-quantity",
+    "why": "You solved correctly but gave the measure of angle $A$, $3(20) + 14 = 74$, instead of $x$."
+   },
+   {
+    "value": "106",
+    "misconception": "wrong-target-quantity",
+    "why": "You solved correctly but gave the measure of angle $B$, $5(20) + 6 = 106$, instead of $x$."
+   },
+   {
+    "value": "42.5",
+    "misconception": "misread-given",
+    "why": "You used $360^\\circ$, the angle sum around a point, instead of $180^\\circ$: $8x + 20 = 360$ gives $x = 42.5$."
+   }
+  ],
+  "id": "orig-sufficient-inf-M-0e1b25",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What length of side $SU$, in millimeters, would be sufficient to prove that triangle $PQR$ is similar to triangle $STU$, with $P$, $Q$, and $R$ corresponding to $S$, $T$, and $U$, respectively?",
+  "stimulus": "A paleobotanist traces a triangle $PQR$ between three vein junctions on a fossil fern frond, where $PQ = 12$ millimeters, $PR = 18$ millimeters, and $QR = 15$ millimeters. On a second, smaller frond she traces triangle $STU$, where angle $S$ has the same measure as angle $P$ and $ST = 8$ millimeters.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "Start with what you already have: one pair of equal angles ($\\angle P = \\angle S$) and one side next to that angle in each triangle ($PQ$ and $ST$). To finish SAS similarity, the sides that enclose the equal angle must be in proportion. Those sides are $PQ$ and $PR$ in the first triangle and $ST$ and $SU$ in the second. Under the stated correspondence, $\\frac{SU}{PR} = \\frac{ST}{PQ}$, so $\\frac{SU}{18} = \\frac{8}{12}$ and $SU = 12$. Side $QR$ is not between the equal angles, so making $TU$ proportional to it would only be SSA, which proves nothing.",
+  "common_errors": [
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "You scaled $QR$ by $\\frac{8}{12}$ and got $10$, the length $TU$ would need. That side is not one of the two sides enclosing the equal angle (the SSA trap), and the question asks for $SU$ anyway."
+   },
+   {
+    "value": "16/3",
+    "misconception": "missed-condition",
+    "why": "You paired $ST$ with $PR$ instead of $PQ$, giving $SU = \\frac{8 \\cdot 12}{18} = \\frac{16}{3}$. That ignores the stated correspondence $Q \\leftrightarrow T$."
+   },
+   {
+    "value": "5.333",
+    "misconception": "missed-condition",
+    "why": "This is the decimal form of $\\frac{16}{3}$, from pairing $ST$ with $PR$ against the stated correspondence."
+   },
+   {
+    "value": "27",
+    "misconception": "algebra-manipulation",
+    "why": "You inverted the scale factor and computed $18 \\cdot \\frac{12}{8} = 27$, making the second triangle larger even though $ST < PQ$."
+   },
+   {
+    "value": "14",
+    "misconception": "algebra-manipulation",
+    "why": "You treated similarity as additive: $ST$ is $4$ less than $PQ$, so you subtracted $4$ from $18$. Similar triangles scale by multiplication, not subtraction."
+   }
+  ],
+  "id": "orig-sufficient-inf-M-0bb5ea",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What length of $DE$, in micrometers, would be sufficient to prove that triangle $ABC$ is congruent to triangle $DEF$, with $A$, $B$, and $C$ corresponding to $D$, $E$, and $F$, respectively?",
+  "stimulus": "An immunologist sketches the binding region of an antibody fragment as right triangle $ABC$, with the right angle at $C$, leg $AC = 10$ micrometers, and leg $BC = 24$ micrometers. A second fragment is sketched as right triangle $DEF$, with the right angle at $F$ and leg $DF = 10$ micrometers.",
+  "keys": [
+   "26"
+  ],
+  "any_of": false,
+  "explanation": "You already have a right angle in each triangle and one matching leg ($AC = DF = 10$). Under the correspondence, $DE$ matches $AB$, which is the hypotenuse because it lies opposite the right angle. The hypotenuse-leg (HL) criterion finishes the proof if the hypotenuses are equal, so you need $AB$. By the Pythagorean theorem, $AB = \\sqrt{10^2 + 24^2} = \\sqrt{676} = 26$. So $DE = 26$ is sufficient.",
+  "common_errors": [
+   {
+    "value": "24",
+    "misconception": "wrong-target-quantity",
+    "why": "You matched $DE$ to leg $BC$. But $DE$ corresponds to $AB$, which is the hypotenuse, so a right angle with two unmatched sides does not prove congruence."
+   },
+   {
+    "value": "34",
+    "misconception": "algebra-manipulation",
+    "why": "You added the legs, $10 + 24 = 34$, instead of using $\\sqrt{10^2 + 24^2}$."
+   },
+   {
+    "value": "676",
+    "misconception": "intermediate-step",
+    "why": "You stopped at $10^2 + 24^2 = 676$ and did not take the square root."
+   }
+  ],
+  "id": "orig-sufficient-inf-M-2a84c3",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What value of $y$ would be sufficient to prove that Elm Street and Birch Street are parallel?",
+  "stimulus": "An urban planner is checking whether two straight streets, Elm Street and Birch Street, are parallel. Both are crossed by Harbor Avenue. Where Harbor Avenue meets Elm Street, angle 1 measures $112^\\circ$. Where Harbor Avenue meets Birch Street, angle 3 is the angle in the position that corresponds to angle 1, and angle 2 forms a linear pair with angle 3. The measure of angle 2 is $(2y + 8)^\\circ$.",
+  "keys": [
+   "30"
+  ],
+  "any_of": false,
+  "explanation": "The streets are parallel when corresponding angles are equal, so you need angle 3 to equal $112^\\circ$. Angle 2 forms a linear pair with angle 3, so angle 2 must be $180 - 112 = 68^\\circ$. Set $2y + 8 = 68$, so $2y = 60$ and $y = 30$. A linear pair adds to $180^\\circ$ whether or not the streets are parallel, so it only works here as a route to angle 3. The parallel test is the corresponding-angle equality.",
+  "common_errors": [
+   {
+    "value": "52",
+    "misconception": "missed-condition",
+    "why": "You set angle 2 itself equal to $112^\\circ$ ($2y + 8 = 112$). Angle 2 is not the corresponding angle; it forms a linear pair with the corresponding angle."
+   },
+   {
+    "value": "34",
+    "misconception": "algebra-manipulation",
+    "why": "You found that angle 2 must be $68^\\circ$ but solved $2y = 68$, dropping the $+8$."
+   },
+   {
+    "value": "68",
+    "misconception": "intermediate-step",
+    "why": "You gave the required measure of angle 2 instead of the value of $y$."
+   },
+   {
+    "value": "86",
+    "misconception": "algebra-manipulation",
+    "why": "You set $2y + 8 = 180$, treating angle 2 as a straight angle instead of one half of a linear pair."
+   }
+  ],
+  "id": "orig-sufficient-inf-M-bc68dd",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

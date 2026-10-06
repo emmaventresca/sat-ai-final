@@ -1,0 +1,186 @@
+[
+ {
+  "stem": "If $f(k) = 14$ and $k > 0$, what is the value of $f(k + 2)$?",
+  "stimulus": "A textile historian uses the function $f(x) = \\frac{1}{2}(x + 4)^2 - 18$ to convert positions on a damaged pattern card from an 1820s hand loom into estimated thread counts.",
+  "keys": [
+   "32"
+  ],
+  "any_of": false,
+  "explanation": "This is a two-part question. First you find the input, then you evaluate the function at a new input. Set $\\frac{1}{2}(k + 4)^2 - 18 = 14$. Undo the operations in reverse order. Add 18 to get $\\frac{1}{2}(k + 4)^2 = 32$, then multiply by 2 to get $(k + 4)^2 = 64$. That gives $k + 4 = 8$ or $k + 4 = -8$, so $k = 4$ or $k = -12$. The condition $k > 0$ leaves $k = 4$. Now evaluate $f(k + 2) = f(6) = \\frac{1}{2}(10)^2 - 18 = 50 - 18 = 32$. In Desmos, graph $f(x)$ and $y = 14$, take the intersection with positive x, then type $f(6)$.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the input k where f(k) = 14 and stopped there, without evaluating f(k + 2). This is the input/output mix-up the subtype is built to catch."
+   },
+   {
+    "value": "0",
+    "misconception": "missed-condition",
+    "why": "Used the negative root k = -12 and evaluated f(-10) = (1/2)(36) - 18 = 0, ignoring k > 0. (A student who divides 32 by 2 instead of multiplying gets (k + 4)\u00b2 = 16, then k = 0, and f(2) = 0 as well.)"
+   },
+   {
+    "value": "50",
+    "misconception": "intermediate-step",
+    "why": "Computed (1/2)(10)\u00b2 = 50 correctly but forgot to subtract 18."
+   },
+   {
+    "value": "7",
+    "misconception": "algebra-manipulation",
+    "why": "Order-of-operations slip: multiplied by 1/2 before squaring, giving ((1/2)\u00b710)\u00b2 - 18 = 25 - 18 = 7."
+   },
+   {
+    "value": "16",
+    "misconception": "wrong-target-quantity",
+    "why": "Read f(k + 2) as f(k) + 2 = 14 + 2."
+   }
+  ],
+  "id": "orig-evaluate-or-in-H-d012db",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "For what value of $t$ is the athlete's heart rate exactly half of the heart rate at $t = 0$?",
+  "stimulus": "A sports scientist models an athlete's heart rate after a sprint with the function $R(t) = 60 + \\frac{120}{t + 1}$. Here $R(t)$ is the heart rate, in beats per minute, $t$ minutes after the sprint ends.",
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "First evaluate, then solve backwards. $R(0) = 60 + \\frac{120}{1} = 180$, so half of that is 90. Set $60 + \\frac{120}{t + 1} = 90$. Subtract 60 to get $\\frac{120}{t + 1} = 30$. Then $t + 1 = 4$, so $t = 3$. Check by substituting back: $R(3) = 60 + 30 = 90$. In Desmos, graph $R(x)$ and $y = 90$ and click the intersection.",
+  "common_errors": [
+   {
+    "value": "90",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the target heart rate (the output) instead of the time t (the input) that produces it."
+   },
+   {
+    "value": "1",
+    "misconception": "misread-given",
+    "why": "Halved only the fraction term (120/(t+1) = 60) instead of the whole heart rate. That is the time when the rate above resting is halved, not the heart rate itself."
+   },
+   {
+    "value": "4",
+    "misconception": "intermediate-step",
+    "why": "Solved for t + 1 = 4 and forgot to subtract 1."
+   },
+   {
+    "value": "1/3",
+    "misconception": "algebra-manipulation",
+    "why": "Set the fraction alone equal to 90 (120/(t+1) = 90) without subtracting the 60 first, giving t + 1 = 4/3."
+   },
+   {
+    "value": ".3333",
+    "misconception": "algebra-manipulation",
+    "why": "Decimal form of 1/3: set 120/(t+1) = 90 without first subtracting 60."
+   }
+  ],
+  "id": "orig-evaluate-or-in-H-9dae5d",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "If $f(a) = 48$, what is the value of $a$?",
+  "stimulus": "A cartographer estimates the time needed to ink a shaded region on a draft map with the function $f(x) = 2x^{\\frac{3}{2}} - 6$. Here $f(x)$ is the number of minutes for a region whose area on the draft is $x$ square centimeters.",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "You are given the output, so set $2a^{\\frac{3}{2}} - 6 = 48$ and undo the operations in reverse order. Add 6 to get $2a^{\\frac{3}{2}} = 54$. Divide by 2 to get $a^{\\frac{3}{2}} = 27$. Raise both sides to the $\\frac{2}{3}$ power, or equivalently take the cube root (3) and square it, to get $a = 9$. Check: $2(9)^{\\frac{3}{2}} - 6 = 2(27) - 6 = 48$. In Desmos, graph $f(x)$ and $y = 48$ and click the intersection.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "intermediate-step",
+    "why": "Took the cube root of 27 to get \u221aa = 3 and stopped before squaring."
+   },
+   {
+    "value": "27",
+    "misconception": "intermediate-step",
+    "why": "Reached a^(3/2) = 27 and gave that as a without undoing the exponent."
+   },
+   {
+    "value": "8.32",
+    "misconception": "algebra-manipulation",
+    "why": "Skipped adding 6, so solved 2a^(3/2) = 48, a^(3/2) = 24, a = 24^(2/3) \u2248 8.32."
+   },
+   {
+    "value": "7.61",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted 6 instead of adding it, so solved 2a^(3/2) = 42, a = 21^(2/3) \u2248 7.61."
+   }
+  ],
+  "id": "orig-evaluate-or-in-H-1846f4",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "If $g(k) = 87$, what is the value of $g\\left(\\frac{k}{2}\\right)$?",
+  "stimulus": "An urban planning office models the number of bike-share stations in a city $x$ months after the program launched with the function $g(x) = 5 \\cdot 2^{\\frac{x}{3}} + 7$.",
+  "keys": [
+   "27"
+  ],
+  "any_of": false,
+  "explanation": "Solve backwards for k first. Set $5 \\cdot 2^{\\frac{k}{3}} + 7 = 87$. Subtract 7 to get $5 \\cdot 2^{\\frac{k}{3}} = 80$, then divide by 5 to get $2^{\\frac{k}{3}} = 16 = 2^4$. So $\\frac{k}{3} = 4$ and $k = 12$. Now evaluate at half that input: $g(6) = 5 \\cdot 2^{2} + 7 = 20 + 7 = 27$. Halving the input of an exponential does not halve the output. In Desmos, graph $g(x)$ and $y = 87$, read $x = 12$, then type $g(6)$.",
+  "common_errors": [
+   {
+    "value": "12",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the input k and stopped, without evaluating g at k/2. This is the input/output mix-up the subtype is built to catch."
+   },
+   {
+    "value": "87/2",
+    "misconception": "algebra-manipulation",
+    "why": "Assumed halving the input halves the output, so gave 87 \u00f7 2."
+   },
+   {
+    "value": "43.5",
+    "misconception": "algebra-manipulation",
+    "why": "Decimal form of 87/2: assumed halving the input halves the output."
+   },
+   {
+    "value": "47",
+    "misconception": "algebra-manipulation",
+    "why": "Halved the exponential part (80 \u00f7 2 = 40) and added 7. Halving the input actually takes a square root of the growth factor, not half of it."
+   },
+   {
+    "value": "14.93",
+    "misconception": "intermediate-step",
+    "why": "Stopped at k/3 = 4, used k = 4, and evaluated g(2) = 5\u00b72^(2/3) + 7 \u2248 14.94."
+   },
+   {
+    "value": "14.94",
+    "misconception": "intermediate-step",
+    "why": "Rounded form of the same slip: used k = 4 instead of 12, then evaluated g(2)."
+   }
+  ],
+  "id": "orig-evaluate-or-in-H-4a8995",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

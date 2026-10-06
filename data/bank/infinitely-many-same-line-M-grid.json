@@ -1,0 +1,151 @@
+[
+ {
+  "stem": "If the system has infinitely many solutions, what is the value of $k$?",
+  "stimulus": "A hydrologist checking two gauging stations on the same river writes two equations relating $x$, the inflow from a tributary, and $y$, the outflow through a spillway, both in thousands of cubic meters per day. In the system below, $k$ is a constant.\n\n$6x - 4y = 18$\n$kx - 10y = 45$",
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "Infinitely many solutions means the second equation is a constant multiple of the first, so every pair of matching parts is in the same ratio. Find the multiplier from the parts you know. The y-coefficients give $\\frac{-10}{-4} = 2.5$, and the constants agree: $\\frac{45}{18} = 2.5$. The x-coefficient must use the same multiplier, so $k = 2.5 \\cdot 6 = 15$. To check in Desmos, put a slider on $k$ and watch the two lines merge into one at $k = 15$.",
+  "common_errors": [
+   {
+    "value": "2.5",
+    "misconception": "intermediate-step",
+    "why": "You found the multiplier between the equations and gave it as the answer without applying it to the x-coefficient 6."
+   },
+   {
+    "value": "2.4",
+    "misconception": "algebra-manipulation",
+    "why": "You turned the ratio upside down, using $\\frac{4}{10}$ in place of $\\frac{10}{4}$, then multiplied 6 by 0.4 and by 10 to get the wrong ratio."
+   },
+   {
+    "value": "6",
+    "misconception": "missed-condition",
+    "why": "You assumed the same line needs identical coefficients and copied 6, but the other coefficients show the second equation is the first one multiplied by 2.5."
+   }
+  ],
+  "id": "orig-infinitely-man-M-f6ae12",
+  "skill_cd": "H.D.",
+  "subtype": "infinitely-many-same-line",
+  "subtype_name": "Infinitely many solutions (the same line)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "If the system has infinitely many solutions, what is the value of $c$?",
+  "stimulus": "A public health analyst models how a county vaccination program divides its weekly outreach hours. Let $x$ be the hours spent at mobile clinics and $y$ the hours spent at school sites. Two planning documents give the relationship as the equations below, where $c$ is a constant.\n\n$y = -\\frac{3}{4}x + 5$\n$12x + 16y = c$",
+  "keys": [
+   "80"
+  ],
+  "any_of": false,
+  "explanation": "Write both equations in the same form first. Multiplying the first equation by 4 gives $4y = -3x + 20$, so $3x + 4y = 20$. Comparing x-coefficients, $\\frac{12}{3} = 4$, and comparing y-coefficients, $\\frac{16}{4} = 4$. So the slopes already match. For the lines to be the same line and not parallel, the constant must use the same multiplier as well: $c = 4 \\cdot 20 = 80$. As a check, $12x + 16y = 80$ becomes $y = -\\frac{3}{4}x + 5$.",
+  "common_errors": [
+   {
+    "value": "20",
+    "misconception": "missed-condition",
+    "why": "You saw that the slopes match and stopped, keeping the constant from $3x + 4y = 20$ without multiplying it by 4. That makes the lines parallel, not the same line."
+   },
+   {
+    "value": "5",
+    "misconception": "graph-feature-mismatch",
+    "why": "You gave the y-intercept of the first equation as $c$, which mixes up the intercept with the constant term in standard form."
+   },
+   {
+    "value": "60",
+    "misconception": "algebra-manipulation",
+    "why": "You solved $12x + 16y = c$ for $y$ but divided $c$ by 12 in place of 16, so setting $\\frac{c}{12} = 5$ gave 60."
+   }
+  ],
+  "id": "orig-infinitely-man-M-50b9c2",
+  "skill_cd": "H.D.",
+  "subtype": "infinitely-many-same-line",
+  "subtype_name": "Infinitely many solutions (the same line)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "If the system has infinitely many solutions, what is the value of $a + b$?",
+  "stimulus": "An agricultural scientist mixing a soil amendment records a nitrogen constraint and a cost constraint for $x$ kilograms of compost and $y$ kilograms of bone meal per plot. For the field trial, the two constraints turn out to describe the same set of mixtures. In the system below, $a$ and $b$ are constants.\n\n$5x + 2y = 14$\n$15x + ay = b$",
+  "keys": [
+   "48"
+  ],
+  "any_of": false,
+  "explanation": "Infinitely many solutions means the second equation is the first multiplied by a single number. The x-coefficients fix that number: $\\frac{15}{5} = 3$. Multiply the whole first equation by 3 to get $15x + 6y = 42$. So $a = 6$ and $b = 42$, and $a + b = 48$.",
+  "common_errors": [
+   {
+    "value": "20",
+    "misconception": "missed-condition",
+    "why": "You scaled the y-coefficient to get $a = 6$ but kept $b = 14$. With matching slopes and an unscaled constant, the lines are parallel and the system has no solution."
+   },
+   {
+    "value": "42",
+    "misconception": "wrong-target-quantity",
+    "why": "You found $b$ correctly and reported it alone, not the sum $a + b$."
+   },
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "You found $a$ correctly and reported it alone, not the sum $a + b$."
+   },
+   {
+    "value": "16",
+    "misconception": "algebra-manipulation",
+    "why": "You added the multiplier to each term, $2 + 3 = 5$ and $14 + 3 = 17$, in place of multiplying. That gives $a = 5$ and $b = 17$, and their sum is 22. If you entered 16, check whether you added 2 to 14."
+   }
+  ],
+  "id": "orig-infinitely-man-M-fd0d92",
+  "skill_cd": "H.D.",
+  "subtype": "infinitely-many-same-line",
+  "subtype_name": "Infinitely many solutions (the same line)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "If the system has infinitely many solutions, what is the value of $c$?",
+  "stimulus": "An ornithologist compares two feeding-time models for a pair of nesting warblers. Let $x$ be the minutes per hour the female spends foraging and $y$ the minutes per hour the male spends foraging. In the system below, $c$ is a constant.\n\n$\\frac{x}{4} + \\frac{y}{6} = 2$\n$3x + 2y = c$",
+  "keys": [
+   "24"
+  ],
+  "any_of": false,
+  "explanation": "Clear the fractions so both equations are in the same form. The least common multiple of 4 and 6 is 12. Multiplying every term of the first equation by 12 gives $3x + 2y = 24$. That matches the second equation's x- and y-coefficients exactly, so for the two to be the same line the constants must match too: $c = 24$.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "missed-condition",
+    "why": "You saw that the coefficients line up after clearing fractions but kept the original constant 2. That gives a parallel line, not the same line."
+   },
+   {
+    "value": "12",
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the first equation by 6 to clear only the y-fraction, which gives $1.5x + y = 12$, and took that constant even though the coefficients no longer match $3x + 2y$."
+   },
+   {
+    "value": "48",
+    "misconception": "intermediate-step",
+    "why": "You multiplied by $4 \\cdot 6 = 24$ to get $6x + 4y = 48$ and stopped there, without dividing by 2 to match $3x + 2y$."
+   }
+  ],
+  "id": "orig-infinitely-man-M-69c023",
+  "skill_cd": "H.D.",
+  "subtype": "infinitely-many-same-line",
+  "subtype_name": "Infinitely many solutions (the same line)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

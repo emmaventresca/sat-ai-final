@@ -1,0 +1,172 @@
+[
+ {
+  "stem": "If the equation has exactly one real solution, what is the value of $k$?",
+  "stimulus": "A nutrition scientist modeling how quickly a vitamin is absorbed obtains the equation $3x^2 - 7x = 2x - k$, where $k$ is a constant.",
+  "keys": [
+   "27/4",
+   "6.75"
+  ],
+  "any_of": false,
+  "explanation": "First get everything on one side. Subtract $2x$ from both sides and add $k$ to both sides: $3x^2 - 9x + k = 0$. Now $a = 3$, $b = -9$ and $c = k$. A quadratic has exactly one real solution when its discriminant is zero: $(-9)^2 - 4(3)(k) = 0$, so $81 - 12k = 0$ and $k = \\frac{81}{12} = \\frac{27}{4}$. To check in Desmos, graph $y = 3x^2 - 9x + k$ with a slider on $k$. At $k = 6.75$ the parabola just touches the x-axis.",
+  "common_errors": [
+   {
+    "value": "49/12",
+    "misconception": "misread-given",
+    "why": "Read $b = -7$ from the left side without moving $2x$ across, then solved $49 - 12k = 0$."
+   },
+   {
+    "value": "25/12",
+    "misconception": "algebra-manipulation",
+    "why": "Moved $2x$ with the wrong sign, which gave $3x^2 - 5x + k = 0$, then solved $25 - 12k = 0$."
+   },
+   {
+    "value": "27",
+    "misconception": "algebra-manipulation",
+    "why": "Left out the 4 in $b^2 - 4ac$ and solved $81 - 3k = 0$."
+   },
+   {
+    "value": "3/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the single solution $x = \\frac{9}{6} = \\frac{3}{2}$ instead of the constant $k$."
+   }
+  ],
+  "id": "orig-discriminant-n-H-416cd4",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the smallest integer value of $c$ for which the system has no real solutions?",
+  "stimulus": "An archaeologist models the profile of an excavated burial mound with $y = -x^2 + 8x$ and a straight survey line across the site with $y = 2x + c$, where $c$ is a constant.",
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "Set the two expressions equal: $-x^2 + 8x = 2x + c$. Move every term to the right side to get $0 = x^2 - 6x + c$, so $a = 1$, $b = -6$ and the constant term is $c$. The system has no real solutions when the discriminant is negative: $36 - 4c < 0$, so $c > 9$. At $c = 9$ the line is tangent to the parabola, which still gives one solution, so $c = 9$ is not allowed. The smallest integer greater than 9 is 10. In Desmos, put a slider on $c$ and you can see the line meet the parabola once at 9 and miss it at 10.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "missed-condition",
+    "why": "Took the boundary from $36 - 4c = 0$. At $c = 9$ the line touches the parabola once, so there is still one solution."
+   },
+   {
+    "value": "8",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used $36 - 4c > 0$, the condition for two solutions, and gave the largest integer on that side."
+   },
+   {
+    "value": "26",
+    "misconception": "algebra-manipulation",
+    "why": "Added $2x$ instead of subtracting it, which gave $x^2 - 10x + c = 0$. Then $100 - 4c < 0$ gives $c > 25$."
+   },
+   {
+    "value": "37",
+    "misconception": "algebra-manipulation",
+    "why": "Left out the 4 in the discriminant, so $36 - c < 0$ and $c > 36$."
+   }
+  ],
+  "id": "orig-discriminant-n-H-3b89ed",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "If the equation has exactly one real solution, what is the value of $k$?",
+  "stimulus": "A linguist studying how vocabulary grows across a series of lessons arrives at the equation $x(kx - 4) = 4x - 2$, where $k$ is a positive constant.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "Expand the left side to get $kx^2 - 4x = 4x - 2$. Then subtract $4x$ and add 2 on both sides: $kx^2 - 8x + 2 = 0$. Now $a = k$, $b = -8$ and $c = 2$. For exactly one solution, set the discriminant to zero: $(-8)^2 - 4(k)(2) = 0$, so $64 - 8k = 0$ and $k = 8$. As a check, $8x^2 - 8x + 2 = 2(2x - 1)^2$, which has the single root $x = \\frac{1}{2}$.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "misread-given",
+    "why": "Expanded the left side but read $b = -4$ without moving $4x$ across, then solved $16 - 8k = 0$."
+   },
+   {
+    "value": "-8",
+    "misconception": "algebra-manipulation",
+    "why": "Moved the $-2$ with the wrong sign, which gave $kx^2 - 8x - 2 = 0$ and $64 + 8k = 0$."
+   },
+   {
+    "value": "32",
+    "misconception": "algebra-manipulation",
+    "why": "Left out the 4 in the discriminant and solved $64 - 2k = 0$."
+   },
+   {
+    "value": "1/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the equation's single solution $x = \\frac{1}{2}$ instead of $k$."
+   }
+  ],
+  "id": "orig-discriminant-n-H-ff8d18",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "If the line intersects the parabola at exactly one point, what is the positive value of $m$?",
+  "stimulus": "A hydrologist models the cross-section of a stream bed with the parabola $y = 2x^2 - 3x + 8$ and a straight drainage pipe with the line $y = mx$, where $m$ is a constant.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "Set the two equal: $2x^2 - 3x + 8 = mx$. Subtract $mx$ to get $2x^2 - (3 + m)x + 8 = 0$, so $a = 2$, $b = -(3 + m)$ and $c = 8$. Exactly one intersection point means the discriminant is zero: $(3 + m)^2 - 4(2)(8) = 0$, so $(3 + m)^2 = 64$. That gives $3 + m = 8$ or $3 + m = -8$, so $m = 5$ or $m = -11$. The positive value is 5. In Desmos, graph both with a slider on $m$. At $m = 5$ the line is tangent to the parabola at $(2, 10)$.",
+  "common_errors": [
+   {
+    "value": "11",
+    "misconception": "algebra-manipulation",
+    "why": "Combined the $x$-terms as $(m - 3)x$ instead of $-(3 + m)x$. Solving $(m - 3)^2 = 64$ then gives 11 as the positive root."
+   },
+   {
+    "value": "8",
+    "misconception": "intermediate-step",
+    "why": "Found $3 + m = 8$ and stopped before subtracting 3."
+   },
+   {
+    "value": "64",
+    "misconception": "intermediate-step",
+    "why": "Gave the value of $(3 + m)^2$ instead of solving it for $m$."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the x-coordinate of the point of tangency instead of the slope $m$."
+   },
+   {
+    "value": "-11",
+    "misconception": "complement-or-direction-flip",
+    "why": "Took the negative root of $(3 + m)^2 = 64$, but the question asks for the positive value."
+   }
+  ],
+  "id": "orig-discriminant-n-H-6d93b1",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

@@ -1,0 +1,152 @@
+[
+ {
+  "stem": "If $(x, y)$ is the solution to the system with the greater value of $x$, what is the value of $y$?",
+  "stimulus": "A sports scientist compares two models of an athlete's heart-rate response during an interval workout. The models agree at the points that satisfy this system of equations.\n\n$y = x^2 - 3x + 2$\n$y = 3x - 6$",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "Both equations are already solved for $y$, so set the right sides equal: $x^2 - 3x + 2 = 3x - 6$. Move everything to one side to get $x^2 - 6x + 8 = 0$, which factors as $(x - 2)(x - 4) = 0$. So $x = 2$ or $x = 4$. The question asks about the solution with the greater $x$, which is $x = 4$. Put it into the simpler linear equation: $y = 3(4) - 6 = 6$. To check, use the quadratic: $16 - 12 + 2 = 6$. The answer is 6.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "You solved for $x$ correctly and entered $x = 4$ instead of putting it back into an equation to find $y$."
+   },
+   {
+    "value": "0",
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the solution with the smaller $x$: at $x = 2$, $y = 3(2) - 6 = 0$."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "You entered the smaller root of $x^2 - 6x + 8 = 0$, which is an $x$-value from the wrong solution, and never found $y$."
+   }
+  ],
+  "id": "orig-system-substit-M-7089c9",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The system has two solutions, $(a, b)$ and $(c, d)$. What is the value of $b + d$?",
+  "stimulus": "An agricultural scientist models how two fertilizer schedules affect the growth of a test crop. The schedules give the same result at the points that satisfy this system of equations.\n\n$y = x^2 + 2x + 3$\n$y = 6x + 3$",
+  "keys": [
+   "30"
+  ],
+  "any_of": false,
+  "explanation": "Substitute: $x^2 + 2x + 3 = 6x + 3$. Subtract $6x + 3$ from both sides to get $x^2 - 4x = 0$. Factor out $x$ to get $x(x - 4) = 0$, so $x = 0$ or $x = 4$. Don't divide both sides by $x$, because that loses the solution $x = 0$. Now find each $y$ from the linear equation. At $x = 0$, $y = 3$. At $x = 4$, $y = 6(4) + 3 = 27$. The sum of the $y$-values is $3 + 27 = 30$.",
+  "common_errors": [
+   {
+    "value": "27",
+    "misconception": "algebra-manipulation",
+    "why": "You divided $x^2 - 4x = 0$ by $x$ instead of factoring it. That lost the solution $x = 0$, so you found only $y = 27$."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "You added the $x$-values, $0 + 4$, instead of the $y$-values."
+   },
+   {
+    "value": "3",
+    "misconception": "complement-or-direction-flip",
+    "why": "You entered the $y$-value of only one solution, $(0, 3)$, instead of adding the two $y$-values."
+   }
+  ],
+  "id": "orig-system-substit-M-688504",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "If $(x, y)$ is the solution to the system with $x > 0$, what is the value of $y$?",
+  "stimulus": "On a map's coordinate grid, a straight road follows the line $x + y = 9$, and a curved river follows $y = x^2 - 3$. The road crosses the river at the points that satisfy both equations.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "The river's equation gives $y$ directly, so substitute it into the road's equation: $x + (x^2 - 3) = 9$. This simplifies to $x^2 + x - 12 = 0$, which factors as $(x + 4)(x - 3) = 0$. So $x = -4$ or $x = 3$. The question wants $x > 0$, so use $x = 3$. Then $y = 9 - 3 = 6$. Check it in the river's equation: $3^2 - 3 = 6$. The answer is 6.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "You entered the $x$-coordinate of the crossing instead of the $y$-coordinate."
+   },
+   {
+    "value": "13",
+    "misconception": "missed-condition",
+    "why": "You used the other solution, $x = -4$, which gives $y = 16 - 3 = 13$. That solution fails the condition $x > 0$."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the road as $y = 9 + x$, which gives $x^2 - x - 12 = 0$ and $x = 4$. Then $y = 9 - 4 = 5$ from the line. This pair does not satisfy the river's equation."
+   }
+  ],
+  "id": "orig-system-substit-M-6a28a5",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "If $(x, y)$ is the solution to the system with the smaller value of $x$, what is the value of $y$?",
+  "stimulus": "A textile historian compares two models of weekly cloth output at a nineteenth-century weaving mill. The models agree at the points that satisfy this system of equations.\n\n$y = 2x^2 - 4x + 5$\n$y = 3x + 2$",
+  "keys": [
+   "3.5",
+   "7/2"
+  ],
+  "any_of": false,
+  "explanation": "Set the right sides equal: $2x^2 - 4x + 5 = 3x + 2$. This gives $2x^2 - 7x + 3 = 0$, which factors as $(2x - 1)(x - 3) = 0$. So $x = \\frac{1}{2}$ or $x = 3$. The smaller value is $x = \\frac{1}{2}$. Put it into the linear equation: $y = 3\\left(\\frac{1}{2}\\right) + 2 = \\frac{7}{2}$. Check it in the quadratic: $2\\left(\\frac{1}{4}\\right) - 2 + 5 = \\frac{7}{2}$. The answer is $\\frac{7}{2}$, or 3.5.",
+  "common_errors": [
+   {
+    "value": "1/2",
+    "misconception": "wrong-target-quantity",
+    "why": "You entered the $x$-value of the solution instead of finding $y$."
+   },
+   {
+    "value": ".5",
+    "misconception": "wrong-target-quantity",
+    "why": "This is the same mistake entered as a decimal: you gave $x = 0.5$ instead of $y$."
+   },
+   {
+    "value": "11",
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the solution with the greater $x$, $x = 3$, which gives $y = 11$."
+   },
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "You found $y$ from the quadratic but read $2x^2$ as $(2x)^2$, so you got $1 - 2 + 5 = 4$."
+   }
+  ],
+  "id": "orig-system-substit-M-ce5e3b",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]

@@ -1,0 +1,166 @@
+[
+ {
+  "stem": "What is the radius, in kilometers, of the circle?",
+  "stimulus": "A meteorologist places a coordinate grid over a radar map, with both axes measured in kilometers. The outer edge of a band of heavy rain is modeled by the circle with equation $x^2 + y^2 - 6x + 8y - 144 = 0$.",
+  "keys": [
+   "13"
+  ],
+  "any_of": false,
+  "explanation": "First move the constant to the right side: $x^2 - 6x + y^2 + 8y = 144$. Next complete the square for each variable. Half of $-6$ is $-3$, and $(-3)^2 = 9$. Half of $8$ is $4$, and $4^2 = 16$. Add both 9 and 16 to both sides: $(x - 3)^2 + (y + 4)^2 = 144 + 9 + 16 = 169$. The right side is $r^2$, so $r = \\sqrt{169} = 13$. To check, graph the original equation in Desmos and read the radius from the circle centered at $(3, -4)$.",
+  "common_errors": [
+   {
+    "value": "12",
+    "misconception": "algebra-manipulation",
+    "why": "You completed the square on the left but did not add 9 and 16 to the right side, so you treated 144 as $r^2$ and took its square root."
+   },
+   {
+    "value": "169",
+    "misconception": "wrong-target-quantity",
+    "why": "You completed the square correctly but gave $r^2$ instead of taking its square root to get $r$."
+   },
+   {
+    "value": "26",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the radius correctly and then doubled it, which gives the diameter."
+   }
+  ],
+  "id": "orig-complete-squar-M-dae21c",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The equation of the circle can be written in the form $x^2 + y^2 + Dx + Ey + F = 0$, where $D$, $E$, and $F$ are constants. What is the value of $F$?",
+  "stimulus": "On a map with coordinates in kilometers, a seismologist marks an earthquake's epicenter at the point $(2, -5)$. The points where shaking reached a certain intensity form a circle centered at the epicenter with a radius of 4 kilometers.",
+  "keys": [
+   "13"
+  ],
+  "any_of": false,
+  "explanation": "Start with center-radius form: $(x - 2)^2 + (y + 5)^2 = 4^2 = 16$. Expand each square: $x^2 - 4x + 4 + y^2 + 10y + 25 = 16$. Move 16 to the left and combine the constants: $x^2 + y^2 - 4x + 10y + 13 = 0$. So $F = 4 + 25 - 16 = 13$. In general, $F = h^2 + k^2 - r^2$.",
+  "common_errors": [
+   {
+    "value": "-16",
+    "misconception": "algebra-manipulation",
+    "why": "When you expanded $(x - 2)^2$ and $(y + 5)^2$, you dropped the constants 4 and 25 that the center creates, so only $-r^2$ was left."
+   },
+   {
+    "value": "25",
+    "misconception": "algebra-manipulation",
+    "why": "You used $r = 4$ in place of $r^2 = 16$, so you computed $4 + 25 - 4$."
+   },
+   {
+    "value": "-13",
+    "misconception": "algebra-manipulation",
+    "why": "You did not change the sign when you moved the terms across the equals sign, so you computed $r^2 - h^2 - k^2$."
+   },
+   {
+    "value": "45",
+    "misconception": "algebra-manipulation",
+    "why": "You added $r^2$ instead of subtracting it, so you computed $4 + 25 + 16$."
+   },
+   {
+    "value": "-4",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the coefficient of $x$, which is $D$, instead of the constant term $F$."
+   }
+  ],
+  "id": "orig-complete-squar-M-d1dc92",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The area of the region enclosed by the circle is $k\\pi$ square units, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "An immunologist studying a tissue sample under a microscope places a coordinate grid over the image. The edge of a circular cluster of immune cells is modeled by the equation $x^2 + y^2 + 8x - 2y = 8$.",
+  "keys": [
+   "25"
+  ],
+  "any_of": false,
+  "explanation": "Complete the square for each variable. Half of 8 is 4, and $4^2 = 16$. Half of $-2$ is $-1$, and $(-1)^2 = 1$. Add 16 and 1 to both sides: $(x + 4)^2 + (y - 1)^2 = 8 + 16 + 1 = 25$. So $r^2 = 25$. The area of a circle is $\\pi r^2$, which here is $25\\pi$, so $k = 25$.",
+  "common_errors": [
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "You completed the square on the left but did not add 16 and 1 to the right side, so you treated 8 as $r^2$."
+   },
+   {
+    "value": "13",
+    "misconception": "algebra-manipulation",
+    "why": "You added the half-coefficients 4 and 1 to the right side without squaring them, so you got $8 + 4 + 1$."
+   },
+   {
+    "value": "5",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the radius, $r = 5$, instead of the number that multiplies $\\pi$ in the area."
+   },
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "You found $r = 5$ and then used the circumference factor $2r$ instead of the area factor $r^2$."
+   }
+  ],
+  "id": "orig-complete-squar-M-d67d3a",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ },
+ {
+  "stem": "The circle has center $(h, k)$ and radius $r$. What is the value of $h + r$?",
+  "stimulus": "A sports scientist tracks a soccer player during an agility drill on a grid measured in meters. The player's path around a cone follows the circle with equation $x^2 + y^2 - 12x + 14y + 69 = 0$.",
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "Move the constant to the right side: $x^2 - 12x + y^2 + 14y = -69$. Half of $-12$ is $-6$, and $(-6)^2 = 36$. Half of 14 is 7, and $7^2 = 49$. Add both to each side: $(x - 6)^2 + (y + 7)^2 = -69 + 36 + 49 = 16$. The center is $(6, -7)$ and the radius is $\\sqrt{16} = 4$. So $h + r = 6 + 4 = 10$. To check, graph the original equation in Desmos.",
+  "common_errors": [
+   {
+    "value": "22",
+    "misconception": "wrong-target-quantity",
+    "why": "You used $r^2 = 16$ as the radius instead of taking its square root, so you computed $6 + 16$."
+   },
+   {
+    "value": "-2",
+    "misconception": "algebra-manipulation",
+    "why": "You did not flip the sign when you read the center from $(x - 6)^2$, so you took $h = -6$."
+   },
+   {
+    "value": "16",
+    "misconception": "algebra-manipulation",
+    "why": "You took $h$ from the $x$-coefficient without halving it, so you used $h = 12$."
+   },
+   {
+    "value": "-3",
+    "misconception": "wrong-target-quantity",
+    "why": "You added the $y$-coordinate of the center, $k = -7$, to the radius instead of the $x$-coordinate."
+   }
+  ],
+  "id": "orig-complete-squar-M-d8dc3b",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "unverified"
+ }
+]
