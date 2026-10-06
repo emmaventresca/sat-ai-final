@@ -17,14 +17,20 @@
 const PLANNER = 'http://localhost:8791';
 
 export const shotState = {
-  busy: false, error: null, result: null, preview: null, startedAt: null,
+  busy: false, error: null, questions: [], rejected: [],
+  preview: null, startedAt: null, picked: 0, writing: false, wrote: 0,
 };
 
 export function resetShot() {
-  shotState.busy = false;
-  shotState.error = null;
-  shotState.result = null;
-  shotState.preview = null;
+  Object.assign(shotState, {
+    busy: false, error: null, questions: [], rejected: [],
+    preview: null, picked: 0, writing: false, wrote: 0,
+  });
+}
+
+/** The question the teacher is currently looking at. */
+export function picked() {
+  return shotState.questions[shotState.picked] ?? null;
 }
 
 /** A File from an input or a paste, as a data URL we can show and send. */
@@ -53,11 +59,10 @@ export function readFile(file) {
  * not react looks broken.
  */
 export async function identify(dataUrl, section, onStart) {
-  shotState.busy = true;
-  shotState.error = null;
-  shotState.result = null;
-  shotState.preview = dataUrl;
-  shotState.startedAt = Date.now();
+  Object.assign(shotState, {
+    busy: true, error: null, questions: [], rejected: [], wrote: 0,
+    preview: dataUrl, startedAt: Date.now(), picked: 0,
+  });
   if (onStart) onStart();
   try {
     const r = await fetch(`${PLANNER}/identify`, {
@@ -67,11 +72,16 @@ export async function identify(dataUrl, section, onStart) {
     });
     const data = await r.json().catch(() => ({}));
     if (!r.ok) throw new Error(data.error || `identify returned ${r.status}`);
-    if (!data.subtype) {
-      throw new Error(data.why || 'That did not match any question type we know.');
+    const hits = (data.questions ?? []).filter((q) => q.subtype);
+    if (!hits.length) {
+      // A screenshot of something that is not an SAT question is the normal
+      // way this fails, and saying so beats a stack trace.
+      throw new Error((data.questions ?? [])[0]?.why
+        || 'Nothing in that image matched a question type we know.');
     }
-    shotState.result = data;
-    return data;
+    shotState.questions = hits;
+    shotState.rejected = data.rejected ?? [];
+    return hits;
   } catch (e) {
     shotState.error = String(e.message ?? e);
     throw e;
@@ -88,14 +98,17 @@ export async function identify(dataUrl, section, onStart) {
  * same difficulty, and a teacher usually wants a spread around it rather
  * than ten clones.
  */
+const TIERS = ['F', 'E', 'M', 'H'];
+
 export function matchesFor(result, items) {
   const pool = (items ?? []).filter((i) => i.subtype === result.subtype);
   const at = (t) => pool.filter((i) => i.difficulty === t);
+  const i = Math.max(0, TIERS.indexOf(result.difficulty));
   return {
     pool,
     same: at(result.difficulty),
-    easier: result.difficulty === 'E' ? at('F') : at(result.difficulty === 'H' ? 'M' : 'E'),
-    harder: result.difficulty === 'H' ? [] : at(result.difficulty === 'E' ? 'M' : 'H'),
+    easier: i > 0 ? at(TIERS[i - 1]) : [],
+    harder: i + 1 < TIERS.length ? at(TIERS[i + 1]) : [],
   };
 }
 

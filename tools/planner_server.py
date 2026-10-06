@@ -28,6 +28,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOOLS = os.path.join(ROOT, "tools")
 sys.path.insert(0, TOOLS)
 from cli import call_json_object                        # noqa: E402
+import read_question                                    # noqa: E402
 PORT = int(os.environ.get("PLANNER_PORT", "8791"))
 MODEL = os.environ.get("PLANNER_MODEL", "claude-opus-5-5")
 
@@ -297,60 +298,11 @@ def generate_items(req):
 # ---------------------------------------------------------------------------
 # Identifying a question from a screenshot
 #
-# A teacher has a question on screen - in Bluebook, in a textbook, on a
-# worksheet - and wants more like it. The useful thing to extract is WHICH
-# RECOGNITION it is, which is a fact about the question and not its
-# expression.
-#
-# So the prompt asks for a classification and forbids returning the text.
-# That is the whole legal design: the image may be College Board's, and the
-# answer we keep is "this is a two-way table conditional probability question
-# at Medium", which is ours. The file is written to a temp path, read once,
-# and deleted in a finally - processed, never persisted (docs/DESIGN.md 3,
-# tier 3).
+# The reading itself lives in tools/read_question.py, which is also a command
+# you can run on its own - the same code path whether it is called from the
+# portal or from a terminal, so what the teacher sees is what you can debug.
+# This endpoint is the transport: decode, hand over a file, delete it.
 # ---------------------------------------------------------------------------
-
-IDENTIFY = """Look at the question in the image at {path}.
-
-You are classifying it against a taxonomy, NOT transcribing it.
-
-DO NOT reproduce the question. No stem, no passage, no answer choices, no
-numbers from it, not even paraphrased. If you find yourself quoting, stop.
-The image may be copyrighted material and we keep only the classification,
-which is a fact about the question rather than anything anyone wrote.
-
-Our taxonomy, as "<skill> / <subtype slug>: <what it is>":
-
-{taxonomy}
-
-Respond with ONLY JSON:
-{{"section": "math"|"rw",
-  "skill_cd": "<code from the list>",
-  "subtype": "<slug from the list>",
-  "difficulty": "E"|"M"|"H",
-  "format": "mc"|"grid",
-  "confidence": "high"|"medium"|"low",
-  "why": "<one sentence on what makes it that recognition - about the TYPE, "
-         "not about this question's content>",
-  "watch_for": "<the mistake this type is built to catch, in your own words>"}}
-
-If nothing fits, set subtype to null and say so in why."""
-
-
-def taxonomy_lines(section=None):
-    """The recognitions, compact enough to put in a prompt."""
-    tax = load("subtypes.json", {}).get("skills", {})
-    skills = {s["skill_name"]: s for s in load("skills.json", {}).get("skills", [])}
-    out = []
-    for skill_name, v in tax.items():
-        if section and v.get("section") != section:
-            continue
-        cd = skills.get(skill_name, {}).get("skill_cd", "?")
-        for st in v.get("subtypes", []):
-            tell = (st.get("tell") or "")[:150]
-            out.append(f"{cd} {skill_name} / {st['slug']}: {tell}")
-    return "\n".join(out)
-
 
 def identify_screenshot(req):
     data = req.get("image") or ""
@@ -365,25 +317,15 @@ def identify_screenshot(req):
     if len(blob) > 12 * 1024 * 1024:
         raise ValueError("image is larger than 12MB")
 
-    fd, path = tempfile.mkstemp(suffix=".png", prefix="question-")
+    fd, path = tempfile.mkstemp(suffix=".img", prefix="question-")
     try:
         with os.fdopen(fd, "wb") as fh:
             fh.write(blob)
-        prompt = IDENTIFY.format(path=path,
-                                 taxonomy=taxonomy_lines(req.get("section")))
-        out = call_json_object(prompt, MODEL, timeout=300,
-                               allowed_tools=["Read"])
+        out = read_question.read(path, req.get("section"), MODEL)
     finally:
         if os.path.exists(path):
             os.unlink(path)
-
-    # Skill codes carry a trailing dot ("H.A."), and a model that has just
-    # read one off a list drops it about half the time. Match it back rather
-    # than handing the browser a code that will not join.
-    codes = {s["skill_cd"] for s in load("skills.json", {}).get("skills", [])}
-    cd = str(out.get("skill_cd") or "")
-    if cd and cd not in codes:
-        out["skill_cd"] = next((c for c in codes if c.rstrip(".") == cd.rstrip(".")), None)
+    read_question.match(out["questions"])
     return out
 
 

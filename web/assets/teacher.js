@@ -12,20 +12,20 @@
 // here that could fake a student's history.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=966802af7e';
-import { scoreItem, bandWeights, TIERS } from './engine.js?v=966802af7e';
-import { focusTier, rankLessons } from './lessons.js?v=966802af7e';
-import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=966802af7e';
-import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=966802af7e';
-import { PREVIEW_KEY } from './store.js?v=966802af7e';
-import * as chats from './chats.js?v=966802af7e';
-import { renderPacket } from './packet.js?v=966802af7e';
+import { makeStore, configured } from './store.js?v=c6ea5cd0a4';
+import { scoreItem, bandWeights, TIERS } from './engine.js?v=c6ea5cd0a4';
+import { focusTier, rankLessons } from './lessons.js?v=c6ea5cd0a4';
+import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=c6ea5cd0a4';
+import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=c6ea5cd0a4';
+import { PREVIEW_KEY } from './store.js?v=c6ea5cd0a4';
+import * as chats from './chats.js?v=c6ea5cd0a4';
+import { renderPacket } from './packet.js?v=c6ea5cd0a4';
 import {
-  shotState, resetShot, readFile, identify, matchesFor, writeMoreLikeIt,
-} from './shot.js?v=966802af7e';
+  shotState, resetShot, readFile, identify, matchesFor, writeMoreLikeIt, picked,
+} from './shot.js?v=c6ea5cd0a4';
 import { plannerState, plannerHealthy, sendToPlanner, renderPlan, STARTERS,
          fetchAgentFeed, newAlerts, markSeen, popDesktop,
-         enableDesktopAlerts, desktopAlertsOn, setSubtypeNames } from './planner.js?v=966802af7e';
+         enableDesktopAlerts, desktopAlertsOn, setSubtypeNames } from './planner.js?v=c6ea5cd0a4';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -665,7 +665,7 @@ function screenAgents() {
  */
 function shotPanel() {
   const st = shotState;
-  const r = st.result;
+  const r = picked();
   const matches = r ? matchesFor(r, state.practiceItems ?? []) : null;
 
   return `<div class="shot">
@@ -689,6 +689,12 @@ function shotPanel() {
     ${st.busy ? `<p class="small muted"><span class="spin"></span>
       Reading it&hellip; <span id="shot-elapsed"></span></p>` : ''}
     ${st.error ? `<p class="small" style="color:var(--bad);font-weight:700">${esc(st.error)}</p>` : ''}
+
+    ${st.questions.length > 1 ? `<div class="shot-pick">
+      <span class="tiny muted">${st.questions.length} questions in that image:</span>
+      ${st.questions.map((q, i) => `<button class="unit-tab ${i === st.picked ? 'on' : ''}"
+        data-shot-pick="${i}">${i + 1}. ${esc(state.subtypeNames?.[q.subtype] ?? q.subtype)}</button>`).join('')}
+    </div>` : ''}
 
     ${r ? `<div class="shot-hit">
       <div class="meta">
@@ -751,9 +757,17 @@ function wireShot() {
   const clear = $('#shot-clear');
   if (clear) clear.onclick = () => { resetShot(); screenPlanner(); };
 
+  for (const b of document.querySelectorAll('[data-shot-pick]')) {
+    b.onclick = () => {
+      shotState.picked = Number(b.dataset.shotPick);
+      shotState.wrote = 0;
+      screenPlanner();
+    };
+  }
+
   const ask = $('#shot-ask');
   if (ask) ask.onclick = () => {
-    const r = shotState.result;
+    const r = picked();
     const name = state.subtypeNames?.[r.subtype] ?? r.subtype;
     const box = $('#ask');
     if (box) {
@@ -767,7 +781,7 @@ function wireShot() {
   if (write) write.onclick = async () => {
     shotState.writing = true; shotState.wrote = 0; screenPlanner();
     try {
-      const made = await writeMoreLikeIt(shotState.result, 6);
+      const made = await writeMoreLikeIt(picked(), 6);
       state.practiceItems = (state.practiceItems ?? []).concat(made);
       shotState.wrote = made.length;
     } catch (e) {
@@ -799,7 +813,7 @@ async function screenPlanner(note) {
     plannerState.loaded = true;
   }
   if (!state.practiceItems) {
-    state.practiceItems = await fetch('../data/practice.json?v=e9f3791161')
+    state.practiceItems = await fetch('../data/practice.json?v=cd74beb194')
       .then((r) => r.json()).then((d) => d.items).catch(() => []);
   }
   const up = await plannerHealthy();
@@ -1020,11 +1034,11 @@ async function openStudent(id) {
 
 async function loadData() {
   const [bands, skills, lessons, subtax, agentFeed] = await Promise.all([
-    fetch('../data/bands.json?v=e9f3791161').then((r) => r.json()),
-    fetch('../data/skills.json?v=e9f3791161').then((r) => r.json()),
-    fetch('../data/lessons.json?v=e9f3791161').then((r) => r.json()),
-    fetch('../data/subtypes.json?v=e9f3791161').then((r) => r.json()).catch(() => ({ skills: {} })),
-    fetch('../data/agent_feed.json?v=e9f3791161').then((r) => r.json())
+    fetch('../data/bands.json?v=cd74beb194').then((r) => r.json()),
+    fetch('../data/skills.json?v=cd74beb194').then((r) => r.json()),
+    fetch('../data/lessons.json?v=cd74beb194').then((r) => r.json()),
+    fetch('../data/subtypes.json?v=cd74beb194').then((r) => r.json()).catch(() => ({ skills: {} })),
+    fetch('../data/agent_feed.json?v=cd74beb194').then((r) => r.json())
       .catch(() => ({ runs: [], summary: {} })),
   ]);
   state.bands = bands;
