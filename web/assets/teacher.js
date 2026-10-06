@@ -12,17 +12,17 @@
 // here that could fake a student's history.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=c25e3af049';
-import { scoreItem, bandWeights, TIERS } from './engine.js?v=c25e3af049';
-import { focusTier, rankLessons } from './lessons.js?v=c25e3af049';
-import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=c25e3af049';
-import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=c25e3af049';
-import { PREVIEW_KEY } from './store.js?v=c25e3af049';
-import * as chats from './chats.js?v=c25e3af049';
-import { renderPacket } from './packet.js?v=c25e3af049';
+import { makeStore, configured } from './store.js?v=80d68ec249';
+import { scoreItem, bandWeights, TIERS } from './engine.js?v=80d68ec249';
+import { focusTier, rankLessons } from './lessons.js?v=80d68ec249';
+import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=80d68ec249';
+import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=80d68ec249';
+import { PREVIEW_KEY } from './store.js?v=80d68ec249';
+import * as chats from './chats.js?v=80d68ec249';
+import { renderPacket } from './packet.js?v=80d68ec249';
 import { plannerState, plannerHealthy, sendToPlanner, renderPlan, STARTERS,
          fetchAgentFeed, newAlerts, markSeen, popDesktop,
-         enableDesktopAlerts, desktopAlertsOn, setSubtypeNames } from './planner.js?v=c25e3af049';
+         enableDesktopAlerts, desktopAlertsOn, setSubtypeNames } from './planner.js?v=80d68ec249';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -661,7 +661,7 @@ async function screenPlanner(note) {
     plannerState.loaded = true;
   }
   if (!state.practiceItems) {
-    state.practiceItems = await fetch('../data/practice.json?v=9f94299437')
+    state.practiceItems = await fetch('../data/practice.json?v=1d70325ee8')
       .then((r) => r.json()).then((d) => d.items).catch(() => []);
   }
   const up = await plannerHealthy();
@@ -879,11 +879,11 @@ async function openStudent(id) {
 
 async function loadData() {
   const [bands, skills, lessons, subtax, agentFeed] = await Promise.all([
-    fetch('../data/bands.json?v=9f94299437').then((r) => r.json()),
-    fetch('../data/skills.json?v=9f94299437').then((r) => r.json()),
-    fetch('../data/lessons.json?v=9f94299437').then((r) => r.json()),
-    fetch('../data/subtypes.json?v=9f94299437').then((r) => r.json()).catch(() => ({ skills: {} })),
-    fetch('../data/agent_feed.json?v=9f94299437').then((r) => r.json())
+    fetch('../data/bands.json?v=1d70325ee8').then((r) => r.json()),
+    fetch('../data/skills.json?v=1d70325ee8').then((r) => r.json()),
+    fetch('../data/lessons.json?v=1d70325ee8').then((r) => r.json()),
+    fetch('../data/subtypes.json?v=1d70325ee8').then((r) => r.json()).catch(() => ({ skills: {} })),
+    fetch('../data/agent_feed.json?v=1d70325ee8').then((r) => r.json())
       .catch(() => ({ runs: [], summary: {} })),
   ]);
   state.bands = bands;

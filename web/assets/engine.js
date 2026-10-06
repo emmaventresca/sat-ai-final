@@ -26,6 +26,34 @@
 
 export const TIERS = ['E', 'M', 'H'];
 
+// Groundwork, below the exam's easiest tier and deliberately not part of it.
+//
+// College Board's "Easy" still assumes a student can solve 3x + 7 = 22 and
+// take 15% of 80. A student at 330 cannot, and sending them at Easy questions
+// is how a tool tells someone their problem is unfixable. Foundations is the
+// skill underneath the recognition, with the exam dressing removed.
+//
+// It stays out of TIERS on purpose. The band model answers "what does my
+// target require", and the answer for a foundations item is nothing - it is
+// not on the test. So the engine never ranks it, never promotes into it, and
+// never counts it toward a tier. A student chooses it, or we suggest it.
+export const FOUNDATION = 'F';
+
+/**
+ * Is the groundwork worth suggesting?
+ *
+ * Two signals, and either is enough: they are starting far enough below the
+ * target that the easy tier is not where their marks are, or they have tried
+ * the easy tier here and it is not going in.
+ */
+export function needsFoundation(unit, ctx) {
+  const cell = ctx.mastery?.[`${unit}|E`];
+  if (cell?.seen >= 4 && cell.correct / cell.seen < 0.55) return true;
+  const p = ctx.student ?? {};
+  const now = (p.current_rw ?? 0) + (p.current_math ?? 0);
+  return now > 0 && now < 900;
+}
+
 // ---------------------------------------------------------------------------
 // Units of mastery
 //
@@ -257,6 +285,8 @@ export function availableTiers(unit, ctx) {
     current: highest,
     tryable,
     challenge: unlocked.includes('H') || tryable === 'H' ? null : 'H',
+    foundation: FOUNDATION,
+    foundationSuggested: needsFoundation(unit, ctx),
   };
 }
 

@@ -38,6 +38,12 @@ LICENSE = "CC BY 4.0 - original item, not College Board content"
 _lock = threading.Lock()
 
 DIFFICULTY_GUIDE = {
+    "F": ("Groundwork, BELOW the exam's easiest level. Not an SAT question: "
+          "the single skill the recognition rests on, with the test wrapped "
+          "off. One step, plain numbers, no scenario unless the scenario IS "
+          "the skill. A student who cannot do this cannot start the real "
+          "question, and telling them to try harder on Easy is how a tool "
+          "tells someone their problem is unfixable."),
     "E": ("Straightforward. One step, or one clear signal in the text. A "
           "prepared student should answer in under 40 seconds."),
     "M": ("Two steps, or one step plus a subtlety - a qualifier that matters, a "
@@ -221,6 +227,7 @@ licensed SAT-aligned item bank used in an academic project.
 {subtype_spec(subtype, patterns) if subtype else ""}
 
 DIFFICULTY: {difficulty} - {DIFFICULTY_GUIDE[difficulty]}
+{FOUNDATION_RULES if difficulty == "F" else ""}
 
 WRITE {n} ORIGINAL ITEMS.
 
@@ -313,6 +320,24 @@ FIGURE_RULES = """
    Every value the question asks about must land exactly on a gridline, so
    choose y_step to divide your values. Set "figure" to null when the question
    needs no display - most do not.
+"""
+
+FOUNDATION_RULES = """
+THIS IS GROUNDWORK, NOT AN EXAM QUESTION. Strip the test away:
+
+  - No context paragraph unless the context is the skill being practised.
+    "Solve 3x + 7 = 22" is the question. A story about a food truck is not.
+  - One step. If the student has to notice something before they can start,
+    it belongs at Easy, not here.
+  - Plain numbers. Small integers, clean fractions, percentages that divide.
+  - Name what it is for. The explanation should say which real question type
+    this unlocks, so the student knows why they are doing it.
+  - The distractors still catch named errors - that is the whole point of
+    groundwork. The error a student makes on 3x + 7 = 22 is the error they
+    will make inside a word problem.
+
+Do NOT use the skill's real instruction line here. These are not test
+questions and must not pretend to be.
 """
 
 MC_SHAPE = """[{

@@ -7,16 +7,16 @@
 // do not teach what they have already shown they know.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=c25e3af049';
-import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=c25e3af049';
-import { buildLesson, focusTier, rankLessons } from './lessons.js?v=c25e3af049';
+import { makeStore, configured } from './store.js?v=80d68ec249';
+import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=80d68ec249';
+import { buildLesson, focusTier, rankLessons } from './lessons.js?v=80d68ec249';
 import {
   missGroups, missCount, reinforcementSet, generatorAvailable, generateMore,
   familyName,
   relatedSets,
-} from './review.js?v=c25e3af049';
-import { isGrid, matches as gridMatches, diagnose as gridDiagnose, MAX_LEN } from './grid.js?v=c25e3af049';
-import { renderText as md, renderBody, renderHtml, renderStimulus, renderFigure, escapeHtml as esc } from './mathfmt.js?v=c25e3af049';
+} from './review.js?v=80d68ec249';
+import { isGrid, matches as gridMatches, diagnose as gridDiagnose, MAX_LEN } from './grid.js?v=80d68ec249';
+import { renderText as md, renderBody, renderHtml, renderStimulus, renderFigure, escapeHtml as esc } from './mathfmt.js?v=80d68ec249';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -311,7 +311,7 @@ function tile(lesson, tier) {
 // student produces and it used to vanish when the round ended.
 // ---------------------------------------------------------------------------
 
-const TIER_WORD = { E: 'Easy', M: 'Medium', H: 'Hard' };
+const TIER_WORD = { F: 'Foundations', E: 'Easy', M: 'Medium', H: 'Hard' };
 
 /**
  * The two places a student works: what to learn, and what they got wrong.
@@ -660,7 +660,7 @@ function screenLesson() {
   window.scrollTo(0, 0);
 }
 
-const TIER_NAME = { E: 'Easy', M: 'Medium', H: 'Hard' };
+const TIER_NAME = { F: 'Foundations', E: 'Easy', M: 'Medium', H: 'Hard' };
 
 /**
  * The recognitions inside a skill, each with its own progress.
@@ -708,9 +708,16 @@ function subtypeList(skill_cd) {
  * demotion - and the next one up is always there to try. Progress at each
  * level is kept separately, so nothing is lost by moving on.
  */
+/** How many groundwork questions exist for a unit. */
+function foundationItems(unit) {
+  return state.items.filter((i) =>
+    (i.subtype === unit || i.skill_cd === unit) && i.difficulty === 'F').length;
+}
+
 function levelPicker(lesson, recommended) {
   const unit = lesson.subtype ?? lesson.skill_cd;
-  const { unlocked, tryable, challenge } = availableTiers(unit, ctx());
+  const { unlocked, tryable, challenge, foundation, foundationSuggested } =
+    availableTiers(unit, ctx());
   const btn = (t, kind) => {
     const cell = state.mastery[`${unit}|${t}`];
     const acc = cell?.seen ? Math.round((cell.correct / cell.seen) * 100) : null;
@@ -722,15 +729,22 @@ function levelPicker(lesson, recommended) {
         acc !== null ? ` &middot; ${acc}% so far` : ''}</span>
       ${t === recommended ? '<span class="level-tag">Suggested</span>' : ''}
       ${kind === 'try' ? '<span class="level-tag try">Try it</span>' : ''}
+      ${kind.startsWith('foundation') ? `<span class="level-tag foundation">${
+        kind.endsWith('on') ? 'Start here' : 'Groundwork'}</span>` : ''}
       ${kind === 'challenge' ? '<span class="level-tag challenge">Challenge</span>' : ''}
       ${kind === 'challenge' ? `<span class="level-note">Only try once you have
         completed Easy and Medium.</span>` : ''}
+      ${kind.startsWith('foundation') ? `<span class="level-note">The skill
+        underneath, without the test wrapped around it. Not exam questions
+        &mdash; the thing they assume you can already do.</span>` : ''}
     </button>`;
   };
   return `
     <p class="small muted">Start where it pays, and move up when you are ready.
       Everything you have practised stays here &mdash; come back any time.</p>
     <div class="levels">
+      ${foundationItems(unit) ? btn(foundation,
+        foundationSuggested ? 'foundation on' : 'foundation') : ''}
       ${unlocked.map((t) => btn(t, 'open')).join('')}
       ${tryable ? btn(tryable, 'try') : ''}
       ${challenge ? btn(challenge, 'challenge') : ''}
@@ -1111,17 +1125,17 @@ function render() {
 async function loadData() {
   const [bands, skills, lessons, sublessons, items, misc, subtax, subcounts] =
     await Promise.all([
-    fetch('../data/bands.json?v=9f94299437').then((r) => r.json()),
-    fetch('../data/skills.json?v=9f94299437').then((r) => r.json()),
-    fetch('../data/lessons.json?v=9f94299437').then((r) => r.json()),
-    fetch('../data/subtype_lessons.json?v=9f94299437').then((r) => r.json())
+    fetch('../data/bands.json?v=1d70325ee8').then((r) => r.json()),
+    fetch('../data/skills.json?v=1d70325ee8').then((r) => r.json()),
+    fetch('../data/lessons.json?v=1d70325ee8').then((r) => r.json()),
+    fetch('../data/subtype_lessons.json?v=1d70325ee8').then((r) => r.json())
       .catch(() => ({ lessons: [] })),
     // Our own CC BY items. The College Board pool is deliberately not loaded:
     // it cannot be served to students (docs/LICENSING.md section 4).
-    fetch('../data/practice.json?v=9f94299437').then((r) => r.json()).catch(() => ({ items: [] })),
-    fetch('../data/misconceptions.json?v=9f94299437').then((r) => r.json()).catch(() => ({ families: [] })),
-    fetch('../data/subtypes.json?v=9f94299437').then((r) => r.json()).catch(() => ({ skills: {} })),
-    fetch('../data/subtype_counts.json?v=9f94299437').then((r) => r.json()).catch(() => ({ subtypes: {} })),
+    fetch('../data/practice.json?v=1d70325ee8').then((r) => r.json()).catch(() => ({ items: [] })),
+    fetch('../data/misconceptions.json?v=1d70325ee8').then((r) => r.json()).catch(() => ({ families: [] })),
+    fetch('../data/subtypes.json?v=1d70325ee8').then((r) => r.json()).catch(() => ({ skills: {} })),
+    fetch('../data/subtype_counts.json?v=1d70325ee8').then((r) => r.json()).catch(() => ({ subtypes: {} })),
   ]);
   state.misconceptions = Object.fromEntries((misc.families ?? []).map((f) => [f.slug, f]));
   state.bands = bands;
