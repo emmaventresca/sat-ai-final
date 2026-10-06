@@ -1,0 +1,217 @@
+[
+ {
+  "stem": "What value of $x$ is the solution to the given equation?",
+  "stimulus": "A meteorologist fitting a model of how quickly a cold front moves ends up with the equation below, where $x$ is a parameter in the model.\n\n$\\sqrt{x + 7} = x - 5$",
+  "choices": [
+   "$2$",
+   "$4$",
+   "$9$",
+   "$11$"
+  ],
+  "answer": "C",
+  "explanation": "Square both sides to get $x + 7 = x^2 - 10x + 25$, which simplifies to $x^2 - 11x + 18 = 0$, or $(x - 2)(x - 9) = 0$. Now check both candidates in the original equation. For $x = 9$, $\\sqrt{16} = 4$ and $9 - 5 = 4$, so it works. For $x = 2$, $\\sqrt{9} = 3$ but $2 - 5 = -3$. A square root can't equal a negative number, so 2 is extraneous. The only solution is 9.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You solved the squared equation correctly but didn't check 2 in the original. At $x = 2$ the right side is $-3$, and a square root can never be negative, so 2 is an extraneous root."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "4 is the value of $\\sqrt{x + 7}$ (and of $x - 5$) when $x = 9$. You reported the value of each side instead of the value of $x$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "11 is the sum of the two candidates from $x^2 - 11x + 18 = 0$. It isn't a solution. You needed to find each root and test it, not add them."
+   }
+  },
+  "id": "orig-rational-radic-M-d43eb4",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-rational-radic-M-d43eb4",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What value of $x$ is the solution to the given equation?",
+  "stimulus": "A marine biologist modeling how two kelp beds share a nutrient supply writes the equation below, where $x$ is a scaling constant in the model.\n\n$\\dfrac{x}{x - 3} + \\dfrac{2}{x} = \\dfrac{3}{x - 3}$",
+  "choices": [
+   "$-2$",
+   "$1$",
+   "$2$",
+   "$3$"
+  ],
+  "answer": "A",
+  "explanation": "Multiply every term by $x(x - 3)$ to get $x^2 + 2(x - 3) = 3x$. This simplifies to $x^2 - x - 6 = 0$, or $(x - 3)(x + 2) = 0$. The candidate $x = 3$ makes the denominator $x - 3$ equal zero, so it must be thrown out. Check $x = -2$: the left side is $\\frac{-2}{-5} + \\frac{2}{-2} = -0.6$ and the right side is $\\frac{3}{-5} = -0.6$. The solution is $-2$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $\\frac{2}{x}$ by $x$ but forgot to also multiply it by $(x - 3)$. That gives $x^2 + 2 = 3x$, with roots 1 and 2. Neither one satisfies the original equation."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the signs when you factored and wrote $(x + 3)(x - 2)$ instead of $(x - 3)(x + 2)$. Substituting 2 into the original equation gives $-1$ on the left and $-3$ on the right."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "3 is a root of the cleared equation, but it makes the denominator $x - 3$ equal zero, so the original equation is undefined there. It's an extraneous root."
+   }
+  },
+  "id": "orig-rational-radic-M-61dcb6",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-rational-radic-M-61dcb6",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What value of $x$ is the solution to the given equation?",
+  "stimulus": "An agricultural scientist relating irrigation depth to root spread arrives at the equation below, where $x$ is a calibration value.\n\n$\\sqrt{2x + 11} + 2 = x$",
+  "choices": [
+   "$-3$",
+   "$-1$",
+   "$5$",
+   "$7$"
+  ],
+  "answer": "D",
+  "explanation": "First isolate the radical: $\\sqrt{2x + 11} = x - 2$. Squaring gives $2x + 11 = x^2 - 4x + 4$, so $x^2 - 6x - 7 = 0$, or $(x - 7)(x + 1) = 0$. Check $x = 7$: $\\sqrt{25} + 2 = 7$, which works. Check $x = -1$: $\\sqrt{9} + 2 = 5$, which isn't $-1$, so $-1$ is extraneous. The solution is 7.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You squared both sides before isolating the radical and treated $(\\sqrt{2x + 11} + 2)^2$ as $2x + 11 + 4$. That gives $x^2 - 2x - 15 = 0$, with roots $-3$ and 5. Neither one satisfies the original equation."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "$-1$ comes from the squared equation, but in the original it needs $\\sqrt{9} = -3$. A square root can't be negative, so $-1$ is an extraneous root."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "5 is the value of $\\sqrt{2x + 11}$ when $x = 7$. You reported the value of the radical instead of $x$."
+   }
+  },
+  "id": "orig-rational-radic-M-d931d8",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-rational-radic-M-d931d8",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What value of $x$ is the solution to the given equation?",
+  "stimulus": "An immunologist modeling how antibody levels respond to repeated doses obtains the equation below, where $x$ is a rate constant.\n\n$\\dfrac{6}{x - 2} = \\dfrac{3x}{x - 2} - x$",
+  "choices": [
+   "$-3$",
+   "$2$",
+   "$3$",
+   "$5$"
+  ],
+  "answer": "C",
+  "explanation": "Multiply every term by $x - 2$ to get $6 = 3x - x(x - 2)$, which becomes $6 = 5x - x^2$. Rearranging gives $x^2 - 5x + 6 = 0$, or $(x - 2)(x - 3) = 0$. The candidate $x = 2$ makes both denominators zero, so it's excluded. Check $x = 3$: the left side is $\\frac{6}{1} = 6$ and the right side is $\\frac{9}{1} - 3 = 6$. The solution is 3.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You made a sign error when you moved terms to one side and wrote $x^2 + 5x + 6 = 0$. Substituting $-3$ into the original equation gives $-1.2$ on the left and $4.8$ on the right."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "2 solves the cleared quadratic, but it makes $x - 2$ equal zero, so both fractions in the original equation are undefined. It's an extraneous root."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "5 is the sum of the two candidates from $x^2 - 5x + 6 = 0$. You added the roots instead of testing each one."
+   }
+  },
+  "id": "orig-rational-radic-M-0bd7d8",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-rational-radic-M-0bd7d8",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the sum of the solutions to the given equation?",
+  "stimulus": "A linguist modeling how often two related word forms appear in a text corpus writes the equation below, where $x$ is a model parameter.\n\n$\\dfrac{2x}{x + 1} + \\dfrac{4}{x - 3} = \\dfrac{16}{(x + 1)(x - 3)}$",
+  "choices": [
+   "$-2$",
+   "$-1$",
+   "$1$",
+   "$2$"
+  ],
+  "answer": "A",
+  "explanation": "Multiply every term by $(x + 1)(x - 3)$ to get $2x(x - 3) + 4(x + 1) = 16$. This simplifies to $2x^2 - 2x - 12 = 0$, or $(x - 3)(x + 2) = 0$. The candidate $x = 3$ makes the denominators zero, so it's extraneous. The equation's only solution is $x = -2$, so the sum of the solutions is $-2$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You kept both candidates and also made a sign error when you used $-\\frac{b}{a}$ for their sum, which gave $-1$ instead of 1. On top of that, 3 shouldn't be counted at all."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You added 3 and $-2$. But $x = 3$ makes the denominators zero, so it isn't a solution, and only $-2$ belongs in the sum."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $\\frac{4}{x - 3}$ by $(x + 1)$ but left $2x$ without the factor $(x - 3)$. That gave the linear equation $6x + 4 = 16$, so $x = 2$, and 2 doesn't satisfy the original equation."
+   }
+  },
+  "id": "orig-rational-radic-M-16d3cd",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-rational-radic-M-16d3cd",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

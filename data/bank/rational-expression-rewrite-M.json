@@ -1,0 +1,219 @@
+[
+ {
+  "stem": "Which expression is equivalent to $\\frac{3}{x} + \\frac{5}{x+2}$, where $x > 0$?",
+  "stimulus": "An astronomy student adds two brightness-correction terms for a variable star. In each term, $x$ is the number of nights since the star was last at peak brightness.",
+  "choices": [
+   "$\\frac{8}{2x+2}$",
+   "$\\frac{8}{x(x+2)}$",
+   "$\\frac{8x+6}{x(x+2)}$",
+   "$\\frac{8x+2}{x(x+2)}$"
+  ],
+  "answer": "C",
+  "explanation": "The common denominator is $x(x+2)$. Multiply the first fraction by $\\frac{x+2}{x+2}$ and the second by $\\frac{x}{x}$. That gives $\\frac{3(x+2) + 5x}{x(x+2)} = \\frac{3x + 6 + 5x}{x(x+2)} = \\frac{8x+6}{x(x+2)}$. To check, put in $x = 2$: the original gives $\\frac{3}{2} + \\frac{5}{4} = \\frac{11}{4}$, and choice C gives $\\frac{22}{8} = \\frac{11}{4}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the numerators ($3 + 5$) and the denominators ($x + x + 2$) straight across. Fractions can't be added that way. You have to rewrite both over a common denominator first."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You found the right common denominator, $x(x+2)$, but you didn't scale the numerators to match it. Each numerator has to be multiplied by the factor its own denominator was missing."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the 3 by $x$ but not by the 2, so you wrote $3x + 2$ in place of $3x + 6$. The 3 has to multiply every term in $(x+2)$."
+   }
+  },
+  "id": "orig-rational-expre-M-b84345",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-rational-expre-M-b84345",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{x^2 - 9}{x^2 + 5x + 6}$, where $x > 0$?",
+  "stimulus": "A nutrition scientist models the fraction of a dose of vitamin C still in the bloodstream with the expression below, where $x$ is the dose in grams.",
+  "choices": [
+   "$\\frac{x+3}{x+2}$",
+   "$\\frac{-9}{5x+6}$",
+   "$\\frac{x-3}{x-2}$",
+   "$\\frac{x-3}{x+2}$"
+  ],
+  "answer": "D",
+  "explanation": "Factor the top and bottom first. The numerator is a difference of squares, $(x-3)(x+3)$. The denominator is $(x+2)(x+3)$. Cancel the shared factor $(x+3)$, which can't be zero when $x > 0$, and you're left with $\\frac{x-3}{x+2}$. To check, put in $x = 5$: the original gives $\\frac{16}{56} = \\frac{2}{7}$, and choice D also gives $\\frac{2}{7}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored $x^2 - 9$ as $(x+3)(x+3)$. A difference of squares factors into one plus factor and one minus factor: $(x-3)(x+3)$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You cancelled the $x^2$ terms from the top and bottom. $x^2$ is a term, not a factor of the whole numerator and denominator, so it can't be cancelled across addition or subtraction."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You slipped a sign when factoring the denominator and wrote $(x-2)(x+3)$. That product is $x^2 + x - 6$, not $x^2 + 5x + 6$."
+   }
+  },
+  "id": "orig-rational-expre-M-49089a",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-rational-expre-M-49089a",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{x^2 + 5x + 9}{x + 2}$, where $x > 0$?",
+  "stimulus": "A city planner estimates the average commute time on a new transit line with the expression below, where $x$ is the number of stations built in a corridor.",
+  "choices": [
+   "$x + 3 + \\frac{3}{x+2}$",
+   "$x + 3 + \\frac{9}{x+2}$",
+   "$x + 7 + \\frac{23}{x+2}$",
+   "$x + 3$"
+  ],
+  "answer": "A",
+  "explanation": "Write the numerator as the divisor times something, plus a remainder. Since $(x+2)(x+3) = x^2 + 5x + 6$, you have $x^2 + 5x + 9 = (x+2)(x+3) + 3$. Split the fraction: $\\frac{(x+2)(x+3)}{x+2} + \\frac{3}{x+2} = x + 3 + \\frac{3}{x+2}$. To check, put in $x = 1$: the original gives $\\frac{15}{3} = 5$, and choice A gives $4 + 1 = 5$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the quotient $x + 3$ but used the original constant, 9, as the remainder. You needed to subtract the 6 that $(x+2)(x+3)$ already accounts for, which leaves 3."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You ran synthetic division with $+2$. Dividing by $x + 2$ means using the zero of the divisor, which is $-2$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found the quotient correctly but dropped the remainder. The leftover 3 still has to appear as $\\frac{3}{x+2}$."
+   }
+  },
+  "id": "orig-rational-expre-M-62ad15",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-rational-expre-M-62ad15",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{4}{x-3} - \\frac{2}{x+3}$, where $x > 3$?",
+  "stimulus": "A printmaker compares the ink-drying rates of two linoleum blocks. Each rate is written as a fraction of $x$, the room temperature in degrees Celsius above a baseline.",
+  "choices": [
+   "$\\frac{2x+6}{x^2-9}$",
+   "$\\frac{2x+18}{x^2-9}$",
+   "$\\frac{2}{x^2-9}$",
+   "$\\frac{6x+6}{x^2-9}$"
+  ],
+  "answer": "B",
+  "explanation": "The common denominator is $(x-3)(x+3) = x^2 - 9$. Rewrite and subtract: $\\frac{4(x+3) - 2(x-3)}{x^2-9} = \\frac{4x + 12 - 2x + 6}{x^2-9} = \\frac{2x+18}{x^2-9}$. To check, put in $x = 5$: the original gives $2 - \\frac{1}{4} = \\frac{7}{4}$, and choice B gives $\\frac{28}{16} = \\frac{7}{4}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You didn't distribute the subtraction sign across $2(x-3)$, so you wrote $-6$ where you needed $+6$. Subtracting $-6$ adds 6."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You wrote both fractions over $x^2 - 9$ but subtracted the original numerators, $4 - 2$. Each numerator first has to be multiplied by the factor its own denominator was missing."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You added the two fractions when the expression subtracts them: $4x + 12 + 2x - 6 = 6x + 6$."
+   }
+  },
+  "id": "orig-rational-expre-M-dab5c8",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-rational-expre-M-dab5c8",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{3x^2 + 12x}{x^2 + x - 12}$, where $x > 3$?",
+  "stimulus": "A public health team models the vaccination rate in a county with the expression below, where $x$ is the number of weeks since a mobile clinic program began.",
+  "choices": [
+   "$\\frac{3x+12}{x-11}$",
+   "$\\frac{3x}{x+3}$",
+   "$\\frac{3}{x-3}$",
+   "$\\frac{3x}{x-3}$"
+  ],
+  "answer": "D",
+  "explanation": "Factor before you cancel anything. The numerator is $3x(x+4)$ and the denominator is $(x+4)(x-3)$. Cancel the shared factor $(x+4)$ to get $\\frac{3x}{x-3}$. To check, put in $x = 5$: the original gives $\\frac{135}{18} = \\frac{15}{2}$, and choice D gives $\\frac{15}{2}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You cancelled one $x$ from each term separately, turning $3x^2$ into $3x$, $12x$ into $12$, $x^2$ into $x$ and $x$ into $1$. You can only cancel a factor that multiplies the entire numerator and the entire denominator."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You slipped a sign when factoring the denominator and wrote $(x+4)(x+3)$. That product is $x^2 + 7x + 12$, not $x^2 + x - 12$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took only 3 out of the numerator, not the full common factor $3x$, so the $x$ got lost. $3x^2 + 12x$ factors as $3x(x+4)$."
+   }
+  },
+  "id": "orig-rational-expre-M-5c2057",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-rational-expre-M-5c2057",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [
+    "where __var__ is the number of weeks since"
+   ],
+   "residue": 2
+  }
+ }
+]

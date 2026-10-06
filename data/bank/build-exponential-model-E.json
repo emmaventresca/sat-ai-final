@@ -1,0 +1,174 @@
+[
+ {
+  "stem": "Which equation represents this situation, where $C$ is the number of reported cases $t$ weeks after the start of the campaign?",
+  "stimulus": "At the start of a hand-washing campaign, a county health office recorded 400 cases of a stomach virus. Each week after that, the number of reported cases was 20% less than the week before.",
+  "choices": [
+   "$C = 400(0.2)^t$",
+   "$C = 400(0.8)^t$",
+   "$C = 400(1.2)^t$",
+   "$C = 400 - 80t$"
+  ],
+  "answer": "B",
+  "explanation": "The starting amount is 400. A 20% decrease means each week keeps 100% \u2212 20% = 80% of the week before, so the growth factor is $1 - 0.2 = 0.8$. The model is $C = 400(0.8)^t$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the rate of decrease, 0.2, as the factor. Multiplying by 0.2 keeps only 20% of the cases each week. To keep 80%, the factor must be $1 - 0.2 = 0.8$."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You added the 20% instead of subtracting it. A factor of 1.2 means the cases go up by 20% each week, but they went down."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took away a fixed 80 cases every week, which is a linear model. A percent decrease takes away a smaller number of cases each week, so the model has to be exponential."
+   }
+  },
+  "id": "orig-build-exponent-E-bdd7c0",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-build-exponent-E-bdd7c0",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation represents this situation, where $P$ is the estimated number of trout in the lake $t$ years after the survey?",
+  "stimulus": "A survey estimated that 150 trout lived in a newly restored mountain lake. Biologists predict that the trout population will double every 3 years.",
+  "choices": [
+   "$P = 150(2)^{3t}$",
+   "$P = 150(2)^t$",
+   "$P = 150(3)^{t/2}$",
+   "$P = 150(2)^{t/3}$"
+  ],
+  "answer": "D",
+  "explanation": "The starting amount is 150 and the population is multiplied by 2 once every 3 years. After $t$ years it has doubled $\\tfrac{t}{3}$ times, so $P = 150(2)^{t/3}$. You can check it: at $t = 3$, $P = 150(2)^1 = 300$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by the doubling period when you should have divided by it. With $3t$ as the exponent, the population would double three times every year."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You didn't divide the exponent by the 3-year doubling period. This model doubles the population every year instead of every 3 years."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You switched the two numbers, using 3 as the factor and 2 as the time per step. 'Doubles' gives a factor of 2, and 'every 3 years' tells you what to divide $t$ by."
+   }
+  },
+  "id": "orig-build-exponent-E-94ec28",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-build-exponent-E-94ec28",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The table shows three values of $n$ and their corresponding values of $f(n)$, where $f(n)$ is the frequency, in hertz, of a note $n$ octaves above a reference note. Which equation could define $f$?",
+  "stimulus": "In a music theory course, students learn that raising a note by one octave doubles its frequency.\n\nFrequency of Notes Above a Reference Note\n$n$ | $f(n)$\n1 | 110\n2 | 220\n3 | 440",
+  "choices": [
+   "$f(n) = 55(2)^n$",
+   "$f(n) = 110(2)^n$",
+   "$f(n) = 2(55)^n$",
+   "$f(n) = 110n$"
+  ],
+  "answer": "A",
+  "explanation": "Each output is double the one before, so the growth factor is 2. The table has no row for $n = 0$, so work backward one step: $110 \\div 2 = 55$. That gives $f(n) = 55(2)^n$. Check it: $55(2)^3 = 440$.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used the first row, 110, as the starting amount, but that row is for $n = 1$, not $n = 0$. This model gives $f(1) = 220$, which doesn't match the table."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You switched the starting amount and the factor. This gives $f(1) = 110$, but $f(2) = 2(55)^2 = 6{,}050$, not 220."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used a linear model that adds 110 each step. It fits the first two rows, but it gives $f(3) = 330$ instead of 440, because the frequency doubles rather than going up by a fixed amount."
+   }
+  },
+  "id": "orig-build-exponent-E-292afc",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-build-exponent-E-292afc",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If this growth continues, what will the town's population be 2 years after the plan was adopted?",
+  "stimulus": "When a town adopted a new zoning plan, its population was 80,000. Planners projected that the population would increase by 5% each year after the plan was adopted.",
+  "choices": [
+   "84,000",
+   "88,000",
+   "88,200",
+   "92,610"
+  ],
+  "answer": "C",
+  "explanation": "A 5% yearly increase means the growth factor is 1.05, so the population after $t$ years is $80{,}000(1.05)^t$. For $t = 2$: $80{,}000(1.05)^2 = 80{,}000(1.1025) = 88{,}200$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You stopped after one year: $80{,}000(1.05) = 84{,}000$. The question asks for the population after 2 years, so you need to multiply by 1.05 again."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You added the first year's increase, 4,000, twice. That's a linear model. In year 2 the 5% applies to 84,000, so the increase is 4,200, not 4,000."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used 3 years instead of 2: $80{,}000(1.05)^3 = 92{,}610$. Check how many years the question asks about."
+   }
+  },
+  "id": "orig-build-exponent-E-0ffd5a",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-build-exponent-E-0ffd5a",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

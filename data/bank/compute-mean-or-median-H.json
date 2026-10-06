@@ -1,0 +1,219 @@
+[
+ {
+  "stem": "What is the median daily high temperature, in degrees Fahrenheit, for these 20 days?",
+  "stimulus": "A weather station in a coastal town recorded the daily high temperature on each of 20 days in April. The results are summarized in the frequency table.\n\nDaily High Temperatures at a Coastal Station\nDaily high (\u00b0F) | Number of days\n58 | 2\n61 | 5\n64 | 3\n67 | 6\n70 | 4",
+  "choices": [
+   "64",
+   "64.75",
+   "65.5",
+   "67"
+  ],
+  "answer": "C",
+  "explanation": "There are 20 days, so the median is the average of the 10th and 11th values in sorted order. The running totals are 2, 7, 10, 16, 20. That puts the 10th value in the 64 row and the 11th value in the 67 row. The median is $\\frac{64 + 67}{2} = 65.5$ degrees Fahrenheit.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found the 10th value, 64, and stopped. With an even count of 20 there are two middle values, and the 11th one falls in the 67 row, so you have to average them. You would also get 64 by taking the median of the five listed temperatures and ignoring how many days each one has."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You computed the mean, $\\frac{1295}{20} = 64.75$. The question asks for the median, not the mean."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You picked 67 because it has the most days. That makes it the mode, not the median."
+   }
+  },
+  "id": "orig-compute-mean-o-H-3d1ca6",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-compute-mean-o-H-3d1ca6",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the mean number of label errors per map sheet for these 25 sheets?",
+  "stimulus": "A cartography team checked 25 sheets of a new regional map series and counted how many place-name labels on each sheet were misplaced. The results are shown in the frequency table.\n\nMisplaced Labels per Map Sheet\nNumber of misplaced labels | Number of sheets\n0 | 6\n1 | 8\n2 | 5\n3 | 4\n4 | 2",
+  "choices": [
+   "1",
+   "1.52",
+   "2",
+   "5"
+  ],
+  "answer": "B",
+  "explanation": "Weight each label count by its number of sheets: $0(6) + 1(8) + 2(5) + 3(4) + 4(2) = 0 + 8 + 10 + 12 + 8 = 38$ misplaced labels in total. Divide by the 25 sheets to get $\\frac{38}{25} = 1.52$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "1 is the median. The 13th sheet in sorted order falls in the 1-label row. The question asks for the mean."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You averaged the distinct label counts, $\\frac{0+1+2+3+4}{5} = 2$, without weighting each one by how many sheets had it."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You averaged the frequency column, $\\frac{25}{5} = 5$. That is the average number of sheets per row, not the average number of labels per sheet."
+   }
+  },
+  "id": "orig-compute-mean-o-H-1c655c",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-compute-mean-o-H-1c655c",
+   "structure": [
+    "correct answer is far longer than every distractor"
+   ],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the median of the hourly meteor counts for all six nights?",
+  "stimulus": "An astronomy club counted meteors per hour on six nights during a meteor shower. The mean hourly count for the six nights was 14. The counts for five of the nights, in the order they were recorded, were 9, 21, 12, 17, and 11. The count for the sixth night was recorded last.",
+  "choices": [
+   "12",
+   "13",
+   "14",
+   "14.5"
+  ],
+  "answer": "B",
+  "explanation": "A mean of 14 over 6 nights means the counts add to $6 \\times 14 = 84$. The five known counts add to 70, so the sixth night's count is $84 - 70 = 14$. Sorted, the six counts are 9, 11, 12, 14, 17, 21. The two middle values are 12 and 14, so the median is $\\frac{12 + 14}{2} = 13$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You took the median of only the five known counts (9, 11, 12, 17, 21). You never found the sixth night's count and added it."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "14 is the mean you were given, and it is also the missing sixth count. Neither one is the median of the six counts."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You averaged the two middle entries of the list in recorded order (9, 21, 12, 17, 11, 14), which are 12 and 17. You have to sort the list before you look for the middle."
+   }
+  },
+  "id": "orig-compute-mean-o-H-6c1f95",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-compute-mean-o-H-6c1f95",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the mean tensile strength, in megapascals (MPa), of all 20 specimens?",
+  "stimulus": "A materials lab tested 20 specimens of a new aluminum alloy. Batch A had 12 specimens with a mean tensile strength of 340 MPa. Batch B had 8 specimens with a mean tensile strength of 390 MPa.",
+  "choices": [
+   "360",
+   "365",
+   "370",
+   "390"
+  ],
+  "answer": "A",
+  "explanation": "Find the total strength in each batch first. Batch A gives $12 \\times 340 = 4080$ and batch B gives $8 \\times 390 = 3120$, for a combined total of 7200. Divide by all 20 specimens to get $\\frac{7200}{20} = 360$ MPa.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You averaged the two batch means, $\\frac{340 + 390}{2} = 365$. That ignores the fact that batch A has more specimens, so its mean should count for more."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You swapped the batch sizes and used $\\frac{8(340) + 12(390)}{20} = 370$. Batch A, the weaker batch, is the one with 12 specimens."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "390 is batch B's mean, which is the larger of the two batch means. It is not the mean of all 20 specimens."
+   }
+  },
+  "id": "orig-compute-mean-o-H-de15f5",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-compute-mean-o-H-de15f5",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the median flow, in cubic meters per second, of the remaining eight readings?",
+  "stimulus": "A hydrologist recorded the flow rate of a river at nine gauges along its length on the same morning. Later, the reading from gauge E was found to be faulty and was removed from the data set.\n\nRiver Flow by Gauge (cubic meters per second)\nGauge | A | B | C | D | E | F | G | H | I\nFlow | 4.2 | 7.9 | 3.6 | 5.1 | 9.4 | 2.8 | 6.3 | 5.5 | 4.7",
+  "choices": [
+   "3.95",
+   "4.7",
+   "4.9",
+   "5.1"
+  ],
+  "answer": "C",
+  "explanation": "Remove gauge E's 9.4, then sort the other eight readings: 2.8, 3.6, 4.2, 4.7, 5.1, 5.5, 6.3, 7.9. With eight values, the median is the average of the 4th and 5th values: $\\frac{4.7 + 5.1}{2} = 4.9$ cubic meters per second.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You averaged the 4th and 5th readings in gauge order (5.1 and 2.8) without sorting. A median only makes sense once the values are in order."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You found the 4th sorted value and stopped. With eight readings there are two middle values, 4.7 and 5.1, and the median is their average."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "5.1 is the median of all nine readings. You left gauge E's faulty 9.4 in the data set even though it was removed."
+   }
+  },
+  "id": "orig-compute-mean-o-H-39b6c0",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-compute-mean-o-H-39b6c0",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

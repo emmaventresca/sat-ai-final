@@ -1,0 +1,223 @@
+[
+ {
+  "stem": "Which expression is equivalent to $(2x - 3)(x + 4) - (x^2 - 5x + 6)$?",
+  "stimulus": "A materials scientist cuts a rectangular test coupon from a sheet of carbon-fiber laminate. The area of the coupon, in square millimeters, is modeled by $(2x - 3)(x + 4)$, and the area of a notch machined out of the coupon, in square millimeters, is modeled by $x^2 - 5x + 6$, where $x > 3$.",
+  "choices": [
+   "$x^2 - 6$",
+   "$x^2 + 10x - 18$",
+   "$x^2 + 10x - 6$",
+   "$x^2 + 5x - 18$"
+  ],
+  "answer": "B",
+  "explanation": "First expand the product: $(2x - 3)(x + 4) = 2x^2 + 8x - 3x - 12 = 2x^2 + 5x - 12$. Then subtract the whole second polynomial. The minus sign changes every term inside it: $2x^2 + 5x - 12 - x^2 + 5x - 6$. Combine like terms to get $x^2 + 10x - 18$. Check with $x = 2$: the original gives $(1)(6) - 0 = 6$, and $4 + 20 - 18 = 6$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the minus sign only to $x^2$ and kept $-5x$ and $+6$ as they were. The $x$-terms then cancel ($5x - 5x$) and you're left with $x^2 - 6$. The minus sign has to reach every term in the second bracket."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the signs of $x^2$ and $-5x$ but not the constant. Subtracting $+6$ gives $-6$, so the constant should be $-12 - 6 = -18$, not $-12 + 6 = -6$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You expanded $(2x - 3)(x + 4)$ correctly to $2x^2 + 5x - 12$, and $5x$ is that product's $x$-coefficient. But you didn't add the $+5x$ that comes from subtracting $-5x$. Its $x$-coefficient should be $5 + 5 = 10$."
+   }
+  },
+  "id": "orig-expand-and-com-H-adca21",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-expand-and-com-H-adca21",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $p^2 - pq$?",
+  "stimulus": "A nutrition scientist builds a model of daily nutrient intake from two quantities, $x$ and $y$. In the model, $p = 2x + y$ and $q = x - 3y$.",
+  "choices": [
+   "$2x^2 - xy - 2y^2$",
+   "$2x^2 + 5xy + 4y^2$",
+   "$2x^2 + 4xy + 4y^2$",
+   "$2x^2 + 9xy + 4y^2$"
+  ],
+  "answer": "D",
+  "explanation": "Substitute into each piece separately. $p^2 = (2x + y)^2 = 4x^2 + 4xy + y^2$. $pq = (2x + y)(x - 3y) = 2x^2 - 6xy + xy - 3y^2 = 2x^2 - 5xy - 3y^2$. Subtract all of $pq$: $4x^2 + 4xy + y^2 - 2x^2 + 5xy + 3y^2 = 2x^2 + 9xy + 4y^2$. Check with $x = 2$ and $y = 3$: $p = 7$ and $q = -7$, so $p^2 - pq = 49 + 49 = 98$, and $8 + 54 + 36 = 98$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted $2x^2$ but added $-5xy$ and $-3y^2$ without changing their signs. The minus in front of $pq$ applies to all three terms of its expansion."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You squared $2x + y$ as $4x^2 + y^2$ and left out the middle term $2(2x)(y) = 4xy$. Without it, the $xy$-coefficient comes out as $5$ instead of $9$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied only the first terms and the last terms of $(2x + y)(x - 3y)$ and got $2x^2 - 3y^2$. That drops the cross terms $-6xy + xy$, so the $xy$-coefficient comes out wrong."
+   }
+  },
+  "id": "orig-expand-and-com-H-dd53cb",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-expand-and-com-H-dd53cb",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [
+    "__var__ and __var__ which expression is equivalent to",
+    "and __var__ which expression is equivalent to __var__"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $f(x) - 2g(x)$?",
+  "stimulus": "A marine biologist models two quantities in a coral reef survey. The function $f$ is defined by $f(x) = 3x^2 - 2x + 5$, and the function $g$ is defined by $g(x) = x^2 + 4x - 1$, where $x$ is the number of years since monitoring began.",
+  "choices": [
+   "$x^2 - 10x + 7$",
+   "$x^2 + 6x + 3$",
+   "$x^2 - 6x + 6$",
+   "$x^2 - 10x + 3$"
+  ],
+  "answer": "A",
+  "explanation": "Substitute the definitions inside parentheses: $3x^2 - 2x + 5 - 2(x^2 + 4x - 1)$. Distribute $-2$ to every term: $3x^2 - 2x + 5 - 2x^2 - 8x + 2$. Combine like terms to get $x^2 - 10x + 7$. Check with $x = 2$: $f(2) = 13$ and $g(2) = 11$, so $13 - 22 = -9$, and $4 - 20 + 7 = -9$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the negative only to $2x^2$ and treated the rest as $+8x - 2$. The $-2$ multiplies every term in $g(x)$, so you should get $-8x$ and $+2$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied only the first term of $g(x)$ by $2$ and subtracted $4x$ and $-1$ without doubling them. Each term of $g(x)$ must be multiplied by $2$ before you subtract."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $-2 \\cdot (-1)$ as $-2$ instead of $+2$. That puts the constant at $5 - 2 = 3$ instead of $5 + 2 = 7$."
+   }
+  },
+  "id": "orig-expand-and-com-H-2a8172",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-expand-and-com-H-2a8172",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [
+    "the function __var__ is defined by __var__ and",
+    "__var__ where __var__ is the number of years"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $(x + 3)(x^2 - 2x + 4) - x(x^2 + x - 6)$?",
+  "stimulus": "An astronomer compares two models of the brightness of a variable star over time. The difference between the two models is given by the expression below, where $x$ is the number of days since the first observation.",
+  "choices": [
+   "$-8x + 12$",
+   "$10x + 12$",
+   "$4x + 12$",
+   "$2x^2 - 8x + 12$"
+  ],
+  "answer": "C",
+  "explanation": "Expand the first product: $x^3 - 2x^2 + 4x + 3x^2 - 6x + 12 = x^3 + x^2 - 2x + 12$. Expand the second: $x^3 + x^2 - 6x$. Subtract all of the second product: $x^3 + x^2 - 2x + 12 - x^3 - x^2 + 6x = 4x + 12$. Check with $x = 2$: $(5)(4) - 2(0) = 20$, and $4(2) + 12 = 20$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You changed the signs of $x^3$ and $x^2$ but kept $-6x$ as $-6x$. Subtracting $-6x$ gives $+6x$, so the $x$-terms add up to $-2x + 6x = 4x$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "When you expanded $(x + 3)(x^2 - 2x + 4)$, you left out the product $3 \\cdot (-2x) = -6x$. That makes the first expansion's $x$-term $+4x$ instead of $-2x$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the minus sign only to $x^3$ and added $x^2 - 6x$ unchanged. The $x^2$-terms then fail to cancel. Every term of $x(x^2 + x - 6)$ is subtracted."
+   }
+  },
+  "id": "orig-expand-and-com-H-1b49fd",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-expand-and-com-H-1b49fd",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $(4a^2b - 3ab^2 + 2ab) - 2(a^2b - ab^2 + 3ab)$?",
+  "stimulus": "An archaeologist estimates the volume of soil removed from a rectangular excavation trench. One expression gives the total volume excavated, and another gives the volume of a backfilled section. The expression below gives the volume that remains open, where $a$ and $b$ are positive measurements in meters.",
+  "choices": [
+   "$2a^2b - 5ab^2 + 8ab$",
+   "$2a^2b - ab^2 - 4ab$",
+   "$2a^2b - 2ab^2 - ab$",
+   "$2a^2b - ab^2 + 8ab$"
+  ],
+  "answer": "B",
+  "explanation": "Distribute $-2$ to every term: $4a^2b - 3ab^2 + 2ab - 2a^2b + 2ab^2 - 6ab$. Group the terms that have the same variables and powers. $a^2b$: $4 - 2 = 2$. $ab^2$: $-3 + 2 = -1$. $ab$: $2 - 6 = -4$. The result is $2a^2b - ab^2 - 4ab$. Keep $a^2b$ and $ab^2$ separate because they are not like terms. Check with $a = 2$ and $b = 3$: the original gives $6 - 2(6) = -18$, and $24 - 18 - 24 = -18$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the negative only to $a^2b$ and wrote $-2ab^2$ and $+6ab$ for the other two terms. Distributing $-2$ gives $+2ab^2$ and $-6ab$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied only $a^2b$ by $2$ and subtracted $-ab^2$ and $3ab$ without doubling them. The $2$ multiplies every term in the bracket."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated $-2 \\cdot 3ab$ as $+6ab$ and added it to $2ab$, getting $8ab$. A negative times a positive is negative, so the $ab$-term is $2ab - 6ab = -4ab$."
+   }
+  },
+  "id": "orig-expand-and-com-H-3c41ac",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-expand-and-com-H-3c41ac",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

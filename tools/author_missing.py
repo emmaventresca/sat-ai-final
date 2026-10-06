@@ -38,6 +38,11 @@ BANK = os.path.join(ROOT, "data", "bank")
 sys.path.insert(0, HERE)
 from cli import Exhausted                               # noqa: E402
 
+# Consecutive failed cells before a run gives up. Low enough that an outage
+# costs minutes, high enough that a few genuinely bad subtypes do not stop
+# a long run.
+STOP_AFTER = 6
+
 
 def load(name):
     return json.load(open(os.path.join(ROOT, "data", name)))
@@ -181,6 +186,11 @@ def main():
 
     print(f"\nrunning {args.workers} at a time\n")
     done = failed = 0
+    # Each job is a subprocess, so the CLI wrapper's circuit breaker lives in
+    # the child and the driver never sees it. Count the run of failures here
+    # instead: when nothing is getting through, stop asking.
+    streak = 0
+    stopped = False
     lock = threading.Lock()
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         futures = {pool.submit(author, j, args.model): j for j in jobs}
@@ -190,27 +200,33 @@ def main():
             try:
                 ok, msg = fut.result()
             except Exhausted as exc:
-                # The limit is gone, not the work. Stop asking, leave the rest
-                # on the to-do list, and say so plainly - a log full of
-                # "FAILED" reads like 287 bad cells when it is one outage.
-                with lock:
-                    print(f"\n{exc}", flush=True)
-                for f in futures:
-                    f.cancel()
-                break
-            except Exception as exc:
                 ok, msg = False, str(exc)[:160]
+            except Exception as exc:
+                ok, msg = False, str(exc).strip().splitlines()[-1][:160]
             with lock:
                 if ok:
                     done += 1
+                    streak = 0
                     print(f"{head:62} {msg}", flush=True)
                 else:
                     failed += 1
+                    streak += 1
                     print(f"{head:62} FAILED: {msg}", flush=True)
+                # The limit is gone, not the work. Stop asking, leave the rest
+                # on the to-do list, and say so plainly - a log full of
+                # "FAILED" reads like 287 bad cells when it is one outage.
+                if streak >= STOP_AFTER and not stopped:
+                    stopped = True
+                    print(f"\n{streak} cells in a row failed - stopping rather "
+                          f"than working through the rest of the queue.",
+                          flush=True)
+                    for f in futures:
+                        f.cancel()
+            if stopped:
+                break
 
-    from cli import BREAKER
     print(f"\n{done} cells written, {failed} failed")
-    if BREAKER.open:
+    if stopped:
         print("the rest were not attempted - rerun this command when the "
               "usage limit resets and it will pick up where it stopped")
     print("now run: verify_items.py, then check_difficulty.py, "

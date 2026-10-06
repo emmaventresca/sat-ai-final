@@ -1,0 +1,488 @@
+[
+ {
+  "stem": "Which of the following equations best models the data in the scatterplot?",
+  "stimulus": "An immunologist measured the concentration of a vaccine-induced antibody, in units per milliliter, in blood samples from a volunteer. The first sample was taken on the day of vaccination, and one sample was taken each week after that for 10 weeks. In the scatterplot, $x$ is the number of weeks since vaccination and $y$ is the antibody concentration.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Antibody Concentration After Vaccination",
+   "x_label": "Weeks since vaccination",
+   "y_label": "Antibody concentration (units per mL)",
+   "points": [
+    [
+     0,
+     396
+    ],
+    [
+     1,
+     326
+    ],
+    [
+     2,
+     252
+    ],
+    [
+     3,
+     208
+    ],
+    [
+     4,
+     160
+    ],
+    [
+     5,
+     134
+    ],
+    [
+     6,
+     102
+    ],
+    [
+     7,
+     86
+    ],
+    [
+     8,
+     66
+    ],
+    [
+     9,
+     56
+    ],
+    [
+     10,
+     42
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 450,
+   "y_step": 50,
+   "alt": "Scatterplot of antibody concentration against weeks since vaccination, for weeks 0 through 10."
+  },
+  "choices": [
+   "$y = 400(1.2)^x$",
+   "$y = 200(0.8)^x$",
+   "$y = 400(0.8)^x$",
+   "$y = 400(0.2)^x$"
+  ],
+  "answer": "C",
+  "explanation": "First check the shape. The points fall quickly at first and then level off as they approach the x-axis, so the model is exponential decay, and the base must be between 0 and 1. Next check the starting value. At $x = 0$ the concentration is about 400, so $a = 400$. Last, check the rate. From week 0 to week 1 the concentration falls from about 400 to about 320, so each week it keeps about $\\frac{320}{400} = 0.8$ of its value. The model is $y = 400(0.8)^x$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the starting value correctly but used a base above 1. A base of 1.2 means the concentration grows by 20% each week, but the points clearly fall. A base between 0 and 1 is what gives decay."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You chose the right decay base, but 200 is not where the data start. At $x = 0$ the concentration is close to 400, so the coefficient has to be 400."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You saw that the concentration drops by about 20% each week and used 0.2 as the base. The base is the share that remains, not the share that is lost. A 20% weekly drop leaves 80%, so the base is 0.8. With 0.2, week 1 would be only 80 units per mL."
+   }
+  },
+  "id": "orig-choose-model-e-H-1d4cb3",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-choose-model-e-H-1d4cb3",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations best models the data in the scatterplot?",
+  "stimulus": "A musicologist counted the printed collections of a certain type of part-song in a library catalogue, grouped by decade. In the scatterplot, $x$ is the number of decades after 1560 and $y$ is the number of collections printed in that decade.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Part-Song Collections Printed per Decade",
+   "x_label": "Decades after 1560",
+   "y_label": "Number of collections",
+   "points": [
+    [
+     0,
+     12
+    ],
+    [
+     1,
+     26
+    ],
+    [
+     2,
+     44
+    ],
+    [
+     3,
+     50
+    ],
+    [
+     4,
+     60
+    ],
+    [
+     5,
+     58
+    ],
+    [
+     6,
+     60
+    ],
+    [
+     7,
+     50
+    ],
+    [
+     8,
+     44
+    ],
+    [
+     9,
+     26
+    ],
+    [
+     10,
+     12
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 70,
+   "y_step": 10,
+   "alt": "Scatterplot of the number of part-song collections printed per decade against decades after 1560, for decades 0 through 10."
+  },
+  "choices": [
+   "$y = -2x^2 + 20x + 10$",
+   "$y = 2x^2 - 20x + 10$",
+   "$y = -2x^2 - 20x + 10$",
+   "$y = -2x^2 + 20x + 60$"
+  ],
+  "answer": "A",
+  "explanation": "The counts rise and then fall, so the model is a parabola that opens downward, and the leading coefficient must be negative. At $x = 0$ the data start near 10, so the constant term is 10. The data peak at about $x = 5$. For $y = -2x^2 + 20x + 10$, the vertex is at $x = -\\frac{20}{2(-2)} = 5$, and its value there is $-50 + 100 + 10 = 60$. That matches the top of the data.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This choice has the right y-intercept of 10, but its leading coefficient is positive, so the parabola opens upward. It would dip to $-40$ at $x = 5$, where the data are at their highest."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This parabola opens downward and starts at 10, but with $b = -20$ its vertex is at $x = -\\frac{-20}{2(-2)} = -5$. That means the curve only decreases from $x = 0$ to $x = 10$ and never rises the way the data do. Checking $-\\frac{b}{2a}$ rules this choice out."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the peak height, about 60, as the constant term. The constant term is the value at $x = 0$, which is about 10. With 60 as the constant, the curve would start at 60 and peak at 110."
+   }
+  },
+  "id": "orig-choose-model-e-H-cab53b",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-choose-model-e-H-cab53b",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations is the most appropriate linear model for the data shown?",
+  "stimulus": "An agronomist planted test plots of the same corn variety on different dates and recorded the yield of each plot at harvest. In the scatterplot, $x$ is the number of days after May 1 that a plot was planted and $y$ is its yield, in bushels per acre.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Corn Yield by Planting Date",
+   "x_label": "Days after May 1",
+   "y_label": "Yield (bushels per acre)",
+   "points": [
+    [
+     0,
+     202
+    ],
+    [
+     5,
+     190
+    ],
+    [
+     10,
+     186
+    ],
+    [
+     15,
+     176
+    ],
+    [
+     20,
+     168
+    ],
+    [
+     25,
+     164
+    ],
+    [
+     30,
+     154
+    ],
+    [
+     35,
+     148
+    ],
+    [
+     40,
+     142
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 40,
+   "x_step": 5,
+   "y_min": 100,
+   "y_max": 220,
+   "y_step": 20,
+   "alt": "Scatterplot of corn yield in bushels per acre against days after May 1 that the plot was planted, for 0 through 40 days."
+  },
+  "choices": [
+   "$y = 200 + 1.5x$",
+   "$y = 140 - 1.5x$",
+   "$y = 200 - \\frac{2}{3}x$",
+   "$y = 200 - 1.5x$"
+  ],
+  "answer": "D",
+  "explanation": "The points fall in a roughly straight line from left to right, so the slope is negative. At $x = 0$ the yield is about 200, which gives the y-intercept. By $x = 40$ the yield has fallen to about 140, so the slope is $\\frac{140 - 200}{40 - 0} = -1.5$. The model is $y = 200 - 1.5x$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You got the intercept and the size of the slope right but made the slope positive. That line rises to 260 by day 40, while the yields actually fall."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used the yield at the right end of the data, about 140 at day 40, as the y-intercept. The intercept is the value where $x = 0$, at the left edge, which is about 200."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the run by the rise ($\\frac{40}{60}$) instead of the rise by the run. The correct slope is $\\frac{-60}{40} = -1.5$. With your slope, the line would predict about 173 bushels at day 40, well above the data."
+   }
+  },
+  "id": "orig-choose-model-e-H-019ee9",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-choose-model-e-H-019ee9",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations best models the data in the scatterplot?",
+  "stimulus": "A nutrition scientist tracked the population of live lactic acid bacteria in a batch of fermenting cabbage brine. In the scatterplot, $x$ is the number of days since the batch was started and $y$ is the bacteria count, in millions of cells per milliliter.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Live Bacteria in Fermenting Brine",
+   "x_label": "Days since start",
+   "y_label": "Bacteria count (millions per mL)",
+   "points": [
+    [
+     0,
+     22
+    ],
+    [
+     1,
+     28
+    ],
+    [
+     2,
+     46
+    ],
+    [
+     3,
+     66
+    ],
+    [
+     4,
+     104
+    ],
+    [
+     5,
+     150
+    ],
+    [
+     6,
+     226
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 6,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 240,
+   "y_step": 40,
+   "alt": "Scatterplot of bacteria count in millions per milliliter against days since the batch was started, for days 0 through 6."
+  },
+  "choices": [
+   "$y = 30(1.5)^x$",
+   "$y = 20(1.5)^x$",
+   "$y = 20(0.5)^x$",
+   "$y = 1.5(20)^x$"
+  ],
+  "answer": "B",
+  "explanation": "The points curve upward more and more steeply, so the model is exponential growth, and the base must be greater than 1. At $x = 0$ the count is about 20, so $a = 20$. From day 2 to day 4 the count goes from about 45 to about 100, roughly multiplying by 1.5 each day. The model is $y = 20(1.5)^x$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "This has the right growth factor, but you used the count at day 1 (about 30) as the starting value. In $y = ab^x$, $a$ is the value at $x = 0$, which is about 20."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read a 50% increase as a base of 0.5. A base between 0 and 1 makes the count shrink each day. A 50% daily increase means a base of $1 + 0.5 = 1.5$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You swapped the starting value and the growth factor. This model starts at 1.5 and then multiplies by 20 each day, which gives 600 by day 2. That is nowhere near the data."
+   }
+  },
+  "id": "orig-choose-model-e-H-f45198",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-choose-model-e-H-f45198",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations is the most appropriate linear model for the data shown?",
+  "stimulus": "A labour economist surveyed warehouse workers in one region and recorded each worker's years of experience and hourly wage. In the scatterplot, $x$ is years of experience and $y$ is the average hourly wage, in dollars, of the workers with that much experience.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Hourly Wage by Years of Experience",
+   "x_label": "Years of experience",
+   "y_label": "Average hourly wage (dollars)",
+   "points": [
+    [
+     0,
+     19
+    ],
+    [
+     2,
+     19
+    ],
+    [
+     4,
+     21
+    ],
+    [
+     6,
+     23
+    ],
+    [
+     8,
+     24
+    ],
+    [
+     10,
+     25
+    ],
+    [
+     12,
+     27
+    ],
+    [
+     14,
+     29
+    ],
+    [
+     16,
+     30
+    ],
+    [
+     18,
+     31
+    ],
+    [
+     20,
+     33
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 20,
+   "x_step": 4,
+   "y_min": 15,
+   "y_max": 36,
+   "y_step": 3,
+   "alt": "Scatterplot of average hourly wage in dollars against years of experience, for 0 through 20 years."
+  },
+  "choices": [
+   "$y = 0.75x + 33$",
+   "$y = -0.75x + 33$",
+   "$y = \\frac{4}{3}x + 18$",
+   "$y = 0.75x + 18$"
+  ],
+  "answer": "D",
+  "explanation": "The points rise in a roughly straight line from left to right, so the slope is positive. At $x = 0$ the wage is about 18 dollars, which gives the y-intercept. At $x = 20$ the wage is about 33 dollars, so the slope is $\\frac{33 - 18}{20 - 0} = 0.75$ dollars per year of experience. The model is $y = 0.75x + 18$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You got the slope right but used the wage at 20 years, about 33 dollars, as the y-intercept. The intercept is the wage at 0 years, about 18 dollars."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "This line uses the same two values, 18 and 33, but in reverse order. It starts at 33 and falls to 18, while the data start near 18 and rise. The slope must be positive."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the run by the rise ($\\frac{20}{15}$) instead of the rise by the run ($\\frac{15}{20}$). Your line would reach about 45 dollars at 20 years, far above the data."
+   }
+  },
+  "id": "orig-choose-model-e-H-f0f7d9",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-choose-model-e-H-f0f7d9",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

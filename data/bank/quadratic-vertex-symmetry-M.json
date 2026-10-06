@@ -1,0 +1,133 @@
+[
+ {
+  "stem": "For what value of $x$ does $E(x)$ reach its minimum?",
+  "stimulus": "An archaeologist is mapping the floor of a filled-in storage pit uncovered in a trench. Along one straight line across the pit, the elevation of the pit floor is modeled by $E(x) = 2x^2 - 24x + 50$. Here $E(x)$ is the elevation, in centimeters, relative to a fixed survey marker, and $x$ is the horizontal distance, in meters, from a stake at the edge of the trench, for $0 \\le x \\le 12$.",
+  "choices": [
+   "$-22$",
+   "$-6$",
+   "$6$",
+   "$12$"
+  ],
+  "answer": "C",
+  "explanation": "The vertex of $y = ax^2 + bx + c$ is at $x = -\\frac{b}{2a}$. Here $a = 2$ and $b = -24$, so $x = -\\frac{-24}{2(2)} = \\frac{24}{4} = 6$. Because $a = 2$ is positive, the parabola opens upward, so the vertex is a minimum. The pit floor is lowest 6 meters from the stake. You can check this in Desmos: graph $E(x)$ and click the turning point to see $(6, -22)$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$-22$ is $E(6)$, the lowest elevation itself. The question asks for the value of $x$ where the minimum happens, not the minimum value of $E(x)$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the negative sign in $-\\frac{b}{2a}$ and calculated $\\frac{b}{2a} = \\frac{-24}{4} = -6$. A negative distance also falls outside the stated domain $0 \\le x \\le 12$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided by $a$ instead of by $2a$ and got $\\frac{24}{2} = 12$. The vertex formula has a 2 in the denominator, so the answer is half of that."
+   }
+  },
+  "id": "orig-quadratic-vert-M-221394",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-quadratic-vert-M-221394",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following points must also lie on the graph of $y = f(x)$ in the xy-plane?",
+  "stimulus": "A cartographer drawing a coastal map on a coordinate grid models the edge of a curved bay as the graph of a quadratic function $y = f(x)$, where both $x$ and $y$ are measured in kilometers. The graph passes through the points $(-3, 7)$ and $(11, 7)$. It also passes through the point $(1, 4)$.",
+  "choices": [
+   "$(-1, 4)$",
+   "$(4, 4)$",
+   "$(7, 4)$",
+   "$(7, 7)$"
+  ],
+  "answer": "C",
+  "explanation": "The points $(-3, 7)$ and $(11, 7)$ have the same $y$-value. A parabola is symmetric about the vertical line through its vertex, so that line lies halfway between them: $x = \\frac{-3 + 11}{2} = 4$. The point $(1, 4)$ is 3 units to the left of $x = 4$, so its mirror image is 3 units to the right, at $x = 2(4) - 1 = 7$. The mirror point has the same height, so $(7, 4)$ must be on the graph.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You reflected $(1, 4)$ across the y-axis instead of across the parabola's axis of symmetry, $x = 4$. If $(-1, 4)$ were on the graph, $f(-1) = f(1)$ would put the axis at $x = 0$, which contradicts the two given points."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$x = 4$ is the axis of symmetry, which is the x-coordinate of the vertex. It is not where the reflected point lands. If $f(4) = f(1)$, the axis would have to be at $x = 2.5$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You found the correct x-coordinate but used the height 7 from the other two points. A reflected point keeps its own y-value, so the height stays 4."
+   }
+  },
+  "id": "orig-quadratic-vert-M-48516e",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-quadratic-vert-M-48516e",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [
+    "the point __var__ which of the following points"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "For what value of $t$, other than $t = 4$, does $A(t) = A(4)$?",
+  "stimulus": "After a booster vaccine, an immunologist models the concentration of a certain antibody in a patient's blood with the function $A$, defined by $A(t) = -2t^2 + 28t + 10$. Here $A(t)$ is the concentration, in micrograms per milliliter, $t$ days after the booster.",
+  "choices": [
+   "$7$",
+   "$10$",
+   "$11$",
+   "$90$"
+  ],
+  "answer": "B",
+  "explanation": "The vertex is at $t = -\\frac{b}{2a} = -\\frac{28}{2(-2)} = 7$, so the concentration peaks on day 7. The parabola is symmetric about $t = 7$. Day 4 is 3 days before the peak, so the same concentration happens again 3 days after it: $t = 2(7) - 4 = 10$. Check: $A(4) = -32 + 112 + 10 = 90$ and $A(10) = -200 + 280 + 10 = 90$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$t = 7$ is the vertex, when the concentration is at its highest. It is not the second time the concentration matches its day-4 value."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the vertex time to 4 and got $4 + 7 = 11$. Symmetry gives the matching time as $2(7) - 4$: the same distance past the vertex as day 4 is before it."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$90$ is $A(4)$, the concentration in micrograms per milliliter. The question asks for a number of days $t$, not the concentration."
+   }
+  },
+  "id": "orig-quadratic-vert-M-6e166d",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-quadratic-vert-M-6e166d",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

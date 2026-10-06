@@ -1,0 +1,232 @@
+[
+ {
+  "stem": "What is the constant term of $p(x)$ when it is written in the form $p(x) = ax^3 + bx^2 + cx + d$?",
+  "stimulus": "An astronomer fits a polynomial function $p$ to measurements of how a star's apparent brightness changes over time. The function $p$ is a cubic polynomial with leading coefficient $2$, and its zeros are $-3$, $\\frac{1}{2}$, and $4$.",
+  "choices": [
+   "$-12$",
+   "$-6$",
+   "$6$",
+   "$12$"
+  ],
+  "answer": "D",
+  "explanation": "Each zero $r$ gives a factor $(x - r)$, so $p(x) = 2(x + 3)\\left(x - \\frac{1}{2}\\right)(x - 4)$. To get the constant term, set $x = 0$: $2(3)\\left(-\\frac{1}{2}\\right)(-4) = 12$. You can also check this by writing $p(x) = (x + 3)(2x - 1)(x - 4)$ and multiplying the constants: $3 \\cdot (-1) \\cdot (-4) = 12$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote each factor as $(x + r)$ instead of $(x - r)$, which gives $2(x - 3)\\left(x + \\frac{1}{2}\\right)(x + 4)$. Its constant term is $2(-3)\\left(\\frac{1}{2}\\right)(4) = -12$, so every sign is flipped."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You multiplied the zeros together, $(-3)\\left(\\frac{1}{2}\\right)(4) = -6$. That is the product of the zeros, not the constant term. The constant term uses $-r$ for each zero and also includes the leading coefficient."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You set up the factors correctly but left out the leading coefficient $2$: $(3)\\left(-\\frac{1}{2}\\right)(-4) = 6$. You need to multiply by $2$."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-ac242b",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-ac242b",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is NOT an x-intercept of the graph of $y = f(x)$ in the xy-plane?",
+  "stimulus": "A nutrition scientist models the difference between a test meal's measured blood-glucose response and its predicted response using the function $f(x) = (x - 6)(5x + 2)(x + 3)$.",
+  "choices": [
+   "$(-3, 0)$",
+   "$\\left(-\\frac{2}{5}, 0\\right)$",
+   "$(-2, 0)$",
+   "$(6, 0)$"
+  ],
+  "answer": "C",
+  "explanation": "Set each factor equal to $0$. From $x - 6 = 0$, $x = 6$. From $5x + 2 = 0$, $x = -\\frac{2}{5}$. From $x + 3 = 0$, $x = -3$. So the x-intercepts are $(6, 0)$, $\\left(-\\frac{2}{5}, 0\\right)$, and $(-3, 0)$. The point $(-2, 0)$ is not one of them. Check: $f(-2) = (-8)(-8)(1) = 64 \\neq 0$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the zero from $(x + 3)$ as $3$ instead of $-3$, so $(-3, 0)$ looked wrong to you. A factor $(x + 3)$ means the zero is $x = -3$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the zero of $(5x + 2)$ to be $-2$ and didn't divide by the coefficient $5$, so $\\left(-\\frac{2}{5}, 0\\right)$ looked wrong to you. Solving $5x + 2 = 0$ gives $x = -\\frac{2}{5}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the zero from $(x - 6)$ as $-6$ instead of $6$, so $(6, 0)$ looked wrong to you. A factor $(x - 6)$ means the zero is $x = 6$."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-eeee22",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-eeee22",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [
+    "an x intercept of the graph of __var__"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "In the given equation, $k$ is a constant. What is the value of $k$?",
+  "stimulus": "A civil engineer models the cross-section of a drainage channel with the equation $y = x^2 + kx - 24$. The graph of this equation in the xy-plane has an x-intercept at $(8, 0)$.",
+  "choices": [
+   "$-5$",
+   "$-3$",
+   "$2$",
+   "$5$"
+  ],
+  "answer": "A",
+  "explanation": "An x-intercept at $(8, 0)$ means $y = 0$ when $x = 8$. Substitute: $0 = 8^2 + 8k - 24 = 40 + 8k$, so $8k = -40$ and $k = -5$. Check: $x^2 - 5x - 24 = (x - 8)(x + 3)$, which has a zero at $8$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$-3$ is the other x-intercept of the graph, because $x^2 - 5x - 24 = (x - 8)(x + 3)$. The question asks for the constant $k$, not the second zero."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You substituted $x = 8$ without squaring it: $8 + 8k - 24 = 0$ gives $k = 2$. The first term is $8^2 = 64$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the sign of the intercept and substituted $x = -8$: $64 - 8k - 24 = 0$ gives $k = 5$. The intercept $(8, 0)$ means $x = 8$."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-db8bce",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-db8bce",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [
+    "the graph of this equation in the xy",
+    "graph of this equation in the xy plane",
+    "in the xy plane has an x intercept",
+    "the xy plane has an x intercept at",
+    "xy plane has an x intercept at __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "What is the value of $T(6)$?",
+  "stimulus": "A meteorologist models how far the temperature is from the seasonal average, $T(x)$, in degrees Celsius, $x$ hours after midnight, using a quadratic function. The zeros of $T$ are $2$ and $10$, and $T(0) = 10$.",
+  "choices": [
+   "$-16$",
+   "$-8$",
+   "$\\frac{1}{2}$",
+   "$64$"
+  ],
+  "answer": "B",
+  "explanation": "The zeros $2$ and $10$ give $T(x) = a(x - 2)(x - 10)$. Use $T(0) = 10$: $a(-2)(-10) = 20a = 10$, so $a = \\frac{1}{2}$. Then $T(6) = \\frac{1}{2}(4)(-4) = -8$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You computed $(6 - 2)(6 - 10) = -16$ but left out the leading coefficient. You need to use $T(0) = 10$ to find $a = \\frac{1}{2}$ first."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "$\\frac{1}{2}$ is the leading coefficient $a$, which you find partway through the solution. You still need to use it to evaluate $T(6)$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the factors as $(x + 2)(x + 10)$. That still gives $a = \\frac{1}{2}$, but then $T(6) = \\frac{1}{2}(8)(16) = 64$. A zero at $2$ gives the factor $(x - 2)$, not $(x + 2)$."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-182a9b",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-182a9b",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given function, $k$ is a constant. What is the value of $k$?",
+  "stimulus": "A hydrologist models the change in a reservoir's water level using the function $w(x) = (x - 5)(2x - k)$. The graph of $y = w(x)$ in the xy-plane has an x-intercept at $(3, 0)$.",
+  "choices": [
+   "$-6$",
+   "$3$",
+   "$5$",
+   "$6$"
+  ],
+  "answer": "D",
+  "explanation": "Since $w(3) = 0$, $(3 - 5)(2 \\cdot 3 - k) = 0$. The factor $3 - 5 = -2$ is not zero, so $6 - k = 0$ and $k = 6$. Check: $w(x) = (x - 5)(2x - 6)$ has zeros at $5$ and $3$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated the intercept as coming from a factor with a plus sign, as if solving $2(3) + k = 0$, and got $k = -6$. Substituting $x = 3$ into $2x - k$ gives $6 - k = 0$, so $k = 6$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You assumed the zero of $(2x - k)$ is $k$ itself, so you set $k = 3$. Because $x$ has the coefficient $2$, the zero is $\\frac{k}{2}$. Setting $\\frac{k}{2} = 3$ gives $k = 6$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$5$ is the other x-intercept, which comes from the factor $(x - 5)$. The question asks for the constant $k$."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-a46ed4",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-a46ed4",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [
+    "the function __var__ the graph of __var__ in",
+    "of __var__ in the xy plane has an",
+    "__var__ in the xy plane has an x",
+    "in the xy plane has an x intercept",
+    "the xy plane has an x intercept at",
+    "xy plane has an x intercept at __var__"
+   ],
+   "residue": 4
+  }
+ }
+]

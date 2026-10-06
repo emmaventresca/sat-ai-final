@@ -396,5 +396,56 @@
   "rated_level": "M",
   "rated_why": "Find equation with fractional slope, then solve for x using it",
   "authored_difficulty": "H"
+ },
+ {
+  "stem": "The table shows three values of $x$ and their corresponding values of $f(x)$. Function $f$ is defined by $f(x) = ax + b$, where $a$ and $b$ are constants. What is the value of $ab$?",
+  "stimulus": "A marine biologist studying where reef fish feed records the water temperature at several depths. She models the temperature $f(x)$, in degrees Celsius, at a depth of $x$ meters below the surface with a linear function $f$.\n\nWater Temperature by Depth\n$x$ (meters) | $f(x)$ (\u00b0C)\n6 | 19\n14 | 15\n22 | 11",
+  "choices": [
+   "$-62$",
+   "$-11$",
+   "$8$",
+   "$22$"
+  ],
+  "answer": "B",
+  "explanation": "Find the slope from any two rows: going from $x = 6$ to $x = 14$, the output changes by $15 - 19 = -4$ while the input changes by $14 - 6 = 8$. So $a = \\frac{-4}{8} = -\\frac{1}{2}$. The temperature falls as depth increases, so a negative slope fits the story. Next, substitute $(6, 19)$: $19 = -\\frac{1}{2}(6) + b$, so $19 = -3 + b$ and $b = 22$. The row $(22, 11)$ checks out: $-\\frac{1}{2}(22) + 22 = 11$. The question asks for the product, so $ab = -\\frac{1}{2} \\cdot 22 = -11$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You worked out the slope as change in $x$ over change in $y$, $\\frac{8}{-4} = -2$. That gave $b = 19 + 12 = 31$ and $ab = -62$. Slope is change in output over change in input. You can also catch this by checking the third row, since $-2(22) + 31 = -13$, not $11$."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You mixed up the subtraction order, taking $19 - 15$ over $14 - 6$, and got a positive slope of $\\frac{1}{2}$. Then $b = 19 - 3 = 16$ and $ab = 8$. The temperature goes down as depth goes up, so the slope has to be negative."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the intercept correctly, $b = 22$, but stopped there. The question asks for the product $ab$, so you still need to multiply by $a = -\\frac{1}{2}$."
+   }
+  },
+  "id": "orig-equation-from--H-ea903b",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-equation-from--H-ea903b",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [
+    "__var__ and their corresponding values of __var__ function",
+    "and their corresponding values of __var__ function __var__",
+    "their corresponding values of __var__ function __var__ is",
+    "corresponding values of __var__ function __var__ is defined",
+    "values of __var__ function __var__ is defined by",
+    "of __var__ function __var__ is defined by __var__",
+    "__var__ function __var__ is defined by __var__ where"
+   ],
+   "residue": 0
+  }
  }
 ]

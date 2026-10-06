@@ -389,5 +389,91 @@
   "rated_level": "M",
   "rated_why": "three steps with fractions and square roots, but mechanically straightforward",
   "authored_difficulty": "H"
+ },
+ {
+  "stem": "The given equation relates the positive numbers $T$, $p$, $w$, and $k$. Which equation correctly expresses $w$ in terms of $T$, $p$, and $k$?",
+  "stimulus": "A linguist models how a second-language learner's reading vocabulary grows with exposure. In the model, $T$ is the number of words the learner recognizes after $w$ hours of reading, $p$ is the greatest number of words the learner could eventually recognize from the reading material, and $k$ is a constant that depends on the material.\n\n$T = \\dfrac{pw}{w + k}$",
+  "choices": [
+   "$w = \\dfrac{k(p - T)}{T}$",
+   "$w = \\dfrac{Tk}{p + T}$",
+   "$w = \\dfrac{Tk}{p - T}$",
+   "$w = \\dfrac{p - T}{Tk}$"
+  ],
+  "answer": "C",
+  "explanation": "First multiply both sides by $w + k$ to clear the fraction: $Tw + Tk = pw$. The target $w$ now shows up in two terms, so you collect them on one side before you divide: $Tk = pw - Tw$. Then factor out $w$: $Tk = w(p - T)$. Dividing by $p - T$ gives $w = \\dfrac{Tk}{p - T}$. To check, try $w = 15$, $k = 5$, $p = 8$. Then $T = \\dfrac{120}{20} = 6$, and $\\dfrac{6 \\cdot 5}{8 - 6} = 15$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You probably split the equation into $\\dfrac{p}{T} = 1 + \\dfrac{k}{w}$ and got as far as $\\dfrac{k}{w} = \\dfrac{p - T}{T}$, which is right. But you then solved as though the equation said $\\dfrac{w}{k}$, so you never took the reciprocal. The correct result is $w = \\dfrac{Tk}{p - T}$, not $w = \\dfrac{k(p - T)}{T}$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You cleared the fraction correctly to get $Tw + Tk = pw$. Then, when you moved $Tw$ across the equals sign, you kept it positive, which turned $p - T$ into $p + T$. Subtracting $Tw$ from both sides gives $Tk = w(p - T)$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You reached $Tk = w(p - T)$ and then flipped the result upside down, so the factor you should divide by ended up in the numerator. To isolate $w$, divide both sides by $p - T$. That leaves $Tk$ in the numerator."
+   }
+  },
+  "id": "orig-literal-equati-H-fca108",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-literal-equati-H-fca108",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The given equation relates the positive numbers $P$, $L$, $k$, and $w$. Which equation correctly expresses $w$ in terms of $P$, $L$, and $k$?",
+  "stimulus": "A city planner estimates the peak pedestrian capacity $P$, in people per minute, of a downtown corridor. Two things limit that capacity: the crosswalk signal, which allows at most $L$ people per minute, and the sidewalk, which allows $kw^2$ people per minute. Here $w$ is the sidewalk width, in meters, and $k$ is a constant.\n\n$\\dfrac{1}{P} = \\dfrac{1}{L} + \\dfrac{1}{kw^2}$",
+  "choices": [
+   "$w = \\sqrt{\\dfrac{PL}{k(L - P)}}$",
+   "$w = \\sqrt{\\dfrac{P - L}{k}}$",
+   "$w = \\sqrt{\\dfrac{L - P}{kPL}}$",
+   "$w = \\sqrt{\\dfrac{PL}{k(L + P)}}$"
+  ],
+  "answer": "A",
+  "explanation": "Get the term with $w$ by itself: $\\dfrac{1}{kw^2} = \\dfrac{1}{P} - \\dfrac{1}{L}$. Over the common denominator $PL$, the right side is $\\dfrac{L - P}{PL}$. Take reciprocals of both sides: $kw^2 = \\dfrac{PL}{L - P}$. Divide by $k$, then take the square root. Because $w$ is positive, keep only the positive root: $w = \\sqrt{\\dfrac{PL}{k(L - P)}}$. To check, try $k = 2$, $w = 3$, $L = 9$. Then $\\dfrac{1}{P} = \\dfrac{1}{9} + \\dfrac{1}{18} = \\dfrac{1}{6}$, so $P = 6$, and $\\sqrt{\\dfrac{54}{2 \\cdot 3}} = 3$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped each fraction separately and rewrote the equation as $P = L + kw^2$. A sum of reciprocals can't be undone one term at a time. You can also see that this choice can't be right: $P$ is always less than $L$, so $P - L$ is negative and the square root isn't a real number."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $\\dfrac{1}{kw^2} = \\dfrac{L - P}{PL}$ correctly, but you then treated it as $kw^2 = \\dfrac{L - P}{PL}$ and skipped the reciprocal step. Flip both sides before you divide by $k$ and take the square root."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "When you combined $\\dfrac{1}{P} - \\dfrac{1}{L}$, you added instead of subtracting and wrote the numerator as $L + P$. Over the common denominator $PL$, the difference is $\\dfrac{L - P}{PL}$."
+   }
+  },
+  "id": "orig-literal-equati-H-26f0a6",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-literal-equati-H-26f0a6",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

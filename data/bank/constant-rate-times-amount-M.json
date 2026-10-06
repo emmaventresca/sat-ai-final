@@ -1,0 +1,217 @@
+[
+ {
+  "stem": "What is the greatest number of complete jobs the printer can finish using one full spool?",
+  "stimulus": "A materials science lab uses a 3D printer that lays down polymer filament at a constant rate of 12 grams per hour. Each test-sample job runs for 7.5 hours. One full spool holds 1,000 grams of filament, and a job cannot be finished if the filament runs out partway through.",
+  "choices": [
+   "90",
+   "83",
+   "12",
+   "11"
+  ],
+  "answer": "D",
+  "explanation": "First find the filament used by one job: $12 \\text{ g/hr} \\times 7.5 \\text{ hr} = 90 \\text{ g}$. Then divide the spool by that amount: $1{,}000 \\text{ g} \\div 90 \\text{ g/job} \\approx 11.1$ jobs. Only complete jobs count, so you round down to 11.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "90 is the grams of filament one job uses. You stopped after the first step and never divided it into the 1,000-gram spool."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided $1{,}000 \\div 12 \\approx 83$. That is how many hours of printing the spool allows, not how many jobs. Check the units: grams \u00f7 grams per hour gives hours."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You found about 11.1 jobs and rounded up. The 12th job would run out of filament partway through, so it can't be finished. Round down."
+   }
+  },
+  "id": "orig-constant-rate--M-2e5342",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-constant-rate--M-2e5342",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many more liters of water per day does Field B use than Field A?",
+  "stimulus": "At an agricultural research station, each plant in two test fields is watered by a drip emitter that delivers 4 liters of water per hour. Field A has 250 plants that are watered for 3 hours each day. Field B has 180 plants that are watered for 5 hours each day.",
+  "choices": [
+   "280",
+   "600",
+   "3,600",
+   "6,600"
+  ],
+  "answer": "B",
+  "explanation": "Total = rate \u00d7 plants \u00d7 hours. Field A: $4 \\times 250 \\times 3 = 3{,}000$ liters per day. Field B: $4 \\times 180 \\times 5 = 3{,}600$ liters per day. The difference is $3{,}600 - 3{,}000 = 600$ liters per day.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You computed $4 \\times (250 - 180) = 280$. That drops the hours, even though the two fields are watered for different lengths of time, so the hours can't cancel out."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "3,600 liters is Field B's daily total. The question asks how much more B uses than A, so you still need to subtract Field A's 3,000 liters."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the two fields' totals ($3{,}000 + 3{,}600$). The question asks for the difference between them, not their combined use."
+   }
+  },
+  "id": "orig-constant-rate--M-a5fae8",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-constant-rate--M-a5fae8",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the maximum number of people who can be in the waiting room at one time under this guideline?",
+  "stimulus": "A public health guideline for a clinic requires at least 2.5 square meters of floor space per person in a waiting room. The clinic's waiting room is a rectangle that is 14 meters long and 6 meters wide.",
+  "choices": [
+   "210",
+   "34",
+   "33",
+   "16"
+  ],
+  "answer": "C",
+  "explanation": "The room's area is $14 \\text{ m} \\times 6 \\text{ m} = 84 \\text{ m}^2$. Divide by the space each person needs: $84 \\text{ m}^2 \\div 2.5 \\text{ m}^2\\text{/person} = 33.6$ people. Each person needs at least 2.5 square meters, so a 34th person would push everyone below that minimum. The maximum is 33.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $84 \\times 2.5$ when you should have divided. The units show the mistake: square meters \u00d7 square meters per person doesn't give a number of people."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You rounded 33.6 up to 34. With 34 people, each person gets less than 2.5 square meters, which breaks the 'at least' condition. Round down."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used the perimeter, $2(14 + 6) = 40$ meters, in place of the area, and got $40 \\div 2.5 = 16$. Floor space is an area, so you need $14 \\times 6$."
+   }
+  },
+  "id": "orig-constant-rate--M-92a225",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-constant-rate--M-92a225",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many hours will it take the press to print the entire order?",
+  "stimulus": "A printmaking studio uses a press that prints posters at a constant rate of 45 sheets per minute. The studio receives an order for 8,100 sheets.",
+  "choices": [
+   "3",
+   "180",
+   "6,075",
+   "10,800"
+  ],
+  "answer": "A",
+  "explanation": "Time = amount \u00f7 rate: $8{,}100 \\text{ sheets} \\div 45 \\text{ sheets/min} = 180 \\text{ min}$. Then convert to hours: $180 \\text{ min} \\times \\frac{1 \\text{ hr}}{60 \\text{ min}} = 3$ hours.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "180 is the time in minutes. The question asks for hours, so you still need to divide by 60."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $8{,}100 \\times 45$ and then divided by 60. Sheets \u00d7 sheets per minute doesn't give a time, so the units tell you to divide by the rate instead."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found 180 minutes and then multiplied by 60 when you should have divided. Write $\\frac{1 \\text{ hr}}{60 \\text{ min}}$ so that minutes cancel."
+   }
+  },
+  "id": "orig-constant-rate--M-d376e2",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-constant-rate--M-d376e2",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What was the weaver's pay for the week after the loom rent was taken out, in pence?",
+  "stimulus": "Records from a 19th-century textile workshop show that a hand-loom weaver was paid 4 pence for each yard of cloth woven. In one week, the weaver wove 9 yards per day for 6 days. At the end of the week, a loom rent of 18 pence was taken out of the weaver's pay.",
+  "choices": [
+   "234",
+   "216",
+   "198",
+   "18"
+  ],
+  "answer": "C",
+  "explanation": "First find the weekly earnings: $4 \\text{ pence/yd} \\times 9 \\text{ yd/day} \\times 6 \\text{ days} = 216$ pence. Then take out the rent: $216 - 18 = 198$ pence.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You added the 18-pence rent instead of subtracting it. The rent was taken out of the pay, so it lowers the total."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "216 pence is the weaver's pay before the rent was taken out. Reread the last line: the question asks for the pay after the rent."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found one day's pay ($4 \\times 9 = 36$) and subtracted the weekly rent. You left out the factor of 6 days."
+   }
+  },
+  "id": "orig-constant-rate--M-bfa0e6",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-constant-rate--M-bfa0e6",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

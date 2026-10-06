@@ -388,5 +388,48 @@
   },
   "rated_level": "E",
   "rated_why": "direct substitution: plug in 2 and compute"
+ },
+ {
+  "stem": "According to the model, what was the length, in centimeters, of the kelp frond 4 weeks before it reached a length of 60 centimeters?",
+  "stimulus": "A marine biologist tracks the growth of a single giant kelp frond in a coastal research tank. The function $L(w) = \\frac{1}{2}(w + 4)^2 + 10$ models the length $L(w)$, in centimeters, of the frond $w$ weeks after the biologist began measuring it, where $0 \\le w \\le 12$.",
+  "choices": [
+   "$6$",
+   "$18$",
+   "$28$",
+   "$108$"
+  ],
+  "answer": "C",
+  "explanation": "You are given an output (60 cm), so first work backwards to find the week. Set $\\frac{1}{2}(w + 4)^2 + 10 = 60$. Subtract 10 to get $\\frac{1}{2}(w + 4)^2 = 50$, then multiply by 2 to get $(w + 4)^2 = 100$, so $w + 4 = 10$ or $w + 4 = -10$. That gives $w = 6$ or $w = -14$, and only $w = 6$ is in the domain $0 \\le w \\le 12$. Four weeks earlier is $w = 2$, so substitute it: $L(2) = \\frac{1}{2}(6)^2 + 10 = 18 + 10 = 28$ centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the week when the frond reached 60 cm, which is an input, $w = 6$. The question asks for a length, which is an output. You still needed to step back 4 weeks to $w = 2$ and evaluate $L(2)$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You correctly substituted $w = 2$ and got $\\frac{1}{2}(6)^2 = 18$, but then you dropped the $+10$ at the end of the function. Every output of $L$ includes that constant, so the length is $18 + 10 = 28$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You took the negative square root, $w + 4 = -10$, which gives $w = -14$. You then evaluated $L(-18) = \\frac{1}{2}(196) + 10 = 108$. A negative number of weeks is outside the domain $0 \\le w \\le 12$, so that root has to be rejected."
+   }
+  },
+  "id": "orig-evaluate-or-in-H-3d237e",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-evaluate-or-in-H-3d237e",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

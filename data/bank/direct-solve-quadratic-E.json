@@ -1,0 +1,143 @@
+[
+ {
+  "stem": "What is the positive solution to the given equation?",
+  "stimulus": "A materials scientist is cutting square test samples from a sheet of a new ceramic composite. The side length $x$, in centimeters, of one sample satisfies the equation below.\n\n$4x^2 = 100$",
+  "choices": [
+   "$5$",
+   "$10$",
+   "$25$",
+   "$96$"
+  ],
+  "answer": "A",
+  "explanation": "First get $x^2$ by itself: divide both sides by 4 to get $x^2 = 25$. Then take the square root of both sides: $x = 5$ or $x = -5$. The positive solution is $5$. You can check it: $4(5)^2 = 4(25) = 100$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the square root before getting $x^2$ by itself. $\\sqrt{100} = 10$, but the 4 is still multiplying $x^2$. Divide by 4 first, then take the square root."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You correctly got $x^2 = 25$ but stopped there. 25 is the value of $x^2$, not $x$, so you still need to take the square root."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted 4 from 100 when you should have divided. The 4 multiplies $x^2$, so you undo it by dividing both sides by 4."
+   }
+  },
+  "id": "orig-direct-solve-q-E-aa9c6c",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-direct-solve-q-E-aa9c6c",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is a solution to the given equation?",
+  "stimulus": "While fitting a model to the dive path of an osprey, an ornithologist arrives at the equation below.\n\n$x^2 - 3x - 28 = 0$",
+  "choices": [
+   "$-7$",
+   "$4$",
+   "$7$",
+   "$28$"
+  ],
+  "answer": "C",
+  "explanation": "Look for two numbers that multiply to $-28$ and add to $-3$. Those are $-7$ and $4$, so the equation factors as $(x - 7)(x + 4) = 0$. The solutions are $x = 7$ and $x = -4$, and only $7$ is among the choices. Check: $49 - 21 - 28 = 0$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the sign when turning the factor $(x - 7)$ into a solution. Setting $x - 7 = 0$ gives $x = 7$, not $-7$. The value $-7$ solves $x^2 + 3x - 28 = 0$, which has the sign of the middle term reversed."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the sign of the other root. The factor $(x + 4)$ gives $x = -4$, not $4$. Substituting $4$ gives $16 - 12 - 28 = -24$, not 0."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "28 is the constant term in the equation, not a root. The constant is the product of the factor numbers, so it doesn't tell you a value of $x$ directly."
+   }
+  },
+  "id": "orig-direct-solve-q-E-4c3760",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-direct-solve-q-E-4c3760",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [
+    "__var__ which of the following is a solution",
+    "which of the following is a solution to",
+    "of the following is a solution to the",
+    "the following is a solution to the given",
+    "following is a solution to the given equation"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is a solution to the given equation?",
+  "stimulus": "A cartographer is resizing the square grid cells on a regional map so that they match a new scale. The work leads to the equation below.\n\n$x^2 = 6x - 4$",
+  "choices": [
+   "$-3 + \\sqrt{5}$",
+   "$3 + \\sqrt{5}$",
+   "$3 + \\sqrt{13}$",
+   "$6 + 2\\sqrt{5}$"
+  ],
+  "answer": "B",
+  "explanation": "Put the equation in standard form: $x^2 - 6x + 4 = 0$. It doesn't factor cleanly, so use the quadratic formula: $x = \\frac{6 \\pm \\sqrt{36 - 16}}{2} = \\frac{6 \\pm 2\\sqrt{5}}{2} = 3 \\pm \\sqrt{5}$. Only $3 + \\sqrt{5}$ is among the choices. In Desmos, graph $y = x^2$ and $y = 6x - 4$. The curves cross at about $x = 0.76$ and $x = 5.24$, and $3 + \\sqrt{5} \\approx 5.24$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $+6$ instead of $-b = 6$, or you got the sign of the middle term wrong when you rearranged. $-3 + \\sqrt{5}$ solves $x^2 + 6x + 4 = 0$, not the given equation. It's about $-0.76$, and the graphs don't cross there."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You moved $-4$ to the left side without changing its sign, which gave you $x^2 - 6x - 4 = 0$. The discriminant became $36 + 16 = 52$, so you got $\\sqrt{13}$ in place of $\\sqrt{5}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the correct numerator, $6 + 2\\sqrt{5}$, but didn't divide by $2a = 2$. Divide both terms by 2 to get $3 + \\sqrt{5}$."
+   }
+  },
+  "id": "orig-direct-solve-q-E-f4843a",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-direct-solve-q-E-f4843a",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [
+    "__var__ which of the following is a solution",
+    "which of the following is a solution to",
+    "of the following is a solution to the",
+    "the following is a solution to the given",
+    "following is a solution to the given equation"
+   ],
+   "residue": 0
+  }
+ }
+]

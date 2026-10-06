@@ -1,0 +1,185 @@
+[
+ {
+  "stem": "The function $f$ is defined by $f(x) = a(b)^x$, where $a$ and $b$ are positive constants. If $f(0) = 40$ and $f(2) = 90$, what is the value of $a + b$?",
+  "stimulus": "A materials scientist runs repeated stress cycles on a ceramic test bar and tracks the length of a small surface crack. The function $f$ gives the predicted crack length, in micrometers, after $x$ thousand stress cycles.",
+  "choices": [
+   "$1.5$",
+   "$40$",
+   "$41.5$",
+   "$42.25$"
+  ],
+  "answer": "C",
+  "explanation": "Start with the y-intercept. Setting $x = 0$ gives $f(0) = a(b)^0 = a$, so $a = 40$. Then substitute the second point: $40b^2 = 90$, so $b^2 = \\frac{9}{4}$. Because $b$ is positive, $b = 1.5$. The question asks for the sum, so $a + b = 40 + 1.5 = 41.5$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $b = 1.5$ correctly, but the question asks for $a + b$. You gave only one of the two constants."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read $a = 40$ off the y-intercept and stopped there. The question asks for $a + b$, so you still have to find $b$ and add it."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You added $b^2 = 2.25$ to $a$. Substituting $x = 2$ gives you $b^2$, not $b$. You need to take the square root before adding."
+   }
+  },
+  "id": "orig-find-constants-M-7cac7a",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-find-constants-M-7cac7a",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The table shows three values of $x$ and their corresponding values of $f(x)$, where $f(x) = ax^2 + bx + c$ and $a$, $b$, and $c$ are constants. Which equation defines $f$?",
+  "stimulus": "A labor economist studies how many people apply for warehouse jobs at different pay levels. The function $f$ estimates the number of applicants, in hundreds, when the hourly wage offered is $x$ dollars above the regional minimum wage.\n\nEstimated Applicants by Wage Premium\n$x$ | $f(x)$\n$0$ | $12$\n$1$ | $15$\n$2$ | $22$",
+  "choices": [
+   "$f(x) = 2x^2 + x + 15$",
+   "$f(x) = x^2 + 2x + 12$",
+   "$f(x) = 2x^2 - x + 12$",
+   "$f(x) = 2x^2 + x + 12$"
+  ],
+  "answer": "D",
+  "explanation": "Setting $x = 0$ gives $c = 12$. Substituting $(1, 15)$ gives $a + b = 3$, and substituting $(2, 22)$ gives $4a + 2b = 10$, so $2a + b = 5$. Subtract the first equation from the second to get $a = 2$, which makes $b = 1$. Check: $f(2) = 8 + 2 + 12 = 22$. You can also test each choice against all three rows. Only $f(x) = 2x^2 + x + 12$ fits every row.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This choice has the wrong y-intercept. You used $f(1) = 15$ as the constant term, but the constant term equals $f(0)$, which is $12$. This equation gives $f(0) = 15$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "This equation fits $(0, 12)$ and $(1, 15)$, but it gives $f(2) = 4 + 4 + 12 = 20$, not $22$. You checked only part of the table."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You got the sign of $b$ wrong. This equation gives $f(1) = 2 - 1 + 12 = 13$, not $15$."
+   }
+  },
+  "id": "orig-find-constants-M-48b825",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-find-constants-M-48b825",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [
+    "their corresponding values of __var__ where __var__ and",
+    "corresponding values of __var__ where __var__ and __var__",
+    "where __var__ and __var__ __var__ and __var__ are",
+    "__var__ and __var__ __var__ and __var__ are constants"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $f$ is defined by $f(x) = ax^2 + bx$, where $a$ and $b$ are constants. If the graph of $y = f(x)$ in the xy-plane passes through the points $(2, 4)$ and $(-1, 7)$, what is the value of $b$?",
+  "stimulus": "A printmaker is designing a curved edge for a linocut stencil. On a coordinate grid measured in centimeters, the edge follows the graph of $y = f(x)$.",
+  "choices": [
+   "$-16$",
+   "$-4$",
+   "$-1$",
+   "$3$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute $(2, 4)$: $4a + 2b = 4$, so $2a + b = 2$. Substitute $(-1, 7)$: because $(-1)^2 = 1$, this gives $a - b = 7$. Add the two equations to get $3a = 9$, so $a = 3$. Then $3 - b = 7$, which gives $b = -4$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated $(-1)^2$ as $-1$, which gives $-a - b = 7$. Squaring a negative number gives a positive result, so the equation should be $a - b = 7$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $a + b = 3 + (-4)$. The question asks for $b$ alone, not the sum of the constants."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You solved the system correctly but reported $a = 3$. The question asks for $b$."
+   }
+  },
+  "id": "orig-find-constants-M-2d496a",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-find-constants-M-2d496a",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $f$ is defined by $f(x) = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. The table shows three values of $x$ and their corresponding values of $f(x)$. What is the value of $a + b$?",
+  "stimulus": "A meteorologist models the air temperature at a coastal weather station on a spring day. The function $f$ gives the temperature, in degrees Celsius, $x$ hours after 6:00 a.m.\n\nModeled Air Temperature at the Station\n$x$ | $f(x)$\n$0$ | $8$\n$2$ | $16$\n$4$ | $16$",
+  "choices": [
+   "$-1$",
+   "$5$",
+   "$6$",
+   "$13$"
+  ],
+  "answer": "B",
+  "explanation": "Setting $x = 0$ gives $c = 8$. Substituting $(2, 16)$ gives $4a + 2b = 8$, so $2a + b = 4$. Substituting $(4, 16)$ gives $16a + 4b = 8$, so $4a + b = 2$. Subtract the first equation from the second to get $2a = -2$, so $a = -1$ and $b = 6$. The question asks for $a + b = -1 + 6 = 5$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $a = -1$ and stopped there. The question asks for $a + b$, so you still need to add $b = 6$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave $b = 6$, which is only one constant. The question asks for the sum $a + b$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added all three constants, $-1 + 6 + 8 = 13$. That sum is $f(1)$. The question asks only for $a + b$, so leave out $c$."
+   }
+  },
+  "id": "orig-find-constants-M-d600f1",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-find-constants-M-d600f1",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [
+    "the function __var__ gives the temperature in degrees",
+    "__var__ is defined by __var__ where __var__ __var__",
+    "is defined by __var__ where __var__ __var__ and",
+    "defined by __var__ where __var__ __var__ and __var__",
+    "by __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 5
+  }
+ }
+]

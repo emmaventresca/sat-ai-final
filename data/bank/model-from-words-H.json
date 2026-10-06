@@ -780,5 +780,93 @@
   "rated_level": "M",
   "rated_why": "Nested relationships (find ferns first, then divide); the algebra is routine once the expressions are identified.",
   "authored_difficulty": "H"
+ },
+ {
+  "stem": "Which equation represents this situation, where $t$ is the number of tales requested and $t \\geq 5$?",
+  "stimulus": "A regional folklore archive charges researchers for digital copies of recorded oral tales. Any request for up to 5 tales costs a flat fee of $\\$40$. Each tale beyond the first 5 costs an additional $\\$6$. Let $C$ be the total cost, in dollars, of a request.",
+  "choices": [
+   "$C = 40t + 6$",
+   "$C = 6t + 40$",
+   "$C = 6t + 10$",
+   "$C = 6t + 70$"
+  ],
+  "answer": "C",
+  "explanation": "The $\\$6$ charge applies only to tales beyond the first 5. For $t$ tales, that is $t - 5$ extra tales. So the cost is $C = 40 + 6(t - 5) = 40 + 6t - 30 = 6t + 10$. To check, a request for exactly 5 tales should cost $\\$40$, and $6(5) + 10 = 40$. A request for 6 tales should cost $\\$46$, and $6(6) + 10 = 46$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You swapped the rate and the starting amount. You used the $\\$40$ flat fee as the charge per tale and the $\\$6$ as the fixed amount. This line has the wrong slope and the wrong intercept. For example, 5 tales would cost $\\$206$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You added the $\\$6$ charge for every tale, including the first 5, which the $\\$40$ fee already covers. The extra charge only applies beyond 5 tales, so the input should be $t - 5$, not $t$. With this equation, 5 tales would cost $\\$70$ instead of $\\$40$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You saw that the first 5 tales need special handling, but you used $t + 5$ instead of $t - 5$. Expanding $40 + 6(t + 5)$ gives $6t + 70$. That adds charges for 5 tales instead of taking away the 5 tales the flat fee already covers."
+   }
+  },
+  "id": "orig-model-from-wor-H-b2049a",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-model-from-wor-H-b2049a",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation represents this situation, where $h$ is the number of hours since the flight began?",
+  "stimulus": "Ornithologists fitted a migrating shorebird with a tracking tag just before it started a nonstop flight over open ocean. At takeoff, the bird was carrying 400 grams of stored body fat. During the flight, it burned fat at a constant rate of 9 grams every 2 hours. Let $F$ be the amount of stored fat, in grams, that the bird has left.",
+  "choices": [
+   "$F = 400 - 18h$",
+   "$F = 400 + \\frac{9}{2}h$",
+   "$F = 400 - \\frac{2}{9}h$",
+   "$F = 400 - \\frac{9}{2}h$"
+  ],
+  "answer": "D",
+  "explanation": "The starting amount is the fat at $h = 0$, which is 400 grams. That is the constant term. The rate is given per 2 hours, so divide to get the rate per hour: $9 \\div 2 = \\frac{9}{2}$ grams per hour. The fat is going down, so the rate is negative. That gives $F = 400 - \\frac{9}{2}h$. To check, after 2 hours the bird should have $400 - 9 = 391$ grams, and $400 - \\frac{9}{2}(2) = 391$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by the 'every 2 hours' figure instead of dividing by it ($9 \\times 2 = 18$). This equation says the bird burns 18 grams each hour, which is four times the actual rate. After 2 hours it would show 364 grams instead of 391."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You found the right rate per hour but gave it the wrong sign. Burning fat makes the amount go down, so the slope must be negative. This equation has the bird gaining fat during the flight."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the wrong way, $2 \\div 9$, which gives hours per gram, not grams per hour. The slope has to be in output units per input unit, so it must be grams per hour, which is $\\frac{9}{2}$."
+   }
+  },
+  "id": "orig-model-from-wor-H-ed50ed",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-model-from-wor-H-ed50ed",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [
+    "situation where __var__ is the number of hours"
+   ],
+   "residue": 1
+  }
  }
 ]

@@ -392,5 +392,139 @@
   "rated_level": "M",
   "rated_why": "Clear fractions by multiplying to get integer coefficients, then set up the parallel-lines proportion carefully",
   "authored_difficulty": "H"
+ },
+ {
+  "stem": "In the given system of equations, $k$ is a constant. If the system has no solution, what is the value of $k$?",
+  "stimulus": "An ornithologist fits straight-line flight paths to radar tracks of two migrating flocks of sandhill cranes. The paths are modeled by the system below, where $x$ and $y$ are map coordinates in kilometers.\n\n$y = \\frac{2}{3}x + 4$\n\n$kx - 9y = 18$",
+  "choices": [
+   "$-\\frac{27}{2}$",
+   "$-6$",
+   "$\\frac{2}{3}$",
+   "$6$"
+  ],
+  "answer": "D",
+  "explanation": "First put the second equation in slope-intercept form: $-9y = -kx + 18$, so $y = \\frac{k}{9}x - 2$. For no solution the lines must be parallel, so their slopes must be equal: $\\frac{k}{9} = \\frac{2}{3}$, which gives $k = 6$. Then check that the lines are different lines. Their y-intercepts are $4$ and $-2$, so they are parallel and never meet. The system has no solution when $k = 6$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You set $\\frac{k}{9}$ equal to $-\\frac{3}{2}$, the negative reciprocal of $\\frac{2}{3}$. That makes the lines perpendicular, so they cross at exactly one point instead of never meeting."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost a negative sign when you divided by $-9$. You wrote the slope as $-\\frac{k}{9}$ instead of $\\frac{k}{9}$. With $k = -6$ the slope is $-\\frac{2}{3}$, so the lines cross."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You set $k$ equal to the slope $\\frac{2}{3}$ without first rewriting the second equation in the same form. In $kx - 9y = 18$, $k$ is not the slope. The slope is $\\frac{k}{9}$, so $k = \\frac{2}{3}$ gives a slope of $\\frac{2}{27}$."
+   }
+  },
+  "id": "orig-no-solution-pa-H-42dfbd",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-no-solution-pa-H-42dfbd",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "One of the two equations in a system of linear equations is given. The system has no solution. Which equation could be the second equation in this system?",
+  "stimulus": "A materials scientist studying an aluminum alloy writes a linear equation that relates $x$, the change in the alloy's temperature in degrees Celsius, to $y$, a measured change in the length of a test rod in micrometers.\n\n$5x - 2y = 8$",
+  "choices": [
+   "$10x - 4y = 16$",
+   "$2x - 5y = 8$",
+   "$-10x + 4y = 16$",
+   "$5x + 2y = 8$"
+  ],
+  "answer": "C",
+  "explanation": "Rewrite the given equation as $y = \\frac{5}{2}x - 4$. In choice C, $4y = 10x + 16$, so $y = \\frac{5}{2}x + 4$. The slopes are equal and the y-intercepts are different ($-4$ and $4$), so the lines are parallel and distinct. Another way to see it: dividing choice C by $-2$ gives $5x - 2y = -8$. That has the same left side as the given equation but a different constant, and subtracting the two equations gives the false statement $0 = 16$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You made the coefficients proportional but didn't check the constants. $10x - 4y = 16$ is the given equation multiplied by $2$, so it describes the same line. That system has infinitely many solutions, not none."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You swapped the $x$ and $y$ coefficients. This line has slope $\\frac{2}{5}$, not $\\frac{5}{2}$, so it crosses the given line at one point."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You kept the coefficients the same size but changed the sign on the $y$-term. That turns the slope into $-\\frac{5}{2}$, so the lines cross at one point."
+   }
+  },
+  "id": "orig-no-solution-pa-H-5628df",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-no-solution-pa-H-5628df",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following systems of linear equations has no solution?",
+  "stimulus": "A printmaker plans a linocut by sketching pairs of carving guides as lines in the xy-plane. Each choice shows one pair of guides as a system of equations.",
+  "choices": [
+   "$y = 4x + 1$ and $8x - 2y = -2$",
+   "$y = -2x + 5$ and $6x + 3y = 9$",
+   "$y = 3x - 2$ and $6x + 2y = 5$",
+   "$y = 6x + 2$ and $x - 6y = 4$"
+  ],
+  "answer": "B",
+  "explanation": "Put each second equation in slope-intercept form and compare. In choice B, $3y = -6x + 9$, so $y = -2x + 3$. It has the same slope as $y = -2x + 5$ but a different y-intercept, so the two lines are parallel and distinct, and the system has no solution. You can also substitute: $6x + 3(-2x + 5) = 9$ simplifies to $15 = 9$, which is false.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "The slopes match, but so do the y-intercepts. $8x - 2y = -2$ rewrites as $y = 4x + 1$, the same line. That system has infinitely many solutions, not none."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You saw the $6$ and the $2$ and treated the slope as $3$. Solving for $y$ gives $y = -3x + \\frac{5}{2}$. The slope is $-3$, so the lines cross."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the $6$ next to $y$ as the slope without solving for $y$. Rewritten, $x - 6y = 4$ becomes $y = \\frac{1}{6}x - \\frac{2}{3}$. Its slope is $\\frac{1}{6}$, not $6$, so the lines cross at one point."
+   }
+  },
+  "id": "orig-no-solution-pa-H-f9a86e",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-no-solution-pa-H-f9a86e",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [
+    "which of the following systems of linear equations",
+    "of the following systems of linear equations has",
+    "the following systems of linear equations has no",
+    "following systems of linear equations has no solution"
+   ],
+   "residue": 11
+  }
  }
 ]

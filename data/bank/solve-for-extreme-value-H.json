@@ -183,7 +183,7 @@
   "verification": {
    "id": "orig-solve-for-extr-H-31bfa2",
    "structure": [],
-   "solve_error": "claude CLI exited 1 with no message",
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
    "overlap": [
     "__var__ __num__ __var__ __num__ __var__ __num__ __var__ __var__",
     "__var__ __num__ __var__ __num__ __var__ __var__ per hour",
@@ -393,5 +393,134 @@
   "rated_level": "M",
   "rated_why": "Linear inequality setup and solution with direction",
   "authored_difficulty": "H"
+ },
+ {
+  "stem": "What is the maximum number of hours of fluent-speaker recordings the linguist can have transcribed?",
+  "stimulus": "A linguist documenting a regional dialect has $\\$1{,}400$ to spend on transcription. Recordings of fluent speakers cost $\\$65$ per hour to transcribe, and recordings of learners cost $\\$40$ per hour. The project requires that at least $8$ hours of learner recordings be transcribed, and only whole hours can be ordered.",
+  "choices": [
+   "16",
+   "17",
+   "21",
+   "24"
+  ],
+  "answer": "A",
+  "explanation": "To get the most fluent-speaker hours, spend as little as you can on learner recordings: the minimum of $8$ hours costs $40(8) = 320$ dollars. That leaves $1{,}400 - 320 = 1{,}080$ dollars, so $65f \\le 1{,}080$ and $f \\le 16.6\\ldots$. The count has to be a whole number and can't go over the cap, so you round down to $16$ hours.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You solved $f \\le 16.6\\ldots$ correctly but rounded up. Seventeen hours would cost $65(17) + 320 = 1{,}425$ dollars, which is over budget. For a maximum, round down."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You divided the whole budget by $65$ ($1{,}400 / 65 \\approx 21.5$) and ignored the requirement of at least $8$ learner hours. That requirement has to be paid for first."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the $8$ learner hours to the $16$ fluent hours and got the total hours transcribed. The question asks only for the fluent-speaker hours."
+   }
+  },
+  "id": "orig-solve-for-extr-H-a435ef",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-solve-for-extr-H-a435ef",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the minimum whole number of hours of press time per month for which the membership plan costs less than the hourly plan?",
+  "stimulus": "A printmaking studio offers two ways to rent its etching press. Under the hourly plan, an artist pays $\\$15$ for each hour of press time. Under the membership plan, an artist pays a monthly fee of $\\$240$ plus $\\$3$ for each hour of press time.",
+  "choices": [
+   "14",
+   "16",
+   "20",
+   "21"
+  ],
+  "answer": "D",
+  "explanation": "Let $h$ be the number of hours. The membership plan costs less when $240 + 3h < 15h$. Subtract $3h$ from both sides to get $240 < 12h$, so $h > 20$. At exactly $20$ hours the two plans cost the same ($\\$300$ each), so the membership plan is not yet cheaper. The smallest whole number greater than $20$ is $21$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the hourly rates instead of subtracting them ($240 < 18h$, so $h > 13.3\\ldots$, which rounds up to $14$). The $3h$ has to be subtracted from $15h$, not added to it."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You compared the $\\$240$ fee with the hourly plan alone ($15h > 240$) and left out the membership plan's $\\$3$ charge per hour."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "At $20$ hours the plans cost the same, $\\$300$ each. The question asks when the membership plan costs less, which is a strict inequality, so the boundary value doesn't count."
+   }
+  },
+  "id": "orig-solve-for-extr-H-a1186c",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-solve-for-extr-H-a1186c",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the minimum number of additional full days of surveying that guarantees the team reaches its goal of 1,000 kilometers?",
+  "stimulus": "A cartography team is mapping a long-distance hiking trail and must survey at least $1{,}000$ kilometers of it before its map can be published. The team has already surveyed $136$ kilometers. Depending on the terrain, the team surveys between $45$ and $60$ kilometers each full day.",
+  "choices": [
+   "15",
+   "19",
+   "20",
+   "23"
+  ],
+  "answer": "C",
+  "explanation": "The team still needs $1{,}000 - 136 = 864$ kilometers. To guarantee the goal, plan for the slowest possible day, $45$ kilometers: $45d \\ge 864$ gives $d \\ge 19.2$. A minimum count rounds up, so the answer is $20$ days.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the fastest rate, $60$ kilometers per day ($864 / 60 = 14.4$, which rounds up to $15$). That gives the fewest days the team might need, not the number that guarantees the goal. A guarantee has to hold even on the slowest days."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You solved $d \\ge 19.2$ but rounded down. After $19$ slow days the team has covered only $855$ of the $864$ kilometers it needs. For a minimum, round up."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You divided the full $1{,}000$ kilometers by $45$ and forgot to subtract the $136$ kilometers already surveyed. You need the remaining distance, not the total."
+   }
+  },
+  "id": "orig-solve-for-extr-H-f268c2",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-solve-for-extr-H-f268c2",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]
