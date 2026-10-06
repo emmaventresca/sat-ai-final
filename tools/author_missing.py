@@ -83,6 +83,12 @@ def plan(counts, good, pending, per_tier, floor, mode):
       broken  cells where most of what exists failed verification
       thin    empty, plus any cell below half the target
       all     every cell below the target
+      exam    every cell the exam actually asks, sized by how often it asks
+              it there. This is the mode that serves the whole score range:
+              a student aiming at 1500 needs the Hard end of every
+              recognition, and a student aiming at 1100 needs the Easy end,
+              so the target for a cell comes from the exam's own per-tier
+              counts rather than from one number applied everywhere.
     """
     freq = load("subtype_counts.json")["subtypes"]
     skills = {s["skill_name"]: s for s in load("skills.json")["skills"]}
@@ -93,6 +99,25 @@ def plan(counts, good, pending, per_tier, floor, mode):
         if not skill:
             continue
         total = meta.get("count_total", 0)
+
+        if mode == "exam":
+            for tier, key in (("E", "count_e"), ("M", "count_m"), ("H", "count_h")):
+                asks = meta.get(key, 0)
+                if not asks:
+                    continue          # the exam does not ask it at this tier
+                # Proportional, with a floor so a rare cell still has enough
+                # to practise and a ceiling so a common one does not eat the
+                # whole run.
+                want = max(per_tier, min(10, round(asks / 2)))
+                have = counts[(slug, tier)]
+                if have >= want:
+                    continue
+                jobs.append({
+                    "skill_cd": skill["skill_cd"], "subtype": slug, "tier": tier,
+                    "n": want - have, "frequency": total, "have": have,
+                    "name": meta["skill"], "asks": asks,
+                })
+            continue
         # Hard only where the test actually asks it, and never without the
         # Medium tier that the app's ladder reaches it through.
         tiers = ["E", "M"]
@@ -130,7 +155,10 @@ def plan(counts, good, pending, per_tier, floor, mode):
                 "n": per_tier - have, "frequency": total, "have": have,
                 "name": meta["skill"],
             })
-    jobs.sort(key=lambda j: (-j["frequency"], j["subtype"], j["tier"]))
+    # Empty cells first - a cell with nothing in it is a student opening a
+    # tier and finding a blank page, which is worse than a thin one.
+    jobs.sort(key=lambda j: (j["have"] > 0, -j.get("asks", j["frequency"]),
+                             -j["frequency"], j["subtype"], j["tier"]))
     return jobs
 
 
@@ -157,10 +185,11 @@ def main():
                          "own bank file, so they do not contend.")
     ap.add_argument("--model", default="claude-opus-5-5")
     ap.add_argument("--mode", default="empty",
-                    choices=("empty", "broken", "thin", "all"),
+                    choices=("empty", "broken", "thin", "all", "exam"),
                     help="empty: subtypes with nothing (default); "
                          "broken: cells where nothing survived verification; "
-                         "thin: those plus half-full cells; all: every gap")
+                         "thin: those plus half-full cells; all: every gap; "
+                         "exam: every cell the exam asks, sized by how often")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
