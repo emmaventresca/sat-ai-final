@@ -1,0 +1,293 @@
+[
+ {
+  "stem": "According to the model, by how many grams does the pumpkin's mass increase from the end of week 2 to the end of week 4 after pollination?",
+  "stimulus": "An agronomist tracking a field of giant pumpkins models the mass $M$, in grams, of one pumpkin $x$ days after pollination with the function $M(x) = 420x + 150$ for $10 \\le x \\le 40$.",
+  "choices": [
+   "840",
+   "5,880",
+   "6,030",
+   "11,910"
+  ],
+  "answer": "B",
+  "explanation": "Week 2 ends on day 14 and week 4 ends on day 28, so the input goes up by $28 - 14 = 14$ days. The change in output is slope \u00d7 change in input: $420 \\times 14 = 5{,}880$ grams. The constant 150 is in both values and cancels.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You treated the input as weeks and multiplied 420 by the 2-week gap. But $x$ counts days, so the gap is 14 days, not 2."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You put the 14-day change straight into the function, $420(14) + 150$, so the 150 got added in. The starting constant cancels when you find a change, so leave it out."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $M(28)$, which is the mass at the end of week 4. The question asks how much the mass increased between the two times, not what it was at the end."
+   }
+  },
+  "id": "orig-change-in-outp-H-235005",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-H-235005",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the graph, by how many beats per minute does the runner's heart rate increase when the treadmill speed increases from 8 km/h to 14 km/h?",
+  "stimulus": "During a graded exercise test, a sports scientist measured a runner's heart rate $H$, in beats per minute, at several treadmill speeds $s$, in kilometers per hour. The graph shows the linear relationship between $s$ and $H$.",
+  "figure": {
+   "type": "line",
+   "caption": "Heart Rate During Treadmill Test",
+   "x_label": "Treadmill speed, s (km/h)",
+   "y_label": "Heart rate, H (beats per minute)",
+   "points": [
+    [
+     4,
+     96
+    ],
+    [
+     6,
+     108
+    ],
+    [
+     8,
+     120
+    ],
+    [
+     10,
+     132
+    ],
+    [
+     12,
+     144
+    ],
+    [
+     14,
+     156
+    ],
+    [
+     16,
+     168
+    ],
+    [
+     18,
+     180
+    ]
+   ],
+   "x_min": 4,
+   "x_max": 18,
+   "x_step": 2,
+   "y_min": 60,
+   "y_max": 180,
+   "y_step": 12,
+   "alt": "A straight line rising from left to right, showing heart rate increasing steadily as treadmill speed increases from 4 to 18 kilometers per hour."
+  },
+  "choices": [
+   "36",
+   "108",
+   "120",
+   "156"
+  ],
+  "answer": "A",
+  "explanation": "Read the graph at both ends of the interval. At 8 km/h the heart rate is 120, and at 14 km/h it is 156. The increase is $156 - 120 = 36$ beats per minute. You can also use the slope: 6 beats per minute for each km/h, times a 6 km/h increase, gives 36.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You took the 6 km/h change, treated it as a speed and read the heart rate there (108). That value includes the line's starting level. You need the difference between the outputs at the two ends."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "120 is the heart rate at 8 km/h, the start of the interval. The question asks how much the heart rate changes across the interval."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "156 is the heart rate at 14 km/h, the end of the interval. You need to subtract the heart rate at 8 km/h to get the increase."
+   }
+  },
+  "id": "orig-change-in-outp-H-8ac5b7",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-H-8ac5b7",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the graph shows the linear relationship between __var__",
+    "graph shows the linear relationship between __var__ and",
+    "shows the linear relationship between __var__ and __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "Based on the table, by how many meters does the total length of cloth increase for every 4 additional hours of weaving?",
+  "stimulus": "A textile historian reconstructing the output of a 19th-century power loom found that the total length $L$, in meters, of cloth in a mill's storeroom was a linear function of the number of hours $t$ the loom had run that day. The storeroom already held some cloth before the loom started.\nCloth in Storeroom\nHours of weaving, t | 2 | 5 | 9\nTotal length, L (meters) | 31 | 52 | 80",
+  "choices": [
+   "7",
+   "21",
+   "28",
+   "45"
+  ],
+  "answer": "C",
+  "explanation": "The slope is $\\frac{52 - 31}{5 - 2} = \\frac{21}{3} = 7$ meters per hour. Over 4 more hours the length increases by $7 \\times 4 = 28$ meters. The cloth already in the storeroom doesn't affect the change.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "7 is the increase for one hour, which is the slope. You stopped there and didn't multiply by the 4-hour change."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "21 is the increase between the first two columns of the table, which are 3 hours apart. The question asks about a 4-hour change."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found the full equation $L = 7t + 17$ and substituted $t = 4$. That gives the total length after 4 hours, including the 17 meters already stored. The 17 cancels when you find a change."
+   }
+  },
+  "id": "orig-change-in-outp-H-4288da",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-H-4288da",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Based on the model, which statement describes how the amount of ink in the reservoir changes when the number of prints increases by 48?",
+  "stimulus": "A printmaking studio runs an automated relief press that draws ink from a reservoir. The amount of ink $R$, in milliliters, left in the reservoir after $p$ prints is modeled by the function $R(p) = 640 - 2.5p$.",
+  "choices": [
+   "It increases by 120 milliliters.",
+   "It decreases by 2.5 milliliters.",
+   "It decreases by 520 milliliters.",
+   "It decreases by 120 milliliters."
+  ],
+  "answer": "D",
+  "explanation": "The slope is $-2.5$ milliliters per print. For 48 more prints, the change is $-2.5 \\times 48 = -120$, so the reservoir loses 120 milliliters. The 640 cancels in the change. The negative sign matches the story, because ink gets used up.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the size of the change right but dropped the negative sign on the slope. Ink is used with every print, so the amount has to go down."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "2.5 milliliters is the change for one print. You didn't multiply by the 48-print increase."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You substituted 48 into the function and got $R(48) = 520$. That's the amount left after 48 prints, not the amount used. The starting 640 doesn't belong in a change."
+   }
+  },
+  "id": "orig-change-in-outp-H-100d22",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-H-100d22",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, by how many beats per minute does the average tempo increase over any 8-decade period?",
+  "stimulus": "A musicologist studying recordings of a popular military march models the average tempo, in beats per minute, of performances $x$ decades after 1910 with a linear function $g$. The model gives $g(4) = 118$ and $g(10) = 139$.",
+  "choices": [
+   "3.5",
+   "21",
+   "28",
+   "132"
+  ],
+  "answer": "C",
+  "explanation": "The slope is $\\frac{139 - 118}{10 - 4} = \\frac{21}{6} = 3.5$ beats per minute per decade. Over 8 decades the tempo increases by $3.5 \\times 8 = 28$ beats per minute, no matter where the 8-decade period starts.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "3.5 is the increase per single decade, which is the slope. You still need to multiply by the 8-decade change."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "21 is the increase between the two given values, which are 6 decades apart. You used that interval instead of the 8 decades in the question."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found the full model $g(x) = 3.5x + 104$ and substituted $x = 8$. That gives the tempo in 1990, which includes the constant 104. The constant cancels in a change, so the answer is $3.5 \\times 8$ alone."
+   }
+  },
+  "id": "orig-change-in-outp-H-908196",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-H-908196",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

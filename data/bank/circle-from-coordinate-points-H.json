@@ -1,0 +1,246 @@
+[
+ {
+  "stem": "The circumference of this circle is $k\\pi$ meters, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "A sports scientist marks out a circular agility course on a practice field. On a coordinate grid where each unit is 1 meter, two cones are placed at $(-2, 1)$ and $(4, 9)$. The two cones sit at opposite ends of a diameter of the circular course.",
+  "choices": [
+   "$5$",
+   "$10$",
+   "$20$",
+   "$25$"
+  ],
+  "answer": "B",
+  "explanation": "The cones are at opposite ends of a diameter, so the distance between them is the diameter: $\\sqrt{(4-(-2))^2 + (9-1)^2} = \\sqrt{36 + 64} = 10$. The radius is $r = 5$, and the circumference is $2\\pi r = 10\\pi$. So $k = 10$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the radius, $5$, and stopped. The circumference is $2\\pi r$, so $k$ is twice the radius."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You used the distance between the cones, $10$, as the radius. That distance is the diameter, so $2\\pi(10)$ doubles the true circumference."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You calculated $r^2 = 25$, which gives the area, $25\\pi$. The question asks for the circumference."
+   }
+  },
+  "id": "orig-circle-from-co-H-158b7c",
+  "skill_cd": "S.A.",
+  "subtype": "circle-from-coordinate-points",
+  "subtype_name": "Find the circle's radius from points, then circumference",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-circle-from-co-H-158b7c",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The area of this circle is $k\\pi$ square kilometers, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "A cartographer is mapping the edge of a circular crater. On the map's coordinate grid, where each unit is 1 kilometer, three survey markers at $(0, 0)$, $(8, 0)$ and $(1, 7)$ all lie on the circular rim of the crater.",
+  "choices": [
+   "$10$",
+   "$16$",
+   "$25$",
+   "$100$"
+  ],
+  "answer": "C",
+  "explanation": "The centre is the same distance from $(0, 0)$ and $(8, 0)$, so it lies on $x = 4$. Call it $(4, c)$. Setting the distances to $(0, 0)$ and $(1, 7)$ equal gives $16 + c^2 = 9 + (7 - c)^2$, so $16 = 58 - 14c$ and $c = 3$. The radius is the distance from $(4, 3)$ to $(0, 0)$: $\\sqrt{16 + 9} = 5$. The area is $\\pi r^2 = 25\\pi$, so $k = 25$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $r = 5$ correctly but then used $2r$, which gives the circumference, $10\\pi$. The question asks for the area, $\\pi r^2$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You treated the segment from $(0, 0)$ to $(8, 0)$ as a diameter, which gives $r = 4$. A circle centred at $(4, 0)$ with radius $4$ does not pass through $(1, 7)$, so that segment is not a diameter."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You squared the diameter, $10$, instead of the radius, $5$. Halve the diameter before you substitute it into $\\pi r^2$."
+   }
+  },
+  "id": "orig-circle-from-co-H-64ba85",
+  "skill_cd": "S.A.",
+  "subtype": "circle-from-coordinate-points",
+  "subtype_name": "Find the circle's radius from points, then circumference",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-circle-from-co-H-64ba85",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The circumference of this circle is $k\\pi$ centimeters, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "A printmaker is cutting a circular woodblock. On a coordinate grid where each unit is 1 centimeter, the points $(-4, 14)$, $(6, 14)$ and $(14, 2)$ all lie on the circular edge of the block.",
+  "choices": [
+   "$10$",
+   "$26$",
+   "$52$",
+   "$169$"
+  ],
+  "answer": "B",
+  "explanation": "The centre is the same distance from $(-4, 14)$ and $(6, 14)$, so it lies on $x = 1$. Call it $(1, c)$. Setting the distances to $(6, 14)$ and $(14, 2)$ equal gives $25 + (14 - c)^2 = 169 + (2 - c)^2$, so $221 - 28c = 173 - 4c$ and $c = 2$. The radius is the distance from $(1, 2)$ to $(14, 2)$, which is $13$. The circumference is $2\\pi(13) = 26\\pi$, so $k = 26$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You treated the $10$-centimeter segment from $(-4, 14)$ to $(6, 14)$ as a diameter, which gives $r = 5$. A circle that size cannot reach $(14, 2)$, so that segment is only a chord."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You used the diameter, $26$, as the radius in $2\\pi r$, which doubles the circumference. The radius is $13$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You calculated $r^2 = 169$, which gives the area. The question asks for the circumference, so $k = 2r$."
+   }
+  },
+  "id": "orig-circle-from-co-H-432178",
+  "skill_cd": "S.A.",
+  "subtype": "circle-from-coordinate-points",
+  "subtype_name": "Find the circle's radius from points, then circumference",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-circle-from-co-H-432178",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is __var__ centimeters where __var__ is a constant",
+    "__var__ centimeters where __var__ is a constant what",
+    "centimeters where __var__ is a constant what is"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "The area of this circle is $k\\pi$ square meters, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "A folklore researcher is documenting a stone circle that local legend says was laid out by giants. On a site plan where each unit is 1 meter, two standing stones at $(-3, -5)$ and $(9, 11)$ sit at opposite ends of a diameter of the circle.",
+  "choices": [
+   "$10$",
+   "$20$",
+   "$100$",
+   "$400$"
+  ],
+  "answer": "C",
+  "explanation": "The stones are at opposite ends of a diameter, so the distance between them is the diameter: $\\sqrt{12^2 + 16^2} = \\sqrt{400} = 20$. The radius is $r = 10$, and the area is $\\pi r^2 = 100\\pi$. So $k = 100$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the radius, $10$, and stopped. For area, $k$ is the radius squared."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You calculated $2r = 20$, which gives the circumference, $20\\pi$. The question asks for the area."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used the distance between the stones, $20$, as the radius. That distance is the diameter, so squaring it gives four times the true area."
+   }
+  },
+  "id": "orig-circle-from-co-H-e8f728",
+  "skill_cd": "S.A.",
+  "subtype": "circle-from-coordinate-points",
+  "subtype_name": "Find the circle's radius from points, then circumference",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-circle-from-co-H-e8f728",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The circumference of this circle is $k\\pi$ meters, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "A marine biologist anchors a circular net enclosure to study juvenile reef fish. On a coordinate grid of the lagoon where each unit is 1 meter, buoys at $(-6, 7)$, $(10, 7)$ and $(8, -7)$ all lie on the circular edge of the enclosure.",
+  "choices": [
+   "$16$",
+   "$20$",
+   "$40$",
+   "$100$"
+  ],
+  "answer": "B",
+  "explanation": "The centre is the same distance from $(-6, 7)$ and $(10, 7)$, so it lies on $x = 2$. Call it $(2, c)$. Setting the distances to $(10, 7)$ and $(8, -7)$ equal gives $64 + (7 - c)^2 = 36 + (-7 - c)^2$, so $113 - 14c = 85 + 14c$ and $c = 1$. The radius is the distance from $(2, 1)$ to $(10, 7)$: $\\sqrt{64 + 36} = 10$. The circumference is $2\\pi(10) = 20\\pi$, so $k = 20$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You treated the $16$-meter segment from $(-6, 7)$ to $(10, 7)$ as a diameter, which gives $r = 8$. A circle centred at $(2, 7)$ with radius $8$ does not pass through $(8, -7)$, so that segment is only a chord."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You used the diameter, $20$, as the radius in $2\\pi r$, which doubles the circumference. The radius is $10$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You calculated $r^2 = 100$, which gives the area. The question asks for the circumference, so $k = 2r$."
+   }
+  },
+  "id": "orig-circle-from-co-H-9bd79f",
+  "skill_cd": "S.A.",
+  "subtype": "circle-from-coordinate-points",
+  "subtype_name": "Find the circle's radius from points, then circumference",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-circle-from-co-H-9bd79f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

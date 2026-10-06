@@ -68,15 +68,27 @@ def _env():
             "PATH": os.environ["PATH"] + ":" + os.path.expanduser("~/.local/bin")}
 
 
-def run_claude(prompt, model, timeout=900, attempts=MAX_ATTEMPTS):
-    """Call the CLI and return its stdout, retrying transient failures."""
+def run_claude(prompt, model, timeout=900, attempts=MAX_ATTEMPTS,
+               allowed_tools=None):
+    """Call the CLI and return its stdout, retrying transient failures.
+
+    `allowed_tools` grants the headless run specific tools. Reading an image
+    needs Read, and without it the CLI answers from nothing and says the
+    permission was denied - which looks like a model that cannot see rather
+    than a flag that was missing.
+    """
+    cmd = ["claude", "-p", prompt, "--model", model]
+    if allowed_tools:
+        cmd += ["--allowedTools", ",".join(allowed_tools)]
     last = None
     for attempt in range(1, attempts + 1):
         BREAKER.check()
         try:
             proc = subprocess.run(
-                ["claude", "-p", prompt, "--model", model],
-                capture_output=True, text=True, timeout=timeout, env=_env())
+                cmd, capture_output=True, text=True, timeout=timeout,
+                # Without this the CLI waits three seconds for stdin that is
+                # never coming, on every call.
+                stdin=subprocess.DEVNULL, env=_env())
         except subprocess.TimeoutExpired:
             last = f"timed out after {timeout}s"
         else:
@@ -103,9 +115,11 @@ def _decode(text, opener):
     return json.JSONDecoder().raw_decode(text[i:])[0]
 
 
-def call_json_array(prompt, model, timeout=900):
-    return _decode(run_claude(prompt, model, timeout), "[")
+def call_json_array(prompt, model, timeout=900, allowed_tools=None):
+    return _decode(run_claude(prompt, model, timeout,
+                              allowed_tools=allowed_tools), "[")
 
 
-def call_json_object(prompt, model, timeout=600):
-    return _decode(run_claude(prompt, model, timeout), "{")
+def call_json_object(prompt, model, timeout=600, allowed_tools=None):
+    return _decode(run_claude(prompt, model, timeout,
+                              allowed_tools=allowed_tools), "{")

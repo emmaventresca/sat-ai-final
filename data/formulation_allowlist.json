@@ -1,5 +1,5 @@
 {
-  "note": "Spans our own items share with the third-party books that a human reviewed and judged to be standard exam formulation rather than anyone's authorship. Each entry names the reason. This is a list of specific spans, not a loosened threshold - an over-permissive rule fails open and silently, a reviewed list does not.",
+  "note": "Spans our own items share with the third-party books that a human reviewed and judged to be standard exam formulation rather than anyone's authorship. Each entry names the reason. This is a list of specific spans, not a loosened threshold - an over-permissive rule fails open and silently, a reviewed list does not. Single letters other than 'a' and 'i' are collapsed before matching, since which letter a variable is carries no expression - 'where b and c are constants' and 'where h and k are constants' are one sentence, not two. Without that, an entry only ever covered the letters it happened to be written with.",
   "reviewed_on": "2026-10-06",
   "spans": [
     {
@@ -29,6 +29,18 @@
     {
       "text": "are constants for which of the following values of",
       "why": "Standard 'find the constant' stem. 'for which of the following values of' appears in 2 College Board items."
+    },
+    {
+      "text": "h and k are constants what is the value of",
+      "why": "Coefficient matching, in its 'are constants, what is the value of' order. Written without the leading 'where' so the shape covers the stem whether or not that clause is present. 'are constants' appears in 42 College Board items and 'what is the value of' in 334."
+    },
+    {
+      "text": "the equation is true for all values of x what is the value of",
+      "why": "The identity stem without the trailing 'where ... are constants' clause already listed. Both halves are College Board's."
+    },
+    {
+      "text": "in the system of equations above k is a constant if the system has",
+      "why": "Standard system-with-a-constant stem. 'is a constant' appears in 76 College Board items."
     }
   ],
   "how_verified": "Each span was searched for in College Board's own corpus with LaTeX stripped. All of them appear there, which settles the question: they are the exam's wording, carried by the books because the books teach the same exam. They did not clear the automatic College Board exemption only because an 8-word window straddles a variable position, where the two normalisers disagree - the corpus has LaTeX, the PDFs have loose glyphs."

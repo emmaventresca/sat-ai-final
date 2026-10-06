@@ -1,0 +1,146 @@
+[
+ {
+  "stem": "Which function gives the mass $M$, in grams, of the sample after $t$ centuries?",
+  "stimulus": "An archaeologist models a buried sample that starts with 800 grams of a substance. The mass of the substance decreases by 10% each century.",
+  "choices": [
+   "$M = 800(0.9)^t$",
+   "$M = 800(0.1)^t$",
+   "$M = 800(1.1)^t$",
+   "$M = 800 - 80t$"
+  ],
+  "answer": "A",
+  "explanation": "In an exponential model, the starting amount is multiplied by the growth factor once for each step. A 10% decrease keeps $1 - 0.10 = 0.9$ of the mass each century. The model is $M = 800(0.9)^t$. Turning 'decreases by r%' into a factor is the first move in every exponential decay question on the test, including ones about depreciation, medicine leaving the body, and populations shrinking.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the rate 0.1 as the factor. Multiplying by 0.1 would wipe out 90% of the mass each century. The factor for a 10% decrease is the part that remains: $1 - 0.1 = 0.9$."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You built the factor for a 10% increase. A decrease means you subtract the rate from 1, so the factor is 0.9, not 1.1."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You subtracted a fixed 80 grams each century, which gives a linear model. A percent decrease takes away 10% of whatever is left. The amount removed shrinks each century, so the model has to be exponential."
+   }
+  },
+  "id": "orig-build-exponent-F-cedf08",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "F",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which function gives the number of beetles $P$ after $t$ years?",
+  "stimulus": "An ecologist counts 50 beetles in a meadow. The beetle population doubles every 3 years.",
+  "choices": [
+   "$P = 50(2)^{t}$",
+   "$P = 50(2)^{t/3}$",
+   "$P = 50(2)^{3t}$",
+   "$P = 50(3)^{t/2}$"
+  ],
+  "answer": "B",
+  "explanation": "The population doubles once every 3 years, so after $t$ years it has doubled $t/3$ times. The model is $P = 50(2)^{t/3}$. Check it: at $t = 3$ the exponent is 1, so $P = 100$. Dividing the exponent by the step interval is what you need for every 'doubles every __' or 'halves every __' question.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You forgot to divide the exponent by the doubling interval. This model doubles every year: at $t = 3$ it gives 400 instead of 100."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by 3 where you should have divided. This model doubles three times each year, which is much faster than once every 3 years."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You swapped the two numbers. The 2 is the multiplier because the population doubles. The 3 is the length of each step in years, so it belongs in the denominator of the exponent."
+   }
+  },
+  "id": "orig-build-exponent-F-dc854f",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "F",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "The area can be modeled by $A = 4 \\cdot b^t$. What is the value of $b$?",
+  "stimulus": "A meteorologist tracks the area covered by a growing storm cell.\nArea of Storm Cell\nTime, t (hours) | Area, A (square kilometers)\n0 | 4\n1 | 12\n2 | 36\n3 | 108",
+  "choices": [
+   "$3$",
+   "$8$",
+   "$4$",
+   "$\\frac{1}{3}$"
+  ],
+  "answer": "A",
+  "explanation": "In $A = 4 \\cdot b^t$, $b$ is the number the area is multiplied by each hour. Divide one row by the row before it: $12 \\div 4 = 3$, $36 \\div 12 = 3$, $108 \\div 36 = 3$. So $b = 3$. Finding the constant ratio in a table is how you fit an exponential model to any table on the test.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You subtracted ($12 - 4 = 8$) instead of dividing. A constant difference describes a linear table. Here the differences grow (8, 24, 72), but the ratios stay at 3, so the table is exponential."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "4 is the starting area, which is the value of $a$ in the model, not $b$. The question asks for the multiplier per hour."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided an earlier value by a later one ($4 \\div 12$). The area grows, so the factor must be greater than 1. Divide each value by the one before it."
+   }
+  },
+  "id": "orig-build-exponent-F-714850",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "F",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $C$ when $t = 2$?",
+  "stimulus": "A public health team models the number of flu cases $C$ in a town $t$ weeks after the first report with $C = 200(1.5)^t$. In this model, cases start at 200 and increase by 50% each week.",
+  "choices": [
+   "$300$",
+   "$400$",
+   "$450$",
+   "$600$"
+  ],
+  "answer": "C",
+  "explanation": "Substitute $t = 2$: $C = 200(1.5)^2 = 200(2.25) = 450$. You multiply by 1.5 once for each week: $200 \\to 300 \\to 450$. Plugging an input into an exponential model is how you answer 'what is the value after __' questions on the test.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "300 is the number of cases after one week. You stopped after the first multiplication by 1.5, but $t = 2$ needs two."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You added 100 cases each week, which is 50% of the starting 200. That treats the percent change as a fixed amount, which is a linear model. In the second week the 50% is taken of 300, so 150 cases are added."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied 1.5 by 2 instead of raising it to the power of 2. $(1.5)^2 = 2.25$, not 3."
+   }
+  },
+  "id": "orig-build-exponent-F-4ea42b",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "F",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

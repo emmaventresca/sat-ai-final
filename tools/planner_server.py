@@ -20,12 +20,14 @@ request is answered with the project's own derived material in context:
 
   python3 tools/planner_server.py          # then open the Plan tab
 """
-import json, os, re, subprocess, sys, tempfile, threading, time
+import base64, binascii, json, os, re, subprocess, sys, tempfile, threading, time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOOLS = os.path.join(ROOT, "tools")
+sys.path.insert(0, TOOLS)
+from cli import call_json_object                        # noqa: E402
 PORT = int(os.environ.get("PLANNER_PORT", "8791"))
 MODEL = os.environ.get("PLANNER_MODEL", "claude-opus-5-5")
 
@@ -292,6 +294,99 @@ def generate_items(req):
     return passed[:n]
 
 
+# ---------------------------------------------------------------------------
+# Identifying a question from a screenshot
+#
+# A teacher has a question on screen - in Bluebook, in a textbook, on a
+# worksheet - and wants more like it. The useful thing to extract is WHICH
+# RECOGNITION it is, which is a fact about the question and not its
+# expression.
+#
+# So the prompt asks for a classification and forbids returning the text.
+# That is the whole legal design: the image may be College Board's, and the
+# answer we keep is "this is a two-way table conditional probability question
+# at Medium", which is ours. The file is written to a temp path, read once,
+# and deleted in a finally - processed, never persisted (docs/DESIGN.md 3,
+# tier 3).
+# ---------------------------------------------------------------------------
+
+IDENTIFY = """Look at the question in the image at {path}.
+
+You are classifying it against a taxonomy, NOT transcribing it.
+
+DO NOT reproduce the question. No stem, no passage, no answer choices, no
+numbers from it, not even paraphrased. If you find yourself quoting, stop.
+The image may be copyrighted material and we keep only the classification,
+which is a fact about the question rather than anything anyone wrote.
+
+Our taxonomy, as "<skill> / <subtype slug>: <what it is>":
+
+{taxonomy}
+
+Respond with ONLY JSON:
+{{"section": "math"|"rw",
+  "skill_cd": "<code from the list>",
+  "subtype": "<slug from the list>",
+  "difficulty": "E"|"M"|"H",
+  "format": "mc"|"grid",
+  "confidence": "high"|"medium"|"low",
+  "why": "<one sentence on what makes it that recognition - about the TYPE, "
+         "not about this question's content>",
+  "watch_for": "<the mistake this type is built to catch, in your own words>"}}
+
+If nothing fits, set subtype to null and say so in why."""
+
+
+def taxonomy_lines(section=None):
+    """The recognitions, compact enough to put in a prompt."""
+    tax = load("subtypes.json", {}).get("skills", {})
+    skills = {s["skill_name"]: s for s in load("skills.json", {}).get("skills", [])}
+    out = []
+    for skill_name, v in tax.items():
+        if section and v.get("section") != section:
+            continue
+        cd = skills.get(skill_name, {}).get("skill_cd", "?")
+        for st in v.get("subtypes", []):
+            tell = (st.get("tell") or "")[:150]
+            out.append(f"{cd} {skill_name} / {st['slug']}: {tell}")
+    return "\n".join(out)
+
+
+def identify_screenshot(req):
+    data = req.get("image") or ""
+    if "," in data[:60]:
+        data = data.split(",", 1)[1]          # strip a data: URL prefix
+    try:
+        blob = base64.b64decode(data, validate=True)
+    except (binascii.Error, ValueError):
+        raise ValueError("that does not look like an image")
+    if not blob:
+        raise ValueError("no image was sent")
+    if len(blob) > 12 * 1024 * 1024:
+        raise ValueError("image is larger than 12MB")
+
+    fd, path = tempfile.mkstemp(suffix=".png", prefix="question-")
+    try:
+        with os.fdopen(fd, "wb") as fh:
+            fh.write(blob)
+        prompt = IDENTIFY.format(path=path,
+                                 taxonomy=taxonomy_lines(req.get("section")))
+        out = call_json_object(prompt, MODEL, timeout=300,
+                               allowed_tools=["Read"])
+    finally:
+        if os.path.exists(path):
+            os.unlink(path)
+
+    # Skill codes carry a trailing dot ("H.A."), and a model that has just
+    # read one off a list drops it about half the time. Match it back rather
+    # than handing the browser a code that will not join.
+    codes = {s["skill_cd"] for s in load("skills.json", {}).get("skills", [])}
+    cd = str(out.get("skill_cd") or "")
+    if cd and cd not in codes:
+        out["skill_cd"] = next((c for c in codes if c.rstrip(".") == cd.rstrip(".")), None)
+    return out
+
+
 class Handler(BaseHTTPRequestHandler):
     def _send(self, code, payload):
         body = json.dumps(payload).encode()
@@ -320,6 +415,15 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         path = urlparse(self.path).path
+        if path == "/identify":
+            try:
+                n = int(self.headers.get("Content-Length", 0))
+                if n > 20 * 1024 * 1024:
+                    return self._send(413, {"error": "image too large"})
+                req = json.loads(self.rfile.read(n) or b"{}")
+                return self._send(200, identify_screenshot(req))
+            except Exception as exc:
+                return self._send(500, {"error": str(exc)[:300]})
         if path == "/generate":
             try:
                 n = int(self.headers.get("Content-Length", 0))

@@ -1,0 +1,256 @@
+[
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "A labour economist surveyed workers at a regional distribution centre about their employment status and union membership. The results are shown in the table.\n\nWorkers by Employment Status and Union Membership\nEmployment status | Union member | Not a union member\nFull-time | 54 | 66\nPart-time | $x$ | 63\n\nIf one of the part-time workers surveyed is selected at random, the probability of selecting a union member is $0.3$.",
+  "choices": [
+   "$19$",
+   "$27$",
+   "$90$",
+   "$147$"
+  ],
+  "answer": "B",
+  "explanation": "The condition is \"part-time,\" so only the part-time row counts. That row's total is $x + 63$, and it includes the unknown cell. Set up $\\frac{x}{x+63} = 0.3$. Multiply both sides by the denominator to get $x = 0.3x + 18.9$, so $0.7x = 18.9$ and $x = 27$. Check: $\\frac{27}{90} = 0.3$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You computed $0.3 \\times 63 = 18.9$ and rounded. That treats 63 as the whole part-time group, but the part-time total is $x + 63$. The unknown cell also belongs in the denominator."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You solved correctly but reported $x + 63 = 90$, the total number of part-time workers. The question asks for $x$, the number of part-time union members."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You treated $0.3$ as the probability of selecting a non-member, solving $\\frac{63}{x+63} = 0.3$. The probability given is for selecting a union member, so $x$ goes in the numerator."
+   }
+  },
+  "id": "orig-reverse-probab-H-1641e4",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-H-1641e4",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is selected at random the probability of selecting",
+    "selected at random the probability of selecting a"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "How many of the tiles warped?",
+  "stimulus": "A materials lab fired 280 ceramic tiles and then stress-tested each one. Each tile either passed or did not pass. Every tile that did not pass either cracked or warped, and none did both. If one of the 280 tiles is selected at random, the probability of selecting a tile that passed is $0.75$. If one of the tiles that did not pass is selected at random, the probability of selecting a tile that cracked is $0.4$.",
+  "choices": [
+   "$28$",
+   "$42$",
+   "$70$",
+   "$126$"
+  ],
+  "answer": "B",
+  "explanation": "First find the tiles that did not pass: $280 \\times (1 - 0.75) = 70$. The second probability uses only those 70 tiles as its whole, so $0.4 \\times 70 = 28$ cracked. The rest warped: $70 - 28 = 42$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You stopped at the group the probability describes. $0.4 \\times 70 = 28$ is the number of tiles that cracked, but the question asks about the tiles that warped."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "70 is the total number of tiles that did not pass. You still have to remove the 28 cracked tiles to find the warped ones."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You read $0.75$ as the probability of not passing, which gives $280 \\times 0.75 = 210$ failed tiles and then $0.6 \\times 210 = 126$. The $0.75$ belongs to the tiles that passed."
+   }
+  },
+  "id": "orig-reverse-probab-H-a4f8eb",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-H-a4f8eb",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is selected at random the probability of selecting",
+    "selected at random the probability of selecting a",
+    "is selected at random the probability of selecting",
+    "selected at random the probability of selecting a"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "A hydrologist tested groundwater from monitoring wells in a river basin. Each well was classified by depth and by whether its nitrate level was above the safe limit. The results are shown in the table.\n\nMonitoring Wells by Depth and Nitrate Level\nWell depth | Above limit | Not above limit\nShallow | 9 | 21\nIntermediate | 4 | 24\nDeep | 2 | $x$\n\nIf one of the wells whose nitrate level is not above the limit is selected at random, the probability of selecting a deep well is $0.25$.",
+  "choices": [
+   "$11$",
+   "$15$",
+   "$20$",
+   "$60$"
+  ],
+  "answer": "B",
+  "explanation": "The group you select from is the \"not above limit\" column, so that column is your whole. Its total is $21 + 24 + x = 45 + x$. Set up $\\frac{x}{45+x} = 0.25$, so $x = 11.25 + 0.25x$. Then $0.75x = 11.25$ and $x = 15$. Check: $\\frac{15}{60} = 0.25$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You computed $0.25 \\times 45 = 11.25$ and rounded. You left $x$ out of the column total, even though the deep wells are part of the \"not above limit\" column."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You used the whole table as the denominator, solving $\\frac{x}{60+x} = 0.25$. The selection is made only from wells that are not above the limit, so only that column counts."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "60 is the total of the \"not above limit\" column once $x = 15$. The question asks for $x$, not the column total."
+   }
+  },
+  "id": "orig-reverse-probab-H-83e95b",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-H-83e95b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is selected at random the probability of selecting",
+    "selected at random the probability of selecting a"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "How many timber bridges are in the inventory?",
+  "stimulus": "A county engineering office classified every bridge in its inventory by primary structural material and by inspection rating. The results are shown in the table.\n\nCounty Bridges by Material and Inspection Rating\nMaterial | Adequate | Deficient\nSteel | 45 | 12\nConcrete | 63 | 6\nTimber | 20 | $x$\n\nIf one of the deficient bridges is selected at random, the probability of selecting a timber bridge is $0.4$.",
+  "choices": [
+   "$12$",
+   "$30$",
+   "$32$",
+   "$47$"
+  ],
+  "answer": "C",
+  "explanation": "The condition is \"deficient,\" so the Deficient column is your whole: $12 + 6 + x = 18 + x$. Solve $\\frac{x}{18+x} = 0.4$ to get $x = 7.2 + 0.4x$, so $0.6x = 7.2$ and $x = 12$. The question asks for all timber bridges, so add the adequate ones: $20 + 12 = 32$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "12 is the value of $x$, the number of deficient timber bridges. The question asks for all timber bridges, so you also need to add the 20 adequate timber bridges."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "30 is the total number of deficient bridges, $18 + 12$. That was the denominator of the probability, not the count of timber bridges."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You treated $0.4$ as the probability of selecting a non-timber deficient bridge, solving $\\frac{18}{18+x} = 0.4$ to get $x = 27$, then adding 20. The probability given is for selecting a timber bridge."
+   }
+  },
+  "id": "orig-reverse-probab-H-b1b1cb",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-H-b1b1cb",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is selected at random the probability of selecting",
+    "selected at random the probability of selecting a"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "What is the minimum number of impressions the printmaker must pull to expect at least 150 defect-free prints?",
+  "stimulus": "A printmaker is producing a large edition of an etching. Based on records from earlier runs, the probability that any single impression pulled from the press is free of defects is $0.92$.",
+  "choices": [
+   "$138$",
+   "$162$",
+   "$163$",
+   "$164$"
+  ],
+  "answer": "D",
+  "explanation": "If $n$ impressions are pulled, the expected number of defect-free prints is $0.92n$. You need $0.92n \\ge 150$, so $n \\ge \\frac{150}{0.92} \\approx 163.04$. The number of impressions must be a whole number, and 163 falls just short because $0.92 \\times 163 = 149.96$. So you must round up to $164$, which gives $0.92 \\times 164 = 150.88$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $150 \\times 0.92$ when you should have divided. The 150 defect-free prints are the part, and the number of impressions is the whole you are solving for."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added 8% of 150 to 150. Finding the whole means dividing the part by $0.92$, and adding 8% of the part is not the same thing."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You rounded $163.04$ to the nearest whole number. With 163 pulls the expected count is $149.96$, which is below 150, so the condition \"at least 150\" fails."
+   }
+  },
+  "id": "orig-reverse-probab-H-a9400d",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-H-a9400d",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

@@ -14,9 +14,9 @@
 // the corpus.
 // ---------------------------------------------------------------------------
 
-import { renderText, escapeHtml as esc } from './mathfmt.js?v=80d68ec249';
-import { isGrid } from './grid.js?v=80d68ec249';
-import { renderStimulus, renderFigure } from './mathfmt.js?v=80d68ec249';
+import { renderText, escapeHtml as esc } from './mathfmt.js?v=966802af7e';
+import { isGrid } from './grid.js?v=966802af7e';
+import { renderStimulus, renderFigure } from './mathfmt.js?v=966802af7e';
 
 const LETTERS = 'ABCD';
 const TIER = { E: 'Easy', M: 'Medium', H: 'Hard' };

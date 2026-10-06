@@ -12,17 +12,20 @@
 // here that could fake a student's history.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=80d68ec249';
-import { scoreItem, bandWeights, TIERS } from './engine.js?v=80d68ec249';
-import { focusTier, rankLessons } from './lessons.js?v=80d68ec249';
-import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=80d68ec249';
-import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=80d68ec249';
-import { PREVIEW_KEY } from './store.js?v=80d68ec249';
-import * as chats from './chats.js?v=80d68ec249';
-import { renderPacket } from './packet.js?v=80d68ec249';
+import { makeStore, configured } from './store.js?v=966802af7e';
+import { scoreItem, bandWeights, TIERS } from './engine.js?v=966802af7e';
+import { focusTier, rankLessons } from './lessons.js?v=966802af7e';
+import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=966802af7e';
+import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=966802af7e';
+import { PREVIEW_KEY } from './store.js?v=966802af7e';
+import * as chats from './chats.js?v=966802af7e';
+import { renderPacket } from './packet.js?v=966802af7e';
+import {
+  shotState, resetShot, readFile, identify, matchesFor, writeMoreLikeIt,
+} from './shot.js?v=966802af7e';
 import { plannerState, plannerHealthy, sendToPlanner, renderPlan, STARTERS,
          fetchAgentFeed, newAlerts, markSeen, popDesktop,
-         enableDesktopAlerts, desktopAlertsOn, setSubtypeNames } from './planner.js?v=80d68ec249';
+         enableDesktopAlerts, desktopAlertsOn, setSubtypeNames } from './planner.js?v=966802af7e';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -652,6 +655,141 @@ function screenAgents() {
  * An assignment it proposes is never written to a student's account directly.
  * The teacher approves it first; the model only ever drafts.
  */
+/**
+ * Drop a screenshot of a question in, get the recognition and more like it.
+ *
+ * The image never leaves the teacher's machine and is never stored - it goes
+ * to the local planner, which reads it once, classifies it, and deletes it.
+ * What comes back is a classification, not a transcription; see
+ * web/assets/shot.js for why that distinction is the whole design.
+ */
+function shotPanel() {
+  const st = shotState;
+  const r = st.result;
+  const matches = r ? matchesFor(r, state.practiceItems ?? []) : null;
+
+  return `<div class="shot">
+    <div class="spread">
+      <div>
+        <strong>Have a question on screen?</strong>
+        <div class="tiny muted">Drop a screenshot in and I will tell you which
+          recognition it is and pull more of the same from the bank. The image
+          is read on this machine and deleted &mdash; nothing is stored, and the
+          question itself is never copied.</div>
+      </div>
+      ${r || st.error ? '<button class="btn-sm" id="shot-clear">Clear</button>' : ''}
+    </div>
+
+    <label class="shot-drop" id="shot-drop">
+      <input type="file" id="shot-file" accept="image/*" hidden>
+      ${st.preview ? `<img src="${st.preview}" alt="the screenshot you added">`
+        : `<span>Drop an image, paste it, or <u>choose a file</u></span>`}
+    </label>
+
+    ${st.busy ? `<p class="small muted"><span class="spin"></span>
+      Reading it&hellip; <span id="shot-elapsed"></span></p>` : ''}
+    ${st.error ? `<p class="small" style="color:var(--bad);font-weight:700">${esc(st.error)}</p>` : ''}
+
+    ${r ? `<div class="shot-hit">
+      <div class="meta">
+        <span class="badge name">${esc(state.subtypeNames?.[r.subtype] ?? r.subtype)}</span>
+        <span class="badge ${String(r.difficulty).toLowerCase()}">${esc(r.difficulty)}</span>
+        ${r.format === 'grid' ? '<span class="badge">student-produced</span>' : ''}
+        <span class="badge ${r.confidence === 'high' ? 'e' : 'on'}">${esc(r.confidence)} confidence</span>
+      </div>
+      <p class="small">${esc(r.why ?? '')}</p>
+      ${r.watch_for ? `<p class="small muted"><strong>Built to catch:</strong>
+        ${esc(r.watch_for)}</p>` : ''}
+      <div class="shot-counts">
+        <span><strong>${matches.same.length}</strong> at this level</span>
+        <span><strong>${matches.easier.length}</strong> a step easier</span>
+        <span><strong>${matches.harder.length}</strong> a step harder</span>
+      </div>
+      <div class="row tight" style="margin-top:10px">
+        <button class="btn-primary" id="shot-ask">Build a lesson on this</button>
+        <button class="btn ghost" id="shot-write" ${st.writing ? 'disabled' : ''}>${
+          st.writing ? '<span class="spin"></span> Writing\u2026' : 'Write 6 more like it'}</button>
+      </div>
+      ${st.wrote ? `<p class="small" style="margin:8px 0 0">Wrote ${st.wrote}
+        new question${st.wrote === 1 ? '' : 's'} into the bank.</p>` : ''}
+      ${matches.same.length ? `<ol class="peek">${matches.same.slice(0, 5).map((i) =>
+        `<li>${esc(String(i.stem).replace(/\$[^$]*\$/g, '\u2026').slice(0, 110))}</li>`).join('')}
+      </ol>` : '<p class="tiny muted" style="margin-top:10px">Nothing in the bank at that level yet &mdash; writing some is the fastest way to fix that.</p>'}
+    </div>` : ''}
+  </div>`;
+}
+
+function wireShot() {
+  const drop = $('#shot-drop');
+  const file = $('#shot-file');
+  if (!drop || !file) return;
+
+  const run = async (f) => {
+    try {
+      const url = await readFile(f);
+      await identify(url, null, () => screenPlanner());
+    } catch { /* shotState carries the message */ }
+    screenPlanner();
+  };
+
+  file.onchange = () => { if (file.files[0]) run(file.files[0]); };
+  drop.ondragover = (e) => { e.preventDefault(); drop.classList.add('over'); };
+  drop.ondragleave = () => drop.classList.remove('over');
+  drop.ondrop = (e) => {
+    e.preventDefault();
+    drop.classList.remove('over');
+    const f = e.dataTransfer?.files?.[0];
+    if (f) run(f);
+  };
+  // Paste works anywhere on the page, which is how a screenshot usually
+  // arrives - you take it and hit paste, you do not save it first.
+  document.onpaste = (e) => {
+    const item = [...(e.clipboardData?.items ?? [])].find((i) => i.type.startsWith('image/'));
+    if (item) run(item.getAsFile());
+  };
+
+  const clear = $('#shot-clear');
+  if (clear) clear.onclick = () => { resetShot(); screenPlanner(); };
+
+  const ask = $('#shot-ask');
+  if (ask) ask.onclick = () => {
+    const r = shotState.result;
+    const name = state.subtypeNames?.[r.subtype] ?? r.subtype;
+    const box = $('#ask');
+    if (box) {
+      box.value = `Plan a lesson on "${name}" at ${r.difficulty} level. `
+        + `My student keeps getting caught by: ${r.watch_for ?? 'this type'}.`;
+      box.focus();
+    }
+  };
+
+  const write = $('#shot-write');
+  if (write) write.onclick = async () => {
+    shotState.writing = true; shotState.wrote = 0; screenPlanner();
+    try {
+      const made = await writeMoreLikeIt(shotState.result, 6);
+      state.practiceItems = (state.practiceItems ?? []).concat(made);
+      shotState.wrote = made.length;
+    } catch (e) {
+      shotState.error = String(e.message ?? e);
+    }
+    shotState.writing = false;
+    screenPlanner();
+  };
+
+  if (shotState.busy && shotState.startedAt) {
+    const el = $('#shot-elapsed');
+    if (el) {
+      clearInterval(state.shotTimer);
+      state.shotTimer = setInterval(() => {
+        const e2 = $('#shot-elapsed');
+        if (!e2) return clearInterval(state.shotTimer);
+        e2.textContent = `${Math.round((Date.now() - shotState.startedAt) / 1000)}s`;
+      }, 1000);
+    }
+  }
+}
+
 async function screenPlanner(note) {
   state.screen = 'planner';
   // Restore the open conversation. Chats persist until deleted.
@@ -661,7 +799,7 @@ async function screenPlanner(note) {
     plannerState.loaded = true;
   }
   if (!state.practiceItems) {
-    state.practiceItems = await fetch('../data/practice.json?v=1d70325ee8')
+    state.practiceItems = await fetch('../data/practice.json?v=e9f3791161')
       .then((r) => r.json()).then((d) => d.items).catch(() => []);
   }
   const up = await plannerHealthy();
@@ -747,6 +885,8 @@ async function screenPlanner(note) {
 
       ${note ? `<p class="small" style="color:#0b7a55;font-weight:700">${esc(note)}</p>` : ''}
 
+      ${shotPanel()}
+
       ${plannerState.messages.length ? '' : `<div class="plan-starters">
         ${STARTERS.map((s, i) => `<button data-starter="${i}">${esc(s)}</button>`).join('')}
       </div>`}
@@ -778,6 +918,7 @@ async function screenPlanner(note) {
     state.planTimer = setInterval(tick, 1000);
   }
 
+  wireShot();
   $('#out').onclick = async () => { await store.signOut(); location.reload(); };
   $('#tab-roster').onclick = () => screenRoster();
   $('#tab-agents').onclick = () => screenAgents();
@@ -879,11 +1020,11 @@ async function openStudent(id) {
 
 async function loadData() {
   const [bands, skills, lessons, subtax, agentFeed] = await Promise.all([
-    fetch('../data/bands.json?v=1d70325ee8').then((r) => r.json()),
-    fetch('../data/skills.json?v=1d70325ee8').then((r) => r.json()),
-    fetch('../data/lessons.json?v=1d70325ee8').then((r) => r.json()),
-    fetch('../data/subtypes.json?v=1d70325ee8').then((r) => r.json()).catch(() => ({ skills: {} })),
-    fetch('../data/agent_feed.json?v=1d70325ee8').then((r) => r.json())
+    fetch('../data/bands.json?v=e9f3791161').then((r) => r.json()),
+    fetch('../data/skills.json?v=e9f3791161').then((r) => r.json()),
+    fetch('../data/lessons.json?v=e9f3791161').then((r) => r.json()),
+    fetch('../data/subtypes.json?v=e9f3791161').then((r) => r.json()).catch(() => ({ skills: {} })),
+    fetch('../data/agent_feed.json?v=e9f3791161').then((r) => r.json())
       .catch(() => ({ runs: [], summary: {} })),
   ]);
   state.bands = bands;

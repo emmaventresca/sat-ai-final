@@ -67,11 +67,44 @@ def corpus_sequences():
     return out
 
 
+# A standalone letter in these stems is a variable name, and which letter it
+# is carries no expression - "where b and c are constants" and "where h and k
+# are constants" are one sentence, not two. Without collapsing them a reviewed
+# span only ever covers the letters it happened to be written with, and the
+# same stem comes back flagged every time an author picks different ones.
+#
+# "a" and "i" are left alone: they are an article and a pronoun far more often
+# than they are variables, and collapsing them would quietly rewrite ordinary
+# English on both sides of the comparison.
+VAR_LETTER = re.compile(r"\b(?![ai]\b)[a-z]\b")
+
+
+def collapse_vars(text):
+    return VAR_LETTER.sub("__v__", text)
+
+
+def covered(span, reviewed):
+    """Is what is left of this span, after the reviewed shapes are taken out,
+    too short to be anyone's expression?
+
+    Plain containment was too brittle at the edges: a span that is a reviewed
+    stem plus two trailing variable names matched neither direction, so the
+    same sentence came back flagged every time an author added a letter. Cut
+    the known shapes out and measure the longest run that survives - the same
+    residue idea the College Board side uses.
+    """
+    shape = collapse_vars(span)
+    for r in reviewed:
+        shape = shape.replace(r, " | ")
+    return max((len(part.split()) for part in shape.split("|")), default=0) \
+        < RESIDUE_REPORT
+
+
 def reviewed_spans():
     """Spans a human looked at and judged to be exam formulation."""
     if not os.path.exists(ALLOWLIST):
         return []
-    return [e["text"] for e in json.load(open(ALLOWLIST))["spans"]]
+    return [collapse_vars(e["text"]) for e in json.load(open(ALLOWLIST))["spans"]]
 
 
 def spans(text, book, exempt, minlen):
@@ -134,7 +167,7 @@ def main():
             continue
         checked += 1
         for span in spans(text, book, exempt, RESIDUE_REPORT):
-            if any(r in span or span in r for r in reviewed):
+            if covered(span, reviewed):
                 continue
             hits.append((where, span))
 

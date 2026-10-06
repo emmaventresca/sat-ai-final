@@ -1,0 +1,217 @@
+[
+ {
+  "stem": "A seismologist's model of ground-motion amplitude contains the expression $\\sqrt[3]{x^{2}}\\cdot\\sqrt{x}$, where $x > 0$. This expression is equivalent to $x^{k}$, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": null,
+  "keys": [
+   "7/6",
+   "1.166",
+   "1.167"
+  ],
+  "any_of": false,
+  "explanation": "First, write each root as a fractional exponent. The cube root of $x^{2}$ is $x^{\\frac{2}{3}}$, and $\\sqrt{x}$ is $x^{\\frac{1}{2}}$. You are multiplying two powers of the same base, so add the exponents: $\\frac{2}{3}+\\frac{1}{2}=\\frac{4}{6}+\\frac{3}{6}=\\frac{7}{6}$. So $k=\\frac{7}{6}$. To check in Desmos, set $x=2$. Both $\\sqrt[3]{4}\\cdot\\sqrt{2}$ and $2^{7/6}$ come out to about 2.2449.",
+  "common_errors": [
+   {
+    "value": "1/3",
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the exponents, $\\frac{2}{3}\\cdot\\frac{1}{2}$, when you should have added them. That is the power-of-a-power rule used on a product of powers."
+   },
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "You turned the cube root of $x^{2}$ into $x^{\\frac{3}{2}}$ by putting the root index in the numerator. Then you added $\\frac{3}{2}+\\frac{1}{2}=2$."
+   },
+   {
+    "value": "3/5",
+    "misconception": "algebra-manipulation",
+    "why": "You added the fractions by adding numerators and adding denominators: $\\frac{2+1}{3+2}=\\frac{3}{5}$."
+   }
+  ],
+  "id": "orig-exponent-radic-M-8854bb",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-8854bb",
+   "structure": [],
+   "solver_answer": "7/6",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ is",
+    "is equivalent to __var__ where __var__ is a",
+    "equivalent to __var__ where __var__ is a constant",
+    "to __var__ where __var__ is a constant what"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In a nutrition study, the expression $\\left(27n^{6}\\right)^{\\frac{2}{3}}$, where $n > 0$, appears in a model relating daily protein intake to muscle-mass gain. This expression is equivalent to $cn^{k}$, where $c$ and $k$ are constants. What is the value of $c + k$?",
+  "stimulus": null,
+  "keys": [
+   "13"
+  ],
+  "any_of": false,
+  "explanation": "The exponent $\\frac{2}{3}$ applies to both the coefficient and the variable. For the coefficient, $27^{\\frac{2}{3}}=\\left(\\sqrt[3]{27}\\right)^{2}=3^{2}=9$. For the variable, raising a power to a power means multiplying the exponents: $\\left(n^{6}\\right)^{\\frac{2}{3}}=n^{6\\cdot\\frac{2}{3}}=n^{4}$. So the expression is $9n^{4}$, which gives $c=9$ and $k=4$. Then $c+k=13$.",
+  "common_errors": [
+   {
+    "value": "31",
+    "misconception": "algebra-manipulation",
+    "why": "You applied the exponent to $n^{6}$ but not to the coefficient. You left 27 unchanged and added it to 4."
+   },
+   {
+    "value": "22",
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the coefficient by the exponent, $27\\cdot\\frac{2}{3}=18$, instead of raising it to that power. Then you added 4."
+   },
+   {
+    "value": "7",
+    "misconception": "intermediate-step",
+    "why": "You took the cube root of 27 to get 3 but did not square it. Then you added 4."
+   },
+   {
+    "value": "9",
+    "misconception": "wrong-target-quantity",
+    "why": "You found $c=9$ correctly but reported $c$ alone instead of $c+k$."
+   }
+  ],
+  "id": "orig-exponent-radic-M-bb3cfc",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-bb3cfc",
+   "structure": [],
+   "solver_answer": 13,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "An ecologist models the density of a beetle population with an expression involving $y$, the area of habitat surveyed. For $y > 0$, the expression $\\dfrac{y^{\\frac{1}{2}}}{\\sqrt[4]{y^{3}}\\cdot y^{-2}}$ is equivalent to $y^{k}$, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": null,
+  "keys": [
+   "7/4",
+   "1.75"
+  ],
+  "any_of": false,
+  "explanation": "First, rewrite the root: $\\sqrt[4]{y^{3}}=y^{\\frac{3}{4}}$. Multiplying powers means adding exponents, so the denominator is $y^{\\frac{3}{4}+(-2)}=y^{-\\frac{5}{4}}$. Dividing means subtracting the denominator's exponent: $\\frac{1}{2}-\\left(-\\frac{5}{4}\\right)=\\frac{2}{4}+\\frac{5}{4}=\\frac{7}{4}$. So $k=\\frac{7}{4}$, or 1.75.",
+  "common_errors": [
+   {
+    "value": "7/6",
+    "misconception": "algebra-manipulation",
+    "why": "You turned the fourth root of $y^{3}$ into $y^{\\frac{4}{3}}$ by putting the root index in the numerator. That gives $\\frac{1}{2}-\\frac{4}{3}+2=\\frac{7}{6}$."
+   },
+   {
+    "value": "-9/4",
+    "misconception": "algebra-manipulation",
+    "why": "When you divided by $y^{-2}$, you subtracted 2 instead of subtracting $-2$. That gives $\\frac{1}{2}-\\frac{3}{4}-2=-\\frac{9}{4}$."
+   },
+   {
+    "value": "-3/4",
+    "misconception": "algebra-manipulation",
+    "why": "You added the exponent of $y^{\\frac{3}{4}}$ and subtracted the exponent of $y^{-2}$, which reverses both signs. That gives $\\frac{1}{2}+\\frac{3}{4}-2=-\\frac{3}{4}$."
+   }
+  ],
+  "id": "orig-exponent-radic-M-d43158",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-d43158",
+   "structure": [],
+   "solver_answer": "7/4",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ is equivalent to __var__ where __var__ is",
+    "is equivalent to __var__ where __var__ is a",
+    "equivalent to __var__ where __var__ is a constant",
+    "to __var__ where __var__ is a constant what"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "An archaeologist estimating the age of a buried hearth uses a formula that contains the expression $\\sqrt{\\dfrac{a^{9}b^{3}}{a\\,b^{-1}}}$, where $a > 0$ and $b > 0$. This expression is equivalent to $a^{m}b^{n}$, where $m$ and $n$ are constants. What is the value of $m + n$?",
+  "stimulus": null,
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "First, simplify inside the root by subtracting exponents. For $a$: $9-1=8$. For $b$: $3-(-1)=4$. So the radicand is $a^{8}b^{4}$. The square root is the exponent $\\frac{1}{2}$, and it applies to both variables: $\\left(a^{8}b^{4}\\right)^{\\frac{1}{2}}=a^{4}b^{2}$. So $m=4$ and $n=2$, and $m+n=6$. To check in Desmos, set $a=2$ and $b=3$. Both the original expression and $2^{4}\\cdot 3^{2}$ come out to 144.",
+  "common_errors": [
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "You applied the square root to $a^{8}$ but not to $b^{4}$. That gives $a^{4}b^{4}$, so $m+n=8$."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "You treated $b^{3}\\div b^{-1}$ as $b^{3-1}=b^{2}$. The square root then gives $a^{4}b^{1}$, so $m+n=5$."
+   },
+   {
+    "value": "12",
+    "misconception": "intermediate-step",
+    "why": "You simplified the radicand to $a^{8}b^{4}$ but did not take the square root. Then you added $8+4$."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "You applied the root twice, as if it were a fourth root. That gives $a^{2}b^{1}$, so $m+n=3$."
+   }
+  ],
+  "id": "orig-exponent-radic-M-261112",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-261112",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]
