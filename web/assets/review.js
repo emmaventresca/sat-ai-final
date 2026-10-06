@@ -105,6 +105,49 @@ export function missCount(ctx) {
 }
 
 /**
+ * The three things a student can usefully do with a group of mistakes.
+ *
+ *   again    the exact questions they got wrong, to sit again
+ *   twins    same recognition AND built to catch the same error - the
+ *            closest thing to "that question, with different numbers"
+ *   cousins  same recognition, a different angle on it
+ *
+ * The split matters. Re-sitting the same question tests memory as much as
+ * understanding, and ten unrelated questions from the same skill is what
+ * made the old "more practice" button feel like busywork. The useful middle
+ * is a question that goes wrong the same way.
+ */
+export function relatedSets(group, ctx, n = REINFORCE_N) {
+  const wanted = new Set(group.topFamilies.map((f) => f.slug));
+  const missedIds = new Set(group.misses.map((m) => m.item.id));
+  const seen = new Set((ctx.attempts ?? []).map((a) => a.content_id));
+
+  const pool = (ctx.items ?? []).filter((i) =>
+    (group.subtype ? i.subtype === group.subtype : i.skill_cd === group.skill_cd)
+    && !missedIds.has(i.id));
+
+  const catches = (i) =>
+    Object.values(i.misconceptions ?? {}).some((f) => wanted.has(f));
+
+  const rank = (a, b) =>
+    (seen.has(a.id) - seen.has(b.id))                 // unseen first
+    || (a.difficulty === group.worstTier ? -1 : 1) - (b.difficulty === group.worstTier ? -1 : 1)
+    || a.id.localeCompare(b.id);
+
+  const twins = pool.filter(catches).sort(rank);
+  const cousins = pool.filter((i) => !catches(i)).sort(rank);
+
+  return {
+    again: group.misses.map((m) => m.item),
+    twins: twins.slice(0, n),
+    cousins: cousins.slice(0, n),
+    // What we would have to write to fill each list.
+    shortTwins: Math.max(0, n - twins.length),
+    shortCousins: Math.max(0, n - cousins.length),
+  };
+}
+
+/**
  * Ten more of exactly this.
  *
  * Ranked, not filtered, so a thin subtype still returns a full round rather
@@ -162,7 +205,7 @@ export async function generatorAvailable() {
  * making. Resolves to the new items; they are appended to the live bank by
  * the caller so the round can use them immediately.
  */
-export async function generateMore(group, ctx, n = REINFORCE_N) {
+export async function generateMore(group, ctx, n = REINFORCE_N, kind = 'twins') {
   const r = await fetch(`${GENERATOR}/generate`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -171,7 +214,18 @@ export async function generateMore(group, ctx, n = REINFORCE_N) {
       skill_cd: group.skill_cd,
       difficulty: group.worstTier,
       n,
+      kind,
       misconceptions: group.topFamilies.slice(0, 3).map((f) => f.slug),
+      // The questions they actually got wrong. The writer models the shape -
+      // the structure and the kind of trap - and invents everything else.
+      // These are our own items, so there is nothing to launder.
+      modelled_on: group.misses.slice(0, 3).map((m) => ({
+        stem: m.item.stem,
+        stimulus: m.item.stimulus ?? null,
+        chose: m.attempt.chosen,
+        answer: m.item.answer ?? (m.item.keys ?? [])[0] ?? null,
+        error: m.family,
+      })),
     }),
   });
   const data = await r.json().catch(() => ({}));

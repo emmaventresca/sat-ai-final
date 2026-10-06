@@ -7,15 +7,16 @@
 // do not teach what they have already shown they know.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=3af15722b1';
-import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=3af15722b1';
-import { buildLesson, focusTier, rankLessons } from './lessons.js?v=3af15722b1';
+import { makeStore, configured } from './store.js?v=c25e3af049';
+import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=c25e3af049';
+import { buildLesson, focusTier, rankLessons } from './lessons.js?v=c25e3af049';
 import {
   missGroups, missCount, reinforcementSet, generatorAvailable, generateMore,
   familyName,
-} from './review.js?v=3af15722b1';
-import { isGrid, matches as gridMatches, diagnose as gridDiagnose, MAX_LEN } from './grid.js?v=3af15722b1';
-import { renderText as md, renderBody, renderHtml, renderStimulus, renderFigure, escapeHtml as esc } from './mathfmt.js?v=3af15722b1';
+  relatedSets,
+} from './review.js?v=c25e3af049';
+import { isGrid, matches as gridMatches, diagnose as gridDiagnose, MAX_LEN } from './grid.js?v=c25e3af049';
+import { renderText as md, renderBody, renderHtml, renderStimulus, renderFigure, escapeHtml as esc } from './mathfmt.js?v=c25e3af049';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -23,7 +24,7 @@ const store = makeStore();
 
 const state = {
   profile: null, mastery: {}, attempts: [], fingerprints: [],
-  reviewGroup: null, reviewGen: null,
+  reviewGroup: null, reviewTab: 'missed', reviewGen: null,
   bands: null, skills: {}, lessons: [],
   screen: 'loading', lesson: null, round: null,
 };
@@ -222,7 +223,7 @@ function screenHome() {
         <p class="tiny muted" style="margin:6px 0 0">${right} of ${done} correct so far</p>` : ''}
     </div>
 
-    ${reviewCard()}
+    ${mainTabs('lessons')}
 
     ${openAssignments().length ? `<h2>Set by your teacher</h2>
       ${openAssignments().map((a) => assignmentTile(a)).join('')}` : ''}
@@ -242,8 +243,7 @@ function screenHome() {
   const out = $('#out');
   if (out) out.onclick = async () => { await store.signOut(); location.reload(); };
   $('#settings').onclick = () => { state.screen = 'setup'; render(); };
-  const rv = $('#review');
-  if (rv) rv.onclick = () => { state.reviewGroup = null; state.screen = 'review'; render(); };
+  wireMainTabs();
   for (const el of document.querySelectorAll('[data-assignment]')) {
     el.onclick = () => startAssignment(el.dataset.assignment);
   }
@@ -313,6 +313,35 @@ function tile(lesson, tier) {
 
 const TIER_WORD = { E: 'Easy', M: 'Medium', H: 'Hard' };
 
+/**
+ * The two places a student works: what to learn, and what they got wrong.
+ *
+ * Review used to be a card buried under the score panel, which made it feel
+ * like a notification rather than somewhere you go. It is half the app - a
+ * wrong answer is the most useful thing a student produces - so it gets
+ * equal billing.
+ */
+function mainTabs(active) {
+  const n = missCount(ctx());
+  return `<div class="tabs" role="tablist">
+    <button class="tab ${active === 'lessons' ? 'on' : ''}" data-tab="lessons"
+      role="tab" aria-selected="${active === 'lessons'}">Lessons</button>
+    <button class="tab ${active === 'review' ? 'on' : ''}" data-tab="review"
+      role="tab" aria-selected="${active === 'review'}">Review mistakes${
+        n ? ` <span class="tab-n">${n}</span>` : ''}</button>
+  </div>`;
+}
+
+function wireMainTabs() {
+  for (const b of document.querySelectorAll('[data-tab]')) {
+    b.onclick = () => {
+      state.reviewGroup = null;
+      state.screen = b.dataset.tab === 'review' ? 'review' : 'home';
+      render();
+    };
+  }
+}
+
 /** The home-screen entry point. Absent until there is something to review. */
 function reviewCard() {
   const groups = missGroups(ctx());
@@ -331,12 +360,19 @@ function reviewCard() {
 
 function screenReview() {
   const groups = missGroups(ctx());
+  const p = state.profile;
   app.innerHTML = `<div class="wrap">
     ${previewBanner()}
-    <div class="spread" style="margin-bottom:12px">
-      <button class="btn-sm" id="back">&larr; Home</button>
+    <div class="top">
+      <div><h1>SAT Practice</h1>
+        <p class="who">${esc(p?.full_name ?? p?.email ?? 'Signed in')}${
+          store.mode === 'local' ? ' &middot; local mode' : ''}</p></div>
+      <div class="row tight">
+        <button class="btn-sm" id="settings">Scores</button>
+      </div>
     </div>
-    <h1>Your mistakes</h1>
+    ${mainTabs('review')}
+    <h2 style="margin-top:0">Your mistakes</h2>
     <p class="muted">Grouped by the kind of question, then by the specific wrong
       move inside it. Worst first &mdash; this list is about you, not about what
       the test asks most.</p>
@@ -358,9 +394,10 @@ function screenReview() {
       : '<div class="card empty">Nothing missed yet. Come back after some practice.</div>'}
   </div>`;
 
-  $('#back').onclick = () => { state.screen = 'home'; render(); };
+  wireMainTabs();
+  $('#settings').onclick = () => { state.screen = 'setup'; render(); };
   for (const b of document.querySelectorAll('[data-group]')) {
-    b.onclick = () => { state.reviewGroup = b.dataset.group; render(); };
+    b.onclick = () => { state.reviewGroup = b.dataset.group; state.reviewTab = 'missed'; render(); };
   }
   window.scrollTo(0, 0);
 }
@@ -368,9 +405,17 @@ function screenReview() {
 function screenReviewGroup() {
   const g = missGroups(ctx()).find((x) => x.key === state.reviewGroup);
   if (!g) { state.reviewGroup = null; return screenReview(); }
-  const set = reinforcementSet(g, ctx());
+  const sets = relatedSets(g, ctx());
+  const tab = state.reviewTab ?? 'missed';
   const lesson = g.subtype ? state.subLessons?.[g.subtype] : null;
   const gen = state.reviewGen ?? {};
+
+  const TABS = [
+    ['missed', `What you missed`, g.count],
+    ['again', 'Sit them again', sets.again.length],
+    ['twins', 'Questions like these', sets.twins.length],
+    ['cousins', 'The same skill, another angle', sets.cousins.length],
+  ];
 
   app.innerHTML = `<div class="wrap">
     ${previewBanner()}
@@ -395,33 +440,14 @@ function screenReviewGroup() {
       }).join('')}
     </div>` : ''}
 
-    <div class="card">
-      <h2 style="margin-top:0">Ten more, aimed at this</h2>
-      <p class="small muted">Same question type, built to catch the same
-        error${g.topFamilies.length ? `s (${esc(g.topFamilies.slice(0, 2)
-          .map((f) => familyName(f.slug, ctx()).toLowerCase()).join(', '))})` : ''}.
-        ${set.fresh >= 10
-          ? 'All ten are ones you have not seen.'
-          : set.fresh
-            ? `${set.fresh} of these are new to you; the rest are ones you have
-               already seen once, which is still worth doing.`
-            : 'You have seen all of these before &mdash; worth a second pass.'}</p>
-      <div class="row tight" style="margin-top:12px">
-        <button class="btn" id="practice" ${set.items.length ? '' : 'disabled'}>
-          Practise ${Math.min(10, set.items.length)} question${
-            set.items.length === 1 ? '' : 's'}</button>
-        ${set.shortfall ? `<button class="btn ghost" id="more" ${
-          gen.busy ? 'disabled' : ''}>${gen.busy
-            ? '<span class="spin"></span> Writing new ones…'
-            : `Write ${set.shortfall} new one${set.shortfall === 1 ? '' : 's'}`}</button>` : ''}
-      </div>
-      ${gen.error ? `<p class="small bad-text" style="margin:10px 0 0">${esc(gen.error)}</p>` : ''}
-      ${gen.added ? `<p class="small" style="margin:10px 0 0">Added ${gen.added}
-        new question${gen.added === 1 ? '' : 's'} to your bank.</p>` : ''}
+    <div class="tabs" role="tablist">
+      ${TABS.map(([k, label, n]) => `<button class="tab ${tab === k ? 'on' : ''}"
+        data-rtab="${k}" role="tab" aria-selected="${tab === k}">${label}${
+          n ? ` <span class="tab-n plain">${n}</span>` : ''}</button>`).join('')}
     </div>
 
-    <h2>The ones you missed</h2>
-    ${g.misses.map((m) => reviewCardFor(m)).join('')}
+    ${tab === 'missed' ? g.misses.map((m) => reviewCardFor(m)).join('')
+      : practiceTab(g, sets, tab, gen)}
   </div>`;
 
   $('#back').onclick = () => { state.reviewGroup = null; render(); };
@@ -429,11 +455,81 @@ function screenReviewGroup() {
   if (t) t.onclick = () => {
     state.lesson = `sub:${g.subtype}`; state.screen = 'lesson'; render();
   };
+  for (const b of document.querySelectorAll('[data-rtab]')) {
+    b.onclick = () => { state.reviewTab = b.dataset.rtab; state.reviewGen = null; render(); };
+  }
   const p = $('#practice');
-  if (p) p.onclick = () => startReinforcement(g);
+  if (p) p.onclick = () => startReinforcement(g, tab);
   const more = $('#more');
-  if (more) more.onclick = () => writeMore(g, set.shortfall);
+  if (more) more.onclick = () => writeMore(g, Number(more.dataset.n), tab);
   window.scrollTo(0, 0);
+}
+
+/**
+ * One of the three practice tabs.
+ *
+ * Each says plainly what it is and what it is for, because the difference
+ * between them is the whole point: sitting the same question again is not
+ * the same as sitting one that goes wrong the same way.
+ */
+function practiceTab(g, sets, tab, gen) {
+  const COPY = {
+    again: {
+      items: sets.again,
+      what: 'The questions you got wrong, exactly as they were.',
+      why: 'Worth doing once you have read why. If you can now get them right '
+         + 'for the right reason, the next tab is where the real test is.',
+      short: 0,
+    },
+    twins: {
+      items: sets.twins,
+      what: 'Same question type, and built to catch the same mistake'
+          + (g.topFamilies.length
+              ? ` (${esc(g.topFamilies.slice(0, 2)
+                  .map((f) => familyName(f.slug, ctx()).toLowerCase()).join(', '))})`
+              : '') + '.',
+      why: 'The closest thing to the question you missed, with everything '
+         + 'else changed. This is the one that tells you whether it stuck.',
+      short: sets.shortTwins,
+    },
+    cousins: {
+      items: sets.cousins,
+      what: 'Same question type, coming at it from a different direction.',
+      why: 'Once the twins are going in, these check that you have the '
+         + 'recognition rather than one worked pattern.',
+      short: sets.shortCousins,
+    },
+  }[tab];
+  if (!COPY) return '';
+
+  const n = COPY.items.length;
+  return `<div class="card">
+    <p class="small"><strong>${COPY.what}</strong></p>
+    <p class="small muted">${COPY.why}</p>
+    <div class="row tight" style="margin-top:12px">
+      <button class="btn-primary" id="practice" ${n ? '' : 'disabled'}>
+        ${n ? `Practise ${Math.min(10, n)} question${n === 1 ? '' : 's'}`
+            : 'Nothing written yet'}</button>
+      ${COPY.short ? `<button class="btn ghost" id="more" data-n="${COPY.short}" ${
+        gen.busy ? 'disabled' : ''}>${gen.busy
+          ? '<span class="spin"></span> Writing\u2026'
+          : `Write ${COPY.short} more`}</button>` : ''}
+    </div>
+    ${gen.error ? `<p class="small bad-text" style="margin:10px 0 0">${esc(gen.error)}</p>` : ''}
+    ${gen.added ? `<p class="small" style="margin:10px 0 0">Added ${gen.added}
+      new question${gen.added === 1 ? '' : 's'}.</p>` : ''}
+    ${n ? `<ol class="peek">${COPY.items.slice(0, 5).map((i) =>
+      `<li><span class="badge ${i.difficulty.toLowerCase()}">${
+        TIER_WORD[i.difficulty]}</span> ${esc(plainStem(i))}</li>`).join('')}
+      ${n > 5 ? `<li class="muted">and ${n - 5} more</li>` : ''}</ol>` : ''}
+  </div>`;
+}
+
+/** A stem as one short line, for a preview list. */
+function plainStem(item) {
+  const t = String(item.stem ?? '').replace(/\$[^$]*\$/g, '\u2026')
+    .replace(/\s+/g, ' ').trim();
+  return t.length > 110 ? `${t.slice(0, 108)}\u2026` : t;
 }
 
 /** One missed question, with what they picked and why it was wrong. */
@@ -459,13 +555,14 @@ function reviewCardFor(m) {
   </div>`;
 }
 
-/** Ten more of exactly this, in the order the engine thinks pays. */
-function startReinforcement(g) {
-  const set = reinforcementSet(g, ctx());
-  if (!set.items.length) return;
+/** A round from one of the review tabs, in the order the engine thinks pays. */
+function startReinforcement(g, tab = 'twins') {
+  const sets = relatedSets(g, ctx());
+  const items = (sets[tab === 'missed' ? 'twins' : tab] ?? []).slice(0, 10);
+  if (!items.length) return;
   state.round = {
-    items: set.items, at: 0, answers: [], startedAt: Date.now(),
-    tier: g.worstTier, reviewGroup: g.key,
+    items, at: 0, answers: [], startedAt: Date.now(),
+    tier: g.worstTier, reviewGroup: g.key, reviewTab: tab,
   };
   state.screen = 'practice';
   render();
@@ -478,7 +575,7 @@ function startReinforcement(g) {
  * serving repeats as if they were new, a student without it is told the bank
  * is out.
  */
-async function writeMore(g, n) {
+async function writeMore(g, n, kind = 'twins') {
   state.reviewGen = { busy: true };
   render();
   try {
@@ -487,7 +584,7 @@ async function writeMore(g, n) {
         + 'no new questions can be written right now. Everything already in '
         + 'your bank is still available above.');
     }
-    const fresh = await generateMore(g, ctx(), n);
+    const fresh = await generateMore(g, ctx(), n, kind);
     const have = new Set(state.items.map((i) => i.id));
     const added = fresh.filter((i) => !have.has(i.id));
     state.items = state.items.concat(added);
@@ -985,7 +1082,7 @@ function screenResult() {
     ? missGroups(ctx()).find((g) => g.key === r.reviewGroup) : null;
   $('#again').onclick = () => {
     state.round = null;
-    if (group) return startReinforcement(group);
+    if (group) return startReinforcement(group, r.reviewTab ?? 'twins');
     if (r.assignment) return startAssignment(r.assignment.id);
     if (r.unit) return startRound(r.unit, r.tier);
     if (src) return startRound(src.skill_cd, r.tier ?? focusTier(src, ctx()));
@@ -1014,17 +1111,17 @@ function render() {
 async function loadData() {
   const [bands, skills, lessons, sublessons, items, misc, subtax, subcounts] =
     await Promise.all([
-    fetch('../data/bands.json?v=09dea318bb').then((r) => r.json()),
-    fetch('../data/skills.json?v=09dea318bb').then((r) => r.json()),
-    fetch('../data/lessons.json?v=09dea318bb').then((r) => r.json()),
-    fetch('../data/subtype_lessons.json?v=09dea318bb').then((r) => r.json())
+    fetch('../data/bands.json?v=5aee4499f1').then((r) => r.json()),
+    fetch('../data/skills.json?v=5aee4499f1').then((r) => r.json()),
+    fetch('../data/lessons.json?v=5aee4499f1').then((r) => r.json()),
+    fetch('../data/subtype_lessons.json?v=5aee4499f1').then((r) => r.json())
       .catch(() => ({ lessons: [] })),
     // Our own CC BY items. The College Board pool is deliberately not loaded:
     // it cannot be served to students (docs/LICENSING.md section 4).
-    fetch('../data/practice.json?v=09dea318bb').then((r) => r.json()).catch(() => ({ items: [] })),
-    fetch('../data/misconceptions.json?v=09dea318bb').then((r) => r.json()).catch(() => ({ families: [] })),
-    fetch('../data/subtypes.json?v=09dea318bb').then((r) => r.json()).catch(() => ({ skills: {} })),
-    fetch('../data/subtype_counts.json?v=09dea318bb').then((r) => r.json()).catch(() => ({ subtypes: {} })),
+    fetch('../data/practice.json?v=5aee4499f1').then((r) => r.json()).catch(() => ({ items: [] })),
+    fetch('../data/misconceptions.json?v=5aee4499f1').then((r) => r.json()).catch(() => ({ families: [] })),
+    fetch('../data/subtypes.json?v=5aee4499f1').then((r) => r.json()).catch(() => ({ skills: {} })),
+    fetch('../data/subtype_counts.json?v=5aee4499f1').then((r) => r.json()).catch(() => ({ subtypes: {} })),
   ]);
   state.misconceptions = Object.fromEntries((misc.families ?? []).map((f) => [f.slug, f]));
   state.bands = bands;

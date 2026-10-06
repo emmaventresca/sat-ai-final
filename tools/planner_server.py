@@ -20,7 +20,7 @@ request is answered with the project's own derived material in context:
 
   python3 tools/planner_server.py          # then open the Plan tab
 """
-import json, os, re, subprocess, sys, threading, time
+import json, os, re, subprocess, sys, tempfile, threading, time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse
 
@@ -245,7 +245,25 @@ def generate_items(req):
     if focus:
         cmd += ["--misconceptions", ",".join(focus[:3])]
 
-    proc = subprocess.run(cmd, capture_output=True, text=True, timeout=900)
+    kind = req.get("kind") if req.get("kind") in ("twins", "cousins") else "twins"
+    cmd += ["--kind", kind]
+
+    # The questions the student actually missed, written to a temp file rather
+    # than stuffed through argv - a stimulus is a paragraph, and three of them
+    # will blow the command-line limit on a long passage.
+    modelled = req.get("modelled_on") or []
+    tmp = None
+    if isinstance(modelled, list) and modelled:
+        fd, tmp = tempfile.mkstemp(suffix=".json", prefix="modelled-")
+        with os.fdopen(fd, "w") as fh:
+            json.dump(modelled[:3], fh)
+        cmd += ["--modelled-on", tmp]
+
+    try:
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=900)
+    finally:
+        if tmp and os.path.exists(tmp):
+            os.unlink(tmp)
     if proc.returncode != 0:
         raise RuntimeError((proc.stderr or proc.stdout)[-400:] or "authoring failed")
 

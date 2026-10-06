@@ -156,8 +156,56 @@ named error really yields - compute them, do not invent them.
 """
 
 
+def modelled_block(modelled_on, kind):
+    """Write questions aimed at the ones a student actually got wrong.
+
+    These are our own items, so the shape can be used directly - there is
+    nothing to launder. What matters is the instruction attached to it, and
+    the two kinds want opposite things:
+
+      twins    reproduce the structure and the trap, change everything else.
+               The closest honest thing to "that question again" without
+               testing whether they remember the answer.
+      cousins  same recognition, deliberately a different route in, so a
+               student who has learnt one worked pattern is caught out.
+    """
+    if not modelled_on:
+        return ""
+    lines = []
+    for i, m in enumerate(modelled_on[:3], 1):
+        lines.append(f"  QUESTION {i}")
+        if m.get("stimulus"):
+            lines.append(f"    setup:  {str(m['stimulus'])[:400]}")
+        lines.append(f"    asks:   {str(m.get('stem',''))[:300]}")
+        if m.get("error"):
+            lines.append(f"    the student went wrong by: {m['error']}")
+    body = "\n".join(lines)
+    if kind == "cousins":
+        return (f"""
+0. A STUDENT KEEPS MISSING THESE. They are ours, shown so you can go a
+   DIFFERENT way. Same recognition, a different route in - a different given,
+   a different direction of reasoning, a different surface. A student who has
+   memorised one worked pattern should not be able to coast through yours.
+   Do not reuse these scenarios, numbers or phrasings.
+
+{body}
+
+""")
+    return (f"""
+0. A STUDENT KEEPS MISSING THESE. They are ours, shown so you can write the
+   closest honest thing to "that question again": keep the STRUCTURE and the
+   TRAP, change the scenario, the numbers, the names and the wording
+   completely. They must not be recognisable as the same question, and must
+   go wrong in the same way for the same reason.
+
+{body}
+
+""")
+
+
 def build_prompt(skill, lesson, families, difficulty, n, seed_topics,
-                 subtype=None, patterns=None, focus=None, fmt="mc"):
+                 subtype=None, patterns=None, focus=None, fmt="mc",
+                 modelled_on=None, kind="twins"):
     stem_line = SKILL_STEMS.get(skill["skill_cd"])
     stem_line = (f'"{stem_line}"' if stem_line else
                  "write the instruction the test would use for this skill, in "
@@ -188,7 +236,7 @@ Hard requirements:
    recognise the subtype from the tell above. Do not drift into a neighbouring
    subtype of the same skill.
 
-{focus_block(families, focus)}4. EVERY DISTRACTOR CATCHES A NAMED ERROR. Pick from these families and say
+{modelled_block(modelled_on, kind)}{focus_block(families, focus)}4. EVERY DISTRACTOR CATCHES A NAMED ERROR. Pick from these families and say
    which one each distractor targets. At least one distractor per item must
    be the subtype's own trap, described above:
 {chr(10).join(f"     {f['slug']}: {f['when']}" for f in fams)}
@@ -345,10 +393,11 @@ def call(prompt, model):
 
 
 def author(skill, lesson, families, difficulty, n, model, rng,
-           subtype=None, patterns=None, focus=None, fmt="mc"):
+           subtype=None, patterns=None, focus=None, fmt="mc",
+           modelled_on=None, kind="twins"):
     topics = rng.sample(TOPICS, min(n, len(TOPICS)))
     prompt = build_prompt(skill, lesson, families, difficulty, n, topics,
-                          subtype, patterns, focus, fmt)
+                          subtype, patterns, focus, fmt, modelled_on, kind)
     assert_no_cb_text(prompt)
     items = call(prompt, model)
     out = []
@@ -387,6 +436,12 @@ def main():
                     dest="fmt",
                     help="grid: student-produced response, no answer choices. "
                          "27%% of the real math section.")
+    ap.add_argument("--modelled-on", dest="modelled_on",
+                    help="JSON file of questions a student missed; the new "
+                         "ones are written against their shape")
+    ap.add_argument("--kind", default="twins", choices=("twins", "cousins"),
+                    help="twins: same structure and trap. cousins: same "
+                         "recognition, a different route in.")
     ap.add_argument("--misconceptions",
                     help="comma-separated family slugs to aim the distractors "
                          "at - used when a student keeps making one error")
@@ -438,7 +493,10 @@ def main():
                        families, args.difficulty, args.n, args.model, rng,
                        subtype, patterns,
                        focus=[f.strip() for f in (args.misconceptions or "").split(",") if f.strip()],
-                       fmt=args.fmt)
+                       fmt=args.fmt,
+                       modelled_on=(json.load(open(args.modelled_on))
+                                    if args.modelled_on else None),
+                       kind=args.kind)
         r.count(authored=len(items))
         if len(items) < args.n:
             r.note(f"asked for {args.n}, got {len(items)}")
