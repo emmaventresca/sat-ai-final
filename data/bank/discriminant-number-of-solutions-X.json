@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "The line and the parabola intersect at exactly one point. What is the value of $m$?",
+  "stimulus": "An ornithologist models a gull's diving path with the graph of $y = x^2 - 2x + 13$ in the xy-plane. A trail camera's line of sight is modeled by the graph of $y = mx + 4$, where $m$ is a constant and $m > 0$.",
+  "choices": [
+   "$-8$",
+   "$4$",
+   "$6$",
+   "$8$"
+  ],
+  "answer": "B",
+  "explanation": "Set the two expressions equal: $x^2 - 2x + 13 = mx + 4$. Move every term to the left side to get $x^2 - (2 + m)x + 9 = 0$. Here $a = 1$, $b = -(2 + m)$ and $c = 9$. Exactly one intersection point means the discriminant is zero: $(2 + m)^2 - 4(1)(9) = 0$, so $(2 + m)^2 = 36$. That gives $2 + m = 6$ or $2 + m = -6$, so $m = 4$ or $m = -8$. The stimulus says $m > 0$, so $m = 4$. To check, the equation becomes $x^2 - 6x + 9 = (x - 3)^2 = 0$, which has one solution, and the line touches the parabola at $(3, 16)$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You set the discriminant to zero correctly, but you took the other root of $(2 + m)^2 = 36$. The line $y = -8x + 4$ is also tangent to the parabola, but it breaks the condition $m > 0$ given in the stimulus."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You solved $(2 + m)^2 = 36$ to get $2 + m = 6$ and stopped there. The value 6 is the expression $2 + m$. You still need to subtract 2 to get $m$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $mx$ to the left side, you kept its plus sign and wrote $x^2 + (m - 2)x + 9 = 0$. Then $(m - 2)^2 = 36$ gives $m = 8$ as the positive value. Moving $mx$ across the equals sign makes it $-mx$, so the coefficient of $x$ is $-(2 + m)$."
+   }
+  },
+  "id": "orig-discriminant-n-X-4cfc20",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "In the given equation, $k$ is a constant. The equation has no real solutions. What is the greatest possible integer value of $k$?",
+  "stimulus": "A transportation planner modeling the layout of a new roundabout arrived at the following equation.\n\n$3x^2 + 5 = 2x(x - k) + 9x - 4$",
+  "choices": [
+   "$2$",
+   "$5$",
+   "$7$",
+   "$8$"
+  ],
+  "answer": "C",
+  "explanation": "First distribute on the right side: $2x(x - k) = 2x^2 - 2kx$. Then move every term to the left side: $3x^2 - 2x^2 + 2kx - 9x + 5 + 4 = 0$, which simplifies to $x^2 + (2k - 9)x + 9 = 0$. No real solutions means the discriminant is negative: $(2k - 9)^2 - 36 < 0$. So $-6 < 2k - 9 < 6$, which gives $1.5 < k < 7.5$. The greatest integer in that range is $7$. To check, $k = 7$ gives a discriminant of $25 - 36 < 0$, so there are no real solutions. For $k = 8$, the discriminant is $49 - 36 > 0$, so there are two real solutions.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the correct interval, $1.5 < k < 7.5$, but you gave the least integer in it instead of the greatest."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $-4$ to the left side, you didn't change its sign, so you got a constant term of $5 - 4 = 1$. That gives $(2k - 9)^2 < 4$ and $3.5 < k < 5.5$. Moving $-4$ across the equals sign makes it $+4$, so the constant term is $9$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You picked the first integer outside the boundary $k = 7.5$. When $k = 8$, the discriminant is $49 - 36 = 13 > 0$, so the equation has two real solutions, not none."
+   }
+  },
+  "id": "orig-discriminant-n-X-b86c0f",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

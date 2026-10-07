@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "In the given system of equations, $k$ is a constant. If the system has no solution, what is the value of $k$?",
+  "stimulus": "A musicologist comparing tempo changes in two recordings of the same sonata fits each recording with a linear model. The two models form the system below.\n\n$y = -\\frac{k}{3}x + 2$\n\n$12x + ky = k + 6$",
+  "choices": [
+   "$-6$",
+   "$6$",
+   "$0$",
+   "$36$"
+  ],
+  "answer": "A",
+  "explanation": "First put both equations in the same form. The first line has slope $-\\frac{k}{3}$. Solving the second for $y$ gives $y = -\\frac{12}{k}x + \\frac{k+6}{k}$, so its slope is $-\\frac{12}{k}$. Parallel lines need equal slopes: $-\\frac{k}{3} = -\\frac{12}{k}$, so $k^2 = 36$ and $k = 6$ or $k = -6$. Now check the intercepts. If $k = 6$, both equations become $y = -2x + 2$. That is the same line, so the system has infinitely many solutions. If $k = -6$, the first equation is $y = 2x + 2$ and the second is $12x - 6y = 0$, which is $y = 2x$. These lines have the same slope and different intercepts, so they are parallel and never meet. The answer is $k = -6$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You set the slopes equal and took the positive root, but you didn't check the intercepts. With $k = 6$, both equations become $y = -2x + 2$. That is the same line, so the system has infinitely many solutions, not none."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the slope of $12x + ky = k + 6$ as $-\\frac{k}{12}$ instead of $-\\frac{12}{k}$, which flips the coefficient ratio. Setting $-\\frac{k}{3} = -\\frac{k}{12}$ gives $k = 0$. With $k = 0$, the lines are $y = 2$ and $x = \\frac{1}{2}$, which cross at one point."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at $k^2 = 36$ and gave $36$ as the answer. The question asks for $k$, so you still need to take the square root and check which root gives parallel lines that are not the same line."
+   }
+  },
+  "id": "orig-no-solution-pa-X-859a87",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "One of the two equations in a system of linear equations is given. The system has no solution. Which equation could be the second equation in this system?",
+  "stimulus": "A paleobotanist relates $x$, the thickness of a sediment layer, in centimeters, to $y$, the estimated number of fossil leaf fragments per kilogram of that layer, using the equation below.\n\n$\\frac{x}{4} - \\frac{y}{6} = 1$",
+  "choices": [
+   "$9x - 6y = 36$",
+   "$\\frac{x}{6} - \\frac{y}{4} = 1$",
+   "$\\frac{x}{2} - \\frac{y}{3} = 1$",
+   "$3x + 2y = 6$"
+  ],
+  "answer": "C",
+  "explanation": "Clear the fractions so you can compare the equations directly. Multiplying the given equation by $12$ gives $3x - 2y = 12$, or $y = \\frac{3}{2}x - 6$. Multiplying choice C by $6$ gives $3x - 2y = 6$, or $y = \\frac{3}{2}x - 3$. The slope is the same and the $y$-intercept is different, so the lines are parallel and distinct. The system has no solution. Choice C looks like it should have a different slope because its denominators are different, but $\\frac{1}{2} : \\frac{1}{3}$ is the same ratio as $\\frac{1}{4} : \\frac{1}{6}$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You saw that the $x$- and $y$-coefficients are in the same ratio as the given equation's, so the slopes match. But dividing by $3$ gives $3x - 2y = 12$, which is exactly the given equation. The constant is in the same ratio too, so this is the same line and the system has infinitely many solutions."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You kept the form of the equation but swapped the denominators. Multiplying by $12$ gives $2x - 3y = 12$, which has slope $\\frac{2}{3}$ instead of $\\frac{3}{2}$. The slopes are different, so the lines cross at exactly one point."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the minus sign on the $y$-term when you cleared the fractions. $3x + 2y = 6$ has slope $-\\frac{3}{2}$, which does not match the given line's slope of $\\frac{3}{2}$. The lines cross at exactly one point."
+   }
+  },
+  "id": "orig-no-solution-pa-X-78e1a7",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

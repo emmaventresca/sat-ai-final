@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "What is the median number of eggs per nest?",
+  "stimulus": "An ecologist counted the eggs in every plover nest along one stretch of shoreline. The table summarizes the results, where $k$ is a positive integer. The mean number of eggs per nest is $3.75$.\n\nEggs per Plover Nest\nNumber of eggs | Number of nests\n2 | 5\n3 | 7\n4 | $k$\n5 | 3\n6 | 4",
+  "choices": [
+   "$3$",
+   "$3.5$",
+   "$4$",
+   "$5$"
+  ],
+  "answer": "B",
+  "explanation": "First find $k$. The total number of eggs is $2(5) + 3(7) + 4k + 5(3) + 6(4) = 70 + 4k$, and the number of nests is $19 + k$. Setting the mean equal to $3.75$ gives $70 + 4k = 3.75(19 + k) = 71.25 + 3.75k$, so $0.25k = 1.25$ and $k = 5$. That makes $24$ nests. Since $24$ is even, the median is the average of the 12th and 13th values. The cumulative frequencies are $5$ (through 2 eggs), $12$ (through 3 eggs), and $17$ (through 4 eggs). So the 12th value is $3$ and the 13th value is $4$, and the median is $\\frac{3 + 4}{2} = 3.5$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You correctly found the 12th value, $3$, but stopped there. With an even count of $24$ nests, the median is the average of the 12th and 13th values, and the 13th value is $4$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You took the middle of the listed egg counts $2, 3, 4, 5, 6$, which is $4$, without weighting by the number of nests. (You get the same value if you use only the 13th position.) The median has to come from all $24$ nests, counted by frequency."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$5$ is the value of $k$, which is one step on the way. You still have to use $k = 5$ to count $24$ nests and then find the middle of the data."
+   }
+  },
+  "id": "orig-compute-mean-o-X-0ee079",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the median of the corrected measurements?",
+  "stimulus": "A lab measured the average grain size, in micrometers, of $9$ samples of an annealed alloy. In the order recorded, the measurements were\n\n$47, 61, 55, 43, 58, 50, 52, 46, 56$\n\nThe value $61$ was later found to be a recording error. After it was replaced with the correct value, the mean of the $9$ measurements was $49$ micrometers.",
+  "choices": [
+   "$34$",
+   "$50$",
+   "$52$",
+   "$58$"
+  ],
+  "answer": "B",
+  "explanation": "The original values add up to $468$. The corrected values must add up to $9 \\times 49 = 441$, so the correct measurement is $61 - (468 - 441) = 61 - 27 = 34$. The corrected data set sorted from least to greatest is $34, 43, 46, 47, 50, 52, 55, 56, 58$. The middle (5th) value is $50$, so the median is $50$ micrometers. The corrected value is now the smallest one rather than the largest, so every value below the old median moves up one position.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$34$ is the corrected measurement, which you need along the way. The question asks for the median of all nine corrected values, not the value that was fixed."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "$52$ is the median of the original data. You assumed that changing one value leaves the median where it was. But the corrected value, $34$, moves from the top of the sorted list to the bottom, which shifts the middle position down to $50$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the 5th value in the order recorded instead of sorting first. A median has to come from the sorted list, and $58$ is actually the largest corrected value."
+   }
+  },
+  "id": "orig-compute-mean-o-X-600ed1",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

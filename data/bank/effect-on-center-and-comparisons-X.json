@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "Which of the following must be true about the corrected data set compared with the original data set?\n\nI. The mean is 8 meters greater.\nII. The median is greater.",
+  "stimulus": "A marine biologist recorded the maximum dive depth, in meters, of each of 15 tagged harbor seals. No two depths were equal. The recorded depths have a mean of 40 meters and a median of 38 meters. Later, the biologist found that one recorded depth, 30 meters, was a logging error and replaced it with the correct depth, 150 meters. Every other depth stayed the same.",
+  "choices": [
+   "I only",
+   "II only",
+   "I and II",
+   "Neither I nor II"
+  ],
+  "answer": "C",
+  "explanation": "Statement I: The original total is $15 \\times 40 = 600$ meters. Swapping 30 for 150 adds $150 - 30 = 120$ meters to the total. There are still 15 seals, so the mean rises by $\\frac{120}{15} = 8$ meters. Statement II: The median, 38, is the 8th of the 15 sorted depths. The value 30 sat below the median, and its replacement, 150, sits above it. So one value has moved from below the middle to above it. In the corrected list, the 8th value is the depth that used to be 9th. Because no two depths were equal, that depth is greater than 38, so the median must increase. Both statements must be true.",
+  "distractors": {
+   "A": {
+    "misconception": "outlier-moves-mean-not-median",
+    "why": "You applied the rule that an extreme value drags the mean but leaves the median alone. That rule holds when you add a value. Here a value from below the median was moved above it, so the middle position moves up one place. Because the depths are all different, the median has to increase."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You probably found the change in the mean as $\\frac{150}{15} = 10$ and forgot to subtract the 30 that was removed. You may also have divided 120 by 16, as if a seal had been added. The total goes up by 120, and there are still 15 seals, so the mean goes up by exactly 8."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You assumed you couldn't tell anything about the mean without all 15 depths, and you also kept the median fixed. The given mean pins the total at $15 \\times 40 = 600$, so the change in the mean is exactly $\\frac{120}{15} = 8$. Moving a value across the middle also forces the median up."
+   }
+  },
+  "id": "orig-effect-on-cent-X-9ff347",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which site has the greatest mean number of nests per transect?",
+  "stimulus": "An ecologist counted ground-bird nests along 10 transects at each of four grassland sites. The table shows how many transects at each site had each number of nests.\n\nFrequency of Nest Counts per Transect\nNumber of nests | Site A | Site B | Site C | Site D\n2 | 1 | 3 | 3 | 0\n3 | 2 | 1 | 0 | 2\n4 | 4 | 2 | 2 | 3\n5 | 2 | 1 | 1 | 4\n6 | 1 | 3 | 4 | 1",
+  "choices": [
+   "Site A",
+   "Site B",
+   "Site C",
+   "Site D"
+  ],
+  "answer": "D",
+  "explanation": "The frequencies for Sites A and B are symmetric around 4 nests, so both of those means are exactly 4. Sites C and D are not symmetric, so you have to compare them. Measure each count from 4 and weight it by its frequency. For Site C: $3(-2) + 0(-1) + 2(0) + 1(1) + 4(2) = 3$, so the mean is $4 + \\frac{3}{10} = 4.3$. For Site D: $0(-2) + 2(-1) + 3(0) + 4(1) + 1(2) = 4$, so the mean is $4 + \\frac{4}{10} = 4.4$. Site D has the greatest mean. In Desmos, mean([2,3,4,5,6],[3,0,2,1,4]) gives 4.3 for Site C, and mean([2,3,4,5,6],[0,2,3,4,1]) gives 4.4 for Site D.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You picked the site whose counts are most bunched at 4. That tells you Site A has the least spread, not the greatest center. Its counts are symmetric about 4, so its mean is only 4."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You picked the site whose counts are most spread toward both ends. That describes the standard deviation, not the mean. Site B's frequencies are symmetric about 4, so the high counts and low counts cancel and the mean is exactly 4."
+   },
+   "C": {
+    "misconception": "skew-by-eye-not-checked",
+    "why": "You correctly found that the means of Sites A and B are 4. Then you chose the non-symmetric site with the most transects at 6 nests. But Site C also has 3 transects at only 2 nests, which pull its mean back down to 4.3. Site D has no low-end weight, so its mean is 4.4."
+   }
+  },
+  "id": "orig-effect-on-cent-X-f9c1f7",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

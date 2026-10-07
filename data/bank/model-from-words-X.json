@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "Which equation represents this situation, where $m$ is the number of minutes of audio in the session and $C$ is the total cost, in dollars, for $m \\geq 10$?",
+  "stimulus": "A folklore archive pays to have each recorded storytelling session transcribed. A transcriber charges a flat fee of $\\$60$, which covers the first $10$ minutes of audio, plus $\\$14$ for every $4$ minutes of audio beyond the first $10$ minutes. To check accuracy, every session is transcribed separately by two transcribers, and the archive pays both at this rate.",
+  "choices": [
+   "$C = 7m + 50$",
+   "$C = 3.5m + 25$",
+   "$C = 7m + 120$",
+   "$C = 28m - 160$"
+  ],
+  "answer": "A",
+  "explanation": "Start with one transcriber. The rate is $\\$14$ per $4$ minutes, so divide: $14 \\div 4 = 3.5$ dollars per minute. That rate only applies to the minutes past the first $10$, so one transcriber charges $60 + 3.5(m - 10) = 3.5m + 25$. Two transcribers each charge this, so $C = 2(3.5m + 25) = 7m + 50$. Check: a $10$-minute session costs two flat fees, $\\$120$, and $7(10) + 50 = 120$.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You handled the per-4-minutes rate and the 10-minute threshold correctly, but $3.5m + 25$ is what one transcriber charges. The session is transcribed twice, so you need to double it."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You doubled correctly, but you charged the $\\$3.50$ per minute for every minute, including the first $10$ that the flat fee already covers. The per-minute charge only applies to $m - 10$ minutes, not $m$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You treated $\\$14$ as the charge per minute. It is the charge per $4$ minutes, so you need to divide it by $4$ to get the rate per minute."
+   }
+  },
+  "id": "orig-model-from-wor-X-263296",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which equation defines $A$, where $A(h)$ is the age, in years, of the sediment $h$ centimeters below the top of the core, for $0 \\leq h \\leq 300$?",
+  "stimulus": "A paleobotanist studies fossil pollen in a sediment core that is $3$ meters long. The sediment at the bottom of the core is $5{,}000$ years old. Moving upward from the bottom of the core, the sediment gets $40$ years younger for every $8$ centimeters. Assume the age of the sediment changes at a constant rate along the core.",
+  "choices": [
+   "$A(h) = 5h + 3{,}500$",
+   "$A(h) = -5h + 5{,}000$",
+   "$A(h) = 5h + 5{,}000$",
+   "$A(h) = 5h + 4{,}985$"
+  ],
+  "answer": "A",
+  "explanation": "The rate is $40$ years per $8$ centimeters, or $40 \\div 8 = 5$ years per centimeter. The input $h$ is measured down from the top, and going down means going toward older sediment, so the slope is $+5$. The bottom of the core is at $h = 300$ centimeters ($3$ meters), where the age is $5{,}000$, so $5(300) + b = 5{,}000$, which gives $b = 3{,}500$. The function is $A(h) = 5h + 3{,}500$. Check: at the top, $h = 0$, the sediment is $3{,}500$ years old, which is $1{,}500$ years younger than the bottom, as it should be.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You saw 'younger' and made the slope negative. But that describes moving up, and $h$ counts centimeters down from the top. As $h$ increases you move deeper, where the sediment is older, so the slope has to be positive. You also used the bottom's age as the value at $h = 0$, which is the top."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the slope right but used $5{,}000$ as the constant term. The constant is the age at $h = 0$, which is the top of the core. $5{,}000$ is the age at the bottom, where $h = 300$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You put $h = 3$ for the bottom of the core, using its length in meters. Here $h$ is measured in centimeters, so the bottom is at $h = 300$, and solving $5(300) + b = 5{,}000$ gives $b = 3{,}500$."
+   }
+  },
+  "id": "orig-model-from-wor-X-e253cf",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]
