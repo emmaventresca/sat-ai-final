@@ -4,6 +4,7 @@ import type { Exam, Question, Tier } from '../exams/types'
 import { loadBank } from '../lib/bank'
 import { difficultyLabel } from '../lesson/types'
 import { addStudent, roster, setAccess, type Student } from './roster'
+import { buildJourney, type SkillMeta } from '../journey/map'
 import { assignmentsFor, progressFor, saveAssignment, type AssignmentItem } from './assignments'
 import { makeWorksheet } from './worksheetApi'
 
@@ -35,6 +36,8 @@ export function Assign() {
   const [days, setDays] = useState(7)
   const [note, setNote] = useState<string | null>(null)
   const [making, setMaking] = useState(false)
+  const [skills, setSkills] = useState<SkillMeta[]>([])
+  const [phrasing, setPhrasing] = useState('')
 
   const student = students.find((s) => s.id === studentId)
   const allowed = EXAM_IDS.filter((id) => student?.access[id])
@@ -42,6 +45,10 @@ export function Assign() {
   useEffect(() => {
     let live = true
     void loadBank(exam).then((b) => live && setBank(b))
+    void fetch(`${import.meta.env.BASE_URL}data/skills.json`)
+      .then((r) => r.json())
+      .then((b: { skills?: SkillMeta[] }) => live && setSkills(b.skills ?? []))
+      .catch(() => undefined)
     return () => { live = false }
   }, [exam])
 
@@ -50,21 +57,41 @@ export function Assign() {
   // this screen exists to prevent.
   useEffect(() => { setChosen([]); setSubtype(''); setTier('') }, [exam])
 
-  const subtypes = useMemo(() => {
-    const seen = new Map<string, string>()
-    for (const q of bank) {
-      if (q.subtype && !seen.has(q.subtype)) {
-        seen.set(q.subtype, q.subtypeName || q.subtype)
-      }
-    }
-    return [...seen.entries()].sort((a, b) => a[1].localeCompare(b[1]))
-  }, [bank])
+  /**
+   * The question types, grouped the way the student's map groups them.
+   *
+   * A flat select of 183 is not a chooser, it is a wall - you cannot find
+   * anything in it without already knowing the exact name. The same list
+   * under its chapter and leg headings is scannable, and it matches what the
+   * student sees, so "the circle ones" means the same thing on both sides.
+   */
+  const grouped = useMemo(() => {
+    if (!bank.length) return []
+    return buildJourney(exam, bank, skills).map((chapter) => ({
+      name: chapter.name,
+      legs: chapter.legs.map((leg) => ({
+        name: leg.name,
+        stages: leg.stages.map((st) => [st.subtype, st.name, st.total] as const),
+      })),
+    }))
+  }, [exam, bank, skills])
 
   const matching = useMemo(
     () => bank.filter((q) =>
-      (!subtype || q.subtype === subtype) && (!tier || q.difficulty === tier)),
-    [bank, subtype, tier],
+      (!subtype || q.subtype === subtype)
+      && (!tier || q.difficulty === tier)
+      && (!phrasing || q.phrasing === phrasing)),
+    [bank, subtype, tier, phrasing],
   )
+
+  /** The wording families this bank actually contains. */
+  const phrasings = useMemo(() => {
+    const seen = new Map<string, number>()
+    for (const q of bank) {
+      if (q.phrasing) seen.set(q.phrasing, (seen.get(q.phrasing) ?? 0) + 1)
+    }
+    return [...seen.entries()].sort((a, b) => b[1] - a[1])
+  }, [bank])
 
   function toggle(id: string) {
     setChosen((prev) => prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id])
@@ -168,13 +195,26 @@ export function Assign() {
             <div className="row tight">
               <select value={subtype} onChange={(e) => setSubtype(e.target.value)}>
                 <option value="">Every question type</option>
-                {subtypes.map(([slug, name]) =>
-                  <option key={slug} value={slug}>{name}</option>)}
+                {grouped.map((chapter) =>
+                  chapter.legs.map((leg) => (
+                    <optgroup key={`${chapter.name}-${leg.name}`}
+                      label={`${chapter.name} · ${leg.name}`}>
+                      {leg.stages.map(([slug, name, n]) => (
+                        <option key={slug} value={slug}>{name} ({n})</option>
+                      ))}
+                    </optgroup>
+                  )))}
               </select>
               <select value={tier} onChange={(e) => setTier(e.target.value as Tier | '')}>
                 <option value="">Every level</option>
                 {examSpec(exam).tiers.map((t) =>
                   <option key={t} value={t}>{difficultyLabel(t)}</option>)}
+              </select>
+              <select value={phrasing} onChange={(e) => setPhrasing(e.target.value)}>
+                <option value="">Any wording</option>
+                {phrasings.map(([fam, n]) => (
+                  <option key={fam} value={fam}>{readableFamily(fam)} ({n})</option>
+                ))}
               </select>
               <span className="tiny muted">{matching.length} match</span>
             </div>
@@ -278,6 +318,10 @@ function Assigned({ studentId }: { studentId: string }) {
       })}
     </>
   )
+}
+
+function readableFamily(slug: string): string {
+  return slug.replace(/_/g, ' ').replace(/^./, (c) => c.toUpperCase())
 }
 
 /** Open a generated document in its own tab, ready to print. */

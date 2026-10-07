@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BANKS = ["data/practice.json"]
+BANKS = ["data/practice.json", "data/act/questions.json"]
 
 DISPLAY = r"(table|graph|chart|figure|bar graph|scatterplot|histogram|diagram)"
 REFERS = re.compile(
@@ -52,8 +52,17 @@ FIGURE_TYPES = {"bar", "line", "scatter", "curve"}
 
 
 def has_display(item):
-    stim = item.get("stimulus") or ""
-    if "<table" in stim or has_pipe_table(stim):
+    # The stem as well as the stimulus: a short data question often has no
+    # passage at all and carries its table in the question itself, and
+    # looking only at the stimulus called 33 of those unanswerable.
+    both = f"{item.get('stimulus') or ''}\n{item.get('stem') or ''}"
+    if "<table" in both or has_pipe_table(both):
+        return True
+    # Already-rendered displays, which is how the ACT bank carries them.
+    if item.get("figure_html"):
+        return True
+    figures = item.get("figures")
+    if isinstance(figures, list) and figures:
         return True
     fig = item.get("figure")
     return isinstance(fig, dict) and fig.get("type") in FIGURE_TYPES
@@ -61,6 +70,10 @@ def has_display(item):
 
 def check_figure(item):
     """A spec we cannot draw is the same as no picture at all."""
+    # The ACT bank's specs are drawn by the ACT project's own renderers at
+    # import time, and anything they refused never got this far.
+    if item.get("figure_html"):
+        return []
     fig = item.get("figure")
     if not isinstance(fig, dict):
         return []

@@ -42,6 +42,7 @@ interface RawItem {
   stimulus?: string | null
   stem: string
   figure?: unknown
+  figures?: unknown[]
   choices?: string[]
   answer?: string
   keys?: string[]
@@ -69,6 +70,7 @@ function normalise(raw: RawItem, exam: Exam): Question {
     stimulus: raw.stimulus ?? null,
     stem: raw.stem,
     figure: raw.figure,
+    figures: raw.figures,
     choices: raw.choices,
     answer: raw.answer,
     keys: raw.keys,

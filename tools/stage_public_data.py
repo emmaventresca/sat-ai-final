@@ -31,6 +31,7 @@ PUBLISH = [
     "subtypes.json",
     "subtype_counts.json",
     "misconceptions.json",
+    "skills.json",              # domain grouping, for the journey map
     "difficulty_style.json",
 ]
 

@@ -75,9 +75,9 @@ export function QuestionCard({
 
   return (
     <div className="card">
-      {Boolean(question.stimulus || question.figure) && (
+      {Boolean(question.stimulus || question.figure || question.figures?.length) && (
         <Annotatable className="stim" questionId={question.id} part="stimulus"
-          html={renderStimulus(question.stimulus) + renderFigure(question.figure)} />
+          html={renderStimulus(question.stimulus) + displays(question)} />
       )}
       <Annotatable className="q" questionId={question.id} part="stem"
         html={renderStimulus(question.stem)} />
@@ -163,6 +163,18 @@ export function QuestionCard({
       )}
     </div>
   )
+}
+
+/**
+ * Every display the question needs, in order.
+ *
+ * A list rather than one, because an ACT Science stem routinely reads "as
+ * determined from Table 1 and Figure 1" and is unanswerable with only the
+ * first - which is exactly what happened to 206 questions.
+ */
+function displays(q: Question): string {
+  const specs = q.figures?.length ? q.figures : q.figure ? [q.figure] : []
+  return specs.map((spec) => renderFigure(spec)).join('')
 }
 
 function Explanation({

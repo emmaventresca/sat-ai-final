@@ -28,6 +28,8 @@ export interface Question {
   stimulus?: string | null
   stem: string
   figure?: unknown
+  /** Every display this question needs. ACT Science routinely needs two. */
+  figures?: unknown[]
   choices?: string[]
   /** Multiple choice. */
   answer?: string

@@ -811,3 +811,104 @@ mark.hl-blue{background:#c3e0ff;box-shadow:inset 0 -.42em 0 #c3e0ff}
   text-transform:uppercase;padding:3px 9px;border-radius:99px;margin-right:6px;
   background:rgba(255,255,255,.8);border:1px solid rgba(0,0,0,.06);color:var(--ink);
 }
+
+/* ---- the journey -------------------------------------------------------- */
+/* The bank laid out as a route rather than an inventory. A hundred and eighty
+   recognitions in one column is the most discouraging thing you can show
+   someone who already feels behind; the same content as eight chapters with a
+   handful of stops each is the same work and a different proposition. */
+.journey h1{font-family:var(--serif);font-size:1.9rem;letter-spacing:-.02em}
+.journey .lead{font-family:var(--serif);font-size:1.02rem;line-height:1.66;color:var(--ink)}
+.journey-overall{height:12px;margin:10px 0 22px}
+
+.road{position:relative;padding-left:30px}
+/* The road itself: one continuous line the chapters hang off, so the eye
+   reads a route rather than a stack of cards. */
+.road::before{
+  content:"";position:absolute;left:11px;top:14px;bottom:14px;width:3px;
+  background:linear-gradient(180deg,var(--purple),var(--blue) 55%,var(--line2));
+  border-radius:99px;opacity:.5;
+}
+
+.chapter{position:relative;margin-bottom:12px}
+.chapter::before{
+  content:"";position:absolute;left:-24px;top:26px;width:15px;height:15px;
+  border-radius:50%;background:var(--panel);border:3px solid var(--line2);z-index:1;
+}
+.chapter.under-way::before{border-color:var(--purple)}
+.chapter.done::before{border-color:var(--good);background:var(--good)}
+
+.chapter-head{
+  display:flex;align-items:center;gap:14px;width:100%;text-align:left;
+  padding:16px 18px;border-radius:var(--radius);background:var(--panel);
+  border:1px solid var(--line);box-shadow:var(--shadow);
+}
+.chapter-head:hover{transform:translateY(-1px);box-shadow:var(--shadow-lg)}
+.chapter-n{
+  flex:0 0 auto;font-family:var(--serif);font-size:1.15rem;font-weight:700;
+  color:var(--purple-d);min-width:34px;text-align:center;letter-spacing:.04em;
+}
+.chapter-body{flex:1;min-width:0}
+.chapter-t{display:block;font-weight:800;font-size:1.04rem;letter-spacing:-.01em}
+.chapter-d{display:block;font-size:.8rem;color:var(--dim);font-weight:600;margin-top:2px}
+.chapter-body .bar{margin-top:8px}
+.chapter-chevron{flex:0 0 auto;font-size:1.3rem;color:var(--dim);line-height:1}
+.chapter.done .chapter-head{border-color:var(--good-ln);background:var(--good-bg)}
+
+.chapter-legs{padding:10px 0 4px 10px}
+.leg{margin:14px 0 18px}
+.leg-name{
+  font-size:.7rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:8px;
+}
+.stops{list-style:none;margin:0;padding:0 0 0 14px;position:relative}
+.stops::before{
+  content:"";position:absolute;left:3px;top:8px;bottom:8px;width:2px;
+  background:var(--line2);border-radius:99px;
+}
+.stops li{margin-bottom:6px}
+.stop{
+  display:flex;align-items:center;gap:12px;width:100%;text-align:left;
+  padding:10px 14px;border-radius:13px;background:var(--panel);
+  border:1px solid var(--line);box-shadow:none;
+}
+.stop:hover{border-color:var(--line2);background:var(--panel2)}
+.stop-dot{
+  flex:0 0 auto;width:10px;height:10px;border-radius:50%;margin-left:-20px;
+  background:var(--panel);border:2px solid var(--line2);
+}
+.stop.started .stop-dot{border-color:var(--purple);background:var(--purple)}
+.stop.cleared .stop-dot{border-color:var(--good);background:var(--good)}
+.stop-body{min-width:0}
+.stop-t{display:block;font-weight:700;font-size:.92rem}
+.stop-d{display:block;font-size:.76rem;color:var(--dim);font-weight:600;margin-top:1px}
+.stop.cleared .stop-t{color:#0b7a55}
+.stop.trial{
+  border-style:dashed;border-color:var(--flag-ln);
+  background:linear-gradient(180deg,var(--flag-bg),var(--panel));
+}
+.stop.trial .stop-dot{border-color:var(--flag);background:var(--flag-bg)}
+.stop.trial .stop-t{color:#a9660a}
+
+/* A stop, opened: the written page first, the questions after. */
+.stage-card,.trial-card{
+  padding:24px 26px;border-radius:var(--radius);background:var(--panel);
+  border:1px solid var(--line);box-shadow:var(--shadow);margin:14px 0 20px;
+}
+.stage-k,.trial-k{
+  font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--purple-d);margin-bottom:6px;
+}
+.trial-k{color:var(--flag)}
+.stage-sec{margin-top:18px}
+.stage-sec h3{
+  font-size:.74rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--dim);margin:0 0 7px;
+}
+.stage-sec p,.stage-sec li{font-family:var(--serif);line-height:1.68}
+.trial-ways{margin:14px 0 18px;padding-left:20px}
+.trial-ways li{margin-bottom:7px;font-size:.92rem}
+.stage-lesson-h{
+  font-family:var(--serif);font-size:1.12rem;margin:18px 0 2px;
+  padding-top:16px;border-top:1px solid var(--line);
+}

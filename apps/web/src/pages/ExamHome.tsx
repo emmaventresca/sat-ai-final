@@ -1,5 +1,5 @@
 import type { Exam } from '../exams/types'
-import { Practice } from '../practice/Practice'
+import { Journey } from '../journey/Journey'
 
 /**
  * The student's front door for ONE exam.
@@ -9,5 +9,5 @@ import { Practice } from '../practice/Practice'
  * exam's content to leak in.
  */
 export function ExamHome({ exam }: { exam: Exam }) {
-  return <Practice exam={exam} />
+  return <Journey exam={exam} />
 }
