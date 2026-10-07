@@ -1,0 +1,98 @@
+import type { Exam, Question, Tier } from '../exams/types'
+
+/**
+ * What the student has done, and what they got wrong.
+ *
+ * Recorded at BOTH levels - the skill and the recognition inside it -
+ * because both are real units of progress. The skill drives what to study
+ * next; the recognition drives its own lesson and the review screen.
+ * Recording only the skill is what once left every recognition reading "not
+ * started" no matter how much a student practised it.
+ *
+ * Keyed by exam as well, since an SAT subtype and an ACT subtopic can share
+ * a name and must never share a cell.
+ */
+const KEY = 'prep.progress'
+
+export interface Attempt {
+  exam: Exam
+  questionId: string
+  subtype: string | null
+  skill: string
+  difficulty: Tier
+  chosen: string
+  correct: boolean
+  misconception?: string | null
+  at: string
+}
+
+export interface Cell {
+  seen: number
+  correct: number
+  streak: number
+}
+
+interface Store {
+  attempts: Attempt[]
+  mastery: Record<string, Cell>
+}
+
+function read(): Store {
+  try {
+    const raw = localStorage.getItem(KEY)
+    return raw ? (JSON.parse(raw) as Store) : { attempts: [], mastery: {} }
+  } catch {
+    return { attempts: [], mastery: {} }
+  }
+}
+
+function write(s: Store): void {
+  // Attempts are the record the review screen reads; trimming the oldest
+  // keeps the store bounded without losing anything recent enough to teach
+  // from.
+  localStorage.setItem(KEY, JSON.stringify({ ...s, attempts: s.attempts.slice(-4000) }))
+}
+
+export const cellKey = (exam: Exam, unit: string, tier: Tier) => `${exam}|${unit}|${tier}`
+
+export function progress(): Store {
+  return read()
+}
+
+export function record(q: Question, chosen: string, correct: boolean): Attempt {
+  const store = read()
+  const attempt: Attempt = {
+    exam: q.exam,
+    questionId: q.id,
+    subtype: q.subtype,
+    skill: q.skill,
+    difficulty: q.difficulty,
+    chosen,
+    correct,
+    misconception: correct ? null : q.misconceptions?.[chosen] ?? null,
+    at: new Date().toISOString(),
+  }
+  store.attempts.push(attempt)
+
+  for (const unit of [q.skill, q.subtype].filter(Boolean) as string[]) {
+    const key = cellKey(q.exam, unit, q.difficulty)
+    const cell = store.mastery[key] ?? { seen: 0, correct: 0, streak: 0 }
+    store.mastery[key] = {
+      seen: cell.seen + 1,
+      correct: cell.correct + (correct ? 1 : 0),
+      streak: correct ? cell.streak + 1 : 0,
+    }
+  }
+  write(store)
+  return attempt
+}
+
+export function accuracy(exam: Exam, unit: string, tier: Tier): number | null {
+  const cell = read().mastery[cellKey(exam, unit, tier)]
+  return cell?.seen ? cell.correct / cell.seen : null
+}
+
+/** Ids already attempted, so a round can prefer questions they have not seen. */
+export function seenIds(exam: Exam): Set<string> {
+  return new Set(read().attempts.filter((a) => a.exam === exam).map((a) => a.questionId))
+}
