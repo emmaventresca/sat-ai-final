@@ -49,8 +49,6 @@ export function Journey({ exam }: { exam: Exam }) {
     () => (bank.length ? buildJourney(exam, bank, skills) : []),
     [exam, bank, skills, version],
   )
-  const realms = useMemo(() => regions.flatMap((r) => r.chapters), [regions])
-
   const rank = useMemo(() => rankOf(exam), [exam, version])
   const streak = useMemo(() => streakOf(exam), [exam, version])
   const today = useMemo(() => todayCount(exam), [exam, version])
@@ -108,17 +106,22 @@ export function Journey({ exam }: { exam: Exam }) {
         </div>
       </div>
 
-      <WorldMap chapters={realms} openId={openRealm}
-        onPick={(id) => setOpenRealm(openRealm === id ? null : id)} />
-
       {regions.map((region) => (
-        <section className="region" key={region.id}>
+        <section className={`region world-${region.terrain}`} key={region.id}>
           <div className="region-head">
             <h2>{region.name}</h2>
             <span className="region-count">
               {region.cleared}/{region.stages} stops
             </span>
           </div>
+
+          {/* Each world gets its own map, drawn in its own country. A
+              student moves between the two sections constantly, and the
+              colour says which one they are in before they read a word. */}
+          <WorldMap chapters={region.chapters} terrain={region.terrain}
+            openId={openRealm}
+            onPick={(id) => setOpenRealm(openRealm === id ? null : id)} />
+
           {region.chapters.map((chapter) => (
             <RealmCard key={chapter.id} chapter={chapter}
               open={openRealm === chapter.id}

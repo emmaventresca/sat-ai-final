@@ -73,6 +73,7 @@ export interface Chapter {
 export interface Region {
   id: string
   name: string
+  terrain: Terrain
   chapters: Chapter[]
   stages: number
   cleared: number
@@ -99,8 +100,34 @@ const TRIAL_FAMILIES = [
 ]
 
 export const SECTION_LABEL: Record<string, string> = {
+  // "English", not "Reading & Writing". It is what the section gets called
+  // out loud, and it is the other half of a pair with Math.
   math: 'Math', english: 'English', reading: 'Reading', science: 'Science',
-  rw: 'Reading & Writing',
+  rw: 'English',
+}
+
+/**
+ * The order the realms are walked in.
+ *
+ * Not by size, which is what the code did before and which put Data &
+ * Problem-Solving first because it has the most recognitions. A curriculum
+ * has an order - algebra before advanced, ideas before conventions - and
+ * where a realm is not named here it falls to the end rather than being
+ * silently dropped.
+ */
+const REALM_ORDER = [
+  'Algebra', 'Advanced Math', 'Problem-Solving and Data Analysis',
+  'Geometry and Trigonometry',
+  'Information and Ideas', 'Craft and Structure', 'Expression of Ideas',
+  'Standard English Conventions',
+]
+
+/** Which world a region belongs to, for the map it is drawn on. */
+export type Terrain = 'cliffs' | 'ocean'
+
+export const TERRAIN: Record<string, Terrain> = {
+  math: 'cliffs', science: 'cliffs',
+  rw: 'ocean', english: 'ocean', reading: 'ocean',
 }
 
 /**
@@ -213,8 +240,12 @@ export function buildJourney(
 
   // Sections stay together, and within a section the biggest domain leads -
   // which is also the one carrying the most marks.
+  const rank = (name: string) => {
+    const at = REALM_ORDER.indexOf(name)
+    return at === -1 ? REALM_ORDER.length : at
+  }
   const ordered = [...chapters.values()].sort(
-    (a, b) => a.section.localeCompare(b.section) || b.stages - a.stages,
+    (a, b) => rank(a.name) - rank(b.name) || b.stages - a.stages,
   )
 
   const regions = new Map<string, Region>()
@@ -222,6 +253,7 @@ export function buildJourney(
     const region = regions.get(chapter.section) ?? {
       id: chapter.section,
       name: SECTION_LABEL[chapter.section] ?? chapter.section,
+      terrain: TERRAIN[chapter.section] ?? 'cliffs',
       chapters: [], stages: 0, cleared: 0,
     }
     region.chapters.push(chapter)
@@ -229,7 +261,12 @@ export function buildJourney(
     region.cleared += chapter.cleared
     regions.set(chapter.section, region)
   }
-  return [...regions.values()]
+  // Maths leads, then the verbal section: it is the order they are sat in,
+  // and for the ACT the rest follow behind.
+  const order = ['math', 'rw', 'english', 'reading', 'science']
+  return [...regions.values()].sort(
+    (a, b) => order.indexOf(a.id) - order.indexOf(b.id),
+  )
 }
 
 /**

@@ -1,4 +1,4 @@
-import type { Chapter } from './map'
+import type { Chapter, Terrain } from './map'
 
 /**
  * The realms, drawn as a place rather than listed as rows.
@@ -15,13 +15,27 @@ import type { Chapter } from './map'
 const W = 1000
 const H = 460
 
+/**
+ * Two worlds, drawn differently.
+ *
+ * Maths is highland: cliffs, moss and bracken under a weather front, the
+ * greens and burnt oranges of a Scottish autumn. English is coastal: open
+ * water, headlands, a long horizon.
+ *
+ * Not decoration. A student bounces between the two sections constantly, and
+ * a glance at the colour tells them which one they are in before they have
+ * read a word - which is the same reason the teacher's roster is colour
+ * coded and the student's practice screens are not.
+ */
 export function WorldMap({
-  chapters, openId, onPick,
+  chapters, openId, onPick, terrain,
 }: {
   chapters: Chapter[]
   openId: string | null
   onPick: (id: string) => void
+  terrain: Terrain
 }) {
+  const t = PALETTE[terrain]
   // Realms sit along a route that rises as it goes, so progress reads as
   // travel rather than as a column.
   const nodes = chapters.map((c, i) => {
@@ -51,51 +65,55 @@ export function WorldMap({
     <svg className="worldmap" viewBox={`0 0 ${W} ${H}`} role="img"
       aria-label="Your route through the test">
       <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#2b3350" />
-          <stop offset="55%" stopColor="#5a6a8c" />
-          <stop offset="100%" stopColor="#c7b58e" />
+        <linearGradient id={`sky-${terrain}`} x1="0" y1="0" x2="0" y2="1">
+          {t.sky.map(([o, c]) => <stop key={o} offset={o} stopColor={c} />)}
         </linearGradient>
-        <linearGradient id="far" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#6c7b9b" />
-          <stop offset="100%" stopColor="#8fa0ba" />
+        <linearGradient id={`far-${terrain}`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor={t.far[0]} />
+          <stop offset="100%" stopColor={t.far[1]} />
         </linearGradient>
-        <linearGradient id="mid" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#5d7257" />
-          <stop offset="100%" stopColor="#7d9460" />
+        <linearGradient id={`mid-${terrain}`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor={t.mid[0]} />
+          <stop offset="100%" stopColor={t.mid[1]} />
         </linearGradient>
-        <linearGradient id="near" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#71893f" />
-          <stop offset="100%" stopColor="#3f4a2a" />
+        <linearGradient id={`near-${terrain}`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor={t.near[0]} />
+          <stop offset="100%" stopColor={t.near[1]} />
         </linearGradient>
-        <radialGradient id="glow">
-          <stop offset="0%" stopColor="#ffd98a" stopOpacity="0.95" />
-          <stop offset="100%" stopColor="#ffd98a" stopOpacity="0" />
+        <radialGradient id={`glow-${terrain}`}>
+          <stop offset="0%" stopColor={t.glow} stopOpacity="0.95" />
+          <stop offset="100%" stopColor={t.glow} stopOpacity="0" />
         </radialGradient>
       </defs>
 
-      <rect width={W} height={H} fill="url(#sky)" />
+      <rect width={W} height={H} fill={`url(#sky-${terrain})`} />
       {/* Weather: heavy banks low in the frame, the way a storm sits over a
           ridge. Painted clouds read as smudges at this size. */}
-      <ellipse cx="220" cy="54" rx="340" ry="62" fill="#161c2c" opacity=".7" />
-      <ellipse cx="640" cy="30" rx="380" ry="54" fill="#1a2132" opacity=".6" />
-      <ellipse cx="880" cy="92" rx="260" ry="40" fill="#222a3e" opacity=".5" />
-      <circle cx="800" cy="186" r="150" fill="url(#glow)" />
+      <ellipse cx="220" cy="54" rx="340" ry="62" fill={t.cloud} opacity=".62" />
+      <ellipse cx="640" cy="30" rx="380" ry="54" fill={t.cloud} opacity=".5" />
+      <ellipse cx="880" cy="92" rx="260" ry="40" fill={t.cloud} opacity=".4" />
+      <circle cx="800" cy="186" r="150" fill={`url(#glow-${terrain})`} />
 
-      {/* Water, which is what makes the far edge read as distance. */}
-      <rect x="0" y={H * 0.5} width={W} height={H * 0.22} fill="#8fa3bc" opacity=".55" />
+      {/* Water. On the coast it is most of the frame; inland it is the loch
+          at the foot of the cliffs. */}
+      <rect x="0" y={H * t.waterTop} width={W} height={H} fill={t.water} opacity=".62" />
+      {terrain === 'ocean' && WAVES.map((i) => (
+        <path key={i} d={waves(H * t.waterTop + 26 + i * 30, 7 - i)}
+          fill="none" stroke="#dcecf6" strokeWidth="1.6" opacity={0.3 - i * 0.05} />
+      ))}
 
-      <path d={ridge(0.55, 9, 44, 1)} fill="url(#far)" opacity=".8" />
-      {/* Spires. The one shape that makes a landscape read as somewhere
-          rather than as hills, so they sit on the skyline, not behind it. */}
-      {SPIRES.map(([x, base, h], i) => (
+      <path d={ridge(0.55, 9, t.farHeight, 1)} fill={`url(#far-${terrain})`} opacity=".8" />
+      {/* Spires on the skyline. Highland gets rock teeth; the coast gets
+          fewer, lower headlands, because a seascape with alpine peaks in it
+          reads as neither. */}
+      {(terrain === 'cliffs' ? SPIRES : HEADLANDS).map(([x, base, h], i) => (
         <path key={i}
           d={`M ${x} ${base} l ${h * 0.17} ${-h} l ${h * 0.1} ${h * 0.34}
               l ${h * 0.12} ${-h * 0.56} l ${h * 0.2} ${h * 1.22} z`}
-          fill="#333c52" opacity=".92" />
+          fill={t.rock} opacity=".92" />
       ))}
-      <path d={ridge(0.7, 6, 66, 2)} fill="url(#mid)" />
-      <path d={ridge(0.86, 5, 78, 3)} fill="url(#near)" />
+      <path d={ridge(0.7, 6, t.midHeight, 2)} fill={`url(#mid-${terrain})`} />
+      <path d={ridge(0.86, 5, t.nearHeight, 3)} fill={`url(#near-${terrain})`} />
 
       <path d={road} className="map-road-shadow" />
       <path d={road} className="map-road" />
@@ -127,6 +145,67 @@ export function WorldMap({
 const SPIRES: [number, number, number][] = [
   [196, 300, 96], [238, 306, 62], [742, 292, 108], [806, 300, 74], [856, 306, 58],
 ]
+
+/** Lower and fewer: a coastline, not a mountain range. */
+const HEADLANDS: [number, number, number][] = [
+  [120, 300, 46], [880, 296, 54],
+]
+
+const WAVES = [0, 1, 2]
+
+/** A line of swell. Deterministic, like everything else on the map. */
+function waves(y: number, amp: number): string {
+  const points = ['M -20 ' + y]
+  for (let x = 20; x <= W + 20; x += 40) {
+    points.push(`Q ${x - 20} ${y - amp}, ${x} ${y}`)
+  }
+  return points.join(' ')
+}
+
+interface Palette {
+  sky: [string, string][]
+  far: [string, string]
+  mid: [string, string]
+  near: [string, string]
+  glow: string
+  cloud: string
+  water: string
+  rock: string
+  waterTop: number
+  farHeight: number
+  midHeight: number
+  nearHeight: number
+}
+
+const PALETTE: Record<Terrain, Palette> = {
+  // Highland autumn: weather overhead, bracken and moss below, the low sun
+  // that makes the grass look lit from inside.
+  cliffs: {
+    sky: [['0%', '#2b3350'], ['50%', '#6a7693'], ['100%', '#d8bd8a']],
+    far: ['#6c7b9b', '#93a3bb'],
+    mid: ['#6b7a45', '#8d9a4e'],
+    near: ['#93a23c', '#4a4a22'],
+    glow: '#ffd98a',
+    cloud: '#1a2132',
+    water: '#8fa3bc',
+    rock: '#3b3f4e',
+    waterTop: 0.5,
+    farHeight: 44, midHeight: 66, nearHeight: 78,
+  },
+  // Coast: more sky, more water, the land a low green edge at the bottom.
+  ocean: {
+    sky: [['0%', '#15314a'], ['45%', '#3f7392'], ['100%', '#a9d4de']],
+    far: ['#4e8198', '#79aab8'],
+    mid: ['#2f6f7c', '#49909a'],
+    near: ['#4e7f5e', '#24402f'],
+    glow: '#cdf0ff',
+    cloud: '#0f2436',
+    water: '#2e7e94',
+    rock: '#2c4452',
+    waterTop: 0.42,
+    farHeight: 34, midHeight: 44, nearHeight: 70,
+  },
+}
 
 /**
  * A ridgeline.
