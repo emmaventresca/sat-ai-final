@@ -190,5 +190,48 @@
    "overlap": [],
    "residue": 0
   }
+ },
+ {
+  "stem": "Which equation gives the amount of water $W$, in liters, left in the tank $h$ hours after the valve opens?",
+  "stimulus": "A field irrigation tank starts with 300 liters of water. Once the valve opens, water drains out at a steady 15 liters per hour.",
+  "choices": [
+   "$W = 300 - 15h$",
+   "$W = 300 + 15h$",
+   "$W = 15 - 300h$",
+   "$W = 300h - 15$"
+  ],
+  "answer": "A",
+  "explanation": "The tank starts with 300 liters, so 300 is the amount when $h = 0$. That makes it the constant term. The water changes by 15 liters every hour, and since it is draining, the rate is $-15$. Output = start + rate \u00d7 input gives $W = 300 - 15h$. Check it: at $h = 0$ you get 300, and at $h = 1$ you get 285, which is 15 liters less. This is the core move behind every SAT word problem that asks you to build the model: pick out where the quantity starts and how fast it changes, then put each number in its place.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the start and the rate right but gave the rate the wrong sign. Water is draining out, so the amount goes down each hour. With $+15h$ the tank would be filling. Before you commit, check that your equation moves in the same direction as the story."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You swapped the two numbers, making 15 the starting amount and 300 the hourly rate. The starting amount is the value when $h = 0$, so it has to be the constant term. The per-hour amount is what multiplies $h$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You attached $h$ to the wrong number. Here 300 is multiplied by the hours, so the tank would gain 300 liters an hour and start at $-15$ liters. Only the per-hour figure, 15, should be multiplied by $h$."
+   }
+  },
+  "id": "orig-model-from-wor-F-291f30",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "F",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-model-from-wor-F-291f30",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

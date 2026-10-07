@@ -3,6 +3,7 @@ import { ExamHome } from './pages/ExamHome'
 import { TeacherHome } from './teacher/TeacherHome'
 import { Pick } from './pages/Pick'
 import { LessonPreview } from './pages/LessonPreview'
+import { Planner } from './teacher/Planner'
 
 /**
  * Two exams, two front doors, one teacher.
@@ -34,6 +35,7 @@ export function App() {
         <Route path="/sat/*" element={<ExamHome exam="sat" />} />
         <Route path="/act/*" element={<ExamHome exam="act" />} />
         <Route path="/teacher/*" element={<TeacherHome />} />
+        <Route path="/plan" element={<Planner />} />
         <Route path="/lesson-preview" element={<LessonPreview />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

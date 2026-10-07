@@ -1,0 +1,90 @@
+[
+ {
+  "stem": "Which of the following best describes the relationship between $t$ and $L$?",
+  "stimulus": "A field technician checks a seismograph station and records $L$, the length, in meters, of recording paper remaining on the drum $t$ hours after a new roll is loaded. The table shows four of the readings.\n\nRecording Paper Remaining on the Drum\nTime since loading, t (hours) | 0 | 4 | 6 | 7\nPaper remaining, L (meters) | 96 | 64 | 48 | 40",
+  "choices": [
+   "Decreasing linear",
+   "Decreasing exponential",
+   "Increasing linear",
+   "Increasing exponential"
+  ],
+  "answer": "A",
+  "explanation": "As $t$ increases, $L$ goes down, so the relationship is decreasing. The time readings are not evenly spaced (gaps of 4, 2 and 1 hours), so you have to compare each change in $L$ with the change in $t$. From 0 to 4 hours, $L$ drops 32 m in 4 h, which is 8 m per hour. From 4 to 6 hours, it drops 16 m in 2 h, which is 8 m per hour. From 6 to 7 hours, it drops 8 m in 1 h, which is 8 m per hour. The rate is a constant $-8$ meters per hour, so $L = 96 - 8t$. The relationship is decreasing linear.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You took the differences between neighbouring columns (\u221232, \u221216, \u22128), saw each one was half the one before, and decided the table shrinks by a constant factor. Those differences halve only because the time gaps halve (4, 2, 1 hours). Per hour, the drop is always 8 m. The ratios of $L$ itself (64/96, 48/64, 40/48) are not constant, so this is not exponential."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the constant rate of 8 meters per hour but tracked the paper used up (0, 32, 48, 56) instead of the paper remaining. The question asks about $L$, the paper remaining, and that goes down as $t$ increases."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You made two mistakes. You followed the paper used instead of the paper remaining, which flips the direction. You also treated the halving differences (32, 16, 8) as a constant multiplier, which changes the type. The paper remaining goes down by a constant 8 m per hour."
+   }
+  },
+  "id": "orig-classify-funct-X-d1ae22",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-classify-funct-X-d1ae22",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [
+    "__num__ which of the following best describes the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which of the following statements is true?",
+  "stimulus": "On day 0, the snow depth was 200 centimeters at weather Station P and 160 centimeters at weather Station Q. During a warm spell, Station P's snow depth decreased each day by an amount equal to 10% of its day 0 depth. Station Q's snow depth decreased each day by 15% of its depth at the end of the previous day. Depths are recorded at the end of each day.",
+  "choices": [
+   "The depth at Station Q never exceeds the depth at Station P.",
+   "The depth at Station Q first exceeds Station P's at the end of day 7.",
+   "The depth at Station Q first exceeds Station P's at the end of day 8.",
+   "The depth at Station Q first exceeds Station P's at the end of day 10."
+  ],
+  "answer": "C",
+  "explanation": "Station P loses 10% of a fixed amount, so it loses the same 20 cm every day. That makes it linear: $P(d) = 200 - 20d$. Station Q loses 15% of whatever depth it has, so it is exponential: $Q(d) = 160(0.85)^d$. A linear decrease reaches zero, but an exponential decrease never does, so Q has to pass P at some point. Check the end-of-day values. Day 7: $P = 60$ and $Q = 160(0.85)^7 \\approx 51.3$, so P is still greater. Day 8: $P = 40$ and $Q = 160(0.85)^8 \\approx 43.6$, so Q is greater. The depth at Q first exceeds the depth at P at the end of day 8.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You treated Station P's 10% as a percent of its current depth, so you modelled it as $200(0.9)^d$. Since 10% is a smaller loss than 15%, and P also starts higher, P would then stay ahead forever. In fact P loses 10% of its day 0 depth, a fixed 20 cm per day. That is linear, and Q overtakes it. You may also have judged only the first few days, when P is clearly ahead."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You set the two models equal, or found their intersection in Desmos, and got $d \\approx 7.7$. Then you rounded down. At the end of day 7, P is still at 60 cm and Q is only about 51.3 cm. Depths are recorded at the end of each day, so the first recorded day with Q ahead is day 8."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You found when Station P's snow is completely gone ($200 \\div 20 = 10$ days) and assumed Q could only pass P then. Q only has to be greater than P, not greater than zero, and that happens two days earlier, at the end of day 8, when P has 40 cm and Q has about 43.6 cm."
+   }
+  },
+  "id": "orig-classify-funct-X-04f129",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-classify-funct-X-04f129",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

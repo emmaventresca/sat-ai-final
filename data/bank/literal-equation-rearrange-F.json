@@ -190,5 +190,50 @@
    "overlap": [],
    "residue": 0
   }
+ },
+ {
+  "stem": "Which equation correctly expresses $A$ in terms of $D$ and $N$?",
+  "stimulus": "In ecology, the population density of a species in a habitat is given by $D = \\dfrac{N}{A}$, where $D$ is the population density, $N$ is the number of individuals, and $A$ is the area of the habitat. $D$, $N$, and $A$ are all positive.",
+  "choices": [
+   "$A = \\dfrac{D}{N}$",
+   "$A = DN$",
+   "$A = \\dfrac{N}{D}$",
+   "$A = N - D$"
+  ],
+  "answer": "C",
+  "explanation": "$A$ is in the denominator, so first multiply both sides by $A$ to clear the fraction: $DA = N$. Now $A$ is multiplied by $D$, so divide both sides by $D$: $A = \\dfrac{N}{D}$. Check with numbers: if $N = 60$ and $A = 20$, then $D = 3$, and $\\dfrac{60}{3} = 20$ gives back $A$. Clearing a denominator and then isolating the letter you want is the first move in every 'which equation correctly expresses ... in terms of ...' question, including the harder ones with reciprocals and squared variables.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the fraction so $A$ went from the bottom to the top, but you didn't apply that to the whole equation. Taking reciprocals of both sides gives $\\dfrac{1}{D} = \\dfrac{A}{N}$, and you'd still need to multiply by $N$. Try numbers: with $D = 3$ and $N = 60$, $\\dfrac{3}{60}$ is nowhere near an area of 20."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $D$ by $N$ when you should have divided. To get $A$ out of the denominator, multiply both sides by $A$ to get $DA = N$, then divide by $D$. Multiplying $D$ and $N$ together doesn't undo anything in the original equation."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You undid the division with subtraction. The original equation divides $N$ by $A$, so getting $A$ on its own takes multiplication and division, not subtraction. With $N = 60$ and $D = 3$, $60 - 3 = 57$, not 20."
+   }
+  },
+  "id": "orig-literal-equati-F-727cea",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "F",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-literal-equati-F-727cea",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [
+    "is given by __var__ where __var__ is the"
+   ],
+   "residue": 2
+  }
  }
 ]

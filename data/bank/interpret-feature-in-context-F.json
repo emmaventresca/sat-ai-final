@@ -190,5 +190,48 @@
    "overlap": [],
    "residue": 0
   }
+ },
+ {
+  "stem": "What does the number 60 mean in this situation?",
+  "stimulus": "A printmaker uses the function $f(x) = 60(0.9)^x$ to model the amount of ink, in milliliters, left in a jar after $x$ print runs.",
+  "choices": [
+   "After 60 print runs, the jar holds no ink at all.",
+   "Each print run uses 60 milliliters of ink from the jar.",
+   "Before any print runs, the jar holds 60 milliliters of ink.",
+   "After 1 print run, the jar holds 60 milliliters of ink."
+  ],
+  "answer": "C",
+  "explanation": "In $y = a \\cdot b^x$, the number in front, $a$, is the starting value. It is what you get when the input is 0. Here $f(0) = 60(0.9)^0 = 60 \\cdot 1 = 60$. The input $x$ counts print runs and the output counts milliliters of ink, so $x = 0$ means 'before any print runs' and 60 means '60 milliliters in the jar.' This is the one step that every 'best interpretation of the constant' question needs: match each number to its input or output and its units before you read the answer choices.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the input and the output. The 60 is an amount of ink, which is the output, not a number of print runs. It also isn't where the ink runs out. 'Holds no ink' would mean the output is 0, which is an x-intercept, and $60(0.9)^x$ never reaches 0."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the model as linear, as if 60 mL were taken away on every run. In an exponential model, the change per run comes from the base, 0.9: each run leaves 90% of the ink that was there before. The 60 is only where the amount starts."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated the starting value as the amount after the first run. Substitute $x = 1$: $60(0.9)^1 = 54$, not 60. You only get exactly 60 at $x = 0$, because $0.9^0 = 1$."
+   }
+  },
+  "id": "orig-interpret-feat-F-2384b7",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "F",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-interpret-feat-F-2384b7",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

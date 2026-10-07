@@ -1,0 +1,94 @@
+[
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "A warehouse has 5 day-shift workers, with hourly wages of $\\$18$, $\\$20$, $\\$21$, $\\$25$, and $x$ dollars. It has 3 night-shift workers, with hourly wages of $\\$24$, $\\$27$, and $\\$30$. The mean hourly wage of all 8 workers is $\\$1.50$ greater than the mean hourly wage of the 5 day-shift workers.",
+  "choices": [
+   "$23$",
+   "$31$",
+   "$36$",
+   "$71$"
+  ],
+  "answer": "B",
+  "explanation": "Let $S$ be the day-shift total, so $S = 84 + x$. The day-shift mean is $\\frac{S}{5}$. The night-shift total is $24 + 27 + 30 = 81$, so the mean of all 8 workers is $\\frac{S + 81}{8}$. Set up the condition: $\\frac{S+81}{8} = \\frac{S}{5} + 1.5$. Multiply both sides by 40 to get $5S + 405 = 8S + 60$, so $3S = 345$ and $S = 115$. Then $x = 115 - 84 = 31$. Check: the day-shift mean is $\\frac{115}{5} = 23$, and the overall mean is $\\frac{196}{8} = 24.5$, which is $1.5$ more.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You solved correctly but stopped at the day-shift mean, $\\frac{115}{5} = 23$, which is not the missing wage $x$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You found the overall mean by averaging the two shift means, $\\frac{1}{2}\\left(\\frac{S}{5} + 27\\right)$, as if both shifts had the same number of workers. The day shift has 5 workers and the night shift has 3, so you have to combine the totals and divide by 8. Averaging the means gives $S = 120$ and $x = 36$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You made the overall mean $1.50$ less than the day-shift mean instead of $1.50$ more. That gives $\\frac{S+81}{8} = \\frac{S}{5} - 1.5$, so $S = 155$ and $x = 71$."
+   }
+  },
+  "id": "orig-reverse-mean-f-X-25790c",
+  "skill_cd": "Q.C.",
+  "subtype": "reverse-mean-find-unknown",
+  "subtype_name": "Work backward from a mean to a missing value",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-reverse-mean-f-X-25790c",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $a$?",
+  "stimulus": "A city planner recorded the number of new building permits issued in each of 8 neighborhoods. Listed from least to greatest, the counts are $5$, $9$, $a$, $13$, $b$, $21$, $24$, and $c$, where $a$, $b$, and $c$ are integers. The median of the counts is $16$, the range is $30$, and the mean is an integer.",
+  "choices": [
+   "$2$",
+   "$10$",
+   "$13$",
+   "$17$"
+  ],
+  "answer": "B",
+  "explanation": "There are 8 values, so the median is the mean of the 4th and 5th values: $\\frac{13 + b}{2} = 16$, so $b = 19$. The range is the maximum minus the minimum: $c - 5 = 30$, so $c = 35$. The sum is $5 + 9 + a + 13 + 19 + 21 + 24 + 35 = 126 + a$. For the mean to be an integer, $126 + a$ must be divisible by 8. Because the list is in order, $a$ must also be between 9 and 13, inclusive. Of 9, 10, 11, 12, and 13, only $a = 10$ makes the sum divisible by 8: the sum is 136 and the mean is 17. So $a = 10$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "$a = 2$ gives a sum of 128, which is divisible by 8, so the mean is an integer. But it breaks the order: $a$ comes after 9 in the list, so it must be at least 9. You checked divisibility but not the ordering."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You took the 5th value, $b$, to be the median and set $b = 16$. With an even number of values, the median is the mean of the 4th and 5th values, so $b = 19$. Using $b = 16$ makes the sum $123 + a$, which leads you to $a = 13$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "17 is the mean of the 8 counts, $\\frac{136}{8}$, not the value of $a$. You found the total but answered with the mean instead of solving for $a$."
+   }
+  },
+  "id": "orig-reverse-mean-f-X-8ecaa0",
+  "skill_cd": "Q.C.",
+  "subtype": "reverse-mean-find-unknown",
+  "subtype_name": "Work backward from a mean to a missing value",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-reverse-mean-f-X-8ecaa0",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [
+    "__var__ __var__ and __var__ where __var__ __var__ and",
+    "__var__ and __var__ where __var__ __var__ and __var__",
+    "and __var__ where __var__ __var__ and __var__ are",
+    "is an integer what is the value of",
+    "an integer what is the value of __var__"
+   ],
+   "residue": 3
+  }
+ }
+]

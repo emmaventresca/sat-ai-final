@@ -22,8 +22,16 @@
 import type { Exam, Tier } from '../exams/types'
 import type { FigureSpec } from './math'
 
-/** An hour unless the teacher says otherwise. */
-export const DEFAULT_DURATION = 60
+/**
+ * Ninety minutes unless the teacher says otherwise.
+ *
+ * An hour was the first default and it was wrong: it runs out before a
+ * student has met a recognition more than once, which leaves the lesson
+ * looking complete while the thing it was for has not happened. Ninety is
+ * long enough to climb a recognition through several tiers and several
+ * variations of the same problem.
+ */
+export const DEFAULT_DURATION = 90
 
 const TIER_LABEL: Record<Tier, string> = {
   F: 'Foundations', E: 'Easy', M: 'Medium', H: 'Hard', X: 'Challenge',

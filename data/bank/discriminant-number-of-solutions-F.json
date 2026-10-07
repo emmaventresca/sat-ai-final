@@ -192,5 +192,54 @@
    ],
    "residue": 2
   }
+ },
+ {
+  "stem": "In the equation $x^2 + 6x + k = 0$, $k$ is a constant. If the equation has exactly one real solution, what is the value of $k$?",
+  "stimulus": null,
+  "choices": [
+   "$-9$",
+   "$3$",
+   "$9$",
+   "$36$"
+  ],
+  "answer": "C",
+  "explanation": "The equation is already in the form $ax^2 + bx + c = 0$, with $a = 1$, $b = 6$ and $c = k$. A quadratic has exactly one real solution when its discriminant is zero, so set $b^2 - 4ac = 0$: $6^2 - 4(1)(k) = 0$, which gives $36 - 4k = 0$, so $k = 9$. As a check, $x^2 + 6x + 9 = (x + 3)^2$, which equals zero only at $x = -3$. This is the basic move behind every SAT question that tells you how many solutions a quadratic has and asks for the unknown constant. Harder versions also make you rearrange the equation into standard form first, or use $< 0$ or $> 0$ in place of $= 0$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the discriminant as $b^2 + 4ac$, which dropped the minus sign. That gave $36 + 4k = 0$ and $k = -9$. The formula is $b^2 - 4ac$. Losing that minus sign is the most common slip in these questions."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You halved $b$ and got $3$, then stopped. That is the first step of completing the square. The constant term has to be that half squared, $3^2 = 9$, for the equation to become a perfect square with only one solution."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You worked out $b^2 = 36$ and gave that as $k$. You still have to set $36 - 4k = 0$ and divide by $4$, which gives $k = 9$."
+   }
+  },
+  "id": "orig-discriminant-n-F-822e5f",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "F",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-discriminant-n-F-822e5f",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [
+    "__var__ is a constant if the equation has",
+    "the equation has exactly one real solution what",
+    "equation has exactly one real solution what is",
+    "has exactly one real solution what is the",
+    "real solution what is the value of __var__"
+   ],
+   "residue": 1
+  }
  }
 ]

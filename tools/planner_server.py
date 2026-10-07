@@ -38,8 +38,51 @@ def load(name, default=None):
     return json.load(open(p)) if os.path.exists(p) else (default or {})
 
 
-def build_context(focus=None):
+def parse_focus(focus):
+    """`focus` arrives as a skill name or as {exam, skill, student}.
+
+    The browser needs to say WHICH EXAM it is planning for, and the original
+    signature only took a string - which is how a dict ended up being handed
+    to .lower(). Accept both rather than breaking the older caller.
+    """
+    if isinstance(focus, dict):
+        exam = focus.get("exam") if focus.get("exam") in ("sat", "act") else "sat"
+        return focus.get("skill") or focus.get("subtype"), exam
+    return focus, "sat"
+
+
+def act_context():
+    """The ACT inventory, in the same shape the prompt expects.
+
+    The two banks are separate everywhere else in this project and they are
+    separate here too: planning an ACT lesson against SAT recognitions would
+    produce a plan citing ids that do not exist in the bank the student
+    practises from.
+    """
+    tax = load(os.path.join("act", "taxonomy.json"), {"subtypes": {}})["subtypes"]
+    items = load(os.path.join("act", "questions.json"), {"items": []})["items"]
+    lines = ["## ACT question types (from 947 questions in the bank)"]
+    for slug, meta in sorted(tax.items(), key=lambda kv: -kv[1].get("count", 0)):
+        tiers = meta.get("tiers", {})
+        lines.append(f"- **{meta.get('name', slug)}** [{slug}] "
+                     f"{meta.get('section', '')}/{meta.get('skill', '')} "
+                     f"({meta.get('count', 0)} questions: "
+                     f"E{tiers.get('E',0)}/M{tiers.get('M',0)}/H{tiers.get('H',0)}"
+                     f"/X{tiers.get('X',0)})")
+
+    lines.append("\n## Items you may cite, by type and level")
+    by_cell = {}
+    for it in items:
+        by_cell.setdefault((it.get("subtype"), it.get("difficulty")), []).append(it["id"])
+    for (slug, tier), ids in sorted(by_cell.items(), key=lambda kv: str(kv[0])):
+        lines.append(f"- {slug} {tier}: {', '.join(ids[:14])}")
+    return "\n".join(lines)
+
+
+def build_context(focus=None, exam="sat"):
     """The project's own material, trimmed to what a planner needs."""
+    if exam == "act":
+        return act_context()
     subtypes = load("subtypes.json", {"skills": {}})["skills"]
     bands = load("bands.json", {"sections": {}})
     misc = load("misconceptions.json", {"families": []})["families"]
@@ -152,7 +195,7 @@ data itself - so give it the structure and the judgement, not the prose:
  "title": "...",
  "subtitle": "one line on what this is for",
  "student": {"from": 1000, "to": 1300},
- "minutes": 60,
+ "minutes": 90,
  "opening": "what to say in the first few minutes, and why this topic now",
  "blocks": [
    {"minutes": 11, "subtype": "<slug>",
@@ -169,6 +212,16 @@ Rules for a lesson spec:
   and say so in "teach".
 - Order blocks so each depends only on what came before.
 - The block minutes must sum to "minutes".
+- NINETY MINUTES unless the teacher names a different length. That is the
+  default because an hour runs out before a student has seen a recognition
+  more than once, and seeing it once is not learning it.
+- FILL THE TIME WITH VARIATIONS, NOT WITH TOPICS. A ninety minute lesson is
+  two or three recognitions worked properly, not six skimmed. Within a block,
+  climb: start at the easiest tier the student still misses, and give several
+  questions at each level before moving up, so they meet the same recognition
+  in different clothes.
+- Ten to eighteen items in a ninety minute lesson. Fewer than ten and they
+  are sitting idle; more than eighteen and nothing gets discussed.
 - Choose blocks by what the student's target actually requires. Do not spend a
   block on a tier the band model says they do not need.
 - For a multi-week course, return one lesson spec per session inside
@@ -191,11 +244,12 @@ def agent_feed():
 
 
 def ask(messages, focus=None):
+    skill, exam = parse_focus(focus)
     convo = []
     for m in messages[-12:]:
         who = "TEACHER" if m.get("role") == "user" else "YOU"
         convo.append(f"{who}: {m.get('content','')}")
-    prompt = (f"{SYSTEM}\n\n# PLATFORM DATA\n\n{build_context(focus)}\n\n"
+    prompt = (f"{SYSTEM}\n\n# PLATFORM DATA\n\n{build_context(skill, exam)}\n\n"
               f"# CONVERSATION\n\n" + "\n\n".join(convo) + "\n\nYOU:")
     proc = subprocess.run(
         ["claude", "-p", prompt, "--model", MODEL],

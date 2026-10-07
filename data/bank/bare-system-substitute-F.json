@@ -190,5 +190,48 @@
    "overlap": [],
    "residue": 0
   }
+ },
+ {
+  "stem": "Substitute the first equation into the second. What is the value of $y$?",
+  "stimulus": "$y = 2x$\n$x + y = 12$",
+  "choices": [
+   "$4$",
+   "$6$",
+   "$8$",
+   "$24$"
+  ],
+  "answer": "C",
+  "explanation": "The first equation already tells you what $y$ is: $2x$. Put $2x$ in place of $y$ in the second equation to get $x + 2x = 12$, so $3x = 12$ and $x = 4$. The question asks for $y$, so substitute back: $y = 2(4) = 8$. Check it in both equations: $8 = 2(4)$ and $4 + 8 = 12$. This substitution step is what unlocks the SAT question that gives you two equations with no story, where one of them already reads '$y = \\dots$'. On those questions, the choices include the value of the variable you found first, here $4$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You solved correctly up to $x = 4$ and stopped there. That is $x$, but the question asked for $y$. Once you find the first variable, go back to $y = 2x$ and finish."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You replaced $y$ with $x$ instead of with $2x$, which drops the coefficient. That gave $x + x = 12$, so $x = 6$. The whole expression $2x$ has to go where $y$ was."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You put the $12$ from the second equation into $y = 2x$ as if it were $x$, which gave $2(12) = 24$. But $12$ is the value of $x + y$, not the value of $x$. Substitute first, then solve."
+   }
+  },
+  "id": "orig-bare-system-su-F-fef204",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "F",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "error",
+  "verification": {
+   "id": "orig-bare-system-su-F-fef204",
+   "structure": [],
+   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]
