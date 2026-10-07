@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "What is the sum of the solutions to the given equation?",
+  "stimulus": "While calibrating a soil-coring tool, an archaeologist arrives at the following equation.\n\n$\\sqrt{2x+7}=\\dfrac{x^2-16}{x+4}$",
+  "choices": [
+   "$-3$",
+   "$5$",
+   "$9$",
+   "$10$"
+  ],
+  "answer": "C",
+  "explanation": "Factor the numerator: $x^2-16=(x-4)(x+4)$. That cancels to $x-4$, with $x\\neq -4$. Now the equation is $\\sqrt{2x+7}=x-4$. Square both sides to get $2x+7=x^2-8x+16$, which gives $x^2-10x+9=0$, so $(x-1)(x-9)=0$ and $x=1$ or $x=9$. Check both in the original equation. At $x=9$ the left side is $\\sqrt{25}=5$ and the right side is $\\frac{65}{13}=5$, so 9 works. At $x=1$ the radicand is $9$, so the root exists, but the left side is $3$ and the right side is $\\frac{-15}{5}=-3$. A square root can't equal a negative number, so $x=1$ is extraneous. The only solution is 9, and the sum of the solutions is 9. If you graph both sides in Desmos, you'll see a single intersection at $x=9$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You simplified $\\frac{x^2-16}{x+4}$ to $x+4$, as if $x^2-16$ were $(x+4)^2$. Squaring $\\sqrt{2x+7}=x+4$ then gives $(x+3)^2=0$, so you got $x=-3$. The numerator actually factors as $(x-4)(x+4)$, so the right side is $x-4$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "5 is what both sides of the equation equal at the solution, $\\sqrt{25}=5$. It isn't the value of $x$. The question asks for the sum of the $x$-values, and the only one is 9."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You kept both roots of the squared equation, $1+9=10$. Maybe you checked that $2x+7$ isn't negative at $x=1$, but that isn't enough. The other side, $x-4$, equals $-3$ there, and a square root can never be negative. So $x=1$ is extraneous."
+   }
+  },
+  "id": "orig-rational-radic-X-0925cb",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "In the given equation, $c$ is a constant. What is the sum of all values of $c$ for which the equation has exactly one real solution?",
+  "stimulus": "A linguistics student fitting a model of how quickly speakers recognize rare words works with the equation below.\n\n$\\dfrac{x}{x-4}+\\dfrac{2}{x}=\\dfrac{c}{x^2-4x}$",
+  "choices": [
+   "$-9$",
+   "$-1$",
+   "$1$",
+   "$8$"
+  ],
+  "answer": "B",
+  "explanation": "Multiply both sides by $x(x-4)$, remembering that $x\\neq 0$ and $x\\neq 4$. You get $x^2+2(x-4)=c$, or $x^2+2x-(8+c)=0$. The original equation can have exactly one solution in two ways. First, the quadratic could have a double root. Its discriminant is $4+4(8+c)$, which is zero when $c=-9$. The root is then $x=-1$, which is allowed. Second, the quadratic could have two roots, one of them an excluded value. If $x=0$ is a root, then $c=-8$, and the quadratic is $x^2+2x=0$. That leaves only $x=-2$. If $x=4$ is a root, then $16+8-8-c=0$, so $c=16$, and the quadratic is $(x+6)(x-4)=0$. That leaves only $x=-6$. The sum of all three values is $-9+(-8)+16=-1$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You only looked for tangency, where the discriminant is zero. You missed the cases where the quadratic has two roots but one of them makes a denominator zero. Those cases, $c=-8$ and $c=16$, also leave exactly one real solution."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the discriminant as $4-4(8+c)$ and dropped the sign of the constant term, which gave you $c=-7$ instead of $-9$. Then $-7+(-8)+16=1$. The constant term is $-(8+c)$, so $-4ac$ becomes $+4(8+c)$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You found the two values of $c$ that make an excluded value a root, $-8+16=8$. But you left out $c=-9$, where the quadratic has a double root at $x=-1$. That case is also exactly one solution."
+   }
+  },
+  "id": "orig-rational-radic-X-81fcb5",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

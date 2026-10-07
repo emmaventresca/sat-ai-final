@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "Which of the following is the most appropriate conclusion?",
+  "stimulus": "A sports scientist selected 200 athletes at random from the 1,200 athletes registered in a regional youth soccer league. Of the sampled athletes, 35% scored below a recommended threshold on a hamstring flexibility test. Based on the sample, the estimated proportion of the league's athletes who would score below the threshold is 35%, with an associated margin of error of 4%.",
+  "choices": [
+   "It is plausible that between 62 and 78 of the league's 1,200 athletes would score below the threshold.",
+   "It is plausible that between 372 and 468 of the league's 1,200 athletes would score below the threshold.",
+   "It is plausible that between 31% and 39% of the 200 sampled athletes scored below the threshold.",
+   "It is certain that more than 372 of the league's 1,200 athletes would score below the threshold."
+  ],
+  "answer": "B",
+  "explanation": "The interval for the league proportion is $35\\% \\pm 4\\%$, so 31% to 39%. The conclusion is about the league, which has 1,200 athletes, so you convert using 1,200: $0.31 \\times 1{,}200 = 372$ and $0.39 \\times 1{,}200 = 468$. So it is plausible that between 372 and 468 of the league's athletes would score below the threshold.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found 31% to 39% correctly but multiplied by the sample size, 200, instead of the league size, 1,200. That gives $0.31 \\times 200 = 62$ and $0.39 \\times 200 = 78$, which are counts for the sample. The claim is about the 1,200 athletes in the league."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You applied the interval to the sample. The sample's percent is known exactly: 35% of the 200 sampled athletes, which is 70 athletes. The margin of error describes uncertainty about the league proportion, not about the sample."
+   },
+   "D": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You used the right lower bound but turned it into a one-sided, certain claim. The interval only makes values from 372 to 468 plausible. It does not make any count certain, and it says nothing about counts above 468."
+   }
+  },
+  "id": "orig-interpret-esti-X-1a2aca",
+  "skill_cd": "Q.F.",
+  "subtype": "interpret-estimate-plus-minus-moe",
+  "subtype_name": "Interpret the margin-of-error interval",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which of the following is the most appropriate conclusion?",
+  "stimulus": "A precast plant made 300 concrete deck panels for a single bridge. Each panel's design compressive strength is 40 megapascals (MPa). An inspector tested 25 of these panels, selected at random. Based on the results, the inspector estimated that the mean compressive strength of the 300 panels is 3.5 MPa above the design strength, with an associated margin of error of 2.0 MPa.",
+  "choices": [
+   "The mean compressive strength of the bridge's 300 panels is plausibly between 41.5 MPa and 45.5 MPa.",
+   "The mean compressive strength of the bridge's 300 panels is plausibly between 38.0 MPa and 42.0 MPa.",
+   "The compressive strength of each of the bridge's 300 panels is plausibly between 41.5 MPa and 45.5 MPa.",
+   "The mean compressive strength of all panels made at the plant is plausibly between 41.5 MPa and 45.5 MPa."
+  ],
+  "answer": "A",
+  "explanation": "The estimated mean is $40 + 3.5 = 43.5$ MPa. Applying the margin of error gives $43.5 - 2.0 = 41.5$ MPa and $43.5 + 2.0 = 45.5$ MPa. The interval describes the mean of the population that was sampled, which is the 300 panels made for this bridge.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You applied the margin of error to the design strength, $40 \\pm 2.0$, instead of to the estimated mean. The estimate is 3.5 MPa above design, so the interval is centered at 43.5 MPa, not 40 MPa."
+   },
+   "C": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You did the arithmetic correctly but applied the interval to individual panels. A margin of error describes where the mean plausibly lies. Individual panels can be well above or below that range."
+   },
+   "D": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You did the arithmetic correctly but extended the conclusion beyond the population that was sampled. The 25 panels were drawn only from the 300 made for this bridge, so the result says nothing about the plant's other panels."
+   }
+  },
+  "id": "orig-interpret-esti-X-5a95b0",
+  "skill_cd": "Q.F.",
+  "subtype": "interpret-estimate-plus-minus-moe",
+  "subtype_name": "Interpret the margin-of-error interval",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

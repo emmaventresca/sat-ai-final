@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "Triangle $SGB$ is similar to triangle $KLM$, where $S$, $G$, and $B$ correspond to $M$, $L$, and $K$, respectively. In triangle $KLM$, $KL = 10$ and $KM = 26$. If $SB = 65$ meters, what is $SG$, in meters?",
+  "stimulus": "A weather balloon at point $B$ is tethered to a ground anchor at point $S$. The balloon floats directly above point $G$ on level ground, so angle $G$ is a right angle.",
+  "choices": [
+   "$9.6$",
+   "$24$",
+   "$25$",
+   "$60$"
+  ],
+  "answer": "D",
+  "explanation": "Go by the stated correspondence, not by the order of the letters: $S \\to M$, $G \\to L$, $B \\to K$. That makes angle $L$ the right angle, so $KM = 26$ is the hypotenuse. $SG$ corresponds to $ML$, which is not given, so you need Pythagoras: $ML = \\sqrt{26^2 - 10^2} = \\sqrt{576} = 24$. The hypotenuses $SB$ and $MK$ correspond, so the scale factor is $\\frac{65}{26} = 2.5$. That gives $SG = 2.5 \\times 24 = 60$ meters. As a check, $\\cos(S) = \\cos(M) = \\frac{24}{26} = \\frac{12}{13}$, and $65 \\cdot \\frac{12}{13} = 60$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You matched the sides correctly and found $ML = 24$, but you flipped the scale factor and multiplied by $\\frac{26}{65} = 0.4$ instead of $\\frac{65}{26} = 2.5$. Triangle $SGB$ is the larger triangle, so its sides must be longer than $KLM$'s."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "$24$ is $ML$, the side of the small triangle that corresponds to $SG$. You stopped there and didn't scale it up to the balloon's triangle by $\\frac{65}{26}$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You matched vertices by letter position ($S \\to K$, $G \\to L$, $B \\to M$) instead of using the stated correspondence. That paired $SG$ with $KL = 10$, and $10 \\times 2.5 = 25$. Under the actual correspondence, $25$ is $GB$, the balloon's height, not the ground distance $SG$."
+   }
+  },
+  "id": "orig-similar-triang-X-aed4b2",
+  "skill_cd": "S.C.",
+  "subtype": "similar-triangles-transfer",
+  "subtype_name": "Similar right triangles: carry a ratio or a side across",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "In triangle $ABC$, angle $C$ is a right angle, and point $D$ lies on $\\overline{AB}$ so that $\\overline{CD}$ is perpendicular to $\\overline{AB}$. If $\\sin(\\angle BCD) = \\frac{3}{5}$ and $AB = 50$ feet, what is the length of $\\overline{BD}$, in feet?",
+  "stimulus": "A civil engineer models a triangular roof truss as right triangle $ABC$. A vertical brace $\\overline{CD}$ runs from the right-angle corner $C$ to the sloped member $\\overline{AB}$.",
+  "choices": [
+   "$18$",
+   "$24$",
+   "$30$",
+   "$32$"
+  ],
+  "answer": "A",
+  "explanation": "The brace splits the truss into two triangles, $ACD$ and $CBD$, that are similar to $ABC$. In triangle $CBD$, angle $\\angle BCD$ and angle $B$ are complementary. In triangle $ABC$, angle $A$ and angle $B$ are also complementary. So $\\angle BCD = \\angle A$, which means $\\sin(A) = \\frac{3}{5}$. In triangle $ABC$, that gives $BC = AB \\sin(A) = 50 \\cdot \\frac{3}{5} = 30$ and $AC = 40$. Now work in triangle $CBD$, where $BC = 30$ is the hypotenuse and $BD$ is opposite $\\angle BCD$. So $BD = 30 \\cdot \\sin(\\angle BCD) = 30 \\cdot \\frac{3}{5} = 18$ feet. As a check, $AD = 40 \\cdot \\frac{4}{5} = 32$, and $18 + 32 = 50$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$24$ is the length of the brace $CD$ ($30 \\cdot \\frac{4}{5}$ or $40 \\cdot \\frac{3}{5}$). You found a leg of the small triangle, but it is the one next to angle $\\angle BCD$, not the segment $BD$ across from it."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You correctly saw that $\\angle BCD = \\angle A$ and found $BC = 30$. But $BC$ is the hypotenuse of the small triangle $CBD$. You still need to multiply by $\\sin(\\angle BCD) = \\frac{3}{5}$ to get $BD$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You matched $\\angle BCD$ to angle $B$ because both sit at the $B$ end of the figure, instead of to angle $A$, which is the angle it actually equals. With $\\sin(B) = \\frac{3}{5}$, you get $BC = 40$ and $BD = 40 \\cdot \\frac{4}{5} = 32$, which is really the length of $AD$."
+   }
+  },
+  "id": "orig-similar-triang-X-936ebd",
+  "skill_cd": "S.C.",
+  "subtype": "similar-triangles-transfer",
+  "subtype_name": "Similar right triangles: carry a ratio or a side across",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

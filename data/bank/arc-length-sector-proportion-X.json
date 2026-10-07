@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "What is the radius, in meters, of the ring?",
+  "stimulus": "Seismometers $P$ and $Q$ sit on a circular ring of sensors centered at borehole $O$. The length of minor arc $PQ$ is $8\\pi$ meters. The measure of major arc $PQ$ is $\\pi$ radians greater than the measure of minor arc $PQ$.",
+  "choices": [
+   "$\\frac{16}{3}$",
+   "$8$",
+   "$16$",
+   "$32$"
+  ],
+  "answer": "C",
+  "explanation": "The two arcs together make the whole circle, so their measures add to $2\\pi$ radians. Let the minor arc measure $\\theta$. Then $\\theta + (\\theta + \\pi) = 2\\pi$, so $\\theta = \\frac{\\pi}{2}$. That makes the minor arc $\\frac{1}{4}$ of the circle, so the circumference is $4(8\\pi) = 32\\pi$ meters. From $2\\pi r = 32\\pi$, you get $r = 16$. You can also use $s = r\\theta$ directly: $8\\pi = r \\cdot \\frac{\\pi}{2}$, so $r = 16$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the arc measures correctly but paired the minor arc's length with the major arc's angle, $\\frac{3\\pi}{2}$. Solving $8\\pi = r \\cdot \\frac{3\\pi}{2}$ gives $\\frac{16}{3}$. The length $8\\pi$ goes with the minor arc, which measures $\\frac{\\pi}{2}$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You used $\\pi$, the difference between the two arc measures, as if it were the minor arc's measure, which gives $8\\pi = r\\pi$. Dividing by $\\pi$ instead of $2\\pi$ for the full circle leads to the same wrong answer. The minor arc measures $\\frac{\\pi}{2}$, because the two arcs together must add to $2\\pi$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You got the circumference, $32\\pi$, right, but then treated $32\\pi = \\pi d$ as $\\pi r$. That makes $32$ the diameter, and the question asks for the radius."
+   }
+  },
+  "id": "orig-arc-length-sec-X-301cc8",
+  "skill_cd": "S.D.",
+  "subtype": "arc-length-sector-proportion",
+  "subtype_name": "Arc length and central angle as a fraction of the circle",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Based on these measurements, what is the distance, in kilometers, along this meridian from city $A$ to the North Pole?",
+  "stimulus": "A cartographer models Earth as a sphere. City $A$ is at latitude $18^\\circ$S and city $B$ is at latitude $27^\\circ$N, and both lie on the same meridian (a circle through both poles that is centered at Earth's center). The distance from $A$ to $B$ along this meridian is $5{,}000$ kilometers. The North Pole is at latitude $90^\\circ$N.",
+  "choices": [
+   "$6{,}000$",
+   "$7{,}000$",
+   "$8{,}000$",
+   "$12{,}000$"
+  ],
+  "answer": "D",
+  "explanation": "The two cities are on opposite sides of the equator, so the central angle between them is $18^\\circ + 27^\\circ = 45^\\circ$. That is $\\frac{45}{360} = \\frac{1}{8}$ of the meridian, so the full circumference is $8(5{,}000) = 40{,}000$ km. From $A$ to the North Pole, the central angle is $18^\\circ + 90^\\circ = 108^\\circ$. The distance is $\\frac{108}{360}(40{,}000) = 12{,}000$ km.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated $45^\\circ$ as a fraction of $180^\\circ$. That gave you $\\frac{1}{4}$ and a circumference of $20{,}000$ km, so $\\frac{108}{360}(20{,}000) = 6{,}000$. A full circle is $360^\\circ$, even when it runs from pole to pole and back."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the distance from city $B$ to the North Pole: $\\frac{63}{360}(40{,}000) = 7{,}000$ km. The question asks about city $A$, which is $108^\\circ$ from the pole."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You found the circumference, $40{,}000$ km, correctly. Then you measured from $A$ to the pole as $90^\\circ - 18^\\circ = 72^\\circ$, as if $A$ were at $18^\\circ$N. City $A$ is south of the equator, so its angle to the North Pole is $90^\\circ + 18^\\circ = 108^\\circ$."
+   }
+  },
+  "id": "orig-arc-length-sec-X-da21c0",
+  "skill_cd": "S.D.",
+  "subtype": "arc-length-sector-proportion",
+  "subtype_name": "Arc length and central angle as a fraction of the circle",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

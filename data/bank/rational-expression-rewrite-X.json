@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "Which expression is equivalent to $\\frac{2x}{x-3}-\\frac{7x+15}{x^2-9}$, where $x>3$?",
+  "stimulus": "A musicologist comparing two historical tuning systems models the difference between two string-length ratios in terms of a positive quantity $x$.",
+  "choices": [
+   "$\\frac{2x-5}{x-3}$",
+   "$\\frac{2x+5}{x+3}$",
+   "$\\frac{-5}{x-3}$",
+   "$\\frac{2x^2-x+15}{x^2-9}$"
+  ],
+  "answer": "B",
+  "explanation": "The common denominator is $x^2-9=(x-3)(x+3)$, so you rewrite the first fraction as $\\frac{2x(x+3)}{(x-3)(x+3)}=\\frac{2x^2+6x}{(x-3)(x+3)}$. Subtracting the whole second numerator gives $2x^2+6x-7x-15=2x^2-x-15$. That factors as $(2x+5)(x-3)$, so you cancel the shared factor $x-3$ (allowed because $x>3$) and get $\\frac{2x+5}{x+3}$. Check with $x=5$: the original is $\\frac{10}{2}-\\frac{50}{16}=\\frac{15}{8}$, and $\\frac{2(5)+5}{5+3}=\\frac{15}{8}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You combined the fractions correctly and got $2x^2-x-15$, but you factored it as $(2x-5)(x+3)$. That product is $2x^2+x-15$. With the wrong factors you cancelled $x+3$ and were left with the wrong fraction."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the numerators, $2x-(7x+15)=-5x-15$, without first multiplying the first fraction by $\\frac{x+3}{x+3}$. You put that over $x^2-9$, and because $-5x-15=-5(x+3)$, it cancelled down to a clean-looking answer that is not equivalent."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the common denominator, but you only applied the minus sign to $7x$, writing $-7x+15$ when it should be $-7x-15$. The numerator $2x^2-x+15$ doesn't factor, so the error goes unnoticed."
+   }
+  },
+  "id": "orig-rational-expre-X-ed76bc",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{4x^3-8x^2+5x+2}{2x-1}$, where $x>\\frac{1}{2}$?",
+  "stimulus": "An archaeologist estimating how much soil each trench layer yields models the volume removed per unit of trench width with a rational expression in a positive quantity $x$.",
+  "choices": [
+   "$4x^2-6x+2+\\frac{3}{2x-1}$",
+   "$2x^2-3x+4$",
+   "$2x^2-3x+1+\\frac{3}{4x-2}$",
+   "$2x^2-3x+1+\\frac{3}{2x-1}$"
+  ],
+  "answer": "D",
+  "explanation": "Rewrite the numerator as the divisor times something, plus a remainder: $(2x-1)(2x^2-3x+1)=4x^3-8x^2+5x-1$, and $4x^3-8x^2+5x+2$ is $3$ more than that. So the expression is $\\frac{(2x-1)(2x^2-3x+1)+3}{2x-1}=2x^2-3x+1+\\frac{3}{2x-1}$. Check with $x=2$: the original is $\\frac{12}{3}=4$, and $8-6+1+\\frac{3}{3}=4$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You used synthetic division with $\\frac{1}{2}$, which gives the quotient $4x^2-6x+2$ for dividing by $x-\\frac{1}{2}$, not by $2x-1$. Since $2x-1=2\\left(x-\\frac{1}{2}\\right)$, you needed to halve that quotient. You kept it at full size and still put the remainder over $2x-1$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the correct quotient and remainder, then added the remainder $3$ to the constant term. The remainder still has to be divided by $2x-1$. Writing it as a plain constant loses the fraction."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You knew the synthetic-division result had to be halved, but you halved the remainder term too, which turned $\\frac{3}{2x-1}$ into $\\frac{3}{4x-2}$. Only the quotient changes size. The remainder $3$ stays over the original divisor $2x-1$."
+   }
+  },
+  "id": "orig-rational-expre-X-cc4c17",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

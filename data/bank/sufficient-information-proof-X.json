@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "Which additional piece of information is sufficient to prove that lines $m$ and $n$ are parallel?",
+  "stimulus": "An ornithologist models two power lines where swallows perch as lines $m$ and $n$. Points $S$, $P$, and $T$ lie on line $m$, with $P$ between $S$ and $T$. Points $Q$ and $R$ lie on line $n$. Line $t$ passes through $P$ and $Q$, and ray $PR$ bisects $\\angle SPQ$.",
+  "choices": [
+   "$m\\angle PQR = m\\angle SPQ$",
+   "$PQ = QR$",
+   "$PR = PQ$",
+   "$m\\angle SPQ + m\\angle QPT = 180^\\circ$"
+  ],
+  "answer": "B",
+  "explanation": "Let $m\\angle QPR = x$. Because ray $PR$ bisects $\\angle SPQ$, $m\\angle SPR = x$ too. If $PQ = QR$, triangle $PQR$ is isosceles, and its base angles are the ones opposite the equal sides: $m\\angle QRP = m\\angle QPR = x$. That gives $m\\angle SPR = m\\angle PRQ$. Ray $PR$ lies inside $\\angle SPQ$, so $S$ and $Q$ are on opposite sides of line $PR$. That makes these two angles alternate interior angles for transversal $PR$, and equal alternate interior angles prove that $m \\parallel n$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You treated $\\angle SPQ$ and $\\angle PQR$ as alternate interior angles. Because ray $PR$ is inside $\\angle SPQ$, $R$ is on the same side of line $t$ as $S$, so these are same-side interior angles. To prove the lines parallel they must add up to $180^\\circ$, not be equal. If they are equal, the lines are parallel only when both angles happen to be $90^\\circ$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You saw that an isosceles triangle was the key, but you picked the wrong pair of equal sides. $PR = PQ$ makes $\\angle PQR$ and $\\angle PRQ$ equal, and neither of those is $\\angle QPR$. So the bisected angle never connects to $\\angle PRQ$, and the alternate interior angles are not shown to be equal."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "$\\angle SPQ$ and $\\angle QPT$ form a linear pair on line $m$, so they add up to $180^\\circ$ whether or not the lines are parallel. A fact that is always true when lines cross cannot prove anything about line $n$."
+   }
+  },
+  "id": "orig-sufficient-inf-X-0c6c8f",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which additional piece of information is sufficient to prove that triangle $ABC$ is similar to triangle $DEF$, with $A$, $B$, and $C$ corresponding to $D$, $E$, and $F$, respectively?",
+  "stimulus": "An archaeologist lays out two triangular excavation plots, $ABC$ and $DEF$. The plots satisfy $AB = 1.5(DE)$ and $BC = 1.5(EF)$. In plot $ABC$, $m\\angle A = 50^\\circ$ and $m\\angle C = 60^\\circ$.",
+  "choices": [
+   "$m\\angle E + m\\angle F = 130^\\circ$",
+   "$m\\angle D + m\\angle E = 110^\\circ$",
+   "$m\\angle D + m\\angle F = 110^\\circ$",
+   "$DF = 1.5(AC)$"
+  ],
+  "answer": "C",
+  "explanation": "You already know two pairs of sides are in proportion, $AB:DE = BC:EF = 1.5$. To finish with SAS similarity, you need the angles between those sides to be equal, which means $\\angle B$ and $\\angle E$. In triangle $ABC$, $m\\angle B = 180^\\circ - 50^\\circ - 60^\\circ = 70^\\circ$. If $m\\angle D + m\\angle F = 110^\\circ$, then $m\\angle E = 180^\\circ - 110^\\circ = 70^\\circ$. That gives $\\angle B \\cong \\angle E$ with the proportional sides on either side of it, so the triangles are similar.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "This gives $m\\angle D = 50^\\circ = m\\angle A$. But $\\angle A$ is not between sides $AB$ and $BC$, so you have two proportional sides and an angle that is not between them (SSA). Here $\\angle A$ is opposite the shorter side, $BC$, so a second triangle is possible: $D = 50^\\circ$, $F = 120^\\circ$, $E = 10^\\circ$, with the same side ratios. That triangle is not similar to $ABC$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "This makes $m\\angle F = 70^\\circ$. You got $70^\\circ$ onto a vertex, but the wrong one. $\\angle F$ corresponds to $\\angle C$, which is $60^\\circ$, so this does not prove the triangles are similar. In fact it rules similarity out."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You flipped the ratio. In the given facts, the sides of $ABC$ are 1.5 times the sides of $DEF$. SSS similarity would need $AC = 1.5(DF)$, but this choice makes $DF$ the longer side, so the three ratios do not match."
+   }
+  },
+  "id": "orig-sufficient-inf-X-2e2a94",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

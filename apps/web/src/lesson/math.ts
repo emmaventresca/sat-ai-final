@@ -21,7 +21,7 @@ const ESCAPES: Record<string, string> = {
 }
 
 export function escapeHtml(s: unknown): string {
-  return String(s ?? '').replace(/[&<>"']/g, (c) => ESCAPES[c] ?? c)
+  return String(s ?? '').replace(/[&<>"']/g, (c) => ESCAPES[c] || c)
 }
 
 /** Inline markdown. Runs only on non-maths text. */
@@ -62,7 +62,7 @@ export function renderText(s: unknown): string {
   for (const m of text.matchAll(MATH)) {
     const at = m.index ?? 0
     out += markdown(text.slice(last, at))
-    out += m[1] !== undefined ? typeset(m[1], true) : typeset(m[2] ?? '', false)
+    out += m[1] !== undefined ? typeset(m[1], true) : typeset(m[2] || '', false)
     last = at + m[0].length
   }
   return out + markdown(text.slice(last))
@@ -125,7 +125,7 @@ function mathOnly(s: string): string {
   for (const m of s.matchAll(MATH)) {
     const at = m.index ?? 0
     out += s.slice(last, at)
-    out += m[1] !== undefined ? typeset(m[1], true) : typeset(m[2] ?? '', false)
+    out += m[1] !== undefined ? typeset(m[1], true) : typeset(m[2] || '', false)
     last = at + m[0].length
   }
   return out + s.slice(last)
@@ -167,7 +167,7 @@ function cells(line: string): string[] {
 function renderTable(rows: string[], caption: string | null): string {
   const body = rows.filter((r) => !TABLE_RULE.test(r)).map(cells)
   if (body.length < 2) return ''
-  const first = body[0] ?? []
+  const first = body[0]
   const wide = Math.max(...body.map((r) => r.length))
   const headed = !/\d/.test(first.join(' ')) || rows.some((r) => TABLE_RULE.test(r))
   const pad = (r: string[]) => r.concat(Array(Math.max(0, wide - r.length)).fill(''))
@@ -196,14 +196,14 @@ export function renderStimulus(raw: unknown): string {
 
   const lines = text.split('\n')
   for (let i = 0; i < lines.length; i++) {
-    const t = (lines[i] ?? '').trim()
+    const t = (lines[i] || '').trim()
     if (!t) { flush(); continue }
 
     if (TABLE_ROW.test(t)) {
       flush()
       const rows: string[] = []
-      while (i < lines.length && TABLE_ROW.test((lines[i] ?? '').trim())) {
-        rows.push(lines[i] ?? '')
+      while (i < lines.length && TABLE_ROW.test((lines[i] || '').trim())) {
+        rows.push(lines[i] || '')
         i++
       }
       i--
@@ -211,8 +211,8 @@ export function renderStimulus(raw: unknown): string {
       const prev = out[out.length - 1]
       let caption: string | null = null
       const m = prev ? /^<p>([\s\S]*)<\/p>$/.exec(prev) : null
-      if (m && CAPTION.test((m[1] ?? '').replace(/<[^>]+>/g, ''))) {
-        caption = m[1] ?? null
+      if (m && CAPTION.test((m[1] || '').replace(/<[^>]+>/g, ''))) {
+        caption = m[1] || null
         out.pop()
       }
       const html = renderTable(rows, caption)

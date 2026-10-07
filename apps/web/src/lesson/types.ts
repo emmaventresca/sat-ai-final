@@ -32,11 +32,11 @@ const TIER_LABEL: Record<Tier, string> = {
 const TIER_RANK: Record<Tier, number> = { F: 0, E: 1, M: 2, H: 3, X: 4 }
 
 export function difficultyLabel(tier: Tier): string {
-  return TIER_LABEL[tier] ?? tier
+  return TIER_LABEL[tier] || String(tier)
 }
 
 export function difficultyRank(tier: Tier): number {
-  return TIER_RANK[tier] ?? 2
+  return TIER_RANK[tier]
 }
 
 /**

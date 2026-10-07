@@ -142,8 +142,8 @@ def select(exam: str, question_ids: Iterable[str]) -> list[dict]:
         if foreign:
             raise MixedExams(
                 f"{len(foreign)} of these questions are {other.upper()} items "
-                f"({', '.join(foreign[:3])}) and this is a {exam.upper()} "
-                f"worksheet. One packet, one exam.")
+                f"({', '.join(foreign[:3])}); this packet is {exam.upper()}. "
+                f"One packet, one exam.")
         raise WorksheetError(
             f"{len(missing)} question ids are not in the {exam.upper()} bank: "
             f"{', '.join(missing[:5])}")

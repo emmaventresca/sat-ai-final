@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "How many automated stations does the network have?",
+  "stimulus": "A regional weather network has 34 stations. Each automated station sends a reading every 15 minutes, and each manual station sends a reading every 3 hours. On one day, 4 of the automated stations were offline and sent no readings. The other stations sent a total of 1,296 readings during that 24-hour day.",
+  "choices": [
+   "12",
+   "16",
+   "18",
+   "22"
+  ],
+  "answer": "B",
+  "explanation": "In 24 hours, an automated station sends $24 \\cdot 4 = 96$ readings and a manual station sends $24 \\div 3 = 8$ readings. Only $34 - 4 = 30$ stations sent readings. Let $a$ be the number of automated stations that worked and $m$ the number of manual stations. Then $a + m = 30$ and $96a + 8m = 1{,}296$. Subtract 8 times the first equation from the second: $88a = 1{,}296 - 240 = 1{,}056$, so $a = 12$ and $m = 18$. The question asks for all the automated stations, including the 4 that were offline, so the answer is $12 + 4 = 16$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You solved the system correctly, but 12 counts only the automated stations that sent readings. You needed to add back the 4 offline automated stations, which are still part of the network."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "18 is the number of manual stations. You solved for the other type. Reread which group the question asks about."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You added the 4 offline stations to the manual count ($18 + 4$). The passage says the offline stations were automated, so they belong with the automated group."
+   }
+  },
+  "id": "orig-word-problem-s-X-d77e4f",
+  "skill_cd": "H.D.",
+  "subtype": "word-problem-solve-for-one-quantity",
+  "subtype_name": "Story problem that asks how many of one type",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "How many 3-meter segments are in the walkway?",
+  "stimulus": "A pedestrian walkway is built from precast concrete segments laid end to end in a single row. Each segment is either 3 meters or 4 meters long, and the finished walkway is 158 meters long. There are 45 joints, and each joint is where two adjacent segments meet. Assume the joints add no length.",
+  "choices": [
+   "20",
+   "22",
+   "26",
+   "46"
+  ],
+  "answer": "C",
+  "explanation": "In a single row, the number of segments is always one more than the number of joints, so there are $45 + 1 = 46$ segments. Let $x$ be the number of 3-meter segments and $y$ the number of 4-meter segments. Then $x + y = 46$ and $3x + 4y = 158$. To eliminate $y$, subtract the second equation from 4 times the first: $4x - 3x = 184 - 158$, so $x = 26$. Check: $y = 20$, and $3(26) + 4(20) = 78 + 80 = 158$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "20 is the number of 4-meter segments. You solved the system correctly but gave the count for the other type."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used 45, the number of joints, as the number of segments. The system $x + y = 45$ and $3x + 4y = 158$ gives $x = 22$. A row with 45 joints has 46 segments."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "46 is the total number of segments, which you found on the way to the answer. The question asks only for the 3-meter segments."
+   }
+  },
+  "id": "orig-word-problem-s-X-934ed2",
+  "skill_cd": "H.D.",
+  "subtype": "word-problem-solve-for-one-quantity",
+  "subtype_name": "Story problem that asks how many of one type",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

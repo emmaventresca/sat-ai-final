@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "Which function $V$ gives the volume of the block, in cubic centimeters, in terms of $h$?",
+  "stimulus": "A materials scientist machines a test block of a new aluminum alloy into a rectangular prism. The width of the block is 4 centimeters less than its length, and the height of the block is half its width. Let $h$ represent the height of the block, in centimeters.",
+  "choices": [
+   "$V(h) = 4h^3 + 8h^2$",
+   "$V(h) = 4h^3 - 8h^2$",
+   "$V(h) = \\frac{1}{4}h^3 + 2h^2$",
+   "$V(h) = 2h^3 + 8h^2$"
+  ],
+  "answer": "A",
+  "explanation": "Write every dimension in terms of the height, $h$. The height is half the width, so the width is $2h$. The width is 4 less than the length, so the length is 4 more than the width: $2h + 4$. The volume is $V(h) = (2h + 4)(2h)(h) = 4h^3 + 8h^2$. Check with $h = 1$: the width is 2, the length is 6, and the volume is $6 \\cdot 2 \\cdot 1 = 12$, which matches $4 + 8 = 12$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You copied 'width is 4 less than the length' straight across as length $= 2h - 4$. Because you are building outward from the width, the offset has to change sign: the length is the width plus 4."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You read 'height is half the width' as width $= \\frac{h}{2}$, which reverses the relationship. If the height is half the width, the width is twice the height, $2h$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the 4 to the height instead of to the width, so you used $h + 4$ for the length. The length is 4 more than the width, $2h$, so it is $2h + 4$."
+   }
+  },
+  "id": "orig-geometry-to-fu-X-1690b3",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which function $A$ gives the area of the print, in square inches, in terms of $x$?",
+  "stimulus": "A folklore archive is framing a rectangular print of an illustrated folktale. The length of the print is 5 inches more than its width. The print is surrounded by a mat that is 2 inches wide on every side. Let $x$ represent the outer length of the mat, in inches.",
+  "choices": [
+   "$A(x) = x^2 - 13x + 36$",
+   "$A(x) = x^2 - 9x + 14$",
+   "$A(x) = x^2 - 3x - 4$",
+   "$A(x) = x^2 - 5x$"
+  ],
+  "answer": "A",
+  "explanation": "Work inward from the variable you are given. The mat adds 2 inches on each end, so the print's length is $x - 4$. The print's width is 5 less than its length, so it is $x - 4 - 5 = x - 9$. The area of the print is $A(x) = (x - 4)(x - 9) = x^2 - 13x + 36$. Check with $x = 20$: the print is 16 by 11, so its area is 176, and $400 - 260 + 36 = 176$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You took the 2-inch mat off only one end, using $x - 2$ for the print's length. The mat is on every side, so the outer length is 4 inches more than the print's length. That gives $(x - 2)(x - 7)$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the print's length correctly as $x - 4$, but then added 5 to get the width. The width is 5 less than the length, so it is $x - 9$, not $x + 1$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the area of the whole framed piece. The outer width is $x - 5$, so $x(x - 5)$ includes the mat. The question asks for the area of the print alone."
+   }
+  },
+  "id": "orig-geometry-to-fu-X-35eb58",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

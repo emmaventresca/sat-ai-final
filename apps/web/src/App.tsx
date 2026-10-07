@@ -2,8 +2,7 @@ import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { ExamHome } from './pages/ExamHome'
 import { TeacherHome } from './teacher/TeacherHome'
 import { Pick } from './pages/Pick'
-import { isExam } from './exams/registry'
-import { useParams } from 'react-router-dom'
+import { LessonPreview } from './pages/LessonPreview'
 
 /**
  * Two exams, two front doors, one teacher.
@@ -28,16 +27,16 @@ export function App() {
     <HashRouter>
       <Routes>
         <Route path="/" element={<Pick />} />
-        <Route path="/:exam/*" element={<ExamRoute />} />
+        {/* Explicit, not /:exam/*. A dynamic segment swallows every other
+            top-level path - /lesson-preview matched it, failed the exam
+            check and bounced to the chooser - and naming the two exams here
+            says what the app supports instead of hiding it in a guard. */}
+        <Route path="/sat/*" element={<ExamHome exam="sat" />} />
+        <Route path="/act/*" element={<ExamHome exam="act" />} />
         <Route path="/teacher/*" element={<TeacherHome />} />
+        <Route path="/lesson-preview" element={<LessonPreview />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </HashRouter>
   )
-}
-
-function ExamRoute() {
-  const { exam } = useParams()
-  if (!isExam(exam)) return <Navigate to="/" replace />
-  return <ExamHome exam={exam} />
 }
