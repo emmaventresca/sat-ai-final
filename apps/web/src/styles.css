@@ -755,3 +755,59 @@ mark.hl-blue{background:#c3e0ff;box-shadow:inset 0 -.42em 0 #c3e0ff}
 
 /* A cell whose review has come round again. */
 .tile.due{border-color:var(--flag-ln);background:linear-gradient(180deg,var(--flag-bg),var(--panel))}
+
+/* ---- teacher dashboard -------------------------------------------------- */
+/* Brushstroke panels: a soft wash of colour with a torn, hand-painted edge
+   rather than a rectangle. Teacher side only - a student is only ever
+   looking at one test, so colour there would carry no information and would
+   just make the two halves look like different products. */
+.brush{
+  position:relative;isolation:isolate;overflow:hidden;
+  margin:14px 0;padding:22px 24px;border-radius:22px 26px 20px 28px;
+  background:var(--panel);box-shadow:var(--shadow);
+}
+.brush::before{
+  content:"";position:absolute;inset:0;z-index:-1;opacity:.92;
+  background:
+    radial-gradient(120% 90% at 6% 0%, var(--tone-a) 0%, transparent 62%),
+    radial-gradient(130% 110% at 98% 8%, var(--tone-b) 0%, transparent 58%),
+    radial-gradient(80% 70% at 50% 120%, var(--tone-a) 0%, transparent 70%);
+  /* The wobble is the brushstroke: straight edges read as a card, and the
+     point of this surface is that it does not. */
+  border-radius:inherit;
+  filter:blur(6px);
+}
+.brush::after{
+  content:"";position:absolute;left:24px;right:24px;top:0;height:5px;z-index:-1;
+  border-radius:99px;opacity:.75;
+  background:linear-gradient(90deg,transparent,var(--tone-b) 18%,var(--tone-a) 72%,transparent);
+}
+.brush h2,.brush h3{letter-spacing:-.02em}
+.brush h3{margin:20px 0 8px;font-size:.96rem}
+.brush table{background:rgba(255,255,255,.72);backdrop-filter:blur(2px)}
+
+/* SAT light pink and purple, ACT light green and blue, both warm. */
+/* Strong enough to read across a roster at a glance, which is the whole
+   job - a wash you have to look for tells you nothing. */
+.tone-sat{--tone-a:#fbc8e8;--tone-b:#cfc0ff}
+.tone-act{--tone-a:#aee6c8;--tone-b:#b4d8ff}
+.tone-both{--tone-a:#ffc87e;--tone-b:#ffe79a}
+.tone-none{--tone-a:#ece9f6;--tone-b:#f3f1fa}
+
+.stat-row{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 4px}
+.stat{
+  flex:1 1 118px;padding:12px 14px;border-radius:16px;
+  background:rgba(255,255,255,.76);border:1px solid rgba(255,255,255,.9);
+}
+.stat-n{font-family:var(--serif);font-size:1.5rem;font-weight:700;letter-spacing:-.02em}
+.stat-l{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--dim);margin-top:2px}
+.stat-note{font-size:.72rem;font-weight:700;color:var(--purple-d);margin-top:3px}
+
+/* The roster, scannable by colour before you have read a name. */
+.roster-card{cursor:pointer}
+.roster-card .exam-chip{
+  display:inline-block;font-size:.64rem;font-weight:800;letter-spacing:.07em;
+  text-transform:uppercase;padding:3px 9px;border-radius:99px;margin-right:6px;
+  background:rgba(255,255,255,.8);border:1px solid rgba(0,0,0,.06);color:var(--ink);
+}
