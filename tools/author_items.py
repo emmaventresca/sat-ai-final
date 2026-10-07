@@ -50,7 +50,60 @@ DIFFICULTY_GUIDE = {
           "value that must be converted, a relationship that must be named."),
     "H": ("Multi-step, or a single step with a genuine trap. Two choices should "
           "be defensible until the deciding detail is noticed."),
+    "X": ("Beyond the hardest the exam asks. For a student who already wins "
+          "the Hard tier and is reaching for the last few marks: more steps "
+          "than a Hard question, or a second-order trap that survives the "
+          "first correct insight. Still fair, still one defensible answer, "
+          "still solvable in about two minutes by someone who sees it."),
 }
+
+
+def style_brief(section, difficulty):
+    """What an official question at this tier actually looks like, measured.
+
+    "Make it feel like a real one" is the hardest instruction to give a
+    writer, because the thing wanted is a register rather than a rule. These
+    are counts off the College Board corpus, so the brief can be checked
+    instead of hoped for. Built by tools/derive_difficulty_style.py.
+    """
+    path = os.path.join(ROOT, "data", "difficulty_style.json")
+    if not os.path.exists(path):
+        return ""
+    blob = json.load(open(path))
+    tiers = blob.get("sections", {}).get(section, {})
+    # Extra hard has no measurements of its own - nothing in the corpus is
+    # labelled that - so it is described as a step beyond Hard.
+    base = "H" if difficulty in ("X", "F") else difficulty
+    t = tiers.get(base)
+    if not t:
+        return ""
+
+    def med(k):
+        return t[k].get("median", t[k].get("share", 0))
+
+    lines = [
+        f"HOW AN OFFICIAL {base} QUESTION IN THIS SECTION MEASURES "
+        f"(medians over {t['items']} real items):",
+        f"  question: {med('stem_words'):.0f} words",
+    ]
+    if med("stimulus_words"):
+        lines.append(f"  passage/setup: {med('stimulus_words'):.0f} words")
+    lines += [
+        f"  conditions to hold at once: about {t['clauses']['mean']:.1f}",
+        f"  steps in the official explanation: about "
+        f"{t['rationale_sentences']['mean']:.1f}",
+        f"  share with no answer choices: {t['grid_in']['share']:.0%}",
+    ]
+    if difficulty == "X":
+        lines.append("  YOU ARE WRITING ABOVE THIS. Take the step count past "
+                     "the Hard figure; do not take the word count past it. "
+                     "Longer is not harder - more to hold at once is.")
+    elif difficulty == "F":
+        lines.append("  YOU ARE WRITING FAR BELOW THIS. One step, no setup.")
+    else:
+        lines.append("  Land near these. A question that runs long reads as "
+                     "a different tier even when the mathematics is right.")
+    return "\n".join(lines) + "\n"
 
 
 def load(name):
@@ -227,7 +280,9 @@ licensed SAT-aligned item bank used in an academic project.
 {subtype_spec(subtype, patterns) if subtype else ""}
 
 DIFFICULTY: {difficulty} - {DIFFICULTY_GUIDE[difficulty]}
-{FOUNDATION_RULES if difficulty == "F" else ""}
+
+{style_brief(skill["section"], difficulty)}
+{FOUNDATION_RULES if difficulty == "F" else ""}{EXTRA_HARD_RULES if difficulty == "X" else ""}
 
 WRITE {n} ORIGINAL ITEMS.
 
@@ -338,6 +393,23 @@ THIS IS GROUNDWORK, NOT AN EXAM QUESTION. Strip the test away:
 
 Do NOT use the skill's real instruction line here. These are not test
 questions and must not pretend to be.
+"""
+
+EXTRA_HARD_RULES = """
+THIS IS ABOVE THE EXAM'S HARDEST TIER. It is for a student who already wins
+Hard and is chasing the last few marks, so it has to be harder in the way
+the test is hard, not in the way a textbook is:
+
+  - More to hold at once, not more to read. Add a condition, not a sentence.
+  - The trap survives the first correct insight. A student who sees the key
+    idea should still be able to land on a wrong answer by finishing it the
+    obvious way. That is what makes the last few questions hard.
+  - Still exactly one defensible answer, and still about two minutes for
+    someone who sees it. If it needs five, it is not a harder SAT question -
+    it is a different exam.
+  - No obscure content. Everything must sit inside what the real test
+    covers; the difficulty comes from the combination, not from knowing
+    something extra.
 """
 
 MC_SHAPE = """[{

@@ -74,8 +74,7 @@ def main():
     by_tier = Counter(i["difficulty"] for i in items)
     print(f"{len(items)} verified items across {len(by_sub)} subtypes "
           f"-> data/practice.json")
-    print(f"  F {by_tier['F']}  E {by_tier['E']}  M {by_tier['M']}  "
-          f"H {by_tier['H']}")
+    print("  " + "  ".join(f"{t} {by_tier[t]}" for t in ("F", "E", "M", "H", "X")))
     if skipped:
         print(f"  held back: {dict(skipped)}")
 

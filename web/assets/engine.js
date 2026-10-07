@@ -39,6 +39,14 @@ export const TIERS = ['E', 'M', 'H'];
 // never counts it toward a tier. A student chooses it, or we suggest it.
 export const FOUNDATION = 'F';
 
+// Above the exam's hardest tier, and labelled as ours rather than as a
+// College Board level - nothing in the corpus is marked this way. It exists
+// because a student who already wins Hard has nowhere left to go, and the
+// last few marks come from questions where the trap survives the first
+// correct insight. Like Foundations it stays out of TIERS: the band model
+// cannot price a tier the exam does not have.
+export const STRETCH = 'X';
+
 /**
  * Is the groundwork worth suggesting?
  *
@@ -287,6 +295,14 @@ export function availableTiers(unit, ctx) {
     challenge: unlocked.includes('H') || tryable === 'H' ? null : 'H',
     foundation: FOUNDATION,
     foundationSuggested: needsFoundation(unit, ctx),
+    stretch: STRETCH,
+    // Offered to everyone, but only pointed at once Hard is actually going
+    // in. Suggesting it earlier would be telling a student to skip the tier
+    // their target depends on.
+    stretchEarned: (() => {
+      const h = ctx.mastery?.[`${unit}|H`];
+      return Boolean(h?.seen >= 5 && h.correct / h.seen >= 0.8);
+    })(),
   };
 }
 

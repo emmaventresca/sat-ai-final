@@ -1,0 +1,196 @@
+[
+ {
+  "stem": "Which additional fact would be enough to prove that triangle $ABC$ is congruent to triangle $DEF$?",
+  "stimulus": "A folklore studies archive records two triangular embroidery motifs as triangles $ABC$ and $DEF$. You already know that $AB = DE$ and $BC = EF$.",
+  "choices": [
+   "$\\angle A = \\angle D$",
+   "$\\angle B = \\angle E$",
+   "$\\angle C = \\angle F$",
+   "$AB + BC = DE + EF$"
+  ],
+  "answer": "B",
+  "explanation": "You already have two pairs of equal sides. To finish SAS, you need the angles between those sides to be equal. In triangle $ABC$, angle $B$ sits between $AB$ and $BC$. In triangle $DEF$, angle $E$ sits between $DE$ and $EF$. So $\\angle B = \\angle E$ completes SAS. This is the step behind every SAT question that asks which extra fact proves two triangles congruent: first find which angle sits between the sides you were given.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "Angle $A$ is not between $AB$ and $BC$, so this gives you side-side-angle (SSA). SSA is not a congruence criterion, because two different triangles can share two sides and an angle that isn't between them."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "Angle $C$ is not between $AB$ and $BC$ either, so this is SSA again. An equal angle only completes SAS when it sits between the two equal sides."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "This follows directly from the two facts you were given, so it adds nothing new. A fact you can already get from the givens cannot prove anything more."
+   }
+  },
+  "id": "orig-sufficient-inf-F-1d5669",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "F",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-F-1d5669",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "that triangle __var__ is congruent to triangle __var__"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which additional fact would be enough to prove that triangle $PQR$ is similar to triangle $STU$?",
+  "stimulus": "A sports science lab models two leg positions as triangles $PQR$ and $STU$. You already know that $\\angle P = \\angle S$.",
+  "choices": [
+   "$\\angle Q = \\angle T$",
+   "$PQ = ST$",
+   "$\\dfrac{PQ}{ST} = \\dfrac{QR}{TU}$",
+   "$\\angle P = \\angle S = 35^\\circ$"
+  ],
+  "answer": "A",
+  "explanation": "AA similarity needs two pairs of equal angles. You have one pair, $\\angle P = \\angle S$, and $\\angle Q = \\angle T$ is the second pair, so the triangles are similar. This is the step behind every SAT question that asks which extra fact proves two triangles similar: count the equal angle pairs you have and look for the one you are missing.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "One pair of equal sides and one pair of equal angles don't meet any similarity criterion. You still need a second angle pair, or sides in proportion around the equal angle."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "These sides meet at angle $Q$ and angle $T$, not at the equal angles $P$ and $S$. Proportional sides prove similarity only when the equal angle sits between them (SAS~). Here the angle isn't between them, which is SSA, so it proves nothing."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "This only gives a size to the angle pair you already have. You still have just one pair of equal angles, and AA needs two."
+   }
+  },
+  "id": "orig-sufficient-inf-F-24edfe",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "F",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-F-24edfe",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which additional fact would be enough to prove that line $m$ is parallel to line $n$?",
+  "stimulus": "On a city map, two straight streets lie along line $m$ and line $n$. A third straight street, along line $t$, crosses both of them.",
+  "choices": [
+   "A pair of vertical angles at line $m$ are equal.",
+   "A pair of alternate interior angles are equal.",
+   "A linear pair of angles at line $n$ sum to $180^\\circ$.",
+   "A pair of same-side interior angles are equal."
+  ],
+  "answer": "B",
+  "explanation": "If the alternate interior angles formed by transversal $t$ are equal, then lines $m$ and $n$ are parallel. This is one of the standard tests for parallel lines. This is the step behind every SAT question that asks which angle fact proves two lines parallel: the fact has to compare an angle at one line with an angle at the other line.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "Vertical angles are equal wherever any two lines cross, whether $m$ and $n$ are parallel or not. A fact that is always true can't prove anything."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "A linear pair always sums to $180^\\circ$, because the two angles lie on a straight line. It's true for any crossing, and it only involves line $n$, so it tells you nothing about how $n$ relates to $m$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You mixed up the rule. Same-side interior angles prove parallel lines when they sum to $180^\\circ$, not when they are equal. Equal same-side interior angles would only be enough if both happened to be $90^\\circ$."
+   }
+  },
+  "id": "orig-sufficient-inf-F-87d3ad",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "F",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-F-87d3ad",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which additional fact would be enough to prove that triangle $ABC$ is similar to triangle $DEF$?",
+  "stimulus": "A printmaker carves two triangular shapes into a woodblock. In triangle $ABC$, $\\angle A = 50^\\circ$ and $\\angle B = 60^\\circ$. In triangle $DEF$, $\\angle D = 50^\\circ$.",
+  "choices": [
+   "$\\angle F = 70^\\circ$",
+   "$\\angle E = 80^\\circ$",
+   "$DE = AB$",
+   "$\\dfrac{DE}{AB} = \\dfrac{EF}{BC}$"
+  ],
+  "answer": "A",
+  "explanation": "The angles of triangle $ABC$ sum to $180^\\circ$, so $\\angle C = 180^\\circ - 50^\\circ - 60^\\circ = 70^\\circ$. If $\\angle F = 70^\\circ$, the triangles share two pairs of equal angles, $50^\\circ$ and $70^\\circ$, so they are similar by AA. This is the step behind SAT questions where the matching angle isn't given directly: you use the $180^\\circ$ sum to find it.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You made a slip finding the third angle. $180 - 50 - 60 = 70$, not $80$. With $\\angle E = 80^\\circ$, triangle $DEF$ has angles of $50^\\circ$, $80^\\circ$, and $50^\\circ$, which don't match triangle $ABC$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "One pair of equal sides and one pair of equal angles don't meet any similarity criterion. You still need a second pair of equal angles."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "These sides meet at angle $E$ and angle $B$, not at the known equal angles $D$ and $A$. Proportional sides need the equal angle between them (SAS~). This is SSA, so it proves nothing."
+   }
+  },
+  "id": "orig-sufficient-inf-F-af4b38",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "F",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-F-af4b38",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]
