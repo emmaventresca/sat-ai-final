@@ -5,7 +5,10 @@ import { loadBank } from '../lib/bank'
 import { difficultyLabel } from '../lesson/types'
 import { addStudent, roster, setAccess, type Student } from './roster'
 import { buildJourney, type SkillMeta } from '../journey/map'
-import { assignmentsFor, progressFor, saveAssignment, type AssignmentItem } from './assignments'
+import {
+  assignmentsFor, progressFor, saveAssignment,
+  type Assignment, type AssignmentItem,
+} from './assignments'
 import { makeWorksheet } from './worksheetApi'
 
 /**
@@ -42,6 +45,29 @@ export function Assign() {
   const student = students.find((s) => s.id === studentId)
   const allowed = EXAM_IDS.filter((id) => student?.access[id])
 
+  /**
+   * Questions this student has already been set.
+   *
+   * Assigning the same question twice is worse than it sounds: the second
+   * copy arrives already complete, because completion counts any attempt
+   * after the assignment was made and the first one produced exactly that.
+   * So it reads as homework they have done without doing it, and the
+   * teacher's progress number is wrong in the flattering direction.
+   *
+   * Scoped to the student, not globally - two students should get the same
+   * good question, and often should get it in the same week.
+   */
+  const alreadySet = useMemo(() => {
+    const out = new Set<string>()
+    if (!student) return out
+    for (const a of assignmentsFor(student.id)) {
+      for (const item of a.items) {
+        if (item.questionId) out.add(item.questionId)
+      }
+    }
+    return out
+  }, [student, note])
+
   useEffect(() => {
     let live = true
     void loadBank(exam).then((b) => live && setBank(b))
@@ -76,13 +102,20 @@ export function Assign() {
     }))
   }, [exam, bank, skills])
 
-  const matching = useMemo(
+  const [showUsed, setShowUsed] = useState(false)
+
+  const eligible = useMemo(
     () => bank.filter((q) =>
       (!subtype || q.subtype === subtype)
       && (!tier || q.difficulty === tier)
       && (!phrasing || q.phrasing === phrasing)),
     [bank, subtype, tier, phrasing],
   )
+  const matching = useMemo(
+    () => (showUsed ? eligible : eligible.filter((q) => !alreadySet.has(q.id))),
+    [eligible, showUsed, alreadySet],
+  )
+  const hidden = eligible.length - matching.length
 
   /** The wording families this bank actually contains. */
   const phrasings = useMemo(() => {
@@ -216,15 +249,30 @@ export function Assign() {
                   <option key={fam} value={fam}>{readableFamily(fam)} ({n})</option>
                 ))}
               </select>
-              <span className="tiny muted">{matching.length} match</span>
+              <span className="tiny muted">
+                {matching.length} to choose from
+                {hidden > 0 && !showUsed && `, ${hidden} already set`}
+              </span>
             </div>
+
+            {hidden > 0 && (
+              <label className="tiny muted" style={{ display: 'block', marginTop: 8 }}>
+                <input type="checkbox" checked={showUsed}
+                  onChange={(e) => setShowUsed(e.target.checked)} />{' '}
+                Show the {hidden} already set for {student?.name ?? 'this student'}
+                {' '}&mdash; worth it for a deliberate re-test, not otherwise
+              </label>
+            )}
 
             <ol className="peek" style={{ maxHeight: 280, overflowY: 'auto' }}>
               {matching.slice(0, 60).map((q) => (
                 <li key={q.id}>
-                  <label>
+                  <label className={alreadySet.has(q.id) ? 'muted' : undefined}>
                     <input type="checkbox" checked={chosen.includes(q.id)}
                       onChange={() => toggle(q.id)} />{' '}
+                    {alreadySet.has(q.id) && (
+                      <span className="badge" title="already assigned">set</span>
+                    )}{' '}
                     <span className={`badge ${q.difficulty.toLowerCase()}`}>
                       {difficultyLabel(q.difficulty)}
                     </span>{' '}
@@ -284,40 +332,136 @@ export function Assign() {
             {note && <p className="small" style={{ marginTop: 10 }}>{note}</p>}
           </div>
 
-          {student && <Assigned studentId={student.id} />}
+          {student && (
+            <Assigned student={student} bank={bank}
+              onChanged={() => setNote(`Re-assigned to ${student.name}.`)} />
+          )}
         </>
       )}
     </div>
   )
 }
 
-/** What this student already has, and how far they have got. */
-function Assigned({ studentId }: { studentId: string }) {
-  const list = assignmentsFor(studentId)
+/**
+ * Everything this student has been set, and how far they got.
+ *
+ * Re-assigning is a button rather than a thing that happens by accident. The
+ * default is that a question you have already set does not come back - a
+ * repeat arrives already complete, because completion counts any attempt
+ * after the assignment was made and the first copy produced exactly that, so
+ * it reads as homework they did without doing it. But deliberately setting
+ * the same questions again is a real move: it is how you check a reteach
+ * landed, and the only way to tell the two apart is who decided.
+ */
+function Assigned({
+  student, bank, onChanged,
+}: {
+  student: Student
+  bank: Question[]
+  onChanged: () => void
+}) {
+  const list = assignmentsFor(student.id)
+  const [openId, setOpenId] = useState<string | null>(null)
   if (!list.length) return null
+
+  const byId = new Map(bank.map((q) => [q.id, q]))
+
+  function reassign(a: Assignment, questionIds: string[]) {
+    if (!questionIds.length) return
+    saveAssignment({
+      studentId: a.studentId,
+      exam: a.exam,
+      title: `${a.title} — again`,
+      dueAt: new Date(Date.now() + 7 * 864e5).toISOString(),
+      items: questionIds.map((id, i) => ({
+        id: `r-${i}`, kind: 'question', questionId: id,
+        dayIndex: Math.floor(i / 3), required: true,
+      })),
+    })
+    onChanged()
+  }
+
   return (
     <>
       <h2>Already assigned</h2>
       {list.map((a) => {
         const p = progressFor(a, [], {})
+        const questions = a.items
+          .map((i) => i.questionId)
+          .filter((id): id is string => Boolean(id))
+        const open = openId === a.id
         return (
           <div className="card" key={a.id}>
             <div className="spread">
               <div>
                 <strong>{a.title}</strong>
                 <div className="tiny muted">
-                  {examSpec(a.exam).label} · {a.items.length} items
+                  {examSpec(a.exam).label} &middot; {a.items.length} items
+                  &middot; set {new Date(a.assignedAt).toLocaleDateString()}
                   {a.dueAt ? ` · due ${new Date(a.dueAt).toLocaleDateString()}` : ''}
                 </div>
               </div>
-              <span className="badge on">{p.done}/{p.total}</span>
+              <div className="row tight">
+                <span className="badge on">{p.done}/{p.total}</span>
+                <button className="btn-sm"
+                  onClick={() => setOpenId(open ? null : a.id)}>
+                  {open ? 'Hide' : 'What was set'}
+                </button>
+              </div>
             </div>
             <div className="bar thin"><i style={{ width: `${p.percent}%` }} /></div>
+
+            {open && (
+              <>
+                <ol className="peek">
+                  {a.items.map((item) => {
+                    const status = p.statuses.find((s) => s.item.id === item.id)
+                    const q = item.questionId ? byId.get(item.questionId) : undefined
+                    return (
+                      <li key={item.id}>
+                        <span className={`badge ${status?.done
+                          ? (status.correct === false ? 'on' : 'e') : ''}`}>
+                          {status?.done
+                            ? (status.correct === false ? 'wrong' : 'done')
+                            : 'not yet'}
+                        </span>{' '}
+                        {item.kind === 'question'
+                          ? (q ? plain(q.stem) : item.questionId)
+                          : item.title ?? item.url}
+                        {item.questionId && (
+                          <button className="link-btn"
+                            onClick={() => reassign(a, [item.questionId as string])}>
+                            set again
+                          </button>
+                        )}
+                      </li>
+                    )
+                  })}
+                </ol>
+                <div className="row tight" style={{ marginTop: 10 }}>
+                  <button className="btn-sm"
+                    onClick={() => reassign(a, questions)}>
+                    Set the whole thing again
+                  </button>
+                  <button className="btn-sm"
+                    onClick={() => reassign(a, p.missed)}
+                    disabled={!p.missed.length}>
+                    Set just the {p.missed.length} they got wrong
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         )
       })}
     </>
   )
+}
+
+/** A stem as one short line, maths stripped to an ellipsis. */
+function plain(stem: string): string {
+  const t = stem.replace(/\$[^$]*\$/g, '…').replace(/\s+/g, ' ').trim()
+  return t.length > 92 ? `${t.slice(0, 90)}…` : t
 }
 
 function readableFamily(slug: string): string {
