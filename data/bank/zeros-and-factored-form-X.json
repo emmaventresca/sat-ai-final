@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "In the xy-plane, the graph of $y = p(x)$ has x-intercepts at $(-1, 0)$ and $(2, 0)$, and it has one other x-intercept. What is the value of $b$?",
+  "stimulus": "A seismologist models a filtered tremor signal with the function $p$, defined by $p(x) = 3x^3 + bx^2 + cx + 8$, where $b$ and $c$ are constants.",
+  "choices": [
+   "$-15$",
+   "$-7$",
+   "$-2$",
+   "$-1$"
+  ],
+  "answer": "B",
+  "explanation": "Each zero $r$ gives a factor $(x - r)$, and the leading coefficient is 3. So $p(x) = 3(x - 2)(x + 1)(x - r)$, where $r$ is the third zero. The constant term is $3 \\cdot (-2) \\cdot (1) \\cdot (-r) = 6r$. It must equal 8, so $r = \\frac{4}{3}$. That means $p(x) = (x - 2)(x + 1)(3x - 4)$. Then $(x^2 - x - 2)(3x - 4) = 3x^3 - 7x^2 - 2x + 8$, so $b = -7$. To check, $p(2) = 24 - 28 - 4 + 8 = 0$ and $p(-1) = -3 - 7 + 2 + 8 = 0$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You left out the leading coefficient 3 when you matched the constant term. That gave $2r = 8$, so you got $r = 4$ instead of $\\frac{4}{3}$. You then put the 3 back in front of $(x - 2)(x + 1)(x - 4)$ and expanded. Here the leading coefficient is part of the constant term, so you have to include it at that step, not only at the end."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You expanded correctly to $3x^3 - 7x^2 - 2x + 8$, but $-2$ is the coefficient of $x$, which is $c$. The question asks for $b$, the coefficient of $x^2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the factors for the zeros 2 and $-1$ as $(x + 2)$ and $(x - 1)$, which flips their signs. The constant term still matches 8, so nothing warns you, but you end up expanding $(x^2 + x - 2)(3x - 4) = 3x^3 - x^2 - 10x + 8$. A zero at $r$ gives the factor $(x - r)$."
+   }
+  },
+  "id": "orig-zeros-and-fact-X-695eac",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "The function $g$ is defined by $g(x) = (kx - 12)(x + k)$, where $k$ is a constant. In the xy-plane, the graph of $y = g(x)$ has an x-intercept at $(3, 0)$, and $g$ has a maximum value. What is the y-coordinate of the y-intercept of the graph of $y = g(x)$?",
+  "stimulus": "An immunologist uses the function $g$ to model how far a patient's antibody level is from a target level, in arbitrary units.",
+  "choices": [
+   "$-48$",
+   "$-36$",
+   "$-4$",
+   "$36$"
+  ],
+  "answer": "D",
+  "explanation": "Since $g(3) = 0$, one of the two factors is zero at $x = 3$. If $3k - 12 = 0$, then $k = 4$. If $3 + k = 0$, then $k = -3$. The leading coefficient of $g$ is $k$. For $g$ to have a maximum, its graph must open downward, so $k$ must be negative, which means $k = -3$. Then $g(x) = (-3x - 12)(x - 3)$, and $g(0) = (-12)(-3) = 36$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You set the first factor to zero, got $k = 4$, and stopped there. With $k = 4$, $g(x) = (4x - 12)(x + 4)$ does have an x-intercept at $(3, 0)$. But its leading coefficient is positive, so the graph opens upward and $g$ has a minimum, not a maximum. Its y-intercept, $-48$, comes from a function that fails the second condition."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $k = -3$ but got the sign of the product wrong. Either you computed $g(0)$ as $12k$ instead of $(-12)(k)$, or you read the zero of $(x + k)$ as $x = k$. The y-intercept is $(-12)(-3)$, and two negative numbers multiply to a positive one."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$-4$ is the other x-intercept: $-3x - 12 = 0$ gives $x = -4$. The question asks for the y-intercept, which is the value of $g(0)$."
+   }
+  },
+  "id": "orig-zeros-and-fact-X-7941b7",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

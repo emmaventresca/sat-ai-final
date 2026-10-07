@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "How many minutes after the 7-minute reading will the balloon's sensor read $-30$ degrees Celsius?",
+  "stimulus": "A meteorologist releases a weather balloon, and its sensor reading falls at a constant rate. Two minutes after release the sensor reads $9$ degrees Celsius (\u00b0C). Seven minutes after release it reads $-6$\u00b0C.",
+  "choices": [
+   "$8$",
+   "$10$",
+   "$13$",
+   "$15$"
+  ],
+  "answer": "A",
+  "explanation": "Start by finding the rate. Between minute 2 and minute 7, the reading dropped from $9$ to $-6$. That is a change of $-15$\u00b0C over $5$ minutes, or $-3$\u00b0C per minute. Go back 2 minutes from the first reading to get the reading at release: $9 + 2(3) = 15$\u00b0C. Then solve $15 - 3t = -30$. That gives $3t = 45$, so $t = 15$ minutes after release. The question asks for the time after the 7-minute reading, so the answer is $15 - 7 = 8$ minutes. You can check this directly: going from $-6$ to $-30$ is a drop of $24$, and $24 \\div 3 = 8$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided $30$ by $3$. That treats the drop to $-30$ as if it started at $0$\u00b0C. The reading at minute 7 is $-6$\u00b0C, so it only has to fall $24$ more degrees."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You measured from the wrong reading. Falling from $9$\u00b0C to $-30$\u00b0C takes $39 \\div 3 = 13$ minutes, but that is time after the 2-minute reading, not after the 7-minute reading."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You solved $15 - 3t = -30$ correctly, but $t = 15$ is the time after release. The question asks how many minutes after the 7-minute reading, so you still need to subtract $7$."
+   }
+  },
+  "id": "orig-word-problem-s-X-45c219",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If both rates stay constant, after how many days must withdrawals stop?",
+  "stimulus": "A reservoir has a capacity of $1{,}500$ million liters and holds $600$ million liters when a drought begins. Each day, a river adds $4$ million liters and the city withdraws $10$ million liters. Withdrawals must stop when the reservoir falls to $30\\%$ of its capacity.",
+  "choices": [
+   "$15$",
+   "$25$",
+   "$70$",
+   "$150$"
+  ],
+  "answer": "B",
+  "explanation": "The cutoff is $30\\%$ of capacity, so it is $0.30(1{,}500) = 450$ million liters. Each day the reservoir changes by $4 - 10 = -6$ million liters. Solve $600 - 6d = 450$. That gives $6d = 150$, so $d = 25$ days.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You left out the river's inflow and divided $150$ by $10$. The reservoir loses only $10 - 4 = 6$ million liters per day, so it takes longer to reach the cutoff."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You took $30\\%$ of the starting volume ($0.30 \\times 600 = 180$) instead of $30\\%$ of the capacity. The cutoff is based on the $1{,}500$ million liter capacity, which gives $450$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$150$ million liters is how much water the reservoir loses before the cutoff. The question asks for a number of days, so you still need to divide by the net loss of $6$ million liters per day."
+   }
+  },
+  "id": "orig-word-problem-s-X-565365",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

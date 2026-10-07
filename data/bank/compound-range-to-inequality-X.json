@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "Which inequality represents this situation?",
+  "stimulus": "At 6:00 a.m., a weather station measured a snow depth of 14 centimeters. From 6:00 a.m. to 2:00 p.m., snow fell at a rate of at least 1.5 centimeters per hour but less than 2.5 centimeters per hour. Over the same period, settling lowered the depth by a constant 0.5 centimeter per hour. Let $d$ be the snow depth, in centimeters, at 2:00 p.m.",
+  "choices": [
+   "$22 \\le d < 30$",
+   "$22 \\le d \\le 30$",
+   "$26 \\le d < 34$",
+   "$8 \\le d < 16$"
+  ],
+  "answer": "A",
+  "explanation": "From 6:00 a.m. to 2:00 p.m. is 8 hours. Settling removes 0.5 centimeter per hour, so the net gain is at least $1.5 - 0.5 = 1$ centimeter per hour and less than $2.5 - 0.5 = 2$ centimeters per hour. Over 8 hours, that adds at least $8(1) = 8$ centimeters and less than $8(2) = 16$ centimeters. Add the starting 14 centimeters to both ends: $14 + 8 \\le d < 14 + 16$, which gives $22 \\le d < 30$. The lower end is 'at least', so it is inclusive. The upper end is 'less than', so it stays strict.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You got both bounds right, but you made the upper end inclusive. The snowfall rate was always less than 2.5 centimeters per hour, so the depth never reaches 30. That end needs $<$, not $\\le$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You scaled the snowfall range and added the starting depth, but you left out settling. Without the 0.5 centimeter per hour loss, you get $14 + 12 = 26$ and $14 + 20 = 34$. Settling has to come off the rate at both ends."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You correctly found that the depth grows by at least 8 and less than 16 centimeters, but that is only the change. You never added the 14 centimeters already on the ground to both ends."
+   }
+  },
+  "id": "orig-compound-range-X-efc70b",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which inequality represents this situation?",
+  "stimulus": "A pond held 240 trout. Biologists removed 40 of the trout for a study. A hatchery then delivered $n$ crates to the pond, each holding 20 trout, and released all of them. Afterward, the pond held more than 600 trout but no more than 900 trout.",
+  "choices": [
+   "$18 < n \\le 33$",
+   "$20 \\le n \\le 35$",
+   "$20 < n \\le 35$",
+   "$30 < n \\le 45$"
+  ],
+  "answer": "C",
+  "explanation": "After the removal, the pond holds $240 - 40 = 200$ trout. Adding $n$ crates of 20 gives $200 + 20n$ trout. 'More than 600' is strict and 'no more than 900' is inclusive, so $600 < 200 + 20n \\le 900$. Subtract 200 from all three parts to get $400 < 20n \\le 700$, then divide by 20: $20 < n \\le 35$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You used the starting 240 trout and forgot the 40 that were removed. That gives $600 < 240 + 20n \\le 900$, so $18 < n \\le 33$. The removal happens before the deliveries, so the base is 200."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "Your algebra is right, but you made the lower end inclusive. 'More than 600' is strict, so $n = 20$, which gives exactly 600 trout, does not fit. The left end needs $<$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You divided the bounds 600 and 900 by 20 but never subtracted the 200 trout already in the pond. $600 < 20n \\le 900$ counts only the delivered fish, not the total the pond holds."
+   }
+  },
+  "id": "orig-compound-range-X-dcb922",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

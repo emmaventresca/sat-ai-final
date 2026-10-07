@@ -27,6 +27,13 @@ KEEP = ("id", "type", "skill_cd", "subtype", "subtype_name", "difficulty",
 
 
 def main():
+    # Which section a skill belongs to. Without it every SAT item looked like
+    # maths to the new front end, because the bank never carried the field -
+    # the old app got it by joining to skills.json at runtime, and the join
+    # does not survive being handed to a different app.
+    section_of = {s["skill_cd"]: s["section"] for s in
+                  json.load(open(os.path.join(ROOT, "data", "skills.json")))["skills"]}
+
     items, skipped = [], Counter()
     for path in sorted(glob.glob(os.path.join(BANK, "*.json"))):
         for it in json.load(open(path)):
@@ -35,6 +42,7 @@ def main():
                 continue
             rec = {k: it.get(k) for k in KEEP if it.get(k) is not None}
             rec["type"] = "item"
+            rec["section"] = section_of.get(rec.get("skill_cd"), "math")
             rec["format"] = rec.get("format") or ("grid" if rec.get("keys") else "mc")
             rec["band_floor"], rec["band_ceiling"] = 200, 1600
             # Per-choice explanations, in the shape the app already renders.

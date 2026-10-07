@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "In triangle $ABC$, angle $C$ is a right angle and $\\cos(B) = \\frac{8}{17}$. The length of $\\overline{AB}$ is 18 meters greater than the length of $\\overline{BC}$. What is the length, in meters, of $\\overline{AC}$?",
+  "stimulus": "A city planner models a triangular pocket park at the corner of two perpendicular streets as triangle $ABC$. The side along the diagonal footpath is $\\overline{AB}$.",
+  "choices": [
+   "$15$",
+   "$16$",
+   "$30$",
+   "$72$"
+  ],
+  "answer": "C",
+  "explanation": "From angle $B$, the adjacent side is $BC$ and the hypotenuse is $AB$. So $BC = 8k$ and $AB = 17k$ for some positive $k$. By the Pythagorean theorem, $AC = \\sqrt{(17k)^2 - (8k)^2} = 15k$. The condition $AB - BC = 18$ gives $17k - 8k = 9k = 18$, so $k = 2$. That makes $AC = 15(2) = 30$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You took the numbers in the ratio as the actual side lengths and read $AC$ as 15. A ratio only fixes the shape. You still need the 18-meter condition to find the scale factor $k = 2$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $k = 2$ correctly but then gave $BC = 8k = 16$, the side adjacent to angle $B$. The question asks for $AC$, the side opposite angle $B$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You labeled the sides from angle $A$ instead of angle $B$, so you set $AC = 8k$ and $BC = 15k$. Then $AB - BC = 2k = 18$ gave $k = 9$ and $AC = 72$. Cosine of $B$ uses the side next to $B$, which is $BC$, not $AC$."
+   }
+  },
+  "id": "orig-trig-ratio-fro-X-701a89",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "In triangle $ABC$, angle $C$ is a right angle. Point $D$ lies on $\\overline{AB}$ so that $\\overline{CD}$ is perpendicular to $\\overline{AB}$. If $AC = 20$ and $AD = 16$, what is the value of $\\tan(B)$?",
+  "stimulus": "A folklorist mapping the sight lines described in a village legend about a hilltop shrine draws the paths as a right triangle with one extra line segment.",
+  "choices": [
+   "$\\frac{3}{5}$",
+   "$\\frac{3}{4}$",
+   "$\\frac{4}{5}$",
+   "$\\frac{4}{3}$"
+  ],
+  "answer": "D",
+  "explanation": "Triangle $ACD$ has a right angle at $D$, so $CD = \\sqrt{20^2 - 16^2} = 12$. Angles $B$ and $ACD$ are both complementary to angle $A$, so they are equal. From angle $ACD$ in triangle $ACD$, the opposite side is $AD = 16$ and the adjacent side is $CD = 12$. So $\\tan(B) = \\frac{16}{12} = \\frac{4}{3}$. To check: $\\tan(A) = \\frac{12}{16} = \\frac{3}{4}$, so $BC = 15$, and $\\tan(B) = \\frac{AC}{BC} = \\frac{20}{15} = \\frac{4}{3}$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found $CD = 12$ and stopped at $\\frac{CD}{AC} = \\frac{12}{20} = \\frac{3}{5}$. That is $\\cos(B)$, a value along the way, not the tangent the question asks for."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read the ratio from angle $A$ instead of angle $B$. $\\frac{CD}{AD} = \\frac{3}{4}$ is $\\tan(A)$. Tangent of the other acute angle is the reciprocal, $\\frac{4}{3}$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You correctly matched angle $B$ to angle $ACD$, but then used opposite over hypotenuse: $\\frac{AD}{AC} = \\frac{16}{20} = \\frac{4}{5}$. That is $\\sin(B)$. Tangent is opposite over adjacent."
+   }
+  },
+  "id": "orig-trig-ratio-fro-X-f12d78",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

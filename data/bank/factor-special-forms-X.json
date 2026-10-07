@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "Which of the following is a factor of $81x^4 - 72x^2 + 16$?",
+  "stimulus": "A musicologist studying how a vibrating string's frequency changes uses the expression $81x^4 - 72x^2 + 16$, where $x$ is a scaled measure of string tension.",
+  "choices": [
+   "$9x - 4$",
+   "$3x - 4$",
+   "$9x^2 + 4$",
+   "$3x - 2$"
+  ],
+  "answer": "D",
+  "explanation": "The expression only has even powers, so let $u = x^2$. It becomes $81u^2 - 72u + 16$. Its first and last terms are perfect squares, $(9u)^2$ and $4^2$, and $2(9u)(4) = 72u$, so it equals $(9u - 4)^2 = (9x^2 - 4)^2$. Don't stop there: $9x^2 - 4$ is itself a difference of squares, $(3x - 2)(3x + 2)$. So $81x^4 - 72x^2 + 16 = (3x - 2)^2(3x + 2)^2$, and $3x - 2$ is a factor. To check, $x = \\tfrac{2}{3}$ gives $81 \\cdot \\tfrac{16}{81} - 72 \\cdot \\tfrac{4}{9} + 16 = 16 - 32 + 16 = 0$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $(9x^2 - 4)^2$ but then wrote $9x^2 - 4$ as if it factored into $(9x - 4)(\\dots)$. You took the square root of $x^2$ and forgot to take the square root of the coefficient 9. The root of $9x - 4$ is $x = \\tfrac{4}{9}$, and the original expression isn't zero there."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You took the square roots of 81 and 16 and paired 9 with 4 as if the inner factor were $9x^2 - 16$, which gives $3x - 4$. The inner factor is $9x^2 - 4$, because the constant 16 is $4^2$, not the inner constant. Substitute $x = \\tfrac{4}{3}$ and you get $256 - 128 + 16 = 144$, not 0."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You recognised a perfect square but used the wrong sign. With a middle term of $-72x^2$, the square is $(9x^2 - 4)^2$, not $(9x^2 + 4)^2$. Expanding $(9x^2 + 4)^2$ gives $+72x^2$, so $9x^2 + 4$ isn't a factor."
+   }
+  },
+  "id": "orig-factor-special-X-e6b1f8",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which expression is equivalent to $-3t^2 + 18t + 4$?",
+  "stimulus": "An ornithologist models a kestrel's altitude, in meters, $t$ seconds after it begins a climb with the expression $-3t^2 + 18t + 4$.",
+  "choices": [
+   "$-3(t - 3)^2 + 13$",
+   "$-3(t - 3)^2 + 31$",
+   "$-3(t + 3)^2 + 31$",
+   "$-3(t - 3)^2 - 23$"
+  ],
+  "answer": "B",
+  "explanation": "Factor $-3$ out of the first two terms: $-3(t^2 - 6t) + 4$. Halve $-6$ to get $-3$ and square it to get 9: $-3(t^2 - 6t + 9) + 4 + ?$. Inside the parentheses you added 9, but because of the $-3$ in front you actually added $-3 \\cdot 9 = -27$ to the expression. To keep it equal, add 27 back: $-3(t - 3)^2 + 4 + 27 = -3(t - 3)^2 + 31$. To check, expand: $-3(t^2 - 6t + 9) + 31 = -3t^2 + 18t - 27 + 31 = -3t^2 + 18t + 4$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You completed the square inside the parentheses and then added 9 to the constant ($4 + 9 = 13$). You forgot that the $-3$ in front turns that 9 into $-27$, so you need to add 27. Expanding your choice gives a constant of $-27 + 13 = -14$, not 4."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the constant right but the sign of $h$ wrong. $(t + 3)^2$ expands to $t^2 + 6t + 9$, so after multiplying by $-3$ your choice has a middle term of $-18t$, not $+18t$. The peak is at $t = 3$, so the factor is $(t - 3)$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You saw that the $-3$ changes the 9 into 27, but you subtracted 27 from the constant ($4 - 27 = -23$) when you should have added it. Expanding your choice gives a constant of $-27 - 23 = -50$, not 4."
+   }
+  },
+  "id": "orig-factor-special-X-629b24",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

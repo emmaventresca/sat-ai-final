@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "A second circle in the xy-plane has the same center as this circle and twice its radius. An equation of the second circle is $x^2 + y^2 + Dx + Ey + F = 0$, where $D$, $E$, and $F$ are constants. What is the value of $F$?",
+  "stimulus": "On an archaeologist's site grid, measured in meters, the outer edge of a buried stone ring is modeled by the circle $x^2 + y^2 - 12x + 8y - 29 = 0$ in the xy-plane.",
+  "choices": [
+   "$-110$",
+   "$-64$",
+   "$-272$",
+   "$-324$"
+  ],
+  "answer": "C",
+  "explanation": "Group the terms and complete the square: $(x^2 - 12x + 36) + (y^2 + 8y + 16) = 29 + 36 + 16$, so $(x - 6)^2 + (y + 4)^2 = 81$. The center is $(6, -4)$ and the radius is $9$. The second circle has radius $18$, so $r^2 = 324$ and its equation is $(x - 6)^2 + (y + 4)^2 = 324$. Expanding gives $x^2 - 12x + 36 + y^2 + 8y + 16 = 324$, so $x^2 + y^2 - 12x + 8y - 272 = 0$. Therefore $F = 52 - 324 = -272$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You doubled $r^2$ to get $162$ instead of doubling $r$. A radius twice as long makes $r^2$ four times as large, which is $324$. Using $162$ gives $52 - 162 = -110$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "When you completed the square, you added $36$ and $16$ on the left but not on the right, so you got $r^2 = 29$. Quadrupling that gives $116$, and $52 - 116 = -64$. The right side should be $29 + 36 + 16 = 81$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found the new $r^2 = 324$ correctly but then dropped the $36 + 16 = 52$ that comes from expanding $(x - 6)^2$ and $(y + 4)^2$. Moving everything to the left side gives $F = 52 - 324$, not $-324$."
+   }
+  },
+  "id": "orig-complete-squar-X-8c9afd",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "A second circle has the same center as this circle, and its diameter is equal to this circle's radius. An equation of the second circle is $x^2 + y^2 + 10x - 14y + d = 0$, where $d$ is a constant. What is the value of $d$?",
+  "stimulus": "A civil engineer models the outer curb of a roundabout in the xy-plane. The graph of $x^2 + y^2 + 10x - 14y + c = 0$, where $c$ is a constant, is a circle that passes through the point $(1, 15)$.",
+  "choices": [
+   "$24$",
+   "$49$",
+   "$-25$",
+   "$-26$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute $(1, 15)$: $1 + 225 + 10 - 210 + c = 0$, so $c = -26$. Complete the square: $(x^2 + 10x + 25) + (y^2 - 14y + 49) = 26 + 25 + 49$, so $(x + 5)^2 + (y - 7)^2 = 100$. The center is $(-5, 7)$ and the radius is $10$. The second circle's diameter is $10$, so its radius is $5$ and $r^2 = 25$. Its equation is $(x + 5)^2 + (y - 7)^2 = 25$. Expanding gives $x^2 + 10x + 25 + y^2 - 14y + 49 = 25$, so $d = 74 - 25 = 49$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You halved $r^2$ to get $50$ instead of halving $r$. Cutting the radius from $10$ to $5$ divides $r^2$ by $4$, which gives $25$. Using $50$ gives $74 - 50 = 24$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You found the new $r^2 = 25$ correctly but forgot the $25 + 49 = 74$ that comes from expanding $(x + 5)^2$ and $(y - 7)^2$. The constant is $74 - 25$, not $-25$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $c$, the constant of the first circle, which you get after substituting the point. It is also what you would get if you took the second circle's radius to be $10$. That would make the second circle the same as the first. The question asks for the second circle, whose diameter is $10$, so its radius is $5$."
+   }
+  },
+  "id": "orig-complete-squar-X-d3f33a",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

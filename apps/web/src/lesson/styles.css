@@ -1,0 +1,407 @@
+/* ---------------------------------------------------------------------------
+   Lesson presentation.
+
+   Same palette and the same Georgia-for-question-text rule as
+   web/assets/styles.css, but the custom properties are redeclared on `.lesson`
+   rather than inherited from :root. That is not duplication for its own sake:
+   the PDF path clones this subtree into a bare iframe, and a variable defined
+   on :root of the app document would resolve to nothing there - a chart whose
+   bars are `var(--purple)` would print as an empty grid.
+
+   Everything is scoped under `.lesson` so this can be dropped into the teacher
+   portal without colliding with the pages around it.
+   --------------------------------------------------------------------------- */
+
+.lesson {
+  --lsn-serif: Georgia, "Libre Baskerville", "Times New Roman", serif;
+  --lsn-ui: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --lsn-panel: #ffffff;
+  --lsn-panel2: #f4f1ff;
+  --lsn-line: #e6ddfb;
+  --lsn-line2: #d9cdf7;
+  /* Darker than the app's --ink. This is read at four metres, not forty
+     centimetres, and #2f2750 on white loses its edges on a projector. */
+  --lsn-ink: #1d1838;
+  --lsn-dim: #5c5680;
+  --lsn-purple: #6742f0;
+  --lsn-blue: #3f7ef7;
+  --lsn-good: #0b7a55;
+  --lsn-good-bg: #e6f9f2;
+  --lsn-good-ln: #a9e8cf;
+  --lsn-bad: #c9344c;
+  --lsn-bad-bg: #fdeef1;
+  --lsn-bad-ln: #f6c2cc;
+  --lsn-flag: #a9660a;
+  --lsn-flag-bg: #fff5e2;
+  --lsn-flag-ln: #f7d79a;
+
+  --lsn-base: 22px;
+  --lsn-lead: 1.7;
+  --lsn-gap: 30px;
+
+  color: var(--lsn-ink);
+  background: var(--lsn-panel);
+  font-family: var(--lsn-ui);
+  font-size: var(--lsn-base);
+  line-height: var(--lsn-lead);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 34px 38px 60px;
+}
+
+/* The teacher copy carries a second column of answers, so it runs a little
+   tighter - but never below the point where a glance costs a squint. */
+.lesson--teacher {
+  --lsn-base: 19px;
+  --lsn-lead: 1.6;
+  --lsn-gap: 24px;
+  max-width: 1180px;
+}
+
+.lesson * { box-sizing: border-box; }
+.lesson p { margin: 0 0 0.7em; }
+
+/* ---- header -------------------------------------------------------------- */
+
+.lsn-head {
+  border-bottom: 3px solid var(--lsn-purple);
+  padding-bottom: 0.6em;
+  margin-bottom: var(--lsn-gap);
+}
+.lsn-kicker {
+  font-size: 0.62em;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lsn-purple);
+}
+.lsn-title {
+  font-family: var(--lsn-serif);
+  font-size: 2.1em;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0.15em 0 0.1em;
+}
+.lsn-sub { color: var(--lsn-dim); font-size: 0.86em; margin: 0; }
+
+.lsn-label {
+  font-size: 0.58em;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lsn-dim);
+}
+
+/* ---- run sheet ----------------------------------------------------------- */
+
+.lsn-runsheet { margin-bottom: var(--lsn-gap); }
+.lsn-table-run { width: 100%; font-size: 0.8em; }
+.lsn-table-run td:nth-child(2) { width: 100%; }
+.lsn-table-run .num { text-align: right; white-space: nowrap; }
+.lsn-table-run tfoot td {
+  font-weight: 800;
+  border-top: 2px solid var(--lsn-line2);
+  background: var(--lsn-panel2);
+}
+/* Minutes that do not add up are shown, not fixed. */
+.lsn-table-run tfoot tr.off td {
+  background: var(--lsn-bad-bg);
+  border-color: var(--lsn-bad-ln);
+  color: var(--lsn-bad);
+}
+.lsn-drift {
+  background: var(--lsn-bad-bg);
+  border: 2px solid var(--lsn-bad-ln);
+  border-radius: 14px;
+  padding: 0.7em 1em;
+  margin-bottom: var(--lsn-gap);
+  font-size: 0.8em;
+  color: var(--lsn-bad);
+}
+
+/* ---- sections ------------------------------------------------------------ */
+
+.lsn-section { margin-bottom: var(--lsn-gap); }
+.lsn-section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid var(--lsn-line);
+  padding-bottom: 0.3em;
+}
+.lsn-section-head h2 {
+  font-family: var(--lsn-serif);
+  font-size: 1.25em;
+  font-weight: 700;
+  margin: 0;
+  flex: 1;
+  letter-spacing: -0.015em;
+}
+.lsn-num {
+  display: inline-grid;
+  place-items: center;
+  width: 1.5em;
+  height: 1.5em;
+  flex: none;
+  border-radius: 50%;
+  background: linear-gradient(100deg, var(--lsn-purple), var(--lsn-blue));
+  color: #fff;
+  font-size: 0.78em;
+  font-weight: 800;
+  line-height: 1;
+}
+.lsn-min {
+  font-size: 0.66em;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--lsn-dim);
+  white-space: nowrap;
+}
+.lsn-why { color: var(--lsn-dim); font-size: 0.82em; }
+
+/* One idea per block: the body lines are spaced like slide bullets, not like
+   paragraphs of a handout. */
+.lsn-body { font-family: var(--lsn-serif); }
+.lsn-body p { margin: 0 0 0.75em; }
+.lsn-list { margin: 0.4em 0 0.8em; padding-left: 1.2em; }
+.lsn-list li { margin-bottom: 0.45em; font-family: var(--lsn-serif); }
+
+.lsn-notes,
+.lsn-prompts {
+  background: var(--lsn-flag-bg);
+  border: 1px solid var(--lsn-flag-ln);
+  border-radius: 14px;
+  padding: 0.7em 1em;
+  margin: 0.8em 0;
+  font-size: 0.82em;
+  color: var(--lsn-flag);
+}
+.lsn-notes .lsn-label,
+.lsn-prompts .lsn-label { color: var(--lsn-flag); }
+.lsn-prompts ul { margin: 0.3em 0 0; padding-left: 1.1em; }
+.lsn-prompts li { margin-bottom: 0.35em; font-family: var(--lsn-ui); }
+
+.lsn-closing {
+  background: var(--lsn-panel2);
+  border: 1px solid var(--lsn-line);
+  border-radius: 16px;
+  padding: 0.9em 1.1em;
+}
+
+/* ---- questions ----------------------------------------------------------- */
+
+.lsn-q {
+  padding: 0.9em 0;
+  border-top: 1px solid var(--lsn-line);
+}
+/* The answer rail is a column, not an interruption: the stem keeps its own
+   measure and the eye has one fixed place to look. */
+.lesson--teacher .lsn-q {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 15em;
+  gap: 1.1em;
+  align-items: start;
+}
+.lsn-q-main { min-width: 0; }
+
+.lsn-q-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  margin-bottom: 0.45em;
+}
+.lsn-q-num {
+  font-weight: 800;
+  font-size: 0.8em;
+  color: var(--lsn-purple);
+}
+/* A student should know why a question is in front of them, and what it is
+   meant to cost - both labels ride with the item. */
+.lsn-q-cat,
+.lsn-q-level {
+  font-size: 0.56em;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3em 0.8em;
+  border-radius: 999px;
+  border: 1px solid var(--lsn-line2);
+  background: var(--lsn-panel2);
+  color: var(--lsn-purple);
+}
+.lsn-q-level.f { background: #f1f4f9; border-color: #d4dce8; color: #41566f; }
+.lsn-q-level.e { background: var(--lsn-good-bg); border-color: var(--lsn-good-ln); color: var(--lsn-good); }
+.lsn-q-level.m { background: #eef3ff; border-color: #c9daff; color: #2d5fc4; }
+.lsn-q-level.h { background: var(--lsn-flag-bg); border-color: var(--lsn-flag-ln); color: var(--lsn-flag); }
+.lsn-q-level.x { background: var(--lsn-bad-bg); border-color: var(--lsn-bad-ln); color: var(--lsn-bad); }
+
+.lsn-stim {
+  background: var(--lsn-panel2);
+  border: 1px solid var(--lsn-line);
+  border-radius: 14px;
+  padding: 0.7em 0.9em;
+  margin-bottom: 0.6em;
+  font-family: var(--lsn-serif);
+}
+.lsn-stim p:last-child { margin-bottom: 0; }
+.lsn-stem { font-family: var(--lsn-serif); margin-bottom: 0.5em; }
+.lsn-stim-label {
+  font-family: var(--lsn-ui);
+  font-size: 0.6em;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lsn-dim);
+  margin: 0.8em 0 0.3em;
+}
+.lsn-stim-label:first-child { margin-top: 0; }
+.lsn-eq { text-align: center; margin: 0.6em 0; }
+
+.lsn-choices { list-style: none; margin: 0; padding: 0; }
+.lsn-choices li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6em;
+  padding: 0.25em 0;
+  font-family: var(--lsn-serif);
+}
+.lsn-choice-letter {
+  font-family: var(--lsn-ui);
+  font-weight: 800;
+  font-size: 0.75em;
+  color: var(--lsn-dim);
+  border: 1.5px solid var(--lsn-line2);
+  border-radius: 50%;
+  width: 1.9em;
+  height: 1.9em;
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  line-height: 1;
+}
+.lsn-choice-body > p:only-child { margin: 0; }
+
+.lsn-grid { display: flex; align-items: center; gap: 0.6em; margin-top: 0.4em; }
+.lsn-grid-box {
+  display: inline-block;
+  width: 7em;
+  height: 1.8em;
+  border-bottom: 2px solid var(--lsn-line2);
+}
+
+/* ---- the answer, in the margin ------------------------------------------- */
+
+/* Green card, UI font, never Georgia. The student-facing text on this page is
+   serif without exception, so an answer can never be mistaken for part of the
+   question at a glance. */
+.lsn-answer {
+  background: var(--lsn-good-bg);
+  border: 2px solid var(--lsn-good-ln);
+  border-radius: 14px;
+  padding: 0.6em 0.8em;
+  font-family: var(--lsn-ui);
+  font-size: 0.72em;
+  line-height: 1.5;
+  color: var(--lsn-good);
+}
+.lsn-answer-key {
+  font-size: 1.6em;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.lsn-answer-why { margin: 0.4em 0 0; }
+.lsn-answer-trap {
+  margin: 0.5em 0 0;
+  padding-top: 0.45em;
+  border-top: 1px solid var(--lsn-good-ln);
+  color: var(--lsn-bad);
+}
+
+/* ---- maths, tables, charts ----------------------------------------------- */
+
+/* Maths as an inline chip, so a formula reads as one unit and still sits in
+   the line of prose rather than interrupting it. */
+.lsn-math {
+  display: inline-block;
+  background: linear-gradient(180deg, #f7f4ff 0%, #f1ecff 100%);
+  border: 1px solid #e0d6fb;
+  border-radius: 9px;
+  padding: 0.08em 0.4em 0.12em;
+  line-height: 1.35;
+  vertical-align: -0.18em;
+  white-space: nowrap;
+  font-family: var(--lsn-serif);
+}
+.lsn-math .katex { font-size: 1.1em; color: #241c48; }
+.lsn-math-block {
+  display: block;
+  margin: 0.6em auto;
+  padding: 0.5em 0.8em;
+  width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: normal;
+}
+
+.lsn-figure { margin: 0.7em 0; }
+.lsn-figure figcaption {
+  font-size: 0.62em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lsn-dim);
+  margin-bottom: 0.4em;
+}
+.lsn-table { border-collapse: collapse; width: auto; min-width: min(100%, 320px); }
+.lsn-table th,
+.lsn-table td {
+  padding: 0.45em 0.8em;
+  border: 1px solid var(--lsn-line);
+  text-align: left;
+}
+.lsn-table th {
+  font-size: 0.7em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--lsn-dim);
+  background: var(--lsn-panel2);
+}
+.lsn-table td { font-variant-numeric: tabular-nums; font-family: var(--lsn-serif); }
+.lsn-table tbody tr:nth-child(even) td { background: rgba(0, 0, 0, 0.015); }
+
+/* Charts are drawn on a 680x380 viewBox and scaled to the column, so the
+   weights below are what make them readable from the back of the room. */
+.lsn-chart { display: block; width: 100%; max-width: 620px; height: auto; }
+.lsn-chart .a { stroke: #9c91c4; stroke-width: 2; }
+.lsn-chart .g { stroke: var(--lsn-line); stroke-width: 1.25; }
+.lsn-chart .bar { fill: var(--lsn-purple); }
+.lsn-chart .pt { fill: var(--lsn-purple); }
+.lsn-chart .ln { fill: none; stroke: var(--lsn-purple); stroke-width: 3.5; }
+.lsn-chart text { font-family: var(--lsn-ui); font-size: 17px; fill: #4a4470; }
+.lsn-chart text.lab { font-size: 18px; font-weight: 700; fill: var(--lsn-ink); }
+
+/* ---- print --------------------------------------------------------------- */
+
+/* The page geometry itself lives in pdf.ts, which owns the @page rule per
+   mode. What belongs here is what must survive the trip to paper. */
+@media print {
+  .lesson { max-width: none; margin: 0; padding: 0; box-shadow: none; }
+  .lsn-section, .lsn-q, .lsn-figure, .lsn-answer, .lsn-notes, .lsn-prompts {
+    break-inside: avoid;
+  }
+  .lsn-break { break-before: page; }
+  .lsn-head { break-after: avoid; }
+  .lsn-section-head { break-after: avoid; }
+  /* Browsers drop background fills when printing, and a bar chart without its
+     bars is a blank grid. */
+  .lesson, .lesson * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

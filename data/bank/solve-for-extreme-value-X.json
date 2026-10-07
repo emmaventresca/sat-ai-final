@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "If $n$ is the number of antibody kits in the order, what is the greatest possible value of $n$?",
+  "stimulus": "An immunology lab is placing one order of assay kits and can spend at most $\\$2{,}000$. The order must include at least $12$ cytokine kits, which cost $\\$65$ each. All other kits in the order are antibody kits, which cost $\\$48$ each. A flat $\\$90$ shipping fee is charged on the whole order. The lab's freezer can store no more than $32$ kits in total.",
+  "choices": [
+   "$20$",
+   "$23$",
+   "$24$",
+   "$25$"
+  ],
+  "answer": "A",
+  "explanation": "To get the most antibody kits, you buy only the required $12$ cytokine kits, because each extra cytokine kit costs money and takes up freezer space. Budget: $90 + 12(65) + 48n \\le 2{,}000$, so $48n \\le 1{,}130$ and $n \\le 23.54$, which gives $n \\le 23$. Freezer: $12 + n \\le 32$, so $n \\le 20$. Both conditions have to hold, so the freezer limit is the one that decides it, and the greatest possible value is $n = 20$. That order costs $90 + 780 + 960 = \\$1{,}830$, which is within the budget.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You solved the budget inequality correctly and rounded down, but you stopped there. With $12$ cytokine kits and $23$ antibody kits, the order has $35$ kits, which is more than the freezer's limit of $32$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You rounded $23.54$ up to $24$. For a maximum you have to round down, because $24$ antibody kits would cost $90 + 780 + 1{,}152 = \\$2{,}022$, which is over budget. You also didn't check the freezer limit."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You left out the $\\$90$ shipping fee and solved $780 + 48n \\le 2{,}000$, which gives $n \\le 25.4$. The fee is part of the total, and this answer also breaks the freezer limit."
+   }
+  },
+  "id": "orig-solve-for-extr-X-4c673e",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the least possible value of $p$?",
+  "stimulus": "A printmaker is making an edition of $p$ linocut prints. Carving the block costs $\\$140$, and paper and ink cost $\\$5$ per print. Each print sells for $\\$20$, but the gallery keeps $25\\%$ of the price of every print it sells. Assume every print sells. The printmaker wants the edition's profit to be more than $\\$400$.",
+  "choices": [
+   "$27$",
+   "$37$",
+   "$54$",
+   "$55$"
+  ],
+  "answer": "D",
+  "explanation": "The printmaker keeps $75\\%$ of $\\$20$, which is $\\$15$ per print. After paying $\\$5$ for materials, each print earns $\\$10$. Profit is $10p - 140$, so you need $10p - 140 > 400$. That gives $10p > 540$, so $p > 54$. Because the inequality is strict, $54$ prints is not enough: the profit would be exactly $\\$400$. The least whole-number value is $p = 55$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted $140$ from $400$ instead of adding it, so you got $10p > 260$ and $p > 26$. To isolate $10p$, you have to add the block cost to both sides."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You left out the gallery's $25\\%$ cut and used $\\$15$ per print ($20 - 5$), which gives $15p > 540$ and $p > 36$. The printmaker only receives $\\$15$ of each sale, so materials leave $\\$10$, not $\\$15$."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You solved $p > 54$ correctly and then kept the boundary value. At $p = 54$ the profit is exactly $\\$400$, which does not satisfy *more than* $\\$400$. The strict inequality means you have to go up to the next whole number."
+   }
+  },
+  "id": "orig-solve-for-extr-X-b742de",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

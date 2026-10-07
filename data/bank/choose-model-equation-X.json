@@ -1,0 +1,172 @@
+[
+ {
+  "stem": "Which of the following equations best models the data, where $y$ is the number of charcoal fragments per liter of sediment and $x$ is the distance, in meters, from the center of the hearth?",
+  "stimulus": "At an excavated campsite, archaeologists counted charcoal fragments in sediment samples taken at different distances from the center of a hearth. The results are shown in the scatterplot.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Charcoal Fragments near a Hearth",
+   "x_label": "Distance from hearth center (meters)",
+   "y_label": "Fragments per liter",
+   "points": [
+    [
+     0.5,
+     80
+    ],
+    [
+     1,
+     40
+    ],
+    [
+     1.5,
+     20
+    ],
+    [
+     2,
+     11
+    ],
+    [
+     2.5,
+     4
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 3.5,
+   "x_step": 0.5,
+   "y_min": 0,
+   "y_max": 100,
+   "y_step": 20,
+   "alt": "Scatterplot of six points that fall steeply and then level off toward zero as distance from the hearth center increases from 0.5 to 3 meters."
+  },
+  "choices": [
+   "$y = 160(0.25)^{-x}$",
+   "$y = 80(4)^{-x}$",
+   "$y = 160(2)^{-x}$",
+   "$y = 160(4)^{-x}$"
+  ],
+  "answer": "D",
+  "explanation": "The points drop by half every 0.5 meter: 80, 40, 20, and so on. That is exponential decay. Over a full meter there are two halvings, so the count is multiplied by $\\frac{1}{4}$ for each meter. Working back half a meter from the first point at $x = 0.5$ gives the starting value: $2 \\times 80 = 160$ at $x = 0$. The model is $y = 160\\left(\\frac{1}{4}\\right)^x$, which can be written as $y = 160(4)^{-x}$. A base above 1 with a negative exponent is still decay. Check: at $x = 1$, $160 \\div 4 = 40$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You saw a base between 0 and 1 and took this for decay, but the exponent is negative. $(0.25)^{-x} = 4^x$, so this model quadruples every meter and rises steeply, while the data fall."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used the leftmost point (80) as the starting value, but that point sits at $x = 0.5$, not $x = 0$. The model has to start where the data would meet the y-axis, which is one halving further back: 160."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You saw the halving pattern, but you counted each gridline step as 1 meter. The data halve every 0.5 meter, so they fall by a factor of 4 per meter. This model gives 80 at $x = 1$, but the data show 40."
+   }
+  },
+  "id": "orig-choose-model-e-X-65bb3b",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which of the following equations best models the data, where $y$ is the average length gain, in millimeters, and $x$ is the number of degrees Celsius above $24^{\\circ}\\text{C}$?",
+  "stimulus": "Marine biologists raised juvenile damselfish in tanks kept at different water temperatures. The scatterplot shows each tank's average length gain over one month.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Juvenile Damselfish Growth by Water Temperature",
+   "x_label": "Water temperature (\u00b0C)",
+   "y_label": "Average length gain in one month (millimeters)",
+   "points": [
+    [
+     24,
+     5
+    ],
+    [
+     25,
+     7
+    ],
+    [
+     26,
+     8
+    ],
+    [
+     27,
+     9
+    ],
+    [
+     28,
+     10
+    ],
+    [
+     29,
+     10
+    ],
+    [
+     30,
+     10
+    ],
+    [
+     31,
+     9
+    ],
+    [
+     32,
+     8
+    ],
+    [
+     33,
+     7
+    ],
+    [
+     34,
+     5
+    ]
+   ],
+   "x_min": 24,
+   "x_max": 34,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 12,
+   "y_step": 1,
+   "alt": "Scatterplot of eleven points that rise from about 5 millimeters at 24 degrees to a peak of about 10 millimeters near 29 degrees, then fall back to about 5 millimeters at 34 degrees."
+  },
+  "choices": [
+   "$y = 0.2x^2 - 2x + 5$",
+   "$y = -0.2x^2 - 2x + 5$",
+   "$y = -0.2x^2 + 2x + 5$",
+   "$y = -0.1x^2 + x + 5$"
+  ],
+  "answer": "C",
+  "explanation": "The data rise and then fall, so the leading coefficient must be negative. Because $x$ counts degrees above $24^{\\circ}\\text{C}$, $x = 0$ is the left edge of the plot, where the gain is about 5, so the constant term is 5. The peak is near $29^{\\circ}\\text{C}$, which is $x = 5$, and the peak gain is about 10. For $y = -0.2x^2 + 2x + 5$, the vertex is at $x = -\\frac{2}{2(-0.2)} = 5$, and $y = -5 + 10 + 5 = 10$ there. Every feature matches.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This equation has the right constant term and a vertex at $x = 5$, but the positive leading coefficient makes it open upward. It has a minimum of 0 at $29^{\\circ}\\text{C}$, where the data peak."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You checked the sign of the leading coefficient and the intercept but not the vertex. With $b = -2$, the vertex is at $x = -5$, which is $19^{\\circ}\\text{C}$. The curve would only fall across the plotted range and would give $-10$ at $x = 5$."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This equation opens downward, starts at 5, has its vertex at $x = 5$, and even returns to 5 at $x = 10$. But you didn't check the height of the vertex: $-2.5 + 5 + 5 = 7.5$, while the data peak at 10."
+   }
+  },
+  "id": "orig-choose-model-e-X-da8449",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

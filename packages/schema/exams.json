@@ -1,0 +1,33 @@
+{
+  "note": "The two exams are separate all the way down. Separate banks, separate taxonomies, separate band models, separate student pages. Nothing is shared except the shape of a question and the teacher who assigns it - because a Transitions question and an ACT English comma question are not interchangeable, and a student practising one should never be handed the other by accident.",
+  "exams": {
+    "sat": {
+      "label": "SAT",
+      "sections": [
+        { "id": "rw", "label": "Reading & Writing", "questions": 54, "score": [200, 800] },
+        { "id": "math", "label": "Math", "questions": 44, "score": [200, 800] }
+      ],
+      "total_score": [400, 1600],
+      "tiers": ["F", "E", "M", "H", "X"],
+      "exam_tiers": ["E", "M", "H"],
+      "bank": "data/practice.json",
+      "taxonomy": "data/subtypes.json",
+      "bands": "data/bands.json"
+    },
+    "act": {
+      "label": "ACT",
+      "sections": [
+        { "id": "english", "label": "English", "questions": 75, "score": [1, 36] },
+        { "id": "math", "label": "Math", "questions": 60, "score": [1, 36] },
+        { "id": "reading", "label": "Reading", "questions": 40, "score": [1, 36] },
+        { "id": "science", "label": "Science", "questions": 40, "score": [1, 36] }
+      ],
+      "total_score": [1, 36],
+      "tiers": ["E", "M", "H"],
+      "exam_tiers": ["E", "M", "H"],
+      "bank": "act/questions.json",
+      "taxonomy": "act/taxonomy.json",
+      "bands": null
+    }
+  }
+}

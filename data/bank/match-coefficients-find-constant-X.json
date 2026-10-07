@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "What is the value of $k + b$?",
+  "stimulus": "A paleobotanist modeling the widths of fossil fern fronds rewrites the expression $2(kx - 3)^2 - 5x(x - 4)$ in the equivalent form $13x^2 + bx + 18$, where $k$ and $b$ are constants and $k < 0$.",
+  "choices": [
+   "$-13$",
+   "$13$",
+   "$53$",
+   "$56$"
+  ],
+  "answer": "C",
+  "explanation": "Expand the given expression. $2(kx - 3)^2 = 2k^2x^2 - 12kx + 18$ and $-5x(x - 4) = -5x^2 + 20x$, so the expression equals $(2k^2 - 5)x^2 + (20 - 12k)x + 18$. Next, match the $x^2$ coefficients: $2k^2 - 5 = 13$, so $k^2 = 9$ and $k = \\pm 3$. Because $k < 0$, $k = -3$. Then match the $x$ coefficients: $b = 20 - 12(-3) = 56$. The question asks for $k + b$, which is $-3 + 56 = 53$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You solved $k^2 = 9$ but took $k = 3$, which ignores the condition $k < 0$. That gives $b = 20 - 36 = -16$ and $k + b = -13$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You expanded $-5x(x - 4)$ as $-5x^2 - 20x$, so the sign on the $x$-term is wrong. With $k = -3$ that gives $b = 36 - 20 = 16$ and $k + b = 13$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$56$ is $b$. You found it correctly but stopped one step early. The question asks for $k + b$, so you still need to add $k = -3$."
+   }
+  },
+  "id": "orig-match-coeffici-X-aa2d7b",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $a + b + c$?",
+  "stimulus": "A meteorologist simplifying a model of overnight temperature drop finds that $\\frac{1}{3}(6x - a)(bx + 9) - 2x^2$ is equivalent to $4x^2 + cx - 15$, where $a$, $b$, and $c$ are constants.",
+  "choices": [
+   "$8$",
+   "$11$",
+   "$13$",
+   "$21$"
+  ],
+  "answer": "D",
+  "explanation": "First expand the product: $(6x - a)(bx + 9) = 6bx^2 + 54x - abx - 9a$. Multiply every term by $\\frac{1}{3}$ to get $2bx^2 + 18x - \\frac{ab}{3}x - 3a$. Subtract $2x^2$, which gives $(2b - 2)x^2 + \\left(18 - \\frac{ab}{3}\\right)x - 3a$. Now match coefficients. From the $x^2$ terms, $2b - 2 = 4$, so $b = 3$. From the constants, $-3a = -15$, so $a = 5$. From the $x$ terms, $c = 18 - \\frac{15}{3} = 13$. So $a + b + c = 5 + 3 + 13 = 21$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found $a = 5$ and $b = 3$ from the $x^2$ terms and the constants, then added only those two. You never worked out $c$ from the $x$ terms, but the question asks for the sum of all three constants."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the $\\frac{1}{3}$ into some terms of the product but not all of them. In particular, you left $-abx$ undivided, which gives $c = 18 - 15 = 3$ and a sum of $5 + 3 + 3 = 11$. The factor multiplies every term of the product."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "$13$ is $c$. Getting $c$ is the last matching step, but the question asks for $a + b + c$, so you still need to add $a = 5$ and $b = 3$."
+   }
+  },
+  "id": "orig-match-coeffici-X-49a198",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

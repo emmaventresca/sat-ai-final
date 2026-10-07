@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "What is the width of the river, in meters?",
+  "stimulus": "A hydrologist stands at point $P$ on one straight bank of a river with parallel banks. Point $Q$ is directly across the river from $P$, so $\\overline{PQ}$ is perpendicular to both banks. Points $S$ and $R$ lie on the far bank, downstream of $Q$, with $S$ between $Q$ and $R$. The distances are $PS = 20$ meters, $PR = 34$ meters, and $SR = 18$ meters.",
+  "choices": [
+   "12",
+   "16",
+   "$4\\sqrt{34}$",
+   "30"
+  ],
+  "answer": "B",
+  "explanation": "The width of the river is $PQ$. Let $QS = x$, so $QR = x + 18$. Triangles $PQS$ and $PQR$ both have their right angle at $Q$, and in each one the side from $P$ (20 or 34) is the hypotenuse. Each triangle gives you a value for $PQ^2$: $PQ^2 = 20^2 - x^2$ and $PQ^2 = 34^2 - (x+18)^2$. Set them equal: $400 - x^2 = 1156 - x^2 - 36x - 324$. This gives $36x = 432$, so $x = 12$. Then $PQ^2 = 400 - 144 = 256$, so $PQ = 16$ meters. To check, $QR = 30$ and $16^2 + 30^2 = 256 + 900 = 1156 = 34^2$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "12 is $QS$, the distance along the far bank from $Q$ to $S$. You solved for $x$ correctly but stopped there. You still need one more Pythagorean step to get the width $PQ$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $QS = 12$ but then added the squares: $\\sqrt{20^2 + 12^2} = \\sqrt{544} = 4\\sqrt{34}$. That treats 20 as a leg. In triangle $PQS$, $PS = 20$ is across from the right angle, so it is the hypotenuse. Since the missing side is a leg, you subtract: $\\sqrt{400 - 144} = 16$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "30 is $QR = 12 + 18$, the leg along the far bank in the larger triangle. It is not the distance straight across the river. The width is the other leg, $PQ$."
+   }
+  },
+  "id": "orig-pythagorean-mi-X-842227",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the height of the tank, in feet?",
+  "stimulus": "A holding tank for juvenile sea turtles is shaped like a rectangular box that is 12 feet long. The diagonal of its rectangular floor is 13 feet. The diagonal of one of its rectangular end walls, whose width equals the width of the floor, is $5\\sqrt{5}$ feet.",
+  "choices": [
+   "5",
+   "10",
+   "$5\\sqrt{6}$",
+   "$\\sqrt{269}$"
+  ],
+  "answer": "B",
+  "explanation": "First find the width from the floor. Its diagonal of 13 feet is the hypotenuse, and the length of 12 feet is one leg, so width $= \\sqrt{13^2 - 12^2} = \\sqrt{25} = 5$ feet. The end wall is a rectangle measuring width by height, and its diagonal $5\\sqrt{5}$ is the hypotenuse. So height $= \\sqrt{(5\\sqrt{5})^2 - 5^2} = \\sqrt{125 - 25} = \\sqrt{100} = 10$ feet.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "5 is the width of the tank, which you get from the floor diagonal. It is only the first step. You still have to use the end-wall diagonal to find the height."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the squares on the end wall: $\\sqrt{125 + 25} = \\sqrt{150} = 5\\sqrt{6}$. That treats the diagonal as a leg. The diagonal is the hypotenuse of the end wall, so you subtract: $\\sqrt{125 - 25} = 10$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$\\sqrt{269} = \\sqrt{12^2 + 5^2 + 10^2}$ is the tank's space diagonal, from a bottom corner to the opposite top corner. You get the same number by adding $12^2$ to the end-wall diagonal squared. Either way it is a diagonal, not the height."
+   }
+  },
+  "id": "orig-pythagorean-mi-X-8e59d8",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

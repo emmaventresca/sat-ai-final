@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "Which expression is equivalent to $\\sqrt[3]{27x^{4}y^{-2}}\\cdot\\left(9x^{2}y\\right)^{-\\frac{1}{2}}$, where $x>0$ and $y>0$?",
+  "stimulus": "A printmaker models how evenly ink spreads across an etched plate using two positive quantities: $x$, the depth of the etched lines, and $y$, the pressure of the press.",
+  "choices": [
+   "$9\\sqrt[6]{\\dfrac{x^{2}}{y^{7}}}$",
+   "$\\sqrt[6]{\\dfrac{x^{2}}{y}}$",
+   "$\\sqrt[6]{\\dfrac{x^{2}}{y^{7}}}$",
+   "$\\sqrt[6]{\\dfrac{y^{2}}{x^{8}}}$"
+  ],
+  "answer": "C",
+  "explanation": "Write each factor with fractional exponents, and apply the exponent to the coefficient as well as to the variables. $\\sqrt[3]{27x^{4}y^{-2}}=3x^{4/3}y^{-2/3}$ and $\\left(9x^{2}y\\right)^{-1/2}=\\tfrac{1}{3}x^{-1}y^{-1/2}$. When you multiply, the coefficients cancel ($3\\cdot\\tfrac13=1$) and you add the exponents: $x^{4/3-1}=x^{1/3}$ and $y^{-2/3-1/2}=y^{-7/6}$. Over a denominator of 6 this is $\\dfrac{x^{2/6}}{y^{7/6}}=\\sqrt[6]{\\dfrac{x^{2}}{y^{7}}}$. Check with $x=2$, $y=3$: both the original and this choice come to about $0.350$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "This is the subtype's trap. You took the cube root of the variables but left the 27 as it was, then multiplied it by $9^{-1/2}=\\tfrac13$ and got 9. The cube root applies to 27 as well, which gives 3, so the coefficients cancel to 1."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You converted everything correctly but lost a sign when you combined the powers of $y$. You worked out $-\\tfrac23+\\tfrac12=-\\tfrac16$, but the second exponent is $-\\tfrac12$, so the sum is $-\\tfrac23-\\tfrac12=-\\tfrac76$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the exponents of matching bases when you should have added them. For $x$ you did $\\tfrac43\\cdot(-1)=-\\tfrac43$, and for $y$ you did $(-\\tfrac23)(-\\tfrac12)=\\tfrac13$. When you multiply two powers of the same base, you add the exponents."
+   }
+  },
+  "id": "orig-exponent-radic-X-37bc4c",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which of the following expressions are equivalent to the given expression?\n\nI. $\\sqrt[12]{2^{n}}$\nII. $\\sqrt[24]{4^{n}}$\nIII. $\\dfrac{\\sqrt[4]{2^{n}}}{\\sqrt[3]{2^{n}}}$",
+  "stimulus": "A musicologist studying twelve-tone equal temperament writes the frequency ratio between two pitches that are $n$ semitones apart as $\\dfrac{\\left(\\sqrt[4]{8}\\right)^{n}}{\\sqrt[3]{4^{n}}}$, where $n$ is a positive integer.",
+  "choices": [
+   "I only",
+   "I and II only",
+   "I and III only",
+   "I, II, and III"
+  ],
+  "answer": "B",
+  "explanation": "Rewrite everything as a power of 2. $\\left(\\sqrt[4]{8}\\right)^{n}=\\left(2^{3}\\right)^{n/4}=2^{3n/4}$ and $\\sqrt[3]{4^{n}}=\\left(2^{2}\\right)^{n/3}=2^{2n/3}$, so the ratio is $2^{3n/4-2n/3}=2^{n/12}$. I: $\\sqrt[12]{2^{n}}=2^{n/12}$, so it is equivalent. II: $\\sqrt[24]{4^{n}}=\\left(2^{2}\\right)^{n/24}=2^{n/12}$, so it is equivalent. III: $2^{n/4}\\div2^{n/3}=2^{n/4-n/3}=2^{-n/12}$, which is the reciprocal and not equal for any positive $n$. So only I and II are equivalent.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "This is the subtype's trap. You confirmed statement I and stopped, or you rejected II because its base is 4 and you did not rewrite $4^{n}$ as $2^{2n}$. Once you do, II is $2^{2n/24}=2^{n/12}$, so it is also equivalent."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You rejected II because you did not rewrite base 4 as $2^{2}$. You also accepted III because you subtracted its exponents in the wrong order and got $\\tfrac13-\\tfrac14=\\tfrac1{12}$. The quotient is $2^{n/4-n/3}$, which gives a negative exponent, so III is the reciprocal of the ratio."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You handled I and II correctly, but in III you subtracted the exponents in the wrong order. The numerator's exponent $\\tfrac{n}{4}$ is smaller than the denominator's $\\tfrac{n}{3}$, so III equals $2^{-n/12}$, not $2^{n/12}$."
+   }
+  },
+  "id": "orig-exponent-radic-X-f870f0",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "What is the sum of the solutions to the given equation?",
+  "stimulus": "A folklorist translating a number riddle from a collection of oral riddles wrote the riddle's condition as the equation below.\n\n$\\frac{x^3 - 4x}{x - 2} = 3x + 10$",
+  "choices": [
+   "$-3$",
+   "$-1$",
+   "$1$",
+   "$3$"
+  ],
+  "answer": "C",
+  "explanation": "Factor the numerator: $x^3 - 4x = x(x - 2)(x + 2)$. The denominator means $x \\neq 2$, so for every allowed $x$ the left side simplifies to $x(x + 2) = x^2 + 2x$. Setting $x^2 + 2x = 3x + 10$ gives $x^2 - x - 10 = 0$. Its discriminant is $1 + 40 = 41 > 0$, and $x = 2$ is not one of its roots ($4 - 2 - 10 \\neq 0$), so it has two valid real solutions. Their sum is $-\\frac{b}{a} = -\\frac{-1}{1} = 1$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You cleared the denominator to get the cubic $x^3 - 3x^2 - 8x + 20 = 0$ and read its root sum as $+\\frac{b}{a} = -3$. That uses the wrong sign, and it also counts the extraneous root $x = 2$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You correctly reduced the equation to $x^2 - x - 10 = 0$, but you took the sum of the roots as $+\\frac{b}{a}$ instead of $-\\frac{b}{a}$, which gives $-1$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You multiplied both sides by $x - 2$ and used $-\\frac{b}{a}$ on the cubic $x^3 - 3x^2 - 8x + 20 = 0$ to get $3$. That cubic has $x = 2$ as a root, but $x = 2$ makes the original denominator zero, so it is extraneous and you must leave it out of the sum."
+   }
+  },
+  "id": "orig-sum-or-structu-X-c970e5",
+  "skill_cd": "P.B.",
+  "subtype": "sum-or-structure-of-solutions",
+  "subtype_name": "Sum of the solutions and unknown-coefficient roots",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the sum of the solutions to the given equation?",
+  "stimulus": "An agricultural scientist comparing two models of crop response to fertilizer finds that the models agree exactly at the values of $x$ that satisfy the equation below, where $a$ and $b$ are distinct positive constants.\n\n$(x + a)(x^2 - b^2) = (x + a)^2(x - b)$",
+  "choices": [
+   "$-a$",
+   "$b - a$",
+   "$a - b$",
+   "$b$"
+  ],
+  "answer": "B",
+  "explanation": "Don't divide by anything that contains $x$. Move everything to one side and factor out what both sides share, $(x + a)(x - b)$: $(x + a)(x - b)\\big[(x + b) - (x + a)\\big] = 0$, which simplifies to $(b - a)(x + a)(x - b) = 0$. Because $a \\neq b$, the constant $b - a$ is not zero, so the only solutions are $x = -a$ and $x = b$. The equation looks like a cubic, but its $x^3$ terms cancel, so there are only these two solutions. Their sum is $b - a$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided both sides by $x - b$, which leaves $x + b = x + a$ after you cancel $x + a$ correctly, so only $x = -a$ survived. Or you listed $-a$, $b$ and $-b$ from the factor $x^2 - b^2$ without checking that $x = -b$ fails the equation. Either way, the sum you get is $-a$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You expanded and combined terms correctly to get the quadratic $(b - a)x^2 - (a - b)^2x + ab(a - b) = 0$, but you used $+\\frac{b}{a}$ for the sum of the roots instead of $-\\frac{b}{a}$, so your answer has the wrong sign."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You divided both sides by $x + a$, which throws away the solution $x = -a$. What remains is $x^2 - b^2 = (x + a)(x - b)$, which gives only $x = b$."
+   }
+  },
+  "id": "orig-sum-or-structu-X-b3b4a5",
+  "skill_cd": "P.B.",
+  "subtype": "sum-or-structure-of-solutions",
+  "subtype_name": "Sum of the solutions and unknown-coefficient roots",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

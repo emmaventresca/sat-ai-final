@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "For which of the following tables are all the values of $x$ and their corresponding values of $y$ solutions to the given system of inequalities?",
+  "stimulus": "An ornithologist tracking a tagged Arctic tern records positions as $(x, y)$, where $x$ and $y$ are the distances, in kilometers, east and north of the nesting colony. Negative values mean west and south. The tern's predicted foraging zone is the set of points that satisfy the system below.\n\n$3x - 2y \\le 12$\n$-4x - y > -20$",
+  "choices": [
+   "$(0, 5)$, $(2, 4)$, $(4, 4)$",
+   "$(0, -6)$, $(2, 11)$, $(4, 3)$",
+   "$(0, 21)$, $(2, 13)$, $(4, 5)$",
+   "$(0, 0)$, $(2, -4)$, $(4, 1)$"
+  ],
+  "answer": "B",
+  "explanation": "Solve each inequality for $y$. The first gives $-2y \\le 12 - 3x$. Dividing by $-2$ flips the sign, so $y \\ge \\frac{3x - 12}{2}$. The second gives $-y > -20 + 4x$. Dividing by $-1$ flips the sign, so $y < 20 - 4x$. At $x = 0$ you need $-6 \\le y < 20$. At $x = 2$ you need $-3 \\le y < 12$. At $x = 4$ you need $0 \\le y < 4$. In choice B, $-6$ sits on the boundary of the first inequality, and that boundary is included because the sign is $\\le$. Then $11 < 12$ and $0 \\le 3 < 4$, so all three rows work. Do not throw out $(0, -6)$ because it lies on a boundary. Only the strict inequality leaves its boundary out.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "The first two rows work. In the third row, $(4, 4)$ gives $-4(4) - 4 = -20$, and $-20 > -20$ is false. You counted a point on the boundary of a strict inequality as a solution."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided $-y > -20 + 4x$ by $-1$ but did not flip the sign, so you got $y > 20 - 4x$. Every row in this table fits that wrong version. Check $(0, 21)$ in the original: $-21 > -20$ is false."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "The first and last rows work, but you did not check every row. At $x = 2$ you need $y \\ge -3$, and $y = -4$ fails: $3(2) - 2(-4) = 14$, which is not $\\le 12$."
+   }
+  },
+  "id": "orig-test-points-ta-X-463785",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If a batch follows the protocol and cures properly, which of the following could be the value of $x$?",
+  "stimulus": "A materials scientist makes epoxy test batches using $x$ grams of hardener and $y$ grams of resin. A batch cures properly only if $x$ and $y$ satisfy the system below. The lab's protocol always uses $1$ gram less resin than twice the amount of hardener.\n\n$4y - 5x \\ge 5$\n$3x - 2y > -3$",
+  "choices": [
+   "$2$",
+   "$3$",
+   "$5$",
+   "$6$"
+  ],
+  "answer": "B",
+  "explanation": "The protocol means $y = 2x - 1$. Substitute it into each inequality. The first becomes $4(2x - 1) - 5x \\ge 5$, which simplifies to $3x - 4 \\ge 5$, so $x \\ge 3$. The second becomes $3x - 2(2x - 1) > -3$, which simplifies to $-x + 2 > -3$, so $-x > -5$. Dividing by $-1$ flips the sign, so $x < 5$. Together these give $3 \\le x < 5$. Only $3$ is in that range. Check it: the point $(3, 5)$ gives $20 - 15 = 5 \\ge 5$ and $9 - 10 = -1 > -3$. The value $3$ is allowed because the first inequality includes its boundary.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "The point $(2, 3)$ satisfies the second inequality, since $6 - 6 = 0 > -3$. It fails the first, because $12 - 10 = 2$ is not $\\ge 5$. You checked only one inequality of the system."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "The bound $x < 5$ is strict. The point $(5, 9)$ gives $15 - 18 = -3$, and $-3 > -3$ is false. You treated the boundary of a strict inequality as if it were included."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "From $-x > -5$ you divided by $-1$ without flipping the sign, so you got $x > 5$ instead of $x < 5$. Check $(6, 11)$: $18 - 22 = -4$, which is not greater than $-3$."
+   }
+  },
+  "id": "orig-test-points-ta-X-ac9a56",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

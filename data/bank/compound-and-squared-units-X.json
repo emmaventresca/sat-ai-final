@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "At this rate, how many hours will the drone take to photograph the entire wetland?",
+  "stimulus": "On a survey map, 1 centimeter represents 0.5 kilometer. A wetland shown on the map has an area of 12 square centimeters. A drone photographs the wetland at a constant rate of 2,500 square meters per minute. (1 kilometer = 1,000 meters)",
+  "choices": [
+   "0.02",
+   "20",
+   "40",
+   "1,200"
+  ],
+  "answer": "B",
+  "explanation": "Area scales by the square of the linear scale factor. Each square centimeter on the map represents $(0.5\\text{ km})^2 = 0.25\\text{ km}^2$, so the wetland's real area is $12 \\times 0.25 = 3\\text{ km}^2$. Changing square kilometers to square meters also uses a squared factor: $3 \\times (1{,}000)^2 = 3{,}000{,}000\\text{ m}^2$. The drone takes $\\frac{3{,}000{,}000\\text{ m}^2}{2{,}500\\text{ m}^2/\\text{min}} = 1{,}200$ minutes, and $\\frac{1{,}200}{60} = 20$ hours.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You squared the map scale correctly, but then converted $3\\text{ km}^2$ to square meters by multiplying by $1{,}000$ instead of $1{,}000^2$. That gives $3{,}000\\text{ m}^2$, which takes 1.2 minutes, or 0.02 hours. Kilometers to meters is a linear factor too, so for area it has to be squared."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the map scale once ($12 \\times 0.5 = 6$) instead of squaring it. That doubles the real area to $6\\text{ km}^2$ and gives 40 hours. For area, each square centimeter stands for $0.5^2 = 0.25\\text{ km}^2$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "1,200 is the time in minutes. The question asks for hours, so you still need to divide by 60."
+   }
+  },
+  "id": "orig-compound-and-s-X-b17382",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the greatest number of pipes in this rank that can sound at the same time?",
+  "stimulus": "A pipe organ's blower supplies air at a rate of 25 cubic feet per minute, but 10% of that air is lost through leaks before it reaches the pipes. While it sounds, each pipe in one rank of the organ uses 9 cubic inches of air per second. (1 foot = 12 inches)",
+  "choices": [
+   "6",
+   "72",
+   "80",
+   "4,320"
+  ],
+  "answer": "B",
+  "explanation": "Volume scales by the cube of the linear factor, so $1\\text{ ft}^3 = 12^3 = 1{,}728\\text{ in}^3$. Convert only the 'per minute' part of the rate to seconds: $\\frac{25 \\times 1{,}728\\text{ in}^3}{60\\text{ s}} = 720\\text{ in}^3/\\text{s}$. After the 10% leak, $0.9 \\times 720 = 648\\text{ in}^3/\\text{s}$ reaches the pipes. Since $\\frac{648}{9} = 72$, at most 72 pipes can sound at once.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You converted cubic feet to cubic inches with $12^2 = 144$ instead of $12^3 = 1{,}728$. That gives $\\frac{25 \\times 144}{60} \\times 0.9 = 54\\text{ in}^3/\\text{s}$, and $\\frac{54}{9} = 6$. Volume needs the linear factor cubed."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You converted the units correctly to $720\\text{ in}^3/\\text{s}$ but left out the 10% leak. Only 90% of that air, $648\\text{ in}^3/\\text{s}$, reaches the pipes."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You converted the volume correctly but never changed 'per minute' to 'per second'. This compares a per-minute supply with a per-second demand. Write the units next to each number and the seconds won't cancel, which shows you need to divide by 60."
+   }
+  },
+  "id": "orig-compound-and-s-X-91fc89",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "What is the value of $V(9)$?",
+  "stimulus": "A hydrologist models the volume of water in a retention pond after a drainage pump is switched on. The function $V(h) = 96 - c(h + 2)$ gives the volume, in thousands of cubic meters, $h$ hours after the pump is switched on, where $c$ is a constant. For this function, $V(6) = 56$.",
+  "choices": [
+   "$5$",
+   "$41$",
+   "$51$",
+   "$61$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute the known pair: $56 = 96 - c(6 + 2)$, so $8c = 40$ and $c = 5$. Now write the function with the constant filled in, $V(h) = 96 - 5(h + 2)$, and evaluate it at 9: $V(9) = 96 - 5(11) = 96 - 55 = 41$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You correctly found $c = 5$ but stopped there. The question asks for the volume $V(9)$, not the constant, so you still need to put $c$ back into the function and evaluate it at $h = 9$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $c = 5$ correctly but then dropped the $+2$ inside the parentheses when you evaluated, working out $96 - 5(9) = 51$. The shift applies at every input, so you need $96 - 5(9 + 2)$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $c = 5$ but evaluated $96 - 5(9 - 2) = 61$, subtracting the 2 where the function adds it. Copy the expression $h + 2$ exactly: at $h = 9$ it is 11, not 7."
+   }
+  },
+  "id": "orig-find-constant--X-bd2a93",
+  "skill_cd": "H.B.",
+  "subtype": "find-constant-from-one-value",
+  "subtype_name": "Find the hidden constant from one known output",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $L(-15)$?",
+  "stimulus": "Civil engineers leave a gap at each expansion joint of a steel bridge deck so that the steel can expand in heat. The width of the gap, in millimeters, when the air temperature is $T$ degrees Celsius is modeled by $L(T) = 40 - kT$, where $k$ is a constant. For this model, $L(25) = 30$.",
+  "choices": [
+   "$0.4$",
+   "$34$",
+   "$46$",
+   "$47.5$"
+  ],
+  "answer": "C",
+  "explanation": "Substitute the input 25 and the output 30: $30 = 40 - 25k$, so $25k = 10$ and $k = 0.4$. The model is $L(T) = 40 - 0.4T$. At $T = -15$: $L(-15) = 40 - 0.4(-15) = 40 + 6 = 46$. The answer makes sense, because the gap widens when the steel contracts in the cold.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the constant $k$. You did the first step correctly and stopped. The question asks for the gap width at $-15$ degrees, so you still need to evaluate $L(-15)$ with $k = 0.4$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $k = 0.4$ but lost the negative sign on the input and computed $40 - 0.4(15) = 34$. A negative temperature makes $-0.4T$ positive, so the gap should come out wider than 40 mm, not narrower."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You swapped the input and output when you substituted, writing $25 = 40 - 30k$. That gives $k = 0.5$ and $L(-15) = 47.5$. In $L(25) = 30$, the 25 is the temperature (the input) and the 30 is the gap width (the output)."
+   }
+  },
+  "id": "orig-find-constant--X-dc0e24",
+  "skill_cd": "H.B.",
+  "subtype": "find-constant-from-one-value",
+  "subtype_name": "Find the hidden constant from one known output",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]
