@@ -121,6 +121,35 @@ def display_html(specs):
     return out, problems
 
 
+def domain_taxonomy():
+    """The ACT project's own domain map for English, Reading and Science.
+
+    Without it those three sections arrive as one leg of twenty-seven stops,
+    which is the wall this whole reorganisation exists to remove - and the
+    grouping already exists over there, with a weight per domain and a
+    one-line description of what each subtopic tests.
+
+    That description is the start of a mini lesson. An ACT stop currently
+    opens saying there is no written page for it; this gives it a first
+    sentence that is true and specific rather than a placeholder.
+    """
+    out = {}
+    for name in ("english", "reading", "science"):
+        path = os.path.join(ACT, "content", f"taxonomy_{name}.json")
+        if not os.path.exists(path):
+            continue
+        blob = json.load(open(path))
+        for domain in blob.get("domains", []):
+            for sub in domain.get("subtopics", []):
+                out[sub["id"]] = {
+                    "name": sub.get("name") or sub["id"],
+                    "domain": domain.get("name") or domain.get("id"),
+                    "domain_weight": domain.get("weight"),
+                    "tests": sub.get("tests"),
+                }
+    return out
+
+
 def passages_in(blob):
     """The pack's passage map, in whichever of its two shapes it is.
 
@@ -388,14 +417,24 @@ def main():
         for entry in json.load(open(blueprint_path)).get("subtopics", []):
             if entry.get("subtopic"):
                 meta_of[entry["subtopic"]] = entry
+    domains = domain_taxonomy()
     for it in items:
         meta = meta_of.get(it["subtype"], {})
+        named = domains.get(it["subtype"])
         it["section"] = section_from(it["source"])
-        it["skill"] = meta.get("domain") or it["section"].title()
+        # The passage sections get their domain from their own taxonomy;
+        # maths from the blueprint. Falling back to the section name is what
+        # produced a single twenty-seven-stop leg.
+        it["skill"] = (named or {}).get("domain") or meta.get("domain") \
+            or it["section"].title()
         # The blueprint names 50 of the 89 subtopics. The rest came from the
         # English import and other passes, and a raw slug on a teacher's
         # assign screen reads as a leaked internal - so make it a title.
-        it["subtype_name"] = meta.get("name") or readable(it["subtype"])
+        it["subtype_name"] = ((named or {}).get("name") or meta.get("name")
+                              or readable(it["subtype"]))
+        if (named or {}).get("tests"):
+            # What this recognition is, in one line, for the stop's page.
+            it["tests"] = named["tests"]
         # How often a real section asks this, which is the ACT equivalent of
         # the SAT side's measured frequency and drives the same ranking.
         if meta.get("per_test"):
@@ -420,6 +459,8 @@ def main():
         })
         e["count"] += 1
         e["tiers"][it["difficulty"]] += 1
+        if it.get("tests") and not e.get("tests"):
+            e["tests"] = it["tests"]
     for e in by_sub.values():
         e["tiers"] = dict(e["tiers"])
     json.dump({"subtypes": by_sub, "phrasings": dict(phrasings)},

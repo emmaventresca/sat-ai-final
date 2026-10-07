@@ -31,7 +31,6 @@ PUBLISH = [
     "act/taxonomy.json",
     "bands.json",
     "lessons.json",
-    "subtype_lessons.json",
     "subtypes.json",
     "subtype_counts.json",
     "misconceptions.json",
@@ -52,7 +51,7 @@ FORBIDDEN = {
 # Directories copied wholesale: the per-recognition chunks, which are too
 # many to name one by one and are all our own content by construction - they
 # are produced from the published banks by tools/split_bank.py.
-PUBLISH_DIRS = ["sat/q", "act/q"]
+PUBLISH_DIRS = ["sat/q", "act/q", "lessons"]
 
 
 def main():

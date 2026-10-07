@@ -29,7 +29,11 @@ BANKS = {
 # What the index carries. Everything here is used to DECIDE what to show;
 # anything used to show it belongs in a chunk.
 INDEX_FIELDS = ("id", "section", "skill", "skill_cd", "subtype",
-                "subtype_name", "difficulty", "format", "phrasing")
+                "subtype_name", "difficulty", "format", "phrasing",
+                # One line on what the recognition tests. The ACT bank
+                # carries it; it is what a stop shows before there is a
+                # written page for it.
+                "tests")
 
 # One line of the stem, so a picker can show WHICH question without pulling
 # the body. Ninety characters across both banks costs about half a megabyte
@@ -95,6 +99,30 @@ def split(exam, path):
     }
 
 
+def split_lessons():
+    """One file per recognition's written page.
+
+    Every stop on the map was fetching all 183 pages - half a megabyte - to
+    show one. Same argument as the bank: what a page costs should be what
+    the student is actually reading.
+    """
+    src = os.path.join(ROOT, "data", "subtype_lessons.json")
+    if not os.path.exists(src):
+        return None
+    out_dir = os.path.join(ROOT, "data", "lessons")
+    if os.path.isdir(out_dir):
+        shutil.rmtree(out_dir)
+    os.makedirs(out_dir, exist_ok=True)
+
+    lessons = json.load(open(src))["lessons"]
+    for lesson in lessons:
+        name = chunk_name(lesson.get("subtype"))
+        json.dump(lesson, open(os.path.join(out_dir, f"{name}.json"), "w"))
+    total = sum(os.path.getsize(os.path.join(out_dir, f))
+                for f in os.listdir(out_dir))
+    return len(lessons), total
+
+
 def main():
     os.makedirs(os.path.join(ROOT, "data", "sat"), exist_ok=True)
     total = Counter()
@@ -110,6 +138,11 @@ def main():
         print(f"     a student opening one recognition downloads the index "
               f"plus one chunk; the largest is {size / 1e3:.0f}KB ({name})")
         total["index"] += stats["index_mb"]
+    lessons = split_lessons()
+    if lessons:
+        count, size = lessons
+        print(f"\nlessons: {count} pages -> one file each "
+              f"({size / 1e6:.2f}MB total, read one at a time)")
     print(f"\nfirst load is now {total['index']:.2f}MB for both exams, "
           f"against 19MB before")
     return 0

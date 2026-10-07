@@ -46,6 +46,8 @@ export interface QuestionRef {
    * transition?" - and choosing between them means opening each one.
    */
   teaser: string
+  /** One line on what this recognition tests, where the bank carries it. */
+  tests?: string
 }
 
 const indexes = new Map<Exam, QuestionRef[]>()
@@ -70,6 +72,7 @@ export async function loadIndex(exam: Exam): Promise<QuestionRef[]> {
     phrasing: raw.phrasing,
     chunk: raw.chunk ?? '_unsorted',
     teaser: raw.teaser ?? '',
+    tests: raw.tests,
   } as QuestionRef))
   indexes.set(exam, refs)
   return refs
@@ -133,6 +136,7 @@ interface RawRef {
   phrasing?: string
   chunk?: string
   teaser?: string
+  tests?: string
 }
 
 interface RawItem extends RawRef {

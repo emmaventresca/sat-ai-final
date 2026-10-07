@@ -20,6 +20,8 @@ import { cellKey, progress } from '../practice/mastery'
 export interface Stage {
   subtype: string
   name: string
+  /** One line on what it tests, where the bank carries one. */
+  tests?: string
   /** Questions available, by tier. */
   pool: Partial<Record<Tier, number>>
   total: number
@@ -148,6 +150,7 @@ export function buildJourney(
       return {
         subtype,
         name: qs[0].subtypeName || subtype,
+        tests: qs.find((q) => q.tests)?.tests,
         pool,
         total: qs.length,
         frequency: qs.length,

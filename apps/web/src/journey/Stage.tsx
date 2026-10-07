@@ -58,12 +58,13 @@ export function StageView({
   useEffect(() => {
     if (!subtype) return
     let live = true
-    void fetch(`${import.meta.env.BASE_URL}data/subtype_lessons.json`)
-      .then((r) => r.json())
-      .then((b: { lessons?: SubLesson[] }) => {
-        if (live) setLesson((b.lessons ?? []).find((l) => l.subtype === subtype) ?? null)
-      })
-      .catch(() => undefined)
+    // One page, not all 183. The slug is the filename, same rule the bank
+    // chunks use, so the two can never disagree about how it is spelled.
+    const file = subtype.toLowerCase().replace(/[^a-z0-9-]+/g, '-')
+    void fetch(`${import.meta.env.BASE_URL}data/lessons/${file}.json`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((l: SubLesson | null) => { if (live) setLesson(l) })
+      .catch(() => { if (live) setLesson(null) })
     return () => { live = false }
   }, [subtype])
 
@@ -135,7 +136,16 @@ export function StageView({
             <div dangerouslySetInnerHTML={{ __html: renderBody(s.body) }} />
           </section>
         ))}
-        {!lesson && (
+        {/* No full page for this recognition yet, but the bank knows what
+            it tests - and one true sentence beats a placeholder saying
+            there is nothing here. */}
+        {!lesson && stage?.tests && (
+          <section className="stage-sec">
+            <h3>What this one tests</h3>
+            <p>{stage.tests}</p>
+          </section>
+        )}
+        {!lesson && !stage?.tests && (
           <p className="muted small">
             No written page for this one yet &mdash; the questions are below.
           </p>
