@@ -94,13 +94,16 @@ export function Assign() {
    */
   const grouped = useMemo(() => {
     if (!bank.length) return []
-    return buildJourney(exam, bank, skills).map((chapter) => ({
-      name: chapter.name,
-      legs: chapter.legs.map((leg) => ({
-        name: leg.name,
-        stages: leg.stages.map((st) => [st.subtype, st.name, st.total] as const),
-      })),
-    }))
+    // Flattened to one group per skill, labelled with the whole path -
+    // section, domain, skill - because an optgroup can only nest one deep
+    // and "Algebra · Linear equations" alone does not say which test
+    // section it is in.
+    return buildJourney(exam, bank, skills).flatMap((region) =>
+      region.chapters.flatMap((chapter) =>
+        chapter.legs.map((leg) => ({
+          label: `${region.name} · ${chapter.name} · ${leg.name}`,
+          stages: leg.stages.map((st) => [st.subtype, st.name, st.total] as const),
+        }))))
   }, [exam, bank, skills])
 
   const [showUsed, setShowUsed] = useState(false)
@@ -231,15 +234,13 @@ export function Assign() {
             <div className="row tight">
               <select value={subtype} onChange={(e) => setSubtype(e.target.value)}>
                 <option value="">Every question type</option>
-                {grouped.map((chapter) =>
-                  chapter.legs.map((leg) => (
-                    <optgroup key={`${chapter.name}-${leg.name}`}
-                      label={`${chapter.name} · ${leg.name}`}>
-                      {leg.stages.map(([slug, name, n]) => (
-                        <option key={slug} value={slug}>{name} ({n})</option>
-                      ))}
-                    </optgroup>
-                  )))}
+                {grouped.map((group) => (
+                  <optgroup key={group.label} label={group.label}>
+                    {group.stages.map(([slug, name, n]) => (
+                      <option key={slug} value={slug}>{name} ({n})</option>
+                    ))}
+                  </optgroup>
+                ))}
               </select>
               <select value={tier} onChange={(e) => setTier(e.target.value as Tier | '')}>
                 <option value="">Every level</option>

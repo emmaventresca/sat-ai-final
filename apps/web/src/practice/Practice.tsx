@@ -13,10 +13,12 @@ const ROUND = 10
 /**
  * Browse a bank and practise it: section, then recognition, then level.
  *
- * The ladder runs Foundations - Easy - Medium - Hard - Stretch, and the two
+ * The ladder runs Foundations - Easy - Medium - Hard - Super hard, and the
  * ends are ours rather than the exam's. Foundations is the skill underneath
  * with the test wrapped off, for a student whom the exam's own easiest tier
- * is already failing. Stretch is above the hardest the exam asks, for a
+ * two ends are ours. Foundations is the skill underneath with the test
+ * wrapped off, for a student the exam's own easiest tier is already failing.
+ * Super hard is above the hardest the exam asks, for a
  * student who has run out of Hard. Neither is hidden: a level a student
  * cannot see is a level they cannot ask for.
  */

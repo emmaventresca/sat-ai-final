@@ -34,10 +34,10 @@ import type { FigureSpec } from './math'
 export const DEFAULT_DURATION = 90
 
 const TIER_LABEL: Record<Tier, string> = {
-  // "Stretch", not "Challenge": Hard already carries a Challenge tag in the
-  // level picker, and two things called Challenge next to each other is how
-  // a student ends up in the wrong one.
-  F: 'Foundations', E: 'Easy', M: 'Medium', H: 'Hard', X: 'Stretch',
+  // "Super hard", which is what it gets called out loud. It was "Challenge"
+  // first, which collided with the Challenge tag on Hard, and then
+  // "Stretch", which is softer than the thing actually is.
+  F: 'Foundations', E: 'Easy', M: 'Medium', H: 'Hard', X: 'Super hard',
 }
 
 const TIER_RANK: Record<Tier, number> = { F: 0, E: 1, M: 2, H: 3, X: 4 }

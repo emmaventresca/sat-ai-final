@@ -154,8 +154,9 @@ export function StageView({
 
       <h2>Now try it</h2>
       <p className="tiny muted" style={{ marginTop: -6 }}>
-        Foundations is the skill underneath with the test wrapped off. Start
-        there if the method above was new.
+        Five levels, and nothing is locked. Foundations is the skill
+        underneath with the test wrapped off; Super hard is beyond anything
+        the exam asks. Start where the method above left you.
       </p>
       <div className="levels">
         {tiers.map((t) => {
@@ -168,6 +169,9 @@ export function StageView({
                 pool.filter((q) => q.difficulty === t).slice(0, 10).map((q) => q.id),
               )}>
               <span className="level-t">{difficultyLabel(t as Tier)}</span>
+              <span className="level-rung" aria-hidden="true">
+                {'◆'.repeat(RUNG[t] ?? 1)}
+              </span>
               <span className="level-d">
                 {n} question{n === 1 ? '' : 's'}
                 {acc !== null ? ` · ${Math.round(acc * 100)}%` : ''}
@@ -179,6 +183,9 @@ export function StageView({
     </div>
   )
 }
+
+/** How many pips a level shows. The ladder should be visible at a glance. */
+const RUNG: Record<string, number> = { F: 1, E: 2, M: 3, H: 4, X: 5 }
 
 const FAMILY_NOTE: Record<string, string> = {
   must_be_true: 'you are testing claims, not solving',

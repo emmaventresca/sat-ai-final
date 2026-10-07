@@ -65,7 +65,7 @@ export function bandWeights(
     if (Math.abs(row.target - target) < Math.abs(best.target - target)) best = row
   }
   // Our own tiers are not on the exam, so the table says nothing about them.
-  // Foundations tracks Easy, Stretch tracks Hard.
+  // Foundations tracks Easy, Super hard tracks Hard.
   const w = best.band_weight
   return { ...w, F: w.E ?? 0, X: w.H ?? 0 }
 }

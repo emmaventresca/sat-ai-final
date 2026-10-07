@@ -812,6 +812,255 @@ mark.hl-blue{background:#c3e0ff;box-shadow:inset 0 -.42em 0 #c3e0ff}
   background:rgba(255,255,255,.8);border:1px solid rgba(0,0,0,.06);color:var(--ink);
 }
 
+/* ---- the long road ------------------------------------------------------ */
+/* A list says "here are 181 things you have not done". A map says "you are
+   here, and that is where you are going" - the same facts, and the
+   difference between them is whether a student opens it twice. */
+.journey h1{font-family:var(--serif);font-size:2rem;letter-spacing:-.025em}
+.journey .lead{font-family:var(--serif);font-size:1.02rem;line-height:1.66;color:var(--ink)}
+
+.worldmap{
+  display:block;width:100%;height:auto;margin:16px 0 26px;
+  border-radius:20px;box-shadow:var(--shadow-lg);background:#2b3350;
+}
+.map-road{fill:none;stroke:#f0e2bd;stroke-width:3.5;stroke-linecap:round;
+  stroke-dasharray:1 9;opacity:.9}
+.map-road-shadow{fill:none;stroke:#2a2415;stroke-width:7;stroke-linecap:round;opacity:.35}
+
+.realm{cursor:pointer}
+.realm-dot{fill:#2b3350;stroke:#f0e2bd;stroke-width:2.5}
+.realm.part .realm-dot{fill:#c98f3c;stroke:#ffe6ad}
+.realm.done .realm-dot{fill:#6f9e4e;stroke:#d8f0b6}
+.realm.here .realm-dot{fill:#f0e2bd;stroke:#fff}
+.realm.open .realm-dot{stroke-width:4}
+.realm-halo{fill:none;stroke:#ffd98a;stroke-width:2;opacity:.55}
+.realm-n{text-anchor:middle;font-family:Georgia,serif;font-size:13px;font-weight:700;
+  fill:#f0e2bd;pointer-events:none}
+.realm.here .realm-n{fill:#2b3350}
+.realm-label{text-anchor:middle;font-size:13.5px;font-weight:700;fill:#fff;
+  paint-order:stroke;stroke:#1d2435;stroke-width:3.5;stroke-linejoin:round;
+  pointer-events:none;letter-spacing:.01em}
+.realm-sub{text-anchor:middle;font-size:11px;font-weight:700;fill:#e7dcc2;
+  paint-order:stroke;stroke:#1d2435;stroke-width:3;pointer-events:none}
+.realm:hover .realm-dot{stroke:#ffd98a;stroke-width:4}
+
+/* The travelling bar: level, streak, today. None of it decides WHAT gets
+   practised - the engine does that - and all of it decides whether there is
+   a tomorrow. */
+.questbar{
+  display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:0 0 20px;
+  padding:14px 18px;border-radius:18px;background:var(--panel);
+  border:1px solid var(--line);box-shadow:var(--shadow);
+}
+.qb-rank{display:flex;align-items:center;gap:12px;flex:1 1 230px}
+.qb-level{
+  flex:0 0 auto;width:46px;height:46px;border-radius:50%;display:grid;
+  place-items:center;font-family:var(--serif);font-size:1.3rem;font-weight:700;
+  color:#3b2f10;background:linear-gradient(145deg,#ffe6ad,#d6a94c);
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.45);
+}
+.qb-title{font-weight:800;letter-spacing:-.01em}
+.qb-xp{font-size:.74rem;color:var(--dim);font-weight:700}
+.qb-track{display:block;height:7px;border-radius:99px;background:#ece7fa;
+  overflow:hidden;margin-top:5px;min-width:130px}
+.qb-track.small{min-width:70px}
+.qb-track>i{display:block;height:100%;border-radius:99px;
+  background:linear-gradient(90deg,#d6a94c,#ffe6ad)}
+.qb-stat{text-align:center;padding:0 10px}
+.qb-n{font-family:var(--serif);font-size:1.5rem;font-weight:700;line-height:1}
+.qb-of{font-size:.9rem;color:var(--dim)}
+.qb-l{font-size:.66rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--dim);margin-top:3px}
+
+/* Region: the section of the test. */
+.region{margin:26px 0}
+.region-head{display:flex;align-items:baseline;gap:12px;margin-bottom:10px;
+  padding-bottom:7px;border-bottom:2px solid var(--line)}
+.region-head h2{margin:0;font-family:var(--serif);font-size:1.3rem}
+.region-count{font-size:.74rem;font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--dim)}
+
+/* Realm: the score-report domain. */
+.realm-card{margin-bottom:10px}
+.realm-head{
+  display:flex;align-items:center;gap:14px;width:100%;text-align:left;
+  padding:15px 18px;border-radius:var(--radius);background:var(--panel);
+  border:1px solid var(--line);box-shadow:var(--shadow);
+}
+.realm-head:hover{transform:translateY(-1px);box-shadow:var(--shadow-lg)}
+.realm-seal{
+  flex:0 0 auto;width:34px;height:34px;border-radius:10px;display:grid;
+  place-items:center;font-family:var(--serif);font-weight:700;font-size:.95rem;
+  background:var(--panel2);color:var(--purple-d);border:1px solid var(--line2);
+}
+.realm-card.under-way .realm-seal{background:#fff3d9;border-color:#e8cf9a;color:#8a6414}
+.realm-card.done .realm-seal{background:#e6f9f2;border-color:#a9e8cf;color:#0b7a55}
+.realm-card.done .realm-head{border-color:var(--good-ln)}
+.realm-body{flex:1;min-width:0}
+.realm-t{display:block;font-weight:800;font-size:1.02rem;letter-spacing:-.01em}
+.realm-d{display:block;font-size:.79rem;color:var(--dim);font-weight:600;margin-top:2px}
+.realm-chevron{flex:0 0 auto;font-size:1.3rem;color:var(--dim);line-height:1}
+
+/* Path: the skill. */
+.realm-paths{padding:10px 0 4px 12px}
+.path{margin:14px 0 18px}
+.path-name{
+  display:flex;align-items:baseline;gap:9px;
+  font-size:.71rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:8px;
+}
+.path-count{font-size:.68rem;color:var(--purple-d)}
+
+/* Stop: the recognition. */
+.stops{list-style:none;margin:0;padding:0 0 0 16px;position:relative}
+.stops::before{content:"";position:absolute;left:4px;top:10px;bottom:10px;width:2px;
+  background:repeating-linear-gradient(180deg,var(--line2) 0 4px,transparent 4px 9px)}
+.stops li{margin-bottom:6px}
+.stop{
+  display:flex;align-items:center;gap:12px;width:100%;text-align:left;
+  padding:10px 14px;border-radius:13px;background:var(--panel);
+  border:1px solid var(--line);box-shadow:none;
+}
+.stop:hover{border-color:var(--line2);background:var(--panel2);transform:translateX(2px)}
+.stop-dot{flex:0 0 auto;width:11px;height:11px;border-radius:50%;margin-left:-22px;
+  background:var(--panel);border:2px solid var(--line2)}
+.stop.started .stop-dot{border-color:#d6a94c;background:#ffe6ad}
+.stop.cleared .stop-dot{border-color:var(--good);background:var(--good)}
+.stop-body{flex:1;min-width:0}
+.stop-t{display:block;font-weight:700;font-size:.93rem}
+.stop-d{display:block;font-size:.76rem;color:var(--dim);font-weight:600;margin-top:1px}
+.stop-seal{flex:0 0 auto;font-size:.95rem;color:var(--good)}
+.stop.cleared{background:linear-gradient(90deg,var(--good-bg),var(--panel) 60%)}
+.stop.cleared .stop-t{color:#0b7a55}
+.stop.trial{
+  border-style:dashed;border-color:#e8cf9a;
+  background:linear-gradient(90deg,#fff3d9,var(--panel) 70%);
+}
+.stop.trial .stop-dot{border-color:#c98f3c;background:#ffe6ad}
+.stop.trial .stop-t{color:#8a6414}
+.stop.trial .stop-seal{color:#c98f3c}
+
+/* A stop, opened: the written page first, the questions after. */
+.stage-card,.trial-card{
+  padding:24px 26px;border-radius:var(--radius);background:var(--panel);
+  border:1px solid var(--line);box-shadow:var(--shadow);margin:14px 0 20px;
+}
+.trial-card{border-color:#e8cf9a;background:linear-gradient(180deg,#fffaf0,var(--panel) 40%)}
+.stage-k,.trial-k{
+  font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--purple-d);margin-bottom:6px;
+}
+.trial-k{color:#b07d26}
+.stage-sec{margin-top:18px}
+.stage-sec h3{
+  font-size:.74rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--dim);margin:0 0 7px;
+}
+.stage-sec p,.stage-sec li{font-family:var(--serif);line-height:1.68}
+.trial-ways{margin:14px 0 18px;padding-left:20px}
+.trial-ways li{margin-bottom:7px;font-size:.92rem}
+.stage-lesson-h{
+  font-family:var(--serif);font-size:1.12rem;margin:18px 0 2px;
+  padding-top:16px;border-top:1px solid var(--line);
+}
+
+/* ---- highlighter and answer eliminator ---------------------------------- */
+/* The digital SAT gives students both. Practising without them practises a
+   different task from the one they sit: highlighting is how you hold a long
+   passage while you work, and crossing out is how you keep the thinking you
+   have already done. */
+.annotatable{position:relative}
+.annotatable .stim, .annotatable .q{user-select:text}
+
+mark.hl{padding:.08em 0;border-radius:3px;background:none;color:inherit;cursor:pointer}
+mark.hl-yellow{background:#fff3a3;box-shadow:inset 0 -.42em 0 #fff3a3}
+mark.hl-pink{background:#ffc9e0;box-shadow:inset 0 -.42em 0 #ffc9e0}
+mark.hl-blue{background:#c3e0ff;box-shadow:inset 0 -.42em 0 #c3e0ff}
+
+.hl-menu{
+  position:fixed;z-index:60;transform:translate(-50%,-130%);
+  display:flex;align-items:center;gap:6px;padding:6px 8px;
+  background:var(--panel);border:1px solid var(--line2);border-radius:12px;
+  box-shadow:var(--shadow-lg);
+}
+.hl-swatch{width:22px;height:22px;border-radius:50%;padding:0;border:1px solid rgba(0,0,0,.14)}
+.hl-swatch.hl-yellow{background:#fff3a3}
+.hl-swatch.hl-pink{background:#ffc9e0}
+.hl-swatch.hl-blue{background:#c3e0ff}
+.hl-note,.hl-clear{font-size:.74rem;font-weight:700;padding:5px 9px;border-radius:8px}
+
+/* A crossed-out choice stays legible. It is a note to yourself, not a
+   deletion - you have to be able to read it to change your mind. */
+.choice-row{display:flex;align-items:stretch;gap:8px}
+.choice-row .choice{flex:1}
+.choice.struck .ctext{text-decoration:line-through;opacity:.5}
+.choice.struck .k{opacity:.45}
+.strike-btn{
+  flex:0 0 auto;align-self:center;min-width:38px;font-weight:800;font-size:.84rem;
+  padding:8px 10px;border-radius:10px;color:var(--dim);
+}
+.strike-btn:hover{color:var(--ink);border-color:var(--line2)}
+.btn-sm.on{background:var(--purple);border-color:var(--purple);color:#fff}
+
+/* A cell whose review has come round again. */
+.tile.due{border-color:var(--flag-ln);background:linear-gradient(180deg,var(--flag-bg),var(--panel))}
+
+/* ---- teacher dashboard -------------------------------------------------- */
+/* Brushstroke panels: a soft wash of colour with a torn, hand-painted edge
+   rather than a rectangle. Teacher side only - a student is only ever
+   looking at one test, so colour there would carry no information and would
+   just make the two halves look like different products. */
+.brush{
+  position:relative;isolation:isolate;overflow:hidden;
+  margin:14px 0;padding:22px 24px;border-radius:22px 26px 20px 28px;
+  background:var(--panel);box-shadow:var(--shadow);
+}
+.brush::before{
+  content:"";position:absolute;inset:0;z-index:-1;opacity:.92;
+  background:
+    radial-gradient(120% 90% at 6% 0%, var(--tone-a) 0%, transparent 62%),
+    radial-gradient(130% 110% at 98% 8%, var(--tone-b) 0%, transparent 58%),
+    radial-gradient(80% 70% at 50% 120%, var(--tone-a) 0%, transparent 70%);
+  /* The wobble is the brushstroke: straight edges read as a card, and the
+     point of this surface is that it does not. */
+  border-radius:inherit;
+  filter:blur(6px);
+}
+.brush::after{
+  content:"";position:absolute;left:24px;right:24px;top:0;height:5px;z-index:-1;
+  border-radius:99px;opacity:.75;
+  background:linear-gradient(90deg,transparent,var(--tone-b) 18%,var(--tone-a) 72%,transparent);
+}
+.brush h2,.brush h3{letter-spacing:-.02em}
+.brush h3{margin:20px 0 8px;font-size:.96rem}
+.brush table{background:rgba(255,255,255,.72);backdrop-filter:blur(2px)}
+
+/* SAT light pink and purple, ACT light green and blue, both warm. */
+/* Strong enough to read across a roster at a glance, which is the whole
+   job - a wash you have to look for tells you nothing. */
+.tone-sat{--tone-a:#fbc8e8;--tone-b:#cfc0ff}
+.tone-act{--tone-a:#aee6c8;--tone-b:#b4d8ff}
+.tone-both{--tone-a:#ffc87e;--tone-b:#ffe79a}
+.tone-none{--tone-a:#ece9f6;--tone-b:#f3f1fa}
+
+.stat-row{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 4px}
+.stat{
+  flex:1 1 118px;padding:12px 14px;border-radius:16px;
+  background:rgba(255,255,255,.76);border:1px solid rgba(255,255,255,.9);
+}
+.stat-n{font-family:var(--serif);font-size:1.5rem;font-weight:700;letter-spacing:-.02em}
+.stat-l{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--dim);margin-top:2px}
+.stat-note{font-size:.72rem;font-weight:700;color:var(--purple-d);margin-top:3px}
+
+/* The roster, scannable by colour before you have read a name. */
+.roster-card{cursor:pointer}
+.roster-card .exam-chip{
+  display:inline-block;font-size:.64rem;font-weight:800;letter-spacing:.07em;
+  text-transform:uppercase;padding:3px 9px;border-radius:99px;margin-right:6px;
+  background:rgba(255,255,255,.8);border:1px solid rgba(0,0,0,.06);color:var(--ink);
+}
+
 /* ---- the journey -------------------------------------------------------- */
 /* The bank laid out as a route rather than an inventory. A hundred and eighty
    recognitions in one column is the most discouraging thing you can show
@@ -947,3 +1196,10 @@ mark.hl-blue{background:#c3e0ff;box-shadow:inset 0 -.42em 0 #c3e0ff}
 .pick-row .badge{flex:0 0 auto}
 .pick-row .peek-open{flex:1 1 auto;min-width:0}
 .peek-open.on{color:var(--purple-d);text-decoration-color:var(--purple);font-weight:700}
+/* The ladder, visible at a glance: one pip per rung, Foundations to Super
+   hard. A student should be able to see which end they are at without
+   reading the labels. */
+.level-rung{display:block;margin-top:5px;font-size:.62rem;letter-spacing:.22em;color:var(--line2)}
+.level.foundation .level-rung{color:#7fb0e8}
+.level.open .level-rung{color:var(--purple)}
+.level.stretch .level-rung{color:#c98f3c}

@@ -3,26 +3,32 @@ import { Link } from 'react-router-dom'
 import type { Exam } from '../exams/types'
 import { examSpec } from '../exams/registry'
 import { loadIndex, type QuestionRef } from '../lib/bank'
-import { buildJourney, type Chapter, type Leg, type SkillMeta } from './map'
+import { buildJourney, type Chapter, type Leg, type Region, type SkillMeta } from './map'
 import { StageView } from './Stage'
+import { WorldMap } from './WorldMap'
+import { DAILY_GOAL, rankOf, streakOf, todayCount } from './quest'
 
 /**
- * The route, not the inventory.
+ * The map, not the inventory.
  *
- * A hundred and eighty recognitions in one column is the most discouraging
- * thing you can put in front of someone who already feels behind. The same
- * content as eight chapters, each a few legs, each leg four or five stops,
- * is the same work and a completely different proposition: you can see where
- * you are, what comes next, and that there is an end.
+ * Four levels, because the test has four and flattening any of them loses
+ * something a student uses: the REGION is how they think about tonight ("I
+ * am doing maths"), the REALM is how the score report breaks down, the PATH
+ * is what a lesson is about, and the STOP is the thing they are actually
+ * getting wrong.
  *
- * Nothing is locked. A student who wants to jump to the last chapter may -
- * the map says what the sensible order IS, which is a different thing from
- * refusing to let them deviate from it.
+ * The game layer on top changes nothing about what gets practised - the
+ * ranking engine decides that from the band model - and everything about
+ * whether they come back tomorrow, which is the variable that makes the rest
+ * of it matter at all.
+ *
+ * Nothing is locked. The route says what the sensible order IS, which is a
+ * different thing from refusing to let anyone leave it.
  */
 export function Journey({ exam }: { exam: Exam }) {
   const [bank, setBank] = useState<QuestionRef[]>([])
   const [skills, setSkills] = useState<SkillMeta[]>([])
-  const [openChapter, setOpenChapter] = useState<string | null>(null)
+  const [openRealm, setOpenRealm] = useState<string | null>(null)
   const [stage, setStage] = useState<{ leg: Leg; subtype: string } | null>(null)
   const [trialLeg, setTrialLeg] = useState<Leg | null>(null)
   const [version, setVersion] = useState(0)
@@ -37,12 +43,17 @@ export function Journey({ exam }: { exam: Exam }) {
     return () => { live = false }
   }, [exam])
 
-  useEffect(() => { setOpenChapter(null); setStage(null); setTrialLeg(null) }, [exam])
+  useEffect(() => { setOpenRealm(null); setStage(null); setTrialLeg(null) }, [exam])
 
-  const chapters = useMemo(
+  const regions = useMemo(
     () => (bank.length ? buildJourney(exam, bank, skills) : []),
     [exam, bank, skills, version],
   )
+  const realms = useMemo(() => regions.flatMap((r) => r.chapters), [regions])
+
+  const rank = useMemo(() => rankOf(exam), [exam, version])
+  const streak = useMemo(() => streakOf(exam), [exam, version])
+  const today = useMemo(() => todayCount(exam), [exam, version])
 
   if (stage || trialLeg) {
     return (
@@ -53,18 +64,17 @@ export function Journey({ exam }: { exam: Exam }) {
     )
   }
 
-  const spec = examSpec(exam)
-  const done = chapters.reduce((n, c) => n + c.cleared, 0)
-  const all = chapters.reduce((n, c) => n + c.stages, 0)
+  const cleared = regions.reduce((n, r) => n + r.cleared, 0)
+  const all = regions.reduce((n, r) => n + r.stages, 0)
 
   return (
-    <div className="wrap journey">
+    <div className="wrap wide journey">
       <div className="top">
         <div>
-          <h1>{spec.label}: the long way round</h1>
+          <h1>{examSpec(exam).label}: the long road</h1>
           <p className="who">
-            {all} stops, {done} behind you. Start anywhere &mdash; the order is
-            advice, not a gate.
+            {cleared} of {all} stops behind you. Start anywhere &mdash; the
+            route is advice, not a gate.
           </p>
         </div>
         <div className="row tight">
@@ -74,28 +84,58 @@ export function Journey({ exam }: { exam: Exam }) {
         </div>
       </div>
 
-      <div className="bar good journey-overall">
-        <i style={{ width: `${all ? (done / all) * 100 : 0}%` }} />
+      <div className="questbar">
+        <div className="qb-rank">
+          <div className="qb-level">{rank.level}</div>
+          <div>
+            <div className="qb-title">{rank.title}</div>
+            <div className="qb-xp">{rank.xp} XP</div>
+            <div className="qb-track">
+              <i style={{ width: `${(rank.into / rank.span) * 100}%` }} />
+            </div>
+          </div>
+        </div>
+        <div className="qb-stat">
+          <div className="qb-n">{streak}</div>
+          <div className="qb-l">day{streak === 1 ? '' : 's'} running</div>
+        </div>
+        <div className="qb-stat">
+          <div className="qb-n">{today}<span className="qb-of">/{DAILY_GOAL}</span></div>
+          <div className="qb-l">today</div>
+          <div className="qb-track small">
+            <i style={{ width: `${Math.min(100, (today / DAILY_GOAL) * 100)}%` }} />
+          </div>
+        </div>
       </div>
 
-      <div className="road">
-        {chapters.map((c, i) => (
-          <ChapterCard key={c.id} chapter={c} index={i}
-            open={openChapter === c.id}
-            onToggle={() => setOpenChapter(openChapter === c.id ? null : c.id)}
-            onStage={(leg, subtype) => setStage({ leg, subtype })}
-            onTrial={(leg) => setTrialLeg(leg)} />
-        ))}
-      </div>
+      <WorldMap chapters={realms} openId={openRealm}
+        onPick={(id) => setOpenRealm(openRealm === id ? null : id)} />
+
+      {regions.map((region) => (
+        <section className="region" key={region.id}>
+          <div className="region-head">
+            <h2>{region.name}</h2>
+            <span className="region-count">
+              {region.cleared}/{region.stages} stops
+            </span>
+          </div>
+          {region.chapters.map((chapter) => (
+            <RealmCard key={chapter.id} chapter={chapter}
+              open={openRealm === chapter.id}
+              onToggle={() => setOpenRealm(openRealm === chapter.id ? null : chapter.id)}
+              onStage={(leg, subtype) => setStage({ leg, subtype })}
+              onTrial={(leg) => setTrialLeg(leg)} />
+          ))}
+        </section>
+      ))}
     </div>
   )
 }
 
-function ChapterCard({
-  chapter, index, open, onToggle, onStage, onTrial,
+function RealmCard({
+  chapter, open, onToggle, onStage, onTrial,
 }: {
   chapter: Chapter
-  index: number
   open: boolean
   onToggle: () => void
   onStage: (leg: Leg, subtype: string) => void
@@ -105,25 +145,28 @@ function ChapterCard({
   const state = pct >= 100 ? 'done' : pct > 0 ? 'under-way' : 'ahead'
 
   return (
-    <section className={`chapter ${state}`}>
-      <button className="chapter-head" onClick={onToggle} aria-expanded={open}>
-        <span className="chapter-n">{romanise(index + 1)}</span>
-        <span className="chapter-body">
-          <span className="chapter-t">{chapter.name}</span>
-          <span className="chapter-d">
-            {chapter.legs.length} leg{chapter.legs.length === 1 ? '' : 's'} &middot;{' '}
-            {chapter.cleared} of {chapter.stages} stops cleared
+    <div className={`realm-card ${state}`} id={`realm-${chapter.id}`}>
+      <button className="realm-head" onClick={onToggle} aria-expanded={open}>
+        <span className="realm-seal">{pct >= 100 ? '★' : chapter.legs.length}</span>
+        <span className="realm-body">
+          <span className="realm-t">{chapter.name}</span>
+          <span className="realm-d">
+            {chapter.legs.length} path{chapter.legs.length === 1 ? '' : 's'} &middot;{' '}
+            {chapter.cleared} of {chapter.stages} stops
           </span>
-          <span className="bar thin"><i style={{ width: `${pct}%` }} /></span>
+          <span className="qb-track"><i style={{ width: `${pct}%` }} /></span>
         </span>
-        <span className="chapter-chevron">{open ? '−' : '+'}</span>
+        <span className="realm-chevron">{open ? '−' : '+'}</span>
       </button>
 
       {open && (
-        <div className="chapter-legs">
+        <div className="realm-paths">
           {chapter.legs.map((leg) => (
-            <div className="leg" key={leg.skill}>
-              <div className="leg-name">{leg.name}</div>
+            <div className="path" key={leg.skill}>
+              <div className="path-name">
+                {leg.name}
+                <span className="path-count">{leg.cleared}/{leg.stages.length}</span>
+              </div>
               <ol className="stops">
                 {leg.stages.map((s) => (
                   <li key={s.subtype}>
@@ -137,6 +180,7 @@ function ChapterCard({
                           {s.accuracy !== null && ` · ${Math.round(s.accuracy * 100)}%`}
                         </span>
                       </span>
+                      {s.cleared && <span className="stop-seal">✓</span>}
                     </button>
                   </li>
                 ))}
@@ -145,11 +189,12 @@ function ChapterCard({
                     <button className="stop trial" onClick={() => onTrial(leg)}>
                       <span className="stop-dot" aria-hidden="true" />
                       <span className="stop-body">
-                        <span className="stop-t">Trial: reading the question</span>
+                        <span className="stop-t">Trial &mdash; reading the question</span>
                         <span className="stop-d">
                           {leg.trial.families.length} ways these get asked
                         </span>
                       </span>
+                      <span className="stop-seal">⚔</span>
                     </button>
                   </li>
                 )}
@@ -158,21 +203,8 @@ function ChapterCard({
           ))}
         </div>
       )}
-    </section>
+    </div>
   )
 }
 
-function romanise(n: number): string {
-  const table: [number, string][] = [
-    [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I'],
-  ]
-  let out = ''
-  let left = n
-  for (const [value, sign] of table) {
-    while (left >= value) {
-      out += sign
-      left -= value
-    }
-  }
-  return out
-}
+export type { Region }

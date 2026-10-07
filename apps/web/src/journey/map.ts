@@ -59,6 +59,25 @@ export interface Chapter {
   cleared: number
 }
 
+/**
+ * The top level: the section of the test.
+ *
+ * Four levels, because the test has four and flattening any of them loses
+ * something a student actually uses. The section is how they think about
+ * their day ("I am doing maths tonight"); the domain is how the score report
+ * is broken down; the skill is what a lesson is about; and the recognition
+ * is the thing they are actually getting wrong. Collapsing section into
+ * domain was what put Algebra and Craft & Structure in one undifferentiated
+ * column.
+ */
+export interface Region {
+  id: string
+  name: string
+  chapters: Chapter[]
+  stages: number
+  cleared: number
+}
+
 export interface SkillMeta {
   skill_cd: string
   skill_name: string
@@ -79,7 +98,7 @@ const TRIAL_FAMILIES = [
   'work_backwards', 'in_context', 'compare',
 ]
 
-const SECTION_LABEL: Record<string, string> = {
+export const SECTION_LABEL: Record<string, string> = {
   math: 'Math', english: 'English', reading: 'Reading', science: 'Science',
   rw: 'Reading & Writing',
 }
@@ -112,7 +131,7 @@ function grouping(exam: Exam, q: QuestionRef, meta: SkillMeta | undefined) {
 
 export function buildJourney(
   exam: Exam, bank: QuestionRef[], skills: SkillMeta[],
-): Chapter[] {
+): Region[] {
   const { mastery } = progress()
   const metaOf = new Map(skills.map((s) => [s.skill_cd, s]))
 
@@ -192,11 +211,25 @@ export function buildJourney(
     chapter.cleared = chapter.legs.reduce((n, l) => n + l.cleared, 0)
   }
 
-  // Sections stay together, and within a section the biggest chapter leads -
+  // Sections stay together, and within a section the biggest domain leads -
   // which is also the one carrying the most marks.
-  return [...chapters.values()].sort(
+  const ordered = [...chapters.values()].sort(
     (a, b) => a.section.localeCompare(b.section) || b.stages - a.stages,
   )
+
+  const regions = new Map<string, Region>()
+  for (const chapter of ordered) {
+    const region = regions.get(chapter.section) ?? {
+      id: chapter.section,
+      name: SECTION_LABEL[chapter.section] ?? chapter.section,
+      chapters: [], stages: 0, cleared: 0,
+    }
+    region.chapters.push(chapter)
+    region.stages += chapter.stages
+    region.cleared += chapter.cleared
+    regions.set(chapter.section, region)
+  }
+  return [...regions.values()]
 }
 
 /**
