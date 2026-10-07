@@ -1,4 +1,5 @@
 import type { Exam, Question, Tier } from '../exams/types'
+import { nextReview } from './engine'
 
 /**
  * What the student has done, and what they got wrong.
@@ -17,6 +18,8 @@ const KEY = 'prep.progress'
 export interface Attempt {
   exam: Exam
   questionId: string
+  /** Milliseconds on the question. Blank where we could not observe it. */
+  ms?: number
   subtype: string | null
   skill: string
   difficulty: Tier
@@ -30,6 +33,10 @@ export interface Cell {
   seen: number
   correct: number
   streak: number
+  /** Leitner box, 1-5. A miss always drops it back to 1. */
+  box: number
+  /** When this cell is worth seeing again. */
+  dueAt: string
 }
 
 interface Store {
@@ -55,11 +62,15 @@ function write(s: Store): void {
 
 export const cellKey = (exam: Exam, unit: string, tier: Tier) => `${exam}|${unit}|${tier}`
 
+const EMPTY: Cell = { seen: 0, correct: 0, streak: 0, box: 1, dueAt: '' }
+
 export function progress(): Store {
   return read()
 }
 
-export function record(q: Question, chosen: string, correct: boolean): Attempt {
+export function record(
+  q: Question, chosen: string, correct: boolean, ms?: number,
+): Attempt {
   const store = read()
   const attempt: Attempt = {
     exam: q.exam,
@@ -70,17 +81,19 @@ export function record(q: Question, chosen: string, correct: boolean): Attempt {
     chosen,
     correct,
     misconception: correct ? null : q.misconceptions?.[chosen] ?? null,
+    ms,
     at: new Date().toISOString(),
   }
   store.attempts.push(attempt)
 
   for (const unit of [q.skill, q.subtype].filter(Boolean) as string[]) {
     const key = cellKey(q.exam, unit, q.difficulty)
-    const cell = store.mastery[key] ?? { seen: 0, correct: 0, streak: 0 }
+    const cell = store.mastery[key] ?? EMPTY
     store.mastery[key] = {
       seen: cell.seen + 1,
       correct: cell.correct + (correct ? 1 : 0),
       streak: correct ? cell.streak + 1 : 0,
+      ...nextReview(cell, correct),
     }
   }
   write(store)

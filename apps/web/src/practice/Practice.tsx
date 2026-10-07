@@ -6,6 +6,7 @@ import { loadBank } from '../lib/bank'
 import { difficultyLabel } from '../lesson/types'
 import { accuracy, seenIds } from './mastery'
 import { Round } from './Round'
+import { dueNow, rank, type Bands, type Ranked } from './engine'
 
 const ROUND = 10
 
@@ -25,6 +26,8 @@ export function Practice({ exam }: { exam: Exam }) {
   const [section, setSection] = useState<string>('')
   const [subtype, setSubtype] = useState<string | null>(null)
   const [round, setRound] = useState<Question[] | null>(null)
+  const [bands, setBands] = useState<Bands | null>(null)
+  const [targets, setTargets] = useState<Record<string, number | undefined>>({})
 
   useEffect(() => {
     let live = true
@@ -36,6 +39,23 @@ export function Practice({ exam }: { exam: Exam }) {
         setLabels(Object.fromEntries((blob.families ?? []).map((f) => [f.slug, f.label])))
       })
       .catch(() => undefined)
+    // The band table is SAT-only: it comes from the official raw-to-scaled
+    // conversions, and we have no equivalent for the ACT. Rather than invent
+    // one, the ACT ranks on what it can measure and says so on screen.
+    if (exam === 'sat') {
+      void fetch(`${import.meta.env.BASE_URL}data/bands.json`)
+        .then((r) => r.json())
+        .then((b: Bands) => live && setBands(b))
+        .catch(() => undefined)
+    } else {
+      setBands(null)
+    }
+    try {
+      const saved = localStorage.getItem(`prep.targets.${exam}`)
+      setTargets(saved ? (JSON.parse(saved) as Record<string, number>) : {})
+    } catch {
+      setTargets({})
+    }
     return () => { live = false }
   }, [exam])
 
@@ -106,7 +126,9 @@ export function Practice({ exam }: { exam: Exam }) {
           onBack={() => setSubtype(null)} onStart={start} />
       ) : (
         <>
-          <h2>What do you want to work on?</h2>
+          <Next exam={exam} bank={inSection} bands={bands} targets={targets}
+            onPick={(r) => { setSubtype(r.subtype); }} />
+          <h2>Everything else</h2>
           {recognitions.map(([slug, meta]) => (
             <button key={slug} className="tile" onClick={() => setSubtype(slug)}>
               <div className="t">{meta.name}</div>
@@ -116,6 +138,68 @@ export function Practice({ exam }: { exam: Exam }) {
         </>
       )}
     </div>
+  )
+}
+
+/**
+ * What to study next, rather than a list to browse.
+ *
+ * This is the difference between an adaptive tool and a question bank. The
+ * ranking multiplies four things, and each one kills a different failure:
+ * how likely they are to miss it, how often the exam asks it, whether their
+ * target needs that tier at all, and whether the tier below is going in yet.
+ */
+function Next({
+  exam, bank, bands, targets, onPick,
+}: {
+  exam: Exam
+  bank: Question[]
+  bands: Bands | null
+  targets: Record<string, number | undefined>
+  onPick: (r: Ranked) => void
+}) {
+  const ranked = useMemo(
+    () => rank(exam, bank, bands, targets, 6), [exam, bank, bands, targets],
+  )
+  const due = useMemo(() => dueNow(exam, bank).slice(0, 4), [exam, bank])
+  if (!ranked.length) return null
+
+  return (
+    <>
+      {due.length > 0 && (
+        <>
+          <h2>Due for another look</h2>
+          {due.map((r) => (
+            <button key={`${r.subtype}|${r.tier}`} className="tile due"
+              onClick={() => onPick(r)}>
+              <div className="t">{r.name}</div>
+              <div className="d">
+                {difficultyLabel(r.tier)} &middot; you were at{' '}
+                {r.accuracy === null ? '—' : `${Math.round(r.accuracy * 100)}%`}
+              </div>
+            </button>
+          ))}
+        </>
+      )}
+
+      <h2>Where your marks are</h2>
+      {!bands && (
+        <p className="tiny muted" style={{ marginTop: -6 }}>
+          Ordered by what you are missing and how often it comes up. The ACT
+          has no published raw-to-scale table here, so unlike the SAT this is
+          not weighted by your target.
+        </p>
+      )}
+      {ranked.map((r) => (
+        <button key={`${r.subtype}|${r.tier}`} className="tile" onClick={() => onPick(r)}>
+          <div className="t">{r.name}</div>
+          <div className="d">
+            {difficultyLabel(r.tier)} &middot; {r.pool} questions
+            {r.accuracy !== null && ` · ${Math.round(r.accuracy * 100)}% so far`}
+          </div>
+        </button>
+      ))}
+    </>
   )
 }
 

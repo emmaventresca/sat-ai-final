@@ -22,7 +22,7 @@ export function QuestionCard({
   question, onAnswer, misconceptionLabel,
 }: {
   question: Question
-  onAnswer: (chosen: string, correct: boolean) => void
+  onAnswer: (chosen: string, correct: boolean, ms: number) => void
   misconceptionLabel?: (slug: string) => string
 }) {
   const [picked, setPicked] = useState<string | null>(null)
@@ -34,12 +34,17 @@ export function QuestionCard({
   const [eliminating, setEliminating] = useState(false)
   const [crossed, setCrossed] = useState<string[]>(() => loadEliminated(question.id))
   const box = useRef<HTMLInputElement>(null)
+  // Time on the question. Worth having because it is the one thing the
+  // teacher cannot see any other way: a student who gets 80% in nine minutes
+  // and a student who gets 80% in forty need different lessons.
+  const started = useRef(Date.now())
   const grid = question.format === 'grid'
 
   useEffect(() => {
     setPicked(null)
     setTyped('')
     setCrossed(loadEliminated(question.id))
+    started.current = Date.now()
     if (grid) box.current?.focus()
   }, [question.id, grid])
 
@@ -60,7 +65,7 @@ export function QuestionCard({
     if (revealed || !value.trim()) return
     const ok = grid ? matches(value, question.keys) : value === question.answer
     setPicked(value)
-    onAnswer(value, ok)
+    onAnswer(value, ok, Date.now() - started.current)
   }
 
   const hit = revealed && !correct && grid

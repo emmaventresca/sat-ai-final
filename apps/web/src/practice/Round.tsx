@@ -61,8 +61,8 @@ export function Round({
 
       <QuestionCard key={question.id} question={question}
         misconceptionLabel={misconceptionLabel}
-        onAnswer={(chosen, correct) => {
-          record(question, chosen, correct)
+        onAnswer={(chosen, correct, ms) => {
+          record(question, chosen, correct, ms)
           setResults((r) => [...r, correct])
           setAnswered(true)
         }} />
