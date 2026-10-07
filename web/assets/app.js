@@ -7,16 +7,16 @@
 // do not teach what they have already shown they know.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=ec0e17d405';
-import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=ec0e17d405';
-import { buildLesson, focusTier, rankLessons } from './lessons.js?v=ec0e17d405';
+import { makeStore, configured } from './store.js?v=c477eccc58';
+import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=c477eccc58';
+import { buildLesson, focusTier, rankLessons } from './lessons.js?v=c477eccc58';
 import {
   missGroups, missCount, reinforcementSet, generatorAvailable, generateMore,
   familyName,
   relatedSets,
-} from './review.js?v=ec0e17d405';
-import { isGrid, matches as gridMatches, diagnose as gridDiagnose, MAX_LEN } from './grid.js?v=ec0e17d405';
-import { renderText as md, renderBody, renderHtml, renderStimulus, renderFigure, escapeHtml as esc } from './mathfmt.js?v=ec0e17d405';
+} from './review.js?v=c477eccc58';
+import { isGrid, matches as gridMatches, diagnose as gridDiagnose, MAX_LEN } from './grid.js?v=c477eccc58';
+import { renderText as md, renderBody, renderHtml, renderStimulus, renderFigure, escapeHtml as esc } from './mathfmt.js?v=c477eccc58';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
@@ -732,9 +732,11 @@ function levelPicker(lesson, recommended) {
       ${t === recommended ? '<span class="level-tag">Suggested</span>' : ''}
       ${kind === 'try' ? '<span class="level-tag try">Try it</span>' : ''}
       ${kind.startsWith('foundation') ? `<span class="level-tag foundation">${
-        kind.endsWith('on') ? 'Start here' : 'Groundwork'}</span>` : ''}
+        // "foundation".endsWith("on") is true, which labelled every
+        // groundwork tile "Start here" including for a student at 1420.
+        kind.includes(' on') ? 'Start here' : 'Groundwork'}</span>` : ''}
       ${kind.startsWith('stretch') ? `<span class="level-tag stretch">${
-        kind.endsWith('earned') ? 'You are ready' : 'Beyond the test'}</span>` : ''}
+        kind.includes(' earned') ? 'You are ready' : 'Beyond the test'}</span>` : ''}
       ${kind === 'challenge' ? '<span class="level-tag challenge">Challenge</span>' : ''}
       ${kind === 'challenge' ? `<span class="level-note">Only try once you have
         completed Easy and Medium.</span>` : ''}

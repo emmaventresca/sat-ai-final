@@ -12,20 +12,20 @@
 // here that could fake a student's history.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=ec0e17d405';
-import { scoreItem, bandWeights, TIERS } from './engine.js?v=ec0e17d405';
-import { focusTier, rankLessons } from './lessons.js?v=ec0e17d405';
-import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=ec0e17d405';
-import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=ec0e17d405';
-import { PREVIEW_KEY } from './store.js?v=ec0e17d405';
-import * as chats from './chats.js?v=ec0e17d405';
-import { renderPacket } from './packet.js?v=ec0e17d405';
+import { makeStore, configured } from './store.js?v=c477eccc58';
+import { scoreItem, bandWeights, TIERS } from './engine.js?v=c477eccc58';
+import { focusTier, rankLessons } from './lessons.js?v=c477eccc58';
+import { escapeHtml as esc, renderText as md } from './mathfmt.js?v=c477eccc58';
+import { columnChart, chartTable, mountCharts, byDay, byWeek, streak } from './charts.js?v=c477eccc58';
+import { PREVIEW_KEY } from './store.js?v=c477eccc58';
+import * as chats from './chats.js?v=c477eccc58';
+import { renderPacket } from './packet.js?v=c477eccc58';
 import {
   shotState, resetShot, readFile, identify, matchesFor, writeMoreLikeIt, picked,
-} from './shot.js?v=ec0e17d405';
+} from './shot.js?v=c477eccc58';
 import { plannerState, plannerHealthy, sendToPlanner, renderPlan, STARTERS,
          fetchAgentFeed, newAlerts, markSeen, popDesktop,
-         enableDesktopAlerts, desktopAlertsOn, setSubtypeNames } from './planner.js?v=ec0e17d405';
+         enableDesktopAlerts, desktopAlertsOn, setSubtypeNames } from './planner.js?v=c477eccc58';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');
