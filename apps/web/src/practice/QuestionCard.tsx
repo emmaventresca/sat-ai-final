@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import type { Question } from '../exams/types'
 import { renderFigure, renderHtml, renderStimulus } from '../lesson/math'
 import { MAX_LEN, diagnose, matches } from './grid'
+import { Annotatable } from './Annotatable'
+import { loadEliminated, saveEliminated } from './annotate'
 
 /**
  * One question, answered.
@@ -25,14 +27,29 @@ export function QuestionCard({
 }) {
   const [picked, setPicked] = useState<string | null>(null)
   const [typed, setTyped] = useState('')
+  // The exam's answer eliminator, off by default and remembered per
+  // question. A student who rules two choices out and then loses the marks
+  // has to redo the thinking, which is exactly why the real test keeps them
+  // on screen.
+  const [eliminating, setEliminating] = useState(false)
+  const [crossed, setCrossed] = useState<string[]>(() => loadEliminated(question.id))
   const box = useRef<HTMLInputElement>(null)
   const grid = question.format === 'grid'
 
   useEffect(() => {
     setPicked(null)
     setTyped('')
+    setCrossed(loadEliminated(question.id))
     if (grid) box.current?.focus()
   }, [question.id, grid])
+
+  function toggleCrossed(key: string) {
+    const next = crossed.includes(key)
+      ? crossed.filter((k) => k !== key)
+      : [...crossed, key]
+    setCrossed(next)
+    saveEliminated(question.id, next)
+  }
 
   const revealed = picked !== null
   const correct = revealed
@@ -54,12 +71,21 @@ export function QuestionCard({
   return (
     <div className="card">
       {Boolean(question.stimulus || question.figure) && (
-        <div className="stim"
-          dangerouslySetInnerHTML={{
-            __html: renderStimulus(question.stimulus) + renderFigure(question.figure),
-          }} />
+        <Annotatable className="stim" questionId={question.id} part="stimulus"
+          html={renderStimulus(question.stimulus) + renderFigure(question.figure)} />
       )}
-      <div className="q" dangerouslySetInnerHTML={{ __html: renderStimulus(question.stem) }} />
+      <Annotatable className="q" questionId={question.id} part="stem"
+        html={renderStimulus(question.stem)} />
+
+      {!grid && !revealed && (
+        <div className="row tight" style={{ margin: '4px 0 10px' }}>
+          <button className={`btn-sm${eliminating ? ' on' : ''}`}
+            aria-pressed={eliminating}
+            onClick={() => setEliminating(!eliminating)}>
+            {eliminating ? 'Done crossing out' : 'Cross out answers'}
+          </button>
+        </div>
+      )}
 
       {grid ? (
         <>
@@ -99,17 +125,28 @@ export function QuestionCard({
       ) : (
         (question.choices ?? []).map((choice, i) => {
           const key = 'ABCDEFGH'[i]
+          const out = crossed.includes(key)
           let cls = 'choice'
+          if (out) cls += ' struck'
           if (revealed) {
             if (key === question.answer) cls += ' right'
             else if (key === picked) cls += ' wrong'
           }
           return (
-            <button key={key} className={cls} disabled={revealed}
-              onClick={() => commit(key)}>
-              <span className="k">{key}</span>
-              <span className="ctext" dangerouslySetInnerHTML={{ __html: renderHtml(choice) }} />
-            </button>
+            <div className="choice-row" key={key}>
+              <button className={cls} disabled={revealed || out}
+                onClick={() => commit(key)}>
+                <span className="k">{key}</span>
+                <span className="ctext" dangerouslySetInnerHTML={{ __html: renderHtml(choice) }} />
+              </button>
+              {eliminating && !revealed && (
+                <button className="strike-btn"
+                  aria-label={out ? `Restore ${key}` : `Cross out ${key}`}
+                  onClick={() => toggleCrossed(key)}>
+                  {out ? key : <s>{key}</s>}
+                </button>
+              )}
+            </div>
           )
         })
       )}
