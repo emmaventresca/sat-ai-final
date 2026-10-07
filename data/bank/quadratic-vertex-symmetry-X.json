@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "Which of the following could be the values of $b$ and $c$?",
+  "stimulus": "A costume historian traces one curved edge of a 1770s tie-on pocket onto a coordinate grid and models it with the graph of $y = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. The graph has its vertex at $(-3, 4)$ and has exactly two $x$-intercepts.",
+  "choices": [
+   "$b = 12$ and $c = -14$",
+   "$b = -12$ and $c = -14$",
+   "$b = 12$ and $c = 22$",
+   "$b = -12$ and $c = 22$"
+  ],
+  "answer": "B",
+  "explanation": "The vertex $(-3, 4)$ is above the $x$-axis. For the graph to cross the $x$-axis twice, the parabola has to open downward, so $a < 0$. In vertex form, $y = a(x + 3)^2 + 4 = ax^2 + 6ax + 9a + 4$, so $b = 6a$ and $c = 9a + 4$. With $a = -2$, you get $b = -12$ and $c = 9(-2) + 4 = -14$. Both conditions hold: the vertex is $(-3, 4)$ and the parabola opens downward from above the axis, so it has two $x$-intercepts. In Desmos, graph $y = a(x+3)^2 + 4$ with a slider on $a$. The curve crosses the axis only when $a$ is negative.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You picked the right opening, $a = -2$, but you wrote the vertex form as $a(x - 3)^2 + 4$. That puts the vertex at $x = 3$, not $-3$. Expanding gives $b = -6a = 12$ and $c = 9a + 4 = -14$. The sign of $b$ comes straight from the sign of $h$. With $h = -3$, $b = 6a$, and that is negative whenever $a$ is negative."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You expanded $a(x + 3)^2 + 4$ correctly, but you used $a = 2$. These values do give the vertex $(-3, 4)$. However, a parabola that opens upward from a vertex above the $x$-axis never reaches the axis, so it has no $x$-intercepts. It does not have two."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You made two errors here. You wrote $a(x - 3)^2 + 4$ and you also let the parabola open upward with $a = 2$, which gives $b = -6a = -12$ and $c = 22$. The negative $b$ looks right, but it comes from two sign errors cancelling. This parabola has its vertex at $(3, 4)$, opens upward, and has no $x$-intercepts."
+   }
+  },
+  "id": "orig-quadratic-vert-X-5b6d2d",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the maximum height, in meters, of the arch?",
+  "stimulus": "The underside of a concrete footbridge arch is modeled by a quadratic function. Here $y$ is the height, in meters, above level ground, and $x$ is the horizontal distance, in meters, from the arch's left footing at $(0, 0)$. Both footings rest on the ground. The arch is $6$ meters high at $x = 4$ and at $x = 20$.",
+  "choices": [
+   "$4.8$",
+   "$10.8$",
+   "$12$",
+   "$24$"
+  ],
+  "answer": "B",
+  "explanation": "Equal heights at $x = 4$ and $x = 20$ put the axis of symmetry at their midpoint, $x = 12$. The left footing is at $x = 0$, so by symmetry the right footing is at $x = 2(12) - 0 = 24$. That gives $y = a\\,x(x - 24)$. Substituting $(4, 6)$ gives $a(4)(-20) = 6$, so $a = -\\tfrac{3}{40}$. The maximum is at $x = 12$: $y = -\\tfrac{3}{40}(12)(-12) = \\tfrac{432}{40} = 10.8$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You probably wrote $y = a(x - 4)(x - 20) + 6$ and used $(0, 0)$ to get $a = -\\tfrac{3}{40}$. Then you evaluated only $a(12 - 4)(12 - 20) = 4.8$ and dropped the $+6$. The value $4.8$ is how far the top of the arch rises above the 6-meter points. It is not the height above the ground."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$12$ is the $x$-coordinate of the vertex, which is the horizontal distance from the left footing to the highest point. The question asks for the height at that point, which is the $y$-coordinate."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$24$ is where the right footing sits, $2(12) - 0$. That is the arch's span, a horizontal distance. To get the maximum height, you still need to find $a$ and evaluate the function at $x = 12$."
+   }
+  },
+  "id": "orig-quadratic-vert-X-f8f4dc",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

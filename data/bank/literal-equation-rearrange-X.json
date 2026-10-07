@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "Which equation correctly expresses $N$ in terms of $E$, $m$, and $h$?",
+  "stimulus": "An ecologist models the feeding rate of a predator, $E$, in prey eaten per hour, using the equation $\\frac{1}{E} = \\frac{1}{m} + \\frac{h}{mN^2}$, where $N$ is the density of prey, in prey per square meter, and $m$ and $h$ are positive constants. In this model, $N > 0$.",
+  "choices": [
+   "$N = \\sqrt{\\frac{h(E - m)}{m}}$",
+   "$N = \\sqrt{\\frac{hE}{m - E}}$",
+   "$N = \\sqrt{\\frac{m - E}{hE}}$",
+   "$N = \\sqrt{\\frac{hE}{E - m}}$"
+  ],
+  "answer": "B",
+  "explanation": "First get the term containing $N$ by itself: $\\frac{1}{E} - \\frac{1}{m} = \\frac{h}{mN^2}$. Combine the left side over the common denominator $mE$ to get $\\frac{m - E}{mE} = \\frac{h}{mN^2}$. Take the reciprocal of both sides: $\\frac{mE}{m - E} = \\frac{mN^2}{h}$. Multiply both sides by $\\frac{h}{m}$ to get $N^2 = \\frac{hE}{m - E}$. Since $N > 0$, keep the positive root: $N = \\sqrt{\\frac{hE}{m - E}}$. Check with numbers: if $m = 6$, $h = 8$, and $N = 2$, then $\\frac{1}{E} = \\frac{1}{6} + \\frac{1}{3} = \\frac{1}{2}$, so $E = 2$, and $\\sqrt{\\frac{8 \\cdot 2}{6 - 2}} = 2$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped each fraction separately and treated the equation as $E = m + \\frac{mN^2}{h}$. You can't undo a sum of reciprocals one term at a time. Subtract $\\frac{1}{m}$ first, combine the fractions, and then take the reciprocal of the whole side."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You solved for $\\frac{1}{N^2}$ correctly but never took the reciprocal. The expression under your root is $\\frac{1}{N^2}$, not $N^2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped a subtraction when you combined $\\frac{1}{E} - \\frac{1}{m}$. Its numerator is $m - E$, not $E - m$. Because $\\frac{1}{E}$ is greater than $\\frac{1}{m}$, $m > E$, so your expression puts a negative number under the root."
+   }
+  },
+  "id": "orig-literal-equati-X-8ddf67",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which equation correctly expresses $w$ in terms of $T$, $d$, and $v$?",
+  "stimulus": "A migrating tern flies a distance of $d$ kilometers straight into a steady headwind, then flies the same $d$ kilometers back with that wind behind it. Its total flight time $T$, in hours, is given by $T = \\frac{d}{v - w} + \\frac{d}{v + w}$, where $v$ is the tern's airspeed and $w$ is the wind speed, both in kilometers per hour, and $0 < w < v$.",
+  "choices": [
+   "$w = \\sqrt{v^2 - \\frac{T}{2dv}}$",
+   "$w = \\sqrt{\\frac{2dv}{T} - v^2}$",
+   "$w = \\sqrt{v^2 - \\frac{2dv}{T}}$",
+   "$w = \\sqrt{v^2 - \\frac{dv}{T}}$"
+  ],
+  "answer": "C",
+  "explanation": "Combine the fractions over $(v - w)(v + w) = v^2 - w^2$. The numerator is $d(v + w) + d(v - w) = 2dv$, so $T = \\frac{2dv}{v^2 - w^2}$. Multiply both sides by $v^2 - w^2$ to get $T(v^2 - w^2) = 2dv$, then divide by $T$: $v^2 - w^2 = \\frac{2dv}{T}$. Isolate $w^2$: $w^2 = v^2 - \\frac{2dv}{T}$. Since $w > 0$, $w = \\sqrt{v^2 - \\frac{2dv}{T}}$. Check with numbers: if $d = 12$, $v = 10$, and $w = 2$, then $T = \\frac{12}{8} + \\frac{12}{12} = 2.5$, and $\\sqrt{100 - \\frac{240}{2.5}} = \\sqrt{4} = 2$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the wrong fraction. From $T = \\frac{2dv}{v^2 - w^2}$, you need $v^2 - w^2 = \\frac{2dv}{T}$. Writing $\\frac{T}{2dv}$ is what you get when you take the reciprocal of one side but not the other."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost a sign when you moved terms to isolate $w^2$. From $v^2 - w^2 = \\frac{2dv}{T}$, you get $w^2 = v^2 - \\frac{2dv}{T}$, not $\\frac{2dv}{T} - v^2$. Since $T > \\frac{2d}{v}$, your expression is negative, so it can't be under a square root."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the factor of 2 when you combined the fractions. The numerator $d(v + w) + d(v - w)$ simplifies to $2dv$, not $dv$, because the two $d \\cdot v$ terms add together."
+   }
+  },
+  "id": "orig-literal-equati-X-76af13",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

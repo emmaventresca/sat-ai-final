@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "The function $N$ can also be written as $N(t) = 2{,}500k^{t}$, where $k$ is a positive constant. Which of the following is the best interpretation of $k$ in this context?",
+  "stimulus": "An ornithologist models the number of nesting pairs of a seabird species on a small island with the function $N(t) = 2{,}500(0.64)^{\\frac{t}{2}}$, where $t$ is the number of years since the survey began.",
+  "choices": [
+   "Each year, the number of nesting pairs is 64% of the number the year before.",
+   "Every 2 years, the number of nesting pairs is 80% of the number 2 years before.",
+   "Each year, the number of nesting pairs is 80% of the number the year before.",
+   "Each year, the number of nesting pairs is 20 fewer than the number the year before."
+  ],
+  "answer": "C",
+  "explanation": "The exponent $\\frac{t}{2}$ means 0.64 is the multiplier for each 2-year period, not for each year. To find the yearly multiplier, rewrite $(0.64)^{\\frac{t}{2}} = \\left((0.64)^{\\frac{1}{2}}\\right)^{t} = (0.8)^{t}$, so $k = 0.8$. The exponent of $k$ is $t$, so $k$ is what the number of nesting pairs is multiplied by each year. Each year, the number is 80% of the number the year before.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You read 0.64 as the yearly multiplier. Because of the exponent $\\frac{t}{2}$, 0.64 applies once every 2 years. The yearly multiplier $k$ is $\\sqrt{0.64} = 0.8$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $k = 0.8$ correctly but attached it to the wrong time period. In $N(t) = 2{,}500k^{t}$, $k$ is applied once per year. Over 2 years the multiplier is $0.8^2 = 0.64$, not 0.8."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the multiplier as an amount subtracted each year, which would describe a linear model. An exponential base is a percent multiplier: $k = 0.8$ means the count keeps 80% each year, so it falls by 20%, not by 20 pairs."
+   }
+  },
+  "id": "orig-interpret-feat-X-892234",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which of the following is the best interpretation of the y-intercept of the graph of $y = S(t)$ in the $ty$-plane in this context?",
+  "stimulus": "A linguist models the number of fluent speakers of a revived regional language with the function $S(t) = -3(t - 10)^2 + 420$, where $S(t)$ is the estimated number of speakers, in hundreds, $t$ years after 1990, for $0 \\le t \\le 30$.",
+  "choices": [
+   "In 1990, the estimated number of fluent speakers was 120.",
+   "In 1990, the estimated number of fluent speakers was 12,000.",
+   "In 1990, the estimated number of fluent speakers was 42,000.",
+   "In 1990, the estimated number of fluent speakers was 72,000."
+  ],
+  "answer": "B",
+  "explanation": "The y-intercept is where $t = 0$, which is the year 1990. Then $S(0) = -3(0 - 10)^2 + 420 = -3(100) + 420 = 120$. $S(t)$ is measured in hundreds of speakers, so 120 stands for $120 \\times 100 = 12{,}000$ speakers. The y-intercept means that in 1990, the estimated number of fluent speakers was 12,000.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You found $S(0) = 120$ correctly but missed that $S(t)$ counts speakers in hundreds. 120 hundred speakers is 12,000 speakers, not 120."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the vertex instead of the y-intercept. The 420 in vertex form is the maximum value, reached when $t = 10$ (in 2000), not the value in 1990. The y-intercept requires $t = 0$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You made a sign error, getting $-3(0 - 10)^2 = +300$ and $300 + 420 = 720$. Squaring $-10$ gives a positive 100, but the coefficient $-3$ still makes the term $-300$, so $S(0) = 120$."
+   }
+  },
+  "id": "orig-interpret-feat-X-8e5b99",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

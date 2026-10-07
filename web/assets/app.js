@@ -7,16 +7,16 @@
 // do not teach what they have already shown they know.
 // ---------------------------------------------------------------------------
 
-import { makeStore, configured } from './store.js?v=c477eccc58';
-import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=c477eccc58';
-import { buildLesson, focusTier, rankLessons } from './lessons.js?v=c477eccc58';
+import { makeStore, configured } from './store.js?v=3eab6ceb41';
+import { scoreItem, selectRound, updateMastery, bandWeights, TIERS, promotionOffer, availableTiers, streakAt } from './engine.js?v=3eab6ceb41';
+import { buildLesson, focusTier, rankLessons } from './lessons.js?v=3eab6ceb41';
 import {
   missGroups, missCount, reinforcementSet, generatorAvailable, generateMore,
   familyName,
   relatedSets,
-} from './review.js?v=c477eccc58';
-import { isGrid, matches as gridMatches, diagnose as gridDiagnose, MAX_LEN } from './grid.js?v=c477eccc58';
-import { renderText as md, renderBody, renderHtml, renderStimulus, renderFigure, escapeHtml as esc } from './mathfmt.js?v=c477eccc58';
+} from './review.js?v=3eab6ceb41';
+import { isGrid, matches as gridMatches, diagnose as gridDiagnose, MAX_LEN } from './grid.js?v=3eab6ceb41';
+import { renderText as md, renderBody, renderHtml, renderStimulus, renderFigure, escapeHtml as esc } from './mathfmt.js?v=3eab6ceb41';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const app = $('#app');

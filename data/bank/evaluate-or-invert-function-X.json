@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "If $f(k) = 101$ and $k < 0$, what is the value of $f(-k)$?",
+  "stimulus": "An ornithologist models the number of hawks per hour passing a ridge-top count station during autumn migration with the function $f(x) = 4(x - 3)^2 + 1$, where $x$ is the number of hours after noon. Negative values of $x$ are hours before noon.",
+  "choices": [
+   "$-2$",
+   "$5$",
+   "$17$",
+   "$485$"
+  ],
+  "answer": "B",
+  "explanation": "First work backwards from the output. Set $4(k - 3)^2 + 1 = 101$. Subtract 1 to get $4(k - 3)^2 = 100$, then divide by 4 to get $(k - 3)^2 = 25$. That means $k - 3 = 5$ or $k - 3 = -5$, so $k = 8$ or $k = -2$. The condition $k < 0$ rules out 8, so $k = -2$. Now go forwards with the new input $-k = 2$: $f(2) = 4(2 - 3)^2 + 1 = 4(1) + 1 = 5$. In context, the model predicts 5 hawks per hour at 2 p.m.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found $k = -2$ correctly and stopped there. The question asks for an output of $f$, not for the input $k$. You still have to evaluate $f$ at $-k = 2$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the right input, 2, but evaluated $f(2)$ in the wrong order. You multiplied $4$ by $(2 - 3)$ to get $-4$ and then squared, which gives $16 + 1 = 17$. The square applies only to $(x - 3)$, so square $-1$ first to get 1, then multiply by 4."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You kept the root $k = 8$ and ignored the condition $k < 0$, then evaluated $f(-8) = 4(-11)^2 + 1 = 485$. Both roots satisfy $f(k) = 101$, but only $-2$ is negative."
+   }
+  },
+  "id": "orig-evaluate-or-in-X-a4075b",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "If $f(k) = 8$, what is the value of $f\\left(\\frac{k}{2}\\right)$?",
+  "stimulus": "In scientific pitch, a musicologist's reference C is tuned to exactly 512 hertz. The function $f(x) = 512 \\cdot 2^{x/12}$ gives the frequency, in hertz, of the tone $x$ semitones above that C. Negative values of $x$ are semitones below it.",
+  "choices": [
+   "$-36$",
+   "$4$",
+   "$64$",
+   "$4096$"
+  ],
+  "answer": "C",
+  "explanation": "First work backwards from the output. Set $512 \\cdot 2^{k/12} = 8$. Dividing by 512 gives $2^{k/12} = \\frac{1}{64} = 2^{-6}$, so $\\frac{k}{12} = -6$ and $k = -72$. Now go forwards with the new input $\\frac{k}{2} = -36$: $f(-36) = 512 \\cdot 2^{-3} = \\frac{512}{8} = 64$. A quicker check is that halving the input takes the square root of the multiplier: $2^{k/24} = \\sqrt{\\tfrac{1}{64}} = \\tfrac{1}{8}$, and $512 \\cdot \\tfrac{1}{8} = 64$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You correctly found the input $\\frac{k}{2} = -36$ and gave it as your answer. The question asks for the value of $f$ at that input, so you still have to substitute $-36$ into $f$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read $f\\left(\\frac{k}{2}\\right)$ as $\\frac{f(k)}{2}$ and halved the output 8. Halving the input of an exponential function does not halve its output. It changes the exponent, which takes the square root of the multiplier."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You flipped the ratio and set $2^{k/12} = 64$ instead of $\\frac{1}{64}$. That gives $k = 72$, a tone above the reference C instead of below it, and then $f(36) = 512 \\cdot 8 = 4096$. An output of 8, which is less than 512, needs a negative exponent."
+   }
+  },
+  "id": "orig-evaluate-or-in-X-57ca87",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

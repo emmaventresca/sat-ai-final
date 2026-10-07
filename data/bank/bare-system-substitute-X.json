@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. What is the value of $x$?",
+  "stimulus": "$x = 2y + 3$\n$5(x - y) = 3(x + y) + 4$",
+  "choices": [
+   "$\\frac{1}{2}$",
+   "$2$",
+   "$4$",
+   "$5$"
+  ],
+  "answer": "C",
+  "explanation": "Start by expanding the second equation: $5x - 5y = 3x + 3y + 4$. Collect the terms to get $2x - 8y = 4$. The first equation already gives you $x$, so substitute $2y + 3$ for $x$: $2(2y + 3) - 8y = 4$. That becomes $4y + 6 - 8y = 4$, so $-4y = -2$ and $y = \\frac{1}{2}$. The question asks for $x$, so substitute back: $x = 2\\left(\\frac{1}{2}\\right) + 3 = 4$. Check: $5(4 - \\frac{1}{2}) = 17.5$ and $3(4 + \\frac{1}{2}) + 4 = 17.5$. In Desmos, graph both equations and click the intersection, $(4, 0.5)$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the value of $y$. Substitution gives you $y$ first, and you stopped there. The question asks for $x$, so you still have to put $y = \\frac{1}{2}$ back into $x = 2y + 3$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You got as far as $-4y = -2$ but dropped the sign when you divided and got $y = -\\frac{1}{2}$. Then $x = 2\\left(-\\frac{1}{2}\\right) + 3 = 2$. A negative divided by a negative is positive."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "When you expanded $3(x + y)$, you multiplied only the $x$ by 3 and wrote $3x + y$. That gives $2x - 6y = 4$, then $y = 1$ and $x = 5$. Multiply the 3 into both terms inside the parentheses."
+   }
+  },
+  "id": "orig-bare-system-su-X-937083",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the solution $(x, y)$ to the given system of equations?",
+  "stimulus": "$\\frac{y}{2} + 3 = 2y - 6$\n$4x - 3y = 2x + y - 10$",
+  "choices": [
+   "$(1, 6)$",
+   "$(5, 5)$",
+   "$(6, 7)$",
+   "$(7, 6)$"
+  ],
+  "answer": "D",
+  "explanation": "The first equation has only $y$ in it, so solve it first. Multiply every term by 2: $y + 6 = 4y - 12$. Then $18 = 3y$, so $y = 6$. Rearrange the second equation: $4x - 2x = y + 3y - 10$, which gives $2x = 4y - 10$. Substitute $y = 6$: $2x = 14$, so $x = 7$. Check both equations: $\\frac{6}{2} + 3 = 6 = 2(6) - 6$, and $4(7) - 3(6) = 10 = 2(7) + 6 - 10$. The solution is $(7, 6)$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $y = 6$ correctly. But when you moved terms in the second equation, you subtracted $y$ from $-3y$ the wrong way and got $2x - 2y = -10$. That gives $x = 1$. This pair works in the first equation, but $4(1) - 3(6) = -14$, while $2(1) + 6 - 10 = -2$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "When you cleared the fraction, you multiplied $\\frac{y}{2}$ and $2y - 6$ by 2 but not the 3. That gives $y + 3 = 4y - 12$ and $y = 5$. Then $x = 5$. This pair satisfies the second equation, but not the first: $\\frac{5}{2} + 3 = 5.5$, while $2(5) - 6 = 4$. A solution has to work in both equations."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "This pair puts the coordinates in the wrong order. It also uses 6 for $x$ and 7 for $y$, which doesn't match either variable. With $x = 6$ and $y = 7$, the first equation gives $6.5 = 8$, which is false. Ordered pairs are written $(x, y)$, and $y$ is the value you get from the first equation."
+   }
+  },
+  "id": "orig-bare-system-su-X-89ee4b",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

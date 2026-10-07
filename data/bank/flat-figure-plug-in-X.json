@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "What is the perimeter, in kilometers, of the remaining monitoring zone?",
+  "stimulus": "A seismology team monitors a rectangular zone that measures 40 kilometers by 24 kilometers. The team drops one corner of the zone from monitoring. The dropped part is a right triangle whose two legs lie along the two sides of the rectangle that meet at that corner. The leg along the 40-kilometer side is 15 kilometers long, and the dropped triangle has an area of 60 square kilometers.",
+  "choices": [
+   "105",
+   "122",
+   "128",
+   "900"
+  ],
+  "answer": "B",
+  "explanation": "First find the missing leg. The triangle's area is $\\frac{1}{2}(15)(b) = 60$, so $b = 8$ km. The legs are 15 and 8, so the hypotenuse, which is the new boundary, is $\\sqrt{15^2 + 8^2} = \\sqrt{289} = 17$ km. The rectangle's perimeter was $2(40 + 24) = 128$ km. Cutting off the corner removes 15 km and 8 km of the old edges and adds the 17 km hypotenuse: $128 - 15 - 8 + 17 = 122$ km.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You took the 15 km and 8 km of edge away from the original 128 km, which leaves 105 km, but you forgot that the cut adds a new 17 km side along the hypotenuse. The region is still closed, so that side belongs in its perimeter."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "This is the perimeter of the whole rectangle, $2(40 + 24) = 128$. You never accounted for the dropped corner. The boundary changes when the triangle is removed, because two leg-length stretches are swapped for one hypotenuse."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the area of the remaining zone, $40 \\cdot 24 - 60 = 900$ square kilometers, but the question asks for the perimeter. You've swapped area for perimeter, which is the trap this kind of question is built to catch."
+   }
+  },
+  "id": "orig-flat-figure-pl-X-eb5bae",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the area, in square centimeters, of the margin?",
+  "stimulus": "A printmaker pulls an etching on a rectangular sheet of paper. The sheet's length is 3 times its width, and its perimeter is 96 centimeters. The printed image is a rectangle centered on the sheet. It leaves a blank margin exactly 3 centimeters wide along all four edges.",
+  "choices": [
+   "135",
+   "180",
+   "252",
+   "288"
+  ],
+  "answer": "C",
+  "explanation": "Start with the sheet: $2(w + 3w) = 96$, so $8w = 96$, which gives $w = 12$ cm and a length of 36 cm. The sheet's area is $36 \\cdot 12 = 432$ square cm. The margin takes 3 cm off both ends of each dimension, so the image measures $(36 - 6)$ by $(12 - 6)$, or 30 cm by 6 cm, for an area of 180 square cm. The margin is the sheet minus the image: $432 - 180 = 252$ square centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the 3 cm margin off each dimension only once, which makes the image 33 cm by 9 cm and gives $432 - 297 = 135$. The margin runs along both ends of the length and both ends of the width, so each dimension shrinks by 6 cm."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "This is the area of the printed image, $30 \\cdot 6 = 180$. That is the part inside the margin. The question asks for the blank border, so you still need to subtract this from the sheet's area."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You multiplied the sheet's perimeter by the margin's width, $96 \\cdot 3 = 288$, as if the border were one straight strip. Using the perimeter to stand in for an area is the trap here. It counts each $3 \\times 3$ corner square twice, so it overshoots by $4 \\cdot 9 = 36$."
+   }
+  },
+  "id": "orig-flat-figure-pl-X-dc9a0a",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

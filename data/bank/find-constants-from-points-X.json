@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "What is the value of $a + k$?",
+  "stimulus": "During a serving drill, a player tosses a volleyball straight up. The ball's height above the floor, in meters, $t$ seconds after it leaves the player's hand is modeled by $h(t) = a(t - k)^2 + 6$, where $a$ and $k$ are constants. The ball leaves the hand at a height of 2 meters. At $t = 1$, the ball is 5 meters high and still rising.",
+  "choices": [
+   "$-\\frac{25}{3}$",
+   "$-3$",
+   "$-1$",
+   "$1$"
+  ],
+  "answer": "D",
+  "explanation": "Use $t = 0$ first: $a k^2 + 6 = 2$, so $a k^2 = -4$. Next use $t = 1$: $a(1 - k)^2 + 6 = 5$, so $a(1 - k)^2 = -1$. Divide the second equation by the first to get $\\frac{(1-k)^2}{k^2} = \\frac{1}{4}$, so $\\frac{1-k}{k} = \\frac{1}{2}$ or $\\frac{1-k}{k} = -\\frac{1}{2}$. That gives $k = \\frac{2}{3}$ or $k = 2$. The vertex of the parabola is at $t = k$, and the ball keeps rising until then. Because the ball is still rising at $t = 1$, the vertex must come after $t = 1$, so $k = 2$. Then $a(2)^2 = -4$, so $a = -1$. Check: $h(0) = -4 + 6 = 2$ and $h(1) = -1 + 6 = 5$. The answer is $a + k = -1 + 2 = 1$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You chose $k = \\frac{2}{3}$ and $a = -9$. Those values do pass through both points. But with them the ball peaks at $t = \\frac{2}{3}$, so it is already falling at $t = 1$. That breaks the condition that the ball is still rising, so you needed the other root, $k = 2$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the vertex form as $a(t + k)^2 + 6$, which flips the sign of $k$. You found the right parabola, but your $k$ came out as $-2$ instead of $2$, so you got $-1 + (-2) = -3$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is $a$ alone. You solved for $a$ correctly but stopped there. The question asks for $a + k$, so you still needed to add $k = 2$."
+   }
+  },
+  "id": "orig-find-constants-X-20a7de",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "What is the value of $a + b + c$?",
+  "stimulus": "An agronomist models wheat yield $Y$, in hundreds of kilograms per hectare, with the function $Y(x) = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. Here $x$ is the number of 10-kilogram units by which the nitrogen applied per hectare differs from the farm's usual rate. Negative values of $x$ mean less nitrogen than usual. The table shows three values of the function.\n\nWheat Yield by Change in Nitrogen\n$x$ | $Y(x)$\n$-2$ | $34$\n$0$ | $50$\n$3$ | $44$",
+  "choices": [
+   "$2$",
+   "$36$",
+   "$50$",
+   "$52$"
+  ],
+  "answer": "D",
+  "explanation": "Start with the y-intercept: $Y(0) = c = 50$. Substitute $x = -2$: $a(-2)^2 + b(-2) + 50 = 34$, so $4a - 2b = -16$, which simplifies to $2a - b = -8$. Substitute $x = 3$: $9a + 3b + 50 = 44$, so $9a + 3b = -6$, which simplifies to $3a + b = -2$. Add the two simplified equations to get $5a = -10$, so $a = -2$ and $b = 4$. Therefore $a + b + c = -2 + 4 + 50 = 52$. (This is the same as $Y(1)$.)",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $a + b$, a partial sum. You solved for $a$ and $b$ correctly but left out $c = 50$, which the question also asks for."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "When you substituted $x = -2$, you wrote the linear term as $+2b$ instead of $-2b$. Solving $2a + b = -8$ with $3a + b = -2$ gives $a = 6$ and $b = -20$, so you got $6 - 20 + 50 = 36$. Check the sign every time you substitute a negative $x$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $c$, the y-intercept, which you can read straight from the table at $x = 0$. The question asks for the sum of all three constants, so you still needed $a$ and $b$."
+   }
+  },
+  "id": "orig-find-constants-X-20c8eb",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

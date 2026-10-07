@@ -1,0 +1,101 @@
+[
+ {
+  "stem": "Which equation represents this relationship?",
+  "stimulus": "A pump drains a retention pond after a storm. The depth of the water, $y$ centimeters, is a linear function of $x$, the number of hours since the pump was switched on. The table shows three measurements.\n\nWater Depth in a Retention Pond\nTime since pump started (minutes) | Depth (cm)\n30 | 41\n90 | 29\n165 | 14",
+  "choices": [
+   "$12x - y = -35$",
+   "$x + 5y = 235$",
+   "$12x + y = 47$",
+   "$12x + y = 41$"
+  ],
+  "answer": "C",
+  "explanation": "The table is in minutes, but $x$ is in hours, so the three points are $(0.5, 41)$, $(1.5, 29)$ and $(2.75, 14)$. The slope is $\\frac{29 - 41}{1.5 - 0.5} = -12$, and the last pair agrees: $\\frac{14 - 29}{2.75 - 1.5} = \\frac{-15}{1.25} = -12$. Going back half an hour from $(0.5, 41)$ adds 6 cm, so the starting depth is $47$. That gives $y = -12x + 47$, which is $12x + y = 47$. Check: $12(1.5) + 29 = 47$ and $12(2.75) + 14 = 47$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used a slope of $+12$ instead of $-12$. The depth goes down, so the slope has to be negative. This line passes through $(0.5, 41)$, since $6 - 41 = -35$, but it misses $(1.5, 29)$: $18 - 29 = -11$. If you only checked the first row, it looked right."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You plugged in the minute values as if they were $x$. Then the slope is $-0.2$ cm per minute and the equation is $y = -0.2x + 47$, which becomes $x + 5y = 235$. That line fits the table as printed, but $x$ is defined in hours. With $x = 1.5$ and $y = 29$, you get $1.5 + 145 \\neq 235$."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "Your slope was right, but you took the first depth in the table, 41 cm, as the starting depth. The first measurement was taken 30 minutes after the pump started, not at $x = 0$. The depth at $x = 0$ is $47$."
+   }
+  },
+  "id": "orig-equation-from--X-99bbe9",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which equation correctly expresses $x$ in terms of $y$?",
+  "stimulus": "A folklorist is recording a storyteller's repertoire of traditional tales. The graph shows the linear relationship between $x$, the number of weeks since the project began, and $y$, the number of tales not yet recorded.",
+  "figure": {
+   "type": "line",
+   "caption": "Tales Not Yet Recorded",
+   "x_label": "Weeks since project began, x",
+   "y_label": "Tales not yet recorded, y",
+   "points": [
+    [
+     2,
+     27
+    ],
+    [
+     6,
+     21
+    ],
+    [
+     10,
+     15
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 12,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 30,
+   "y_step": 3,
+   "alt": "A decreasing line segment passing through the points (2, 27), (6, 21), and (10, 15)."
+  },
+  "choices": [
+   "$x = 30 - \\frac{3}{2}y$",
+   "$x = 20 - \\frac{2}{3}y$",
+   "$x = 20 - \\frac{3}{2}y$",
+   "$x = 18 - \\frac{2}{3}y$"
+  ],
+  "answer": "B",
+  "explanation": "Use the points $(2, 27)$ and $(10, 15)$. The slope is $\\frac{15 - 27}{10 - 2} = -\\frac{3}{2}$. Going back 2 weeks from $(2, 27)$ adds 3, so the y-intercept is 30, and $y = -\\frac{3}{2}x + 30$. Rewrite this as $3x + 2y = 60$, then solve for $x$: $x = 20 - \\frac{2}{3}y$. Check: when $y = 27$, $x = 20 - 18 = 2$, and when $y = 15$, $x = 20 - 10 = 10$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the correct equation for $y$ in terms of $x$, $y = 30 - \\frac{3}{2}x$, then switched the letters instead of solving for $x$. The question asks for $x$ in terms of $y$. With $y = 27$, this gives $30 - 40.5$, not 2."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You got the x-intercept, 20, right, but you kept the coefficient $\\frac{3}{2}$ when you solved for $x$. Dividing $2y$ by 3 gives $\\frac{2}{3}y$. Check: with $y = 15$, $20 - 22.5$ is not 10."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated the first plotted point, $(2, 27)$, as the y-intercept. That gives $3x + 2y = 54$ and an x-intercept of 18. The graph begins at week 2, so the intercept is 30, not 27. Check: with $y = 27$, this gives $x = 0$, but the graph shows $x = 2$."
+   }
+  },
+  "id": "orig-equation-from--X-888b91",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

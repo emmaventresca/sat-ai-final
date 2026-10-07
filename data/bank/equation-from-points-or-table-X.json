@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "The function $H$ is defined by $H(t) = at + b$, where $a$ and $b$ are constants. The table shows three values of $t$ and their corresponding values of $H(t)$. What is the value of $a + b$?",
+  "stimulus": "A materials engineer models the hardness $H(t)$ of an aluminum alloy sample, in Vickers hardness units, as a linear function of the annealing temperature $t$, in degrees Celsius.\n\nAlloy Hardness After Annealing\n$t$ | $H(t)$\n310 | 248\n150 | 312\n400 | 212",
+  "choices": [
+   "$252.4$",
+   "$371.6$",
+   "$372.4$",
+   "$684.5$"
+  ],
+  "answer": "B",
+  "explanation": "The rows are out of order and unevenly spaced, so take any two rows and divide the change in output by the change in input. Using $(150, 312)$ and $(310, 248)$: $a = \\frac{248 - 312}{310 - 150} = \\frac{-64}{160} = -0.4$. Check with the third row: $\\frac{212 - 312}{400 - 150} = \\frac{-100}{250} = -0.4$. Substitute $(150, 312)$: $312 = -0.4(150) + b$, so $312 = -60 + b$ and $b = 372$. Hardness falls as temperature rises, so a negative slope makes sense. Then $a + b = -0.4 + 372 = 371.6$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You lost the negative sign and used $a = 0.4$. That gives $b = 312 - 60 = 252$ and $a + b = 252.4$. Hardness goes down as $t$ goes up, so the slope has to be negative."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $a = -0.4$ and $b = 372$ correctly, but when you added them you used $0.4$ instead of $-0.4$ and got $372.4$. Adding a negative slope makes the total smaller than $b$, not bigger."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You divided change in $t$ by change in $H(t)$, which gave $a = \\frac{160}{-64} = -2.5$. Then $b = 312 + 2.5(150) = 687$ and $a + b = 684.5$. The slope is change in output over change in input."
+   }
+  },
+  "id": "orig-equation-from--X-0e0b60",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "For the linear function $L$, $L(80) = 14$ and $L(240) = 34$. For what value of $d$ does $L(d) = 49$?",
+  "stimulus": "At a seismic monitoring station, the S-wave from an earthquake arrives after the P-wave. A seismologist models this lag time $L(d)$, in seconds, as a linear function of the station's distance $d$ from the earthquake's epicenter, in kilometers.",
+  "choices": [
+   "$280$",
+   "$360$",
+   "$392$",
+   "$424$"
+  ],
+  "answer": "B",
+  "explanation": "The slope is the change in output over the change in input: $\\frac{34 - 14}{240 - 80} = \\frac{20}{160} = \\frac{1}{8}$ second per kilometer. Substitute $(80, 14)$ into $L(d) = \\frac{1}{8}d + b$: $14 = 10 + b$, so $b = 4$. Now set $\\frac{1}{8}d + 4 = 49$. That gives $\\frac{1}{8}d = 45$, so $d = 360$. Check: $L(360) = 45 + 4 = 49$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You treated lag time as proportional to distance, using $\\frac{14}{80} = \\frac{7}{40}$ second per kilometer from the first point alone, and solved $\\frac{7}{40}d = 49$. That line passes through $(80, 14)$ but gives $L(240) = 42$, not $34$, so it fails the second condition."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the correct slope, $\\frac{1}{8}$, but left out the intercept and solved $\\frac{1}{8}d = 49$. The line has $b = 4$, so you have to subtract it from $49$ before multiplying by $8$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $b = 4$ but moved it to the wrong side with the wrong sign and solved $\\frac{1}{8}d = 49 + 4$. To isolate $\\frac{1}{8}d$, subtract $4$ from both sides, which gives $45$, not $53$."
+   }
+  },
+  "id": "orig-equation-from--X-f79494",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

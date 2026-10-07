@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Will this work on this computer?</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<!--
+  A page a student can open on a locked-down school machine that says, in
+  words, what is broken. "The site doesn't work" is not something a teacher
+  can act on; "your school blocks the database host" is.
+
+  It deliberately uses no modules and no vendored library, so it still runs
+  on a browser too old for the app itself.
+-->
+<div class="wrap">
+  <h1>Will this work on this computer?</h1>
+  <p class="muted">Open this page on the computer you are having trouble with
+    and send your teacher a screenshot.</p>
+  <div class="card"><table style="width:100%">
+    <thead><tr><th>Check</th><th>Result</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table></div>
+  <p class="tiny muted" id="ua"></p>
+</div>
+<script>
+(function () {
+  var rows = document.getElementById('rows');
+  function row(name, ok, detail) {
+    var tr = document.createElement('tr');
+    var c1 = document.createElement('td'); c1.textContent = name;
+    var c2 = document.createElement('td');
+    c2.innerHTML = '<strong style="color:' + (ok ? '#17b881' : '#ec5f75') + '">'
+      + (ok ? 'works' : 'blocked') + '</strong>'
+      + (detail ? ' <span class="tiny muted">' + detail + '</span>' : '');
+    tr.appendChild(c1); tr.appendChild(c2); rows.appendChild(tr);
+  }
+
+  // Modules. An older browser skips the module script entirely and the app
+  // renders nothing at all, which is the most confusing failure of the lot.
+  var modules = ('noModule' in document.createElement('script'));
+  row('Modern JavaScript (ES modules)', modules,
+      modules ? '' : 'this browser is too old for the practice app');
+
+  var storage = false;
+  try { localStorage.setItem('_t', '1'); localStorage.removeItem('_t'); storage = true; } catch (e) {}
+  row('Saving your progress in this browser', storage,
+      storage ? '' : 'private mode or a policy is blocking local storage');
+
+  function check(name, url, detail) {
+    var done = false;
+    var t = setTimeout(function () { if (!done) { done = true; row(name, false, detail); } }, 6000);
+    fetch(url, { cache: 'no-store' })
+      .then(function (r) { if (!done) { done = true; clearTimeout(t); row(name, r.ok, r.ok ? '' : 'HTTP ' + r.status); } })
+      .catch(function () { if (!done) { done = true; clearTimeout(t); row(name, false, detail); } });
+  }
+
+  check('Reaching this site’s own files', 'assets/styles.css', 'the site itself is blocked');
+  check('Maths rendering (KaTeX)', 'vendor/katex/katex.min.js', 'served from this site, so this should not fail');
+  check('The question bank', '../data/practice.json', 'the data files are not reachable');
+
+  var cfg = window.CONFIG || {};
+  if (cfg.SUPABASE_URL) {
+    check('Your account (Supabase)', cfg.SUPABASE_URL + '/auth/v1/health',
+          'your network blocks the login server - ask for local mode');
+  } else {
+    row('Your account (Supabase)', true, 'not configured; the app runs in local mode');
+  }
+
+  document.getElementById('ua').textContent = navigator.userAgent;
+})();
+</script>
+<script src="assets/config.js"></script>
+</body>
+</html>

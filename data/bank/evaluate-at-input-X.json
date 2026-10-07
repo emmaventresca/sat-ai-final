@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "According to the model, what was the price, in pence, of one pound of this yarn in 1810?",
+  "stimulus": "A historian models the price, in pence, of one pound of a certain cotton yarn sold by a Lancashire spinning mill with the function $p(t) = 38 - \\frac{5}{2}(t - 4)$, where $t$ is the number of years after 1800 and $0 \\le t \\le 12$.",
+  "choices": [
+   "$17$",
+   "$23$",
+   "$25$",
+   "$33$"
+  ],
+  "answer": "B",
+  "explanation": "1810 is 10 years after 1800, so the input is $t = 10$. Don't subtract the 4 yourself. The function does that. Substitute: $p(10) = 38 - \\frac{5}{2}(10 - 4) = 38 - \\frac{5}{2}(6) = 38 - 15 = 23$. The output is a price in pence, which is what the question asks for, so the answer is 23.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You distributed the $-\\frac{5}{2}$ only to $t$ and then subtracted 4, giving $38 - 25 - 4$ or $38 - 25 + 4$. Correct distribution gives $-\\frac{5}{2}t + 10$, so $p(10) = 38 - 25 + 10 = 23$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found how much the price fell between 1800 and 1810. The price in 1800 is $p(0) = 38 + 10 = 48$, not 38, and $48 - 23 = 25$. The question asks for the 1810 price itself, not the drop."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You treated $t$ as years after 1804 and used $t = 6$, which subtracts the 4 twice: $38 - \\frac{5}{2}(2) = 33$. Since $t$ counts years after 1800, the input for 1810 is $t = 10$."
+   }
+  },
+  "id": "orig-evaluate-at-in-X-d8cf07",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "According to the model, how many measures of the gigue remain 3 minutes 55 seconds after the start of the recording?",
+  "stimulus": "On a recording of a Baroque keyboard suite, the gigue begins 2 minutes 40 seconds after the start of the recording. A musicologist models the number of measures of the gigue that remain $t$ seconds after the gigue begins with the function $R(t) = 96 - \\frac{3}{5}t$.",
+  "choices": [
+   "$27$",
+   "$35$",
+   "$45$",
+   "$51$"
+  ],
+  "answer": "D",
+  "explanation": "The input $t$ is measured from the start of the gigue, not from the start of the recording. Convert both times to seconds: 3 min 55 s = 235 s and 2 min 40 s = 160 s. So $t = 235 - 160 = 75$. Then $R(75) = 96 - \\frac{3}{5}(75) = 96 - 45 = 51$ measures remain.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the times as if they were decimals ($3.55 - 2.40$ read as 115 seconds) and used $t = 115$, which gives $96 - 69 = 27$. There are 60 seconds in a minute, so the gap is 75 seconds."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You solved $R(t) = 75$ instead of finding $R(75)$: $96 - \\frac{3}{5}t = 75$ gives $t = 35$. The 75 is the input, so substitute it for $t$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "45 is $\\frac{3}{5}(75)$, the number of measures already played. The function gives the measures remaining, so subtract that from 96."
+   }
+  },
+  "id": "orig-evaluate-at-in-X-32a783",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

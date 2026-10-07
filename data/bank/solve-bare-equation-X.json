@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "What value of $x$ is the solution to the given equation?",
+  "stimulus": "While calibrating a sediment-layer dating model, an archaeologist reduces the model to the following equation.\n\n$\\frac{2(x-3)}{5} - \\frac{x-3}{4} = \\frac{3}{10} - \\frac{x-3}{20}$",
+  "choices": [
+   "$-\\frac{3}{2}$",
+   "$\\frac{3}{2}$",
+   "$\\frac{9}{2}$",
+   "$6$"
+  ],
+  "answer": "C",
+  "explanation": "The group $(x-3)$ appears in every term that has $x$, so let $u = x-3$. Multiply each term by 20 to clear the fractions: $8u - 5u = 6 - u$, so $3u = 6 - u$. Then $4u = 6$, so $u = \\frac{3}{2}$. You still have one step left: $x - 3 = \\frac{3}{2}$, so $x = \\frac{9}{2}$. Check it: the left side is $\\frac{3}{5} - \\frac{3}{8} = \\frac{9}{40}$, and the right side is $\\frac{3}{10} - \\frac{3}{40} = \\frac{9}{40}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $u = \\frac{3}{2}$ correctly. Then you undid the substitution with the wrong sign and subtracted 3 when you should have added it. If $x - 3 = \\frac{3}{2}$, then $x = \\frac{3}{2} + 3$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is the value of the group $x - 3$, not the value of $x$. Factoring out the group was the right idea, but you stopped before converting back to $x$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $-\\frac{x-3}{20}$ to the left side, you kept its minus sign. That gives $\\frac{2u}{20} = \\frac{3}{10}$, so $u = 3$ and $x = 6$. Moving the term across should have made it $+\\frac{u}{20}$. Substitute 6 back in: the two sides are not equal."
+   }
+  },
+  "id": "orig-solve-bare-equ-X-96b6b1",
+  "skill_cd": "H.A.",
+  "subtype": "solve-bare-equation",
+  "subtype_name": "Solve a bare linear equation for x",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "What value of $x$ is the solution to the given equation?",
+  "stimulus": "While checking a zoning formula for setbacks along a new transit corridor, a city planner simplifies it to the following equation.\n\n$0.4(3x - 5) - 1.2(x - 2) = 0.6(2x + 1) - 0.8x$",
+  "choices": [
+   "$-\\frac{25}{2}$",
+   "$-2$",
+   "$-\\frac{1}{2}$",
+   "$\\frac{5}{2}$"
+  ],
+  "answer": "C",
+  "explanation": "Distribute on the left: $1.2x - 2 - 1.2x + 2.4 = 0.4$. The $x$-terms on the left cancel, but the equation still has $x$ on the right, so you are not done. The right side is $1.2x + 0.6 - 0.8x = 0.4x + 0.6$. Now solve $0.4 = 0.4x + 0.6$: subtract 0.6 to get $-0.2 = 0.4x$, then divide to get $x = -\\frac{1}{2}$. Check it: the left side is $0.4(-6.5) - 1.2(-2.5) = -2.6 + 3 = 0.4$, and the right side is $0.6(0) + 0.4 = 0.4$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You distributed $-1.2$ over $(x - 2)$ and got $-1.2x - 2.4$, but the product of $-1.2$ and $-2$ is $+2.4$. With that slip the left side becomes $-4.4$, and solving $-4.4 = 0.4x + 0.6$ gives $-12.5$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You reached $0.4x = -0.2$ and then divided the wrong way, computing $0.4 \\div (-0.2)$ instead of $-0.2 \\div 0.4$. Substitute $-2$ back in: the right side is $-0.2$, not $0.4$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You moved 0.6 across the equals sign without changing its sign, so you got $0.4x = 0.4 + 0.6 = 1$. Subtracting 0.6 from both sides gives $0.4x = -0.2$."
+   }
+  },
+  "id": "orig-solve-bare-equ-X-8495cf",
+  "skill_cd": "H.A.",
+  "subtype": "solve-bare-equation",
+  "subtype_name": "Solve a bare linear equation for x",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

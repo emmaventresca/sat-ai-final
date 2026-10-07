@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "Which of the following is the best interpretation of $75$ in this context?",
+  "stimulus": "A paleobotanist dates layers of fossil pollen in a lake-sediment core. The relationship between the depth $d$, in centimeters, below the top of the core and the estimated age $A$, in years, of the sediment at that depth is modeled by the equation $2A - 75d = 2{,}400$.",
+  "choices": [
+   "The age, in years, of the sediment at the top of the core",
+   "The increase in age, in years, for each 1-centimeter increase in depth",
+   "The increase in age, in years, for each 2-centimeter increase in depth",
+   "The increase in depth, in centimeters, for each 2-year increase in age"
+  ],
+  "answer": "C",
+  "explanation": "Solve for $A$ to get the model into slope-intercept form: $A = 37.5d + 1{,}200$. The rate is $37.5$ years per centimeter, so $75$ is not the slope. It is twice the slope: if $d$ increases by $2$, $A$ increases by $2(37.5) = 75$ years. You can also see it in the original equation. If $d$ goes up by $2$, the term $75d$ goes up by $150$, so $2A$ must also go up by $150$, which means $A$ goes up by $75$. So $75$ is the increase in age, in years, for each 2-centimeter increase in depth.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the starting value when a rate was asked for. At the top of the core, $d = 0$, so $2A = 2{,}400$ and $A = 1{,}200$ years. That is the intercept, not $75$. The number $75$ multiplies the variable $d$, so it describes a change, not a fixed amount."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You correctly saw that $75$ is tied to how age changes with depth, but you read the coefficient straight from the equation without first solving for $A$. Dividing by the $2$ in front of $A$ gives a slope of $37.5$ years per centimeter, so a 1-centimeter step adds $37.5$ years, not $75$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You reversed the input and the output. Solving for $d$ gives $d = \\frac{2A - 2{,}400}{75}$, so a 2-year increase in age adds only $\\frac{4}{75}$ centimeter of depth. The $75$ counts years of age, not centimeters of depth."
+   }
+  },
+  "id": "orig-interpret-slop-X-e12e9b",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which of the following is the best interpretation of $1{,}012$ in this context?",
+  "stimulus": "As a storm approached a weather station, the air pressure there fell steadily. The function $P(t) = 1{,}012 - 1.5(t - 4)$ models the air pressure, in hectopascals, $t$ hours after midnight, for $4 \\le t \\le 16$.",
+  "choices": [
+   "The air pressure, in hectopascals, at midnight",
+   "The air pressure, in hectopascals, at 4:00 a.m.",
+   "The decrease in air pressure, in hectopascals, per hour",
+   "The highest air pressure, in hectopascals, recorded that day"
+  ],
+  "answer": "B",
+  "explanation": "A constant term gives the output where the variable part equals $0$. Here the variable part is $-1.5(t - 4)$, and it equals $0$ when $t = 4$, not when $t = 0$. So $P(4) = 1{,}012$, which means $1{,}012$ is the air pressure, in hectopascals, $4$ hours after midnight, at 4:00 a.m. That is also the first time the model covers, since $4 \\le t \\le 16$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used the rule that the constant is the value when the input is $0$, but the input here is $t - 4$, not $t$. If you extend the line back to midnight, you get $P(0) = 1{,}012 + 6 = 1{,}018$. So $1{,}012$ is not the y-intercept, and the model does not cover midnight anyway."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the slope when the question asked about the constant. The rate of decrease is $1.5$ hectopascals per hour, the coefficient on $(t - 4)$. The number $1{,}012$ is a pressure reading, not a change per hour."
+   },
+   "D": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "$1{,}012$ is the highest value the model gives, but the model only covers 4:00 a.m. to 4:00 p.m. It says nothing about the pressure before 4:00 a.m. Since the pressure was falling, it was probably higher earlier, so you can't call $1{,}012$ the day's highest reading."
+   }
+  },
+  "id": "orig-interpret-slop-X-c94e81",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]

@@ -1,0 +1,74 @@
+[
+ {
+  "stem": "Which equation represents this situation, where $P$ is the number of nesting pairs $t$ years after 2010?",
+  "stimulus": "A survey team counted the nesting pairs of a ground-nesting plover in one coastal reserve. Over the survey period, the number of nesting pairs decreased by the same percentage every 3 years. The table shows two of the counts.\n\nNesting Pairs of Plovers in the Reserve\nYears after 2010, $t$ | Nesting pairs, $P$\n3 | 800\n9 | 512",
+  "choices": [
+   "$P = 800(0.8)^{t/3}$",
+   "$P = 1{,}000(0.8)^{t/3}$",
+   "$P = 1{,}000(0.64)^{t/3}$",
+   "$P = 1{,}250(0.8)^{t/3}$"
+  ],
+  "answer": "B",
+  "explanation": "From $t = 3$ to $t = 9$ is 6 years, which is two 3-year steps. So the 3-year factor $b$ satisfies $800b^2 = 512$. That gives $b^2 = 0.64$, so $b = 0.8$ (a 20% decrease every 3 years). The table has no row for $t = 0$, so you work back one 3-year step from $t = 3$: $800 \\div 0.8 = 1{,}000$. The model is $P = 1{,}000(0.8)^{t/3}$. Check it: at $t = 3$ it gives $1{,}000(0.8) = 800$, and at $t = 9$ it gives $1{,}000(0.8)^3 = 512$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used the first row of the table, 800, as the starting amount. That count is from $t = 3$, not from $t = 0$. At $t = 3$ this model gives 640, not 800."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the ratio $512 \\div 800 = 0.64$ and used it as the factor for one 3-year step. Those rows are 6 years apart, so 0.64 is the factor for two steps. The 3-year factor is $\\sqrt{0.64} = 0.8$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found the correct factor of 0.8, but when you worked back to $t = 0$ you divided 800 by 0.64. That undoes two 3-year steps. The table starts only one step after 2010, so you divide by 0.8 once. This model gives 1,000 at $t = 3$, not 800."
+   }
+  },
+  "id": "orig-build-exponent-X-d3e216",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which equation gives $S$, the concentration of the bath in grams per liter, $t$ years after the bath was mixed?",
+  "stimulus": "A printmaking studio etches copper plates in a ferric chloride bath. With use, the bath's concentration decreases by 10% every 6 months. Eighteen months after the bath was mixed, its concentration was 29.16 grams per liter. The concentration can be modeled by an equation of the form $S = a \\cdot b^t$, where $a$ and $b$ are constants.",
+  "choices": [
+   "$S = 40(0.80)^t$",
+   "$S = 29.16(0.81)^t$",
+   "$S = 40(0.81)^t$",
+   "$S = 40(0.90)^t$"
+  ],
+  "answer": "C",
+  "explanation": "Each 6-month period multiplies the concentration by 0.9. Eighteen months is three of those periods, so $a(0.9)^3 = 29.16$. Since $0.9^3 = 0.729$, $a = 29.16 \\div 0.729 = 40$. Because $t$ is measured in years, and each year contains two 6-month periods, the yearly factor is $b = 0.9^2 = 0.81$. The model is $S = 40(0.81)^t$. Check it: at $t = 1.5$, $40(0.81)^{1.5} = 40(0.9)^3 = 29.16$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the two 10% decreases to get a 20% decrease per year. Percent decreases compound: after one year 0.9 \u00d7 0.9 = 0.81 of the concentration remains, not 0.80. This is a linear habit applied to a percent change."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used 29.16 as the starting amount. That is the concentration at 18 months, not at mixing. You need to work back three 6-month periods to get $a = 40$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You worked back correctly to $a = 40$, but you used 0.9 as the yearly factor. The factor 0.9 applies to each 6-month period, and $t$ counts years, so the yearly factor is $0.9^2 = 0.81$. This model gives about 34.2 at $t = 1.5$, not 29.16."
+   }
+  },
+  "id": "orig-build-exponent-X-26c475",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ }
+]
