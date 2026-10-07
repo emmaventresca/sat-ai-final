@@ -115,9 +115,7 @@ export function fromPlanner(
     })
 
     return {
-      heading: block.subtype
-        ? used.get(ids[0])?.category || block.subtype
-        : 'Work',
+      heading: headingFor(block, ids, used, bank),
       minutes: Math.max(0, Math.round(block.minutes ?? 0)),
       body: lines(block.teach),
       questionIds: ids.length ? ids : undefined,
@@ -125,16 +123,23 @@ export function fromPlanner(
     }
   })
 
-  // The opening is a block of its own so it gets minutes on the run sheet
-  // rather than being a sentence nobody budgeted for.
+  // The opening needs minutes or it is a row on the run sheet reading 0-0,
+  // which looks like a bug. When the blocks already fill the hour it belongs
+  // at the top of the first one instead - the teacher still says it, they
+  // just say it inside the time that was budgeted.
   if (spec.opening) {
     const spent = sections.reduce((n, s) => n + s.minutes, 0)
-    const total = spec.minutes ?? 0
-    sections.unshift({
-      heading: 'Where this sits',
-      minutes: total > spent ? Math.min(10, total - spent) : 0,
-      body: lines(spec.opening),
-    })
+    const spare = Math.min(10, (spec.minutes ?? 0) - spent)
+    if (spare > 0) {
+      sections.unshift({ heading: 'Where this sits', minutes: spare,
+                         body: lines(spec.opening) })
+    } else if (sections.length) {
+      sections[0] = { ...sections[0],
+                      body: [...lines(spec.opening), ...sections[0].body] }
+    } else {
+      sections.push({ heading: 'Where this sits', minutes: spec.minutes ?? 0,
+                      body: lines(spec.opening) })
+    }
   }
 
   return {
@@ -150,6 +155,29 @@ export function fromPlanner(
     },
     missing,
   }
+}
+
+/**
+ * What to call a block.
+ *
+ * The recognition's own name where we can get it - from a question in the
+ * block, or failing that from any question in the bank with that subtype,
+ * since a block the planner could not fill still has a name. Only if both
+ * miss does the raw slug show, made readable, because "no-solution-parallel"
+ * on a screen-shared lesson reads as a leaked internal.
+ */
+function headingFor(
+  block: PlannerBlock,
+  ids: string[],
+  used: Map<string, LessonQuestion>,
+  bank: Question[],
+): string {
+  if (!block.subtype) return 'Work'
+  const fromBlock = ids.length ? used.get(ids[0])?.category : undefined
+  if (fromBlock) return fromBlock
+  const anywhere = bank.find((q) => q.subtype === block.subtype)
+  if (anywhere?.subtypeName) return anywhere.subtypeName
+  return block.subtype.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase())
 }
 
 function studentLine(spec: PlannerLesson): string | undefined {
