@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { EXAM_IDS, examSpec } from '../exams/registry'
 import type { Exam, Question, Tier } from '../exams/types'
-import { loadBank } from '../lib/bank'
+import { loadBodies, loadIndex, type QuestionRef } from '../lib/bank'
 import { difficultyLabel } from '../lesson/types'
 import { addStudent, roster, setAccess, type Student } from './roster'
 import { buildJourney, type SkillMeta } from '../journey/map'
@@ -29,7 +29,7 @@ export function Assign() {
   const [students, setStudents] = useState<Student[]>(roster())
   const [studentId, setStudentId] = useState<string>(students[0]?.id ?? '')
   const [exam, setExam] = useState<Exam>('sat')
-  const [bank, setBank] = useState<Question[]>([])
+  const [bank, setBank] = useState<QuestionRef[]>([])
   const [subtype, setSubtype] = useState<string>('')
   const [tier, setTier] = useState<Tier | ''>('')
   const [chosen, setChosen] = useState<string[]>([])
@@ -71,7 +71,7 @@ export function Assign() {
 
   useEffect(() => {
     let live = true
-    void loadBank(exam).then((b) => live && setBank(b))
+    void loadIndex(exam).then((b) => live && setBank(b))
     void fetch(`${import.meta.env.BASE_URL}data/skills.json`)
       .then((r) => r.json())
       .then((b: { skills?: SkillMeta[] }) => live && setSkills(b.skills ?? []))
@@ -105,6 +105,7 @@ export function Assign() {
 
   const [showUsed, setShowUsed] = useState(false)
   const [peek, setPeek] = useState<Question | null>(null)
+  const [peekId, setPeekId] = useState<string | null>(null)
 
   const eligible = useMemo(
     () => bank.filter((q) =>
@@ -283,9 +284,16 @@ export function Assign() {
                         Assigning from one line is assigning blind: two
                         questions in the same recognition at the same level
                         can be thirty seconds and four minutes apart. */}
-                    <button className={`peek-open${peek?.id === q.id ? ' on' : ''}`}
-                      onClick={() => setPeek(peek?.id === q.id ? null : q)}>
-                      {q.stem.replace(/\$[^$]*\$/g, '…').slice(0, 96)}
+                    <button className={`peek-open${peekId === q.id ? ' on' : ''}`}
+                      onClick={() => {
+                        if (peekId === q.id) { setPeekId(null); setPeek(null); return }
+                        // One question's body, fetched when it is opened.
+                        setPeekId(q.id)
+                        void loadBodies(exam, [q.id]).then(([body]) => {
+                          if (body) setPeek(body)
+                        })
+                      }}>
+                      {q.teaser}
                     </button>
                   </span>
                 </li>
@@ -294,7 +302,10 @@ export function Assign() {
 
             {/* Outside the scrolling list on purpose. A whole question inside
                 a 280px scroll box is a question nobody can read. */}
-            {peek && <QuestionPeek question={peek} onClose={() => setPeek(null)} />}
+            {peek && peekId === peek.id && (
+              <QuestionPeek question={peek}
+                onClose={() => { setPeek(null); setPeekId(null) }} />
+            )}
           </div>
 
           <div className="card">
@@ -371,7 +382,7 @@ function Assigned({
   student, bank, onChanged,
 }: {
   student: Student
-  bank: Question[]
+  bank: QuestionRef[]
   onChanged: () => void
 }) {
   const list = assignmentsFor(student.id)
@@ -440,7 +451,7 @@ function Assigned({
                             : 'not yet'}
                         </span>{' '}
                         {item.kind === 'question'
-                          ? (q ? plain(q.stem) : item.questionId)
+                          ? (q ? q.teaser : item.questionId)
                           : item.title ?? item.url}
                         {item.questionId && (
                           <button className="link-btn"
@@ -470,12 +481,6 @@ function Assigned({
       })}
     </>
   )
-}
-
-/** A stem as one short line, maths stripped to an ellipsis. */
-function plain(stem: string): string {
-  const t = stem.replace(/\$[^$]*\$/g, '…').replace(/\s+/g, ' ').trim()
-  return t.length > 92 ? `${t.slice(0, 90)}…` : t
 }
 
 function readableFamily(slug: string): string {

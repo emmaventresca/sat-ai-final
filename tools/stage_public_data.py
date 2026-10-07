@@ -21,9 +21,13 @@ DEST = os.path.join(ROOT, "apps", "web", "public", "data")
 
 # Everything the student and teacher apps actually fetch. Our own content
 # only: authored items under CC BY, and the derived taxonomies.
+# The banks ship SPLIT: a light index plus one chunk per recognition. The
+# whole-bank files stay out of the published set deliberately - shipping
+# 19MB of question bodies to render a list of topic names is what made this
+# unusable on a school network, which is the one place it has to work.
 PUBLISH = [
-    "practice.json",            # our authored SAT items
-    "act/questions.json",       # the ACT bank, converted
+    "sat/index.json",
+    "act/index.json",
     "act/taxonomy.json",
     "bands.json",
     "lessons.json",
@@ -45,6 +49,12 @@ FORBIDDEN = {
 }
 
 
+# Directories copied wholesale: the per-recognition chunks, which are too
+# many to name one by one and are all our own content by construction - they
+# are produced from the published banks by tools/split_bank.py.
+PUBLISH_DIRS = ["sat/q", "act/q"]
+
+
 def main():
     if os.path.isdir(DEST) or os.path.islink(DEST):
         if os.path.islink(DEST):
@@ -62,6 +72,16 @@ def main():
         os.makedirs(os.path.dirname(dst), exist_ok=True)
         shutil.copyfile(src, dst)
         copied.append((rel, os.path.getsize(src)))
+
+    for rel in PUBLISH_DIRS:
+        src = os.path.join(SRC, rel)
+        if not os.path.isdir(src):
+            missing.append(rel)
+            continue
+        dst = os.path.join(DEST, rel)
+        shutil.copytree(src, dst)
+        size = sum(os.path.getsize(os.path.join(dst, f)) for f in os.listdir(dst))
+        copied.append((f"{rel}/ ({len(os.listdir(dst))} files)", size))
 
     # Belt and braces: if anything forbidden is sitting in the staged folder,
     # stop. The allowlist should make this impossible, which is exactly why

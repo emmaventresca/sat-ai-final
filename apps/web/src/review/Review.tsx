@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import type { Exam, Question, Tier } from '../exams/types'
-import { loadBank } from '../lib/bank'
+import { loadSubtypes } from '../lib/bank'
 import { renderFigure, renderStimulus } from '../lesson/math'
 import { QuestionCard } from '../practice/QuestionCard'
 import { progress, record } from '../practice/mastery'
@@ -74,7 +74,15 @@ export function Review() {
     if (!current) return
     let live = true
     setBank(null)
-    loadBank(current)
+    // Only the recognitions this student has actually missed. Review is by
+    // definition a narrow slice of the bank, so loading the whole thing to
+    // show it would be the one place the split buys the least and costs the
+    // most.
+    const missed = [...new Set(
+      store.attempts.filter((a) => a.exam === current && !a.correct)
+        .map((a) => a.subtype),
+    )]
+    loadSubtypes(current, missed)
       .then((b) => { if (live) setBank(b) })
       .catch((e: unknown) => { if (live) setError(String((e as Error).message ?? e)) })
     return () => { live = false }

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
-import type { Exam, Question } from '../exams/types'
+import type { Exam } from '../exams/types'
 import { EXAM_IDS, examSpec } from '../exams/registry'
-import { loadBank } from '../lib/bank'
+import { loadIndex } from '../lib/bank'
 import { difficultyLabel } from '../lesson/types'
 import { duration, metricsFor } from './metrics'
 import type { Student } from './roster'
@@ -24,7 +24,7 @@ export function StudentDetail({ student }: { student: Student }) {
 
   useEffect(() => {
     let live = true
-    void loadBank(exam).then((bank: Question[]) => {
+    void loadIndex(exam).then((bank) => {
       if (!live) return
       const map: Record<string, string> = {}
       const fam: Record<string, string> = {}

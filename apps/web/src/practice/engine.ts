@@ -1,4 +1,5 @@
-import type { Exam, Question, Tier } from '../exams/types'
+import type { Exam, Tier } from '../exams/types'
+import type { QuestionRef } from '../lib/bank'
 import { cellKey, progress, type Cell } from './mastery'
 
 /**
@@ -139,13 +140,13 @@ export interface Ranked {
  */
 export function rank(
   exam: Exam,
-  bank: Question[],
+  bank: QuestionRef[],
   bands: Bands | null,
   targets: StudentTargets,
   limit = 12,
 ): Ranked[] {
   const { mastery } = progress()
-  const cells = new Map<string, { pool: Question[]; q: Question }>()
+  const cells = new Map<string, { pool: QuestionRef[]; q: QuestionRef }>()
   for (const q of bank) {
     if (!q.subtype) continue
     const key = `${q.subtype}|${q.difficulty}`
@@ -181,7 +182,7 @@ export function rank(
 }
 
 /** Cells whose review has come round again. */
-export function dueNow(exam: Exam, bank: Question[]): Ranked[] {
+export function dueNow(exam: Exam, bank: QuestionRef[]): Ranked[] {
   const { mastery } = progress()
   const seen = new Set(
     Object.keys(mastery).filter((k) => k.startsWith(`${exam}|`) && mastery[k].seen > 0),

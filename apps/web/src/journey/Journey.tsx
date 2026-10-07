@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import type { Exam, Question } from '../exams/types'
+import type { Exam } from '../exams/types'
 import { examSpec } from '../exams/registry'
-import { loadBank } from '../lib/bank'
+import { loadIndex, type QuestionRef } from '../lib/bank'
 import { buildJourney, type Chapter, type Leg, type SkillMeta } from './map'
 import { StageView } from './Stage'
 
@@ -20,7 +20,7 @@ import { StageView } from './Stage'
  * refusing to let them deviate from it.
  */
 export function Journey({ exam }: { exam: Exam }) {
-  const [bank, setBank] = useState<Question[]>([])
+  const [bank, setBank] = useState<QuestionRef[]>([])
   const [skills, setSkills] = useState<SkillMeta[]>([])
   const [openChapter, setOpenChapter] = useState<string | null>(null)
   const [stage, setStage] = useState<{ leg: Leg; subtype: string } | null>(null)
@@ -29,7 +29,7 @@ export function Journey({ exam }: { exam: Exam }) {
 
   useEffect(() => {
     let live = true
-    void loadBank(exam).then((b) => live && setBank(b))
+    void loadIndex(exam).then((b) => live && setBank(b))
     void fetch(`${import.meta.env.BASE_URL}data/skills.json`)
       .then((r) => r.json())
       .then((b: { skills?: SkillMeta[] }) => live && setSkills(b.skills ?? []))

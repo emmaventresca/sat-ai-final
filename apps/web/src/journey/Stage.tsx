@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useState } from 'react'
 import type { Exam, Question, Tier } from '../exams/types'
+import { loadBodies, type QuestionRef } from '../lib/bank'
 import { examSpec } from '../exams/registry'
 import { difficultyLabel } from '../lesson/types'
 import { renderBody } from '../lesson/math'
 import { Round } from '../practice/Round'
 import { accuracy } from '../practice/mastery'
-import { trialQuestions, type Leg } from './map'
+import { trialRefs, type Leg } from './map'
 
 interface SubLesson {
   subtype: string
@@ -33,14 +34,26 @@ export function StageView({
   exam, bank, leg, subtype, onBack,
 }: {
   exam: Exam
-  bank: Question[]
+  bank: QuestionRef[]
   leg: Leg
   subtype: string | null
   onBack: () => void
 }) {
   const [lesson, setLesson] = useState<SubLesson | null>(null)
   const [round, setRound] = useState<Question[] | null>(null)
+  const [fetching, setFetching] = useState(false)
   const trial = subtype === null
+
+  /** Bodies are fetched when a round starts, not when the page opens. */
+  async function begin(ids: string[]) {
+    if (!ids.length || fetching) return
+    setFetching(true)
+    try {
+      setRound(await loadBodies(exam, ids))
+    } finally {
+      setFetching(false)
+    }
+  }
 
   useEffect(() => {
     if (!subtype) return
@@ -69,7 +82,7 @@ export function StageView({
   }
 
   if (trial) {
-    const questions = leg.trial ? trialQuestions(bank, leg.trial) : []
+    const questions = leg.trial ? trialRefs(bank, leg.trial) : []
     return (
       <div className="wrap journey">
         <button className="btn-sm" onClick={onBack}>&larr; Back to the map</button>
@@ -88,9 +101,11 @@ export function StageView({
               <li key={f}><strong>{readable(f)}</strong> &mdash; {FAMILY_NOTE[f] ?? ''}</li>
             ))}
           </ul>
-          <button className="btn-primary" disabled={!questions.length}
-            onClick={() => setRound(questions)}>
-            {questions.length ? `Begin — ${questions.length} questions` : 'Not enough questions yet'}
+          <button className="btn-primary" disabled={!questions.length || fetching}
+            onClick={() => void begin(questions.map((q) => q.id))}>
+            {fetching ? 'Loading…'
+              : questions.length ? `Begin — ${questions.length} questions`
+              : 'Not enough questions yet'}
           </button>
         </div>
       </div>
@@ -138,9 +153,9 @@ export function StageView({
           const acc = accuracy(exam, subtype as string, t)
           const kind = t === 'F' ? 'foundation' : t === 'X' ? 'stretch' : 'open'
           return (
-            <button key={t} className={`level ${kind}`}
-              onClick={() => setRound(
-                pool.filter((q) => q.difficulty === t).slice(0, 10),
+            <button key={t} className={`level ${kind}`} disabled={fetching}
+              onClick={() => void begin(
+                pool.filter((q) => q.difficulty === t).slice(0, 10).map((q) => q.id),
               )}>
               <span className="level-t">{difficultyLabel(t as Tier)}</span>
               <span className="level-d">

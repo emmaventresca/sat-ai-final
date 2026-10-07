@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { EXAM_IDS, examSpec } from '../exams/registry'
-import type { Exam, Question } from '../exams/types'
-import { loadBank } from '../lib/bank'
+import type { Exam } from '../exams/types'
+import { loadIndex, type QuestionRef } from '../lib/bank'
 import { roster, type Student } from './roster'
 import { StudentDetail } from './StudentDetail'
 import { examTone } from './tone'
@@ -16,14 +16,14 @@ import { examTone } from './tone'
  * cover both.
  */
 export function TeacherHome() {
-  const [banks, setBanks] = useState<Partial<Record<Exam, Question[]>>>({})
+  const [banks, setBanks] = useState<Partial<Record<Exam, QuestionRef[]>>>({})
   const [students] = useState<Student[]>(() => roster())
   const [openId, setOpenId] = useState<string | null>(null)
 
   useEffect(() => {
     let live = true
     for (const id of EXAM_IDS) {
-      void loadBank(id)
+      void loadIndex(id)
         .then((b) => live && setBanks((prev) => ({ ...prev, [id]: b })))
         .catch(() => undefined)
     }

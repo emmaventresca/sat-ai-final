@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import type { Exam, Question, Tier } from '../exams/types'
 import { examSpec } from '../exams/registry'
-import { loadBank } from '../lib/bank'
+import { loadBodies, loadIndex, type QuestionRef } from '../lib/bank'
 import { difficultyLabel } from '../lesson/types'
 import { accuracy, seenIds } from './mastery'
 import { Round } from './Round'
@@ -21,7 +21,7 @@ const ROUND = 10
  * cannot see is a level they cannot ask for.
  */
 export function Practice({ exam }: { exam: Exam }) {
-  const [bank, setBank] = useState<Question[]>([])
+  const [bank, setBank] = useState<QuestionRef[]>([])
   const [labels, setLabels] = useState<Record<string, string>>({})
   const [section, setSection] = useState<string>('')
   const [subtype, setSubtype] = useState<string | null>(null)
@@ -31,7 +31,7 @@ export function Practice({ exam }: { exam: Exam }) {
 
   useEffect(() => {
     let live = true
-    void loadBank(exam).then((b) => live && setBank(b))
+    void loadIndex(exam).then((b) => live && setBank(b))
     void fetch(`${import.meta.env.BASE_URL}data/misconceptions.json`)
       .then((r) => r.json())
       .then((blob: { families?: { slug: string; label: string }[] }) => {
@@ -81,12 +81,15 @@ export function Practice({ exam }: { exam: Exam }) {
     return [...map.entries()].sort((a, b) => b[1].count - a[1].count)
   }, [inSection])
 
-  function start(tier: Tier) {
+  async function start(tier: Tier) {
     const pool = inSection.filter((q) => q.subtype === subtype && q.difficulty === tier)
     const seen = seenIds(exam)
     // Unseen first. A round that re-serves what they just did tests memory.
     const sorted = [...pool].sort((a, b) => Number(seen.has(a.id)) - Number(seen.has(b.id)))
-    if (sorted.length) setRound(sorted.slice(0, ROUND))
+    if (!sorted.length) return
+    // Bodies are fetched here, for these ten, rather than up front for the
+    // whole bank.
+    setRound(await loadBodies(exam, sorted.slice(0, ROUND).map((q) => q.id)))
   }
 
   if (round) {
@@ -127,7 +130,7 @@ export function Practice({ exam }: { exam: Exam }) {
       ) : (
         <>
           <Next exam={exam} bank={inSection} bands={bands} targets={targets}
-            onPick={(r) => { setSubtype(r.subtype); }} />
+            onPick={(r) => { setSubtype(r.subtype) }} />
           <h2>Everything else</h2>
           {recognitions.map(([slug, meta]) => (
             <button key={slug} className="tile" onClick={() => setSubtype(slug)}>
@@ -153,7 +156,7 @@ function Next({
   exam, bank, bands, targets, onPick,
 }: {
   exam: Exam
-  bank: Question[]
+  bank: QuestionRef[]
   bands: Bands | null
   targets: Record<string, number | undefined>
   onPick: (r: Ranked) => void
@@ -207,7 +210,7 @@ function Levels({
   exam, bank, subtype, onBack, onStart,
 }: {
   exam: Exam
-  bank: Question[]
+  bank: QuestionRef[]
   subtype: string
   onBack: () => void
   onStart: (tier: Tier) => void
@@ -233,7 +236,7 @@ function Levels({
           const kind = t === 'F' ? 'foundation' : t === 'X' ? 'stretch' : 'open'
           return (
             <button key={t} className={`level ${kind}`} disabled={!n}
-              onClick={() => onStart(t)}>
+              onClick={() => void onStart(t)}>
               <span className="level-t">{difficultyLabel(t)}</span>
               <span className="level-d">
                 {n ? `${n} questions` : 'none yet'}

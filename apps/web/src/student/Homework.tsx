@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { examSpec } from '../exams/registry'
 import type { Question } from '../exams/types'
 import { difficultyLabel } from '../lesson/types'
-import { loadBank } from '../lib/bank'
+import { loadBodies } from '../lib/bank'
 import { QuestionCard } from '../practice/QuestionCard'
 import { progress, record } from '../practice/mastery'
 import {
@@ -124,7 +124,13 @@ function AssignmentView({
 
   useEffect(() => {
     let live = true
-    void loadBank(assignment.exam).then((b) => { if (live) setBank(b) })
+    // The assigned questions, not the bank. A week of homework is a dozen
+    // ids; fetching twelve megabytes to render twelve questions is the thing
+    // the split exists to stop.
+    void loadBodies(
+      assignment.exam,
+      assignment.items.map((i) => i.questionId).filter((id): id is string => Boolean(id)),
+    ).then((b) => { if (live) setBank(b) })
     return () => { live = false }
   }, [assignment.exam])
 

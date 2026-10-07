@@ -1,4 +1,5 @@
-import type { Exam, Question, Tier } from '../exams/types'
+import type { Exam, Tier } from '../exams/types'
+import type { QuestionRef } from '../lib/bank'
 import { cellKey, progress } from '../practice/mastery'
 
 /**
@@ -94,7 +95,7 @@ const SECTION_LABEL: Record<string, string> = {
  * Either way the stage is the recognition, which is the unit everything else
  * in this app is keyed on.
  */
-function grouping(exam: Exam, q: Question, meta: SkillMeta | undefined) {
+function grouping(exam: Exam, q: QuestionRef, meta: SkillMeta | undefined) {
   if (exam === 'act') {
     return {
       chapter: SECTION_LABEL[q.section] ?? q.section,
@@ -108,16 +109,16 @@ function grouping(exam: Exam, q: Question, meta: SkillMeta | undefined) {
 }
 
 export function buildJourney(
-  exam: Exam, bank: Question[], skills: SkillMeta[],
+  exam: Exam, bank: QuestionRef[], skills: SkillMeta[],
 ): Chapter[] {
   const { mastery } = progress()
   const metaOf = new Map(skills.map((s) => [s.skill_cd, s]))
 
   // skill -> subtype -> questions
-  const bySkill = new Map<string, Map<string, Question[]>>()
+  const bySkill = new Map<string, Map<string, QuestionRef[]>>()
   for (const q of bank) {
     if (!q.subtype) continue
-    const skill = bySkill.get(q.skill) ?? new Map<string, Question[]>()
+    const skill = bySkill.get(q.skill) ?? new Map<string, QuestionRef[]>()
     const stage = skill.get(q.subtype) ?? []
     stage.push(q)
     skill.set(q.subtype, stage)
@@ -195,10 +196,15 @@ export function buildJourney(
   )
 }
 
-/** Questions for one leg's wording trial. */
-export function trialQuestions(
-  bank: Question[], trial: Trial, limit = 10,
-): Question[] {
+/**
+ * Which questions a leg's wording trial should use.
+ *
+ * Refs, not bodies: the caller fetches only what it is about to show, which
+ * for a trial is ten questions rather than a whole leg.
+ */
+export function trialRefs(
+  bank: QuestionRef[], trial: Trial, limit = 10,
+): QuestionRef[] {
   const pool = bank.filter(
     (q) => q.subtype && trial.subtypes.includes(q.subtype)
       && q.phrasing && q.phrasing !== 'direct',
@@ -206,13 +212,13 @@ export function trialQuestions(
   // Spread across the families rather than ten of whichever is commonest:
   // the trial is asking whether they can read the FRAME, so it has to show
   // them more than one.
-  const byFamily = new Map<string, Question[]>()
+  const byFamily = new Map<string, QuestionRef[]>()
   for (const q of pool) {
     const list = byFamily.get(q.phrasing as string) ?? []
     list.push(q)
     byFamily.set(q.phrasing as string, list)
   }
-  const out: Question[] = []
+  const out: QuestionRef[] = []
   let round = 0
   while (out.length < limit && round < 20) {
     let added = false

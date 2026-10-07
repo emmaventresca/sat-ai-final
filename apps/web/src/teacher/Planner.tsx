@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { EXAM_IDS, examSpec } from '../exams/registry'
-import type { Exam, Question } from '../exams/types'
-import { loadBank } from '../lib/bank'
+import type { Exam } from '../exams/types'
+import { loadBodies, loadIndex, type QuestionRef } from '../lib/bank'
 import { Lesson } from '../lesson/render'
 import { exportBothPdfs, exportLessonPdf } from '../lesson/pdf'
 import { fromPlanner } from '../lesson/fromPlanner'
@@ -18,7 +18,7 @@ import { ask, plannerUp, sessionsOf, type PlannerMessage } from './plannerApi'
  */
 export function Planner() {
   const [exam, setExam] = useState<Exam>('sat')
-  const [bank, setBank] = useState<Question[]>([])
+  const [refs, setRefs] = useState<QuestionRef[]>([])
   const [up, setUp] = useState<boolean | null>(null)
   const [messages, setMessages] = useState<PlannerMessage[]>([])
   const [text, setText] = useState('')
@@ -34,7 +34,7 @@ export function Planner() {
 
   useEffect(() => {
     let live = true
-    void loadBank(exam).then((b) => live && setBank(b))
+    void loadIndex(exam).then((b) => live && setRefs(b))
     return () => {
       live = false
     }
@@ -52,7 +52,11 @@ export function Planner() {
       const out = await ask(next, { exam })
       setMessages([...next, { role: 'assistant', content: out.reply }])
       if (out.lesson) {
-        const converted = sessionsOf(out.lesson).map((s) => fromPlanner(s, bank, exam))
+        // The plan names its questions, so only those are fetched.
+        const cited = sessionsOf(out.lesson)
+          .flatMap((s) => (s.blocks ?? []).flatMap((b) => b.items ?? []))
+        const bodies = await loadBodies(exam, cited)
+        const converted = sessionsOf(out.lesson).map((s) => fromPlanner(s, bodies, exam))
         setPlans(converted.map((c) => c.plan))
         setMissing(converted.flatMap((c) => c.missing))
       }
@@ -71,7 +75,7 @@ export function Planner() {
           <p className="who">
             {up === false
               ? 'The planner is not running on this machine'
-              : `Grounded in the ${examSpec(exam).label} bank (${bank.length} questions)`}
+              : `Grounded in the ${examSpec(exam).label} bank (${refs.length} questions)`}
           </p>
         </div>
         <div className="row tight">
