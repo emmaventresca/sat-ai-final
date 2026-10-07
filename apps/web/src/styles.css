@@ -917,3 +917,33 @@ mark.hl-blue{background:#c3e0ff;box-shadow:inset 0 -.42em 0 #c3e0ff}
   font-size:.74rem;font-weight:700;color:var(--purple-d);text-decoration:underline;
 }
 .link-btn:hover{color:var(--purple)}
+
+/* ---- previewing a question before setting it ---------------------------- */
+.peek-open{
+  background:none;border:none;box-shadow:none;padding:0;text-align:left;
+  font:inherit;color:inherit;text-decoration:underline;
+  text-decoration-color:var(--line2);text-underline-offset:3px;
+}
+.peek-open:hover{text-decoration-color:var(--purple);color:var(--purple-d)}
+.peek-panel{
+  margin:10px 0 14px;padding:16px 18px;border-radius:16px;
+  background:var(--panel);border:1px solid var(--line2);box-shadow:var(--shadow);
+}
+/* Wraps rather than squeezing: the labels on the left are long, and without
+   this the "Show answer" toggle was sliding under the Close button. */
+.peek-head{margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed var(--line);
+  flex-wrap:wrap;gap:10px;align-items:center}
+.peek-head .row{flex:0 1 auto}
+.peek-toggle{font-weight:700;color:var(--purple-d);white-space:nowrap}
+/* A choice in the preview is not clickable - this is reading, not answering. */
+.choice.peek-choice{cursor:default;background:var(--panel2);border-color:var(--line)}
+.choice.peek-choice.right{background:var(--good-bg);border-color:var(--good-ln)}
+.peek-panel .peek{max-height:none}
+/* One question, one line: tick, labels, stem. The stem opens the preview;
+   the tick selects. Without a flex row the checkbox wrapped onto its own
+   line and the two actions read as unrelated. */
+.pick-row{display:flex;align-items:baseline;gap:7px;line-height:1.5}
+.pick-row input[type=checkbox]{flex:0 0 auto;align-self:center;margin:0}
+.pick-row .badge{flex:0 0 auto}
+.pick-row .peek-open{flex:1 1 auto;min-width:0}
+.peek-open.on{color:var(--purple-d);text-decoration-color:var(--purple);font-weight:700}

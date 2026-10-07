@@ -5,6 +5,7 @@ import { loadBank } from '../lib/bank'
 import { difficultyLabel } from '../lesson/types'
 import { addStudent, roster, setAccess, type Student } from './roster'
 import { buildJourney, type SkillMeta } from '../journey/map'
+import { QuestionPeek } from './QuestionPeek'
 import {
   assignmentsFor, progressFor, saveAssignment,
   type Assignment, type AssignmentItem,
@@ -103,6 +104,7 @@ export function Assign() {
   }, [exam, bank, skills])
 
   const [showUsed, setShowUsed] = useState(false)
+  const [peek, setPeek] = useState<Question | null>(null)
 
   const eligible = useMemo(
     () => bank.filter((q) =>
@@ -267,20 +269,32 @@ export function Assign() {
             <ol className="peek" style={{ maxHeight: 280, overflowY: 'auto' }}>
               {matching.slice(0, 60).map((q) => (
                 <li key={q.id}>
-                  <label className={alreadySet.has(q.id) ? 'muted' : undefined}>
+                  <span className={`pick-row${alreadySet.has(q.id) ? ' muted' : ''}`}>
                     <input type="checkbox" checked={chosen.includes(q.id)}
-                      onChange={() => toggle(q.id)} />{' '}
+                      onChange={() => toggle(q.id)}
+                      aria-label={`Select ${q.id}`} />{' '}
                     {alreadySet.has(q.id) && (
                       <span className="badge" title="already assigned">set</span>
                     )}{' '}
                     <span className={`badge ${q.difficulty.toLowerCase()}`}>
                       {difficultyLabel(q.difficulty)}
                     </span>{' '}
-                    {q.stem.replace(/\$[^$]*\$/g, '…').slice(0, 96)}
-                  </label>
+                    {/* The stem opens the question rather than ticking it.
+                        Assigning from one line is assigning blind: two
+                        questions in the same recognition at the same level
+                        can be thirty seconds and four minutes apart. */}
+                    <button className={`peek-open${peek?.id === q.id ? ' on' : ''}`}
+                      onClick={() => setPeek(peek?.id === q.id ? null : q)}>
+                      {q.stem.replace(/\$[^$]*\$/g, '…').slice(0, 96)}
+                    </button>
+                  </span>
                 </li>
               ))}
             </ol>
+
+            {/* Outside the scrolling list on purpose. A whole question inside
+                a 280px scroll box is a question nobody can read. */}
+            {peek && <QuestionPeek question={peek} onClose={() => setPeek(null)} />}
           </div>
 
           <div className="card">
