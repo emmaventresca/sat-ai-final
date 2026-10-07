@@ -383,6 +383,36 @@ def identify_screenshot(req):
     return out
 
 
+# ---------------------------------------------------------------------------
+# Worksheets
+#
+# services/api/app/worksheet.py is the implementation; this is the transport.
+# It lives on the planner server rather than behind a new FastAPI service for
+# the same reason the planner does: it is the teacher's own tooling, running
+# on the teacher's own machine, and students never reach it.
+# ---------------------------------------------------------------------------
+
+def make_worksheet(req):
+    sys.path.insert(0, os.path.join(ROOT, "services", "api"))
+    from app.worksheet import build_packet          # noqa: WPS433
+
+    ids = [i for i in (req.get("question_ids") or []) if isinstance(i, str)]
+    if not ids:
+        raise ValueError("no questions were chosen")
+    if len(ids) > 40:
+        raise ValueError("a worksheet of more than 40 questions is a mock, "
+                         "not a worksheet")
+    return build_packet(
+        exam=req.get("exam") or "sat",
+        question_ids=ids,
+        brief=req.get("brief") or "",
+        model=MODEL,
+        # The layout and key passes cost a call each. A teacher who just
+        # wants the questions on paper should not pay for them.
+        use_model=bool(req.get("use_model", True)),
+    )
+
+
 class Handler(BaseHTTPRequestHandler):
     def _send(self, code, payload):
         body = json.dumps(payload).encode()
@@ -411,6 +441,13 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         path = urlparse(self.path).path
+        if path == "/worksheet":
+            try:
+                n = int(self.headers.get("Content-Length", 0))
+                req = json.loads(self.rfile.read(n) or b"{}")
+                return self._send(200, make_worksheet(req))
+            except Exception as exc:
+                return self._send(500, {"error": str(exc)[:300]})
         if path == "/identify":
             try:
                 n = int(self.headers.get("Content-Length", 0))

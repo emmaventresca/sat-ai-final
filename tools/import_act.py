@@ -32,6 +32,31 @@ OUT = os.path.join(ROOT, "data", "act")
 LETTERS = "ABCDEFGH"
 
 
+SMALL = {"and", "or", "of", "the", "a", "an", "to", "in", "on", "with", "vs"}
+
+# The ACT has four sections and the bank is split by file. Reading and
+# Science were being filed as maths because the rule only looked for
+# "english" - 383 questions in the wrong section, which on the assign screen
+# means a teacher picking Reading practice is shown algebra.
+SECTION_FILES = {"english": "english", "reading": "reading", "science": "science"}
+
+
+def section_from(source):
+    name = os.path.basename(source).lower()
+    for marker, section in SECTION_FILES.items():
+        if marker in name:
+            return section
+    return "math"
+
+
+def readable(slug):
+    """A slug as a title: 'absolute-value-equations' -> 'Absolute value equations'."""
+    words = str(slug or "").replace("_", "-").split("-")
+    out = [words[0].capitalize()] if words else []
+    out += [w if w in SMALL else w for w in words[1:]]
+    return " ".join(out)
+
+
 def convert(q, source):
     choices = q.get("choices") or []
     idx = q.get("answer")
@@ -98,9 +123,12 @@ def main():
                 meta_of[entry["subtopic"]] = entry
     for it in items:
         meta = meta_of.get(it["subtype"], {})
-        it["section"] = "english" if "english" in it["source"] else "math"
+        it["section"] = section_from(it["source"])
         it["skill"] = meta.get("domain") or it["section"].title()
-        it["subtype_name"] = meta.get("name") or it["subtype"]
+        # The blueprint names 50 of the 89 subtopics. The rest came from the
+        # English import and other passes, and a raw slug on a teacher's
+        # assign screen reads as a leaked internal - so make it a title.
+        it["subtype_name"] = meta.get("name") or readable(it["subtype"])
         # How often a real section asks this, which is the ACT equivalent of
         # the SAT side's measured frequency and drives the same ranking.
         if meta.get("per_test"):
