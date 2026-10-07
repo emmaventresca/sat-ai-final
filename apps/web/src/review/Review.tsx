@@ -56,7 +56,11 @@ function useMisconceptions(): Record<string, string> {
  * row.
  */
 export function Review() {
-  const store = useMemo(() => progress(), [])
+  // Re-read when a practice session ends. Reading once per mount meant a
+  // student could sit ten twins, get three wrong, and come back to a group
+  // that still showed the old count - which reads as the screen not working.
+  const [refresh, setRefresh] = useState(0)
+  const store = useMemo(() => progress(), [refresh])
   const exams = useMemo(() => examsWithMisses(store.attempts), [store])
   const [exam, setExam] = useState<Exam | null>(null)
   const [bank, setBank] = useState<Question[] | null>(null)
@@ -98,6 +102,7 @@ export function Review() {
   if (open) {
     return (
       <Group group={open} bank={bank} attempts={store.attempts}
+        onPractised={() => setRefresh((n) => n + 1)}
         labels={labels} onBack={() => setOpenKey(null)} />
     )
   }
@@ -165,13 +170,14 @@ function Header() {
 }
 
 function Group({
-  group, bank, attempts, labels, onBack,
+  group, bank, attempts, labels, onBack, onPractised,
 }: {
   group: MissGroup
   bank: Question[]
   attempts: ReturnType<typeof progress>['attempts']
   labels: Record<string, string>
   onBack: () => void
+  onPractised: () => void
 }) {
   const [tab, setTab] = useState<Tab>('twins')
   const [running, setRunning] = useState<Question[] | null>(null)
@@ -179,7 +185,8 @@ function Group({
   const label = (slug: string) => labels[slug] ?? familyName(slug)
 
   if (running) {
-    return <Session items={running} label={label} onDone={() => setRunning(null)} />
+    return <Session items={running} label={label}
+      onDone={() => { setRunning(null); onPractised() }} />
   }
 
   return (
@@ -188,7 +195,12 @@ function Group({
         <button className="btn-sm" onClick={onBack}>&larr; All mistakes</button>
       </div>
       <h1>{group.title}</h1>
-      <p className="muted">{group.count} missed in {group.skill}.</p>
+      {/* The heading above already names the recognition, which is the
+          useful part. The skill was being shown as its CODE - "3 missed in
+          H.D.." , trailing double stop and all - so it is simply dropped. */}
+      <p className="muted">
+        {group.count} missed at this question type
+      </p>
 
       {group.topFamilies.length > 0 && (
         <div className="card">
