@@ -38,6 +38,15 @@ export interface Question {
   perChoice?: Record<string, string>
   /** Per choice (or per typed value) misconception slugs. */
   misconceptions?: Record<string, string>
+  /**
+   * The wording family: direct, must_be_true, not_except, which_expression,
+   * work_backwards, in_context, compare.
+   *
+   * A dimension of its own, separate from topic. A student can lose every
+   * "which of the following must be true" across six different topics, and a
+   * topic-only breakdown hides it completely.
+   */
+  phrasing?: string
 }
 
 export interface ExamSection {

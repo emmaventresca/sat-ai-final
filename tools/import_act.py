@@ -20,6 +20,11 @@ than ours:
   dropped; a student stuck at 30 often loses a whole wording family rather
   than a whole topic.
 
+Re-run it whenever the ACT project gains questions. It is a SYNC, not a
+one-time copy: the whole bank is re-read and rewritten every time, so a
+question edited over there is corrected here rather than existing twice, and
+the delta is reported so you can see what actually moved.
+
     python3 tools/import_act.py
     -> data/act/questions.json, data/act/taxonomy.json
 """
@@ -109,6 +114,13 @@ def main():
         sys.exit(f"no ACT project at {ACT}")
     os.makedirs(OUT, exist_ok=True)
 
+    # What we had last time, so the run can say what changed rather than just
+    # printing a total that nobody can check against anything.
+    before_path = os.path.join(OUT, "questions.json")
+    before = {}
+    if os.path.exists(before_path):
+        before = {i["id"]: i for i in json.load(open(before_path))["items"]}
+
     items, problems = [], []
     seen = set()
     for path in sorted(glob.glob(os.path.join(ACT, "content", "questions_*.json"))):
@@ -172,7 +184,24 @@ def main():
     json.dump({"subtypes": by_sub, "phrasings": dict(phrasings)},
               open(os.path.join(OUT, "taxonomy.json"), "w"), indent=1)
 
+    now = {i["id"]: i for i in items}
+    added = [i for i in now if i not in before]
+    gone = [i for i in before if i not in now]
+    changed = [i for i in now if i in before
+               and json.dumps(now[i], sort_keys=True)
+               != json.dumps(before[i], sort_keys=True)]
+
     print(f"{len(items)} ACT questions across {len(subs)} subtopics -> data/act/")
+    if before:
+        print(f"  since last sync: +{len(added)} new, "
+              f"{len(changed)} changed, -{len(gone)} removed")
+        for i in added[:6]:
+            print(f"    new  {i}  ({now[i].get('subtype')} "
+                  f"{now[i].get('difficulty')})")
+        if len(added) > 6:
+            print(f"    ... and {len(added) - 6} more")
+        for i in gone[:4]:
+            print(f"    gone {i}")
     print(f"  tiers    {dict(tiers)}")
     print(f"  sections {dict(sections)}")
     print(f"  phrasing {dict(phrasings.most_common(6))}")

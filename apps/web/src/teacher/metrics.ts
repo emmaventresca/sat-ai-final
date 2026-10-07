@@ -32,12 +32,18 @@ export interface Metrics {
   weakest: { subtype: string; name: string; seen: number; accuracy: number }[]
   /** Named errors, most frequent first. */
   errors: { slug: string; count: number }[]
+  /** How they do by wording family - the axis topic alone cannot show. */
+  byPhrasing: { phrasing: string; seen: number; accuracy: number }[]
   recent: Attempt[]
 }
 
 const DAY = 86400000
 
-export function metricsFor(exam: Exam, names: Record<string, string> = {}): Metrics {
+export function metricsFor(
+  exam: Exam,
+  names: Record<string, string> = {},
+  phrasingOf: Record<string, string> = {},
+): Metrics {
   const attempts = progress().attempts.filter((a) => a.exam === exam)
   const answered = attempts.length
   const correct = attempts.filter((a) => a.correct).length
@@ -59,6 +65,7 @@ export function metricsFor(exam: Exam, names: Record<string, string> = {}): Metr
   const bySection: Metrics['bySection'] = {}
   const bySubtype = new Map<string, { seen: number; correct: number }>()
   const errors = new Map<string, number>()
+  const byPhrasing = new Map<string, { seen: number; correct: number }>()
 
   for (const a of attempts) {
     const tier = (byTier[a.difficulty] ??= { seen: 0, correct: 0 })
@@ -71,6 +78,13 @@ export function metricsFor(exam: Exam, names: Record<string, string> = {}): Metr
       bySubtype.set(a.subtype, s)
     }
     if (a.misconception) errors.set(a.misconception, (errors.get(a.misconception) ?? 0) + 1)
+    const fam = phrasingOf[a.questionId]
+    if (fam) {
+      const p = byPhrasing.get(fam) ?? { seen: 0, correct: 0 }
+      p.seen += 1
+      p.correct += a.correct ? 1 : 0
+      byPhrasing.set(fam, p)
+    }
   }
 
   return {
@@ -100,6 +114,12 @@ export function metricsFor(exam: Exam, names: Record<string, string> = {}): Metr
       .map(([slug, count]) => ({ slug, count }))
       .sort((a, b) => b.count - a.count)
       .slice(0, 6),
+    byPhrasing: [...byPhrasing.entries()]
+      // Two is too few to mean anything, and "direct" is most of the bank -
+      // it is the baseline the others are read against, so it stays.
+      .filter(([, s]) => s.seen >= 2)
+      .map(([phrasing, s]) => ({ phrasing, seen: s.seen, accuracy: s.correct / s.seen }))
+      .sort((a, b) => a.accuracy - b.accuracy),
     recent: attempts.slice(-25).reverse(),
   }
 }

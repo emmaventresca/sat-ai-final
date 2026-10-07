@@ -19,6 +19,7 @@ export function StudentDetail({ student }: { student: Student }) {
   const sitting = EXAM_IDS.filter((id) => student.access[id])
   const [exam, setExam] = useState<Exam>(sitting[0] ?? 'sat')
   const [names, setNames] = useState<Record<string, string>>({})
+  const [phrasingOf, setPhrasingOf] = useState<Record<string, string>>({})
   const [labels, setLabels] = useState<Record<string, string>>({})
 
   useEffect(() => {
@@ -26,10 +27,13 @@ export function StudentDetail({ student }: { student: Student }) {
     void loadBank(exam).then((bank: Question[]) => {
       if (!live) return
       const map: Record<string, string> = {}
+      const fam: Record<string, string> = {}
       for (const q of bank) {
         if (q.subtype && !map[q.subtype]) map[q.subtype] = q.subtypeName || q.subtype
+        if (q.phrasing) fam[q.id] = q.phrasing
       }
       setNames(map)
+      setPhrasingOf(fam)
     })
     void fetch(`${import.meta.env.BASE_URL}data/misconceptions.json`)
       .then((r) => r.json())
@@ -40,7 +44,9 @@ export function StudentDetail({ student }: { student: Student }) {
     return () => { live = false }
   }, [exam])
 
-  const m = useMemo(() => metricsFor(exam, names), [exam, names])
+  const m = useMemo(
+    () => metricsFor(exam, names, phrasingOf), [exam, names, phrasingOf],
+  )
   const trend = m.prev7 ? Math.round(((m.last7 - m.prev7) / m.prev7) * 100) : null
 
   return (
@@ -105,6 +111,27 @@ export function StudentDetail({ student }: { student: Student }) {
                     <td>{w.name}</td>
                     <td className="num">{w.seen}</td>
                     <td className="num">{Math.round(w.accuracy * 100)}%</td>
+                  </tr>
+                ))}
+              </tbody></table>
+            </>
+          )}
+
+          {m.byPhrasing.length > 0 && (
+            <>
+              <h3>By how the question is worded</h3>
+              <p className="tiny muted" style={{ marginTop: -4 }}>
+                A student can lose a whole wording family across six different
+                topics. Worst first.
+              </p>
+              <table><thead><tr>
+                <th>Wording</th><th className="num">Seen</th><th className="num">Accuracy</th>
+              </tr></thead><tbody>
+                {m.byPhrasing.map((p) => (
+                  <tr key={p.phrasing}>
+                    <td>{readable(p.phrasing)}</td>
+                    <td className="num">{p.seen}</td>
+                    <td className="num">{Math.round(p.accuracy * 100)}%</td>
                   </tr>
                 ))}
               </tbody></table>

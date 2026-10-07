@@ -48,6 +48,7 @@ interface RawItem {
   explanation?: string
   per_choice?: Record<string, string>
   misconceptions?: Record<string, string>
+  phrasing?: string
 }
 
 /**
@@ -74,6 +75,7 @@ function normalise(raw: RawItem, exam: Exam): Question {
     explanation: raw.explanation,
     perChoice: raw.per_choice,
     misconceptions: raw.misconceptions,
+    phrasing: raw.phrasing,
   }
 }
 

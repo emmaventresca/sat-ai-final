@@ -23,7 +23,11 @@ KEEP = ("id", "type", "skill_cd", "subtype", "subtype_name", "difficulty",
         "figure", "authored_difficulty", "source", "license",
         # Student-produced response: no choices, a list of acceptable answers,
         # and the wrong values a student actually types.
-        "format", "keys", "any_of", "common_errors")
+        "format", "keys", "any_of", "common_errors",
+        # The wording family, from tools/derive_phrasing.py. A dimension of
+        # its own: a student can lose every "must be true" question across
+        # six different topics, and a topic-only breakdown hides it.
+        "phrasing")
 
 
 def main():
