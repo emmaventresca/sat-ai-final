@@ -23,7 +23,7 @@ than ours:
     python3 tools/import_act.py
     -> data/act/questions.json, data/act/taxonomy.json
 """
-import glob, json, os, sys
+import glob, json, os, re, sys
 from collections import Counter
 
 ACT = os.path.expanduser("~/act-mastery/backend")
@@ -57,7 +57,21 @@ def readable(slug):
     return " ".join(out)
 
 
+# College Board's rationale formula. One ACT item used it, and rather than
+# widen the licensing guard for a single question out of 1,385 the question
+# is dropped. A guard that gets relaxed to let something through stops being
+# a guard; this is the cheaper side of the trade by a wide margin.
+CB_FORMULA = re.compile(
+    r"Choice [A-K] is incorrect|is the best answer because|"
+    r"may result from conceptual", re.I)
+
+
 def convert(q, source):
+    if CB_FORMULA.search(json.dumps(q)):
+        return None, (f"{q.get('id')}: explanation uses College Board's "
+                      f"rationale formula; dropped rather than relax the "
+                      f"licensing guard")
+
     choices = q.get("choices") or []
     idx = q.get("answer")
     if not isinstance(idx, int) or not 0 <= idx < len(choices):

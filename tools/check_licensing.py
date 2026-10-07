@@ -44,6 +44,7 @@ EXEMPT = {
     "tools/classify_misconceptions.py",
     "tools/author_items.py",          # the regex that detects CB text leaking in
     "tools/verify_items.py",
+    "tools/import_act.py",            # the same regex, guarding the ACT import
 }
 
 
