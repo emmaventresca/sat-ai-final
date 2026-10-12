@@ -1,0 +1,38 @@
+.sheet { background:#15141c; color:#e8e2d4; min-height:100vh; padding-bottom:50px }
+.sheet h1 {
+  font-family:var(--serif); font-size:1.5rem; font-weight:700;
+  padding:24px 26px 4px; margin:0; color:#fff;
+  background:none; -webkit-text-fill-color:currentColor;
+}
+.sheet-sub { margin:0; padding:0 26px 20px; color:#9a948a; font-size:.86rem }
+.sheet-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+  gap:20px; padding:0 26px;
+}
+.sheet figure { margin:0 }
+.sheet-frame {
+  position:relative; aspect-ratio:16/9; border-radius:12px; overflow:hidden;
+  background:#000;
+}
+/* The scene is fixed-position in the app; inside the sheet it has to sit in
+   its own frame instead. */
+/* The app paints the scene at z-index -2, behind everything. Inside the
+   sheet it has to sit IN its frame, in front of the frame's own background. */
+.sheet-frame .scene { position:absolute; inset:0; z-index:0; opacity:1 }
+.sheet-card { z-index:1 }
+.sheet-card {
+  position:absolute; left:12%; right:12%; top:14%; bottom:14%;
+  background:#fffdf7; border-radius:10px; opacity:.93;
+  box-shadow:0 10px 40px rgba(0,0,0,.45);
+  display:grid; place-items:center; color:#8a8578; font-size:.8rem;
+}
+.sheet figcaption { padding:9px 2px 0; font-size:.86rem; color:#8f897e }
+.sheet figcaption b { color:#fff; font-weight:700 }
+
+.sheet-tabs { display:flex; gap:7px; flex-wrap:wrap; padding:0 26px 20px }
+.sheet-tabs button {
+  padding:8px 14px; border-radius:11px; font-size:.84rem; font-weight:700;
+  background:transparent; color:#9a948a; border:1px solid #33313c;
+}
+.sheet-tabs button:hover { color:#e8e2d4; background:#201f29; box-shadow:none }
+.sheet-tabs button.on { background:#2d2b38; color:#fff; border-color:#4a4757 }

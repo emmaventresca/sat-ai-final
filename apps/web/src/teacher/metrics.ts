@@ -1,5 +1,6 @@
 import type { Exam } from '../exams/types'
 import { progress, type Attempt } from '../practice/mastery'
+import { byTopic, errorLog, open as openErrors } from '../errors/log'
 
 /**
  * What a teacher actually needs to know about a student.
@@ -34,7 +35,23 @@ export interface Metrics {
   errors: { slug: string; count: number }[]
   /** How they do by wording family - the axis topic alone cannot show. */
   byPhrasing: { phrasing: string; seen: number; accuracy: number }[]
+  /**
+   * How they do by KIND of passage, on the sections that have one.
+   *
+   * A dimension of its own, like wording. A student can be fine on Craft &
+   * Structure in a natural-science passage and lost in prose fiction, and
+   * the subtype breakdown reports one number covering both - so the thing
+   * a tutor could fix in a single session is exactly the thing it hides.
+   */
+  byPassageType: { type: string; seen: number; accuracy: number }[]
   recent: Attempt[]
+  /** Mistakes still unfixed, and mistakes they have come back and fixed. */
+  errorsOpen: number
+  errorsFixed: number
+  /** Where the open ones are, worst first. */
+  errorTopics: { key: string; name: string; skill: string; open: number; fixed: number }[]
+  /** What the student wrote about their own mistakes, newest first. */
+  errorNotes: { questionId: string; name: string; text: string; at: string }[]
 }
 
 const DAY = 86400000
@@ -43,8 +60,11 @@ export function metricsFor(
   exam: Exam,
   names: Record<string, string> = {},
   phrasingOf: Record<string, string> = {},
+  passageTypeOf: Record<string, string> = {},
 ): Metrics {
   const attempts = progress().attempts.filter((a) => a.exam === exam)
+  const log = errorLog(attempts, exam)
+  const stillOpen = openErrors(log)
   const answered = attempts.length
   const correct = attempts.filter((a) => a.correct).length
 
@@ -66,6 +86,7 @@ export function metricsFor(
   const bySubtype = new Map<string, { seen: number; correct: number }>()
   const errors = new Map<string, number>()
   const byPhrasing = new Map<string, { seen: number; correct: number }>()
+  const byPassageType = new Map<string, { seen: number; correct: number }>()
 
   for (const a of attempts) {
     const tier = (byTier[a.difficulty] ??= { seen: 0, correct: 0 })
@@ -84,6 +105,13 @@ export function metricsFor(
       p.seen += 1
       p.correct += a.correct ? 1 : 0
       byPhrasing.set(fam, p)
+    }
+    const genre = passageTypeOf[a.questionId]
+    if (genre) {
+      const g = byPassageType.get(genre) ?? { seen: 0, correct: 0 }
+      g.seen += 1
+      g.correct += a.correct ? 1 : 0
+      byPassageType.set(genre, g)
     }
   }
 
@@ -120,7 +148,26 @@ export function metricsFor(
       .filter(([, s]) => s.seen >= 2)
       .map(([phrasing, s]) => ({ phrasing, seen: s.seen, accuracy: s.correct / s.seen }))
       .sort((a, b) => a.accuracy - b.accuracy),
+    byPassageType: [...byPassageType.entries()]
+      .filter(([, s]) => s.seen >= 2)
+      .map(([type, s]) => ({ type, seen: s.seen, accuracy: s.correct / s.seen }))
+      .sort((a, b) => a.accuracy - b.accuracy),
     recent: attempts.slice(-25).reverse(),
+    errorsOpen: stillOpen.length,
+    errorsFixed: log.length - stillOpen.length,
+    errorTopics: byTopic(log, names).slice(0, 8),
+    // A student's own words about where they went wrong are the most
+    // readable thing on this page, and the one part of it we did not write.
+    errorNotes: log
+      .filter((e) => e.note)
+      .sort((a, b) => (b.note?.at ?? '').localeCompare(a.note?.at ?? ''))
+      .slice(0, 12)
+      .map((e) => ({
+        questionId: e.questionId,
+        name: names[e.subtype ?? ''] ?? e.subtype ?? e.skill,
+        text: e.note?.text ?? '',
+        at: e.note?.at ?? '',
+      })),
   }
 }
 

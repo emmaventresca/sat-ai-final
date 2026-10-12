@@ -26,6 +26,8 @@ export interface Question {
   difficulty: Tier
   format: 'mc' | 'grid'
   stimulus?: string | null
+  /** Set when this question shares its passage with others. */
+  passageId?: string | null
   stem: string
   figure?: unknown
   /** Every display this question needs. ACT Science routinely needs two. */

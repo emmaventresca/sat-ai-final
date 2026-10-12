@@ -325,18 +325,33 @@
 
 /* ---- maths, tables, charts ----------------------------------------------- */
 
-/* Maths as an inline chip, so a formula reads as one unit and still sits in
-   the line of prose rather than interrupting it. */
+/* Maths, set the way the real test sets it: in the line, unboxed.
+   
+   The chip was a lesson-page device and it followed the maths into the
+   question screen, where it is wrong - the exam never draws a box round an
+   expression, and a student who has learned to look for the tinted pill has
+   learned something that will not be there on test day. */
 .lsn-math {
   display: inline-block;
-  background: linear-gradient(180deg, #f7f4ff 0%, #f1ecff 100%);
-  border: 1px solid #e0d6fb;
-  border-radius: 9px;
-  padding: 0.08em 0.4em 0.12em;
   line-height: 1.35;
   vertical-align: -0.18em;
   white-space: nowrap;
   font-family: var(--lsn-serif);
+}
+
+/* Except at the bottom two rungs, where it stays.
+   
+   Foundations and Easy are where a student is still learning to SEE an
+   expression as one object rather than a run of symbols, and the chip does
+   that job. It disappears from Medium upward - which is also the moment the
+   scaffold stops being help and starts being a crutch they would lose in
+   the exam hall. */
+.tier-F .lsn-math,
+.tier-E .lsn-math {
+  background: linear-gradient(180deg, #f7f4ff 0%, #f1ecff 100%);
+  border: 1px solid #e0d6fb;
+  border-radius: 9px;
+  padding: 0.08em 0.4em 0.12em;
 }
 .lsn-math .katex { font-size: 1.1em; color: #241c48; }
 .lsn-math-block {
@@ -404,4 +419,51 @@
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
+}
+
+/* ---------------------------------------------------------------------------
+   Fresh questions picker - teacher portal only.
+
+   Laid out as a list to scan rather than a grid to admire: the teacher is
+   reading first lines and ticking, and anything that makes her move her eyes
+   horizontally costs her a question's worth of attention. The target tier is
+   not visually promoted over the neighbours, because the point of the
+   neighbours is that she reaches for them.
+   --------------------------------------------------------------------------- */
+.fresh { margin-top: 18px; }
+.fresh-block { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); }
+.fresh-tier { margin: 10px 0 0; }
+.fresh-item {
+  display: flex; align-items: center; gap: 9px;
+  padding: 6px 8px; border-radius: 7px; cursor: pointer;
+}
+.fresh-item:hover { background: var(--tint); }
+.fresh-item input { flex: none; }
+.fresh-stem {
+  flex: 1; min-width: 0; font-size: 13.5px; line-height: 1.4;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.fresh-item .btn-sm { flex: none; }
+.row.between { justify-content: space-between; align-items: flex-start; }
+
+/* A roman-numeral option list: one claim per line.
+   
+   Written as a single paragraph by the authoring tool, which is how it
+   arrives from the model, and unreadable that way - a student has to find
+   the boundaries themselves while answering, and "I and III only" means
+   nothing against a wall of text. The numeral hangs in the margin so the
+   claims align with each other. */
+.lsn-roman {
+  list-style: none;
+  margin: 0.7em 0;
+  padding: 0;
+}
+.lsn-roman li {
+  /* Hanging indent: the numeral sits in the margin and wrapped lines align
+     with the claim, not with the "III." - which is the difference between a
+     list you can scan and three paragraphs with numbers in them. */
+  padding-left: 2.6em;
+  text-indent: -2.6em;
+  margin-bottom: 0.5em;
+  line-height: 1.6;
 }

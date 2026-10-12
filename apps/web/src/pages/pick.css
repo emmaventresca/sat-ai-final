@@ -1,0 +1,98 @@
+/* ---------------------------------------------------------------------------
+   The opening.
+
+   Full-bleed, dark, and the only screen in the app that is allowed to be
+   mostly picture. Everything readable sits in the lower third where the lake
+   is darkest, so the type never fights the sky.
+   --------------------------------------------------------------------------- */
+.gate {
+  position:relative; min-height:100vh; min-height:100dvh;
+  display:flex; align-items:flex-end; justify-content:center;
+  overflow:hidden; background:#15142a;
+}
+.sunrise { position:absolute; inset:0; width:100%; height:100%; }
+
+/* A vignette so the edges fall away and the centre holds. */
+.gate::after {
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(130% 85% at 50% 30%, transparent 38%, rgba(10,10,24,.55) 100%),
+    linear-gradient(180deg, transparent 46%, rgba(10,10,24,.72) 92%);
+}
+
+.gate-inner {
+  position:relative; z-index:2; width:100%; max-width:860px;
+  padding:0 24px 64px; text-align:center;
+  animation:gate-rise 1.2s cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes gate-rise {
+  from { opacity:0; transform:translateY(26px); filter:blur(8px) }
+  to   { opacity:1; transform:none; filter:none }
+}
+
+.gate-t {
+  font-family:var(--serif);
+  font-size:clamp(3.1rem, 9vw, 6rem); line-height:.96;
+  letter-spacing:-.04em; font-weight:700; color:#fff6e4;
+  margin:0 0 14px;
+  text-shadow:0 2px 5px rgba(12,10,28,.45), 0 16px 48px rgba(12,10,28,.5);
+  background:none; -webkit-text-fill-color:currentColor;
+}
+.gate-d {
+  font-size:1.1rem; line-height:1.6; color:#f0dfd0;
+  max-width:50ch; margin:0 auto 34px;
+  text-shadow:0 1px 3px rgba(12,10,28,.6);
+}
+
+.gate-pick {
+  display:grid; gap:14px; max-width:520px; margin:0 auto;
+  grid-template-columns:1fr;
+}
+.gate-card {
+  display:grid; align-items:center; text-align:left; gap:0 16px;
+  grid-template-columns:1fr auto auto;
+  grid-template-areas:"t s go" "d s go";
+  padding:18px 22px; border-radius:18px; text-decoration:none;
+  color:#fff6e4;
+  background:rgba(24,22,46,.52);
+  border:1px solid rgba(255,230,196,.3);
+  -webkit-backdrop-filter:blur(14px) saturate(1.1);
+  backdrop-filter:blur(14px) saturate(1.1);
+  box-shadow:0 3px 8px rgba(8,8,20,.3), 0 18px 44px rgba(8,8,20,.38);
+  transition:transform .3s cubic-bezier(.16,1,.3,1),
+             border-color .25s ease, background .25s ease,
+             box-shadow .3s cubic-bezier(.16,1,.3,1);
+}
+.gate-card:hover {
+  transform:translateY(-3px);
+  background:rgba(32,29,58,.64); border-color:rgba(255,230,196,.62);
+  box-shadow:0 6px 14px rgba(8,8,20,.34), 0 26px 62px rgba(8,8,20,.46);
+}
+.gate-card:focus-visible { outline:2.5px solid #ffd98a; outline-offset:3px }
+
+.gate-card-t {
+  grid-area:t; font-family:var(--serif); font-size:1.72rem; font-weight:700;
+  letter-spacing:-.02em; line-height:1.1;
+}
+.gate-card-d { grid-area:d; font-size:.84rem; color:#dcc8b4; margin-top:3px }
+.gate-card-s {
+  grid-area:s; font-family:var(--serif); font-size:1rem; color:#ffd98a;
+  white-space:nowrap;
+}
+.gate-go {
+  grid-area:go; display:grid; place-items:center;
+  width:34px; height:34px; border-radius:50%;
+  border:1px solid rgba(255,230,196,.34); color:#ffd98a;
+  transition:transform .3s cubic-bezier(.16,1,.3,1), background .25s ease;
+}
+.gate-card:hover .gate-go { transform:translateX(3px); background:rgba(255,217,138,.14) }
+
+.gate-foot { margin:26px 0 0; font-size:.82rem }
+.gate-foot a { color:#e2cdb6; text-decoration-color:rgba(226,205,182,.4) }
+.gate-foot a:hover { color:#ffd98a }
+
+@media (min-width:620px) { .gate-pick { grid-template-columns:1fr 1fr } }
+@media (prefers-reduced-motion:reduce) {
+  .gate-inner { animation:none }
+  .gate-card { transition:none }
+}

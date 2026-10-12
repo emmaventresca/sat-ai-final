@@ -56,6 +56,15 @@ export function QuestionCard({
     saveEliminated(question.id, next)
   }
 
+  /**
+   * Selecting is not answering.
+   *
+   * Tapping a choice used to grade it instantly, which turns every question
+   * into a one-shot commitment and punishes the exact behaviour the test
+   * rewards: choosing one, re-reading the stem, and changing your mind. It
+   * also made a mis-tap unrecoverable. So a tap selects, and Submit answers.
+   */
+  const [chosen, setChosen] = useState<string | null>(null)
   const revealed = picked !== null
   const correct = revealed
     ? grid ? matches(picked, question.keys) : picked === question.answer
@@ -74,9 +83,13 @@ export function QuestionCard({
     ? (grid ? hit?.family : question.misconceptions?.[picked ?? '']) : null
 
   return (
-    <div className="card">
+    /* The tier travels with the card so the maths can be scaffolded at the
+       levels where a student is still learning to SEE an expression, and
+       plain at the levels where the real test gives it to them plain. */
+    <div className={`card tier-${question.difficulty}`}>
       {Boolean(question.stimulus || question.figure || question.figures?.length) && (
         <Annotatable className="stim" questionId={question.id} part="stimulus"
+          lineNumbers={Boolean(question.passageId)}
           html={renderStimulus(question.stimulus) + displays(question)} />
       )}
       <Annotatable className="q" questionId={question.id} part="stem"
@@ -136,11 +149,12 @@ export function QuestionCard({
           if (revealed) {
             if (key === question.answer) cls += ' right'
             else if (key === picked) cls += ' wrong'
-          }
+          } else if (key === chosen) cls += ' chosen'
           return (
             <div className="choice-row" key={key}>
               <button className={cls} disabled={revealed || out}
-                onClick={() => commit(key)}>
+                aria-pressed={key === chosen}
+                onClick={() => setChosen(key === chosen ? null : key)}>
                 <span className="k">{key}</span>
                 <span className="ctext" dangerouslySetInnerHTML={{ __html: renderHtml(choice) }} />
               </button>
@@ -154,6 +168,18 @@ export function QuestionCard({
             </div>
           )
         })
+      )}
+
+      {!grid && !revealed && (
+        <div className="submit-row">
+          <button className="btn-primary" disabled={!chosen}
+            onClick={() => chosen && commit(chosen)}>
+            Submit answer
+          </button>
+          {chosen
+            ? <span className="tiny muted">You picked {chosen}. Change it any time before you submit.</span>
+            : <span className="tiny muted">Pick an answer, then submit.</span>}
+        </div>
       )}
 
       {revealed && (

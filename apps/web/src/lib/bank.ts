@@ -48,6 +48,23 @@ export interface QuestionRef {
   teaser: string
   /** One line on what this recognition tests, where the bank carries it. */
   tests?: string
+  /** The day this question entered the bank, where it was not always here. */
+  added?: string
+  /**
+   * The passage this question hangs off, for the sections that have one.
+   *
+   * In the index rather than the chunk because it is a decision, not a
+   * display: a Reading round is ordered BY passage, and that order has to be
+   * computable before any body is fetched.
+   */
+  passageId?: string
+  /**
+   * Which kind of passage: literary narrative, social science, humanities,
+   * natural science. A dimension of its own, like `phrasing` - a student can
+   * be fine on Craft & Structure in a science passage and lost in prose
+   * fiction, and a topic average cannot show that.
+   */
+  passageType?: string
 }
 
 const indexes = new Map<Exam, QuestionRef[]>()
@@ -73,6 +90,9 @@ export async function loadIndex(exam: Exam): Promise<QuestionRef[]> {
     chunk: raw.chunk ?? '_unsorted',
     teaser: raw.teaser ?? '',
     tests: raw.tests,
+    added: raw.added,
+    passageId: raw.passage_id,
+    passageType: raw.passage_type,
   } as QuestionRef))
   indexes.set(exam, refs)
   return refs
@@ -137,6 +157,9 @@ interface RawRef {
   chunk?: string
   teaser?: string
   tests?: string
+  added?: string
+  passage_id?: string
+  passage_type?: string
 }
 
 interface RawItem extends RawRef {
@@ -168,6 +191,7 @@ function normalise(raw: RawItem, exam: Exam): Question {
     difficulty: raw.difficulty as Tier,
     format: raw.format === 'grid' ? 'grid' : 'mc',
     stimulus: raw.stimulus ?? null,
+    passageId: raw.passage_id ?? null,
     stem: raw.stem,
     figure: raw.figure,
     // Already-drawn displays, which is how the ACT bank carries them.

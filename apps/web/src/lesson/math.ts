@@ -108,27 +108,98 @@ export function renderHtml(html: unknown): string {
   let out = ''
   let i = 0
   while (i < text.length) {
-    const lt = text.indexOf('<', i)
-    if (lt === -1) { out += mathOnly(text.slice(i)); break }
-    out += mathOnly(text.slice(i, lt))
-    const gt = text.indexOf('>', lt)
-    if (gt === -1) { out += text.slice(lt); break }
-    out += text.slice(lt, gt + 1)
-    i = gt + 1
+    const ch = text[i]
+
+    // Maths wins over markup, and it has to: a less-than sign is the most
+    // common operator on this test and also the character that opens a tag.
+    // Scanning for tags first meant `$5.0 < m \le 6.0$` hit the `<`, found
+    // no closing `>`, and dumped the rest of the choice out as raw LaTeX -
+    // which is exactly what a student saw on three of four answer choices.
+    if (ch === '$') {
+      const m = matchMath(text, i)
+      if (m) {
+        out += m.html
+        i = m.end
+        continue
+      }
+    }
+
+    if (ch === '<') {
+      // Only a real tag opens here. A bare `<` between numbers is an
+      // operator and belongs in the text, escaped.
+      if (TAG_START.test(text.slice(i, i + 2))) {
+        const gt = text.indexOf('>', i)
+        if (gt === -1) { out += escapeHtml(text.slice(i)); break }
+        out += text.slice(i, gt + 1)
+        i = gt + 1
+        continue
+      }
+      out += '&lt;'
+      i += 1
+      continue
+    }
+
+    // An escaped dollar outside maths is a currency symbol, not a delimiter.
+    if (ch === '\\' && text[i + 1] === '$') {
+      out += '$'
+      i += 2
+      continue
+    }
+
+    // Plain text up to the next thing that needs a decision.
+    let j = i
+    while (j < text.length && text[j] !== '<' && text[j] !== '$'
+      && !(text[j] === '\\' && text[j + 1] === '$')) j += 1
+    out += text.slice(i, j)
+    i = j
   }
   return out
 }
 
-function mathOnly(s: string): string {
-  let out = ''
-  let last = 0
-  for (const m of s.matchAll(MATH)) {
-    const at = m.index ?? 0
-    out += s.slice(last, at)
-    out += m[1] !== undefined ? typeset(m[1], true) : typeset(m[2] || '', false)
-    last = at + m[0].length
+const TAG_START = /^<[/!?a-zA-Z]/
+
+/**
+ * A maths span starting at `at`, or null if the dollar is just a dollar.
+ *
+ * Currency is the reason this returns null rather than guessing: the bank is
+ * full of "$68" and "$1,500", and typesetting those produces nonsense. A run
+ * only counts as maths when it closes on the same line.
+ */
+function matchMath(text: string, at: number): { html: string; end: number } | null {
+  if (text.startsWith('$$', at)) {
+    const close = text.indexOf('$$', at + 2)
+    if (close !== -1) {
+      return { html: typeset(text.slice(at + 2, close), true), end: close + 2 }
+    }
   }
-  return out + s.slice(last)
+  const nl = text.indexOf('\n', at)
+  const close = closingDollar(text, at + 1)
+  if (close === -1 || close === at + 1) return null
+  if (nl !== -1 && nl < close) return null
+  return { html: typeset(text.slice(at + 1, close), false), end: close + 1 }
+}
+
+/**
+ * The next REAL closing dollar, skipping escaped ones.
+ *
+ * A money amount inside maths is written `$\$12{,}000$` - a span whose first
+ * character is an escaped dollar. Searching naively for the next `$` lands on
+ * that escape, closes the span one character in, and leaves the rest of the
+ * sentence to be swallowed by the following span. On screen that turned
+ * "a budget of $12,000 for trees and benches" into a run of italic LaTeX, on
+ * 53 items across both banks.
+ */
+function closingDollar(text: string, from: number): number {
+  for (let i = from; i < text.length; i++) {
+    if (text[i] !== '$') continue
+    // Count the backslashes immediately before it: an odd number means this
+    // dollar is escaped, an even number means the backslashes are themselves
+    // escaped and the dollar is real.
+    let slashes = 0
+    for (let j = i - 1; j >= 0 && text[j] === '\\'; j--) slashes += 1
+    if (slashes % 2 === 0) return i
+  }
+  return -1
 }
 
 // ---------------------------------------------------------------------------
@@ -154,6 +225,37 @@ const BARE_MATH = /^\s*\$[^$]+\$\s*$/
 const TABLE_ROW = /\|/
 const TABLE_RULE = /^\s*\|?[\s:|-]*-[\s:|-]*\|?\s*$/
 const CAPTION = /^[^.!?]{3,70}$/
+
+/**
+ * A roman-numeral option list, written on one line.
+ *
+ * "I. ... II. ... III. ..." is the standard shape of a must-be-true question,
+ * and authored items write it as a single paragraph because that is how it
+ * arrives from the model. Rendered as one line the student has to find the
+ * boundaries themselves, mid-question, which is work the display should have
+ * done — and the answer choices ("I and III only") are unreadable against a
+ * wall of text.
+ *
+ * Only splits when there are at least two numerals in sequence, so a sentence
+ * that happens to start with "I." is left alone.
+ */
+const ROMAN_RUN = /(?:^|\s)(I{1,3}|IV|V|VI{0,3}|IX|X)\.\s+/g
+
+function splitRomanList(line: string): string[] | null {
+  const marks = [...line.matchAll(ROMAN_RUN)]
+  if (marks.length < 2) return null
+  const want = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X']
+  // They have to be in order from the start: "I, II" inside prose is not a
+  // list, and a run beginning at III is a coincidence.
+  if (!marks.every((m, i) => m[1] === want[i])) return null
+  const out: string[] = []
+  for (let i = 0; i < marks.length; i++) {
+    const from = (marks[i].index ?? 0) + marks[i][0].length
+    const to = i + 1 < marks.length ? marks[i + 1].index : line.length
+    out.push(`${marks[i][1]}. ${line.slice(from, to).trim()}`)
+  }
+  return out
+}
 
 function cells(line: string): string[] {
   return line.trim().replace(/^\||\|$/g, '').split('|').map((c) => c.trim())
@@ -230,6 +332,14 @@ export function renderStimulus(raw: unknown): string {
     if (BULLET.test(t)) {
       if (!list) list = []
       list.push(`<li>${renderText(t.replace(BULLET, ''))}</li>`)
+      continue
+    }
+    const roman = splitRomanList(t)
+    if (roman) {
+      flush()
+      out.push(`<ul class="lsn-roman">${
+        roman.map((r) => `<li>${renderText(r)}</li>`).join('')
+      }</ul>`)
       continue
     }
     flush()
@@ -389,7 +499,68 @@ function pointChart(spec: PointFigure, kind: 'line' | 'scatter' | 'curve'): stri
  * Draw an item's figure. Returns '' for anything unrecognised, so an unknown
  * spec degrades to no picture rather than to a broken one.
  */
+const DRAWN = /^<(svg|figure|table|img)\b/i
+
+interface TableSpec {
+  type: 'table'
+  title?: string
+  columns: string[]
+  rows: (string | number | null)[][]
+}
+
+function isTableSpec(spec: unknown): spec is TableSpec {
+  const s = spec as TableSpec
+  return Boolean(s) && typeof s === 'object' && s.type === 'table'
+    && Array.isArray(s.columns) && Array.isArray(s.rows)
+}
+
+/**
+ * A table spec as a real table.
+ *
+ * Rendered rather than flattened: a data question asks the student to read a
+ * row against a column, and "Wet | 182 | 176" makes that comparison their
+ * work instead of the display's.
+ */
+function renderSpecTable(spec: TableSpec): string {
+  const cell = (v: string | number | null) =>
+    v === null || v === undefined ? '' : escapeHtml(String(v))
+  return `<figure class="lsn-figure">
+    ${spec.title ? `<figcaption>${escapeHtml(spec.title)}</figcaption>` : ''}
+    <table class="lsn-table">
+      <thead><tr>${spec.columns.map((c) => `<th>${escapeHtml(c)}</th>`).join('')}</tr></thead>
+      <tbody>${spec.rows.map((r) =>
+        `<tr>${r.map((v) => `<td>${cell(v)}</td>`).join('')}</tr>`).join('')}</tbody>
+    </table>
+  </figure>`
+}
+
 export function renderFigure(spec: unknown): string {
+  // ---------------------------------------------------------------------
+  // Already-drawn displays.
+  //
+  // The ACT bank ships its figures as finished SVG, drawn by that project's
+  // own chart and diagram renderers - which is right, because they know
+  // about apparatus diagrams and cross-sections and cycles that this module
+  // has never heard of. 2,129 of them.
+  //
+  // They arrived as strings, this function only understood chart SPECS, and
+  // a string fell through to `return ''`. So every ACT Science question that
+  // said "Table 1 shows..." rendered no table: unanswerable, silently, for
+  // the whole section. The fix is to pass them through.
+  //
+  // Only markup that starts as a display is allowed, so a stray string
+  // cannot inject anything: the content is ours, written by our own tools,
+  // and this keeps it that way even if a future bank is less careful.
+  // ---------------------------------------------------------------------
+  if (typeof spec === 'string') {
+    const markup = spec.trim()
+    return DRAWN.test(markup) ? `<figure class="lsn-figure">${markup}</figure>` : ''
+  }
+
+  // A data table is a display too, and the single commonest one in the ACT
+  // Science section. It was falling through the same gap.
+  if (isTableSpec(spec)) return renderSpecTable(spec)
+
   if (!isFigureSpec(spec)) return ''
   const body = spec.type === 'bar'
     ? barChart(spec)

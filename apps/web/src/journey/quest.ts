@@ -88,4 +88,55 @@ export function todayCount(exam: Exam): number {
     .filter((a) => a.exam === exam && a.at.startsWith(today)).length
 }
 
-export const DAILY_GOAL = 12
+/**
+ * The daily goal, which belongs to the student.
+ *
+ * Twelve was a guess, and a guess shown as a target is worse than no target:
+ * a student doing four a night on a school week reads it as failing, and one
+ * with two months left reads it as permission to stop. Neither is true, and
+ * neither number was ever ours to pick.
+ *
+ * So twelve is only where the dial starts. The range is wide on purpose -
+ * five is a real goal on a Tuesday in exam season, and sixty is a real one on
+ * a Saturday three weeks out.
+ */
+export const DEFAULT_GOAL = 12
+export const GOAL_MIN = 3
+export const GOAL_MAX = 60
+
+const GOAL_KEY = 'prep.goal'
+
+export function dailyGoal(exam: Exam): number {
+  try {
+    const raw = JSON.parse(localStorage.getItem(GOAL_KEY) ?? '{}') as Record<string, number>
+    const n = raw[exam]
+    return Number.isFinite(n) ? clampGoal(n) : DEFAULT_GOAL
+  } catch {
+    return DEFAULT_GOAL
+  }
+}
+
+export function setDailyGoal(exam: Exam, n: number): number {
+  const value = clampGoal(n)
+  let raw: Record<string, number> = {}
+  try {
+    raw = JSON.parse(localStorage.getItem(GOAL_KEY) ?? '{}') as Record<string, number>
+  } catch {
+    raw = {}
+  }
+  raw[exam] = value
+  localStorage.setItem(GOAL_KEY, JSON.stringify(raw))
+  return value
+}
+
+function clampGoal(n: number): number {
+  return Math.max(GOAL_MIN, Math.min(GOAL_MAX, Math.round(n)))
+}
+
+/**
+ * A goal is per exam, because the two are different amounts of work.
+ *
+ * Kept as a constant for anything that only needs a sensible default.
+ * @deprecated use {@link dailyGoal} - the student sets this now.
+ */
+export const DAILY_GOAL = DEFAULT_GOAL

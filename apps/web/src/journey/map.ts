@@ -1,6 +1,8 @@
 import type { Exam, Tier } from '../exams/types'
 import type { QuestionRef } from '../lib/bank'
 import { cellKey, progress } from '../practice/mastery'
+import { lastTouched, remainingIn } from './promotion'
+import { resolved as resolvedIds } from '../errors/log'
 
 /**
  * The bank, laid out as a route rather than a list.
@@ -31,16 +33,54 @@ export interface Stage {
   accuracy: number | null
   /** Enough evidence, going in well enough, to call it done. */
   cleared: boolean
+  /** Questions in this recognition the student has never answered. */
+  left: number
+  /** Of those, ones added since they last worked on it. */
+  fresh: number
 }
 
 export interface Leg {
   skill: string
   name: string
   stages: Stage[]
+  /** Unanswered questions across the whole path, and new ones among them. */
+  left: number
+  fresh: number
   /** A wording trial drawn from this leg's recognitions. */
   trial: Trial | null
+  /** The unit quiz for the path, where there is enough to draw one from. */
+  quiz: UnitQuiz | null
   cleared: number
 }
+
+/**
+ * The unit quiz at the end of a path.
+ *
+ * Not a gate. Clearing every stop earns the gem on its own - a student at
+ * 85% across four recognitions has already proved the thing, and making them
+ * sit a quiz to collect a reward they have earned is the busywork this whole
+ * reorganisation was for.
+ *
+ * What it earns is a BETTER gem, because it is a harder exercise than any of
+ * the stops: the recognitions arrive mixed and out of order, which is the one
+ * thing practising them a stop at a time cannot rehearse. On the real test
+ * nobody announces which recognition is coming.
+ *
+ * And it never closes. Sitting it again two months later is one of the better
+ * uses of twenty minutes a student has, so a path with its gem already
+ * polished still offers it.
+ */
+export interface UnitQuiz {
+  id: string
+  /** The recognitions it draws across. */
+  subtypes: string[]
+  /** How many it will ask. */
+  questions: number
+}
+
+/** Below this a "quiz" is a handful of questions from two stops. */
+export const QUIZ_MIN_STAGES = 2
+export const QUIZ_LENGTH = 12
 
 export interface Trial {
   id: string
@@ -57,6 +97,8 @@ export interface Chapter {
   legs: Leg[]
   stages: number
   cleared: number
+  left: number
+  fresh: number
 }
 
 /**
@@ -77,6 +119,8 @@ export interface Region {
   chapters: Chapter[]
   stages: number
   cleared: number
+  left: number
+  fresh: number
 }
 
 export interface SkillMeta {
@@ -122,12 +166,29 @@ const REALM_ORDER = [
   'Standard English Conventions',
 ]
 
-/** Which world a region belongs to, for the map it is drawn on. */
-export type Terrain = 'cliffs' | 'ocean'
+/**
+ * Which country a section is drawn as.
+ *
+ * Six, because the two exams have six sections between them and a student
+ * crossing between them should know where they are before reading a word.
+ * They are keyed by exam AND section: the ACT's maths is not the SAT's, and
+ * giving them the same picture would be the one place this app implies the
+ * two tests are interchangeable.
+ */
+export type Terrain = 'cliffs' | 'ocean' | 'park' | 'fair' | 'peaks' | 'tropic'
 
-export const TERRAIN: Record<string, Terrain> = {
-  math: 'cliffs', science: 'cliffs',
-  rw: 'ocean', english: 'ocean', reading: 'ocean',
+const TERRAIN_BY_EXAM: Record<Exam, Record<string, Terrain>> = {
+  sat: { math: 'cliffs', rw: 'ocean' },
+  act: {
+    math: 'tropic',      // Hawaii by way of Miami, 1986
+    english: 'peaks',    // high altitude, thin air
+    reading: 'fair',     // a world's fair at dusk
+    science: 'park',     // Sequoia, Sedona, Yellowstone
+  },
+}
+
+export function terrainFor(exam: Exam, section: string): Terrain {
+  return TERRAIN_BY_EXAM[exam]?.[section] ?? 'cliffs'
 }
 
 /**
@@ -145,10 +206,13 @@ export const TERRAIN: Record<string, Terrain> = {
  */
 function grouping(exam: Exam, q: QuestionRef, meta: SkillMeta | undefined) {
   if (exam === 'act') {
-    return {
-      chapter: SECTION_LABEL[q.section] ?? q.section,
-      leg: q.skill || SECTION_LABEL[q.section] || q.section,
-    }
+    // The ACT's own reporting categories - Algebra, Geometry, Functions,
+    // Craft & Structure, Interpretation of Data - are the realms. Filing
+    // every ACT skill under one chapter named after the section gave each
+    // region exactly one chapter, which is why the ACT map drew a single
+    // dot and no route at all: there was nowhere to travel to.
+    const skill = q.skill || SECTION_LABEL[q.section] || q.section
+    return { chapter: skill, leg: skill }
   }
   return {
     chapter: meta?.domain_name ?? q.skill,
@@ -159,7 +223,17 @@ function grouping(exam: Exam, q: QuestionRef, meta: SkillMeta | undefined) {
 export function buildJourney(
   exam: Exam, bank: QuestionRef[], skills: SkillMeta[],
 ): Region[] {
-  const { mastery } = progress()
+  const { mastery, attempts } = progress()
+  /**
+   * What counts as DONE: answered correctly, not merely met.
+   *
+   * This used to be every question the student had attempted, which meant a
+   * stop reporting "all 21 done" when six of those were wrong. That is the
+   * one place the app was flattering somebody rather than telling them where
+   * they stand, and a missed question is exactly the one worth coming back
+   * to.
+   */
+  const attempted = resolvedIds(attempts.filter((a) => a.exam === exam))
   const metaOf = new Map(skills.map((s) => [s.skill_cd, s]))
 
   // skill -> subtype -> questions
@@ -178,7 +252,27 @@ export function buildJourney(
     const meta = metaOf.get(skillCd)
     const sample = [...subtypes.values()][0][0]
     const { chapter: domain, leg: legName } = grouping(exam, sample, meta)
-    const section = meta?.section ?? sample.section
+    /**
+     * Which section this skill belongs to: the MAJORITY of its questions,
+     * not one sample.
+     *
+     * Reading it off `sample` put the entire ACT Science section inside
+     * Reading and made it vanish from the map. Science subtypes carry two or
+     * three questions mis-filed as reading upstream, and if one of those
+     * happens to be the first question of the first subtype, the whole skill
+     * - 47 questions - inherits the wrong section. Nothing throws; a quarter
+     * of the test just disappears.
+     */
+    const section = meta?.section ?? (() => {
+      const tally = new Map<string, number>()
+      for (const qs of subtypes.values()) {
+        for (const q of qs) tally.set(q.section, (tally.get(q.section) ?? 0) + 1)
+      }
+      let best = sample.section
+      let most = 0
+      for (const [sec, n] of tally) if (n > most) { best = sec; most = n }
+      return best
+    })()
 
     const stages: Stage[] = [...subtypes.entries()].map(([subtype, qs]) => {
       const pool: Partial<Record<Tier, number>> = {}
@@ -193,8 +287,11 @@ export function buildJourney(
         }
       }
       const accuracy = seen ? correct / seen : null
+      const rest = remainingIn(qs, attempted, lastTouched(exam, subtype))
       return {
         subtype,
+        left: rest.left,
+        fresh: rest.fresh,
         name: qs[0].subtypeName || subtype,
         tests: qs.find((q) => q.tests)?.tests,
         pool,
@@ -222,11 +319,21 @@ export function buildJourney(
       trial: trialQs.length >= 4 && families.length
         ? { id: `${skillCd}-trial`, families, subtypes: legStages, questions: trialQs.length }
         : null,
+      quiz: stages.length >= QUIZ_MIN_STAGES
+        ? {
+            id: `${skillCd}-quiz`,
+            subtypes: legStages,
+            questions: Math.min(QUIZ_LENGTH, stages.reduce((n, s) => n + s.total, 0)),
+          }
+        : null,
       cleared: stages.filter((s) => s.cleared).length,
+      left: stages.reduce((n, s) => n + s.left, 0),
+      fresh: stages.reduce((n, s) => n + s.fresh, 0),
     }
 
     const chapter = chapters.get(domain) ?? {
-      id: domain, name: domain, section, legs: [], stages: 0, cleared: 0,
+      id: domain, name: domain, section, legs: [],
+      stages: 0, cleared: 0, left: 0, fresh: 0,
     }
     chapter.legs.push(leg)
     chapters.set(domain, chapter)
@@ -236,6 +343,8 @@ export function buildJourney(
     chapter.legs.sort((a, b) => b.stages.length - a.stages.length)
     chapter.stages = chapter.legs.reduce((n, l) => n + l.stages.length, 0)
     chapter.cleared = chapter.legs.reduce((n, l) => n + l.cleared, 0)
+    chapter.left = chapter.legs.reduce((n, l) => n + l.left, 0)
+    chapter.fresh = chapter.legs.reduce((n, l) => n + l.fresh, 0)
   }
 
   // Sections stay together, and within a section the biggest domain leads -
@@ -253,20 +362,28 @@ export function buildJourney(
     const region = regions.get(chapter.section) ?? {
       id: chapter.section,
       name: SECTION_LABEL[chapter.section] ?? chapter.section,
-      terrain: TERRAIN[chapter.section] ?? 'cliffs',
-      chapters: [], stages: 0, cleared: 0,
+      terrain: terrainFor(exam, chapter.section),
+      chapters: [], stages: 0, cleared: 0, left: 0, fresh: 0,
     }
     region.chapters.push(chapter)
     region.stages += chapter.stages
     region.cleared += chapter.cleared
+    region.left += chapter.left
+    region.fresh += chapter.fresh
     regions.set(chapter.section, region)
   }
-  // Maths leads, then the verbal section: it is the order they are sat in,
-  // and for the ACT the rest follow behind.
-  const order = ['math', 'rw', 'english', 'reading', 'science']
-  return [...regions.values()].sort(
-    (a, b) => order.indexOf(a.id) - order.indexOf(b.id),
-  )
+  // The order the test is actually sat in. The SAT opens with Reading and
+  // Writing; the ACT runs English, Math, Reading, Science. Leading with
+  // maths was our habit, not the exam's, and the map is supposed to be the
+  // shape of the day they are preparing for.
+  const order = exam === 'act'
+    ? ['english', 'math', 'reading', 'science']
+    : ['rw', 'math']
+  const place = (id: string) => {
+    const at = order.indexOf(id)
+    return at === -1 ? order.length : at
+  }
+  return [...regions.values()].sort((a, b) => place(a.id) - place(b.id))
 }
 
 /**
@@ -305,6 +422,53 @@ export function trialRefs(
     }
     if (!added) break
     round += 1
+  }
+  return out
+}
+
+/**
+ * Which questions a unit quiz should ask.
+ *
+ * Round-robin across the path's recognitions, so no two in a row come from
+ * the same stop. That interleaving is the exercise: practising a recognition
+ * at its own stop tells a student which method to reach for before they have
+ * read anything, and the test never does them that favour.
+ *
+ * Medium first, then the tiers either side. A quiz made of Foundations
+ * questions says nothing, and one made of Hard ones says nothing either -
+ * both of them fail students who are actually fine.
+ */
+export function quizRefs(
+  bank: QuestionRef[], quiz: UnitQuiz, limit = QUIZ_LENGTH,
+): QuestionRef[] {
+  const WEIGHT: Record<string, number> = { M: 0, H: 1, E: 2, X: 3, F: 4 }
+  const byStage = new Map<string, QuestionRef[]>()
+  for (const q of bank) {
+    if (!q.subtype || !quiz.subtypes.includes(q.subtype)) continue
+    const list = byStage.get(q.subtype) ?? []
+    list.push(q)
+    byStage.set(q.subtype, list)
+  }
+  for (const list of byStage.values()) {
+    list.sort((a, b) =>
+      (WEIGHT[a.difficulty] ?? 9) - (WEIGHT[b.difficulty] ?? 9)
+      || a.id.localeCompare(b.id))
+  }
+
+  // Walk the stops in the order the path lists them so the draw is stable:
+  // a quiz that reshuffles every render is a quiz a student cannot resume.
+  const order = quiz.subtypes.filter((s) => byStage.has(s))
+  const out: QuestionRef[] = []
+  for (let round = 0; out.length < limit && round < 40; round += 1) {
+    let added = false
+    for (const subtype of order) {
+      const q = byStage.get(subtype)?.[round]
+      if (!q) continue
+      out.push(q)
+      added = true
+      if (out.length >= limit) break
+    }
+    if (!added) break
   }
   return out
 }

@@ -4,9 +4,10 @@ import type { Exam } from '../exams/types'
 import { loadBodies, loadIndex, type QuestionRef } from '../lib/bank'
 import { Lesson } from '../lesson/render'
 import { exportBothPdfs, exportLessonPdf } from '../lesson/pdf'
-import { fromPlanner } from '../lesson/fromPlanner'
+import { fromPlanner, mergeFresh } from '../lesson/fromPlanner'
 import type { LessonMode, LessonPlan } from '../lesson/types'
 import { ask, plannerUp, sessionsOf, type PlannerMessage } from './plannerApi'
+import { FreshQuestions } from './FreshQuestions'
 
 /**
  * Ask for a lesson, get a lesson - not a wall of chat.
@@ -143,6 +144,10 @@ export function Planner() {
             </button>
           </div>
           <Lesson plan={plan} mode={mode} />
+          <FreshQuestions plan={plan} exam={exam}
+            onUse={(picked, replace) =>
+              setPlans((was) =>
+                was.map((p, j) => (j === i ? mergeFresh(p, picked, replace) : p)))} />
         </div>
       ))}
     </div>

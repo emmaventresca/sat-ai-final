@@ -34,10 +34,11 @@ import type { FigureSpec } from './math'
 export const DEFAULT_DURATION = 90
 
 const TIER_LABEL: Record<Tier, string> = {
-  // "Super hard", which is what it gets called out loud. It was "Challenge"
-  // first, which collided with the Challenge tag on Hard, and then
-  // "Stretch", which is softer than the thing actually is.
-  F: 'Foundations', E: 'Easy', M: 'Medium', H: 'Hard', X: 'Super hard',
+  // "Challenge" - what it gets called out loud, and now unambiguous: the
+  // Challenge TAG that used to sit on Hard questions no longer exists in
+  // either bank, so the name is free. It was "Stretch" in between, which is
+  // softer than the thing actually is.
+  F: 'Foundations', E: 'Easy', M: 'Medium', H: 'Hard', X: 'Challenge',
 }
 
 const TIER_RANK: Record<Tier, number> = { F: 0, E: 1, M: 2, H: 3, X: 4 }
@@ -61,6 +62,15 @@ export interface LessonQuestion {
   id: string
   /** Subtype name where there is one, otherwise the skill. Shown on the chip. */
   category: string
+  /**
+   * The recognition's slug, carried alongside the readable name.
+   *
+   * Not shown anywhere - it is here so the teacher tools can ask for more of
+   * this recognition. The ids truncate the slug to keep them short
+   * ("orig-addition-and-e-F-15d793" for `addition-and-emphasis`), so
+   * recovering it from an id gives a prefix that matches nothing.
+   */
+  subtype?: string | null
   difficulty: Tier
   format: 'mc' | 'grid'
   stimulus?: string | null

@@ -1,0 +1,81 @@
+/* ---------------------------------------------------------------------------
+   The land behind a question.
+
+   This was wrong twice and both failures were the same mistake in different
+   places. First the art was a pastel wash; then the art got bold and the CSS
+   held it at 42% opacity behind a white card, which produced exactly the same
+   washed-out result through a different mechanism.
+
+   The fix is to stop asking the backdrop to be quiet. It runs at full
+   strength, and the CARD earns its own contrast: an opaque panel with a real
+   shadow, sitting on the picture the way a sign sits on a landscape. Legibility
+   is a property of the card, not a tax on the art.
+   --------------------------------------------------------------------------- */
+.scene {
+  position:fixed; inset:0; width:100%; height:100%;
+  z-index:-2; pointer-events:none;
+  /* Half strength. Full strength competes with the question for attention,
+     and the question is the only thing on this screen with a job. */
+  opacity:.5;
+}
+
+/* A soft scrim only where the card sits, so the panel has something to sit
+   against on worlds whose sky runs bright behind it. */
+.scene-scrim {
+  position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:
+    linear-gradient(180deg, rgba(252,250,244,.5) 0%, rgba(252,250,244,.18) 40%,
+      rgba(252,250,244,.42) 100%);
+}
+
+/* ---------------------------------------------------------------------------
+   The question, at the size it deserves.
+
+   A 860px column on a 1440px screen left half the window to the backdrop,
+   which inverted the priority: the art got the room and the thing the student
+   is actually doing got a strip down the middle. The card now takes most of
+   the window - wide enough that answer choices stop wrapping, capped so the
+   line length stays readable and the eye is not travelling the full width of
+   a monitor to get from a choice letter to its text.
+   --------------------------------------------------------------------------- */
+body:has(.scene) .wrap {
+  max-width:min(1240px, 94vw);
+  padding:20px 26px 48px;
+}
+body:has(.scene) .card { padding:34px 38px; min-height:64vh; }
+body:has(.scene) .card .stim { font-size:1.16rem; line-height:1.74; }
+body:has(.scene) .card .q { font-size:1.42rem; line-height:1.55; }
+body:has(.scene) .choice-row > * { padding:16px 22px; font-size:1.12rem; }
+
+@media (max-width:760px) {
+  body:has(.scene) .wrap { max-width:100%; padding:14px 14px 40px }
+  body:has(.scene) .card { padding:22px 20px; min-height:0 }
+}
+
+/* The card, on top of a painting. Opaque, warm-white, lifted. */
+.scene ~ * .card,
+body:has(.scene) .card {
+  background:#fffdf7;
+  border:1px solid rgba(255,255,255,.7);
+  box-shadow:
+    0 2px 6px rgba(10,8,22,.22),
+    0 14px 34px rgba(10,8,22,.3),
+    0 42px 90px rgba(10,8,22,.26);
+}
+
+/* Chrome around the card has to survive a dark sky too. */
+body:has(.scene) .spread .btn-sm {
+  background:rgba(255,253,247,.94);
+  border-color:rgba(255,255,255,.6);
+  box-shadow:0 2px 8px rgba(10,8,22,.26);
+}
+body:has(.scene) .spread .tiny.muted { color:#f3ecdf; text-shadow:0 1px 3px rgba(10,8,22,.7) }
+body:has(.scene) .bar.thin { background:rgba(255,255,255,.28) }
+
+/* Flat poster illustration: hard edges, no blur, full strength.
+   
+   The painterly scenes run at 50% because a fake painting competes with the
+   question. A poster does not - it is already flat, already low-detail in the
+   middle by composition, and dimming it just makes it look washed out, which
+   is the exact failure these replace. */
+.scene-poster { opacity: .82; }

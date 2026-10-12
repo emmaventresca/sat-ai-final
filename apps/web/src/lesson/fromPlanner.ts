@@ -71,10 +71,11 @@ function stripTags(html: string): string {
   return html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
 }
 
-function toLessonQuestion(q: Question): LessonQuestion {
+export function toLessonQuestion(q: Question): LessonQuestion {
   return {
     id: q.id,
     category: q.subtypeName || q.subtype || q.skill || '',
+    subtype: q.subtype,
     difficulty: q.difficulty,
     format: q.format,
     stimulus: q.stimulus ?? null,
@@ -184,4 +185,73 @@ function studentLine(spec: PlannerLesson): string | undefined {
   const s = spec.student
   if (!s?.from || !s?.to) return undefined
   return `For a student at ${s.from} aiming at ${s.to}`
+}
+
+/**
+ * A freshly written variant, as the lesson shows it.
+ *
+ * These come straight off the authoring tool rather than out of the bank, so
+ * they carry the bank's field names but none of the index's enrichment - no
+ * subtypeName, and an exam only implied by where they were written. Both are
+ * supplied here rather than left undefined, because a question chip reading
+ * "undefined" on a shared screen is the kind of detail that makes a teacher
+ * stop trusting the whole packet.
+ */
+export function fromPool(
+  raw: Record<string, unknown>,
+  exam: Exam,
+  subtypeName: string,
+): LessonQuestion {
+  const q = { ...raw, exam, subtypeName } as unknown as Question
+  return toLessonQuestion(q)
+}
+
+/**
+ * Swap freshly written variants into a plan.
+ *
+ * By default the bank questions the planner cited are dropped, because that
+ * was the whole reason for writing variants: the student may already have sat
+ * them alone, and a lesson that re-runs their homework teaches them that the
+ * session is optional. The teacher can keep both sets, and sometimes should -
+ * working the original and then its twin back to back is a real exercise -
+ * but it has to be the thing she chose, not the thing that happened.
+ *
+ * Questions no longer referenced by any section are dropped from the plan
+ * entirely. Leaving them would quietly move them into the leftover pool at
+ * the end of the packet, which is where a question goes to be handed out as
+ * extra practice - exactly where these must not end up.
+ */
+export function mergeFresh(
+  plan: LessonPlan,
+  picked: Map<string, LessonQuestion[]>,
+  replace: boolean,
+): LessonPlan {
+  if (!picked.size) return plan
+  const added = new Map<string, LessonQuestion>()
+
+  const sections = plan.sections.map((section) => {
+    const ids = section.questionIds ?? []
+    if (!ids.length) return section
+    const byId = new Map(plan.questions.map((q) => [q.id, q]))
+    const slugs = ids.map((id) => byId.get(id)?.subtype).filter(Boolean)
+    const slug = slugs.find((s) => s && picked.has(s))
+    if (!slug) return section
+
+    const fresh = picked.get(slug) ?? []
+    for (const q of fresh) added.set(q.id, q)
+    const next = replace ? fresh.map((q) => q.id) : [...ids, ...fresh.map((q) => q.id)]
+    next.sort((a, b) => {
+      const qa = added.get(a) ?? byId.get(a)
+      const qb = added.get(b) ?? byId.get(b)
+      return qa && qb ? difficultyRank(qa.difficulty) - difficultyRank(qb.difficulty) : 0
+    })
+    return { ...section, questionIds: next }
+  })
+
+  const kept = new Set(sections.flatMap((s) => s.questionIds ?? []))
+  return {
+    ...plan,
+    sections,
+    questions: [...plan.questions, ...added.values()].filter((q) => kept.has(q.id)),
+  }
 }

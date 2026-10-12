@@ -6,6 +6,8 @@ import { loadIndex, type QuestionRef } from '../lib/bank'
 import { roster, type Student } from './roster'
 import { StudentDetail } from './StudentDetail'
 import { examTone } from './tone'
+import { Codes } from './Codes'
+import { current, signOut } from '../auth/auth'
 
 /**
  * One portal, both exams.
@@ -40,6 +42,9 @@ export function TeacherHome() {
           <Link className="btn-sm" to="/plan">Plan a lesson</Link>
           <Link className="btn-sm" to="/assign">Assign</Link>
           <Link className="btn-sm" to="/">Student view</Link>
+          <button className="btn-sm" onClick={() => void signOut()}>
+            Sign out{current()?.name ? ` (${current()?.name})` : ''}
+          </button>
         </div>
       </div>
 
@@ -56,6 +61,8 @@ export function TeacherHome() {
           )
         })}
       </div>
+
+      <Codes />
 
       <h2>Your students</h2>
       {!students.length && (

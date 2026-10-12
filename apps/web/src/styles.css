@@ -1214,3 +1214,343 @@ mark.hl-blue{background:#c3e0ff;box-shadow:inset 0 -.42em 0 #c3e0ff}
 .world-ocean .realm-card.under-way .realm-seal{background:#e2f4fa;border-color:#9ed0e0;color:#17627a}
 .world-ocean .realm-card.under-way .qb-track>i{background:linear-gradient(90deg,#3f93ad,#b6e3f0)}
 .region+.region{margin-top:38px}
+/* On the snow world the ground is pale, so the label inverts: dark ink with
+   a white halo rather than the other way round. */
+.realm-label.on-light{fill:#1d2435;stroke:#eef6fb}
+.realm-sub.on-light{fill:#33425c;stroke:#eef6fb}
+
+/* ---------------------------------------------------------------------------
+   Gems, quizzes, and what is left.
+
+   The counts are the quiet half of this. A student who moves up a level has
+   not finished the one below, and a screen that showed only a percentage let
+   them believe otherwise - so every level of the map now says what it still
+   holds. "New" is the loud one on purpose: it is the only thing here that
+   changes without the student doing anything.
+   --------------------------------------------------------------------------- */
+.gem { flex: none; vertical-align: -2px; }
+.gem-polished { filter: drop-shadow(0 0 4px rgba(255, 255, 255, .45)); }
+.gem-none { color: var(--dim); }
+
+.realm-gems { display: flex; gap: 3px; margin-top: 7px; }
+.realm-left {
+  display: flex; gap: 10px; align-items: baseline;
+  font-size: 11.5px; color: var(--dim); margin-top: 5px;
+}
+.realm-seal.sealed { background: var(--accent); color: #fff; }
+
+.new-flag {
+  display: inline-block; margin-left: 7px; padding: 1px 6px;
+  border-radius: 999px; background: var(--accent); color: #fff;
+  font-size: 10.5px; font-weight: 700; letter-spacing: .02em;
+  vertical-align: 1px;
+}
+
+.path-name { display: flex; align-items: center; gap: 7px; }
+
+/* The bar under a level fills to what has actually been answered there. */
+.level-bar {
+  display: block; height: 3px; border-radius: 2px;
+  background: var(--line); overflow: hidden; margin: 6px 0 2px;
+}
+.level-bar i { display: block; height: 100%; background: var(--accent); }
+.level-new {
+  position: absolute; top: 8px; right: 8px;
+  padding: 1px 6px; border-radius: 999px;
+  background: var(--accent); color: #fff; font-size: 10px; font-weight: 700;
+}
+.level { position: relative; }
+
+.stop.quiz .stop-dot { background: var(--accent); }
+.stop.quiz .stop-seal { display: flex; align-items: center; }
+
+/* The quiz card reads as a reward, not a gate - it is the only screen in the
+   app where the student is being offered something rather than set work. */
+.quiz-card { text-align: center; }
+.quiz-card .gem { margin: 14px auto 0; display: block; }
+
+/* The mid-round offer. It appears under the question that earned it, while
+   the student is still warm, and it is an offer: "Stay here" is a real
+   button and nothing moves without a tap. */
+.offer {
+  margin-top: 12px; padding: 12px 14px;
+  border: 1px solid var(--accent); border-radius: 10px;
+  background: var(--tint); font-size: 13.5px; line-height: 1.5;
+}
+
+/* The road already walked, and the figure walking it. */
+.map-road-done{
+  fill:none;stroke:#ffe6ad;stroke-width:4.5;stroke-linecap:round;opacity:.9;
+  transition:stroke-dashoffset 1.1s cubic-bezier(.16,1,.3,1);
+}
+.traveller{
+  transition:offset-distance 1.1s cubic-bezier(.16,1,.3,1);
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.35));
+}
+@media (prefers-reduced-motion:reduce){
+  .map-road-done,.traveller{transition:none}
+}
+
+/* ---------------------------------------------------------------------------
+   Selecting is not answering: a tap marks a choice, Submit commits it.
+
+   The mark is a ring on the LETTER, not a slab behind the whole row. Filling
+   a 600px row to say "this one" is a lot of ink for one bit of information,
+   and it fights the passage it sits under - the eye keeps going back to the
+   block of colour instead of to the words. The letter is already where the
+   student looks to name their answer, so that is where the state belongs.
+   It is also what the real test interface does.
+   --------------------------------------------------------------------------- */
+.choice .k{
+  flex:0 0 auto;display:inline-grid;place-items:center;
+  width:27px;height:27px;border-radius:50%;
+  border:1.5px solid var(--line2);background:transparent;
+  font-size:.86rem;font-weight:800;color:var(--dim);
+  margin-right:11px;line-height:1;
+  /* Sits on the first line of the choice, not at the top of a wrapped block. */
+  margin-top:1px;
+  transition:border-color .16s ease, background .16s ease, color .16s ease;
+}
+.choice:hover .k{border-color:var(--purple)}
+
+.choice.chosen{border-color:var(--line2)}
+.choice.chosen .k{
+  border-color:var(--purple);border-width:2.5px;
+  background:transparent;color:var(--purple-d);
+}
+
+/* After submitting, the ring carries the verdict too. */
+.choice.right .k{border-color:var(--good);background:var(--good);color:#fff}
+.choice.wrong .k{border-color:var(--bad);background:var(--bad);color:#fff}
+.submit-row{display:flex;align-items:center;gap:14px;margin-top:18px;flex-wrap:wrap}
+
+/* ---------------------------------------------------------------------------
+   Exam tabs.
+
+   The mistakes set earns top billing because it answers the question a
+   student actually arrives with - "what should I do for twenty minutes" -
+   and the map answers a different one. The count is rendered as a fact, not
+   a nag: a number on a tab, no colour alarm, no exclamation.
+   --------------------------------------------------------------------------- */
+.exam-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 16px;
+  border-bottom:1px solid var(--line);padding-bottom:0}
+.exam-tabs .tab,.exam-tabs .tab-on{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 16px 11px;border-radius:12px 12px 0 0;
+  font-size:.92rem;font-weight:700;text-decoration:none;
+  color:var(--dim);border:1px solid transparent;border-bottom:none;
+  transition:color .16s ease,background .16s ease,border-color .16s ease}
+.exam-tabs .tab:hover{color:var(--ink);background:var(--panel2)}
+.exam-tabs .tab-on{color:var(--ink);background:var(--panel);
+  border-color:var(--line);margin-bottom:-1px}
+.tab-n{display:inline-grid;place-items:center;min-width:21px;height:21px;
+  padding:0 6px;border-radius:99px;background:var(--line2);color:var(--ink);
+  font-size:.7rem;font-weight:800}
+
+.recent-set h2{margin-bottom:6px}
+.recent-groups{display:grid;gap:9px;margin-bottom:6px}
+.recent-group{display:flex;align-items:center;gap:14px;padding:13px 16px;
+  border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.rg-n{flex:0 0 auto;width:36px;height:36px;border-radius:50%;display:grid;
+  place-items:center;font-family:var(--serif);font-weight:700;
+  background:var(--bad-bg);color:#c9344c;border:1px solid var(--bad-ln)}
+.rg-t{display:block;font-weight:700;font-size:.97rem}
+.rg-d{display:block;font-size:.78rem;color:var(--dim);margin-top:2px}
+
+.recent-lessons{display:grid;gap:9px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.recent-lesson{display:block;text-align:left;padding:15px 17px;border-radius:14px}
+.rl-t{display:block;font-weight:700;font-size:.97rem}
+.rl-d{display:block;font-size:.78rem;color:var(--dim);margin-top:3px;font-weight:600}
+
+/* Invite codes. A code is a physical object - it gets read off a screen and
+   typed on a phone - so it is set big and monospaced with generous tracking. */
+.codes-make input{flex:1;min-width:160px;padding:11px 14px;border-radius:12px;
+  border:1.5px solid var(--line2);font:inherit;background:var(--panel)}
+.codes-uses{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.codes-uses input{width:62px;flex:none;text-align:center}
+.code-list{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
+.code-list li{display:flex;align-items:center;gap:12px;padding:11px 14px;
+  border:1px solid var(--line);border-radius:13px;background:var(--panel2)}
+.code-big{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:1.22rem;font-weight:700;letter-spacing:.14em;color:var(--ink)}
+.code-for{flex:1;font-size:.84rem;color:var(--dim);font-weight:600}
+
+/* On a passage section a round is measured in passages, not questions:
+   reading is most of the work and the student should see it coming. */
+.level-shape{display:block;font-size:.72rem;font-weight:700;color:var(--purple-d);
+  margin-top:3px}
+
+/* Challenge, locked. Visible and counted - a student should see the
+   questions exist and what opens them, not find an empty space - but
+   plainly not available yet. */
+.level.locked{opacity:.52;cursor:default;border-style:dashed}
+.level.locked:hover{transform:none;box-shadow:none;border-color:var(--line2)}
+.level-lock{display:block;font-size:.7rem;font-weight:800;letter-spacing:.03em;
+  color:var(--flag);margin-top:4px}
+
+/* ---------------------------------------------------------------------------
+   Error log.
+
+   A mistake leaves the open list by being answered right, and by nothing
+   else - so "open" is styled as a live count rather than as an alarm, and
+   "fixed" is quiet rather than celebratory. The student's own note is set
+   apart because it is the one thing on the screen we did not write.
+   --------------------------------------------------------------------------- */
+/* The tree: skill, then recognition, then the questions themselves.
+   
+   Collapsed by default at both levels. A student opening the log wants the
+   SHAPE first - which skills, how many - and showing forty rows immediately
+   buries the shape under them. */
+.err-tree{display:grid;gap:9px;margin-top:14px}
+.err-skill{border:1px solid var(--line);border-radius:15px;background:var(--panel);
+  overflow:hidden}
+.err-skill-head{display:flex;align-items:center;gap:12px;width:100%;text-align:left;
+  padding:15px 17px;border:0;border-radius:0;background:transparent}
+.err-skill-head:hover{background:var(--panel2);box-shadow:none}
+.err-skill-t{flex:1;font-weight:800;font-size:1rem;letter-spacing:-.01em}
+.err-skill-n{display:flex;gap:10px;align-items:baseline;flex:none}
+.err-caret{flex:none;width:21px;height:21px;display:grid;place-items:center;
+  border-radius:7px;background:var(--panel2);border:1px solid var(--line2);
+  font-size:.86rem;font-weight:800;color:var(--dim);line-height:1}
+
+.err-topic-list{padding:0 13px 13px;display:grid;gap:7px}
+.err-topic-group{border:1px solid var(--line);border-radius:13px;
+  background:var(--panel2);overflow:hidden}
+.err-topic-head{display:flex;align-items:center;gap:9px;padding:9px 11px}
+.err-topic-toggle{flex:1;display:flex;align-items:center;gap:10px;text-align:left;
+  border:0;background:transparent;padding:4px 2px}
+.err-topic-toggle:hover{background:transparent;box-shadow:none}
+.err-topic-head .btn-sm{flex:none}
+.err-topic-group .err-list{padding:0 11px 11px;margin-top:0}
+
+.err-topics{display:grid;gap:9px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.err-topic{display:flex;align-items:center;gap:12px;text-align:left;
+  padding:14px 16px;border-radius:14px}
+.err-topic:disabled{opacity:.55}
+.et-body{flex:1;min-width:0}
+.et-t{display:block;font-weight:700;font-size:.95rem}
+.et-d{display:block;font-size:.76rem;color:var(--dim);font-weight:600;margin-top:2px}
+.et-n{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex:none}
+.et-open{font-size:.78rem;color:#c9344c}
+.et-fixed{font-size:.72rem;color:var(--good)}
+
+.err-list{display:grid;gap:9px;margin-top:14px}
+.err-row{display:flex;align-items:flex-start;gap:14px;padding:15px 17px;
+  border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.err-row.is-fixed{opacity:.72;background:linear-gradient(90deg,var(--good-bg),var(--panel) 55%)}
+.err-main{flex:1;min-width:0}
+.err-t{font-weight:700;font-size:.97rem}
+.err-d{font-size:.78rem;color:var(--dim);font-weight:600;margin-top:3px}
+.err-acts{flex:none}
+.err-note{margin-top:9px;padding:10px 13px;border-radius:11px;
+  background:var(--panel2);border-left:2px solid var(--purple);
+  font-size:.86rem;line-height:1.5}
+.err-note-k{display:block;font-size:.68rem;font-weight:800;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--purple-d);margin-bottom:3px}
+.err-note-edit{margin-top:10px}
+.err-note-edit textarea{width:100%;padding:11px 13px;border-radius:11px;
+  border:1.5px solid var(--line2);font:inherit;font-size:.9rem;resize:vertical;
+  background:var(--panel)}
+.err-note-edit .row{margin-top:7px}
+
+/* Picking which mistakes to set as homework. */
+.err-pick{display:flex;align-items:center;gap:12px;padding:13px 15px;
+  border:1.5px solid var(--line);border-radius:14px;background:var(--panel);
+  cursor:pointer;transition:border-color .16s ease,background .16s ease}
+.err-pick:hover{background:var(--panel2)}
+.err-pick.on{border-color:var(--purple);background:var(--panel2)}
+.err-pick input{flex:none}
+
+/* Next: moves on without answering.
+   The first version of this was a muted underlined link pushed to the right
+   margin - "available, never inviting" - and Emma could not find it on the
+   page at all, twice. A control a student needs when they are stuck is not
+   the place to be tasteful about it. It is a real button now, sitting where
+   the next action belongs; it is still secondary to Submit, by weight rather
+   than by hiding. */
+.btn-next{
+  margin-left:auto;
+  padding:9px 16px;
+  font-size:.9rem;
+  font-weight:600;
+  border-radius:11px;
+  background:var(--panel2);
+  border:1px solid var(--line2);
+  color:var(--ink);
+  cursor:pointer;
+}
+.btn-next:hover{background:#fff;border-color:var(--purple);color:var(--purple)}
+
+/* Passage line numbers, in the margin like the real paper. Positions are
+   measured from the rendered line boxes (see LineNumbers.tsx), so the gutter
+   only needs to reserve the room and get out of the way. */
+.annotatable{position:relative}
+.annotatable.numbered{padding-left:2.6rem}
+.psg-gutter{position:absolute;left:0;top:0;bottom:0;width:2.2rem;pointer-events:none}
+.psg-num{
+  position:absolute;right:0;
+  font-size:.72rem;line-height:1;
+  color:var(--dim);opacity:.65;
+  font-variant-numeric:tabular-nums;
+  user-select:none;
+}
+/* The underlined clause an English question is asking about. Heavier than a
+   text-decoration underline so it survives beside a highlight. */
+.stim u, .q u{
+  text-decoration:none;
+  border-bottom:2px solid currentColor;
+  padding-bottom:1px;
+}
+
+/* Round tools: clock and flag, in the header beside the question count. */
+.round-tools{display:flex;align-items:center;gap:8px;margin-left:auto}
+.btn-tool{
+  padding:5px 10px;font-size:.76rem;font-weight:600;
+  border-radius:9px;background:var(--panel2);
+  border:1px solid var(--line2);color:var(--dim);cursor:pointer;
+}
+.btn-tool:hover{color:var(--ink);border-color:var(--purple)}
+.btn-tool.flag.on{
+  background:#fff4e0;border-color:#f0b35c;color:#9a6512;
+}
+.clock{
+  display:inline-flex;gap:5px;align-items:baseline;
+  font-variant-numeric:tabular-nums;font-size:.8rem;color:var(--dim);
+}
+.clock-sep{opacity:.5}
+.clock-total{font-weight:600;color:var(--ink)}
+
+/* The navigator. Each question's state at a glance, and a way back to any
+   of them - which is what makes skipping safe rather than lossy. */
+.navstrip{
+  display:flex;flex-wrap:wrap;gap:6px;
+  list-style:none;padding:0;margin:18px 0 6px;
+}
+.nav-q{
+  width:30px;height:30px;border-radius:8px;cursor:pointer;
+  font-size:.78rem;font-weight:700;font-variant-numeric:tabular-nums;
+  border:1px solid var(--line2);background:var(--panel);color:var(--dim);
+  position:relative;
+}
+.nav-q:hover{border-color:var(--purple)}
+.nav-q.right{background:var(--good-bg);border-color:var(--good-ln);color:#0f7a56}
+.nav-q.wrong{background:var(--bad-bg);border-color:var(--bad-ln);color:#b3324a}
+.nav-q.here{outline:2px solid var(--purple);outline-offset:1px}
+/* The flag is a corner mark, so it can sit on top of right/wrong rather
+   than replacing the colour that says what happened. */
+.nav-q.flagged::after{
+  content:'';position:absolute;top:-2px;right:-2px;
+  width:8px;height:8px;border-radius:50%;
+  background:#f0b35c;border:1.5px solid #fff;
+}
+.navkey{margin-top:2px}
+.btn-next:disabled{opacity:.4;cursor:not-allowed}
+.btn-next:disabled:hover{background:var(--panel2);border-color:var(--line2);color:var(--ink)}
+
+/* Shown when a student navigates back to a question they already answered. */
+.revisit{
+  margin:0 0 10px;padding:8px 12px;border-radius:10px;
+  font-size:.84rem;border:1px solid var(--line2);background:var(--panel2);
+}
+.revisit.right{background:var(--good-bg);border-color:var(--good-ln);color:#0f7a56}
+.revisit.wrong{background:var(--bad-bg);border-color:var(--bad-ln);color:#b3324a}

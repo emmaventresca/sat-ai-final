@@ -1,0 +1,512 @@
+/* ---------------------------------------------------------------------------
+   The greenwood.
+
+   Scoped to `.journey` on purpose. The teacher portal and the review screens
+   keep the app's lavender; this is the one surface that is pretending to be a
+   place, and a place should not look like a settings page.
+
+   The move is singular: the page becomes ground. Everything else here is in
+   service of that - the ivy in the gutters, the trail that never breaks
+   between a map and the cards under it, the headings sized like signage
+   rather than like labels. Where the old screen said "here are eight
+   domains", this one says "here is somewhere, and it goes on".
+   --------------------------------------------------------------------------- */
+
+.journey {
+  --moss:#1f3d26;
+  --moss-d:#15291a;
+  --leaf:#3f7a3f;
+  --leaf-l:#6fae5a;
+  --leaf-p:#bfe0a4;
+  --bark:#5a4631;
+  --gold:#d9a93f;
+  --gold-l:#f2d99a;
+  --parch:#fbfaf3;
+  --parch2:#f2f1e4;
+  --parch-ln:#ddd9c2;
+  --ink-g:#24351f;
+  --dim-g:#5c6b52;
+
+  position:relative;
+  color:var(--ink-g);
+  max-width:980px;
+}
+
+/* The ground. A wash rather than a texture: a tiled leaf pattern behind body
+   text is the fastest way to make a page unreadable, and the depth here has
+   to come from the gutters instead. */
+.journey::before {
+  content:"";
+  position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:
+    radial-gradient(1200px 680px at 8% -10%, #e8f2dd 0%, transparent 62%),
+    radial-gradient(900px 620px at 95% 2%, #dfeedd 0%, transparent 58%),
+    radial-gradient(760px 520px at 50% 108%, #cfe4c4 0%, transparent 70%),
+    linear-gradient(172deg, #f4f8ec 0%, #e9f1e0 55%, #dfebd4 100%);
+}
+
+/* --- Ivy ------------------------------------------------------------------
+   Fixed to the viewport so it climbs past as the page scrolls, which is the
+   whole effect. Hidden below the width where the gutters stop existing -
+   ivy over the content is wallpaper, not a frame. */
+.journey .ivy {
+  position:fixed; top:210px; bottom:-60px; width:70px; z-index:0;
+  pointer-events:none; overflow:hidden;
+  display:flex; flex-direction:column;
+  /* Starts below the masthead and fades in, so it reads as something growing
+     up the walls rather than a band pinned across the top of the screen. */
+  -webkit-mask-image:linear-gradient(180deg, transparent 0, #000 110px, #000 82%, transparent 100%);
+  mask-image:linear-gradient(180deg, transparent 0, #000 110px, #000 82%, transparent 100%);
+  opacity:.72;
+}
+.journey .ivy-left  { left:0;  }
+.journey .ivy-right { right:0; transform:scaleX(-1); }
+.ivy-seg { width:100%; flex:0 0 auto; display:block; }
+
+.ivy-stem    { fill:none; stroke:#4a6b3a; stroke-width:2.6; stroke-linecap:round; opacity:.34; }
+.ivy-tendril { fill:none; stroke:#4a6b3a; stroke-width:1.4; stroke-linecap:round; opacity:.28; }
+.ivy-leaf    { fill:#4f8440; opacity:.26; }
+.ivy-vein    { fill:none; stroke:#2f5c2a; stroke-width:.9; opacity:.18; }
+
+@media (max-width:1280px) { .journey .ivy { display:none } }
+
+/* Content sits above the ivy, and the ivy never reaches it.
+
+   Scoped past the ivy rather than applied to every child: `.journey > *`
+   matches the ivy columns too, and at equal specificity the later rule won -
+   which dropped them out of `fixed` and into the flow, pushing the whole page
+   2,600px down behind them. */
+.journey > *:not(.ivy) { position:relative; z-index:1; }
+
+/* --- Signage --------------------------------------------------------------
+   The region heading was 1.3rem, which is a label. A region is a COUNTRY -
+   it is the biggest division the student has - and it should arrive like one.
+   No eyebrow above it: the heading carries its own weight. */
+.journey .region { margin:54px 0 0; }
+.journey .region-head {
+  display:block; border:0; padding:0 0 14px; margin-bottom:22px;
+  position:relative;
+}
+.journey .region-head h2 {
+  font-family:var(--serif);
+  font-size:clamp(2.4rem, 6.2vw, 3.9rem);
+  line-height:.98; letter-spacing:-.035em; font-weight:700;
+  color:var(--moss); margin:0; text-transform:none;
+}
+.journey .region-count {
+  display:block; margin-top:10px; color:var(--dim-g);
+  font-size:.82rem; font-weight:700; letter-spacing:.04em; text-transform:none;
+}
+/* A rule that frays out rather than stopping dead, so the heading sits on
+   ground rather than in a box. */
+.journey .region-head::after {
+  content:""; position:absolute; left:0; right:0; bottom:0; height:2px;
+  background:linear-gradient(90deg, var(--leaf) 0%, #9ac08a 42%, transparent 92%);
+  border-radius:2px;
+}
+
+.journey h1 {
+  font-family:var(--serif); font-weight:700;
+  font-size:clamp(2rem, 4.4vw, 2.9rem); line-height:1.04;
+  letter-spacing:-.03em;
+  background:none; -webkit-text-fill-color:currentColor; color:var(--moss);
+}
+.journey .who { color:var(--dim-g); font-size:.95rem; }
+
+/* --- The trail ------------------------------------------------------------
+   One continuous dotted line from the map, down past every realm card, to
+   the end of the region. The map already drew a trail between its nodes and
+   then the page under it reverted to a stack of cards - which read as two
+   different ideas about what this screen is. */
+.journey .region-body { position:relative; padding-left:34px; }
+.journey .region-body::before {
+  content:""; position:absolute; left:9px; top:-14px; bottom:34px; width:3px;
+  background:
+    repeating-linear-gradient(180deg,
+      var(--leaf) 0 5px, transparent 5px 13px);
+  opacity:.5; border-radius:3px;
+}
+/* Where the trail ends, it ends as a bud rather than being cut off. */
+.journey .region-body::after {
+  content:""; position:absolute; left:4px; bottom:24px;
+  width:13px; height:13px; border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  background:var(--leaf-l); opacity:.55;
+}
+
+/* --- Realm cards ----------------------------------------------------------
+   Parchment, not panel. Softer corners and a shadow with real offset and
+   blur, so the card sits ON the ground rather than floating in front of it. */
+.journey .realm-card { margin-bottom:14px; position:relative; }
+.journey .realm-card::before {
+  content:""; position:absolute; left:-25px; top:33px; width:19px; height:3px;
+  background:repeating-linear-gradient(90deg, var(--leaf) 0 4px, transparent 4px 9px);
+  opacity:.55;
+}
+.journey .realm-head {
+  gap:16px; padding:19px 22px;
+  border-radius:22px;
+  background:linear-gradient(176deg, var(--parch) 0%, var(--parch2) 100%);
+  border:1px solid var(--parch-ln);
+  box-shadow:0 3px 6px rgba(31,61,38,.06), 0 14px 32px rgba(31,61,38,.10);
+  transition:transform .26s cubic-bezier(.16,1,.3,1),
+             box-shadow .26s cubic-bezier(.16,1,.3,1),
+             border-color .2s ease;
+}
+.journey .realm-head:hover {
+  transform:translateY(-3px);
+  border-color:#c3cdae;
+  box-shadow:0 6px 12px rgba(31,61,38,.09), 0 24px 50px rgba(31,61,38,.16);
+}
+.journey .realm-seal {
+  width:42px; height:42px; border-radius:14px;
+  background:linear-gradient(160deg,#eef5e3,#d7e6c6);
+  border:1px solid #bfd3ab; color:#2f5c2a;
+  font-size:1.05rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8);
+}
+.journey .realm-card.under-way .realm-seal {
+  background:linear-gradient(160deg,var(--gold-l),#e6c268);
+  border-color:#d2ab55; color:#5e4410;
+}
+.journey .realm-card.done .realm-seal,
+.journey .realm-seal.sealed {
+  background:linear-gradient(160deg,#9fd089,#4f8440);
+  border-color:#3f7a3f; color:#fff;
+}
+.journey .realm-t { font-size:1.18rem; letter-spacing:-.018em; color:var(--moss); }
+.journey .realm-d { color:var(--dim-g); font-size:.83rem; }
+.journey .realm-chevron { color:#8a9c7e; }
+
+.journey .qb-track { background:#dfe8d4; }
+.journey .qb-track > i { background:linear-gradient(90deg,var(--leaf),var(--leaf-l)); }
+
+.journey .realm-left { color:var(--dim-g); font-size:.78rem; margin-top:7px; }
+.journey .realm-gems { margin-top:9px; }
+
+/* --- Paths and stops ------------------------------------------------------ */
+.journey .realm-paths { padding:14px 0 6px 16px; }
+.journey .path { margin:20px 0 24px; }
+.journey .path-name {
+  font-size:.78rem; letter-spacing:.1em; color:#4a6b3a; gap:10px;
+}
+.journey .path-count { color:var(--leaf); }
+
+/* The stops rail is a vine too: dashes with a leaf at the head. */
+.journey .stops { padding-left:20px; }
+.journey .stops::before {
+  left:5px; width:3px; border-radius:3px;
+  background:repeating-linear-gradient(180deg, #7ba368 0 4px, transparent 4px 10px);
+  opacity:.65;
+}
+.journey .stops li { margin-bottom:8px; }
+.journey .stop {
+  padding:13px 17px; border-radius:16px; gap:14px;
+  background:var(--parch);
+  border:1px solid #e4e2d2;
+  transition:transform .22s cubic-bezier(.16,1,.3,1),
+             background .2s ease, border-color .2s ease, box-shadow .22s ease;
+}
+.journey .stop:hover {
+  transform:translateX(5px);
+  background:#fff; border-color:#c3cdae;
+  box-shadow:0 2px 5px rgba(31,61,38,.05), 0 10px 22px rgba(31,61,38,.09);
+}
+.journey .stop-dot {
+  width:13px; height:13px; margin-left:-27px;
+  background:var(--parch); border:2.5px solid #adbf9c;
+}
+.journey .stop.started .stop-dot { border-color:var(--gold); background:var(--gold-l); }
+.journey .stop.cleared .stop-dot { border-color:var(--leaf); background:var(--leaf-l); }
+.journey .stop-t { font-size:.97rem; color:var(--ink-g); }
+.journey .stop-d { color:var(--dim-g); font-size:.78rem; }
+.journey .stop.cleared {
+  background:linear-gradient(90deg,#e9f4e0,var(--parch) 62%);
+  border-color:#cadcbc;
+}
+.journey .stop.cleared .stop-t { color:#2f5c2a; }
+.journey .stop-seal { color:var(--leaf); display:flex; align-items:center; }
+
+.journey .stop.trial {
+  border-style:solid; border-color:#ddc79a;
+  background:linear-gradient(90deg,#fdf5e3,var(--parch) 68%);
+}
+.journey .stop.trial .stop-dot { border-color:#c19a46; background:var(--gold-l); }
+.journey .stop.trial .stop-t { color:#6b5114; }
+.journey .stop.trial .stop-seal { color:#b8912f; }
+
+.journey .stop.quiz {
+  border-color:#c7bce8;
+  background:linear-gradient(90deg,#f1edfd,var(--parch) 68%);
+}
+.journey .stop.quiz .stop-dot { border-color:#7f77dd; background:#cdc7f4; }
+.journey .stop.quiz .stop-t { color:#443a8c; }
+
+.journey .new-flag {
+  background:var(--leaf); box-shadow:0 1px 3px rgba(31,61,38,.3);
+}
+
+/* --- Opened stop ---------------------------------------------------------- */
+.journey .stage-card, .journey .trial-card {
+  border-radius:24px; padding:30px 32px;
+  background:linear-gradient(176deg, var(--parch) 0%, var(--parch2) 100%);
+  border:1px solid var(--parch-ln);
+  box-shadow:0 3px 7px rgba(31,61,38,.06), 0 18px 40px rgba(31,61,38,.11);
+}
+.journey .trial-card {
+  border-color:#ddc79a;
+  background:linear-gradient(176deg,#fdf8ec 0%,#f6efdd 100%);
+}
+.journey .quiz-card {
+  border-color:#c7bce8;
+  background:linear-gradient(176deg,#f6f3fe 0%,#ece7fb 100%);
+}
+.journey .stage-card h1, .journey .trial-card h1 { margin-bottom:10px; }
+.journey .lead { font-family:var(--serif); font-size:1.06rem; line-height:1.62; color:#3a4a33; }
+.journey .stage-sec h3 { color:#4a6b3a; }
+
+.journey .level {
+  border-radius:17px; border-color:#dfdcc9; background:var(--parch);
+  transition:transform .22s cubic-bezier(.16,1,.3,1), box-shadow .22s ease,
+             border-color .2s ease;
+}
+.journey .level:hover {
+  transform:translateY(-2px); border-color:#9fbd8c;
+  box-shadow:0 3px 7px rgba(31,61,38,.07), 0 12px 26px rgba(31,61,38,.12);
+}
+.journey .level-bar { background:#e0e6d6; }
+.journey .level-bar i { background:linear-gradient(90deg,var(--leaf),var(--leaf-l)); }
+.journey .level-new { background:var(--leaf); }
+
+/* --- The questbar --------------------------------------------------------- */
+.journey .questbar {
+  border-radius:22px; padding:17px 22px; gap:18px;
+  background:linear-gradient(176deg, var(--parch) 0%, var(--parch2) 100%);
+  border:1px solid var(--parch-ln);
+  box-shadow:0 3px 6px rgba(31,61,38,.06), 0 14px 32px rgba(31,61,38,.10);
+}
+.journey .qb-level {
+  width:52px; height:52px;
+  background:linear-gradient(150deg,var(--gold-l),var(--gold));
+  color:#4a3708;
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.55), 0 2px 5px rgba(31,61,38,.14);
+}
+.journey .qb-title { color:var(--moss); font-size:1.04rem; }
+.journey .qb-xp, .journey .qb-l { color:var(--dim-g); }
+.journey .qb-n { color:var(--moss); }
+
+/* The goal is the student's. Shown as a control, not as a verdict. */
+.goal-set {
+  display:flex; align-items:center; gap:8px; margin-top:7px;
+  justify-content:center;
+}
+.goal-step {
+  width:25px; height:25px; padding:0; border-radius:9px; line-height:1;
+  font-size:1rem; font-weight:800; display:grid; place-items:center;
+  border:1px solid #c7d3ba; background:#eef3e6; color:#3f5c35;
+}
+.goal-step:hover { background:#e2ecd6; border-color:var(--leaf); box-shadow:none; }
+.goal-note { font-size:.68rem; color:var(--dim-g); font-weight:700; }
+
+/* --- Browser surfaces -----------------------------------------------------
+   The parts nobody draws. A green page with a blue selection highlight and a
+   grey scrollbar is a page that was assembled rather than built. */
+.journey ::selection { background:#c8e4b4; color:#1b3318; }
+.journey :focus-visible {
+  outline:2.5px solid var(--leaf); outline-offset:3px; border-radius:12px;
+}
+.journey { scrollbar-color:#9fbd8c #e4ecda; }
+.journey ::-webkit-scrollbar { width:11px; height:11px; }
+.journey ::-webkit-scrollbar-track { background:#e4ecda; }
+.journey ::-webkit-scrollbar-thumb {
+  background:#9fbd8c; border-radius:99px; border:3px solid #e4ecda;
+}
+.journey ::-webkit-scrollbar-thumb:hover { background:var(--leaf); }
+
+@media (prefers-reduced-motion:reduce) {
+  .journey * { transition-duration:.01ms !important; }
+}
+
+/* --- Worked examples ------------------------------------------------------
+   The stop page used to be prose and then a row of difficulty buttons. These
+   sit between: the recognition, demonstrated twice, with the working folded
+   so the student guesses before they read. */
+.journey .worked { margin:26px 0 8px; }
+.journey .worked h2 {
+  font-family:var(--serif); font-size:1.5rem; font-weight:700;
+  letter-spacing:-.022em; text-transform:none; color:var(--moss);
+  margin:0 0 4px;
+}
+.worked-card {
+  position:relative; margin-top:14px; padding:22px 24px 20px;
+  border-radius:20px; border:1px solid var(--parch-ln);
+  background:linear-gradient(176deg,#fcfbf4 0%,#f4f3e6 100%);
+  box-shadow:0 2px 5px rgba(31,61,38,.05), 0 10px 26px rgba(31,61,38,.08);
+  transition:box-shadow .26s cubic-bezier(.16,1,.3,1), border-color .2s ease;
+}
+.worked-card.open { border-color:#bcd3ab; box-shadow:0 3px 7px rgba(31,61,38,.07), 0 16px 36px rgba(31,61,38,.12); }
+.worked-head { display:flex; align-items:center; gap:11px; margin-bottom:12px; }
+.worked-n {
+  width:29px; height:29px; border-radius:50%; display:grid; place-items:center;
+  font-family:var(--serif); font-size:.98rem; font-weight:700; color:#4a3708;
+  background:linear-gradient(150deg,var(--gold-l),var(--gold));
+  box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.55);
+}
+.worked-stim, .worked-stem { font-family:var(--serif); line-height:1.66; }
+.worked-stim { color:#3a4a33; padding-bottom:10px; margin-bottom:10px;
+  border-bottom:1px dashed #d6d3bd; }
+.worked-fig { margin:12px 0; text-align:center; }
+.worked-fig svg { max-width:100%; height:auto; }
+
+.worked-choices { list-style:none; margin:14px 0 0; padding:0; }
+.worked-choices li {
+  display:flex; gap:11px; align-items:baseline;
+  padding:8px 12px; border-radius:11px; font-size:.94rem;
+  transition:background .2s ease;
+}
+.worked-choices li.right { background:#e5f2da; color:#2f5c2a; font-weight:700; }
+.worked-letter {
+  flex:0 0 auto; width:21px; height:21px; border-radius:50%;
+  display:grid; place-items:center; font-size:.73rem; font-weight:800;
+  border:1.5px solid #c3cdae; color:var(--dim-g);
+}
+.worked-choices li.right .worked-letter {
+  background:var(--leaf); border-color:var(--leaf); color:#fff;
+}
+
+.worked-open { margin-top:15px; }
+.worked-why { margin-top:16px; padding-top:15px; border-top:1px dashed #cdd8c0; }
+.worked-why h4 {
+  margin:0 0 7px; font-size:.76rem; font-weight:800;
+  letter-spacing:.08em; text-transform:uppercase; color:#4a6b3a;
+}
+.worked-why > div { font-family:var(--serif); line-height:1.66; color:#3a4a33; }
+.worked-trap { margin-top:15px; padding-top:13px; border-top:1px dashed #e0d2b4; }
+.worked-trap h4 { color:#9a7320; }
+.worked-why .btn-sm { margin-top:15px; }
+
+/* The one line that says where this stop sits, now that the eyebrow is gone. */
+.journey .stage-where {
+  margin:6px 0 0; font-size:.88rem; font-weight:700; color:#4a6b3a;
+}
+.journey .level-rung { display:block; color:var(--leaf); margin:7px 0 3px; }
+
+/* --- Arriving -------------------------------------------------------------
+   Sections settle as they come up, from a place they already occupy: the
+   shift is small and the blur does the work, so nothing reflows and a fast
+   scroll never catches a half-built page. Revealed stays revealed. */
+.journey .reveal {
+  opacity:0; transform:translateY(26px); filter:blur(7px);
+  transition:opacity .78s cubic-bezier(.16,1,.3,1),
+             transform .78s cubic-bezier(.16,1,.3,1),
+             filter .62s cubic-bezier(.16,1,.3,1);
+  will-change:opacity, transform;
+}
+.journey .reveal.in { opacity:1; transform:none; filter:none; }
+.journey .realm-card.reveal { transition-delay:.05s; }
+
+@media (prefers-reduced-motion:reduce) {
+  .journey .reveal { opacity:1; transform:none; filter:none; }
+}
+
+/* --- Signage, louder ------------------------------------------------------
+   The region is the biggest division a student has. It should arrive at a
+   size that says so, and the line under it should be readable from the same
+   distance rather than shrinking to a caption. */
+.journey .region-head h2 { font-size:clamp(3rem, 7.6vw, 5.4rem); }
+.journey .region-count { font-size:1rem; letter-spacing:.01em; }
+.journey h1 { font-size:clamp(2.4rem, 5vw, 3.5rem); }
+.journey .who { font-size:1.06rem; }
+.journey .realm-t { font-size:1.34rem; }
+.journey .realm-d { font-size:.92rem; }
+
+/* --- The shelf ------------------------------------------------------------
+   Paths inside a realm run sideways. The eight realms are the journey and
+   they go down; the recognitions inside one of them are a shelf you walk
+   along, and stacking them turned one realm into four hundred pixels of list
+   that buried the realm after it. */
+.journey .path-rail {
+  display:flex; gap:18px; overflow-x:auto; overflow-y:hidden;
+  scroll-snap-type:x mandatory; scroll-padding-left:4px;
+  padding:4px 4px 16px; margin:0 -4px;
+  overscroll-behavior-x:contain;
+  scrollbar-width:thin;
+}
+.journey .path-rail .path {
+  flex:0 0 min(335px, 82vw); scroll-snap-align:start; margin:0;
+  padding:18px 18px 14px; border-radius:20px;
+  background:linear-gradient(176deg,#fbfbf2 0%,#f1f2e3 100%);
+  border:1px solid #e2e3d0;
+  box-shadow:0 2px 5px rgba(31,61,38,.05), 0 9px 22px rgba(31,61,38,.07);
+}
+.journey .path-rail .stops { padding-left:19px; }
+.journey .rail-hint { margin:2px 0 0 4px; letter-spacing:.04em; }
+
+.journey .path-rail::-webkit-scrollbar { height:9px; }
+.journey .path-rail::-webkit-scrollbar-track { background:transparent; }
+.journey .path-rail::-webkit-scrollbar-thumb {
+  background:#b6cca6; border-radius:99px;
+}
+.journey .path-rail::-webkit-scrollbar-thumb:hover { background:var(--leaf); }
+
+/* The rail is a horizontal surface inside a vertical page, so it has to say
+   it continues. A hard edge reads as the end of the content. */
+.journey .realm-paths { position:relative; }
+.journey .realm-paths::after {
+  content:""; position:absolute; right:0; top:4px; bottom:30px; width:46px;
+  pointer-events:none; border-radius:0 20px 20px 0;
+  background:linear-gradient(90deg, transparent, #eef4e5 86%);
+}
+
+/* --- One path, full width -------------------------------------------------
+   The stops run in a serpentine with a dashed trail curved through their
+   centres, so a realm that owns the whole card reads as a stretch of road
+   rather than as a narrow list with a screenful of nothing beside it. */
+.journey .path-wide .path {
+  padding:20px 22px 16px; border-radius:20px; margin:0;
+  background:linear-gradient(176deg,#fbfbf2 0%,#f1f2e3 100%);
+  border:1px solid #e2e3d0;
+  box-shadow:0 2px 5px rgba(31,61,38,.05), 0 9px 22px rgba(31,61,38,.07);
+}
+.journey .path-wide .path-name { margin-bottom:14px; }
+
+.journey .stop-grid {
+  position:relative; display:grid; gap:14px 20px; align-items:stretch;
+  list-style:none; margin:0; padding:0;
+}
+.journey .stop-grid::before { content:none; }
+.journey .stop-grid .stop-cell {
+  position:relative; z-index:1; display:flex; margin:0;
+}
+.journey .stop-grid .stop-cell > * { width:100%; }
+
+/* Behind the stops, joining them in the order they are read. */
+.stop-trail-cell {
+  position:absolute; inset:0; z-index:0; pointer-events:none; margin:0;
+}
+.stop-trail { position:absolute; inset:0; overflow:visible; }
+.stop-trail path {
+  fill:none; stroke:#7ba368; stroke-width:2.5; stroke-linecap:round;
+  stroke-dasharray:4 10; opacity:.72;
+}
+
+/* Inside the grid a stop carries its own dot rather than hanging off a rail. */
+.journey .stop-grid .stop { height:100%; }
+.journey .stop-grid .stop-dot { margin-left:0; }
+
+@media (max-width:620px) { .stop-grid { gap:10px; } }
+
+.goal-input {
+  width:52px; padding:3px 4px; text-align:center;
+  font:inherit; font-weight:800; font-size:.95rem; color:var(--moss);
+  border:1px solid #c7d3ba; border-radius:9px; background:#fbfcf8;
+  -moz-appearance:textfield;
+}
+.goal-input::-webkit-outer-spin-button,
+.goal-input::-webkit-inner-spin-button { -webkit-appearance:none; margin:0 }
+.goal-input:focus { outline:2px solid var(--leaf); outline-offset:1px; }
+.journey .goal-note { display:block; text-align:center; margin-top:3px; }
+
+/* Room above a realm when the map scrolls you to it, so it does not land
+   jammed against the top of the window. */
+.journey .realm-card { scroll-margin-top: 26px; }

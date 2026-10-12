@@ -2,10 +2,44 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "--prefix",
+        "apps/web",
+        "dev",
+        "--",
+        "--port",
+        "5180",
+        "--strictPort"
+      ],
+      "port": 5180
+    },
+    {
       "name": "sat-ai",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8770"],
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8770"
+      ],
       "port": 8770
+    },
+    {
+      "name": "web-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "--prefix",
+        "apps/web",
+        "dev",
+        "--",
+        "--port",
+        "5181",
+        "--strictPort"
+      ],
+      "port": 5181
     }
   ]
 }

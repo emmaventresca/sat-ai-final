@@ -17,15 +17,20 @@ import {
  * colour buttons would be clutter on a maths stem, which is most of the
  * questions here.
  */
+import { LineGutter, useLineNumbers } from './LineNumbers'
+
 export function Annotatable({
-  html, questionId, part, className,
+  html, questionId, part, className, lineNumbers = false,
 }: {
   html: string
   questionId: string
   part: string
   className?: string
+  /** Number the margin every five lines, as the real paper does. */
+  lineNumbers?: boolean
 }) {
   const host = useRef<HTMLDivElement>(null)
+  const lineRows = useLineNumbers(host, lineNumbers)
   const [highlights, setHighlights] = useState<Highlight[]>(
     () => loadHighlights(questionId, part),
   )
@@ -80,7 +85,8 @@ export function Annotatable({
   }
 
   return (
-    <div className="annotatable">
+    <div className={`annotatable${lineNumbers ? ' numbered' : ''}`}>
+      <LineGutter lines={lineRows} />
       <div ref={host} className={className} onMouseUp={onMouseUp}
         dangerouslySetInnerHTML={{ __html: html }} />
 

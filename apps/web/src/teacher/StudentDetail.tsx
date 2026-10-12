@@ -3,6 +3,7 @@ import type { Exam } from '../exams/types'
 import { EXAM_IDS, examSpec } from '../exams/registry'
 import { loadIndex } from '../lib/bank'
 import { difficultyLabel } from '../lesson/types'
+import { AssignErrors } from './AssignErrors'
 import { duration, metricsFor } from './metrics'
 import type { Student } from './roster'
 import { examTone } from './tone'
@@ -20,6 +21,8 @@ export function StudentDetail({ student }: { student: Student }) {
   const [exam, setExam] = useState<Exam>(sitting[0] ?? 'sat')
   const [names, setNames] = useState<Record<string, string>>({})
   const [phrasingOf, setPhrasingOf] = useState<Record<string, string>>({})
+  const [genreOf, setGenreOf] = useState<Record<string, string>>({})
+  const [setting, setSetting] = useState(false)
   const [labels, setLabels] = useState<Record<string, string>>({})
 
   useEffect(() => {
@@ -28,12 +31,15 @@ export function StudentDetail({ student }: { student: Student }) {
       if (!live) return
       const map: Record<string, string> = {}
       const fam: Record<string, string> = {}
+      const genre: Record<string, string> = {}
       for (const q of bank) {
         if (q.subtype && !map[q.subtype]) map[q.subtype] = q.subtypeName || q.subtype
         if (q.phrasing) fam[q.id] = q.phrasing
+        if (q.passageType) genre[q.id] = q.passageType
       }
       setNames(map)
       setPhrasingOf(fam)
+      setGenreOf(genre)
     })
     void fetch(`${import.meta.env.BASE_URL}data/misconceptions.json`)
       .then((r) => r.json())
@@ -45,7 +51,8 @@ export function StudentDetail({ student }: { student: Student }) {
   }, [exam])
 
   const m = useMemo(
-    () => metricsFor(exam, names, phrasingOf), [exam, names, phrasingOf],
+    () => metricsFor(exam, names, phrasingOf, genreOf),
+    [exam, names, phrasingOf, genreOf],
   )
   const trend = m.prev7 ? Math.round(((m.last7 - m.prev7) / m.prev7) * 100) : null
 
@@ -132,6 +139,82 @@ export function StudentDetail({ student }: { student: Student }) {
                     <td>{readable(p.phrasing)}</td>
                     <td className="num">{p.seen}</td>
                     <td className="num">{Math.round(p.accuracy * 100)}%</td>
+                  </tr>
+                ))}
+              </tbody></table>
+            </>
+          )}
+
+          {(m.errorsOpen > 0 || m.errorsFixed > 0) && (
+            <>
+              <h3>Error log</h3>
+              {setting ? (
+                <AssignErrors studentId={student.id} exam={exam} names={names}
+                  onDone={() => setSetting(false)} />
+              ) : (
+                <button className="btn-sm" style={{ float: 'right', marginTop: -4 }}
+                  onClick={() => setSetting(true)}>
+                  Assign these
+                </button>
+              )}
+              <p className="tiny muted" style={{ marginTop: -4 }}>
+                <b>{m.errorsOpen} open</b>, {m.errorsFixed} fixed. A question
+                leaves the open list only by being answered right, so this is
+                work outstanding rather than a score.
+              </p>
+              {m.errorTopics.length > 0 && (
+                <table><thead><tr>
+                  <th>Where</th><th className="num">Open</th><th className="num">Fixed</th>
+                </tr></thead><tbody>
+                  {m.errorTopics.map((t) => (
+                    <tr key={t.key}>
+                      <td>{t.name}</td>
+                      <td className="num">{t.open || '—'}</td>
+                      <td className="num">{t.fixed || '—'}</td>
+                    </tr>
+                  ))}
+                </tbody></table>
+              )}
+              {m.errorNotes.length > 0 && (
+                <>
+                  <h3 style={{ marginTop: 18 }}>What they wrote</h3>
+                  <p className="tiny muted" style={{ marginTop: -4 }}>
+                    Their own words on their own mistakes &mdash; the one
+                    thing on this page nobody generated.
+                  </p>
+                  <div className="err-list">
+                    {m.errorNotes.map((n) => (
+                      <div className="err-row" key={n.questionId}>
+                        <div className="err-main">
+                          <div className="err-t">{n.name}</div>
+                          <div className="err-note" style={{ marginTop: 7 }}>
+                            {n.text}
+                          </div>
+                          <div className="err-d">{n.at.slice(0, 10)}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </>
+          )}
+
+          {m.byPassageType.length > 0 && (
+            <>
+              <h3>By kind of passage</h3>
+              <p className="tiny muted" style={{ marginTop: -4 }}>
+                Fine on one genre and lost in another is common, and a topic
+                average covers both with one number. Worst first.
+              </p>
+              <table><thead><tr>
+                <th>Passage</th><th className="num">Seen</th><th className="num">Accuracy</th>
+              </tr></thead><tbody>
+                {m.byPassageType.map((g) => (
+                  <tr key={g.type}>
+                    <td>{readable(g.type)}</td>
+                    <td className="num">{g.seen}</td>
+                    <td className="num">{Math.round(g.accuracy * 100)}%</td>
                   </tr>
                 ))}
               </tbody></table>

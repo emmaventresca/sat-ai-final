@@ -11,7 +11,7 @@ import {
 } from './groups'
 
 const TIER_WORD: Record<Tier, string> = {
-  F: 'Foundations', E: 'Easy', M: 'Medium', H: 'Hard', X: 'Super hard',
+  F: 'Foundations', E: 'Easy', M: 'Medium', H: 'Hard', X: 'Challenge',
 }
 const TIERS: Tier[] = ['F', 'E', 'M', 'H', 'X']
 

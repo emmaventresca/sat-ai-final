@@ -1,4 +1,5 @@
 import type { Chapter, Terrain } from './map'
+import { Traveller } from './Traveller'
 
 /**
  * The realms, drawn as a place rather than listed as rows.
@@ -61,6 +62,16 @@ export function WorldMap({
   const doneUpTo = nodes.findIndex((n) => n.chapter.cleared < n.chapter.stages)
   const reached = doneUpTo === -1 ? nodes.length - 1 : doneUpTo
 
+  // Where the traveller stands: at the realm they have reached, plus however
+  // far into it they are. Snapping them to whole realms would leave the
+  // figure motionless through an entire domain, which is the stretch where
+  // seeing movement matters most.
+  const here = nodes[reached]?.chapter
+  const within = here && here.stages ? here.cleared / here.stages : 0
+  const along = nodes.length > 1
+    ? (reached + Math.min(0.95, within)) / (nodes.length - 1)
+    : 0.5
+
   return (
     <svg className="worldmap" viewBox={`0 0 ${W} ${H}`} role="img"
       aria-label="Your route through the test">
@@ -96,27 +107,28 @@ export function WorldMap({
 
       {/* Water. On the coast it is most of the frame; inland it is the loch
           at the foot of the cliffs. */}
-      <rect x="0" y={H * t.waterTop} width={W} height={H} fill={t.water} opacity=".62" />
+      {t.waterTop < 0.6 && (
+        <rect x="0" y={H * t.waterTop} width={W} height={H}
+          fill={t.water} opacity=".62" />
+      )}
       {terrain === 'ocean' && WAVES.map((i) => (
         <path key={i} d={waves(H * t.waterTop + 26 + i * 30, 7 - i)}
           fill="none" stroke="#dcecf6" strokeWidth="1.6" opacity={0.3 - i * 0.05} />
       ))}
 
       <path d={ridge(0.55, 9, t.farHeight, 1)} fill={`url(#far-${terrain})`} opacity=".8" />
-      {/* Spires on the skyline. Highland gets rock teeth; the coast gets
-          fewer, lower headlands, because a seascape with alpine peaks in it
-          reads as neither. */}
-      {(terrain === 'cliffs' ? SPIRES : HEADLANDS).map(([x, base, h], i) => (
-        <path key={i}
-          d={`M ${x} ${base} l ${h * 0.17} ${-h} l ${h * 0.1} ${h * 0.34}
-              l ${h * 0.12} ${-h * 0.56} l ${h * 0.2} ${h * 1.22} z`}
-          fill={t.rock} opacity=".92" />
-      ))}
+      <Skyline terrain={terrain} rock={t.rock} />
       <path d={ridge(0.7, 6, t.midHeight, 2)} fill={`url(#mid-${terrain})`} />
       <path d={ridge(0.86, 5, t.nearHeight, 3)} fill={`url(#near-${terrain})`} />
+      <Foreground terrain={terrain} />
 
       <path d={road} className="map-road-shadow" />
       <path d={road} className="map-road" />
+      {/* The road already walked, drawn over the dotted one. */}
+      <path d={road} className="map-road-done"
+        pathLength={1} strokeDasharray={1} strokeDashoffset={1 - along} />
+
+      <Traveller terrain={terrain} road={road} at={along} />
 
       {nodes.map((n, i) => {
         const c = n.chapter
@@ -131,8 +143,12 @@ export function WorldMap({
             {here && <circle r="30" className="realm-halo" />}
             <circle r="15" className="realm-dot" />
             <text y="5" className="realm-n">{roman(i + 1)}</text>
-            <text y={n.above ? -30 : 42} className="realm-label">{short(c.name)}</text>
-            <text y={n.above ? -15 : 57} className="realm-sub">
+            <text y={n.above ? -30 : 42}
+              className={`realm-label ${LIGHT_GROUND.has(terrain) ? 'on-light' : ''}`}>
+              {short(c.name)}
+            </text>
+            <text y={n.above ? -15 : 57}
+              className={`realm-sub ${LIGHT_GROUND.has(terrain) ? 'on-light' : ''}`}>
               {c.cleared}/{c.stages}
             </text>
           </g>
@@ -141,6 +157,9 @@ export function WorldMap({
     </svg>
   )
 }
+
+/** Worlds whose lower half is pale, where a white label disappears. */
+const LIGHT_GROUND = new Set<Terrain>(['peaks'])
 
 const SPIRES: [number, number, number][] = [
   [196, 300, 96], [238, 306, 62], [742, 292, 108], [806, 300, 74], [856, 306, 58],
@@ -153,6 +172,160 @@ const HEADLANDS: [number, number, number][] = [
 
 const WAVES = [0, 1, 2]
 
+/**
+ * What stands on the skyline.
+ *
+ * The thing that makes a map read as somewhere rather than as coloured
+ * hills. Recolouring one set of triangles six times would give six maps that
+ * all feel like the same place, which defeats the point of having six.
+ */
+function Skyline({ terrain, rock }: { terrain: Terrain; rock: string }) {
+  if (terrain === 'cliffs') {
+    return <>{SPIRES.map(([x, base, h], i) => (
+      <g key={i}>
+        <path d={tooth(x, base, h)} fill={rock} opacity=".92" />
+        {h > 70 && <path d={cap(x, base, h)} fill="#f2f7fb" opacity=".9" />}
+      </g>
+    ))}</>
+  }
+  if (terrain === 'ocean') {
+    return <>{HEADLANDS.map(([x, base, h], i) => (
+      <path key={i} d={tooth(x, base, h)} fill={rock} opacity=".92" />
+    ))}</>
+  }
+  if (terrain === 'park') {
+    // Mesas: flat tops, sheer sides. A pointed peak would read as the Alps.
+    return <>{[[90, 300, 74, 150], [300, 296, 58, 110], [720, 302, 66, 170]]
+      .map(([x, base, h, w], i) => (
+        <path key={i} d={`M ${x} ${base} L ${x + w * 0.1} ${base - h}
+          L ${x + w * 0.9} ${base - h} L ${x + w} ${base} z`}
+          fill={rock} opacity=".9" />
+      ))}</>
+  }
+  if (terrain === 'peaks') {
+    // Sharp, snow-capped, overlapping. Height is the whole character.
+    return <>{[[70, 320, 150, 120], [230, 320, 190, 150], [640, 320, 170, 140],
+               [840, 320, 210, 160]].map(([x, base, h, w], i) => (
+      <g key={i}>
+        <path d={`M ${x} ${base} L ${x + w / 2} ${base - h} L ${x + w} ${base} z`}
+          fill={rock} opacity=".95" />
+        <path d={`M ${x + w / 2 - w * 0.17} ${base - h * 0.62}
+          L ${x + w / 2} ${base - h} L ${x + w / 2 + w * 0.17} ${base - h * 0.62}
+          L ${x + w / 2 + w * 0.06} ${base - h * 0.72}
+          L ${x + w / 2 - w * 0.04} ${base - h * 0.64} z`}
+          fill="#f4fbff" opacity=".95" />
+      </g>
+    ))}</>
+  }
+  if (terrain === 'fair') {
+    // A ferris wheel and two pavilions. Nothing says 1904 like a wheel on
+    // the skyline with the lights coming on.
+    return (
+      <g opacity=".95">
+        <g transform="translate(180 250)" stroke={rock} strokeWidth="2.5" fill="none">
+          <circle r="54" />
+          <circle r="34" opacity=".6" />
+          {Array.from({ length: 12 }, (_, i) => {
+            const a = (i / 12) * Math.PI * 2
+            return <line key={i} x1="0" y1="0"
+              x2={Math.cos(a) * 54} y2={Math.sin(a) * 54} opacity=".7" />
+          })}
+          {Array.from({ length: 12 }, (_, i) => {
+            const a = (i / 12) * Math.PI * 2
+            return <circle key={i} cx={Math.cos(a) * 54} cy={Math.sin(a) * 54}
+              r="3.4" fill="#ffe6ad" stroke="none" />
+          })}
+        </g>
+        <path d="M 165 304 L 180 250 L 195 304 z" fill={rock} />
+        {[[620, 300], [800, 304]].map(([x, base], i) => (
+          <g key={i} fill={rock}>
+            <rect x={x} y={base - 54} width="96" height="54" />
+            <path d={`M ${x - 10} ${base - 54} L ${x + 48} ${base - 96}
+              L ${x + 106} ${base - 54} z`} />
+            <circle cx={x + 48} cy={base - 104} r="5" />
+          </g>
+        ))}
+      </g>
+    )
+  }
+  // tropic: a banded sun, the one image that says 1986 without a word.
+  return (
+    <g>
+      <circle cx="500" cy="248" r="92" fill="#ffd36e" opacity=".9" />
+      {[0, 1, 2, 3, 4].map((i) => (
+        <rect key={i} x="400" y={240 + i * 16} width="200" height={5 + i * 1.6}
+          fill="#8a3b86" opacity=".85" />
+      ))}
+    </g>
+  )
+}
+
+/**
+ * What stands in front, below the last ridge.
+ *
+ * Only two worlds need it: a park without conifers is a desert, and a
+ * tropical sunset without palms is a gradient.
+ */
+function Foreground({ terrain }: { terrain: Terrain }) {
+  if (terrain === 'park') {
+    return <>{[60, 150, 250, 790, 880, 960].map((x, i) => (
+      <path key={i} d={conifer(x, 430, 58 + (i % 3) * 16)}
+        fill="#15301c" opacity=".92" />
+    ))}</>
+  }
+  if (terrain === 'tropic') {
+    return <>{[[70, 436, 1], [150, 444, -1], [880, 440, 1], [950, 432, -1]]
+      .map(([x, base, lean], i) => (
+        <g key={i} fill="#120a26">
+          <path d={`M ${x} ${base} q ${4 * lean} -46 ${16 * lean} -74`}
+            stroke="#120a26" strokeWidth="5" fill="none" />
+          {[-1, -0.5, 0.5, 1].map((f, j) => (
+            <path key={j}
+              d={`M ${x + 16 * lean} ${base - 74}
+                  q ${34 * f} ${-18 - Math.abs(f) * 6} ${54 * f} ${6 - Math.abs(f) * 4}
+                  q ${-30 * f} ${-6} ${-54 * f} ${-6} z`} />
+          ))}
+      </g>
+    ))}</>
+  }
+  return null
+}
+
+/** A rock tooth: the highland and coastal silhouette. */
+function tooth(x: number, base: number, h: number): string {
+  return `M ${x} ${base} l ${h * 0.17} ${-h} l ${h * 0.1} ${h * 0.34}
+          l ${h * 0.12} ${-h * 0.56} l ${h * 0.2} ${h * 1.22} z`
+}
+
+/**
+ * Snow on a tooth.
+ *
+ * Traced from the same two points the tooth's own summit uses, so the cap
+ * sits on the rock rather than floating near it - a snowline drawn as a
+ * separate triangle is the detail that makes a mountain look like clip art.
+ */
+function cap(x: number, base: number, h: number): string {
+  const peak = { x: x + h * 0.17, y: base - h }
+  const drop = h * 0.26
+  return `M ${peak.x - drop * 0.52} ${peak.y + drop}
+          L ${peak.x} ${peak.y}
+          L ${peak.x + drop * 0.46} ${peak.y + drop * 0.84}
+          L ${peak.x + drop * 0.16} ${peak.y + drop * 0.5}
+          L ${peak.x - drop * 0.1} ${peak.y + drop * 0.92} z`
+}
+
+/** A sequoia, in the fewest points that still read as one. */
+function conifer(x: number, base: number, h: number): string {
+  const w = h * 0.42
+  return `M ${x} ${base}
+    L ${x - w * 0.18} ${base} L ${x - w * 0.5} ${base - h * 0.32}
+    L ${x - w * 0.28} ${base - h * 0.34} L ${x - w * 0.42} ${base - h * 0.62}
+    L ${x - w * 0.22} ${base - h * 0.64} L ${x} ${base - h}
+    L ${x + w * 0.22} ${base - h * 0.64} L ${x + w * 0.42} ${base - h * 0.62}
+    L ${x + w * 0.28} ${base - h * 0.34} L ${x + w * 0.5} ${base - h * 0.32}
+    L ${x + w * 0.18} ${base} z`
+}
+
 /** A line of swell. Deterministic, like everything else on the map. */
 function waves(y: number, amp: number): string {
   const points = ['M -20 ' + y]
@@ -162,7 +335,7 @@ function waves(y: number, amp: number): string {
   return points.join(' ')
 }
 
-interface Palette {
+export interface Palette {
   sky: [string, string][]
   far: [string, string]
   mid: [string, string]
@@ -177,7 +350,7 @@ interface Palette {
   nearHeight: number
 }
 
-const PALETTE: Record<Terrain, Palette> = {
+export const PALETTE: Record<Terrain, Palette> = {
   // Highland autumn: weather overhead, bracken and moss below, the low sun
   // that makes the grass look lit from inside.
   cliffs: {
@@ -205,6 +378,67 @@ const PALETTE: Record<Terrain, Palette> = {
     waterTop: 0.42,
     farHeight: 34, midHeight: 44, nearHeight: 70,
   },
+
+  // National park. Sedona red rock behind, Sequoia dark green in front,
+  // under the big clean western sky that makes the postcards.
+  park: {
+    sky: [['0%', '#2a5e8c'], ['45%', '#7fb4d4'], ['100%', '#f2d8ae']],
+    far: ['#b4642f', '#d89a5a'],
+    mid: ['#8a4a28', '#b06a38'],
+    near: ['#2f5436', '#16301d'],
+    glow: '#ffe3a8',
+    cloud: '#ffffff',
+    water: '#5e9bb8',
+    rock: '#9c4f27',
+    waterTop: 0.56,
+    farHeight: 58, midHeight: 72, nearHeight: 64,
+  },
+
+  // A world's fair at dusk: warm electric light, pale pavilions, bunting.
+  // Every surface in 1904 was painted white and then lit, which is why the
+  // palette is cream against a deep evening blue.
+  fair: {
+    sky: [['0%', '#1f2449'], ['45%', '#5a4a7a'], ['100%', '#e8b06a']],
+    far: ['#8d7fae', '#c0ad c8'.replace(' ', '')],
+    mid: ['#6a5c8c', '#9a88ad'],
+    near: ['#3d3254', '#241d36'],
+    glow: '#ffd98a',
+    cloud: '#2a2450',
+    water: '#5d6a9c',
+    rock: '#efe3cd',
+    waterTop: 0.62,
+    farHeight: 30, midHeight: 40, nearHeight: 58,
+  },
+
+  // High altitude: thin air, hard light, snow. Almost no colour on purpose -
+  // everything else here is warm, and the cold is the point.
+  peaks: {
+    sky: [['0%', '#13243f'], ['42%', '#4e74a0'], ['100%', '#d6e7f2']],
+    far: ['#7d9bbd', '#b8cfe2'],
+    mid: ['#5f7fa6', '#93b2cc'],
+    near: ['#e8f1f8', '#9fb6c9'],
+    glow: '#eaf6ff',
+    cloud: '#16233c',
+    water: '#86a6c2',
+    rock: '#44597a',
+    waterTop: 0.6,
+    farHeight: 96, midHeight: 110, nearHeight: 66,
+  },
+
+  // Hawaii by way of Miami, 1986. A sun with bands through it, palms in
+  // silhouette, and a gradient that has no business being this loud.
+  tropic: {
+    sky: [['0%', '#2b1b55'], ['38%', '#8a3b86'], ['72%', '#e8615f'], ['100%', '#ffb867']],
+    far: ['#5a2a6e', '#8a3b86'],
+    mid: ['#3d1f5c', '#6a2d77'],
+    near: ['#1d1038', '#0f0a22'],
+    glow: '#ffd36e',
+    cloud: '#3a1f5e',
+    water: '#6a2d77',
+    rock: '#2a1548',
+    waterTop: 0.58,
+    farHeight: 40, midHeight: 50, nearHeight: 56,
+  },
 }
 
 /**
@@ -215,7 +449,7 @@ const PALETTE: Record<Terrain, Palette> = {
  * chart. Three layered sines per seed give peaks of different heights and
  * widths without anything random in it.
  */
-function ridge(baseline: number, peaks: number, height: number, seed: number): string {
+export function ridge(baseline: number, peaks: number, height: number, seed: number): string {
   const y = H * baseline
   const points: string[] = [`M -20 ${H}`, `L -20 ${y}`]
   const steps = peaks * 3

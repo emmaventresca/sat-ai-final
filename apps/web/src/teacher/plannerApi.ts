@@ -87,3 +87,67 @@ export function sessionsOf(spec: PlannerLesson & { sessions?: PlannerLesson[] })
   if (spec.kind === 'course' && Array.isArray(spec.sessions)) return spec.sessions
   return [spec]
 }
+
+// ---------------------------------------------------------------------------
+// Fresh questions for a generated lesson
+//
+// A lesson built out of the bank is a lesson the student may already have
+// sat. So the planner's blocks go back to the server, which writes variants
+// of the cited items - same recognition, same trap, different numbers - and
+// returns more than the block needs, spread a tier either side of its target.
+//
+// The teacher picks. That is not a hedge: she is the one who knows whether
+// the student in front of her is having a good day, and a generator that
+// decided for her would be making that call from a worse position.
+// ---------------------------------------------------------------------------
+
+export interface PoolBlockRequest {
+  subtype?: string
+  skill_cd?: string
+  difficulty?: string
+  /** How many the block's minutes actually need. */
+  n?: number
+  /** Bank items the variants should be built against. */
+  item_ids?: string[]
+}
+
+export interface PoolTier {
+  difficulty: string
+  /** What the block needed at this tier; the list is deliberately longer. */
+  wanted: number
+  items: Record<string, unknown>[]
+}
+
+export interface PoolBlock {
+  subtype: string | null
+  skill_cd: string
+  target: string
+  asked_for: number
+  tiers: PoolTier[]
+  total: number
+  modelled_on: string[]
+  rejected_as_too_close: number
+}
+
+export interface PoolReply {
+  blocks: PoolBlock[]
+  /** Recognitions that produced nothing, with the reason. */
+  failed: { subtype: string | null; error: string }[]
+}
+
+export async function lessonItems(
+  exam: Exam,
+  blocks: PoolBlockRequest[],
+): Promise<PoolReply> {
+  const r = await fetch(`${PLANNER}/lesson-items`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ exam, blocks }),
+    // Each block is an authoring run plus a verification pass. This is a
+    // minutes-long call and there is no honest way to make it a fast one.
+    signal: AbortSignal.timeout(20 * 60 * 1000),
+  })
+  const data = (await r.json().catch(() => ({}))) as Partial<PoolReply> & { error?: string }
+  if (!r.ok) throw new Error(data.error || `planner returned ${r.status}`)
+  return { blocks: data.blocks ?? [], failed: data.failed ?? [] }
+}

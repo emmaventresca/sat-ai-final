@@ -5,8 +5,17 @@ import { examSpec } from '../exams/registry'
 import { difficultyLabel } from '../lesson/types'
 import { renderBody } from '../lesson/math'
 import { Round } from '../practice/Round'
-import { accuracy } from '../practice/mastery'
-import { trialRefs, type Leg } from './map'
+import { accuracy, progress } from '../practice/mastery'
+import { quizRefs, trialRefs, type Leg } from './map'
+import {
+  challengeGate, lastTouched, promotionFor, remainingIn, serveOrder, streakNeeded,
+} from './promotion'
+import { gemFor, lastQuiz, QUIZ_PASS, recordQuiz } from './gems'
+import { resolved as resolvedIds } from '../errors/log'
+import { groupedBySection, passageRound, shapeOf } from './passages'
+import { Gem } from './Gem'
+import { Rungs } from './Icons'
+import { WorkedExample } from './Worked'
 
 interface SubLesson {
   subtype: string
@@ -30,29 +39,64 @@ interface SubLesson {
  * because knowing the method and recognising the frame are different skills
  * and the second one is where a plateau usually is.
  */
+export type StageMode = 'stage' | 'trial' | 'quiz'
+
 export function StageView({
-  exam, bank, leg, subtype, onBack,
+  exam, bank, leg, subtype, mode, onBack,
 }: {
   exam: Exam
   bank: QuestionRef[]
   leg: Leg
   subtype: string | null
+  mode: StageMode
   onBack: () => void
 }) {
   const [lesson, setLesson] = useState<SubLesson | null>(null)
   const [round, setRound] = useState<Question[] | null>(null)
+  const [tier, setTier] = useState<Tier | null>(null)
   const [fetching, setFetching] = useState(false)
-  const trial = subtype === null
+  const [scored, setScored] = useState<{ right: number; total: number } | null>(null)
+
+  /**
+   * Answered CORRECTLY, not merely met.
+   *
+   * A missed question is not finished - it is the most useful thing in the
+   * bank to come back to - so it keeps counting as left, and `serveOrder`
+   * puts it back in front of the student rather than retiring it.
+   */
+  const attempted = useMemo(
+    () => resolvedIds(progress().attempts.filter((a) => a.exam === exam)),
+    [exam, round],
+  )
 
   /** Bodies are fetched when a round starts, not when the page opens. */
-  async function begin(ids: string[]) {
-    if (!ids.length || fetching) return
+  async function begin(refs: QuestionRef[], at: Tier | null = null) {
+    if (!refs.length || fetching) return
     setFetching(true)
+    setTier(at)
     try {
-      setRound(await loadBodies(exam, ids))
+      setRound(await loadBodies(exam, refs.map((q) => q.id)))
     } finally {
       setFetching(false)
     }
+  }
+
+  /**
+   * Ten questions, newest first.
+   *
+   * The ordering is what makes a bank edit visible the same evening: a
+   * teacher writes twenty questions in the morning and the student meets
+   * them tonight, rather than after the hundred and fifty they have not got
+   * to yet.
+   */
+  function pick(refs: QuestionRef[], subtypeFor: string, n = 10): QuestionRef[] {
+    // Reading and Science hang many questions off one passage, so a round
+    // there takes passages WHOLE. Serving those one question at a time means
+    // reading a fresh passage for every question - four minutes of reading
+    // for forty seconds of question, and nothing like the real section,
+    // where you read once and then answer ten.
+    if (groupedBySection(section)) return passageRound(refs, attempted, n)
+    return serveOrder(refs, attempted, lastTouched(exam, subtypeFor)).slice(0, n)
   }
 
   useEffect(() => {
@@ -73,23 +117,128 @@ export function StageView({
     () => bank.filter((q) => q.subtype === subtype),
     [bank, subtype],
   )
+  /**
+   * The section this recognition belongs to.
+   *
+   * The MAJORITY, not the first question. 41 ACT questions sit in a subtype
+   * whose other questions are in a different section, and reading the
+   * section off `pool[0]` meant two stray maths items in a 70-question
+   * Reading recognition turned passage-grouped serving off for the whole
+   * thing - silently, because nothing about a wrong section throws.
+   */
+  const gate = useMemo(
+    () => challengeGate(pool, attempted), [pool, attempted],
+  )
+
+  const section = useMemo(() => {
+    const tally = new Map<string, number>()
+    for (const q of pool) tally.set(q.section, (tally.get(q.section) ?? 0) + 1)
+    let best = bank[0]?.section ?? ''
+    let most = 0
+    for (const [sec, n] of tally) if (n > most) { best = sec; most = n }
+    return best
+  }, [pool, bank])
 
   if (round) {
+    const quiz = mode === 'quiz'
     return (
       <div className="wrap">
-        <Round questions={round} onDone={() => { setRound(null); onBack() }} />
+        <Round questions={round}
+          verdict={quiz ? quizVerdict : undefined}
+          offer={!quiz && subtype && tier
+            ? (run) =>
+                // The streak has to have happened HERE. The stored one can be
+                // carried in from last week, and "ten in a row" meaning five
+                // tonight and five on Tuesday is not the signal we claimed.
+                run >= streakNeeded(tier, section)
+                  ? promotionFor(exam, subtype, tier, section, pool)
+                  : null
+            : undefined}
+          onAccept={(to) => {
+            if (!subtype) return
+            setRound(null)
+            void begin(pick(pool.filter((q) => q.difficulty === to), subtype), to)
+          }}
+          onDone={(right, total) => {
+            if (quiz) {
+              recordQuiz(exam, leg.skill, right, total)
+              setScored({ right, total })
+              setRound(null)
+              return
+            }
+            setRound(null)
+            onBack()
+          }} />
       </div>
     )
   }
 
-  if (trial) {
+  if (mode === 'quiz') {
+    const earned = gemFor(exam, leg.skill, leg.cleared === leg.stages.length)
+    const questions = leg.quiz ? quizRefs(bank, leg.quiz) : []
+    const sat = lastQuiz(exam, leg.skill)
+    return (
+      <div className="wrap journey">
+        <button className="btn-sm" onClick={onBack}>&larr; Back to the map</button>
+        <div className="trial-card quiz-card">
+          <h1>The {leg.name} quiz</h1>
+
+          {scored ? (
+            <>
+              <p className="lead">
+                {scored.right} of {scored.total}.{' '}
+                {scored.total && scored.right / scored.total >= QUIZ_PASS
+                  ? 'That is the quiz passed, and the gem is polished.'
+                  : 'Not quite the gem this time, and nothing is lost by it — '
+                    + 'the questions you missed are the useful part.'}
+              </p>
+              <Gem state={gemFor(exam, leg.skill, leg.cleared === leg.stages.length)}
+                hue={['#534AB7', '#7F77DD']} size={56}
+                title="Your gem for this path" />
+            </>
+          ) : (
+            <>
+              <p className="lead">
+                {earned === 'none'
+                  ? `All ${leg.stages.length} recognitions on this path, mixed and `
+                    + 'out of order. Nothing announces which one is coming — which '
+                    + 'is the whole exercise, and the one thing practising them a '
+                    + 'stop at a time cannot rehearse.'
+                  : earned === 'earned'
+                    ? 'You have the gem already — clearing every stop earned it. '
+                      + 'This is for a better one: the same recognitions, mixed '
+                      + 'and out of order, the way the real test gives them to you.'
+                    : 'You have already polished this one. Sitting it again is '
+                      + 'still one of the better things you can do with twenty '
+                      + 'minutes — it is the fastest way to find out what has '
+                      + 'gone quiet since.'}
+              </p>
+              {sat && <p className="tiny muted">Last sat {sat}.</p>}
+              <button className="btn-primary" disabled={!questions.length || fetching}
+                onClick={() => void begin(questions)}>
+                {fetching ? 'Loading…'
+                  : questions.length
+                    ? `Begin — ${questions.length} questions`
+                    : 'Not enough questions yet'}
+              </button>
+              <p className="tiny muted" style={{ marginTop: 10 }}>
+                {Math.round(QUIZ_PASS * 100)}% polishes the gem. Below that
+                nothing is taken away, and you can come back to it any time.
+              </p>
+            </>
+          )}
+        </div>
+      </div>
+    )
+  }
+
+  if (mode === 'trial') {
     const questions = leg.trial ? trialRefs(bank, leg.trial) : []
     return (
       <div className="wrap journey">
         <button className="btn-sm" onClick={onBack}>&larr; Back to the map</button>
         <div className="trial-card">
-          <div className="trial-k">Trial</div>
-          <h1>Reading the question</h1>
+          <h1>Trial: reading the question</h1>
           <p className="lead">
             You have the methods for {leg.name.toLowerCase()}. This is the
             other half: the same content, worded the ways the real test words
@@ -103,7 +252,7 @@ export function StageView({
             ))}
           </ul>
           <button className="btn-primary" disabled={!questions.length || fetching}
-            onClick={() => void begin(questions.map((q) => q.id))}>
+            onClick={() => void begin(questions)}>
             {fetching ? 'Loading…'
               : questions.length ? `Begin — ${questions.length} questions`
               : 'Not enough questions yet'}
@@ -120,8 +269,8 @@ export function StageView({
       <button className="btn-sm" onClick={onBack}>&larr; Back to the map</button>
 
       <div className="stage-card">
-        <div className="stage-k">{leg.name}</div>
         <h1>{stage?.name ?? lesson?.title ?? subtype}</h1>
+        <p className="stage-where">{leg.name}</p>
         {lesson?.subtitle && <p className="lead">{lesson.subtitle}</p>}
 
         {/* Named, because a student should know they are being taught before
@@ -152,36 +301,107 @@ export function StageView({
         )}
       </div>
 
+      {subtype && <WorkedExample exam={exam} subtype={subtype} pool={pool} />}
+
       <h2>Now try it</h2>
       <p className="tiny muted" style={{ marginTop: -6 }}>
-        Five levels, and nothing is locked. Foundations is the skill
-        underneath with the test wrapped off; Super hard is beyond anything
-        the exam asks. Start where the method above left you.
+        Foundations is the skill underneath with the test wrapped off.
+        Challenge is beyond anything the exam asks, so it opens once you have
+        worked through every Hard question here &mdash; there is no point
+        spending an evening past the test while real Hard questions sit
+        unanswered. Start where the method above left you.
       </p>
       <div className="levels">
         {tiers.map((t) => {
           const n = stage?.pool[t] ?? 0
           const acc = accuracy(exam, subtype as string, t)
           const kind = t === 'F' ? 'foundation' : t === 'X' ? 'stretch' : 'open'
-          return (
-            <button key={t} className={`level ${kind}`} disabled={fetching}
-              onClick={() => void begin(
-                pool.filter((q) => q.difficulty === t).slice(0, 10).map((q) => q.id),
-              )}>
+
+            const here = pool.filter((q) => q.difficulty === t)
+            const rest = remainingIn(here, attempted, lastTouched(exam, subtype as string))
+            // Challenge is the one locked thing in the app. It shows its
+            // count either way - a student should see that the questions
+            // exist and what opens them, not find an empty space.
+            const locked = t === 'X' && !gate.open
+            return (
+            <button key={t} className={`level ${kind} ${locked ? 'locked' : ''}`}
+              disabled={fetching || locked}
+              aria-disabled={locked}
+              title={locked
+                ? `Opens when all ${gate.hardTotal} Hard questions here are done`
+                : undefined}
+              onClick={() => void begin(pick(here, subtype as string), t)}>
               <span className="level-t">{difficultyLabel(t as Tier)}</span>
-              <span className="level-rung" aria-hidden="true">
-                {'◆'.repeat(RUNG[t] ?? 1)}
+              <span className="level-rung">
+                <Rungs n={RUNG[t] ?? 1} />
               </span>
+              {/* The bar fills to what they have ACTUALLY answered, and the
+                  line underneath says what is left. Moving up a level does
+                  not finish the one below, and a screen that showed only a
+                  percentage let a student believe it did. */}
+              {rest.attempted > 0 && (
+                <span className="level-bar">
+                  <i style={{ width: `${(rest.attempted / rest.total) * 100}%` }} />
+                </span>
+              )}
               <span className="level-d">
-                {n} question{n === 1 ? '' : 's'}
+                {rest.left === 0
+                  ? `all ${n} done`
+                  : rest.attempted === 0
+                    ? `${n} question${n === 1 ? '' : 's'}`
+                    : `${rest.left} of ${n} left`}
                 {acc !== null ? ` · ${Math.round(acc * 100)}%` : ''}
               </span>
+              {/* On a passage section, say how much reading this is. "Two
+                  passages, 14 questions" is a different commitment from
+                  "14 questions", and the student should know which one they
+                  are agreeing to before they start. */}
+              {groupedBySection(section) && rest.left > 0 && (() => {
+                const shape = shapeOf(here, attempted, 10)
+                return shape.passages > 0 ? (
+                  <span className="level-shape">
+                    {shape.passages} passage{shape.passages === 1 ? '' : 's'}
+                    {' · '}{shape.questions} question
+                    {shape.questions === 1 ? '' : 's'} a round
+                  </span>
+                ) : null
+              })()}
+              {rest.fresh > 0 && !locked && (
+                <span className="level-new">{rest.fresh} new</span>
+              )}
+              {locked && (
+                <span className="level-lock">
+                  {gate.hardLeft} Hard left to open
+                </span>
+              )}
             </button>
-          )
+            )
         })}
       </div>
     </div>
   )
+}
+
+/**
+ * What to say after a unit quiz.
+ *
+ * Never "you failed". A quiz below the bar costs a student nothing they had -
+ * the gem they earned by clearing the stops is still theirs - and the thing
+ * that actually helps is pointing at the misses, not at the number.
+ */
+function quizVerdict(right: number, total: number): string {
+  if (!total) return ''
+  const share = right / total
+  if (share >= QUIZ_PASS) {
+    return 'Passed, and mixed up like that it counts for more than any single '
+      + 'stop. The gem is polished.'
+  }
+  if (share >= 0.6) {
+    return 'Close. Mixed order is harder than any one stop, and the ones you '
+      + 'missed are a shorter list than it feels like — Review has them.'
+  }
+  return 'Worth going back to the stops before sitting this again. Nothing is '
+    + 'lost by it, and the misses are in Review.'
 }
 
 /** How many pips a level shows. The ladder should be visible at a glance. */
