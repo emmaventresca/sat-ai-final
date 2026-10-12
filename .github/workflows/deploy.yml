@@ -1,0 +1,75 @@
+# Build the app and publish it to GitHub Pages.
+#
+# The ACT and SAT question data is NOT committed - apps/web/public/data is
+# gitignored, because it is generated. It gets rebuilt here instead: the
+# package's own `prebuild` runs tools/stage_public_data.py, so whatever is in
+# data/ at the time of the push is what goes online. That is what makes an
+# edit on the ACT side show up on the site without anyone remembering to
+# stage it by hand.
+#
+# stage_public_data.py is an allowlist, deliberately: a new file under data/
+# is private until someone adds it. Publishing stays opt-in even here.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race; the later push is the one that should win.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install
+        run: npm ci --prefix apps/web
+
+      # The house rule: this has to pass before anything is called done.
+      - name: Typecheck
+        run: npm run typecheck --prefix apps/web
+
+      # Stages data (via prebuild) and builds.
+      - name: Build
+        run: npm run build --prefix apps/web
+
+      - name: Say what went online
+        run: |
+          echo "### Published" >> $GITHUB_STEP_SUMMARY
+          du -sh apps/web/dist >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "SAT questions: $(python3 -c "import json;print(len(json.load(open('data/practice.json'))))" 2>/dev/null || echo '?')" >> $GITHUB_STEP_SUMMARY
+          echo "ACT questions: $(python3 -c "import json;d=json.load(open('data/act/questions.json'));print(len(d.get('items',d)))" 2>/dev/null || echo '?')" >> $GITHUB_STEP_SUMMARY
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/web/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
