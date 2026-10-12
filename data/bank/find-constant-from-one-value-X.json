@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-find-constant--X-bd2a93",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,14 +82,433 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-find-constant--X-dc0e24",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "If $L(70) = 500.6$, what is the value of $L(120)$?",
+  "stimulus": "A materials scientist models the length, in millimeters, of a heated alloy bar with the function $L$, defined by $L(t) = 500 + k(t - 20)$, where $t$ is the bar's temperature in degrees Celsius and $k$ is a constant.",
+  "choices": [
+   "$0.012$",
+   "$501.2$",
+   "$501.44$",
+   "$501.8$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute the known pair: $500.6 = 500 + k(70 - 20)$, so $50k = 0.6$ and $k = 0.012$. Now evaluate at the new input, keeping the shift: $L(120) = 500 + 0.012(120 - 20) = 500 + 1.2 = 501.2$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found the constant $k$ correctly but stopped there. The question asks for the bar's length at $120$ degrees, not for $k$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $k$ correctly but then computed $500 + 0.012(120)$. You dropped the $-20$ inside the parentheses when you evaluated the function."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You added $0.012(120 - 20)$ to $500.6$ instead of to $500$. That counts the expansion from $20$ degrees on top of a length that already includes the expansion up to $70$ degrees."
+   }
+  },
+  "id": "orig-find-constant--X-92d875",
+  "skill_cd": "H.B.",
+  "subtype": "find-constant-from-one-value",
+  "subtype_name": "Find the hidden constant from one known output",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constant--X-92d875",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ is a constant if __var__ what is",
+    "is a constant if __var__ what is the",
+    "a constant if __var__ what is the value"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $B(4) = 35$, what is the value of $B(9)$?",
+  "stimulus": "A musicologist analyzing a folk dance tune uses the function $B$, defined by $B(x) = ax + 3a$, where $a$ is a constant, to model the total number of beats in a performance in which the main phrase is repeated $x$ times after an introduction.",
+  "choices": [
+   "$5$",
+   "$45$",
+   "$60$",
+   "$75$"
+  ],
+  "answer": "C",
+  "explanation": "Substitute: $35 = 4a + 3a = 7a$, so $a = 5$. The function is $B(x) = 5x + 15$, so $B(9) = 45 + 15 = 60$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$5$ is the constant $a$. You stopped after finding it, but the question asks for the output when $x = 9$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $a = 5$ but evaluated only $5 \\cdot 9$ and dropped the $3a = 15$ term, which is part of the function."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You read the rule as $ax + 3$ instead of $ax + 3a$. That gives $4a + 3 = 35$, so $a = 8$, and then $8 \\cdot 9 + 3 = 75$."
+   }
+  },
+  "id": "orig-find-constant--X-f7cefe",
+  "skill_cd": "H.B.",
+  "subtype": "find-constant-from-one-value",
+  "subtype_name": "Find the hidden constant from one known output",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constant--X-f7cefe",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $h(k) = 176$, what is the value of $h(30)$?",
+  "stimulus": "During maintenance, engineers drain a reservoir at a constant rate. The water level, in centimeters, $x$ hours after draining begins is modeled by the function $h$, defined by $h(x) = 240 - kx$, where $k$ is a positive constant.",
+  "choices": [
+   "$0$",
+   "$8$",
+   "$64$",
+   "$480$"
+  ],
+  "answer": "A",
+  "explanation": "Here the known input is $k$ itself. Substitute: $240 - k \\cdot k = 176$, so $k^2 = 64$. Because $k$ is positive, $k = 8$. Then $h(30) = 240 - 8(30) = 0$, so the reservoir is empty after $30$ hours.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "$8$ is the constant $k$. You stopped after finding it instead of using it to evaluate $h(30)$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "$64$ is $k^2$, a step on the way to $k$. You stopped before taking the square root and before evaluating $h(30)$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You used $k = -8$, which gives $240 + 240 = 480$. The problem says $k$ is positive, and a draining reservoir's level can't go up."
+   }
+  },
+  "id": "orig-find-constant--X-c68c99",
+  "skill_cd": "H.B.",
+  "subtype": "find-constant-from-one-value",
+  "subtype_name": "Find the hidden constant from one known output",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constant--X-c68c99",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ where __var__ is a positive constant if",
+    "where __var__ is a positive constant if __var__",
+    "__var__ is a positive constant if __var__ what",
+    "is a positive constant if __var__ what is",
+    "a positive constant if __var__ what is the",
+    "positive constant if __var__ what is the value"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $F(4) = 30$, how many grams of fat does the model predict the bird has $2$ weeks after it begins migrating?",
+  "stimulus": "An ornithologist models the fat reserve, in grams, of a migrating warbler $d$ days after it begins migrating with the function $F$, defined by $F(d) = 36 - kd$, where $k$ is a constant.",
+  "choices": [
+   "$1.5$",
+   "$15$",
+   "$33$",
+   "$57$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute: $30 = 36 - 4k$, so $4k = 6$ and $k = 1.5$. The input is measured in days, and $2$ weeks is $14$ days. So $F(14) = 36 - 1.5(14) = 36 - 21 = 15$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$1.5$ is the constant $k$, the grams lost per day. You stopped after finding it instead of evaluating the function at $2$ weeks."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You substituted $d = 2$, but $d$ is measured in days. Two weeks is $d = 14$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You added $21$ to $36$ instead of subtracting it. The reserve is shrinking, so the term $-kd$ lowers it."
+   }
+  },
+  "id": "orig-find-constant--X-08578a",
+  "skill_cd": "H.B.",
+  "subtype": "find-constant-from-one-value",
+  "subtype_name": "Find the hidden constant from one known output",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constant--X-08578a",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ where __var__ is a constant if __var__"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $f(5) = 39$, what is the value of $f(9)$?",
+  "stimulus": "A linguist studying a constructed language models the number of words in a sentence with $x$ clauses using the function $f$, defined by $f(x) = (a + 3)x - 2a$, where $a$ is a constant.",
+  "choices": [
+   "$8$",
+   "$83$",
+   "$99$",
+   "$115$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute: $39 = 5(a + 3) - 2a = 3a + 15$, so $a = 8$. Then $f(x) = 11x - 16$, and $f(9) = 99 - 16 = 83$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$8$ is the constant $a$. You stopped after finding it, but the question asks for $f(9)$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You computed the slope term $11 \\cdot 9$ but forgot that $a$ also appears in the $-2a$ term, so you never subtracted $16$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $2a$ instead of subtracting it when you evaluated: $99 + 16$. The rule subtracts $2a$."
+   }
+  },
+  "id": "orig-find-constant--X-ba48d7",
+  "skill_cd": "H.B.",
+  "subtype": "find-constant-from-one-value",
+  "subtype_name": "Find the hidden constant from one known output",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constant--X-ba48d7",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ where __var__ is a constant if __var__",
+    "__var__ is a constant if __var__ what is",
+    "is a constant if __var__ what is the",
+    "a constant if __var__ what is the value"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $V(3) = 28$, what is the value of $V(6)$?",
+  "stimulus": "A folklorist models the number of recorded versions of a regional folktale $x$ decades after systematic collection began with the function $V$, defined by $V(x) = kx + k^2$, where $k$ is a positive constant.",
+  "choices": [
+   "$4$",
+   "$7$",
+   "$24$",
+   "$40$"
+  ],
+  "answer": "D",
+  "explanation": "Substitute: $3k + k^2 = 28$, so $k^2 + 3k - 28 = 0$ and $(k + 7)(k - 4) = 0$. Since $k$ is positive, $k = 4$. Then $V(x) = 4x + 16$, so $V(6) = 24 + 16 = 40$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$4$ is the constant $k$. You stopped after solving for it instead of evaluating $V(6)$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You used the root $k = -7$, which gives $-42 + 49 = 7$. The problem says $k$ is positive, so you have to reject that root."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $k = 4$ but evaluated only $4 \\cdot 6$ and dropped the constant term $k^2 = 16$."
+   }
+  },
+  "id": "orig-find-constant--X-3b9ccb",
+  "skill_cd": "H.B.",
+  "subtype": "find-constant-from-one-value",
+  "subtype_name": "Find the hidden constant from one known output",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constant--X-3b9ccb",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ where __var__ is a positive constant if",
+    "where __var__ is a positive constant if __var__",
+    "__var__ is a positive constant if __var__ what",
+    "is a positive constant if __var__ what is",
+    "a positive constant if __var__ what is the",
+    "positive constant if __var__ what is the value"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $f(5) = 95$, what is the value of $g(8)$?",
+  "stimulus": "In a sports science study, the heart rate, in beats per minute, of athlete A $t$ minutes into a warm-up is modeled by $f(t) = 60 + rt$, where $r$ is a constant. Athlete B's heart rate is modeled by $g(t) = 52 + (r + 3)t$.",
+  "choices": [
+   "$7$",
+   "$108$",
+   "$116$",
+   "$132$"
+  ],
+  "answer": "D",
+  "explanation": "Substitute into $f$: $95 = 60 + 5r$, so $r = 7$. Athlete B's rate is $r + 3 = 10$, so $g(t) = 52 + 10t$, and $g(8) = 52 + 80 = 132$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$7$ is the constant $r$. You stopped after finding it instead of using it to evaluate $g(8)$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $r = 7$ as athlete B's rate and computed $52 + 7(8)$. You dropped the $+3$, so B's rate is really $10$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$116$ is $f(8)$, athlete A's heart rate at $8$ minutes. The question asks about athlete B, whose rule is $g$."
+   }
+  },
+  "id": "orig-find-constant--X-1daea6",
+  "skill_cd": "H.B.",
+  "subtype": "find-constant-from-one-value",
+  "subtype_name": "Find the hidden constant from one known output",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constant--X-1daea6",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $h(30) = 32$, what is the value of $h(45)$?",
+  "stimulus": "An agricultural scientist models the height, in centimeters, of a corn seedling $d$ days after transplanting with the function $h$, defined by $h(d) = 12 + \\frac{d}{k}$, where $k$ is a constant.",
+  "choices": [
+   "$1.5$",
+   "$42$",
+   "$48$",
+   "$79.5$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute: $32 = 12 + \\frac{30}{k}$, so $\\frac{30}{k} = 20$ and $k = 1.5$. Then $h(45) = 12 + \\frac{45}{1.5} = 12 + 30 = 42$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$1.5$ is the constant $k$. You stopped after finding it instead of evaluating $h(45)$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You scaled the whole output by $\\frac{45}{30}$: $32 \\cdot 1.5 = 48$. That would only work if $h$ were proportional to $d$, but the $12$ cm starting height doesn't scale."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated $k$ as the slope and computed $12 + 1.5(45)$. The rule divides by $k$, so the growth rate is $\\frac{1}{k}$ cm per day, not $k$."
+   }
+  },
+  "id": "orig-find-constant--X-445465",
+  "skill_cd": "H.B.",
+  "subtype": "find-constant-from-one-value",
+  "subtype_name": "Find the hidden constant from one known output",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constant--X-445465",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ where __var__ is a constant if __var__",
+    "__var__ is a constant if __var__ what is",
+    "is a constant if __var__ what is the",
+    "a constant if __var__ what is the value"
+   ],
+   "residue": 0
+  }
  }
 ]

@@ -382,5 +382,101 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the value of $\\cos\\left(\\frac{11\\pi}{4}\\right)$?",
+  "stimulus": "A civil engineer tracking a tunnel-boring machine records that its cutter head has turned through an angle of $\\frac{11\\pi}{4}$ radians from its starting position.",
+  "choices": [
+   "$-1$",
+   "$-\\frac{\\sqrt{2}}{2}$",
+   "$\\frac{\\sqrt{2}}{2}$",
+   "$1$"
+  ],
+  "answer": "B",
+  "explanation": "Subtract one full turn: $\\frac{11\\pi}{4} - 2\\pi = \\frac{3\\pi}{4}$. That angle is in Quadrant II, and its reference angle is $\\frac{\\pi}{4}$. The unit-circle point is $\\left(-\\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{2}}{2}\\right)$. Cosine is the x-coordinate, so $\\cos\\left(\\frac{11\\pi}{4}\\right) = -\\frac{\\sqrt{2}}{2}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found tangent instead of cosine. At $\\frac{3\\pi}{4}$, y divided by x is $-1$, but the question asks for the x-coordinate alone."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the size right but put the reduced angle $\\frac{3\\pi}{4}$ in Quadrant I. It is in Quadrant II, where x-coordinates are negative, so the cosine has to be negative."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided y by x and then dropped the negative sign. That gives the size of the tangent, not the cosine, and the sign is wrong too."
+   }
+  },
+  "id": "orig-unit-circle-tr-E-db31e6",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-unit-circle-tr-E-db31e6",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $\\sin(5\\theta)$?",
+  "stimulus": "In a torsion test, a materials scientist twists a steel rod through an angle of $5\\theta$ radians, where $\\theta = \\frac{\\pi}{3}$.",
+  "choices": [
+   "$-\\frac{\\sqrt{3}}{2}$",
+   "$\\frac{1}{2}$",
+   "$\\frac{\\sqrt{3}}{2}$",
+   "$\\frac{5\\sqrt{3}}{2}$"
+  ],
+  "answer": "A",
+  "explanation": "First build the angle: $5\\theta = \\frac{5\\pi}{3}$. That is between $\\frac{3\\pi}{2}$ and $2\\pi$, so it is in Quadrant IV, with reference angle $2\\pi - \\frac{5\\pi}{3} = \\frac{\\pi}{3}$. The unit-circle point is $\\left(\\frac{1}{2}, -\\frac{\\sqrt{3}}{2}\\right)$. Sine is the y-coordinate, so $\\sin(5\\theta) = -\\frac{\\sqrt{3}}{2}$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found cosine instead of sine. The x-coordinate at $\\frac{5\\pi}{3}$ is $\\frac{1}{2}$, but the question asks for the y-coordinate."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used the right reference angle, $\\frac{\\pi}{3}$, but kept the Quadrant I sign. $\\frac{5\\pi}{3}$ is in Quadrant IV, where sine is negative."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $\\sin\\left(\\frac{\\pi}{3}\\right)$ by 5, as if $\\sin(5\\theta) = 5\\sin\\theta$. You have to multiply the angle first and then take the sine. A sine can never be bigger than 1."
+   }
+  },
+  "id": "orig-unit-circle-tr-E-390f07",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-unit-circle-tr-E-390f07",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

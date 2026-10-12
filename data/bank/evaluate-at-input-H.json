@@ -243,5 +243,53 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the value of $f(-12)$?",
+  "stimulus": "An immunologist tracks how a patient's antibody level wanes before a booster shot. The function $f$ is defined by $f(t) = -\\frac{3}{4}t + 15$, where $f(t)$ is the antibody level, in arbitrary units, $t$ days after the booster. Negative values of $t$ are days before the booster.",
+  "choices": [
+   "$6$",
+   "$9$",
+   "$24$",
+   "$36$"
+  ],
+  "answer": "C",
+  "explanation": "Put $-12$ in for $t$ and keep it in parentheses: $f(-12) = -\\frac{3}{4}(-12) + 15$. A negative times a negative is positive, so $-\\frac{3}{4}(-12) = 9$. Then $9 + 15 = 24$. That fits the story: 12 days before the booster, the level was higher than the 15 units it had fallen to by the day of the booster.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the negative sign on the input and worked out $-\\frac{3}{4}(12) + 15 = -9 + 15$. Two negatives multiply to a positive, so the product should be $+9$, not $-9$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You found $-\\frac{3}{4}(-12) = 9$ correctly but stopped there. You still have to add the constant 15 to get the output."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You solved $f(t) = -12$ and got $t = 36$. The question asks for $f(-12)$, which means you put $-12$ in for $t$. It does not mean you set the output equal to $-12$."
+   }
+  },
+  "id": "orig-evaluate-at-in-H-7c2f0a",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-H-7c2f0a",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "A",
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

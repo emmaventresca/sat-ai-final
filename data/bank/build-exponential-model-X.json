@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-build-exponent-X-d3e216",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,11 +82,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-build-exponent-X-26c475",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "the form __var__ where __var__ and __var__ are",
     "form __var__ where __var__ and __var__ are constants"
@@ -89,5 +99,391 @@
    "residue": 2
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which function best models the number of moon jellyfish polyps, $P(t)$, in the tank $t$ weeks after the count began?",
+  "stimulus": "A marine biologist tracks the moon jellyfish polyps in an aquarium tank. The number of polyps is multiplied by the same factor every week. The table shows two of the weekly counts.\n\nMoon Jellyfish Polyps in Tank\nWeek, t | Number of polyps\n2 | 96\n5 | 768",
+  "choices": [
+   "$P(t)=96\\cdot 2^{t}$",
+   "$P(t)=24\\cdot 8^{t}$",
+   "$P(t)=24\\cdot 2^{t}$",
+   "$P(t)=48\\cdot 2^{t}$"
+  ],
+  "answer": "C",
+  "explanation": "From week 2 to week 5 is 3 weeks, and the count goes from 96 to 768, so it was multiplied by 8. Three equal weekly factors multiply to 8, so the weekly factor is 2. The table has no row for week 0, so work backwards from week 2 by dividing by 2 twice: 96 \u00f7 2 \u00f7 2 = 24. That gives $P(t)=24\\cdot 2^{t}$. Check it: $24\\cdot 2^{5}=768$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You took the first row of the table, 96, as the starting amount. That row is week 2, not week 0, so this model gives 384 polyps at week 2 instead of 96."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used 8 as the weekly factor, but 8 is the factor across the 3 weeks from week 2 to week 5. You needed to split it into three equal weekly factors of 2."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the weekly factor of 2 but divided 96 by 2 only once. Week 2 is two steps after week 0, so you need to divide by 2 twice."
+   }
+  },
+  "id": "orig-build-exponent-X-1e657f",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-X-1e657f",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "A civil engineer models the compressive strength of the concrete in a bridge pier. The strength starts at 60 megapascals when the pier is built and decreases by 19% every 10 years. The model can be written as $S(t)=60b^{t/5}$, where $S(t)$ is the strength, in megapascals, $t$ years after construction and $b$ is a constant.",
+  "choices": [
+   "$0.9$",
+   "$0.19$",
+   "$0.905$",
+   "$0.81$"
+  ],
+  "answer": "A",
+  "explanation": "A 19% decrease means the strength is multiplied by 0.81 every 10 years. In the model the exponent $t/5$ counts 5-year periods, so 10 years is 2 periods and $b^{2}=0.81$. That makes $b=0.9$. Check it: $60(0.9)^{10/5}=60(0.81)$, which is a 19% drop.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the rate of decrease, 0.19, as the multiplier. A 19% decrease leaves 81% of the strength, so the multiplier must be close to 1."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You halved the percent, using 9.5% per 5 years. Percent changes compound, so two decreases of 9.5% are not the same as one decrease of 19%: $0.905^{2}\\approx 0.819$, not 0.81."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "0.81 is the factor for 10 years, but the exponent $t/5$ makes $b$ the factor for each 5-year period. With $b = 0.81$, the strength would fall 19% every 5 years."
+   }
+  },
+  "id": "orig-build-exponent-X-acad45",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-X-acad45",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "and __var__ is a constant what is the"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "According to the model, what is the smallest whole number $n$ for which fewer than 100 aftershocks are recorded on day $n$?",
+  "stimulus": "A seismologist models the number of aftershocks recorded on day $n$ after a main earthquake, where day 0 is the day of the main shock. In the model, the count on each day is 20% less than the count on the day before. The model gives 320 aftershocks on day 2.",
+  "choices": [
+   "5",
+   "6",
+   "7",
+   "8"
+  ],
+  "answer": "D",
+  "explanation": "Work back from day 2 to day 0: $320 \\div 0.8^{2} = 320 \\div 0.64 = 500$. The model is $A(n)=500(0.8)^{n}$. On day 7, $500(0.8)^{7}\\approx 104.9$, which is still at least 100. On day 8, $500(0.8)^{8}\\approx 83.9$, which is below 100. The first day under 100 is day 8.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used a linear model and subtracted 20% of 500, which is 100 aftershocks, every day. A percent decrease shrinks by a smaller amount each day, so the count falls more slowly than that."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You treated 320 as the day-0 count. Since 320 is the count on day 2, your model runs two days early."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "Day 7 is the last day with at least 100 aftershocks (about 104.9). The question asks for the first day with fewer than 100."
+   }
+  },
+  "id": "orig-build-exponent-X-d98805",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-X-d98805",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "To the nearest micrometer, what crack length does the model predict after 6,000 loading cycles?",
+  "stimulus": "A materials scientist loads an aluminum alloy test bar over and over and measures the length of a fatigue crack. In the model, the crack length is multiplied by the same factor every 1,000 cycles.\n\nFatigue Crack Length\nLoading cycles | Crack length (micrometers)\n2,000 | 288\n4,000 | 648",
+  "choices": [
+   "1,008",
+   "1,458",
+   "1,711",
+   "3,281"
+  ],
+  "answer": "B",
+  "explanation": "From 2,000 to 4,000 cycles the length is multiplied by $648/288=2.25$. That span is two 1,000-cycle steps, so each step multiplies by $\\sqrt{2.25}=1.5$. From 4,000 to 6,000 cycles is two more steps: $648(1.5)^{2}=648(2.25)=1{,}458$ micrometers.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You added the same amount, 360 micrometers, for every 2,000 cycles. That is a linear model, but the crack grows by a constant factor, not a constant amount."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You split the 125% increase into two 62.5% increases. Percent changes compound, so you need to take the square root of the factor 2.25, not halve the percent."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You applied the 2,000-cycle factor of 2.25 to each 1,000 cycles. You needed to divide the cycle count by the length of the step the factor belongs to."
+   }
+  },
+  "id": "orig-build-exponent-X-edaa79",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-X-edaa79",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which function gives the frequency $f(s)$, in hertz, of the pipe at step $s$?",
+  "stimulus": "A musicologist studying a historical organ finds that its pipes are tuned in equal steps: moving up one step always multiplies the frequency by the same factor, and the frequency doubles every 12 steps. The pipe at step 9 sounds at 440 hertz.",
+  "choices": [
+   "$f(s)=440\\cdot 2^{s/12}$",
+   "$f(s)=440\\cdot 2^{(s+9)/12}$",
+   "$f(s)=440\\cdot 2^{12(s-9)}$",
+   "$f(s)=440\\cdot 2^{(s-9)/12}$"
+  ],
+  "answer": "D",
+  "explanation": "The frequency doubles every 12 steps, so the exponent on 2 must be the number of steps moved divided by 12. The only known value is at step 9, not step 0, so count steps away from 9 using $s-9$. Then $f(9)=440\\cdot 2^{0}=440$ and $f(21)=440\\cdot 2^{1}=880$, which is one doubling 12 steps higher.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You treated 440 Hz as the frequency at step 0. Since it belongs to step 9, this model gives about 740 Hz at step 9."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You shifted the input the wrong way. To make the exponent zero at step 9 you need $s-9$, not $s+9$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by 12 instead of dividing by 12. That would make the frequency double 12 times per step, rather than once every 12 steps."
+   }
+  },
+  "id": "orig-build-exponent-X-2e325e",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-X-2e325e",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Assuming both seeds began with the same amount of carbon-14, about how many years older is Seed B than Seed A?",
+  "stimulus": "A paleobotanist dates two fossilized seeds of the same plant species. The amount of carbon-14 in a dead plant halves every 5,730 years. Seed A contains 12.5% of the carbon-14 it had when it died. Seed B contains one-fourth as much carbon-14 as Seed A.",
+  "choices": [
+   "1,074",
+   "11,460",
+   "17,190",
+   "28,650"
+  ],
+  "answer": "B",
+  "explanation": "Seed B has $\\tfrac{1}{4}$ as much carbon-14 as Seed A, and $\\tfrac{1}{4}=\\left(\\tfrac{1}{2}\\right)^{2}$, so B has gone through 2 more halvings than A. Two half-lives are $2(5{,}730)=11{,}460$ years. You can check with full ages: A has 12.5%, which is 3 half-lives (17,190 years). B has 3.125%, which is 5 half-lives (28,650 years). The difference is 11,460 years.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You assumed carbon-14 is lost at a constant 50 percentage points every 5,730 years. That is a linear model, but halving is exponential decay."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "17,190 years is Seed A's age. The question asks how much older Seed B is than Seed A."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "28,650 years is Seed B's full age. You still need to subtract Seed A's age to get the difference."
+   }
+  },
+  "id": "orig-build-exponent-X-709496",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-X-709496",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, by what percent does the number of aphids per plant increase over any 12-day period?",
+  "stimulus": "An agricultural scientist counts aphids on soybean plants in an untreated test plot. In the model, the average number of aphids per plant is multiplied by the same factor every 4 days.\n\nAverage Aphids per Soybean Plant\nDay | Aphids per plant\n3 | 160\n7 | 240\n11 | 360",
+  "choices": [
+   "125%",
+   "150%",
+   "237.5%",
+   "337.5%"
+  ],
+  "answer": "C",
+  "explanation": "Each 4-day step multiplies the count by $240/160=1.5$. Twelve days is 3 steps, so the count is multiplied by $1.5^{3}=3.375$. A factor of 3.375 means the new count is 337.5% of the old one, which is an increase of $337.5\\%-100\\%=237.5\\%$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "125% is the increase over 8 days, from 160 to 360, which are the first and last rows of the table. A 12-day period is three 4-day steps, not two."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the 50% increase three times. Percent increases compound, so you need to multiply the factors: $1.5^{3}$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "337.5% is the new count as a percent of the old count, from the factor 3.375. The increase is what is left after subtracting the original 100%."
+   }
+  },
+  "id": "orig-build-exponent-X-2ab0c4",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-X-2ab0c4",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which function gives the volume $V(w)$, in cubic meters, of water in the pond $w$ weeks after the start of the dry season?",
+  "stimulus": "A hydrologist monitors a retention pond during a dry season. At the start of the dry season, the pond holds 50,000 cubic meters of water. In the model, the volume decreases by 2% every 3 days.",
+  "choices": [
+   "$V(w)=50{,}000(0.98)^{7w/3}$",
+   "$V(w)=50{,}000(0.98)^{w/3}$",
+   "$V(w)=50{,}000(0.02)^{7w/3}$",
+   "$V(w)=50{,}000(0.98)^{3w/7}$"
+  ],
+  "answer": "A",
+  "explanation": "A 2% decrease multiplies the volume by 0.98. The exponent must count 3-day periods. In $w$ weeks there are $7w$ days, which is $7w/3$ periods of 3 days. Check with $w=3$: that is 21 days, or 7 periods, and the exponent $7(3)/3$ is 7.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You divided by the 3-day step but didn't convert weeks to days. This model loses 2% every 3 weeks instead of every 3 days."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the rate of decrease, 0.02, as the factor. Losing 2% leaves 98% each period, so the factor is 0.98."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You turned the unit conversion upside down. One week is $7/3$ periods of 3 days, not $3/7$ of one."
+   }
+  },
+  "id": "orig-build-exponent-X-ed6a65",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-X-ed6a65",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

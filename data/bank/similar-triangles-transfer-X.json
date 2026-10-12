@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-similar-triang-X-aed4b2",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "is similar to triangle __var__ where __var__ __var__",
     "similar to triangle __var__ where __var__ __var__ and",
@@ -85,16 +90,417 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-similar-triang-X-936ebd",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "__var__ angle __var__ is a right angle and"
    ],
    "residue": 1
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the length, in millimeters, of $\\overline{DE}$?",
+  "stimulus": "A nutrition scientist builds a logo for a food-label study from two right triangles. Triangle $ABC$ has a right angle at $C$, and $\\sin A = \\frac{20}{29}$. Triangle $DEF$ is similar to triangle $ABC$, where vertices $A$, $B$, and $C$ correspond to vertices $E$, $D$, and $F$, respectively. The length of $\\overline{EF}$ is 42 millimeters.",
+  "choices": [
+   "29",
+   "40",
+   "58",
+   "60.9"
+  ],
+  "answer": "C",
+  "explanation": "Since $\\sin A = \\frac{20}{29}$, you can write $BC = 20k$ and $AB = 29k$. By Pythagoras, $AC = 21k$. The stated correspondence pairs $E$ with $A$ and $F$ with $C$, so $\\overline{EF}$ matches $\\overline{AC}$. That gives $21k = 42$, so $k = 2$. Side $\\overline{DE}$ matches $\\overline{BA}$, so $DE = 29(2) = 58$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found the hypotenuse of the 20-21-29 triangle but didn't scale it by $k = 2$ to fit triangle $DEF$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $DF$, which matches $\\overline{BC} = 20k$. You needed $DE$, which matches the hypotenuse $\\overline{AB}$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You matched the vertices alphabetically ($A$ to $D$, $B$ to $E$) instead of using the stated correspondence. That paired $\\overline{EF}$ with $\\overline{BC}$, so you got $20k = 42$ and $k = 2.1$."
+   }
+  },
+  "id": "orig-similar-triang-X-86a7a0",
+  "skill_cd": "S.C.",
+  "subtype": "similar-triangles-transfer",
+  "subtype_name": "Similar right triangles: carry a ratio or a side across",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-similar-triang-X-86a7a0",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __var__ and __var__ respectively the length of",
+    "what is the length in millimeters of __var__"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "What is the length of $\\overline{PR}$?",
+  "stimulus": "A musicologist sketches the cross-section of a harp's frame as right triangle $PQR$, with the right angle at $R$. Segment $\\overline{RS}$ is the altitude from $R$ to hypotenuse $\\overline{PQ}$. In the sketch, $QS = 9$ and $\\tan(\\angle QRS) = \\frac{3}{4}$.",
+  "choices": [
+   "12",
+   "15",
+   "16",
+   "20"
+  ],
+  "answer": "D",
+  "explanation": "In right triangle $QSR$, $\\tan(\\angle QRS) = \\frac{QS}{RS} = \\frac{3}{4}$, so $RS = 12$. The altitude creates similar triangles, and $\\angle QRS = 90^\\circ - \\angle Q = \\angle P$. That means $\\tan P = \\frac{3}{4}$. In right triangle $PSR$, $\\tan P = \\frac{RS}{PS}$, so $PS = 16$. Then $PR = \\sqrt{16^2 + 12^2} = 20$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at $RS = 12$, the altitude, which you need on the way to $PR$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You matched $\\angle QRS$ to $\\angle PRS$ because both angles sit at vertex $R$. That gave $\\tan(\\angle PRS) = \\frac{3}{4}$, so $PS = 9$ and $PR = 15$. The angle that is actually congruent to $\\angle QRS$ is $\\angle P$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You found $PS = 16$, which is one leg of triangle $PSR$, but not its hypotenuse $PR$."
+   }
+  },
+  "id": "orig-similar-triang-X-c84449",
+  "skill_cd": "S.C.",
+  "subtype": "similar-triangles-transfer",
+  "subtype_name": "Similar right triangles: carry a ratio or a side across",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-similar-triang-X-c84449",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length of $\\overline{BC}$?",
+  "stimulus": "A marine biologist models a kelp line as right triangle $ABC$, with the right angle at $B$. Point $D$ lies on $\\overline{AB}$ and point $E$ lies on $\\overline{AC}$, with $\\overline{DE}$ parallel to $\\overline{BC}$. In the model, $\\cos A = \\frac{12}{13}$, $AE = 26$, and $DB = 60$.",
+  "choices": [
+   "10",
+   "35",
+   "91",
+   "168"
+  ],
+  "answer": "B",
+  "explanation": "Because $\\overline{DE} \\parallel \\overline{BC}$, triangle $ADE$ has a right angle at $D$ and is similar to triangle $ABC$. In triangle $ADE$, $AD = AE \\cos A = 24$, and $DE = 10$. Then $AB = 24 + 60 = 84$. Angle $A$ is shared, so $\\tan A = \\frac{5}{12}$ in both triangles. That gives $BC = 84 \\cdot \\frac{5}{12} = 35$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found $DE$, the side of the small triangle, and didn't carry the ratio over to the large triangle."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the hypotenuse $AC = 84 \\cdot \\frac{13}{12}$ instead of the leg $BC$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You labeled the sides relative to the wrong angle, so you took $AD = 10$ and $\\tan A = \\frac{12}{5}$. That gives $AB = 70$ and $BC = 168$. Side $AD$ is adjacent to $A$, so cosine puts it at 24."
+   }
+  },
+  "id": "orig-similar-triang-X-71aa36",
+  "skill_cd": "S.C.",
+  "subtype": "similar-triangles-transfer",
+  "subtype_name": "Similar right triangles: carry a ratio or a side across",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-similar-triang-X-71aa36",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "point __var__ lies on __var__ and point __var__",
+    "__var__ lies on __var__ and point __var__ lies",
+    "lies on __var__ and point __var__ lies on",
+    "on __var__ and point __var__ lies on __var__",
+    "__var__ __var__ and __var__ what is the length"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "What is the value of $\\cos(90^\\circ - U)$?",
+  "stimulus": "A public health team's poster shows right triangle $JKL$, with the right angle at $L$, $JK = 17$, and $KL = 8$. Triangle $TUV$ is similar to triangle $JKL$, where vertices $J$, $K$, and $L$ correspond to vertices $U$, $V$, and $T$, respectively, and $TU = 45$.",
+  "choices": [
+   "$\\frac{8}{17}$",
+   "$\\frac{8}{15}$",
+   "$\\frac{15}{17}$",
+   "$\\frac{15}{8}$"
+  ],
+  "answer": "A",
+  "explanation": "By the complementary angle identity, $\\cos(90^\\circ - U) = \\sin U$. Angle $U$ corresponds to angle $J$, so $\\sin U = \\sin J$. In triangle $JKL$, $JL = \\sqrt{17^2 - 8^2} = 15$, and $\\sin J = \\frac{KL}{JK} = \\frac{8}{17}$. The scale factor doesn't change the ratio, so $TU = 45$ isn't needed.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the correct angle but found $\\tan J = \\frac{8}{15}$ instead of $\\sin J$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You either matched $U$ with $K$ because both are the second letter, or you computed $\\cos U$ and forgot that $\\cos(90^\\circ - U) = \\sin U$. Both errors give $\\frac{15}{17}$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $\\tan K$, which uses the wrong angle and the wrong ratio."
+   }
+  },
+  "id": "orig-similar-triang-X-63e102",
+  "skill_cd": "S.C.",
+  "subtype": "similar-triangles-transfer",
+  "subtype_name": "Similar right triangles: carry a ratio or a side across",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-similar-triang-X-63e102",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length of $\\overline{XY}$?",
+  "stimulus": "A seismologist diagrams a fault block as right triangle $XYZ$, with the right angle at $Y$. Segment $\\overline{YW}$ is the altitude from $Y$ to hypotenuse $\\overline{XZ}$. In the diagram, $\\cos X = \\frac{3}{5}$ and $WZ = 48$.",
+  "choices": [
+   "36",
+   "45",
+   "60",
+   "80"
+  ],
+  "answer": "B",
+  "explanation": "$\\angle WYZ = 90^\\circ - \\angle Z = \\angle X$, so $\\sin(\\angle WYZ) = \\frac{4}{5}$. In right triangle $YWZ$, $\\sin(\\angle WYZ) = \\frac{WZ}{YZ}$, so $YZ = 60$. In triangle $XYZ$, $\\tan Z = \\frac{XY}{YZ}$, and since $Z = 90^\\circ - X$, $\\tan Z = \\frac{3}{4}$. That gives $XY = 60 \\cdot \\frac{3}{4} = 45$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the altitude $YW = 36$, not the leg $XY$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You found $YZ = 60$, the other leg of triangle $XYZ$. You still needed to apply the ratio to get $XY$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You applied angle $X$'s ratio at angle $Z$, multiplying $YZ$ by $\\tan X = \\frac{4}{3}$. The side $XY$ is opposite $Z$, so the ratio you need is $\\tan Z = \\frac{3}{4}$."
+   }
+  },
+  "id": "orig-similar-triang-X-a23d61",
+  "skill_cd": "S.C.",
+  "subtype": "similar-triangles-transfer",
+  "subtype_name": "Similar right triangles: carry a ratio or a side across",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-similar-triang-X-a23d61",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $\\sin S$?",
+  "stimulus": "A cartographer uses two right triangles to set a map's scale bar. Triangle $MNP$ has a right angle at $P$, $MN = 50$, and $MP = 48$. Triangle $RST$ is similar to triangle $MNP$, where vertices $M$, $N$, and $P$ correspond to vertices $S$, $R$, and $T$, respectively, and $RS = 25$.",
+  "choices": [
+   "$\\frac{7}{25}$",
+   "$\\frac{7}{24}$",
+   "$\\frac{14}{25}$",
+   "$\\frac{24}{25}$"
+  ],
+  "answer": "A",
+  "explanation": "By Pythagoras, $NP = \\sqrt{50^2 - 48^2} = 14$. Angle $S$ corresponds to angle $M$, so $\\sin S = \\sin M = \\frac{NP}{MN} = \\frac{14}{50} = \\frac{7}{25}$. Similar triangles share their trig ratios, so $RS = 25$ doesn't affect the answer.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the correct angle but took $\\frac{\\text{opposite}}{\\text{adjacent}}$, which is $\\tan M$, not $\\sin M$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided a side of triangle $MNP$ ($NP = 14$) by a side of triangle $RST$ ($RS = 25$). A trig ratio has to use two sides from the same triangle."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You matched $S$ with $N$ because both are the second letter, not with $M$ as the correspondence states. That gave $\\sin N = \\frac{48}{50}$."
+   }
+  },
+  "id": "orig-similar-triang-X-bcfbfb",
+  "skill_cd": "S.C.",
+  "subtype": "similar-triangles-transfer",
+  "subtype_name": "Similar right triangles: carry a ratio or a side across",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-similar-triang-X-bcfbfb",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length of $\\overline{AE}$?",
+  "stimulus": "A folklorist diagrams the crossed threads of a woven charm. Segments $\\overline{AE}$ and $\\overline{BD}$ intersect at point $C$, and $\\overline{AB}$ is parallel to $\\overline{DE}$. Angle $B$ is a right angle, $\\tan A = \\frac{3}{4}$, $AC = 20$, and $CD = 24$.",
+  "choices": [
+   "32",
+   "40",
+   "50",
+   "60"
+  ],
+  "answer": "D",
+  "explanation": "The parallel segments make $\\angle A = \\angle E$ and $\\angle B = \\angle D$, so triangle $ABC$ is similar to triangle $EDC$. Since $\\tan A = \\frac{BC}{AB} = \\frac{3}{4}$ and $AC = 20$, you get $BC = 12$ and $AB = 16$. Side $\\overline{CD}$ corresponds to $\\overline{CB}$, so the scale factor is $\\frac{24}{12} = 2$. That makes $CE = 2(20) = 40$, and $AE = 20 + 40 = 60$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $DE = 2(16) = 32$ instead of the full segment $AE$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You found $CE = 40$ but didn't add $AC = 20$ to get the full length of $\\overline{AE}$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You paired $\\overline{CD}$ with $\\overline{AB}$, either by where they sit in the figure or by labeling $\\tan A$ backwards so that $AB = 12$. That gave a scale factor of $1.5$, so $CE = 30$ and $AE = 50$."
+   }
+  },
+  "id": "orig-similar-triang-X-7bf1c8",
+  "skill_cd": "S.C.",
+  "subtype": "similar-triangles-transfer",
+  "subtype_name": "Similar right triangles: carry a ratio or a side across",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-similar-triang-X-7bf1c8",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ and __var__ intersect at point __var__ and",
+    "__var__ __var__ and __var__ what is the length"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the length of $\\overline{AB}$?",
+  "stimulus": "An ornithologist models a heron's wing and leg as right triangle $ABC$, with the right angle at $C$. Segment $\\overline{CD}$ is the altitude from $C$ to hypotenuse $\\overline{AB}$. In the model, $AD = 25$ and $\\sin(\\angle ACD) = \\frac{5}{13}$.",
+  "choices": [
+   "50",
+   "144",
+   "156",
+   "169"
+  ],
+  "answer": "D",
+  "explanation": "In right triangle $ADC$, $\\sin(\\angle ACD) = \\frac{AD}{AC} = \\frac{5}{13}$, so $AC = 65$ and $CD = 60$. The altitude makes $\\angle ACD = 90^\\circ - \\angle A = \\angle B$, so $\\tan B = \\frac{5}{12}$. In triangle $CDB$, $\\tan B = \\frac{CD}{BD}$, which gives $BD = 144$. Then $AB = 25 + 144 = 169$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You treated $\\angle ACD$ as congruent to $\\angle A$, so you took $\\tan B = \\frac{12}{5}$ and got $BD = 25$. But $\\angle ACD$ is complementary to $\\angle A$, so it matches $\\angle B$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You found $BD = 144$ but didn't add $AD = 25$ to get the whole hypotenuse."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the leg $BC = 156$ instead of the hypotenuse $AB$."
+   }
+  },
+  "id": "orig-similar-triang-X-136d3d",
+  "skill_cd": "S.C.",
+  "subtype": "similar-triangles-transfer",
+  "subtype_name": "Similar right triangles: carry a ratio or a side across",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-similar-triang-X-136d3d",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

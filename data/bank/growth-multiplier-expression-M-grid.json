@@ -205,16 +205,701 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "grid",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-growth-multipl-M-47ad89",
    "structure": [
     "key '201/200' is longer than the entry box allows"
    ],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": 1.005,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
-  },
-  "phrasing": "direct"
+  }
+ },
+ {
+  "stem": "During pasteurization, the vitamin C content of a juice decreases by 20%. During storage, the remaining vitamin C content then decreases by a further 10%. The final vitamin C content is $k$ times the original content. What is the value of $k$?",
+  "stimulus": null,
+  "keys": [
+   "0.72",
+   ".72",
+   "18/25"
+  ],
+  "any_of": false,
+  "explanation": "Turn each change into a multiplier. A 20% decrease means you multiply by $1 - 0.20 = 0.8$. A further 10% decrease of what remains means you multiply by $1 - 0.10 = 0.9$. Successive changes multiply, so $k = (0.8)(0.9) = 0.72$. You cannot add the two percents, because the second 10% is taken from the reduced amount, not from the original.",
+  "common_errors": [
+   {
+    "value": "0.7",
+    "misconception": "algebra-manipulation",
+    "why": "Added the two decreases to get 30% and used $1 - 0.30$, instead of multiplying the two multipliers."
+   },
+   {
+    "value": "0.28",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the fraction of vitamin C that was lost, $1 - 0.72$, instead of the fraction that remains."
+   },
+   {
+    "value": "0.8",
+    "misconception": "intermediate-step",
+    "why": "Stopped after the pasteurization multiplier and did not apply the storage decrease."
+   },
+   {
+    "value": "1.32",
+    "misconception": "complement-or-direction-flip",
+    "why": "Treated both changes as increases and used $(1.2)(1.1)$."
+   }
+  ],
+  "id": "orig-growth-multipl-M-ba760b",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-ba760b",
+   "structure": [],
+   "solver_answer": 0.72,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Over one excavation season, the number of pottery shards catalogued at a dig site increased by 150%. The number at the end of the season is the product of the number at the start and $r$. What is the value of $r$?",
+  "stimulus": null,
+  "keys": [
+   "2.5",
+   "5/2"
+  ],
+  "any_of": false,
+  "explanation": "An increase of $p\\%$ means you multiply by $1 + \\frac{p}{100}$. Here $p = 150$, so $r = 1 + 1.5 = 2.5$. An increase of more than 100% is still added to the original 1. The new count is the original plus one and a half times the original.",
+  "common_errors": [
+   {
+    "value": "1.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the bare rate 1.5 as the multiplier and forgot to add the original amount (the 1)."
+   },
+   {
+    "value": "1.15",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote 1.p by pattern, putting 15 after the decimal point instead of converting 150% to 1.5."
+   },
+   {
+    "value": "150",
+    "misconception": "algebra-manipulation",
+    "why": "Entered the percent as a whole number without converting it to a decimal."
+   }
+  ],
+  "id": "orig-growth-multipl-M-b8e95e",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-b8e95e",
+   "structure": [],
+   "solver_answer": 2.5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The second edition of a dictionary contains 40% more entries than the first edition. The third edition contains 25% more entries than the second edition. The number of entries in the third edition is $k$ times the number in the first. What is $k$?",
+  "stimulus": null,
+  "keys": [
+   "1.75",
+   "7/4"
+  ],
+  "any_of": false,
+  "explanation": "From the first edition to the second, you multiply by $1.40$. From the second to the third, you multiply by $1.25$. To go from the first edition to the third, chain the two: $k = (1.4)(1.25) = 1.75$.",
+  "common_errors": [
+   {
+    "value": "1.65",
+    "misconception": "algebra-manipulation",
+    "why": "Added the two percents to get 65% and used $1 + 0.65$, instead of multiplying the multipliers."
+   },
+   {
+    "value": "0.75",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the overall percent increase as a decimal, $1.75 - 1$, instead of the multiplier."
+   },
+   {
+    "value": "1.4",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the multiplier from the first edition to the second."
+   },
+   {
+    "value": "0.45",
+    "misconception": "complement-or-direction-flip",
+    "why": "Treated both changes as decreases and used $(0.6)(0.75)$."
+   }
+  ],
+  "id": "orig-growth-multipl-M-761186",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-761186",
+   "structure": [],
+   "solver_answer": 1.75,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A conductor speeds up a passage by 20% in rehearsal. In performance, the conductor then slows that rehearsal tempo by 20%. The performance tempo is $k$ times the original tempo. What is the value of $k$?",
+  "stimulus": null,
+  "keys": [
+   "0.96",
+   ".96",
+   "24/25"
+  ],
+  "any_of": false,
+  "explanation": "Speeding up by 20% means you multiply by $1.2$. Slowing down by 20% means you multiply by $0.8$. Multiply the two: $k = (1.2)(0.8) = 0.96$. The changes do not cancel. The 20% decrease is taken from the larger rehearsal tempo, so it removes more than the increase added.",
+  "common_errors": [
+   {
+    "value": "1",
+    "misconception": "algebra-manipulation",
+    "why": "Assumed a 20% rise and a 20% fall cancel out, which treats the percents as if they could be added."
+   },
+   {
+    "value": "0.04",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the net fraction lost, $1 - 0.96$, instead of the multiplier."
+   },
+   {
+    "value": "1.2",
+    "misconception": "intermediate-step",
+    "why": "Stopped after the rehearsal multiplier and did not apply the 20% slowdown."
+   }
+  ],
+  "id": "orig-growth-multipl-M-0923c0",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-0923c0",
+   "structure": [],
+   "solver_answer": 0.96,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "After a vaccine booster, a patient's antibody concentration decreases by 30% each week. The concentration 2 weeks after the booster is $k$ times the concentration at the booster. What is the value of $k$?",
+  "stimulus": null,
+  "keys": [
+   "0.49",
+   ".49",
+   "49/100"
+  ],
+  "any_of": false,
+  "explanation": "A weekly decrease of 30% means you multiply by $0.7$ each week. Over 2 weeks you apply that multiplier twice: $k = (0.7)^2 = 0.49$.",
+  "common_errors": [
+   {
+    "value": "0.4",
+    "misconception": "algebra-manipulation",
+    "why": "Doubled the rate to 60% and used $1 - 0.60$, instead of squaring the multiplier."
+   },
+   {
+    "value": "0.7",
+    "misconception": "intermediate-step",
+    "why": "Gave the multiplier for one week only."
+   },
+   {
+    "value": "0.51",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the fraction of antibodies lost over the two weeks, $1 - 0.49$, instead of the fraction remaining."
+   },
+   {
+    "value": "1.69",
+    "misconception": "complement-or-direction-flip",
+    "why": "Treated the change as an increase and used $(1.3)^2$."
+   }
+  ],
+  "id": "orig-growth-multipl-M-24ed51",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-24ed51",
+   "structure": [],
+   "solver_answer": 0.49,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A weather station recorded 25% more rainfall in June than in July. The July rainfall is $k$ times the June rainfall. What is the value of $k$?",
+  "stimulus": null,
+  "keys": [
+   "0.8",
+   ".8",
+   "4/5"
+  ],
+  "any_of": false,
+  "explanation": "The 25% is measured from July, so June $= 1.25 \\times$ July. Solve for July: July $= \\frac{1}{1.25} \\times$ June $= \\frac{4}{5} \\times$ June. So $k = 0.8$. Writing the equation is safer than reversing the percent in your head.",
+  "common_errors": [
+   {
+    "value": "0.75",
+    "misconception": "algebra-manipulation",
+    "why": "Reversed the percent in their head as a 25% decrease from June, but the 25% was measured from July."
+   },
+   {
+    "value": "1.25",
+    "misconception": "complement-or-direction-flip",
+    "why": "Gave the multiplier that takes July to June, which is the reverse of what was asked."
+   },
+   {
+    "value": "0.25",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the bare rate instead of a multiplier."
+   }
+  ],
+  "id": "orig-growth-multipl-M-8defde",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-8defde",
+   "structure": [],
+   "solver_answer": 0.8,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A firm cuts each employee's weekly hours by 10% and raises the hourly pay by 20%. An employee's new weekly earnings are $k$ times the old weekly earnings. What is the value of $k$?",
+  "stimulus": null,
+  "keys": [
+   "1.08",
+   "27/25"
+  ],
+  "any_of": false,
+  "explanation": "Weekly earnings equal hours times hourly pay. Hours are multiplied by $0.9$ and pay is multiplied by $1.2$, so earnings are multiplied by $k = (0.9)(1.2) = 1.08$.",
+  "common_errors": [
+   {
+    "value": "1.1",
+    "misconception": "algebra-manipulation",
+    "why": "Combined the changes by adding, $+20\\% - 10\\% = +10\\%$, instead of multiplying the multipliers."
+   },
+   {
+    "value": "0.08",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the net percent increase as a decimal instead of the multiplier."
+   },
+   {
+    "value": "1.32",
+    "misconception": "complement-or-direction-flip",
+    "why": "Treated the cut in hours as an increase and used $(1.1)(1.2)$."
+   },
+   {
+    "value": "0.72",
+    "misconception": "complement-or-direction-flip",
+    "why": "Treated the pay raise as a decrease and used $(0.9)(0.8)$."
+   }
+  ],
+  "id": "orig-growth-multipl-M-04be5a",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-04be5a",
+   "structure": [],
+   "solver_answer": 1.08,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "On a hot day, a steel bridge girder expands so that its length increases by 0.2%. Its new length is the product of its original length and $r$. What is the value of $r$?",
+  "stimulus": null,
+  "keys": [
+   "1.002",
+   "501/500"
+  ],
+  "any_of": false,
+  "explanation": "Convert the percent to a decimal: $0.2\\% = \\frac{0.2}{100} = 0.002$. An increase means you multiply by $1 + 0.002$, so $r = 1.002$. Watch the conversion: 0.2% is two thousandths, not two tenths.",
+  "common_errors": [
+   {
+    "value": "1.2",
+    "misconception": "algebra-manipulation",
+    "why": "Read 0.2% as the decimal 0.2 without dividing by 100."
+   },
+   {
+    "value": "1.02",
+    "misconception": "algebra-manipulation",
+    "why": "Moved the decimal point only one place when converting 0.2% to a decimal."
+   },
+   {
+    "value": "0.002",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the bare rate instead of $1 +$ rate."
+   },
+   {
+    "value": "0.998",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the decrease multiplier $1 - 0.002$ for an increase."
+   }
+  ],
+  "id": "orig-growth-multipl-M-8e2368",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "fail",
+  "verification": {
+   "id": "orig-growth-multipl-M-8e2368",
+   "structure": [
+    "key '501/500' is longer than the entry box allows"
+   ],
+   "solver_answer": 1.002,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A paleobotanist counts fossil fern spores in two neighbouring layers of sediment. The upper layer has 35% fewer spores per gram than the lower layer. The upper layer's count is $k$ times the lower layer's count.",
+  "keys": [
+   "0.65",
+   ".65",
+   "13/20"
+  ],
+  "any_of": false,
+  "explanation": "\"35% fewer\" is a decrease of 35%, so you multiply by $1 - 0.35$. The upper count is $0.65$ times the lower count, which makes $k = 0.65$. To check, give the lower layer 100 spores per gram. The upper layer then has $100 - 35 = 65$, and $65 / 100 = 0.65$.",
+  "common_errors": [
+   {
+    "value": "0.35",
+    "misconception": "wrong-target-quantity",
+    "why": "You entered the rate of decrease, which is the amount lost, instead of the multiplier for the amount left."
+   },
+   {
+    "value": "1.35",
+    "misconception": "complement-or-direction-flip",
+    "why": "You treated 35% fewer as a 35% increase and multiplied by $1 + 0.35$."
+   },
+   {
+    "value": "65",
+    "misconception": "algebra-manipulation",
+    "why": "You found the right percent, 65%, but did not convert it to a decimal."
+   }
+  ],
+  "id": "orig-growth-multipl-M-f083c9",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-f083c9",
+   "structure": [],
+   "solver_answer": 0.65,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $r$?",
+  "stimulus": "In its second season, an archaeological dig grew its excavated area by 140% compared with the first season. The second season's area equals $r$ times the first season's area.",
+  "keys": [
+   "2.4",
+   "12/5"
+  ],
+  "any_of": false,
+  "explanation": "An increase of 140% means you multiply by $1 + 1.40$, so the second season's area is $2.4$ times the first. To check, use a first-season area of 100 square meters. The increase is $140$, so the new area is $240$, and $240 / 100 = 2.4$.",
+  "common_errors": [
+   {
+    "value": "1.4",
+    "misconception": "wrong-target-quantity",
+    "why": "You entered the rate of increase without adding the original 1. That treats the area as 140% of the first season's area instead of 140% more than it."
+   },
+   {
+    "value": "0.4",
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted 1 from 1.4 instead of adding it."
+   },
+   {
+    "value": "140",
+    "misconception": "algebra-manipulation",
+    "why": "You entered the percent as a whole number instead of turning it into a multiplier."
+   }
+  ],
+  "id": "orig-growth-multipl-M-0ec687",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-0ec687",
+   "structure": [],
+   "solver_answer": 2.4,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A county health department reported 12.5% fewer cases of influenza in March than in February. If $M$ is the number of cases in March and $F$ is the number in February, then $M = kF$.",
+  "keys": [
+   "0.875",
+   ".875",
+   "7/8"
+  ],
+  "any_of": false,
+  "explanation": "12.5% fewer is a decrease of 12.5%, so you multiply by $1 - 0.125 = 0.875$. That gives $M = 0.875F$, so $k = 0.875$, which is $\\tfrac{7}{8}$ as a fraction. To check, let $F = 800$. The decrease is $100$, so $M = 700$, and $700 / 800 = 0.875$.",
+  "common_errors": [
+   {
+    "value": "0.125",
+    "misconception": "wrong-target-quantity",
+    "why": "You entered the rate of decrease instead of the share that remains."
+   },
+   {
+    "value": "1.125",
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the multiplier for an increase when the cases went down."
+   },
+   {
+    "value": "87.5",
+    "misconception": "algebra-manipulation",
+    "why": "You found the remaining percent but did not divide by 100."
+   },
+   {
+    "value": "0.88",
+    "misconception": "algebra-manipulation",
+    "why": "You rounded 12.5% to 12% before finding the multiplier."
+   }
+  ],
+  "id": "orig-growth-multipl-M-1cffbc",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-1cffbc",
+   "structure": [],
+   "solver_answer": 0.875,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A cartographer's first revision of a map shortened a coastline's measured length by 4%. A second revision then increased that new length by 25%. After both revisions, the length is $k$ times the original length.",
+  "keys": [
+   "1.2",
+   "6/5"
+  ],
+  "any_of": false,
+  "explanation": "Turn each change into a multiplier. The 4% decrease is $\\times 0.96$ and the 25% increase is $\\times 1.25$. Successive changes multiply, so $k = (0.96)(1.25) = 1.2$. You cannot add the percents, because the 25% is taken of the already shortened length. To check, start with 100 km. After the first revision it is 96 km, and after the second it is $96 \\times 1.25 = 120$ km.",
+  "common_errors": [
+   {
+    "value": "1.21",
+    "misconception": "algebra-manipulation",
+    "why": "You added the percent changes, $-4\\% + 25\\% = 21\\%$, instead of multiplying the multipliers."
+   },
+   {
+    "value": "1.3",
+    "misconception": "complement-or-direction-flip",
+    "why": "You treated the 4% decrease as an increase: $(1.04)(1.25) = 1.3$."
+   },
+   {
+    "value": "0.21",
+    "misconception": "wrong-target-quantity",
+    "why": "You added the rates and entered the result as a bare rate, not a multiplier."
+   },
+   {
+    "value": "1.25",
+    "misconception": "intermediate-step",
+    "why": "You used only the second revision's multiplier and dropped the first one."
+   }
+  ],
+  "id": "orig-growth-multipl-M-ef8355",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-ef8355",
+   "structure": [],
+   "solver_answer": 1.2,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A marine biologist found that a sea otter population was 20% smaller this year than last year. Last year's population was $k$ times this year's population.",
+  "keys": [
+   "1.25",
+   "5/4"
+  ],
+  "any_of": false,
+  "explanation": "Start from the year the percent is based on. This year's population is 80% of last year's, so this year $= 0.8 \\times$ last year. The question asks for last year in terms of this year, so divide: last year $= \\tfrac{1}{0.8} \\times$ this year $= 1.25 \\times$ this year. To check, take 100 otters last year. That gives 80 this year, and $100 / 80 = 1.25$.",
+  "common_errors": [
+   {
+    "value": "1.2",
+    "misconception": "algebra-manipulation",
+    "why": "You reversed the change in your head by adding 20% back. The 20% was taken of last year's population, not this year's."
+   },
+   {
+    "value": "0.8",
+    "misconception": "complement-or-direction-flip",
+    "why": "You gave this year as a multiple of last year, which is the reverse of the relationship asked for."
+   },
+   {
+    "value": "0.2",
+    "misconception": "wrong-target-quantity",
+    "why": "You entered the bare rate of decrease instead of a multiplier."
+   }
+  ],
+  "id": "orig-growth-multipl-M-1df239",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-1df239",
+   "structure": [],
+   "solver_answer": 1.25,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

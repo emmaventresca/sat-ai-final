@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-model-from-wor-X-263296",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,16 +82,405 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-model-from-wor-X-e253cf",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "which equation defines __var__ where __var__ is the"
    ],
    "residue": 3
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which equation gives the volume $V$, in milliliters, of formula left in the bag $h$ hours after feeding starts?",
+  "stimulus": "A bag of enteral formula holds 1,260 milliliters. Before feeding starts, priming the tubing draws 60 milliliters from the bag. Once feeding starts, the pump delivers 75 milliliters every 20 minutes.",
+  "choices": [
+   "$V = 1{,}260 - 225h$",
+   "$V = 1{,}200 - 75h$",
+   "$V = 1{,}200 - 225h$",
+   "$V = 1{,}200 - 25h$"
+  ],
+  "answer": "C",
+  "explanation": "Priming happens before feeding starts, so at $h = 0$ the bag holds $1{,}260 - 60 = 1{,}200$ mL. That is the constant. An hour has three 20-minute blocks, so the pump delivers $3 \\times 75 = 225$ mL per hour. The volume is going down, so $V = 1{,}200 - 225h$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You got the hourly rate right but used the full bag as the starting amount. The 60 mL of priming comes out before $h = 0$, so the bag holds 1,200 mL when feeding starts."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You took 75 mL as the rate per hour. The 75 mL is delivered every 20 minutes, and $h$ counts hours, so the hourly rate is three times that."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You saw that 20 minutes and an hour differ by a factor of 3, but you divided by 3 when you should have multiplied. An hour holds three deliveries, so the hourly rate is larger than 75 mL, not smaller."
+   }
+  },
+  "id": "orig-model-from-wor-X-b7e9a9",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-X-b7e9a9",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation gives the pay $P$, in dollars, for a shift of $h$ hours, where $h > 8$?",
+  "stimulus": "A study of warehouse contracts describes one agreement in detail. A worker earns a flat $\\$180$ for any shift of up to 8 hours. For time beyond 8 hours, the worker earns $\\$33$ for each additional half hour.",
+  "choices": [
+   "$P = 66h + 180$",
+   "$P = 66h - 348$",
+   "$P = 33h - 84$",
+   "$P = 66h - 528$"
+  ],
+  "answer": "B",
+  "explanation": "$\\$33$ per half hour is $\\$66$ per hour, and it only applies to the $h - 8$ hours beyond the flat block. So $P = 180 + 66(h - 8) = 66h - 528 + 180 = 66h - 348$. To check: at $h = 8$, $66(8) - 348 = 180$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You charged the overtime rate on every hour of the shift. The $\\$66$ per hour only applies beyond the first 8 hours, so you need $h - 8$ rather than $h$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You set up $180 + 33(h - 8)$ correctly but treated $\\$33$ as an hourly rate. It is paid per half hour, so the hourly rate is $\\$66$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You expanded $66(h - 8)$ correctly but dropped the flat $\\$180$ when you simplified. Adding it back gives $-528 + 180 = -348$."
+   }
+  },
+  "id": "orig-model-from-wor-X-b866ab",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-X-b866ab",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation gives the timer reading $T$, in seconds, when the S-wave reaches a station $d$ kilometers from the epicenter?",
+  "stimulus": "A seismometer's timer already read 12 seconds at the instant an earthquake began. The earthquake's S-wave travels outward at a steady 7 kilometers every 2 seconds.",
+  "choices": [
+   "$T = 12d + \\frac{2}{7}$",
+   "$T = 12 + \\frac{7}{2}d$",
+   "$T = \\frac{2}{7}d - 12$",
+   "$T = 12 + \\frac{2}{7}d$"
+  ],
+  "answer": "D",
+  "explanation": "The output is time and the input is distance, so the rate you need is seconds per kilometer: $\\frac{2 \\text{ s}}{7 \\text{ km}} = \\frac{2}{7}$ s/km. At $d = 0$ the timer reads 12, and every extra kilometer adds time, so $T = 12 + \\frac{2}{7}d$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You swapped the starting value and the rate. The 12 seconds is where the timer starts, so it is the constant, not the coefficient on $d$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the speed, kilometers per second. Because $T$ is a time and $d$ is a distance, the coefficient has to be seconds per kilometer, which is $\\frac{2}{7}$, not $\\frac{7}{2}$. Check the units: s/km times km gives s."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You subtracted the 12 seconds. The timer was already at 12 when the earthquake began, so the 12 is added to the travel time."
+   }
+  },
+  "id": "orig-model-from-wor-X-4b5617",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-X-4b5617",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation gives the volume $V$, in liters, of water in the tank $t$ minutes after 6:00 a.m.?",
+  "stimulus": "At 6:00 a.m., a field irrigation tank holds 4,800 liters of water. From then on, an inflow pipe adds 120 liters every 3 minutes, and each of the field's 6 drip lines draws 18 liters per minute from the tank.",
+  "choices": [
+   "$V = 4{,}800 - 68t$",
+   "$V = 4{,}800 + 22t$",
+   "$V = 4{,}800 - 108t$",
+   "$V = 4{,}800 + 68t$"
+  ],
+  "answer": "A",
+  "explanation": "The inflow is $120 \\div 3 = 40$ liters per minute. The outflow is $6 \\times 18 = 108$ liters per minute. The net change is $40 - 108 = -68$ liters per minute, so the tank is draining and $V = 4{,}800 - 68t$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted only one drip line, $40 - 18 = 22$. There are 6 lines, so the outflow is $6 \\times 18 = 108$ liters per minute."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You counted all six drip lines but left out the inflow pipe. The tank also gains 40 liters per minute, which partly offsets the drain."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You found the right net rate, 68 liters per minute, but gave it the wrong sign. More water leaves than enters, so the volume falls and the slope must be negative."
+   }
+  },
+  "id": "orig-model-from-wor-X-08ee63",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-X-08ee63",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation gives the amount $R$, in milliliters, of reagent remaining after $p$ plates have been run?",
+  "stimulus": "An immunology lab has 500 milliliters of a reagent for antibody assays. Before the first plate, 20 milliliters is used once to calibrate the reader. Each plate has 48 wells, and each well uses 0.5 milliliter.",
+  "choices": [
+   "$R = 500 - 24p$",
+   "$R = 480 - 0.5p$",
+   "$R = 480 - 24p$",
+   "$R = 500 - 44p$"
+  ],
+  "answer": "C",
+  "explanation": "Calibration happens once, before any plates, so the amount at $p = 0$ is $500 - 20 = 480$ mL. Each plate uses $48 \\times 0.5 = 24$ mL. The reagent decreases, so $R = 480 - 24p$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You got the per-plate use right but left out the one-time calibration. The 20 mL is gone before the first plate, so the starting amount is 480 mL."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used the per-well amount as the per-plate amount. Each plate has 48 wells, so a plate uses $48 \\times 0.5 = 24$ mL."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You treated the calibration as if it happened on every plate, adding 20 to the slope. It happens once, so it belongs in the constant, not the rate."
+   }
+  },
+  "id": "orig-model-from-wor-X-da5292",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-X-da5292",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation gives the total yards $y$ of the order woven $d$ days after the repair began, where $d \\ge 3$?",
+  "stimulus": "In 1824, a mill's loom stopped for a 3-day repair. When the repair began, a weaver had already woven 14 yards of a cloth order. Once the repair ended, the weaver produced 5 yards every 2 days.",
+  "choices": [
+   "$y = 2.5d + 6.5$",
+   "$y = 2.5d + 14$",
+   "$y = 5d - 1$",
+   "$y = 2.5d + 21.5$"
+  ],
+  "answer": "A",
+  "explanation": "The rate is $5 \\div 2 = 2.5$ yards per day, but weaving only happens on the $d - 3$ days after the repair. So $y = 14 + 2.5(d - 3) = 2.5d - 7.5 + 14 = 2.5d + 6.5$. To check: at $d = 3$, $y = 7.5 + 6.5 = 14$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You counted weaving during the 3 repair days. No cloth is made until the repair ends, so the rate applies to $d - 3$ days, not $d$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You handled the repair delay but used 5 yards per day. The weaver makes 5 yards every 2 days, which is 2.5 yards per day."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You shifted the input the wrong way, writing $d + 3$. The weaving starts 3 days late, so you subtract 3 from $d$."
+   }
+  },
+  "id": "orig-model-from-wor-X-15a79b",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-X-15a79b",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation gives the shrub density $D$, in plants per plot, at an elevation of $E$ meters, where $E \\ge 1{,}200$?",
+  "stimulus": "Ecologists ran a transect up a mountain from a trailhead at 1,200 meters elevation. At the trailhead, a shrub species averaged 84 plants per plot. Density fell by 3 plants per plot for every 50 meters of elevation gained.",
+  "choices": [
+   "$D = 84 - 0.06E$",
+   "$D = 12 - 0.06E$",
+   "$D = 12 + 0.06E$",
+   "$D = 156 - 0.06E$"
+  ],
+  "answer": "D",
+  "explanation": "The rate is $-\\frac{3}{50} = -0.06$ plants per plot per meter. Because $E$ is elevation and not elevation gained, the meters gained are $E - 1{,}200$. So $D = 84 - 0.06(E - 1{,}200) = 84 - 0.06E + 72 = 156 - 0.06E$. To check: at $E = 1{,}200$, $D = 156 - 72 = 84$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You used 84 as the constant, which only works if $E$ counts meters gained. Here $E$ is the actual elevation, so you have to measure from 1,200 using $E - 1{,}200$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You set up the shift but distributed the sign wrong: $-0.06(E - 1{,}200)$ gives $+72$, not $-72$. To check, $E = 1{,}200$ in your equation gives a density of $-60$, not 84."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You gave the slope a positive sign. Density falls as you climb, so the coefficient on $E$ must be negative."
+   }
+  },
+  "id": "orig-model-from-wor-X-8249a1",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-X-8249a1",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation gives the total charge $C$, in dollars, for an edition of $n$ prints, where $n > 20$?",
+  "stimulus": "A printmaking studio charges a one-time $\\$90$ fee to prepare an etching plate. It then charges $\\$14$ per print for each of the first 20 prints and $\\$9$ per print for each print beyond 20.",
+  "choices": [
+   "$C = 9n + 370$",
+   "$C = 9n + 190$",
+   "$C = 9n + 90$",
+   "$C = 14n + 90$"
+  ],
+  "answer": "B",
+  "explanation": "The fixed part is $90 + 14(20) = 370$ dollars for the setup fee and the first 20 prints. Only the $n - 20$ prints beyond those cost $\\$9$ each. So $C = 370 + 9(n - 20) = 9n - 180 + 370 = 9n + 190$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You added the setup fee and the first 20 prints correctly, then charged $\\$9$ on all $n$ prints. That counts the first 20 prints twice. Only $n - 20$ prints cost $\\$9$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You kept the setup fee and the $\\$9$ rate but dropped the first 20 prints at $\\$14$. That leaves out the higher price on the first block."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the price of the first 20 prints for every print. That only works when $n \\le 20$. For larger editions, the extra prints cost $\\$9$."
+   }
+  },
+  "id": "orig-model-from-wor-X-86f47e",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-X-86f47e",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

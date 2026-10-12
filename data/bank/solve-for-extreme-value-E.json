@@ -243,5 +243,245 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the maximum number of trees the city can plant?",
+  "stimulus": "A city is planting trees along a new bike lane. The contractor charges a one-time delivery fee of $50 plus $45 per tree, and the city has budgeted at most $520 for the project.",
+  "choices": [
+   "9",
+   "10",
+   "11",
+   "12"
+  ],
+  "answer": "B",
+  "explanation": "The total cost must be no more than the budget: $45x + 50 \\le 520$. Subtracting 50 from both sides gives $45x \\le 470$, so $x \\le 10.\\overline{4}$. You can't plant part of a tree, and 11 trees would cost $545, which is over budget. Round down: the maximum is 10 trees.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You swapped the fee and the per-tree price and solved $50x + 45 \\le 520$, which gives $x \\le 9.5$, so you got 9. The delivery fee is $50 and each tree costs $45."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You solved correctly to $x \\le 10.\\overline{4}$ but rounded up. For a maximum you have to round down, because 11 trees cost $45(11) + 50 = 545$ dollars, which is more than $520."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the $50 fee to the budget when you should have subtracted it, which gave $45x \\le 570$ and $x \\le 12.\\overline{6}$. Subtract the fee from both sides."
+   }
+  },
+  "id": "orig-solve-for-extr-E-a6d4b4",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-E-a6d4b4",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the minimum number of additional whole hours the worker must work this week to meet the goal?",
+  "stimulus": "A warehouse worker earns $18 per hour and has already earned $95 this week. The worker wants to earn at least $400 in total this week.",
+  "choices": [
+   "16",
+   "17",
+   "23",
+   "28"
+  ],
+  "answer": "B",
+  "explanation": "Total earnings must be at least the goal: $18h + 95 \\ge 400$. Subtracting 95 gives $18h \\ge 305$, so $h \\ge 16.9\\overline{4}$. Sixteen hours would bring the total to only $383, so round up: the worker needs at least 17 more hours.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You rounded $16.9\\overline{4}$ down. A minimum has to be rounded up, because 16 hours brings the total to $18(16) + 95 = 383$ dollars, which is short of $400."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You left out the $95 already earned and solved $18h \\ge 400$, which gives 23 hours. The worker only needs enough hours to make up the remaining $305."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the $95 to the goal when you should have subtracted it, which gave $18h \\ge 495$ and 28 hours. Money already earned shrinks what's left to earn."
+   }
+  },
+  "id": "orig-solve-for-extr-E-36f21b",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-E-36f21b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "For which numbers of hours, $h$, is Company B's charge greater than Company A's charge?",
+  "stimulus": "An archaeology team is renting a ground-scanning radar unit. Company A charges a flat fee of $120 plus $15 per hour. Company B charges $30 per hour and has no flat fee.",
+  "choices": [
+   "$h < 8$",
+   "$h > 4$",
+   "$h > 8$",
+   "$h \\ge 8$"
+  ],
+  "answer": "C",
+  "explanation": "Set Company B's charge greater than Company A's: $30h > 120 + 15h$. Subtracting $15h$ from both sides gives $15h > 120$, so $h > 8$. At exactly 8 hours both charges are $240, so 8 itself isn't included.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the boundary at 8 but took the wrong side. For fewer than 8 hours, Company B is the cheaper one. Company B costs more only for rentals longer than 8 hours."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided 120 by 30 and dropped Company A's $15 hourly rate. Subtract $15h$ from both sides first, so the hourly difference is $15, not $30."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You kept the boundary value. At $h = 8$ both companies charge $240, so B's charge isn't greater. The inequality is strict."
+   }
+  },
+  "id": "orig-solve-for-extr-E-56d6d2",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-E-56d6d2",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the maximum number of interviews the linguist can record on this card?",
+  "stimulus": "A linguist is recording interviews with speakers of a regional dialect. The memory card holds 50 gigabytes (GB), and 6 GB are already used. Each interview takes up 5 GB.",
+  "choices": [
+   "8",
+   "9",
+   "10",
+   "11"
+  ],
+  "answer": "A",
+  "explanation": "The storage used can't exceed the card's capacity: $5x + 6 \\le 50$. Subtracting 6 gives $5x \\le 44$, so $x \\le 8.8$. A ninth interview would need 51 GB in total, which is more than the card holds. Round down: the maximum is 8 interviews.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You rounded $8.8$ up. For a maximum you round down, because 9 interviews need $5(9) + 6 = 51$ GB, which is more than the card's 50 GB."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You ignored the 6 GB already used and divided 50 by 5. Only 44 GB is still free."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the 6 GB to the capacity when you should have subtracted it, which gave $5x \\le 56$ and $x \\le 11.2$. Space already used reduces what's left."
+   }
+  },
+  "id": "orig-solve-for-extr-E-cf7b0b",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-E-cf7b0b",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest number of snack bars the athlete can eat that day?",
+  "stimulus": "A dietitian is planning a day of eating for an athlete whose daily target is 2,000 calories. Each snack bar has 150 calories, and the dietitian wants at least 700 calories of the target left over for meals.",
+  "choices": [
+   "4",
+   "8",
+   "9",
+   "13"
+  ],
+  "answer": "B",
+  "explanation": "The calories left after the snack bars must be at least 700: $2000 - 150s \\ge 700$. Subtracting 2000 gives $-150s \\ge -1300$. Dividing by $-150$ flips the sign: $s \\le 8.\\overline{6}$. Nine bars would leave only 650 calories, so round down: the greatest number is 8.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You treated 700 calories as the limit for snacks and divided 700 by 150. The 700 calories are reserved for meals, so the snacks can use up to 1,300 calories."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You solved to $s \\le 8.\\overline{6}$ but rounded up. Nine bars leave $2000 - 1350 = 650$ calories, which is less than the 700 required."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You divided the full 2,000 calories by 150 and ignored the requirement to keep at least 700 calories for meals."
+   }
+  },
+  "id": "orig-solve-for-extr-E-478bc1",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-E-478bc1",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

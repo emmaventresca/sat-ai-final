@@ -373,16 +373,613 @@
   "section": "math",
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "error",
+  "status": "review",
+  "phrasing": "which_expression",
   "verification": {
    "id": "orig-growth-multipl-M-871429",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "which expression represents the length in centimeters of"
    ],
    "residue": 8
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "In an immunology study, a patient's antibody level was measured before and after a booster shot. The level after the booster, $a$, was 35% greater than the level before it, $b$. Both are in units per milliliter.",
+  "choices": [
+   "$a = 1.35b$",
+   "$b = 1.35a$",
+   "$a = 0.35b$",
+   "$a = 0.65b$"
+  ],
+  "answer": "A",
+  "explanation": "\"35% greater than $b$\" makes $b$ the starting value. An increase of 35% means multiplying by $1 + \\frac{35}{100} = 1.35$, so $a = 1.35b$. To check, set $b = 100$: the level after should be 135, and $1.35(100) = 135$.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the after level as the base. The sentence says greater than $b$, so $b$ is what gets multiplied by 1.35, not $a$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$0.35b$ is only the amount the level went up by. You need the new level, which is the original plus that increase: $b + 0.35b = 1.35b$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "$0.65$ is the multiplier for a 35% decrease. The level went up, so the multiplier has to be more than 1."
+   }
   },
-  "phrasing": "which_expression"
+  "id": "orig-growth-multipl-M-d53e6d",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-d53e6d",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A cartographer shrinks a trail map so that every distance on the new map is 40% shorter than the matching distance on the original. A distance of $L$ centimeters on the original becomes $N$ centimeters on the new map.",
+  "choices": [
+   "$N = \\frac{3}{5}L$",
+   "$N = \\frac{2}{5}L$",
+   "$N = \\frac{7}{5}L$",
+   "$L = \\frac{3}{5}N$"
+  ],
+  "answer": "A",
+  "explanation": "\"40% shorter\" is a 40% decrease from the original, so you multiply by $1 - \\frac{40}{100} = 0.6$. As a simplified fraction that is $\\frac{3}{5}$, so $N = \\frac{3}{5}L$. To check, set $L = 10$: the new distance should be 6, and $\\frac{3}{5}(10) = 6$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$\\frac{2}{5}$ is 0.4, the bare rate. It gives the length that was cut off each distance, not the length that is left."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "$\\frac{7}{5} = 1.4$ is the multiplier for a 40% increase. The map was shrunk, so the multiplier has to be less than 1."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You got the right multiplier but put it on the wrong variable. The original distance $L$ is the base, so $\\frac{3}{5}$ multiplies $L$. Your equation would make the new map bigger."
+   }
+  },
+  "id": "orig-growth-multipl-M-5cbb23",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-5cbb23",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "During an aftershock, the peak ground motion recorded at a seismic station near the fault was 125% greater than at a station farther away. The near reading equals the far reading multiplied by $r$.",
+  "choices": [
+   "$r = 2.25$",
+   "$r = 1.25$",
+   "$r = 125$",
+   "$r = -0.25$"
+  ],
+  "answer": "A",
+  "explanation": "\"125% greater than\" the far reading is an increase of 125%, so the multiplier is $1 + \\frac{125}{100} = 2.25$. The near reading is the far reading plus 1.25 times the far reading, so $r = 2.25$. To check, set the far reading to 100: it should become $100 + 125 = 225$, and $2.25(100) = 225$.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You read \"125% greater than\" as \"125% of.\" A value 125% of the far reading would be 1.25 times it, but \"greater than\" means you add the 125% on top of the original 100%."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the percent as a whole number without dividing by 100. A multiplier of 125 would make the near reading 125 times the far one."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the decrease form, $1 - 1.25$. The near reading is greater, so the multiplier is $1$ plus the rate, not $1$ minus it. A negative ground motion also makes no sense here."
+   }
+  },
+  "id": "orig-growth-multipl-M-eedc89",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-eedc89",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "B",
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A paleobotanist counted $p$ fossil spores in a sample of shale from one layer. A sample from the layer just below it held 12.5% more spores than the first sample. The number of spores in the lower sample is $kp$.",
+  "choices": [
+   "$\\frac{1}{8}$",
+   "$\\frac{7}{8}$",
+   "$\\frac{9}{8}$",
+   "$\\frac{25}{2}$"
+  ],
+  "answer": "C",
+  "explanation": "An increase of 12.5% means you multiply by $1 + 0.125$. Since $0.125 = \\frac{1}{8}$, the multiplier is $1 + \\frac{1}{8} = \\frac{9}{8}$, so $k = \\frac{9}{8}$. To check, let $p = 8$. Then 12.5% of 8 is 1, so the lower sample has 9 spores, and $\\frac{9}{8}(8) = 9$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You wrote 12.5% as $\\frac{1}{8}$ correctly, but that is only the extra amount compared with $p$. The lower sample holds the original $p$ spores plus that extra, so the multiplier is $1 + \\frac{1}{8}$, not $\\frac{1}{8}$."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used $1 - \\frac{1}{8}$, which is the multiplier for a 12.5% decrease. The lower sample held more spores, so you add the rate to 1."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated the percent as a plain number and turned 12.5 into the fraction $\\frac{25}{2}$. A percent has to be divided by 100 first: 12.5% is $0.125$, or $\\frac{1}{8}$."
+   }
+  },
+  "id": "orig-growth-multipl-M-e320d4",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-e320d4",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A musicologist restoring an archival recording first made it 10% longer by splicing in a recovered passage. She then made the new version 30% shorter by cutting long silences. The final length is $k$ times the original length.",
+  "choices": [
+   "$0.80$",
+   "$0.77$",
+   "$0.70$",
+   "$0.23$"
+  ],
+  "answer": "B",
+  "explanation": "Each change gives its own multiplier. A 10% increase is $\\times 1.1$ and a 30% decrease is $\\times 0.7$. Successive changes multiply, so $k = (1.1)(0.7) = 0.77$. To check, start from a 100-minute recording. It becomes 110 minutes, and 30% of 110 is 33, so you end with 77 minutes, which is $0.77$ of 100.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the rates: $1 + 0.10 - 0.30 = 0.80$. The 30% cut is taken from the lengthened version, not from the original, so the multipliers have to be multiplied, not added."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You applied only the second change, the 30% cut, and ignored the 10% the recording grew first."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the overall multiplier, 0.77, and then subtracted it from 1. That gives 0.23, the share of the original length that was lost. The question asks for the multiplier, not the rate of change."
+   }
+  },
+  "id": "orig-growth-multipl-M-57e346",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-57e346",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the final width, in inches, of the map?",
+  "stimulus": "A cartographer reduced a map with a width of $w$ inches by 15% so it would fit on a page. She then enlarged the reduced map by 20% to make a wall proof.",
+  "choices": [
+   "$1.02w$",
+   "$1.05w$",
+   "$0.68w$",
+   "$0.35w$"
+  ],
+  "answer": "A",
+  "explanation": "A 15% reduction multiplies the width by $0.85$, and a 20% enlargement multiplies it by $1.2$. Applied one after the other, these give $(0.85)(1.2)w = 1.02w$. To check, let $w = 100$. Reducing gives 85 inches, and 20% of 85 is 17, so the final width is 102 inches, which matches $1.02(100)$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You combined the rates by adding: $1 - 0.15 + 0.20 = 1.05$. The 20% enlargement is applied to the reduced width, not to $w$, so you multiply $0.85$ by $1.2$."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You treated the enlargement as a reduction, using $0.8$ in place of $1.2$. This gives $(0.85)(0.8) = 0.68$. An increase of 20% multiplies by $1 + 0.20$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the bare rates, $0.15 + 0.20$, and never attached either one to 1. A percent change becomes a multiplier only when it is written as $1 \\pm$ the rate."
+   }
+  },
+  "id": "orig-growth-multipl-M-e5503e",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-e5503e",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the number of flu vaccines the clinic gave this year?",
+  "stimulus": "A county health clinic gave $v$ flu vaccines last year. This year it gave 35% more flu vaccines than it did last year.",
+  "choices": [
+   "$0.35v$",
+   "$1.35v$",
+   "$0.65v$",
+   "$35v$"
+  ],
+  "answer": "B",
+  "explanation": "35% more than last year means you keep all of last year's amount, $1v$, and add 35% of it, $0.35v$. That gives $v + 0.35v = 1.35v$. To check, let $v = 100$: 35% more than 100 is 135, and $1.35(100) = 135$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$0.35v$ is only the number of extra vaccines, not this year's total. You wrote the bare rate and forgot to add it to the original 1."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "$0.65v$ is what you get after a 35% decrease. The clinic gave more vaccines, so the multiplier has to be greater than 1."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the percent as a whole number without dividing by 100. With $v = 100$, $35v$ gives 3,500 vaccines, far more than a 35% increase."
+   }
+  },
+  "id": "orig-growth-multipl-M-a5863e",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-a5863e",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The number of fern spores in the upper layer is $k$ times the number in the lower layer. What is the value of $k$?",
+  "stimulus": "A paleobotanist counts fossil fern spores in two layers of a sediment core. The upper layer contains 16% fewer fern spores than the lower layer.",
+  "choices": [
+   "$16$",
+   "$0.16$",
+   "$1.16$",
+   "$0.84$"
+  ],
+  "answer": "D",
+  "explanation": "16% fewer means the count drops by 16% of the lower layer's count. Multiply by $1 - \\frac{16}{100} = 0.84$, so $k = 0.84$. To check, if the lower layer has 100 spores, the upper layer has $100 - 16 = 84$, and $0.84(100) = 84$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the percent as a whole number without dividing by 100. A layer can't hold 16 times as many spores when it has fewer."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "0.16 is the share of spores that disappeared, not the share that remains. You wrote the rate when the question asks for the multiplier."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "1.16 is the multiplier for a 16% increase. The upper layer has fewer spores, so $k$ must be less than 1."
+   }
+  },
+  "id": "orig-growth-multipl-M-3cf642",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-3cf642",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The new price of each print is the product of the original price and $r$. What is the value of $r$?",
+  "stimulus": "A printmaker sold linocut prints from a limited edition for a fixed price. After the edition was shown in a gallery, she raised the price of each remaining print by 60%.",
+  "choices": [
+   "$\\frac{3}{5}$",
+   "$\\frac{2}{5}$",
+   "$\\frac{8}{5}$",
+   "$60$"
+  ],
+  "answer": "C",
+  "explanation": "Raising a price by 60% means you multiply it by $1 + \\frac{60}{100} = 1.6$. As a simplified fraction, $1.6 = \\frac{16}{10} = \\frac{8}{5}$, so $r = \\frac{8}{5}$. To check, a \\$100 print becomes \\$160, and $\\frac{8}{5}(100) = 160$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$\\frac{3}{5} = 0.6$ is the rate of the increase on its own. Multiplying by it gives only the amount added to the price, not the new price."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "$\\frac{2}{5} = 1 - 0.6$ is the multiplier for a 60% decrease. The price went up, so $r$ must be greater than 1."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the percent as a whole number without dividing by 100. That would make a \\$100 print cost \\$6,000."
+   }
+  },
+  "id": "orig-growth-multipl-M-812cde",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-812cde",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A hydrologist measured the average flow rate of a stream. The rate in April was 40% greater than the rate in March. The rate in May was 25% less than the rate in April. The rate in May was $k$ times the rate in March.",
+  "choices": [
+   "$0.75$",
+   "$1.05$",
+   "$1.15$",
+   "$1.75$"
+  ],
+  "answer": "B",
+  "explanation": "A 40% increase multiplies by $1 + 0.40 = 1.4$. A 25% decrease multiplies by $1 - 0.25 = 0.75$. Changes in a row multiply, so May's rate is $1.4 \\times 0.75 = 1.05$ times March's rate. That makes $k = 1.05$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$0.75$ only compares May with April. You stopped partway and didn't apply the 40% increase from March to April, so it doesn't compare May with March."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the percents ($40\\% - 25\\% = 15\\%$) to get $1.15$. Percent changes in a row multiply. The 25% drop is taken from April's larger rate, not from March's."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used $1.25$ for the April-to-May change, which treats the 25% decrease as an increase. A 25% decrease multiplies by $0.75$."
+   }
+  },
+  "id": "orig-growth-multipl-M-f1519d",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-f1519d",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "in march what is the value of __var__"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which expression represents how many fewer kilograms of wheat Field Y produced than Field X?",
+  "stimulus": "In a crop trial, Field X produced $w$ kilograms of wheat. Field Y, which was planted later in the season, produced 18% less wheat than Field X.",
+  "choices": [
+   "$0.18w$",
+   "$0.82w$",
+   "$1.18w$",
+   "$18w$"
+  ],
+  "answer": "A",
+  "explanation": "Field Y produced $(1 - 0.18)w = 0.82w$ kilograms. The question asks for the gap between the two fields: $w - 0.82w = 0.18w$ kilograms. Here the bare rate times $w$ is the right answer because the question asks for the amount lost, not the amount left.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$0.82w$ is how much Field Y produced. The question asks how many fewer kilograms Field Y produced, which is the difference between the two fields."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "$1.18w$ is $w$ increased by 18%. Field Y produced less than Field X, and this expression isn't a difference anyway."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the percent as a whole number. 18% is $0.18$, so $18w$ is 100 times too big."
+   }
+  },
+  "id": "orig-growth-multipl-M-beda58",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-beda58",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A printmaker made two editions of a woodcut. The number of prints in Edition Q is 150% greater than the number of prints in Edition P. Edition Q has $k$ times as many prints as Edition P.",
+  "choices": [
+   "$1.5$",
+   "$2.5$",
+   "$150$",
+   "$250$"
+  ],
+  "answer": "B",
+  "explanation": "An increase of 150% multiplies by $1 + \\frac{150}{100} = 1 + 1.5 = 2.5$. Edition Q has all the prints in Edition P plus another 150% of that number, so it has $2.5$ times as many. Check with numbers: if Edition P has 20 prints, Edition Q has $20 + 30 = 50$, and $50 \\div 20 = 2.5$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "$1.5$ is just the rate of increase. You left out the 1 for the original amount. \"150% greater\" means the original plus 150% more, so multiply by $1 + 1.5$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the percent as a whole number and didn't add the original amount. $k$ is a multiplier, not a percent."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found that Edition Q is 250% of Edition P but didn't convert that percent to a decimal. 250% is $2.5$."
+   }
+  },
+  "id": "orig-growth-multipl-M-83d78b",
+  "skill_cd": "Q.B.",
+  "subtype": "growth-multiplier-expression",
+  "subtype_name": "Turn a percent change into a multiplier",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-growth-multipl-M-83d78b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

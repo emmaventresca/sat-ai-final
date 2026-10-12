@@ -161,11 +161,17 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "grid",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-discriminant-n-M-43f2c0",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": 16,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "equation __var__ is an integer constant if the",
     "__var__ is an integer constant if the equation",
@@ -176,8 +182,7 @@
     "what is the smallest possible value of __var__"
    ],
    "residue": 18
-  },
-  "phrasing": "direct"
+  }
  },
  {
   "stem": "In the equation, $k$ is a positive constant. If the equation has exactly one real solution, what is the value of $k$?",
@@ -237,5 +242,722 @@
    "residue": 1
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "The equation has exactly one real solution. What is the value of $k$?",
+  "stimulus": "An ecologist uses the equation $3x^2 - 7x = 2x - k$, where $k$ is a constant, in a model of how a wetland's frog population responds to drought.",
+  "keys": [
+   "6.75",
+   "27/4"
+  ],
+  "any_of": false,
+  "explanation": "First get everything on one side. Subtracting $2x$ and adding $k$ to both sides gives $3x^2 - 9x + k = 0$, so $a = 3$, $b = -9$ and $c = k$. For exactly one real solution the discriminant must equal zero: $(-9)^2 - 4(3)(k) = 0$, which is $81 - 12k = 0$. That gives $k = \\frac{81}{12} = \\frac{27}{4}$, or $6.75$. In Desmos, graph $y = 3x^2 - 9x + k$ with a slider on $k$ and slide until the parabola just touches the x-axis.",
+  "common_errors": [
+   {
+    "value": "49/12",
+    "misconception": "algebra-manipulation",
+    "why": "Read $b = -7$ from the left side without moving the $2x$ over: $49 - 12k = 0$ gives $k = \\frac{49}{12} \\approx 4.083$."
+   },
+   {
+    "value": "25/12",
+    "misconception": "algebra-manipulation",
+    "why": "Got the sign wrong moving $2x$, writing $-7x + 2x = -5x$, so $25 - 12k = 0$ and $k = \\frac{25}{12} \\approx 2.083$."
+   },
+   {
+    "value": "27",
+    "misconception": "algebra-manipulation",
+    "why": "Left out the 4 in $b^2 - 4ac$: $81 - 3k = 0$ gives $k = 27$."
+   }
+  ],
+  "id": "orig-discriminant-n-M-ce4b4d",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-ce4b4d",
+   "structure": [],
+   "solver_answer": "6.75",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the equation __var__ where __var__ is a constant",
+    "the equation has exactly one real solution what",
+    "equation has exactly one real solution what is",
+    "has exactly one real solution what is the",
+    "real solution what is the value of __var__"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "What is the smallest integer value of $c$ for which the equation has no real solutions?",
+  "stimulus": "A materials scientist models the stress on a polymer sample with the equation $x^2 + 10x + c = 4x - 2$, where $c$ is a constant.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "Rewrite the equation in standard form: $x^2 + 6x + (c + 2) = 0$. No real solutions means the discriminant is negative: $6^2 - 4(1)(c + 2) < 0$. That simplifies to $36 < 4c + 8$, so $c > 7$. The value 7 itself gives exactly one solution, so the smallest integer that works is $8$.",
+  "common_errors": [
+   {
+    "value": "7",
+    "misconception": "missed-condition",
+    "why": "Solved the equation $b^2 - 4ac = 0$ and took the boundary itself. At $c = 7$ there is exactly one solution, not none."
+   },
+   {
+    "value": "6",
+    "misconception": "complement-or-direction-flip",
+    "why": "Reversed the inequality, which gives $c < 7$ (two solutions), and took the largest integer on that side."
+   },
+   {
+    "value": "24",
+    "misconception": "algebra-manipulation",
+    "why": "Kept $b = 10$ without subtracting $4x$: $100 - 4(c + 2) < 0$ gives $c > 23$."
+   },
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "Never moved the $-2$, so used $c$ as the constant term: $36 - 4c < 0$ gives $c > 9$."
+   }
+  ],
+  "id": "orig-discriminant-n-M-c5fc9e",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-c5fc9e",
+   "structure": [],
+   "solver_answer": "8",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the equation __var__ where __var__ is a constant",
+    "equation __var__ where __var__ is a constant what"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "In the $xy$-plane, the graph of $y = k$ meets the graph of $y = -2x^2 + 12x + 5$ at exactly one point. What is the value of $k$?",
+  "stimulus": "An ornithologist models the height of a tern's flight path with $y = -2x^2 + 12x + 5$, where $k$ is a constant.",
+  "keys": [
+   "23"
+  ],
+  "any_of": false,
+  "explanation": "Set the two expressions equal and move everything to one side: $-2x^2 + 12x + (5 - k) = 0$. For exactly one solution, $12^2 - 4(-2)(5 - k) = 0$, which is $144 + 40 - 8k = 0$, so $k = 23$. This is the height of the vertex, where the horizontal line just touches the top of the parabola. In Desmos, put a slider on $k$ and drag the line until it is tangent to the parabola.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the x-coordinate of the touching point, $x = -\\frac{12}{2(-2)} = 3$, instead of $k$."
+   },
+   {
+    "value": "18",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the 5 from the constant term and used $c = -k$: $144 - 8k = 0$ gives $k = 18$."
+   },
+   {
+    "value": "-13",
+    "misconception": "algebra-manipulation",
+    "why": "Got the sign of $-4ac$ wrong with $a = -2$, writing $144 - 8(5 - k) = 0$, which gives $5 - k = 18$."
+   }
+  ],
+  "id": "orig-discriminant-n-M-1a8632",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-1a8632",
+   "structure": [],
+   "solver_answer": "23",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ where __var__ is a constant in the",
+    "in the __var__ plane the graph of __var__",
+    "__var__ at exactly one point what is the",
+    "at exactly one point what is the value",
+    "exactly one point what is the value of",
+    "one point what is the value of __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "The system has exactly one solution, and $m > 0$. What is the value of $m$?",
+  "stimulus": "A musicologist compares two models of a melody's pitch range: $y = x^2 + 3x + 10$ and $y = mx + 6$, where $m$ is a constant.",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "Set the right-hand sides equal and move everything to one side: $x^2 + (3 - m)x + 4 = 0$. For exactly one solution, $(3 - m)^2 - 4(1)(4) = 0$, so $(3 - m)^2 = 16$ and $3 - m = \\pm 4$. That gives $m = -1$ or $m = 7$. Only $7$ is positive. In Desmos, graph both equations with a slider on $m$ and find where the line just touches the parabola.",
+  "common_errors": [
+   {
+    "value": "-1",
+    "misconception": "missed-condition",
+    "why": "Took the root from $3 - m = 4$ and ignored the condition $m > 0$."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the x-coordinate of the point of tangency, $x = \\frac{m - 3}{2} = 2$, instead of $m$."
+   },
+   {
+    "value": "11",
+    "misconception": "algebra-manipulation",
+    "why": "Added 6 instead of subtracting it, getting $c = 16$, so $(3 - m)^2 = 64$ and the positive answer $m = 11$."
+   }
+  ],
+  "id": "orig-discriminant-n-M-aba812",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-aba812",
+   "structure": [],
+   "solver_answer": "7",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ and __var__ where __var__ is a constant",
+    "__var__ is a constant the system has exactly",
+    "is a constant the system has exactly one"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "The equation has two distinct real solutions. What is the greatest integer value of $k$?",
+  "stimulus": "A meteorologist fitting a pressure model gets the equation $kx^2 + 9 = 7 - 6x$, where $k$ is a constant.",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "Move everything to the left: $kx^2 + 6x + 2 = 0$, so $a = k$, $b = 6$ and $c = 2$. Two real solutions means $6^2 - 4(k)(2) > 0$, so $36 > 8k$ and $k < 4.5$. The greatest integer below 4.5 is $4$.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "missed-condition",
+    "why": "Rounded the boundary 4.5 up. At $k = 5$ the discriminant is $36 - 40 < 0$, so there are no real solutions."
+   },
+   {
+    "value": "4.5",
+    "misconception": "missed-condition",
+    "why": "Gave the boundary value, which is not an integer and gives only one solution."
+   },
+   {
+    "value": "0",
+    "misconception": "algebra-manipulation",
+    "why": "Used the wrong constant term ($c = 9$ or $c = 16$) instead of $9 - 7 = 2$. That gives $k < 1$ or $k < 0.5625$, so the greatest integer is 0."
+   }
+  ],
+  "id": "orig-discriminant-n-M-bd8f3b",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-bd8f3b",
+   "structure": [],
+   "solver_answer": "4",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the equation __var__ where __var__ is a constant"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "The equation has exactly one real solution. What is the value of $a$?",
+  "stimulus": "A printmaker models the ink spread on a plate with the equation $ax^2 - 10x + 5 = 2x^2 - 4x$, where $a$ is a constant and $a \\neq 2$.",
+  "keys": [
+   "3.8",
+   "19/5"
+  ],
+  "any_of": false,
+  "explanation": "Move every term to the left: $(a - 2)x^2 - 6x + 5 = 0$. The coefficient of $x^2$ is $a - 2$, not $a$. For exactly one solution, $(-6)^2 - 4(a - 2)(5) = 0$, so $36 = 20(a - 2)$, $a - 2 = 1.8$, and $a = 3.8$.",
+  "common_errors": [
+   {
+    "value": "1.8",
+    "misconception": "algebra-manipulation",
+    "why": "Didn't subtract $2x^2$ from the left, so used $a$ as the leading coefficient (or stopped at $a - 2 = 1.8$): $36 - 20a = 0$."
+   },
+   {
+    "value": "7",
+    "misconception": "algebra-manipulation",
+    "why": "Read $b = -10$ without moving the $-4x$: $100 - 20(a - 2) = 0$ gives $a - 2 = 5$."
+   },
+   {
+    "value": "11.8",
+    "misconception": "algebra-manipulation",
+    "why": "Got the sign wrong moving $-4x$, getting $-14x$: $196 - 20(a - 2) = 0$ gives $a - 2 = 9.8$."
+   }
+  ],
+  "id": "orig-discriminant-n-M-21cbc0",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-21cbc0",
+   "structure": [],
+   "solver_answer": "3.8",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the equation __var__ where __var__ is a constant",
+    "the equation has exactly one real solution what",
+    "equation has exactly one real solution what is",
+    "has exactly one real solution what is the",
+    "real solution what is the value of __var__"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "In the $xy$-plane, the graphs of $y = x^2 - 6x + 14$ and $y = k$ do not intersect. What is the greatest integer value of $k$?",
+  "stimulus": "An urban planner models the ground elevation along a proposed greenway with $y = x^2 - 6x + 14$. The constant $k$ is the height of a level pipe.",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "Set the two equal and move $k$ over: $x^2 - 6x + (14 - k) = 0$. No intersection means no real solutions: $36 - 4(14 - k) < 0$, so $36 < 56 - 4k$ and $k < 5$. The greatest integer below 5 is $4$. The line sits just under the vertex, which is at $(3, 5)$.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "missed-condition",
+    "why": "Took the boundary. $y = 5$ touches the vertex, so the graphs meet once."
+   },
+   {
+    "value": "6",
+    "misconception": "complement-or-direction-flip",
+    "why": "Reversed the inequality and took the smallest integer for which the graphs meet twice."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the x-coordinate of the vertex instead of a value of $k$."
+   }
+  ],
+  "id": "orig-discriminant-n-M-1a9319",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-1a9319",
+   "structure": [],
+   "solver_answer": "4",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation has exactly one real solution. What is the value of $k$?",
+  "stimulus": "An archaeologist estimating the depth of soil layers at a dig site uses the equation $(2x + 3)^2 = 8x + k$, where $k$ is a constant.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "Expand the left side: $4x^2 + 12x + 9 = 8x + k$. Then move everything over: $4x^2 + 4x + (9 - k) = 0$. For exactly one solution, $4^2 - 4(4)(9 - k) = 0$, so $16 = 16(9 - k)$, $9 - k = 1$, and $k = 8$.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Squared the binomial as $4x^2 + 9$ and lost the middle term, so $b = -8$: $64 - 16(9 - k) = 0$ gives $k = 5$."
+   },
+   {
+    "value": "0",
+    "misconception": "algebra-manipulation",
+    "why": "Kept $b = 12$ without subtracting $8x$: $144 - 16(9 - k) = 0$ gives $k = 0$."
+   },
+   {
+    "value": "-8",
+    "misconception": "algebra-manipulation",
+    "why": "Added $k$ instead of subtracting it, writing $9 + k$ as the constant: $9 + k = 1$."
+   },
+   {
+    "value": "-.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the single solution $x = -\\frac{1}{2}$ instead of $k$."
+   }
+  ],
+  "id": "orig-discriminant-n-M-7da5fb",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-7da5fb",
+   "structure": [],
+   "solver_answer": 8,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the equation __var__ where __var__ is a constant",
+    "a constant the equation has exactly one real",
+    "constant the equation has exactly one real solution",
+    "the equation has exactly one real solution what",
+    "equation has exactly one real solution what is",
+    "has exactly one real solution what is the",
+    "real solution what is the value of __var__"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "What is the value of $c$?",
+  "stimulus": "A folklorist studying how a tale's retellings change over time fits the equation $2x^2 + 12x = 5 - c$, where $c$ is a constant. The equation has exactly one real solution.",
+  "keys": [
+   "23"
+  ],
+  "any_of": false,
+  "explanation": "First get the equation into standard form by moving everything to the left: $2x^2 + 12x + (c - 5) = 0$. So $a = 2$, $b = 12$ and the constant term is $c - 5$. For exactly one solution, set the discriminant to zero: $12^2 - 4(2)(c - 5) = 0$. That gives $144 = 8(c - 5)$, so $c - 5 = 18$ and $c = 23$. To check in Desmos, graph $y = 2x^2 + 12x - 5 + c$ with $c$ as a slider. At $c = 23$ the parabola just touches the x-axis.",
+  "common_errors": [
+   {
+    "value": "18",
+    "misconception": "intermediate-step",
+    "why": "Solved $144 = 8(c - 5)$ to get $c - 5 = 18$ and stopped before adding 5. Treating $c$ as the constant term without moving the 5 over also gives 18."
+   },
+   {
+    "value": "-13",
+    "misconception": "algebra-manipulation",
+    "why": "Moved $5 - c$ across without changing its signs, which gives $2x^2 + 12x + 5 - c = 0$. Then $144 - 8(5 - c) = 0$ leads to $c = -13$."
+   },
+   {
+    "value": "77",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the 4 from the discriminant and used $b^2 - ac$: $144 - 2(c - 5) = 0$ gives $c = 77$."
+   }
+  ],
+  "id": "orig-discriminant-n-M-da7ff6",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-da7ff6",
+   "structure": [],
+   "solver_answer": 23,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the equation __var__ where __var__ is a constant",
+    "a constant the equation has exactly one real",
+    "constant the equation has exactly one real solution",
+    "the equation has exactly one real solution what",
+    "equation has exactly one real solution what is",
+    "has exactly one real solution what is the",
+    "real solution what is the value of __var__"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "On a city plan, a curved road follows $y = x^2 - 4x + 30$ and a straight bike path follows $y = 2x + k$, where $k$ is a constant. The path meets the road at exactly one point.",
+  "keys": [
+   "21"
+  ],
+  "any_of": false,
+  "explanation": "Set the two expressions equal: $x^2 - 4x + 30 = 2x + k$. Move everything to the left to get $x^2 - 6x + (30 - k) = 0$. They meet at exactly one point, so the discriminant is zero: $(-6)^2 - 4(1)(30 - k) = 0$. That gives $36 = 4(30 - k)$, so $30 - k = 9$ and $k = 21$. In Desmos, graph both equations with a slider on $k$ and slide until the line just touches the parabola.",
+  "common_errors": [
+   {
+    "value": "26",
+    "misconception": "algebra-manipulation",
+    "why": "Never subtracted $2x$ from the left side, so used $b = -4$: $16 = 4(30 - k)$ gives $k = 26$."
+   },
+   {
+    "value": "29",
+    "misconception": "algebra-manipulation",
+    "why": "Added $2x$ instead of subtracting it, which gives $x^2 - 2x + (30 - k) = 0$. Then $4 = 4(30 - k)$ gives $k = 29$."
+   },
+   {
+    "value": "9",
+    "misconception": "intermediate-step",
+    "why": "Found $30 - k = 9$ and gave that as the answer."
+   },
+   {
+    "value": "27",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the y-coordinate of the point where they touch, $(3, 27)$, instead of $k$."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the x-coordinate of the point where they touch instead of $k$."
+   }
+  ],
+  "id": "orig-discriminant-n-M-ce9ede",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-ce9ede",
+   "structure": [],
+   "solver_answer": 21,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "at exactly one point what is the value",
+    "exactly one point what is the value of",
+    "one point what is the value of __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "What is the least integer value of $k$?",
+  "stimulus": "A nutrition scientist's model of protein absorption leads to the equation $x^2 + 8x = 2 - 3k$, where $k$ is a constant. The equation has no real solutions.",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "Rewrite the equation as $x^2 + 8x + (3k - 2) = 0$. For no real solutions, the discriminant must be negative: $64 - 4(3k - 2) < 0$. Simplify to $64 < 12k - 8$, so $72 < 12k$ and $k > 6$. Because the inequality is strict, $k = 6$ is not allowed. At $k = 6$ the discriminant is 0, so the equation has exactly one solution. The least integer greater than 6 is 7.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "missed-condition",
+    "why": "Took the boundary value itself. At $k = 6$ the discriminant is 0, so there is one solution, not none. Leaving out the $-2$ ($64 - 12k < 0$, so $k > 16/3$) also leads to 6."
+   },
+   {
+    "value": "16",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $3k - 2 > 16$ and gave 16 as the answer."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Squared 8 as 16, so $16 - 4(3k - 2) < 0$ gave $k > 2$ and then 3."
+   }
+  ],
+  "id": "orig-discriminant-n-M-105efb",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-105efb",
+   "structure": [],
+   "solver_answer": 7,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the equation __var__ where __var__ is a constant",
+    "is a constant the equation has no real",
+    "a constant the equation has no real solutions",
+    "equation has no real solutions what is the",
+    "has no real solutions what is the least"
+   ],
+   "residue": 6
+  }
+ },
+ {
+  "stem": "What is the greatest integer value of $p$?",
+  "stimulus": "A civil engineer modeling the sag of a suspension cable uses the equation $3x^2 - 6x = 2 - p$, where $p$ is a constant. The equation has two distinct real solutions.",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "Write the equation in standard form: $3x^2 - 6x + (p - 2) = 0$. For two distinct real solutions, the discriminant must be positive: $(-6)^2 - 4(3)(p - 2) > 0$. That gives $36 > 12(p - 2)$, so $p - 2 < 3$ and $p < 5$. Since $p$ cannot equal 5, the greatest integer is 4. You can check in Desmos with a slider on $p$. At $p = 5$ the parabola only touches the x-axis.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "missed-condition",
+    "why": "Used the boundary value. At $p = 5$ the discriminant is 0, which gives one solution, not two."
+   },
+   {
+    "value": "3",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $p - 2 < 3$ and gave 3 as the answer."
+   },
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "Used $p$ as the constant term without moving the 2 over: $36 - 12p > 0$ gives $p < 3$ and then 2."
+   },
+   {
+    "value": "13",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the 4 from the discriminant: $36 - 3(p - 2) > 0$ gives $p < 14$ and then 13."
+   }
+  ],
+  "id": "orig-discriminant-n-M-aa7ffe",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-aa7ffe",
+   "structure": [],
+   "solver_answer": 4,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the equation __var__ where __var__ is a constant"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "On a cartographer's grid, a coastline is modeled by $y = kx^2 + 5x$, where $k$ is a positive constant, and a straight survey line is modeled by $y = x - 3$. The two graphs intersect at exactly one point.",
+  "keys": [
+   "4/3",
+   "1.333"
+  ],
+  "any_of": false,
+  "explanation": "Set the two expressions equal: $kx^2 + 5x = x - 3$. Move everything to the left to get $kx^2 + 4x + 3 = 0$. For exactly one intersection, the discriminant is zero: $4^2 - 4(k)(3) = 0$. So $16 = 12k$ and $k = \\frac{4}{3}$. As a check, with $k = \\frac{4}{3}$, multiplying the equation by 3 gives $4x^2 + 12x + 9 = (2x + 3)^2$, which has a single root.",
+  "common_errors": [
+   {
+    "value": "25/12",
+    "misconception": "algebra-manipulation",
+    "why": "Never subtracted $x$, so used $b = 5$: $25 - 12k = 0$ gives $k = 25/12$."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Added $x$ instead of subtracting it, so used $b = 6$: $36 - 12k = 0$ gives $k = 3$."
+   },
+   {
+    "value": "16/3",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the 4 from the discriminant: $16 - 3k = 0$ gives $k = 16/3$."
+   },
+   {
+    "value": "1.33",
+    "misconception": "algebra-manipulation",
+    "why": "Rounded $4/3$ to two decimal places. That is less precise than the answer box requires."
+   }
+  ],
+  "id": "orig-discriminant-n-M-1bda12",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-1bda12",
+   "structure": [],
+   "solver_answer": "4/3",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "at exactly one point what is the value",
+    "exactly one point what is the value of",
+    "one point what is the value of __var__"
+   ],
+   "residue": 4
+  }
  }
 ]

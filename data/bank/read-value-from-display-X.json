@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-read-value-fro-X-ac4214",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -103,14 +108,503 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-read-value-fro-X-37543d",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "compare"
+ },
+ {
+  "stem": "According to the table, what is the difference between the greatest daily rainfall amount recorded and the daily rainfall amount recorded most often?",
+  "stimulus": "A hydrologist recorded the daily rainfall at a river gauge on each of 30 days. The table shows the results.\n\nDaily Rainfall at River Gauge\nRainfall (millimeters) | Number of days\n0 | 5\n2 | 6\n5 | 9\n8 | 7\n12 | 2\n20 | 1",
+  "choices": [
+   "8",
+   "11",
+   "15",
+   "20"
+  ],
+  "answer": "C",
+  "explanation": "The greatest rainfall amount is the largest value in the Rainfall column, 20 millimeters. The amount recorded most often is the rainfall value with the largest frequency. The largest frequency is 9 days, which belongs to 5 millimeters. The difference is $20 - 5 = 15$ millimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You stayed in the Number of days column for both readings. You took the largest frequency, 9, and the frequency of the greatest value, 1, and computed $9 - 1$. The question asks about rainfall amounts, not about counts of days."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You took the greatest rainfall correctly, but you subtracted the largest frequency, 9, when you needed the rainfall value that has that frequency, 5. 'Recorded most often' points you to the frequency column, but the answer is the value in the other column."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the range, $20 - 0$, because you took the least rainfall amount instead of the amount recorded most often."
+   }
+  },
+  "id": "orig-read-value-fro-X-d85aa9",
+  "skill_cd": "Q.C.",
+  "subtype": "read-value-from-display",
+  "subtype_name": "Read a value off a graph or table",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-value-fro-X-d85aa9",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Based on the bar graph, how many more earthquakes had a magnitude less than 4.0 than had a magnitude of 5.0 or greater?",
+  "stimulus": "A seismic station classified every earthquake it detected in one year by magnitude. The bar graph shows the results.",
+  "figure": {
+   "type": "bar",
+   "caption": "Earthquakes Detected by Magnitude",
+   "x_label": "Magnitude",
+   "y_label": "Number of earthquakes",
+   "categories": [
+    "2.0\u20132.9",
+    "3.0\u20133.9",
+    "4.0\u20134.9",
+    "5.0\u20135.9",
+    "6.0 or greater"
+   ],
+   "values": [
+    36,
+    27,
+    15,
+    6,
+    3
+   ],
+   "y_min": 0,
+   "y_max": 39,
+   "y_step": 3,
+   "alt": "Bar graph of earthquakes by magnitude: 2.0\u20132.9 has 36, 3.0\u20133.9 has 27, 4.0\u20134.9 has 15, 5.0\u20135.9 has 6, and 6.0 or greater has 3."
+  },
+  "choices": [
+   "33",
+   "39",
+   "54",
+   "63"
+  ],
+  "answer": "C",
+  "explanation": "A magnitude less than 4.0 covers two bars: $36 + 27 = 63$. A magnitude of 5.0 or greater also covers two bars: $6 + 3 = 9$. The difference is $63 - 9 = 54$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You compared only the first bar and the last bar, $36 - 3$. Each condition covers two magnitude classes, so you need to add two bars on each side."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You read '5.0 or greater' as '4.0 or greater' and subtracted $15 + 6 + 3 = 24$ from 63. The 4.0\u20134.9 class is in neither group."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "63 is the number of earthquakes with a magnitude less than 4.0. You stopped before subtracting the 9 earthquakes with a magnitude of 5.0 or greater."
+   }
+  },
+  "id": "orig-read-value-fro-X-205a4a",
+  "skill_cd": "Q.C.",
+  "subtype": "read-value-from-display",
+  "subtype_name": "Read a value off a graph or table",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-value-fro-X-205a4a",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the table, how many more participants on Plan B than on Plan A had a daily sodium intake of less than 2,300 milligrams?",
+  "stimulus": "Nutrition researchers grouped the participants on two meal plans by their average daily sodium intake. The table shows the results.\n\nParticipants by Daily Sodium Intake\nSodium intake (milligrams) | Plan A | Plan B | Total\nLess than 1,500 | 14 | 9 | 23\n1,500 to 2,299 | 22 | 31 | 53\n2,300 to 2,999 | 18 | 12 | 30\n3,000 or more | 6 | 11 | 17\nTotal | 60 | 63 | 123",
+  "choices": [
+   "1",
+   "4",
+   "9",
+   "40"
+  ],
+  "answer": "B",
+  "explanation": "Less than 2,300 milligrams covers the first two rows. Plan B has $9 + 31 = 40$ participants there, and Plan A has $14 + 22 = 36$. The difference is $40 - 36 = 4$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the rows for 2,300 milligrams or more: Plan A has $18 + 6 = 24$ and Plan B has $12 + 11 = 23$, a difference of 1. Those are the participants at or above the cutoff, not below it."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You compared only the 1,500 to 2,299 row, $31 - 22$. Intakes less than 1,500 are also less than 2,300, so that row counts too."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "40 is the number of Plan B participants below 2,300 milligrams. You still need to subtract the Plan A count, 36."
+   }
+  },
+  "id": "orig-read-value-fro-X-f95b00",
+  "skill_cd": "Q.C.",
+  "subtype": "read-value-from-display",
+  "subtype_name": "Read a value off a graph or table",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-value-fro-X-f95b00",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Based on the bar graph, what is the total number of versions collected in the two regions with the fewest versions?",
+  "stimulus": "A folklorist recorded how many distinct versions of a single trickster tale were collected in each of six regions.",
+  "figure": {
+   "type": "bar",
+   "caption": "Versions of a Trickster Tale Collected by Region",
+   "x_label": "Region",
+   "y_label": "Number of versions",
+   "categories": [
+    "Highlands",
+    "Coast",
+    "Delta",
+    "Plains",
+    "Valley",
+    "Islands"
+   ],
+   "values": [
+    52,
+    44,
+    60,
+    48,
+    56,
+    40
+   ],
+   "y_min": 36,
+   "y_max": 64,
+   "y_step": 4,
+   "alt": "Bar graph with a vertical axis starting at 36: Highlands 52, Coast 44, Delta 60, Plains 48, Valley 56, Islands 40."
+  },
+  "choices": [
+   "12",
+   "84",
+   "96",
+   "116"
+  ],
+  "answer": "B",
+  "explanation": "The two shortest bars are Islands at 40 and Coast at 44. The vertical axis starts at 36, not 0, so you read each value from the axis labels, not from how tall the bar looks. The total is $40 + 44 = 84$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You assumed the vertical axis starts at 0 and measured each bar's length above the bottom gridline: $4 + 8 = 12$. The axis starts at 36, so those lengths are not the counts."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You added the first two bars, Highlands and Coast: $52 + 44 = 96$. The question asks for the two regions with the fewest versions, wherever they appear on the graph."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You added the two tallest bars, Delta and Valley: $60 + 56 = 116$. Those are the regions with the most versions, not the fewest."
+   }
+  },
+  "id": "orig-read-value-fro-X-ab749c",
+  "skill_cd": "Q.C.",
+  "subtype": "read-value-from-display",
+  "subtype_name": "Read a value off a graph or table",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-value-fro-X-ab749c",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the table, what is the difference between the greatest deflection recorded and the least deflection recorded for more than 5 beams?",
+  "stimulus": "Civil engineers loaded each of 41 identical steel beams and recorded its midspan deflection. The table shows the results.\n\nMidspan Deflection of Steel Beams\nDeflection (millimeters) | Number of beams\n2 | 3\n4 | 8\n5 | 12\n7 | 12\n9 | 5\n13 | 1",
+  "choices": [
+   "3",
+   "8",
+   "9",
+   "11"
+  ],
+  "answer": "C",
+  "explanation": "The greatest deflection recorded is 13 millimeters. The 'more than 5 beams' condition applies only to the least value: the deflections with frequencies greater than 5 are 4, 5 and 7, and the least of these is 4. The difference is $13 - 4 = 9$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You applied 'more than 5 beams' to both readings, so you took 7 as the greatest value and computed $7 - 4$. The condition describes only the least deflection, and the greatest deflection recorded is 13."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "For 'greatest' you read the largest number in the Number of beams column, 12, and computed $12 - 4$. The greatest deflection comes from the Deflection column."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You found the range, $13 - 2$. The deflection of 2 millimeters was recorded for only 3 beams, so it does not meet the 'more than 5 beams' condition."
+   }
+  },
+  "id": "orig-read-value-fro-X-64fe54",
+  "skill_cd": "Q.C.",
+  "subtype": "read-value-from-display",
+  "subtype_name": "Read a value off a graph or table",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "fail",
+  "verification": {
+   "id": "orig-read-value-fro-X-64fe54",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": false,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Based on the bar graph, in how many of the months from February through June was the number of sightings greater than the number in the preceding month?",
+  "stimulus": "A marine biology team counted sightings of humpback whales from a fixed observation point each month for six months.",
+  "figure": {
+   "type": "bar",
+   "caption": "Humpback Whale Sightings by Month",
+   "x_label": "Month",
+   "y_label": "Number of sightings",
+   "categories": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun"
+   ],
+   "values": [
+    18,
+    24,
+    21,
+    27,
+    27,
+    30
+   ],
+   "y_min": 0,
+   "y_max": 33,
+   "y_step": 3,
+   "alt": "Bar graph of whale sightings: January 18, February 24, March 21, April 27, May 27, June 30."
+  },
+  "choices": [
+   "1",
+   "3",
+   "4",
+   "5"
+  ],
+  "answer": "B",
+  "explanation": "Compare each month with the month before it. February (24 > 18), April (27 > 21) and June (30 > 27) are increases. March (21 < 24) is a decrease, and May (27 = 27) is unchanged. That makes 3 months.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You counted the months where sightings fell from the month before. Only March did that."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You counted May, but May's bar is the same height as April's. 'Greater than' leaves out a month with no change."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You compared every month with January instead of with the month before it. All five later months are above 18, but that answers a different question."
+   }
+  },
+  "id": "orig-read-value-fro-X-237d1a",
+  "skill_cd": "Q.C.",
+  "subtype": "read-value-from-display",
+  "subtype_name": "Read a value off a graph or table",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-value-fro-X-237d1a",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the table, how many workers reported working more hours per week than the number of hours reported most often?",
+  "stimulus": "A labor economist surveyed 102 warehouse workers about the number of hours they usually work per week. The table shows the results.\n\nUsual Weekly Hours of Warehouse Workers\nHours per week | Number of workers\n20 | 7\n30 | 11\n35 | 20\n40 | 35\n45 | 20\n50 | 9",
+  "choices": [
+   "29",
+   "38",
+   "64",
+   "95"
+  ],
+  "answer": "A",
+  "explanation": "The largest frequency is 35, so the number of hours reported most often is 40. 'More hours than 40' means the 45-hour and 50-hour rows: $20 + 9 = 29$ workers.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You added the workers who reported fewer than 40 hours: $7 + 11 + 20 = 38$. The question asks about workers above the most common value."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You included the 35 workers at exactly 40 hours: $35 + 20 + 9 = 64$. 'More hours than' leaves out the 40-hour row."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You added the hours values 45 and 50 instead of their frequencies. The question asks how many workers, so you read the Number of workers column."
+   }
+  },
+  "id": "orig-read-value-fro-X-495b27",
+  "skill_cd": "Q.C.",
+  "subtype": "read-value-from-display",
+  "subtype_name": "Read a value off a graph or table",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-value-fro-X-495b27",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Based on the bar graph, which plate produced 8 fewer impressions than the plate with the second-greatest number of impressions?",
+  "stimulus": "A printmaker recorded the number of acceptable impressions pulled from each of five etched plates during one edition.",
+  "figure": {
+   "type": "bar",
+   "caption": "Acceptable Impressions by Plate",
+   "x_label": "Plate",
+   "y_label": "Number of impressions",
+   "categories": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+   ],
+   "values": [
+    28,
+    16,
+    36,
+    24,
+    32
+   ],
+   "y_min": 0,
+   "y_max": 40,
+   "y_step": 4,
+   "alt": "Bar graph of impressions by plate: A 28, B 16, C 36, D 24, E 32."
+  },
+  "choices": [
+   "Plate A",
+   "Plate B",
+   "Plate D",
+   "Plate E"
+  ],
+  "answer": "C",
+  "explanation": "From greatest to least, the plates are C (36), E (32), A (28), D (24) and B (16). The second-greatest is plate E with 32. Eight fewer than 32 is 24, which is plate D.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You subtracted 8 from the greatest count, $36 - 8 = 28$, and ignored the word 'second.' The question measures from plate E, not plate C."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You started from the second-least count, 24, and went down 8 to 16. The question starts from the second-greatest count."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "Plate E is the plate with the second-greatest count, which is your starting point. You still need to find the plate with 8 fewer impressions than plate E."
+   }
+  },
+  "id": "orig-read-value-fro-X-7631ab",
+  "skill_cd": "Q.C.",
+  "subtype": "read-value-from-display",
+  "subtype_name": "Read a value off a graph or table",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-value-fro-X-7631ab",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

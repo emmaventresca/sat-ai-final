@@ -1,0 +1,891 @@
+[
+ {
+  "stem": "By how many centimeters does the seedling's height increase over a period of 2 weeks?",
+  "stimulus": "An agronomist models the height of a sorghum seedling with $h(d) = 1.5d + 20$, where $h(d)$ is the height, in centimeters, $d$ days after the seedling is transplanted.",
+  "keys": [
+   "21"
+  ],
+  "any_of": false,
+  "explanation": "You are asked for a change in height, so the starting height of 20 drops out. The rate is 1.5 centimeters per day. Two weeks is 14 days, so the change in height is $1.5 \\times 14 = 21$ centimeters.",
+  "common_errors": [
+   {
+    "value": "41",
+    "misconception": "intermediate-step",
+    "why": "Substituted the 14 days straight into the function, $h(14) = 1.5(14) + 20 = 41$, which keeps the starting height in a question about a change."
+   },
+   {
+    "value": "3",
+    "misconception": "misread-given",
+    "why": "Used 2 as the change in input without converting weeks to days: $1.5 \\times 2 = 3$."
+   },
+   {
+    "value": "14",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the change in input, 14 days, instead of the change in height."
+   }
+  ],
+  "id": "orig-change-in-outp-M-8d3c63",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-8d3c63",
+   "structure": [],
+   "solver_answer": 21,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "By how many meters does the elevation of the ramp increase when the horizontal distance increases by 250 meters?",
+  "stimulus": "A civil engineer designs a highway on-ramp whose elevation, in meters above sea level, is given by $E(x) = 0.06x + 310$, where $x$ is the horizontal distance, in meters, from the start of the ramp.",
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "The constant 310 is the elevation at the start, and it cancels when you subtract two elevations. The change in elevation is slope \u00d7 change in input: $0.06 \\times 250 = 15$ meters.",
+  "common_errors": [
+   {
+    "value": "325",
+    "misconception": "intermediate-step",
+    "why": "Evaluated $E(250) = 0.06(250) + 310$, which is the elevation at 250 meters, not the increase."
+   },
+   {
+    "value": "150",
+    "misconception": "algebra-manipulation",
+    "why": "Misplaced the decimal and treated 0.06 as 0.6: $0.6 \\times 250 = 150$."
+   },
+   {
+    "value": "310",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the starting elevation, the constant term, instead of the change."
+   }
+  ],
+  "id": "orig-change-in-outp-M-428af0",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-428af0",
+   "structure": [],
+   "solver_answer": 15,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is given by __var__ where __var__ is the"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "By how many seconds does the arrival time increase from a station 40 kilometers from the epicenter to a station 160 kilometers from the epicenter?",
+  "stimulus": "Seismologists recorded when the first wave of an earthquake reached several monitoring stations, measured in seconds after a recording system began logging. The graph shows the linear relationship between a station's distance from the epicenter and the arrival time at that station.",
+  "figure": {
+   "type": "line",
+   "caption": "First-Wave Arrival Time by Station Distance",
+   "x_label": "Distance from epicenter (kilometers)",
+   "y_label": "Arrival time (seconds)",
+   "points": [
+    [
+     0,
+     10
+    ],
+    [
+     40,
+     16
+    ],
+    [
+     80,
+     22
+    ],
+    [
+     120,
+     28
+    ],
+    [
+     160,
+     34
+    ],
+    [
+     200,
+     40
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 200,
+   "x_step": 40,
+   "y_min": 0,
+   "y_max": 44,
+   "y_step": 2,
+   "alt": "A straight line rising from 10 seconds at 0 kilometers to 40 seconds at 200 kilometers, passing through 16 seconds at 40 kilometers and 34 seconds at 160 kilometers."
+  },
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "Read the arrival time at each end of the interval. At 40 kilometers it is 16 seconds, and at 160 kilometers it is 34 seconds. The increase is $34 - 16 = 18$ seconds. You can check this with the slope: 6 seconds per 40 kilometers is 0.15 second per kilometer, and $0.15 \\times 120 = 18$.",
+  "common_errors": [
+   {
+    "value": "34",
+    "misconception": "intermediate-step",
+    "why": "Reported the arrival time at 160 kilometers, the end of the interval, instead of the difference between the two ends."
+   },
+   {
+    "value": "28",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the change in distance, 120 kilometers, and read the graph's value at x = 120, which includes the intercept."
+   },
+   {
+    "value": "120",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the change in distance instead of the change in arrival time."
+   }
+  ],
+  "id": "orig-change-in-outp-M-d7f9fe",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-d7f9fe",
+   "structure": [],
+   "solver_answer": 18,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "By how many degrees Celsius does the air temperature decrease as the balloon rises from an altitude of 1,200 meters to an altitude of 3,200 meters?",
+  "stimulus": "A meteorologist models the air temperature during a weather-balloon launch with $T(h) = 18 - 6.5h$, where $T(h)$ is the temperature, in degrees Celsius, at an altitude of $h$ kilometers.",
+  "keys": [
+   "13"
+  ],
+  "any_of": false,
+  "explanation": "In this model $h$ is in kilometers, so the balloon rises 2 kilometers. The temperature changes by $-6.5$ degrees per kilometer, so over 2 kilometers it changes by $-6.5 \\times 2 = -13$. The question asks how much it decreases, so the answer is 13.",
+  "common_errors": [
+   {
+    "value": "-13",
+    "misconception": "complement-or-direction-flip",
+    "why": "Gave the signed change, even though the question asks for the size of the decrease."
+   },
+   {
+    "value": "5",
+    "misconception": "intermediate-step",
+    "why": "Substituted the 2-kilometer change into the function, $T(2) = 18 - 13 = 5$, which keeps the 18 in the answer."
+   },
+   {
+    "value": "-2.8",
+    "misconception": "intermediate-step",
+    "why": "Gave the temperature at the end of the climb, $T(3.2) = 18 - 20.8$, instead of the change."
+   },
+   {
+    "value": "13000",
+    "misconception": "misread-given",
+    "why": "Used 2,000 meters as the input without converting to kilometers: $6.5 \\times 2000$."
+   }
+  ],
+  "id": "orig-change-in-outp-M-49a480",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-49a480",
+   "structure": [],
+   "solver_answer": 13,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "By how many years does the estimated age increase from a depth of 35 centimeters to a depth of 50 centimeters?",
+  "stimulus": "In a lake-bed core, a paleobotanist estimates the age of fossil pollen grains with $A(d) = 120d + 800$, where $A(d)$ is the age, in years, of the pollen found $d$ centimeters below the top of the core.",
+  "keys": [
+   "1800"
+  ],
+  "any_of": false,
+  "explanation": "The 800 is the age at the top of the core, and it cancels when you compare two depths. The depth increases by $50 - 35 = 15$ centimeters, and the age increases by 120 years per centimeter, so the change in age is $120 \\times 15 = 1800$ years.",
+  "common_errors": [
+   {
+    "value": "2600",
+    "misconception": "intermediate-step",
+    "why": "Substituted the change in depth into the function, $A(15) = 1800 + 800$, which keeps the constant term."
+   },
+   {
+    "value": "6800",
+    "misconception": "intermediate-step",
+    "why": "Gave the age at 50 centimeters, the end of the interval, instead of the difference."
+   },
+   {
+    "value": "15",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the change in depth instead of the change in age."
+   }
+  ],
+  "id": "orig-change-in-outp-M-98b670",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-98b670",
+   "structure": [],
+   "solver_answer": 1800,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "By how many square meters does the area covered by duckweed increase every 5 days?",
+  "stimulus": "An ecologist uses a linear function $f$ to model the area, in square meters, of a pond covered by duckweed $x$ days after monitoring began. According to the model, $f(4) = 31$ and $f(10) = 49$.",
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "First, find the rate. Over $10 - 4 = 6$ days the area grows by $49 - 31 = 18$ square meters, so the slope is $18 \\div 6 = 3$ square meters per day. Over 5 days the change is $3 \\times 5 = 15$ square meters.",
+  "common_errors": [
+   {
+    "value": "18",
+    "misconception": "intermediate-step",
+    "why": "Gave the growth over the given 6-day span instead of scaling it to 5 days."
+   },
+   {
+    "value": "3",
+    "misconception": "intermediate-step",
+    "why": "Found the change per day but didn't multiply by 5."
+   },
+   {
+    "value": "34",
+    "misconception": "wrong-target-quantity",
+    "why": "Built the full function, $f(x) = 3x + 19$, and evaluated $f(5)$, which is the area on day 5, not a change."
+   }
+  ],
+  "id": "orig-change-in-outp-M-44aff7",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-44aff7",
+   "structure": [],
+   "solver_answer": 15,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many more meters of cloth have been woven after 7.5 hours of a shift than after 5 hours?",
+  "stimulus": "A historian studying records from a 19th-century cotton mill models the total length of cloth produced by one power loom with $L(t) = 2.4t + 9$, where $L(t)$ is the length, in meters, recorded $t$ hours after a shift began.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "Comparing two totals cancels the 9. The time increases by $7.5 - 5 = 2.5$ hours, and the loom produces 2.4 meters per hour, so the difference is $2.4 \\times 2.5 = 6$ meters.",
+  "common_errors": [
+   {
+    "value": "15",
+    "misconception": "intermediate-step",
+    "why": "Substituted the 2.5-hour difference into the function, $L(2.5) = 6 + 9$, which keeps the constant term."
+   },
+   {
+    "value": "27",
+    "misconception": "intermediate-step",
+    "why": "Gave the total length after 7.5 hours instead of the difference between the two totals."
+   },
+   {
+    "value": "2.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the change in time instead of the change in length."
+   }
+  ],
+  "id": "orig-change-in-outp-M-04c348",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-04c348",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, by how much does the number of daily riders increase when the number of new housing units increases by 250?",
+  "stimulus": "An urban planner models the relationship between the number of new housing units, $x$, built near a transit station and the number of daily riders, $y$, at the station with the equation $5y - 2x = 1500$.",
+  "keys": [
+   "100"
+  ],
+  "any_of": false,
+  "explanation": "Solve for $y$ to get the rate: $y = \\frac{2}{5}x + 300$. Each new housing unit adds $\\frac{2}{5}$ of a rider per day, and the 300 cancels when you look at a change. So the increase is $\\frac{2}{5} \\times 250 = 100$ riders.",
+  "common_errors": [
+   {
+    "value": "400",
+    "misconception": "intermediate-step",
+    "why": "Substituted 250 for $x$ and solved for $y$, $5y = 1500 + 500$, which gives a rider count rather than a change."
+   },
+   {
+    "value": "625",
+    "misconception": "algebra-manipulation",
+    "why": "Inverted the slope and used $\\frac{5}{2}$: $2.5 \\times 250 = 625$."
+   },
+   {
+    "value": "500",
+    "misconception": "algebra-manipulation",
+    "why": "Took the coefficient 2 as the slope without dividing by the 5 on $y$: $2 \\times 250 = 500$."
+   }
+  ],
+  "id": "orig-change-in-outp-M-dc9e95",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-dc9e95",
+   "structure": [],
+   "solver_answer": 100,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, by how many millimeters does the water depth increase over a period of 90 minutes?",
+  "stimulus": "A hydrologist models the depth of water in a flooded drainage channel during a storm with the function $d(t) = 4t + 150$, where $d(t)$ is the depth, in millimeters, $t$ hours after the storm began.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "You are asked for a change in depth, not the depth at one time. The change in output equals the slope times the change in input, and the 150 drops out. The input is in hours, so first convert: 90 minutes = 1.5 hours. The change is $4 \\times 1.5 = 6$ millimeters.",
+  "common_errors": [
+   {
+    "value": "156",
+    "misconception": "wrong-target-quantity",
+    "why": "Plugged the change straight into the function, $d(1.5) = 156$, which brings in the intercept and gives a depth instead of a change."
+   },
+   {
+    "value": "360",
+    "misconception": "misread-given",
+    "why": "Treated 90 minutes as 90 hours: $4 \\times 90$."
+   },
+   {
+    "value": "510",
+    "misconception": "wrong-target-quantity",
+    "why": "Did not convert the units and also evaluated the function: $d(90) = 360 + 150$."
+   },
+   {
+    "value": "4",
+    "misconception": "intermediate-step",
+    "why": "Gave the rate per hour and stopped before multiplying by the time elapsed."
+   }
+  ],
+  "id": "orig-change-in-outp-M-b9c421",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-b9c421",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, by how much does the estimated number of spore types decrease when the depth increases by 12 meters?",
+  "stimulus": "A paleobotanist models the number of distinct fern spore types, $N$, found in a sediment core sample taken $x$ meters below the surface with the equation $N = 210 - 1.5x$.",
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "The coefficient $-1.5$ means $N$ drops by 1.5 for each extra meter of depth. Over 12 meters the drop is $1.5 \\times 12 = 18$. The 210 is the starting value and has nothing to do with the change. The question asks how much it decreases, so you enter the positive amount, 18.",
+  "common_errors": [
+   {
+    "value": "192",
+    "misconception": "wrong-target-quantity",
+    "why": "Plugged the change straight into the equation: $210 - 1.5(12) = 192$, which is a spore count, not a decrease."
+   },
+   {
+    "value": "-18",
+    "misconception": "complement-or-direction-flip",
+    "why": "Gave the signed change even though the question asks for the size of the decrease."
+   },
+   {
+    "value": "1.5",
+    "misconception": "intermediate-step",
+    "why": "Gave the decrease per meter without multiplying by 12."
+   },
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Divided instead of multiplying: $12 \\div 1.5$."
+   }
+  ],
+  "id": "orig-change-in-outp-M-611366",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-611366",
+   "structure": [],
+   "solver_answer": 18,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the projection, by how many docks does the number increase from year 3 to year 11?",
+  "stimulus": "A city's planning office projects the number of bike-share docks, $D$, $t$ years after a program launches. The relationship between $t$ and $D$ is linear, and some values are shown.\n\nProjected Bike-Share Docks\nYears after launch, $t$ | 0 | 2 | 5\nNumber of docks, $D$ | 140 | 164 | 200",
+  "keys": [
+   "96"
+  ],
+  "any_of": false,
+  "explanation": "Find the rate from any two columns: from $t = 0$ to $t = 2$, $D$ rises by 24, so the slope is $24 \\div 2 = 12$ docks per year. From year 3 to year 11, $t$ increases by 8, so $D$ increases by $12 \\times 8 = 96$ docks. You don't need the starting value of 140.",
+  "common_errors": [
+   {
+    "value": "272",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the number of docks at year 11, $140 + 12(11)$, instead of the change."
+   },
+   {
+    "value": "132",
+    "misconception": "misread-given",
+    "why": "Measured the change from launch to year 11 instead of from year 3: $12 \\times 11$."
+   },
+   {
+    "value": "12",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the yearly rate."
+   },
+   {
+    "value": "236",
+    "misconception": "wrong-target-quantity",
+    "why": "Plugged the change of 8 years into the model: $140 + 12(8)$."
+   }
+  ],
+  "id": "orig-change-in-outp-M-851711",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-851711",
+   "structure": [],
+   "solver_answer": 96,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the graph, by how many millimeters does the deflection increase as the load increases from 10 tons to 30 tons?",
+  "stimulus": "A civil engineer tests a steel bridge beam by measuring how far its center bends downward, its deflection, under different loads. The graph shows the linear relationship.",
+  "figure": {
+   "type": "line",
+   "caption": "Beam Deflection Under Load",
+   "x_label": "Load (tons)",
+   "y_label": "Deflection (mm)",
+   "points": [
+    [
+     0,
+     6
+    ],
+    [
+     10,
+     11
+    ],
+    [
+     20,
+     16
+    ],
+    [
+     30,
+     21
+    ],
+    [
+     40,
+     26
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 40,
+   "x_step": 5,
+   "y_min": 0,
+   "y_max": 30,
+   "y_step": 1,
+   "alt": "A straight line rising from (0, 6) through (10, 11), (20, 16), and (30, 21) to (40, 26)."
+  },
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "Read the deflection at each end of the interval. At 10 tons it is 11 mm, and at 30 tons it is 21 mm. Subtract: $21 - 11 = 10$ millimeters. As a check, the slope is 0.5 mm per ton, and $0.5 \\times 20 = 10$.",
+  "common_errors": [
+   {
+    "value": "21",
+    "misconception": "wrong-target-quantity",
+    "why": "Reported the deflection at the end of the interval instead of the difference between the two ends."
+   },
+   {
+    "value": "16",
+    "misconception": "wrong-target-quantity",
+    "why": "Read the deflection at a load of 20 tons, the size of the change in load, instead of subtracting."
+   },
+   {
+    "value": "15",
+    "misconception": "missed-condition",
+    "why": "Subtracted the deflection at 0 tons from the deflection at 30 tons, ignoring that the interval starts at 10 tons."
+   },
+   {
+    "value": "32",
+    "misconception": "algebra-manipulation",
+    "why": "Added the two readings instead of subtracting them: $21 + 11$."
+   }
+  ],
+  "id": "orig-change-in-outp-M-fa71ce",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-fa71ce",
+   "structure": [],
+   "solver_answer": 10,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, by how many meters does the length of the cloth increase over a period of 15 hours of weaving?",
+  "stimulus": "A historian reconstructing work at an 18th-century hand loom models the length of finished cloth, $L$, in meters, as a linear function of $t$, the number of hours of weaving. The model gives $L = 21$ when $t = 2$ and $L = 24$ when $t = 7$.",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "First find the rate: over 5 hours the cloth grows by 3 meters, so the slope is $3 \\div 5 = 0.6$ meters per hour. Over 15 hours the length increases by $0.6 \\times 15 = 9$ meters. The intercept isn't needed.",
+  "common_errors": [
+   {
+    "value": "28.8",
+    "misconception": "wrong-target-quantity",
+    "why": "Built the full equation $L = 0.6t + 19.8$ and evaluated it at $t = 15$, giving a length instead of a change."
+   },
+   {
+    "value": "25",
+    "misconception": "algebra-manipulation",
+    "why": "Calculated run over rise, $5/3$ hours per meter, and multiplied that by 15."
+   },
+   {
+    "value": "3",
+    "misconception": "intermediate-step",
+    "why": "Reported the increase between the two given times instead of scaling it to 15 hours."
+   },
+   {
+    "value": ".6",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the hourly rate."
+   }
+  ],
+  "id": "orig-change-in-outp-M-cea2a9",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-cea2a9",
+   "structure": [],
+   "solver_answer": 9,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "By how many centimeters does $f(x)$ increase when $x$ increases by 5?",
+  "stimulus": "The depth of an archaeological test trench, in centimeters, $x$ days after a dig begins is given by the linear function $f$. The trench is $35$ centimeters deep at the start of the dig, and $f(1) = 47$.",
+  "keys": [
+   "60"
+  ],
+  "any_of": false,
+  "explanation": "$f(0) = 35$ is the intercept, and the step from 35 to 47 is the slope: $f$ increases by 12 cm per day. When $x$ increases by 5, $f(x)$ increases by $12 \\times 5 = 60$ centimeters.",
+  "common_errors": [
+   {
+    "value": "95",
+    "misconception": "wrong-target-quantity",
+    "why": "Plugged 5 into the function, $f(5) = 35 + 60$, giving a depth instead of a change."
+   },
+   {
+    "value": "235",
+    "misconception": "graph-feature-mismatch",
+    "why": "Used $f(1) = 47$ as the daily rate instead of the step from 35 to 47: $47 \\times 5$."
+   },
+   {
+    "value": "12",
+    "misconception": "intermediate-step",
+    "why": "Gave the change for a single day."
+   },
+   {
+    "value": "175",
+    "misconception": "graph-feature-mismatch",
+    "why": "Treated the starting depth of 35 as the rate: $35 \\times 5$."
+   }
+  ],
+  "id": "orig-change-in-outp-M-99130d",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-99130d",
+   "structure": [],
+   "solver_answer": 60,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, by how many centimeters does the ice thickness decrease from day 10 to day 25?",
+  "stimulus": "An ecologist studying a northern lake models the thickness of its ice cover, $T$, in centimeters, $d$ days after March 1 as $T = 48 - \\frac{2}{5}d$.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "The ice thins by $\\frac{2}{5}$ cm each day. From day 10 to day 25 is 15 days, so the thickness falls by $\\frac{2}{5} \\times 15 = 6$ centimeters. As a check, $T(10) = 44$ and $T(25) = 38$, and $44 - 38 = 6$.",
+  "common_errors": [
+   {
+    "value": "38",
+    "misconception": "wrong-target-quantity",
+    "why": "Reported the thickness on day 25 instead of the difference between the two days."
+   },
+   {
+    "value": "42",
+    "misconception": "wrong-target-quantity",
+    "why": "Plugged the 15-day change straight into the model: $48 - \\frac{2}{5}(15)$."
+   },
+   {
+    "value": "-6",
+    "misconception": "complement-or-direction-flip",
+    "why": "Gave the signed change even though the question asks how much the thickness decreases."
+   },
+   {
+    "value": "37.5",
+    "misconception": "algebra-manipulation",
+    "why": "Inverted the rate and multiplied 15 by $\\frac{5}{2}$."
+   }
+  ],
+  "id": "orig-change-in-outp-M-c2535a",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-c2535a",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, by how many meters does the elevation increase between the points 1.2 kilometers and 3.6 kilometers from the trailhead?",
+  "stimulus": "A cartographer drawing a hiking map models the elevation of a straight mountain road as $E(x) = 35x + 620$, where $E(x)$ is the elevation, in meters, at a point $x$ kilometers horizontally from the trailhead.",
+  "keys": [
+   "84"
+  ],
+  "any_of": false,
+  "explanation": "The road climbs 35 meters for each horizontal kilometer. The distance from 1.2 km to 3.6 km is 2.4 km, so the elevation rises $35 \\times 2.4 = 84$ meters. The 620 cancels when you subtract, so you can ignore it.",
+  "common_errors": [
+   {
+    "value": "704",
+    "misconception": "wrong-target-quantity",
+    "why": "Plugged the 2.4 km change straight into the function: $E(2.4) = 84 + 620$."
+   },
+   {
+    "value": "746",
+    "misconception": "wrong-target-quantity",
+    "why": "Reported the elevation at 3.6 km instead of the difference."
+   },
+   {
+    "value": "168",
+    "misconception": "algebra-manipulation",
+    "why": "Added the two distances instead of subtracting them: $35 \\times (1.2 + 3.6)$."
+   },
+   {
+    "value": "126",
+    "misconception": "missed-condition",
+    "why": "Measured the rise from the trailhead to 3.6 km, ignoring that the interval starts at 1.2 km."
+   }
+  ],
+  "id": "orig-change-in-outp-M-866f68",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-866f68",
+   "structure": [],
+   "solver_answer": 84,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

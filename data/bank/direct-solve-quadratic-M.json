@@ -397,5 +397,760 @@
   "rated_why": "Straightforward algebra (combine, divide, square root) with obvious distractors",
   "authored_difficulty": "M",
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the positive solution to the given equation?",
+  "stimulus": "A meteorologist estimates $x$, the radius, in kilometers, of a circular band of rain using the equation below.\n\n$3x^2 + 12 = 120$",
+  "choices": [
+   "$6$",
+   "$2\\sqrt{11}$",
+   "$6\\sqrt{3}$",
+   "$36$"
+  ],
+  "answer": "A",
+  "explanation": "There's no $x$ term, so isolate $x^2$ first. Subtract 12 from both sides to get $3x^2 = 108$, then divide by 3 to get $x^2 = 36$. That gives $x = 6$ or $x = -6$. The question asks for the positive solution, so the answer is $6$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added 12 to both sides instead of subtracting it. That gives $3x^2 = 132$, then $x^2 = 44$ and $x = 2\\sqrt{11}$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted 12 but forgot to divide by 3, so you took the square root of 108 instead of 36. Divide by the coefficient before you take the root."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$36$ is the value of $x^2$, not $x$. You stopped one step early, before taking the square root."
+   }
+  },
+  "id": "orig-direct-solve-q-M-267528",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-267528",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive solution to the given equation?",
+  "stimulus": "A historian studying a 17th-century woven tapestry finds that its width $x$, in feet, satisfies the equation below.\n\n$x^2 - 4x = 45$",
+  "choices": [
+   "$9$",
+   "$5$",
+   "$-5$",
+   "$49$"
+  ],
+  "answer": "A",
+  "explanation": "Put the equation in standard form: $x^2 - 4x - 45 = 0$. Look for two numbers that multiply to $-45$ and add to $-4$. Those are $-9$ and $5$, so $(x - 9)(x + 5) = 0$. The solutions are $x = 9$ and $x = -5$. Only $9$ is positive.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored with the signs swapped, as $(x + 9)(x - 5)$, so you got the positive root of $x^2 + 4x - 45 = 0$ instead. Check that your factors add to $-4$, not $+4$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "$-5$ is a solution to the equation, but it's negative. The question asks for the positive solution."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $x(x - 4) = 45$ and set $x - 4 = 45$. The zero-product property works only when one side is 0. Move 45 to the left side first, then factor."
+   }
+  },
+  "id": "orig-direct-solve-q-M-878da9",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-878da9",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive solution to the given equation?",
+  "stimulus": "In a nutrition study, the daily dose $x$, in grams, of a fiber supplement satisfies the equation below.\n\n$x^2 + 4x = 8$",
+  "choices": [
+   "$-2 + 2\\sqrt{3}$",
+   "$2 + 2\\sqrt{3}$",
+   "$-4 + 4\\sqrt{3}$",
+   "$-2 - 2\\sqrt{3}$"
+  ],
+  "answer": "A",
+  "explanation": "Rewrite the equation as $x^2 + 4x - 8 = 0$. It doesn't factor over the integers, so use the quadratic formula: $x = \\frac{-4 \\pm \\sqrt{16 + 32}}{2} = \\frac{-4 \\pm 4\\sqrt{3}}{2} = -2 \\pm 2\\sqrt{3}$. Since $2\\sqrt{3} \\approx 3.46$, only $-2 + 2\\sqrt{3} \\approx 1.46$ is positive. In Desmos, graph $y = x^2 + 4x - 8$ and match the positive x-intercept, about $1.46$, to the choices.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $+b$ instead of $-b$ in the quadratic formula. That gives the positive root of $x^2 - 4x - 8 = 0$, which is a different equation."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $-4 \\pm 4\\sqrt{3}$ but never divided by $2a = 2$. The whole numerator has to be divided."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "$-2 - 2\\sqrt{3}$ is a solution, but it's about $-5.46$. The question asks for the positive solution."
+   }
+  },
+  "id": "orig-direct-solve-q-M-574fa2",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-574fa2",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following statements about the solutions to the given equation must be true?",
+  "stimulus": "An archaeologist estimating how far a buried wall extends from a marker stake obtains the given equation, where $x$ is a signed distance in meters.\n\n$2x^2 - 7 = 43$",
+  "choices": [
+   "The equation's only solution is $x = 5$.",
+   "The solutions are $x = 5\\sqrt{2}$ and $x = -5\\sqrt{2}$.",
+   "The solutions are $x = 5$ and $x = -5$.",
+   "The solutions are $x = 3\\sqrt{2}$ and $x = -3\\sqrt{2}$."
+  ],
+  "answer": "C",
+  "explanation": "First add 7 to both sides to get $2x^2 = 50$. Then divide by 2 to get $x^2 = 25$. Taking the square root of both sides gives $x = 5$ or $x = -5$, because both $5^2$ and $(-5)^2$ equal 25. If you graph $y = 2x^2 - 7$ and $y = 43$, they cross at $x = -5$ and $x = 5$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You took only the positive square root of 25. $(-5)^2 = 25$ as well, so $x = -5$ also satisfies the equation, and the equation has two solutions, not one."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added 7 correctly to get $2x^2 = 50$, but then took the square root of 50 without first dividing by the coefficient 2. Isolate $x^2$ completely before taking the root."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted 7 from 43 instead of adding it, which gives $2x^2 = 36$ and $x^2 = 18$. To undo $-7$ you add 7 to both sides."
+   }
+  },
+  "id": "orig-direct-solve-q-M-e7f918",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-e7f918",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following statements about the solutions to the given equation must be true?",
+  "stimulus": "An immunologist fitting a model of antibody response over time arrives at the given equation, where $x$ is measured in days relative to a booster dose.\n\n$x^2 - 4x = 21$",
+  "choices": [
+   "The solutions are $x = -7$ and $x = 3$.",
+   "The equation's only solution is $x = 7$.",
+   "The solutions are $x = 0$ and $x = 4$.",
+   "The solutions are $x = 7$ and $x = -3$."
+  ],
+  "answer": "D",
+  "explanation": "Subtract 21 from both sides to put the equation in standard form: $x^2 - 4x - 21 = 0$. You need two numbers that multiply to $-21$ and add to $-4$, which are $-7$ and $3$, so the equation factors as $(x - 7)(x + 3) = 0$. That makes $x = 7$ or $x = -3$. You can check this: $49 - 28 = 21$ and $9 + 12 = 21$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored correctly but flipped the signs when you set each factor equal to zero. $(x - 7) = 0$ gives $x = 7$, not $-7$. Substituting $x = -7$ gives $49 + 28 = 77$, not 21."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You found the positive root and stopped. The factor $(x + 3)$ also gives a solution, $x = -3$, and it satisfies the equation: $9 + 12 = 21$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You solved $x^2 - 4x = 0$ and dropped the 21 on the right side. Factoring $x(x - 4)$ only works when the other side is zero, so you have to move 21 over first."
+   }
+  },
+  "id": "orig-direct-solve-q-M-84ca74",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-84ca74",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following statements about the solutions to the given equation must be true?",
+  "stimulus": "A folklore scholar comparing how often a motif shows up in two families of tales reduces the comparison to the given equation.\n\n$x^2 - 6x + 4 = 0$",
+  "choices": [
+   "The solutions are $x = -3 + \\sqrt{5}$ and $x = -3 - \\sqrt{5}$.",
+   "The solutions are $x = 3 + \\sqrt{5}$ and $x = 3 - \\sqrt{5}$.",
+   "The solutions are $x = 3 + \\sqrt{13}$ and $x = 3 - \\sqrt{13}$.",
+   "The equation's only solution is $x = 3 + \\sqrt{5}$."
+  ],
+  "answer": "B",
+  "explanation": "This equation doesn't factor over the integers, so use the quadratic formula with $a = 1$, $b = -6$ and $c = 4$. The discriminant is $b^2 - 4ac = 36 - 16 = 20$, so $x = \\frac{6 \\pm \\sqrt{20}}{2} = \\frac{6 \\pm 2\\sqrt{5}}{2} = 3 \\pm \\sqrt{5}$. In Desmos, the graph of $y = x^2 - 6x + 4$ crosses the x-axis near 0.76 and 5.24, which match $3 - \\sqrt{5}$ and $3 + \\sqrt{5}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $b$ where the formula needs $-b$. With $b = -6$, $-b$ is $+6$, so the center of the roots is $+3$, not $-3$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $4ac$ instead of subtracting it. That gives $36 + 16 = 52$ and $\\frac{\\sqrt{52}}{2} = \\sqrt{13}$. The discriminant is $b^2 - 4ac = 20$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You kept only the $+$ branch of the $\\pm$. The value $3 - \\sqrt{5}$, about 0.76, also satisfies the equation, so there are two solutions."
+   }
+  },
+  "id": "orig-direct-solve-q-M-b6432c",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-b6432c",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is a solution to the given equation?",
+  "stimulus": "A paleobotanist fitting a curve to the widths of fossil leaf layers works through the equation below.\n\n$2x^2 + 3 = 12x - 5$",
+  "choices": [
+   "$-3 + \\sqrt{5}$",
+   "$3 + \\sqrt{5}$",
+   "$3 + \\sqrt{10}$",
+   "$6 + 2\\sqrt{5}$"
+  ],
+  "answer": "B",
+  "explanation": "First get everything on one side: $2x^2 - 12x + 8 = 0$. Dividing by 2 gives $x^2 - 6x + 4 = 0$. The quadratic formula then gives $x = \\frac{6 \\pm \\sqrt{36 - 16}}{2} = 3 \\pm \\sqrt{5}$. Only $3 + \\sqrt{5}$ is among the choices. You can check it by substitution: $(3+\\sqrt{5})^2 = 14 + 6\\sqrt{5}$, so the left side is $28 + 12\\sqrt{5} + 3 = 31 + 12\\sqrt{5}$, and the right side is $36 + 12\\sqrt{5} - 5 = 31 + 12\\sqrt{5}$. In Desmos, graph both sides and you'll find intersections at about 0.76 and 5.24, which matches $3 + \\sqrt{5} \\approx 5.24$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the sign of $b$ in the quadratic formula. You used $-(-6) = -6$ instead of $+6$, so your roots came out as $-3 \\pm \\sqrt{5}$. This is the root of a nearby equation with the sign flipped. Substituting it back gives a left side of $31 - 12\\sqrt{5}$ and a right side of $-41 + 12\\sqrt{5}$, so it fails."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You read the right side as $12x + 5$ instead of $12x - 5$. That gives $x^2 - 6x - 1 = 0$, whose roots are $3 \\pm \\sqrt{10}$. This value solves a different equation, not the one given."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the quadratic formula on $2x^2 - 12x + 8 = 0$ but divided by 2 instead of by $2a = 4$. That gives $\\frac{12 \\pm \\sqrt{80}}{2} = 6 \\pm 2\\sqrt{5}$, which is twice too large in the rational part."
+   }
+  },
+  "id": "orig-direct-solve-q-M-1a94d8",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-1a94d8",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following is a solution",
+    "which of the following is a solution to",
+    "of the following is a solution to the",
+    "the following is a solution to the given",
+    "following is a solution to the given equation"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the negative solution to the given equation?",
+  "stimulus": "A cartographer rescaling the square grid cells on a regional map arrives at the equation below.\n\n$\\frac{x^2}{3} + 7 = 2x^2 - 13$",
+  "choices": [
+   "$-2\\sqrt{15}$",
+   "$-2\\sqrt{5}$",
+   "$-2\\sqrt{3}$",
+   "$2\\sqrt{3}$"
+  ],
+  "answer": "C",
+  "explanation": "There's no $x$ term, so isolate $x^2$ first. Moving the terms gives $20 = 2x^2 - \\frac{x^2}{3} = \\frac{5}{3}x^2$, so $x^2 = 12$. Then $x = \\pm\\sqrt{12} = \\pm 2\\sqrt{3}$, and the negative solution is $-2\\sqrt{3}$. To check: $x^2 = 12$ makes the left side $4 + 7 = 11$ and the right side $24 - 13 = 11$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You combined $2x^2 - \\frac{x^2}{3}$ incorrectly as $\\frac{2 - 1}{3}x^2 = \\frac{1}{3}x^2$ instead of $\\frac{5}{3}x^2$. That gives $x^2 = 60$ and $x = -2\\sqrt{15}$. Substituting it back gives $27 \\ne 107$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You reached $20 = \\frac{5}{3}x^2$ and then took the square root before isolating $x^2$. You treated $x^2$ as 20 and dropped the coefficient $\\frac{5}{3}$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You solved correctly but kept only the positive square root. When you take a square root you need both $\\pm$ values, and the question asks for the negative one."
+   }
+  },
+  "id": "orig-direct-solve-q-M-04a0e6",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-04a0e6",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ what is the negative solution to the",
+    "what is the negative solution to the given",
+    "is the negative solution to the given equation"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "What is the positive solution to the given equation?",
+  "stimulus": "A linguist modeling how quickly learners pick up new word roots reduces the model to the equation below.\n\n$6x^2 + 7x = 20$",
+  "choices": [
+   "$\\frac{3}{4}$",
+   "$\\frac{4}{3}$",
+   "$\\frac{5}{2}$",
+   "$\\frac{10}{3}$"
+  ],
+  "answer": "B",
+  "explanation": "Write the equation in standard form, $6x^2 + 7x - 20 = 0$, and factor: $(3x - 4)(2x + 5) = 0$. So $x = \\frac{4}{3}$ or $x = -\\frac{5}{2}$, and the positive solution is $\\frac{4}{3}$. Testing the choices is faster still: $6 \\cdot \\frac{16}{9} + 7 \\cdot \\frac{4}{3} = \\frac{32}{3} + \\frac{28}{3} = 20$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You set $3x - 4 = 0$ and then divided the wrong way, which gave $x = \\frac{3}{4}$ instead of $\\frac{4}{3}$. Substituting it back gives $\\frac{69}{8}$, not 20."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored with the signs swapped, as $(3x + 4)(2x - 5)$. That is the factoring of $6x^2 - 7x - 20$, so you found the positive root of a nearby equation with the sign of the $x$ term flipped. Substituting it back gives 55, not 20."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You dropped the $7x$ term and solved $6x^2 = 20$, which gives $x^2 = \\frac{10}{3}$. Then you stopped at $x^2$ and never took the square root. Substituting it back gives 90, not 20."
+   }
+  },
+  "id": "orig-direct-solve-q-M-076a35",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-076a35",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive difference between the two solutions to the given equation?",
+  "stimulus": "While sizing a rectangular plaza, a city planner arrives at the following equation.\n\n$x^2 - 6x = 40$",
+  "choices": [
+   "$6$",
+   "$7$",
+   "$10$",
+   "$14$"
+  ],
+  "answer": "D",
+  "explanation": "Rewrite the equation in standard form as $x^2 - 6x - 40 = 0$, then factor it as $(x - 10)(x + 4) = 0$. The solutions are $x = 10$ and $x = -4$. The question asks for the gap between them, so subtract: $10 - (-4) = 14$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated the second solution as $4$ instead of $-4$ and subtracted $10 - 4$. You lost the negative root's sign, so the gap came out too small."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided by $2a$ when you meant to divide by $a$. The value $\\frac{\\sqrt{196}}{2} = 7$ is the distance from the vertex to either root. That is half the gap between the roots."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$10$ is one of the solutions. The question asks for the difference between the two solutions, not for either solution on its own."
+   }
+  },
+  "id": "orig-direct-solve-q-M-2c7c99",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-2c7c99",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How much greater is the positive solution to the given equation than the negative solution?",
+  "stimulus": "An astronomy student's calculation of a telescope's field of view leads to the following equation.\n\n$3x^2 + 7 = 115$",
+  "choices": [
+   "$6$",
+   "$12$",
+   "$36$",
+   "$12\\sqrt{3}$"
+  ],
+  "answer": "B",
+  "explanation": "Isolate $x^2$ before you take any square root. Subtract $7$ to get $3x^2 = 108$, then divide by $3$ to get $x^2 = 36$. That gives $x = 6$ or $x = -6$. The positive solution is greater by $6 - (-6) = 12$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$6$ is the positive solution. You either forgot the negative root or stopped before working out the gap between the two solutions."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "$36$ is the value of $x^2$, which you get partway through the solution. You never took the square root, and you never found the difference between the roots."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the square root of $108$ without first dividing by $3$. That gave $x = \\pm 6\\sqrt{3}$ and a gap of $12\\sqrt{3}$. Because the coefficient was left undivided, both roots are too large."
+   }
+  },
+  "id": "orig-direct-solve-q-M-b8760f",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-b8760f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive difference between the two solutions to the given equation?",
+  "stimulus": "A hydrologist modeling the water level in a reservoir arrives at the following equation.\n\n$x^2 - 4x - 9 = 0$",
+  "choices": [
+   "$\\sqrt{13}$",
+   "$4$",
+   "$2\\sqrt{13}$",
+   "$2 + \\sqrt{13}$"
+  ],
+  "answer": "C",
+  "explanation": "The quadratic doesn't factor over the integers, so use the quadratic formula: $x = \\frac{4 \\pm \\sqrt{16 + 36}}{2} = \\frac{4 \\pm 2\\sqrt{13}}{2} = 2 \\pm \\sqrt{13}$. The difference between the solutions is $(2 + \\sqrt{13}) - (2 - \\sqrt{13}) = 2\\sqrt{13}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "$\\sqrt{13}$ is how far each solution sits from $2$, the midpoint between them. The two solutions are on opposite sides of $2$, so the full gap is twice that distance."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$4$ is the sum of the solutions: $(2 + \\sqrt{13}) + (2 - \\sqrt{13}) = 4$. You added the roots when the question asks for their difference."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$2 + \\sqrt{13}$ is the positive solution by itself. You ignored the second root, so you never found how far apart the two solutions are."
+   }
+  },
+  "id": "orig-direct-solve-q-M-253237",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-253237",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is one of the solutions to the given equation?",
+  "stimulus": "A folklorist cataloguing regional versions of a trickster tale models one pattern in her data with the equation below.\n\n$x^2 - 6x + 4 = 0$",
+  "choices": [
+   "$3+\\sqrt{5}$",
+   "$3+\\sqrt{13}$",
+   "$6+\\sqrt{5}$",
+   "$-3+\\sqrt{5}$"
+  ],
+  "answer": "A",
+  "explanation": "The left side doesn't factor over the integers, so you use the quadratic formula with $a = 1$, $b = -6$ and $c = 4$: $x = \\frac{6 \\pm \\sqrt{36 - 16}}{2} = \\frac{6 \\pm \\sqrt{20}}{2} = \\frac{6 \\pm 2\\sqrt{5}}{2} = 3 \\pm \\sqrt{5}$. So $3+\\sqrt{5}$ is one of the solutions. Check in Desmos: graph $y = x^2 - 6x + 4$ and you'll see an x-intercept near $5.236$, which matches $3+\\sqrt{5}$.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You treated the constant as $-4$ instead of $+4$, so you got $36 + 16 = 52$ under the radical. $3+\\sqrt{13}$ solves $x^2 - 6x - 4 = 0$, a nearby equation with one sign flipped, not the given one."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You got as far as $\\frac{6 \\pm 2\\sqrt{5}}{2}$ but divided only the radical term by 2. Every term in the numerator has to be divided by 2, which gives $3 \\pm \\sqrt{5}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $b$ as the numerator's first term instead of $-b$. Since $b = -6$, the formula starts with $-(-6) = 6$. $-3+\\sqrt{5}$ solves $x^2 + 6x + 4 = 0$ instead."
+   }
+  },
+  "id": "orig-direct-solve-q-M-6e7f29",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-6e7f29",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which of the following is one of the",
+    "of the following is one of the solutions",
+    "the following is one of the solutions to",
+    "following is one of the solutions to the"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive solution to the given equation?",
+  "stimulus": "While modeling how far fossil pollen grains spread from a buried conifer stand, a paleobotanist arrives at the equation below.\n\n$5x^2 + 9 = 39$",
+  "choices": [
+   "$\\sqrt{6}$",
+   "$\\sqrt{30}$",
+   "$\\frac{\\sqrt{30}}{5}$",
+   "$\\sqrt{\\frac{48}{5}}$"
+  ],
+  "answer": "A",
+  "explanation": "There's no $x$ term, so you isolate $x^2$ first. Subtract 9 from both sides: $5x^2 = 30$. Divide by 5: $x^2 = 6$. Take plus or minus the square root: $x = \\pm\\sqrt{6}$. The positive solution is $\\sqrt{6}$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted 9 to get $5x^2 = 30$, then took the square root without dividing by 5. The coefficient has to come off before $x^2$ is isolated."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the square root before isolating $x^2$ and wrote $\\sqrt{5x^2}$ as $5x$. Correctly, $\\sqrt{5x^2} = \\sqrt{5}\\,x$, so divide by 5 first and then take the root."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added 9 to both sides instead of subtracting it, which gave $5x^2 = 48$. To undo $+9$ you subtract 9, which leaves $5x^2 = 30$."
+   }
+  },
+  "id": "orig-direct-solve-q-M-f10592",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-f10592",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is one of the solutions to the given equation?",
+  "stimulus": "A marine biologist estimating where a drifting kelp raft will cross a survey line works with the equation below.\n\n$2x^2 + 4x - 3 = 0$",
+  "choices": [
+   "$\\frac{-2+\\sqrt{10}}{2}$",
+   "$\\frac{2+\\sqrt{10}}{2}$",
+   "$\\frac{-2+\\sqrt{7}}{2}$",
+   "$\\frac{-2+\\sqrt{6}}{2}$"
+  ],
+  "answer": "A",
+  "explanation": "This doesn't factor cleanly, so you use the quadratic formula with $a = 2$, $b = 4$ and $c = -3$: $x = \\frac{-4 \\pm \\sqrt{16 - 4(2)(-3)}}{2(2)} = \\frac{-4 \\pm \\sqrt{40}}{4} = \\frac{-4 \\pm 2\\sqrt{10}}{4} = \\frac{-2 \\pm \\sqrt{10}}{2}$. So $\\frac{-2+\\sqrt{10}}{2}$ is one of the solutions. In Desmos, the graph of $y = 2x^2 + 4x - 3$ crosses the x-axis near $0.581$, which matches.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used $b = -4$ instead of $4$, which makes the numerator start with $+2$ after simplifying. $\\frac{2+\\sqrt{10}}{2}$ solves $2x^2 - 4x - 3 = 0$, a nearby equation with one sign flipped."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped $a$ from the discriminant and computed $16 - 4(-3) = 28$ instead of $16 - 4(2)(-3) = 40$. Then $\\frac{-4 \\pm 2\\sqrt{7}}{4}$ simplifies to this choice."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You completed the square as $2(x+1)^2 = 3$ and forgot that $2(x+1)^2$ adds an extra 2 you have to subtract back. Correctly, $2(x+1)^2 = 5$, so $(x+1)^2 = \\frac{5}{2}$, not $\\frac{3}{2}$."
+   }
+  },
+  "id": "orig-direct-solve-q-M-1f79f9",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-1f79f9",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which of the following is one of the",
+    "of the following is one of the solutions",
+    "the following is one of the solutions to",
+    "following is one of the solutions to the"
+   ],
+   "residue": 0
+  }
  }
 ]

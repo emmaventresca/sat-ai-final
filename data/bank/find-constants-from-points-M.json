@@ -205,5 +205,659 @@
    "residue": 5
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the value of $a + b$?",
+  "stimulus": "A staffing agency models the number of temporary workers it places in a year with the function $E(t) = a \\cdot b^{t}$, where $t$ is the number of years since 2020 and $a$ and $b$ are positive constants. The agency placed 120 workers in 2020 and 270 workers in 2022.",
+  "choices": [
+   "$120$",
+   "$121.125$",
+   "$121.5$",
+   "$122.25$"
+  ],
+  "answer": "C",
+  "explanation": "Start with the y-intercept. The year 2020 is $t = 0$, and $b^0 = 1$, so $E(0) = a = 120$. Next substitute the 2022 point, which is $t = 2$: $120 \\cdot b^2 = 270$, so $b^2 = 2.25$. Because $b$ is positive, $b = 1.5$. The question asks for the sum, so $a + b = 120 + 1.5 = 121.5$. In Desmos, you can enter the table (0, 120), (2, 270) and fit $y_1 \\sim a b^{x_1}$ to read off both constants.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $a = 120$ from the 2020 value and stopped there. The question asks for $a + b$, not $a$ alone, so you still need to add $b$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You got $b^2 = 2.25$ but then divided by 2 instead of taking the square root, which gives $b = 1.125$. Undoing a square takes a square root: $\\sqrt{2.25} = 1.5$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You used $2.25$ as $b$, but $2.25$ is $b^2$, the growth over two years. Take the square root to get the yearly multiplier, $b = 1.5$, before you add."
+   }
+  },
+  "id": "orig-find-constants-M-c15e8b",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-c15e8b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ where __var__ is the number of years"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $a$?",
+  "stimulus": "In a laboratory culture, the number of antibody-producing cells, in thousands, $t$ days after stimulation is modeled by the function $f(t) = a(b)^t$, where $a$ and $b$ are positive constants. The model gives $f(2) = 360$ and $f(5) = 1{,}215$.",
+  "choices": [
+   "$160$",
+   "$240$",
+   "$360$",
+   "$540$"
+  ],
+  "answer": "A",
+  "explanation": "Divide the two given values to cancel $a$: $\\frac{f(5)}{f(2)} = b^3 = \\frac{1{,}215}{360} = 3.375$, so $b = 1.5$. Then $a(1.5)^2 = 360$ gives $2.25a = 360$, so $a = 160$. It is quicker to test the choices. If $a = 160$, then $160b^2 = 360$, so $b = 1.5$, and $160(1.5)^5 = 1{,}215$. That matches the second point, so $a = 160$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$240$ is $ab$, which is $f(1)$, the product of the two constants. You divided $360$ by $1.5$ once instead of twice. The question asks for $a$ alone, which is the value at $t = 0$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You took $f(2) = 360$ as the starting value. The starting value is the output at $t = 0$, not at $t = 2$. You have to undo two factors of $b$ to get back to $a$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $b = 1.5$ but then multiplied $360$ by $1.5$ instead of dividing. That moves forward to $f(3)$ when you needed to go back to $f(0)$."
+   }
+  },
+  "id": "orig-find-constants-M-4995a0",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-4995a0",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "where __var__ and __var__ are positive constants the"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which equation defines $f$?",
+  "stimulus": "An archaeologist models the profile of an excavated earthwork with a quadratic function $f$. Here $f(x)$ is the height, in decimeters, above a datum line at a horizontal distance of $x$ meters from a marker stake. The table shows three values of $x$ and their corresponding values of $f(x)$.\n\nEarthwork Profile\n$x$ | $f(x)$\n$-2$ | $3$\n$0$ | $3$\n$3$ | $18$",
+  "choices": [
+   "$f(x) = 2x^2 + 4x + 3$",
+   "$f(x) = x^2 + 2x + 3$",
+   "$f(x) = 5x^2 - 10x + 3$",
+   "$f(x) = 2x^2 - x + 3$"
+  ],
+  "answer": "B",
+  "explanation": "All four choices have a constant term of $3$, so the point $(0, 3)$ doesn't rule anything out. Test the other two points in each choice. For $f(x) = x^2 + 2x + 3$: $f(-2) = 4 - 4 + 3 = 3$ and $f(3) = 9 + 6 + 3 = 18$. Both match, so this equation goes through all three points in the table.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "This equation gives $f(-2) = 8 - 8 + 3 = 3$, which matches, but $f(3) = 18 + 12 + 3 = 33$, not $18$. You checked only one of the nonzero points."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "When you substituted $x = -2$, you wrote $-2b$ as $+2b$. That sets up the system as if the point were $(2, 3)$, and solving it gives $a = 5$ and $b = -10$. Check this choice at $x = -2$: $20 + 20 + 3 = 43$, not $3$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "This equation gives $f(3) = 18 - 3 + 3 = 18$, which matches, but $f(-2) = 8 + 2 + 3 = 13$, not $3$. It fails the point with the negative $x$-value."
+   }
+  },
+  "id": "orig-find-constants-M-026bbc",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-026bbc",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "An agronomist models soybean yield, in bushels per acre, by $f(x) = ax^2 + bx + 40$, where $x$ is the amount of nitrogen applied, in hundreds of pounds per acre, and $a$ and $b$ are constants. The model gives $f(2) = 64$ and $f(6) = 64$.",
+  "choices": [
+   "$-2$",
+   "$4$",
+   "$12$",
+   "$16$"
+  ],
+  "answer": "D",
+  "explanation": "Substitute both points. $4a + 2b + 40 = 64$ gives $2a + b = 12$, and $36a + 6b + 40 = 64$ gives $6a + b = 4$. Subtract the first equation from the second to get $4a = -8$, so $a = -2$ and $b = 16$. To test the choice instead: $b = 16$ in $2a + b = 12$ gives $a = -2$, and $6(-2) + 16 = 4$, so it checks.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$-2$ is the value of $a$, the other constant. You solved the system correctly but reported the wrong letter."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "$4$ is the $x$-coordinate of the vertex, halfway between $x = 2$ and $x = 6$, where the outputs are equal. It locates the maximum yield, not the coefficient $b$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "$12$ is the value of $2a + b$ from the first equation. You stopped before solving the system for $b$."
+   }
+  },
+  "id": "orig-find-constants-M-e5d2be",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-e5d2be",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A paleobotanist measures pollen concentration in a sediment core. The function $p$ is defined by $p(x) = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. It models the concentration, in thousands of grains per gram, at $x$ meters below a reference layer. Negative values of $x$ are above the layer. The table shows three values of $x$ and their corresponding values of $p(x)$.\n\nPollen Concentration Model\n$x$ | $p(x)$\n$-1$ | $7$\n$0$ | $6$\n$1$ | $9$",
+  "choices": [
+   "$a = 2b$",
+   "$b = 2a$",
+   "$a + b = 9$",
+   "$c = 7$"
+  ],
+  "answer": "A",
+  "explanation": "Start with $x = 0$. Every term with $x$ drops out, so $c = 6$. At $x = 1$, $a + b + 6 = 9$, so $a + b = 3$. At $x = -1$, $(-1)^2 = 1$, so $a - b + 6 = 7$, which gives $a - b = 1$. Add the two equations to get $2a = 4$, so $a = 2$ and $b = 1$. Then $a = 2b$ is true, because $2 = 2(1)$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the right values but swapped which constant is which. The constant on $x^2$ is 2 and the constant on $x$ is 1, so $b = 2a$ would mean $1 = 4$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You set $a + b$ equal to $p(1)$, which is 9, and forgot that $c = 6$ is part of that output. Subtract $c$ first: $a + b = 3$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You took the output at $x = -1$ as the y-intercept. The y-intercept is the output at $x = 0$, so $c = 6$."
+   }
+  },
+  "id": "orig-find-constants-M-f06de6",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-f06de6",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ is defined by __var__ where __var__ __var__",
+    "is defined by __var__ where __var__ __var__ and",
+    "defined by __var__ where __var__ __var__ and __var__",
+    "by __var__ where __var__ __var__ and __var__ are",
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A printmaker tracks how deep the lines on a copper etching plate are as the plate wears. The depth, in micrometers, after $n$ printing runs is modeled by $d(n) = a \\cdot b^n$, where $a$ and $b$ are positive constants. Before any runs the lines are 200 micrometers deep, and after 2 runs they are 162 micrometers deep.",
+  "choices": [
+   "$ab = 162$",
+   "$ab = 20$",
+   "$ab = 180$",
+   "$ab = 145.8$"
+  ],
+  "answer": "C",
+  "explanation": "At $n = 0$, $b^0 = 1$, so $a = 200$. At $n = 2$, $200b^2 = 162$, so $b^2 = 0.81$ and $b = 0.9$ (because $b$ is positive). Then $ab = 200(0.9) = 180$. This is also the depth after a single run.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at $b^2 = 0.81$ and used it as $b$. That gives $200(0.81) = 162$, which is the depth after 2 runs, not $ab$. Take the square root first: $b = 0.9$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the 10% loss per run, 0.1, as $b$. But $b$ is what you multiply by each run, and when 10% is lost each time, $b = 0.9$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used 162 as the starting depth $a$. The starting value is the depth before any runs, so $a = 200$, not 162."
+   }
+  },
+  "id": "orig-find-constants-M-b314d6",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-b314d6",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A sports scientist models the height of a tossed training ball. The function $h$ is defined by $h(t) = at^2 + bt + c$, where $a$, $b$, and $c$ are constants. It gives the ball's height, in meters, $t$ seconds after release.\n\nTraining Ball Height\n$t$ (seconds) | $h(t)$ (meters)\n$0$ | $2$\n$1$ | $6$\n$2$ | $0$",
+  "choices": [
+   "$a + b = 6$",
+   "$b = -5$",
+   "$2a + b = -1$",
+   "$c = 0$"
+  ],
+  "answer": "C",
+  "explanation": "At $t = 0$, $h(0) = c$, so $c = 2$. At $t = 2$, $4a + 2b + 2 = 0$, so $4a + 2b = -2$. Divide by 2 to get $2a + b = -1$. As a check, $t = 1$ gives $a + b = 4$, so $a = -5$ and $b = 9$, and $2(-5) + 9 = -1$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You set $a + b$ equal to $h(1)$, which is 6, without subtracting $c = 2$. The correct partial sum is $a + b = 4$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$-5$ is the value of $a$, the constant on $t^2$. You gave it as $b$. The constant on $t$ is $b = 9$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You took the height where the ball lands as the y-intercept. Height 0 is reached at $t = 2$, which is a root. The y-intercept is the height at $t = 0$, so $c = 2$."
+   }
+  },
+  "id": "orig-find-constants-M-20ff15",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-20ff15",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ is defined by __var__ where __var__ __var__",
+    "is defined by __var__ where __var__ __var__ and",
+    "defined by __var__ where __var__ __var__ and __var__",
+    "by __var__ where __var__ __var__ and __var__ are",
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of $b$ in this context?",
+  "stimulus": "A meteorologist models air pressure with the function $P(h) = a(b)^h$, where $P(h)$ is the pressure, in kilopascals, at an altitude of $h$ kilometers above sea level, and $a$ and $b$ are constants. The model gives a pressure of 100 kilopascals at sea level and 64 kilopascals at an altitude of 2 kilometers.",
+  "choices": [
+   "The pressure decreases by 20% for each additional kilometer of altitude.",
+   "The pressure decreases by 80% for each additional kilometer of altitude.",
+   "The pressure decreases by 36% for each additional kilometer of altitude.",
+   "The pressure decreases by 18 kilopascals for each additional kilometer of altitude."
+  ],
+  "answer": "A",
+  "explanation": "Sea level means $h = 0$, so $a = 100$. Substituting $(2, 64)$ gives $100b^2 = 64$, so $b^2 = 0.64$ and $b = 0.8$, since $b$ must be positive. Each kilometer multiplies the pressure by 0.8, which means you keep 80% of it and lose 20% for every kilometer you climb.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $b = 0.8$ correctly but read it as the share that is lost. A multiplier of 0.8 keeps 80% each kilometer, so only 20% is lost."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at $b^2 = 0.64$. That 36% drop happens over 2 kilometers, not 1. You still need the square root to get the change per kilometer."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the total drop of 36 kilopascals and split it evenly over 2 kilometers. That gives a constant amount per kilometer, which describes a linear model. This model is exponential, so $b$ describes a constant percentage."
+   }
+  },
+  "id": "orig-find-constants-M-b28d0d",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-b28d0d",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of $a$ in this context?",
+  "stimulus": "During annealing, the average grain size in a metal sample is modeled by $G(t) = a(b)^t$, where $G(t)$ is the grain size, in micrometers, $t$ hours after annealing began, and $a$ and $b$ are positive constants. The table shows two values from the model.\n\nModeled Grain Size\n$t$ (hours) | $G(t)$ (micrometers)\n1 | 12\n3 | 27",
+  "choices": [
+   "The grain size was 12 micrometers when annealing began.",
+   "The grain size was 8 micrometers when annealing began.",
+   "The grain size was 1.5 micrometers when annealing began.",
+   "The grain size grew by 8 micrometers during each hour."
+  ],
+  "answer": "B",
+  "explanation": "Dividing the two table values gives $\\frac{ab^3}{ab} = b^2 = \\frac{27}{12} = 2.25$, so $b = 1.5$. Then $a(1.5) = 12$, so $a = 8$. Here $a$ is the value of $G(0)$, so it is the grain size, in micrometers, at the moment annealing began.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You treated the first row of the table as the starting value. That row is at $t = 1$, one hour into annealing. The starting value is at $t = 0$, which the table does not show."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "1.5 is $b$, the other constant. It is the hourly growth multiplier, not the starting size the question asks about."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You found $a = 8$ correctly but read it as a constant hourly increase, which is how a slope works in a linear model. In $a(b)^t$, $a$ is the starting value and $b$ sets the growth."
+   }
+  },
+  "id": "orig-find-constants-M-04fbea",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-04fbea",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of $c$ in this context?",
+  "stimulus": "A clinic modeled its daily number of visits for heat-related illness with $V(t) = -t^2 + bt + c$, where $t$ is the number of days since a heat wave began and $b$ and $c$ are constants. The model gives 46 visits on day 2 and 70 visits on day 6.",
+  "choices": [
+   "The model estimates 14 visits on the day the heat wave began.",
+   "The model estimates 22 visits on the day the heat wave began.",
+   "The model estimates 50 visits on the day the heat wave began.",
+   "The model estimates 22 more visits on each day than the day before."
+  ],
+  "answer": "B",
+  "explanation": "Substituting $(2, 46)$ gives $-4 + 2b + c = 46$, so $2b + c = 50$. Substituting $(6, 70)$ gives $-36 + 6b + c = 70$, so $6b + c = 106$. Subtracting the first equation from the second gives $4b = 56$, so $b = 14$ and $c = 50 - 28 = 22$. Since $V(0) = c$, $c$ is the estimated number of visits on day 0, the day the heat wave began.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "14 is $b$, the other constant you solve for along the way. The visits at $t = 0$ are given by $c$, not $b$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "50 is $2b + c$, the right side of your first simplified equation. You stopped before solving the system for $c$ alone."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You found $c = 22$ correctly but read it as a daily rate of change, the way a slope works. In this quadratic, $c$ is the value at $t = 0$, its y-intercept, and the change from day to day is not constant."
+   }
+  },
+  "id": "orig-find-constants-M-d4d058",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-d4d058",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $b - a$?",
+  "stimulus": "A labour economist models a worker's weekly earnings $E$, in dollars, after $x$ years on the job with $E(x) = ax^2 + bx + 400$, where $a$ and $b$ are constants. The model gives $E(2) = 440$ and $E(4) = 520$.",
+  "choices": [
+   "$-5$",
+   "$5$",
+   "$10$",
+   "$15$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute each point. $E(2) = 4a + 2b + 400 = 440$, so $4a + 2b = 40$, which means $2a + b = 20$. $E(4) = 16a + 4b + 400 = 520$, so $16a + 4b = 120$, which means $4a + b = 30$. Subtract the first equation from the second to get $2a = 10$, so $a = 5$. Then $b = 20 - 10 = 10$. The question asks for the gap $b - a$, which is $10 - 5 = 5$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found $a = 5$ and $b = 10$ correctly, then subtracted the wrong way round and gave $a - b$ instead of $b - a$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $b$ by itself. You solved for one constant and stopped before you found the difference the question asks for."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $a + b$. You combined the two constants, but the question asks how far apart they are, not what they add up to."
+   }
+  },
+  "id": "orig-find-constants-M-024148",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-024148",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $a - b$?",
+  "stimulus": "A county health department models the number of reported flu cases $t$ weeks after an outbreak began with $f(t) = a \\cdot b^t$, where $a$ and $b$ are positive constants. The model gives $f(0) = 80$ and $f(2) = 320$.",
+  "choices": [
+   "$76$",
+   "$78$",
+   "$80$",
+   "$82$"
+  ],
+  "answer": "B",
+  "explanation": "Set $t = 0$ first. Since $b^0 = 1$, $f(0) = a = 80$. Then $f(2) = 80b^2 = 320$, so $b^2 = 4$. Because $b$ is positive, $b = 2$. The question asks for the gap $a - b$, which is $80 - 2 = 78$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided to get $b^2 = 4$ but then treated $4$ as $b$ without taking the square root, so you got $80 - 4$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $a$, the starting number of cases. You read the constant off the y-intercept and stopped before you subtracted $b$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $a + b$. You found both constants correctly but added them when the question asks for their difference."
+   }
+  },
+  "id": "orig-find-constants-M-80ffbb",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-80ffbb",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "where __var__ and __var__ are positive constants the"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the value of $b - a$?",
+  "stimulus": "An immunologist models the antibody level $C(t)$, in units per milliliter, $t$ weeks after a booster dose with $C(t) = at^2 + bt + c$, where $a$, $b$, and $c$ are constants. The table shows three values from the model.\n\nAntibody Level After a Booster Dose\n$t$ (weeks) | $C(t)$ (units per mL)\n0 | 12\n1 | 21\n2 | 26",
+  "choices": [
+   "$-13$",
+   "$9$",
+   "$11$",
+   "$13$"
+  ],
+  "answer": "D",
+  "explanation": "Start with $t = 0$: $C(0) = c = 12$. Then $C(1) = a + b + 12 = 21$, so $a + b = 9$. And $C(2) = 4a + 2b + 12 = 26$, so $4a + 2b = 14$, which means $2a + b = 7$. Subtract $a + b = 9$ from $2a + b = 7$ to get $a = -2$, so $b = 11$. The gap $b - a$ is $11 - (-2) = 13$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found $a = -2$ and $b = 11$, then subtracted the wrong way round and gave $a - b = -13$ instead of $b - a$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is $a + b$, which comes from the $t = 1$ row partway through the solution. You stopped there instead of solving for each constant and finding their difference."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $b$ by itself. You solved for one constant but did not subtract $a$, or you lost the sign when subtracting $-2$."
+   }
+  },
+  "id": "orig-find-constants-M-f57cea",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-f57cea",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

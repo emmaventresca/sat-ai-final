@@ -238,5 +238,901 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "The relationship between $x$ and $y$ is linear and can be written as $y = mx + b$, where $m$ and $b$ are constants. What is the value of $b$?",
+  "stimulus": "An ecologist counts the frogs living in a restored wetland. The table shows the number of frogs, $y$, counted $x$ weeks after the restoration was finished.\n\nFrogs in a Restored Wetland\nWeeks, $x$ | Frogs, $y$\n2 | 31\n5 | 43\n8 | 55",
+  "keys": [
+   "23"
+  ],
+  "any_of": false,
+  "explanation": "Use two rows to find the slope: from $x = 2$ to $x = 5$, $y$ rises from 31 to 43, so $m = \\frac{43 - 31}{5 - 2} = \\frac{12}{3} = 4$. The table has no row for $x = 0$, so work backwards from a point you know. At $x = 2$, $31 = 4(2) + b$, which gives $b = 31 - 8 = 23$. Check with the last row: $4(8) + 23 = 55$. Correct.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope $m$ when the question asked for $b$."
+   },
+   {
+    "value": "31",
+    "misconception": "graph-feature-mismatch",
+    "why": "Took the first y-value in the table as the y-intercept, even though that row is $x = 2$, not $x = 0$."
+   },
+   {
+    "value": "39",
+    "misconception": "algebra-manipulation",
+    "why": "Got the sign wrong solving $31 = 8 + b$ and added: $31 + 8$."
+   },
+   {
+    "value": "30.5",
+    "misconception": "graph-feature-mismatch",
+    "why": "Found the slope as run over rise, $\\frac{3}{12} = \\frac{1}{4}$, then worked out $b = 31 - 2\\cdot\\frac{1}{4}$."
+   }
+  ],
+  "id": "orig-equation-from--M-09c3ce",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-09c3ce",
+   "structure": [],
+   "solver_answer": 23,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The relationship between $x$ and $y$ can be written as $y = kx + c$, where $k$ and $c$ are constants. What is the value of $k$?",
+  "stimulus": "A linguist tracks how many words of a new language a learner can recognise. The table shows the number of words recognised, $y$, after $x$ hours of study.\n\nVocabulary Recognised\nHours of study, $x$ | Words recognised, $y$\n3 | 61\n6 | 82\n9 | 103",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "$k$ is the slope, meaning the change in $y$ for each one-hour change in $x$. Between consecutive rows, $y$ rises by $82 - 61 = 21$ while $x$ rises by $6 - 3 = 3$. So $k = \\frac{21}{3} = 7$. The next pair of rows gives the same thing: $\\frac{103 - 82}{9 - 6} = 7$.",
+  "common_errors": [
+   {
+    "value": "21",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the change in $y$ and never divided by the change in $x$."
+   },
+   {
+    "value": "1/7",
+    "misconception": "graph-feature-mismatch",
+    "why": "Worked out the slope as run over rise, $\\frac{3}{21}$."
+   },
+   {
+    "value": ".1428",
+    "misconception": "graph-feature-mismatch",
+    "why": "Run over rise, $\\frac{3}{21}$, entered as a truncated decimal."
+   },
+   {
+    "value": ".1429",
+    "misconception": "graph-feature-mismatch",
+    "why": "Run over rise, $\\frac{3}{21}$, entered as a rounded decimal."
+   },
+   {
+    "value": "61/3",
+    "misconception": "algebra-manipulation",
+    "why": "Divided one y-value by its x-value, $\\frac{61}{3}$, as if the line went through the origin, and ignored $c$."
+   }
+  ],
+  "id": "orig-equation-from--M-e3cf1b",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-e3cf1b",
+   "structure": [],
+   "solver_answer": 7,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graph shows a line in the $xy$-plane that can be written as $y = mx + b$, where $m$ and $b$ are constants. What is the value of $m$?",
+  "stimulus": "A nutrition scientist makes a breakfast blend by adding oats to a base mix. The graph shows the total grams of fiber, $y$, in the blend when it contains $x$ cups of oats.",
+  "figure": {
+   "type": "line",
+   "caption": "Fiber in Breakfast Blend",
+   "x_label": "Cups of oats, x",
+   "y_label": "Fiber (grams), y",
+   "points": [
+    [
+     0,
+     4
+    ],
+    [
+     2,
+     16
+    ],
+    [
+     4,
+     28
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 5,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 32,
+   "y_step": 4,
+   "alt": "A straight line rising from left to right through the points (0, 4), (2, 16), and (4, 28)."
+  },
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "Pick two points that sit exactly on gridlines, such as $(0, 4)$ and $(4, 28)$. The slope is rise over run: $m = \\frac{28 - 4}{4 - 0} = \\frac{24}{4} = 6$. Each extra cup of oats adds 6 grams of fiber.",
+  "common_errors": [
+   {
+    "value": "12",
+    "misconception": "intermediate-step",
+    "why": "Used the rise from $(0, 4)$ to $(2, 16)$ and never divided by the run of 2."
+   },
+   {
+    "value": "1/6",
+    "misconception": "graph-feature-mismatch",
+    "why": "Worked out the slope as run over rise, $\\frac{4}{24}$."
+   },
+   {
+    "value": ".1666",
+    "misconception": "graph-feature-mismatch",
+    "why": "Run over rise entered as a truncated decimal."
+   },
+   {
+    "value": ".1667",
+    "misconception": "graph-feature-mismatch",
+    "why": "Run over rise entered as a rounded decimal."
+   },
+   {
+    "value": "7",
+    "misconception": "algebra-manipulation",
+    "why": "Divided a point's y-value by its x-value, $\\frac{28}{4}$, as if the line went through the origin."
+   }
+  ],
+  "id": "orig-equation-from--M-9fa489",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-9fa489",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The relationship between $x$ and $y$ can be written as $3x + ky = 60$, where $k$ is a positive constant. What is the value of $k$?",
+  "stimulus": "An agricultural scientist splits a farm's weekly irrigation water between wheat and barley fields. The table shows combinations of $x$ hectares of wheat and $y$ hectares of barley that use up the whole supply.\n\nIrrigated Hectares\nWheat, $x$ | Barley, $y$\n0 | 15\n4 | 12\n8 | 9",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "This is standard form, so read it for intercepts. When $x = 0$ the equation becomes $ky = 60$, and the table gives $y = 15$ at $x = 0$. So $15k = 60$ and $k = 4$. Check another row: $3(4) + 4(12) = 12 + 48 = 60$. Correct.",
+  "common_errors": [
+   {
+    "value": "15",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the y-intercept from the table instead of the coefficient $k$."
+   },
+   {
+    "value": "20",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the x-intercept, $\\frac{60}{3}$, instead of $k$."
+   },
+   {
+    "value": ".75",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the size of the slope, $\\frac{3}{4}$, instead of $k$."
+   },
+   {
+    "value": "9/4",
+    "misconception": "graph-feature-mismatch",
+    "why": "Found the slope as run over rise, $-\\frac{4}{3}$, then set $\\frac{3}{k} = \\frac{4}{3}$."
+   },
+   {
+    "value": "2.25",
+    "misconception": "graph-feature-mismatch",
+    "why": "Same run-over-rise slip, entered as a decimal."
+   }
+  ],
+  "id": "orig-equation-from--M-92be2f",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-92be2f",
+   "structure": [],
+   "solver_answer": 4,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The relationship between $x$ and $y$ is linear and can be written as $y - 650 = m(x - 10)$, where $m$ is a constant. What is the value of $m$?",
+  "stimulus": "At an excavation, archaeologists date the sediment at several depths. The table shows the estimated age, $y$, in years, of sediment found $x$ centimeters below the surface.\n\nSediment Age by Depth\nDepth (cm), $x$ | Age (years), $y$\n10 | 650\n25 | 1,100\n40 | 1,550",
+  "keys": [
+   "30"
+  ],
+  "any_of": false,
+  "explanation": "The equation is in point-slope form through $(10, 650)$, so $m$ is the slope. Using the first two rows, $m = \\frac{1{,}100 - 650}{25 - 10} = \\frac{450}{15} = 30$. Check: $\\frac{1{,}550 - 1{,}100}{40 - 25} = 30$. Sediment ages by 30 years for each extra centimeter of depth.",
+  "common_errors": [
+   {
+    "value": "450",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the change in age and never divided by the change in depth."
+   },
+   {
+    "value": "1/30",
+    "misconception": "graph-feature-mismatch",
+    "why": "Worked out the slope as run over rise, $\\frac{15}{450}$."
+   },
+   {
+    "value": ".0333",
+    "misconception": "graph-feature-mismatch",
+    "why": "Run over rise entered as a decimal."
+   },
+   {
+    "value": "65",
+    "misconception": "algebra-manipulation",
+    "why": "Divided $650$ by $10$, as if the line went through the origin."
+   }
+  ],
+  "id": "orig-equation-from--M-af5da2",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-af5da2",
+   "structure": [],
+   "solver_answer": 30,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graph can be written as $y = b - kx$, where $b$ and $k$ are positive constants. What is the value of $k$?",
+  "stimulus": "An ornithologist models the fat reserve of a migrating goose during a long nonstop flight. The graph shows the goose's fat reserve, $y$, in grams, after $x$ hours of flight.",
+  "figure": {
+   "type": "line",
+   "caption": "Goose Fat Reserve During Flight",
+   "x_label": "Hours of flight, x",
+   "y_label": "Fat reserve (grams), y",
+   "points": [
+    [
+     0,
+     48
+    ],
+    [
+     6,
+     30
+    ],
+    [
+     16,
+     0
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 18,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 54,
+   "y_step": 6,
+   "alt": "A straight line falling from left to right through the points (0, 48), (6, 30), and (16, 0)."
+  },
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "Pick two points that sit exactly on gridlines, such as $(0, 48)$ and $(16, 0)$. The slope is $\\frac{0 - 48}{16 - 0} = -3$. The equation $y = b - kx$ already contains the minus sign, so the slope $-3$ means $k = 3$. The goose burns 3 grams of fat per hour.",
+  "common_errors": [
+   {
+    "value": "-3",
+    "misconception": "graph-feature-mismatch",
+    "why": "Entered the slope itself, even though the equation already supplies the minus sign, so the positive constant $k$ is 3."
+   },
+   {
+    "value": "1/3",
+    "misconception": "graph-feature-mismatch",
+    "why": "Worked out the slope as run over rise, $\\frac{16}{48}$."
+   },
+   {
+    "value": "18",
+    "misconception": "intermediate-step",
+    "why": "Found the drop from 48 to 30 and never divided by the 6 hours."
+   },
+   {
+    "value": "16",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the x-intercept, the hour the reserve runs out, instead of $k$."
+   },
+   {
+    "value": "48",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $b$, the starting reserve, instead of $k$."
+   }
+  ],
+  "id": "orig-equation-from--M-d72057",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-d72057",
+   "structure": [],
+   "solver_answer": 3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The relationship between $x$ and $y$ is linear and can be written as $y - mx = c$, where $m$ and $c$ are constants. What is the value of $c$?",
+  "stimulus": "A cartographer is drawing an elevation profile for a hiking trail. The table shows the elevation, $y$, in meters, at points on the trail that are $x$ centimeters along the map from the trailhead marker.\n\nTrail Elevation\nMap distance (cm), $x$ | Elevation (m), $y$\n2 | 310\n5 | 370\n9 | 450",
+  "keys": [
+   "270"
+  ],
+  "any_of": false,
+  "explanation": "Rewritten, $y - mx = c$ is just $y = mx + c$, so $c$ is the y-intercept. Slope: $m = \\frac{370 - 310}{5 - 2} = \\frac{60}{3} = 20$. Put in the point $(2, 310)$: $c = 310 - 20(2) = 270$. Check with the last row: $450 - 20(9) = 270$. Correct.",
+  "common_errors": [
+   {
+    "value": "20",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope $m$ instead of $c$."
+   },
+   {
+    "value": "310",
+    "misconception": "graph-feature-mismatch",
+    "why": "Took the first elevation in the table as the intercept, even though that row is $x = 2$."
+   },
+   {
+    "value": "350",
+    "misconception": "algebra-manipulation",
+    "why": "Got the sign wrong and added: $310 + 20(2)$."
+   },
+   {
+    "value": "309.9",
+    "misconception": "graph-feature-mismatch",
+    "why": "Found the slope as run over rise, $\\frac{3}{60} = 0.05$, then worked out $c = 310 - 0.05(2)$."
+   }
+  ],
+  "id": "orig-equation-from--M-c5e345",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-c5e345",
+   "structure": [],
+   "solver_answer": 270,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The line shown can be written as $y = mx + c$, where $m$ and $c$ are constants. What is the value of $c$?",
+  "stimulus": "A sports scientist records an athlete's heart rate at several treadmill speeds. The graph shows the athlete's heart rate, $y$, in beats per minute, at a speed of $x$ kilometers per hour.",
+  "figure": {
+   "type": "line",
+   "caption": "Heart Rate at Treadmill Speeds",
+   "x_label": "Speed (km/h), x",
+   "y_label": "Heart rate (beats per minute), y",
+   "points": [
+    [
+     4,
+     110
+    ],
+    [
+     8,
+     150
+    ],
+    [
+     12,
+     190
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 14,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 200,
+   "y_step": 10,
+   "alt": "A straight line segment rising from left to right through the points (4, 110), (8, 150), and (12, 190). The segment does not extend to x = 0."
+  },
+  "keys": [
+   "70"
+  ],
+  "any_of": false,
+  "explanation": "The drawn line stops before $x = 0$, so you can't read $c$ off the graph. Calculate it. Slope: $m = \\frac{150 - 110}{8 - 4} = \\frac{40}{4} = 10$. Put in $(4, 110)$: $110 = 10(4) + c$, so $c = 70$. Check: $10(12) + 70 = 190$. Correct.",
+  "common_errors": [
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope $m$ instead of $c$."
+   },
+   {
+    "value": "110",
+    "misconception": "graph-feature-mismatch",
+    "why": "Took the left end of the drawn segment as the y-intercept, even though it sits at $x = 4$."
+   },
+   {
+    "value": "150",
+    "misconception": "algebra-manipulation",
+    "why": "Got the sign wrong solving $110 = 40 + c$ and added: $110 + 40$."
+   },
+   {
+    "value": "109.6",
+    "misconception": "graph-feature-mismatch",
+    "why": "Found the slope as run over rise, $\\frac{4}{40} = 0.1$, then worked out $c = 110 - 0.1(4)$."
+   }
+  ],
+  "id": "orig-equation-from--M-c11eb3",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-c11eb3",
+   "structure": [],
+   "solver_answer": 70,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "shown can be written as __var__ where __var__"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "The equation $y = mx + b$, where $m$ and $b$ are constants, represents this relationship. What is the value of $b$?",
+  "stimulus": "An ornithologist weighed a songbird nestling at several ages. The table shows the nestling's mass $y$, in grams, $x$ days after hatching. The relationship between $x$ and $y$ is linear.\n\nNestling Mass by Age\nDays after hatching, $x$ | Mass (grams), $y$\n2 | 46\n5 | 61\n8 | 76",
+  "keys": [
+   "36"
+  ],
+  "any_of": false,
+  "explanation": "Use two rows to find the slope: from $x = 2$ to $x = 5$, $y$ rises from 46 to 61, so $m = \\frac{61 - 46}{5 - 2} = \\frac{15}{3} = 5$. Then substitute one point into $y = 5x + b$: $46 = 5(2) + b$, so $b = 36$. Check it with another row: $5(8) + 36 = 76$. The table never shows $x = 0$, so the intercept has to be worked out. You can't read it from the first row.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope $m$ when the question asks for $b$."
+   },
+   {
+    "value": "46",
+    "misconception": "graph-feature-mismatch",
+    "why": "Took the first row's $y$-value as the $y$-intercept, even though that row has $x = 2$, not $x = 0$."
+   },
+   {
+    "value": "56",
+    "misconception": "algebra-manipulation",
+    "why": "Added $5(2)$ to 46 when solving $46 = 10 + b$, when it should have been subtracted."
+   },
+   {
+    "value": "44",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted $x = 2$ from 46 without multiplying it by the slope first."
+   }
+  ],
+  "id": "orig-equation-from--M-a6287c",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-a6287c",
+   "structure": [],
+   "solver_answer": 36,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graph can be represented by the equation $3x + ky = 24$, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "An archaeology crew is removing a pile of excavated soil from a dig site. The graph shows the volume of soil $y$, in cubic meters, that remains $x$ hours after the crew starts removing it.",
+  "figure": {
+   "type": "line",
+   "caption": "Soil Remaining at the Dig Site",
+   "x_label": "Hours since removal began",
+   "y_label": "Soil remaining (cubic meters)",
+   "points": [
+    [
+     0,
+     6
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     8,
+     0
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 8,
+   "y_step": 1,
+   "alt": "A straight line falling from the point (0, 6) through (4, 3) to the point (8, 0)."
+  },
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "Read a point off the graph and substitute it. The $y$-intercept is the point $(0, 6)$, which gives $3(0) + k(6) = 24$, so $6k = 24$ and $k = 4$. Check it with the $x$-intercept $(8, 0)$: $3(8) + 4(0) = 24$. The equation is already in standard form, so you don't need to rewrite it in slope-intercept form.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the $y$-intercept read from the graph instead of the constant $k$."
+   },
+   {
+    "value": "3",
+    "misconception": "graph-feature-mismatch",
+    "why": "Read the $x$-intercept as $(0, 8)$, so solved $8k = 24$."
+   },
+   {
+    "value": "8",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the $x$-intercept, the time when the soil runs out, instead of $k$."
+   }
+  ],
+  "id": "orig-equation-from--M-d92ef4",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-d92ef4",
+   "structure": [],
+   "solver_answer": 4,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "by the equation __var__ where __var__ is a",
+    "the equation __var__ where __var__ is a constant",
+    "equation __var__ where __var__ is a constant what"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "The equation $y = 584 - kx$, where $k$ is a constant, represents this relationship. What is the value of $k$?",
+  "stimulus": "A tunnel-boring machine is digging a road tunnel. The table shows the length of tunnel $y$, in meters, still left to dig $x$ days after the engineers recorded the first measurement. The relationship between $x$ and $y$ is linear.\n\nTunnel Length Left to Dig\nDays, $x$ | Meters remaining, $y$\n3 | 548\n7 | 500\n12 | 440",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "The length remaining drops by $548 - 500 = 48$ meters over $7 - 3 = 4$ days, which is 12 meters per day. In $y = 584 - kx$, the number $k$ is that daily drop, so $k = 12$. Check it with the first row: $584 - 12(3) = 548$. Check it with the last row: $584 - 12(12) = 440$.",
+  "common_errors": [
+   {
+    "value": "1/12",
+    "misconception": "graph-feature-mismatch",
+    "why": "Found the slope as run over rise, $\\frac{4}{48}$, instead of rise over run."
+   },
+   {
+    "value": "36",
+    "misconception": "intermediate-step",
+    "why": "Substituted $(3, 548)$ and stopped at $3k = 36$ without dividing by 3."
+   },
+   {
+    "value": "48",
+    "misconception": "intermediate-step",
+    "why": "Used the change in $y$ between two rows without dividing by the change in $x$."
+   }
+  ],
+  "id": "orig-equation-from--M-e18ba6",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-e18ba6",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the equation __var__ where __var__ is a constant"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "The relationship can be represented by the equation $ax - 2y = -56$, where $a$ is a constant. What is the value of $a$?",
+  "stimulus": "An immunologist tracked the antibody level in a volunteer after a booster vaccine. The table shows the antibody concentration $y$, in units per milliliter, $x$ days after the booster. The relationship between $x$ and $y$ is linear.\n\nAntibody Concentration After Booster\nDays, $x$ | Concentration (units/mL), $y$\n2 | 42\n5 | 63\n9 | 91",
+  "keys": [
+   "14"
+  ],
+  "any_of": false,
+  "explanation": "Substitute a row into the equation. Using $(2, 42)$: $2a - 2(42) = -56$, so $2a - 84 = -56$, $2a = 28$, and $a = 14$. Check it with $(5, 63)$: $70 - 126 = -56$. The slope of the line is 7, but the coefficient on $y$ is $-2$, so $a$ has to be twice the slope.",
+  "common_errors": [
+   {
+    "value": "7",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the slope, $\\frac{63 - 42}{5 - 2} = 7$, and gave it as $a$ without accounting for the $-2y$ term."
+   },
+   {
+    "value": "1/7",
+    "misconception": "graph-feature-mismatch",
+    "why": "Found the slope as run over rise, $\\frac{3}{21}$."
+   },
+   {
+    "value": "-14",
+    "misconception": "algebra-manipulation",
+    "why": "Made a sign error when moving $-84$ across, solving $2a = -56 - (-84)$ as $2a = -28$."
+   }
+  ],
+  "id": "orig-equation-from--M-72c7d8",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-72c7d8",
+   "structure": [],
+   "solver_answer": 14,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "by the equation __var__ where __var__ is a",
+    "the equation __var__ where __var__ is a constant",
+    "equation __var__ where __var__ is a constant what"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "The graph can be represented by the equation $y = kx + 4$, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "A textile historian rebuilt a nineteenth-century hand loom and timed a weaver using it. The graph shows the total length of cloth $y$, in meters, on the loom's cloth beam $x$ hours after the weaver started.",
+  "figure": {
+   "type": "line",
+   "caption": "Cloth on the Beam During Weaving",
+   "x_label": "Hours of weaving",
+   "y_label": "Cloth on beam (meters)",
+   "points": [
+    [
+     0,
+     4
+    ],
+    [
+     2,
+     10
+    ],
+    [
+     4,
+     16
+    ],
+    [
+     6,
+     22
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 8,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 24,
+   "y_step": 2,
+   "alt": "A straight line rising through the points (0, 4), (2, 10), (4, 16), and (6, 22)."
+  },
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "Take two points that sit on gridlines, such as $(0, 4)$ and $(2, 10)$. The slope is $\\frac{10 - 4}{2 - 0} = 3$. The equation already shows the intercept 4, which matches $(0, 4)$ on the graph, so $k$ is the slope, 3.",
+  "common_errors": [
+   {
+    "value": "1/3",
+    "misconception": "graph-feature-mismatch",
+    "why": "Found the slope as run over rise, $\\frac{2}{6}$."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Divided a point's $y$-value by its $x$-value, $\\frac{10}{2}$, without subtracting the starting length of 4."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the $y$-intercept instead of the slope."
+   }
+  ],
+  "id": "orig-equation-from--M-11ccd8",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-11ccd8",
+   "structure": [],
+   "solver_answer": 3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "by the equation __var__ where __var__ is a",
+    "the equation __var__ where __var__ is a constant",
+    "equation __var__ where __var__ is a constant what"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "The relationship can be represented by the equation $x + 2y = c$, where $c$ is a constant. What is the value of $c$?",
+  "stimulus": "A county health department launched an online booking system for its walk-in clinic. The table shows the average wait time $y$, in minutes, $x$ weeks after the launch. The relationship between $x$ and $y$ is linear.\n\nAverage Clinic Wait Time\nWeeks after launch, $x$ | Wait time (minutes), $y$\n4 | 31\n10 | 28\n16 | 25",
+  "keys": [
+   "66"
+  ],
+  "any_of": false,
+  "explanation": "Every row has to satisfy the equation, so substitute one: $4 + 2(31) = 66$. Check it with the other two rows: $10 + 2(28) = 66$ and $16 + 2(25) = 66$. All three rows give 66, so $c = 66$.",
+  "common_errors": [
+   {
+    "value": "35",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the coefficient 2 and computed $4 + 31$."
+   },
+   {
+    "value": "33",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the $y$-intercept, the wait time at week 0, instead of $c$, which is twice that value."
+   },
+   {
+    "value": "39",
+    "misconception": "missed-condition",
+    "why": "Found $c$ from the first row as $x + y$ plus the change in $y$, a value that fails when checked against the other rows."
+   }
+  ],
+  "id": "orig-equation-from--M-c7a7be",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-c7a7be",
+   "structure": [],
+   "solver_answer": 66,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "by the equation __var__ where __var__ is a",
+    "the equation __var__ where __var__ is a constant",
+    "equation __var__ where __var__ is a constant what"
+   ],
+   "residue": 1
+  }
  }
 ]

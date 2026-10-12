@@ -204,5 +204,197 @@
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which equation defines $f$?",
+  "stimulus": "A survey map lists the elevation along a straight trail. The linear function $f$ gives the elevation, in meters, of a point on the trail $x$ kilometers from the trailhead. The table shows three values of $f$.\n\nTrail Elevation\n$x$ (km) | $f(x)$ (m)\n0 | 350\n2 | 410\n4 | 470",
+  "choices": [
+   "$f(x) = 30x + 350$",
+   "$f(x) = 60x + 350$",
+   "$f(x) = \\frac{1}{30}x + 350$",
+   "$f(x) = 350x + 30$"
+  ],
+  "answer": "A",
+  "explanation": "From one row to the next, $x$ goes up by 2 and $f(x)$ goes up by 60, so the slope is $\\frac{60}{2} = 30$ meters per kilometer. The row where $x = 0$ gives the intercept, 350. So $f(x) = 30x + 350$. A check with the last row: $30(4) + 350 = 470$.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You found that the elevation goes up by 60 from one row to the next, but you stopped there. That rise happens over 2 kilometers, so you still need to divide by 2 to get the change per kilometer."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the change in $x$ by the change in $f(x)$, which gives $\\frac{2}{60}$. Slope is the change in output over the change in input, which is $\\frac{60}{2}$."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You switched the slope and the intercept. The starting elevation of 350 is $b$, and the rate of 30 meters per kilometer is $m$."
+   }
+  },
+  "id": "orig-equation-from--E-365244",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--E-365244",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation correctly expresses $d$ in terms of $t$?",
+  "stimulus": "During a dry season, the water depth in a marsh pond falls by 3 centimeters each week. After 4 weeks, the depth is 72 centimeters. The depth $d$, in centimeters, after $t$ weeks is a linear function of $t$.",
+  "choices": [
+   "$d = -3t + 72$",
+   "$d = -3t + 84$",
+   "$d = 3t + 60$",
+   "$d = -3t + 60$"
+  ],
+  "answer": "B",
+  "explanation": "The depth falls 3 centimeters per week, so $m = -3$. Put the point $(4, 72)$ into $d = -3t + b$: $72 = -12 + b$, so $b = 84$. That gives $d = -3t + 84$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used 72 as the starting depth, but 72 is the depth after 4 weeks, not at $t = 0$. This equation fits only if the pond started at 72 centimeters."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You made the slope positive. The pond is losing water, so the depth goes down over time and the slope has to be negative."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted 12 from 72 when you should have added it. From $72 = -12 + b$, you add 12 to both sides and get $b = 84$."
+   }
+  },
+  "id": "orig-equation-from--E-f2b7d4",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--E-f2b7d4",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The total cost $C$, in dollars, of an order of $x$ prints can be written as $C = mx + b$, where $m$ and $b$ are constants. What is the value of $m + b$?",
+  "stimulus": "A printmaking studio charges a fixed setup fee plus a constant price per print. An order of 20 prints costs $70, and an order of 50 prints costs $130.",
+  "choices": [
+   "2",
+   "30",
+   "32",
+   "60.5"
+  ],
+  "answer": "C",
+  "explanation": "The slope is $\\frac{130 - 70}{50 - 20} = \\frac{60}{30} = 2$ dollars per print. Substitute $(20, 70)$: $70 = 2(20) + b$, so $b = 30$. The question asks for the sum, so $m + b = 2 + 30 = 32$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $m$ alone, the price per print. The question asks for $m + b$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $b$ alone, the setup fee. You still need to add the slope to get $m + b$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the change in prints by the change in cost and got $m = \\frac{30}{60} = 0.5$. With that slope, $b$ becomes 60. Slope is the change in cost over the change in prints."
+   }
+  },
+  "id": "orig-equation-from--E-6d84ca",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--E-6d84ca",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $f$ is defined by $f(x) = mx + b$, where $m$ and $b$ are constants. What is the value of $b$?",
+  "stimulus": "At an excavation site, the estimated age of a soil layer, in years, is a linear function $f$ of the layer's depth $x$, in centimeters, below the surface. The table shows three values of $f$.\n\nEstimated Age of Soil Layers\n$x$ (cm) | $f(x)$ (years)\n10 | 400\n30 | 1,000\n50 | 1,600",
+  "choices": [
+   "30",
+   "100",
+   "400",
+   "700"
+  ],
+  "answer": "B",
+  "explanation": "The slope is $\\frac{1{,}000 - 400}{30 - 10} = \\frac{600}{20} = 30$ years per centimeter. Substitute $(10, 400)$: $400 = 30(10) + b$, so $b = 100$. The last row checks out: $30(50) + 100 = 1{,}600$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the slope $m$, the number of years per centimeter. The question asks for the constant $b$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You read the first row's output as the intercept, but that row has $x = 10$, not $x = 0$. The intercept is the value of $f$ when $x$ is 0."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted in a different order on the top and bottom, $\\frac{1{,}000 - 400}{10 - 30}$. That gave you a slope of $-30$, and then $b = 700$. Keep the same order of points in both the numerator and the denominator."
+   }
+  },
+  "id": "orig-equation-from--E-0b67d8",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--E-0b67d8",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

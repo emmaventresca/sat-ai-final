@@ -1,0 +1,1193 @@
+[
+ {
+  "stem": "After 6 days, the turtle's distance $d$, in kilometers, from the beach satisfies $a \\le d \\le b$. What is the value of $b$?",
+  "stimulus": "When tracking began, a tagged sea turtle was 40 kilometers from its nesting beach. Each day after that, it swam at least 18 kilometers but no more than 25 kilometers farther from the beach.",
+  "keys": [
+   "190"
+  ],
+  "any_of": false,
+  "explanation": "\"At least 18\" means the daily distance is $\\ge 18$, and \"no more than 25\" means it is $\\le 25$. The upper end is the largest possible distance. In 6 days the turtle swims at most $6(25) = 150$ kilometers farther. Add the 40 kilometers it started with: $b = 40 + 150 = 190$. Both ends get the starting value, so $a = 40 + 6(18) = 148$.",
+  "common_errors": [
+   {
+    "value": "150",
+    "misconception": "intermediate-step",
+    "why": "Scaled the daily maximum, $6(25)$, but forgot to add the starting 40 km."
+   },
+   {
+    "value": "148",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the minimum daily distance and gave the lower bound $a$ instead of $b$."
+   },
+   {
+    "value": "65",
+    "misconception": "algebra-manipulation",
+    "why": "Added the daily maximum to the start, $40 + 25$, without multiplying by the 6 days."
+   },
+   {
+    "value": "108",
+    "misconception": "intermediate-step",
+    "why": "Scaled the minimum, $6(18)$, and forgot the starting distance as well."
+   }
+  ],
+  "id": "orig-compound-range-M-5193e7",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-5193e7",
+   "structure": [],
+   "solver_answer": "190",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest integer number of milliliters of ink that an edition of 12 prints could use?",
+  "stimulus": "Each print in a printmaker's linocut edition uses more than 4 milliliters but less than 7 milliliters of ink.",
+  "keys": [
+   "83"
+  ],
+  "any_of": false,
+  "explanation": "\"More than\" and \"less than\" are both strict, so each print uses $4 < x < 7$ milliliters. Multiply both ends by 12 to get the total: $48 < t < 84$. Since $t$ must be less than 84, the greatest integer it can be is 83. That total is possible, because each print would use $\\tfrac{83}{12} \\approx 6.92$ milliliters, which is less than 7.",
+  "common_errors": [
+   {
+    "value": "84",
+    "misconception": "complement-or-direction-flip",
+    "why": "Read \"less than 7\" as $\\le 7$, so let the total reach $12(7)$."
+   },
+   {
+    "value": "6",
+    "misconception": "intermediate-step",
+    "why": "Found the greatest integer for a single print and never scaled to 12 prints."
+   },
+   {
+    "value": "49",
+    "misconception": "complement-or-direction-flip",
+    "why": "Found the least integer total, just above $12(4) = 48$, instead of the greatest."
+   },
+   {
+    "value": "48",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the lower end of the range, $12(4)$."
+   }
+  ],
+  "id": "orig-compound-range-M-b2bc50",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-b2bc50",
+   "structure": [],
+   "solver_answer": "83",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "After 8 more days, the clinic's total number of vaccinations $v$ for the month satisfies $a \\le v \\le b$. What is the value of $a$?",
+  "stimulus": "A county clinic gives at least 30 but no more than 45 vaccinations per day. It has already given 200 vaccinations so far this month.",
+  "keys": [
+   "440"
+  ],
+  "any_of": false,
+  "explanation": "\"At least 30\" is the minimum, so the lower bound uses 30. Over 8 days the clinic gives at least $8(30) = 240$ vaccinations. Add the 200 already given: $a = 200 + 240 = 440$. The upper bound works the same way: $b = 200 + 8(45) = 560$.",
+  "common_errors": [
+   {
+    "value": "240",
+    "misconception": "intermediate-step",
+    "why": "Multiplied the minimum by 8 but did not add the 200 already given."
+   },
+   {
+    "value": "560",
+    "misconception": "complement-or-direction-flip",
+    "why": "Swapped minimum and maximum and gave the upper bound $b$."
+   },
+   {
+    "value": "230",
+    "misconception": "algebra-manipulation",
+    "why": "Added the daily minimum to 200 without multiplying it by 8 days."
+   }
+  ],
+  "id": "orig-compound-range-M-3bf8f6",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-3bf8f6",
+   "structure": [],
+   "solver_answer": "440",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is one possible total number of aftershocks the station recorded over the 4 days?",
+  "stimulus": "On each of 4 consecutive days after an earthquake, a seismic station recorded at least 16 but no more than 21 aftershocks.",
+  "keys": [
+   "64",
+   "65",
+   "66",
+   "67",
+   "68",
+   "69",
+   "70",
+   "71",
+   "72",
+   "73",
+   "74",
+   "75",
+   "76",
+   "77",
+   "78",
+   "79",
+   "80",
+   "81",
+   "82",
+   "83",
+   "84"
+  ],
+  "any_of": true,
+  "explanation": "Each day the count $n$ satisfies $16 \\le n \\le 21$. Multiply both ends by 4 to get the range for the 4-day total: $64 \\le T \\le 84$. Any whole number from 64 to 84 can happen. For example, 16 on every day gives 64, and 21 on every day gives 84.",
+  "common_errors": [
+   {
+    "value": "21",
+    "misconception": "intermediate-step",
+    "why": "Gave a count for a single day without scaling it to 4 days."
+   },
+   {
+    "value": "16",
+    "misconception": "intermediate-step",
+    "why": "Gave the single-day minimum instead of a 4-day total."
+   },
+   {
+    "value": "37",
+    "misconception": "algebra-manipulation",
+    "why": "Added the two bounds, $16 + 21$, instead of multiplying each by 4."
+   },
+   {
+    "value": "88",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 22 by 4, reading \"no more than 21\" as strictly less than 22 and then using 22 as if it were included."
+   }
+  ],
+  "id": "orig-compound-range-M-362e2d",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-362e2d",
+   "structure": [],
+   "solver_answer": "80",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest number of days the weaver could have needed to produce a 60-meter order?",
+  "stimulus": "Ledgers from an eighteenth-century workshop show that a hand-loom weaver produced at least 3 meters but no more than 5 meters of linen each day.",
+  "keys": [
+   "20"
+  ],
+  "any_of": false,
+  "explanation": "The daily output $r$ satisfies $3 \\le r \\le 5$. The most days are needed when the weaver works at the slowest rate, which is the minimum of 3 meters per day. $\\frac{60}{3} = 20$ days. At the fastest rate the order would take only $\\frac{60}{5} = 12$ days.",
+  "common_errors": [
+   {
+    "value": "12",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the maximum daily output, which gives the fewest days rather than the most."
+   },
+   {
+    "value": "180",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 60 by 3 instead of dividing."
+   },
+   {
+    "value": "15",
+    "misconception": "misread-given",
+    "why": "Used the midpoint rate of 4 meters per day instead of a bound of the range."
+   }
+  ],
+  "id": "orig-compound-range-M-cb0efa",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-cb0efa",
+   "structure": [],
+   "solver_answer": "20",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A second marker is exactly 45 meters higher than the first. Its elevation $h$, in meters, satisfies $a < h < b$. What is the value of $a$?",
+  "stimulus": "On a topographic map, a survey marker lies between two contour lines, so its elevation is more than 340 meters but less than 360 meters.",
+  "keys": [
+   "385"
+  ],
+  "any_of": false,
+  "explanation": "The first marker's elevation $e$ satisfies $340 < e < 360$. The second marker is 45 meters higher, so add 45 to both ends: $385 < h < 405$. The lower bound is $a = 385$.",
+  "common_errors": [
+   {
+    "value": "405",
+    "misconception": "complement-or-direction-flip",
+    "why": "Gave the upper bound $b$ instead of the lower bound."
+   },
+   {
+    "value": "340",
+    "misconception": "intermediate-step",
+    "why": "Gave the first marker's lower bound without adding the 45 meters."
+   },
+   {
+    "value": "295",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted 45 instead of adding it."
+   },
+   {
+    "value": "386",
+    "misconception": "algebra-manipulation",
+    "why": "Turned the strict bound into the next integer, but $a$ is the bound itself."
+   }
+  ],
+  "id": "orig-compound-range-M-d332d4",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-d332d4",
+   "structure": [],
+   "solver_answer": "385",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A section of the trunk contains 20 rings. Its thickness $T$, in millimeters, satisfies $a \\le T \\le b$. What is the value of $b - a$?",
+  "stimulus": "In a fossilized tree trunk, each growth ring is at least 1.5 millimeters but no more than 4 millimeters thick.",
+  "keys": [
+   "50"
+  ],
+  "any_of": false,
+  "explanation": "Each ring's thickness satisfies $1.5 \\le r \\le 4$. Multiply both ends by 20: $a = 20(1.5) = 30$ and $b = 20(4) = 80$. So $b - a = 80 - 30 = 50$.",
+  "common_errors": [
+   {
+    "value": "2.5",
+    "misconception": "intermediate-step",
+    "why": "Found the width of the range for a single ring and never scaled it by 20."
+   },
+   {
+    "value": "80",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $b$ alone instead of the difference $b - a$."
+   },
+   {
+    "value": "110",
+    "misconception": "algebra-manipulation",
+    "why": "Added the bounds, $30 + 80$, instead of subtracting."
+   },
+   {
+    "value": "48.5",
+    "misconception": "algebra-manipulation",
+    "why": "Scaled only the upper end, $80 - 1.5$, and forgot to scale the lower end."
+   }
+  ],
+  "id": "orig-compound-range-M-a4aa9a",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-a4aa9a",
+   "structure": [],
+   "solver_answer": "50",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Using $F = \\frac{9}{5}C + 32$, the forecast temperature $F$, in degrees Fahrenheit, satisfies $a \\le F \\le b$. What is the value of $b$?",
+  "stimulus": "A meteorologist forecasts that tomorrow's temperature will be at least $5^\\circ\\text{C}$ but no more than $20^\\circ\\text{C}$.",
+  "keys": [
+   "68"
+  ],
+  "any_of": false,
+  "explanation": "The Celsius temperature satisfies $5 \\le C \\le 20$. Apply the conversion to both ends. The upper end is $\\frac{9}{5}(20) + 32 = 36 + 32 = 68$, so $b = 68$. The lower end is $\\frac{9}{5}(5) + 32 = 41$.",
+  "common_errors": [
+   {
+    "value": "36",
+    "misconception": "intermediate-step",
+    "why": "Multiplied 20 by $\\frac{9}{5}$ but forgot to add 32."
+   },
+   {
+    "value": "41",
+    "misconception": "complement-or-direction-flip",
+    "why": "Converted the minimum and gave the lower bound $a$."
+   },
+   {
+    "value": "20",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the Celsius maximum without converting it."
+   },
+   {
+    "value": "52",
+    "misconception": "algebra-manipulation",
+    "why": "Added 32 to 20 without multiplying by $\\frac{9}{5}$."
+   }
+  ],
+  "id": "orig-compound-range-M-db2442",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-db2442",
+   "structure": [],
+   "solver_answer": "68",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A paleobotanist's collection holds 40 fossil leaf specimens. Each field day adds at least 6 but no more than 9 new specimens. After 5 more field days, the total number of specimens $T$ satisfies $a \\le T \\le b$. What is the value of $b$?",
+  "stimulus": null,
+  "keys": [
+   "85"
+  ],
+  "any_of": false,
+  "explanation": "\"No more than 9\" sets the maximum per day. Over 5 days, the most the collection can gain is $5(9) = 45$ specimens. Add the 40 already in the collection: $b = 40 + 45 = 85$. The lower end works the same way, $40 + 5(6) = 70$, so $70 \\le T \\le 85$.",
+  "common_errors": [
+   {
+    "value": "45",
+    "misconception": "intermediate-step",
+    "why": "Scaled the daily maximum to 5 days but forgot to add the 40 specimens already in the collection."
+   },
+   {
+    "value": "70",
+    "misconception": "wrong-target-quantity",
+    "why": "Swapped minimum and maximum and gave the lower bound $a$ instead of $b$."
+   },
+   {
+    "value": "49",
+    "misconception": "algebra-manipulation",
+    "why": "Added one day's maximum, 9, to 40 without multiplying by the 5 days."
+   }
+  ],
+  "id": "orig-compound-range-M-dcd638",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-dcd638",
+   "structure": [],
+   "solver_answer": 85,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A printmaker uses more than 3 milliliters but less than 5 milliliters of ink for each print. For one run, they make 12 prints and also use 20 milliliters of ink to clean the roller. If $T$ is the total amount of ink, in milliliters, used for the run, what is the greatest integer value of $T$ that is possible?",
+  "stimulus": null,
+  "keys": [
+   "79"
+  ],
+  "any_of": false,
+  "explanation": "Scale both ends by 12 prints and add the 20 mL for cleaning to both: $20 + 12(3) < T < 20 + 12(5)$, so $56 < T < 80$. Both ends are strict because the words say \"more than\" and \"less than.\" $T$ cannot equal 80, so the greatest integer value is 79.",
+  "common_errors": [
+   {
+    "value": "80",
+    "misconception": "missed-condition",
+    "why": "Treated \"less than 5\" as $\\le$, so the upper end was allowed to equal 80."
+   },
+   {
+    "value": "60",
+    "misconception": "intermediate-step",
+    "why": "Found the upper end for the 12 prints, $12(5)$, but did not add the 20 mL used for cleaning."
+   },
+   {
+    "value": "57",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the least possible integer total instead of the greatest."
+   },
+   {
+    "value": "25",
+    "misconception": "algebra-manipulation",
+    "why": "Added one print's upper bound, 5, to 20 without multiplying by 12."
+   }
+  ],
+  "id": "orig-compound-range-M-3d389d",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-3d389d",
+   "structure": [],
+   "solver_answer": 79,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In an agricultural trial, a seedling is 6 centimeters tall. It grows at least 0.8 centimeter and at most 1.4 centimeters each day. After 10 days, its height $h$, in centimeters, satisfies $a \\le h \\le b$. What is the value of $a$?",
+  "stimulus": null,
+  "keys": [
+   "14"
+  ],
+  "any_of": false,
+  "explanation": "\"At least 0.8\" is the daily minimum, so it gives the lower bound. Over 10 days, the seedling grows at least $10(0.8) = 8$ cm. Add its starting height: $a = 6 + 8 = 14$. The upper end is $6 + 10(1.4) = 20$.",
+  "common_errors": [
+   {
+    "value": "20",
+    "misconception": "wrong-target-quantity",
+    "why": "Swapped minimum and maximum and gave the upper bound $b$."
+   },
+   {
+    "value": "8",
+    "misconception": "intermediate-step",
+    "why": "Found the minimum growth over 10 days but did not add the starting height of 6 cm."
+   },
+   {
+    "value": "6.8",
+    "misconception": "algebra-manipulation",
+    "why": "Added one day's minimum growth to 6 without multiplying by 10."
+   }
+  ],
+  "id": "orig-compound-range-M-628d1a",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-628d1a",
+   "structure": [],
+   "solver_answer": 14,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "An ecologist counted 8 frogs at a wetland during a pilot visit. On each of the next 3 nights, they counted at least 12 and at most 15 frogs. What is one possible value for the total number of frogs counted, including the pilot visit?",
+  "stimulus": null,
+  "keys": [
+   "44",
+   "45",
+   "46",
+   "47",
+   "48",
+   "49",
+   "50",
+   "51",
+   "52",
+   "53"
+  ],
+  "any_of": true,
+  "explanation": "Scale the nightly range by 3 nights and add the 8 frogs from the pilot visit to both ends: $8 + 3(12) \\le T \\le 8 + 3(15)$, so $44 \\le T \\le 53$. Each night's count is a whole number, so every integer from 44 to 53 is possible. Any one of them is correct.",
+  "common_errors": [
+   {
+    "value": "36",
+    "misconception": "intermediate-step",
+    "why": "Found the minimum for the 3 nights, $3(12)$, but did not add the 8 pilot-visit frogs."
+   },
+   {
+    "value": "23",
+    "misconception": "algebra-manipulation",
+    "why": "Added one night's maximum, 15, to 8 without multiplying by 3."
+   },
+   {
+    "value": "20",
+    "misconception": "algebra-manipulation",
+    "why": "Added one night's minimum, 12, to 8 without multiplying by 3."
+   }
+  ],
+  "id": "orig-compound-range-M-a8c190",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-a8c190",
+   "structure": [],
+   "solver_answer": 50,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A crane platform already carries 500 kilograms of equipment. A civil engineering crew loads 8 concrete panels onto it. Each panel weighs at least 220 kilograms but no more than 260 kilograms. The total weight $W$, in kilograms, satisfies $a \\le W \\le b$. What is the value of $b - a$?",
+  "stimulus": null,
+  "keys": [
+   "320"
+  ],
+  "any_of": false,
+  "explanation": "Scale both ends by 8 panels and add the 500 kg to both: $a = 500 + 8(220) = 2260$ and $b = 500 + 8(260) = 2580$. So $b - a = 2580 - 2260 = 320$. The 500 kg cancels out, but the 8 does not.",
+  "common_errors": [
+   {
+    "value": "40",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the per-panel bounds, $260 - 220$, without scaling by the 8 panels."
+   },
+   {
+    "value": "2580",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the upper bound $b$ instead of the difference $b - a$."
+   },
+   {
+    "value": "2260",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the lower bound $a$ instead of the difference $b - a$."
+   }
+  ],
+  "id": "orig-compound-range-M-411f65",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-411f65",
+   "structure": [],
+   "solver_answer": 320,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A folklore archive recording begins with a 15-minute introduction and then has 6 folktales. Each folktale lasts more than 7 minutes but less than 12 minutes. If $L$ is the total length of the recording, in minutes, what is the least integer value of $L$ that is possible?",
+  "stimulus": null,
+  "keys": [
+   "58"
+  ],
+  "any_of": false,
+  "explanation": "Scale both ends by the 6 tales and add the 15-minute introduction to both: $15 + 6(7) < L < 15 + 6(12)$, so $57 < L < 87$. \"More than\" is strict, so $L$ cannot equal 57. The least integer value is 58.",
+  "common_errors": [
+   {
+    "value": "57",
+    "misconception": "missed-condition",
+    "why": "Treated \"more than 7\" as $\\ge$, so the lower end was allowed to equal 57."
+   },
+   {
+    "value": "42",
+    "misconception": "intermediate-step",
+    "why": "Found the lower end for the 6 tales but did not add the 15-minute introduction."
+   },
+   {
+    "value": "86",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the greatest possible integer length instead of the least."
+   },
+   {
+    "value": "22",
+    "misconception": "algebra-manipulation",
+    "why": "Added one tale's lower bound, 7, to 15 without multiplying by 6."
+   }
+  ],
+  "id": "orig-compound-range-M-bc381c",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-bc381c",
+   "structure": [],
+   "solver_answer": 58,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A fence crosses a slowly creeping fault and is already offset by 4 centimeters. Seismologists estimate that the fault creeps at least 1.2 centimeters and no more than 2 centimeters per year. After 15 more years, the offset $d$, in centimeters, satisfies $a \\le d \\le b$. What is the value of $b$?",
+  "stimulus": null,
+  "keys": [
+   "34"
+  ],
+  "any_of": false,
+  "explanation": "\"No more than 2\" sets the yearly maximum. Over 15 years, the most the fault can creep is $15(2) = 30$ cm. Add the existing offset: $b = 4 + 30 = 34$. The lower end is $4 + 15(1.2) = 22$.",
+  "common_errors": [
+   {
+    "value": "30",
+    "misconception": "intermediate-step",
+    "why": "Scaled the yearly maximum to 15 years but forgot the existing 4 cm offset."
+   },
+   {
+    "value": "22",
+    "misconception": "wrong-target-quantity",
+    "why": "Swapped minimum and maximum and gave the lower bound $a$."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Added one year's maximum, 2, to 4 without multiplying by 15."
+   }
+  ],
+  "id": "orig-compound-range-M-306a9a",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-306a9a",
+   "structure": [],
+   "solver_answer": 34,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "An archaeological trench is 35 centimeters deep. Each day, the crew deepens it by at least 4.5 centimeters and at most 6 centimeters. After 8 more days, the trench's depth $D$, in centimeters, satisfies $a \\le D \\le b$. What is the value of $a$?",
+  "stimulus": null,
+  "keys": [
+   "71"
+  ],
+  "any_of": false,
+  "explanation": "\"At least 4.5\" is the daily minimum, so it gives the lower bound. Over 8 days, the trench deepens by at least $8(4.5) = 36$ cm. Add the starting depth: $a = 35 + 36 = 71$. The upper end is $35 + 8(6) = 83$.",
+  "common_errors": [
+   {
+    "value": "36",
+    "misconception": "intermediate-step",
+    "why": "Found the minimum deepening over 8 days but did not add the starting depth of 35 cm."
+   },
+   {
+    "value": "83",
+    "misconception": "wrong-target-quantity",
+    "why": "Swapped minimum and maximum and gave the upper bound $b$."
+   },
+   {
+    "value": "39.5",
+    "misconception": "algebra-manipulation",
+    "why": "Added one day's minimum, 4.5, to 35 without multiplying by 8."
+   }
+  ],
+  "id": "orig-compound-range-M-340e60",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-340e60",
+   "structure": [],
+   "solver_answer": 71,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "After 6 weeks of planting, the total number of milkweed plants $m$ in the meadow satisfies $a \\le m \\le b$. What is the value of $b$?",
+  "stimulus": "A restored meadow has 85 milkweed plants. Each week, volunteers plant at least 12 but no more than 20 new milkweed plants there. No plants are lost.",
+  "keys": [
+   "205"
+  ],
+  "any_of": false,
+  "explanation": "'No more than 20' sets the top of the range, so the largest weekly amount is 20. Over 6 weeks that is at most $6(20) = 120$ new plants. Add the 85 plants already there: $b = 85 + 120 = 205$. The full range is $157 \\le m \\le 205$.",
+  "common_errors": [
+   {
+    "value": "120",
+    "misconception": "intermediate-step",
+    "why": "Scaled the weekly maximum to 6 weeks but forgot to add the 85 plants already in the meadow."
+   },
+   {
+    "value": "157",
+    "misconception": "complement-or-direction-flip",
+    "why": "Mixed up the bounds and used the minimum of 12 per week: 85 + 6(12) = 157, which is a, not b."
+   },
+   {
+    "value": "105",
+    "misconception": "algebra-manipulation",
+    "why": "Added one week's maximum to the starting count, 85 + 20, without multiplying by 6."
+   }
+  ],
+  "id": "orig-compound-range-M-7861ac",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-7861ac",
+   "structure": [],
+   "solver_answer": "205",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The total rehearsal time $t$, in minutes, satisfies $a < t < b$. What is the value of $a$?",
+  "stimulus": "A choir rehearsal starts with a 15-minute warm-up, followed by 4 run-throughs of a motet. Each run-through takes more than 7 minutes but less than 9 minutes.",
+  "keys": [
+   "43"
+  ],
+  "any_of": false,
+  "explanation": "The lower bound comes from 'more than 7'. Four run-throughs take more than $4(7) = 28$ minutes. The warm-up adds 15 minutes to both ends, so $a = 15 + 28 = 43$. The full range is $43 < t < 51$.",
+  "common_errors": [
+   {
+    "value": "28",
+    "misconception": "intermediate-step",
+    "why": "Found the lower bound for the four run-throughs but did not add the 15-minute warm-up."
+   },
+   {
+    "value": "51",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the upper limit of 9 minutes, 15 + 4(9) = 51, and gave b instead of a."
+   },
+   {
+    "value": "22",
+    "misconception": "algebra-manipulation",
+    "why": "Added a single run-through to the warm-up, 15 + 7, without multiplying by 4."
+   }
+  ],
+  "id": "orig-compound-range-M-56ef14",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-56ef14",
+   "structure": [],
+   "solver_answer": "43",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "After 8 hours, the volume $v$ of water in the barrel, in liters, satisfies $a \\le v \\le b$. What is the value of $b - a$?",
+  "stimulus": "A rain barrel holds 40 liters of water when a storm begins. During the storm, rain adds at least 3 liters but no more than 5 liters to the barrel each hour. No water leaves the barrel.",
+  "keys": [
+   "16"
+  ],
+  "any_of": false,
+  "explanation": "Scale both ends of the hourly range by 8 hours and add the starting 40 liters to both ends: $a = 40 + 8(3) = 64$ and $b = 40 + 8(5) = 80$. Then $b - a = 80 - 64 = 16$. The 40 liters cancel because they are added to both ends.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "intermediate-step",
+    "why": "Found the width of the hourly range, 5 \u2212 3, but did not scale it to 8 hours."
+   },
+   {
+    "value": "56",
+    "misconception": "algebra-manipulation",
+    "why": "Added the starting 40 liters to only the upper end: (40 + 40) \u2212 24 = 56."
+   },
+   {
+    "value": "80",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the upper bound b instead of the difference b \u2212 a."
+   }
+  ],
+  "id": "orig-compound-range-M-0237f7",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-0237f7",
+   "structure": [],
+   "solver_answer": "16",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Over 3 days, what is the greatest possible total number of aftershocks the station recorded?",
+  "stimulus": "After an earthquake, a seismic station recorded a whole number of aftershocks each day. For 3 days in a row, the daily count was at least 14 but fewer than 22.",
+  "keys": [
+   "63"
+  ],
+  "any_of": false,
+  "explanation": "'Fewer than 22' is strict, so the largest whole-number daily count is 21, not 22. Over 3 days the greatest total is $3(21) = 63$.",
+  "common_errors": [
+   {
+    "value": "66",
+    "misconception": "missed-condition",
+    "why": "Treated 'fewer than 22' as \u2264 22, so 3(22) = 66. A daily count of 22 breaks the condition."
+   },
+   {
+    "value": "42",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the minimum of 14 per day, 3(14) = 42, which gives the least possible total."
+   },
+   {
+    "value": "21",
+    "misconception": "intermediate-step",
+    "why": "Found the greatest single-day count but did not multiply by 3 days."
+   }
+  ],
+  "id": "orig-compound-range-M-df7a6d",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-df7a6d",
+   "structure": [],
+   "solver_answer": "63",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The total amount of ink $k$, in grams, used for the edition satisfies $a \\le k \\le b$. What is the value of $a$?",
+  "stimulus": "A printmaker is printing an edition of 25 etchings. Inking the plate the first time takes 30 grams of ink. After that, each print uses at least 4 grams but no more than 7 grams.",
+  "keys": [
+   "130"
+  ],
+  "any_of": false,
+  "explanation": "The lower bound comes from 'at least 4 grams' per print. For 25 prints that is $25(4) = 100$ grams. Add the 30 grams used to ink the plate: $a = 30 + 100 = 130$. The full range is $130 \\le k \\le 205$.",
+  "common_errors": [
+   {
+    "value": "100",
+    "misconception": "intermediate-step",
+    "why": "Found the minimum ink for the 25 prints but left out the 30 grams used to ink the plate."
+   },
+   {
+    "value": "205",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the maximum of 7 grams per print, 30 + 25(7) = 205, which is b, not a."
+   },
+   {
+    "value": "34",
+    "misconception": "algebra-manipulation",
+    "why": "Added one print's minimum to the plate ink, 30 + 4, without multiplying by 25."
+   }
+  ],
+  "id": "orig-compound-range-M-642451",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-642451",
+   "structure": [],
+   "solver_answer": "130",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $h$ is the total mass, in grams, of hardener used in all 4 batches and $h$ is an integer, what is one possible value of $h$?",
+  "stimulus": "A materials lab makes 4 batches of a composite resin. Each batch must contain more than 18 grams but less than 23 grams of hardener.",
+  "keys": [
+   "73",
+   "74",
+   "75",
+   "76",
+   "77",
+   "78",
+   "79",
+   "80",
+   "81",
+   "82",
+   "83",
+   "84",
+   "85",
+   "86",
+   "87",
+   "88",
+   "89",
+   "90",
+   "91"
+  ],
+  "any_of": true,
+  "explanation": "Multiply both ends of the per-batch range by 4: $4(18) < h < 4(23)$, so $72 < h < 92$. Both bounds are strict, so 72 and 92 are not allowed. Any integer from 73 to 91 works.",
+  "common_errors": [
+   {
+    "value": "72",
+    "misconception": "missed-condition",
+    "why": "Used the lower end 4(18) = 72, but 'more than' is strict, so h cannot equal 72."
+   },
+   {
+    "value": "92",
+    "misconception": "missed-condition",
+    "why": "Used the upper end 4(23) = 92, but 'less than' is strict, so h cannot equal 92."
+   },
+   {
+    "value": "20",
+    "misconception": "intermediate-step",
+    "why": "Gave a hardener mass for one batch instead of the total for all 4."
+   }
+  ],
+  "id": "orig-compound-range-M-ba7fbf",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-ba7fbf",
+   "structure": [],
+   "solver_answer": "80",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The actual length $L$ of the trail, in kilometers, satisfies $a \\le L \\le b$. What is the value of $b$?",
+  "stimulus": "On a park map, 1 centimeter represents 4 kilometers. A planned trail will measure at least 3.5 centimeters but no more than 5 centimeters on the map.",
+  "keys": [
+   "20"
+  ],
+  "any_of": false,
+  "explanation": "'No more than 5 centimeters' sets the upper bound. Convert it with the scale: $5 \\times 4 = 20$ kilometers, so $b = 20$. The full range is $14 \\le L \\le 20$.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "intermediate-step",
+    "why": "Gave the upper bound in map centimeters without converting it to kilometers."
+   },
+   {
+    "value": "14",
+    "misconception": "complement-or-direction-flip",
+    "why": "Converted the minimum, 3.5 \u00d7 4 = 14, which is a instead of b."
+   },
+   {
+    "value": "1.25",
+    "misconception": "algebra-manipulation",
+    "why": "Divided by the scale factor, 5 \u00f7 4, instead of multiplying."
+   }
+  ],
+  "id": "orig-compound-range-M-8bfb92",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-M-8bfb92",
+   "structure": [],
+   "solver_answer": "20",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

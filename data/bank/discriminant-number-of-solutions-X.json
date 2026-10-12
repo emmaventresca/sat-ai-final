@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-discriminant-n-X-4cfc20",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "at exactly one point what is the value",
     "exactly one point what is the value of",
@@ -81,11 +86,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-discriminant-n-X-b86c0f",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "is a constant the equation has no real",
     "a constant the equation has no real solutions",
@@ -94,5 +104,427 @@
    "residue": 2
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "In the given equation, $k$ is a constant. What is the sum of all values of $k$ for which the equation has exactly one real solution?",
+  "stimulus": "A printmaking studio uses the following equation to model ink spread on a test plate.\n\n$kx^2 + 4x + 1 = 3x^2$",
+  "choices": [
+   "$-2$",
+   "$4$",
+   "$7$",
+   "$10$"
+  ],
+  "answer": "D",
+  "explanation": "Move everything to the left to get $(k-3)x^2 + 4x + 1 = 0$, so $a = k - 3$, $b = 4$ and $c = 1$. One case is a quadratic with discriminant zero: $16 - 4(k-3)(1) = 0$ gives $k - 3 = 4$, so $k = 7$. The other case is when $a = 0$, which happens at $k = 3$. Then the equation becomes $4x + 1 = 0$, which is linear and has exactly one solution, $x = -\\tfrac{1}{4}$. The sum is $7 + 3 = 10$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You moved $3x^2$ with the wrong sign and wrote $a = k + 3$. That gives $k = 1$ from the discriminant and $k = -3$ from the linear case, which sum to $-2$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "$4$ is the value of $k - 3$ that makes the discriminant zero. You stopped there and didn't add 3 to get $k$, or you left $3x^2$ on the right side and read $a$ as $k$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "$7$ is the discriminant case, but you missed $k = 3$. At that value the $x^2$ term disappears and the linear equation $4x + 1 = 0$ still has exactly one solution."
+   }
+  },
+  "id": "orig-discriminant-n-X-5c6292",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-X-5c6292",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ is a constant what is the sum",
+    "is a constant what is the sum of",
+    "a constant what is the sum of all"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "In the given system of equations, $m$ is a constant and $m < 0$. If the system has exactly one distinct real solution, what is the value of $m$?",
+  "stimulus": "A paleobotanist compares a fossil leaf's curved margin with a straight midrib using the following system.\n\n$y = x^2 - 2x + 5$\n$y = mx + 1$",
+  "choices": [
+   "$-6$",
+   "$-2$",
+   "$2$",
+   "$4$"
+  ],
+  "answer": "A",
+  "explanation": "Set the two expressions equal and move everything to one side: $x^2 - (2 + m)x + 4 = 0$. For exactly one solution, $(2+m)^2 - 4(1)(4) = 0$, so $2 + m = \\pm 4$. That gives $m = 2$ or $m = -6$. Since $m < 0$, $m = -6$. Check: $x^2 + 4x + 4 = 0$ has the single solution $x = -2$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $mx$ to the left, you wrote the $x$-coefficient as $m - 2$ instead of $-(2 + m)$. Solving $(m-2)^2 = 16$ gives $m = 6$ or $m = -2$, and you kept the negative one."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "$m = 2$ does make the discriminant zero, but it breaks the stated condition that $m < 0$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$4$ is the size of $2 + m$ at tangency. You still needed to solve $2 + m = \\pm 4$ for $m$."
+   }
+  },
+  "id": "orig-discriminant-n-X-7b3624",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-X-7b3624",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the system has exactly one distinct real solution",
+    "system has exactly one distinct real solution what",
+    "has exactly one distinct real solution what is",
+    "exactly one distinct real solution what is the",
+    "one distinct real solution what is the value",
+    "distinct real solution what is the value of",
+    "real solution what is the value of __var__"
+   ],
+   "residue": 7
+  }
+ },
+ {
+  "stem": "In the given equation, $k$ is a constant. If the equation has no real solutions, what is the greatest possible integer value of $k$?",
+  "stimulus": "A hydrology team uses the following equation to model groundwater level against distance from a well.\n\n$x^2 + 4 = k(3 - 2x)$",
+  "choices": [
+   "$-3$",
+   "$0$",
+   "$1$",
+   "$3$"
+  ],
+  "answer": "B",
+  "explanation": "Distribute and move everything to the left: $x^2 + 2kx + 4 - 3k = 0$. For no real solutions, $(2k)^2 - 4(1)(4 - 3k) < 0$, which simplifies to $k^2 + 3k - 4 < 0$, or $(k+4)(k-1) < 0$. So $-4 < k < 1$, and the greatest integer in that range is $0$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$-3$ is the least integer in the interval $-4 < k < 1$. The question asks for the greatest."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "$k = 1$ is the boundary, where the discriminant equals 0. At $k = 1$ the equation is $(x+1)^2 = 0$, which has exactly one solution, so it falls outside the strict inequality."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You moved $3k - 2kx$ to the left without changing its signs, which gave $x^2 - 2kx + 4 + 3k = 0$. That leads to $-1 < k < 4$, and you took 3."
+   }
+  },
+  "id": "orig-discriminant-n-X-fd2220",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-X-fd2220",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "equation __var__ is a constant if the equation",
+    "__var__ is a constant if the equation has",
+    "equation has no real solutions what is the"
+   ],
+   "residue": 5
+  }
+ },
+ {
+  "stem": "In the given equation, $k$ is a constant. For how many positive integer values of $k$ does the equation have exactly two distinct real solutions?",
+  "stimulus": "An agricultural scientist models irrigation runoff on a sloped field with the following equation.\n\n$kx^2 + 6x + 1 = 2x^2$",
+  "choices": [
+   "$8$",
+   "$9$",
+   "$10$",
+   "$11$"
+  ],
+  "answer": "B",
+  "explanation": "Rewrite the equation as $(k-2)x^2 + 6x + 1 = 0$. Two distinct real solutions need $36 - 4(k-2)(1) > 0$, so $k < 11$. That allows $k = 1$ through $10$, which is 10 values. But $k = 2$ makes the equation linear ($6x + 1 = 0$), and a linear equation has only one solution. Removing it leaves $9$ values.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You left $2x^2$ on the right side and used $a = k$. Then $36 - 4k > 0$ gives $k < 9$, which is 8 values."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You found $k < 11$ correctly but counted $k = 2$. At $k = 2$ the $x^2$ term vanishes and the equation has only one solution."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used $\\le$ instead of $<$, so you counted $k = 11$, where the discriminant is 0 and there is only one solution. You also counted the linear case $k = 2$."
+   }
+  },
+  "id": "orig-discriminant-n-X-f6708b",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-X-f6708b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the given equation __var__ is a constant for"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "In the xy-plane, the graph of the given equation and the graph of $y = k$, where $k$ is a constant, intersect at exactly one point. What is the value of $k$?",
+  "stimulus": "A folklore studies project models how often a tale is retold over time with the following equation.\n\n$y = -2(x - 3)(x + 5)$",
+  "choices": [
+   "$-32$",
+   "$-1$",
+   "$30$",
+   "$32$"
+  ],
+  "answer": "D",
+  "explanation": "Expand to get $y = -2x^2 - 4x + 30$. Setting this equal to $k$ gives $-2x^2 - 4x + (30 - k) = 0$. For exactly one solution, $(-4)^2 - 4(-2)(30 - k) = 0$, so $16 + 8(30 - k) = 0$. Then $30 - k = -2$, and $k = 32$. This is the height of the vertex at $x = -1$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $k$ to the left, you wrote the constant as $30 + k$ instead of $30 - k$. That flips the sign and gives $-32$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$-1$ is the $x$-coordinate of the vertex. The horizontal line is $y = k$, so you need the vertex's $y$-coordinate."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$30$ is the $y$-intercept, the value at $x = 0$. A horizontal line through it also crosses the parabola at $x = -2$, so the graphs meet twice."
+   }
+  },
+  "id": "orig-discriminant-n-X-2a98a6",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-X-2a98a6",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "at exactly one point what is the value",
+    "exactly one point what is the value of",
+    "one point what is the value of __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "In the given equation, $k$ is a constant. The equation has exactly one real solution, and that solution is greater than $2$. What is the value of $k$?",
+  "stimulus": "A musicologist's model relating tempo to phrase length gives the following equation.\n\n$x^2 + 2k = kx + 3$",
+  "choices": [
+   "$2$",
+   "$3$",
+   "$6$",
+   "$9$"
+  ],
+  "answer": "C",
+  "explanation": "In standard form the equation is $x^2 - kx + (2k - 3) = 0$. Setting $k^2 - 4(2k - 3) = 0$ gives $k^2 - 8k + 12 = 0$, so $k = 2$ or $k = 6$. The single solution is $x = \\tfrac{k}{2}$. That is $1$ when $k = 2$ and $3$ when $k = 6$. Only $k = 6$ gives a solution greater than 2.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "$k = 2$ makes the discriminant zero, but the resulting solution is $x = 1$, which isn't greater than 2."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$3$ is the solution $x$ when $k = 6$. The question asks for $k$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$9$ is the constant term $2k - 3$ after you substitute $k = 6$, as in $x^2 - 6x + 9 = 0$. It is a step on the way, not $k$."
+   }
+  },
+  "id": "orig-discriminant-n-X-f64dc9",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-X-f64dc9",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "a constant the equation has exactly one real",
+    "constant the equation has exactly one real solution",
+    "is greater than __var__ what is the value"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "In the given system of equations, $c$ is a constant. If the system has no real solutions, what is the least possible integer value of $c$?",
+  "stimulus": "A public health analyst compares a curved infection-rate model with a straight-line vaccination trend using the following system.\n\n$y = (x + 3)(x + 2) + c$\n$y = x - 3$",
+  "choices": [
+   "$-5$",
+   "$-4$",
+   "$-2$",
+   "$2$"
+  ],
+  "answer": "B",
+  "explanation": "Set the two equal: $x^2 + 5x + 6 + c = x - 3$, so $x^2 + 4x + (9 + c) = 0$. For no real solutions, $16 - 4(9 + c) < 0$, so $9 + c > 4$ and $c > -5$. The least integer greater than $-5$ is $-4$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "At $c = -5$ the discriminant is exactly 0. The equation becomes $(x+2)^2 = 0$, which has one solution, not none, so the boundary isn't allowed."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You didn't subtract $x$ when you moved the line's expression, so you kept $b = 5$. Then $25 - 4(9 + c) < 0$ gives $c > -\\tfrac{11}{4}$, and you took $-2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $x - 3$ to the left, you subtracted 3 instead of adding it. That gives the constant $3 + c$, then $c > 1$, and you took 2."
+   }
+  },
+  "id": "orig-discriminant-n-X-57855f",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-X-57855f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the system has no real solutions what is",
+    "system has no real solutions what is the",
+    "has no real solutions what is the least",
+    "no real solutions what is the least possible"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "In the given equation, $k$ is a constant. If the equation has exactly one real solution, what is the value of $k$?",
+  "stimulus": "An urban planning model for pedestrian flow across a plaza leads to the following equation.\n\n$kx(x + 1) = -4$",
+  "choices": [
+   "$-16$",
+   "$0$",
+   "$4$",
+   "$16$"
+  ],
+  "answer": "D",
+  "explanation": "Expand and move everything to the left: $kx^2 + kx + 4 = 0$. Setting the discriminant to zero gives $k^2 - 16k = 0$, so $k = 0$ or $k = 16$. If $k = 0$, the equation becomes $0 = -4$, which has no solution, so reject it. At $k = 16$, the equation is $4(2x + 1)^2 = 0$, which has exactly one solution. So $k = 16$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You moved $-4$ to the left without changing its sign and got $kx^2 + kx - 4 = 0$. Then $k^2 + 16k = 0$ gives $k = -16$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "$k = 0$ solves $k^2 - 16k = 0$, but it removes every $x$-term and leaves $0 = -4$, which has no solution at all."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the factor $c = 4$ from $4ac$ and wrote $k^2 - 4k = 0$, which gives $k = 4$."
+   }
+  },
+  "id": "orig-discriminant-n-X-7e84b2",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-X-7e84b2",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "equation __var__ is a constant if the equation",
+    "__var__ is a constant if the equation has",
+    "the equation has exactly one real solution what",
+    "equation has exactly one real solution what is",
+    "has exactly one real solution what is the",
+    "real solution what is the value of __var__"
+   ],
+   "residue": 1
+  }
  }
 ]

@@ -147,5 +147,650 @@
    "residue": 0
   },
   "phrasing": "work_backwards"
+ },
+ {
+  "stem": "According to the model, at what other value of $t$ will the pond also hold 230 larvae?",
+  "stimulus": "An ecologist models the number of dragonfly larvae in a pond, $L$, $t$ weeks after a survey began with the function $L(t) = -2t^2 + 28t + 150$, for $0 \\le t \\le 15$. The model gives 230 larvae at $t = 4$.",
+  "choices": [
+   "$7$",
+   "$10$",
+   "$24$",
+   "$248$"
+  ],
+  "answer": "B",
+  "explanation": "The parabola's axis of symmetry is at $t = -\\frac{b}{2a} = -\\frac{28}{2(-2)} = 7$. A height reached 3 weeks before the vertex is reached again 3 weeks after it, so the other time is $2(7) - 4 = 10$. Check: $L(10) = -2(100) + 280 + 150 = 230$. In Desmos, graph the function, add the line $y = 230$, and click the second intersection to see $(10, 230)$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the time of the maximum, $t = 7$, which is the axis of symmetry. The question asks for the other time the count is 230, and that is as far past the vertex as $t = 4$ is before it."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You left the 2 out of $-\\frac{b}{2a}$ and used $\\frac{28}{2} \\cdot 1$... more precisely, you took $-\\frac{b}{a} = 14$ as the vertex, so you got $2(14) - 4 = 24$. That value isn't even inside the model's domain of $0 \\le t \\le 15$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the vertex's $y$-value, $L(7) = 248$, which is the largest number of larvae. The question asks for a time $t$, not a number of larvae."
+   }
+  },
+  "id": "orig-quadratic-vert-M-3761b7",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-3761b7",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 8 in this context?",
+  "stimulus": "After a storm, a hydrologist models the depth of a river at a gauging station with the function $d(t) = -0.25t^2 + 4t + 9$. Here $d(t)$ is the depth, in feet, $t$ hours after the rain stopped, for $0 \\le t \\le 16$. The graph of $y = d(t)$ reaches its maximum at $t = 8$.",
+  "choices": [
+   "The river reaches its greatest depth 8 hours after the rain stopped.",
+   "The river's greatest depth after the rain stopped is 8 feet.",
+   "The river is back to a depth of 9 feet 8 hours after the rain stopped.",
+   "The river reaches its greatest depth 8 minutes after the rain stopped."
+  ],
+  "answer": "A",
+  "explanation": "The maximum of a downward-opening parabola is at its vertex. The vertex's t-coordinate is $-\\frac{b}{2a} = -\\frac{4}{2(-0.25)} = 8$, and t counts hours after the rain stopped. So 8 is the time, in hours, when the river is deepest. The depth at that moment is $d(8) = 25$ feet.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read the vertex's t-coordinate as its height. The value 8 is a time. The greatest depth is $d(8) = 25$ feet."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You stopped halfway through the symmetry. The river starts at 9 feet when $t = 0$, and by symmetry about $t = 8$ it returns to 9 feet at $t = 2(8) - 0 = 16$. At $t = 8$ it is at its peak."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You have the right meaning in the wrong units. The model says t is measured in hours, not minutes."
+   }
+  },
+  "id": "orig-quadratic-vert-M-5bd528",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-5bd528",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 900 in this context?",
+  "stimulus": "A historian reconstructs the weekly profit of an 1850s cotton mill as $P(x) = -3x^2 + 120x - 300$. Here $P(x)$ is the profit, in dollars, when the mill charges $x$ cents per yard of cloth. The vertex of the graph of $y = P(x)$ in the xy-plane is $(20, 900)$.",
+  "choices": [
+   "The mill's greatest possible weekly profit is 900 dollars.",
+   "The price per yard that gives the greatest profit is 900 cents.",
+   "The mill's weekly profit is 900 dollars when it charges 0 cents per yard.",
+   "The mill's greatest possible weekly profit is 900 cents."
+  ],
+  "answer": "A",
+  "explanation": "Since $a = -3$ is negative, the parabola opens downward, so its vertex is a maximum. The vertex's y-coordinate is the greatest value of P, and P is measured in dollars. So 900 is the greatest weekly profit the mill can make, 900 dollars, when it charges 20 cents per yard.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the vertex's coordinates. The price that gives the most profit is the x-coordinate, 20 cents. The number 900 is the profit itself."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated the vertex as the y-intercept. When the price is 0 cents, $P(0) = -300$, so the mill loses 300 dollars."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You have the right meaning in the wrong units. P is measured in dollars. Cents are the unit of the price x."
+   }
+  },
+  "id": "orig-quadratic-vert-M-49ddf9",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-49ddf9",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the vertex of the graph of __var__ in",
+    "vertex of the graph of __var__ in the"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 4 in this context?",
+  "stimulus": "In a nutrition study, a participant's blood glucose concentration after a meal is modeled by $G(t) = -10t^2 + 40t + 90$. Here $G(t)$ is in milligrams per deciliter (mg/dL), $t$ hours after the meal. The model gives $G(t) = 90$ both at $t = 0$ and at $t = 4$.",
+  "choices": [
+   "The participant's blood glucose is back at its pre-meal level 4 hours after the meal.",
+   "The participant's blood glucose reaches its highest level 4 hours after the meal.",
+   "The participant's blood glucose is back at its pre-meal level 4 minutes after the meal.",
+   "The participant's blood glucose falls to 0 mg/dL 4 hours after the meal."
+  ],
+  "answer": "A",
+  "explanation": "$G(0) = 90$ is the concentration at the moment of the meal, which is the pre-meal level. The parabola is symmetric about its vertex at $t = -\\frac{40}{2(-10)} = 2$, so the value it had at $t = 0$ comes back at $t = 2(2) - 0 = 4$. So 4 is the number of hours until blood glucose is back to 90 mg/dL.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You took a time when the function has a given value to be the time of the maximum. The peak is at the vertex, $t = 2$, halfway between 0 and 4, where $G(2) = 130$ mg/dL."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You have the right meaning in the wrong units. The model says t is measured in hours, not minutes."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated $t = 4$ as an x-intercept. At $t = 4$ the output is $G(4) = 90$, not 0, so the graph is at the pre-meal height, not on the t-axis."
+   }
+  },
+  "id": "orig-quadratic-vert-M-d02e56",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-d02e56",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the time, in seconds, at which the dolphin reaches its maximum height above the water?",
+  "stimulus": "A marine biologist models one leap of a spinner dolphin with the function $h(t) = -5t^2 + vt$, where $h(t)$ is the dolphin's height, in meters, above the water surface $t$ seconds after it leaves the water, and $v$ is a positive constant.",
+  "choices": [
+   "$\\frac{v}{5}$",
+   "$\\frac{v}{10}$",
+   "$-\\frac{v}{10}$",
+   "$\\frac{v^2}{20}$"
+  ],
+  "answer": "B",
+  "explanation": "The highest point is the vertex, and its t-coordinate is $-\\frac{b}{2a}$. Here $a = -5$ and $b = v$, so the time is $-\\frac{v}{2(-5)} = \\frac{v}{10}$. You can also factor: $h(t) = -5t\\left(t - \\frac{v}{5}\\right)$ has roots $0$ and $\\frac{v}{5}$. The vertex is halfway between them, at $\\frac{v}{10}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found when the dolphin lands back in the water, which is the second root of $h(t)$. The question asks when it reaches its highest point, and that comes halfway to the landing time."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the negative sign in $-\\frac{b}{2a}$ or the negative sign on $a = -5$. A time after the leap starts can't be negative when $v$ is positive."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the maximum height, the y-value of the vertex: $h\\left(\\frac{v}{10}\\right) = \\frac{v^2}{20}$. The question asks for the time when that height is reached, which is the t-value."
+   }
+  },
+  "id": "orig-quadratic-vert-M-fbae81",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-fbae81",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the other amount of protein, in grams, that earns the same satiety score as a meal with $p$ grams of protein?",
+  "stimulus": "A nutrition scientist models a meal's satiety score with $S(g) = c - a(g - k)^2$, where $g$ is the grams of protein in the meal and $a$, $c$, and $k$ are positive constants. A meal has $p$ grams of protein, where $p < k$.",
+  "choices": [
+   "$k - p$",
+   "$-2k - p$",
+   "$2p - k$",
+   "$2k - p$"
+  ],
+  "answer": "D",
+  "explanation": "The parabola is symmetric about its vertex line $g = k$. The value $p$ is $k - p$ grams to the left of the vertex, so the matching value is the same distance to the right: $k + (k - p) = 2k - p$. Check it by substituting: $(2k - p - k)^2 = (k - p)^2$, so both amounts give the same score.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$k - p$ is the distance from $p$ to the vertex, a step partway through the solution. You still need to add that distance to $k$ to land on the other side."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the vertex from $(g - k)$ as $-k$ instead of $k$. In vertex form, the vertex value is the number subtracted from $g$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You reflected the vertex across $p$ instead of reflecting $p$ across the vertex. That swaps which value sits at the center."
+   }
+  },
+  "id": "orig-quadratic-vert-M-3d6929",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-3d6929",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation could represent this model, where $a$ is a positive constant?",
+  "stimulus": "An agricultural scientist models corn yield $y$, in bushels per acre, as a quadratic function of the nitrogen applied, $x$, in pounds per acre. The model gives equal yields at $60$ and $180$ pounds per acre, and its greatest yield is $150$ bushels per acre.",
+  "choices": [
+   "$y = -a(x + 120)^2 + 150$",
+   "$y = a(x - 120)^2 + 150$",
+   "$y = -a(x - 120)^2 + 150$",
+   "$y = -a(x - 60)(x - 180) + 150$"
+  ],
+  "answer": "C",
+  "explanation": "Equal yields at $60$ and $180$ put the vertex halfway between them, at $x = \\frac{60 + 180}{2} = 120$. A greatest yield means the parabola opens downward and has a maximum of $150$, so the vertex is $(120, 150)$ and the leading coefficient is negative. In vertex form that is $y = -a(x - 120)^2 + 150$ with $a > 0$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You got the sign in vertex form wrong. $(x + 120)$ puts the vertex at $x = -120$, not at $x = 120$."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "With $a$ positive, this parabola opens upward, so $150$ would be the least yield, not the greatest. A maximum needs a negative leading coefficient."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "This equation does give equal yields at $60$ and $180$. But at $x = 120$ it gives $3600a + 150$, which is more than $150$, so it breaks the condition that the greatest yield is $150$."
+   }
+  },
+  "id": "orig-quadratic-vert-M-c330cb",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-c330cb",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A musicologist models the tempo $T$, in beats per minute, of a recorded performance $t$ seconds after a passage begins with the function $T(t) = -\\frac{1}{2}t^2 + 12t + 60$, for $0 \\le t \\le 24$.",
+  "choices": [
+   "The tempo is greatest when $t = 6$.",
+   "The tempo is greatest when $t = 132$.",
+   "The tempo when $t = 5$ is equal to the tempo when $t = 19$.",
+   "The tempo when $t = 5$ is equal to the tempo when $t = 7$."
+  ],
+  "answer": "C",
+  "explanation": "The vertex is at $t = -\\frac{b}{2a} = -\\frac{12}{2(-\\frac{1}{2})} = 12$. A parabola is symmetric about its vertex, so a tempo reached at $t = 5$, which is 7 seconds before the vertex, is reached again 7 seconds after it, at $t = 2(12) - 5 = 19$. You can check this: $T(5) = -12.5 + 60 + 60 = 107.5$ and $T(19) = -180.5 + 228 + 60 = 107.5$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $\\frac{b}{2} = 6$ and dropped $a$ from $-\\frac{b}{2a}$. Since $a = -\\frac{1}{2}$, the denominator is $-1$, which puts the vertex at $t = 12$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "132 beats per minute is the greatest tempo, $T(12)$. It is the y-value of the vertex, not the time when the tempo is greatest."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "7 is the distance from $t = 5$ to the vertex at $t = 12$. You needed to add that distance on the far side of the vertex: $12 + 7 = 19$."
+   }
+  },
+  "id": "orig-quadratic-vert-M-530841",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-530841",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "An urban planner draws the cross-section of a sunken plaza in the xy-plane. The graph of $y = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants, has its vertex at $(40, -6)$ and crosses the x-axis at two points.",
+  "choices": [
+   "$a < 0$",
+   "$b < 0$",
+   "$b > 0$",
+   "$c < 0$"
+  ],
+  "answer": "B",
+  "explanation": "The vertex $(40, -6)$ is below the x-axis. For the graph to cross the x-axis twice, the parabola has to open upward, so $a > 0$. The x-coordinate of the vertex is $-\\frac{b}{2a} = 40$, which gives $b = -80a$. A positive $a$ times $-80$ is negative, so $b < 0$ must be true.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "If $a < 0$, the parabola opens downward from a vertex that is already below the x-axis, so it would never cross the x-axis. That breaks the condition that it crosses twice."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You got the sign wrong in $-\\frac{b}{2a}$. Setting it equal to 40 gives $b = -80a$, not $80a$, so $b$ has the opposite sign from $a$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You treated $-6$, the y-value of the vertex, as if it were the y-intercept $c$. In fact $c = 1600a - 6$. It is positive for $a = 1$ and negative for $a = 0.001$, so it does not have to be negative."
+   }
+  },
+  "id": "orig-quadratic-vert-M-096e1c",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-096e1c",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "In a materials science lab, a launcher fires a ceramic bead straight up. The bead's height above the floor, in meters, $t$ seconds after launch is modeled by a quadratic function. The bead is 9 meters above the floor at $t = 0.4$ and again at $t = 2.0$.",
+  "choices": [
+   "The bead's greatest height is 9 meters.",
+   "The bead reaches its greatest height at $t = 1.6$.",
+   "The bead returns to the floor at $t = 2.4$.",
+   "The bead reaches its greatest height at $t = 1.2$."
+  ],
+  "answer": "D",
+  "explanation": "The bead is at the same height at two times, so by symmetry the vertex is halfway between them: $\\frac{0.4 + 2.0}{2} = 1.2$. The bead reaches its greatest height at $t = 1.2$ seconds.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "The bead reaches 9 meters twice, once on the way up and once on the way down. A height reached twice can't be the maximum, which is higher than 9 meters."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "1.6 is the gap between the two times, $2.0 - 0.4$. The vertex is the midpoint, so you needed to add the times and divide by 2 instead."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "At $t = 2(1.2) - 0 = 2.4$, the bead is back at the height it was launched from. Nothing says the launcher is at floor level, so the bead may still be above the floor at that time."
+   }
+  },
+  "id": "orig-quadratic-vert-M-d537a4",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-d537a4",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "According to the model, the percentage is 51 when $t = 3$. How many years after that does the model next give a percentage of 51?",
+  "stimulus": "A linguist models the percentage of speakers in a town who use a certain regional verb form with the function $P(t) = -t^2 + 16t + 12$, where $t$ is the number of years after 1980.",
+  "choices": [
+   "5",
+   "8",
+   "10",
+   "13"
+  ],
+  "answer": "C",
+  "explanation": "The vertex of the parabola is at $t = -\\frac{16}{2(-1)} = 8$. A parabola is symmetric about its vertex, so the value at $t = 3$, which is 5 years before the vertex, comes back 5 years after it, at $t = 13$. Check: $P(13) = -169 + 208 + 12 = 51$. The question asks how many years separate the two times, so the answer is $13 - 3 = 10$ years.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "5 is the distance from $t = 3$ to the vertex at $t = 8$. You stopped partway. The parabola needs another 5 years past the vertex to come back to 51, so the gap is twice that."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "8 is the $t$-value of the vertex, where the percentage is at its highest. The question asks how long it takes for the percentage to come back to 51, not when it peaks."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "13 is the value of $t$ when the percentage is 51 again. The question asks how many years after $t = 3$ that happens, so you need to subtract 3."
+   }
+  },
+  "id": "orig-quadratic-vert-M-fe6c28",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-fe6c28",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ where __var__ is the number of years"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many decades later does composer B's model reach its maximum than composer A's model?",
+  "stimulus": "A musicologist models the number of recorded performances per year of works by two composers. For composer A the model is $f(x) = -2(x - 6)^2 + 90$, and for composer B it is $g(x) = -x^2 + 14x + 30$, where $x$ is the number of decades after 1900.",
+  "choices": [
+   "1",
+   "8",
+   "11",
+   "13"
+  ],
+  "answer": "A",
+  "explanation": "Composer A's model is in vertex form, so its maximum is at $x = 6$. For composer B's model, use $x = -\\frac{b}{2a} = -\\frac{14}{2(-1)} = 7$. The question asks for the gap between the two $x$-values, so the answer is $7 - 6 = 1$ decade.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided 14 by 1 and left out the 2 in $-\\frac{b}{2a}$, which gave $x = 14$ for composer B and a gap of $14 - 6 = 8$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "11 is the difference between the maximum values, $90 - g(7) = 90 - 79$. The question asks how many decades apart the maximums happen, which is a difference in $x$, not in the number of performances."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the vertex of $f$ as $x = -6$ instead of $x = 6$. In vertex form, $(x - h)$ means the vertex is at $+h$. That sign error gave a gap of $7 - (-6) = 13$."
+   }
+  },
+  "id": "orig-quadratic-vert-M-6903bc",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-6903bc",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many feet greater is the wreath's maximum height than its height when it is released?",
+  "stimulus": "At a midsummer festival, a folklorist records a custom in which a flower wreath is thrown upward. The wreath's height, in feet, $t$ seconds after it is released is modeled by $h(t) = -16t^2 + 48t + 4$.",
+  "choices": [
+   "1.5",
+   "36",
+   "40",
+   "44"
+  ],
+  "answer": "B",
+  "explanation": "The vertex is at $t = -\\frac{48}{2(-16)} = 1.5$ seconds, so the maximum height is $h(1.5) = -36 + 72 + 4 = 40$ feet. The release height is $h(0) = 4$ feet. The question asks how much greater the maximum is, so the answer is $40 - 4 = 36$ feet.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "1.5 is the time, in seconds, when the wreath reaches its highest point. That is the $t$-coordinate of the vertex. The question asks for a difference in height."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "40 feet is the maximum height. The question asks how much greater it is than the release height of 4 feet, so you still need to subtract."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the release height to the maximum ($40 + 4$) when you needed to subtract it to find the gap."
+   }
+  },
+  "id": "orig-quadratic-vert-M-be7bf2",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-be7bf2",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

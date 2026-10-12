@@ -251,5 +251,749 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the value of $w$?",
+  "stimulus": "A civil engineer designing a drainage channel finds that the channel's width $w$, in meters, satisfies the equation $2w^2 - 7w - 15 = 0$.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "Factor the quadratic: $2w^2 - 7w - 15 = (2w + 3)(w - 5)$. Set each factor equal to 0, which gives $w = -\\frac{3}{2}$ or $w = 5$. A width can't be negative, so $w = 5$. You can check this in Desmos: graph $y = 2x^2 - 7x - 15$ and you'll see x-intercepts at $-1.5$ and $5$.",
+  "common_errors": [
+   {
+    "value": "-3/2",
+    "misconception": "missed-condition",
+    "why": "Solved the equation correctly but kept the negative root, even though a width must be positive."
+   },
+   {
+    "value": "-1.5",
+    "misconception": "missed-condition",
+    "why": "Gave the negative root as a decimal, ignoring that a width must be positive."
+   },
+   {
+    "value": "3/2",
+    "misconception": "algebra-manipulation",
+    "why": "Factored with the signs swapped, as $(2w - 3)(w + 5)$, and took the positive root of that."
+   },
+   {
+    "value": "1.5",
+    "misconception": "algebra-manipulation",
+    "why": "Factored with the signs swapped, as $(2w - 3)(w + 5)$, and gave the positive root as a decimal."
+   },
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "Used the quadratic formula but divided $7 + 13$ by 2 instead of by $2a = 4$."
+   }
+  ],
+  "id": "orig-direct-solve-q-M-e785ed",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-e785ed",
+   "structure": [],
+   "solver_answer": "5",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $s$?",
+  "stimulus": "A cartographer sizes a square map tile so that its side length $s$, in centimeters, satisfies the equation $3s^2 - 12 = 63$.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "There's no $s$ term, so isolate $s^2$ first. Add 12 to both sides to get $3s^2 = 75$, then divide by 3 to get $s^2 = 25$. Taking square roots gives $s = \\pm 5$. A side length is positive, so $s = 5$.",
+  "common_errors": [
+   {
+    "value": "25",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $s^2 = 25$ without taking the square root."
+   },
+   {
+    "value": "-5",
+    "misconception": "missed-condition",
+    "why": "Took the negative square root, but a side length must be positive."
+   },
+   {
+    "value": "8.660",
+    "misconception": "algebra-manipulation",
+    "why": "Took the square root of 75 without first dividing by 3."
+   },
+   {
+    "value": "8.66",
+    "misconception": "algebra-manipulation",
+    "why": "Took the square root of 75 without first dividing by 3, then rounded."
+   },
+   {
+    "value": "4.123",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted 12 instead of adding it, which gives $3s^2 = 51$, then $s^2 = 17$ and $s = \\sqrt{17}$."
+   }
+  ],
+  "id": "orig-direct-solve-q-M-514e56",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-514e56",
+   "structure": [],
+   "solver_answer": "5",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive solution to the equation?",
+  "stimulus": "A sports scientist models an athlete's recovery time $t$, in minutes, with the equation $t^2 - 4t - 1 = 0$.",
+  "keys": [
+   "4.236",
+   "2+sqrt(5)"
+  ],
+  "any_of": false,
+  "explanation": "This doesn't factor over the integers, so use the quadratic formula with $a = 1$, $b = -4$, $c = -1$: $t = \\frac{4 \\pm \\sqrt{16 + 4}}{2} = \\frac{4 \\pm 2\\sqrt{5}}{2} = 2 \\pm \\sqrt{5}$. The positive solution is $2 + \\sqrt{5} \\approx 4.236$. In Desmos, graph $y = x^2 - 4x - 1$ and click the right-hand x-intercept.",
+  "common_errors": [
+   {
+    "value": "-.236",
+    "misconception": "missed-condition",
+    "why": "Took $2 - \\sqrt{5}$, which is the negative root."
+   },
+   {
+    "value": "-0.236",
+    "misconception": "missed-condition",
+    "why": "Took $2 - \\sqrt{5}$, which is the negative root."
+   },
+   {
+    "value": "8.472",
+    "misconception": "algebra-manipulation",
+    "why": "Forgot to divide by $2a$, which gives $4 + \\sqrt{20}$."
+   },
+   {
+    "value": ".2360",
+    "misconception": "algebra-manipulation",
+    "why": "Used $b$ instead of $-b$ in the formula, which gives $-2 + \\sqrt{5}$."
+   },
+   {
+    "value": "0.236",
+    "misconception": "algebra-manipulation",
+    "why": "Used $b$ instead of $-b$ in the formula, which gives $-2 + \\sqrt{5}$."
+   },
+   {
+    "value": "3.732",
+    "misconception": "algebra-manipulation",
+    "why": "Got the sign of $c$ wrong in the discriminant, using $16 - 4 = 12$, which gives $2 + \\sqrt{3}$."
+   }
+  ],
+  "id": "orig-direct-solve-q-M-a1f9f0",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "fail",
+  "verification": {
+   "id": "orig-direct-solve-q-M-a1f9f0",
+   "structure": [
+    "key '2+sqrt(5)' is not a plain number or fraction"
+   ],
+   "solver_answer": "2 + \u221a5",
+   "agrees": false,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $w$?",
+  "stimulus": "Public health analysts tracking a vaccination campaign find that the number of weeks $w$ until a coverage target is met satisfies the equation $w^2 + 6w = 40$.",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "Get it into standard form first: $w^2 + 6w - 40 = 0$. This factors as $(w + 10)(w - 4) = 0$, so $w = -10$ or $w = 4$. A number of weeks can't be negative, so $w = 4$.",
+  "common_errors": [
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "Factored with the signs swapped, as $(w - 10)(w + 4)$, and took the positive root."
+   },
+   {
+    "value": "-10",
+    "misconception": "missed-condition",
+    "why": "Kept the negative root, which can't be a number of weeks."
+   },
+   {
+    "value": "34",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote the equation as $w(w + 6) = 40$ and set $w + 6 = 40$. The zero-product rule only works when the product equals 0."
+   },
+   {
+    "value": "40",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote the equation as $w(w + 6) = 40$ and set $w = 40$, using the zero-product rule on a product that isn't 0."
+   }
+  ],
+  "id": "orig-direct-solve-q-M-a9731f",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-a9731f",
+   "structure": [],
+   "solver_answer": "4",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is one possible value of $x$?",
+  "stimulus": "In a linguist's model of how many new words a child learns, $x$ satisfies the equation $x^2 = 9x - 14$.",
+  "keys": [
+   "2",
+   "7"
+  ],
+  "any_of": true,
+  "explanation": "Move every term to one side: $x^2 - 9x + 14 = 0$. This factors as $(x - 2)(x - 7) = 0$, so $x = 2$ or $x = 7$. Either value is correct.",
+  "common_errors": [
+   {
+    "value": "-2",
+    "misconception": "algebra-manipulation",
+    "why": "Moved the terms without changing their signs, which gives $x^2 + 9x + 14 = 0$, with roots $-2$ and $-7$."
+   },
+   {
+    "value": "-7",
+    "misconception": "algebra-manipulation",
+    "why": "Moved the terms without changing their signs, which gives $x^2 + 9x + 14 = 0$, with roots $-2$ and $-7$."
+   },
+   {
+    "value": "14",
+    "misconception": "misread-given",
+    "why": "Read off the constant term instead of solving the equation."
+   }
+  ],
+  "id": "orig-direct-solve-q-M-1571a8",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-1571a8",
+   "structure": [],
+   "solver_answer": "7",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $r$?",
+  "stimulus": "An agricultural scientist sets the radius $r$, in meters, of a circular irrigation zone so that $4r^2 + 5 = 14$.",
+  "keys": [
+   "3/2",
+   "1.5"
+  ],
+  "any_of": false,
+  "explanation": "Isolate $r^2$ first. Subtract 5 to get $4r^2 = 9$, then divide by 4 to get $r^2 = \\frac{9}{4}$. Taking square roots gives $r = \\pm\\frac{3}{2}$. A radius is positive, so $r = \\frac{3}{2}$.",
+  "common_errors": [
+   {
+    "value": "9/4",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $r^2 = \\frac{9}{4}$ without taking the square root."
+   },
+   {
+    "value": "2.25",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $r^2 = 2.25$ without taking the square root."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Took the square root of 9 before dividing by 4."
+   },
+   {
+    "value": "-3/2",
+    "misconception": "missed-condition",
+    "why": "Took the negative root, but a radius must be positive."
+   },
+   {
+    "value": "2.179",
+    "misconception": "algebra-manipulation",
+    "why": "Added 5 instead of subtracting it, which gives $r^2 = \\frac{19}{4}$ and $r = \\frac{\\sqrt{19}}{2}$."
+   }
+  ],
+  "id": "orig-direct-solve-q-M-b1aaf6",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-b1aaf6",
+   "structure": [],
+   "solver_answer": "1.5",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $d$?",
+  "stimulus": "A hydrologist finds that the depth $d$, in meters, of water in a retention basin satisfies the equation $(d + 2)(d - 1) = 18$.",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "The product equals 18, not 0, so you can't set each factor equal to anything yet. Expand to get $d^2 + d - 2 = 18$, then subtract 18: $d^2 + d - 20 = 0$. This factors as $(d + 5)(d - 4) = 0$, so $d = -5$ or $d = 4$. A depth is positive, so $d = 4$.",
+  "common_errors": [
+   {
+    "value": "19",
+    "misconception": "algebra-manipulation",
+    "why": "Set $d - 1 = 18$, using the zero-product rule on a product that equals 18."
+   },
+   {
+    "value": "16",
+    "misconception": "algebra-manipulation",
+    "why": "Set $d + 2 = 18$, using the zero-product rule on a product that equals 18."
+   },
+   {
+    "value": "-5",
+    "misconception": "missed-condition",
+    "why": "Kept the negative root, but a depth must be positive."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Factored with the signs swapped, as $(d - 5)(d + 4)$."
+   }
+  ],
+  "id": "orig-direct-solve-q-M-a8213b",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-a8213b",
+   "structure": [],
+   "solver_answer": "4",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive solution to the equation?",
+  "stimulus": "A materials scientist models the strain $x$ in a polymer sample with the equation $6x^2 - x - 2 = 0$.",
+  "keys": [
+   "2/3",
+   ".6666",
+   ".6667",
+   "0.666",
+   "0.667"
+  ],
+  "any_of": false,
+  "explanation": "Factor: $6x^2 - x - 2 = (3x - 2)(2x + 1)$, so $x = \\frac{2}{3}$ or $x = -\\frac{1}{2}$. The quadratic formula agrees: $x = \\frac{1 \\pm \\sqrt{1 + 48}}{12} = \\frac{1 \\pm 7}{12}$. The positive solution is $\\frac{2}{3}$.",
+  "common_errors": [
+   {
+    "value": "1/2",
+    "misconception": "algebra-manipulation",
+    "why": "Factored with the signs swapped, as $(3x + 2)(2x - 1)$, and took the positive root."
+   },
+   {
+    "value": "-1/2",
+    "misconception": "missed-condition",
+    "why": "Took the negative root, but the question asks for the positive one."
+   },
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Used the quadratic formula but never divided $1 + 7$ by $2a$."
+   },
+   {
+    "value": "4/3",
+    "misconception": "algebra-manipulation",
+    "why": "Divided by $a = 6$ instead of $2a = 12$ in the quadratic formula."
+   }
+  ],
+  "id": "orig-direct-solve-q-M-1ff4c2",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-1ff4c2",
+   "structure": [],
+   "solver_answer": "2/3",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive solution to the equation?",
+  "stimulus": "While fitting a model to the rise and fall of afternoon temperatures, a meteorologist reaches the equation $2x^2 - 7x - 15 = 0$.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "The equation is already in standard form, so factor it. You need two numbers that multiply to $2 \\cdot (-15) = -30$ and add to $-7$. Those are $-10$ and $3$, so $2x^2 - 10x + 3x - 15 = 0$, which becomes $2x(x - 5) + 3(x - 5) = 0$, or $(2x + 3)(x - 5) = 0$. The solutions are $x = 5$ and $x = -\\frac{3}{2}$. The question asks for the positive one, which is $5$. To check in Desmos, graph $y = 2x^2 - 7x - 15$ and click the x-intercepts at $-1.5$ and $5$.",
+  "common_errors": [
+   {
+    "value": "-3/2",
+    "misconception": "missed-condition",
+    "why": "You solved correctly but entered the negative root, even though the question asks for the positive solution."
+   },
+   {
+    "value": "3/2",
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the signs when factoring and wrote $(2x - 3)(x + 5) = 0$, which gives $x = \\frac{3}{2}$ as the positive root."
+   },
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "In the quadratic formula you divided $7 + \\sqrt{169} = 20$ by $2$ instead of by $2a = 4$."
+   }
+  ],
+  "id": "orig-direct-solve-q-M-03a474",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-03a474",
+   "structure": [],
+   "solver_answer": 5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive solution to the equation?",
+  "stimulus": "An agricultural scientist sizing square test plots arrives at the equation $4x^2 - 9 = 91$.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "There is no $x$ term, so isolate $x^2$ first and then take the square root. Add $9$ to both sides to get $4x^2 = 100$. Divide by $4$ to get $x^2 = 25$. Now take the square root of both sides: $x = 5$ or $x = -5$. The positive solution is $5$.",
+  "common_errors": [
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "You took the square root of $100$ before dividing by the coefficient $4$, so the $4$ never got divided out."
+   },
+   {
+    "value": "25",
+    "misconception": "intermediate-step",
+    "why": "You stopped at $x^2 = 25$ and entered the value of $x^2$, not $x$."
+   },
+   {
+    "value": "-5",
+    "misconception": "missed-condition",
+    "why": "You entered the negative square root, even though the question asks for the positive solution."
+   }
+  ],
+  "id": "orig-direct-solve-q-M-686355",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-686355",
+   "structure": [],
+   "solver_answer": 5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive solution to the equation?",
+  "stimulus": "A seismologist comparing the arrival times of two waves sets up the equation $6x^2 + x - 2 = 0$.",
+  "keys": [
+   "1/2",
+   ".5",
+   "0.5"
+  ],
+  "any_of": false,
+  "explanation": "Factor it. You need two numbers that multiply to $6 \\cdot (-2) = -12$ and add to $1$. Those are $4$ and $-3$, so $6x^2 + 4x - 3x - 2 = 0$, which becomes $2x(3x + 2) - 1(3x + 2) = 0$, or $(2x - 1)(3x + 2) = 0$. The solutions are $x = \\frac{1}{2}$ and $x = -\\frac{2}{3}$. The positive one is $\\frac{1}{2}$.",
+  "common_errors": [
+   {
+    "value": "-2/3",
+    "misconception": "missed-condition",
+    "why": "You entered the negative root, even though the question asks for the positive solution."
+   },
+   {
+    "value": "2/3",
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the signs when factoring and wrote $(2x + 1)(3x - 2) = 0$, which gives $\\frac{2}{3}$ as the positive root."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "In the quadratic formula you divided $-1 + \\sqrt{49} = 6$ by $2$ instead of by $2a = 12$."
+   }
+  ],
+  "id": "orig-direct-solve-q-M-c8ff96",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-c8ff96",
+   "structure": [],
+   "solver_answer": 0.5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greater of the two solutions to the equation?",
+  "stimulus": "A linguist modeling how fast a new word spreads through a community obtains the equation $x^2 - 6x + 4 = 0$.",
+  "keys": [
+   "5.236",
+   "5.2360"
+  ],
+  "any_of": false,
+  "explanation": "This doesn't factor over the integers, so use the quadratic formula with $a = 1$, $b = -6$ and $c = 4$. That gives $x = \\frac{6 \\pm \\sqrt{36 - 16}}{2} = \\frac{6 \\pm \\sqrt{20}}{2} = 3 \\pm \\sqrt{5}$. The greater solution is $3 + \\sqrt{5} \\approx 5.236$. In Desmos, graph $y = x^2 - 6x + 4$ and click the right-hand x-intercept.",
+  "common_errors": [
+   {
+    "value": ".7639",
+    "misconception": "complement-or-direction-flip",
+    "why": "You took the smaller root, $3 - \\sqrt{5}$, when the question asks for the greater one."
+   },
+   {
+    "value": "10.47",
+    "misconception": "algebra-manipulation",
+    "why": "You computed $6 + \\sqrt{20}$ and forgot to divide by $2a = 2$."
+   },
+   {
+    "value": "-.7639",
+    "misconception": "algebra-manipulation",
+    "why": "You used $b$ in place of $-b$, which gives $x = -3 \\pm \\sqrt{5}$, and then took the greater of those two roots."
+   }
+  ],
+  "id": "orig-direct-solve-q-M-31aec6",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-31aec6",
+   "structure": [],
+   "solver_answer": 5.236,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive solution to the equation?",
+  "stimulus": "A folklore researcher counting how often a motif repeats across versions of a tale arrives at the equation $x(x + 3) = 70$.",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "The right side is not zero, so you can't use the zero-product rule yet. Expand and move everything to one side: $x^2 + 3x - 70 = 0$. You need two numbers that multiply to $-70$ and add to $3$. Those are $10$ and $-7$, so $(x + 10)(x - 7) = 0$. The solutions are $x = -10$ and $x = 7$. The positive one is $7$.",
+  "common_errors": [
+   {
+    "value": "67",
+    "misconception": "algebra-manipulation",
+    "why": "You set the factor $x + 3$ equal to $70$, as if the zero-product rule worked when the right side is $70$ instead of zero."
+   },
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the signs when factoring and wrote $(x - 10)(x + 7) = 0$."
+   },
+   {
+    "value": "-10",
+    "misconception": "missed-condition",
+    "why": "You entered the negative root, even though the question asks for the positive solution."
+   }
+  ],
+  "id": "orig-direct-solve-q-M-21a3bb",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-21a3bb",
+   "structure": [],
+   "solver_answer": 7,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive solution to the equation?",
+  "stimulus": "A nutrition scientist balancing two sources of fiber in a meal plan reaches the equation $5x^2 = 3x + 2$.",
+  "keys": [
+   "1"
+  ],
+  "any_of": false,
+  "explanation": "Move everything to one side to get standard form: $5x^2 - 3x - 2 = 0$. You need two numbers that multiply to $5 \\cdot (-2) = -10$ and add to $-3$. Those are $-5$ and $2$, so $5x^2 - 5x + 2x - 2 = 0$, which becomes $5x(x - 1) + 2(x - 1) = 0$, or $(5x + 2)(x - 1) = 0$. The solutions are $x = 1$ and $x = -\\frac{2}{5}$. The positive one is $1$.",
+  "common_errors": [
+   {
+    "value": "-2/5",
+    "misconception": "missed-condition",
+    "why": "You entered the negative root, even though the question asks for the positive solution."
+   },
+   {
+    "value": "2/5",
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the signs when factoring and wrote $(5x - 2)(x + 1) = 0$, which gives $\\frac{2}{5}$ as the positive root."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "In the quadratic formula you divided $3 + \\sqrt{49} = 10$ by $2$ instead of by $2a = 10$."
+   }
+  ],
+  "id": "orig-direct-solve-q-M-30c771",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-M-30c771",
+   "structure": [],
+   "solver_answer": 1,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

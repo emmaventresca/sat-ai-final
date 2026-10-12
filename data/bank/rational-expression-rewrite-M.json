@@ -245,5 +245,643 @@
    "residue": 2
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which expression is equivalent to $\frac{3}{x} + \frac{5}{x+2}$, where $x > 0$?",
+  "stimulus": "A folklorist compares how often a trickster motif shows up in two collections of retold tales. The comparison uses the expression $\frac{3}{x} + \frac{5}{x+2}$, where $x$ is a positive number of retellings.",
+  "choices": [
+   "$\frac{8}{2x+2}$",
+   "$\frac{8}{x^2+2x}$",
+   "$\frac{8x+6}{x^2+2x}$",
+   "$\frac{8x+2}{x^2+2x}$"
+  ],
+  "answer": "C",
+  "explanation": "The common denominator is $x(x+2) = x^2 + 2x$. Rewrite each fraction over it: $\frac{3}{x} = \frac{3(x+2)}{x(x+2)} = \frac{3x+6}{x^2+2x}$ and $\frac{5}{x+2} = \frac{5x}{x(x+2)} = \frac{5x}{x^2+2x}$. Then add the numerators: $\frac{3x+6+5x}{x^2+2x} = \frac{8x+6}{x^2+2x}$. To check, try $x = 2$. The original gives $\frac{3}{2} + \frac{5}{4} = \frac{11}{4}$, and $\frac{8(2)+6}{4+4} = \frac{22}{8} = \frac{11}{4}$, so they match.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the numerators ($3 + 5 = 8$) and the denominators ($x + x + 2 = 2x + 2$) straight across. Fractions can only be added once they share a denominator. With $x = 2$ this choice gives $\frac{8}{6}$, not $\frac{11}{4}$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the right common denominator, $x^2 + 2x$, but kept the old numerators 3 and 5 and added them. Each numerator has to be multiplied by the factor its denominator was missing, so 3 becomes $3(x+2)$ and 5 becomes $5x$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You rebuilt the first numerator as $3x + 2$ when it should be $3(x+2) = 3x + 6$. The 3 has to multiply both terms in $x + 2$. With $x = 2$ this choice gives $\frac{18}{8}$, not $\frac{22}{8}$."
+   }
+  },
+  "id": "orig-rational-expre-M-1ba7db",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-1ba7db",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{3}{x} + \\frac{5}{x+2}$, where $x > 0$?",
+  "stimulus": "A paleobotanist estimates how fast fossil leaf fragments collect at two layers of a lakebed core. She adds the two rates, $\\frac{3}{x}$ and $\\frac{5}{x+2}$, where $x$ is the depth of the upper layer in meters.",
+  "choices": [
+   "$\\frac{8x+6}{x^2+2x}$",
+   "$\\frac{8}{2x+2}$",
+   "$\\frac{8x+2}{x^2+2x}$",
+   "$\\frac{8x+10}{x^2+2x}$"
+  ],
+  "answer": "A",
+  "explanation": "The common denominator is $x(x+2) = x^2+2x$. Rewrite the sum as $\\frac{3(x+2)}{x(x+2)} + \\frac{5x}{x(x+2)}$. The numerators combine to $3x + 6 + 5x = 8x + 6$, so the sum is $\\frac{8x+6}{x^2+2x}$. To check, try $x = 2$: the original gives $\\frac{3}{2} + \\frac{5}{4} = \\frac{11}{4}$, and so does $\\frac{22}{8}$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the numerators ($3 + 5$) and the denominators ($x + x + 2$) straight across. Fractions only add once they share a denominator. At $x = 2$ this choice gives $\\frac{8}{6}$, not $\\frac{11}{4}$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the right common denominator, but you distributed $3(x+2)$ as $3x + 2$ instead of $3x + 6$. That dropped 4 from the numerator."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the wrong fractions by the missing factors. You wrote $5(x+2) + 3x$, but the 3 must be multiplied by $(x+2)$ and the 5 by $x$."
+   }
+  },
+  "id": "orig-rational-expre-M-45d508",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-45d508",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{x^2-9}{x^2+x-6}$, where $x > 2$?",
+  "stimulus": "A hydrologist compares how much water two connected reservoirs hold. For a channel width of $x$ meters, the ratio of their volumes is modeled by $\\frac{x^2-9}{x^2+x-6}$.",
+  "choices": [
+   "$\\frac{-9}{x-6}$",
+   "$\\frac{x-3}{x+2}$",
+   "$\\frac{x-3}{x-2}$",
+   "$\\frac{3}{2}$"
+  ],
+  "answer": "C",
+  "explanation": "Factor the top and the bottom first. The numerator is a difference of squares, $(x+3)(x-3)$, and the denominator is $(x+3)(x-2)$. Because $x > 2$, the shared factor $(x+3)$ is never zero, so you can cancel it. That leaves $\\frac{x-3}{x-2}$. To check, try $x = 5$: the original gives $\\frac{16}{24} = \\frac{2}{3}$, and so does $\\frac{2}{3}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You canceled the $x^2$ terms, but they are terms, not factors. You can only cancel something that multiplies the whole numerator and the whole denominator. At $x = 5$ this choice gives 9, not $\\frac{2}{3}$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You got a sign wrong when you factored the denominator. $(x+3)(x+2)$ multiplies out to $x^2 + 5x + 6$, not $x^2 + x - 6$, which factors as $(x+3)(x-2)$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You reached $\\frac{x-3}{x-2}$ correctly, then canceled the $x$ terms. They are terms joined by subtraction, not factors, so the expression doesn't reduce to a constant."
+   }
+  },
+  "id": "orig-rational-expre-M-598fd3",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-598fd3",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{2x^2+7x+8}{x+2}$, where $x > 0$?",
+  "stimulus": "An immunologist models the number of antibodies per activated cell after $x$ hours with the expression $\\frac{2x^2+7x+8}{x+2}$.",
+  "choices": [
+   "$2x+3+\\frac{2}{x}$",
+   "$2x+11+\\frac{30}{x+2}$",
+   "$2x+3+\\frac{8}{x+2}$",
+   "$2x+3+\\frac{2}{x+2}$"
+  ],
+  "answer": "D",
+  "explanation": "Write the numerator as the divisor times something, plus a remainder. $(x+2)(2x+3) = 2x^2 + 7x + 6$, which is 2 less than the numerator. So $2x^2+7x+8 = (x+2)(2x+3) + 2$. Dividing by $x+2$ gives $2x + 3 + \\frac{2}{x+2}$. To check, try $x = 2$: the original gives $\\frac{30}{4} = 7.5$, and so does $7 + 0.5$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the right quotient and remainder, but you put the remainder over $x$ instead of the divisor, $x + 2$. A remainder always goes over the divisor."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "In synthetic division you used $+2$ instead of $-2$, the value that makes $x + 2$ equal zero. Every number after the first came out wrong. At $x = 2$ this choice gives 22.5, not 7.5."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You stopped partway. You kept the original constant 8 as the remainder without subtracting the 6 that $(x+2)(2x+3)$ already accounts for. The remainder is $8 - 6 = 2$."
+   }
+  },
+  "id": "orig-rational-expre-M-564b79",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-564b79",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{12}{x}+\\frac{12}{x+2}$, where $x>0$?",
+  "stimulus": "In a sprint drill, an athlete covers 12 meters at $x$ meters per second, then 12 more meters at $x+2$ meters per second. A sports scientist models the total time, in seconds, as $\\frac{12}{x}+\\frac{12}{x+2}$.",
+  "choices": [
+   "$\\frac{24x+24}{x^2+2x}$",
+   "$\\frac{24}{2x+2}$",
+   "$\\frac{12x+36}{x^2+2x}$",
+   "$\\frac{144}{x^2+2x}$"
+  ],
+  "answer": "A",
+  "explanation": "The common denominator is $x(x+2)=x^2+2x$. Rewrite the first fraction as $\\frac{12(x+2)}{x(x+2)}$ and the second as $\\frac{12x}{x(x+2)}$. Add the numerators: $12x+24+12x=24x+24$, which gives $\\frac{24x+24}{x^2+2x}$. To check, try $x=2$: the original is $6+3=9$, and $\\frac{72}{8}=9$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the numerators ($12+12$) and the denominators ($x+x+2$) straight across. Fractions only add over a common denominator. At $x=2$ this choice gives 4, not 9."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You put both fractions over $x(x+2)$, but you scaled only one numerator. The first became $12(x+2)$, and the second stayed 12 when it should have become $12x$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You multiplied the two fractions instead of adding them, so you found their product, $\\frac{144}{x(x+2)}$, and not the total time."
+   }
+  },
+  "id": "orig-rational-expre-M-830ecc",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-830ecc",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{x^2-9}{x^2+5x+6}$, where $x>3$?",
+  "stimulus": "An immunologist compares two antibody responses in a trial. The ratio of the first response to the second is modeled by $\\frac{x^2-9}{x^2+5x+6}$, where $x$ is the number of days after a booster dose.",
+  "choices": [
+   "$\\frac{x-3}{x+2}$",
+   "$\\frac{-9}{5x+6}$",
+   "$\\frac{x+3}{x+2}$",
+   "$\\frac{x-3}{x+3}$"
+  ],
+  "answer": "A",
+  "explanation": "Factor both parts first. The numerator is a difference of squares, $(x-3)(x+3)$, and the denominator is $(x+2)(x+3)$. The factor $x+3$ is shared, and it is never zero when $x>3$, so you can cancel it. That leaves $\\frac{x-3}{x+2}$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You cancelled the $x^2$ terms, but they are terms joined by addition and subtraction, not factors. You can only cancel a factor that multiplies the whole numerator and the whole denominator."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored correctly but cancelled the wrong factor from the numerator. You removed $x-3$ when the shared factor was $x+3$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored the denominator as $(x+3)^2$. That expands to $x^2+6x+9$, not $x^2+5x+6$. The correct factors are $(x+2)(x+3)$."
+   }
+  },
+  "id": "orig-rational-expre-M-e43e6a",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-e43e6a",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{6x+7}{2x+1}$, where $x>0$?",
+  "stimulus": "A folklorist catalogs versions of a regional trickster tale. For a collection gathered from $x$ villages, the average number of recorded versions per storyteller is modeled by $\\frac{6x+7}{2x+1}$.",
+  "choices": [
+   "$3+\\frac{4}{2x+1}$",
+   "$3+\\frac{7}{2x+1}$",
+   "$3+\\frac{1}{2x+1}$",
+   "$4+\\frac{3}{2x+1}$"
+  ],
+  "answer": "A",
+  "explanation": "Rewrite the numerator as the divisor times something, plus a remainder: $6x+7=3(2x+1)+4$. Split the fraction into two: $\\frac{3(2x+1)}{2x+1}+\\frac{4}{2x+1}=3+\\frac{4}{2x+1}$. To check, try $x=1$: the original is $\\frac{13}{3}$, and $3+\\frac{4}{3}=\\frac{13}{3}$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You took 3 out of $6x$ but did not take it out of the constant term. Since $3(2x+1)=6x+3$, the remainder is $7-3=4$, not 7."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted 6 from 7, as if $3(2x+1)$ were $6x+6$. Distributing the 3 over $2x+1$ gives $6x+3$, so the remainder is 4."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the quotient and the remainder. The divisor goes into the numerator 3 times with 4 left over, so 3 is the whole-number part and 4 is the remainder over $2x+1$."
+   }
+  },
+  "id": "orig-rational-expre-M-be2bd5",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-be2bd5",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{3}{x-2} + \\frac{5}{x+4}$, where $x > 2$?",
+  "stimulus": "A materials scientist testing a two-layer ceramic coating adds two strain terms to estimate total deformation. In the model, $x$ is the thickness, in millimeters, of the outer layer.",
+  "choices": [
+   "$\\frac{8}{2x+2}$",
+   "$\\frac{8x+2}{(x-2)(x+4)}$",
+   "$\\frac{8x+14}{(x-2)(x+4)}$",
+   "$\\frac{8x+22}{(x-2)(x+4)}$"
+  ],
+  "answer": "B",
+  "explanation": "The common denominator is $(x-2)(x+4)$. Rewrite the sum as $\\frac{3(x+4) + 5(x-2)}{(x-2)(x+4)} = \\frac{3x+12+5x-10}{(x-2)(x+4)} = \\frac{8x+2}{(x-2)(x+4)}$. To check by picking a number, use $x = 4$. The original is $\\frac{3}{2} + \\frac{5}{8} = \\frac{17}{8}$, and choice B gives $\\frac{34}{16} = \\frac{17}{8}$. None of the other choices gives this value.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the numerators ($3 + 5$) and the denominators ($(x-2) + (x+4)$) straight across. Fractions can only be combined over a common denominator."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied each numerator by its own denominator, $3(x-2) + 5(x+4)$, when you should have used the other fraction's denominator, $3(x+4) + 5(x-2)$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You distributed $5(x-2)$ as $5x + 10$ and dropped the negative sign, so your constant came out as $12 + 10$ when it should be $12 - 10$."
+   }
+  },
+  "id": "orig-rational-expre-M-40f4e1",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-40f4e1",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{x^2-9}{x^2+5x+6}$, where $x > 3$?",
+  "stimulus": "An ecologist studying a wetland compares the number of breeding frogs to the number of available ponds. In the model, $x$ is the number of weeks since the spring thaw.",
+  "choices": [
+   "$\\frac{x+3}{x+2}$",
+   "$\\frac{-9}{5x+6}$",
+   "$\\frac{x-3}{x+2}$",
+   "$\\frac{x-3}{x+3}$"
+  ],
+  "answer": "C",
+  "explanation": "Factor the top and bottom first: $x^2 - 9 = (x-3)(x+3)$ and $x^2 + 5x + 6 = (x+2)(x+3)$. Cancel the shared factor $(x+3)$ to get $\\frac{x-3}{x+2}$. To check by picking a number, use $x = 5$. The original is $\\frac{16}{56} = \\frac{2}{7}$, and choice C gives $\\frac{2}{7}$. No other choice gives this value.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored $x^2 - 9$ as $(x+3)(x+3)$. A difference of squares factors as $(x-3)(x+3)$, so the factor left after cancelling is $x - 3$, not $x + 3$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You cancelled the $x^2$ terms because they appear in both the numerator and the denominator. They are terms joined by addition, not factors, so they cannot be cancelled. Factor first, then cancel."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You correctly removed $(x+3)$ from the numerator but removed $(x+2)$ from the denominator. Only the factor that both share, $(x+3)$, can be cancelled."
+   }
+  },
+  "id": "orig-rational-expre-M-1af252",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-1af252",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ is the number of weeks since the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{2x^2+7x-1}{x+3}$, where $x > 0$?",
+  "stimulus": "A linguist modeling how the vocabulary of a language grows over time uses a ratio in which $x$ is the number of centuries since the language's earliest written records.",
+  "choices": [
+   "$2x+7-\\frac{1}{x+3}$",
+   "$2x+1+\\frac{4}{x+3}$",
+   "$2x+13+\\frac{38}{x+3}$",
+   "$2x+1-\\frac{4}{x+3}$"
+  ],
+  "answer": "D",
+  "explanation": "Rewrite the numerator as the divisor times a quotient, plus a remainder: $(x+3)(2x+1) = 2x^2 + 7x + 3$, so $2x^2 + 7x - 1 = (x+3)(2x+1) - 4$. Splitting this into two fractions gives $2x + 1 - \\frac{4}{x+3}$. To check by picking a number, use $x = 1$. The original is $\\frac{8}{4} = 2$, and choice D gives $3 - 1 = 2$. No other choice gives this value.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided $2x^2 + 7x$ by $x$ alone and left $-1$ over $x + 3$. You can't split the divisor $x + 3$ across a sum. The whole numerator has to be divided by the whole binomial."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "Your quotient $2x + 1$ is correct, but you got the sign of the remainder wrong. $(x+3)(2x+1)$ is $2x^2 + 7x + 3$, which is 4 more than the numerator, so the remainder is $-4$, not $+4$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You did synthetic division with $3$ when you should have used $-3$. The divisor $x + 3$ is zero at $x = -3$, so $-3$ is the value to use."
+   }
+  },
+  "id": "orig-rational-expre-M-7bb518",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-7bb518",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{5}{x-1}-\\frac{3}{x+1}$, where $x>1$?",
+  "stimulus": "A printmaking studio prices two kinds of editions. For an edition of $x$ hundred prints, the ink cost per print, in dollars, is $\\frac{5}{x-1}$ for a linocut and $\\frac{3}{x+1}$ for a screenprint. The studio wants to know how much more the linocut ink costs per print, which is $\\frac{5}{x-1}-\\frac{3}{x+1}$.",
+  "choices": [
+   "$\\frac{2x+8}{x^2-1}$",
+   "$\\frac{2}{x^2-1}$",
+   "$\\frac{2x+2}{x^2-1}$",
+   "$\\frac{8x+2}{x^2-1}$"
+  ],
+  "answer": "A",
+  "explanation": "The common denominator is $(x-1)(x+1)=x^2-1$. Rewrite each fraction over it: $\\frac{5(x+1)}{x^2-1}-\\frac{3(x-1)}{x^2-1}$. The numerator is $5x+5-3x+3=2x+8$, so the difference is $\\frac{2x+8}{x^2-1}$. To check, pick $x=2$: the original gives $5-1=4$, and $\\frac{12}{3}=4$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the common denominator but subtracted the original numerators, $5-3$, without first multiplying each one by the factor its denominator was missing."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You distributed the minus sign to only the first term of $3(x-1)$ and wrote $-3x-3$ when it should be $-3x+3$, so the constant came out as 2 instead of 8."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the two costs instead of subtracting them. The question asks how much more one costs than the other, not what they cost together."
+   }
+  },
+  "id": "orig-rational-expre-M-824945",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-824945",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{x^2-16}{2x}\\div\\frac{x+4}{x}$, where $x>4$?",
+  "stimulus": "Marine biologists measure kelp density at two reef sites. At site A the density, in plants per square meter, is $\\frac{x^2-16}{2x}$, and at site B it is $\\frac{x+4}{x}$, where $x$ is the water temperature above a baseline. The number of times as dense site A is as site B is $\\frac{x^2-16}{2x}\\div\\frac{x+4}{x}$.",
+  "choices": [
+   "$\\frac{x-4}{2}$",
+   "$\\frac{x+4}{2}$",
+   "$\\frac{2}{x-4}$",
+   "$x-4$"
+  ],
+  "answer": "A",
+  "explanation": "Dividing by a fraction is the same as multiplying by its reciprocal: $\\frac{x^2-16}{2x}\\cdot\\frac{x}{x+4}$. Factor $x^2-16$ as $(x+4)(x-4)$, then cancel the shared factors $x+4$ and $x$. What remains is $\\frac{x-4}{2}$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored $x^2-16$ correctly but cancelled the wrong factor, keeping $x+4$ and removing $x-4$, which isn't in the divisor."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided site B's density by site A's. That tells you how many times as dense B is as A, which is the reverse of what was asked."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You cancelled the $x$ terms and the $x+4$ factor but dropped the 2 from the denominator $2x$, as though cancelling $x$ removed the whole denominator."
+   }
+  },
+  "id": "orig-rational-expre-M-65960b",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-65960b",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{x^2+5x+9}{x+2}-x$, where $x>0$?",
+  "stimulus": "An ecologist models two amphibian populations in a wetland $x$ years after a restoration project. The frog population, in hundreds, is $\\frac{x^2+5x+9}{x+2}$, and the toad population, in hundreds, is $x$. How many more frogs than toads there are, in hundreds, is $\\frac{x^2+5x+9}{x+2}-x$.",
+  "choices": [
+   "$3+\\frac{3}{x+2}$",
+   "$x+3+\\frac{3}{x+2}$",
+   "$3+\\frac{9}{x+2}$",
+   "$x+2+\\frac{5}{x+2}$"
+  ],
+  "answer": "A",
+  "explanation": "Write $x$ as $\\frac{x(x+2)}{x+2}=\\frac{x^2+2x}{x+2}$. Subtracting gives $\\frac{3x+9}{x+2}$. Since $3(x+2)=3x+6$, the numerator is $3(x+2)+3$, so the expression equals $3+\\frac{3}{x+2}$. To check, pick $x=2$: the original gives $\\frac{23}{4}-2=\\frac{15}{4}$, and $3+\\frac{3}{4}=\\frac{15}{4}$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the frog expression correctly to get $x+3+\\frac{3}{x+2}$ but never subtracted the toads, so this is the frog population, not the gap between the two."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the quotient 3 but took the remainder to be the original constant 9, forgetting to subtract the 6 that $3(x+2)$ already uses up."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted $x$ from the numerator alone, as if $x$ already had the denominator $x+2$, which gave $\\frac{x^2+4x+9}{x+2}$. You have to rewrite $x$ over the common denominator before you combine."
+   }
+  },
+  "id": "orig-rational-expre-M-a99b3b",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-a99b3b",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

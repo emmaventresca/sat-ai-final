@@ -268,5 +268,739 @@
    "residue": 4
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "While planning a relief print, an artist uses the equation $3x^2 + 24 = 12x + k$ to find where a carved curve touches a straight guide line on the block. In the equation, $k$ is a constant, and the equation has exactly one real solution.",
+  "choices": [
+   "$-24$",
+   "$-12$",
+   "$2$",
+   "$12$"
+  ],
+  "answer": "D",
+  "explanation": "First move everything to one side: $3x^2 - 12x + (24 - k) = 0$. So $a = 3$, $b = -12$ and $c = 24 - k$. For exactly one real solution, the discriminant must be zero: $(-12)^2 - 4(3)(24 - k) = 0$. That gives $144 - 288 + 12k = 0$, so $12k = 144$ and $k = 12$. To check, with $k = 12$ the equation becomes $3x^2 - 12x + 12 = 3(x - 2)^2 = 0$, which has only one solution, $x = 2$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the 4 from the discriminant and solved $144 - 3(24 - k) = 0$. That gives $72 + 3k = 144$... and then a sign slip leads to $-24$. The discriminant is $b^2 - 4ac$, so the 4 has to stay."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $k$ to the left side, you kept its plus sign and wrote the constant term as $24 + k$ instead of $24 - k$. Solving $144 - 12(24 + k) = 0$ gives $-12$. This is the trap of reading $c$ before the equation is fully in standard form."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$2$ is the single solution $x$ of the equation once $k = 12$. The question asks for the constant $k$, not for $x$."
+   }
+  },
+  "id": "orig-discriminant-n-M-5ccecc",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-5ccecc",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the equation has exactly one real solution what",
+    "equation has exactly one real solution what is",
+    "has exactly one real solution what is the",
+    "real solution what is the value of __var__"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "In the given equation, $k$ is a constant. The equation has exactly one real solution. Which equation must be true?",
+  "stimulus": "A textile historian fits a curve to weekly cloth output from an 1820s handloom workshop and arrives at the equation below.\n\n$2x^2 + 7x = 3x + k$",
+  "choices": [
+   "$16 + 8k = 0$",
+   "$16 - 8k = 0$",
+   "$49 + 8k = 0$",
+   "$16 + 8k > 0$"
+  ],
+  "answer": "A",
+  "explanation": "Subtract $3x$ and $k$ from both sides to get $2x^2 + 4x - k = 0$. That gives $a = 2$, $b = 4$ and $c = -k$. A quadratic has exactly one real solution when $b^2 - 4ac = 0$, so you need $4^2 - 4(2)(-k) = 0$, which simplifies to $16 + 8k = 0$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You took $c$ to be $k$ instead of $-k$. The minus sign goes missing when you forget that $k$ changes sign as it moves to the left side."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You read $b = 7$ straight off the left side without first subtracting $3x$. Once everything is on one side, the $x$-coefficient is $7 - 3 = 4$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "A positive discriminant means two real solutions. Exactly one solution needs the discriminant to equal zero."
+   }
+  },
+  "id": "orig-discriminant-n-M-0c0c28",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-0c0c28",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "a constant the equation has exactly one real",
+    "constant the equation has exactly one real solution"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "The line $y = h$, where $h$ is a constant, intersects the parabola at exactly one point. Which of the following must be true?",
+  "stimulus": "A hydrologist models the cross-section of a drainage channel with the parabola $y = x^2 - 6x + 10$, where $x$ and $y$ are measured in meters.",
+  "choices": [
+   "$36 - 4(10 - h) = 0$",
+   "$36 - 4(10 + h) = 0$",
+   "$36 - 4(10 - h) < 0$",
+   "$6 - 4(10 - h) = 0$"
+  ],
+  "answer": "A",
+  "explanation": "Set the two expressions for $y$ equal: $x^2 - 6x + 10 = h$. Subtracting $h$ gives $x^2 - 6x + (10 - h) = 0$, so $a = 1$, $b = -6$ and $c = 10 - h$. One intersection point means $b^2 - 4ac = 0$, which is $(-6)^2 - 4(1)(10 - h) = 0$, or $36 - 4(10 - h) = 0$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $h$ to the constant term instead of subtracting it. When $h$ moves to the left side, the constant becomes $10 - h$."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "A negative discriminant means the line misses the parabola entirely. Exactly one intersection point needs the discriminant to equal zero."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $b$ where the formula needs $b^2$. Squaring $-6$ gives $36$, not $6$."
+   }
+  },
+  "id": "orig-discriminant-n-M-68d65f",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-68d65f",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given equation, $c$ is a constant. The equation has no real solutions. Which of the following must be true?",
+  "stimulus": "An ecologist compares two models of a pond's frog population. The models never predict the same value when the equation below has no real solutions.\n\n$x^2 + 6x = 2x - c$",
+  "choices": [
+   "$16 - 4c < 0$",
+   "$16 - 4c > 0$",
+   "$16 + 4c < 0$",
+   "$36 - 4c < 0$"
+  ],
+  "answer": "A",
+  "explanation": "Subtract $2x$ from both sides and add $c$ to both sides to get $x^2 + 4x + c = 0$. That gives $a = 1$, $b = 4$ and $c = c$. A quadratic has no real solutions when $b^2 - 4ac < 0$, so you need $4^2 - 4(1)(c) < 0$, which is $16 - 4c < 0$.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You chose the wrong side of zero. A positive discriminant means two real solutions, but this equation has none."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You kept the constant as $-c$ after moving it. Adding $c$ to both sides makes the constant term $+c$, so $-4ac$ becomes $-4c$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You read $b = 6$ off the left side before combining like terms. After you subtract $2x$, the $x$-coefficient is $6 - 2 = 4$."
+   }
+  },
+  "id": "orig-discriminant-n-M-3c46e4",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-3c46e4",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is a constant the equation has no real",
+    "a constant the equation has no real solutions"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A musicologist studying how strings were tuned in early lutes models one tuning relationship with the equation $x^2 + 8x = c$, where $c$ is a constant. The equation has no real solutions.",
+  "choices": [
+   "$c < -16$",
+   "$c > -16$",
+   "$c > 16$",
+   "$c < -64$"
+  ],
+  "answer": "A",
+  "explanation": "First put the equation in standard form: $x^2 + 8x - c = 0$. That gives $a = 1$, $b = 8$ and a constant term of $-c$. For no real solutions the discriminant must be negative: $8^2 - 4(1)(-c) < 0$, so $64 + 4c < 0$. That means $4c < -64$, so $c < -16$.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You solved $64 + 4c = 0$ correctly but used the wrong side of the boundary. $c > -16$ makes the discriminant positive, which gives two real solutions, not none."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You took the constant term as $+c$ without moving it across the equals sign. The standard form is $x^2 + 8x - c = 0$, so the constant term is $-c$, not $c$. Using $c$ gives $64 - 4c < 0$, which leads to $c > 16$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You left the 4 out of $4ac$ and wrote $64 + c < 0$. The discriminant is $b^2 - 4ac$, so the inequality is $64 + 4c < 0$, which gives $c < -16$."
+   }
+  },
+  "id": "orig-discriminant-n-M-8fb0c1",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-8fb0c1",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the equation __var__ where __var__ is a constant",
+    "is a constant the equation has no real",
+    "a constant the equation has no real solutions"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "In a nutrition study, a researcher models protein absorption with $y = x^2 + 3$ and a dietary intake target with $y = 2x + k$, where $k$ is a constant. The graphs of the two equations meet at exactly one point.",
+  "choices": [
+   "$k = -2$",
+   "$k = 4$",
+   "$k = 2$",
+   "$k = 8$"
+  ],
+  "answer": "C",
+  "explanation": "Set the two expressions equal: $x^2 + 3 = 2x + k$. Move every term to one side to get $x^2 - 2x + (3 - k) = 0$. If the graphs meet exactly once, the discriminant is zero: $(-2)^2 - 4(1)(3 - k) = 0$. That gives $4 - 12 + 4k = 0$, so $4k = 8$ and $k = 2$. To check, $x^2 - 2x + 1 = 0$ has the single solution $x = 1$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $k$ to the left side you kept its plus sign, so the constant term became $3 + k$. Then $4 - 4(3 + k) = 0$ gives $k = -2$. Subtracting $k$ makes the constant term $3 - k$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "4 is the $y$-coordinate of the point where the graphs touch, $(1, 4)$. It is not the value of $k$. The line is $y = 2x + 2$, so $k = 2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You didn't distribute the 4 across $(3 - k)$ and wrote $4 - 12 + k = 0$. Multiplying correctly gives $4 - 12 + 4k = 0$, so $k = 2$."
+   }
+  },
+  "id": "orig-discriminant-n-M-8d0b7e",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-8d0b7e",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ is a constant the graphs of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A seismologist modeling the arrival times of aftershock waves uses the equation $2x^2 - 6x = -p$, where $p$ is an integer. The equation has two distinct real solutions.",
+  "choices": [
+   "The greatest possible value of $p$ is 5.",
+   "The greatest possible value of $p$ is 4.",
+   "The greatest possible value of $p$ is 8.",
+   "The least possible value of $p$ is -4."
+  ],
+  "answer": "B",
+  "explanation": "Add $p$ to both sides to get standard form: $2x^2 - 6x + p = 0$, so $a = 2$, $b = -6$ and the constant term is $p$. Two distinct real solutions need a positive discriminant: $(-6)^2 - 4(2)(p) > 0$, so $36 - 8p > 0$ and $p < 4.5$. Because $p$ must be an integer, the greatest value it can take is 4. There is no smallest value.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You found the boundary $p < 4.5$ correctly but rounded up to 5. Since 5 is greater than 4.5, it falls outside the allowed range. The greatest integer that works is 4."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the coefficient $a = 2$ and wrote the discriminant as $36 - 4p$. That gives $p < 9$, so you got 8. The correct discriminant is $36 - 8p$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You read the constant term as $-p$ from the right side without moving it over. That gives $36 + 8p > 0$, so $p > -4.5$. In standard form the constant term is $+p$, which puts an upper limit on $p$, not a lower one."
+   }
+  },
+  "id": "orig-discriminant-n-M-d1e174",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-d1e174",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given equations, $a$ and $b$ are positive constants. Each equation has exactly one real solution. What is the value of $a - b$?",
+  "stimulus": "An agronomist compares two irrigation schedules for a test plot of soybeans. Her models produce the equations below, where $x$ is the number of hours since watering began.\n\nSchedule 1: $4x^2 + 9 = ax$\n\nSchedule 2: $x^2 + bx + 17 = -8$",
+  "choices": [
+   "$-4$",
+   "$2$",
+   "$6$",
+   "$12$"
+  ],
+  "answer": "B",
+  "explanation": "Put each equation in standard form first. Schedule 1 becomes $4x^2 - ax + 9 = 0$. One solution means the discriminant is zero, so $a^2 - 4(4)(9) = 0$. That gives $a^2 = 144$, and because $a$ is positive, $a = 12$. Schedule 2 becomes $x^2 + bx + 25 = 0$ once you add 8 to both sides. Setting $b^2 - 4(1)(25) = 0$ gives $b^2 = 100$, so $b = 10$. The difference is $a - b = 12 - 10 = 2$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the leading coefficient 4 in Schedule 1 and used $a^2 - 4(1)(9) = 0$. That gives $a = 6$, and $6 - 10 = -4$. The coefficient of $x^2$ is 4, and it belongs in $4ac$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved the $-8$ in Schedule 2, you subtracted instead of adding and got a constant of $17 - 8 = 9$. That gives $b = 6$, and $12 - 6 = 6$. Adding 8 to both sides makes the constant $17 + 8 = 25$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $a = 12$ correctly but gave it as the answer. The question asks how much greater $a$ is than $b$, so you still need to subtract $b = 10$."
+   }
+  },
+  "id": "orig-discriminant-n-M-56a8ce",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-56a8ce",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "equation has exactly one real solution what is",
+    "has exactly one real solution what is the",
+    "real solution what is the value of __var__"
+   ],
+   "residue": 5
+  }
+ },
+ {
+  "stem": "In the given equations, $j$ and $k$ are constants. Equation A has exactly one real solution, and equation B has no real solutions. If $k$ is the smallest integer for which this is true, what is the value of $k - j$?",
+  "stimulus": "An ecologist models dissolved oxygen in two ponds. One pond is shaded by willows and the other is open to the sun.\n\nEquation A (shaded pond): $x^2 + 13 = 6x + j$\n\nEquation B (open pond): $x^2 - 10x + k = 0$",
+  "choices": [
+   "$21$",
+   "$22$",
+   "$26$",
+   "$30$"
+  ],
+  "answer": "B",
+  "explanation": "Rewrite equation A as $x^2 - 6x + (13 - j) = 0$. Exactly one solution means $(-6)^2 - 4(1)(13 - j) = 0$, so $36 = 52 - 4j$ and $j = 4$. For equation B, no real solutions means $(-10)^2 - 4(1)(k) < 0$, so $100 < 4k$ and $k > 25$. The smallest integer greater than 25 is 26. So $k - j = 26 - 4 = 22$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You used $k = 25$. At $k = 25$ the discriminant equals zero, so equation B has exactly one solution rather than none. The inequality is strict, so the smallest integer that works is 26, and $26 - 4 = 22$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $k = 26$ correctly but stopped there. The question asks for the gap $k - j$, so you still need to subtract $j = 4$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $j$ to the left side of equation A, you wrote the constant as $13 + j$ instead of $13 - j$. That gives $j = -4$, and $26 - (-4) = 30$."
+   }
+  },
+  "id": "orig-discriminant-n-M-7c5d4e",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-7c5d4e",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the xy-plane, the graph of $y = x^2 + 5$ intersects each of the lines $y = 6x + c$ and $y = 2x + d$ at exactly one point, where $c$ and $d$ are constants. What is the value of $d - c$?",
+  "stimulus": "A sports scientist models a sprinter's leg-muscle fatigue with the curve $y = x^2 + 5$. She then draws two straight-line trend lines for comparison, and each one just touches the curve.",
+  "choices": [
+   "$-8$",
+   "$0$",
+   "$2$",
+   "$8$"
+  ],
+  "answer": "D",
+  "explanation": "Set each line equal to the parabola and move every term to one side. For the first line, $x^2 + 5 = 6x + c$ becomes $x^2 - 6x + (5 - c) = 0$. Exactly one intersection means $36 - 4(5 - c) = 0$, so $5 - c = 9$ and $c = -4$. For the second line, $x^2 + 5 = 2x + d$ becomes $x^2 - 2x + (5 - d) = 0$. Then $4 - 4(5 - d) = 0$, so $5 - d = 1$ and $d = 4$. So $d - c = 4 - (-4) = 8$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You subtracted in the wrong order and found $c - d = -4 - 4 = -8$. The question asks for $d - c$. You also land here if you flip the sign on both constants when moving them across."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $6x + c$ to the left side, you wrote the constant as $5 + c$ instead of $5 - c$. That gives $c = 4$, and $4 - 4 = 0$. Subtracting $c$ from both sides leaves $5 - c$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found where each line touches the curve, at $x = 3$ and $x = 1$, and subtracted those x-coordinates. The question asks about the constants $c$ and $d$, not the points where the lines touch."
+   }
+  },
+  "id": "orig-discriminant-n-M-cf0a92",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-cf0a92",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given equation, $k$ is a positive constant. The equation has exactly one real solution. What is the value of $k$?",
+  "stimulus": "A printmaker is cutting a rectangular linoleum block with an area of 36 square inches. If one side of the block is $x$ inches long, the block's dimensions satisfy the equation $x(k - x) = 36$, where $k$ is the sum of the block's length and width, in inches.",
+  "choices": [
+   "$6$",
+   "$12$",
+   "$24$",
+   "$144$"
+  ],
+  "answer": "B",
+  "explanation": "Expand and move everything to one side: $kx - x^2 = 36$ becomes $x^2 - kx + 36 = 0$, so $a = 1$, $b = -k$ and $c = 36$. For exactly one real solution, set the discriminant to zero: $(-k)^2 - 4(1)(36) = 0$, so $k^2 = 144$ and $k = \\pm 12$. Because $k$ is positive, $k = 12$. In context, one solution means the block is a 6-inch-by-6-inch square, and the length plus the width is 12 inches.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You set $k^2 - 36 = 0$ and dropped the 4 from $4ac$ in the discriminant. You may also have noticed that 6 is the side of the square block. That is a side length, not the sum of the length and width."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "24 inches is the block's full perimeter. The problem defines $k$ as the length plus the width, which is half the perimeter."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "144 is the value of $k^2$. You stopped one step early and didn't take the square root."
+   }
+  },
+  "id": "orig-discriminant-n-M-4e2e45",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-4e2e45",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "given equation __var__ is a positive constant the",
+    "constant the equation has exactly one real solution",
+    "the equation has exactly one real solution what",
+    "equation has exactly one real solution what is",
+    "has exactly one real solution what is the",
+    "real solution what is the value of __var__"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "In the given equation, $c$ is a constant. If the equation has no real solutions, what is the least possible integer value of $c$?",
+  "stimulus": "An ecologist models the number of fireflies counted in a meadow each night, $t$ weeks after June 1, with the expression $-t^2 + 8t + 20$. To find when the count equals a target value $c$, the ecologist writes the equation $-t^2 + 8t + 20 = c$.",
+  "choices": [
+   "$20$",
+   "$35$",
+   "$36$",
+   "$37$"
+  ],
+  "answer": "D",
+  "explanation": "Move $c$ to the left so the equation reads $-t^2 + 8t + (20 - c) = 0$, with $a = -1$, $b = 8$ and the constant term $20 - c$. For no real solutions, the discriminant must be negative: $8^2 - 4(-1)(20 - c) < 0$, which gives $64 + 80 - 4c < 0$, so $c > 36$. The least integer greater than 36 is 37. In context, the model's count peaks at 36 fireflies, so it never reaches a target of 37.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "20 is the count when $t = 0$, which is the y-intercept of the model. The model's highest value is at the vertex ($t = 4$), not at the intercept, so the count goes above 20 and the equation has solutions for $c = 20$."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "When $c = 35$, the discriminant is positive and the equation has two real solutions. You chose a value on the wrong side of the inequality."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "When $c = 36$, the discriminant is exactly zero, so the equation has one real solution (the peak count). You need the discriminant to be strictly less than zero, so you have to go one integer further."
+   }
+  },
+  "id": "orig-discriminant-n-M-a7cbae",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-a7cbae",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "equation __var__ is a constant if the equation",
+    "__var__ is a constant if the equation has",
+    "equation has no real solutions what is the",
+    "has no real solutions what is the least",
+    "no real solutions what is the least possible"
+   ],
+   "residue": 5
+  }
+ },
+ {
+  "stem": "In the given system of equations, $k$ is a constant. The graphs of the equations in the xy-plane intersect at exactly one point. What is the value of $k$?",
+  "stimulus": "In a classroom simulation of an immune response, the level of an antibody, in units per milliliter, $x$ days after a booster dose is modeled by $y = 2x^2 - x + 9$. A student adds the reference line $y = 3x + k$ so that it just touches the curve.\n\n$y = 2x^2 - x + 9$\n$y = 3x + k$",
+  "choices": [
+   "$-7$",
+   "$5$",
+   "$7$",
+   "$10$"
+  ],
+  "answer": "C",
+  "explanation": "Set the right sides equal: $2x^2 - x + 9 = 3x + k$. Move every term to the left: $2x^2 - 4x + (9 - k) = 0$, so $a = 2$, $b = -4$ and the constant term is $9 - k$. One intersection point means the discriminant is zero: $(-4)^2 - 4(2)(9 - k) = 0$, so $16 - 72 + 8k = 0$ and $k = 7$. As a check, the line $y = 3x + 7$ touches the curve only at $(1, 10)$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $k$ to the left, you wrote the constant term as $9 + k$ instead of $9 - k$. Solving $16 - 8(9 + k) = 0$ then gives $-7$. This is the sign slip that comes from not putting the equation in standard form carefully."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You left out $a = 2$ when you computed $4ac$ and solved $16 - 4(9 - k) = 0$. The leading coefficient belongs in the discriminant."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "10 is the y-coordinate of the point where the line touches the curve, which is an antibody level. The question asks for the constant $k$ in the line's equation, not the coordinates of the intersection point."
+   }
+  },
+  "id": "orig-discriminant-n-M-c1ce70",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-c1ce70",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "of equations __var__ is a constant the graphs",
+    "equations __var__ is a constant the graphs of",
+    "__var__ is a constant the graphs of the",
+    "is a constant the graphs of the equations",
+    "a constant the graphs of the equations in",
+    "constant the graphs of the equations in the",
+    "at exactly one point what is the value",
+    "exactly one point what is the value of",
+    "one point what is the value of __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "In the equation above, $k$ is a positive constant. If the equation has exactly one real solution, what is the value of $k$?",
+  "stimulus": "A paleobotanist checking a growth model for fossil fern fronds arrives at the following equation.\n\n$2x^2 - kx = 3x - 8$",
+  "choices": [
+   "$2$",
+   "$5$",
+   "$8$",
+   "$11$"
+  ],
+  "answer": "B",
+  "explanation": "First move everything to one side: $2x^2 - kx - 3x + 8 = 0$, which is $2x^2 - (k+3)x + 8 = 0$. So $a = 2$, $b = -(k+3)$ and $c = 8$. Exactly one solution means $b^2 - 4ac = 0$: $(k+3)^2 - 4(2)(8) = 0$, so $(k+3)^2 = 64$ and $k + 3 = 8$ or $k + 3 = -8$. Because $k$ is positive, $k = 5$. A quicker route is to test the choices. With $k = 5$ the equation becomes $2x^2 - 8x + 8 = 0$, or $2(x-2)^2 = 0$, which has the single solution $x = 2$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the right $k$ but then reported the solution of the equation. When $k = 5$ the single solution is $x = 2$, but the question asks for $k$, not $x$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You left $3x$ on the right side and used $b = -k$, so you solved $k^2 - 64 = 0$. The $x$ term in standard form is $-(k+3)x$, because $3x$ has to be moved across too."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $3x$ to the left, you added it instead of subtracting it. That gave you $b = -(k-3)$ and $(k-3)^2 = 64$, so $k = 11$. Subtracting $3x$ makes the coefficient $-(k+3)$."
+   }
+  },
+  "id": "orig-discriminant-n-M-2b319f",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-M-2b319f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the equation has exactly one real solution what",
+    "equation has exactly one real solution what is",
+    "has exactly one real solution what is the",
+    "real solution what is the value of __var__"
+   ],
+   "residue": 1
+  }
  }
 ]

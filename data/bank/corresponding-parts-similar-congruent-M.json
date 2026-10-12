@@ -353,19 +353,24 @@
   "section": "math",
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "error",
+  "status": "review",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-corresponding--M-9f3cdc",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "on __var__ and __var__ is parallel to __var__",
     "__var__ meters what is the width in meters",
     "meters what is the width in meters of"
    ],
    "residue": 8
-  },
-  "phrasing": "direct"
+  }
  },
  {
   "stem": "What is the measure, in degrees, of angle $S$?",
@@ -423,5 +428,804 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A sports scientist models a cyclist's leg position with two right triangles. Triangle $PQR$ is similar to triangle $STU$, where $P$, $Q$, and $R$ correspond to $S$, $T$, and $U$, respectively. Angle $Q$ is a right angle, the measure of angle $R$ is $34^\\circ$, and $ST = 3 \\cdot PQ$.",
+  "choices": [
+   "The measure of angle $S$ is $56^\\circ$.",
+   "The measure of angle $S$ is $34^\\circ$.",
+   "The measure of angle $S$ is $168^\\circ$.",
+   "The measure of angle $S$ is $146^\\circ$."
+  ],
+  "answer": "A",
+  "explanation": "Angle $Q$ is $90^\\circ$ and angle $R$ is $34^\\circ$, so angle $P$ is $180 - 90 - 34 = 56$ degrees. The letter order matches $P$ with $S$, and similar triangles have equal corresponding angles, so angle $S$ is $56^\\circ$. The scale factor of 3 changes side lengths only, never angles.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You matched $S$ with $R$, perhaps by where it sits in your sketch, instead of following the letter order. $34^\\circ$ is angle $U$, which corresponds to $R$, not angle $S$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the correct $56^\\circ$ and then multiplied it by the scale factor 3. A dilation scales lengths, but corresponding angles stay equal."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You took the supplement of the $34^\\circ$ angle and ignored the right angle at $Q$. Since the triangle already has a $90^\\circ$ angle, its other two angles must add to $90^\\circ$, so 146 is impossible."
+   }
+  },
+  "id": "orig-corresponding--M-891598",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-891598",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is similar to triangle __var__ where __var__ __var__",
+    "similar to triangle __var__ where __var__ __var__ and",
+    "to triangle __var__ where __var__ __var__ and __var__",
+    "triangle __var__ where __var__ __var__ and __var__ correspond",
+    "of angle __var__ is __var__ and __var__ which",
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A triangular wheat plot $ABC$ is split by an irrigation pipe $DE$, with $D$ on $\\overline{AB}$, $E$ on $\\overline{AC}$, and $\\overline{DE}$ parallel to $\\overline{BC}$. The lengths are $AD = 12$ meters, $DB = 18$ meters, and $DE = 20$ meters.",
+  "choices": [
+   "$BC = 50$ meters",
+   "$BC = 30$ meters",
+   "$BC = 38$ meters",
+   "$BC = 8$ meters"
+  ],
+  "answer": "A",
+  "explanation": "Because $\\overline{DE}$ is parallel to $\\overline{BC}$, triangle $ADE$ is similar to triangle $ABC$ (AA). The full side is $AB = 12 + 18 = 30$. Pair small with large on both sides: $\\frac{AD}{AB} = \\frac{DE}{BC}$, so $\\frac{12}{30} = \\frac{20}{BC}$, which gives $BC = 50$ meters.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used $\\frac{12}{18} = \\frac{20}{BC}$, comparing $AD$ with $DB$. $DB$ is only part of a side, not a side of the large triangle. The large triangle's side is $AB = 30$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the 18-meter extension to $DE$ as if the lengths grew by adding. Similar figures scale by multiplying: the factor is $\\frac{30}{12} = 2.5$, not $+18$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped one ratio and wrote $\\frac{12}{30} = \\frac{BC}{20}$. That makes the outer side shorter than the pipe inside it, which can't happen."
+   }
+  },
+  "id": "orig-corresponding--M-114168",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-114168",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "An ecologist maps a triangular wetland survey plot $JKL$, then draws it at half size as triangle $MNP$, where $J$, $K$, and $L$ correspond to $M$, $N$, and $P$, respectively. In triangle $JKL$, angle $J$ measures $48^\\circ$ and angle $K$ measures $77^\\circ$.",
+  "choices": [
+   "The measure of angle $P$ is $55^\\circ$.",
+   "The measure of angle $P$ is $27.5^\\circ$.",
+   "The measure of angle $P$ is $77^\\circ$.",
+   "The measure of angle $P$ is $125^\\circ$."
+  ],
+  "answer": "A",
+  "explanation": "In triangle $JKL$, angle $L$ is $180 - 48 - 77 = 55$ degrees. The letter order matches $L$ with $P$, and a dilation keeps every angle the same, so angle $P$ is $55^\\circ$. Drawing the plot at half size halves the sides only.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the correct $55^\\circ$ and then halved it because the drawing is half size. The scale factor applies to lengths. Corresponding angles stay equal."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You matched $P$ with $K$ instead of $L$. In the stated order, $K$ corresponds to $N$, so $77^\\circ$ is angle $N$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at $48 + 77 = 125$, the total of the two given angles. To get the third angle, you still have to subtract that total from $180^\\circ$."
+   }
+  },
+  "id": "orig-corresponding--M-f83504",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-f83504",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "triangle __var__ where __var__ __var__ and __var__ correspond",
+    "correspond to __var__ __var__ and __var__ respectively in",
+    "to __var__ __var__ and __var__ respectively in triangle",
+    "__var__ __var__ and __var__ respectively in triangle __var__",
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which expression represents the measure, in degrees, of angle $U$?",
+  "stimulus": "An ornithologist sketches two triangular perch brackets for a heron blind. Triangle $PQR$ is similar to triangle $STU$, where $P$, $Q$, and $R$ correspond to $S$, $T$, and $U$, respectively. Each side of triangle $STU$ is 3 times as long as the corresponding side of triangle $PQR$. The measure of angle $P$ is $x^\\circ$, and the measure of angle $T$ is $50^\\circ$.",
+  "choices": [
+   "$3(130 - x)$",
+   "$x + 50$",
+   "$130 - x$",
+   "$180 - x$"
+  ],
+  "answer": "C",
+  "explanation": "From the letter order, $T$ matches $Q$ and $U$ matches $R$. Corresponding angles are equal, so angle $Q$ is $50^\\circ$. That makes angle $R$ equal to $180 - x - 50 = 130 - x$ degrees. Angle $U$ matches $R$, so it is also $130 - x$. A scale factor of 3 changes side lengths but never angles.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You multiplied the angle by the scale factor of 3. Similar figures have equal corresponding angles, so the 3 only applies to side lengths."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is the sum of the two angles you know, which is only partway there. You still need to subtract that sum from 180."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You subtracted only angle $P$ from 180 and forgot that angle $Q$, which matches $T$, is also $50^\\circ$."
+   }
+  },
+  "id": "orig-corresponding--M-d4e923",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-d4e923",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is similar to triangle __var__ where __var__ __var__",
+    "similar to triangle __var__ where __var__ __var__ and",
+    "to triangle __var__ where __var__ __var__ and __var__",
+    "triangle __var__ where __var__ __var__ and __var__ correspond",
+    "the measure of angle __var__ is __var__ which"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which expression represents the length of $\\overline{BC}$?",
+  "stimulus": "A musicologist studying a medieval harp models its frame as triangle $ABC$. Point $D$ lies on $\\overline{AB}$ and point $E$ lies on $\\overline{AC}$, with crossbar $\\overline{DE}$ parallel to $\\overline{BC}$. In the model, $AD = 4$, $DB = k$, and $DE = 6$, where all lengths are in inches.",
+  "choices": [
+   "$\\frac{3k}{2}$",
+   "$\\frac{3(4 + k)}{2}$",
+   "$\\frac{2(4 + k)}{3}$",
+   "$\\frac{6(4 + k)}{k}$"
+  ],
+  "answer": "B",
+  "explanation": "Since $\\overline{DE} \\parallel \\overline{BC}$, triangle $ADE$ is similar to triangle $ABC$ (AA), with $D$ matching $B$ and $E$ matching $C$. Write small over large for both pairs: $\\frac{AD}{AB} = \\frac{DE}{BC}$, so $\\frac{4}{4 + k} = \\frac{6}{BC}$. Cross-multiplying gives $BC = \\frac{6(4 + k)}{4} = \\frac{3(4 + k)}{2}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used $DB = k$ as the large triangle's side. The side of triangle $ABC$ that matches $\\overline{AD}$ is the whole side $\\overline{AB}$, which is $4 + k$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You set the proportion up as $\\frac{AD}{AB} = \\frac{BC}{DE}$, so one ratio was small over large and the other was large over small. Keep the small triangle on top in both ratios."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used $DB$ in place of $AD$ as the small triangle's side. Triangle $ADE$ has side $AD = 4$; $\\overline{DB}$ isn't a side of either triangle."
+   }
+  },
+  "id": "orig-corresponding--M-d68d41",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-d68d41",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "point __var__ lies on __var__ and point __var__",
+    "__var__ lies on __var__ and point __var__ lies",
+    "lies on __var__ and point __var__ lies on",
+    "on __var__ and point __var__ lies on __var__"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which expression represents the measure, in degrees, of angle $H$?",
+  "stimulus": "An immunology poster shows two triangular icons for antigen-binding sites. Triangle $FGH$ is similar to triangle $RST$, where $F$, $G$, and $H$ correspond to $R$, $S$, and $T$, respectively. Angle $G$ is a right angle, the measure of angle $R$ is $(2y)^\\circ$, and each side of triangle $RST$ is 4 times as long as the corresponding side of triangle $FGH$.",
+  "choices": [
+   "$2y$",
+   "$180 - 2y$",
+   "$90 + 2y$",
+   "$90 - 2y$"
+  ],
+  "answer": "D",
+  "explanation": "By letter order, $S$ matches $G$, so angle $S$ is $90^\\circ$, and $H$ matches $T$. In triangle $RST$, angle $T$ is $180 - 90 - 2y = 90 - 2y$ degrees. Corresponding angles are equal, so angle $H$ is also $90 - 2y$. The scale factor of 4 has no effect on angles.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You matched angle $H$ to angle $R$, but the letter order pairs $R$ with $F$. So $2y$ is the measure of angle $F$, not angle $H$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You subtracted only $2y$ from 180 and left out the right angle at $S$, which matches $G$. That gives the supplement of angle $R$, not the third angle of the triangle."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $2y$ to 90 when you needed to subtract it. Together the two acute angles must make $90^\\circ$."
+   }
+  },
+  "id": "orig-corresponding--M-4dfbb4",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-4dfbb4",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is similar to triangle __var__ where __var__ __var__",
+    "similar to triangle __var__ where __var__ __var__ and",
+    "to triangle __var__ where __var__ __var__ and __var__",
+    "triangle __var__ where __var__ __var__ and __var__ correspond"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the measure of angle $F$?",
+  "stimulus": "A city planner draws two triangular pocket parks for a new neighborhood. Triangle $ABC$ is similar to triangle $DEF$, where $A$, $B$, and $C$ correspond to $D$, $E$, and $F$, respectively. In triangle $ABC$, angle $B$ measures $90^\\circ$ and angle $A$ measures $34^\\circ$. Each side of triangle $DEF$ is 3 times as long as the corresponding side of triangle $ABC$.",
+  "choices": [
+   "$34^\\circ$",
+   "$56^\\circ$",
+   "$124^\\circ$",
+   "$168^\\circ$"
+  ],
+  "answer": "B",
+  "explanation": "Angle $F$ corresponds to angle $C$. In triangle $ABC$, angle $C = 180^\\circ - 90^\\circ - 34^\\circ = 56^\\circ$. Similar triangles have equal corresponding angles, and the scale factor of 3 changes only the side lengths, so angle $F$ measures $56^\\circ$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$34^\\circ$ is angle $A$, so it is also angle $D$. You gave the angle that corresponds to $A$ instead of the one that corresponds to $C$."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found $56^\\circ$ and then subtracted it from $180^\\circ$, which gives its supplement. Angle $F$ is equal to angle $C$, not supplementary to it."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $56^\\circ$ by the scale factor 3. A dilation scales side lengths, but it never changes angle measures."
+   }
+  },
+  "id": "orig-corresponding--M-682327",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-682327",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is similar to triangle __var__ where __var__ __var__",
+    "similar to triangle __var__ where __var__ __var__ and",
+    "to triangle __var__ where __var__ __var__ and __var__",
+    "triangle __var__ where __var__ __var__ and __var__ correspond",
+    "correspond to __var__ __var__ and __var__ respectively in",
+    "to __var__ __var__ and __var__ respectively in triangle",
+    "__var__ __var__ and __var__ respectively in triangle __var__"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length, in centimeters, of $\\overline{QR}$?",
+  "stimulus": "An ornithologist builds a triangular roof frame $PQR$ for an owl nest box. A brace $\\overline{ST}$ is parallel to $\\overline{QR}$, with $S$ on $\\overline{PQ}$ and $T$ on $\\overline{PR}$. The lengths are $PS = 6$ centimeters, $SQ = 9$ centimeters, and $ST = 8$ centimeters.",
+  "choices": [
+   "$3.2$",
+   "$12$",
+   "$17$",
+   "$20$"
+  ],
+  "answer": "D",
+  "explanation": "Because $\\overline{ST}$ is parallel to $\\overline{QR}$, triangle $PST$ is similar to triangle $PQR$. The full side is $PQ = 6 + 9 = 15$. Set small over large for both pairs of sides: $\\frac{PS}{PQ} = \\frac{ST}{QR}$, so $\\frac{6}{15} = \\frac{8}{QR}$. Cross-multiplying gives $6 \\cdot QR = 120$, so $QR = 20$ centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You put the proportion together upside down on one side, so you solved $\\frac{6}{15} = \\frac{QR}{8}$. That makes the longer side shorter than the brace."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You compared $PS$ to $SQ$ instead of to the whole side $PQ$. $SQ$ is only part of the large triangle's side, so $\\frac{6}{9} = \\frac{8}{QR}$ pairs sides that do not correspond."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the 9 cm to the brace length. Similar triangles grow by multiplying by a ratio, not by adding the same amount."
+   }
+  },
+  "id": "orig-corresponding--M-969505",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-969505",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "centimeters and __var__ centimeters what is the length",
+    "__var__ centimeters what is the length in centimeters",
+    "centimeters what is the length in centimeters of"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "What is the measure of angle $Y$?",
+  "stimulus": "A folklore scholar compares two triangular motifs carved on story boards from neighboring villages. Triangle $XYZ$ is the image of triangle $KLM$ after a dilation with scale factor $\\frac{1}{2}$, where $K$, $L$, and $M$ correspond to $X$, $Y$, and $Z$, respectively. Angle $K$ measures $48^\\circ$ and angle $M$ measures $71^\\circ$.",
+  "choices": [
+   "$30.5^\\circ$",
+   "$61^\\circ$",
+   "$71^\\circ$",
+   "$119^\\circ$"
+  ],
+  "answer": "B",
+  "explanation": "Angle $Y$ corresponds to angle $L$. In triangle $KLM$, angle $L = 180^\\circ - 48^\\circ - 71^\\circ = 61^\\circ$. A dilation keeps every angle the same, so angle $Y$ measures $61^\\circ$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the scale factor $\\frac{1}{2}$ to $61^\\circ$. A dilation shrinks side lengths, but it leaves angle measures unchanged."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$71^\\circ$ is angle $M$, which matches angle $Z$. You paired $Y$ with the wrong vertex. Use the letter order: the second letter matches the second letter, so $Y$ goes with $L$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$119^\\circ$ is $48^\\circ + 71^\\circ$, the sum of the two given angles. You stopped before subtracting that sum from $180^\\circ$."
+   }
+  },
+  "id": "orig-corresponding--M-a8af16",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-a8af16",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many degrees greater is the measure of angle $F$ than the measure of angle $D$?",
+  "stimulus": "A nutrition lab prints triangular portion-guide cards in two sizes. Triangle $ABC$ is similar to triangle $DEF$, where $A$, $B$, and $C$ correspond to $D$, $E$, and $F$, respectively. Each side of triangle $DEF$ is 3 times as long as the corresponding side of triangle $ABC$. The measure of angle $A$ is $34^\\circ$, and the measure of angle $E$ is $90^\\circ$.",
+  "choices": [
+   "$22$",
+   "$34$",
+   "$56$",
+   "$66$"
+  ],
+  "answer": "A",
+  "explanation": "The letter order matches $A$ to $D$ and $B$ to $E$, so angle $D$ measures $34^\\circ$ and angle $E$ measures $90^\\circ$. The angles of a triangle add up to $180^\\circ$, so angle $F$ measures $180 - 34 - 90 = 56^\\circ$. The question asks for the difference: $56 - 34 = 22$. The scale factor of 3 changes side lengths, not angles, so you don't use it here.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the measure of angle $D$, which is one of the two angles being compared. The question asks how much greater angle $F$ is than angle $D$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You correctly found that angle $F$ measures $56^\\circ$, then stopped. You still have to subtract the $34^\\circ$ of angle $D$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the $22^\\circ$ difference by the scale factor of 3. Similar figures have equal corresponding angles, so the scale factor doesn't affect any angle measure."
+   }
+  },
+  "id": "orig-corresponding--M-5697ae",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-5697ae",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is similar to triangle __var__ where __var__ __var__",
+    "similar to triangle __var__ where __var__ __var__ and",
+    "to triangle __var__ where __var__ __var__ and __var__",
+    "triangle __var__ where __var__ __var__ and __var__ correspond"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How much longer is $KL$ than $MN$, in feet?",
+  "stimulus": "A job-training center for displaced factory workers is building a triangular display wall, $JKL$. A support beam $MN$ runs across the wall, with point $M$ on side $JK$ and point $N$ on side $JL$, and $MN$ is parallel to $KL$. The lengths are $JM = 6$ feet, $MK = 4$ feet, and $MN = 9$ feet.",
+  "choices": [
+   "$3$",
+   "$4.5$",
+   "$6$",
+   "$15$"
+  ],
+  "answer": "C",
+  "explanation": "Since $MN$ is parallel to $KL$, triangle $JMN$ is similar to triangle $JKL$. The side matching $JM$ is $JK = 6 + 4 = 10$ feet. Set up the proportion $\\frac{MN}{KL} = \\frac{JM}{JK}$, which gives $\\frac{9}{KL} = \\frac{6}{10}$, so $KL = 15$ feet. The difference is $15 - 9 = 6$ feet.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You matched $JM$ with $MK$ instead of with the whole side $JK$. That gives $\\frac{9}{KL} = \\frac{6}{4}$ and $KL = 6$, which differs from $MN$ by 3. $MK$ is only part of a side, so it isn't a side of the large triangle."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the ratio and used the segment $MK$, so you got $KL = \\frac{9 \\cdot 6}{4} = 13.5$, which is 4.5 more than $MN$. The small triangle's sides go over the large triangle's sides: $\\frac{6}{10}$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$15$ feet is the full length of $KL$. The question asks how much longer $KL$ is than $MN$, so you have to subtract the 9 feet."
+   }
+  },
+  "id": "orig-corresponding--M-de6d26",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-de6d26",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ and __var__ is parallel to __var__ the",
+    "and __var__ is parallel to __var__ the lengths"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "How many degrees greater is the measure of angle $X$ than the measure of angle $W$?",
+  "stimulus": "A civil engineer uses identical triangular panels in a pedestrian bridge truss. Triangle $RST$ is congruent to triangle $WXY$, with the vertices corresponding in the order listed. The measure of angle $R$ is $52^\\circ$, and the measure of angle $Y$ is $61^\\circ$.",
+  "choices": [
+   "$9$",
+   "$15$",
+   "$67$",
+   "$113$"
+  ],
+  "answer": "B",
+  "explanation": "The letter order matches $R$ to $W$, $S$ to $X$, and $T$ to $Y$. So angle $W$ measures $52^\\circ$ and angle $T$ measures $61^\\circ$. Angle $S$ measures $180 - 52 - 61 = 67^\\circ$, and angle $X$ is equal to angle $S$, so it also measures $67^\\circ$. The difference is $67 - 52 = 15$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You compared the two given angles, $61 - 52 = 9$. Angle $Y$ isn't angle $X$. Use the letter order to see that $X$ matches $S$, which you have to find with the triangle sum."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You correctly found that angle $X$ measures $67^\\circ$, then stopped. The question asks how much greater it is than angle $W$, which measures $52^\\circ$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You gave the supplement of angle $X$, $180 - 67$. Corresponding angles in congruent triangles are equal; they aren't supplementary. And the question asks for a difference, not for an angle measure."
+   }
+  },
+  "id": "orig-corresponding--M-b39eea",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-b39eea",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "A public health agency designs two similar triangular warning signs for a handwashing campaign. Triangle $JKL$ is similar to triangle $RTS$, where $J$, $K$, and $L$ correspond to $R$, $T$, and $S$, respectively. Side $JK$ is 5 inches long and side $RT$ is 10 inches long. The measure of angle $K$ is $(x^2 - 4x)\u00b0$, the measure of angle $T$ is $(2x + 16)\u00b0$, and the measure of angle $S$ is $(x + 36)\u00b0$.",
+  "choices": [
+   "$2$",
+   "$8$",
+   "$9$",
+   "$32$"
+  ],
+  "answer": "B",
+  "explanation": "From the stated order, $K$ corresponds to $T$. Corresponding angles in similar triangles are equal, and the scale factor does not change them. So $x^2 - 4x = 2x + 16$. Testing the choices is faster than factoring. With $x = 8$, angle $K$ is $64 - 32 = 32\u00b0$ and angle $T$ is $2(8) + 16 = 32\u00b0$, so they match. (Factoring gives the same result: $x^2 - 6x - 16 = (x - 8)(x + 2) = 0$, so $x = 8$.)",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored $x^2 - 6x - 16$ as $(x + 8)(x - 2)$ and got the signs backward. Plug $x = 2$ in and angle $K$ comes out as $-4\u00b0$, which can't be an angle measure."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You matched $K$ to $S$ because $S$ comes second in the alphabet, but the triangle is named $RTS$, so $K$ matches $T$. Solving $x^2 - 4x = x + 36$ gives $x = 9$, but then angle $K$ is $45\u00b0$ and angle $T$ is $34\u00b0$, which aren't equal."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the measure of angle $K$ (and angle $T$), which is $32\u00b0$, but the question asks for $x$, which is $8$."
+   }
+  },
+  "id": "orig-corresponding--M-0c6c9a",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-0c6c9a",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is similar to triangle __var__ where __var__ __var__",
+    "similar to triangle __var__ where __var__ __var__ and",
+    "to triangle __var__ where __var__ __var__ and __var__",
+    "triangle __var__ where __var__ __var__ and __var__ correspond",
+    "measure of angle __var__ is __var__ the measure",
+    "of angle __var__ is __var__ the measure of",
+    "angle __var__ is __var__ the measure of angle",
+    "__var__ is __var__ the measure of angle __var__",
+    "is __var__ the measure of angle __var__ is"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $G$?",
+  "stimulus": "To estimate where an earthquake started, a seismologist sketches two similar triangles. Triangle $DEF$ is similar to triangle $GHI$, where $D$, $E$, and $F$ correspond to $G$, $H$, and $I$, respectively. Angle $H$ is a right angle, and $DE$ is twice as long as $GH$. The measure of angle $D$ is $(x^2)\u00b0$, and the measure of angle $I$ is $(2x + 10)\u00b0$.",
+  "choices": [
+   "$26$",
+   "$32$",
+   "$64$",
+   "$116$"
+  ],
+  "answer": "C",
+  "explanation": "$G$ corresponds to $D$, so angle $G$ also measures $(x^2)\u00b0$. Angle $H$ is $90\u00b0$, so in triangle $GHI$ the other two angles add to $90\u00b0$: $x^2 + 2x + 10 = 90$. Test the choices: if angle $G$ is $64\u00b0$, then $x = 8$ and angle $I$ is $26\u00b0$, and $64 + 26 = 90$. So angle $G$ measures $64\u00b0$. The fact that $DE$ is twice $GH$ doesn't affect any angle.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$26\u00b0$ is angle $I$, or equally angle $F$, which is the angle given in the problem. You matched $G$ to the wrong vertex. By the stated order, $G$ matches $D$, not $F$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $64\u00b0$ and then halved it because the sides are in a $2:1$ ratio. A scale factor changes side lengths, not angles, so similar triangles always have equal corresponding angles."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You subtracted $64\u00b0$ from $180\u00b0$ and got the supplement of angle $G$. That is the exterior angle at $G$, not angle $G$ itself. A right triangle can't have a $116\u00b0$ angle anyway."
+   }
+  },
+  "id": "orig-corresponding--M-abe271",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-abe271",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is similar to triangle __var__ where __var__ __var__",
+    "similar to triangle __var__ where __var__ __var__ and",
+    "to triangle __var__ where __var__ __var__ and __var__",
+    "triangle __var__ where __var__ __var__ and __var__ correspond"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "A city planner models a triangular plaza as triangle $ABC$. A straight walkway runs from point $D$ on side $AB$ to point $E$ on side $AC$, and segment $DE$ is parallel to side $BC$. The lengths are $AD = x$ meters, $DB = 6$ meters, $DE = 4$ meters, and $BC = (x + 2)$ meters.",
+  "choices": [
+   "$4$",
+   "$6$",
+   "$8$",
+   "$12$"
+  ],
+  "answer": "B",
+  "explanation": "Because $DE$ is parallel to $BC$, triangle $ADE$ is similar to triangle $ABC$ (AA). So set small over large equal to small over large: $\\frac{AD}{AB} = \\frac{DE}{BC}$, which is $\\frac{x}{x + 6} = \\frac{4}{x + 2}$. Test the choices: with $x = 6$, the left side is $\\frac{6}{12} = \\frac{1}{2}$ and the right side is $\\frac{4}{8} = \\frac{1}{2}$, so the proportion holds. (Cross-multiplying gives $x^2 - 2x - 24 = 0$, so $x = 6$.)",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You paired $AD$ with $DB$, writing $\\frac{x}{6} = \\frac{4}{x + 2}$. $DB$ is only part of a side, so it isn't a side of either triangle. The side that matches $AD$ is the whole side $AB = x + 6$. With $x = 4$, $\\frac{4}{10}$ doesn't equal $\\frac{4}{6}$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$8$ is the length of $BC$ when $x = 6$. You found the long side of the plaza instead of $x$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$12$ is the full length of $AB$, which is $x + 6$. You stopped before subtracting the $6$ meters of $DB$ to get $AD = x$."
+   }
+  },
+  "id": "orig-corresponding--M-a81f91",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-a81f91",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

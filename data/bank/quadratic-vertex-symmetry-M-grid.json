@@ -246,18 +246,597 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "grid",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "work_backwards",
   "verification": {
    "id": "orig-quadratic-vert-M-938b7f",
    "structure": [
     "common error '12' is a correct answer"
    ],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": 1,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "function __var__ where __var__ and __var__ are constants"
    ],
    "residue": 1
-  },
-  "phrasing": "work_backwards"
+  }
+ },
+ {
+  "stem": "At what other time $t$, in seconds, is the probe at the same height it had at $t = 3$?",
+  "stimulus": "During a low-gravity test for a lunar lander, a sensor probe is fired upward. Its height above the surface, in meters, is modelled by $h(t) = -2t^2 + 28t + 5$, where $t$ is the number of seconds after launch.",
+  "keys": [
+   "11"
+  ],
+  "any_of": false,
+  "explanation": "The probe peaks at the vertex, $t = -\\frac{b}{2a} = -\\frac{28}{2(-2)} = 7$. A parabola is symmetric about its vertex, so a height reached 4 seconds before the peak is reached again 4 seconds after it: $2(7) - 3 = 11$. To check, $h(3) = -18 + 84 + 5 = 71$ and $h(11) = -242 + 308 + 5 = 71$.",
+  "common_errors": [
+   {
+    "value": "7",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the time of the peak, not the second time at the height from $t = 3$."
+   },
+   {
+    "value": "103",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the maximum height $h(7)$, not a time."
+   },
+   {
+    "value": "4",
+    "misconception": "intermediate-step",
+    "why": "Found the gap between $t = 3$ and the vertex and stopped there without adding it to 7."
+   },
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "Added 3 to the vertex time ($7 + 3$) when you should reflect 3 across 7."
+   },
+   {
+    "value": "25",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the 2 in $-\\frac{b}{2a}$, got a vertex at 14, then worked out $2(14) - 3$."
+   }
+  ],
+  "id": "orig-quadratic-vert-M-850f3d",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-850f3d",
+   "structure": [],
+   "solver_answer": "11",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "For what number of workers $n$ is the daily output greatest?",
+  "stimulus": "A labour economist models the daily output of a small packing plant as $P(n) = -3(n - 4)(n - 36)$, where $n$ is the number of workers on a shift.",
+  "keys": [
+   "20"
+  ],
+  "any_of": false,
+  "explanation": "From the factored form, the zeros are $n = 4$ and $n = 36$. The coefficient $-3$ is negative, so the parabola opens downward and its vertex is a maximum. The vertex is halfway between the zeros: $\\frac{4 + 36}{2} = 20$.",
+  "common_errors": [
+   {
+    "value": "36",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave an x-intercept, a staffing level where output is zero."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the other x-intercept, not the vertex."
+   },
+   {
+    "value": "768",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the maximum output $P(20)$, not the number of workers."
+   },
+   {
+    "value": "40",
+    "misconception": "intermediate-step",
+    "why": "Added the two roots and never divided by 2."
+   },
+   {
+    "value": "16",
+    "misconception": "algebra-manipulation",
+    "why": "Halved the difference of the roots, $\\frac{36 - 4}{2}$, when you need their average."
+   }
+  ],
+  "id": "orig-quadratic-vert-M-bd88b1",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-bd88b1",
+   "structure": [],
+   "solver_answer": "20",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "Engineers testing a polymer strip model its deflection, in micrometers, as $d(T) = -2T^2 + bT + 41$, where $T$ is the temperature in degrees Celsius above room temperature and $b$ is a constant. The deflection at $T = 2$ is equal to the deflection at $T = 8$.",
+  "keys": [
+   "20"
+  ],
+  "any_of": false,
+  "explanation": "Two inputs with equal outputs sit symmetrically around the vertex. That puts the vertex at $T = \\frac{2 + 8}{2} = 5$. The vertex is also $-\\frac{b}{2a}$, so $-\\frac{b}{2(-2)} = 5$. That gives $\\frac{b}{4} = 5$, so $b = 20$.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the T-coordinate of the vertex, not the coefficient $b$."
+   },
+   {
+    "value": "-20",
+    "misconception": "algebra-manipulation",
+    "why": "Lost the sign in $-\\frac{b}{2a}$ when $a$ is negative."
+   },
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "Used $-\\frac{b}{a}$ and left out the 2, so $\\frac{b}{2} = 5$."
+   },
+   {
+    "value": "40",
+    "misconception": "intermediate-step",
+    "why": "Used the sum $2 + 8 = 10$ as the vertex without halving it, then solved $\\frac{b}{4} = 10$."
+   }
+  ],
+  "id": "orig-quadratic-vert-M-c15edf",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-c15edf",
+   "structure": [],
+   "solver_answer": "20",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What thread density $w$, in threads per centimeter, gives the lowest cost per bolt?",
+  "stimulus": "A historian reconstructing the ledgers of an 1840s weaving mill models the cost, in shillings, of producing one bolt of cloth as $C(w) = 0.25w^2 - 9w + 120$, where $w$ is the thread density in threads per centimeter.",
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "The leading coefficient is positive, so the parabola opens upward and its vertex is the minimum. The vertex is at $w = -\\frac{b}{2a} = -\\frac{-9}{2(0.25)} = \\frac{9}{0.5} = 18$. In Desmos, graph $C$ and click the low point to read $(18, 39)$. The question asks for $w$, so the answer is 18.",
+  "common_errors": [
+   {
+    "value": "39",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the minimum cost $C(18)$, not the thread density."
+   },
+   {
+    "value": "-18",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the leading negative in $-\\frac{b}{2a}$ with $b = -9$."
+   },
+   {
+    "value": "36",
+    "misconception": "algebra-manipulation",
+    "why": "Divided by $a$ alone, $\\frac{9}{0.25}$, and forgot the 2."
+   },
+   {
+    "value": "120",
+    "misconception": "wrong-target-quantity",
+    "why": "Took the constant term (the y-intercept) as the minimum."
+   }
+  ],
+  "id": "orig-quadratic-vert-M-8f0c9e",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-8f0c9e",
+   "structure": [],
+   "solver_answer": "18",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The trail crosses the line $y = 15$ at $x = 2$ and at one other point. What is the x-coordinate of the other point?",
+  "stimulus": "On a park map with a coordinate grid in kilometers, a hiking trail follows the curve $y = x^2 - 10x + 31$.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "The axis of symmetry is $x = -\\frac{b}{2a} = -\\frac{-10}{2(1)} = 5$. The point $x = 2$ is 3 units left of the axis, so its mirror image is 3 units right: $2(5) - 2 = 8$. To check, $64 - 80 + 31 = 15$.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the axis of symmetry, not the second crossing."
+   },
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the y-coordinate of the vertex, $y(5)$."
+   },
+   {
+    "value": "3",
+    "misconception": "intermediate-step",
+    "why": "Found the distance from 2 to the axis and stopped there."
+   },
+   {
+    "value": "7",
+    "misconception": "algebra-manipulation",
+    "why": "Added 2 to the axis value ($5 + 2$) when you should reflect 2 across it."
+   },
+   {
+    "value": "-12",
+    "misconception": "algebra-manipulation",
+    "why": "Got the sign of $-\\frac{b}{2a}$ wrong (axis at $-5$), then worked out $2(-5) - 2$."
+   }
+  ],
+  "id": "orig-quadratic-vert-M-44b087",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-44b087",
+   "structure": [],
+   "solver_answer": "8",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest antibody level the model predicts, in units per milliliter?",
+  "stimulus": "An immunologist models the antibody level in a patient's blood after a vaccine dose as $A(t) = -0.5t(t - 18)$, where $A(t)$ is in units per milliliter and $t$ is the number of days after the dose.",
+  "keys": [
+   "40.5",
+   "81/2"
+  ],
+  "any_of": false,
+  "explanation": "The zeros are $t = 0$ and $t = 18$. The leading coefficient is negative, so the peak is the vertex, halfway between the zeros at $t = 9$. Substitute this back in: $A(9) = -0.5(9)(9 - 18) = -0.5(9)(-9) = 40.5$.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the day of the peak, not the antibody level."
+   },
+   {
+    "value": "18",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the nonzero root, the day the level returns to zero."
+   },
+   {
+    "value": "81",
+    "misconception": "algebra-manipulation",
+    "why": "Left out the coefficient $-0.5$ when evaluating at $t = 9$."
+   },
+   {
+    "value": "-40.5",
+    "misconception": "algebra-manipulation",
+    "why": "Got a sign wrong when multiplying, using $(9 - 18) = 9$ or keeping the negative."
+   }
+  ],
+  "id": "orig-quadratic-vert-M-6bf593",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-6bf593",
+   "structure": [],
+   "solver_answer": "40.5",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "At $t = 0.5$, the tern is $19$ feet above the dune. At what other value of $t$ is the tern $19$ feet above the dune?",
+  "stimulus": "An ornithologist models a tern's courtship flight with the function $h(t) = -16t^2 + 40t + 3$. This gives the tern's height above a dune, in feet, $t$ seconds after it leaves a fence post.",
+  "keys": [
+   "2",
+   "2.0",
+   "2/1"
+  ],
+  "any_of": false,
+  "explanation": "The path is a parabola, so it is symmetric about the vertical line through its vertex. First find the time of the vertex: $t = -\\frac{b}{2a} = -\\frac{40}{2(-16)} = 1.25$. The tern reaches each height once on the way up and once on the way down, the same distance from $t = 1.25$ each time. The time $t = 0.5$ is $0.75$ seconds before the vertex, so the matching time is $0.75$ seconds after it: $1.25 + 0.75 = 2$. That is the same as $2(1.25) - 0.5 = 2$. Check: $h(2) = -64 + 80 + 3 = 19$. In Desmos, graph $h$ and the line $y = 19$, then click the two intersection points. They are at $t = 0.5$ and $t = 2$.",
+  "common_errors": [
+   {
+    "value": "1.25",
+    "misconception": "intermediate-step",
+    "why": "You found the time of the vertex and stopped. You never reflected $t = 0.5$ across it."
+   },
+   {
+    "value": "28",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the maximum height $h(1.25) = 28$ when the question asked for a time."
+   },
+   {
+    "value": "0.75",
+    "misconception": "intermediate-step",
+    "why": "You found how far $0.5$ is from the vertex time but never added that distance to $1.25$."
+   },
+   {
+    "value": "2.5",
+    "misconception": "algebra-manipulation",
+    "why": "You doubled the vertex time, $2(1.25)$, but forgot to subtract $0.5$."
+   },
+   {
+    "value": "4.5",
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the 2 in $-\\frac{b}{2a}$ and used $\\frac{40}{16} = 2.5$ as the vertex time, then worked out $2(2.5) - 0.5$."
+   }
+  ],
+  "id": "orig-quadratic-vert-M-694001",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-694001",
+   "structure": [],
+   "solver_answer": 2,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "At what other value of $x$ is the underside of the arch 35 meters above the road?",
+  "stimulus": "A civil engineer models the underside of a concrete bridge arch with $h(x) = -0.05x^2 + 4x$, where $h(x)$ is the height, in meters, above the road and $x$ is the horizontal distance, in meters, from the arch's left base. The underside is 35 meters above the road at $x = 10$.",
+  "keys": [
+   "70"
+  ],
+  "any_of": false,
+  "explanation": "A parabola is symmetric about the vertical line through its vertex. Find the vertex's x-coordinate with $x = -\\frac{b}{2a} = -\\frac{4}{2(-0.05)} = 40$. The point $x = 10$ is 30 meters to the left of the vertex, so the matching point is 30 meters to the right: $2(40) - 10 = 70$. To check, $h(70) = -0.05(4900) + 280 = -245 + 280 = 35$.",
+  "common_errors": [
+   {
+    "value": "40",
+    "misconception": "intermediate-step",
+    "why": "Found the axis of symmetry and stopped without reflecting x = 10 across it."
+   },
+   {
+    "value": "80",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the other x-intercept, where the height is 0, not where it is 35."
+   },
+   {
+    "value": "50",
+    "misconception": "algebra-manipulation",
+    "why": "Added the vertex x-coordinate to 10 (40 + 10) instead of computing 2(40) \u2212 10."
+   },
+   {
+    "value": "35",
+    "misconception": "wrong-target-quantity",
+    "why": "Typed the height that was given instead of the horizontal distance."
+   },
+   {
+    "value": "30",
+    "misconception": "intermediate-step",
+    "why": "Gave the distance from x = 10 to the vertex rather than the matching position."
+   }
+  ],
+  "id": "orig-quadratic-vert-M-d35e0a",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-d35e0a",
+   "structure": [],
+   "solver_answer": "70",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "At what distance $x$, in meters, is the trench deepest?",
+  "stimulus": "At an excavation site, archaeologists model the bottom of a trench with $y = \\frac{1}{4}(x - 3)(x - 11)$ for $3 \\le x \\le 11$. Here $y$ is the elevation, in meters, relative to the surrounding ground, and $x$ is the horizontal distance, in meters, from a survey stake.",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "The trench is deepest at the parabola's minimum, which is its vertex. Factored form gives you the roots, 3 and 11, where the trench meets ground level. The vertex lies halfway between them: $x = \\frac{3 + 11}{2} = 7$. The question asks for the distance, not the depth, so the answer is 7. The depth there is $\\frac{1}{4}(4)(-4) = -4$, which you don't need.",
+  "common_errors": [
+   {
+    "value": "-4",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the elevation at the vertex instead of the x-coordinate where it occurs."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave an x-intercept, where the trench meets the ground and is shallowest."
+   },
+   {
+    "value": "11",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the other x-intercept instead of the point midway between the intercepts."
+   },
+   {
+    "value": "14",
+    "misconception": "intermediate-step",
+    "why": "Added the roots, 3 + 11, and didn't divide by 2."
+   },
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the roots, 11 \u2212 3, instead of averaging them."
+   },
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "Halved the difference of the roots, which gives the half-width rather than the midpoint."
+   }
+  ],
+  "id": "orig-quadratic-vert-M-109654",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-109654",
+   "structure": [],
+   "solver_answer": "7",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the dolphin's maximum height, in meters, above the water?",
+  "stimulus": "A marine biologist models a dolphin's leap with $h(t) = -5t^2 + bt$, where $h(t)$ is the dolphin's height, in meters, above the water $t$ seconds after it leaves the surface and $b$ is a constant. The dolphin reenters the water at $t = 1.6$.",
+  "keys": [
+   "3.2",
+   "16/5"
+  ],
+  "any_of": false,
+  "explanation": "The dolphin is at the surface at $t = 0$ and $t = 1.6$. These are the roots, so the vertex is midway between them at $t = 0.8$. To find $b$, use $h(1.6) = 0$: $-5(2.56) + 1.6b = 0$, so $b = 8$. Then $h(0.8) = -5(0.64) + 8(0.8) = -3.2 + 6.4 = 3.2$. The maximum height is 3.2 meters.",
+  "common_errors": [
+   {
+    "value": "0.8",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the time of the maximum instead of the maximum height."
+   },
+   {
+    "value": "8",
+    "misconception": "intermediate-step",
+    "why": "Solved for b and stopped there."
+   },
+   {
+    "value": "9.6",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the negative sign on \u22125t\u00b2, computing 3.2 + 6.4."
+   },
+   {
+    "value": "-9.6",
+    "misconception": "algebra-manipulation",
+    "why": "Got the sign wrong in \u2212b/(2a), used t = \u22120.8, and evaluated h(\u22120.8)."
+   },
+   {
+    "value": "0",
+    "misconception": "wrong-target-quantity",
+    "why": "Evaluated h at the reentry time, t = 1.6, instead of at the vertex."
+   }
+  ],
+  "id": "orig-quadratic-vert-M-7f7b13",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-M-7f7b13",
+   "structure": [],
+   "solver_answer": "3.2",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

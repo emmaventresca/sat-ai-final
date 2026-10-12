@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-pythagorean-mi-X-842227",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,14 +82,405 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-pythagorean-mi-X-8e59d8",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the perimeter, in inches, of the panel?",
+  "stimulus": "A recording studio hangs a rectangular acoustic panel to damp echoes from a piano. The panel's length is 14 inches greater than its width, and its diagonal is 26 inches long.",
+  "choices": [
+   "34",
+   "68",
+   "76",
+   "240"
+  ],
+  "answer": "B",
+  "explanation": "The diagonal is the hypotenuse. Let the width be $w$, so $w^2 + (w+14)^2 = 26^2$. That gives $2w^2 + 28w + 196 = 676$, so $w^2 + 14w - 240 = 0$, which factors as $(w+24)(w-10) = 0$. So $w = 10$ and the length is $24$. The perimeter is $2(10 + 24) = 68$ inches.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You added the length and the width, $10 + 24 = 34$, and stopped before doubling. That is only half the perimeter."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the 26-inch diagonal to be the length, which made the width $26 - 14 = 12$ and the perimeter $2(26+12) = 76$. The diagonal is the hypotenuse, not a side of the rectangle."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $10 \\times 24 = 240$, which is the panel's area, not its perimeter."
+   }
+  },
+  "id": "orig-pythagorean-mi-X-f49d84",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-X-f49d84",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "To the nearest meter, what is the distance between stake A and stake B?",
+  "stimulus": "A vertical trellis post stands on level ground in a vineyard. A taut 20-meter wire runs from the top of the post to stake A, which is 12 meters from the base of the post. A second taut wire, 34 meters long, runs from the top of the post to stake B. Stake B is on the same side of the post as stake A, and the base of the post and both stakes lie on one straight line.",
+  "choices": [
+   "13",
+   "18",
+   "30",
+   "42"
+  ],
+  "answer": "B",
+  "explanation": "The post is a leg, so its height is $\\sqrt{20^2 - 12^2} = \\sqrt{256} = 16$ meters. Stake B is then $\\sqrt{34^2 - 16^2} = \\sqrt{900} = 30$ meters from the base. Both stakes are on the same side, so they are $30 - 12 = 18$ meters apart.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the squares to get the post height, $\\sqrt{20^2 + 12^2} = \\sqrt{544}$, which treats the 12-meter leg as part of a hypotenuse. That gives stake B at $\\sqrt{1156 - 544} \\approx 24.7$ meters from the base, and $24.7 - 12 \\approx 13$. The 20-meter wire is the hypotenuse, so you should have subtracted."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "30 meters is how far stake B is from the post. You still needed to subtract stake A's 12 meters."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You added $30 + 12$, which is the distance if the stakes were on opposite sides of the post. The stakes are on the same side."
+   }
+  },
+  "id": "orig-pythagorean-mi-X-75bd19",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-X-75bd19",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "To the nearest meter, by how many meters does the horizontal distance between the anchor and the point directly below the buoy increase?",
+  "stimulus": "A marine biologist anchors a hydrophone buoy to a flat sea floor with a line that stays taut and straight. At low tide, with 13 meters of line out, the anchor is 5 meters horizontally from the point on the sea floor directly below the buoy. At high tide the water is 4 meters deeper, and the biologist lets the line out to 20 meters.",
+  "choices": [
+   "7",
+   "11",
+   "12",
+   "21"
+  ],
+  "answer": "A",
+  "explanation": "At low tide the depth is $\\sqrt{13^2 - 5^2} = 12$ meters. At high tide it is $12 + 4 = 16$ meters, so the horizontal distance is $\\sqrt{20^2 - 16^2} = \\sqrt{144} = 12$ meters. The increase is $12 - 5 = 7$ meters.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You left the depth at 12 meters and ignored the 4-meter tide, so you got $\\sqrt{20^2 - 12^2} = 16$ and $16 - 5 = 11$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "12 meters is the new horizontal distance. The question asks how much it grew from the original 5 meters."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the squares, $\\sqrt{20^2 + 16^2} \\approx 25.6$, so you treated a leg as the hypotenuse, and then got $25.6 - 5 \\approx 21$. The 20-meter line is the hypotenuse, so you should have subtracted."
+   }
+  },
+  "id": "orig-pythagorean-mi-X-5690fa",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-X-5690fa",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the width, in inches, of the base of the gable?",
+  "stimulus": "An ornithologist builds a nest box with a triangular front gable. The gable is an isosceles triangle whose two equal sides are each $4\\sqrt{5}$ inches long. The perpendicular distance from the top vertex to the base is 8 inches.",
+  "choices": [
+   "4",
+   "8",
+   "12",
+   "16"
+  ],
+  "answer": "B",
+  "explanation": "The height splits the isosceles triangle into two right triangles. In each one the hypotenuse is $4\\sqrt{5}$, one leg is 8, and the other leg is half the base. $(4\\sqrt{5})^2 = 80$, so half the base is $\\sqrt{80 - 64} = 4$. The full base is $2 \\times 4 = 8$ inches.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "4 inches is half the base, the leg of one right triangle. You needed to double it."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the squares, $\\sqrt{80 + 64} = 12$, which treats the $4\\sqrt{5}$ side as a leg. It is the hypotenuse, so you should have subtracted."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You doubled the 8-inch height instead of doubling the half-base you get from the Pythagorean theorem."
+   }
+  },
+  "id": "orig-pythagorean-mi-X-15ee3b",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "review",
+  "verification": {
+   "id": "orig-pythagorean-mi-X-15ee3b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "inches what is the width in inches of"
+   ],
+   "residue": 8
+  }
+ },
+ {
+  "stem": "Which equation must be true?",
+  "stimulus": "An earthquake's hypocenter lies directly beneath point $E$ on flat ground. Seismic station A is $a$ kilometers from $E$, and station B is $b$ kilometers from $E$, both on the ground. The straight-line distances from the hypocenter to stations A and B are $p$ kilometers and $q$ kilometers.",
+  "choices": [
+   "$p - q = a - b$",
+   "$p^2 + a^2 = q^2 + b^2$",
+   "$p^2 - q^2 = a^2 - b^2$",
+   "$p^2 - q^2 = b^2 - a^2$"
+  ],
+  "answer": "C",
+  "explanation": "Call the depth $h$. Each station makes a right triangle with the depth as one leg, the ground distance as the other leg, and the straight-line distance as the hypotenuse. So $h^2 = p^2 - a^2$ and $h^2 = q^2 - b^2$. Setting these equal gives $p^2 - a^2 = q^2 - b^2$, which rearranges to $p^2 - q^2 = a^2 - b^2$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You related the side lengths directly without squaring them. The Pythagorean relationship holds for the squares of the sides, not the sides."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $h^2 = p^2 + a^2$, which makes $p$ a leg. But $p$ is the hypotenuse, so the ground distance must be subtracted from it, not added to it."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You set it up correctly but flipped a sign when you rearranged. The station farther from the hypocenter is also farther from $E$, so the differences have the same order: $a^2 - b^2$, not $b^2 - a^2$."
+   }
+  },
+  "id": "orig-pythagorean-mi-X-f42845",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-X-f42845",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is closest to the straight-line distance, in kilometers, from the starting point to the ending point of the route?",
+  "stimulus": "A folklore team retraces a route described in a local ballad across flat land. The route goes 5 kilometers north, then 3 kilometers east, then 2 kilometers north, then 9 kilometers east.",
+  "choices": [
+   "9.7",
+   "13.9",
+   "15.1",
+   "19.0"
+  ],
+  "answer": "B",
+  "explanation": "The net movement is $5 + 2 = 7$ kilometers north and $3 + 9 = 12$ kilometers east. These are the legs of a right triangle, so the distance is $\\sqrt{7^2 + 12^2} = \\sqrt{193} \\approx 13.9$ kilometers.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the squares, $\\sqrt{12^2 - 7^2} = \\sqrt{95} \\approx 9.7$, as if 12 were the hypotenuse. Both 7 and 12 are legs here, so you add."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found a diagonal for each half of the route, $\\sqrt{34} + \\sqrt{85} \\approx 15.1$, and added them. That is the length of a two-part path, not the straight-line distance between the endpoints."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You added all four segments, $5 + 3 + 2 + 9 = 19$. That is the distance walked along the route, not the straight-line distance."
+   }
+  },
+  "id": "orig-pythagorean-mi-X-c24b0c",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-X-c24b0c",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the perimeter, in meters, of the floor?",
+  "stimulus": "A public health team sets up a rectangular vaccination tent. The floor's length is 3 times its width, and the diagonal of the floor is $10\\sqrt{10}$ meters.",
+  "choices": [
+   "$40$",
+   "$80$",
+   "$\\frac{80\\sqrt{10}}{3}$",
+   "$40\\sqrt{10}$"
+  ],
+  "answer": "B",
+  "explanation": "The diagonal is the hypotenuse. Let the width be $w$, so $w^2 + (3w)^2 = (10\\sqrt{10})^2$. That gives $10w^2 = 1000$, so $w = 10$ and the length is $30$. The perimeter is $2(10 + 30) = 80$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found $10 + 30 = 40$, the length plus the width, and forgot to double it."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the diagonal $10\\sqrt{10}$ to be the length, which made the width $\\frac{10\\sqrt{10}}{3}$. The diagonal is the hypotenuse, not a side."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $(3w)^2$ as $3w^2$, which gave $4w^2 = 1000$ and $w = 5\\sqrt{10}$. Squaring $3w$ gives $9w^2$."
+   }
+  },
+  "id": "orig-pythagorean-mi-X-cdb973",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-X-cdb973",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "To the nearest meter, how many fewer meters does a worker walk by taking the diagonal walkway instead of walking along the two sides of the floor?",
+  "stimulus": "In a time-and-motion study at a warehouse, a labour economist measures a rectangular packing floor. One side of the floor is 20 meters long, and a straight diagonal walkway from corner to opposite corner is 29 meters long.",
+  "choices": [
+   "12",
+   "21",
+   "26",
+   "41"
+  ],
+  "answer": "A",
+  "explanation": "The diagonal is the hypotenuse, so the other side is $\\sqrt{29^2 - 20^2} = \\sqrt{441} = 21$ meters. Walking the two sides covers $20 + 21 = 41$ meters, so the walkway saves $41 - 29 = 12$ meters.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "21 meters is the missing side. You still needed to add it to 20 and compare the total with the walkway."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the squares, $\\sqrt{29^2 + 20^2} \\approx 35.2$, which treats the diagonal as a leg. That gives $20 + 35.2 - 29 \\approx 26$. The diagonal is the hypotenuse, so you should have subtracted."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "41 meters is the distance walked along the two sides. The question asks how much shorter the diagonal is than that."
+   }
+  },
+  "id": "orig-pythagorean-mi-X-a2e27e",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-X-a2e27e",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

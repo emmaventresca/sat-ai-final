@@ -390,5 +390,101 @@
   "rated_level": "E",
   "rated_why": "direct substitution yields simple linear equation",
   "phrasing": "direct"
+ },
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. What is the value of $y$?",
+  "stimulus": "$y = 2x - 3$\n$3x + y = 17$",
+  "choices": [
+   "$4$",
+   "$5$",
+   "$7$",
+   "$9$"
+  ],
+  "answer": "B",
+  "explanation": "The first equation already gives y in terms of x, so substitute it into the second equation: $3x + (2x - 3) = 17$. That gives $5x - 3 = 17$, so $5x = 20$ and $x = 4$. The question asks for y, so substitute back: $y = 2(4) - 3 = 5$. You can also graph both lines in Desmos. They cross at $(4, 5)$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $x = 4$ and stopped there. The question asks for y, so you still need to substitute x back into $y = 2x - 3$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "When you substituted, you dropped the coefficient 2 and wrote $3x + x - 3 = 17$. That gives $x = 5$ and $y = 7$. Keep the whole expression $2x - 3$ in the substitution."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the two coordinates and got $x + y = 4 + 5 = 9$. The question asks only for y."
+   }
+  },
+  "id": "orig-bare-system-su-E-b18817",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-E-b18817",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the solution $(x, y)$ to the given system of equations?",
+  "stimulus": "$x = 3$\n$2x + 5y = 26$",
+  "choices": [
+   "$(8, 2)$",
+   "$(3, 20)$",
+   "$(3, 4)$",
+   "$(4, 3)$"
+  ],
+  "answer": "C",
+  "explanation": "The first equation already tells you that $x = 3$. Substitute it into the second equation: $2(3) + 5y = 26$, so $6 + 5y = 26$, then $5y = 20$ and $y = 4$. The solution is $(3, 4)$. Check it: $x = 3$ is true, and $2(3) + 5(4) = 26$ is also true.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "$(8, 2)$ makes $2x + 5y = 26$ true, because $16 + 10 = 26$. But x is not 3, so this pair fails the first equation. A solution has to make both equations true."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You got as far as $5y = 20$ and took 20 as y. You need to divide by 5 to get $y = 4$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You switched the coordinates. x is fixed at 3, so 3 has to be the first coordinate. Also, $(4, 3)$ gives $2(4) + 5(3) = 23$, not 26."
+   }
+  },
+  "id": "orig-bare-system-su-E-d50d94",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-E-d50d94",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

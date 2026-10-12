@@ -32,18 +32,23 @@
   "section": "math",
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "error",
+  "status": "review",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-reverse-probab-M-40089b",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "is selected at random the probability of selecting",
     "selected at random the probability of selecting an"
    ],
    "residue": 9
-  },
-  "phrasing": "direct"
+  }
  },
  {
   "stem": "How many of the firm's employees are part-time?",
@@ -131,18 +136,23 @@
   "section": "math",
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "error",
+  "status": "review",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-reverse-probab-M-48fc7b",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "is selected at random the probability of selecting",
     "selected at random the probability of selecting an"
    ],
    "residue": 9
-  },
-  "phrasing": "direct"
+  }
  },
  {
   "stem": "How many samplers in the collection date from the 19th century?",
@@ -280,18 +290,23 @@
   "section": "math",
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "error",
+  "status": "review",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-reverse-probab-M-ff96d9",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "is selected at random the probability of selecting",
     "is selected at random the probability of selecting"
    ],
    "residue": 8
-  },
-  "phrasing": "direct"
+  }
  },
  {
   "stem": "How many fish are in the tank?",
@@ -394,5 +409,842 @@
    "residue": 4
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "If an object is selected at random from those observed with Telescope B, the probability that it is a nebula is $0.4$. What is the value of $x$?",
+  "stimulus": "An astronomy club recorded the deep-sky objects its members observed with two telescopes. The table shows the number of each type of object observed.\n\nObjects Observed by Telescope\nTelescope | Galaxies | Nebulae\nTelescope A | 26 | 16\nTelescope B | 30 | $x$",
+  "choices": [
+   "$12$",
+   "$20$",
+   "$48$",
+   "$50$"
+  ],
+  "answer": "B",
+  "explanation": "The words 'from those observed with Telescope B' make the Telescope B row your whole world, so the denominator is $30 + x$, not $30$. Set up $\\frac{x}{30 + x} = 0.4$. Cross-multiplying gives $x = 0.4(30 + x) = 12 + 0.4x$, so $0.6x = 12$ and $x = 20$. Check: $\\frac{20}{50} = 0.4$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You calculated $0.4 \\times 30 = 12$ and forgot that the unknown cell $x$ is also part of Telescope B's total. Check it: $\\frac{12}{30 + 12} = \\frac{12}{42}$, which isn't $0.4$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You used the whole table, $72 + x$, as the denominator. The probability applies only to objects observed with Telescope B, so the denominator should be that row's total."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$50$ is the total number of objects seen with Telescope B, $30 + 20$. The question asks for $x$, the number of nebulae."
+   }
+  },
+  "id": "orig-reverse-probab-M-2df5ef",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-2df5ef",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many of the tagged fish were wrasses?",
+  "stimulus": "Marine biologists tagged $160$ fish on a coral reef. Every tagged fish was a parrotfish, a grouper, or a wrasse, and $40$ of them were groupers. If one of the tagged fish is selected at random, the probability that it is a parrotfish is $0.35$.",
+  "choices": [
+   "$56$",
+   "$64$",
+   "$104$",
+   "$120$"
+  ],
+  "answer": "B",
+  "explanation": "The number of parrotfish is $0.35 \\times 160 = 56$. The wrasses are the fish left after you remove the parrotfish and the groupers: $160 - 56 - 40 = 64$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$56$ is the number of parrotfish, which is the group the probability describes. The question asks about wrasses, so you still have to subtract both known groups from $160$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You subtracted only the parrotfish, $160 - 56 = 104$. That leaves the groupers and wrasses together, so you also need to subtract the $40$ groupers."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You subtracted only the $40$ groupers, $160 - 40 = 120$, and didn't use the probability to remove the parrotfish."
+   }
+  },
+  "id": "orig-reverse-probab-M-57f29d",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-57f29d",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If a tray of coated seed is selected at random, the probability that it reached full germination is $\\frac{3}{5}$. Which equation represents this situation?",
+  "stimulus": "An agronomist recorded whether each seed tray in a trial reached full germination. The table shows the number of trays of each type.\n\nSeed Tray Germination Results\nSeed type | Full germination | Partial germination\nCoated | $x$ | 18\nUncoated | 25 | 15",
+  "choices": [
+   "$\\frac{x}{x+25}=\\frac{3}{5}$",
+   "$\\frac{x}{x+18}=\\frac{3}{5}$",
+   "$\\frac{x}{18}=\\frac{3}{5}$",
+   "$\\frac{x}{x+58}=\\frac{3}{5}$"
+  ],
+  "answer": "B",
+  "explanation": "The tray is chosen from the coated trays only, so the Coated row is the whole group. That row has $x+18$ trays, and $x$ of them reached full germination. Setting the part over the whole equal to the probability gives $\\frac{x}{x+18}=\\frac{3}{5}$, which works out to $x=27$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided by the Full germination column, $x+25$. That gives the probability that a fully germinated tray is coated, which reverses the condition. The question picks from the coated trays."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You compared full germination with partial germination. The unknown cell $x$ is part of the coated total too, so the denominator has to be $x+18$, not just 18."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the whole table, $x+18+25+15$, as the denominator. Because the tray is selected only from the coated trays, the denominator is the Coated row total."
+   }
+  },
+  "id": "orig-reverse-probab-M-08646a",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-08646a",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation represents this situation?",
+  "stimulus": "A museum drawer holds only fossil leaf impressions: 40 fern fronds, 28 cycad leaves, and $p$ ginkgo leaves. If one impression is selected at random from the drawer, the probability that it is a fern frond is 0.4.",
+  "choices": [
+   "$\\frac{p}{p+68}=0.4$",
+   "$\\frac{40}{p+28}=0.4$",
+   "$\\frac{p+28}{p+68}=0.4$",
+   "$\\frac{40}{p+68}=0.4$"
+  ],
+  "answer": "D",
+  "explanation": "The given probability is about fern fronds, so the numerator is 40. The impression can come from anywhere in the drawer, so the denominator is all of them: $40+28+p=p+68$. That gives $\\frac{40}{p+68}=0.4$. Solving, $p+68=100$, so $p=32$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You put the ginkgo leaves, $p$, in the numerator. The 0.4 describes fern fronds, so the numerator has to be the 40 ferns."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You left the ferns out of the total. The 40 fern fronds are in the drawer too, so the denominator is $p+68$, not $p+28$."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You wrote the probability of picking something that is not a fern. That probability is $1-0.4=0.6$, not 0.4."
+   }
+  },
+  "id": "orig-reverse-probab-M-d265dd",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-d265dd",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of the frogs that tested positive is selected at random, the probability that it came from the South pond is 0.3. Which equation represents this situation?",
+  "stimulus": "Ecologists tested frogs from two ponds for a skin fungus. The table shows the results.\n\nFungus Test Results by Pond\nPond | Tested positive | Tested negative\nNorth | 14 | 36\nSouth | $x$ | 50",
+  "choices": [
+   "$\\frac{x}{x+14}=0.3$",
+   "$\\frac{x}{x+50}=0.3$",
+   "$\\frac{x}{14}=0.3$",
+   "$\\frac{x}{x+100}=0.3$"
+  ],
+  "answer": "A",
+  "explanation": "The frog is chosen only from the frogs that tested positive, so the Tested positive column is the whole group. That column has $x+14$ frogs, and $x$ of them came from the South pond. That gives $\\frac{x}{x+14}=0.3$, which works out to $x=6$.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided by the South pond row, $x+50$. That gives the probability that a South pond frog tested positive, which reverses the condition. The question picks from the frogs that tested positive."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You compared South positives with North positives. The unknown cell $x$ also belongs in the positive total, so the denominator has to be $x+14$, not just 14."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used every frog in the table, $x+14+36+50$, as the denominator. The frog is picked only from those that tested positive, so the denominator is that column's total."
+   }
+  },
+  "id": "orig-reverse-probab-M-9b8ac6",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-9b8ac6",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one tale is selected at random from the archive, the probability that it is a trickster tale is $0.35$ and the probability that it is an animal fable is $0.25$. How many more tales in the archive are classified as other than are classified as trickster tales?",
+  "stimulus": "A folklore archive holds $240$ recorded folktales. Each tale is classified as exactly one of three types: trickster tale, animal fable, or other.",
+  "choices": [
+   "$12$",
+   "$24$",
+   "$84$",
+   "$96$"
+  ],
+  "answer": "A",
+  "explanation": "Turn each probability into a count: there are $0.35 \\times 240 = 84$ trickster tales and $0.25 \\times 240 = 60$ animal fables. That leaves $240 - 84 - 60 = 96$ tales classified as other. The question asks how many more, so subtract: $96 - 84 = 12$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the gap between trickster tales and animal fables, $84 - 60 = 24$. The question compares the other group with the trickster tales."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the number of trickster tales, $0.35 \\times 240 = 84$. That is one of the two groups being compared, not the difference between them."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You stopped once you had the size of the other group, $96$. You still need to subtract the $84$ trickster tales to get how many more there are."
+   }
+  },
+  "id": "orig-reverse-probab-M-a27d74",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-a27d74",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If a map is selected at random from the post-1900 maps, the probability that it is topographic is $\\frac{3}{5}$. How many more post-1900 maps than pre-1900 maps are in the collection?",
+  "stimulus": "A library's map collection is summarized in the table.\n\nMaps in the Collection\nMap type | Pre-1900 | Post-1900\nTopographic | 24 | $x$\nNautical | 16 | 30",
+  "choices": [
+   "$8$",
+   "$21$",
+   "$35$",
+   "$45$"
+  ],
+  "answer": "C",
+  "explanation": "There are $x + 30$ post-1900 maps, so $\\frac{x}{x + 30} = \\frac{3}{5}$. Cross-multiply: $5x = 3x + 90$, which gives $x = 45$. That means there are $45 + 30 = 75$ post-1900 maps and $24 + 16 = 40$ pre-1900 maps. The difference is $75 - 40 = 35$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $x = \\frac{3}{5} \\times 30 = 18$, leaving $x$ out of its own column's total. That makes $48$ post-1900 maps, which is $8$ more than $40$. But $x$ belongs in the denominator too."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You compared only the topographic maps, $45 - 24 = 21$. The question asks about all post-1900 maps against all pre-1900 maps."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at $x = 45$, the number of post-1900 topographic maps. You still need the two column totals and the difference between them."
+   }
+  },
+  "id": "orig-reverse-probab-M-de655f",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-de655f",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If a specimen is selected at random, the probability that it failed by fracture is $0.15$ and the probability that it passed is $0.62$. How many more specimens passed than failed by deformation?",
+  "stimulus": "A materials lab stress-tested $200$ alloy specimens. Each specimen had exactly one outcome: it failed by fracture, failed by deformation, or passed.",
+  "choices": [
+   "$46$",
+   "$78$",
+   "$94$",
+   "$124$"
+  ],
+  "answer": "B",
+  "explanation": "Turn each probability into a count: $0.15 \\times 200 = 30$ specimens fractured and $0.62 \\times 200 = 124$ passed. That leaves $200 - 30 - 124 = 46$ that failed by deformation. The difference is $124 - 46 = 78$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found the number that failed by deformation, $46$, and stopped. The question asks how many more passed than that."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You subtracted the fracture count instead, $124 - 30 = 94$. The question compares the passed group with the deformation group."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You gave the number that passed, $0.62 \\times 200 = 124$. That is only one of the two groups. You still need to subtract the deformation count."
+   }
+  },
+  "id": "orig-reverse-probab-M-46028d",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-46028d",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "An engineer ran a stress test on metal samples. The table shows how many samples of each alloy passed or failed, with one entry unknown. If an aluminum sample is chosen at random, the probability that it failed is $0.25$.\n\nStress Test Results\nAlloy | Passed | Failed\nAluminum | 36 | $x$\nTitanium | 42 | 18",
+  "choices": [
+   "Exactly 12 aluminum samples failed.",
+   "Exactly 9 aluminum samples failed.",
+   "Exactly 48 aluminum samples failed.",
+   "Exactly 108 aluminum samples failed."
+  ],
+  "answer": "A",
+  "explanation": "The sample is chosen only from the aluminum samples, so the aluminum row is the denominator: $\\frac{x}{36 + x} = 0.25$. Multiply both sides by $36 + x$ to get $x = 9 + 0.25x$, so $0.75x = 9$ and $x = 12$. Check: $\\frac{12}{48} = 0.25$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $0.25 \\times 36$, which treats the 36 passing samples as the whole aluminum group. The unknown $x$ is part of that group too, so it has to appear in the denominator."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "48 is the total number of aluminum samples, $36 + 12$. You found it on the way to the answer, but the statement asks how many failed, and that's only 12 of the 48."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You set the failure probability to $0.75$, so $\\frac{x}{36 + x} = 0.75$. That's the chance a sample passed, not the chance it failed."
+   }
+  },
+  "id": "orig-reverse-probab-M-6c28a3",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-6c28a3",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__num__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "At a wetland, researchers tagged 200 birds, and each one is a heron, an egret, or an ibis. Of these, 64 are herons. If one of the tagged birds is chosen at random, the probability that it is an egret is $0.43$.",
+  "choices": [
+   "Exactly 50 of the tagged birds are ibises.",
+   "Exactly 86 of the tagged birds are ibises.",
+   "Exactly 136 of the tagged birds are ibises.",
+   "Exactly 114 of the tagged birds are ibises."
+  ],
+  "answer": "A",
+  "explanation": "The number of egrets is $0.43 \\times 200 = 86$. Ibises are whatever birds are left over: $200 - 64 - 86 = 50$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "86 is the number of egrets, which is the group the probability describes. The statement is about ibises, so you still need to subtract the herons and egrets from 200."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "136 is $200 - 64$, the number of birds that aren't herons. You stopped there without subtracting the 86 egrets."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "114 is $200 - 86$, so you subtracted only the egrets. That count still includes the 64 herons, but every bird belongs to exactly one species, so the herons have to come out too."
+   }
+  },
+  "id": "orig-reverse-probab-M-8e54b1",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-8e54b1",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "Divers counted fish on a reef and classified each fish by depth zone and life stage. One count is unknown. If a fish is chosen at random, the probability that it is from the deep zone, given that it is a juvenile, is $\\frac{3}{5}$.\n\nReef Fish Counts\nZone | Juvenile | Adult\nShallow | 14 | 26\nDeep | $x$ | 30",
+  "choices": [
+   "The value of $x$ is 21.",
+   "The value of $x$ is 35.",
+   "The value of $x$ is 45.",
+   "The value of $x$ is 105."
+  ],
+  "answer": "A",
+  "explanation": "'Given that it is a juvenile' makes the juvenile column the denominator, and that column includes $x$: $\\frac{x}{14 + x} = \\frac{3}{5}$. Cross-multiplying gives $5x = 42 + 3x$, so $2x = 42$ and $x = 21$. Check: $\\frac{21}{35} = \\frac{3}{5}$.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "35 is the total number of juveniles, $14 + 21$. That's the denominator you used, not the unknown cell $x$."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the deep-zone row as the denominator, $\\frac{x}{x + 30} = \\frac{3}{5}$. That gives the fraction of deep-zone fish that are juveniles, which is the reverse of what's given. The words after 'given that' tell you the juvenile column is the denominator."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You put $x$ over the grand total, $\\frac{x}{70 + x} = \\frac{3}{5}$. That ignores 'given that it is a juvenile', which limits the denominator to the juvenile column."
+   }
+  },
+  "id": "orig-reverse-probab-M-d005aa",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-d005aa",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__num__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "If one of the well samples is selected at random, the probability that it was contaminated is 0.15. What is the value of $x$?",
+  "stimulus": "A county hydrology office tested groundwater and surface-water samples for nitrate contamination. The table shows the results by source.\n\nNitrate Test Results by Water Source\nSource | Contaminated | Not contaminated\nWell | 6 | x\nStream | 14 | 20",
+  "choices": [
+   "6",
+   "34",
+   "40",
+   "46"
+  ],
+  "answer": "B",
+  "explanation": "The words 'one of the well samples' make the Well row your whole world. So its total, $6 + x$, is the denominator: $\\frac{6}{6 + x} = 0.15$. Then $6 + x = \\frac{6}{0.15} = 40$, which gives $x = 34$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "6 is the number of contaminated well samples, which the table already gives you. The question asks for $x$, the number of well samples that were not contaminated."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "40 is the total number of well samples, $6 + x$. You stopped there and didn't subtract the 6 contaminated samples to get $x$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found that the Well row totals 40, but then you added 6 to it when you should have subtracted. Solving $6 + x = 40$ gives $x = 34$, not 46."
+   }
+  },
+  "id": "orig-reverse-probab-M-a68df2",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-a68df2",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If a day is selected at random from these records, the probability that it was sunny is 0.35 and the probability that it was cloudy is 0.40. How many of the days were rainy?",
+  "stimulus": "A meteorology student reviewed 120 days of records from a weather station. Each day was classified as exactly one of the following: sunny, cloudy, or rainy.",
+  "choices": [
+   "30",
+   "42",
+   "48",
+   "90"
+  ],
+  "answer": "A",
+  "explanation": "Every day falls into exactly one of the three groups, so the probability that a day was rainy is $1 - 0.35 - 0.40 = 0.25$. That makes the number of rainy days $0.25 \\times 120 = 30$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$0.35 \\times 120 = 42$ is the number of sunny days. You found the count for the group the first probability describes, but the question asks about the rainy days."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$0.40 \\times 120 = 48$ is the number of cloudy days. You need the remaining group, the rainy days."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "90 is the number of sunny and cloudy days together, $42 + 48$. You still have to subtract that from 120 to get the number of rainy days."
+   }
+  },
+  "id": "orig-reverse-probab-M-3dc204",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-3dc204",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of the turtles tagged at South Beach is selected at random, the probability that it is a loggerhead is $\\frac{2}{5}$. What is the value of $x$?",
+  "stimulus": "Marine biologists tagged nesting sea turtles at two beaches during one season. The table shows the number of turtles of each species tagged at each beach.\n\nSea Turtles Tagged by Beach and Species\nSpecies | North Beach | South Beach\nLoggerhead | 24 | x\nGreen | 12 | 30",
+  "choices": [
+   "12",
+   "20",
+   "44",
+   "50"
+  ],
+  "answer": "B",
+  "explanation": "'Tagged at South Beach' makes the South Beach column your whole world. That column totals $x + 30$, and the unknown cell is part of that total. So $\\frac{x}{x + 30} = \\frac{2}{5}$. Cross-multiplying gives $5x = 2x + 60$, so $3x = 60$ and $x = 20$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You calculated $\\frac{2}{5} \\times 30 = 12$, which leaves the unknown cell out of the South Beach total. The denominator has to be $x + 30$, not 30."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You divided by the whole table, $x + 66$, so you ignored the condition that the turtle was tagged at South Beach. Only the South Beach column belongs in the denominator."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "50 is the total number of turtles tagged at South Beach, $x + 30$. You need to subtract the 30 green turtles to get $x$."
+   }
+  },
+  "id": "orig-reverse-probab-M-0351a7",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-0351a7",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If a participant with a high antibody level is selected at random, the probability that the participant received the booster is 0.6. What is the value of $x$?",
+  "stimulus": "In a vaccine trial, researchers recorded whether each participant received a booster dose and whether that participant's antibody level was high or low four weeks later.\n\nAntibody Levels of Trial Participants\nAntibody level | Booster | No booster\nHigh | $x$ | 18\nLow | 14 | 30",
+  "choices": [
+   "12",
+   "21",
+   "27",
+   "45"
+  ],
+  "answer": "C",
+  "explanation": "The words \"a participant with a high antibody level\" mean the High row is the whole group, so the denominator is $x + 18$. Set up $\\frac{x}{x + 18} = 0.6$. Trying the choices is faster than solving: for 27, $\\frac{27}{27 + 18} = \\frac{27}{45} = 0.6$. That works, so $x = 27$. To solve it directly, $x = 0.6x + 10.8$, so $0.4x = 10.8$ and $x = 27$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You set the probability equal to the wrong cell. You wrote $\\frac{18}{x + 18} = 0.6$, which is the probability of no booster. That gives $x = 12$, but $\\frac{12}{30} = 0.4$, not 0.6."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You flipped the condition. You used the Booster column as your denominator, $\\frac{x}{x + 14} = 0.6$, which is the probability of a high level given a booster. The question gives you high level and asks about the booster, so the High row is your denominator."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "45 is the total of the High row, $x + 18$. You found the denominator and stopped there. The question asks only for the booster cell, which is $45 - 18 = 27$."
+   }
+  },
+  "id": "orig-reverse-probab-M-62fb87",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-62fb87",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one sample is selected at random from the freezer, the probability of selecting a high-fiber sample is 0.375. What is the value of $x$?",
+  "stimulus": "A nutrition lab's freezer holds 15 high-fiber food samples, 9 medium-fiber food samples, and $x$ low-fiber food samples. There are no other samples in the freezer.",
+  "choices": [
+   "9",
+   "16",
+   "25",
+   "40"
+  ],
+  "answer": "B",
+  "explanation": "The whole is every sample in the freezer, $15 + 9 + x = 24 + x$. Set up $\\frac{15}{24 + x} = 0.375$. Test the choices: for 16, $\\frac{15}{24 + 16} = \\frac{15}{40} = 0.375$. That works, so $x = 16$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied 0.375 by the 24 samples you already knew about, which gives 9. That isn't how to solve this. The unknown $x$ is part of the total in the denominator, so you have to solve $\\frac{15}{24 + x} = 0.375$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You left the 9 medium-fiber samples out of the total and solved $\\frac{15}{15 + x} = 0.375$. Put 25 back into the full freezer and you get $\\frac{15}{49}$, which isn't 0.375."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "40 is the total number of samples, $\\frac{15}{0.375}$. You found the whole and stopped there. Subtract the known groups to get the low-fiber count: $40 - 15 - 9 = 16$."
+   }
+  },
+  "id": "orig-reverse-probab-M-fcace4",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-fcace4",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If a surveyed resident who lives in Riverside is selected at random, the probability that the resident commutes by bike is 0.25. What is the value of $x$?",
+  "stimulus": "A city planning office surveyed residents of two neighborhoods about how they usually commute to work.\n\nCommute Mode of Surveyed Residents\nNeighborhood | Bike | Transit | Car\nRiverside | $x$ | 40 | $x + 12$\nHillcrest | 18 | 35 | 47",
+  "choices": [
+   "6",
+   "26",
+   "38",
+   "104"
+  ],
+  "answer": "B",
+  "explanation": "The words \"who lives in Riverside\" mean the Riverside row is the whole group. Its total is $x + 40 + (x + 12) = 2x + 52$, so you need $\\frac{x}{2x + 52} = 0.25$. Test the choices: for 26, the row total is $26 + 40 + 38 = 104$, and $\\frac{26}{104} = 0.25$. That works, so $x = 26$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You reversed the condition. You used the Bike column as your denominator, $\\frac{x}{x + 18} = 0.25$, which is the probability that a bike commuter lives in Riverside. The question gives you Riverside, so the Riverside row is your denominator."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "38 is the number of Riverside residents who drive, $x + 12$. You solved correctly but reported the car cell instead of $x$, the bike cell."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "104 is the total of the Riverside row, which is the denominator once you know $x$. You stopped at the whole group. The question asks for $x$, which is $0.25 \\times 104 = 26$."
+   }
+  },
+  "id": "orig-reverse-probab-M-87e23b",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-87e23b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

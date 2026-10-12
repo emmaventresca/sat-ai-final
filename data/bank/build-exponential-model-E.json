@@ -194,5 +194,249 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "Which equation represents this situation, where $A$ is the area, in square centimeters, of the colony $t$ years after it was first measured?",
+  "stimulus": "A marine biologist tracks a colony of reef coral that covered 40 square centimeters when first measured. The area of the colony doubles every 3 years.",
+  "choices": [
+   "$A = 40(2)^{t/3}$",
+   "$A = 40(2)^{t}$",
+   "$A = 40(3)^{t/2}$",
+   "$A = 40(2)^{3t}$"
+  ],
+  "answer": "A",
+  "explanation": "The starting area is 40, so that is the value in front. The area is multiplied by 2 once every 3 years, so after $t$ years it has doubled $t/3$ times. That gives $A = 40(2)^{t/3}$. As a check, at $t = 3$ the model gives $40(2)^1 = 80$, which is double the starting area.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the right factor of 2 but forgot to divide the exponent by the 3-year doubling time. This model doubles every year, so it gives 80 square centimeters after 1 year instead of after 3."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You swapped the two given numbers, so 3 became the multiplier and 2 became the time step. The colony doubles, so the growth factor must be 2."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by the time step instead of dividing by it. With an exponent of $3t$, the colony would double three times every year, not once every three years."
+   }
+  },
+  "id": "orig-build-exponent-E-383029",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-E-383029",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "represents this situation where __var__ is the area",
+    "this situation where __var__ is the area in",
+    "situation where __var__ is the area in square"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which function $f$ gives the number of potholes awaiting repair $m$ months after the program began?",
+  "stimulus": "When a city started a new road-repair program, 500 potholes were awaiting repair. Each month after that, the number awaiting repair decreased by 4%.",
+  "choices": [
+   "$f(m) = 500(0.04)^{m}$",
+   "$f(m) = 500(1.04)^{m}$",
+   "$f(m) = 500 - 20m$",
+   "$f(m) = 500(0.96)^{m}$"
+  ],
+  "answer": "D",
+  "explanation": "A decrease of 4% means that each month 96% of the potholes are still waiting, so the growth factor is $1 - 0.04 = 0.96$. The starting amount is 500, so $f(m) = 500(0.96)^{m}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the rate of change, 0.04, as the factor. That would leave only 4% of the potholes after one month (20 potholes) instead of 96% (480 potholes)."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You wrote the factor for a 4% increase. The number of potholes is going down, so the factor must be less than 1."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took 4% of the starting 500 and subtracted that 20 every month, which makes a linear model. A percent change applies to the current amount each month, so the model has to be exponential."
+   }
+  },
+  "id": "orig-build-exponent-E-c9bd72",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-E-c9bd72",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Based on the model, how many aftershocks will be recorded on day 6?",
+  "stimulus": "After an earthquake, a seismology station recorded 240 aftershocks on day 0. A model predicts that the number of aftershocks recorded each day is halved every 2 days.",
+  "choices": [
+   "3.75",
+   "30",
+   "60",
+   "80"
+  ],
+  "answer": "B",
+  "explanation": "Day 6 is $6/2 = 3$ halving periods after day 0. The model is $240\\left(\\tfrac{1}{2}\\right)^{t/2}$, so on day 6 it gives $240\\left(\\tfrac{1}{2}\\right)^{3} = 240 \\div 8 = 30$ aftershocks.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You halved once for each day, so you used an exponent of 6 instead of $6/2 = 3$. That gives $240 \\div 64 = 3.75$, which treats the halving time as 1 day instead of 2."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You stopped after two halvings, which gives the count for day 4. One more halving is needed to reach day 6."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided 240 by the 3 halving periods instead of halving 3 times. Halving three times means dividing by $2^3 = 8$."
+   }
+  },
+  "id": "orig-build-exponent-E-5fafe0",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-E-5fafe0",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation represents this situation, where $m$ is the mass, in grams, of the sample $w$ weeks after the study began?",
+  "stimulus": "A materials scientist recorded the mass of a biodegradable plastic sample buried in soil. The table shows the mass at the end of three weeks. Each week the mass was multiplied by the same factor.\nMass of Plastic Sample\nWeek, $w$ | Mass (grams)\n1 | 160\n2 | 80\n3 | 40",
+  "choices": [
+   "$m = 160(0.5)^{w}$",
+   "$m = 320(0.5)^{w}$",
+   "$m = 320(2)^{w}$",
+   "$m = 320(1.5)^{w}$"
+  ],
+  "answer": "B",
+  "explanation": "Each mass is half of the one before it, so the factor is 0.5. The table starts at week 1, not week 0. To find the starting mass, work back one week: $160 \\div 0.5 = 320$ grams. So $m = 320(0.5)^{w}$. As a check, $w = 1$ gives 160 and $w = 3$ gives 40.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used the first row of the table as the starting amount, but that row is week 1, not week 0. This model gives 80 grams at week 1, not 160."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided an earlier mass by a later one ($160 \\div 80 = 2$) to get the factor. The factor is a later value divided by the one before it, which is 0.5. A factor of 2 would make the mass grow."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You saw a 50% change and wrote it as an increase, $1 + 0.5$. The mass is going down, so the factor is $1 - 0.5 = 0.5$."
+   }
+  },
+  "id": "orig-build-exponent-E-1e657f",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-E-1e657f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the frequency, in hertz, of the note 36 semitones above this note?",
+  "stimulus": "A musicologist studying tuning systems notes that, in equal temperament, the frequency of a note doubles every 12 semitones. One note has a frequency of 110 hertz.",
+  "choices": [
+   "330",
+   "440",
+   "660",
+   "880"
+  ],
+  "answer": "D",
+  "explanation": "The model is $f(s) = 110(2)^{s/12}$, where $s$ is the number of semitones above the note. For 36 semitones the exponent is $36/12 = 3$, so the frequency is $110(2)^3 = 110 \\cdot 8 = 880$ hertz.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied 110 by the exponent 3 instead of by $2^3$. Three doublings multiply the frequency by 8, not by 3."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used a linear model and added 110 hertz for every 12 semitones: $110 + 3(110) = 440$. Doubling repeats on the current frequency each time, so the model is exponential."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied 110 by $2 \\times 3$ instead of by $2^3$. The exponent 3 means you multiply by 2 three times."
+   }
+  },
+  "id": "orig-build-exponent-E-acad45",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-E-acad45",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

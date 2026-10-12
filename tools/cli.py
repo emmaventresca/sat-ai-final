@@ -25,6 +25,11 @@ Three things this fixes, and they are the three things that went wrong:
 """
 import json, os, random, subprocess, threading, time
 
+USAGE_LOG = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    "corpus", "usage.jsonl")
+LEDGER = threading.Lock()
+
 MAX_ATTEMPTS = 4
 BASE_DELAY = 20.0            # seconds; a rate limit needs real time, not 1s
 BREAKER_AFTER = 12           # consecutive failures across all threads
@@ -68,8 +73,55 @@ def _env():
             "PATH": os.environ["PATH"] + ":" + os.path.expanduser("~/.local/bin")}
 
 
+def _unwrap(out):
+    """Text and usage out of the CLI's JSON envelope.
+
+    Falls back to treating the output as plain text, so a CLI that does not
+    speak JSON still works rather than failing every call in the run.
+    """
+    try:
+        doc = json.loads(out)
+    except (ValueError, TypeError):
+        return out, None
+    if not isinstance(doc, dict) or "result" not in doc:
+        return out, None
+    if doc.get("is_error"):
+        return None, None
+    return doc["result"], doc
+
+
+def meter(model, meta, tag=None):
+    """Append one line to the usage ledger. Never raises.
+
+    Metering must not be able to fail a run that already succeeded - the work
+    is done and paid for by the time we get here, and losing it over a
+    logging error would be absurd.
+    """
+    if not meta:
+        return
+    try:
+        usage = meta.get("usage") or {}
+        row = {
+            "at": round(time.time()),
+            "tag": tag,
+            "model": model,
+            "usd": meta.get("total_cost_usd"),
+            "ms": meta.get("duration_ms"),
+            "in": usage.get("input_tokens"),
+            "out": usage.get("output_tokens"),
+            "cache_read": usage.get("cache_read_input_tokens"),
+            "cache_write": usage.get("cache_creation_input_tokens"),
+        }
+        os.makedirs(os.path.dirname(USAGE_LOG), exist_ok=True)
+        with LEDGER:
+            with open(USAGE_LOG, "a") as fh:
+                fh.write(json.dumps(row) + "\n")
+    except Exception:
+        pass
+
+
 def run_claude(prompt, model, timeout=900, attempts=MAX_ATTEMPTS,
-               allowed_tools=None):
+               allowed_tools=None, tag=None):
     """Call the CLI and return its stdout, retrying transient failures.
 
     `allowed_tools` grants the headless run specific tools. Reading an image
@@ -77,7 +129,11 @@ def run_claude(prompt, model, timeout=900, attempts=MAX_ATTEMPTS,
     permission was denied - which looks like a model that cannot see rather
     than a flag that was missing.
     """
-    cmd = ["claude", "-p", prompt, "--model", model]
+    # JSON output so every call reports what it actually cost. The CLI
+    # returns total_cost_usd and a full token breakdown alongside the text,
+    # and without asking for it there is no way to know what the bank cost to
+    # build - 3,160 authoring runs were logged with no usage at all.
+    cmd = ["claude", "-p", prompt, "--model", model, "--output-format", "json"]
     if allowed_tools:
         cmd += ["--allowedTools", ",".join(allowed_tools)]
     last = None
@@ -93,8 +149,12 @@ def run_claude(prompt, model, timeout=900, attempts=MAX_ATTEMPTS,
             last = f"timed out after {timeout}s"
         else:
             if proc.returncode == 0 and proc.stdout.strip():
-                BREAKER.ok()
-                return proc.stdout
+                text, meta = _unwrap(proc.stdout)
+                if text is not None:
+                    BREAKER.ok()
+                    meter(model, meta, tag)
+                    return text
+                last = "the CLI returned something that was not a result"
             # Always carry something truthy: an empty message is how a call
             # that never happened gets mistaken for a call that said no.
             last = (proc.stderr.strip()[:200]
@@ -115,11 +175,11 @@ def _decode(text, opener):
     return json.JSONDecoder().raw_decode(text[i:])[0]
 
 
-def call_json_array(prompt, model, timeout=900, allowed_tools=None):
+def call_json_array(prompt, model, timeout=900, allowed_tools=None, tag=None):
     return _decode(run_claude(prompt, model, timeout,
-                              allowed_tools=allowed_tools), "[")
+                              allowed_tools=allowed_tools, tag=tag), "[")
 
 
-def call_json_object(prompt, model, timeout=600, allowed_tools=None):
+def call_json_object(prompt, model, timeout=600, allowed_tools=None, tag=None):
     return _decode(run_claude(prompt, model, timeout,
-                              allowed_tools=allowed_tools), "{")
+                              allowed_tools=allowed_tools, tag=tag), "{")

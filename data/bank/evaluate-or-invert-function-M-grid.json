@@ -236,5 +236,566 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "According to the model, after how many weeks of study will the learner know 1,640 words?",
+  "stimulus": "A linguist models the number of words, $W$, that an adult learner of Basque knows after $t$ weeks of study as $W(t) = 40t^2 + 200$, for $t \\ge 0$.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "You are given the output, so set the rule equal to it: $40t^2 + 200 = 1{,}640$. Undo the operations in reverse order. Subtract 200 to get $40t^2 = 1{,}440$. Divide by 40 to get $t^2 = 36$. Take the square root to get $t = 6$. Because $t \\ge 0$, discard $-6$. Check: $40(36) + 200 = 1{,}640$.",
+  "common_errors": [
+   {
+    "value": "36",
+    "misconception": "intermediate-step",
+    "why": "Solved for $t^2 = 36$ and stopped before taking the square root."
+   },
+   {
+    "value": "1440",
+    "misconception": "intermediate-step",
+    "why": "Subtracted 200 and gave $40t^2 = 1{,}440$ as the answer."
+   },
+   {
+    "value": ".9487",
+    "misconception": "algebra-manipulation",
+    "why": "Read $40t^2$ as $(40t)^2$, so $1{,}600t^2 = 1{,}440$, $t^2 = 0.9$ and $t \\approx 0.9487$."
+   }
+  ],
+  "id": "orig-evaluate-or-in-M-ed0abe",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-or-in-M-ed0abe",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "For what water height, in feet, does the model give a flow rate of 81 cubic feet per second?",
+  "stimulus": "The flow rate $Q$, in cubic feet per second, of a stream over a small weir is modeled by $Q(h) = 3h^{3/2}$, where $h$ is the height, in feet, of the water above the top of the weir.",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "The flow rate is the output, so set $3h^{3/2} = 81$. Divide by 3: $h^{3/2} = 27$. $h^{3/2}$ means $(\\sqrt{h})^3$, so $\\sqrt{h} = 3$ and $h = 9$. Check: $3 \\cdot 9^{3/2} = 3 \\cdot 27 = 81$.",
+  "common_errors": [
+   {
+    "value": "2187",
+    "misconception": "wrong-target-quantity",
+    "why": "Swapped input and output and found $Q(81) = 3 \\cdot 729$ when the question asked for $h$."
+   },
+   {
+    "value": "27",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $h^{3/2} = 27$ without undoing the exponent."
+   },
+   {
+    "value": "18",
+    "misconception": "algebra-manipulation",
+    "why": "Treated the exponent $\\tfrac{3}{2}$ as a coefficient and divided 27 by 1.5."
+   }
+  ],
+  "id": "orig-evaluate-or-in-M-91859a",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-or-in-M-91859a",
+   "structure": [],
+   "solver_answer": 9,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $L(k) = 280$, what is the value of $L(k + 1)$?",
+  "stimulus": "A civil engineer models the maximum load $L$, in kilonewtons, that a timber beam of width $w$ centimeters can support as $L(w) = 12w^2 - 20$, for $w > 2$.",
+  "keys": [
+   "412"
+  ],
+  "any_of": false,
+  "explanation": "First find $k$ by working backwards: $12k^2 - 20 = 280$, so $12k^2 = 300$, $k^2 = 25$ and $k = 5$, since $w > 2$ rules out $-5$. Then substitute the new input, $k + 1 = 6$: $L(6) = 12(36) - 20 = 432 - 20 = 412$.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "wrong-target-quantity",
+    "why": "Found $k$ and gave it as the answer instead of evaluating $L(k+1)$."
+   },
+   {
+    "value": "281",
+    "misconception": "algebra-manipulation",
+    "why": "Treated $L(k+1)$ as $L(k) + 1$."
+   },
+   {
+    "value": "172",
+    "misconception": "missed-condition",
+    "why": "Used $k = -5$, which breaks $w > 2$, and evaluated $L(-4) = 192 - 20$."
+   },
+   {
+    "value": "300",
+    "misconception": "intermediate-step",
+    "why": "Gave the value of $12k^2$ from partway through the first step."
+   }
+  ],
+  "id": "orig-evaluate-or-in-M-4aa604",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-or-in-M-4aa604",
+   "structure": [],
+   "solver_answer": 412,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, how many years after the survey began will the population reach 4,000 beetles?",
+  "stimulus": "An ecologist models the population $P$ of a bark beetle species in a forest plot $t$ years after a survey began as $P(t) = 500 \\cdot 2^{t/3}$.",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "Set the output equal to 4,000: $500 \\cdot 2^{t/3} = 4{,}000$. Divide by 500: $2^{t/3} = 8$. Since $8 = 2^3$, the exponent must be $3$, so $t/3 = 3$ and $t = 9$. Check: $500 \\cdot 2^3 = 4{,}000$.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "intermediate-step",
+    "why": "Solved for the exponent $t/3 = 3$ and stopped before multiplying by 3."
+   },
+   {
+    "value": "24",
+    "misconception": "algebra-manipulation",
+    "why": "Set the exponent equal to 8, the multiplier, instead of to the power of 2 that gives 8: $t/3 = 8$."
+   },
+   {
+    "value": "8",
+    "misconception": "intermediate-step",
+    "why": "Gave $2^{t/3} = 8$ after dividing by 500, before solving for $t$."
+   }
+  ],
+  "id": "orig-evaluate-or-in-M-00a0ad",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-or-in-M-00a0ad",
+   "structure": [],
+   "solver_answer": 9,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "At what distance, in astronomical units, does the model give a brightness of 4?",
+  "stimulus": "An astronomer models the apparent brightness $B$, in relative units, of a star as seen from a space probe at a distance of $d$ astronomical units as $B(d) = \\dfrac{900}{d^2}$, for $d > 0$.",
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "The brightness is the output, so set $\\dfrac{900}{d^2} = 4$. Multiply both sides by $d^2$ and divide by 4: $d^2 = 225$. Because $d > 0$, $d = 15$. Check: $900/225 = 4$.",
+  "common_errors": [
+   {
+    "value": "56.25",
+    "misconception": "wrong-target-quantity",
+    "why": "Evaluated $B(4) = 900/16$ instead of finding the distance where $B = 4$."
+   },
+   {
+    "value": "225",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $d^2 = 225$ without taking the square root."
+   },
+   {
+    "value": "60",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied instead of dividing, so $d^2 = 900 \\cdot 4 = 3{,}600$."
+   }
+  ],
+  "id": "orig-evaluate-or-in-M-14f9cc",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-or-in-M-14f9cc",
+   "structure": [],
+   "solver_answer": 15,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many minutes after the start of the dive is the seal 45 meters deep and rising toward the surface?",
+  "stimulus": "A marine biologist models the depth $D$, in meters, of a diving harbor seal $t$ minutes after the start of a dive as $D(t) = 60 - 15(t - 2)^2$, for $0 \\le t \\le 4$.",
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "Set the depth equal to 45: $60 - 15(t-2)^2 = 45$. Subtract 60 and divide by $-15$: $(t-2)^2 = 1$. Remember both roots: $t - 2 = 1$ or $t - 2 = -1$, so $t = 3$ or $t = 1$. The depth is greatest at $t = 2$, so the seal is going down before that and rising after it. The answer is $t = 3$.",
+  "common_errors": [
+   {
+    "value": "1",
+    "misconception": "missed-condition",
+    "why": "Took the other root, when the seal is still going down, and ignored 'rising'."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the time of the deepest point instead of the time when the depth is 45 meters."
+   }
+  ],
+  "id": "orig-evaluate-or-in-M-dc6904",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-or-in-M-dc6904",
+   "structure": [],
+   "solver_answer": 3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, what hourly wage, in dollars, will attract 50 applicants?",
+  "stimulus": "A labor economist models the number of applicants $A$ for a warehouse job that pays $w$ dollars per hour as $A(w) = \\dfrac{(w - 12)^2}{2}$, for $w \\ge 12$.",
+  "keys": [
+   "22"
+  ],
+  "any_of": false,
+  "explanation": "Set the output equal to 50: $\\dfrac{(w-12)^2}{2} = 50$. Multiply by 2: $(w - 12)^2 = 100$. Take the square root: $w - 12 = 10$, because $w \\ge 12$ rules out $-10$. Add 12: $w = 22$. Check: $10^2/2 = 50$.",
+  "common_errors": [
+   {
+    "value": "10",
+    "misconception": "intermediate-step",
+    "why": "Solved for $w - 12 = 10$ and forgot to add 12."
+   },
+   {
+    "value": "2",
+    "misconception": "missed-condition",
+    "why": "Used $w - 12 = -10$, which breaks $w \\ge 12$."
+   },
+   {
+    "value": "17",
+    "misconception": "algebra-manipulation",
+    "why": "Divided 50 by 2 instead of multiplying, so $(w-12)^2 = 25$."
+   },
+   {
+    "value": "722",
+    "misconception": "wrong-target-quantity",
+    "why": "Evaluated $A(50) = 38^2/2$ instead of solving for the wage."
+   }
+  ],
+  "id": "orig-evaluate-or-in-M-faab0f",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-or-in-M-faab0f",
+   "structure": [],
+   "solver_answer": 22,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $H(a) = 78$, what is the value of $H(4a)$?",
+  "stimulus": "A sports scientist models a cyclist's heart rate $H$, in beats per minute, $m$ minutes into a warm-up as $H(m) = 6\\sqrt{m} + 60$, for $0 \\le m \\le 40$.",
+  "keys": [
+   "96"
+  ],
+  "any_of": false,
+  "explanation": "First find $a$: $6\\sqrt{a} + 60 = 78$, so $6\\sqrt{a} = 18$, $\\sqrt{a} = 3$ and $a = 9$. Then $4a = 36$, so $H(36) = 6(6) + 60 = 96$.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "wrong-target-quantity",
+    "why": "Found $a$ and gave it instead of evaluating $H(4a)$."
+   },
+   {
+    "value": "312",
+    "misconception": "algebra-manipulation",
+    "why": "Treated $H(4a)$ as $4 \\cdot H(a) = 4 \\cdot 78$."
+   },
+   {
+    "value": "156",
+    "misconception": "algebra-manipulation",
+    "why": "Saw that $\\sqrt{4a} = 2\\sqrt{a}$ but doubled the whole output, including the constant 60."
+   }
+  ],
+  "id": "orig-evaluate-or-in-M-a7509c",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-or-in-M-a7509c",
+   "structure": [],
+   "solver_answer": 96,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, what is the diameter, in millimeters, of a hailstone that falls at 25 meters per second?",
+  "stimulus": "A meteorologist models the falling speed of hailstones using the function $v(d) = 2\\sqrt{d} + 5$. Here, $v(d)$ is the falling speed, in meters per second, of a hailstone with a diameter of $d$ millimeters.",
+  "keys": [
+   "100"
+  ],
+  "any_of": false,
+  "explanation": "You are given the output, the speed, so set the function equal to it: $2\\sqrt{d} + 5 = 25$. Undo the operations in reverse order. Subtract 5 to get $2\\sqrt{d} = 20$. Divide by 2 to get $\\sqrt{d} = 10$. Square both sides to get $d = 100$. Check it: $2\\sqrt{100} + 5 = 20 + 5 = 25$. In Desmos, graph $v(x)=2\\sqrt{x}+5$ and $y=25$, then click the intersection at $x = 100$.",
+  "common_errors": [
+   {
+    "value": "15",
+    "misconception": "wrong-target-quantity",
+    "why": "Treated 25 as the input and found $v(25) = 2(5) + 5 = 15$. That is the speed of a 25 mm hailstone, not the diameter of a hailstone falling at 25 m/s."
+   },
+   {
+    "value": "10",
+    "misconception": "intermediate-step",
+    "why": "Solved correctly as far as $\\sqrt{d} = 10$ and stopped before squaring."
+   },
+   {
+    "value": "400",
+    "misconception": "algebra-manipulation",
+    "why": "Reached $2\\sqrt{d} = 20$ and squared 20 without first dividing by 2."
+   },
+   {
+    "value": "225",
+    "misconception": "algebra-manipulation",
+    "why": "Added 5 instead of subtracting it: $\\sqrt{d} = (25+5)/2 = 15$, so $d = 225$."
+   },
+   {
+    "value": "56.25",
+    "misconception": "algebra-manipulation",
+    "why": "Divided by 2 before subtracting 5: $\\sqrt{d} = 25/2 - 5 = 7.5$, so $d = 56.25$."
+   }
+  ],
+  "id": "orig-evaluate-or-in-M-d08244",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-or-in-M-d08244",
+   "structure": [],
+   "solver_answer": "100",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, how many new flu cases were reported in the week 28 days after the season began?",
+  "stimulus": "A health department models the number of new flu cases reported in a county with $N(w) = 400 - 4(w - 9)^2$. Here, $w$ is the number of weeks since the start of the flu season.",
+  "keys": [
+   "300"
+  ],
+  "any_of": false,
+  "explanation": "The input is measured in weeks, so convert first: 28 days is $28 \\div 7 = 4$ weeks. Substitute $w = 4$: $N(4) = 400 - 4(4 - 9)^2 = 400 - 4(-5)^2$. Square first: $(-5)^2 = 25$. Then multiply: $4 \\cdot 25 = 100$. Then subtract: $400 - 100 = 300$. In Desmos, type the function as $N(x)=400-4(x-9)^2$, then type $N(4)$.",
+  "common_errors": [
+   {
+    "value": "-1044",
+    "misconception": "misread-given",
+    "why": "Put in 28 days without converting to weeks: $400 - 4(19)^2 = 400 - 1444$."
+   },
+   {
+    "value": "0",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied before squaring: $(4 \\cdot -5)^2 = 400$, and $400 - 400 = 0$."
+   },
+   {
+    "value": "420",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the square: $400 - 4(-5) = 420$."
+   },
+   {
+    "value": "100",
+    "misconception": "intermediate-step",
+    "why": "Gave the amount subtracted, $4(-5)^2 = 100$, instead of subtracting it from 400."
+   },
+   {
+    "value": "400",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the peak weekly count, $N(9)$, instead of the count in week 4."
+   }
+  ],
+  "id": "orig-evaluate-or-in-M-a5aab3",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-or-in-M-a5aab3",
+   "structure": [],
+   "solver_answer": "300",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ is the number of weeks since the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "According to the model, how many seconds after release is the ball 24 feet above the ground on its way down?",
+  "stimulus": "In a training drill, an athlete tosses a ball straight up. The ball's height, in feet, $t$ seconds after it is released is modeled by $h(t) = -16(t - 1.5)^2 + 40$.",
+  "keys": [
+   "2.5",
+   "5/2"
+  ],
+  "any_of": false,
+  "explanation": "You are given the output, the height, so set $-16(t - 1.5)^2 + 40 = 24$. Subtract 40: $-16(t - 1.5)^2 = -16$. Divide by $-16$: $(t - 1.5)^2 = 1$. Take both square roots: $t - 1.5 = 1$ or $t - 1.5 = -1$, which gives $t = 2.5$ or $t = 0.5$. The ball is highest at $t = 1.5$, so $t = 0.5$ is on the way up and $t = 2.5$ is on the way down. Check it: $-16(1)^2 + 40 = 24$. In Desmos, graph $h(x)$ and $y=24$. There are two intersections; click the right-hand one.",
+  "common_errors": [
+   {
+    "value": "0.5",
+    "misconception": "missed-condition",
+    "why": "Took the other square root. The ball is 24 feet up at 0.5 seconds too, but it is still rising then."
+   },
+   {
+    "value": "1.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the time of maximum height, the vertex, instead of the time the height is 24."
+   },
+   {
+    "value": "1",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $t - 1.5 = 1$ and reported 1 without adding 1.5."
+   },
+   {
+    "value": "3.5",
+    "misconception": "algebra-manipulation",
+    "why": "Got the sign wrong moving 40 across: $(t - 1.5)^2 = (24 + 40)/16 = 4$, so $t = 1.5 + 2 = 3.5$."
+   }
+  ],
+  "id": "orig-evaluate-or-in-M-2b853a",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-or-in-M-2b853a",
+   "structure": [],
+   "solver_answer": "2.5",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

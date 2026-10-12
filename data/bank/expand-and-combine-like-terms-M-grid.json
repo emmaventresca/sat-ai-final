@@ -226,5 +226,587 @@
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "A public health analyst models the difference between two weekly clinic counts with the expression $(4x^2 + 3x - 6) - (x^2 - 8x + 5)$. This expression is equivalent to $ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. What is the value of $b$?",
+  "stimulus": null,
+  "keys": [
+   "11"
+  ],
+  "any_of": false,
+  "explanation": "Distribute the minus sign to every term in the second bracket: $4x^2 + 3x - 6 - x^2 + 8x - 5$. Now group the like terms. For $x^2$: $4 - 1 = 3$. For $x$: $3 + 8 = 11$. For the constants: $-6 - 5 = -11$. The expression is $3x^2 + 11x - 11$, so $b = 11$. To check, put in $x = 2$. The original gives $16 - 1 = 15$, and $12 + 22 - 11 = 23$... recheck: the original is $(16 + 6 - 6) - (4 - 16 + 5) = 16 - (-7) = 23$, which matches.",
+  "common_errors": [
+   {
+    "value": "-5",
+    "misconception": "algebra-manipulation",
+    "why": "Applied the minus sign only to $x^2$, so $-8x$ stayed negative and $3x - 8x = -5x$."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the coefficient of $x^2$ instead of the coefficient of $x$."
+   },
+   {
+    "value": "-11",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the constant term instead of the coefficient of $x$."
+   }
+  ],
+  "id": "orig-expand-and-com-M-27186f",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-27186f",
+   "structure": [],
+   "solver_answer": 11,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ __var__",
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A marine biologist uses the expression $(2x + 5)(3x - 4) - 4x$ to estimate tank volume. This expression is equivalent to $ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. What is the value of $b$?",
+  "stimulus": null,
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "Expand the product: $6x^2 - 8x + 15x - 20 = 6x^2 + 7x - 20$. Then subtract $4x$: $6x^2 + 3x - 20$. The coefficient of $x$ is $3$. To check, put in $x = 2$: $(9)(2) - 8 = 10$, and $24 + 6 - 20 = 10$.",
+  "common_errors": [
+   {
+    "value": "7",
+    "misconception": "intermediate-step",
+    "why": "Expanded the product correctly but never subtracted the $4x$."
+   },
+   {
+    "value": "11",
+    "misconception": "algebra-manipulation",
+    "why": "Added $4x$ instead of subtracting it: $7 + 4$."
+   },
+   {
+    "value": "19",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote $2x \\cdot (-4)$ as $+8x$, which gave $23x$, and then subtracted $4x$."
+   },
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the coefficient of $x^2$ instead."
+   }
+  ],
+  "id": "orig-expand-and-com-M-d930ec",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-d930ec",
+   "structure": [],
+   "solver_answer": 3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ __var__",
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A meteorologist models two temperature trends with $f(x) = 3x^2 - 2x + 7$ and $g(x) = x^2 + 4x - 1$. The expression $f(x) - 2g(x)$ is equivalent to $ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. What is the value of $c$?",
+  "stimulus": null,
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "Substitute the two definitions inside parentheses: $(3x^2 - 2x + 7) - 2(x^2 + 4x - 1)$. Distribute $-2$ to every term: $3x^2 - 2x + 7 - 2x^2 - 8x + 2$. Combining like terms gives $x^2 - 10x + 9$, so $c = 9$.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Let the minus sign reach only the first term of $2g(x)$, writing $-2x^2 + 8x - 2$, so the constant came out as $7 - 2$."
+   },
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Did not multiply the constant $-1$ by 2, so the constant came out as $7 + 1$."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the sign on $-1$ when subtracting, so the constant came out as $7 - 1$."
+   },
+   {
+    "value": "1",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the coefficient of $x^2$ instead of the constant."
+   }
+  ],
+  "id": "orig-expand-and-com-M-764713",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-764713",
+   "structure": [],
+   "solver_answer": 9,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A cartographer's scaling formula simplifies the expression $(5x^2y - 3xy + 4x) - (2x^2y - 9xy + x)$ to $ax^2y + bxy + cx$, where $a$, $b$, and $c$ are constants. What is the value of $b$?",
+  "stimulus": null,
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "Distribute the minus sign to every term: $5x^2y - 3xy + 4x - 2x^2y + 9xy - x$. Combine only terms that have exactly the same variables and powers. For $x^2y$: $5 - 2 = 3$. For $xy$: $-3 + 9 = 6$. For $x$: $4 - 1 = 3$. So $b = 6$.",
+  "common_errors": [
+   {
+    "value": "-12",
+    "misconception": "algebra-manipulation",
+    "why": "Applied the minus sign only to $2x^2y$, so $-9xy$ stayed negative and $-3 - 9 = -12$."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the coefficient of $x^2y$ or of $x$ instead of the coefficient of $xy$."
+   }
+  ],
+  "id": "orig-expand-and-com-M-6b18c7",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-6b18c7",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "An ornithologist models wingbeat data with the expression $(2x + 3)(x^2 - x + 4)$. This expression is equivalent to $ax^3 + bx^2 + cx + d$, where $a$, $b$, $c$, and $d$ are constants. What is the value of $c$?",
+  "stimulus": null,
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "Multiply each term of $2x + 3$ by each term of the trinomial. $2x$ times the trinomial is $2x^3 - 2x^2 + 8x$. $3$ times the trinomial is $3x^2 - 3x + 12$. Add them: $2x^3 + x^2 + 5x + 12$. The coefficient of $x$ is $8 - 3 = 5$.",
+  "common_errors": [
+   {
+    "value": "8",
+    "misconception": "intermediate-step",
+    "why": "Counted only the $x$ term from $2x \\cdot 4$ and missed the $-3x$ from $3 \\cdot (-x)$."
+   },
+   {
+    "value": "11",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote $3 \\cdot (-x)$ as $+3x$, so the coefficient came out as $8 + 3$."
+   },
+   {
+    "value": "1",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the coefficient of $x^2$ instead of the coefficient of $x$."
+   }
+  ],
+  "id": "orig-expand-and-com-M-879209",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-879209",
+   "structure": [],
+   "solver_answer": 5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ __var__"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A nutrition scientist combines two intake models into the expression $3(2x^2 - x + 4) - 2(x^2 - 5x - 3)$. This expression is equivalent to $ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. What is the value of $c$?",
+  "stimulus": null,
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "Distribute each factor to every term in its bracket: $6x^2 - 3x + 12 - 2x^2 + 10x + 6$. Combine like terms to get $4x^2 + 7x + 18$, so $c = 12 + 6 = 18$.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Treated $-2 \\cdot (-3)$ as $-6$, so the constant came out as $12 - 6$."
+   },
+   {
+    "value": "9",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied only the first term of the second bracket by $-2$ and left $-3$ as it was, so the constant came out as $12 - 3$."
+   },
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "Did not multiply the $4$ by $3$, so the constant came out as $4 + 6$."
+   },
+   {
+    "value": "7",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the coefficient of $x$ instead of the constant."
+   }
+  ],
+  "id": "orig-expand-and-com-M-9b2d67",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-9b2d67",
+   "structure": [],
+   "solver_answer": 18,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ __var__",
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A printmaker compares a square plate with side length $(x + 4)$ centimeters and a rectangular plate measuring $(x - 1)$ by $(x + 6)$ centimeters. The difference in their areas, $(x + 4)^2 - (x - 1)(x + 6)$, is equivalent to $ax + b$, where $a$ and $b$ are constants. What is the value of $a$?",
+  "stimulus": null,
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "Expand each part. $(x + 4)^2 = x^2 + 8x + 16$ and $(x - 1)(x + 6) = x^2 + 5x - 6$. Subtract the whole second polynomial: $x^2 + 8x + 16 - x^2 - 5x + 6 = 3x + 22$. So $a = 3$.",
+  "common_errors": [
+   {
+    "value": "13",
+    "misconception": "algebra-manipulation",
+    "why": "Applied the minus sign only to $x^2$, so $+5x$ was added and the coefficient came out as $8 + 5$."
+   },
+   {
+    "value": "-5",
+    "misconception": "algebra-manipulation",
+    "why": "Squared $(x + 4)$ as $x^2 + 16$ and lost the $8x$ middle term, leaving only $-5x$."
+   },
+   {
+    "value": "22",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the constant term $b$ instead of $a$."
+   }
+  ],
+  "id": "orig-expand-and-com-M-d91c07",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-d91c07",
+   "structure": [],
+   "solver_answer": 3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In an ecology model, $A = 2x^2 + 3x - 1$ and $B = x^2 - 4x + 5$. The expression $4A - 3B$ is equivalent to $ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. What is the value of $b$?",
+  "stimulus": null,
+  "keys": [
+   "24"
+  ],
+  "any_of": false,
+  "explanation": "Substitute inside parentheses: $4(2x^2 + 3x - 1) - 3(x^2 - 4x + 5)$. Distribute: $8x^2 + 12x - 4 - 3x^2 + 12x - 15$. Combining like terms gives $5x^2 + 24x - 19$, so $b = 12 + 12 = 24$.",
+  "common_errors": [
+   {
+    "value": "0",
+    "misconception": "algebra-manipulation",
+    "why": "Applied $-3$ only to the first term of $B$ and wrote $-12x$, so the coefficient came out as $12 - 12$."
+   },
+   {
+    "value": "16",
+    "misconception": "algebra-manipulation",
+    "why": "Did not multiply $-4x$ by $3$ and just changed its sign, so the coefficient came out as $12 + 4$."
+   },
+   {
+    "value": "5",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the coefficient of $x^2$ instead of the coefficient of $x$."
+   }
+  ],
+  "id": "orig-expand-and-com-M-13830d",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-13830d",
+   "structure": [],
+   "solver_answer": 24,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression $(4x^2 - 3x + 5) - (x^2 - 7x - 2)$ is equivalent to $ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. What is the value of $c$?",
+  "stimulus": "A materials scientist models the stiffness of two composite samples with polynomials in $x$, the fiber content, and subtracts one model from the other to compare them.",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "Distribute the minus sign to every term in the second bracket: $4x^2 - 3x + 5 - x^2 + 7x + 2$. Then group like terms. The $x^2$ terms give $4x^2 - x^2 = 3x^2$, the $x$ terms give $-3x + 7x = 4x$, and the constants give $5 + 2 = 7$. The expression is $3x^2 + 4x + 7$, so $c = 7$.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Applied the minus sign only to $x^2$, so kept $-2$ and got $5 - 2 = 3$ for the constant."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Simplified correctly but reported $b$, the coefficient of $x$, instead of the constant $c$."
+   },
+   {
+    "value": "14",
+    "misconception": "algebra-manipulation",
+    "why": "Added unlike terms and lumped the whole $x$-free part together with the $x$ coefficient: $3 + 4 + 7 = 14$."
+   }
+  ],
+  "id": "orig-expand-and-com-M-8c0360",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-8c0360",
+   "structure": [],
+   "solver_answer": 7,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $P = 3(x^2 - 2x + 1)$ and $Q = (x - 5)(x + 2)$, then $P - Q$ is equivalent to $ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. What is the value of $c$?",
+  "stimulus": "A paleobotanist uses two expressions, $P$ and $Q$, to estimate how many fossil leaf fragments turn up in two sediment layers, where $x$ is the depth index.",
+  "keys": [
+   "13"
+  ],
+  "any_of": false,
+  "explanation": "First expand each definition. $P = 3x^2 - 6x + 3$. $Q = x^2 + 2x - 5x - 10 = x^2 - 3x - 10$. Put $Q$ in parentheses and subtract: $3x^2 - 6x + 3 - (x^2 - 3x - 10) = 3x^2 - 6x + 3 - x^2 + 3x + 10$. Combine like terms to get $2x^2 - 3x + 13$, so $c = 13$.",
+  "common_errors": [
+   {
+    "value": "-7",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted only the $x^2$ term of $Q$ and left $-10$ unchanged, so the constant came out as $3 - 10$."
+   },
+   {
+    "value": "11",
+    "misconception": "algebra-manipulation",
+    "why": "Didn't distribute the 3 to the constant term of $P$, so used $1 + 10$ in place of $3 + 10$."
+   },
+   {
+    "value": "-3",
+    "misconception": "wrong-target-quantity",
+    "why": "Simplified correctly but reported $b$, the coefficient of $x$, instead of the constant."
+   }
+  ],
+  "id": "orig-expand-and-com-M-13a39b",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-13a39b",
+   "structure": [],
+   "solver_answer": 13,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression $(2x + y)(x - 3y) - (x^2 - 9xy)$ is equivalent to $ax^2 + bxy + cy^2$, where $a$, $b$, and $c$ are constants. What is the value of $b$?",
+  "stimulus": "A printmaker estimates how much ink a layered relief print needs. In the estimate, $x$ is the number of color passes and $y$ is the number of plates.",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "Expand the product, keeping every term: $(2x + y)(x - 3y) = 2x^2 - 6xy + xy - 3y^2 = 2x^2 - 5xy - 3y^2$. Then distribute the minus sign to both terms of the second bracket: $2x^2 - 5xy - 3y^2 - x^2 + 9xy$. Combine like terms to get $x^2 + 4xy - 3y^2$, so $b = 4$.",
+  "common_errors": [
+   {
+    "value": "-14",
+    "misconception": "algebra-manipulation",
+    "why": "Applied the minus sign only to $x^2$, so kept $-9xy$ and got $-5 - 9 = -14$."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the inner product $y \\cdot x = xy$ when expanding, so got $-6 + 9 = 3$."
+   },
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the outer product $2x \\cdot (-3y) = -6xy$, so got $1 + 9 = 10$."
+   },
+   {
+    "value": "1",
+    "misconception": "wrong-target-quantity",
+    "why": "Simplified correctly but reported $a$, the coefficient of $x^2$, instead of the coefficient of $xy$."
+   }
+  ],
+  "id": "orig-expand-and-com-M-f6d99c",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-f6d99c",
+   "structure": [],
+   "solver_answer": 4,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
  }
 ]

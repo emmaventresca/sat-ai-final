@@ -33,17 +33,22 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-compute-mean-o-X-0ee079",
    "structure": [
     "correct answer is far longer than every distractor"
    ],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
-  },
-  "phrasing": "direct"
+  }
  },
  {
   "stem": "What is the median of the corrected measurements?",
@@ -79,14 +84,447 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-compute-mean-o-X-600ed1",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the median number of impressions per plate for all 22 plates?",
+  "stimulus": "A printmaking studio recorded how many impressions were pulled from each of 20 etched plates.\nImpressions Pulled per Plate\nImpressions | Number of plates\n12 | 3\n8 | 5\n20 | 2\n10 | 4\n15 | 6\nTwo more plates were then added to the record. Each of them had 9 impressions pulled.",
+  "choices": [
+   "10",
+   "11",
+   "12",
+   "12.3"
+  ],
+  "answer": "B",
+  "explanation": "There are now 22 plates, so the median is the mean of the 11th and 12th values once they are in order. Put the rows in order and count up: 8 covers positions 1\u20135, 9 covers 6\u20137, 10 covers 8\u201311, and 12 covers 12\u201314. The 11th value is 10 and the 12th is 12, so the median is $\\frac{10+12}{2} = 11$.",
+  "distractors": {
+   "A": {
+    "misconception": "compute-mean-or-median",
+    "why": "You counted positions in the order the table lists the rows (12, 8, 20, 10, 15) and put the new plates at the end. You have to sort the values before counting. Without sorting, the 11th and 12th positions both land in the 10 row."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "12 is the median of the first 20 plates, and it is also the mean of all 22 ($264 \\div 22$). It is not the median of all 22. The two 9s move the middle down."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "12.3 is the mean of the first 20 plates ($246 \\div 20$). You left out the two new plates, and you found the mean when the question asks for the median."
+   }
+  },
+  "id": "orig-compute-mean-o-X-887277",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "fail",
+  "verification": {
+   "id": "orig-compute-mean-o-X-887277",
+   "structure": [
+    "distractor A: unknown family 'compute-mean-or-median'"
+   ],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__num__ __num__ __num__ __num__ __num__ __num__ __num__ two"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the median of the data set?",
+  "stimulus": "An ornithologist recorded how many days each of 7 banded warblers stayed at a migration stopover site: 18, 11, $x$, 9, 20, 14, 16. The mean of these 7 values is 15 days.",
+  "choices": [
+   "9",
+   "15",
+   "16",
+   "17"
+  ],
+  "answer": "C",
+  "explanation": "Because the mean of the 7 values is 15, they add up to $7 \\times 15 = 105$. The six known values add up to 88, so $x = 17$. In order, the values are 9, 11, 14, 16, 17, 18, 20. The 4th value is 16, so the median is 16.",
+  "distractors": {
+   "A": {
+    "misconception": "compute-mean-or-median",
+    "why": "You took the 4th value in the list as written. The list was never sorted, so that position doesn't tell you anything about the median."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "15 is the mean, which the question gives you. It is also the median of the six known values if you leave out $x$. Neither one is the median of all 7 values."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "17 is the value of $x$. Finding $x$ is only the first step. You still have to sort all 7 values and take the middle one."
+   }
+  },
+  "id": "orig-compute-mean-o-X-d218b5",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "fail",
+  "verification": {
+   "id": "orig-compute-mean-o-X-d218b5",
+   "structure": [
+    "distractor A: unknown family 'compute-mean-or-median'"
+   ],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the median of the data set"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the mean daily high temperature, in degrees Celsius, for the 20 days after the error is corrected?",
+  "stimulus": "A weather station logged the daily high temperature for 20 days. For the first 12 days the mean daily high was $18^{\\circ}\\text{C}$, and for the last 8 days it was $24^{\\circ}\\text{C}$. Later, the station found that one of the last 8 days had been logged as $30^{\\circ}\\text{C}$. The correct reading for that day was $20^{\\circ}\\text{C}$.",
+  "choices": [
+   "19.9",
+   "20.4",
+   "20.9",
+   "21.0"
+  ],
+  "answer": "A",
+  "explanation": "First find each group's total: $12 \\times 18 = 216$ and $8 \\times 24 = 192$. Correcting the error lowers the second total by 10, to 182. The corrected mean is $\\frac{216 + 182}{20} = \\frac{398}{20} = 19.9$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You weighted the two groups correctly, which gives $408 \\div 20 = 20.4$. But you didn't fix the reading that was logged 10 degrees too high."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You added 10 to the total when you should have subtracted it. The true reading was lower than the logged one, so the corrected mean has to go down."
+   },
+   "D": {
+    "misconception": "compute-mean-or-median",
+    "why": "You averaged the two group means, 18 and 24, as if both groups had the same number of days. The 12-day group should count for more."
+   }
+  },
+  "id": "orig-compute-mean-o-X-cf2e01",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "fail",
+  "verification": {
+   "id": "orig-compute-mean-o-X-cf2e01",
+   "structure": [
+    "distractor D: unknown family 'compute-mean-or-median'"
+   ],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the mean number of confirmed planets per star for the stars in the survey?",
+  "stimulus": "An astronomy survey counted the confirmed planets orbiting each star in a sample. The results are shown in the bar graph.",
+  "figure": {
+   "type": "bar",
+   "caption": "Confirmed Planets per Star",
+   "x_label": "Number of confirmed planets",
+   "y_label": "Number of stars",
+   "categories": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "values": [
+    4,
+    6,
+    6,
+    2,
+    2
+   ],
+   "y_min": 0,
+   "y_max": 8,
+   "y_step": 2,
+   "alt": "Bar graph. 0 planets: 4 stars; 1 planet: 6 stars; 2 planets: 6 stars; 3 planets: 2 stars; 4 planets: 2 stars."
+  },
+  "choices": [
+   "1.5",
+   "1.6",
+   "2",
+   "6.4"
+  ],
+  "answer": "B",
+  "explanation": "There are $4+6+6+2+2 = 20$ stars. Together they have $0(4) + 1(6) + 2(6) + 3(2) + 4(2) = 32$ planets. The mean is $\\frac{32}{20} = 1.6$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "1.5 is the median. The 10th star has 1 planet and the 11th has 2, so the median is their average. The question asks for the mean."
+   },
+   "C": {
+    "misconception": "compute-mean-or-median",
+    "why": "You either averaged the bar labels 0 through 4 without weighting them by frequency, or you left out the 4 stars with no planets and divided 32 by 16. Stars with 0 planets are still part of the sample."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the 32 planets by the 5 bars. You need to divide by the 20 stars."
+   }
+  },
+  "id": "orig-compute-mean-o-X-ec793f",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "fail",
+  "verification": {
+   "id": "orig-compute-mean-o-X-ec793f",
+   "structure": [
+    "distractor C: unknown family 'compute-mean-or-median'"
+   ],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the median of the remaining 8 measurements, in millimeters?",
+  "stimulus": "Engineers measured the deflection, in millimeters, of 9 bridge girders under the same test load: 4.8, 3.6, 5.5, 13.0, 4.0, 4.5, 3.9, 5.2, 4.3. The largest reading was traced to a faulty gauge and removed from the data.",
+  "choices": [
+   "4.25",
+   "4.3",
+   "4.4",
+   "4.5"
+  ],
+  "answer": "C",
+  "explanation": "Remove 13.0 and sort the 8 values that remain: 3.6, 3.9, 4.0, 4.3, 4.5, 4.8, 5.2, 5.5. With an even count, the median is the mean of the 4th and 5th values: $\\frac{4.3 + 4.5}{2} = 4.4$.",
+  "distractors": {
+   "A": {
+    "misconception": "compute-mean-or-median",
+    "why": "You removed 13.0 but didn't sort the list. You averaged the 4th and 5th values as written, 4.0 and 4.5."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You sorted the values but took only the 4th one. With 8 values there are two middle values, and you have to average them."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "4.5 is the median of all 9 readings. You didn't remove the faulty reading of 13.0."
+   }
+  },
+  "id": "orig-compute-mean-o-X-7d117f",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "fail",
+  "verification": {
+   "id": "orig-compute-mean-o-X-7d117f",
+   "structure": [
+    "distractor A: unknown family 'compute-mean-or-median'"
+   ],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the median number of clinic visits for these patients?",
+  "stimulus": "A public health team recorded how many times each patient in a study visited a clinic during one month. The mean number of visits per patient is 1.7.\nClinic Visits per Patient\nNumber of visits | Number of patients\n0 | 6\n1 | 14\n2 | $k$\n3 | 6\n4 | 4",
+  "choices": [
+   "1.5",
+   "1.7",
+   "2",
+   "10"
+  ],
+  "answer": "A",
+  "explanation": "The total number of visits is $14 + 2k + 18 + 16 = 48 + 2k$, and there are $30 + k$ patients. Setting $\\frac{48 + 2k}{30 + k} = 1.7$ gives $48 + 2k = 51 + 1.7k$, so $k = 10$ and there are 40 patients. The median is the mean of the 20th and 21st values. The 0s take positions 1\u20136 and the 1s take 7\u201320, so the 20th value is 1 and the 21st is 2. The median is 1.5.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "1.7 is the mean, which the question gives you. The median is a different measure, and you have to find it by counting positions."
+   },
+   "C": {
+    "misconception": "compute-mean-or-median",
+    "why": "You took the middle of the distinct values 0, 1, 2, 3, 4 without weighting them by frequency. Or you took only the 21st value. With 40 patients, the median is the average of the 20th and 21st values."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "10 is the value of $k$. You need it to count positions, but it is not the median."
+   }
+  },
+  "id": "orig-compute-mean-o-X-d183f6",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "fail",
+  "verification": {
+   "id": "orig-compute-mean-o-X-d183f6",
+   "structure": [
+    "distractor C: unknown family 'compute-mean-or-median'"
+   ],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the median of all 10 values in the table?",
+  "stimulus": "An immunology lab counted the cytokine-secreting spots, in spot-forming units per well, in samples from two groups of mice.\nSpot-Forming Units per Well\nMouse | Group A | Group B\n1 | 31 | 47\n2 | 44 | 35\n3 | 38 | 58\n4 | 52 | 40\n5 | 29 | 56",
+  "choices": [
+   "38",
+   "42",
+   "42.5",
+   "43"
+  ],
+  "answer": "B",
+  "explanation": "Combine the two groups and sort all 10 values: 29, 31, 35, 38, 40, 44, 47, 52, 56, 58. The median is the mean of the 5th and 6th values: $\\frac{40 + 44}{2} = 42$.",
+  "distractors": {
+   "A": {
+    "misconception": "compute-mean-or-median",
+    "why": "You read down Group A and then down Group B without sorting, and averaged the 5th and 6th entries, 29 and 47. You have to sort the values before you take the middle."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found each group's median (38 and 47) and averaged them. The median of the combined data is not the average of the two group medians."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "43 is the mean of the 10 values ($430 \\div 10$). The question asks for the median."
+   }
+  },
+  "id": "orig-compute-mean-o-X-b59a2a",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "fail",
+  "verification": {
+   "id": "orig-compute-mean-o-X-b59a2a",
+   "structure": [
+    "distractor A: unknown family 'compute-mean-or-median'"
+   ],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the mean number of hours worked per week for all 40 employees?",
+  "stimulus": "A firm has 40 employees. Its 15 part-time employees work a mean of 22 hours per week. The weekly hours of its 25 full-time employees are shown in the table.\nFull-Time Employees' Weekly Hours\nHours per week | Number of employees\n40 | 15\n45 | 6\n50 | 4",
+  "choices": [
+   "32.4",
+   "35",
+   "39.25",
+   "42.8"
+  ],
+  "answer": "B",
+  "explanation": "The part-time employees work $15 \\times 22 = 330$ hours. The full-time employees work $15(40) + 6(45) + 4(50) = 1{,}070$ hours. The mean for all 40 employees is $\\frac{330 + 1{,}070}{40} = \\frac{1{,}400}{40} = 35$.",
+  "distractors": {
+   "A": {
+    "misconception": "compute-mean-or-median",
+    "why": "You found the full-time mean, 42.8, and averaged it with 22. That treats the two groups as the same size, but there are 25 full-time employees and only 15 part-time."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You averaged the four distinct hour values (22, 40, 45, 50) without weighting each one by how many employees it applies to."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "42.8 is the mean for the full-time employees only ($1{,}070 \\div 25$). You stopped before adding in the part-time hours."
+   }
+  },
+  "id": "orig-compute-mean-o-X-06e3f0",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "fail",
+  "verification": {
+   "id": "orig-compute-mean-o-X-06e3f0",
+   "structure": [
+    "distractor A: unknown family 'compute-mean-or-median'"
+   ],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "D",
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

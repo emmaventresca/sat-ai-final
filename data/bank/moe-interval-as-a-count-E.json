@@ -398,5 +398,105 @@
    "residue": 1
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "Which of the following is the most plausible range for $n$, the number of bars in the shipment that contain more sugar than their labels state?",
+  "stimulus": "A nutrition lab chose a random sample of 200 granola bars from a shipment of 6,000 bars. Based on the sample, it estimated that 30% of the bars in the shipment contain more sugar than their labels state, with an associated margin of error of 4%.",
+  "choices": [
+   "$52 \\le n \\le 68$",
+   "$1{,}560 \\le n \\le 2{,}040$",
+   "$1{,}796 \\le n \\le 1{,}804$",
+   "$3{,}960 \\le n \\le 4{,}440$"
+  ],
+  "answer": "B",
+  "explanation": "The margin of error gives a range of percents: 30% \u2212 4% = 26% and 30% + 4% = 34%. The question asks about the whole shipment, so multiply each percent by 6,000: $0.26 \\times 6{,}000 = 1{,}560$ and $0.34 \\times 6{,}000 = 2{,}040$. The plausible range is $1{,}560 \\le n \\le 2{,}040$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You multiplied 26% and 34% by the sample size of 200 instead of the shipment size of 6,000. That gives a count for the sample, but the question asks about the whole shipment."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the point estimate, $0.30 \\times 6{,}000 = 1{,}800$, and then added and subtracted 4 bars. The margin of error is 4 percent of the shipment, which is 240 bars, not 4 bars."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used 70% \u00b1 4%, so you counted the bars whose sugar matches their labels. The question asks about the bars that contain more sugar than their labels state, which is 30% \u00b1 4%."
+   }
+  },
+  "id": "orig-moe-interval-a-E-3b5a73",
+  "skill_cd": "Q.F.",
+  "subtype": "moe-interval-as-a-count",
+  "subtype_name": "Turn a percent \u00b1 MOE into a range of counts",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-moe-interval-a-E-3b5a73",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "A",
+   "problem": null,
+   "overlap": [
+    "which of the following is the most plausible"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following is the most plausible value for the total number of songs in the archive that use a pentatonic scale?",
+  "stimulus": "A musicologist chose a random sample of 150 songs from an archive of 2,500 recorded folk songs. Based on the sample, it is estimated that 40% of the songs in the archive use a pentatonic scale, with an associated margin of error of 6%.",
+  "choices": [
+   "69",
+   "150",
+   "1,050",
+   "1,450"
+  ],
+  "answer": "C",
+  "explanation": "Find the plausible percents first: 40% \u2212 6% = 34% and 40% + 6% = 46%. Then multiply each by the archive total of 2,500: $0.34 \\times 2{,}500 = 850$ and $0.46 \\times 2{,}500 = 1{,}150$. Of the choices, only 1,050 falls between 850 and 1,150.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You took 46% of the sample size: $0.46 \\times 150 = 69$. The question asks about the whole archive of 2,500 songs, not the 150 songs in the sample."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found 6% of 2,500, which is 150. That is the size of the margin of error as a number of songs, not the number of pentatonic songs."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You worked with 60% \u00b1 6%, which counts the songs that do not use a pentatonic scale (between 1,350 and 1,650). The question asks for the songs that do use one."
+   }
+  },
+  "id": "orig-moe-interval-a-E-aa0796",
+  "skill_cd": "Q.F.",
+  "subtype": "moe-interval-as-a-count",
+  "subtype_name": "Turn a percent \u00b1 MOE into a range of counts",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-moe-interval-a-E-aa0796",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which of the following is the most plausible"
+   ],
+   "residue": 1
+  }
  }
 ]

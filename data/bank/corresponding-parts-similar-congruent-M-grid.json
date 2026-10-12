@@ -280,5 +280,815 @@
    "residue": 2
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "An immunology poster models an antibody fragment as triangle $JKL$, which is similar to triangle $MNP$, with $J$, $K$, and $L$ corresponding to $M$, $N$, and $P$. Each side of $MNP$ is 3 times as long as the corresponding side of $JKL$. The measure of angle $J$ is $31^\\circ$ and the measure of angle $N$ is $104^\\circ$. What is the measure, in degrees, of angle $P$?",
+  "stimulus": null,
+  "keys": [
+   "45"
+  ],
+  "any_of": false,
+  "explanation": "Match the vertices by letter order: $J \\leftrightarrow M$, $K \\leftrightarrow N$, $L \\leftrightarrow P$. Corresponding angles are equal, so angle $M = 31^\\circ$. Triangle $MNP$ now has two known angles, $31^\\circ$ and $104^\\circ$, so angle $P = 180 - 31 - 104 = 45^\\circ$. The scale factor of 3 changes side lengths, not angles, so ignore it.",
+  "common_errors": [
+   {
+    "value": "135",
+    "misconception": "algebra-manipulation",
+    "why": "Found 45 and then multiplied it by the scale factor 3, as though dilating a figure changed its angles."
+   },
+   {
+    "value": "149",
+    "misconception": "intermediate-step",
+    "why": "Worked out $180 - 31$ and stopped before subtracting the $104^\\circ$ angle."
+   },
+   {
+    "value": "31",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the angle that corresponds to $J$, which is angle $M$, instead of angle $P$."
+   },
+   {
+    "value": "104",
+    "misconception": "wrong-target-quantity",
+    "why": "Copied the given angle at $N$ instead of finding the third angle."
+   }
+  ],
+  "id": "orig-corresponding--M-c7c43c",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-c7c43c",
+   "structure": [],
+   "solver_answer": "45",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A materials scientist models a crack in a ceramic plate as triangle $ABC$. Point $D$ lies on $\\overline{AB}$ and point $E$ lies on $\\overline{AC}$, with $\\overline{DE}$ parallel to $\\overline{BC}$. If $AD = 6$ millimeters, $DB = 9$ millimeters, and $DE = 8$ millimeters, what is the length, in millimeters, of $\\overline{BC}$?",
+  "stimulus": null,
+  "keys": [
+   "20"
+  ],
+  "any_of": false,
+  "explanation": "Because $\\overline{DE}$ is parallel to $\\overline{BC}$, triangle $ADE$ is similar to triangle $ABC$ (AA). First find the whole side: $AB = 6 + 9 = 15$. Then set up small over large on both sides: $\\frac{AD}{AB} = \\frac{DE}{BC}$, so $\\frac{6}{15} = \\frac{8}{BC}$. Cross-multiply: $6 \\cdot BC = 120$, so $BC = 20$.",
+  "common_errors": [
+   {
+    "value": "12",
+    "misconception": "wrong-target-quantity",
+    "why": "Paired $DB$ with $BC$, writing $\\frac{6}{9} = \\frac{8}{BC}$. But $DB$ is a piece of a side, not a side of the large triangle."
+   },
+   {
+    "value": "3.2",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped one ratio, writing $\\frac{6}{15} = \\frac{BC}{8}$, which gives $BC = \\frac{16}{5}$."
+   },
+   {
+    "value": "16/5",
+    "misconception": "algebra-manipulation",
+    "why": "The same flipped ratio as 3.2, entered as a fraction."
+   },
+   {
+    "value": "15",
+    "misconception": "intermediate-step",
+    "why": "Found $AB = 15$ and gave that instead of finishing the proportion."
+   }
+  ],
+  "id": "orig-corresponding--M-b4ada6",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-b4ada6",
+   "structure": [],
+   "solver_answer": "20",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "point __var__ lies on __var__ and point __var__",
+    "__var__ lies on __var__ and point __var__ lies",
+    "lies on __var__ and point __var__ lies on",
+    "on __var__ and point __var__ lies on __var__",
+    "what is the length in millimeters of __var__"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "An agronomist divides a field into two congruent triangular plots, $\\triangle FGH \\cong \\triangle RST$. Side $\\overline{GH}$ is 40 meters long. The measure of angle $G$ is $48^\\circ$ and the measure of angle $R$ is $71^\\circ$. What is the measure, in degrees, of angle $T$?",
+  "stimulus": null,
+  "keys": [
+   "61"
+  ],
+  "any_of": false,
+  "explanation": "The letter order gives the correspondence: $F \\leftrightarrow R$, $G \\leftrightarrow S$, $H \\leftrightarrow T$. So angle $S = 48^\\circ$, because it matches angle $G$. In triangle $RST$, angle $T = 180 - 71 - 48 = 61^\\circ$. The 40-meter side has no bearing on the angle.",
+  "common_errors": [
+   {
+    "value": "48",
+    "misconception": "wrong-target-quantity",
+    "why": "Matched $T$ with $G$, perhaps from where the vertices sit in a sketch, instead of matching $T$ with $H$."
+   },
+   {
+    "value": "71",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the angle at $R$, which corresponds to $F$, not to $H$."
+   },
+   {
+    "value": "109",
+    "misconception": "intermediate-step",
+    "why": "Worked out $180 - 71$ and did not subtract the second angle."
+   },
+   {
+    "value": "132",
+    "misconception": "intermediate-step",
+    "why": "Worked out $180 - 48$ and did not subtract the second angle."
+   }
+  ],
+  "id": "orig-corresponding--M-b7c57b",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-b7c57b",
+   "structure": [],
+   "solver_answer": "61",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A textile historian enlarges a quilt-block pattern. Triangle $ABC$ is dilated by a scale factor of 2.5 to make triangle $A'B'C'$. In triangle $ABC$, the measure of angle $A$ is $28^\\circ$ and the measure of angle $B$ is $64^\\circ$. What is the measure, in degrees, of angle $C'$?",
+  "stimulus": null,
+  "keys": [
+   "88"
+  ],
+  "any_of": false,
+  "explanation": "A dilation keeps every angle the same, so angle $C'$ equals angle $C$. Use the triangle sum in $ABC$: angle $C = 180 - 28 - 64 = 88^\\circ$. So angle $C' = 88^\\circ$.",
+  "common_errors": [
+   {
+    "value": "220",
+    "misconception": "algebra-manipulation",
+    "why": "Found 88 and then multiplied by the scale factor 2.5, as though dilation stretched angles."
+   },
+   {
+    "value": "152",
+    "misconception": "intermediate-step",
+    "why": "Worked out $180 - 28$ and did not subtract angle $B$."
+   },
+   {
+    "value": "64",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave angle $B'$, which corresponds to $B$, instead of angle $C'$."
+   },
+   {
+    "value": "70",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied angle $A$ by 2.5, applying the scale factor to a given angle."
+   }
+  ],
+  "id": "orig-corresponding--M-dc31e8",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-dc31e8",
+   "structure": [],
+   "solver_answer": "88",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "triangle __var__ is dilated by a scale factor",
+    "__var__ is dilated by a scale factor of",
+    "__var__ in triangle __var__ the measure of angle"
+   ],
+   "residue": 7
+  }
+ },
+ {
+  "stem": "A printmaker enlarges a triangular stencil. Triangle $PQR$ is similar to triangle $XYZ$, with $P$, $Q$, and $R$ corresponding to $X$, $Y$, and $Z$. If $PQ = 12$ centimeters, $QR = 18$ centimeters, and $XY = 20$ centimeters, what is the length, in centimeters, of $\\overline{YZ}$?",
+  "stimulus": null,
+  "keys": [
+   "30"
+  ],
+  "any_of": false,
+  "explanation": "Use the letter order to pair the sides: $PQ \\leftrightarrow XY$ and $QR \\leftrightarrow YZ$. Then $\\frac{YZ}{QR} = \\frac{XY}{PQ}$, so $\\frac{YZ}{18} = \\frac{20}{12}$. That gives $YZ = 18 \\cdot \\frac{5}{3} = 30$.",
+  "common_errors": [
+   {
+    "value": "40/3",
+    "misconception": "wrong-target-quantity",
+    "why": "Paired the wrong sides and wrote $\\frac{YZ}{12} = \\frac{20}{18}$, which gives $\\frac{40}{3}$."
+   },
+   {
+    "value": "13.33",
+    "misconception": "wrong-target-quantity",
+    "why": "The same wrong pairing as 40/3, entered as a rounded decimal."
+   },
+   {
+    "value": "13.33",
+    "misconception": "wrong-target-quantity",
+    "why": "The same wrong pairing as 40/3, entered as a truncated decimal."
+   },
+   {
+    "value": "26",
+    "misconception": "algebra-manipulation",
+    "why": "Added the difference $20 - 12 = 8$ to 18 instead of multiplying by the ratio."
+   },
+   {
+    "value": "10.8",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the scale factor and calculated $18 \\cdot \\frac{12}{20}$."
+   }
+  ],
+  "id": "orig-corresponding--M-fa008c",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-fa008c",
+   "structure": [],
+   "solver_answer": "30",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "centimeters and __var__ centimeters what is the length",
+    "__var__ centimeters what is the length in centimeters",
+    "centimeters what is the length in centimeters of"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "A labour economist's infographic uses two similar triangles, $\\triangle UVW \\sim \\triangle XYZ$. In triangle $UVW$, the measure of angle $V$ is twice the measure of angle $U$, and the measure of angle $W$ is $81^\\circ$. What is the measure, in degrees, of angle $Y$?",
+  "stimulus": null,
+  "keys": [
+   "66"
+  ],
+  "any_of": false,
+  "explanation": "From the letter order, $V \\leftrightarrow Y$, so you need angle $V$. In triangle $UVW$, $U + V = 180 - 81 = 99$. Since $V = 2U$, you get $3U = 99$, so $U = 33$ and $V = 66$. That makes angle $Y = 66^\\circ$.",
+  "common_errors": [
+   {
+    "value": "33",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved for angle $U$, which matches $X$, and gave that instead of angle $V$."
+   },
+   {
+    "value": "99",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $U + V = 99$ without splitting it in the ratio 1 to 2."
+   },
+   {
+    "value": "81",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the angle that corresponds to $W$, which is angle $Z$."
+   },
+   {
+    "value": "49.5",
+    "misconception": "algebra-manipulation",
+    "why": "Split 99 into two equal halves, dropping the factor of 2 between $V$ and $U$."
+   }
+  ],
+  "id": "orig-corresponding--M-42c830",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-42c830",
+   "structure": [],
+   "solver_answer": "66",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ in triangle __var__ the measure of angle",
+    "the measure of angle __var__ and the measure",
+    "measure of angle __var__ and the measure of",
+    "of angle __var__ and the measure of angle",
+    "angle __var__ and the measure of angle __var__"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "An astronomer's sightline sketch shows triangle $ABC$, with point $D$ on $\\overline{AB}$, point $E$ on $\\overline{AC}$, and $\\overline{DE}$ parallel to $\\overline{BC}$. If $AD = 9$, $AB = 12$, and $DE = 7$, what is the length of $\\overline{BC}$?",
+  "stimulus": null,
+  "keys": [
+   "28/3",
+   "9.333"
+  ],
+  "any_of": false,
+  "explanation": "Because $\\overline{DE}$ is parallel to $\\overline{BC}$, triangle $ADE$ is similar to triangle $ABC$. Set up small over large on both sides: $\\frac{AD}{AB} = \\frac{DE}{BC}$, so $\\frac{9}{12} = \\frac{7}{BC}$. Cross-multiply: $9 \\cdot BC = 84$, so $BC = \\frac{28}{3}$.",
+  "common_errors": [
+   {
+    "value": "21/4",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped one ratio, writing $\\frac{9}{12} = \\frac{BC}{7}$."
+   },
+   {
+    "value": "5.25",
+    "misconception": "algebra-manipulation",
+    "why": "The same flipped ratio as 21/4, entered as a decimal."
+   },
+   {
+    "value": "7/3",
+    "misconception": "wrong-target-quantity",
+    "why": "Used $DB = 3$ in place of $AB$, writing $\\frac{9}{3} = \\frac{7}{BC}$."
+   },
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "Added the difference $12 - 9 = 3$ to $DE$ instead of scaling it."
+   }
+  ],
+  "id": "orig-corresponding--M-b8b1d1",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-b8b1d1",
+   "structure": [],
+   "solver_answer": "28/3",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __var__ and __var__ what is the length"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "An ornithologist traces a wing outline as triangle $KLM$, which is similar to triangle $QRS$, with $K$, $L$, and $M$ corresponding to $Q$, $R$, and $S$. Each side of $QRS$ is twice the corresponding side of $KLM$. Angle $L$ is a right angle and the measure of angle $S$ is $58^\\circ$. What is the measure, in degrees, of angle $K$?",
+  "stimulus": null,
+  "keys": [
+   "32"
+  ],
+  "any_of": false,
+  "explanation": "Match by letter order: $M \\leftrightarrow S$, so angle $M = 58^\\circ$. Angle $L = 90^\\circ$, so angle $K = 180 - 90 - 58 = 32^\\circ$. The scale factor of 2 has no effect on angles.",
+  "common_errors": [
+   {
+    "value": "58",
+    "misconception": "wrong-target-quantity",
+    "why": "Matched $K$ with $S$ instead of $M$ with $S$, then copied the given angle."
+   },
+   {
+    "value": "122",
+    "misconception": "intermediate-step",
+    "why": "Worked out $180 - 58$ and did not subtract the right angle."
+   },
+   {
+    "value": "29",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the $58^\\circ$ angle by the scale factor 2, as though shrinking a figure shrank its angles."
+   },
+   {
+    "value": "64",
+    "misconception": "algebra-manipulation",
+    "why": "Found 32 and then multiplied it by the scale factor 2."
+   }
+  ],
+  "id": "orig-corresponding--M-f06f8d",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-f06f8d",
+   "structure": [],
+   "solver_answer": "32",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ angle __var__ is a right angle and",
+    "angle __var__ is a right angle and the"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "An astronomer connects three stars on a chart to form triangle $ABC$. Triangle $DEF$ is a dilation of triangle $ABC$ by a scale factor of 3, where $A$, $B$, and $C$ correspond to $D$, $E$, and $F$, respectively. Angle $A$ measures $48^\\circ$, and angle $B$ is a right angle. What is the measure, in degrees, of angle $F$?",
+  "stimulus": null,
+  "keys": [
+   "42"
+  ],
+  "any_of": false,
+  "explanation": "Match the vertices using the letter order: $F$ corresponds to $C$. A dilation does not change angle measures, so angle $F$ equals angle $C$. The angles in triangle $ABC$ add to $180^\\circ$, so angle $C = 180 - 48 - 90 = 42$. Angle $F$ measures $42^\\circ$. The scale factor of 3 has no effect on any angle.",
+  "common_errors": [
+   {
+    "value": "126",
+    "misconception": "algebra-manipulation",
+    "why": "Found angle C = 42 correctly, then multiplied it by the scale factor 3, as if dilating a figure scaled its angles."
+   },
+   {
+    "value": "48",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave angle D, which corresponds to the given angle A, not angle F."
+   },
+   {
+    "value": "138",
+    "misconception": "complement-or-direction-flip",
+    "why": "Gave the supplement of 42 (180 \u2212 42) instead of the angle itself."
+   },
+   {
+    "value": "144",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the given 48 by the scale factor 3, treating the angle as if it scaled like a side."
+   }
+  ],
+  "id": "orig-corresponding--M-47402b",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-47402b",
+   "structure": [],
+   "solver_answer": 42,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ and angle __var__ is a right angle",
+    "and angle __var__ is a right angle what",
+    "angle __var__ is a right angle what is",
+    "__var__ is a right angle what is the"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "In a diagram for a labour-market report, segment $ST$ is drawn inside triangle $PQR$, with $S$ on $\\overline{PQ}$, $T$ on $\\overline{PR}$, and $\\overline{ST} \\parallel \\overline{QR}$. If $PS = 6$ centimeters, $SQ = 4$ centimeters, and $ST = 9$ centimeters, what is the length, in centimeters, of $\\overline{QR}$?",
+  "stimulus": null,
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "Because $ST$ is parallel to $QR$, triangle $PST$ is similar to triangle $PQR$ (AA). Corresponding sides are $PS$ with $PQ$ and $ST$ with $QR$. First find the whole side: $PQ = 6 + 4 = 10$. Then set up small over large on both sides: $\\frac{6}{10} = \\frac{9}{QR}$. Cross-multiply to get $6 \\cdot QR = 90$, so $QR = 15$.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "misread-given",
+    "why": "Used SQ = 4 in place of the full side PQ = 10, writing 6/4 = ST/QR in the wrong orientation and getting QR = 9\u00b74/6."
+   },
+   {
+    "value": "13.5",
+    "misconception": "misread-given",
+    "why": "Paired PS with SQ instead of PQ: 4/6 = 9/QR, so QR = 9\u00b76/4 = 13.5."
+   },
+   {
+    "value": "5.4",
+    "misconception": "algebra-manipulation",
+    "why": "Set up the correct sides but flipped one ratio, 6/10 = QR/9, so QR = 5.4."
+   }
+  ],
+  "id": "orig-corresponding--M-aa5e99",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-aa5e99",
+   "structure": [],
+   "solver_answer": 15,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "centimeters and __var__ centimeters what is the length",
+    "__var__ centimeters what is the length in centimeters",
+    "centimeters what is the length in centimeters of"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "A hydrologist models two drainage basins as triangles $JKL$ and $MNP$, where triangle $JKL$ is congruent to triangle $MNP$ and $J$, $K$, and $L$ correspond to $M$, $N$, and $P$, respectively. Angle $J$ measures $35^\\circ$ and angle $N$ measures $75^\\circ$. What is the measure, in degrees, of angle $L$?",
+  "stimulus": null,
+  "keys": [
+   "70"
+  ],
+  "any_of": false,
+  "explanation": "Match the vertices using the letter order: $N$ corresponds to $K$, so angle $K = 75^\\circ$. Now you know two angles of triangle $JKL$. Angle $L = 180 - 35 - 75 = 70$. Angle $L$ measures $70^\\circ$.",
+  "common_errors": [
+   {
+    "value": "75",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave angle K (equal to angle N) rather than the third angle L."
+   },
+   {
+    "value": "110",
+    "misconception": "intermediate-step",
+    "why": "Added the two known angles (35 + 75) and stopped before subtracting from 180."
+   },
+   {
+    "value": "35",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the given angle J, or matched L with J."
+   }
+  ],
+  "id": "orig-corresponding--M-b3eb06",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-b3eb06",
+   "structure": [],
+   "solver_answer": 70,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A cartographer enlarges a region on a map shaped like quadrilateral $WXYZ$ to quadrilateral $W'X'Y'Z'$ using a scale factor of 2.5. In quadrilateral $WXYZ$, angles $W$, $X$, and $Y$ measure $80^\\circ$, $95^\\circ$, and $110^\\circ$, respectively. What is the measure, in degrees, of angle $Z'$?",
+  "stimulus": null,
+  "keys": [
+   "75"
+  ],
+  "any_of": false,
+  "explanation": "Angle $Z'$ corresponds to angle $Z$, and enlarging a figure does not change its angles. The angles of a quadrilateral add to $360^\\circ$, so angle $Z = 360 - (80 + 95 + 110) = 360 - 285 = 75$. Angle $Z'$ measures $75^\\circ$. The scale factor of 2.5 doesn't affect the answer.",
+  "common_errors": [
+   {
+    "value": "187.5",
+    "misconception": "algebra-manipulation",
+    "why": "Found angle Z = 75 and then multiplied it by the scale factor 2.5."
+   },
+   {
+    "value": "285",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the sum of the three given angles without subtracting it from 360."
+   },
+   {
+    "value": "105",
+    "misconception": "complement-or-direction-flip",
+    "why": "Gave the supplement of 75 (180 \u2212 75) instead of the angle itself."
+   }
+  ],
+  "id": "orig-corresponding--M-65a310",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-65a310",
+   "structure": [],
+   "solver_answer": 75,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "On a weather map, a forecaster draws triangle $ABC$ connecting three stations. A front is shown as segment $DE$, with $D$ on $\\overline{AB}$, $E$ on $\\overline{AC}$, and $\\overline{DE} \\parallel \\overline{BC}$. If $AD = 8$ kilometers, $AB = 20$ kilometers, and $BC = 35$ kilometers, what is the length, in kilometers, of $\\overline{DE}$?",
+  "stimulus": null,
+  "keys": [
+   "14"
+  ],
+  "any_of": false,
+  "explanation": "Since $DE$ is parallel to $BC$, triangle $ADE$ is similar to triangle $ABC$ (AA). Pair $AD$ with $AB$ and $DE$ with $BC$, writing small over large on both sides: $\\frac{8}{20} = \\frac{DE}{35}$. Then $DE = \\frac{8 \\cdot 35}{20} = 14$.",
+  "common_errors": [
+   {
+    "value": "87.5",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped one ratio, 20/8 = DE/35, so DE = 87.5."
+   },
+   {
+    "value": "21",
+    "misconception": "misread-given",
+    "why": "Used DB = 12 instead of AD = 8: 12/20 = DE/35, so DE = 21."
+   },
+   {
+    "value": "23",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted instead of scaling: took BC minus the difference DB = 12 to get 35 \u2212 12 = 23."
+   }
+  ],
+  "id": "orig-corresponding--M-b76e3f",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-b76e3f",
+   "structure": [],
+   "solver_answer": 14,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "An archaeologist finds that a decorative motif on one pottery shard is triangle $RST$ and the motif on a second shard is triangle $UVW$. Triangle $RST$ is similar to triangle $UVW$, with $R$, $S$, and $T$ corresponding to $U$, $V$, and $W$, respectively. Each side of $UVW$ is 1.5 times the corresponding side of $RST$. If $RS = RT$ and angle $U$ measures $40^\\circ$, what is the measure, in degrees, of angle $W$?",
+  "stimulus": null,
+  "keys": [
+   "70"
+  ],
+  "any_of": false,
+  "explanation": "Angle $R$ corresponds to angle $U$, so angle $R = 40^\\circ$. Because $RS = RT$, triangle $RST$ is isosceles with equal base angles $S$ and $T$. Each base angle is $\\frac{180 - 40}{2} = 70$. Angle $W$ corresponds to angle $T$, so it measures $70^\\circ$. The factor 1.5 applies only to side lengths.",
+  "common_errors": [
+   {
+    "value": "105",
+    "misconception": "algebra-manipulation",
+    "why": "Found 70 correctly and then multiplied it by the side-length factor 1.5."
+   },
+   {
+    "value": "140",
+    "misconception": "intermediate-step",
+    "why": "Found the combined base angles (180 \u2212 40) and did not divide by 2."
+   },
+   {
+    "value": "40",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave angle R (equal to angle U), the apex angle, instead of a base angle."
+   },
+   {
+    "value": "100",
+    "misconception": "wrong-target-quantity",
+    "why": "Treated 40 as a base angle, so the apex came out as 180 \u2212 80 = 100."
+   }
+  ],
+  "id": "orig-corresponding--M-d12374",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-d12374",
+   "structure": [],
+   "solver_answer": 70,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A linguist plots three vowel positions for one speaker as triangle $FGH$ and the same vowels for a second speaker as triangle $KLM$. Triangle $FGH$ is similar to triangle $KLM$, with $F$, $G$, and $H$ corresponding to $K$, $L$, and $M$, respectively, and $LM = 2 \\cdot GH$. Angle $G$ measures $(3x + 10)^\\circ$, angle $H$ measures $(2x)^\\circ$, and angle $L$ measures $70^\\circ$. What is the measure, in degrees, of angle $M$?",
+  "stimulus": null,
+  "keys": [
+   "40"
+  ],
+  "any_of": false,
+  "explanation": "Angle $G$ corresponds to angle $L$, so $3x + 10 = 70$, which gives $x = 20$. Angle $H$ is $2x = 40^\\circ$. Angle $M$ corresponds to angle $H$, so it is also $40^\\circ$. The fact that $LM$ is twice $GH$ changes the side lengths, not the angles.",
+  "common_errors": [
+   {
+    "value": "20",
+    "misconception": "intermediate-step",
+    "why": "Solved for x and reported it instead of evaluating 2x."
+   },
+   {
+    "value": "80",
+    "misconception": "algebra-manipulation",
+    "why": "Found angle H = 40 and then doubled it because LM = 2\u00b7GH."
+   },
+   {
+    "value": "70",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave angle L (equal to angle G) instead of angle M."
+   }
+  ],
+  "id": "orig-corresponding--M-d784c5",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--M-d784c5",
+   "structure": [],
+   "solver_answer": 40,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

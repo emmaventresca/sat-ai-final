@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-evaluate-at-in-X-d8cf07",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "__var__ where __var__ is the number of years"
    ],
@@ -79,14 +84,405 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-evaluate-at-in-X-32a783",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the value of $g(10)$?",
+  "stimulus": "In a vaccine trial, $f(x) = 1200 - 35x$ gives the predicted antibody level, in units per milliliter, $x$ days after the level peaked. A second lab counts days from vaccination instead, and the peak came 4 days after vaccination, so the second lab uses $g(x) = f(x - 4)$.",
+  "choices": [
+   "$710$",
+   "$850$",
+   "$990$",
+   "$210$"
+  ],
+  "answer": "C",
+  "explanation": "$g(10) = f(10 - 4) = f(6)$. Then $f(6) = 1200 - 35(6) = 1200 - 210 = 990$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You shifted the input the wrong way and evaluated $f(14)$ instead of $f(6)$: $1200 - 490 = 710$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You put 10 straight into $f$ and skipped the shift, so you found $f(10)$ rather than $g(10)$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at $35(6) = 210$, which is how much the level has dropped. You didn't subtract it from 1200."
+   }
+  },
+  "id": "orig-evaluate-at-in-X-a38b76",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-X-a38b76",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, what is the resting heart rate, in beats per minute, of a bird of this species with a mass of 0.025 kilogram?",
+  "stimulus": "An ornithologist models the resting heart rate $R$, in beats per minute, of a songbird species as $R(m) = 640 - 8m$, where $m$ is the bird's body mass in grams and $12 \\le m \\le 40$.",
+  "choices": [
+   "$200$",
+   "$440$",
+   "$639.8$",
+   "$840$"
+  ],
+  "answer": "B",
+  "explanation": "The model takes mass in grams, and 0.025 kilogram is 25 grams. $R(25) = 640 - 8(25) = 640 - 200 = 440$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at $8(25) = 200$, which is the drop from 640, not the heart rate."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You put 0.025 in for $m$ without converting kilograms to grams. 0.025 is also outside the model's domain."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $8(25)$ when you should have subtracted it. You dropped the negative sign on the slope."
+   }
+  },
+  "id": "orig-evaluate-at-in-X-2badd6",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-X-2badd6",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ according to the model what is the"
+   ],
+   "residue": 7
+  }
+ },
+ {
+  "stem": "What is the value of $f(f(-4))$?",
+  "stimulus": "A nutrition scientist's spreadsheet rescales a food's fiber deviation score with the function $f(x) = \\frac{3}{2}x - 6$. To compare two rounds of rescaling, the scientist applies $f$ twice.",
+  "choices": [
+   "$-12$",
+   "$-6$",
+   "$12$",
+   "$-24$"
+  ],
+  "answer": "D",
+  "explanation": "Work from the inside out. $f(-4) = \\frac{3}{2}(-4) - 6 = -6 - 6 = -12$. Then $f(-12) = \\frac{3}{2}(-12) - 6 = -18 - 6 = -24$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$-12$ is $f(-4)$, the inner value. You didn't apply $f$ a second time."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the negative on the input and got $f(-4) = 6 - 6 = 0$. That made the outer step $f(0) = -6$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $f(-4) = -12$ correctly but lost the sign when you substituted it back in, so you evaluated $f(12) = 12$."
+   }
+  },
+  "id": "orig-evaluate-at-in-X-6a2671",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-X-6a2671",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $f(-2)$?",
+  "stimulus": "In a zoning model, $g(x) = 4 - \\frac{1}{2}x$ gives a block's density rating when the block's distance from a transit line changes by $x$ blocks. The function $f(x) = 3g(x) - 7$ converts that rating into a permit score.",
+  "choices": [
+   "$8$",
+   "$-13$",
+   "$2$",
+   "$5$"
+  ],
+  "answer": "A",
+  "explanation": "First find $g(-2) = 4 - \\frac{1}{2}(-2) = 4 + 1 = 5$. Then $f(-2) = 3(5) - 7 = 8$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You put $-2$ in place of $g(x)$ and computed $3(-2) - 7$. The input belongs inside $g$, not in place of $g(x)$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the negative and got $g(-2) = 4 - 1 = 3$, which led to $3(3) - 7 = 2$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$5$ is $g(-2)$. You didn't convert it with $f$."
+   }
+  },
+  "id": "orig-evaluate-at-in-X-56a8e8",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-X-56a8e8",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $f\\left(-\\frac{3}{8}\\right)$?",
+  "stimulus": "A textile historian rescales dye-fastness scores from a nineteenth-century mill ledger with the function $f(x) = 9 - \\frac{4}{3}(x - 6)$.",
+  "choices": [
+   "$\\frac{3}{2}$",
+   "$\\frac{7}{2}$",
+   "$\\frac{35}{2}$",
+   "$\\frac{17}{2}$"
+  ],
+  "answer": "C",
+  "explanation": "$-\\frac{3}{8} - 6 = -\\frac{51}{8}$. Then $-\\frac{4}{3} \\cdot \\left(-\\frac{51}{8}\\right) = \\frac{17}{2}$, so $f\\left(-\\frac{3}{8}\\right) = 9 + \\frac{17}{2} = \\frac{35}{2}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the negative on the input and evaluated $9 - \\frac{4}{3}\\left(\\frac{3}{8} + 6\\right) = 9 - \\frac{15}{2}$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You distributed $-\\frac{4}{3}$ only to $x$ and wrote $9 - \\frac{4}{3}x - 6$, so the 6 was never multiplied by $\\frac{4}{3}$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$\\frac{17}{2}$ is the change from 9. You didn't add it to 9."
+   }
+  },
+  "id": "orig-evaluate-at-in-X-aa1906",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-X-aa1906",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $f(9)$?",
+  "stimulus": "A seismologist's calibration function $f$ is linear and satisfies $f(2x + 1) = 6x - 5$ for all values of $x$.",
+  "choices": [
+   "$4$",
+   "$49$",
+   "$22$",
+   "$19$"
+  ],
+  "answer": "D",
+  "explanation": "The input $2x + 1$ equals 9 when $x = 4$, so $f(9) = 6(4) - 5 = 19$. You can check this by rewriting the function: $f(u) = 3(u - 1) - 5 = 3u - 8$, and $3(9) - 8 = 19$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$4$ is the value of $x$ that makes the input 9. It isn't the output."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You put 9 into $6x - 5$, which is the wrong place. The 9 is the value of $2x + 1$, not of $x$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You halved the slope to get $f(x) = 3x - 5$ but didn't adjust the constant for the $+1$ in the input."
+   }
+  },
+  "id": "orig-evaluate-at-in-X-99e949",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-X-99e949",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $h(5)$?",
+  "stimulus": "A musicologist models a tuning offset with $f(x) = -3x + 8$ and measures how lopsided a scale is with $h(x) = f(x) - f(-x)$.",
+  "choices": [
+   "$-30$",
+   "$30$",
+   "$0$",
+   "$-7$"
+  ],
+  "answer": "A",
+  "explanation": "$f(5) = -15 + 8 = -7$ and $f(-5) = 15 + 8 = 23$, so $h(5) = -7 - 23 = -30$.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You subtracted in the wrong order and computed $f(-5) - f(5)$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the negative inside $f(-5)$ and got $-7$ again, so the difference came out to 0."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$-7$ is just $f(5)$. You didn't subtract $f(-5)$."
+   }
+  },
+  "id": "orig-evaluate-at-in-X-4cb9fc",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-X-4cb9fc",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $g(6)$?",
+  "stimulus": "A linguist estimates the number of unfamiliar words a reader skips with $f(x) = 12 - \\frac{x}{3}$, and combines two passage lengths using $g(x) = f(3x) + f(x)$.",
+  "choices": [
+   "$6$",
+   "$20$",
+   "$16$",
+   "$40$"
+  ],
+  "answer": "C",
+  "explanation": "$f(3 \\cdot 6) = f(18) = 12 - 6 = 6$ and $f(6) = 12 - 2 = 10$, so $g(6) = 6 + 10 = 16$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$6$ is only $f(18)$. You left out the $f(6)$ term."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You ignored the $3x$ inside the first term and computed $f(6) + f(6)$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the output by 3 instead of the input, which gives $3f(6) + f(6)$."
+   }
+  },
+  "id": "orig-evaluate-at-in-X-b162fa",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-X-b162fa",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

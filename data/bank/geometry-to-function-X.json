@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-geometry-to-fu-X-1690b3",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "which function __var__ gives the volume of the"
    ],
@@ -79,14 +84,403 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-geometry-to-fu-X-35eb58",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which function $A$ gives the combined area, in square meters, of the plaza and the border in terms of the plaza's length $L$, in meters?",
+  "stimulus": "A city planning office is designing a rectangular plaza whose length is 6 meters greater than its width. A paved border 2 meters wide will surround the plaza on all four sides.",
+  "choices": [
+   "$A(L) = L^2 - 2L - 8$",
+   "$A(L) = L^2 - 6L$",
+   "$A(L) = L^2 + 2L - 8$",
+   "$A(L) = L^2 + 14L + 40$"
+  ],
+  "answer": "C",
+  "explanation": "The plaza's width is $L - 6$. The border adds 2 meters on each side, so each outer dimension grows by 4. The outer length is $L + 4$ and the outer width is $L - 6 + 4 = L - 2$. So $A(L) = (L + 4)(L - 2) = L^2 + 2L - 8$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the 2-meter border only once to each dimension, which gives $(L + 2)(L - 4)$. The border is on both ends of the length and on both sides of the width, so each dimension grows by 4."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$L(L - 6)$ is the area of the plaza alone. The question asks for the plaza and the border together."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You wrote the width as $L + 6$, which treats $L$ as the width. Since $L$ is the length, the width is $L - 6$. With that sign flipped, you got $(L + 4)(L + 10)$."
+   }
+  },
+  "id": "orig-geometry-to-fu-X-75a2c2",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-X-75a2c2",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which function $V$ gives the volume, in cubic centimeters, of the box in terms of the sheet's length $x$, in centimeters?",
+  "stimulus": "A rectangular aluminum sheet has a length that is 10 centimeters greater than its width. A square with sides of 3 centimeters is cut from each corner of the sheet, and the sides are folded up to form an open-top box.",
+  "choices": [
+   "$V(x) = 3(x - 6)(x - 16)$",
+   "$V(x) = 3(x - 3)(x - 13)$",
+   "$V(x) = (x - 6)(x - 16)$",
+   "$V(x) = 3(x + 4)(x - 6)$"
+  ],
+  "answer": "A",
+  "explanation": "The sheet's width is $x - 10$. Cutting a 3 cm square from each corner removes 3 cm from both ends of each dimension. The base is therefore $(x - 6)$ by $(x - 10 - 6) = (x - 16)$, and the height is 3. So $V(x) = 3(x - 6)(x - 16)$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted 3 from each dimension only once. Each dimension loses a corner square at both ends, so you need to subtract 6."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is the area of the base. You forgot to multiply by the height of 3 cm that comes from folding up the sides."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You wrote the width as $x + 10$, as if $x$ were the width. Since $x$ is the length, the width is $x - 10$."
+   }
+  },
+  "id": "orig-geometry-to-fu-X-0c9c4a",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-X-0c9c4a",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which function $V$ gives the volume, in cubic feet, of the tank in terms of its diameter $d$, in feet?",
+  "stimulus": "A rain-collection tank is shaped like a right circular cylinder. Its height is 3 feet less than twice its diameter.",
+  "choices": [
+   "$V(d) = \\pi d^2(2d - 3)$",
+   "$V(d) = \\frac{\\pi}{4}d^2(2d - 3)$",
+   "$V(d) = \\frac{\\pi}{4}d^2(d - 3)$",
+   "$V(d) = \\frac{\\pi}{2}d^2(2d - 3)$"
+  ],
+  "answer": "B",
+  "explanation": "The radius is $\\frac{d}{2}$ and the height is $2d - 3$. So $V(d) = \\pi\\left(\\frac{d}{2}\\right)^2(2d - 3) = \\frac{\\pi}{4}d^2(2d - 3)$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used $d$ as the radius in $\\pi r^2 h$. The radius is half the diameter, so the base area is $\\frac{\\pi}{4}d^2$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You wrote the height as twice the radius minus 3, which is $d - 3$. The height is twice the diameter minus 3, which is $2d - 3$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You squared $\\frac{d}{2}$ as $\\frac{d^2}{2}$. The square of $\\frac{d}{2}$ is $\\frac{d^2}{4}$."
+   }
+  },
+  "id": "orig-geometry-to-fu-X-91a53f",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-X-91a53f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which function $A$ gives the area, in square meters, of the plot in terms of $x$, the length, in meters, of the side parallel to the canal?",
+  "stimulus": "An agronomist has 400 meters of fencing to enclose a rectangular test plot beside a straight irrigation canal. No fence is needed along the canal. The fencing will also form one divider, parallel to the sides that meet the canal, which splits the plot into two equal sections.",
+  "choices": [
+   "$A(x) = x(400 - 3x)$",
+   "$A(x) = x(200 - x)$",
+   "$A(x) = \\frac{x(400 - x)}{2}$",
+   "$A(x) = \\frac{x(400 - x)}{3}$"
+  ],
+  "answer": "D",
+  "explanation": "The fence covers one side of length $x$ plus three sides perpendicular to the canal (two ends and the divider). Writing each perpendicular side as $y$ gives $x + 3y = 400$, so $y = \\frac{400 - x}{3}$. Then $A(x) = x \\cdot \\frac{400 - x}{3}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the area written in terms of the perpendicular side. You let the input stand for the wrong dimension, so the $3$ multiplies the input when it should divide the remaining fence."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You fenced all four sides ($2x + 2y = 400$) and left out the divider. The canal side needs no fence, and the divider uses some of the fencing."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You accounted for the open canal side but forgot the divider, so you split the remaining fence between only two perpendicular sides instead of three."
+   }
+  },
+  "id": "orig-geometry-to-fu-X-f9910c",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-X-f9910c",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which function $V$ gives the volume, in cubic millimeters, of the growth medium in terms of the chamber's height $h$, in millimeters?",
+  "stimulus": "A culture chamber is a rectangular box with a square base. The chamber's height is 2 millimeters less than the edge length of its base. A technician fills the chamber with growth medium to a level 1 millimeter below the top.",
+  "choices": [
+   "$V(h) = (h + 2)^2(h - 1)$",
+   "$V(h) = (h - 2)^2(h - 1)$",
+   "$V(h) = h(h + 2)^2$",
+   "$V(h) = h^2(h - 3)$"
+  ],
+  "answer": "A",
+  "explanation": "Since the height is 2 less than the base edge, the base edge is $h + 2$. The medium fills the full base to a depth of $h - 1$. So $V(h) = (h + 2)^2(h - 1)$.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You wrote the base edge as $h - 2$. The height is 2 less than the edge, so the edge is 2 more than the height."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "This is the volume of the whole chamber. The medium stops 1 mm below the top, so its depth is $h - 1$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You treated $h$ as the base edge, which made the chamber height $h - 2$ and the fill depth $h - 3$. The question names $h$ as the height."
+   }
+  },
+  "id": "orig-geometry-to-fu-X-195da9",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-X-195da9",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which function $V$ gives the volume, in cubic meters, of the trench in terms of its length $L$, in meters?",
+  "stimulus": "An archaeological team digs a rectangular trench that is 1.5 meters deep. The trench's length is 5 meters more than 3 times its width.",
+  "choices": [
+   "$V(L) = \\frac{1}{3}L(L - 5)$",
+   "$V(L) = \\frac{1}{2}L(L + 5)$",
+   "$V(L) = \\frac{1}{2}L(L - 5)$",
+   "$V(L) = \\frac{3}{2}L(L - 5)$"
+  ],
+  "answer": "C",
+  "explanation": "From $L = 3w + 5$, the width is $w = \\frac{L - 5}{3}$. So $V(L) = 1.5 \\cdot L \\cdot \\frac{L - 5}{3} = \\frac{1}{2}L(L - 5)$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$L \\cdot \\frac{L - 5}{3}$ is the area of the trench's floor. You stopped before multiplying by the 1.5-meter depth."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You solved $L = 3w + 5$ for $w$ by adding 5 instead of subtracting it. The width is $\\frac{L - 5}{3}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted 5 but didn't divide by 3, so you used $L - 5$ for the width. The width is $\\frac{L - 5}{3}$."
+   }
+  },
+  "id": "orig-geometry-to-fu-X-d9cf02",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-X-d9cf02",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which function $A$ gives the area, in square feet, of the cross section in terms of the channel's top width $t$, in feet?",
+  "stimulus": "The cross section of a drainage channel is an isosceles trapezoid. The bottom of the channel is as wide as the channel is deep, and the top of the channel is 6 feet wider than the bottom.",
+  "choices": [
+   "$A(t) = (t + 3)(t + 6)$",
+   "$A(t) = (t - 3)(t - 6)$",
+   "$A(t) = t(t - 6)$",
+   "$A(t) = (2t - 6)(t - 6)$"
+  ],
+  "answer": "B",
+  "explanation": "The bottom width is $t - 6$, and the depth equals the bottom width, so the depth is also $t - 6$. A trapezoid's area is the average of its parallel sides times its height: $\\frac{1}{2}(t + t - 6)(t - 6) = (t - 3)(t - 6)$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You wrote the bottom width and depth as $t + 6$, as if $t$ were the bottom. Since $t$ is the top, which is the wider side, the bottom is $t - 6$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the top width by the depth as if the cross section were a rectangle. A trapezoid uses the average of its two parallel sides."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the two parallel sides but left out the factor of $\\frac{1}{2}$, so your area is twice the true area."
+   }
+  },
+  "id": "orig-geometry-to-fu-X-5a3a8b",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-X-5a3a8b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which function $V$ gives the volume, in cubic centimeters, of the box drum in terms of its height $h$, in centimeters?",
+  "stimulus": "A luthier builds a box drum shaped like a rectangular prism. The box's height is 20 centimeters greater than its width, and its depth is half its width.",
+  "choices": [
+   "$V(h) = \\frac{1}{2}h(h + 20)^2$",
+   "$V(h) = h(h - 20)^2$",
+   "$V(h) = \\frac{1}{2}h^2(h - 20)$",
+   "$V(h) = \\frac{1}{2}h(h - 20)^2$"
+  ],
+  "answer": "D",
+  "explanation": "The width is $h - 20$, and the depth is half of that, $\\frac{1}{2}(h - 20)$. So $V(h) = h(h - 20) \\cdot \\frac{1}{2}(h - 20) = \\frac{1}{2}h(h - 20)^2$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You wrote the width as $h + 20$, as if $h$ were the width. The height is the larger dimension, so the width is $h - 20$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the full width for the depth and dropped the factor of $\\frac{1}{2}$. The depth is half the width."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You halved the height to get the depth, which multiplied $h$ by itself. The depth is half the width, so the factor that appears twice is $h - 20$."
+   }
+  },
+  "id": "orig-geometry-to-fu-X-8730bb",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-X-8730bb",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

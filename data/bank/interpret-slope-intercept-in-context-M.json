@@ -286,5 +286,677 @@
    "residue": 0
   },
   "phrasing": "in_context"
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 120 in this context?",
+  "stimulus": "A labour economist models the number of members, $M$, of a regional machinists' union $t$ years after 2015 with the equation $M = 4{,}800 - 120t$.",
+  "choices": [
+   "The union had 120 members in 2015.",
+   "The union lost 120 members each year.",
+   "The union gained 120 members each year.",
+   "The union had no members 120 years after 2015."
+  ],
+  "answer": "B",
+  "explanation": "The model has the form $M = b + mt$, where $b = 4{,}800$ and $m = -120$. The coefficient on $t$ is the rate of change, which here means members per year. It is negative, so membership goes down. The 120 in the equation is the size of that drop: each year after 2015, the union has 120 fewer members than the year before.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read the coefficient as the starting amount. The number of members in 2015 is the value when $t = 0$, which is $M = 4{,}800$, not 120. The 120 is attached to $t$, so it's a rate per year."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the rate but missed its sign. The equation subtracts $120t$, so $M$ gets smaller as $t$ grows. The union is losing members, not gaining them."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You treated 120 as the time it takes membership to reach zero. That time comes from solving $4{,}800 - 120t = 0$, which gives $t = 40$ years. The 120 is how many members leave each year, not a number of years."
+   }
+  },
+  "id": "orig-interpret-slop-M-95e9f8",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-M-95e9f8",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the total length, in kilometers, of protected bike lanes in the city in 2020?",
+  "stimulus": "A city planner uses the equation $L = 4(t + 15)$ to model the total length $L$, in kilometers, of protected bike lanes in a city $t$ years after 2020.",
+  "choices": [
+   "$4(15)$",
+   "$4$",
+   "$15$",
+   "$4(16)$"
+  ],
+  "answer": "A",
+  "explanation": "The year 2020 is $t = 0$, so you want the starting amount, which is the value of $L$ when $t = 0$. Substituting gives $L = 4(0 + 15) = 4(15)$. If you distribute, you get $L = 4t + 60$, so the y-intercept is $4(15)$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the coefficient on $t$. That is the number of kilometers added each year, which is the slope. The question asks for the starting length in 2020, which is the intercept."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the 15 inside the parentheses as the intercept and dropped the factor of 4 multiplying it. When $t = 0$, the whole quantity $4(0 + 15)$ gives the length, not just the 15."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You took 2020 to be $t = 1$. Since $t$ counts years after 2020, the year 2020 itself is $t = 0$. The expression $4(16)$ is the length in 2021."
+   }
+  },
+  "id": "orig-interpret-slop-M-6a7986",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-M-6a7986",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the number of centimeters the pond's depth fell each day?",
+  "stimulus": "During a dry summer, the depth of a wetland pond decreased at a constant rate. Its depth was 340 centimeters on day 0 and 298 centimeters on day 14.",
+  "choices": [
+   "$\\dfrac{340 - 298}{14}$",
+   "$\\dfrac{298 - 340}{14}$",
+   "$\\dfrac{14}{340 - 298}$",
+   "$\\dfrac{340}{14}$"
+  ],
+  "answer": "A",
+  "explanation": "\"Each day\" asks for the rate of change. Over 14 days the depth fell by $340 - 298$ centimeters, so the amount it fell per day is $\\frac{340 - 298}{14}$. The question asks how much the depth *fell*, so you want the positive size of the change.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "This is the slope of the depth line, and it is negative because the depth went down. The question asks how many centimeters the depth fell, which is the size of that change. A negative fall would mean the pond was rising."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided days by centimeters, which is run over rise. That gives days per centimeter, not centimeters per day."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the starting depth by the number of days. The rate comes from the change in depth over those 14 days, $340 - 298$, not from the depth itself."
+   }
+  },
+  "id": "orig-interpret-slop-M-3db70b",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-M-3db70b",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the number of known recordings of the ballad in 1960?",
+  "stimulus": "A musicologist finds that the number of known recordings of a folk ballad grew linearly after 1960. There were 62 known recordings in 1970 and 102 in 1980.",
+  "choices": [
+   "$62 - 10\\left(\\dfrac{102 - 62}{10}\\right)$",
+   "$62 + 10\\left(\\dfrac{102 - 62}{10}\\right)$",
+   "$62 - \\dfrac{102 - 62}{10}$",
+   "$\\dfrac{102 - 62}{10}$"
+  ],
+  "answer": "A",
+  "explanation": "The number in 1960 is the starting amount, the intercept when you count years from 1960. The rate is $\\frac{102 - 62}{10}$ recordings per year. To go from 1970 back to 1960, you remove 10 years of growth: $62 - 10\\left(\\frac{102 - 62}{10}\\right)$.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You added 10 years of growth to the 1970 count. That moves forward to 1980. To reach the earlier year, 1960, you have to subtract."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted only one year's growth from the 1970 count. That gives the count in 1969. From 1970 back to 1960 is 10 years, so the rate has to be multiplied by 10."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the slope, the number of recordings added each year. The question asks for the starting count in 1960, which is the intercept."
+   }
+  },
+  "id": "orig-interpret-slop-M-783c95",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-M-783c95",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 4 in this context?",
+  "stimulus": "A weather station tracked the air temperature after a cold front passed over it. The equation $T = 61 - 4h$ gives the temperature $T$, in degrees Fahrenheit, $h$ hours after the front arrived, for $0 \\le h \\le 6$.",
+  "choices": [
+   "The temperature was 4\u00b0F at the moment the front arrived.",
+   "The temperature rose 2\u00b0F every 30 minutes after the front arrived.",
+   "The temperature fell 4\u00b0F every 30 minutes after the front arrived.",
+   "The temperature fell 2\u00b0F every 30 minutes after the front arrived."
+  ],
+  "answer": "D",
+  "explanation": "The 4 is the coefficient of $h$, so it is the rate of change, and the minus sign means the temperature is going down. The temperature falls 4\u00b0F for each hour. Half an hour is half of that, so the temperature falls 2\u00b0F every 30 minutes.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You treated the coefficient as the starting value. The temperature when the front arrived is the value at $h = 0$, which is 61\u00b0F, not 4\u00b0F."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You converted the rate correctly but dropped the minus sign. The term $-4h$ makes $T$ smaller as time passes, so the temperature falls."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You kept the hourly rate of 4\u00b0F but attached it to 30 minutes. Halving the time also halves the change, so it is 2\u00b0F."
+   }
+  },
+  "id": "orig-interpret-slop-M-1e497e",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-M-1e497e",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 840 in this context?",
+  "stimulus": "A research farm draws water from a reservoir to irrigate its test plots. The equation $W + 35d = 840$ models the amount of water $W$, in thousands of gallons, left in the reservoir $d$ days after irrigation began.",
+  "choices": [
+   "The reservoir held 840 thousand gallons when irrigation began.",
+   "The reservoir loses 840 thousand gallons each day of irrigation.",
+   "The reservoir is empty 840 days after irrigation began.",
+   "The reservoir held 840 thousand gallons after one day of irrigation."
+  ],
+  "answer": "A",
+  "explanation": "Rewrite the equation as $W = 840 - 35d$. When irrigation begins, $d = 0$, so $W = 840$. The constant 840 is the amount of water in the reservoir at the start, in thousands of gallons.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the constant the meaning of the rate. The amount used per day is the coefficient of $d$, which is 35 thousand gallons, not 840."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read 840 as the point where the line meets the horizontal axis. The reservoir is empty when $W = 0$, which happens at $d = 24$ days."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You plugged in $d = 1$ for the first day instead of $d = 0$ for the start. After one day, $W = 840 - 35 = 805$ thousand gallons."
+   }
+  },
+  "id": "orig-interpret-slop-M-006336",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-M-006336",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of the slope of the graph in this context?",
+  "stimulus": "During a nonstop migratory flight, an ornithologist estimated the body mass of a tagged warbler at regular intervals. The graph shows the bird's estimated mass, in grams, against the time since the flight began, in hours.",
+  "figure": {
+   "type": "line",
+   "caption": "Warbler Body Mass During Flight",
+   "x_label": "Time since flight began (hours)",
+   "y_label": "Body mass (grams)",
+   "points": [
+    [
+     0,
+     22
+    ],
+    [
+     4,
+     20
+    ],
+    [
+     8,
+     18
+    ],
+    [
+     12,
+     16
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 14,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 24,
+   "y_step": 2,
+   "alt": "A straight line falling from left to right through the points (0, 22), (4, 20), (8, 18), and (12, 16)."
+  },
+  "choices": [
+   "The bird's mass decreased by 0.5 grams each hour of the flight.",
+   "The bird's mass decreased by 2 grams each hour of the flight.",
+   "The bird's mass increased by 0.5 grams each hour of the flight.",
+   "The bird's mass decreased by 6 grams each hour of the flight."
+  ],
+  "answer": "A",
+  "explanation": "Use two grid points, such as $(0, 22)$ and $(4, 20)$. The slope is $\\frac{20 - 22}{4 - 0} = -\\frac{1}{2}$ gram per hour. A negative slope means the mass is going down, so the bird lost 0.5 grams for each hour it flew.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided run by rise and got $\\frac{4}{2} = 2$. Slope is rise over run, the change in mass divided by the change in time, which gives 0.5."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the right size of the rate but gave it the wrong direction. The line falls from left to right, so the mass decreases."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found the total loss over the 12 hours shown, $22 - 16 = 6$ grams, and stopped there. Dividing by the 12 hours gives the hourly rate of 0.5 grams."
+   }
+  },
+  "id": "orig-interpret-slop-M-8e72d6",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-M-8e72d6",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "hours which of the following is the best",
+    "interpretation of the slope of the graph in",
+    "of the slope of the graph in this",
+    "the slope of the graph in this context"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "According to the model, by how many grams does the warbler's mass increase each day?",
+  "stimulus": "During a stopover on its migration, a warbler feeds heavily to build up fat. The equation $5M - 3d = 90$ models the warbler's mass $M$, in grams, $d$ days after it arrives at the stopover site.",
+  "choices": [
+   "$\\frac{5}{3}$",
+   "$0.6$",
+   "$3$",
+   "$18$"
+  ],
+  "answer": "B",
+  "explanation": "\"Each day\" asks for the rate, which is the slope. You can test it directly: when $d = 0$, $5M = 90$, so $M = 18$. When $d = 1$, $5M = 93$, so $M = 18.6$. The mass goes up by $0.6$ gram each day. Solving for $M$ gives the same thing: $M = 0.6d + 18$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the coefficients the wrong way round, 5 by 3 instead of 3 by 5. That ratio is the number of days per gram, not grams per day."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the 3 straight off the equation without dividing by the 5 on $M$. The coefficient is only the rate once $M$ is by itself."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "18 is the warbler's mass when $d = 0$, the day it arrives. That's the intercept, but the question asks how much the mass changes each day, which is the slope."
+   }
+  },
+  "id": "orig-interpret-slop-M-0a238c",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-M-0a238c",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, how many grams of protein powder are used per scoop?",
+  "stimulus": "A dietitian tracks a tub of protein powder. The equation $2P + 45s = 1{,}680$ models $P$, the number of grams of powder left in the tub after $s$ scoops have been taken out.",
+  "choices": [
+   "$-22.5$",
+   "$45$",
+   "$22.5$",
+   "$840$"
+  ],
+  "answer": "C",
+  "explanation": "\"Per scoop\" asks for the rate. When $s = 0$, $P = 840$. When $s = 2$, $2P = 1{,}680 - 90 = 1{,}590$, so $P = 795$. Two scoops take out $45$ grams, so one scoop uses $22.5$ grams. The question asks how much is used, which is a positive amount, even though $P$ goes down.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "$-22.5$ is the slope of $P$, which is how fast the amount left changes. The question asks how much powder is used per scoop, and that's the size of the drop, $22.5$ grams, not a negative number."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the 45 from the equation without dividing by the 2 on $P$. Forty-five grams is what two scoops use."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "840 grams is how much was in the tub before any scoops were taken, which is the intercept. The question asks for the amount per scoop, which is the rate."
+   }
+  },
+  "id": "orig-interpret-slop-M-ce4ff4",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-M-ce4ff4",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, what is the air temperature, in degrees Celsius, at ground level?",
+  "stimulus": "A weather balloon records the air temperature as it rises. The equation $2T + 13h = 44$ models the temperature $T$, in degrees Celsius, at a height of $h$ kilometers above the ground.",
+  "choices": [
+   "$6.5$",
+   "$15.5$",
+   "$44$",
+   "$22$"
+  ],
+  "answer": "D",
+  "explanation": "Ground level means the starting point, where $h = 0$. Then $2T = 44$, so $T = 22$. The temperature at ground level is $22$ degrees Celsius.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "6.5 is the number of degrees the temperature drops for each kilometer of height. That's the slope, but the question asks for the starting temperature, which is the intercept."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You put in $h = 1$, which gives the temperature 1 kilometer up. Ground level is $h = 0$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You set $h = 0$ correctly, but then you stopped at $2T = 44$ and didn't divide by 2."
+   }
+  },
+  "id": "orig-interpret-slop-M-27c4fa",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-M-27c4fa",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 0.3 in this context?",
+  "stimulus": "A materials lab hangs loads from two polymer strips, P and Q. The function $D(w) = 0.3w - 6$ gives the number of millimeters by which strip Q is longer than strip P when each strip holds a load of $w$ grams, for $0 \\le w \\le 100$.",
+  "choices": [
+   "For each additional gram of load, the length of strip Q alone increases by 0.3 millimeter.",
+   "For each additional gram of load, the amount by which strip Q is longer than strip P increases by 0.3 millimeter.",
+   "With no load on either strip, strip Q is 0.3 millimeter longer than strip P.",
+   "For each additional gram of load, the amount by which strip Q is longer than strip P decreases by 0.3 millimeter."
+  ],
+  "answer": "B",
+  "explanation": "In $D(w) = 0.3w - 6$, 0.3 is the coefficient of $w$, so it is a rate: millimeters per gram. $D$ does not measure either strip on its own. It measures the gap between them. So each additional gram makes Q's lead over P grow by 0.3 millimeter.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read 0.3 as the stretch rate of one strip. $D$ is the difference between the two strips, so 0.3 is how fast that gap changes. It says nothing about how fast Q stretches by itself."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated the slope as the intercept. The difference with no load is $D(0) = -6$, the constant term. The coefficient on $w$ is a per-gram rate."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You let the $-6$ set the direction. The sign of the slope decides the direction, and $+0.3$ is positive, so the gap grows as the load increases."
+   }
+  },
+  "id": "orig-interpret-slop-M-b7c47f",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-M-b7c47f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 150 in this context?",
+  "stimulus": "During a vaccination drive, a county compares two clinics, North and South. The function $G(t) = 150 - 12t$ gives how many more vaccine doses North has remaining than South $t$ hours after both clinics open.",
+  "choices": [
+   "When the clinics opened, North had 150 doses remaining.",
+   "Each hour, the difference between the two clinics' remaining doses changes by 150.",
+   "When the clinics opened, South had 150 more doses remaining than North.",
+   "When the clinics opened, North had 150 more doses remaining than South."
+  ],
+  "answer": "D",
+  "explanation": "150 is the constant term, so it is the value of $G$ when $t = 0$, which is the moment the clinics open. $G$ counts how many more doses North has than South, so at opening North was 150 doses ahead.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read 150 as North's own supply. $G$ gives the gap between the clinics. North's actual count could be much larger. The 150 is how far ahead of South it was."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated the intercept as the slope. The hourly change is the coefficient on $t$, which is $-12$. The constant 150 is the starting value."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You reversed the comparison. $G$ counts how many more doses North has than South, so a positive 150 means North was ahead."
+   }
+  },
+  "id": "orig-interpret-slop-M-39ad48",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-M-39ad48",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 4 in this context?",
+  "stimulus": "Two folklore archives are cataloguing recorded folktales from the same region. The function $R(m) = 60 - 4m$ gives how many more folktales Archive A has catalogued than Archive B $m$ months after the project began.",
+  "choices": [
+   "Each month, the number of folktales by which Archive A leads Archive B decreases by 4.",
+   "Each month, the number of folktales by which Archive A leads Archive B increases by 4.",
+   "Each month, Archive A catalogues 4 fewer folktales than it did in the month before.",
+   "When the project began, Archive A had catalogued 4 more folktales than Archive B."
+  ],
+  "answer": "A",
+  "explanation": "The 4 is part of the coefficient $-4$ on $m$, so it is a monthly rate. $R$ measures Archive A's lead over Archive B, and the negative sign means that lead shrinks. Each month, A's lead goes down by 4 folktales.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You dropped the negative sign. The term is $-4m$, so as the months go by the lead gets smaller."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read the rate as describing Archive A alone. $R$ is the gap between the archives. A shrinking lead means B is catching up. It doesn't tell you that A's own monthly output is falling."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated the slope as the intercept. A's lead when the project began is $R(0) = 60$, the constant term. The 4 tells you how fast that lead changes each month."
+   }
+  },
+  "id": "orig-interpret-slop-M-5cab23",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-M-5cab23",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

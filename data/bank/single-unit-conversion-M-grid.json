@@ -220,5 +220,441 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "How many fluid ounces of hand sanitizer is this? (1 gallon = 4 quarts and 1 quart = 32 fluid ounces)",
+  "stimulus": "A county health department sets aside 2.5 gallons of hand sanitizer for a weekend vaccination clinic.",
+  "keys": [
+   "320"
+  ],
+  "any_of": false,
+  "explanation": "Write the amount with its unit, then multiply by conversion fractions that cancel the units you don't want. Put the old unit in the denominator each time: $2.5\\text{ gal} \\times \\frac{4\\text{ qt}}{1\\text{ gal}} \\times \\frac{32\\text{ fl oz}}{1\\text{ qt}}$. Gallons cancel, then quarts cancel, and fluid ounces are left. The arithmetic is $2.5 \\times 4 = 10$, then $10 \\times 32 = 320$. Check the direction: fluid ounces are much smaller than gallons, so the number should get much bigger, and it does.",
+  "common_errors": [
+   {
+    "value": "10",
+    "misconception": "intermediate-step",
+    "why": "Converted gallons to quarts and stopped there, one factor short of the two-step chain."
+   },
+   {
+    "value": "80",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 2.5 by 32 directly and dropped the gallons-to-quarts factor of 4."
+   },
+   {
+    "value": ".3125",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied by 4 but then divided by 32 instead of multiplying, so the second factor went the wrong way: $2.5 \\times 4 \\div 32$."
+   }
+  ],
+  "id": "orig-single-unit-co-M-fcf9c5",
+  "skill_cd": "Q.A.",
+  "subtype": "single-unit-conversion",
+  "subtype_name": "Straight unit conversion (one or chained factors)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-single-unit-co-M-fcf9c5",
+   "structure": [],
+   "solver_answer": 320,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many yards is this altitude? (1 mile = 5,280 feet)",
+  "stimulus": "A weather balloon released by a meteorologist to measure upper-air temperatures reached an altitude of 4.5 miles before it burst.",
+  "keys": [
+   "7920"
+  ],
+  "any_of": false,
+  "explanation": "Chain through feet. Start with $4.5\\text{ mi} \\times \\frac{5280\\text{ ft}}{1\\text{ mi}}$, which cancels miles and gives $23{,}760$ feet. Then multiply by $\\frac{1\\text{ yd}}{3\\text{ ft}}$ so that feet cancel: $23{,}760 \\div 3 = 7{,}920$ yards. Check the direction: a yard is longer than a foot, so the yard count should be smaller than the foot count.",
+  "common_errors": [
+   {
+    "value": "23760",
+    "misconception": "intermediate-step",
+    "why": "Converted miles to feet and gave that as the answer without the feet-to-yards step."
+   },
+   {
+    "value": "71280",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the feet by 3 instead of dividing, so the second conversion went the wrong way."
+   },
+   {
+    "value": "1.5",
+    "misconception": "misread-given",
+    "why": "Divided 4.5 by 3 as if the given value were already in feet, and ignored the 5,280 factor."
+   }
+  ],
+  "id": "orig-single-unit-co-M-35a12a",
+  "skill_cd": "Q.A.",
+  "subtype": "single-unit-conversion",
+  "subtype_name": "Straight unit conversion (one or chained factors)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-single-unit-co-M-35a12a",
+   "structure": [],
+   "solver_answer": 7920,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many seconds of music does the collection contain?",
+  "stimulus": "A musicologist cataloguing a collection of Baroque harpsichord recordings finds that the recordings run 2.25 hours in total.",
+  "keys": [
+   "8100"
+  ],
+  "any_of": false,
+  "explanation": "Use the standard factors 60 minutes per hour and 60 seconds per minute: $2.25\\text{ h} \\times \\frac{60\\text{ min}}{1\\text{ h}} \\times \\frac{60\\text{ s}}{1\\text{ min}}$. Hours cancel, then minutes cancel. $2.25 \\times 60 = 135$ minutes, and $135 \\times 60 = 8{,}100$ seconds. Note that 2.25 hours means two and a quarter hours. It does not mean 2 hours 25 minutes.",
+  "common_errors": [
+   {
+    "value": "135",
+    "misconception": "intermediate-step",
+    "why": "Converted hours to minutes and stopped before converting minutes to seconds."
+   },
+   {
+    "value": "8700",
+    "misconception": "misread-given",
+    "why": "Read 2.25 hours as 2 hours 25 minutes, which gives 145 minutes and then 8,700 seconds."
+   },
+   {
+    "value": ".000625",
+    "misconception": "algebra-manipulation",
+    "why": "Divided by 60 twice instead of multiplying, so the conversion went the wrong way: $2.25 \\div 3600$."
+   }
+  ],
+  "id": "orig-single-unit-co-M-6dad63",
+  "skill_cd": "Q.A.",
+  "subtype": "single-unit-conversion",
+  "subtype_name": "Straight unit conversion (one or chained factors)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-single-unit-co-M-6dad63",
+   "structure": [],
+   "solver_answer": 8100,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length of the boot, in yards?",
+  "stimulus": "In a folktale collected by a folklore scholar, a giant's boot is said to be 3 ells long. The scholar notes that the ell used in the region where the tale was collected equals 45 inches.",
+  "keys": [
+   "3.75",
+   "15/4"
+  ],
+  "any_of": false,
+  "explanation": "Chain through inches. $3\\text{ ells} \\times \\frac{45\\text{ in}}{1\\text{ ell}} = 135$ inches. A yard is 36 inches, so multiply by $\\frac{1\\text{ yd}}{36\\text{ in}}$: $135 \\div 36 = 3.75$ yards. Check the direction: a yard is longer than an inch, so the count should drop sharply from 135.",
+  "common_errors": [
+   {
+    "value": "135",
+    "misconception": "intermediate-step",
+    "why": "Converted ells to inches and stopped without converting inches to yards."
+   },
+   {
+    "value": "11.25",
+    "misconception": "misread-given",
+    "why": "Used 12 inches per yard (which is inches per foot) and divided 135 by 12."
+   },
+   {
+    "value": "4860",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 135 by 36 instead of dividing, so the second conversion went the wrong way."
+   }
+  ],
+  "id": "orig-single-unit-co-M-8abf4d",
+  "skill_cd": "Q.A.",
+  "subtype": "single-unit-conversion",
+  "subtype_name": "Straight unit conversion (one or chained factors)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-single-unit-co-M-8abf4d",
+   "structure": [],
+   "solver_answer": 3.75,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many inches below the surface is the holdfast?",
+  "stimulus": "A marine biologist surveying a kelp forest records that one kelp holdfast is anchored 2.5 fathoms below the water's surface. A fathom is 6 feet.",
+  "keys": [
+   "180"
+  ],
+  "any_of": false,
+  "explanation": "Chain through feet. $2.5\\text{ fathoms} \\times \\frac{6\\text{ ft}}{1\\text{ fathom}} = 15$ feet. Then multiply by $\\frac{12\\text{ in}}{1\\text{ ft}}$: $15 \\times 12 = 180$ inches. Check the direction: inches are smaller than feet, so the number should grow.",
+  "common_errors": [
+   {
+    "value": "15",
+    "misconception": "intermediate-step",
+    "why": "Converted fathoms to feet and stopped before converting to inches."
+   },
+   {
+    "value": "1.25",
+    "misconception": "algebra-manipulation",
+    "why": "Divided 15 feet by 12 instead of multiplying, so the second conversion went the wrong way."
+   },
+   {
+    "value": "45",
+    "misconception": "misread-given",
+    "why": "Used 3 inches per foot instead of 12 and multiplied 15 by 3."
+   }
+  ],
+  "id": "orig-single-unit-co-M-383bfe",
+  "skill_cd": "Q.A.",
+  "subtype": "single-unit-conversion",
+  "subtype_name": "Straight unit conversion (one or chained factors)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-single-unit-co-M-383bfe",
+   "structure": [],
+   "solver_answer": 180,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A paleobotanist measures a fossil fern frond preserved in shale and records its length as 4.5 inches. Given that 1 inch equals 2.54 centimeters, what is the length of the frond, in millimeters?",
+  "stimulus": null,
+  "keys": [
+   "114.3",
+   "1143/10"
+  ],
+  "any_of": false,
+  "explanation": "Write the length with its unit, then multiply by conversion fractions so each unwanted unit cancels. Put the old unit in the denominator each time: $4.5 \\text{ in} \\times \\frac{2.54 \\text{ cm}}{1 \\text{ in}} \\times \\frac{10 \\text{ mm}}{1 \\text{ cm}}$. Inches cancel, then centimeters cancel, and only millimeters are left. The arithmetic is $4.5 \\times 2.54 = 11.43$, and $11.43 \\times 10 = 114.3$. Check the direction: millimeters are much smaller than inches, so the number should get much bigger, and it does.",
+  "common_errors": [
+   {
+    "value": "11.43",
+    "misconception": "intermediate-step",
+    "why": "Converted inches to centimeters and stopped, leaving out the second factor that turns centimeters into millimeters."
+   },
+   {
+    "value": "1.143",
+    "misconception": "complement-or-direction-flip",
+    "why": "Got 11.43 cm, then divided by 10 instead of multiplying when going from centimeters to the smaller unit, millimeters."
+   },
+   {
+    "value": "17.72",
+    "misconception": "complement-or-direction-flip",
+    "why": "Divided 4.5 by 2.54 instead of multiplying, which gives about 1.772, then multiplied by 10 correctly to get 17.72."
+   }
+  ],
+  "id": "orig-single-unit-co-M-1899d8",
+  "skill_cd": "Q.A.",
+  "subtype": "single-unit-conversion",
+  "subtype_name": "Straight unit conversion (one or chained factors)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "fail",
+  "verification": {
+   "id": "orig-single-unit-co-M-1899d8",
+   "structure": [
+    "key '1143/10' is longer than the entry box allows"
+   ],
+   "solver_answer": 114.3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A weather station's snow stake shows that 1.5 yards of snow accumulated on the ground over one winter. What is this depth, in inches?",
+  "stimulus": null,
+  "keys": [
+   "54"
+  ],
+  "any_of": false,
+  "explanation": "You need standard factors here: 1 yard = 3 feet and 1 foot = 12 inches. Chain them so yards and then feet cancel: $1.5 \\text{ yd} \\times \\frac{3 \\text{ ft}}{1 \\text{ yd}} \\times \\frac{12 \\text{ in}}{1 \\text{ ft}} = 1.5 \\times 36 = 54$ inches. Inches are smaller than yards, so the answer should be larger than 1.5, and it is.",
+  "common_errors": [
+   {
+    "value": "4.5",
+    "misconception": "intermediate-step",
+    "why": "Converted yards to feet ($1.5 \\times 3$) and stopped before converting feet to inches."
+   },
+   {
+    "value": "18",
+    "misconception": "algebra-manipulation",
+    "why": "Remembered the factor wrong, using 12 inches per yard instead of 36, so computed $1.5 \\times 12$."
+   },
+   {
+    "value": "1/24",
+    "misconception": "complement-or-direction-flip",
+    "why": "Divided by 36 instead of multiplying ($1.5 \\div 36$), which converts the wrong way."
+   }
+  ],
+  "id": "orig-single-unit-co-M-6740f0",
+  "skill_cd": "Q.A.",
+  "subtype": "single-unit-conversion",
+  "subtype_name": "Straight unit conversion (one or chained factors)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-single-unit-co-M-6740f0",
+   "structure": [],
+   "solver_answer": 54,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A complete concert performance of a cycle of piano sonatas lasts 2.4 hours. How many seconds long is the performance?",
+  "stimulus": null,
+  "keys": [
+   "8640"
+  ],
+  "any_of": false,
+  "explanation": "Chain two factors through minutes: $2.4 \\text{ h} \\times \\frac{60 \\text{ min}}{1 \\text{ h}} \\times \\frac{60 \\text{ s}}{1 \\text{ min}}$. Hours cancel, then minutes cancel. The arithmetic is $2.4 \\times 60 = 144$ minutes, and $144 \\times 60 = 8640$ seconds. Seconds are much smaller than hours, so a large number makes sense.",
+  "common_errors": [
+   {
+    "value": "144",
+    "misconception": "intermediate-step",
+    "why": "Converted hours to minutes and stopped before converting minutes to seconds."
+   },
+   {
+    "value": "0.04",
+    "misconception": "complement-or-direction-flip",
+    "why": "Divided 2.4 by 60 instead of multiplying, which converts toward a larger unit instead of a smaller one."
+   },
+   {
+    "value": "240",
+    "misconception": "algebra-manipulation",
+    "why": "Treated 2.4 hours as 2 hours 40 minutes ($2 \\times 60 + 40 = 160$... or read the decimal as 100 minutes per hour, $2.4 \\times 100 = 240$), using a decimal place-value factor instead of 60."
+   }
+  ],
+  "id": "orig-single-unit-co-M-aebb87",
+  "skill_cd": "Q.A.",
+  "subtype": "single-unit-conversion",
+  "subtype_name": "Straight unit conversion (one or chained factors)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-single-unit-co-M-aebb87",
+   "structure": [],
+   "solver_answer": 8640,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In a historical textile ledger, cloth is measured in ells, where 1 ell is equal to 45 inches. A bolt of wool is recorded as 16 ells long. What is the length of this bolt, in yards?",
+  "stimulus": null,
+  "keys": [
+   "20"
+  ],
+  "any_of": false,
+  "explanation": "Chain through inches, because inches link the two units: $16 \\text{ ells} \\times \\frac{45 \\text{ in}}{1 \\text{ ell}} \\times \\frac{1 \\text{ yd}}{36 \\text{ in}}$. Ells cancel, then inches cancel. The arithmetic is $16 \\times 45 = 720$ inches, and $720 \\div 36 = 20$ yards. An ell (45 in) is longer than a yard (36 in), so the number of yards should be a little more than 16, and it is.",
+  "common_errors": [
+   {
+    "value": "720",
+    "misconception": "intermediate-step",
+    "why": "Converted ells to inches and stopped before converting inches to yards."
+   },
+   {
+    "value": "60",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 720 inches by 12, which gives the length in feet instead of yards."
+   },
+   {
+    "value": "12.8",
+    "misconception": "complement-or-direction-flip",
+    "why": "Flipped the conversion, computing $16 \\times \\frac{36}{45}$, so the inches-per-ell and inches-per-yard factors are used the wrong way round."
+   }
+  ],
+  "id": "orig-single-unit-co-M-9d43e1",
+  "skill_cd": "Q.A.",
+  "subtype": "single-unit-conversion",
+  "subtype_name": "Straight unit conversion (one or chained factors)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-single-unit-co-M-9d43e1",
+   "structure": [],
+   "solver_answer": 20,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

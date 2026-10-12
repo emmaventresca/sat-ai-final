@@ -526,5 +526,145 @@
    "residue": 2
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "The table shows some values of $x$ and their corresponding values of $y$. Which equation represents the relationship between $x$ and $y$?",
+  "stimulus": "A meteorologist recorded the air temperature $y$, in degrees Fahrenheit, $x$ hours after 6:00 a.m. on a clear spring morning.\n\nAir Temperature After 6:00 a.m.\n$x$ (hours) | $y$ (\u00b0F)\n0 | 48\n2 | 54\n4 | 60",
+  "choices": [
+   "$y = 48x + 3$",
+   "$y = \\frac{1}{3}x + 48$",
+   "$y = 3x + 48$",
+   "$y = 6x + 48$"
+  ],
+  "answer": "C",
+  "explanation": "Use two rows to find the slope. From $(0, 48)$ to $(2, 54)$, $y$ rises 6 while $x$ rises 2, so the slope is $\\frac{6}{2} = 3$. The table gives the y-intercept directly: when $x = 0$, $y = 48$. So $y = 3x + 48$. Check the last row: $3(4) + 48 = 60$. It works.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You swapped the slope and the y-intercept. This line starts at $y = 3$ when $x = 0$, but the table shows 48 at $x = 0$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You worked out the slope as run over rise, $\\frac{2}{6}$, when it should be rise over run, $\\frac{6}{2} = 3$. At $x = 2$ this line gives about 48.7, not 54."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You took the 6-degree change between rows as the slope and forgot that each row is 2 hours apart. The line passes through $(0, 48)$, but at $x = 2$ it gives 60, not 54, so it misses the other points."
+   }
+  },
+  "id": "orig-equation-from--E-4408a2",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--E-4408a2",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "their corresponding values of __var__ which equation represents",
+    "corresponding values of __var__ which equation represents the",
+    "__var__ which equation represents the relationship between __var__",
+    "which equation represents the relationship between __var__ and",
+    "equation represents the relationship between __var__ and __var__"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which equation represents the relationship between $x$ and $y$?",
+  "stimulus": "A 12-acre city lot is being divided into community garden plots of equal size. The graph shows the number of acres still unassigned, $y$, after $x$ plots have been marked out.",
+  "figure": {
+   "type": "line",
+   "caption": "Unassigned Acres in the City Lot",
+   "x_label": "Number of plots, x",
+   "y_label": "Unassigned acres, y",
+   "points": [
+    [
+     0,
+     12
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     0
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 5,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 15,
+   "y_step": 3,
+   "alt": "A straight line falling from the point (0, 12) to the point (4, 0), passing through (1, 9), (2, 6), and (3, 3)."
+  },
+  "choices": [
+   "$4x + y = 12$",
+   "$3x + y = 12$",
+   "$x + 3y = 12$",
+   "$3x - y = 12$"
+  ],
+  "answer": "B",
+  "explanation": "The line crosses the y-axis at $(0, 12)$ and the x-axis at $(4, 0)$. Substitute both points. For $3x + y = 12$: $3(0) + 12 = 12$ and $3(4) + 0 = 12$. Both work, so this equation fits the line. You can also read it in slope-intercept form: $y = -3x + 12$, so the line falls 3 acres for each plot and starts at 12 acres.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You used the x-intercept, 4, as the coefficient of $x$. The line passes through $(0, 12)$, but at $x = 4$ it gives $y = -4$, not 0, so it misses the x-intercept."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You computed the slope as run over rise, which gives $-\\frac{1}{3}$ in place of $-3$. This line has intercepts at $(12, 0)$ and $(0, 4)$, not the ones on the graph."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the sign of the intercept wrong. This line passes through $(4, 0)$, but its y-intercept is $-12$ and its slope is positive, while the graphed line falls from $(0, 12)$."
+   }
+  },
+  "id": "orig-equation-from--E-5f32da",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--E-5f32da",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which equation represents the relationship between __var__ and",
+    "equation represents the relationship between __var__ and __var__"
+   ],
+   "residue": 4
+  }
  }
 ]

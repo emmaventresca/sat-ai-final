@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-find-constants-X-20a7de",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,14 +82,416 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-find-constants-X-20c8eb",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the value of $a + b + c$?",
+  "stimulus": "A staffing agency models the average hourly wage, in dollars, of its workers with $f(x) = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants and $x$ is the number of years after 2020. The model gives $f(-2) = 44$, $f(0) = 30$, and $f(3) = 39$.",
+  "choices": [
+   "$-1$",
+   "$13$",
+   "$29$",
+   "$35$"
+  ],
+  "answer": "C",
+  "explanation": "Setting $x = 0$ gives $c = 30$. Substituting $x = -2$ gives $4a - 2b + 30 = 44$, so $2a - b = 7$. Substituting $x = 3$ gives $9a + 3b + 30 = 39$, so $3a + b = 3$. Adding the two equations gives $5a = 10$, so $a = 2$ and $b = -3$. Then $a + b + c = 2 - 3 + 30 = 29$. You can check this another way, because $a + b + c$ is just $f(1) = 2 - 3 + 30 = 29$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found $a + b = -1$ and stopped. The question asks for $a + b + c$, so you still need to add $c = 30$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "When you substituted $x = -2$, you wrote $(-2)^2$ as $-4$. That gives the wrong system, which solves to $a = 10$ and $b = -27$. A negative number squared is positive."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the right size for $b$ but got its sign wrong, using $b = 3$ instead of $-3$. Check it: $f(3)$ would then be $18 + 9 + 30 = 57$, not $39$."
+   }
+  },
+  "id": "orig-find-constants-X-4e6991",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-X-4e6991",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ and __var__ are constants and __var__ is",
+    "and __var__ are constants and __var__ is the",
+    "__var__ are constants and __var__ is the number",
+    "are constants and __var__ is the number of"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $a$?",
+  "stimulus": "An agronomist models the number of weed seedlings, in hundreds, in a test plot $x$ weeks after tilling with $f(x) = a \\cdot b^x + c$, where $a$, $b$, and $c$ are constants. The table shows three values of $f$.\nValues of f\nx | 0 | 1 | 2\nf(x) | 7 | 13 | 31",
+  "choices": [
+   "$3$",
+   "$4$",
+   "$6$",
+   "$7$"
+  ],
+  "answer": "A",
+  "explanation": "Here $x = 0$ does not give $a$ by itself. It gives $a + c = 7$. The other two points give $ab + c = 13$ and $ab^2 + c = 31$. Subtracting the equations in pairs gives $a(b - 1) = 6$ and $ab(b - 1) = 18$. Dividing the second result by the first gives $b = 3$. Then $a \\cdot 2 = 6$, so $a = 3$, and $c = 4$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$4$ is $c$, the constant added on. The question asks for $a$, the coefficient of $b^x$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "$6$ is $a(b - 1)$, the first difference. You still need to divide by $b - 1 = 2$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You took the y-intercept as $a$, which works for $a \\cdot b^x$. Because this function also adds $c$, the y-intercept is $a + c$, not $a$."
+   }
+  },
+  "id": "orig-find-constants-X-8237d7",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-X-8237d7",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "An astronomer models the change in a variable star's brightness, in hundredths of a magnitude, $x$ days after observations begin with $f(x) = a(x - h)^2 + k$, where $a$, $h$, and $k$ are constants. The graph of $y = f(x)$ in the xy-plane passes through $(0, 32)$ and $(2, 0)$ and is symmetric about the line $x = 5$.",
+  "choices": [
+   "$-18$",
+   "$-9$",
+   "$18$",
+   "$32$"
+  ],
+  "answer": "A",
+  "explanation": "The graph is symmetric about $x = 5$, so $h = 5$, and the root at $2$ reflects to a second root at $8$. That means $f(x) = a(x - 2)(x - 8)$. Setting $x = 0$ gives $16a = 32$, so $a = 2$. The vertex value is $k = f(5) = 2(3)(-3) = -18$.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You calculated $(5 - 2)(5 - 8) = -9$ but did not multiply by $a = 2$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated $(5 - 8)$ as $+3$ and lost the negative sign. The graph passes through a root and opens upward, so the vertex must lie below the x-axis."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$32$ is the y-intercept, $f(0)$. $k$ is the y-coordinate of the vertex."
+   }
+  },
+  "id": "orig-find-constants-X-a64cfa",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-X-a64cfa",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation defines $g$?",
+  "stimulus": "A printmaker models the width, in millimeters, of an ink line pressed from a roller with the quadratic function $g$, where $x$ is the distance, in centimeters, from the center of the roller and negative values are to the left. The table shows three values of $g(x)$.\nInk Line Width\nx | -1 | 0 | 2\ng(x) | 6 | 1 | 3",
+  "choices": [
+   "$g(x) = x^2 - x + 1$",
+   "$g(x) = 2x^2 - 3x + 1$",
+   "$g(x) = 3x^2 - 2x + 1$",
+   "$g(x) = 6x^2 - 11x + 1$"
+  ],
+  "answer": "B",
+  "explanation": "Check every point in each choice. For $2x^2 - 3x + 1$: $g(-1) = 2 + 3 + 1 = 6$, $g(0) = 1$, and $g(2) = 8 - 6 + 1 = 3$. It is the only choice that matches all three points.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "This choice matches the points at $x = 0$ and $x = 2$, but $g(-1) = 1 + 1 + 1 = 3$, not $6$. You stopped checking too soon."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "This choice matches the points at $x = -1$ and $x = 0$, but $g(2) = 12 - 4 + 1 = 9$, not $3$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "When you substituted $x = -1$, you wrote $(-1)^2$ as $-1$. That gives $-a - b = 5$ and leads to $a = 6$ and $b = -11$. Check it: $g(-1)$ would then be $18$."
+   }
+  },
+  "id": "orig-find-constants-X-95744c",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-X-95744c",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation defines $P$?",
+  "stimulus": "Ecologists model the number of invasive mussel colonies in a lake $t$ years after a 2018 survey with $P(t) = a \\cdot b^t$, where $a$ and $b$ are positive constants. The model gives $P(2) = 400$ and $P(4) = 625$.",
+  "choices": [
+   "$P(t) = 320(1.25)^t$",
+   "$P(t) = 256(0.25)^t$",
+   "$P(t) = 256(1.5625)^t$",
+   "$P(t) = 256(1.25)^t$"
+  ],
+  "answer": "D",
+  "explanation": "Dividing gives $b^2 = 625/400 = 1.5625$, so $b = 1.25$. Then $a(1.25)^2 = 400$, so $a = 400/1.5625 = 256$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You divided $400$ by $1.25$ only once, which gives $P(1)$. To reach $t = 0$ from $t = 2$, you need to divide twice."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the 25% rate as the multiplier. Growth of 25% means you multiply by $1.25$ each year, not $0.25$."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "$1.5625$ is the growth over two years. Using it as the yearly multiplier puts $625$ at $t = 2$ instead of $t = 4$."
+   }
+  },
+  "id": "orig-find-constants-X-ab7cdb",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-X-ab7cdb",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "where __var__ and __var__ are positive constants the"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the value of $h + k$?",
+  "stimulus": "A health department models weekly clinic visits, in tens, $x$ weeks after October 1 with $f(x) = a(x - h)^2 + k$, where $a$, $h$, and $k$ are constants. The model gives $f(1) = 40$, $f(5) = 56$, and $f(7) = 40$.",
+  "choices": [
+   "$26$",
+   "$58$",
+   "$60$",
+   "$62$"
+  ],
+  "answer": "D",
+  "explanation": "$f(1)$ and $f(7)$ are equal, so the axis of symmetry is halfway between them: $h = 4$. That leaves $9a + k = 40$ and $a + k = 56$. Subtracting gives $8a = -16$, so $a = -2$ and $k = 58$. Then $h + k = 62$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost the negative sign on $a$ and solved $40 = 18 + k$, which gives $k = 22$. Because $a = -2$, the equation is $40 = -18 + k$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "$58$ is $k$ by itself. The question asks for $h + k$, so you still need to add $h = 4$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You treated $f(5) = 56$ as the maximum. The vertex is at $x = 4$, so the peak is higher than $f(5)$."
+   }
+  },
+  "id": "orig-find-constants-X-e719d9",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-X-e719d9",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $a + b$?",
+  "stimulus": "A seismologist models the peak amplitude of a wave, in millimeters, with $f(x) = a \\cdot b^x$, where $a$ and $b$ are positive constants and $x$ is the distance, in hundreds of kilometers, beyond a reference station. Negative $x$ means the station is closer to the source than the reference station. The model gives $f(-1) = 50$ and $f(2) = 6.25$.",
+  "choices": [
+   "$6.375$",
+   "$25.5$",
+   "$50.5$",
+   "$100.5$"
+  ],
+  "answer": "B",
+  "explanation": "Dividing gives $b^3 = 6.25/50 = 0.125$, so $b = 0.5$. Then $a \\cdot (0.5)^{-1} = 50$, which means $2a = 50$ and $a = 25$. So $a + b = 25.5$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the ratio $0.125$ as $b$ without taking the cube root. The two x-values are 3 apart, so $0.125$ is $b^3$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You took $f(-1) = 50$ as the starting value $a$. Only $f(0)$ equals $a$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You handled the negative exponent the wrong way and solved $a = 50/b = 100$. Because $b^{-1} = 2$, the equation is $2a = 50$."
+   }
+  },
+  "id": "orig-find-constants-X-477bf8",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-X-477bf8",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "where __var__ and __var__ are positive constants and",
+    "__var__ and __var__ are positive constants and __var__"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the value of $a + b + c$?",
+  "stimulus": "A sports scientist models a cyclist's power output, in hundreds of watts, with $P(x) = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants and $x$ is the pedaling cadence, in tens of revolutions per minute above 60. The model gives $P(0) = 2$, and the greatest power output, $20$, occurs at $x = 3$.",
+  "choices": [
+   "$-12$",
+   "$10$",
+   "$12$",
+   "$20$"
+  ],
+  "answer": "C",
+  "explanation": "The vertex is $(3, 20)$, so $P(x) = a(x - 3)^2 + 20$. Using $P(0) = 2$ gives $9a + 20 = 2$, so $a = -2$. Expanding gives $P(x) = -2x^2 + 12x + 2$, so $a + b + c = -2 + 12 + 2 = 12$. This is the same as $P(1)$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You expanded $(x - 3)^2$ as $x^2 + 6x + 9$, which gives $b = -12$. The middle term of $(x - 3)^2$ is $-6x$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "$10$ is $a + b$. You still need to add $c = 2$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$20$ is the maximum power output, the vertex value. The question asks for the sum of the coefficients."
+   }
+  },
+  "id": "orig-find-constants-X-2a598f",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-X-2a598f",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ and __var__ are constants and __var__ is",
+    "and __var__ are constants and __var__ is the"
+   ],
+   "residue": 2
+  }
  }
 ]

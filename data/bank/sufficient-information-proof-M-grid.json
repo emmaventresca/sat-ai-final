@@ -216,5 +216,551 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "For what value of $x$ would these facts be enough to prove that line $\\ell$ is parallel to line $m$?",
+  "stimulus": "On a test farm, two irrigation channels run along lines $\\ell$ and $m$, and a straight access road along line $t$ crosses both. Angles 1 and 2 lie between $\\ell$ and $m$ on the same side of $t$. Angle 1 measures $112^\\circ$ and angle 2 measures $(4x + 8)^\\circ$.",
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "Angles 1 and 2 are same-side interior angles: both lie between the two lines, on the same side of the transversal. Lines are parallel when same-side interior angles are supplementary, not when they are equal. So you need $112 + (4x + 8) = 180$, which gives $4x + 8 = 68$. Then $4x = 60$ and $x = 15$.",
+  "common_errors": [
+   {
+    "value": "26",
+    "misconception": "missed-condition",
+    "why": "Treated the same-side interior angles as equal, as if they were alternate interior angles: $4x + 8 = 112$ gives $x = 26$. Equal same-side interior angles do not make the lines parallel."
+   },
+   {
+    "value": "68",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the measure that angle 2 must have and gave it instead of $x$."
+   },
+   {
+    "value": "43",
+    "misconception": "algebra-manipulation",
+    "why": "Set angle 2 alone equal to 180, $4x + 8 = 180$, and left angle 1 out of the sum."
+   }
+  ],
+  "id": "orig-sufficient-inf-M-636aa1",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-M-636aa1",
+   "structure": [],
+   "solver_answer": "15",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What length of $DF$, in centimeters, would make these facts sufficient to prove that triangle $ABC$ is similar to triangle $DEF$, with $A$, $B$, and $C$ corresponding to $D$, $E$, and $F$?",
+  "stimulus": "A printmaker enlarges a triangular woodblock. In triangle $ABC$, $AB = 4$ centimeters, $AC = 7$ centimeters, $BC = 9$ centimeters, and $\\angle A = 50^\\circ$. In triangle $DEF$, $\\angle D = 50^\\circ$ and $DE = 10$ centimeters.",
+  "keys": [
+   "17.5",
+   "35/2"
+  ],
+  "any_of": false,
+  "explanation": "You already have one pair of equal angles, $\\angle A = \\angle D$. For SAS similarity, the two sides that form those angles must be in proportion. Angle $A$ sits between $AB$ and $AC$, and angle $D$ sits between $DE$ and $DF$. The scale factor is $\\frac{DE}{AB} = \\frac{10}{4} = 2.5$, so $DF = 2.5 \\times 7 = 17.5$. Side $BC$ is not next to angle $A$, so it plays no part.",
+  "common_errors": [
+   {
+    "value": "22.5",
+    "misconception": "missed-condition",
+    "why": "Scaled $BC$, which is not next to the equal angle: $2.5 \\times 9 = 22.5$. That is SSA, which does not prove similarity."
+   },
+   {
+    "value": "40/7",
+    "misconception": "algebra-manipulation",
+    "why": "Set up the proportion with the sides in mismatched positions, $\\frac{4}{7} = \\frac{DF}{10}$, which gives $DF = \\frac{40}{7}$."
+   },
+   {
+    "value": "13",
+    "misconception": "algebra-manipulation",
+    "why": "Added the difference $10 - 4 = 6$ to 7 instead of multiplying by the scale factor."
+   },
+   {
+    "value": "2.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Stopped at the scale factor and did not find the side length."
+   }
+  ],
+  "id": "orig-sufficient-inf-M-9930b6",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-M-9930b6",
+   "structure": [],
+   "solver_answer": "17.5",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "For what value of $x$ would these facts be enough to prove that triangle $PQR$ is congruent to triangle $STU$ by ASA?",
+  "stimulus": "A marine biologist cuts two triangular net panels. In triangle $PQR$, $\\angle P = 48^\\circ$ and $\\angle Q = 63^\\circ$. In triangle $STU$, $\\angle T = 63^\\circ$ and $\\angle S = (3x - 6)^\\circ$. Also, $PQ = ST$.",
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "ASA needs two angles and the side between them. Side $PQ$ lies between angles $P$ and $Q$, and side $ST$ lies between angles $S$ and $T$. You already have $PQ = ST$ and $\\angle Q = \\angle T$. The remaining condition is $\\angle S = \\angle P$, so $3x - 6 = 48$. Then $3x = 54$ and $x = 18$.",
+  "common_errors": [
+   {
+    "value": "25",
+    "misconception": "missed-condition",
+    "why": "Found the third angle $\\angle R = 180 - 48 - 63 = 69$ and set $\\angle S$ equal to it. Angle $R$ is not at an end of $PQ$, so the ASA match fails."
+   },
+   {
+    "value": "23",
+    "misconception": "misread-given",
+    "why": "Set $\\angle S$ equal to the $63^\\circ$ angle, $3x - 6 = 63$, instead of the $48^\\circ$ angle."
+   },
+   {
+    "value": "14",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted 6 instead of adding it: $(48 - 6) \\div 3 = 14$."
+   },
+   {
+    "value": "48",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the angle measure that $\\angle S$ needs instead of the value of $x$."
+   }
+  ],
+  "id": "orig-sufficient-inf-M-8e0efb",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-M-8e0efb",
+   "structure": [],
+   "solver_answer": "18",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "that triangle __var__ is congruent to triangle __var__"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "For what value of $x$ would these facts be enough to prove that the two fence lines are parallel?",
+  "stimulus": "In a wetland survey, two fence lines are crossed by a straight transect. Angles $a$ and $b$ are alternate interior angles formed by the transect and the two fence lines. Angle $a$ measures $(5x - 12)^\\circ$ and angle $b$ measures $(3x + 20)^\\circ$.",
+  "keys": [
+   "16"
+  ],
+  "any_of": false,
+  "explanation": "Two lines are parallel when alternate interior angles are equal. Set $5x - 12 = 3x + 20$. Then $2x = 32$, so $x = 16$. Each angle then measures $68^\\circ$.",
+  "common_errors": [
+   {
+    "value": "21.5",
+    "misconception": "missed-condition",
+    "why": "Made the alternate interior angles supplementary, $8x + 8 = 180$. That is the test for same-side interior angles, and it does not show these lines are parallel."
+   },
+   {
+    "value": "68",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the angle measure instead of $x$."
+   },
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "Moved the constants with the wrong sign: $2x = 20 - 12 = 8$."
+   }
+  ],
+  "id": "orig-sufficient-inf-M-7f7b34",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-M-7f7b34",
+   "structure": [],
+   "solver_answer": "16",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What value of $s$ would make the two triangles similar?",
+  "stimulus": "A nutrition scientist designs two triangular food-label graphics. One triangle has sides of 10, 14, and 18 millimeters. The other has sides of 15, 27, and $s$ millimeters.",
+  "keys": [
+   "21"
+  ],
+  "any_of": false,
+  "explanation": "For SSS similarity, all three pairs of corresponding sides must be in the same ratio. Match the sides in order of length. The ratio $15:27 = 5:9$ matches $10:18$, so the scale factor is $\\frac{15}{10} = \\frac{27}{18} = 1.5$. The middle sides must also be in that ratio: $s = 1.5 \\times 14 = 21$.",
+  "common_errors": [
+   {
+    "value": "19",
+    "misconception": "algebra-manipulation",
+    "why": "Added the difference $15 - 10 = 5$ to 14 instead of multiplying by the scale factor."
+   },
+   {
+    "value": "28/3",
+    "misconception": "algebra-manipulation",
+    "why": "Used the scale factor upside down, $14 \\times \\frac{2}{3}$, and shrank the side instead of enlarging it."
+   },
+   {
+    "value": "1.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the scale factor instead of the side length."
+   }
+  ],
+  "id": "orig-sufficient-inf-M-071d06",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-M-071d06",
+   "structure": [],
+   "solver_answer": "21",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What length of $EC$, in centimeters, would be sufficient to prove that $\\overline{DE}$ is parallel to $\\overline{BC}$?",
+  "stimulus": "A paleobotanist traces the triangular outline of a fossil leaf as triangle $ABC$. Point $D$ lies on $\\overline{AB}$ and point $E$ lies on $\\overline{AC}$. $AD = 6$ centimeters, $DB = 4$ centimeters, and $AE = 9$ centimeters.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "A segment that cuts two sides of a triangle in the same ratio is parallel to the third side. You need $\\frac{AD}{DB} = \\frac{AE}{EC}$, so $\\frac{6}{4} = \\frac{9}{EC}$. Cross-multiplying gives $6 \\cdot EC = 36$, so $EC = 6$.",
+  "common_errors": [
+   {
+    "value": "15",
+    "misconception": "wrong-target-quantity",
+    "why": "Used $\\frac{AD}{AB} = \\frac{AE}{AC}$ correctly but gave the whole side $AC = 15$ instead of the piece $EC$."
+   },
+   {
+    "value": "13.5",
+    "misconception": "algebra-manipulation",
+    "why": "Paired the pieces upside down, $\\frac{AD}{DB} = \\frac{EC}{AE}$, which gives $EC = 13.5$."
+   },
+   {
+    "value": "7",
+    "misconception": "algebra-manipulation",
+    "why": "Used a difference instead of a ratio: $AD - DB = 2$, so $EC = 9 - 2$."
+   }
+  ],
+  "id": "orig-sufficient-inf-M-440e98",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-M-440e98",
+   "structure": [],
+   "solver_answer": "6",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "point __var__ lies on __var__ and point __var__",
+    "__var__ lies on __var__ and point __var__ lies",
+    "lies on __var__ and point __var__ lies on",
+    "on __var__ and point __var__ lies on __var__"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "What length of $OD$, in centimeters, would make these facts sufficient to prove that triangle $AOC$ is similar to triangle $BOD$, with $A$, $O$, and $C$ corresponding to $B$, $O$, and $D$?",
+  "stimulus": "On a historical loom, two straight wooden struts $\\overline{AB}$ and $\\overline{CD}$ cross at point $O$. $OA = 6$ centimeters, $OC = 9$ centimeters, and $OB = 10$ centimeters.",
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "The struts cross at $O$, so $\\angle AOC$ and $\\angle BOD$ are vertical angles and therefore equal. That gives you the included angle for SAS similarity. The sides around those angles must be in proportion, using the stated correspondence: $\\frac{OB}{OA} = \\frac{OD}{OC}$. So $\\frac{10}{6} = \\frac{OD}{9}$, and $OD = 15$.",
+  "common_errors": [
+   {
+    "value": "20/3",
+    "misconception": "missed-condition",
+    "why": "Paired $OA$ with $OD$ and $OC$ with $OB$. That proves similarity to triangle $DOB$, not the correspondence asked for."
+   },
+   {
+    "value": "13",
+    "misconception": "algebra-manipulation",
+    "why": "Added the difference $10 - 6 = 4$ to 9 instead of multiplying by $\\frac{10}{6}$."
+   },
+   {
+    "value": "5.4",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied by the scale factor upside down: $9 \\times \\frac{6}{10} = 5.4$."
+   }
+  ],
+  "id": "orig-sufficient-inf-M-c462df",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-M-c462df",
+   "structure": [],
+   "solver_answer": "15",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "For what value of $k$ would these facts be enough to prove that triangle $ABC$ is congruent to triangle $DEF$?",
+  "stimulus": "A sports scientist models two ramp profiles as right triangles $ABC$ and $DEF$, with right angles at $C$ and $F$. $AB = DE = 17$ feet, $BC = 8$ feet, and $AC = 15$ feet. In triangle $DEF$, $EF = (2k - 4)$ feet.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "For right triangles, HL needs the hypotenuses equal and one pair of corresponding legs equal. The hypotenuses already match: $AB = DE = 17$. The statement $ABC \\cong DEF$ pairs $BC$ with $EF$, so you need $2k - 4 = 8$. Then $2k = 12$ and $k = 6$.",
+  "common_errors": [
+   {
+    "value": "9.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Matched $EF$ to the other leg, $AC = 15$, which ignores the correspondence in $ABC \\cong DEF$."
+   },
+   {
+    "value": "10.5",
+    "misconception": "misread-given",
+    "why": "Set $EF$ equal to the hypotenuse, 17, instead of the leg $BC$."
+   },
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted 4 instead of adding it: $(8 - 4) \\div 2 = 2$."
+   }
+  ],
+  "id": "orig-sufficient-inf-M-b5152c",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-M-b5152c",
+   "structure": [],
+   "solver_answer": "6",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "that triangle __var__ is congruent to triangle __var__"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "How many of the numbered statements, each on its own, are sufficient to prove that triangle $ABC$ is similar to triangle $DEF$?",
+  "stimulus": "A paleobotanist compares the triangular outlines of two fossil fern leaflets, modeled as triangle $ABC$ and triangle $DEF$. She has measured that $\\angle A = \\angle D = 40^\\circ$.\n\n1. $\\frac{AB}{DE} = \\frac{AC}{DF}$\n2. $\\frac{AB}{DE} = \\frac{BC}{EF}$\n3. $\\angle B = \\angle E$\n4. $AB = DE$\n5. $\\frac{BC}{EF} = \\frac{AC}{DF}$",
+  "keys": [
+   "2"
+  ],
+  "any_of": false,
+  "explanation": "You already have one pair of equal angles, $\\angle A = \\angle D$. To finish, you need AA (a second pair of equal angles) or SAS~ (the sides on either side of the equal angle in proportion). Test each statement. Statement 1: $AB$ and $AC$ are the two sides that form $\\angle A$, and $DE$ and $DF$ form $\\angle D$, so this is SAS~. It is sufficient. Statement 2: $BC$ is opposite $\\angle A$, so the equal angle is not between these sides. That is SSA, which does not prove similarity. Statement 3: a second pair of equal angles gives AA. It is sufficient. Statement 4: one pair of equal sides says nothing about the shape. Statement 5: $BC$ and $AC$ form $\\angle C$, not $\\angle A$, so this is SSA again and not sufficient. Two statements, 1 and 3, are sufficient.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "missed-condition",
+    "why": "You accepted statements 2 and 5 because the sides are in proportion, without checking that the known equal angle sits between them (SSA)."
+   },
+   {
+    "value": "3",
+    "misconception": "complement-or-direction-flip",
+    "why": "You counted the statements that are NOT sufficient (2, 4 and 5) instead of the ones that are."
+   }
+  ],
+  "id": "orig-sufficient-inf-M-c7b7b4",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-M-c7b7b4",
+   "structure": [],
+   "solver_answer": "2",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __num__ __var__ __num__ __var__ __num__ __var__ __num__",
+    "__var__ __num__ __var__ __num__ __var__ __num__ __var__ __num__",
+    "are sufficient to prove that triangle __var__ is"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which numbered statement, on its own, is sufficient to prove that line $\\ell$ is parallel to line $m$?\n\nIf there is more than one correct answer, enter only one.",
+  "stimulus": "An astronomer models two rays of starlight entering a telescope as lines $\\ell$ and $m$. A line $t$ crosses $\\ell$ at point $P$ and crosses $m$ at point $Q$. The four angles at $P$ are numbered 1 (upper left), 2 (upper right), 3 (lower left) and 4 (lower right). The four angles at $Q$ are numbered 5, 6, 7 and 8 in the same positions.\n\nStatement 1: $\\angle 1 = \\angle 4$\nStatement 2: $\\angle 3 = \\angle 6$\nStatement 3: $m\\angle 1 + m\\angle 2 = 180^\\circ$\nStatement 4: $m\\angle 4 + m\\angle 6 = 180^\\circ$\nStatement 5: $\\angle 1 = \\angle 5$",
+  "keys": [
+   "2",
+   "4",
+   "5"
+  ],
+  "any_of": true,
+  "explanation": "To prove that two lines are parallel, you need a pair of corresponding angles that are equal, a pair of alternate interior angles that are equal, or a pair of same-side interior angles that add to $180^\\circ$. The angle pairs must be at different intersections. Statement 1 compares vertical angles at $P$, which are always equal, so it proves nothing. Statement 3 is a linear pair at $P$, which always adds to $180^\\circ$, so it also proves nothing. Statement 2 pairs $\\angle 3$ and $\\angle 6$, which are alternate interior angles, so they are equal only when the lines are parallel. Statement 4 pairs $\\angle 4$ and $\\angle 6$, which are same-side interior angles, so a sum of $180^\\circ$ proves the lines are parallel. Statement 5 pairs $\\angle 1$ and $\\angle 5$, which are corresponding angles. Any of 2, 4 or 5 is correct.",
+  "common_errors": [
+   {
+    "value": "1",
+    "misconception": "missed-condition",
+    "why": "You chose a pair of vertical angles. They are equal whenever two lines cross, so they cannot show anything about line $m$."
+   },
+   {
+    "value": "3",
+    "misconception": "missed-condition",
+    "why": "You chose a linear pair. Those angles add to $180^\\circ$ on any line, so the pair does not involve line $m$ at all."
+   }
+  ],
+  "id": "orig-sufficient-inf-M-e2932a",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "review",
+  "verification": {
+   "id": "orig-sufficient-inf-M-e2932a",
+   "structure": [],
+   "solver_answer": "5",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": true,
+   "second_defensible": "2",
+   "problem": null,
+   "overlap": [
+    "line __var__ is parallel to line __var__ if"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "How many of the numbered statements, each on its own, are sufficient to prove that triangle $PQR$ is congruent to triangle $STU$?",
+  "stimulus": "A nutrition scientist designs two triangular food-label icons, triangle $PQR$ and triangle $STU$. In these triangles, $PQ = ST$ and $QR = TU$.\n\n1. $\\angle Q = \\angle T$\n2. $\\angle P = \\angle S$\n3. $PR = SU$\n4. $\\angle R = \\angle U$\n5. $\\angle P = \\angle S$ and $\\angle R = \\angle U$",
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "You already have two pairs of equal sides. To finish, you need either the included angle (SAS) or the third side (SSS). The included angle is the one between $PQ$ and $QR$, which is $\\angle Q$, and it matches $\\angle T$. Statement 1 gives the included angle, so SAS applies and it is sufficient. Statement 2: $\\angle P$ is not between the two known sides, so this is SSA and not sufficient. Statement 3 gives the third side, so SSS applies and it is sufficient. Statement 4: $\\angle R$ is not between the known sides either, so this is SSA again. Statement 5: if two pairs of angles are equal, the third pair must be equal too, because each triangle's angles add to $180^\\circ$. So $\\angle Q = \\angle T$, SAS applies, and it is sufficient. Three statements are sufficient: 1, 3 and 5.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "missed-condition",
+    "why": "You accepted statements 2 and 4 even though the equal angle is not between the two known sides (SSA)."
+   },
+   {
+    "value": "2",
+    "misconception": "complement-or-direction-flip",
+    "why": "You counted the statements that are NOT sufficient (2 and 4) instead of the ones that are."
+   }
+  ],
+  "id": "orig-sufficient-inf-M-2b7117",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-M-2b7117",
+   "structure": [],
+   "solver_answer": "3",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __num__ __var__ __num__ __var__ __num__ __var__ __num__",
+    "__var__ __num__ __var__ __num__ __var__ __num__ __var__ __num__",
+    "are sufficient to prove that triangle __var__ is",
+    "that triangle __var__ is congruent to triangle __var__"
+   ],
+   "residue": 3
+  }
  }
 ]

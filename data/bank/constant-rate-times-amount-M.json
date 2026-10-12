@@ -243,5 +243,641 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the greatest number of participants who can each receive their full daily amount from one container?",
+  "stimulus": "In a nutrition study, each participant must receive at least 35 grams of protein powder per day. The powder comes in containers that each hold 2.5 kilograms. (1 kilogram = 1,000 grams)",
+  "choices": [
+   "7",
+   "71",
+   "72",
+   "87"
+  ],
+  "answer": "B",
+  "explanation": "First convert the container to grams: $2.5 \\text{ kg} \\times \\frac{1{,}000 \\text{ g}}{1 \\text{ kg}} = 2{,}500 \\text{ g}$. You want a count, so divide the total by the rate per person: $\\frac{2{,}500 \\text{ g}}{35 \\text{ g per participant}} \\approx 71.4$ participants. A 72nd participant would get less than 35 grams, so you round down. The container can supply at most 71 participants.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You converted 2.5 kilograms to 250 grams instead of 2,500 grams, so you divided $250 \\div 35 \\approx 7.1$. Multiply by 1,000 to go from kilograms to grams."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You found $2{,}500 \\div 35 \\approx 71.4$ and rounded up. The 72nd participant would get less than the required 35 grams, so the answer has to be rounded down to a whole count."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $2.5 \\times 35 = 87.5$ when you needed to divide. Look at the units: kilograms times grams per participant doesn't give a number of participants. Grams divided by grams per participant does."
+   }
+  },
+  "id": "orig-constant-rate--M-a230fb",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--M-a230fb",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "C",
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the number of minutes the machine needs to bring the film to a total thickness of $t$ nanometers, where $t > 40$?",
+  "stimulus": "A coating machine adds a ceramic film to a metal sample at a constant rate of 12 nanometers per minute. Before the machine starts, the sample already has a film 40 nanometers thick.",
+  "choices": [
+   "$\\frac{t-40}{12}$",
+   "$\\frac{t}{12}$",
+   "$12(t-40)$",
+   "$\\frac{t}{12}-40$"
+  ],
+  "answer": "A",
+  "explanation": "The machine only has to add the film that isn't there yet, which is $t-40$ nanometers. Time equals amount divided by rate. Dividing nanometers by nanometers per minute leaves minutes, so the time is $\\frac{t-40}{12}$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You divided the whole target thickness by the rate and ignored the 40 nanometers already on the sample. This is the time to build the film from bare metal, not the time to finish this one."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by the rate when you should have divided. Nanometers times nanometers per minute gives nanometers squared per minute, not minutes. Checking the units would have caught this."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You took 40 away after dividing, so you subtracted a thickness from a time. The 40 nanometers has to come off the thickness before you divide by the rate."
+   }
+  },
+  "id": "orig-constant-rate--M-3c65b4",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--M-3c65b4",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the amount, in dollars, the printmaker receives for the prints pulled in $h$ hours, after the fee is taken off?",
+  "stimulus": "A printmaker pulls linocut prints at a constant rate of 18 prints per hour and sells every print for $6. The gallery takes a single flat fee of $40 from the total sales.",
+  "choices": [
+   "$6(18h)-40$",
+   "$6(18h)$",
+   "$18h-40$",
+   "$(6 \\cdot 18-40)h$"
+  ],
+  "answer": "A",
+  "explanation": "In $h$ hours the printmaker pulls $18h$ prints. At $6 each, that comes to $6(18h)$ dollars. The gallery's fee is taken off once, so the amount received is $6(18h)-40$.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is the total sales before the gallery's fee. You stopped one step early, so reread the last line of the question: it asks for the amount after the fee."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$18h$ is the number of prints, not dollars. You subtracted a fee in dollars from a count of prints without first multiplying by the $6 price."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the $40 inside the hourly amount, so the fee gets charged once for every hour. The fee is a single flat amount taken from the total."
+   }
+  },
+  "id": "orig-constant-rate--M-0f2fdc",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--M-0f2fdc",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the worker's pay, in U.S. dollars, for $h$ hours of work?",
+  "stimulus": "A contract worker in Canada is paid 42 Canadian dollars per hour. At the current exchange rate, 1 U.S. dollar is equal to 1.4 Canadian dollars.",
+  "choices": [
+   "$\\frac{42h}{1.4}$",
+   "$42(1.4)h$",
+   "$42h$",
+   "$\\frac{1.4h}{42}$"
+  ],
+  "answer": "A",
+  "explanation": "For $h$ hours the worker earns $42h$ Canadian dollars. To convert, multiply by $\\frac{1 \\text{ U.S. dollar}}{1.4 \\text{ Canadian dollars}}$. The Canadian dollars cancel, and you get $\\frac{42h}{1.4}$ U.S. dollars.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by 1.4 when you should have divided. With the units written in, Canadian dollars times Canadian dollars per U.S. dollar don't cancel, so this setup can't give U.S. dollars."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is the pay in Canadian dollars before conversion. You worked out the total but didn't do the last step the question asks for."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You put the wage in the denominator and the exchange rate in the numerator, so the chain is upside down. The 42 Canadian dollars per hour must multiply the hours, and the 1.4 goes in the denominator."
+   }
+  },
+  "id": "orig-constant-rate--M-cc2260",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--M-cc2260",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the runner drinks at this rate for the entire run and begins with a full pack, how many liters of water are left in the pack at the end of the run?",
+  "stimulus": "A coach tells a marathon runner to drink 150 milliliters of water every 20 minutes during a training run. The runner's hydration pack holds 2 liters, and the run lasts 2.5 hours. ($1 \\text{ liter} = 1{,}000 \\text{ milliliters}$)",
+  "choices": [
+   "$0.875$",
+   "$1.125$",
+   "$1.550$",
+   "$1.625$"
+  ],
+  "answer": "A",
+  "explanation": "There are $\\frac{2.5 \\text{ hours} \\times 60 \\text{ minutes/hour}}{20 \\text{ minutes}} = 7.5$ twenty-minute intervals in the run, so the runner drinks $7.5 \\times 150 = 1{,}125$ milliliters, which is $1.125$ liters. The pack started with $2$ liters, so $2 - 1.125 = 0.875$ liters are left. To check by working backward, $2 - 0.875 = 1.125$ liters drunk, and that matches the rate.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is how much water the runner drinks. The question asks how much is left, so you stopped before subtracting from the 2 liters."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You worked out one hour of drinking ($450$ mL) and subtracted that from 2 liters. The run lasts 2.5 hours, not 1."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You read the rate as 150 milliliters per hour instead of per 20 minutes, so you got $150 \\times 2.5 = 375$ mL drunk and $2 - 0.375 = 1.625$ liters left."
+   }
+  },
+  "id": "orig-constant-rate--M-532a93",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--M-532a93",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the maximum number of buckets the team can completely fill with the soil from this section?",
+  "stimulus": "An archaeology team carries soil from a trench to a sifting screen in buckets. Each bucket holds 12 liters, and the trench section contains 1.3 cubic meters of soil. ($1 \\text{ cubic meter} = 1{,}000 \\text{ liters}$)",
+  "choices": [
+   "$10$",
+   "$108$",
+   "$109$",
+   "$1{,}083$"
+  ],
+  "answer": "B",
+  "explanation": "First convert: $1.3 \\text{ m}^3 \\times 1{,}000 \\text{ L/m}^3 = 1{,}300$ liters. Then divide by the bucket size: $1{,}300 \\div 12 \\approx 108.3$. Only complete buckets count, so round down to $108$. To check the choices, $108 \\times 12 = 1{,}296$ liters fits in the soil available, but $109 \\times 12 = 1{,}308$ liters is more than the section holds.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You converted with 100 liters per cubic meter instead of 1,000. That gives $130 \\div 12 \\approx 10.8$, which is off by a factor of ten."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You rounded $108.3$ up. The 109th bucket would need $1{,}308$ liters, but there are only $1{,}300$, so it can't be filled completely."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You converted with 10,000 liters per cubic meter. That gives $13{,}000 \\div 12 \\approx 1{,}083$, which is ten times too many buckets."
+   }
+  },
+  "id": "orig-constant-rate--M-4d9014",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--M-4d9014",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the crew continues at this rate, how many more days will it take to finish painting the lane?",
+  "stimulus": "A city crew paints a new bike lane at a constant rate of 0.6 kilometer per day. The finished lane will be 9 kilometers long, and the crew has already painted 2.4 kilometers of it.",
+  "choices": [
+   "$3.96$",
+   "$4$",
+   "$11$",
+   "$15$"
+  ],
+  "answer": "C",
+  "explanation": "The crew still has $9 - 2.4 = 6.6$ kilometers to paint. Time is distance divided by rate: $6.6 \\text{ km} \\div 0.6 \\text{ km/day} = 11$ days. The kilometers cancel and leave days. To check, $11 \\times 0.6 = 6.6$ kilometers, and $2.4 + 6.6 = 9$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $6.6 \\times 0.6$ when you should have divided. The units would come out as km\u00b2/day, which is not a number of days."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$2.4 \\div 0.6 = 4$ is the number of days the crew has already worked, not the number of days still to go."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$9 \\div 0.6 = 15$ is the time for the whole lane. You didn't take off the 2.4 kilometers that are already painted."
+   }
+  },
+  "id": "orig-constant-rate--M-328e4b",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--M-328e4b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A cartography team scans paper map sheets into a digital archive at a constant rate of 12 sheets per hour. A county atlas has 150 sheets, and the team has already scanned 42 of them.",
+  "choices": [
+   "Scanning the remaining sheets will take 9 hours.",
+   "Scanning the remaining sheets will take 12.5 hours.",
+   "Scanning the remaining sheets will take 3.5 hours.",
+   "Scanning the remaining sheets will take $\\frac{1}{9}$ hour."
+  ],
+  "answer": "A",
+  "explanation": "First find how many sheets are left: $150 - 42 = 108$ sheets. Time = amount \u00f7 rate, so $108 \\text{ sheets} \\div 12 \\text{ sheets/hour} = 9$ hours. The units check it: sheets \u00f7 (sheets per hour) leaves hours.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You divided the whole atlas, $150 \\div 12 = 12.5$, and ignored that 42 sheets were already scanned. The question asks only about the sheets that remain."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $42 \\div 12 = 3.5$, the time the team has already spent. That comes from the same setup but measures the finished work, not the remaining work."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the rate by the amount, $12 \\div 108 = \\frac{1}{9}$, instead of the amount by the rate. Write the units down: sheets/hour \u00f7 sheets gives 'per hour', not hours."
+   }
+  },
+  "id": "orig-constant-rate--M-e2132b",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--M-e2132b",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "At 9:00 p.m., a weather station recorded 4 inches of snow on the ground. Snow then fell at a constant rate of 1.5 inches per hour until 3:00 a.m., and none melted.",
+  "choices": [
+   "The snow depth at 3:00 a.m. was 9 inches.",
+   "The snow depth at 3:00 a.m. was 13 inches.",
+   "The snow depth at 3:00 a.m. was 8 inches.",
+   "The snow depth at 3:00 a.m. was 14.5 inches."
+  ],
+  "answer": "B",
+  "explanation": "From 9:00 p.m. to 3:00 a.m. is 6 hours. New snow = rate \u00d7 time = $1.5 \\text{ in/hour} \\times 6 \\text{ hours} = 9$ inches. Add the 4 inches already on the ground: $4 + 9 = 13$ inches.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "9 inches is only the snow that fell overnight. You stopped before adding the 4 inches that were already on the ground at 9:00 p.m."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided, $6 \\div 1.5 = 4$, and then added 4. Hours \u00f7 (inches per hour) doesn't leave inches. The units tell you to multiply."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You counted 7 hours (9, 10, 11, 12, 1, 2, 3) when there are only 6. That gives $4 + 1.5 \\times 7 = 14.5$. Count the gaps between the times, not the clock readings."
+   }
+  },
+  "id": "orig-constant-rate--M-da11f1",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--M-da11f1",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A wildlife refuge covers 128 acres. Its managers require at least 2.5 acres of habitat per deer. The refuge currently has 38 deer.",
+  "choices": [
+   "The refuge can take in at most 13 more deer.",
+   "The refuge can take in at most 14 more deer.",
+   "The refuge can take in at most 51 more deer.",
+   "The refuge can take in at most 282 more deer."
+  ],
+  "answer": "A",
+  "explanation": "Count = total \u00f7 rate: $128 \\text{ acres} \\div 2.5 \\text{ acres/deer} = 51.2$ deer. You can't have part of a deer, and 52 deer would give each one less than 2.5 acres, so round down to 51. The refuge already has 38, so it can take in $51 - 38 = 13$ more.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You rounded 51.2 up to 52. But 52 deer would need $52 \\times 2.5 = 130$ acres, which breaks the 'at least 2.5 acres per deer' rule. For a maximum count, round down."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "51 is the refuge's total capacity. You didn't subtract the 38 deer already living there, and the question asks how many more it can take in."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied, $128 \\times 2.5 = 320$, and then subtracted 38. Acres \u00d7 (acres per deer) gives square acres per deer, which makes no sense. Acres \u00f7 (acres per deer) gives deer."
+   }
+  },
+  "id": "orig-constant-rate--M-5fb0fb",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--M-5fb0fb",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In this context, what does 8 represent?",
+  "stimulus": "Six volunteers are replanting a marsh with sedge plugs. Each volunteer plants at a constant rate of 40 plugs per hour. The marsh needs 1,920 plugs. A coordinator computes $\\frac{1{,}920}{6 \\times 40} = 8$.",
+  "choices": [
+   "The number of hours the six volunteers need to plant all the plugs",
+   "The number of hours one volunteer needs to plant all the plugs",
+   "The number of plugs the six volunteers plant together in one hour",
+   "The number of minutes the six volunteers need to plant all the plugs"
+  ],
+  "answer": "A",
+  "explanation": "The denominator, $6 \\times 40 = 240$, is the team's combined rate in plugs per hour. Dividing a total by a rate gives a time: $\\frac{1{,}920 \\text{ plugs}}{240 \\text{ plugs/hour}} = 8$ hours. Plugs cancel and hours are left, so 8 is the number of hours the whole team needs to plant all the plugs.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You overlooked the 6 in the denominator. One volunteer working alone would divide by 40 only, which gives $\\frac{1{,}920}{40} = 48$ hours. The expression divides by the team's combined rate, so 8 is the team's time, not one person's."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You described the denominator, not the result. The team plants $6 \\times 40 = 240$ plugs per hour. That is a step on the way, and the full expression goes on to divide the total by it."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You read the rate as 40 plugs per minute. It is 40 plugs per hour, so when the plugs cancel, hours are left, not minutes."
+   }
+  },
+  "id": "orig-constant-rate--M-b0b525",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--M-b0b525",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In this context, what does 6 represent?",
+  "stimulus": "A dietitian recommends that an athlete eat 1.5 grams of protein per kilogram of body mass each day. The athlete has a mass of 80 kilograms, and each protein bar contains 20 grams of protein. The dietitian computes $\\frac{1.5 \\times 80}{20} = 6$.",
+  "choices": [
+   "The number of grams of protein the athlete should eat each day",
+   "The number of bars that supply the athlete's daily recommended protein",
+   "The number of bars per kilogram of body mass the athlete needs daily",
+   "The number of grams of protein contained in each bar the athlete eats"
+  ],
+  "answer": "B",
+  "explanation": "The numerator, $1.5 \\times 80 = 120$, is the athlete's daily protein target in grams. Dividing that total by the amount in each bar gives a count: $\\frac{120 \\text{ g}}{20 \\text{ g/bar}} = 6$ bars. Grams cancel and bars are left, so 6 is the number of bars that would supply a full day's recommended protein.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at the numerator. The daily target is $1.5 \\times 80 = 120$ grams. The expression then divides by 20 grams per bar, which turns grams into a number of bars."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You attached the 'per kilogram' wording to the answer. The 80 kilograms multiplies out of the expression, so the result is a total number of bars for the athlete, not a rate for each kilogram."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You confused the result with a given value. The problem states that each bar has 20 grams of protein. The 6 comes from dividing by that amount, so it counts bars, not grams."
+   }
+  },
+  "id": "orig-constant-rate--M-30a04a",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--M-30a04a",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In this context, what does 25 represent?",
+  "stimulus": "A crew is paving a 12-kilometer road at a constant rate of 0.4 kilometer per day. The crew has already paved 2 kilometers. An engineer computes $\\frac{12 - 2}{0.4} = 25$.",
+  "choices": [
+   "The number of days the crew needs to pave the entire road",
+   "The number of kilometers of road the crew has left to pave",
+   "The number of days the crew needs to pave the remaining road",
+   "The number of days the crew has already spent paving the road"
+  ],
+  "answer": "C",
+  "explanation": "The numerator, $12 - 2 = 10$, is the distance still unpaved, in kilometers. Dividing a distance by a rate gives a time: $\\frac{10 \\text{ km}}{0.4 \\text{ km/day}} = 25$ days. Kilometers cancel and days are left, so 25 is the number of days needed to finish the road that is still unpaved.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You overlooked the subtraction. Paving the whole road would take $\\frac{12}{0.4} = 30$ days. The expression subtracts the 2 kilometers already paved, so it counts only the days still needed."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You described the numerator. The unpaved distance is $12 - 2 = 10$ kilometers. Dividing that by 0.4 kilometer per day changes the units from kilometers to days."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You reversed the timeline. The time already spent would come from the 2 kilometers already paved: $\\frac{2}{0.4} = 5$ days. The expression uses the distance still left, so it gives the time ahead, not the time behind."
+   }
+  },
+  "id": "orig-constant-rate--M-f5ec8c",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--M-f5ec8c",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

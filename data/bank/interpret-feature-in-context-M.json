@@ -404,5 +404,509 @@
    "residue": 1
   },
   "phrasing": "in_context"
+ },
+ {
+  "stem": "Which of the following is the best interpretation of the number 18 in this context?",
+  "stimulus": "During a drought, the volume of water in a reservoir, $V$, in millions of cubic meters, $t$ days after the drought began is modeled by $V(t) = 0.02(t - 40)^2 + 18$ for $0 \\le t \\le 80$.",
+  "choices": [
+   "The reservoir held 18 million cubic meters of water when the drought began.",
+   "The least volume of water in the reservoir during this period was 18 million cubic meters.",
+   "The reservoir reached its least volume of water 18 days after the drought began.",
+   "The greatest volume of water in the reservoir during this period was 18 million cubic meters."
+  ],
+  "answer": "B",
+  "explanation": "The model is in vertex form, $a(t - h)^2 + k$, so its vertex is $(40, 18)$. Because $a = 0.02$ is positive, the parabola opens upward and the vertex is a minimum. The output is volume, so 18 is the smallest volume the reservoir reached: 18 million cubic meters, 40 days into the drought.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated the constant $k$ as the y-intercept. The starting volume is $V(0) = 0.02(1600) + 18 = 50$ million cubic meters, not 18. In vertex form, $k$ is the y-coordinate of the vertex."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the input and the output. The 18 is a volume (the output). The time when the minimum happens is the 40 inside the parentheses."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the vertex but got its direction wrong. Since $a = 0.02$ is positive, the parabola opens upward, so the vertex is a minimum, not a maximum."
+   }
+  },
+  "id": "orig-interpret-feat-M-6027cc",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-M-6027cc",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "following is the best interpretation of the number"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of the number 0.75 in this context?",
+  "stimulus": "After a large earthquake, a seismologist models the number of aftershocks recorded on day $d$ after the main shock as $N(d) = 640(0.75)^d$.",
+  "choices": [
+   "Each day, the number of aftershocks recorded is 75% less than on the day before.",
+   "Each day, the number of aftershocks recorded is 75% of the number on the day before.",
+   "Each day, the number of aftershocks recorded is 0.75 fewer than on the day before.",
+   "Each day, the number of aftershocks recorded is 75% greater than on the day before."
+  ],
+  "answer": "B",
+  "explanation": "In $y = a \\cdot b^x$, $b$ is the number you multiply by each step. Here $b = 0.75$, so each day's count is the previous day's count times 0.75, which is 75% of it. Put another way, the count drops by 25% per day.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You mixed up the multiplier with the percent change. Multiplying by 0.75 keeps 75% and removes 25%. A 75% decrease would mean multiplying by 0.25."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the base of an exponential as an amount subtracted each day, which describes a linear model. In an exponential model, the base is a factor you multiply by each step."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You got the direction wrong. A base less than 1 means decay, not growth. A 75% increase would need a base of 1.75."
+   }
+  },
+  "id": "orig-interpret-feat-M-e7da2e",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-M-e7da2e",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "following is the best interpretation of the number"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of the number 5 in this context?",
+  "stimulus": "A test probe is launched straight up from a platform on the surface of a moon. Its height above the surface, $h$, in meters, $t$ seconds after launch is modeled by $h(t) = -0.8t^2 + 32t + 5$.",
+  "choices": [
+   "The probe was launched from a height of 5 meters above the surface.",
+   "The probe reached a maximum height of 5 meters above the surface.",
+   "The probe returned to the surface 5 seconds after it was launched.",
+   "The probe's height increased by 5 meters during each second of flight."
+  ],
+  "answer": "A",
+  "explanation": "In standard form, $c$ is the y-intercept: $h(0) = 5$. The input 0 means 0 seconds after launch, and the output is height in meters. So the probe was 5 meters above the surface at the moment it was launched.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the starting value the meaning of the vertex. The maximum is at $t = 20$, where $h = 325$ meters. The 5 is the height at launch."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You reversed the roles. The 5 is an output (height) when the input is 0, not an input (time) when the height is 0. Landing time is an x-intercept, not the constant term."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the constant as a rate of change, as you would a slope in a linear model. A constant term adds nothing per second. It is the value of $h$ when $t = 0$."
+   }
+  },
+  "id": "orig-interpret-feat-M-5f57d4",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-M-5f57d4",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "following is the best interpretation of the number"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which equation represents this situation?",
+  "stimulus": "A city models the daily ridership on a new tram line with the function $R(w) = -(w - 10)^2 + 125$. Here $R(w)$ is the number of riders per day, in hundreds, $w$ weeks after the line opened. Five weeks after opening, the line carried 10,000 riders per day.",
+  "choices": [
+   "$R(100) = 5$",
+   "$R(5) = 100$",
+   "$R(5) = 10{,}000$",
+   "$R(5) = 125$"
+  ],
+  "answer": "B",
+  "explanation": "A point on the model means \"output equals y when input equals x.\" The input is weeks, so $w = 5$. The output is counted in hundreds of riders, so 10,000 riders is $R(w) = 100$. That makes the statement $R(5) = 100$. You can check it against the model: $-(5 - 10)^2 + 125 = -25 + 125 = 100$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You swapped the input and the output. In this equation 100 weeks is the input and 5 is the ridership, which is backwards. Weeks go inside the parentheses and ridership is the value of the function."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You put the weeks in the right place, but you used the ridership as a raw count. $R(w)$ is measured in hundreds of riders, so 10,000 riders has to be written as 100."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "125 is the constant from vertex form. It is the greatest ridership the model reaches, in hundreds, and that happens at week 10. It is not the ridership at week 5, so you read the vertex value as the value at the point you were given."
+   }
+  },
+  "id": "orig-interpret-feat-M-6d4c67",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-M-6d4c67",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation represents this situation?",
+  "stimulus": "An agronomist models the weed seeds in a field's soil with the function $S(t) = 48{,}000(0.75)^t$. Here $S(t)$ is the number of seeds per square meter $t$ years after a cover-crop program began. The agronomist found 27,000 seeds per square meter 24 months after the program began.",
+  "choices": [
+   "$S(27{,}000) = 2$",
+   "$S(24) = 27{,}000$",
+   "$S(0) = 27{,}000$",
+   "$S(2) = 27{,}000$"
+  ],
+  "answer": "D",
+  "explanation": "The input $t$ is measured in years, so 24 months has to be converted to $t = 2$. The output is the seed count, 27,000 per square meter, so the statement is $S(2) = 27{,}000$. You can check it: $48{,}000(0.75)^2 = 48{,}000(0.5625) = 27{,}000$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You reversed the input and the output. The time goes inside the parentheses and the seed count is what the function gives back, not the other way round."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used 24 as the input without changing the units. The model counts time in years, so 24 months is $t = 2$, not $t = 24$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$S(0)$ is the seed count when the program began, which is 48,000 here. The 27,000 was measured two years later, so it is not the starting value."
+   }
+  },
+  "id": "orig-interpret-feat-M-fbcb49",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-M-fbcb49",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation represents this situation?",
+  "stimulus": "A gannet leaves a cliff ledge, climbs, then dives. Its height above the sea, in meters, $t$ seconds after it leaves the ledge is modeled by $h(t) = -2(t - 8)(t + 2)$. The gannet reaches the water's surface 8 seconds after leaving the ledge.",
+  "choices": [
+   "$h(8) = 0$",
+   "$h(0) = 8$",
+   "$h(8) = 32$",
+   "$h(3) = 0$"
+  ],
+  "answer": "A",
+  "explanation": "Reaching the water's surface means the height is 0 meters, which is an x-intercept of the model. That happens when $t = 8$ seconds, so the statement is $h(8) = 0$. The factored form shows it directly, because the factor $(t - 8)$ is 0 when $t = 8$.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You swapped the roles of time and height. $h(0) = 8$ says the bird is 8 meters high at the moment it leaves the ledge, which is a different claim. Time goes inside the parentheses and height is the output."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "32 meters is the y-intercept: $h(0) = -2(-8)(2) = 32$, which is the height of the ledge. At the water's surface the height is 0, not the starting height."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$t = 3$ is halfway between the roots $-2$ and 8, so it is the time of the vertex. That is when the gannet is highest, not when it reaches the water."
+   }
+  },
+  "id": "orig-interpret-feat-M-9c3432",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-M-9c3432",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of $0.5$ in this context?",
+  "stimulus": "Some time after a booster shot, a patient's antibody level starts to fall. The function $A(t) = 640(0.5)^{t/30}$ gives the level, in units per milliliter, $t$ days after the level began to fall.",
+  "choices": [
+   "The antibody level falls by $0.5$ units per milliliter every 30 days.",
+   "The antibody level is cut in half every 30 days.",
+   "The antibody level is cut in half every day.",
+   "The antibody level is $0.5$ units per milliliter after 30 days."
+  ],
+  "answer": "B",
+  "explanation": "In $a \\cdot b^{\\text{exponent}}$, the base $b$ is the number you multiply by each time the exponent goes up by 1. Here the exponent is $t/30$, which goes up by 1 each time $t$ goes up by 30. So every 30 days the level is multiplied by $0.5$. Multiplying by $0.5$ cuts the level in half. You can check it: $A(0) = 640$ and $A(30) = 320$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the base as an amount subtracted each period, which would make the model linear. An exponential base is a multiplier. The level drops by half of whatever it is, not by a fixed $0.5$ units."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You saw that $0.5$ means halving but ignored the $/30$ in the exponent. The exponent goes up by 1 only once every 30 days, so the halving happens every 30 days, not every day."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You took the base as an output value. After 30 days the level is $640(0.5) = 320$ units per milliliter, not $0.5$. The $0.5$ is the multiplier, not a level the antibodies reach."
+   }
+  },
+  "id": "orig-interpret-feat-M-1f04b3",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-M-1f04b3",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of $45$ in this context?",
+  "stimulus": "A nutrition researcher models a volunteer's blood glucose after a meal with $G(t) = -0.02(t - 45)^2 + 140$. Here $G(t)$ is the glucose level, in milligrams per deciliter, $t$ minutes after the volunteer finishes eating.",
+  "choices": [
+   "The highest glucose level reached after the meal is $45$ milligrams per deciliter.",
+   "The glucose level is $45$ milligrams per deciliter when the volunteer finishes eating.",
+   "The glucose level reaches its highest value $45$ minutes after the volunteer finishes eating.",
+   "The glucose level reaches its lowest value $45$ minutes after the volunteer finishes eating."
+  ],
+  "answer": "C",
+  "explanation": "The model is in vertex form, $a(t - h)^2 + k$, so its vertex is $(45, 140)$. The coefficient $-0.02$ is negative, which means the parabola opens downward and the vertex is a maximum. The $45$ sits in the input position, and the input is minutes after eating. So $45$ is the time when glucose is highest. The highest level itself is $140$ milligrams per deciliter.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the input and the output. In $(t - 45)^2$, the $45$ is a time in minutes. The highest glucose level is the other vertex coordinate, $140$ milligrams per deciliter."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated $45$ as the y-intercept. The level when eating ends is $G(0) = -0.02(2025) + 140 = 99.5$ milligrams per deciliter. In vertex form, the constants give the vertex, not the intercept."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the right time but the wrong kind of turning point. Because $a = -0.02$ is negative, the parabola opens downward, so the vertex is a maximum, not a minimum."
+   }
+  },
+  "id": "orig-interpret-feat-M-e2819d",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-M-e2819d",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of the point $(10, 0)$ in this context?",
+  "stimulus": "An ecologist models the number of invasive beetles in a forest plot with $P(t) = -5t^2 + 20t + 300$. Here $P(t)$ is the number of beetles $t$ years after the study began. The graph of $y = P(t)$ in the $ty$-plane passes through the point $(10, 0)$.",
+  "choices": [
+   "The beetle population in the plot is $0$ beetles $10$ years after the study began.",
+   "The beetle population in the plot is $10$ beetles at the time the study began.",
+   "The beetle population in the plot is at its greatest $10$ years after the study began.",
+   "The beetle population in the plot decreases by $10$ beetles each year after the study began."
+  ],
+  "answer": "A",
+  "explanation": "A point $(t, y)$ on the graph means that $t$ years after the study began, there are $y$ beetles. In $(10, 0)$, the input is $t = 10$ years and the output is $0$ beetles. You can check it: $P(10) = -500 + 200 + 300 = 0$. This is the x-intercept, the time when the population reaches zero.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You reversed the roles of the coordinates. You read $0$ as the time and $10$ as the number of beetles. The first coordinate is time, so the point describes year 10, when there are $0$ beetles. The population when the study began is $P(0) = 300$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the point a vertex meaning. The vertex is at $t = -\\frac{20}{2(-5)} = 2$, so the population peaks at year 2. A point with output $0$ is an intercept, not a maximum."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the point as a constant rate of change. That would only make sense for a linear model. This model is quadratic, so the yearly change is not constant, and $(10, 0)$ gives one input and its output."
+   }
+  },
+  "id": "orig-interpret-feat-M-486f60",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-M-486f60",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "graph of __var__ in the __var__ plane passes",
+    "of __var__ in the __var__ plane passes through",
+    "__var__ in the __var__ plane passes through the",
+    "is the best interpretation of the point __var__",
+    "the best interpretation of the point __var__ in",
+    "best interpretation of the point __var__ in this",
+    "interpretation of the point __var__ in this context"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 150 in this context?",
+  "stimulus": "A lab measures a radioactive isotope in two fragments, P and Q, of the same meteorite. Fragment P always holds more of the isotope than fragment Q. The function $D(t) = 150(0.5)^{t/30}$ gives the difference, in micrograms, between the isotope mass in fragment P and the isotope mass in fragment Q, $t$ days after the first measurement.",
+  "choices": [
+   "At the first measurement, fragment P held 150 micrograms of the isotope.",
+   "At the first measurement, fragment P held 150 micrograms more of the isotope than fragment Q.",
+   "Every 30 days, fragment P's lead over fragment Q shrinks by 150 micrograms of the isotope.",
+   "At 30 days after the first measurement, fragment P held 150 micrograms more of the isotope than fragment Q."
+  ],
+  "answer": "B",
+  "explanation": "150 is the value of $D(t)$ when $t = 0$, because $(0.5)^{0} = 1$. Here $t = 0$ means the first measurement, and $D$ is the difference between the two fragments, not the amount in either one. So when the first measurement was taken, fragment P held 150 micrograms more of the isotope than fragment Q.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read 150 as the amount in fragment P alone. $D(t)$ measures the gap between P and Q, so 150 is how much more P held, not how much P held."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated the model as linear, with 150 subtracted every 30 days. The factor $0.5$ means the difference halves every 30 days, and 150 is only the starting difference."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You took the 30 in the exponent as the time that goes with 150. At $t = 30$ the difference is $150(0.5)^{1} = 75$ micrograms. The value 150 belongs to $t = 0$."
+   }
+  },
+  "id": "orig-interpret-feat-M-242b0c",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-M-242b0c",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

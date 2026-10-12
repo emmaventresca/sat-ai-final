@@ -243,5 +243,612 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the solution to the given equation?",
+  "stimulus": "While calibrating a seismometer, a geophysicist reduces a timing relationship to the equation below.\n\n$\\sqrt{x + 10} = x - 2$",
+  "choices": [
+   "$-1$",
+   "$4$",
+   "$6$",
+   "$-6$"
+  ],
+  "answer": "C",
+  "explanation": "Square both sides to get $x + 10 = x^2 - 4x + 4$, so $x^2 - 5x - 6 = 0$. This factors as $(x - 6)(x + 1) = 0$, which gives $x = 6$ or $x = -1$. Now check both in the original equation. For $x = 6$, $\\sqrt{16} = 4$ and $6 - 2 = 4$, so it works. For $x = -1$, $\\sqrt{9} = 3$ but $-1 - 2 = -3$. A square root can't equal a negative number, so $-1$ is extraneous. The only solution is $6$. On Desmos, $y = \\sqrt{x+10}$ and $y = x - 2$ cross only once, at $x = 6$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You solved the squared equation correctly but kept both roots without checking them. With $x = -1$, the left side is $\\sqrt{9} = 3$ and the right side is $-3$, so this root was created by squaring and doesn't satisfy the original equation."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$4$ is the value of each side when $x = 6$, since $\\sqrt{16} = 4 = 6 - 2$. You reported the value of the square root rather than the value of $x$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You made a sign error when factoring $x^2 - 5x - 6$, writing it as $(x + 6)(x - 1)$. That gives $x = -6$, which also fails the check because $\\sqrt{4} = 2$ while $-6 - 2 = -8$."
+   }
+  },
+  "id": "orig-rational-radic-M-9da5ba",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-9da5ba",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "A",
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What are all values of $x$ that satisfy the given equation?",
+  "stimulus": "A textile historian estimates the thread count of a hand-woven linen fragment, where $x$ is the number of threads per centimeter, using the equation $\\sqrt{2x + 15} = x$.",
+  "choices": [
+   "$-5$ and $3$",
+   "$-3$ and $5$",
+   "$5$ only",
+   "$-3$ only"
+  ],
+  "answer": "C",
+  "explanation": "Square both sides to get $2x + 15 = x^2$, which gives $x^2 - 2x - 15 = 0$, or $(x - 5)(x + 3) = 0$. That leaves two candidates, $x = 5$ and $x = -3$. Check each one in the original equation. For $x = 5$, $\\sqrt{25} = 5$, so it works. For $x = -3$, $\\sqrt{9} = 3$, and $3$ is not $-3$, so $-3$ is extraneous. The only solution is $5$ threads per centimeter.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored $x^2 - 2x - 15$ as $(x + 5)(x - 3)$, which flips the signs of both roots. The correct factors are $(x - 5)(x + 3)$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You solved the squared equation correctly but never checked the candidates in the original. At $x = -3$ the square root equals $3$, not $-3$, so $-3$ is extraneous."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You kept the extraneous root and threw out the real one. Substitute $x = 5$: $\\sqrt{25} = 5$ holds. Substitute $x = -3$: $\\sqrt{9} = -3$ fails."
+   }
+  },
+  "id": "orig-rational-radic-M-a31432",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-a31432",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What are all values of $x$ that satisfy the given equation?",
+  "stimulus": "An immunologist models a ratio of antibody levels $x$ days after a booster dose with the equation $\\dfrac{x^2 + 6}{x - 3} = \\dfrac{5x}{x - 3}$.",
+  "choices": [
+   "$2$ only",
+   "$3$ only",
+   "$2$ and $3$",
+   "$-2$ and $-3$"
+  ],
+  "answer": "A",
+  "explanation": "Multiply both sides by $x - 3$, keeping in mind that $x$ can't be $3$. That gives $x^2 + 6 = 5x$, so $x^2 - 5x + 6 = 0$, or $(x - 2)(x - 3) = 0$. The candidate $x = 3$ makes both denominators zero, so you have to throw it out. The only solution is $x = 2$, which means $2$ days after the booster.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You threw out the valid root and kept the extraneous one. $x = 3$ makes the denominator $x - 3$ equal zero, so the equation is undefined there."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You solved $x^2 - 5x + 6 = 0$ correctly but forgot that clearing the denominator requires $x \\neq 3$. At $x = 3$ the original fractions are undefined."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored $x^2 - 5x + 6$ as $(x + 2)(x + 3)$. Those factors multiply out to $x^2 + 5x + 6$, so both signs are wrong."
+   }
+  },
+  "id": "orig-rational-radic-M-332fa3",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-332fa3",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the solution to the given equation?",
+  "stimulus": "A public health team models clinic demand $x$ weeks after a vaccination campaign begins, using the equation $x - 4 = \\sqrt{x - 2}$.",
+  "choices": [
+   "$2$",
+   "$3$",
+   "$6$",
+   "$9$"
+  ],
+  "answer": "C",
+  "explanation": "Square both sides to get $x^2 - 8x + 16 = x - 2$, so $x^2 - 9x + 18 = 0$, or $(x - 3)(x - 6) = 0$. Check $x = 6$ in the original: $6 - 4 = 2$ and $\\sqrt{4} = 2$, so it works. Check $x = 3$: $3 - 4 = -1$, but $\\sqrt{1} = 1$, so $3$ is extraneous. The solution is $6$ weeks.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$x = 2$ is where the expression under the root equals zero, which is the edge of the domain. It isn't a solution: $2 - 4 = -2$, but $\\sqrt{0} = 0$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "$x = 3$ solves the squared equation, but in the original it would need $\\sqrt{1} = -1$. A square root can't be negative, so $3$ is extraneous."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$9$ comes from the coefficient in $x^2 - 9x + 18 = 0$. It's the sum of the two candidate roots, not a root. You stopped before factoring and checking."
+   }
+  },
+  "id": "orig-rational-radic-M-0352ff",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-0352ff",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is a solution to the given equation?",
+  "stimulus": "A civil engineer models the deflection of a bridge girder with the equation below, where $c$ is a positive constant.\n\n$\\frac{x^2}{x - c} = \\frac{cx}{x - c} + 2c$",
+  "choices": [
+   "$2c$",
+   "$c$",
+   "$3c$",
+   "$-2c$"
+  ],
+  "answer": "A",
+  "explanation": "Multiply both sides by $x - c$ to get $x^2 = cx + 2c(x - c)$, which is $x^2 = 3cx - 2c^2$. Then $x^2 - 3cx + 2c^2 = 0$ factors as $(x - c)(x - 2c) = 0$, so the candidates are $x = c$ and $x = 2c$. Putting $x = c$ makes the denominator $x - c$ equal to zero, so you throw it out. That leaves $x = 2c$, and substituting it back in confirms it works.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You solved the quadratic correctly but kept $x = c$. That value makes $x - c = 0$, so the original equation is undefined there. It's an extraneous root and has to be rejected."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $2c$ by $x$ but not by the whole factor $x - c$. That gives $x^2 = 3cx$, which leads to $x = 3c$. The constant term $-2c^2$ is missing."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You reached $x^2 - 3cx + 2c^2 = 0$ but factored it as $(x + c)(x + 2c)$, which flips the signs of both roots. Expanding your factors gives $+3cx$, not $-3cx$."
+   }
+  },
+  "id": "orig-rational-radic-M-1c1a00",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-1c1a00",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following is a solution",
+    "which of the following is a solution to",
+    "of the following is a solution to the",
+    "the following is a solution to the given",
+    "following is a solution to the given equation"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is a solution to the given equation?",
+  "stimulus": "A sports scientist relates a sprinter's stride data with the equation below, where $k$ is a positive constant.\n\n$\\sqrt{kx + 5k^2} = x - k$",
+  "choices": [
+   "$4k$",
+   "$-k$",
+   "$3k$",
+   "$k$"
+  ],
+  "answer": "A",
+  "explanation": "Square both sides: $kx + 5k^2 = x^2 - 2kx + k^2$, so $x^2 - 3kx - 4k^2 = 0$. That factors as $(x - 4k)(x + k) = 0$, so the candidates are $x = 4k$ and $x = -k$. Check each one in the original equation. With $x = 4k$, the left side is $\\sqrt{9k^2} = 3k$ and the right side is $4k - k = 3k$, so it works. With $x = -k$, the right side is $-2k$, which is negative, and a square root can't equal a negative number. So $x = -k$ is extraneous, and the solution is $4k$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You kept the squared-in root. At $x = -k$ the left side is $2k$ but the right side is $-2k$. Squaring hid the sign mismatch, so this value doesn't satisfy the original equation."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You squared $x - k$ as $x^2 - k^2$ and dropped the middle term $-2kx$. That gives $x^2 - kx - 6k^2 = 0$, which has a root of $3k$. The correct square is $x^2 - 2kx + k^2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You reached $x^2 - 3kx - 4k^2 = 0$ but factored it as $(x + 4k)(x - k)$, which flips the signs of the roots. Substituting $k$ into the original gives $\\sqrt{6}\\,k = 0$, which is false."
+   }
+  },
+  "id": "orig-rational-radic-M-d012c5",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-d012c5",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following is a solution",
+    "which of the following is a solution to",
+    "of the following is a solution to the",
+    "the following is a solution to the given",
+    "following is a solution to the given equation"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is a solution to the given equation?",
+  "stimulus": "An ecologist comparing two pond populations uses the equation below, where $p$ is a positive constant.\n\n$\\frac{x}{x - p} + \\frac{p}{x + p} = \\frac{2p^2}{x^2 - p^2}$",
+  "choices": [
+   "$-3p$",
+   "$p$",
+   "$3p$",
+   "$-p$"
+  ],
+  "answer": "A",
+  "explanation": "Multiply every term by $x^2 - p^2 = (x - p)(x + p)$ to get $x(x + p) + p(x - p) = 2p^2$. That simplifies to $x^2 + 2px - 3p^2 = 0$, which factors as $(x + 3p)(x - p) = 0$. The candidates are $x = -3p$ and $x = p$. Putting $x = p$ makes $x - p$ equal to zero, so you reject it. The solution is $-3p$, and it doesn't make any denominator zero.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You solved the cleared equation correctly but didn't check its roots against the denominators. At $x = p$ the first fraction and the right side are both undefined, so it's an extraneous root."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You reached $x^2 + 2px - 3p^2 = 0$ but factored it as $(x - 3p)(x + p)$, which flips the signs of the roots. Expanding your factors gives $-2px$, not $+2px$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted $p(x - p)$ instead of adding it, which gave $x^2 + p^2 = 2p^2$ and so $x = \\pm p$. You rejected $p$ and kept $-p$, but $-p$ makes $x + p = 0$, so it isn't a valid solution either."
+   }
+  },
+  "id": "orig-rational-radic-M-901c5e",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-901c5e",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following is a solution",
+    "which of the following is a solution to",
+    "of the following is a solution to the",
+    "the following is a solution to the given",
+    "following is a solution to the given equation"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $a$ is the solution to equation 1 and $b$ is the solution to equation 2, what is the value of $a - b$?",
+  "stimulus": "An urban planner uses two equations to set the width $x$, in meters, of two proposed bike lanes.\n\nEquation 1: $\\sqrt{x + 7} = x - 5$\n\nEquation 2: $\\sqrt{3x + 4} = x$",
+  "choices": [
+   "$-2$",
+   "$5$",
+   "$10$",
+   "$13$"
+  ],
+  "answer": "B",
+  "explanation": "Square both sides of equation 1 to get $x + 7 = x^2 - 10x + 25$, so $x^2 - 11x + 18 = 0$ and $(x - 2)(x - 9) = 0$. Check each value: $x = 9$ gives $\\sqrt{16} = 4$, which matches. $x = 2$ gives $\\sqrt{9} = 3$ on the left but $-3$ on the right, so throw it out. That leaves $a = 9$. Square equation 2 to get $x^2 - 3x - 4 = 0$, so $(x - 4)(x + 1) = 0$. $x = 4$ checks, since $\\sqrt{16} = 4$. $x = -1$ fails, since $\\sqrt{1} = 1 \\neq -1$. That leaves $b = 4$, so $a - b = 9 - 4 = 5$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You kept $a = 2$ from equation 1. It makes the right side $-3$, which a square root can never equal, so it's an extraneous root. That gives you $2 - 4$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You kept $b = -1$ from equation 2. It makes the right side negative while the root equals $1$, so it's extraneous. That gives you $9 - (-1)$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the two solutions, $9 + 4$, when the question asks for the difference $a - b$."
+   }
+  },
+  "id": "orig-rational-radic-M-b124c0",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-b124c0",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $p$ is the solution to equation 1 and $q$ is the solution to equation 2, how much greater is $p$ than $q$?",
+  "stimulus": "An ecologist models changes in two wetland plant populations with the equations below.\n\nEquation 1: $\\dfrac{x^2}{x - 3} = \\dfrac{9}{x - 3}$\n\nEquation 2: $\\dfrac{x^2 + x}{x - 4} = \\dfrac{20}{x - 4}$",
+  "choices": [
+   "$-7$",
+   "$-2$",
+   "$2$",
+   "$8$"
+  ],
+  "answer": "C",
+  "explanation": "In equation 1, multiply both sides by $x - 3$ to get $x^2 = 9$, so $x = 3$ or $x = -3$. $x = 3$ makes the denominator zero, so $p = -3$. In equation 2, multiply by $x - 4$ to get $x^2 + x - 20 = 0$, so $(x + 5)(x - 4) = 0$. $x = 4$ makes the denominator zero, so $q = -5$. Then $p - q = -3 - (-5) = 2$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You kept $q = 4$, but it makes the denominator $x - 4$ equal zero, so it can't be a solution. That gives you $-3 - 4$."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You worked out $q - p$ instead of $p - q$. The question asks how much greater $p$ is than $q$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You kept $p = 3$, but it makes the denominator $x - 3$ equal zero, so it can't be a solution. That gives you $3 - (-5)$."
+   }
+  },
+  "id": "orig-rational-radic-M-c0966e",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-c0966e",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $m$ is the solution to equation 1 and $n$ is the solution to equation 2, how many times as great as $m$ is $n$?",
+  "stimulus": "A public health analyst uses two equations to model the number of weeks $x$ that two vaccination clinics need to reach their targets.\n\nEquation 1: $\\sqrt{x + 12} = x$\n\nEquation 2: $\\sqrt{5x - 4} = x - 2$",
+  "choices": [
+   "$\\dfrac{1}{4}$",
+   "$\\dfrac{1}{2}$",
+   "$2$",
+   "$4$"
+  ],
+  "answer": "C",
+  "explanation": "Square equation 1 to get $x^2 - x - 12 = 0$, so $(x - 4)(x + 3) = 0$. $x = 4$ checks, since $\\sqrt{16} = 4$. $x = -3$ fails, since $\\sqrt{9} = 3 \\neq -3$. That leaves $m = 4$. Square equation 2 to get $5x - 4 = x^2 - 4x + 4$, so $x^2 - 9x + 8 = 0$ and $(x - 1)(x - 8) = 0$. $x = 8$ checks, since $\\sqrt{36} = 6 = 8 - 2$. $x = 1$ fails, since $\\sqrt{1} = 1$ but $1 - 2 = -1$. That leaves $n = 8$, so $n$ is $\\frac{8}{4} = 2$ times as great as $m$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You kept $n = 1$ from equation 2. It makes the right side $-1$, which a square root can't equal, so it's extraneous. That gives you $\\frac{1}{4}$."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You worked out $\\frac{m}{n} = \\frac{4}{8}$, which is the reverse of the ratio the question asks for."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found how much greater $n$ is than $m$, which is $8 - 4$, when the question asks how many times as great."
+   }
+  },
+  "id": "orig-rational-radic-M-6597df",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-6597df",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "While calibrating a relief press for a linocut edition, a printmaker finds that the pressure setting $x$ must satisfy the equation $\\sqrt{2x + 6} = x - 1$.",
+  "choices": [
+   "The equation has exactly two solutions: $x = 5$ and $x = -1$.",
+   "The equation has exactly one solution, and it is $x = -1$.",
+   "The equation has exactly one solution, and it is $x = 5$.",
+   "The equation has exactly two solutions: $x = -5$ and $x = 1$."
+  ],
+  "answer": "C",
+  "explanation": "Square both sides to get $2x + 6 = x^2 - 2x + 1$, which simplifies to $x^2 - 4x - 5 = 0$, or $(x - 5)(x + 1) = 0$. That gives two candidates, $x = 5$ and $x = -1$. Check each one in the original equation. For $x = 5$, $\\sqrt{16} = 4$ and $5 - 1 = 4$, so it works. For $x = -1$, $\\sqrt{4} = 2$ but $-1 - 1 = -2$, and a square root can't equal a negative number, so $x = -1$ is extraneous. If you graph $y = \\sqrt{2x + 6}$ and $y = x - 1$, they cross only once, at $x = 5$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You solved the squared equation correctly but kept both roots without checking them in the original. At $x = -1$ the right side is $-2$, which a square root can never equal, so that root is extraneous."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You saw that one root had to go but threw out the wrong one. $x = 5$ checks ($4 = 4$). $x = -1$ is the one that fails, because it makes the right side negative."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You got the signs wrong when you factored $x^2 - 4x - 5$ and wrote $(x + 5)(x - 1)$. That expands to $x^2 + 4x - 5$. The correct factors are $(x - 5)(x + 1)$, and neither $-5$ nor $1$ satisfies the original equation."
+   }
+  },
+  "id": "orig-rational-radic-M-073c28",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-073c28",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "A",
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the solution to the given equation?",
+  "stimulus": "An immunologist models the number of days, $x$, after a booster dose at which a patient's antibody level reaches a target using the equation $x - \\sqrt{3x + 22} = 6$.",
+  "choices": [
+   "$1$",
+   "$8$",
+   "$14$",
+   "$15$"
+  ],
+  "answer": "C",
+  "explanation": "Testing the choices is quickest. For $x = 14$: $14 - \\sqrt{3(14) + 22} = 14 - \\sqrt{64} = 14 - 8 = 6$, so it works. To solve it algebraically, isolate the root to get $\\sqrt{3x + 22} = x - 6$. Squaring both sides gives $3x + 22 = x^2 - 12x + 36$, which simplifies to $x^2 - 15x + 14 = 0$, or $(x - 1)(x - 14) = 0$. Now check both candidates in the original equation. Only $x = 14$ holds. You can also confirm it in Desmos: the graphs of $y = x - \\sqrt{3x + 22}$ and $y = 6$ cross only once, at $x = 14$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You got $x = 1$ from the squared equation but didn't check it in the original. There, $1 - \\sqrt{25} = 1 - 5 = -4$, not $6$. The root $\\sqrt{3x + 22}$ would have to equal $x - 6 = -5$, and a square root can't be negative, so $x = 1$ is extraneous."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$8$ is the value of $\\sqrt{3x + 22}$ when $x = 14$. That's the radical, not $x$. The question asks for $x$ itself."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "$15$ is the sum of the two roots of $x^2 - 15x + 14 = 0$, read from the middle coefficient. It isn't a root. Check it: $15 - \\sqrt{67}$ isn't $6$."
+   }
+  },
+  "id": "orig-rational-radic-M-39d387",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-39d387",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "A",
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

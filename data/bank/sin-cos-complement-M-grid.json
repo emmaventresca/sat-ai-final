@@ -1,0 +1,914 @@
+[
+ {
+  "stem": "What is the measure, in degrees, of the larger of the two angles?",
+  "stimulus": "A paleobotanist sketching a fossil fern frond marks two acute angles measuring $(4x + 10)\u00b0$ and $(2x + 20)\u00b0$. For these angles, $\\sin((4x + 10)\u00b0) = \\cos((2x + 20)\u00b0)$.",
+  "keys": [
+   "50"
+  ],
+  "any_of": false,
+  "explanation": "The sine of one acute angle equals the cosine of another exactly when the two angles add to $90\u00b0$. Set $(4x + 10) + (2x + 20) = 90$, so $6x + 30 = 90$ and $x = 10$. The angles are $4(10) + 10 = 50\u00b0$ and $2(10) + 20 = 40\u00b0$. The larger one is $50\u00b0$.",
+  "common_errors": [
+   {
+    "value": "10",
+    "misconception": "intermediate-step",
+    "why": "You solved for $x$ correctly and stopped there, without putting it back into the angle expressions."
+   },
+   {
+    "value": "40",
+    "misconception": "wrong-target-quantity",
+    "why": "You found both angles but gave the smaller one."
+   },
+   {
+    "value": "30",
+    "misconception": "misread-given",
+    "why": "You set the angles equal ($4x + 10 = 2x + 20$, so $x = 5$) when they should add to $90$, which makes both angles $30\u00b0$."
+   },
+   {
+    "value": "110",
+    "misconception": "misread-given",
+    "why": "You made the angles add to $180$ (supplementary), not $90$: $6x + 30 = 180$ gives $x = 25$, so the larger angle is $110\u00b0$."
+   }
+  ],
+  "id": "orig-sin-cos-comple-M-f21cb6",
+  "skill_cd": "S.C.",
+  "subtype": "sin-cos-complement",
+  "subtype_name": "Sine equals cosine of the complement",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sin-cos-comple-M-f21cb6",
+   "structure": [],
+   "solver_answer": 50,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the measure in degrees of the"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the value of $\\cos B$?",
+  "stimulus": "Two lines of sight from an observatory form a right triangle whose acute angles are $A$ and $B$. In this triangle, $\\cos A = \\frac{5}{13}$.",
+  "keys": [
+   "12/13",
+   ".9230",
+   ".9231"
+  ],
+  "any_of": false,
+  "explanation": "$A$ and $B$ are the two acute angles of a right triangle, so $A + B = 90\u00b0$, which makes $\\cos B = \\sin A$. Since $\\cos A = \\frac{5}{13}$, the side opposite $A$ is $\\sqrt{13^2 - 5^2} = 12$ out of a hypotenuse of $13$. So $\\sin A = \\frac{12}{13}$, and therefore $\\cos B = \\frac{12}{13}$.",
+  "common_errors": [
+   {
+    "value": "5/13",
+    "misconception": "wrong-target-quantity",
+    "why": "You copied $\\cos A$ across as $\\cos B$. Copying across only works between sine and cosine of complementary angles, so $\\cos A = \\sin B$, not $\\cos B$."
+   },
+   {
+    "value": "13/12",
+    "misconception": "wrong-target-quantity",
+    "why": "You flipped the ratio and gave hypotenuse over the adjacent side instead of $\\cos B$."
+   },
+   {
+    "value": "12/5",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the 12 and gave a tangent-style ratio ($\\tan A$) instead of $\\cos B$."
+   }
+  ],
+  "id": "orig-sin-cos-comple-M-6598b2",
+  "skill_cd": "S.C.",
+  "subtype": "sin-cos-complement",
+  "subtype_name": "Sine equals cosine of the complement",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sin-cos-comple-M-6598b2",
+   "structure": [],
+   "solver_answer": "12/13",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $a$?",
+  "stimulus": "An archaeologist models the slope of an excavated ramp with an angle of $a\\pi$ radians, where $0 < a\\pi < \\frac{\\pi}{2}$ and $\\sin(a\\pi) = \\cos\\left(\\frac{2\\pi}{9}\\right)$.",
+  "keys": [
+   "5/18",
+   ".2777",
+   ".2778"
+  ],
+  "any_of": false,
+  "explanation": "In radians, sine of one angle equals cosine of another when the angles add to $\\frac{\\pi}{2}$. So $a\\pi = \\frac{\\pi}{2} - \\frac{2\\pi}{9} = \\frac{9\\pi}{18} - \\frac{4\\pi}{18} = \\frac{5\\pi}{18}$. Divide by $\\pi$ to get $a = \\frac{5}{18}$.",
+  "common_errors": [
+   {
+    "value": "2/9",
+    "misconception": "misread-given",
+    "why": "You set the two angles equal instead of making them add to $\\frac{\\pi}{2}$."
+   },
+   {
+    "value": "13/18",
+    "misconception": "algebra-manipulation",
+    "why": "You added $\\frac{2\\pi}{9}$ to $\\frac{\\pi}{2}$ when you should have subtracted it."
+   },
+   {
+    "value": "1/2",
+    "misconception": "intermediate-step",
+    "why": "You wrote down the $\\frac{\\pi}{2}$ total and never took away the given angle."
+   }
+  ],
+  "id": "orig-sin-cos-comple-M-cf1e29",
+  "skill_cd": "S.C.",
+  "subtype": "sin-cos-complement",
+  "subtype_name": "Sine equals cosine of the complement",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sin-cos-comple-M-cf1e29",
+   "structure": [],
+   "solver_answer": "5/18",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "A historian diagrams the diagonal brace of an eighteenth-century loom. Two acute angles at the brace satisfy $\\sin((5x - 8)\u00b0) = \\cos((3x + 2)\u00b0)$.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "Sine and cosine of acute angles are equal when the angles are complementary. Set $(5x - 8) + (3x + 2) = 90$. That gives $8x - 6 = 90$, so $8x = 96$ and $x = 12$. Check: the angles are $52\u00b0$ and $38\u00b0$, which add to $90\u00b0$.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "misread-given",
+    "why": "You set the angles equal: $5x - 8 = 3x + 2$ gives $x = 5$."
+   },
+   {
+    "value": "10.5",
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted 6 from 90 instead of adding it: $8x = 84$."
+   },
+   {
+    "value": "23.25",
+    "misconception": "misread-given",
+    "why": "You made the angles add to $180$ instead of $90$: $8x - 6 = 180$."
+   },
+   {
+    "value": "52",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the measure of the angle $(5x - 8)\u00b0$ instead of $x$."
+   }
+  ],
+  "id": "orig-sin-cos-comple-M-a3b31d",
+  "skill_cd": "S.C.",
+  "subtype": "sin-cos-complement",
+  "subtype_name": "Sine equals cosine of the complement",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sin-cos-comple-M-a3b31d",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "A luthier's diagram of a violin bridge shows acute angles of $x\u00b0$ and $y\u00b0$, where $x = 2y + 15$ and $\\sin(x\u00b0) = \\cos(y\u00b0)$.",
+  "keys": [
+   "65"
+  ],
+  "any_of": false,
+  "explanation": "Because $\\sin(x\u00b0) = \\cos(y\u00b0)$ for acute angles, $x + y = 90$. Substitute $x = 2y + 15$ to get $3y + 15 = 90$, so $y = 25$. Then $x = 2(25) + 15 = 65$.",
+  "common_errors": [
+   {
+    "value": "25",
+    "misconception": "wrong-target-quantity",
+    "why": "You solved for $y$ and reported that instead of $x$."
+   },
+   {
+    "value": "85",
+    "misconception": "algebra-manipulation",
+    "why": "You added 15 to 90 instead of subtracting it ($3y = 105$, $y = 35$), then found $x = 85$."
+   },
+   {
+    "value": "125",
+    "misconception": "misread-given",
+    "why": "You used $x + y = 180$: $3y + 15 = 180$ gives $y = 55$ and $x = 125$."
+   }
+  ],
+  "id": "orig-sin-cos-comple-M-18b237",
+  "skill_cd": "S.C.",
+  "subtype": "sin-cos-complement",
+  "subtype_name": "Sine equals cosine of the complement",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sin-cos-comple-M-18b237",
+   "structure": [],
+   "solver_answer": 65,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $\\cos((3x + 6)\u00b0)$?",
+  "stimulus": "Seismologists tracing a refracted wave describe two acute angles measuring $(x + 12)\u00b0$ and $(3x + 6)\u00b0$, with $\\sin((x + 12)\u00b0) = \\cos((3x + 6)\u00b0)$.",
+  "keys": [
+   "1/2",
+   ".5",
+   "0.5"
+  ],
+  "any_of": false,
+  "explanation": "Equal sine and cosine of acute angles means the angles are complementary: $(x + 12) + (3x + 6) = 90$, so $4x + 18 = 90$ and $x = 18$. The angles are $30\u00b0$ and $60\u00b0$. $\\cos 60\u00b0 = \\frac{1}{2}$ from the 30-60-90 triangle. It also equals $\\sin 30\u00b0$, as the given equation says it should.",
+  "common_errors": [
+   {
+    "value": "18",
+    "misconception": "intermediate-step",
+    "why": "You found $x$ and stopped before evaluating the cosine."
+   },
+   {
+    "value": "60",
+    "misconception": "intermediate-step",
+    "why": "You gave the angle $(3x + 6)\u00b0$ instead of its cosine."
+   },
+   {
+    "value": ".8660",
+    "misconception": "wrong-target-quantity",
+    "why": "You took $\\sin 60\u00b0$ (or $\\cos 30\u00b0$), the wrong ratio, which gives $\\frac{\\sqrt{3}}{2}$."
+   }
+  ],
+  "id": "orig-sin-cos-comple-M-393da1",
+  "skill_cd": "S.C.",
+  "subtype": "sin-cos-complement",
+  "subtype_name": "Sine equals cosine of the complement",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sin-cos-comple-M-393da1",
+   "structure": [],
+   "solver_answer": "1/2",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of the smaller angle?",
+  "stimulus": "On a survey map, a road crosses a meridian, and a cartographer labels two acute angles $(7k)\u00b0$ and $(4k + 24)\u00b0$. These angles satisfy $\\cos((7k)\u00b0) = \\sin((4k + 24)\u00b0)$.",
+  "keys": [
+   "42"
+  ],
+  "any_of": false,
+  "explanation": "Cosine of one acute angle equals sine of another when the angles add to $90\u00b0$. So $7k + 4k + 24 = 90$, which gives $11k = 66$ and $k = 6$. The angles are $7(6) = 42\u00b0$ and $4(6) + 24 = 48\u00b0$. The smaller one is $42\u00b0$.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "intermediate-step",
+    "why": "You solved for $k$ and did not substitute it back in."
+   },
+   {
+    "value": "48",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the larger angle instead of the smaller one."
+   },
+   {
+    "value": "56",
+    "misconception": "misread-given",
+    "why": "You set the angles equal: $7k = 4k + 24$ gives $k = 8$, which makes both angles $56\u00b0$."
+   }
+  ],
+  "id": "orig-sin-cos-comple-M-8de194",
+  "skill_cd": "S.C.",
+  "subtype": "sin-cos-complement",
+  "subtype_name": "Sine equals cosine of the complement",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sin-cos-comple-M-8de194",
+   "structure": [],
+   "solver_answer": 42,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the measure in degrees of the"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "If $x = c\\pi$, what is the value of $c$?",
+  "stimulus": "An immunologist models the opening of a Y-shaped antibody with an angle of $x$ radians, where $0 < x < \\frac{\\pi}{2}$ and $\\sin(x) = \\cos\\left(\\frac{x}{2}\\right)$.",
+  "keys": [
+   "1/3",
+   ".3333"
+  ],
+  "any_of": false,
+  "explanation": "Both $x$ and $\\frac{x}{2}$ are acute, so equal sine and cosine means they add to $\\frac{\\pi}{2}$ radians. Then $x + \\frac{x}{2} = \\frac{\\pi}{2}$, so $\\frac{3x}{2} = \\frac{\\pi}{2}$ and $x = \\frac{\\pi}{3}$. That makes $c = \\frac{1}{3}$.",
+  "common_errors": [
+   {
+    "value": "60",
+    "misconception": "misread-given",
+    "why": "You used $90$ instead of $\\frac{\\pi}{2}$, which gives $x = 60$ degrees instead of a multiple of $\\pi$."
+   },
+   {
+    "value": "1/6",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the coefficient for $\\frac{x}{2}$, which is $\\frac{\\pi}{6}$, instead of for $x$."
+   },
+   {
+    "value": "1",
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted instead of adding: $x - \\frac{x}{2} = \\frac{\\pi}{2}$ gives $x = \\pi$."
+   }
+  ],
+  "id": "orig-sin-cos-comple-M-da9a47",
+  "skill_cd": "S.C.",
+  "subtype": "sin-cos-complement",
+  "subtype_name": "Sine equals cosine of the complement",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sin-cos-comple-M-da9a47",
+   "structure": [],
+   "solver_answer": "1/3",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "An ecologist modeling how sunlight passes through a gap in a forest canopy uses two angles, measured in degrees, that satisfy $\\sin((3x+8)^\\circ) = \\cos((2x+12)^\\circ)$. Both angle measures are between $0^\\circ$ and $90^\\circ$.",
+  "keys": [
+   "14"
+  ],
+  "any_of": false,
+  "explanation": "The sine of one acute angle equals the cosine of another exactly when the two angles add to $90^\\circ$. Set the sum of the angle expressions equal to 90: $(3x+8)+(2x+12)=90$, so $5x+20=90$. Then $5x=70$ and $x=14$. To check, the angles are $50^\\circ$ and $40^\\circ$. Both are between $0^\\circ$ and $90^\\circ$, and they add to $90^\\circ$, so $\\sin 50^\\circ=\\cos 40^\\circ$.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "misread-given",
+    "why": "Set the two angle expressions equal to each other, $3x+8=2x+12$, which replaces the given relationship with a different equation. That gives two $20^\\circ$ angles, and $\\sin 20^\\circ \\neq \\cos 20^\\circ$."
+   },
+   {
+    "value": "70",
+    "misconception": "intermediate-step",
+    "why": "Solved $5x+20=90$ as far as $5x=70$ and stopped before dividing by 5."
+   },
+   {
+    "value": "32",
+    "misconception": "missed-condition",
+    "why": "Made the angles add to 180 instead of 90, so $5x+20=180$. That gives angles of $104^\\circ$ and $76^\\circ$, and $104^\\circ$ breaks the stated condition that both angles are between $0^\\circ$ and $90^\\circ$."
+   }
+  ],
+  "id": "orig-sin-cos-comple-M-ae2928",
+  "skill_cd": "S.C.",
+  "subtype": "sin-cos-complement",
+  "subtype_name": "Sine equals cosine of the complement",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sin-cos-comple-M-ae2928",
+   "structure": [],
+   "solver_answer": "14",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $\\cos(y^\\circ)$?",
+  "stimulus": "On a city planner's street-grid sketch, two angles where a new avenue crosses existing streets have measures $x^\\circ$ and $y^\\circ$. The two angles are complementary, and $\\cos(x^\\circ) = \\frac{24}{25}$.",
+  "keys": [
+   "7/25",
+   ".28",
+   "0.28"
+  ],
+  "any_of": false,
+  "explanation": "Because $x+y=90$, the cosine of one angle equals the sine of the other, so $\\cos(y^\\circ)=\\sin(x^\\circ)$. To find $\\sin(x^\\circ)$, picture a right triangle with angle $x^\\circ$. Its adjacent side is 24 and its hypotenuse is 25. The opposite side is $\\sqrt{25^2-24^2}=\\sqrt{49}=7$. So $\\sin(x^\\circ)=\\frac{7}{25}$, which means $\\cos(y^\\circ)=\\frac{7}{25}$.",
+  "common_errors": [
+   {
+    "value": "24/25",
+    "misconception": "wrong-target-quantity",
+    "why": "Copied the cosine value across without changing the function. $\\frac{24}{25}$ is $\\sin(y^\\circ)$, not $\\cos(y^\\circ)$."
+   },
+   {
+    "value": "25/24",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the reciprocal ratio (hypotenuse over adjacent) instead of a cosine."
+   },
+   {
+    "value": "7/24",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the missing side correctly but wrote opposite over adjacent, which is $\\tan(x^\\circ)$, instead of opposite over hypotenuse."
+   },
+   {
+    "value": "1/25",
+    "misconception": "algebra-manipulation",
+    "why": "Calculated $1-\\frac{24}{25}$ without squaring, instead of $\\sqrt{1-\\left(\\frac{24}{25}\\right)^2}$."
+   }
+  ],
+  "id": "orig-sin-cos-comple-M-13786d",
+  "skill_cd": "S.C.",
+  "subtype": "sin-cos-complement",
+  "subtype_name": "Sine equals cosine of the complement",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sin-cos-comple-M-13786d",
+   "structure": [],
+   "solver_answer": "7/25",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $x = a\\pi$, what is the value of $a$?",
+  "stimulus": "A printmaker carving a linocut marks an angle of measure $x$ radians, where $0 < x < \\frac{\\pi}{2}$, such that $\\sin(x) = \\cos\\left(\\frac{\\pi}{8}\\right)$.",
+  "keys": [
+   "3/8",
+   ".375",
+   "0.375"
+  ],
+  "any_of": false,
+  "explanation": "In radians, $\\sin(x)=\\cos(B)$ for acute angles exactly when $x+B=\\frac{\\pi}{2}$. So $x=\\frac{\\pi}{2}-\\frac{\\pi}{8}=\\frac{4\\pi}{8}-\\frac{\\pi}{8}=\\frac{3\\pi}{8}$. Since $x=a\\pi$, you get $a=\\frac{3}{8}$.",
+  "common_errors": [
+   {
+    "value": "1/8",
+    "misconception": "wrong-target-quantity",
+    "why": "Set the angles equal, $x=\\frac{\\pi}{8}$, and so gave the angle already in the question instead of its complement."
+   },
+   {
+    "value": "7/8",
+    "misconception": "missed-condition",
+    "why": "Subtracted from $\\pi$ instead of $\\frac{\\pi}{2}$. That gives $x=\\frac{7\\pi}{8}$, which breaks the condition $0<x<\\frac{\\pi}{2}$."
+   },
+   {
+    "value": "1.178",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the value of $x$ itself, $\\frac{3\\pi}{8}\\approx 1.178$, instead of the coefficient $a$."
+   }
+  ],
+  "id": "orig-sin-cos-comple-M-478dc1",
+  "skill_cd": "S.C.",
+  "subtype": "sin-cos-complement",
+  "subtype_name": "Sine equals cosine of the complement",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sin-cos-comple-M-478dc1",
+   "structure": [],
+   "solver_answer": "3/8",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "An urban planner models two streets that cross a boulevard. One meets it at an angle of $(3x + 8)^\\circ$ and the other at $(2x + 12)^\\circ$. Both angles are between $0^\\circ$ and $90^\\circ$, and $\\sin((3x + 8)^\\circ) = \\cos((2x + 12)^\\circ)$.",
+  "keys": [
+   "14"
+  ],
+  "any_of": false,
+  "explanation": "For two acute angles, the sine of one equals the cosine of the other exactly when the angles add to $90^\\circ$. Set $(3x + 8) + (2x + 12) = 90$, so $5x + 20 = 90$, $5x = 70$, and $x = 14$. Check: the angles are $50^\\circ$ and $40^\\circ$. Both are acute and they sum to $90^\\circ$.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "misread-given",
+    "why": "Set the angles equal to each other, $3x + 8 = 2x + 12$, when they should add to 90."
+   },
+   {
+    "value": "32",
+    "misconception": "misread-given",
+    "why": "Made the angles add to 180 instead of 90, so $5x + 20 = 180$."
+   },
+   {
+    "value": "50",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved correctly but gave the first angle, $3(14) + 8$, instead of $x$."
+   },
+   {
+    "value": "40",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the second angle, $2(14) + 12$, instead of $x$."
+   }
+  ],
+  "id": "orig-sin-cos-comple-M-3dfc56",
+  "skill_cd": "S.C.",
+  "subtype": "sin-cos-complement",
+  "subtype_name": "Sine equals cosine of the complement",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sin-cos-comple-M-3dfc56",
+   "structure": [],
+   "solver_answer": "14",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $\\cos((70 - x)^\\circ)$?",
+  "stimulus": "A printmaker holds a carving gouge at an angle of $(x + 20)^\\circ$ to the block, where $0 < x < 70$. For this angle, $\\sin((x + 20)^\\circ) = 0.64$.",
+  "keys": [
+   "0.64",
+   ".64",
+   "16/25"
+  ],
+  "any_of": false,
+  "explanation": "Add the two angles: $(x + 20) + (70 - x) = 90$. They are complementary, so the cosine of one equals the sine of the other. That gives $\\cos((70 - x)^\\circ) = \\sin((x + 20)^\\circ) = 0.64$. You don't need to find $x$.",
+  "common_errors": [
+   {
+    "value": ".7684",
+    "misconception": "wrong-target-quantity",
+    "why": "Used $\\sin^2 + \\cos^2 = 1$ to find the cosine of the same angle, $\\sqrt{1 - 0.64^2} \\approx 0.7684$, instead of the cosine of the complement."
+   },
+   {
+    "value": ".36",
+    "misconception": "algebra-manipulation",
+    "why": "Took $1 - 0.64$, as if sine and cosine of complementary angles added to 1."
+   },
+   {
+    "value": "1.5625",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the reciprocal, $1/0.64$, as though the question asked for cosecant."
+   }
+  ],
+  "id": "orig-sin-cos-comple-M-9a292e",
+  "skill_cd": "S.C.",
+  "subtype": "sin-cos-complement",
+  "subtype_name": "Sine equals cosine of the complement",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sin-cos-comple-M-9a292e",
+   "structure": [],
+   "solver_answer": "0.64",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "angle __var__ what is the value of __var__"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "If $b = k\\pi$, what is the value of $k$?",
+  "stimulus": "A paleobotanist measures the angle between two veins in a fossil leaf as $a = \\frac{\\pi}{5}$ radians. A second angle $b$ satisfies $0 < b < \\frac{\\pi}{2}$ and $\\sin(a) = \\cos(b)$.",
+  "keys": [
+   "3/10",
+   ".3",
+   "0.3"
+  ],
+  "any_of": false,
+  "explanation": "Both angles are acute, so $\\sin(a) = \\cos(b)$ means $a + b = \\frac{\\pi}{2}$ (radians, not 90). Then $b = \\frac{\\pi}{2} - \\frac{\\pi}{5} = \\frac{5\\pi - 2\\pi}{10} = \\frac{3\\pi}{10}$, so $k = \\frac{3}{10}$.",
+  "common_errors": [
+   {
+    "value": "1/5",
+    "misconception": "misread-given",
+    "why": "Set $b$ equal to $a$ instead of making the two angles add to $\\frac{\\pi}{2}$."
+   },
+   {
+    "value": "4/5",
+    "misconception": "misread-given",
+    "why": "Used $\\pi$ as the total instead of $\\frac{\\pi}{2}$, so $b = \\pi - \\frac{\\pi}{5}$."
+   },
+   {
+    "value": "7/10",
+    "misconception": "algebra-manipulation",
+    "why": "Added instead of subtracting: $\\frac{1}{2} + \\frac{1}{5}$."
+   }
+  ],
+  "id": "orig-sin-cos-comple-M-93eb52",
+  "skill_cd": "S.C.",
+  "subtype": "sin-cos-complement",
+  "subtype_name": "Sine equals cosine of the complement",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sin-cos-comple-M-93eb52",
+   "structure": [],
+   "solver_answer": "0.3",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $a$?",
+  "stimulus": "For a public health audit of clinic entrances, two acute angles are recorded as $a^\\circ$ and $b^\\circ$. The value of $a$ is 24 more than twice $b$, and $\\sin(a^\\circ) = \\cos(b^\\circ)$.",
+  "keys": [
+   "68"
+  ],
+  "any_of": false,
+  "explanation": "For acute angles, $\\sin(a^\\circ) = \\cos(b^\\circ)$ means $a + b = 90$. Substitute $a = 2b + 24$: $2b + 24 + b = 90$, so $3b = 66$ and $b = 22$. Then $a = 2(22) + 24 = 68$. Check: $68 + 22 = 90$.",
+  "common_errors": [
+   {
+    "value": "22",
+    "misconception": "wrong-target-quantity",
+    "why": "Stopped at $b$ and reported it instead of $a$."
+   },
+   {
+    "value": "128",
+    "misconception": "misread-given",
+    "why": "Made the angles add to 180, so $3b + 24 = 180$ and $b = 52$, giving $a = 128$."
+   },
+   {
+    "value": "84",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the 24 when solving, so $3b = 90$ and $b = 30$, then put it back to get $a = 2(30) + 24$."
+   }
+  ],
+  "id": "orig-sin-cos-comple-M-e5a4d5",
+  "skill_cd": "S.C.",
+  "subtype": "sin-cos-complement",
+  "subtype_name": "Sine equals cosine of the complement",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sin-cos-comple-M-e5a4d5",
+   "structure": [],
+   "solver_answer": "68",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $\\sin(B)$?",
+  "stimulus": "A folklore scholar diagrams the roofline of a storytelling hut as a triangle with acute angles $A = (50 - x)^\\circ$ and $B = (40 + x)^\\circ$, where $0 < x < 50$. It is given that $\\cos(A) = \\frac{7}{25}$.",
+  "keys": [
+   "7/25",
+   ".28",
+   "0.28"
+  ],
+  "any_of": false,
+  "explanation": "Add the angles: $(50 - x) + (40 + x) = 90$, so $A$ and $B$ are complementary. The sine of one equals the cosine of the other, so $\\sin(B) = \\cos(A) = \\frac{7}{25}$.",
+  "common_errors": [
+   {
+    "value": "24/25",
+    "misconception": "wrong-target-quantity",
+    "why": "Found $\\sin(A)$ (or $\\cos(B)$) from $\\sqrt{1 - (7/25)^2}$ instead of copying the value across to the complement."
+   },
+   {
+    "value": "25/7",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the reciprocal ratio, $\\sec(A)$, instead of $\\sin(B)$."
+   },
+   {
+    "value": "24/7",
+    "misconception": "wrong-target-quantity",
+    "why": "Built a 7-24-25 triangle and gave $\\tan(A)$ instead of $\\sin(B)$."
+   }
+  ],
+  "id": "orig-sin-cos-comple-M-a7bb37",
+  "skill_cd": "S.C.",
+  "subtype": "sin-cos-complement",
+  "subtype_name": "Sine equals cosine of the complement",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sin-cos-comple-M-a7bb37",
+   "structure": [],
+   "solver_answer": "0.28",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "An archaeologist sets up two survey sightlines from a trench marker. Their angles with the ground are $x^\\circ$ and $(2x - 30)^\\circ$. Both angles are acute, and $\\sin(x^\\circ) = \\cos((2x - 30)^\\circ)$.",
+  "keys": [
+   "40"
+  ],
+  "any_of": false,
+  "explanation": "For acute angles, sine of one equals cosine of the other only when they sum to $90^\\circ$. Set $x + (2x - 30) = 90$, so $3x = 120$ and $x = 40$. The angles are $40^\\circ$ and $50^\\circ$, both acute.",
+  "common_errors": [
+   {
+    "value": "30",
+    "misconception": "misread-given",
+    "why": "Set the angles equal, $x = 2x - 30$, instead of making them add to 90."
+   },
+   {
+    "value": "70",
+    "misconception": "misread-given",
+    "why": "Made the sum 180: $3x - 30 = 180$."
+   },
+   {
+    "value": "50",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the second angle, $2(40) - 30$, instead of $x$."
+   },
+   {
+    "value": "20",
+    "misconception": "algebra-manipulation",
+    "why": "Moved the 30 the wrong way: $3x = 90 - 30 = 60$."
+   }
+  ],
+  "id": "orig-sin-cos-comple-M-1a4eac",
+  "skill_cd": "S.C.",
+  "subtype": "sin-cos-complement",
+  "subtype_name": "Sine equals cosine of the complement",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sin-cos-comple-M-1a4eac",
+   "structure": [],
+   "solver_answer": "40",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "An astronomer describes two acute angles in a telescope mount as $\\alpha = \\frac{\\pi x}{60}$ radians and $\\beta = \\frac{\\pi (x + 6)}{60}$ radians, where $\\sin(\\alpha) = \\cos(\\beta)$.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "Since both angles are acute, $\\sin(\\alpha) = \\cos(\\beta)$ means $\\alpha + \\beta = \\frac{\\pi}{2}$. That gives $\\frac{\\pi x}{60} + \\frac{\\pi(x + 6)}{60} = \\frac{\\pi}{2}$. Multiply both sides by $\\frac{60}{\\pi}$: $2x + 6 = 30$, so $x = 12$.",
+  "common_errors": [
+   {
+    "value": "27",
+    "misconception": "misread-given",
+    "why": "Used $\\pi$ instead of $\\frac{\\pi}{2}$ as the total, so $2x + 6 = 60$."
+   },
+   {
+    "value": "24",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $2x = 24$ without dividing by 2."
+   },
+   {
+    "value": "15",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the 6 from the second angle and solved $2x = 30$."
+   }
+  ],
+  "id": "orig-sin-cos-comple-M-330c17",
+  "skill_cd": "S.C.",
+  "subtype": "sin-cos-complement",
+  "subtype_name": "Sine equals cosine of the complement",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sin-cos-comple-M-330c17",
+   "structure": [],
+   "solver_answer": "12",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

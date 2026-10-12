@@ -252,5 +252,453 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "In the given equation, $k$ is a constant. The equation has no solution. What is the value of $k$?",
+  "stimulus": "An ecologist compares the number of frogs, in dozens, at two ponds $x$ weeks after a survey begins. Setting the two counts equal gives the equation $3(kx - 2) = 12x + k$.",
+  "choices": [
+   "$-6$",
+   "$\\frac{1}{4}$",
+   "$4$",
+   "$12$"
+  ],
+  "answer": "C",
+  "explanation": "Distribute the 3 on the left to get $3kx - 6 = 12x + k$. For an equation like this to have no solution, the $x$-coefficients must be equal and the constants must be different. Setting $3k = 12$ gives $k = 4$. Check the constants: the left side has $-6$ and the right side has $4$. They are different, so with $k = 4$ the two sides are parallel lines that never meet, and the equation has no solution.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You set the constants equal ($-6 = k$) instead of the $x$-coefficients. Matching the constants doesn't give you no solution. With $k = -6$, the $x$-coefficients are $-18$ and $12$, which are different, so the equation has exactly one solution."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You set up $3k = 12$ correctly but then divided the wrong way and got $\\frac{3}{12}$ instead of $\\frac{12}{3}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You didn't distribute the 3 to the $kx$ term, so you matched $k$ to 12 when you should have matched $3k$ to 12."
+   }
+  },
+  "id": "orig-number-of-solu-M-1389f2",
+  "skill_cd": "H.A.",
+  "subtype": "number-of-solutions",
+  "subtype_name": "No solution / infinitely many solutions / find the constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-number-of-solu-M-1389f2",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given equation, $k$ is a constant. The equation has no solution. What is the value of $k$?",
+  "stimulus": "In a vaccine trial, the antibody level, in units per milliliter, of one patient group $x$ weeks after a booster is modeled by $3(2x + 5)$, and the level of a second group is modeled by $kx + 9$.\n\n$3(2x + 5) = kx + 9$",
+  "choices": [
+   "$-6$",
+   "$2$",
+   "$6$",
+   "$15$"
+  ],
+  "answer": "C",
+  "explanation": "Distribute the left side to get $6x + 15 = kx + 9$. For there to be no solution, the $x$-coefficients must match and the constants must differ. Setting $k = 6$ gives $6x + 15 = 6x + 9$, and since $15 \\neq 9$, no value of $x$ works. In context, the two groups never have the same antibody level.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You moved $kx$ to the left side without changing its sign, so you solved $6 + k = 0$ when you should have solved $6 - k = 0$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You didn't distribute the 3 to the $2x$ term, so you matched $k$ to 2 when the left side's $x$-coefficient is actually 6."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You took 15, the constant term on the left side after distributing. But $k$ multiplies $x$, so it has to match the $x$-coefficient, not the constant."
+   }
+  },
+  "id": "orig-number-of-solu-M-e0e53f",
+  "skill_cd": "H.A.",
+  "subtype": "number-of-solutions",
+  "subtype_name": "No solution / infinitely many solutions / find the constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-number-of-solu-M-e0e53f",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given equation, $a$ and $b$ are constants. If the equation has infinitely many solutions, what are the values of $a$ and $b$?",
+  "stimulus": "Under two proposed contracts, a warehouse worker's weekly pay, in dollars, for $h$ hours of overtime is $a(h + 25)$ and $18h + b$, respectively.\n\n$a(h + 25) = 18h + b$",
+  "choices": [
+   "$a = 18$ and $b = 43$",
+   "$a = 18$ and $b = 400$",
+   "$a = 18$ and $b = 450$",
+   "$a = 25$ and $b = 625$"
+  ],
+  "answer": "C",
+  "explanation": "Distribute to get $ah + 25a = 18h + b$. For infinitely many solutions, the two sides must be identical: the $h$-coefficients must match, so $a = 18$, and the constants must match, so $b = 25(18) = 450$. In context, the two contracts pay the same amount for every number of overtime hours.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added 18 and 25 when you should have multiplied them. Distributing $a$ across $(h + 25)$ gives a constant term of $25a$, not $a + 25$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "With $a = 18$ the $h$-terms match, but $b = 400$ makes the constants differ ($450 \\neq 400$). That gives no solution, not infinitely many. You need the constants to match as well."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You set $a$ equal to the number inside the parentheses. $a$ has to match the $h$-coefficient on the right side, which is 18, and $a = 25$ gives $25h$ on the left and $18h$ on the right."
+   }
+  },
+  "id": "orig-number-of-solu-M-e3157f",
+  "skill_cd": "H.A.",
+  "subtype": "number-of-solutions",
+  "subtype_name": "No solution / infinitely many solutions / find the constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-number-of-solu-M-e3157f",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $3(4w + 50) = 12w + 90$ compares the two counties' totals. Which choice best describes the solutions to this equation in this context?",
+  "stimulus": "A health department models the total number of reported flu cases in County R as $3(4w + 50)$ and in County S as $12w + 90$, where $w$ is the number of weeks since the start of flu season.",
+  "choices": [
+   "No solution: County R's total is always 60 cases higher than County S's",
+   "Exactly one solution: both counties reach the same total at week 5",
+   "Infinitely many solutions: both counties have the same total every week",
+   "No solution: County S's total is always 60 cases higher than County R's"
+  ],
+  "answer": "A",
+  "explanation": "Distribute to get $12w + 150 = 12w + 90$. The $w$-coefficients match and the constants don't, so the equation has no solution: the two totals are never equal. Subtracting gives $(12w + 150) - (12w + 90) = 60$, so County R's total is always 60 cases higher than County S's.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the constants to get 60 and then divided by 12. But the $12w$ terms cancel completely, so there is no $w$ left to solve for."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You saw that both $x$-coefficients equal 12 and stopped there. Infinitely many solutions also requires matching constants, and $150 \\neq 90$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You correctly found there's no solution, but you reversed which county is ahead. County R's constant is 150 and County S's is 90, so County R is the one that's always 60 cases higher."
+   }
+  },
+  "id": "orig-number-of-solu-M-2d15d6",
+  "skill_cd": "H.A.",
+  "subtype": "number-of-solutions",
+  "subtype_name": "No solution / infinitely many solutions / find the constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-number-of-solu-M-2d15d6",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "where __var__ is the number of weeks since",
+    "__var__ is the number of weeks since the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "If the equation has infinitely many solutions, what is the value of $b - a$?",
+  "stimulus": "A printmaker compares the cost of two linocut print runs using the equation $3(ax + 4) = 12x + b$, where $x$ is the number of prints and $a$ and $b$ are constants.",
+  "choices": [
+   "$0$",
+   "$4$",
+   "$8$",
+   "$16$"
+  ],
+  "answer": "C",
+  "explanation": "Distribute the 3 on the left to get $3ax + 12 = 12x + b$. For infinitely many solutions, both sides must be identical, so the x-coefficients must match and the constants must match. From $3a = 12$, you get $a = 4$. From $12 = b$, you get $b = 12$. So $b - a = 12 - 4 = 8$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied only the $ax$ term by 3 and wrote the left side as $3ax + 4$. That made $b = 4$, so you got $4 - 4 = 0$. The 3 has to multiply the 4 as well, which gives 12."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You matched the x-coefficients and found $a = 4$, then stopped. The question asks for the gap $b - a$, so you still need to match the constants to find $b$ and then subtract."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $a = 4$ and $b = 12$ correctly but added them. The question asks for the difference $b - a$, not the sum."
+   }
+  },
+  "id": "orig-number-of-solu-M-f7c96b",
+  "skill_cd": "H.A.",
+  "subtype": "number-of-solutions",
+  "subtype_name": "No solution / infinitely many solutions / find the constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-number-of-solu-M-f7c96b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $b - a$?",
+  "stimulus": "A nutrition scientist models fiber intake under two meal plans. In the equations below, $a$ and $b$ are constants and $x$ is the number of servings.\n\nEquation I: $3(ax - 2) = 15x - 6$\nEquation II: $bx + 4 = 2(4x + 1)$\n\nEquation I has infinitely many solutions, and Equation II has no solution.",
+  "choices": [
+   "$-7$",
+   "$3$",
+   "$8$",
+   "$13$"
+  ],
+  "answer": "B",
+  "explanation": "Equation I becomes $3ax - 6 = 15x - 6$. The constants already match, so infinitely many solutions only needs $3a = 15$, which gives $a = 5$. Equation II becomes $bx + 4 = 8x + 2$. For no solution, the x-coefficients must be equal while the constants differ. The constants are 4 and 2, so they already differ, and $b = 8$. So $b - a = 8 - 5 = 3$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You matched $a$ directly to 15 without dividing by the 3 you distributed, so you got $a = 15$ and $8 - 15 = -7$. The left side's x-coefficient is $3a$, so $3a = 15$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is $b$, which you get partway through the solution. The question asks how much greater $b$ is than $a$, so you still need to subtract $a = 5$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $a = 5$ and $b = 8$ but added them. The question asks for the difference $b - a$."
+   }
+  },
+  "id": "orig-number-of-solu-M-eedfe1",
+  "skill_cd": "H.A.",
+  "subtype": "number-of-solutions",
+  "subtype_name": "No solution / infinitely many solutions / find the constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-number-of-solu-M-eedfe1",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ and __var__ are constants and __var__ is",
+    "and __var__ are constants and __var__ is the",
+    "__var__ are constants and __var__ is the number",
+    "are constants and __var__ is the number of"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the equation has infinitely many solutions, what is the value of $c - d$?",
+  "stimulus": "A marine biologist compares the depths of two tagged sea turtles using the equation $4(x + c) - x = dx + 20$, where $x$ is the number of hours after release and $c$ and $d$ are constants.",
+  "choices": [
+   "$1$",
+   "$2$",
+   "$8$",
+   "$17$"
+  ],
+  "answer": "B",
+  "explanation": "Distribute and combine like terms on the left: $4x + 4c - x = 3x + 4c$. The equation is now $3x + 4c = dx + 20$. For infinitely many solutions, the x-coefficients match, so $d = 3$, and the constants match, so $4c = 20$ and $c = 5$. So $c - d = 5 - 3 = 2$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the $-x$ term and kept $4x$ on the left, so you got $d = 4$ and $5 - 4 = 1$. Once you combine $4x - x$, the x-coefficient is 3."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $c = 5$ and $d = 3$ correctly but added them. The question asks for the gap $c - d$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You didn't multiply $c$ by the 4, so you wrote the constant as $c$ instead of $4c$. That gave $c = 20$ and $20 - 3 = 17$."
+   }
+  },
+  "id": "orig-number-of-solu-M-6131d2",
+  "skill_cd": "H.A.",
+  "subtype": "number-of-solutions",
+  "subtype_name": "No solution / infinitely many solutions / find the constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-number-of-solu-M-6131d2",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the equation has no solution, which of the following must be true?",
+  "stimulus": "A marine biologist sets two models of a reef's sea urchin count equal to each other, where $x$ is the number of weeks of observation:\n\n$3(ax - 4) = 12x + b$\n\nIn the given equation, $a$ and $b$ are constants.",
+  "choices": [
+   "$a = 4$ and $b \\neq -12$",
+   "$a = 4$ and $b = -12$",
+   "$a = 12$ and $b \\neq -12$",
+   "$a = 4$ and $b \\neq -4$"
+  ],
+  "answer": "A",
+  "explanation": "Distribute the 3 on the left to get $3ax - 12 = 12x + b$. An equation with no solution needs the same x-coefficient on both sides but different constants. Matching the x-coefficients gives $3a = 12$, so $a = 4$. The constants must not match, so $b \\neq -12$. Both conditions have to hold, so choice A must be true. In Desmos, put a slider on b with $a = 4$. The two lines stay parallel unless $b = -12$, and then they lie on top of each other.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You matched the constants as well as the x-coefficients. That makes both sides identical, so the equation has infinitely many solutions, not none. A no-solution equation needs the constants to be different."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You set $a$ equal to 12 without carrying the 3 that multiplies $ax$. The left side's x-coefficient is $3a$, so $3a = 12$ and $a = 4$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You forgot to multiply the $-4$ inside the parentheses by 3, so you compared $b$ with $-4$ instead of $-12$. With $a = 4$, the value $b = -4$ still gives no solution, so $b \\neq -4$ doesn't have to be true."
+   }
+  },
+  "id": "orig-number-of-solu-M-572733",
+  "skill_cd": "H.A.",
+  "subtype": "number-of-solutions",
+  "subtype_name": "No solution / infinitely many solutions / find the constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-number-of-solu-M-572733",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "For which of the following expressions $D$ does the equation $3(2t + 5) = D$ have no solution?",
+  "stimulus": "A hydrologist models the depth, in centimeters, of water in a retention pond $t$ hours after a storm as $3(2t + 5)$. To find when a second pond is equally deep, the hydrologist sets this model equal to the second pond's depth model, $D$.",
+  "choices": [
+   "$6t + 15$",
+   "$5t + 15$",
+   "$6t + 12$",
+   "$2t + 12$"
+  ],
+  "answer": "C",
+  "explanation": "Distribute the 3 to every term on the left: $3(2t + 5) = 6t + 15$. For no solution, the $t$-coefficients must match and the constants must differ. $6t + 12$ has the same coefficient, 6, and a different constant, 12, so $6t + 15 = 6t + 12$ simplifies to $15 = 12$, which is never true. On Desmos the two lines are parallel.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You matched the $t$-coefficients but forgot that the constants also have to differ. $6t + 15$ is identical to the left side, so the equation is true for every value of $t$ and has infinitely many solutions. You can also land here if you distributed the 3 only to $2t$, got $6t + 5$, and thought 15 was a different constant."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You matched the wrong part. With equal constants and different $t$-coefficients, $6t + 15 = 5t + 15$ has exactly one solution, $t = 0$. For no solution, the coefficients have to match and the constants have to differ."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You didn't distribute the 3, so you compared $2t$ directly with $2t$. The left side is really $6t + 15$, and $6t + 15 = 2t + 12$ has exactly one solution, $t = -\\tfrac{3}{4}$."
+   }
+  },
+  "id": "orig-number-of-solu-M-f1ee89",
+  "skill_cd": "H.A.",
+  "subtype": "number-of-solutions",
+  "subtype_name": "No solution / infinitely many solutions / find the constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-number-of-solu-M-f1ee89",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

@@ -495,5 +495,53 @@
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which equation correctly expresses $q$ in terms of $p$ and $T$?",
+  "stimulus": "An orchard fills its irrigation reservoir using one main pump and two identical auxiliary pumps. When all three pumps run together, the reservoir fills in $T$ hours, where $\\frac{1}{T} = \\frac{1}{p} + \\frac{2}{q}$. Here $p$ is the time, in hours, the main pump needs alone, and $q$ is the time, in hours, one auxiliary pump needs alone, with $p > T > 0$.",
+  "choices": [
+   "$q = \\frac{2pT}{p - T}$",
+   "$q = \\frac{2pT}{T - p}$",
+   "$q = \\frac{p - T}{2pT}$",
+   "$q = \\frac{pT}{2(p - T)}$"
+  ],
+  "answer": "A",
+  "explanation": "First isolate the term that contains $q$: $\\frac{2}{q} = \\frac{1}{T} - \\frac{1}{p}$. Put the right side over the common denominator $pT$ to get $\\frac{2}{q} = \\frac{p - T}{pT}$. Take reciprocals of both sides: $\\frac{q}{2} = \\frac{pT}{p - T}$. Then multiply by 2: $q = \\frac{2pT}{p - T}$. To check, let $p = 6$ and $T = 3$. Then $\\frac{2}{q} = \\frac{1}{3} - \\frac{1}{6} = \\frac{1}{6}$, so $q = 12$, and $\\frac{2(6)(3)}{6 - 3} = 12$. Because $p > T$, this value is positive, as a pumping time has to be.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost the sign when you moved $\\frac{1}{p}$ across, which gave you $\\frac{1}{p} - \\frac{1}{T}$ instead of $\\frac{1}{T} - \\frac{1}{p}$. Since $p > T$, your expression is negative, and a pumping time can't be negative. With $p = 6$ and $T = 3$, it gives $-12$ instead of $12$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You solved for $\\frac{1}{q}$ and stopped there, so you skipped the final reciprocal step. $\\frac{p - T}{2pT}$ is the value of $\\frac{1}{q}$, not $q$. With $p = 6$ and $T = 3$, it gives $\\frac{1}{12}$ instead of $12$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You reached $\\frac{2}{q} = \\frac{p - T}{pT}$ and then divided by 2 instead of multiplying by 2 when you flipped. The 2 is in the numerator with $q$'s reciprocal, so it stays a factor of 2 in $q$. With $p = 6$ and $T = 3$, your expression gives $3$ instead of $12$."
+   }
+  },
+  "id": "orig-literal-equati-H-f5c7c6",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-H-f5c7c6",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

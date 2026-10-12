@@ -393,5 +393,98 @@
    "residue": 6
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "The graph of the linear function $y = f(x)$ is shown. What is the $y$-intercept of the graph of $y = f(x)$ in the $xy$-plane?",
+  "stimulus": null,
+  "figure": {
+   "type": "line",
+   "caption": "Graph of y = f(x)",
+   "x_label": "x",
+   "y_label": "y",
+   "points": [
+    [
+     2,
+     -3
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     10,
+     9
+    ],
+    [
+     12,
+     12
+    ]
+   ],
+   "x_min": 2,
+   "x_max": 12,
+   "x_step": 2,
+   "y_min": -3,
+   "y_max": 12,
+   "y_step": 3,
+   "alt": "A straight line rising from left to right, passing through the gridline intersections (2, -3), (4, 0), (6, 3), (8, 6), (10, 9) and (12, 12). The horizontal axis starts at x = 2, so the y-axis is not shown."
+  },
+  "choices": [
+   "$(0, -6)$",
+   "$(4, 0)$",
+   "$(0, 4)$",
+   "$(0, 6)$"
+  ],
+  "answer": "A",
+  "explanation": "The window starts at x = 2, so you can't see the line cross the y-axis. You have to extend it. From (4, 0) to (8, 6), the line rises 6 while x goes 4 to the right, so the slope is $\\frac{6}{4} = \\frac{3}{2}$. Going from (4, 0) back to x = 0 is 4 steps to the left, and each step left drops y by $\\frac{3}{2}$. That gives $y = 0 - 4 \\cdot \\frac{3}{2} = -6$. You can also substitute into $y = \\frac{3}{2}x + b$ with (4, 0): $0 = 6 + b$, so $b = -6$. The y-intercept is $(0, -6)$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is where the line crosses the x-axis, the only crossing you can actually see on the graph. The question asks for the y-intercept, which is where x = 0, not where y = 0."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You took the visible crossing (4, 0) and swapped its coordinates. That puts the point on the y-axis, but it still describes the x-intercept, and the line doesn't pass through (0, 4)."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the right slope and the right distance, but you added when you moved left from (4, 0). This line rises to the right, so moving left has to lower y, which makes the intercept $-6$, not $6$."
+   }
+  },
+  "id": "orig-graph-read-or--H-dbbb22",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--H-dbbb22",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "of the linear function __var__ is shown what",
+    "the linear function __var__ is shown what is",
+    "linear function __var__ is shown what is the",
+    "the __var__ intercept of the graph of __var__",
+    "__var__ intercept of the graph of __var__ in"
+   ],
+   "residue": 0
+  }
  }
 ]

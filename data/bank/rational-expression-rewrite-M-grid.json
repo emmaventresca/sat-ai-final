@@ -214,5 +214,504 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A paleobotanist models the ratio of leaf width to vein spacing in fossil leaves with the expression $\\frac{6x^2+11x+7}{2x+3}$, where $x > 0$. This expression is equivalent to $3x+1+\\frac{k}{2x+3}$, where $k$ is a constant.",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "The non-fraction part, $3x+1$, is the quotient. Multiply it by the divisor: $(2x+3)(3x+1) = 6x^2+11x+3$. The original numerator is $6x^2+11x+7$, so the amount left over is $7-3 = 4$. That leftover sits over the divisor, which gives $\\frac{6x^2+11x+7}{2x+3} = 3x+1+\\frac{4}{2x+3}$. So $k = 4$. To check, put $x = 2$ into both forms: $\\frac{24+22+7}{7} = \\frac{53}{7}$, and $7+\\frac{4}{7} = \\frac{53}{7}$.",
+  "common_errors": [
+   {
+    "value": "7",
+    "misconception": "intermediate-step",
+    "why": "Reads the constant in the original numerator as the remainder and never subtracts the 3 that comes from multiplying the divisor by the quotient."
+   },
+   {
+    "value": "3",
+    "misconception": "intermediate-step",
+    "why": "Works out $(2x+3)(3x+1)$ and gives its constant term, 3, without subtracting it from 7."
+   },
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "Adds the product's constant to the numerator's constant (7 + 3) instead of subtracting it."
+   }
+  ],
+  "id": "orig-rational-expre-M-9213c3",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-9213c3",
+   "structure": [],
+   "solver_answer": 4,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ is",
+    "is equivalent to __var__ where __var__ is a",
+    "equivalent to __var__ where __var__ is a constant",
+    "to __var__ where __var__ is a constant what"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "In a nutrition study, a researcher combines two absorption rates into the expression $\\frac{4}{x}+\\frac{3}{x+5}$, where $x > 0$. This expression is equivalent to $\\frac{ax+b}{x^2+5x}$, where $a$ and $b$ are constants.",
+  "keys": [
+   "20"
+  ],
+  "any_of": false,
+  "explanation": "The common denominator is $x(x+5) = x^2+5x$. To get it, multiply the first fraction by $\\frac{x+5}{x+5}$ and the second by $\\frac{x}{x}$. The numerators become $4(x+5) = 4x+20$ and $3x$. Add them to get $7x+20$, so the sum is $\\frac{7x+20}{x^2+5x}$. That gives $a = 7$ and $b = 20$.",
+  "common_errors": [
+   {
+    "value": "7",
+    "misconception": "algebra-manipulation",
+    "why": "Adds the fractions straight across, numerators together and denominators together, and takes the numerator 4 + 3 = 7. The same value also comes from reporting $a$ instead of $b$."
+   },
+   {
+    "value": "15",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplies each numerator by the wrong factor: $4 \\cdot x + 3(x+5) = 7x+15$."
+   },
+   {
+    "value": "35",
+    "misconception": "algebra-manipulation",
+    "why": "Adds the numerators to get 7, then multiplies that total by $x+5$: $7x+35$."
+   }
+  ],
+  "id": "orig-rational-expre-M-d0ce90",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-d0ce90",
+   "structure": [],
+   "solver_answer": 20,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "An ecologist compares two population growth rates using the expression $\\frac{x^2+2x-15}{x^2-9}$, where $x > 3$. This expression is equivalent to $1+\\frac{k}{x+3}$, where $k$ is a constant.",
+  "keys": [
+   "2"
+  ],
+  "any_of": false,
+  "explanation": "Factor both parts. The numerator is $x^2+2x-15 = (x+5)(x-3)$ and the denominator is $x^2-9 = (x+3)(x-3)$. Because $x > 3$, you can cancel $x-3$, which leaves $\\frac{x+5}{x+3}$. Now rewrite the numerator as $(x+3)+2$. Then $\\frac{x+5}{x+3} = 1+\\frac{2}{x+3}$, so $k = 2$.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "intermediate-step",
+    "why": "Stops at $\\frac{x+5}{x+3}$ and gives the numerator's constant instead of splitting off the 1."
+   },
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Rewrites $x+5$ as $(x+3)+8$, adding the 3 when it should be subtracted."
+   },
+   {
+    "value": "-2",
+    "misconception": "algebra-manipulation",
+    "why": "Factors the numerator as $(x-5)(x+3)$, which gives $\\frac{x-5}{x-3} = 1+\\frac{-2}{x-3}$, and then takes $-2$."
+   }
+  ],
+  "id": "orig-rational-expre-M-d6ecda",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-d6ecda",
+   "structure": [],
+   "solver_answer": 2,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ is",
+    "is equivalent to __var__ where __var__ is a",
+    "equivalent to __var__ where __var__ is a constant",
+    "to __var__ where __var__ is a constant what"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $a+b+c$?",
+  "stimulus": "A seismologist relates the energy of an aftershock to its distance from the epicenter with the expression $\\frac{3x^2+14x+9}{x+4}$, where $x > 0$. This expression is equivalent to $ax+b+\\frac{c}{x+4}$, where $a$, $b$, and $c$ are constants.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "Divide $3x^2+14x+9$ by $x+4$. The first term of the quotient is $3x$, because $3x(x+4) = 3x^2+12x$. That leaves $2x+9$. The next term is $2$, because $2(x+4) = 2x+8$, and that leaves a remainder of $1$. So the expression equals $3x+2+\\frac{1}{x+4}$. That gives $a = 3$, $b = 2$, $c = 1$, and $a+b+c = 6$. To check, multiply back: $(x+4)(3x+2)+1 = 3x^2+14x+9$.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Drops the remainder term and adds only $3+2$."
+   },
+   {
+    "value": "14",
+    "misconception": "intermediate-step",
+    "why": "Uses the numerator's constant, 9, as $c$ without subtracting the 8 from $2(x+4)$, so the total is $3+2+9$."
+   },
+   {
+    "value": "22",
+    "misconception": "algebra-manipulation",
+    "why": "Adds 8 to 9 instead of subtracting it, which makes $c = 17$ and the total $3+2+17$."
+   }
+  ],
+  "id": "orig-rational-expre-M-cfb445",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-cfb445",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ __var__",
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $a+b$?",
+  "stimulus": "A sports scientist adds two recovery-time terms to get $\\frac{3}{x-2}+\\frac{1}{x+2}$, where $x > 2$. This sum is equivalent to $\\frac{ax+b}{x^2-4}$, where $a$ and $b$ are constants.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "The common denominator is $(x-2)(x+2) = x^2-4$. Multiply the numerator 3 by $x+2$ and the numerator 1 by $x-2$. That gives $3x+6+x-2 = 4x+4$, so the sum is $\\frac{4x+4}{x^2-4}$. Then $a = 4$, $b = 4$, and $a+b = 8$.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "Adds the numerators straight across ($3+1 = 4$) without building a common denominator, so it reads as $0x+4$. Giving only $a$ or only $b$ produces the same value."
+   },
+   {
+    "value": "12",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplies 1 by $x+2$ instead of $x-2$, which gives $3x+6+x+2 = 4x+8$."
+   },
+   {
+    "value": "0",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplies each numerator by its own denominator: $3(x-2)+(x+2) = 4x-4$."
+   }
+  ],
+  "id": "orig-rational-expre-M-9f91cf",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-9f91cf",
+   "structure": [],
+   "solver_answer": 8,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "A linguist models how often a word is used compared with how long it is using the expression $\\frac{2x^2+10x}{x^2-25}$, where $x > 5$. This expression is equivalent to $a+\\frac{b}{x-5}$, where $a$ and $b$ are constants.",
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "Factor first. The numerator is $2x^2+10x = 2x(x+5)$ and the denominator is $x^2-25 = (x+5)(x-5)$. Cancel $x+5$ to get $\\frac{2x}{x-5}$. Next, rewrite $2x$ as $2(x-5)+10$. Then $\\frac{2x}{x-5} = 2+\\frac{10}{x-5}$, so $b = 10$.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives $a$, the whole-number part, instead of $b$."
+   },
+   {
+    "value": "-10",
+    "misconception": "algebra-manipulation",
+    "why": "Writes $2x = 2(x-5)-10$, which gets the sign of the leftover wrong."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Cancels the 2 in $2x$ against the 2 that is pulled out, then treats $\\frac{x}{x-5}$ as $1+\\frac{5}{x-5}$ and keeps 5 as the remainder."
+   }
+  ],
+  "id": "orig-rational-expre-M-f96c98",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-f96c98",
+   "structure": [],
+   "solver_answer": 10,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of the expression?",
+  "stimulus": "A civil engineer finds the difference between two beam-load ratios with the expression $\\frac{x^2+8x+15}{x+3}-\\frac{x^2-4}{x-2}$, where $x > 2$. For all $x > 2$, this expression equals a constant.",
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "Simplify each fraction by factoring. The first is $\\frac{(x+3)(x+5)}{x+3} = x+5$. The second is a difference of squares: $\\frac{(x+2)(x-2)}{x-2} = x+2$. Subtract the whole second result: $(x+5)-(x+2) = 3$. To check, put $x = 4$ into the original: $\\frac{63}{7}-\\frac{12}{2} = 9-6 = 3$.",
+  "common_errors": [
+   {
+    "value": "7",
+    "misconception": "algebra-manipulation",
+    "why": "Doesn't apply the minus sign to both terms, writing $x+5-x+2$. The same value comes from simplifying $\\frac{x^2-4}{x-2}$ to $x-2$."
+   },
+   {
+    "value": "5",
+    "misconception": "intermediate-step",
+    "why": "Simplifies the first fraction to $x+5$, gives its constant, and never subtracts the second fraction."
+   }
+  ],
+  "id": "orig-rational-expre-M-28d897",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-28d897",
+   "structure": [],
+   "solver_answer": 3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the expression is rewritten in the form $6 + \\frac{k}{x+2}$, where $k$ is a constant, what is the value of $k$?",
+  "stimulus": "A sports scientist models a sprinter's recovery ratio with the expression $\\frac{6x+17}{x+2}$, where $x > 0$ is the number of rest minutes.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "Write the numerator as a multiple of the divisor plus a remainder. 6(x + 2) = 6x + 12, so 6x + 17 = 6(x + 2) + 5. Split it into two fractions: (6(x + 2))/(x + 2) + 5/(x + 2) = 6 + 5/(x + 2). So k = 5. To check, pick x = 3: the original is 35/5 = 7, and 6 + 5/5 = 7.",
+  "common_errors": [
+   {
+    "value": "17",
+    "misconception": "algebra-manipulation",
+    "why": "You copied the numerator's constant as the remainder and never took out the 6(x + 2), so you lost what the division leaves behind."
+   },
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the quotient, the whole-number part, when the question asks for the numerator of the remainder fraction."
+   },
+   {
+    "value": "29",
+    "misconception": "algebra-manipulation",
+    "why": "You added 6 \u00d7 2 = 12 to 17 when you should have subtracted it."
+   }
+  ],
+  "id": "orig-rational-expre-M-9b56a4",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-9b56a4",
+   "structure": [],
+   "solver_answer": 5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "in the form __var__ where __var__ is a",
+    "the form __var__ where __var__ is a constant",
+    "form __var__ where __var__ is a constant what"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "The sum $\\frac{3}{x} + \\frac{2}{x+4}$ is equivalent to $\\frac{5x+b}{x^2+4x}$, where $b$ is a constant. What is the value of $b$?",
+  "stimulus": "A nutrition scientist adds two absorption rates, each modeled as a fraction of a dose of $x$ grams, where $x > 0$.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "The common denominator is x(x + 4) = x\u00b2 + 4x. Multiply 3/x by (x + 4)/(x + 4) to get (3x + 12)/(x\u00b2 + 4x), and multiply 2/(x + 4) by x/x to get 2x/(x\u00b2 + 4x). Add the numerators: 3x + 12 + 2x = 5x + 12. So b = 12.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied 3 by (x + 4) but distributed it only to the x, so you wrote 3x + 4 instead of 3x + 12."
+   },
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied each numerator by the wrong factor and wrote 3x + 2(x + 4), which makes the constant 8."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "You added straight across, getting 3 + 2 = 5 on top, then read that 5 as the constant."
+   }
+  ],
+  "id": "orig-rational-expre-M-f74a04",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-f74a04",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ is equivalent to __var__ where __var__ is",
+    "is equivalent to __var__ where __var__ is a",
+    "equivalent to __var__ where __var__ is a constant",
+    "to __var__ where __var__ is a constant what"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression $\\frac{3x^2+14x+8}{x+4}$ is equivalent to $ax+b$, where $a$ and $b$ are constants. What is the value of $a+b$?",
+  "stimulus": "A seismologist uses a rational expression to model how a tremor's amplitude falls off with distance $x$, in kilometers, where $x > 0$.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "Factor the numerator. You need two numbers that multiply to 3 \u00d7 8 = 24 and add to 14. Those are 12 and 2, so 3x\u00b2 + 14x + 8 = 3x\u00b2 + 12x + 2x + 8 = 3x(x + 4) + 2(x + 4) = (3x + 2)(x + 4). Since x > 0, x + 4 is never zero, so you can cancel it. That leaves 3x + 2, so a = 3, b = 2, and a + b = 5.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "You found a = 3 and b = 2 correctly but multiplied them instead of adding."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave only the coefficient a and never added b."
+   },
+   {
+    "value": "29",
+    "misconception": "algebra-manipulation",
+    "why": "In synthetic division you used +4 instead of -4. That gives a quotient of 3x + 26, and you ignored the nonzero remainder of 112 it should have warned you about."
+   }
+  ],
+  "id": "orig-rational-expre-M-5ac919",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-M-5ac919",
+   "structure": [],
+   "solver_answer": 5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

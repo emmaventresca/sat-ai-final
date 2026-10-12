@@ -260,5 +260,260 @@
    "residue": 3
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "Which of the following ordered pairs $(x, y)$ is a solution to the given inequality?",
+  "stimulus": "A marine biologist keeps $x$ clownfish and $y$ yellow tangs in a tank. Each clownfish needs 3 liters of filtered water per hour and each tang needs 8 liters. The inequality below shows which combinations the filter can support.\n\n$3x + 8y < 60$",
+  "choices": [
+   "$(12, 3)$",
+   "$(8, 4)$",
+   "$(4, 8)$",
+   "$(10, 4)$"
+  ],
+  "answer": "B",
+  "explanation": "Put each pair into $3x + 8y$. For $(8, 4)$ you get $3(8) + 8(4) = 24 + 32 = 56$. Since $56 < 60$, this pair is a solution. The other three pairs give 60, 76 and 62, and none of these is less than 60.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "$3(12) + 8(3) = 60$, so this point sits exactly on the boundary. The inequality is strict (less than 60), so 60 does not count. You treated a boundary point as a solution."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You swapped the coefficients and tested $8x + 3y$, which gives $32 + 24 = 56$. With the correct coefficients, $3(4) + 8(8) = 76$, and that is not less than 60."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "$3(10) + 8(4) = 62$. That is more than 60, so this pair satisfies $3x + 8y > 60$. You read the inequality sign the wrong way around."
+   }
+  },
+  "id": "orig-test-points-ta-E-917adf",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-test-points-ta-E-917adf",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The point $(4, y)$ is a solution to the given system of inequalities. Which of the following could be the value of $y$?",
+  "stimulus": "A sports scientist uses this system to describe acceptable weekly plans, where $x$ is hours of sprint training and $y$ is hours of endurance training.\n\n$y \\geq 3x - 2$\n$y \\leq x + 10$",
+  "choices": [
+   "$8$",
+   "$9$",
+   "$12$",
+   "$16$"
+  ],
+  "answer": "C",
+  "explanation": "Substitute $x = 4$ into each inequality. The first gives $y \\geq 3(4) - 2 = 10$. The second gives $y \\leq 4 + 10 = 14$. So $y$ must be between 10 and 14, inclusive. Only 12 is in that range.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "8 satisfies $y \\leq 14$ but not $y \\geq 10$. You checked only the second inequality."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You worked out $3(4) - 2$ as $3(4 - 2) = 6$, which gave a lower bound of 6. The correct lower bound is 10, and 9 is below it."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "16 satisfies $y \\geq 10$ but not $y \\leq 14$. You checked only the first inequality."
+   }
+  },
+  "id": "orig-test-points-ta-E-75162c",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-test-points-ta-E-75162c",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the point __var__ is a solution to the",
+    "point __var__ is a solution to the given",
+    "a solution to the given system of inequalities"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which point $(x, y)$ is a solution to the given inequality in the $xy$-plane?",
+  "stimulus": "A civil engineer uses the inequality below to screen pairs of scaled design values $x$ and $y$ for a bridge support.\n\n$6x - 3y > 12$",
+  "choices": [
+   "$(2, 3)$",
+   "$(4, 4)$",
+   "$(4, 5)$",
+   "$(5, 4)$"
+  ],
+  "answer": "D",
+  "explanation": "Subtract $6x$ from both sides, then divide by $-3$. Dividing by a negative flips the sign, so you get $y < 2x - 4$. For $(5, 4)$: $2(5) - 4 = 6$, and $4 < 6$. You can check this in the original inequality: $30 - 12 = 18$, and $18 > 12$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided by $-3$ without flipping the sign, which gave $y > 2x - 4$. Then $3 > 0$ looked true. In the original inequality, $6(2) - 3(3) = 3$, which is not greater than 12."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "$6(4) - 3(4) = 12$, so this point lies on the boundary line. The inequality is strict, so 12 is not greater than 12."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You probably swapped the coordinates of the correct point. $6(4) - 3(5) = 9$, and 9 is not greater than 12."
+   }
+  },
+  "id": "orig-test-points-ta-E-4cd183",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-test-points-ta-E-4cd183",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which point __var__ is a solution to",
+    "which point __var__ is a solution to the",
+    "point __var__ is a solution to the given"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "For which of the following sets of values of $x$ and their corresponding values of $y$ are all the pairs solutions to the given inequality?",
+  "stimulus": "An ornithologist models a chick's mass with the inequality below, where $y$ is the mass in grams on day $x$ after hatching.\n\n$y > 3x + 2$",
+  "choices": [
+   "$(1, 6)$, $(2, 9)$, $(3, 12)$",
+   "$(1, 6)$, $(2, 8)$, $(3, 10)$",
+   "$(1, 5)$, $(2, 8)$, $(3, 11)$",
+   "$(1, 4)$, $(2, 7)$, $(3, 10)$"
+  ],
+  "answer": "A",
+  "explanation": "For $x = 1, 2, 3$, the value of $3x + 2$ is 5, 8 and 11. Each $y$ must be greater than these. In choice A, $6 > 5$, $9 > 8$ and $12 > 11$, so every pair works.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "The first pair works because $6 > 5$. But 8 is not greater than 8, and 10 is not greater than 11. You checked only the first row."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "Each $y$ equals $3x + 2$ exactly, so every pair lies on the boundary line. The inequality is strict, so none of them is a solution."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "Each $y$ is less than $3x + 2$, so these pairs satisfy $y < 3x + 2$. You used the wrong side of the inequality."
+   }
+  },
+  "id": "orig-test-points-ta-E-d5e235",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-test-points-ta-E-d5e235",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which point $(x, y)$ is a solution to the given system of inequalities in the $xy$-plane?",
+  "stimulus": "A meteorologist uses this system to flag overnight conditions, where $x$ and $y$ are scaled readings of wind speed and temperature drop.\n\n$y < 2x + 1$\n$y > -x + 4$",
+  "choices": [
+   "$(0, 0)$",
+   "$(3, 5)$",
+   "$(0, 2)$",
+   "$(1, 3)$"
+  ],
+  "answer": "B",
+  "explanation": "Test $(3, 5)$ in both inequalities. First: $5 < 2(3) + 1 = 7$, which is true. Second: $5 > -3 + 4 = 1$, which is true. The point satisfies both, so it lies in the overlap.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "$0 < 1$ satisfies the first inequality, but $0 > 4$ is false. You checked only one inequality of the system."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "$2 < 1$ is false and $2 > 4$ is false. The point satisfies $y > 2x + 1$ and $y < -x + 4$, so you reversed both signs."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "$(1, 3)$ is where the two boundary lines cross: $2(1) + 1 = 3$ and $-1 + 4 = 3$. Both inequalities are strict, so a point on the boundary is not a solution."
+   }
+  },
+  "id": "orig-test-points-ta-E-c6c181",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-test-points-ta-E-c6c181",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which point __var__ is a solution to",
+    "which point __var__ is a solution to the",
+    "point __var__ is a solution to the given",
+    "a solution to the given system of inequalities",
+    "solution to the given system of inequalities in",
+    "to the given system of inequalities in the"
+   ],
+   "residue": 3
+  }
  }
 ]

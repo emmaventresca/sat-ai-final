@@ -245,5 +245,539 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the median vertical jump height, in centimeters, of these 8 athletes?",
+  "stimulus": "A sports science lab measured the vertical jump heights, in centimeters, of 8 volleyball players. In the order they were tested, the heights were 58, 47, 61, 44, 52, 66, 50, and 49.",
+  "keys": [
+   "51"
+  ],
+  "any_of": false,
+  "explanation": "Sort the heights first: 44, 47, 49, 50, 52, 58, 61, 66. There are 8 values, which is an even number, so the median is the mean of the 4th and 5th values. That gives $\\frac{50 + 52}{2} = 51$.",
+  "common_errors": [
+   {
+    "value": "48",
+    "misconception": "algebra-manipulation",
+    "why": "Averaged the 4th and 5th values of the unsorted list, 44 and 52, without sorting first."
+   },
+   {
+    "value": "53.375",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the mean, $427 \\div 8$, instead of the median."
+   },
+   {
+    "value": "22",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the range, $66 - 44$, instead of the median."
+   },
+   {
+    "value": "50",
+    "misconception": "algebra-manipulation",
+    "why": "Sorted correctly but took only the 4th value instead of averaging the two middle values."
+   },
+   {
+    "value": "52",
+    "misconception": "algebra-manipulation",
+    "why": "Sorted correctly but took only the 5th value instead of averaging the two middle values."
+   }
+  ],
+  "id": "orig-compute-mean-o-M-ea9f82",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-ea9f82",
+   "structure": [],
+   "solver_answer": 51,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the mean number of planets detected per star for these 20 stars?",
+  "stimulus": "An astronomy survey recorded how many planets were detected around each of 20 nearby stars. The results are shown in the table.\n\nPlanets Detected per Star\nNumber of planets | Number of stars\n0 | 6\n1 | 7\n2 | 4\n3 | 2\n4 | 1",
+  "keys": [
+   "1.25",
+   "5/4"
+  ],
+  "any_of": false,
+  "explanation": "Weight each planet count by how many stars have it: $0(6) + 1(7) + 2(4) + 3(2) + 4(1) = 0 + 7 + 8 + 6 + 4 = 25$ planets in total. Divide by the 20 stars: $\\frac{25}{20} = 1.25$.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "Averaged the five distinct planet counts, $\\frac{0+1+2+3+4}{5}$, without weighting by frequency."
+   },
+   {
+    "value": "25",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the total number of planets and never divided by the number of stars."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the total of 25 planets by the 5 rows of the table instead of by the 20 stars."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Averaged the frequency column, $\\frac{20}{5}$, instead of the planet counts."
+   },
+   {
+    "value": "1",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the median (the 10th and 11th stars both have 1 planet) instead of the mean."
+   }
+  ],
+  "id": "orig-compute-mean-o-M-8c977a",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-8c977a",
+   "structure": [],
+   "solver_answer": 1.25,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the median number of flood days per month for these 15 months?",
+  "stimulus": "A hydrologist counted the number of days each month that a river stayed above flood stage. The table summarizes 15 months of records.\n\nDays Above Flood Stage\nDays in the month | Number of months\n0 | 4\n1 | 3\n2 | 2\n3 | 3\n5 | 2\n8 | 1",
+  "keys": [
+   "2"
+  ],
+  "any_of": false,
+  "explanation": "There are 15 months, so the median is the 8th value in order. Add up the frequencies as you go: the value 0 covers positions 1 to 4, the value 1 covers positions 5 to 7, and the value 2 covers positions 8 to 9. The 8th value is 2.",
+  "common_errors": [
+   {
+    "value": "2.5",
+    "misconception": "algebra-manipulation",
+    "why": "Took the median of the six distinct values 0, 1, 2, 3, 5, 8 and ignored how many months had each."
+   },
+   {
+    "value": "34/15",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the mean, $\\frac{34}{15}$, instead of the median."
+   },
+   {
+    "value": "2.266",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the mean, $\\frac{34}{15}$, instead of the median (truncated decimal)."
+   },
+   {
+    "value": "2.267",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the mean, $\\frac{34}{15}$, instead of the median (rounded decimal)."
+   },
+   {
+    "value": "0",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the mode, the value with the highest frequency, instead of the median."
+   },
+   {
+    "value": "8",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the range, $8 - 0$, instead of the median."
+   }
+  ],
+  "id": "orig-compute-mean-o-M-bce968",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-bce968",
+   "structure": [],
+   "solver_answer": 2,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the median number of aftershocks per day for these 7 days?",
+  "stimulus": "After an earthquake, a seismology station logged the number of aftershocks above magnitude 2.0 on each of 7 days. The daily counts were 41, 7, 18, 12, 9, 23, and 15.",
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "Sort the counts: 7, 9, 12, 15, 18, 23, 41. With 7 values, the median is the 4th one, which is 15. The large count of 41 pulls the mean up but has no effect on the median.",
+  "common_errors": [
+   {
+    "value": "12",
+    "misconception": "algebra-manipulation",
+    "why": "Took the 4th value of the list as given, without sorting first."
+   },
+   {
+    "value": "125/7",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the mean, $\\frac{125}{7}$, instead of the median."
+   },
+   {
+    "value": "17.85",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the mean, $\\frac{125}{7}$, instead of the median (truncated decimal)."
+   },
+   {
+    "value": "17.86",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the mean, $\\frac{125}{7}$, instead of the median (rounded decimal)."
+   },
+   {
+    "value": "34",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the range, $41 - 7$, instead of the median."
+   }
+  ],
+  "id": "orig-compute-mean-o-M-f19693",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-f19693",
+   "structure": [],
+   "solver_answer": 15,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the mean number of clinic visits per patient for these 20 patients?",
+  "stimulus": "A public health team reviewed how many times each of 20 patients visited a community clinic during one year. The results are shown in the table.\n\nClinic Visits in One Year\nNumber of visits | Number of patients\n1 | 5\n2 | 8\n3 | 4\n4 | 2\n6 | 1",
+  "keys": [
+   "2.35",
+   "47/20"
+  ],
+  "any_of": false,
+  "explanation": "Find the total number of visits by multiplying each visit count by its number of patients: $1(5) + 2(8) + 3(4) + 4(2) + 6(1) = 5 + 16 + 12 + 8 + 6 = 47$. Divide by the 20 patients: $\\frac{47}{20} = 2.35$.",
+  "common_errors": [
+   {
+    "value": "3.2",
+    "misconception": "algebra-manipulation",
+    "why": "Averaged the distinct visit counts, $\\frac{1+2+3+4+6}{5}$, without weighting by frequency."
+   },
+   {
+    "value": "47",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the total number of visits and never divided by the number of patients."
+   },
+   {
+    "value": "9.4",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the 47 total visits by the 5 rows of the table instead of by the 20 patients."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the median (the 10th and 11th patients each made 2 visits) or the mode instead of the mean."
+   }
+  ],
+  "id": "orig-compute-mean-o-M-88bd29",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-88bd29",
+   "structure": [],
+   "solver_answer": 2.35,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the median amount of dietary fiber, in grams, for these 10 cereals?",
+  "stimulus": "A nutrition science student recorded the dietary fiber, in grams per serving, of 10 breakfast cereals. In the order they were tested, the amounts were 3, 8, 5, 2, 11, 6, 4, 9, 7, and 1.",
+  "keys": [
+   "5.5",
+   "11/2"
+  ],
+  "any_of": false,
+  "explanation": "Sort the amounts first: 1, 2, 3, 4, 5, 6, 7, 8, 9, 11. There are 10 values, so the median is the mean of the 5th and 6th values: $\\frac{5 + 6}{2} = 5.5$.",
+  "common_errors": [
+   {
+    "value": "8.5",
+    "misconception": "algebra-manipulation",
+    "why": "Averaged the 5th and 6th values of the unsorted list, 11 and 6, without sorting first."
+   },
+   {
+    "value": "5.6",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the mean, $56 \\div 10$, instead of the median."
+   },
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the range, $11 - 1$, instead of the median."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Sorted correctly but took only the 5th value instead of averaging the two middle values."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Sorted correctly but took only the 6th value instead of averaging the two middle values."
+   }
+  ],
+  "id": "orig-compute-mean-o-M-7cdc93",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-7cdc93",
+   "structure": [],
+   "solver_answer": 5.5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the median number of pottery sherds per unit for these 20 units?",
+  "stimulus": "At an archaeology dig, each of 20 excavation units was checked for pottery sherds. The table shows how many units held each number of sherds.\n\nPottery Sherds Recovered\nSherds per unit | Number of units\n2 | 3\n3 | 7\n4 | 4\n6 | 4\n9 | 2",
+  "keys": [
+   "3.5",
+   "7/2"
+  ],
+  "any_of": false,
+  "explanation": "With 20 units, the median is the mean of the 10th and 11th values in order. Add up the frequencies as you go: the value 2 covers positions 1 to 3 and the value 3 covers positions 4 to 10, so the 10th value is 3. The value 4 begins at position 11, so the 11th value is 4. The median is $\\frac{3 + 4}{2} = 3.5$.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "Took the middle of the five distinct values 2, 3, 4, 6, 9 and ignored the frequencies, or used only the 11th value."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Used only the 10th value instead of averaging the 10th and 11th."
+   },
+   {
+    "value": "4.25",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the mean, $85 \\div 20$, instead of the median."
+   },
+   {
+    "value": "17/4",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the mean, $\\frac{85}{20}$, instead of the median."
+   },
+   {
+    "value": "7",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the range, $9 - 2$, instead of the median."
+   }
+  ],
+  "id": "orig-compute-mean-o-M-b3c865",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-b3c865",
+   "structure": [],
+   "solver_answer": 3.5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the mean number of vowel sounds for these 9 languages?",
+  "stimulus": "A linguistics researcher counted the distinct vowel sounds in each of 9 languages. The counts were 5, 7, 12, 5, 9, 6, 14, 8, and 5.",
+  "keys": [
+   "71/9",
+   "7.888",
+   "7.889"
+  ],
+  "any_of": false,
+  "explanation": "Add the counts: $5 + 7 + 12 + 5 + 9 + 6 + 14 + 8 + 5 = 71$. Divide by the 9 languages: $\\frac{71}{9} \\approx 7.889$.",
+  "common_errors": [
+   {
+    "value": "7",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the median of the sorted list, 5, 5, 5, 6, 7, 8, 9, 12, 14, instead of the mean."
+   },
+   {
+    "value": "71",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the sum and never divided by the number of languages."
+   },
+   {
+    "value": "8.875",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the sum of 71 by 8 instead of 9, having miscounted the values."
+   },
+   {
+    "value": "5",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the mode, the most frequent count, instead of the mean."
+   },
+   {
+    "value": "9",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the range, $14 - 5$, or the middle value of the unsorted list, instead of the mean."
+   }
+  ],
+  "id": "orig-compute-mean-o-M-bfa9fd",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-bfa9fd",
+   "structure": [],
+   "solver_answer": "71/9",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the mean number of syllables per word for these 20 words?",
+  "stimulus": "A linguist studying word length in an oral storytelling tradition counted the number of syllables in each of 20 words chosen at random from a recorded folktale. The results are shown in the frequency table.\n\nSyllables per Word in a Recorded Folktale\nNumber of syllables | Number of words\n1 | 6\n2 | 9\n3 | 3\n4 | 2",
+  "keys": [
+   "2.05",
+   "41/20"
+  ],
+  "any_of": false,
+  "explanation": "Each row of a frequency table stands for several words. Multiply each syllable count by its frequency, add the products, then divide by the total number of words. The products are $1 \\cdot 6 = 6$, $2 \\cdot 9 = 18$, $3 \\cdot 3 = 9$ and $4 \\cdot 2 = 8$, which add to $6 + 18 + 9 + 8 = 41$ syllables. The number of words is $6 + 9 + 3 + 2 = 20$. The mean is $\\frac{41}{20} = 2.05$ syllables per word. In Desmos, enter the syllable counts and the frequencies as two lists and use mean(L1, L2) to check.",
+  "common_errors": [
+   {
+    "value": "2.5",
+    "misconception": "algebra-manipulation",
+    "why": "Averaged the four distinct syllable counts, $(1+2+3+4)/4$, without weighting each by how many words had it."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the median (the 10th and 11th words both have 2 syllables), which is also the mode, instead of the mean."
+   },
+   {
+    "value": "41",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the total number of syllables and never divided by the number of words."
+   },
+   {
+    "value": "10.25",
+    "misconception": "algebra-manipulation",
+    "why": "Found the weighted total of 41 correctly but divided by the 4 rows of the table instead of the 20 words."
+   },
+   {
+    "value": "5",
+    "misconception": "wrong-target-quantity",
+    "why": "Averaged the frequency column, $(6+9+3+2)/4$, instead of the syllable counts."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the range of syllable counts, $4 - 1$, instead of the mean."
+   }
+  ],
+  "id": "orig-compute-mean-o-M-96ad74",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-96ad74",
+   "structure": [],
+   "solver_answer": 2.05,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

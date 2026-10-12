@@ -220,5 +220,612 @@
    "residue": 2
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "A linguist models how often a word is used over time with the function $f(x) = 3x^2 + bx + c$, where $b$ and $c$ are constants. The zeros of $f$ are $-2$ and $-7$.",
+  "keys": [
+   "27"
+  ],
+  "any_of": false,
+  "explanation": "Each zero $r$ gives a factor $(x - r)$, so the zeros $-2$ and $-7$ give $(x + 2)$ and $(x + 7)$. The leading coefficient is 3, so $f(x) = 3(x + 2)(x + 7)$. Expand: $(x + 2)(x + 7) = x^2 + 9x + 14$, and multiplying by 3 gives $3x^2 + 27x + 42$. So $b = 27$. To check in Desmos, graph $3x^2 + 27x + 42$ and click the x-intercepts. They should be at $-2$ and $-7$.",
+  "common_errors": [
+   {
+    "value": "-27",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote the factors as $(x - 2)(x - 7)$ instead of $(x + 2)(x + 7)$. That flips the sign of the middle term."
+   },
+   {
+    "value": "9",
+    "misconception": "algebra-manipulation",
+    "why": "Expanded $(x + 2)(x + 7)$ but dropped the leading coefficient 3."
+   },
+   {
+    "value": "42",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the constant term $c$ instead of $b$."
+   }
+  ],
+  "id": "orig-zeros-and-fact-M-7708fb",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-7708fb",
+   "structure": [],
+   "solver_answer": "27",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "function __var__ where __var__ and __var__ are constants",
+    "are __var__ and __var__ what is the value"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "For what positive value of $t$, other than 6, is $d(t) = 0$?",
+  "stimulus": "A hydrologist models the change in a river's depth, in centimeters, $t$ hours after a storm by $d(t) = -2(5t - 4)(t - 6)$.",
+  "keys": [
+   "4/5",
+   ".8",
+   "0.8"
+  ],
+  "any_of": false,
+  "explanation": "A product is zero only when one of its factors is zero. Setting $t - 6 = 0$ gives the zero you were told about, 6. Set the other factor to zero: $5t - 4 = 0$, so $5t = 4$ and $t = \\frac{4}{5}$. The $-2$ out front stretches and flips the graph but doesn't move its zeros. In Desmos, graph the function and click the intercept to the left of 6. It sits at $0.8$.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "Read the zero from $(5t - 4)$ as 4 and ignored the coefficient 5 on $t$."
+   },
+   {
+    "value": "5/4",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the wrong way when solving $5t = 4$ and got $\\frac{5}{4}$."
+   },
+   {
+    "value": "-4/5",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the sign when solving $5t - 4 = 0$."
+   },
+   {
+    "value": "-2",
+    "misconception": "wrong-target-quantity",
+    "why": "Took the leading coefficient for a zero."
+   }
+  ],
+  "id": "orig-zeros-and-fact-M-37dda2",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-37dda2",
+   "structure": [],
+   "solver_answer": "4/5",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the other zero of $p$?",
+  "stimulus": "An ornithologist uses the function $p(x) = x^2 - kx + 24$, where $k$ is a constant, to model the flight path of a gliding bird. One zero of $p$ is 4.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "Because 4 is a zero, $p(4) = 0$. Substitute: $16 - 4k + 24 = 0$, so $40 = 4k$ and $k = 10$. Now $p(x) = x^2 - 10x + 24 = (x - 4)(x - 6)$, so the other zero is 6. A faster route: the leading coefficient is 1, so the product of the zeros equals the constant term, 24, and $24 \\div 4 = 6$. In Desmos, put a slider on $k$ and drag until the curve passes through $(4, 0)$. Then click the other intercept.",
+  "common_errors": [
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "Found $k$ and stopped without finding the other zero."
+   },
+   {
+    "value": "-6",
+    "misconception": "algebra-manipulation",
+    "why": "Factored correctly to $(x - 4)(x - 6)$ but read the zero from the factor as $-6$."
+   },
+   {
+    "value": "4",
+    "misconception": "misread-given",
+    "why": "Gave back the zero the question already stated."
+   }
+  ],
+  "id": "orig-zeros-and-fact-M-5cf85a",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-5cf85a",
+   "structure": [],
+   "solver_answer": "6",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $d$?",
+  "stimulus": "A marine biologist models a reef's coral cover with a polynomial function $p$ of degree 3. The function has zeros at $-3$, $1$ and $4$ and a leading coefficient of 2. It can be written as $p(x) = 2x^3 + bx^2 + cx + d$, where $b$, $c$ and $d$ are constants.",
+  "keys": [
+   "24"
+  ],
+  "any_of": false,
+  "explanation": "Write $p$ from its zeros: $p(x) = 2(x + 3)(x - 1)(x - 4)$. The constant term is what you get when every $x$ is set to 0, so you don't need to expand the whole thing: $d = 2(3)(-1)(-4) = 24$. There are two negative factors, so the product is positive. You can check with $p(0) = 24$, or graph the function in Desmos and read the y-intercept.",
+  "common_errors": [
+   {
+    "value": "-24",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote the factors as $(x - 3)(x + 1)(x + 4)$, which flips the sign of every constant and of their product."
+   },
+   {
+    "value": "12",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the constants from the factors but dropped the leading coefficient 2."
+   },
+   {
+    "value": "-4",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the coefficient $b$ instead of the constant term."
+   },
+   {
+    "value": "-22",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the coefficient $c$ instead of the constant term."
+   }
+  ],
+  "id": "orig-zeros-and-fact-M-3dc552",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-3dc552",
+   "structure": [],
+   "solver_answer": "24",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "as __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $a + b$?",
+  "stimulus": "In an excavation model, the function $f(x) = (2x - 9)(x + 4)$ describes the depth of a trench. The x-intercepts of the graph of $y = f(x)$ are $(a, 0)$ and $(b, 0)$.",
+  "keys": [
+   "1/2",
+   ".5",
+   "0.5"
+  ],
+  "any_of": false,
+  "explanation": "Set each factor to zero. From $2x - 9 = 0$ you get $x = \\frac{9}{2}$, and from $x + 4 = 0$ you get $x = -4$. Add them: $\\frac{9}{2} + (-4) = \\frac{1}{2}$. To check in Desmos, graph $f$ and click both intercepts. They are at $4.5$ and $-4$.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Read the zero from $(2x - 9)$ as 9 and ignored the coefficient 2, so added $9 + (-4)$."
+   },
+   {
+    "value": "-1/2",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped both signs and got the zeros $-\\frac{9}{2}$ and $4$."
+   },
+   {
+    "value": "17/2",
+    "misconception": "algebra-manipulation",
+    "why": "Got the sign wrong on $-4$ only, so added $\\frac{9}{2} + 4$."
+   },
+   {
+    "value": "-18",
+    "misconception": "wrong-target-quantity",
+    "why": "Took the product of the factors' constants instead of adding the intercepts."
+   }
+  ],
+  "id": "orig-zeros-and-fact-M-c5201c",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-c5201c",
+   "structure": [],
+   "solver_answer": "0.5",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "are __var__ and __var__ what is the value"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $f(11)$?",
+  "stimulus": "An urban planner models the projected change in traffic on a road with a quadratic function $f$. The zeros of $f$ are 2 and 10, and $f(0) = 40$.",
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "The zeros give $f(x) = a(x - 2)(x - 10)$ for some constant $a$. Use $f(0) = 40$: $a(-2)(-10) = 20a = 40$, so $a = 2$. Then $f(11) = 2(11 - 2)(11 - 10) = 2(9)(1) = 18$. In Desmos, graph $a(x - 2)(x - 10)$ with a slider on $a$, set it so the y-intercept is 40, and evaluate at 11.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "intermediate-step",
+    "why": "Wrote $(x - 2)(x - 10)$ but never solved for $a$, which leaves $a = 1$."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the leading coefficient $a$ and stopped."
+   },
+   {
+    "value": "546",
+    "misconception": "algebra-manipulation",
+    "why": "Used the factors $(x + 2)(x + 10)$. That still gives $a = 2$, but then $f(11) = 2(13)(21)$."
+   }
+  ],
+  "id": "orig-zeros-and-fact-M-39c930",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-39c930",
+   "structure": [],
+   "solver_answer": "18",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The zeros of $p$ are $-3$ and $-5$. What is the value of $b$?",
+  "stimulus": "A cartographer models how a grid line on a map projection bends near the map's edge using the function $p(x) = 2x^2 + bx + 30$, where $b$ is a constant.",
+  "keys": [
+   "16"
+  ],
+  "any_of": false,
+  "explanation": "Each zero $r$ gives a factor $(x - r)$, so the zeros $-3$ and $-5$ give the factors $(x + 3)$ and $(x + 5)$. The leading coefficient is 2, so $p(x) = 2(x + 3)(x + 5)$. Expand: $(x + 3)(x + 5) = x^2 + 8x + 15$, and doubling gives $2x^2 + 16x + 30$. The constant term matches the given 30, so this is the right function, and $b = 16$. In Desmos, graph $y = 2x^2 + bx + 30$ with a slider on $b$ and drag until the x-intercepts sit at $-3$ and $-5$.",
+  "common_errors": [
+   {
+    "value": "-16",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote the factors as $(x - 3)(x - 5)$ instead of $(x + 3)(x + 5)$, which flips the sign of the middle term."
+   },
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Expanded $(x + 3)(x + 5)$ without the leading coefficient 2 and read off the middle coefficient 8."
+   },
+   {
+    "value": "-8",
+    "misconception": "algebra-manipulation",
+    "why": "Made both slips at once: flipped the signs of the factors and dropped the leading coefficient."
+   },
+   {
+    "value": "15",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the product of the zeros, which is the constant term divided by 2, instead of the coefficient $b$."
+   }
+  ],
+  "id": "orig-zeros-and-fact-M-baf56d",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-baf56d",
+   "structure": [],
+   "solver_answer": "16",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "are __var__ and __var__ what is the value"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the sum of the zeros of $d$?",
+  "stimulus": "A materials scientist models how far a polymer coating's thickness is from its target, $x$ hours after curing begins, with the function $d(x) = (4x - 3)(x - 2)$.",
+  "keys": [
+   "11/4",
+   "2.75"
+  ],
+  "any_of": false,
+  "explanation": "Set each factor equal to zero. $4x - 3 = 0$ gives $x = \\frac{3}{4}$, and $x - 2 = 0$ gives $x = 2$. The zeros are $\\frac{3}{4}$ and $2$, so their sum is $\\frac{3}{4} + 2 = \\frac{11}{4}$, or 2.75. Watch out for the factor with a coefficient: its zero is $\\frac{3}{4}$, not 3. In Desmos, graph $y = (4x - 3)(x - 2)$ and click the two x-intercepts to check.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Read the zero of $(4x - 3)$ as 3 without dividing by the coefficient 4, then added $3 + 2$."
+   },
+   {
+    "value": "-11/4",
+    "misconception": "algebra-manipulation",
+    "why": "Took the zeros as $-\\frac{3}{4}$ and $-2$, reading the signs in the factors as the signs of the zeros."
+   },
+   {
+    "value": "-2.75",
+    "misconception": "algebra-manipulation",
+    "why": "Decimal form of the same sign flip: zeros taken as $-\\frac{3}{4}$ and $-2$."
+   },
+   {
+    "value": "10/3",
+    "misconception": "algebra-manipulation",
+    "why": "Solved $4x - 3 = 0$ as $x = \\frac{4}{3}$ by inverting the fraction, then added 2."
+   },
+   {
+    "value": "3.333",
+    "misconception": "algebra-manipulation",
+    "why": "Decimal form of $\\frac{4}{3} + 2$, from inverting the zero of $4x - 3$."
+   },
+   {
+    "value": "3/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Multiplied the zeros, $\\frac{3}{4} \\cdot 2$, instead of adding them."
+   },
+   {
+    "value": "1.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Decimal form of the product of the zeros instead of their sum."
+   }
+  ],
+  "id": "orig-zeros-and-fact-M-1b12e4",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-1b12e4",
+   "structure": [],
+   "solver_answer": "11/4",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graph of $y = s(t)$ in the $ty$-plane has two $t$-intercepts. One is $(2, 0)$. What is the $t$-coordinate of the other $t$-intercept?",
+  "stimulus": "A seismologist models the vertical displacement of a ground sensor $t$ seconds after a tremor reaches it with the function $s(t) = t^2 - 7t + c$, where $c$ is a constant.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "$(2, 0)$ is on the graph, so substitute $t = 2$ and set the output to 0: $4 - 14 + c = 0$, which gives $c = 10$. Then $s(t) = t^2 - 7t + 10 = (t - 2)(t - 5)$, and the other $t$-intercept is at $t = 5$. In Desmos, put a slider on $c$ and drag until the curve crosses the axis at 2. The second intercept shows up at 5.",
+  "common_errors": [
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the constant $c$ correctly but gave it as the answer instead of the other intercept."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave back the intercept already stated in the question."
+   },
+   {
+    "value": "9",
+    "misconception": "algebra-manipulation",
+    "why": "Substituted $t = -2$, treating the intercept as the factor $(t + 2)$, which gives $c = -18$ and $s(t) = (t - 9)(t + 2)$."
+   },
+   {
+    "value": "-5",
+    "misconception": "algebra-manipulation",
+    "why": "Factored correctly as $(t - 2)(t - 5)$ but read the zero off the factor with the wrong sign."
+   }
+  ],
+  "id": "orig-zeros-and-fact-M-d941d3",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-d941d3",
+   "structure": [],
+   "solver_answer": "5",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "graph of __var__ in the __var__ plane has",
+    "__var__ what is the __var__ coordinate of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "The zeros of $p$ are $-2$, $1$, and $5$. What is the value of $d$?",
+  "stimulus": "A civil engineer models the sag of a suspension cable along part of a bridge span with the function $p(x) = 3x^3 + bx^2 + cx + d$, where $b$, $c$, and $d$ are constants.",
+  "keys": [
+   "30"
+  ],
+  "any_of": false,
+  "explanation": "Each zero $r$ gives a factor $(x - r)$, so $p(x) = 3(x + 2)(x - 1)(x - 5)$. You only need the constant term, which is the leading coefficient times the product of the constants in the factors: $3 \\cdot (2)(-1)(-5) = 3 \\cdot 10 = 30$. Check the sign carefully: the factors contribute two negative constants, so the product is positive. In Desmos, graph $y = 3(x + 2)(x - 1)(x - 5)$ and click the y-intercept, which is $(0, 30)$.",
+  "common_errors": [
+   {
+    "value": "-30",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the zeros themselves, $3 \\cdot (-2)(1)(5)$, instead of the constants $-r$ in the factors, which flips the sign."
+   },
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the factor constants correctly but dropped the leading coefficient 3."
+   },
+   {
+    "value": "-10",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the zeros themselves and also dropped the leading coefficient."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Added the zeros, $-2 + 1 + 5$, instead of building the constant term from the factors."
+   }
+  ],
+  "id": "orig-zeros-and-fact-M-ab76df",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-ab76df",
+   "structure": [],
+   "solver_answer": "30",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The zeros of $g$ are $3$ and $4$. What is the value of $k$?",
+  "stimulus": "A nutrition scientist models the change in a participant's blood glucose level, compared with the level before a meal, $x$ hours after the meal with the function $g(x) = (x - 4)(2x - k)$, where $k$ is a constant.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "The factor $(x - 4)$ gives the zero 4, so the zero 3 must come from $(2x - k)$. Substitute $x = 3$ into that factor and set it to zero: $2(3) - k = 0$, so $k = 6$. Check: $2x - 6 = 0$ gives $x = 3$. In Desmos, graph $y = (x - 4)(2x - k)$ with a slider on $k$ and drag until the intercepts sit at 3 and 4.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Treated $(2x - k)$ as if it were $(x - k)$, ignoring the coefficient 2, and set $k$ equal to the zero."
+   },
+   {
+    "value": "-6",
+    "misconception": "algebra-manipulation",
+    "why": "Solved $2(3) + k = 0$, flipping the sign inside the factor."
+   },
+   {
+    "value": "8",
+    "misconception": "misread-given",
+    "why": "Substituted the zero 4, which belongs to the other factor, into $(2x - k)$ and got $k = 8$."
+   },
+   {
+    "value": "3/2",
+    "misconception": "algebra-manipulation",
+    "why": "Divided by 2 where they should have multiplied, solving $2k = 3$ instead of $k = 2 \\cdot 3$."
+   },
+   {
+    "value": "1.5",
+    "misconception": "algebra-manipulation",
+    "why": "Decimal form of the same slip: solved $2k = 3$ instead of $k = 2 \\cdot 3$."
+   }
+  ],
+  "id": "orig-zeros-and-fact-M-9ea336",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-9ea336",
+   "structure": [],
+   "solver_answer": "6",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "are __var__ and __var__ what is the value"
+   ],
+   "residue": 0
+  }
  }
 ]

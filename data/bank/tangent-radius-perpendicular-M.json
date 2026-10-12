@@ -186,11 +186,17 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "review",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-tangent-radius-M-c4d48a",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "line __var__ is tangent to this circle at",
     "__var__ is tangent to this circle at the",
@@ -203,8 +209,7 @@
     "the point __var__ which of the following points"
    ],
    "residue": 8
-  },
-  "phrasing": "direct"
+  }
  },
  {
   "stem": "What is the area, in square meters, of quadrilateral $OAPB$?",
@@ -257,5 +262,907 @@
    "residue": 2
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the slope of the comet's path at the point $(5, 3)$?",
+  "stimulus": "In a model of a planet's orbit in the $xy$-plane, the orbit is the circle with center $(2, -1)$ that passes through the point $(5, 3)$. A comet's straight-line path is tangent to the orbit at $(5, 3)$.",
+  "choices": [
+   "$\\frac{4}{3}$",
+   "$-\\frac{3}{4}$",
+   "$\\frac{3}{4}$",
+   "$-\\frac{4}{3}$"
+  ],
+  "answer": "B",
+  "explanation": "The radius runs from $(2, -1)$ to $(5, 3)$, so its slope is $\\frac{3-(-1)}{5-2} = \\frac{4}{3}$. A tangent line is perpendicular to the radius at the point of tangency, so you take the negative reciprocal of the radius's slope: $-\\frac{3}{4}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the slope of the radius and stopped there. The tangent is perpendicular to the radius, so its slope is not the same as the radius's slope."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the reciprocal of $\\frac{4}{3}$ but didn't change the sign. Perpendicular slopes have opposite signs, so this line isn't perpendicular to the radius."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You changed the sign of $\\frac{4}{3}$ but didn't flip the fraction. The perpendicular slope is the negative reciprocal, so you need to do both."
+   }
+  },
+  "id": "orig-tangent-radius-M-727b3f",
+  "skill_cd": "S.D.",
+  "subtype": "tangent-radius-perpendicular",
+  "subtype_name": "Tangent lines and radii (right angles, isosceles triangles)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-tangent-radius-M-727b3f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the area, in square meters, of quadrilateral $OAPB$?",
+  "stimulus": "At an excavation site, a circular stone ring has center $O$ and radius $6$ meters. From a survey stake $P$, located $10$ meters from $O$, two straight cords are stretched so that they are tangent to the ring at points $A$ and $B$.",
+  "choices": [
+   "$24$",
+   "$28$",
+   "$60$",
+   "$48$"
+  ],
+  "answer": "D",
+  "explanation": "$OA$ is a radius and $PA$ is tangent at $A$, so angle $OAP$ is $90^\\circ$. Triangle $OAP$ has hypotenuse $OP = 10$ and leg $OA = 6$, so $PA = \\sqrt{10^2 - 6^2} = 8$. Its area is $\\frac{1}{2}(6)(8) = 24$. Triangle $OBP$ is congruent to it, because the two tangent segments from $P$ are equal. The quadrilateral's area is $2(24) = 48$ square meters.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "This is the area of triangle $OAP$ alone. The quadrilateral is made of two congruent right triangles, so you need to double it."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the perimeter of the quadrilateral, $6 + 6 + 8 + 8$, but the question asks for its area."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You used $6$ and $10$ as the legs of each triangle. The right angle is at the point of tangency, between the radius and the tangent, so $OP = 10$ is the hypotenuse and not a leg."
+   }
+  },
+  "id": "orig-tangent-radius-M-73ec00",
+  "skill_cd": "S.D.",
+  "subtype": "tangent-radius-perpendicular",
+  "subtype_name": "Tangent lines and radii (right angles, isosceles triangles)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-tangent-radius-M-73ec00",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the area in square meters of"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which of the following points lies on the line tangent to the circle at $(4, 6)$?",
+  "stimulus": "On a hydrologist's site map in the $xy$-plane, the edge of a circular reservoir is given by $(x - 1)^2 + (y - 2)^2 = 25$. The point $(4, 6)$ lies on the edge.",
+  "choices": [
+   "$(8, 3)$",
+   "$(7, 10)$",
+   "$(8, 9)$",
+   "$(7, 2)$"
+  ],
+  "answer": "A",
+  "explanation": "The center is $(1, 2)$. The radius to $(4, 6)$ has slope $\\frac{6-2}{4-1} = \\frac{4}{3}$, so the tangent line has slope $-\\frac{3}{4}$. Its equation is $y - 6 = -\\frac{3}{4}(x - 4)$. When $x = 8$, $y = 6 - 3 = 3$, so $(8, 3)$ is on the line.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This point is on the line through $(4, 6)$ with slope $\\frac{4}{3}$. That is the line containing the radius, not the tangent."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This point is on the line with slope $\\frac{3}{4}$. You took the reciprocal of the radius's slope but didn't change the sign."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "This point is on the line with slope $-\\frac{4}{3}$. You changed the sign of the radius's slope but didn't take its reciprocal."
+   }
+  },
+  "id": "orig-tangent-radius-M-bab240",
+  "skill_cd": "S.D.",
+  "subtype": "tangent-radius-perpendicular",
+  "subtype_name": "Tangent lines and radii (right angles, isosceles triangles)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-tangent-radius-M-bab240",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $AOB$?",
+  "stimulus": "On a linguist's survey map, a circular boundary with center $O$ marks where a dialect is spoken. A straight road is tangent to the boundary at point $A$. A straight trail runs from $A$ to point $B$, which is also on the boundary. The road and the trail meet at an angle of $35^\\circ$.",
+  "choices": [
+   "$35$",
+   "$55$",
+   "$70$",
+   "$125$"
+  ],
+  "answer": "C",
+  "explanation": "Radius $OA$ is perpendicular to the road, so angle $OAB = 90^\\circ - 35^\\circ = 55^\\circ$. $OA$ and $OB$ are both radii, so triangle $AOB$ is isosceles and angle $OBA$ is also $55^\\circ$. That gives angle $AOB = 180^\\circ - 55^\\circ - 55^\\circ = 70^\\circ$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "This is the given angle between the road and the trail. It isn't an angle at the center."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is angle $OAB$, the base angle of the isosceles triangle. You still need to use it to find the angle at $O$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You subtracted only one $55^\\circ$ angle from $180^\\circ$. $OA$ and $OB$ are both radii, so the triangle is isosceles and angle $OBA$ is also $55^\\circ$."
+   }
+  },
+  "id": "orig-tangent-radius-M-d764f4",
+  "skill_cd": "S.D.",
+  "subtype": "tangent-radius-perpendicular",
+  "subtype_name": "Tangent lines and radii (right angles, isosceles triangles)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-tangent-radius-M-d764f4",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation represents the walkway?",
+  "stimulus": "On a city planner's coordinate grid, the edge of a circular plaza is the circle with center $(-2, 3)$ that passes through the point $(1, 9)$. A straight walkway will touch the plaza's edge only at $(1, 9)$.",
+  "choices": [
+   "$2x - y = -7$",
+   "$x - 2y = -17$",
+   "$x + 2y = 19$",
+   "$2x + y = 11$"
+  ],
+  "answer": "C",
+  "explanation": "A line that touches the circle at only one point is tangent to it. The radius to $(1, 9)$ has slope $\\frac{9-3}{1-(-2)} = 2$, so the tangent has slope $-\\frac{1}{2}$. Then $y - 9 = -\\frac{1}{2}(x - 1)$. Multiply by $2$ to get $2y - 18 = -x + 1$, which rearranges to $x + 2y = 19$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This line has slope $2$, which is the slope of the radius. It passes through the center, so it isn't tangent to the circle."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This line has slope $\\frac{1}{2}$. You took the reciprocal of the radius's slope but didn't change the sign, so the line isn't perpendicular to the radius."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "This line has slope $-2$. You changed the sign of the radius's slope but didn't take its reciprocal."
+   }
+  },
+  "id": "orig-tangent-radius-M-1a0347",
+  "skill_cd": "S.D.",
+  "subtype": "tangent-radius-perpendicular",
+  "subtype_name": "Tangent lines and radii (right angles, isosceles triangles)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-tangent-radius-M-1a0347",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A public health team marks the edge of a circular vaccination outreach zone as a circle in the xy-plane. The circle's center is $(2, -1)$. A straight road touches the circle at exactly one point, $(5, 3)$.",
+  "choices": [
+   "The road has a slope of $-\\frac{3}{4}$.",
+   "The road has a slope of $\\frac{4}{3}$.",
+   "The road has a slope of $\\frac{3}{4}$.",
+   "The road has a slope of $-\\frac{4}{3}$."
+  ],
+  "answer": "A",
+  "explanation": "The road touches the circle at one point, so it is tangent there, and a tangent is perpendicular to the radius at the point where it touches. The radius runs from $(2, -1)$ to $(5, 3)$, so its slope is $\\frac{3-(-1)}{5-2} = \\frac{4}{3}$. A perpendicular line has the negative reciprocal slope, $-\\frac{3}{4}$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the slope of the radius and stopped there. The road is perpendicular to the radius, so it does not have the same slope."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the radius's slope but didn't change its sign. A perpendicular slope is the negative reciprocal, so the sign has to change too."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You changed the sign of the radius's slope but didn't flip it. The perpendicular slope needs both steps: flip the fraction and change the sign."
+   }
+  },
+  "id": "orig-tangent-radius-M-db3104",
+  "skill_cd": "S.D.",
+  "subtype": "tangent-radius-perpendicular",
+  "subtype_name": "Tangent lines and radii (right angles, isosceles triangles)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-tangent-radius-M-db3104",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A sports science lab anchors a circular force plate with center $O$ and radius $6$ meters. From a post at point $P$, $10$ meters from $O$, two straight cables run to the plate's edge. One touches the edge only at $A$, and the other touches it only at $B$.",
+  "choices": [
+   "Each cable is $8$ meters long.",
+   "Each cable is $10$ meters long.",
+   "Each cable is $4$ meters long.",
+   "Each cable is $2\\sqrt{34}$ meters long."
+  ],
+  "answer": "A",
+  "explanation": "Each cable is tangent to the circle, so it meets the radius at a right angle. That makes triangle $OAP$ a right triangle with legs $OA = 6$ and $PA$, and hypotenuse $OP = 10$. So $PA = \\sqrt{10^2 - 6^2} = \\sqrt{64} = 8$. Two tangent segments drawn from the same outside point are equal, so $PB = 8$ as well.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$10$ is the distance from the post to the center, $OP$. It is the hypotenuse, not the length of a cable."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the lengths, $10 - 6$. The Pythagorean theorem subtracts the squares and then takes the square root."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You put the right angle at $O$ and added the squares, $\\sqrt{10^2 + 6^2}$. The right angle is at the point of tangency, between the radius and the cable, so $OP$ is the hypotenuse."
+   }
+  },
+  "id": "orig-tangent-radius-M-e6da8a",
+  "skill_cd": "S.D.",
+  "subtype": "tangent-radius-perpendicular",
+  "subtype_name": "Tangent lines and radii (right angles, isosceles triangles)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-tangent-radius-M-e6da8a",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A printmaker carves a circular stamp with center $O$. Points $A$ and $B$ lie on the stamp's edge, and the carving shows triangle $OAB$. The measure of angle $OAB$ is $35^\\circ$.",
+  "choices": [
+   "The measure of angle $AOB$ is $110^\\circ$.",
+   "The measure of angle $AOB$ is $145^\\circ$.",
+   "The measure of angle $AOB$ is $70^\\circ$.",
+   "The measure of angle $AOB$ is $55^\\circ$."
+  ],
+  "answer": "A",
+  "explanation": "$OA$ and $OB$ are both radii, so they are equal and triangle $OAB$ is isosceles. Its base angles are equal, so angle $OBA$ is also $35^\\circ$. That leaves $180^\\circ - 35^\\circ - 35^\\circ = 110^\\circ$ for angle $AOB$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You subtracted only one $35^\\circ$ angle from $180^\\circ$. You missed that $OA$ and $OB$ are both radii, which makes angle $OBA$ another $35^\\circ$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$70^\\circ$ is the sum of the two base angles. Angle $AOB$ is what is left after you subtract that sum from $180^\\circ$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You treated $AB$ as a tangent and assumed a right angle in the triangle, which gives $90^\\circ - 35^\\circ$. $A$ and $B$ are both on the circle, so $AB$ is a chord, and there is no right angle."
+   }
+  },
+  "id": "orig-tangent-radius-M-27ae17",
+  "skill_cd": "S.D.",
+  "subtype": "tangent-radius-perpendicular",
+  "subtype_name": "Tangent lines and radii (right angles, isosceles triangles)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-tangent-radius-M-27ae17",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ points __var__ and __var__ lie on the",
+    "the measure of angle __var__ is __var__ which",
+    "measure of angle __var__ is __var__ which of",
+    "of angle __var__ is __var__ which of the",
+    "angle __var__ is __var__ which of the following",
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following describes the slope of the access road in this context?",
+  "stimulus": "A circular roundabout is modeled in the xy-plane. Each unit is 1 meter, the positive x-axis points east, and the positive y-axis points north. The center of the roundabout is at $(2, 3)$. A straight access road is tangent to the roundabout's edge at the point $(6, 6)$.",
+  "choices": [
+   "The road goes 4 meters south for every 3 meters it goes east.",
+   "The road goes 3 meters north for every 4 meters it goes east.",
+   "The road goes 4 meters north for every 3 meters it goes east.",
+   "The road goes 3 meters south for every 4 meters it goes east."
+  ],
+  "answer": "A",
+  "explanation": "The radius from $(2, 3)$ to $(6, 6)$ has slope $\\frac{6-3}{6-2} = \\frac{3}{4}$. A tangent line is perpendicular to the radius at the point of tangency, so the road's slope is the negative reciprocal, $-\\frac{4}{3}$. A slope of $-\\frac{4}{3}$ means y goes down 4 for every 3 that x goes up. In this context, the road goes 4 meters south for every 3 meters it goes east.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This is the slope of the radius, $\\frac{3}{4}$. You used the radius's slope as the tangent's slope, but the road is perpendicular to the radius."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the reciprocal of $\\frac{3}{4}$ but kept the positive sign. Perpendicular slopes need the opposite sign as well, so the road goes south, not north."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You changed the sign of $\\frac{3}{4}$ but didn't take the reciprocal. That gives $-\\frac{3}{4}$, which is not perpendicular to the radius."
+   }
+  },
+  "id": "orig-tangent-radius-M-d1be32",
+  "skill_cd": "S.D.",
+  "subtype": "tangent-radius-perpendicular",
+  "subtype_name": "Tangent lines and radii (right angles, isosceles triangles)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-tangent-radius-M-d1be32",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "at the point __var__ which of the following"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the area, in square centimeters, of quadrilateral $OAPB$?",
+  "stimulus": "A nutrition science lab is designing a food label graphic. It has a circular nutrient wheel with center $O$ and a radius of 6 centimeters. From a point $P$ outside the wheel, two straight guide lines are drawn tangent to the wheel at points $A$ and $B$. The distance from $O$ to $P$ is 10 centimeters.",
+  "choices": [
+   "24",
+   "60",
+   "48",
+   "96"
+  ],
+  "answer": "C",
+  "explanation": "$OA$ and $OB$ are radii, so each is 6 cm. Each one meets its tangent line at a right angle. In right triangle $OAP$, the hypotenuse is $OP = 10$, so $AP = \\sqrt{10^2 - 6^2} = 8$ cm. Triangle $OAP$ has area $\\frac{1}{2}(6)(8) = 24$ cm\u00b2. Triangle $OBP$ is congruent to it, so the quadrilateral's area is $2 \\times 24 = 48$ square centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "This is the area of only one right triangle, $OAP$. The quadrilateral is made of two congruent triangles, so you needed to double it."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used $OP = 10$ as a leg of the right triangle, getting $2 \\times \\frac{1}{2}(6)(10)$. But $OP$ is the hypotenuse. The legs are the radius and the tangent segment, and they meet at the right angle at $A$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the legs $6 \\times 8$ for each triangle and dropped the $\\frac{1}{2}$ in the triangle area formula, which doubles the area."
+   }
+  },
+  "id": "orig-tangent-radius-M-620009",
+  "skill_cd": "S.D.",
+  "subtype": "tangent-radius-perpendicular",
+  "subtype_name": "Tangent lines and radii (right angles, isosceles triangles)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-tangent-radius-M-620009",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is the area in square centimeters of quadrilateral",
+    "the area in square centimeters of quadrilateral __var__"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of the acute angle between the road and path $AB$?",
+  "stimulus": "A public health team maps a circular vaccination outreach zone centered at a clinic, point $O$. Two outreach stations, $A$ and $B$, are on the boundary of the zone, and the measure of angle $AOB$ is $40^\\circ$. A straight path runs from $A$ to $B$, and a straight road is tangent to the boundary at $A$.",
+  "choices": [
+   "40",
+   "20",
+   "70",
+   "50"
+  ],
+  "answer": "B",
+  "explanation": "$OA$ and $OB$ are both radii, so triangle $OAB$ is isosceles. Its base angles are each $\\frac{180 - 40}{2} = 70^\\circ$, so angle $OAB = 70^\\circ$. The road is tangent at $A$, so it makes a $90^\\circ$ angle with radius $OA$. The acute angle between the road and path $AB$ is $90 - 70 = 20$ degrees.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the central angle $AOB$, which is given. The question asks for the angle at $A$ between the road and the path, not the angle at the clinic."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is angle $OAB$, the angle between the radius and the path. You stopped before using the fact that the radius and the tangent road form a $90^\\circ$ angle."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You subtracted the central angle from $90^\\circ$ and skipped the isosceles triangle. Because $OA = OB$, you first need the base angle of $70^\\circ$, and then $90 - 70$."
+   }
+  },
+  "id": "orig-tangent-radius-M-776aec",
+  "skill_cd": "S.D.",
+  "subtype": "tangent-radius-perpendicular",
+  "subtype_name": "Tangent lines and radii (right angles, isosceles triangles)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-tangent-radius-M-776aec",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the measure in degrees of the"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following points lies on line $\\ell$?",
+  "stimulus": "A city planner models a circular plaza in the xy-plane with the equation $(x - 2)^2 + (y + 3)^2 = 25$. A straight walking path, represented by line $\\ell$, is tangent to the plaza's edge at the point $(5, 1)$.",
+  "choices": [
+   "$(6, -6)$",
+   "$(9, -2)$",
+   "$(8, 5)$",
+   "$(9, 4)$"
+  ],
+  "answer": "B",
+  "explanation": "The center of the circle is $(2, -3)$. The radius to $(5, 1)$ has slope $\\frac{1 - (-3)}{5 - 2} = \\frac{4}{3}$. A tangent line is perpendicular to the radius, so line $\\ell$ has slope $-\\frac{3}{4}$ and passes through $(5, 1)$: $y - 1 = -\\frac{3}{4}(x - 5)$. Testing the choices, $x = 9$ gives $y = 1 - 3 = -2$, so $(9, -2)$ is on the line.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used the slope $-\\frac{3}{4}$ correctly but drew the line through the center $(2, -3)$ instead of through the point of tangency $(5, 1)$. The tangent line touches the circle at $(5, 1)$; it doesn't pass through the center."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used the slope of the radius, $\\frac{4}{3}$, as the slope of the tangent line. That gives the line through the center, which isn't the tangent. The tangent is perpendicular to the radius, so its slope is the negative reciprocal, $-\\frac{3}{4}$."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the reciprocal of the radius's slope but didn't change the sign, so you used $\\frac{3}{4}$. A perpendicular slope needs both the flip and the sign change: $-\\frac{3}{4}$."
+   }
+  },
+  "id": "orig-tangent-radius-M-85bfe0",
+  "skill_cd": "S.D.",
+  "subtype": "tangent-radius-perpendicular",
+  "subtype_name": "Tangent lines and radii (right angles, isosceles triangles)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-tangent-radius-M-85bfe0",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "at the point __var__ which of the following",
+    "the point __var__ which of the following points"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which of the following is an equation of line $\\ell$?",
+  "stimulus": "In the xy-plane, the edge of a circular retention pond is modeled by $x^2 + y^2 - 8x + 2y - 8 = 0$. An inflow channel, represented by line $\\ell$, is tangent to the pond's edge at the point $(1, 3)$.",
+  "choices": [
+   "$3x - 4y = -9$",
+   "$3x + 4y = 15$",
+   "$4x + 3y = 13$",
+   "$5x + 2y = 11$"
+  ],
+  "answer": "A",
+  "explanation": "Complete the square: $(x - 4)^2 + (y + 1)^2 = 25$, so the center is $(4, -1)$. The radius to $(1, 3)$ has slope $\\frac{3 - (-1)}{1 - 4} = -\\frac{4}{3}$, so the tangent line has slope $\\frac{3}{4}$. All four choices pass through $(1, 3)$, so check the slopes: $3x - 4y = -9$ rearranges to $y = \\frac{3}{4}x + \\frac{9}{4}$, which has the slope you need.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This line has slope $-\\frac{3}{4}$. You took the reciprocal of the radius's slope, $-\\frac{4}{3}$, but kept its sign. For a perpendicular line you also have to change the sign, which gives $\\frac{3}{4}$."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This line has slope $-\\frac{4}{3}$, the slope of the radius itself. That line runs through the center. The tangent has to be perpendicular to the radius."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the signs when you completed the square and placed the center at $(-4, 1)$. The term $(x - 4)^2$ means the center's x-coordinate is $+4$. With the wrong center, the radius slope and the perpendicular slope both come out wrong."
+   }
+  },
+  "id": "orig-tangent-radius-M-160b05",
+  "skill_cd": "S.D.",
+  "subtype": "tangent-radius-perpendicular",
+  "subtype_name": "Tangent lines and radii (right angles, isosceles triangles)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-tangent-radius-M-160b05",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "at the point __var__ which of the following"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the perimeter, in meters, of quadrilateral $OAPB$?",
+  "stimulus": "An ornithologist watches herons from point $P$, outside a circular pond with center $O$ and radius $8$ meters. Two lines of sight from $P$ are tangent to the pond's edge at points $A$ and $B$. The distance $OP$ is $17$ meters.",
+  "choices": [
+   "$15$",
+   "$34$",
+   "$46$",
+   "$50$"
+  ],
+  "answer": "C",
+  "explanation": "$OA$ and $OB$ are radii, so each is $8$. A tangent meets the radius at a right angle, so triangle $OAP$ is a right triangle with hypotenuse $OP = 17$: $PA = \\sqrt{17^2 - 8^2} = \\sqrt{225} = 15$. Tangent segments drawn from the same outside point are equal, so $PB = 15$ too. The perimeter is $8 + 8 + 15 + 15 = 46$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$15$ is the length of one tangent segment, $PA$. You stopped partway: the perimeter also includes $PB$ and the two radii."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You found $PA$ as $17 - 8 = 9$, as if $O$, $A$ and $P$ were on one straight line. The radius and tangent meet at a $90^\\circ$ angle, so you need the Pythagorean theorem to find $PA$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used $OP = 17$ as the length of each tangent segment. $OP$ is the hypotenuse of the right triangle, not a side of the quadrilateral. The tangent segments are each $15$."
+   }
+  },
+  "id": "orig-tangent-radius-M-929cde",
+  "skill_cd": "S.D.",
+  "subtype": "tangent-radius-perpendicular",
+  "subtype_name": "Tangent lines and radii (right angles, isosceles triangles)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-tangent-radius-M-929cde",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How much greater is the slope of line $m$ than the slope of line $\\ell$?",
+  "stimulus": "A sports scientist models the curve of a running track with a circle in the xy-plane that has center $(2, 3)$. Line $\\ell$ is tangent to the circle at the point $(5, 7)$. Line $m$ passes through the center and the point $(5, 7)$.",
+  "choices": [
+   "$-\\frac{3}{4}$",
+   "$0$",
+   "$\\frac{7}{12}$",
+   "$\\frac{25}{12}$"
+  ],
+  "answer": "D",
+  "explanation": "Line $m$ contains a radius, so its slope is $\\frac{7-3}{5-2} = \\frac{4}{3}$. A tangent line is perpendicular to the radius at the point of tangency, so the slope of $\\ell$ is the negative reciprocal, $-\\frac{3}{4}$. The difference is $\\frac{4}{3} - \\left(-\\frac{3}{4}\\right) = \\frac{16}{12} + \\frac{9}{12} = \\frac{25}{12}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the slope of line $\\ell$ alone. You found the tangent's slope correctly but never subtracted it from the slope of line $m$."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You gave the tangent line the radius's slope, $\\frac{4}{3}$, so the two slopes cancelled. A tangent is perpendicular to the radius, so it cannot share that slope."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the reciprocal of $\\frac{4}{3}$ but did not change its sign, so you used $\\frac{3}{4}$ as the tangent's slope. That gives $\\frac{4}{3} - \\frac{3}{4} = \\frac{7}{12}$."
+   }
+  },
+  "id": "orig-tangent-radius-M-f6117f",
+  "skill_cd": "S.D.",
+  "subtype": "tangent-radius-perpendicular",
+  "subtype_name": "Tangent lines and radii (right angles, isosceles triangles)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-tangent-radius-M-f6117f",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many meters longer is segment $PA$ than the radius of the pond?",
+  "stimulus": "An ornithologist maps a circular pond with center $O$ and a radius of 9 meters. A heron stands at point $P$, 15 meters from $O$. A straight path from $P$ touches the edge of the pond at exactly one point, $A$.",
+  "choices": [
+   "3",
+   "6",
+   "12",
+   "21"
+  ],
+  "answer": "A",
+  "explanation": "The path touches the pond at exactly one point, so it is tangent at $A$, and radius $OA$ is perpendicular to $PA$. Triangle $OAP$ is a right triangle with hypotenuse $OP = 15$ and leg $OA = 9$, so $PA = \\sqrt{15^2 - 9^2} = \\sqrt{144} = 12$. Then $PA$ is $12 - 9 = 3$ meters longer than the radius.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$15 - 9 = 6$ is the distance from $P$ straight to the nearest point of the pond along $OP$. You missed the right angle at $A$ that makes $PA$ a leg of a right triangle."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "12 is the length of $PA$. You stopped before comparing it with the 9-meter radius."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the tangent length and the radius, $12 + 9$, when the question asks how much longer one is than the other."
+   }
+  },
+  "id": "orig-tangent-radius-M-4df1ca",
+  "skill_cd": "S.D.",
+  "subtype": "tangent-radius-perpendicular",
+  "subtype_name": "Tangent lines and radii (right angles, isosceles triangles)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-tangent-radius-M-4df1ca",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many degrees greater is the measure of angle $OAB$ than the measure of the angle between line $t$ and segment $AB$?",
+  "stimulus": "A civil engineer designs a circular roundabout with center $O$. Points $A$ and $B$ lie on its edge, and angle $AOB$ measures $50^\\circ$. A straight access road, line $t$, is tangent to the roundabout at $A$, on the same side of line $OA$ as $B$.",
+  "choices": [
+   "15",
+   "25",
+   "40",
+   "65"
+  ],
+  "answer": "C",
+  "explanation": "$OA$ and $OB$ are both radii, so triangle $OAB$ is isosceles and angle $OAB = \\frac{180 - 50}{2} = 65^\\circ$. The tangent meets radius $OA$ at $90^\\circ$, so the angle between line $t$ and segment $AB$ is $90 - 65 = 25^\\circ$. The difference is $65 - 25 = 40$ degrees.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You compared angle $OAB$ with the central angle, $65 - 50 = 15$, instead of with the angle between the tangent and the chord."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "25 is the angle between line $t$ and segment $AB$ alone. You found it but never subtracted it from angle $OAB$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "65 is angle $OAB$, the result of the isosceles step. You stopped before using the $90^\\circ$ angle between the radius and the tangent to find the second angle and the difference."
+   }
+  },
+  "id": "orig-tangent-radius-M-9c733d",
+  "skill_cd": "S.D.",
+  "subtype": "tangent-radius-perpendicular",
+  "subtype_name": "Tangent lines and radii (right angles, isosceles triangles)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-tangent-radius-M-9c733d",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation represents the line along which the road runs?",
+  "stimulus": "A cartographer places a map of a county on the $xy$-plane. On the map, the shoreline of a circular lake is a circle with center $(2, -1)$. A straight road is tangent to the shoreline at the point $(5, 3)$.",
+  "choices": [
+   "$y - 3 = -\\frac{3}{4}(x - 5)$",
+   "$y - 3 = \\frac{4}{3}(x - 5)$",
+   "$y - 3 = \\frac{3}{4}(x - 5)$",
+   "$y + 1 = -\\frac{3}{4}(x - 2)$"
+  ],
+  "answer": "A",
+  "explanation": "The radius goes from the center $(2, -1)$ to the point of tangency $(5, 3)$, so its slope is $\\frac{3 - (-1)}{5 - 2} = \\frac{4}{3}$. A tangent line is perpendicular to the radius at the point where it touches the circle, so the road's slope is the negative reciprocal, $-\\frac{3}{4}$. The road passes through $(5, 3)$, so in point-slope form its line is $y - 3 = -\\frac{3}{4}(x - 5)$.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used the slope of the radius, $\\frac{4}{3}$, as the slope of the road. That line runs along the radius and goes through the center. It does not just touch the circle. The tangent has to be perpendicular to the radius."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the reciprocal of the radius's slope but didn't change its sign. A line with slope $\\frac{3}{4}$ isn't perpendicular to one with slope $\\frac{4}{3}$, because their product is $1$, not $-1$. The tangent's slope must be $-\\frac{3}{4}$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You found the correct perpendicular slope, but you wrote the line through the center $(2, -1)$ instead of through the point of tangency. The road has to pass through $(5, 3)$, and this line does not."
+   }
+  },
+  "id": "orig-tangent-radius-M-359a7e",
+  "skill_cd": "S.D.",
+  "subtype": "tangent-radius-perpendicular",
+  "subtype_name": "Tangent lines and radii (right angles, isosceles triangles)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-tangent-radius-M-359a7e",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

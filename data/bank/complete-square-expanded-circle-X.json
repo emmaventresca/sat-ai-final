@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-complete-squar-X-8c9afd",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "circle is __var__ where __var__ __var__ and __var__",
     "is __var__ where __var__ __var__ and __var__ are"
@@ -80,14 +85,418 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-complete-squar-X-d3f33a",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the value of $F$?",
+  "stimulus": "A sports scientist marks a circular warm-up zone on a coordinate grid of a training field. The boundary of the zone is the circle $x^2 + y^2 - 10x + 6y + 18 = 0$. A larger cool-down zone is a circle with the same center and a radius 3 times the radius of the warm-up zone. Its equation is $x^2 + y^2 - 10x + 6y + F = 0$, where $F$ is a constant.",
+  "choices": [
+   "$-144$",
+   "$-110$",
+   "$-14$",
+   "$110$"
+  ],
+  "answer": "B",
+  "explanation": "Complete the square: $(x-5)^2 + (y+3)^2 = -18 + 25 + 9 = 16$, so the center is $(5, -3)$ and the radius is 4. The cool-down zone has radius 12, so its equation is $(x-5)^2 + (y+3)^2 = 144$. Expanding gives $x^2 - 10x + 25 + y^2 + 6y + 9 = 144$, so $x^2 + y^2 - 10x + 6y - 110 = 0$. That makes $F = -110$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $r^2 = 144$ correctly, but when you expanded back out you dropped the 25 and the 9 that the center creates, so you wrote $F = -144$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You tripled $r^2$, getting 48, when you should have tripled $r$. Tripling the radius multiplies $r^2$ by 9, which gives 144, not 48."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You got the right size, but you moved 144 across with the wrong sign. The constant is $34 - 144$, not $144 - 34$."
+   }
+  },
+  "id": "orig-complete-squar-X-153a6e",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-X-153a6e",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "equation is __var__ where __var__ is a constant"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the radius of the circle?",
+  "stimulus": "A materials scientist models the cross-section of a cylindrical fiber in the $xy$-plane as the circle $x^2 + y^2 + 8x - 2y + c = 0$, where $c$ is a constant. The point $(1, 3)$ lies on the circle.",
+  "choices": [
+   "$2\\sqrt{3}$",
+   "$5$",
+   "$\\sqrt{29}$",
+   "$29$"
+  ],
+  "answer": "C",
+  "explanation": "Substitute $(1, 3)$: $1 + 9 + 8 - 6 + c = 0$, so $c = -12$. Then $x^2 + 8x + y^2 - 2y = 12$. Add 16 and 1 to both sides: $(x+4)^2 + (y-1)^2 = 29$. The radius is $\\sqrt{29}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $c = -12$ but didn't add the completing-the-square constants 16 and 1 to the right side, so you took $r^2 = 12$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "When you substituted the point you wrote $-8$ for $8x$ and $+6$ for $-2y$. That gave $c = -8$ and $r^2 = 25$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "29 is $r^2$. You need its square root for the radius."
+   }
+  },
+  "id": "orig-complete-squar-X-2eeda2",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-X-2eeda2",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $F$?",
+  "stimulus": "In a civil engineer's site plan, the edge of a circular roundabout is $x^2 + y^2 - 6x + 14y + 33 = 0$. An outer curb is a circle with the same center, and its radius is 3 units greater than the roundabout's radius. The curb's equation is $x^2 + y^2 - 6x + 14y + F = 0$, where $F$ is a constant.",
+  "choices": [
+   "$-64$",
+   "$-6$",
+   "$30$",
+   "$64$"
+  ],
+  "answer": "B",
+  "explanation": "Complete the square: $(x-3)^2 + (y+7)^2 = -33 + 9 + 49 = 25$, so the radius is 5. The curb has radius 8, so it is $(x-3)^2 + (y+7)^2 = 64$. Expanding gives $x^2 + y^2 - 6x + 14y + 58 = 64$, so $F = 58 - 64 = -6$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You set $r^2 = 64$ correctly but dropped the $9 + 49 = 58$ that the center contributes when you expanded back out."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added 3 to $r^2$, getting 28, instead of adding 3 to $r$. That gives $F = 58 - 28 = 30$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "64 is the curb's $r^2$. It is not the constant term of the expanded equation."
+   }
+  },
+  "id": "orig-complete-squar-X-80f2a1",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-X-80f2a1",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "equation is __var__ where __var__ is a constant"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the shortest distance from the origin to a point on the circle?",
+  "stimulus": "On an archaeologist's site grid, measured in meters, the base of a circular hut is $2x^2 + 2y^2 - 16x + 12y + 42 = 0$. A survey datum sits at the origin.",
+  "choices": [
+   "$5 - \\sqrt{21}$",
+   "$3$",
+   "$5$",
+   "$7$"
+  ],
+  "answer": "B",
+  "explanation": "Divide every term by 2: $x^2 + y^2 - 8x + 6y + 21 = 0$. Complete the square: $(x-4)^2 + (y+3)^2 = -21 + 16 + 9 = 4$. The center is $(4, -3)$ and the radius is 2. The center is $\\sqrt{16 + 9} = 5$ from the origin, which lies outside the circle. The nearest point on the circle is therefore $5 - 2 = 3$ meters away.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You didn't add 16 and 9 to the right side when you completed the square, so you took $r^2 = 21$ and $r = \\sqrt{21}$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "5 is the distance from the origin to the center. You still need to subtract the radius to reach the circle."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You added the radius instead of subtracting it. That gives the farthest point on the circle, not the nearest."
+   }
+  },
+  "id": "orig-complete-squar-X-eeca62",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-X-eeca62",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $D + E + F$?",
+  "stimulus": "A folklore researcher maps a 'fairy ring' of mushrooms as a circle in the $xy$-plane. The circle has center $(-2, 5)$ and passes through the point $(2, 1)$. Its equation can be written as $x^2 + y^2 + Dx + Ey + F = 0$, where $D$, $E$, and $F$ are constants.",
+  "choices": [
+   "$-38$",
+   "$-9$",
+   "$3$",
+   "$7$"
+  ],
+  "answer": "B",
+  "explanation": "The squared radius is $(2-(-2))^2 + (1-5)^2 = 16 + 16 = 32$. The circle is $(x+2)^2 + (y-5)^2 = 32$. Expanding gives $x^2 + 4x + 4 + y^2 - 10y + 25 = 32$, so $x^2 + y^2 + 4x - 10y - 3 = 0$. Then $D + E + F = 4 - 10 - 3 = -9$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "When you expanded you dropped the 4 and the 25 that the center creates, so you took $F = -32$. That gives $4 - 10 - 32 = -38$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the signs from the center, taking $D = -4$ and $E = 10$. That gives $-4 + 10 - 3 = 3$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used only one leg, $4^2 = 16$, as $r^2$ instead of $16 + 16 = 32$. That gives $F = 29 - 16 = 13$ and a sum of 7."
+   }
+  },
+  "id": "orig-complete-squar-X-8ee22a",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-X-8ee22a",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "as __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A public health team draws a circular vaccination outreach zone on a city grid. The zone's boundary is $x^2 + y^2 + kx - 8y + 5 = 0$, where $k$ is a positive constant, and the circle has a radius of 6.",
+  "choices": [
+   "$-10$",
+   "$5$",
+   "$10$",
+   "$25$"
+  ],
+  "answer": "C",
+  "explanation": "Complete the square: $\\left(x + \\frac{k}{2}\\right)^2 + (y-4)^2 = -5 + \\frac{k^2}{4} + 16$. Set this equal to $6^2 = 36$: $\\frac{k^2}{4} = 25$, so $k^2 = 100$. Since $k$ is positive, $k = 10$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "$k = -10$ also satisfies $k^2 = 100$, but the question says $k$ is positive."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $k^2$ instead of $\\left(\\frac{k}{2}\\right)^2$ when you completed the square, so you got $k^2 = 25$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "25 is $\\frac{k^2}{4}$. You still need to solve for $k$."
+   }
+  },
+  "id": "orig-complete-squar-X-836fa9",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-X-836fa9",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following points lies on circle $T$?",
+  "stimulus": "An astronomer models the apparent edge of a nebula as circle $S$: $x^2 + y^2 - 4x + 2y - 20 = 0$. Circle $T$ has the same center as circle $S$, and its diameter is twice the diameter of circle $S$.",
+  "choices": [
+   "$(8, 7)$",
+   "$(7, 4)$",
+   "$(4, 9)$",
+   "$(6, 7)$"
+  ],
+  "answer": "A",
+  "explanation": "Complete the square: $(x-2)^2 + (y+1)^2 = 20 + 4 + 1 = 25$. Circle $S$ has center $(2, -1)$ and radius 5. Circle $T$ has radius 10, so it is $(x-2)^2 + (y+1)^2 = 100$. For $(8, 7)$: $6^2 + 8^2 = 100$, so this point is on $T$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You doubled $r^2$ to 50 instead of multiplying it by 4. The point $(7, 4)$ satisfies $(x-2)^2 + (y+1)^2 = 50$."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the center as $(-2, 1)$ by not flipping the signs. $(4, 9)$ is 10 from $(-2, 1)$, but it is $\\sqrt{104}$ from the true center."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You took $r^2 = 20$ without adding 4 and 1 to the right side, then multiplied by 4 to get 80. $(6, 7)$ satisfies $(x-2)^2 + (y+1)^2 = 80$."
+   }
+  },
+  "id": "orig-complete-squar-X-aa62f9",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-X-aa62f9",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ circle __var__ has the same center as",
+    "circle __var__ has the same center as circle",
+    "__var__ has the same center as circle __var__",
+    "has the same center as circle __var__ and"
+   ],
+   "residue": 6
+  }
+ },
+ {
+  "stem": "What is the value of $c$?",
+  "stimulus": "A hydrologist models the boundary of a circular pond on a map where the $x$-axis runs along a straight canal. The boundary is $x^2 + y^2 + 6x - 8y + c = 0$, where $c$ is a constant, and the circle touches the $x$-axis at exactly one point.",
+  "choices": [
+   "$-16$",
+   "$9$",
+   "$16$",
+   "$21$"
+  ],
+  "answer": "B",
+  "explanation": "Complete the square: $(x+3)^2 + (y-4)^2 = 25 - c$. The center is $(-3, 4)$. A circle that touches the $x$-axis at exactly one point has a radius equal to the center's distance from that axis, which is 4. So $25 - c = 16$ and $c = 9$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You set $-c = 16$ without adding 9 and 16 to the right side when you completed the square."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the center's distance from the $y$-axis, 3, as the radius. That is the condition for touching the $y$-axis, not the $x$-axis."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You set $25 - c$ equal to the radius 4 instead of $r^2 = 16$."
+   }
+  },
+  "id": "orig-complete-squar-X-466238",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-X-466238",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "at exactly one point what is the value",
+    "exactly one point what is the value of",
+    "one point what is the value of __var__"
+   ],
+   "residue": 4
+  }
  }
 ]

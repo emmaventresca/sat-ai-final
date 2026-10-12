@@ -290,5 +290,57 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the slope of the graph of this equation in the xy-plane?",
+  "stimulus": "A materials engineer heats a thin polymer strip and records its length. She models the strip's length $y$, in millimeters, at a temperature of $x$ degrees Celsius with the equation $3x - 100y = -8{,}000$.",
+  "choices": [
+   "$-0.03$",
+   "$0.03$",
+   "$3$",
+   "$80$"
+  ],
+  "answer": "B",
+  "explanation": "Solve for $y$. Subtract $3x$ from both sides to get $-100y = -3x - 8{,}000$. Then divide every term by $-100$: $y = 0.03x + 80$. The slope is the coefficient of $x$, which is $0.03$. You can check this with the shortcut for $Ax + By = C$: the slope is $-\\frac{A}{B} = -\\frac{3}{-100} = 0.03$. In context, the strip gets 0.03 millimeters longer for each degree Celsius.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the $-\\frac{A}{B}$ shortcut but missed that $B$ is $-100$, not $100$. You may also have moved $3x$ across without dividing its sign by $-100$. The two negatives cancel, so the slope is positive. The strip gets longer as it heats, not shorter."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the slope straight off the standard form as the coefficient $A = 3$. In $Ax + By = C$ the slope is $-\\frac{A}{B}$, so you have to divide by $B = -100$ and change the sign."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You got the equation into the form $y = 0.03x + 80$ correctly, then gave the constant term. That is the y-intercept, the strip's length at $0^\\circ$C. The question asks for the slope, which is the coefficient of $x$."
+   }
+  },
+  "id": "orig-read-slope-or--H-265d89",
+  "skill_cd": "H.C.",
+  "subtype": "read-slope-or-intercept",
+  "subtype_name": "Read the slope or intercept",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-slope-or--H-265d89",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "of the graph of this equation in the",
+    "the graph of this equation in the xy",
+    "graph of this equation in the xy plane"
+   ],
+   "residue": 1
+  }
  }
 ]

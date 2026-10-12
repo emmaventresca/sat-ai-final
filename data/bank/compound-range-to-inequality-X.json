@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-compound-range-X-efc70b",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,14 +82,403 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-compound-range-X-dcb922",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which inequality represents this situation?",
+  "stimulus": "A warehouse employee works 5 shifts each week. Every shift lasts at least 6 hours but less than 9 hours, and the employee is paid $22 per hour. A $40 transit fee is deducted from each week's pay. Let $P$ be the employee's weekly pay after the deduction, in dollars.",
+  "choices": [
+   "$620 \\le P < 950$",
+   "$620 \\le P \\le 950$",
+   "$700 \\le P < 1{,}030$",
+   "$620 \\le P < 990$"
+  ],
+  "answer": "A",
+  "explanation": "Weekly hours run from $5(6) = 30$, which is allowed, up to but not including $5(9) = 45$. Multiply by the wage to get $660 \\le 22h < 990$. Then subtract the $40 fee from both ends: $620 \\le P < 950$. The upper end stays strict because no shift can reach 9 hours.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You scaled the range correctly, but you used \u2264 at the top. 'Less than 9 hours' is strict, so the weekly pay can never actually reach $950."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the $40 transit fee to both ends. It is a deduction, so it has to be subtracted."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You subtracted the $40 fee from the lower end only. Any amount taken off the pay has to come off both ends of the range."
+   }
+  },
+  "id": "orig-compound-range-X-0e2756",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-X-0e2756",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which inequality represents the possible values of $R$?",
+  "stimulus": "An excavation trench is already 40 centimeters deep. Each day, the team deepens it by at least 12 centimeters but no more than 15 centimeters. A buried floor lies 160 centimeters below the surface. Let $R$ be the distance, in centimeters, between the trench bottom and the floor after 6 more days of digging.",
+  "choices": [
+   "$112 \\le R \\le 130$",
+   "$30 \\le R \\le 48$",
+   "$70 \\le R \\le 88$",
+   "$30 \\le R \\le 88$"
+  ],
+  "answer": "B",
+  "explanation": "After 6 days the trench is between $40 + 6(12) = 112$ and $40 + 6(15) = 130$ centimeters deep. The distance left is $160$ minus the depth, so the greatest depth gives the smallest $R$: $160 - 130 = 30$ and $160 - 112 = 48$. That gives $30 \\le R \\le 48$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the range for the trench's total depth after 6 days. The question asks how much distance is left before the floor."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You left out the 40 centimeters that had already been dug. The starting depth has to be counted at both ends."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You took the starting 40 centimeters off one end of the range but not the other. A starting amount applies to both ends."
+   }
+  },
+  "id": "orig-compound-range-X-b5c3cc",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-X-b5c3cc",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following could be the total number of syllables the narrator spoke during the recording?",
+  "stimulus": "A linguist records a narrator for 12 minutes. The recording includes pauses totaling 90 seconds, during which no syllables are spoken. While speaking, the narrator's rate is more than 150 syllables per minute but no more than 190 syllables per minute.",
+  "choices": [
+   "$180$",
+   "$1{,}575$",
+   "$1{,}890$",
+   "$2{,}100$"
+  ],
+  "answer": "C",
+  "explanation": "The narrator speaks for $12 - 1.5 = 10.5$ minutes. Total syllables $S$ satisfy $10.5(150) < S \\le 10.5(190)$, which is $1{,}575 < S \\le 1{,}995$. Only 1,890 falls in that range.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "180 is a possible speaking rate in syllables per minute. The question asks for the total syllables over the whole recording."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "1,575 is the lower bound, but 'more than 150 per minute' is strict. That makes the total strictly greater than 1,575."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You used all 12 minutes as speaking time, which gives $1{,}800 < S \\le 2{,}280$. Subtract the 90 seconds of pauses first. Then the maximum is 1,995."
+   }
+  },
+  "id": "orig-compound-range-X-5fd232",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-X-5fd232",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which inequality represents this situation?",
+  "stimulus": "A coach estimates an athlete's maximum heart rate as $220$ minus the athlete's age, in beats per minute. A 20-year-old's training zone is at least 60% but less than 75% of this maximum. The coach counts the athlete's heartbeats for 15 seconds. Let $c$ be a count that lies in the zone.",
+  "choices": [
+   "$120 \\le c < 150$",
+   "$30 < c \\le 37.5$",
+   "$30 \\le c < 37.5$",
+   "$33 \\le c < 41.25$"
+  ],
+  "answer": "C",
+  "explanation": "The maximum heart rate is $220 - 20 = 200$ beats per minute. The zone is $0.60(200) \\le h < 0.75(200)$, which is $120 \\le h < 150$ beats per minute. A 15-second count is a quarter of that, so $30 \\le c < 37.5$. The strictness at each end stays the same.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "This is the zone in beats per minute. You stopped before converting it to a 15-second count, which means dividing both ends by 4."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the strictness. 'At least 60%' includes its endpoint and 'less than 75%' does not, so the inequality is \u2264 on the left and < on the right."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used 220 as the maximum heart rate and never subtracted the athlete's age of 20."
+   }
+  },
+  "id": "orig-compound-range-X-b8423c",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-X-b8423c",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which inequality represents all depths $d$ at which this species can live?",
+  "stimulus": "In a stretch of ocean, the water temperature $T$, in degrees Celsius, at a depth of $d$ meters is modeled by $T = 28 - 0.05d$. A species of sponge survives only where the temperature is at least $13^{\\circ}\\text{C}$ but below $18^{\\circ}\\text{C}$.",
+  "choices": [
+   "$200 \\le d < 300$",
+   "$200 < d \\le 300$",
+   "$260 \\le d < 360$",
+   "$820 < d \\le 920$"
+  ],
+  "answer": "B",
+  "explanation": "Start with $13 \\le 28 - 0.05d < 18$. Subtract 28 to get $-15 \\le -0.05d < -10$. Divide by $-0.05$, which flips both signs: $300 \\ge d > 200$. Read left to right, that is $200 < d \\le 300$. Temperature 18 is excluded, and it matches depth 200, so the strict end is now on the left.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the right endpoints but left the strictness where it was in the temperature inequality. Dividing by a negative swaps the ends, so the strict sign moves to the 200 end."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You divided 13 and 18 by 0.05 without using the surface temperature of 28 in the model."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added 28 to each bound instead of subtracting it. To isolate the $d$ term, subtract 28 from all three parts."
+   }
+  },
+  "id": "orig-compound-range-X-fb8aff",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-X-fb8aff",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which inequality represents this situation?",
+  "stimulus": "A dance piece has 96 measures with 3 beats in each measure. In performance, the first 32 measures are played twice. The ensemble's tempo is at least 64 but fewer than 96 beats per minute. Let $t$ be the length of a performance, in minutes.",
+  "choices": [
+   "$4 \\le t < 6$",
+   "$4 < t \\le 6$",
+   "$3 < t \\le 4.5$",
+   "$\\tfrac{4}{3} < t \\le 2$"
+  ],
+  "answer": "B",
+  "explanation": "With the repeat, the performance has $96 + 32 = 128$ measures, or $128 \\times 3 = 384$ beats. Time is beats divided by tempo, so a faster tempo gives a shorter performance. The tempo can't reach 96, so $t > 384/96 = 4$. A tempo of 64 is allowed, so $t \\le 384/64 = 6$. That gives $4 < t \\le 6$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You kept the strictness in the same place as in the tempo range. Time goes down as tempo goes up, so the excluded tempo of 96 gives the excluded time of 4, on the left."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You used 96 measures and left out the 32 repeated measures. The performance actually has 384 beats, not 288."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated each measure as one beat. Multiply the 128 measures by 3 beats per measure before you divide by the tempo."
+   }
+  },
+  "id": "orig-compound-range-X-1733f0",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-X-1733f0",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which inequality represents the possible values of $c$?",
+  "stimulus": "To test a serum sample with antibody concentration $c$ units per milliliter, a technician mixes 1 part serum with 7 parts buffer. The assay adds a constant background of 3 units per milliliter to the diluted concentration. A reading is valid only if it is at least 15 but less than 60 units per milliliter.",
+  "choices": [
+   "$96 \\le c \\le 456$",
+   "$84 \\le c < 399$",
+   "$96 \\le c < 456$",
+   "$117 \\le c < 477$"
+  ],
+  "answer": "C",
+  "explanation": "One part in $1 + 7 = 8$ total parts is serum, so the reading is $\\tfrac{c}{8} + 3$. Solve $15 \\le \\tfrac{c}{8} + 3 < 60$. Subtract 3 to get $12 \\le \\tfrac{c}{8} < 57$, then multiply by 8: $96 \\le c < 456$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You scaled the range correctly but changed the upper end to \u2264. 'Less than 60' is strict, so $c$ can't equal 456."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used 7 as the dilution factor. Mixing 1 part serum with 7 parts buffer makes 8 parts in total, so the serum is diluted by a factor of 8."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by 8 before dealing with the background and then subtracted 3. The background is added after dilution, so remove it first and then multiply."
+   }
+  },
+  "id": "orig-compound-range-X-1276fb",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-X-1276fb",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following could be the number of doses remaining at the end of Saturday?",
+  "stimulus": "A clinic starts Monday with 2,400 vaccine doses and receives no new supply that week. On each day from Monday through Saturday, it gives more than 250 doses but no more than 340 doses.",
+  "choices": [
+   "$120$",
+   "$360$",
+   "$900$",
+   "$1{,}800$"
+  ],
+  "answer": "B",
+  "explanation": "Monday through Saturday is 6 days. The clinic gives out more than $6(250) = 1{,}500$ doses and no more than $6(340) = 2{,}040$. The doses remaining are $2{,}400$ minus that number, so $2{,}400 - 2{,}040 \\le R < 2{,}400 - 1{,}500$, which is $360 \\le R < 900$. 360 is possible: it is what's left if the clinic gives 340 doses every day.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You counted 7 days instead of 6, which gives $20 \\le R < 650$. Monday through Saturday is 6 days."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You kept 'more than 250' as the strict end. Subtracting from 2,400 reverses the order, so 900 is the excluded endpoint and 360 is included."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "1,800 is a possible number of doses given out. The question asks how many doses are left."
+   }
+  },
+  "id": "orig-compound-range-X-ab8112",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-X-ab8112",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

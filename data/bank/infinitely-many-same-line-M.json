@@ -261,5 +261,407 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "In the given system of equations, $c$ is a constant. If the system has infinitely many solutions, what is the value of $c$?",
+  "stimulus": "A civil engineer writes two equations to describe the same set of possible loads on a bridge deck, where $x$ and $y$ are the loads, in kilonewtons, carried by its two support beams.\n\n$4x + 6y = 10$\n\n$10x + 15y = c$",
+  "choices": [
+   "$\\frac{5}{2}$",
+   "$10$",
+   "$16$",
+   "$25$"
+  ],
+  "answer": "D",
+  "explanation": "For the system to have infinitely many solutions, the second equation has to be a constant multiple of the first, so both equations describe the same line. Compare the x-coefficients: $\\frac{10}{4} = \\frac{5}{2}$. The y-coefficients agree, because $6 \\cdot \\frac{5}{2} = 15$. The constant must be scaled by the same factor, so $c = 10 \\cdot \\frac{5}{2} = 25$. To check, divide $10x + 15y = 25$ by $\\frac{5}{2}$ and you get $4x + 6y = 10$, the first equation.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You correctly found that the second equation is $\\frac{5}{2}$ times the first, then stopped and gave that scale factor as your answer. You still have to multiply the constant 10 by $\\frac{5}{2}$ to get $c$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You saw that the slopes already match and kept the constant at 10. With $c = 10$ the lines are parallel and separate, so the system has no solution. For the lines to be identical, the constants must be in the same $\\frac{5}{2}$ ratio as the coefficients."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You noticed the x-coefficient went from 4 to 10, so you added 6 to the constant: $10 + 6 = 16$. The coefficients are related by multiplication, not addition, so the constant must also be multiplied by $\\frac{5}{2}$."
+   }
+  },
+  "id": "orig-infinitely-man-M-23913c",
+  "skill_cd": "H.D.",
+  "subtype": "infinitely-many-same-line",
+  "subtype_name": "Infinitely many solutions (the same line)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-infinitely-man-M-23913c",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given system of equations, $k$ is a constant. If the system has infinitely many solutions, what is the value of $k$?",
+  "stimulus": "A marine biologist feeds a rescued seal $x$ buckets of herring and $y$ buckets of mackerel. A bucket of herring holds 2 kilograms and a bucket of mackerel holds 3 kilograms. The day's feeding totals 18 kilograms. An assistant logs the same feeding in grams.\n\n$2x + 3y = 18$\n$2{,}000x + 3{,}000y = k$",
+  "choices": [
+   "$18$",
+   "$1{,}000$",
+   "$1{,}800$",
+   "$18{,}000$"
+  ],
+  "answer": "D",
+  "explanation": "For infinitely many solutions, the second equation has to be a constant multiple of the first. Here every term is multiplied by the same number. The $x$-coefficient goes from 2 to 2,000, so the multiplier is 1,000. The constant must also be multiplied by 1,000, so $k = 18 \\times 1{,}000 = 18{,}000$. In the story, $k$ is the same 18 kilograms written as grams.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You matched the coefficients but left the constant unscaled. With $k = 18$, the lines have the same slope and different intercepts, so they are parallel and the system has no solution. In the story, that is the right total in the wrong units."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "1,000 is the multiplier between the two equations. You found it, but you still needed to apply it to the constant 18."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied 18 by 100 instead of by 1,000. Compare the $x$-coefficients again: 2 becomes 2,000, so the factor is 1,000."
+   }
+  },
+  "id": "orig-infinitely-man-M-48c3e8",
+  "skill_cd": "H.D.",
+  "subtype": "infinitely-many-same-line",
+  "subtype_name": "Infinitely many solutions (the same line)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-infinitely-man-M-48c3e8",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given system of equations, $k$ is a constant. If the system has infinitely many solutions, what is the value of $k$?",
+  "stimulus": "An immunology lab runs $x$ antibody assays of type A and $y$ assays of type B. Each type A assay uses 4 microliters of serum, and each type B assay uses 6 microliters. The lab uses 120 microliters in total. A technician records the same serum budget using a different measuring unit.\n\n$4x + 6y = 120$\n$10x + ky = 300$",
+  "choices": [
+   "$2.5$",
+   "$6$",
+   "$15$",
+   "$24$"
+  ],
+  "answer": "C",
+  "explanation": "For infinitely many solutions, the $x$-coefficients, the $y$-coefficients, and the constants must all be in the same ratio. Both $\\frac{10}{4}$ and $\\frac{300}{120}$ equal 2.5, so the $y$-coefficient must also be multiplied by 2.5. That gives $k = 6 \\times 2.5 = 15$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "2.5 is the ratio between the equations. You found it, but $k$ is the $y$-coefficient, so you still needed to multiply 6 by 2.5."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You copied the $y$-coefficient without scaling it. With $k = 6$, the slopes are different, so the lines cross at exactly one point instead of being the same line."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied 6 by the $x$-coefficient 4 instead of by the ratio $\\frac{10}{4} = 2.5$."
+   }
+  },
+  "id": "orig-infinitely-man-M-0c8bcc",
+  "skill_cd": "H.D.",
+  "subtype": "infinitely-many-same-line",
+  "subtype_name": "Infinitely many solutions (the same line)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-infinitely-man-M-0c8bcc",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "One of the two equations in a system of linear equations is given. The system has infinitely many solutions. Which of the following could be the second equation in this system?",
+  "stimulus": "A textile historian studies an 18th-century weaver's ledger. In the ledger, $x$ is the number of yards of linen and $y$ is the number of yards of wool bought at a market. Linen cost 3 shillings per yard, wool cost 4 shillings per yard, and the purchase came to 24 shillings.\n\n$3x + 4y = 24$",
+  "choices": [
+   "$6x + 8y = 24$",
+   "$4x + 3y = 24$",
+   "$6x + 8y = 48$",
+   "$3x - 4y = 24$"
+  ],
+  "answer": "C",
+  "explanation": "A system has infinitely many solutions when the second equation is the first one multiplied by a constant. Multiplying every term of $3x + 4y = 24$ by 2 gives $6x + 8y = 48$, which is the same line. You can check this in Desmos: graph both equations and they sit exactly on top of each other.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You doubled the coefficients but not the constant. This line has the same slope and a different intercept, so it is parallel to the given line and the system has no solution."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You swapped the linen and wool prices, which attaches the coefficients to the wrong variables. This line has a different slope, so it crosses the given line at only one point."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You changed the sign of the $y$-term, which flips the sign of the slope. The two lines then cross at exactly one point instead of coinciding."
+   }
+  },
+  "id": "orig-infinitely-man-M-556900",
+  "skill_cd": "H.D.",
+  "subtype": "infinitely-many-same-line",
+  "subtype_name": "Infinitely many solutions (the same line)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-infinitely-man-M-556900",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "given the system has infinitely many solutions which",
+    "the system has infinitely many solutions which of",
+    "system has infinitely many solutions which of the",
+    "has infinitely many solutions which of the following",
+    "infinitely many solutions which of the following could",
+    "many solutions which of the following could be",
+    "solutions which of the following could be the",
+    "which of the following could be the second",
+    "of the following could be the second equation",
+    "the following could be the second equation in"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given system of equations, $a$ and $b$ are constants. If the system has infinitely many solutions, what is the value of $b - a$?",
+  "stimulus": "A meteorologist relates rainfall $x$, in millimeters, at one station to rainfall $y$, in millimeters, at a second station using two models.\n\n$3x - 2y = 8$\n$ax - 6y = b$",
+  "choices": [
+   "$-1$",
+   "$15$",
+   "$24$",
+   "$33$"
+  ],
+  "answer": "B",
+  "explanation": "If there are infinitely many solutions, the second equation is a constant multiple of the first. The $y$-coefficients are $-2$ and $-6$, so the multiplier is $3$. The second equation must be $9x - 6y = 24$, which gives $a = 9$ and $b = 24$. So $b - a = 24 - 9 = 15$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You multiplied the $x$-coefficient by 3 to get $a = 9$ but left the constant at 8, so you found $8 - 9 = -1$. With $b = 8$ the lines are parallel, not the same line. The constant has to be multiplied by 3 as well."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $b = 24$ correctly and stopped there. The question asks how much greater $b$ is than $a$, so you still have to subtract $a = 9$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $a = 9$ and $b = 24$ correctly but added them instead of subtracting. $b - a$ is the difference, $24 - 9$."
+   }
+  },
+  "id": "orig-infinitely-man-M-65cd73",
+  "skill_cd": "H.D.",
+  "subtype": "infinitely-many-same-line",
+  "subtype_name": "Infinitely many solutions (the same line)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-infinitely-man-M-65cd73",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given system of equations, $p$ and $c$ are constants. If the system has infinitely many solutions, what is the value of $p - c$?",
+  "stimulus": "A linguist relates $x$, the number of syllables in a word, to $y$, the time in tenths of a second needed to say it, in two ways.\n\n$y = 4x + 5$\n$px - 3y = c$",
+  "choices": [
+   "$-3$",
+   "$12$",
+   "$17$",
+   "$27$"
+  ],
+  "answer": "D",
+  "explanation": "Put the first equation in the same form as the second: $4x - y = -5$. Infinitely many solutions means the second equation is a multiple of this one. The $y$-coefficients go from $-1$ to $-3$, so multiply everything by 3: $12x - 3y = -15$. That gives $p = 12$ and $c = -15$, so $p - c = 12 - (-15) = 27$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved the terms to get $4x - y = -5$, you kept the constant positive and wrote $4x - y = 5$. That made $c = 15$, and $12 - 15 = -3$. Moving $5$ across the equals sign changes its sign."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $p = 12$ and gave that as the answer. The question asks for the gap $p - c$, so you also need $c = -15$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You multiplied the coefficients by 3 but left the constant as $-5$, so you got $12 - (-5) = 17$. Those lines have the same slope but different intercepts, which means they are parallel. The constant has to be multiplied by 3 too."
+   }
+  },
+  "id": "orig-infinitely-man-M-8d2299",
+  "skill_cd": "H.D.",
+  "subtype": "infinitely-many-same-line",
+  "subtype_name": "Infinitely many solutions (the same line)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-infinitely-man-M-8d2299",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given system of equations, $a$ and $b$ are constants. If the system has infinitely many solutions, what is the value of $b - a$?",
+  "stimulus": "Two survey teams at an excavation each wrote an equation relating $x$ and $y$, two distances in meters measured from a buried wall.\n\n$\\frac{x}{2} + \\frac{y}{3} = 4$\n$ax + 2y = b$",
+  "choices": [
+   "$-21$",
+   "$1$",
+   "$21$",
+   "$24$"
+  ],
+  "answer": "C",
+  "explanation": "Clear the fractions in the first equation by multiplying every term by 6: $3x + 2y = 24$. Its $y$-coefficient already matches the second equation's, so for infinitely many solutions the two equations must be identical. That gives $a = 3$ and $b = 24$, so $b - a = 24 - 3 = 21$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found $a = 3$ and $b = 24$ but subtracted in the wrong order, $a - b = -21$. The question asks for $b - a$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You multiplied the $x$- and $y$-terms by 6 but left the constant at 4, so you got $4 - 3 = 1$. That system describes parallel lines, not one line. Every term, including the constant, has to be multiplied by 6."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $b = 24$ and stopped. The question asks how much greater $b$ is than $a$, so you still have to subtract $a = 3$."
+   }
+  },
+  "id": "orig-infinitely-man-M-a168b0",
+  "skill_cd": "H.D.",
+  "subtype": "infinitely-many-same-line",
+  "subtype_name": "Infinitely many solutions (the same line)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-infinitely-man-M-a168b0",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given system of equations, $k$ is a constant. If the system has infinitely many solutions, what is the value of $k$?",
+  "stimulus": "A marine biologist mixes $x$ grams of brine shrimp and $y$ grams of mysis shrimp to feed captive seahorses. She records two conditions on the mix.\n\n$\\frac{3}{4}x + \\frac{5}{6}y = 7$\n\n$9x + 10y = k$",
+  "choices": [
+   "$7$",
+   "$12$",
+   "$42$",
+   "$84$"
+  ],
+  "answer": "D",
+  "explanation": "Infinitely many solutions means the two equations describe the same line, so one must be a constant multiple of the other. Multiplying the first equation by $12$ turns $\\frac{3}{4}x$ into $9x$ and $\\frac{5}{6}y$ into $10y$. The constant has to be multiplied by $12$ too, so $k = 12 \\cdot 7 = 84$. To check by testing the choices, put $k = 84$ into the second equation and divide by $12$. You get $\\frac{3}{4}x + \\frac{5}{6}y = 7$, which is exactly the first equation.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You saw that the slopes already match and kept the constant at $7$. With $k = 7$ the second equation becomes $\\frac{3}{4}x + \\frac{5}{6}y = \\frac{7}{12}$, which has the same slope but a different intercept. The lines are parallel, so the system has no solution, not infinitely many."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$12$ is the number you multiply the first equation by to get the second equation's coefficients. The question asks for the new constant, which is $12 \\cdot 7$, not the multiplier itself."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You cleared the fractions with $6$ instead of $12$. Multiplying by $6$ gives $\\frac{9}{2}x + 5y = 42$, and those coefficients don't match $9x + 10y$. You need to multiply everything, including the constant, by $12$."
+   }
+  },
+  "id": "orig-infinitely-man-M-d216f6",
+  "skill_cd": "H.D.",
+  "subtype": "infinitely-many-same-line",
+  "subtype_name": "Infinitely many solutions (the same line)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-infinitely-man-M-d216f6",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

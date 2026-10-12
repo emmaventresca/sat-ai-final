@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-corresponding--X-eb619d",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "is similar to triangle __var__ where __var__ __var__",
     "similar to triangle __var__ where __var__ __var__ and",
@@ -86,11 +91,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-corresponding--X-91345a",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "point __var__ lies on __var__ and point __var__",
     "__var__ lies on __var__ and point __var__ lies",
@@ -100,5 +110,430 @@
    "residue": 2
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $U$?",
+  "stimulus": "A nutrition science poster uses two triangular logos. Triangle $PQR$ is similar to triangle $STU$, and each side of triangle $STU$ is 3 times as long as the corresponding side of triangle $PQR$. The measure of angle $P$ is $(2x + 10)^\\circ$, the measure of angle $T$ is $(3x)^\\circ$, and the measure of angle $R$ is $(x + 20)^\\circ$.",
+  "choices": [
+   "$25$",
+   "$45$",
+   "$75$",
+   "$135$"
+  ],
+  "answer": "B",
+  "explanation": "The letter order matches $P$ to $S$, $Q$ to $T$, and $R$ to $U$. So angle $Q$ equals angle $T$, which is $(3x)^\\circ$. In triangle $PQR$, $(2x+10) + 3x + (x+20) = 180$, so $6x + 30 = 180$ and $x = 25$. Angle $U$ matches angle $R$, which is $25 + 20 = 45^\\circ$. The scale factor changes side lengths, not angles.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found $x = 25$ and stopped there. You still needed to put it into $x + 20$ to get angle $R$, which equals angle $U$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You worked out angle $T$, $3(25) = 75$, but angle $U$ matches angle $R$, not angle $T$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You multiplied $45^\\circ$ by the scale factor 3. Similar figures have equal angles, so the scale factor applies only to side lengths."
+   }
+  },
+  "id": "orig-corresponding--X-e81c06",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--X-e81c06",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "measure of angle __var__ is __var__ the measure",
+    "of angle __var__ is __var__ the measure of",
+    "angle __var__ is __var__ the measure of angle",
+    "__var__ is __var__ the measure of angle __var__",
+    "is __var__ the measure of angle __var__ is"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length of $\\overline{DB}$?",
+  "stimulus": "A linguistics textbook draws a branching diagram as triangle $ABC$. Point $D$ lies on $\\overline{AB}$ and point $E$ lies on $\\overline{AC}$, with $\\overline{DE}$ parallel to $\\overline{BC}$. $AD = x$, $DB = x + 3$, $DE = 6$, and $BC = 15$.",
+  "choices": [
+   "$5$",
+   "$6$",
+   "$9$",
+   "$15$"
+  ],
+  "answer": "C",
+  "explanation": "Because $\\overline{DE} \\parallel \\overline{BC}$, triangle $ADE$ is similar to triangle $ABC$. Corresponding sides are $AD$ and $AB$, so $\\frac{AD}{AB} = \\frac{DE}{BC}$. With $AB = x + (x+3) = 2x + 3$, you get $\\frac{x}{2x+3} = \\frac{6}{15}$. Cross-multiplying gives $15x = 12x + 18$, so $x = 6$ and $DB = 6 + 3 = 9$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $\\frac{x}{x+3} = \\frac{6}{15}$, which pairs $DB$ with $BC$. $DB$ is only part of a side of the large triangle, so the side you need is $AB = 2x + 3$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "$6$ is $x$, which is the length of $AD$. You needed to add 3 to get $DB$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$15$ is the full side $AB$. The question asks only for the piece $DB$."
+   }
+  },
+  "id": "orig-corresponding--X-266887",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--X-266887",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "A",
+   "problem": null,
+   "overlap": [
+    "point __var__ lies on __var__ and point __var__",
+    "__var__ lies on __var__ and point __var__ lies",
+    "lies on __var__ and point __var__ lies on",
+    "on __var__ and point __var__ lies on __var__",
+    "__var__ __var__ __var__ __var__ and __var__ what is",
+    "__var__ __var__ __var__ and __var__ what is the",
+    "__var__ __var__ and __var__ what is the length"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $N$?",
+  "stimulus": "A textile historian compares two quilt blocks shaped like quadrilaterals. Quadrilateral $ABCD$ is similar to quadrilateral $KLMN$, and each side of $KLMN$ is twice as long as the corresponding side of $ABCD$. In these figures, $m\\angle A = 70^\\circ$, $m\\angle M = 110^\\circ$, $m\\angle L = (3k)^\\circ$, and $m\\angle D = (k + 20)^\\circ$.",
+  "choices": [
+   "$30$",
+   "$40$",
+   "$60$",
+   "$120$"
+  ],
+  "answer": "C",
+  "explanation": "The letter order matches $B$ to $L$ and $C$ to $M$, so angle $B$ is $(3k)^\\circ$ and angle $C$ is $110^\\circ$. The angles of quadrilateral $ABCD$ add to $360^\\circ$: $70 + 3k + 110 + (k + 20) = 360$, so $4k = 160$ and $k = 40$. Then angle $D = 60^\\circ$, and angle $N$ matches angle $D$, so it is $60^\\circ$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You divided $60^\\circ$ by the scale factor 2. The scale factor changes side lengths, not angle measures."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "$40$ is the value of $k$. You still needed $k + 20$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You doubled $60^\\circ$ because of the scale factor. Angles in similar figures are equal, so no scaling applies. $120$ is also angle $L$, which is a different vertex."
+   }
+  },
+  "id": "orig-corresponding--X-05bad7",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--X-05bad7",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __var__ __var__ and __var__ what is the",
+    "__var__ __var__ and __var__ what is the measure"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $Q$?",
+  "stimulus": "In a folklore studies archive, two triangular story maps are compared. Triangle $FGH$ is similar to triangle $QPR$, and the scale factor from $FGH$ to $QPR$ is $\\frac{3}{2}$. The measure of angle $P$ is $90^\\circ$, the measure of angle $F$ is $(4n)^\\circ$, and the measure of angle $R$ is $(n + 15)^\\circ$.",
+  "choices": [
+   "$15$",
+   "$30$",
+   "$60$",
+   "$90$"
+  ],
+  "answer": "C",
+  "explanation": "The order $FGH \\leftrightarrow QPR$ matches $F$ to $Q$, $G$ to $P$, and $H$ to $R$. So angle $G = 90^\\circ$ and angle $H = (n+15)^\\circ$. In triangle $FGH$, the angles at $F$ and $H$ add to $90^\\circ$: $4n + n + 15 = 90$, so $n = 15$. That makes angle $F = 60^\\circ$, and angle $Q$ matches angle $F$, so it is $60^\\circ$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$15$ is $n$. You needed to put it into $4n$ to get angle $F$, which equals angle $Q$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$30^\\circ$ is angle $H$, which equals angle $R$. Angle $Q$ matches $F$, the first letter in each name."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You multiplied $60^\\circ$ by the scale factor $\\frac{3}{2}$. Similarity keeps angles the same, so the scale factor never applies to them."
+   }
+  },
+  "id": "orig-corresponding--X-1bae4e",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--X-1bae4e",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ is __var__ the measure of angle __var__",
+    "is __var__ the measure of angle __var__ is",
+    "measure of angle __var__ is __var__ the measure",
+    "of angle __var__ is __var__ the measure of",
+    "angle __var__ is __var__ the measure of angle",
+    "__var__ is __var__ the measure of angle __var__",
+    "is __var__ the measure of angle __var__ is"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the length of $\\overline{FG}$?",
+  "stimulus": "A materials science lab cuts a triangular test plate $ABC$. Points $D$ and $F$ lie on $\\overline{AB}$, in the order $A$, $D$, $F$, $B$, and points $E$ and $G$ lie on $\\overline{AC}$. Segments $\\overline{DE}$ and $\\overline{FG}$ are both parallel to $\\overline{BC}$. $AD = 4$, $DF = 2$, $FB = 6$, and $DE = 5$.",
+  "choices": [
+   "$2.5$",
+   "$7$",
+   "$7.5$",
+   "$15$"
+  ],
+  "answer": "C",
+  "explanation": "Triangles $ADE$ and $AFG$ are similar because they share angle $A$ and $\\overline{DE} \\parallel \\overline{FG}$. Match the sides that start at $A$: $AD = 4$ and $AF = 4 + 2 = 6$. So $\\frac{FG}{DE} = \\frac{AF}{AD}$, which gives $FG = 5 \\cdot \\frac{6}{4} = 7.5$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $DF = 2$ in the proportion instead of $AF = 6$. Corresponding sides have to be measured from the shared vertex $A$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the extra length, getting $5 + 2 = 7$. Similar figures scale by multiplying, so you need the ratio $\\frac{6}{4}$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$15$ is $BC = 5 \\cdot \\frac{12}{4}$, the side of the whole triangle. The question asks for $FG$."
+   }
+  },
+  "id": "orig-corresponding--X-63f20f",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--X-63f20f",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __var__ __var__ __var__ and __var__ what is",
+    "__var__ __var__ __var__ and __var__ what is the",
+    "__var__ __var__ and __var__ what is the length"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $C$?",
+  "stimulus": "An archaeology team records two triangular stone fragments. Triangle $ABC$ is similar to triangle $EFD$, and each side of $EFD$ is 4 times as long as the corresponding side of $ABC$. An exterior angle of triangle $EFD$ at vertex $F$ measures $105^\\circ$, and $m\\angle D = 2(m\\angle E)$.",
+  "choices": [
+   "$35$",
+   "$50$",
+   "$70$",
+   "$75$"
+  ],
+  "answer": "C",
+  "explanation": "The exterior angle at $F$ equals the sum of the two interior angles that are not next to it: $m\\angle D + m\\angle E = 105^\\circ$. With $D = 2E$, you get $3E = 105$, so $E = 35^\\circ$ and $D = 70^\\circ$. The order $ABC \\leftrightarrow EFD$ matches $C$ to $D$, so angle $C$ is $70^\\circ$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$35^\\circ$ is angle $E$, which matches angle $A$. Angle $C$ matches $D$, the third letter in each name."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used $105^\\circ$ as the interior angle at $F$. That leaves $75^\\circ$ for $D + E$ and gives $50$. The given angle is exterior, so the interior angle at $F$ is $75^\\circ$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You matched $C$ to $F$ by alphabetical position. The stated order matches $C$ to $D$. $75^\\circ$ is the interior angle at $F$, which equals angle $B$."
+   }
+  },
+  "id": "orig-corresponding--X-7e4fa6",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--X-7e4fa6",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $K$?",
+  "stimulus": "A sports science study models a sprinter's stride with two triangles. Triangle $KLM$ is similar to triangle $TRS$, and $KL = 2 \\cdot TR$. In triangle $TRS$, $TR = RS$ and $m\\angle R = 40^\\circ$.",
+  "choices": [
+   "$40$",
+   "$70$",
+   "$100$",
+   "$140$"
+  ],
+  "answer": "B",
+  "explanation": "Because $TR = RS$, the angles opposite those sides are equal. Those are angles $S$ and $T$. So $m\\angle T = m\\angle S = \\frac{180 - 40}{2} = 70^\\circ$. The order $KLM \\leftrightarrow TRS$ matches $K$ to $T$, so angle $K$ is $70^\\circ$. The factor of 2 affects only side lengths.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$40^\\circ$ is angle $R$, which matches angle $L$, not angle $K$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You treated $40^\\circ$ as a base angle, so you got $180 - 2(40) = 100$. But $R$ is the vertex between the two equal sides, so it is the apex angle."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You multiplied $70^\\circ$ by the side ratio 2. Similar triangles have equal angles, whatever the scale factor is."
+   }
+  },
+  "id": "orig-corresponding--X-dd73cd",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--X-dd73cd",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __var__ and __var__ what is the measure"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $PQR$?",
+  "stimulus": "An immunology diagram shows antibody binding as triangle $PQR$. Point $S$ lies on $\\overline{PQ}$ and point $T$ lies on $\\overline{PR}$, with $\\overline{ST}$ parallel to $\\overline{QR}$, $PS = 4$, and $PQ = 10$. The measure of angle $PST$ is $(3y)^\\circ$, the measure of angle $PRQ$ is $(2y + 5)^\\circ$, and the measure of angle $QPR$ is $(y + 25)^\\circ$.",
+  "choices": [
+   "$50$",
+   "$55$",
+   "$75$",
+   "$105$"
+  ],
+  "answer": "C",
+  "explanation": "Because $\\overline{ST} \\parallel \\overline{QR}$, triangle $PST$ is similar to triangle $PQR$. This gives $\\angle PTS = \\angle PRQ = (2y+5)^\\circ$. In triangle $PST$, $3y + (2y + 5) + (y + 25) = 180$, so $6y = 150$ and $y = 25$. Angle $PQR$ corresponds to angle $PST$, so it is $3(25) = 75^\\circ$. The side lengths $4$ and $10$ are not needed for an angle.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$50^\\circ$ is angle $QPR$, the angle at the shared vertex $P$, not the angle at $Q$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$55^\\circ$ is angle $PRQ$. Angle $PQR$ matches angle $PST$, not angle $PTS$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the supplement of $75^\\circ$. That is angle $QST$, the angle on the other side of $\\overline{ST}$, not the matching angle."
+   }
+  },
+  "id": "orig-corresponding--X-6be229",
+  "skill_cd": "S.B.",
+  "subtype": "corresponding-parts-similar-congruent",
+  "subtype_name": "Similar / congruent figures: read off corresponding parts",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-corresponding--X-6be229",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "point __var__ lies on __var__ and point __var__",
+    "__var__ lies on __var__ and point __var__ lies",
+    "lies on __var__ and point __var__ lies on",
+    "on __var__ and point __var__ lies on __var__",
+    "measure of angle __var__ is __var__ the measure",
+    "of angle __var__ is __var__ the measure of",
+    "angle __var__ is __var__ the measure of angle",
+    "__var__ is __var__ the measure of angle __var__",
+    "is __var__ the measure of angle __var__ is"
+   ],
+   "residue": 2
+  }
  }
 ]

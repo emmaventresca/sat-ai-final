@@ -236,5 +236,638 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the value of $h + k$?",
+  "stimulus": "A paleobotanist models the width of fossil leaf impressions using the expression $x^2 - 10x + 31$. This expression can be rewritten as $(x - h)^2 + k$, where $h$ and $k$ are constants.",
+  "keys": [
+   "11"
+  ],
+  "any_of": false,
+  "explanation": "Halve the x-coefficient: half of $-10$ is $-5$, so the squared part is $(x - 5)^2 = x^2 - 10x + 25$. That supplies 25 of the 31, so you need $+6$ more: $x^2 - 10x + 31 = (x - 5)^2 + 6$. Because the form is $(x - h)^2$, $h = 5$, not $-5$. So $h = 5$ and $k = 6$, and $h + k = 11$. To check in Desmos, graph $y = x^2 - 10x + 31$ and click the vertex. It is at $(5, 6)$.",
+  "common_errors": [
+   {
+    "value": "1",
+    "misconception": "algebra-manipulation",
+    "why": "Read $(x - 5)^2$ as $h = -5$, getting the sign of h wrong, then added $-5 + 6$."
+   },
+   {
+    "value": "61",
+    "misconception": "algebra-manipulation",
+    "why": "Added the 25 to the constant instead of subtracting it, so k = 56, then 5 + 56."
+   },
+   {
+    "value": "-64",
+    "misconception": "algebra-manipulation",
+    "why": "Squared the whole coefficient 10 instead of half of it, so k = 31 \u2212 100 = \u221269, then 5 + (\u221269)."
+   },
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave k alone instead of h + k."
+   }
+  ],
+  "id": "orig-factor-special-M-e6ef67",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-e6ef67",
+   "structure": [],
+   "solver_answer": 11,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression can be rewritten as __var__ where __var__",
+    "can be rewritten as __var__ where __var__ and",
+    "be rewritten as __var__ where __var__ and __var__",
+    "rewritten as __var__ where __var__ and __var__ are"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "What is the value of $a + b$?",
+  "stimulus": "A labour economist's wage model contains the expression $25t^2 - 60t + 36$. This expression is equivalent to $(at - b)^2$, where $a$ and $b$ are positive constants.",
+  "keys": [
+   "11"
+  ],
+  "any_of": false,
+  "explanation": "The first and last terms are perfect squares: $25t^2 = (5t)^2$ and $36 = 6^2$. Check the middle term. For a perfect square it must be $2 \\cdot 5t \\cdot 6 = 60t$, and it is, with a minus sign. So $25t^2 - 60t + 36 = (5t - 6)^2$. That gives $a = 5$ and $b = 6$, so $a + b = 11$.",
+  "common_errors": [
+   {
+    "value": "61",
+    "misconception": "algebra-manipulation",
+    "why": "Used the coefficients 25 and 36 themselves without taking their square roots."
+   },
+   {
+    "value": "35",
+    "misconception": "algebra-manipulation",
+    "why": "Took b as half of the middle coefficient (30) instead of the square root of the constant, then added a = 5."
+   },
+   {
+    "value": "30",
+    "misconception": "wrong-target-quantity",
+    "why": "Multiplied a and b instead of adding them."
+   }
+  ],
+  "id": "orig-factor-special-M-c7876f",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-c7876f",
+   "structure": [],
+   "solver_answer": 11,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $ab$?",
+  "stimulus": "A cartographer's scale-correction formula uses the expression $49x^2 - 100y^2$, which is equivalent to $(ax + by)(ax - by)$, where $a$ and $b$ are positive constants.",
+  "keys": [
+   "70"
+  ],
+  "any_of": false,
+  "explanation": "This is a difference of squares: $49x^2 = (7x)^2$ and $100y^2 = (10y)^2$. Since $p^2 - q^2 = (p + q)(p - q)$, the expression factors as $(7x + 10y)(7x - 10y)$. So $a = 7$ and $b = 10$, and $ab = 70$.",
+  "common_errors": [
+   {
+    "value": "4900",
+    "misconception": "algebra-manipulation",
+    "why": "Used 49 and 100 as a and b without taking square roots, so the coefficients were never factored."
+   },
+   {
+    "value": "17",
+    "misconception": "wrong-target-quantity",
+    "why": "Added a and b instead of multiplying them."
+   }
+  ],
+  "id": "orig-factor-special-M-e57412",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-e57412",
+   "structure": [],
+   "solver_answer": 70,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $c$?",
+  "stimulus": "An ornithologist's model of wingbeat frequency includes the expression $x^4 - 13x^2 + 36$. This expression is equivalent to $(x - 2)(x + 2)(x - c)(x + c)$, where $c$ is a positive constant.",
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "Only even powers appear, so let $u = x^2$. The expression becomes $u^2 - 13u + 36$. You need two numbers that multiply to 36 and add to 13, which are 4 and 9: $(u - 4)(u - 9)$. Substitute back to get $(x^2 - 4)(x^2 - 9)$. Each factor is a difference of squares: $(x - 2)(x + 2)(x - 3)(x + 3)$. So $c = 3$. In Desmos, the graph crosses the x-axis at $\\pm 2$ and $\\pm 3$.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $x^2 - 9$ and reported the value of $u$ instead of taking its square root to get $x$."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the root already shown in the given factors instead of the new one."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Chose the factor pair 6 \u00b7 6, which multiplies to 36 but does not add to 13, then reported 6."
+   }
+  ],
+  "id": "orig-factor-special-M-fbf526",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-fbf526",
+   "structure": [],
+   "solver_answer": 3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ is",
+    "is equivalent to __var__ where __var__ is a"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A musicologist models the pitch drift of a tuning fork with $2x^2 + 12x + 23$. This expression can be rewritten as $2(x - h)^2 + k$, where $h$ and $k$ are constants.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "First factor the 2 out of the x-terms: $2(x^2 + 6x) + 23$. Half of 6 is 3, and $3^2 = 9$, so write $2(x^2 + 6x + 9) + 23 - 2 \\cdot 9$. Inside the parentheses, the 9 is multiplied by 2, so you have added 18 and must subtract 18. That gives $2(x + 3)^2 + 5$, so $k = 5$. In Desmos, the vertex of $y = 2x^2 + 12x + 23$ is at $(-3, 5)$.",
+  "common_errors": [
+   {
+    "value": "14",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted 9 instead of 2 \u00b7 9, forgetting that the 9 inside the parentheses is multiplied by 2."
+   },
+   {
+    "value": "-13",
+    "misconception": "algebra-manipulation",
+    "why": "Didn't factor out the 2 first. Halved 12 to get 6 and subtracted 36 from 23."
+   },
+   {
+    "value": "-3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave h instead of k."
+   }
+  ],
+  "id": "orig-factor-special-M-e8ac8f",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-e8ac8f",
+   "structure": [],
+   "solver_answer": 5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression can be rewritten as __var__ where __var__",
+    "can be rewritten as __var__ where __var__ and",
+    "be rewritten as __var__ where __var__ and __var__",
+    "rewritten as __var__ where __var__ and __var__ are"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "A hydrologist models the water level in a reservoir with the expression $(x - 7)^2 - 16$. This expression is equivalent to $(x - a)(x - b)$, where $a$ and $b$ are constants and $a < b$.",
+  "keys": [
+   "11"
+  ],
+  "any_of": false,
+  "explanation": "Treat it as a difference of squares: $(x - 7)^2 - 4^2 = \\big((x - 7) - 4\\big)\\big((x - 7) + 4\\big) = (x - 11)(x - 3)$. So the constants are 3 and 11. Since $a < b$, $b = 11$. Check by expanding: $(x - 11)(x - 3) = x^2 - 14x + 33$, and $(x - 7)^2 - 16 = x^2 - 14x + 49 - 16 = x^2 - 14x + 33$.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the smaller constant, a, instead of b."
+   },
+   {
+    "value": "23",
+    "misconception": "algebra-manipulation",
+    "why": "Added 16 to 7 without taking its square root."
+   },
+   {
+    "value": "-3",
+    "misconception": "algebra-manipulation",
+    "why": "Got the sign of h wrong, read the center as \u22127, and got roots \u221211 and \u22123, then took the larger."
+   }
+  ],
+  "id": "orig-factor-special-M-fe5237",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-fe5237",
+   "structure": [],
+   "solver_answer": 11,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ and __var__ are constants and __var__ what",
+    "and __var__ are constants and __var__ what is",
+    "__var__ are constants and __var__ what is the",
+    "are constants and __var__ what is the value",
+    "constants and __var__ what is the value of"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "In a public health model of infection spread, the expression $9x^2 - kx + 25$ is equivalent to $(ax - b)^2$, where $a$, $b$, and $k$ are positive constants.",
+  "keys": [
+   "30"
+  ],
+  "any_of": false,
+  "explanation": "Match the outer terms first: $(ax)^2 = 9x^2$ gives $a = 3$, and $b^2 = 25$ gives $b = 5$. Expanding $(3x - 5)^2$ gives $9x^2 - 2 \\cdot 3 \\cdot 5x + 25 = 9x^2 - 30x + 25$. So $k = 30$.",
+  "common_errors": [
+   {
+    "value": "15",
+    "misconception": "algebra-manipulation",
+    "why": "Left out the factor of 2 in the middle term $2ab$."
+   },
+   {
+    "value": "90",
+    "misconception": "algebra-manipulation",
+    "why": "Used 9 instead of its square root 3 for a, so 2 \u00b7 9 \u00b7 5."
+   },
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Added a and b (3 + 5) instead of computing 2ab."
+   }
+  ],
+  "id": "orig-factor-special-M-07b100",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-07b100",
+   "structure": [],
+   "solver_answer": 30,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $hk$?",
+  "stimulus": "A materials scientist models the stress in an alloy sample with $x^2 + 8x + 3$. This expression can be rewritten as $(x - h)^2 + k$, where $h$ and $k$ are constants.",
+  "keys": [
+   "52"
+  ],
+  "any_of": false,
+  "explanation": "Half of 8 is 4, so the squared part is $(x + 4)^2 = x^2 + 8x + 16$. You need 3, not 16, so subtract 13: $x^2 + 8x + 3 = (x + 4)^2 - 13$. Written as $(x - h)^2$, this means $h = -4$. So $h = -4$ and $k = -13$, and $hk = (-4)(-13) = 52$. In Desmos, the vertex is at $(-4, -13)$.",
+  "common_errors": [
+   {
+    "value": "-52",
+    "misconception": "algebra-manipulation",
+    "why": "Got the sign of h wrong. Read $(x + 4)^2$ as h = 4, then 4 \u00b7 (\u221213)."
+   },
+   {
+    "value": "-76",
+    "misconception": "algebra-manipulation",
+    "why": "Added 16 to the constant instead of subtracting it, so k = 19, then (\u22124)(19)."
+   },
+   {
+    "value": "244",
+    "misconception": "algebra-manipulation",
+    "why": "Squared 8 instead of half of 8, so k = 3 \u2212 64 = \u221261, then (\u22124)(\u221261)."
+   },
+   {
+    "value": "-17",
+    "misconception": "wrong-target-quantity",
+    "why": "Added h and k instead of multiplying them."
+   }
+  ],
+  "id": "orig-factor-special-M-0a9810",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-0a9810",
+   "structure": [],
+   "solver_answer": 52,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression can be rewritten as __var__ where __var__",
+    "can be rewritten as __var__ where __var__ and",
+    "be rewritten as __var__ where __var__ and __var__",
+    "rewritten as __var__ where __var__ and __var__ are"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "The expression $x^2 - 14x + 61$ is equivalent to $(x - h)^2 + k$, where $h$ and $k$ are constants. What is the value of $h + k$?",
+  "stimulus": "An agricultural scientist models the extra fertilizer cost, in dollars per acre, of planting $x$ days after the ideal date with the expression $x^2 - 14x + 61$.",
+  "keys": [
+   "19"
+  ],
+  "any_of": false,
+  "explanation": "Halve the x-coefficient: half of $-14$ is $-7$, so the square is $(x - 7)^2 = x^2 - 14x + 49$. That gives $h = 7$, because $(x - 7)^2$ means $h$ is $+7$. To keep the expression the same, the constant must make up the difference between 61 and 49, so $k = 61 - 49 = 12$. Then $h + k = 7 + 12 = 19$. In Desmos, graph $y = x^2 - 14x + 61$ and click the vertex: it is $(7, 12)$.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Took $h = -7$ from the $-7$ inside the parentheses, so $-7 + 12 = 5$. In $(x - h)^2$, the expression $(x - 7)^2$ means $h = 7$."
+   },
+   {
+    "value": "68",
+    "misconception": "algebra-manipulation",
+    "why": "Completed the square but kept the original constant, so $k = 61$, then $7 + 61 = 68$."
+   },
+   {
+    "value": "117",
+    "misconception": "algebra-manipulation",
+    "why": "Added the 49 to the constant instead of subtracting it, so $k = 110$, then $7 + 110 = 117$."
+   },
+   {
+    "value": "12",
+    "misconception": "intermediate-step",
+    "why": "Found $k$ and stopped without adding $h$."
+   },
+   {
+    "value": "7",
+    "misconception": "intermediate-step",
+    "why": "Found $h$ and stopped without adding $k$."
+   }
+  ],
+  "id": "orig-factor-special-M-88db1d",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-88db1d",
+   "structure": [],
+   "solver_answer": 19,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression $x^4 - 81$ is equivalent to $(x^2 + a)(x + b)(x - b)$, where $a$ and $b$ are positive constants. What is the value of $a + b$?",
+  "stimulus": "An immunologist simplifying a model of antibody binding needs to factor the expression $x^4 - 81$ completely.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "Treat $x^4 - 81$ as a difference of squares: $(x^2)^2 - 9^2 = (x^2 + 9)(x^2 - 9)$. The second factor is another difference of squares: $x^2 - 9 = (x + 3)(x - 3)$. So $x^4 - 81 = (x^2 + 9)(x + 3)(x - 3)$, which gives $a = 9$ and $b = 3$, and $a + b = 12$. To check, try $x = 2$: $16 - 81 = -65$, and $(4 + 9)(5)(-1) = -65$.",
+  "common_errors": [
+   {
+    "value": "18",
+    "misconception": "algebra-manipulation",
+    "why": "Split $x^2 - 9$ as $(x + 9)(x - 9)$ without taking the square root of 9, so $b = 9$ and $9 + 9 = 18$."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Took the square root of 9 in both factors and set $a = 3$, even though the $x^2 + 9$ factor keeps the 9, so $3 + 3 = 6$."
+   },
+   {
+    "value": "9",
+    "misconception": "intermediate-step",
+    "why": "Stopped after the first split into $(x^2 + 9)(x^2 - 9)$ and reported $a$ alone."
+   }
+  ],
+  "id": "orig-factor-special-M-45c86f",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-45c86f",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression $49x^2 - 84x + 36$ is equivalent to $(ax - b)^2$, where $a$ and $b$ are positive constants. What is the value of $ab$?",
+  "stimulus": "A folklore studies researcher models how often a motif turns up across $x$ regional versions of a tale with the expression $49x^2 - 84x + 36$.",
+  "keys": [
+   "42"
+  ],
+  "any_of": false,
+  "explanation": "The first and last terms are perfect squares: $49x^2 = (7x)^2$ and $36 = 6^2$. Check the middle term: $2 \\cdot 7x \\cdot 6 = 84x$, and the sign is negative, so $49x^2 - 84x + 36 = (7x - 6)^2$. That gives $a = 7$ and $b = 6$, so $ab = 42$. Expand $(7x - 6)^2$ to confirm that you get back $-84x$.",
+  "common_errors": [
+   {
+    "value": "84",
+    "misconception": "algebra-manipulation",
+    "why": "Read the middle coefficient as $ab$ and forgot that in $(ax - b)^2$ the middle term is $2ab$."
+   },
+   {
+    "value": "1764",
+    "misconception": "algebra-manipulation",
+    "why": "Used $a = 49$ and $b = 36$ without taking square roots, so $49 \\cdot 36 = 1764$."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Didn't factor the coefficient 49 out of the first term, wrote $(x - 6)^2$ with $a = 1$, so $1 \\cdot 6 = 6$."
+   },
+   {
+    "value": "13",
+    "misconception": "wrong-target-quantity",
+    "why": "Found $a = 7$ and $b = 6$ but added them instead of multiplying."
+   }
+  ],
+  "id": "orig-factor-special-M-182e01",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-182e01",
+   "structure": [],
+   "solver_answer": 42,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $x - c$ is a factor of $p(x)$, where $c$ is a positive constant, what is one possible value of $c$?",
+  "stimulus": "An archaeologist uses the function $p(x) = x^4 - 13x^2 + 36$ to model the depth profile across an excavation trench.",
+  "keys": [
+   "2",
+   "3"
+  ],
+  "any_of": true,
+  "explanation": "The only powers are $x^4$ and $x^2$, so let $u = x^2$. Then $u^2 - 13u + 36 = (u - 4)(u - 9)$, because 4 and 9 multiply to 36 and add to 13. Put $x^2$ back: $(x^2 - 4)(x^2 - 9) = (x - 2)(x + 2)(x - 3)(x + 3)$. The factors of the form $x - c$ with $c > 0$ are $x - 2$ and $x - 3$, so $c = 2$ and $c = 3$ are both correct. In Desmos, the graph crosses the x-axis at $\\pm 2$ and $\\pm 3$.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "intermediate-step",
+    "why": "Factored the quadratic in $u$ but forgot that $u = x^2$, so gave the $u$-root 4 instead of its square root."
+   },
+   {
+    "value": "9",
+    "misconception": "intermediate-step",
+    "why": "Factored the quadratic in $u$ but forgot that $u = x^2$, so gave the $u$-root 9 instead of its square root."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Took the square root of the constant 36 instead of factoring, as if the expression were a perfect square."
+   },
+   {
+    "value": "13",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the sum of the $u$-roots (the middle coefficient) instead of a root of $p$."
+   }
+  ],
+  "id": "orig-factor-special-M-89acc8",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-89acc8",
+   "structure": [],
+   "solver_answer": 2,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": 3,
+   "problem": null,
+   "overlap": [
+    "a factor of __var__ where __var__ is a",
+    "factor of __var__ where __var__ is a positive"
+   ],
+   "residue": 2
+  }
  }
 ]

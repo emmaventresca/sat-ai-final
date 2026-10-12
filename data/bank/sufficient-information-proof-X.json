@@ -33,17 +33,22 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-sufficient-inf-X-0c6c8f",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": false,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "__var__ points __var__ and __var__ lie on line"
    ],
    "residue": 1
-  },
-  "phrasing": "direct"
+  }
  },
  {
   "stem": "Which additional piece of information is sufficient to prove that triangle $ABC$ is similar to triangle $DEF$, with $A$, $B$, and $C$ corresponding to $D$, $E$, and $F$, respectively?",
@@ -79,14 +84,429 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-sufficient-inf-X-2e2a94",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "Which of the following additional pieces of information is sufficient to prove that $\\overline{DE}$ is parallel to $\\overline{BC}$?",
+  "stimulus": "An urban planner models three city roads as triangle $ABC$. A proposed connector road runs from point $D$ on $\\overline{AB}$ to point $E$ on $\\overline{AC}$.",
+  "choices": [
+   "$m\\angle ADE + m\\angle BDE = 180^\\circ$",
+   "$AD = 4$, $DB = 6$, $AE = 5$, $EC = 3$",
+   "$AD = 4$, $DB = 6$, $AE = 6$, $EC = 9$",
+   "$AD = \\frac{2}{5}AB$ and $DE = \\frac{2}{5}BC$"
+  ],
+  "answer": "C",
+  "explanation": "With these lengths, $AB = 10$ and $AC = 15$, so $\\frac{AD}{AB} = \\frac{4}{10} = \\frac{2}{5}$ and $\\frac{AE}{AC} = \\frac{6}{15} = \\frac{2}{5}$. Angle $A$ is shared, and it is the angle between those two sides, so triangle $ADE$ is similar to triangle $ABC$ by SAS similarity. That makes $\\angle ADE \\cong \\angle ABC$, which are corresponding angles, so $\\overline{DE} \\parallel \\overline{BC}$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "Points $A$, $D$, and $B$ lie on one line, so $\\angle ADE$ and $\\angle BDE$ form a linear pair. Their sum is $180^\\circ$ wherever $E$ is, so this fact can't prove anything about parallel lines."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You noticed that $\\frac{AD}{AC} = \\frac{4}{8}$ and $\\frac{AE}{AB} = \\frac{5}{10}$ are equal, so triangle $ADE$ is similar to triangle $ACB$. But in that pairing, $D$ corresponds to $C$, not to $B$. For $\\overline{DE}$ to be parallel to $\\overline{BC}$, you need $\\frac{AD}{AB} = \\frac{AE}{AC}$, and here $\\frac{4}{10} \\neq \\frac{5}{8}$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "Angle $A$ is not the angle between $\\overline{AD}$ and $\\overline{DE}$. This is side-side-angle, which is not a similarity criterion: a second point on $\\overline{AC}$ can also be $\\frac{2}{5}BC$ away from $D$ without $\\overline{DE}$ being parallel to $\\overline{BC}$."
+   }
+  },
+  "id": "orig-sufficient-inf-X-3b625e",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-X-3b625e",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following additional pieces of",
+    "which of the following additional pieces of information",
+    "of the following additional pieces of information is"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which of the following statements, if added to the given information, is sufficient to prove that triangle $ABC$ is congruent to triangle $DEF$?",
+  "stimulus": "A labour economist uses two triangular wage-band diagrams, triangles $ABC$ and $DEF$. In these triangles, $AB = DE$ and $\\angle A \\cong \\angle D$.\n\nI. $\\angle C \\cong \\angle F$\nII. $BC = EF$\nIII. $m\\angle B + m\\angle C = m\\angle E + m\\angle F$",
+  "choices": [
+   "I only",
+   "I and II only",
+   "I and III only",
+   "I, II, and III"
+  ],
+  "answer": "A",
+  "explanation": "Statement I gives two pairs of equal angles ($A$ and $C$) and a pair of equal sides ($\\overline{AB}$) that is not between them. That is AAS, so the triangles are congruent. Statement II gives two sides and an angle, but $\\angle A$ is not between $\\overline{AB}$ and $\\overline{BC}$, so it is side-side-angle, which is not a criterion. Statement III is always true when $\\angle A \\cong \\angle D$, because each side of the equation equals $180^\\circ$ minus that angle. It adds no new information.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You accepted statement II as SAS. But the given angle, $\\angle A$, is not between $\\overline{AB}$ and $\\overline{BC}$, so this is side-side-angle, which doesn't prove congruence."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "Statement III looks like new information, but it follows from $\\angle A \\cong \\angle D$ and the $180^\\circ$ angle sum. It is true for any pair of triangles that meet the given conditions, so it can't prove anything on its own."
+   },
+   "D": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You treated every statement that sounds relevant as sufficient. Statement II is side-side-angle, and statement III follows from the given information, so neither one completes a congruence criterion."
+   }
+  },
+  "id": "orig-sufficient-inf-X-25bb4b",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-X-25bb4b",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "that triangle __var__ is congruent to triangle __var__"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which of the following additional pieces of information is sufficient to prove that line $\\ell$ is parallel to line $m$?",
+  "stimulus": "A public health team maps two roads leading to a clinic as lines $\\ell$ and $m$. Points $A$ and $B$ lie on line $\\ell$, and points $D$ and $E$ lie on line $m$. Segments $\\overline{AD}$ and $\\overline{BE}$ intersect at point $C$, which lies between the two lines. In triangle $ABC$, $m\\angle BAC = 35^\\circ$ and $m\\angle ACB = 105^\\circ$.",
+  "choices": [
+   "$m\\angle DEC = 35^\\circ$",
+   "$m\\angle DEC = 40^\\circ$",
+   "$m\\angle DCE = 105^\\circ$",
+   "$m\\angle CDE + m\\angle CED = 75^\\circ$"
+  ],
+  "answer": "B",
+  "explanation": "In triangle $ABC$, $m\\angle ABC = 180^\\circ - 35^\\circ - 105^\\circ = 40^\\circ$. Along the transversal $\\overline{BE}$, $\\angle ABC$ and $\\angle DEC$ are alternate interior angles. If $m\\angle DEC = 40^\\circ$, those alternate interior angles are equal, so $\\ell \\parallel m$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You matched $\\angle DEC$ with $\\angle BAC$, but those angles are not an alternate pair. $\\angle DEC$ pairs with $\\angle ABC$, which measures $40^\\circ$. If $m\\angle DEC = 35^\\circ$, the lines are not parallel."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "$\\angle DCE$ and $\\angle ACB$ are vertical angles, so they are always equal wherever the lines run. This proves nothing about $\\ell$ and $m$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "This is true for any position of $D$ and $E$: the vertical angle at $C$ is $105^\\circ$, so the other two angles of triangle $CDE$ must sum to $75^\\circ$. It is a step you can work out from the given information, not a new condition."
+   }
+  },
+  "id": "orig-sufficient-inf-X-033039",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-X-033039",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ points __var__ and __var__ lie on line",
+    "__var__ which of the following additional pieces of",
+    "which of the following additional pieces of information",
+    "of the following additional pieces of information is"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which of the following additional pieces of information is sufficient to prove that triangle $JKL$ is similar to triangle $MNP$?",
+  "stimulus": "A seismologist locating an epicentre sketches two triangles. In triangle $JKL$, $JK = 6$, $KL = 9$, and $m\\angle K = 50^\\circ$. In triangle $MNP$, $MN = 8$ and $m\\angle M + m\\angle P = 130^\\circ$.",
+  "choices": [
+   "$MP = 12$",
+   "$NP = 11$",
+   "$m\\angle N = 50^\\circ$",
+   "$NP = 12$"
+  ],
+  "answer": "D",
+  "explanation": "From the angle sum, $m\\angle N = 180^\\circ - 130^\\circ = 50^\\circ = m\\angle K$. With $NP = 12$, you get $\\frac{JK}{MN} = \\frac{6}{8} = \\frac{3}{4}$ and $\\frac{KL}{NP} = \\frac{9}{12} = \\frac{3}{4}$. The sides are proportional and the equal angles are between them, so the triangles are similar by SAS similarity.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "$\\overline{MP}$ is opposite $\\angle N$, so $\\angle N$ is not between $\\overline{MN}$ and $\\overline{MP}$. Proportional sides with an angle that isn't between them is side-side-angle, which doesn't prove similarity."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You saw that $6$ became $8$ by adding $2$, so you added $2$ to $9$ as well. Similarity needs a common ratio, not a common difference: $\\frac{9}{11} \\neq \\frac{3}{4}$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You can already work out $m\\angle N = 50^\\circ$ from the given angle sum, so this adds nothing. Without the length $NP$, you have only one pair of angles and one pair of sides, which is not enough."
+   }
+  },
+  "id": "orig-sufficient-inf-X-5d35a1",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-X-5d35a1",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following additional pieces of",
+    "which of the following additional pieces of information",
+    "of the following additional pieces of information is"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which of the following statements, if true, is sufficient to prove that line $j$ is parallel to line $k$?",
+  "stimulus": "An immunology lab diagram shows two lines, $j$ and $k$, crossed by line $t$. Points $A$, $P$, and $B$ lie on $j$ in that order, and points $C$, $Q$, and $D$ lie on $k$ in that order. Points $E$, $P$, $Q$, and $F$ lie on $t$ in that order. Points $A$ and $C$ are on the same side of $t$.\n\nI. $m\\angle APQ + m\\angle CQP = 180^\\circ$\nII. $m\\angle EPA = m\\angle BPQ$\nIII. $m\\angle EPB = m\\angle CQF$",
+  "choices": [
+   "I only",
+   "III only",
+   "I and III only",
+   "I, II, and III"
+  ],
+  "answer": "C",
+  "explanation": "In statement I, $\\angle APQ$ and $\\angle CQP$ are same-side interior angles, and when they sum to $180^\\circ$, the lines are parallel. In statement III, $\\angle CQF$ is vertical to $\\angle PQD$, so $m\\angle EPB = m\\angle PQD$. Those are corresponding angles, so the lines are parallel. In statement II, $\\angle EPA$ and $\\angle BPQ$ are vertical angles, which are always equal, so they prove nothing.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You rejected statement III because $\\angle EPB$ and $\\angle CQF$ don't look like a standard pair. Replace $\\angle CQF$ with its vertical angle, $\\angle PQD$, and the pair becomes corresponding angles, which is sufficient."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You applied the wrong rule to statement I by expecting same-side interior angles to be equal. They need to be supplementary, and statement I gives exactly that, so it is sufficient."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "Statement II describes vertical angles. They are equal whenever two lines cross, whether or not $j$ and $k$ are parallel, so statement II proves nothing."
+   }
+  },
+  "id": "orig-sufficient-inf-X-349228",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-X-349228",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "points __var__ __var__ __var__ and __var__ lie on"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following additional pieces of information is sufficient to prove that triangle $ABD$ is congruent to triangle $CBD$?",
+  "stimulus": "A civil engineer models a bridge truss as triangle $ABC$. Point $D$ lies on $\\overline{AC}$ between $A$ and $C$, and $\\overline{BD} \\perp \\overline{AC}$. In the model, $AB = 13$ and $AD = 5$.",
+  "choices": [
+   "$BD = 12$",
+   "$AC = 10$",
+   "$CD = 12$",
+   "$BC > BD$"
+  ],
+  "answer": "B",
+  "explanation": "If $AC = 10$, then $CD = 10 - 5 = 5 = AD$. Both triangles have a right angle at $D$ and share the side $\\overline{BD}$. Leg $\\overline{AD}$ equals leg $\\overline{CD}$ and the right angles are between the matching legs, so the triangles are congruent by SAS.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$BD = 12$ already follows from the Pythagorean theorem in triangle $ABD$, since $13^2 - 5^2 = 144$. It is a step you can work out, and it tells you nothing new about triangle $CBD$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You paired $\\overline{CD}$ with $\\overline{BD}$. But $\\overline{BD}$ is shared, so $\\overline{CD}$ has to match $\\overline{AD}$, which is $5$. A triangle with legs $12$ and $12$ is not congruent to one with legs $5$ and $12$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "In a right triangle, the hypotenuse is always longer than either leg, so $BC > BD$ is true for any position of $C$. It puts no limit on the length of $\\overline{BC}$."
+   }
+  },
+  "id": "orig-sufficient-inf-X-e35594",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-X-e35594",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following additional pieces of",
+    "which of the following additional pieces of information",
+    "of the following additional pieces of information is",
+    "that triangle __var__ is congruent to triangle __var__"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which of the following statements, if true, is sufficient to prove that triangle $ABC$ is similar to triangle $DEC$?",
+  "stimulus": "A marine biologist tracks two straight transects across a reef: segments $\\overline{AD}$ and $\\overline{BE}$, which intersect at point $C$. Point $C$ lies between $A$ and $D$ and between $B$ and $E$.\n\nI. $AC = 6$, $BC = 9$, $DC = 4$, $EC = 6$\nII. $\\angle BAC \\cong \\angle EDC$\nIII. $\\frac{AB}{DE} = \\frac{AC}{DC}$",
+  "choices": [
+   "I only",
+   "II only",
+   "I and II only",
+   "I, II, and III"
+  ],
+  "answer": "C",
+  "explanation": "$\\angle ACB$ and $\\angle DCE$ are vertical angles, so they are equal, and here that fact is useful. In statement I, $\\frac{AC}{DC} = \\frac{6}{4}$ and $\\frac{BC}{EC} = \\frac{9}{6}$, so both ratios are $\\frac{3}{2}$, and the vertical angle is between those sides. That gives SAS similarity. In statement II, the equal angles together with the vertical angles give AA similarity. In statement III, the vertical angle is opposite $\\overline{AB}$ instead of between the proportional sides, so it is side-side-angle, which is not a criterion.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You rejected statement II because it gives only one pair of angles. But the vertical angles at $C$ give a second pair, so AA is complete."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You applied 'vertical angles prove nothing' to a similarity question. That rule is about parallel lines. Here, the vertical angle is exactly the included angle that statement I needs for SAS similarity."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "In statement III, the angle at $C$ is opposite $\\overline{AB}$, so it is not between $\\overline{AB}$ and $\\overline{AC}$. Proportional sides with an angle that isn't between them is side-side-angle, which doesn't prove similarity."
+   }
+  },
+  "id": "orig-sufficient-inf-X-536045",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-X-536045",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following additional pieces of information is sufficient to prove that line $\\ell$ is parallel to $\\overline{BC}$?",
+  "stimulus": "A musicologist diagrams the frame of a harp as triangle $ABC$. Side $\\overline{BC}$ is extended past $C$ to point $D$, with $m\\angle ABC = 48^\\circ$ and $m\\angle ACD = 110^\\circ$. Line $\\ell$ passes through $A$ and contains points $W$ and $V$. $W$ and $C$ are on opposite sides of line $AB$, and $V$ and $B$ are on opposite sides of line $AC$.",
+  "choices": [
+   "$m\\angle VAC = 110^\\circ$",
+   "$m\\angle VAC = 62^\\circ$",
+   "$m\\angle WAV = 180^\\circ$",
+   "$m\\angle VAC = 70^\\circ$"
+  ],
+  "answer": "D",
+  "explanation": "$\\angle ACB$ and $\\angle ACD$ form a linear pair, so $m\\angle ACB = 180^\\circ - 110^\\circ = 70^\\circ$. Along the transversal $\\overline{AC}$, $\\angle VAC$ and $\\angle ACB$ are alternate interior angles. If $m\\angle VAC = 70^\\circ$, those angles are equal, so $\\ell \\parallel \\overline{BC}$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used the exterior angle, $110^\\circ$, as if it were the interior angle at $C$. $\\angle VAC$ pairs with $\\angle ACB$, which measures $70^\\circ$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$110^\\circ - 48^\\circ = 62^\\circ$ is $m\\angle BAC$, the angle inside the triangle at $A$. $\\angle VAC$ has to match the angle at $C$, not the angle at $A$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "$W$, $A$, and $V$ all lie on line $\\ell$, so $\\angle WAV$ is a straight angle no matter which direction $\\ell$ runs. A fact that is always true can't prove that two lines are parallel."
+   }
+  },
+  "id": "orig-sufficient-inf-X-b18e81",
+  "skill_cd": "S.B.",
+  "subtype": "sufficient-information-proof",
+  "subtype_name": "Which extra fact is sufficient to prove it?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sufficient-inf-X-b18e81",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following additional pieces of",
+    "which of the following additional pieces of information",
+    "of the following additional pieces of information is"
+   ],
+   "residue": 2
+  }
  }
 ]

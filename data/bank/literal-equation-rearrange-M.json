@@ -392,5 +392,500 @@
   "rated_level": "M",
   "rated_why": "multiply through, distribute, rearrange, and factor\u2014multi-step process requiring careful algebra",
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which equation correctly expresses $d_i$ in terms of $f$ and $d_o$?",
+  "stimulus": "An astronomer focusing a refracting telescope uses the lens equation $\\frac{1}{f} = \\frac{1}{d_o} + \\frac{1}{d_i}$, where $f$ is the focal length of the objective lens, $d_o$ is the distance from the lens to the object, and $d_i$ is the distance from the lens to the image, all in centimeters, with $d_o > f > 0$.",
+  "choices": [
+   "$d_i = d_o - f$",
+   "$d_i = \\frac{f d_o}{d_o - f}$",
+   "$d_i = \\frac{d_o - f}{f d_o}$",
+   "$d_i = \\frac{f d_o}{f - d_o}$"
+  ],
+  "answer": "B",
+  "explanation": "Subtract $\\frac{1}{d_o}$ from both sides to get $\\frac{1}{d_i} = \\frac{1}{f} - \\frac{1}{d_o}$. Over the common denominator $f d_o$, that is $\\frac{1}{d_i} = \\frac{d_o - f}{f d_o}$. Take reciprocals of both sides and you get $d_i = \\frac{f d_o}{d_o - f}$. To check, try $f = 2$ and $d_o = 3$: the original equation gives $\\frac{1}{d_i} = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$, so $d_i = 6$, and $\\frac{2 \\cdot 3}{3 - 2} = 6$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You undid the sum of reciprocals one term at a time, as if $\\frac{1}{f} = \\frac{1}{d_o} + \\frac{1}{d_i}$ meant $f = d_o + d_i$. Reciprocals don't add that way. With $f = 2$ and $d_o = 3$ this choice gives 1, but the real value is 6."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is $\\frac{1}{d_i}$, not $d_i$. You combined the fractions correctly but stopped before the last step of taking the reciprocal."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted in the wrong order when you combined $\\frac{1}{f} - \\frac{1}{d_o}$, so the sign flipped. Since $d_o > f$, this choice gives a negative distance."
+   }
+  },
+  "id": "orig-literal-equati-M-e8719b",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-e8719b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation correctly expresses $s$ in terms of $V$ and $k$?",
+  "stimulus": "A printmaker estimates the volume of ink $V$, in milliliters, needed to print a square woodblock with side length $s$ centimeters in $k$ layers using the formula $V = \\frac{k s^2}{50} + 2$, where $s > 0$ and $k > 0$.",
+  "choices": [
+   "$s = \\sqrt{\\frac{50V}{k} - 2}$",
+   "$s = \\frac{50(V - 2)}{k}$",
+   "$s = \\sqrt{\\frac{50(V - 2)}{k}}$",
+   "$s = \\sqrt{\\frac{k(V - 2)}{50}}$"
+  ],
+  "answer": "C",
+  "explanation": "Subtract 2 from both sides to get $V - 2 = \\frac{k s^2}{50}$. Multiply by 50 and divide by $k$: $s^2 = \\frac{50(V - 2)}{k}$. Since $s > 0$, keep only the positive square root, which gives $s = \\sqrt{\\frac{50(V - 2)}{k}}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by 50 and divided by $k$ before subtracting the 2, but the 2 was never multiplied by $\\frac{k}{50}$. You have to remove the added constant first."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This expression equals $s^2$, not $s$. You isolated the squared term but didn't take the square root."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the fraction $\\frac{k}{50}$ the wrong way. To undo multiplying by $\\frac{k}{50}$, you multiply by $\\frac{50}{k}$, not by $\\frac{k}{50}$ again."
+   }
+  },
+  "id": "orig-literal-equati-M-725798",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-725798",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation correctly expresses $n$ in terms of $P$, $a$, and $b$?",
+  "stimulus": "A city planning office models projected daily cyclists $P$, in thousands, on a downtown network with $n$ protected bike lanes as $P = \\frac{a n}{n + b}$, where $a$ and $b$ are positive constants and $0 < P < a$.",
+  "choices": [
+   "$n = \\frac{P b}{a - P}$",
+   "$n = \\frac{P b}{P - a}$",
+   "$n = \\frac{P b}{a}$",
+   "$n = \\frac{P(n + b)}{a}$"
+  ],
+  "answer": "A",
+  "explanation": "Multiply both sides by $n + b$ to get $Pn + Pb = an$. Move every term with $n$ to one side: $Pb = an - Pn$. Factor out $n$ to get $Pb = n(a - P)$, then divide: $n = \\frac{P b}{a - P}$. Because $P < a$, this value is positive, as a number of lanes must be.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped a sign while collecting the $n$ terms and wrote $Pb = n(P - a)$. Since $P < a$, this choice gives a negative number of lanes."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost the $Pn$ term after clearing the denominator, as if $Pn + Pb = an$ were just $Pb = an$. Then you divided before collecting both $n$ terms."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You divided by $a$ before collecting the $n$ terms, so $n$ is still on the right side. That's a rearranged step, not an expression of $n$ in terms of the other letters."
+   }
+  },
+  "id": "orig-literal-equati-M-ec4055",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-ec4055",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "where __var__ and __var__ are positive constants and",
+    "__var__ and __var__ are positive constants and __var__"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation correctly expresses $q$ in terms of $p$ and $T$?",
+  "stimulus": "Two crews are clearing soil from an excavation trench at an archaeological site. Working alone, the first crew would need $p$ hours and the second crew would need $q$ hours. Working together, they need $T$ hours, where $\\frac{1}{T} = \\frac{1}{p} + \\frac{1}{q}$ and $p > T$.",
+  "choices": [
+   "$q = \\frac{pT}{p - T}$",
+   "$q = \\frac{p - T}{pT}$",
+   "$q = \\frac{pT}{T - p}$",
+   "$q = T - p$"
+  ],
+  "answer": "A",
+  "explanation": "Subtract $\\frac{1}{p}$ from both sides: $\\frac{1}{q} = \\frac{1}{T} - \\frac{1}{p}$. Use the common denominator $pT$: $\\frac{1}{q} = \\frac{p - T}{pT}$. Take reciprocals to get $q = \\frac{pT}{p - T}$, which is positive because $p > T$, as a number of hours has to be.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is $\\frac{1}{q}$. You combined the fractions correctly but stopped before taking the reciprocal to get $q$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You switched the order of the subtraction when you combined $\\frac{1}{T} - \\frac{1}{p}$. Because $p > T$, this would give the second crew a negative number of hours."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped each fraction separately, as if $\\frac{1}{T} = \\frac{1}{p} + \\frac{1}{q}$ meant $T = p + q$. You can't take reciprocals term by term in a sum."
+   }
+  },
+  "id": "orig-literal-equati-M-2eb877",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-2eb877",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation correctly expresses $d$ in terms of $L$, $s$, $k$, and $w$?",
+  "stimulus": "A civil engineer estimates the maximum load $L$, in newtons, that a rectangular timber beam can carry using $L = \\frac{kwd^2}{s}$. Here $w$ is the beam's width, $d$ is its depth, $s$ is the span between supports, and $k$ is a constant for the type of timber. All quantities are positive.",
+  "choices": [
+   "$d = \\sqrt{\\frac{Ls}{kw}}$",
+   "$d = \\frac{Ls}{kw}$",
+   "$d = \\sqrt{\\frac{Lkw}{s}}$",
+   "$d = \\sqrt{\\frac{kw}{Ls}}$"
+  ],
+  "answer": "A",
+  "explanation": "Multiply both sides by $s$ to get $Ls = kwd^2$. Divide by $kw$ to get $d^2 = \\frac{Ls}{kw}$. Since $d$ is a positive depth, keep only the positive square root: $d = \\sqrt{\\frac{Ls}{kw}}$.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is $d^2$, not $d$. You isolated the squared term and then forgot to take the square root."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by $k$ and $w$ when you needed to divide by them, and divided by $s$ when you needed to multiply by it."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You turned the fraction upside down while isolating $d^2$. This is $\\frac{1}{d}$, not $d$."
+   }
+  },
+  "id": "orig-literal-equati-M-15f997",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-15f997",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation correctly expresses $S$ in terms of $E$ and $W$?",
+  "stimulus": "Meteorologists sometimes model a hurricane as a heat engine. Its efficiency $E$ is given by $E = \\frac{S - W}{S}$, where $S$ is the sea-surface temperature and $W$ is the temperature of the air flowing out at the top of the storm, both in kelvins, and $0 < E < 1$.",
+  "choices": [
+   "$S = \\frac{W}{E - 1}$",
+   "$S = W(1 - E)$",
+   "$S = \\frac{W}{1 - E}$",
+   "$S = \\frac{1 - E}{W}$"
+  ],
+  "answer": "C",
+  "explanation": "Multiply both sides by $S$: $ES = S - W$. Collect the $S$ terms on one side: $W = S - ES = S(1 - E)$. Divide by $1 - E$ to get $S = \\frac{W}{1 - E}$, which is a positive temperature because $0 < E < 1$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped a sign while collecting the $S$ terms, which gives $S(E - 1)$ in place of $S(1 - E)$. With $0 < E < 1$, this makes the temperature negative."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You reached $W = S(1 - E)$ and then multiplied by $1 - E$ when you needed to divide by it."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "This is $\\frac{1}{S}$. You got $\\frac{W}{S} = 1 - E$, divided by $W$, and forgot to take the reciprocal at the end."
+   }
+  },
+  "id": "orig-literal-equati-M-4226da",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-4226da",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is given by __var__ where __var__ is the"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "The given equation relates the positive numbers $t$, $d$, $p$, and $s$, where $p > s$. Which equation correctly expresses $d$ in terms of $t$, $p$, and $s$?",
+  "stimulus": "An earthquake sends out a fast P-wave and a slower S-wave. A seismograph station that is $d$ kilometers from the source records the S-wave arriving $t$ seconds after the P-wave, where\n\n$t = \\frac{d}{s} - \\frac{d}{p}$\n\nand $p$ and $s$ are the speeds, in kilometers per second, of the P-wave and S-wave.",
+  "choices": [
+   "$d = t(p - s)$",
+   "$d = \\frac{tps}{p - s}$",
+   "$d = \\frac{t(p - s)}{ps}$",
+   "$d = \\frac{tps}{p + s}$"
+  ],
+  "answer": "B",
+  "explanation": "Factor out $d$: $t = d\\left(\\frac{1}{s} - \\frac{1}{p}\\right)$. Combine the fractions over the common denominator $ps$: $\\frac{1}{s} - \\frac{1}{p} = \\frac{p - s}{ps}$, so $t = \\frac{d(p - s)}{ps}$. Multiply both sides by $ps$ to get $tps = d(p - s)$, then divide by $p - s$: $d = \\frac{tps}{p - s}$. Because $p > s$, this value of $d$ is positive, as a distance has to be.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped each fraction separately, as if $\\frac{d}{s} - \\frac{d}{p}$ could be undone into $d(p - s)$. You can't take the reciprocal of a difference one term at a time. Combine the fractions first."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You got as far as $t = d \\cdot \\frac{p - s}{ps}$ and then multiplied $t$ by that factor when you should have divided by it. To isolate $d$, divide by $\\frac{p - s}{ps}$, which is the same as multiplying by its reciprocal $\\frac{ps}{p - s}$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You treated the gap between the two arrival times as a sum and used $p + s$ in place of $p - s$. The equation subtracts $\\frac{d}{p}$, so the combined numerator is $p - s$."
+   }
+  },
+  "id": "orig-literal-equati-M-84e1cb",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-84e1cb",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The given equation relates the positive numbers $A$, $r$, and $w$. Which equation correctly expresses $r$ in terms of $A$ and $w$?",
+  "stimulus": "A printmaker cuts a square window with side length $w$ centimeters out of a circular linoleum block with radius $r$ centimeters. The area left on the block, $A$ square centimeters, is the area of the circle minus the area of the square:\n\n$A = \\pi r^2 - w^2$",
+  "choices": [
+   "$r = \\frac{A + w^2}{\\pi}$",
+   "$r = \\sqrt{\\frac{A - w^2}{\\pi}}$",
+   "$r = \\sqrt{\\frac{A + w^2}{\\pi}}$",
+   "$r = \\sqrt{\\frac{A}{\\pi}} + w$"
+  ],
+  "answer": "C",
+  "explanation": "Add $w^2$ to both sides: $A + w^2 = \\pi r^2$. Divide by $\\pi$: $r^2 = \\frac{A + w^2}{\\pi}$. Because $r$ is positive, keep only the positive square root: $r = \\sqrt{\\frac{A + w^2}{\\pi}}$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "This expression equals $r^2$, not $r$. You stopped one step early. Take the square root to finish."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted $w^2$ when you should have added it. The equation subtracts $w^2$ from $\\pi r^2$, so you undo that by adding $w^2$ to both sides."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You undid the terms one at a time, taking a square root of $\\frac{A}{\\pi}$ and of $w^2$ separately. A square root doesn't distribute over a sum. Collect everything on one side before you take the root."
+   }
+  },
+  "id": "orig-literal-equati-M-95d38b",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-95d38b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The given equation relates the positive numbers $T$, $d$, $v$, and $w$, where $v > w$. Which equation correctly expresses $d$ in terms of $T$, $v$, and $w$?",
+  "stimulus": "A tagged tern flies $d$ kilometers straight into a steady wind and then flies the same distance back with the wind behind it. Its airspeed is $v$ kilometers per hour, and the wind speed is $w$ kilometers per hour. The headwind leg takes $T$ hours longer than the tailwind leg, where\n\n$T = \\frac{d}{v - w} - \\frac{d}{v + w}$",
+  "choices": [
+   "$d = \\frac{T(v^2 - w^2)}{2w}$",
+   "$d = \\frac{T(v^2 - w^2)}{2v}$",
+   "$d = \\frac{2wT}{v^2 - w^2}$",
+   "$d = \\frac{T(v^2 + w^2)}{2w}$"
+  ],
+  "answer": "A",
+  "explanation": "Use the common denominator $(v - w)(v + w) = v^2 - w^2$: $T = \\frac{d(v + w) - d(v - w)}{v^2 - w^2} = \\frac{2dw}{v^2 - w^2}$. Multiply both sides by $v^2 - w^2$ to get $T(v^2 - w^2) = 2dw$, then divide by $2w$: $d = \\frac{T(v^2 - w^2)}{2w}$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the two flight times when the question is about the gap between them. Adding gives the numerator $d(v + w) + d(v - w) = 2dv$. The equation subtracts, so the numerator is $2dw$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You reached $T = d \\cdot \\frac{2w}{v^2 - w^2}$ and then multiplied $T$ by that factor when you should have divided by it. To isolate $d$, multiply $T$ by the reciprocal $\\frac{v^2 - w^2}{2w}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $(v - w)(v + w)$ incorrectly. That product is $v^2 - w^2$, not $v^2 + w^2$, because the middle terms cancel and the last term is negative."
+   }
+  },
+  "id": "orig-literal-equati-M-7f1972",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-7f1972",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation correctly expresses $a$ in terms of $k$ and $b$?",
+  "stimulus": "A civil engineer models the effective stiffness $k$ of a bridge bearing, in kilonewtons per millimeter, with the equation $\\frac{1}{k} = \\frac{1}{a} + \\frac{2}{b}$, where $a$ is the stiffness of the rubber pad and $b$ is the stiffness of each of two identical steel plates. All three quantities are positive.",
+  "choices": [
+   "$a = \\frac{kb}{b - 2k}$",
+   "$a = \\frac{b - 2k}{kb}$",
+   "$a = \\frac{kb}{2k - b}$",
+   "$a = k - \\frac{b}{2}$"
+  ],
+  "answer": "A",
+  "explanation": "Subtract $\\frac{2}{b}$ from both sides: $\\frac{1}{a} = \\frac{1}{k} - \\frac{2}{b}$. Over the common denominator $kb$, that is $\\frac{1}{a} = \\frac{b - 2k}{kb}$. Take reciprocals to get $a = \\frac{kb}{b - 2k}$. Testing the choices is quicker: let $k = 2$ and $b = 10$. Then $\\frac{1}{a} = \\frac{1}{2} - \\frac{1}{5} = \\frac{3}{10}$, so $a = \\frac{10}{3}$. Only choice A gives $\\frac{20}{6} = \\frac{10}{3}$.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You found $\\frac{1}{a}$ correctly, but you stopped there and never took the reciprocal to get $a$ itself. With $k = 2$ and $b = 10$, this choice gives $\\frac{3}{10}$, not $\\frac{10}{3}$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost the sign when you isolated $\\frac{1}{a}$. You subtracted $\\frac{1}{k}$ from $\\frac{2}{b}$ when you should have subtracted $\\frac{2}{b}$ from $\\frac{1}{k}$. This choice gives a negative stiffness, and the problem says every stiffness is positive."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped each fraction separately and turned $\\frac{1}{k} = \\frac{1}{a} + \\frac{2}{b}$ into $k = a + \\frac{b}{2}$. The reciprocal of a sum is not the sum of the reciprocals. With $k = 2$ and $b = 10$, this choice gives $-3$."
+   }
+  },
+  "id": "orig-literal-equati-M-363fbe",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-363fbe",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

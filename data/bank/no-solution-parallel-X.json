@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-no-solution-pa-X-859a87",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,14 +82,403 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-no-solution-pa-X-78e1a7",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "If the system has no solution, what is the value of $k$?",
+  "stimulus": "A sports scientist compares two training-load models using the system of equations below, where $k$ is a constant.\n$(k - 2)x + 6y = 9$\n$4x + (k + 3)y = 12$",
+  "choices": [
+   "$-6$",
+   "$-5$",
+   "$5$",
+   "$6$"
+  ],
+  "answer": "A",
+  "explanation": "For no solution, the $x$- and $y$-coefficients must be proportional: $\\frac{k - 2}{4} = \\frac{6}{k + 3}$. Cross-multiplying gives $(k - 2)(k + 3) = 24$, so $k^2 + k - 30 = 0$ and $(k + 6)(k - 5) = 0$. That gives $k = -6$ or $k = 5$. Now check the constants. When $k = 5$, the equations are $3x + 6y = 9$ and $4x + 8y = 12$, and both reduce to $x + 2y = 3$. They are the same line, so there are infinitely many solutions. When $k = -6$, the equations are $-8x + 6y = 9$ and $4x - 3y = 12$. Multiplying the second by $-2$ gives $-8x + 6y = -24$, which contradicts $-8x + 6y = 9$. The lines are parallel and distinct, so $k = -6$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the signs of the roots when you factored $k^2 + k - 30$. When $k = -5$, the ratios are $-\\frac{7}{4}$ and $-3$, which are not equal, so the lines cross."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You solved for the slopes correctly but didn't check the constants. When $k = 5$, both equations reduce to $x + 2y = 3$. That is the same line, so the system has infinitely many solutions, not none."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the positive root with the wrong sign. When $k = 6$, the ratios are $\\frac{4}{4} = 1$ and $\\frac{6}{9}$, which are not equal, so the system has exactly one solution."
+   }
+  },
+  "id": "orig-no-solution-pa-X-99dd12",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-X-99dd12",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the system formed by the two models has no solution, which of the following could be the values of $k$ and $c$?",
+  "stimulus": "A labour economist models a worker's weekly pay, $y$ dollars, for $x$ hours of overtime as $y = 18x + 40$. A second model is $3y - kx = c$, where $k$ and $c$ are constants.",
+  "choices": [
+   "$k = 6$ and $c = 120$",
+   "$k = 18$ and $c = 150$",
+   "$k = 54$ and $c = 120$",
+   "$k = 54$ and $c = 150$"
+  ],
+  "answer": "D",
+  "explanation": "Rewrite the second model in slope-intercept form: $y = \\frac{k}{3}x + \\frac{c}{3}$. For no solution, the slopes must match, so $\\frac{k}{3} = 18$ and $k = 54$. The intercepts must differ, so $\\frac{c}{3} \\neq 40$, which means $c \\neq 120$. With $k = 54$ and $c = 150$, the second model is $y = 18x + 50$. That line is parallel to $y = 18x + 40$ and distinct from it.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided 18 by 3 instead of multiplying by 3. This gives $y = 2x + 40$, a line with a different slope that meets the first model at $x = 0$."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You matched $k$ to the slope 18 without rearranging the second equation first. In $3y - 18x = 150$ the slope is $\\frac{18}{3} = 6$, not 18, so the lines cross."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You got the slope right, but $3y - 54x = 120$ simplifies to $y = 18x + 40$. That is the same line as the first model, so there are infinitely many solutions."
+   }
+  },
+  "id": "orig-no-solution-pa-X-09b6b4",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-X-09b6b4",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following systems of equations has no solution?",
+  "stimulus": "An archaeologist tests pairs of linear models relating two quantities, $x$ and $y$, measured in a trench. A pair of models with no solution never agrees at any point.",
+  "choices": [
+   "$2x - 3y = 7$ and $6y = 4x - 14$",
+   "$2x - 3y = 7$ and $6y = 4x + 14$",
+   "$2x - 3y = 7$ and $6x = 4y + 14$",
+   "$2x - 3y = 7$ and $3y = -2x - 7$"
+  ],
+  "answer": "B",
+  "explanation": "Put each second equation in the form $ax + by = c$. In choice B, $6y = 4x + 14$ becomes $4x - 6y = -14$, which is $2x - 3y = -7$. Subtracting this from $2x - 3y = 7$ gives $0 = 14$, which is false. The lines have the same slope and different intercepts, so the system has no solution.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You saw that the slopes match but didn't compare the constants. $6y = 4x - 14$ becomes $2x - 3y = 7$, the same as the first equation, so this system has infinitely many solutions."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The numbers look like those in B, but the 4 and 6 are attached to the other variables. $6x - 4y = 14$ has slope $\\frac{3}{2}$, while the first equation has slope $\\frac{2}{3}$, so the lines cross."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You missed a sign. $3y = -2x - 7$ becomes $2x + 3y = -7$, which has slope $-\\frac{2}{3}$. That is the opposite sign from the first line's slope, so the lines intersect."
+   }
+  },
+  "id": "orig-no-solution-pa-X-852792",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-X-852792",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the system has no solution, which of the following could be the values of $a$ and $b$?",
+  "stimulus": "In a study of reef fish, a marine biologist's two linear models give the system below, where $a$ and $b$ are constants.\n$\\frac{1}{3}x - \\frac{1}{2}y = 4$\n$ax - 9y = b$",
+  "choices": [
+   "$a = -6$ and $b = 36$",
+   "$a = 3$ and $b = 36$",
+   "$a = 6$ and $b = 36$",
+   "$a = 6$ and $b = 72$"
+  ],
+  "answer": "C",
+  "explanation": "To turn $-\\frac{1}{2}y$ into $-9y$, multiply the first equation by 18. This gives $6x - 9y = 72$. For no solution, the $x$-coefficients must also match, so $a = 6$, and the constant must differ, so $b \\neq 72$. The pair $a = 6$, $b = 36$ gives $6x - 9y = 36$. That line is parallel to $6x - 9y = 72$ and distinct from it.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped a negative sign while scaling. When $a = -6$, the second line has slope $-\\frac{2}{3}$, but the first line has slope $\\frac{2}{3}$, so they cross."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You scaled by 9 as if the $y$-coefficient were $-1$, forgetting the $\\frac{1}{2}$. The correct scale factor is 18, so $a$ must be 6. When $a = 3$, the slopes differ."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You scaled the whole first equation by 18, constant included. $6x - 9y = 72$ is the same line as the first equation, so the system has infinitely many solutions."
+   }
+  },
+  "id": "orig-no-solution-pa-X-33eda4",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-X-33eda4",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations, together with the given equation, forms a system with no solution?",
+  "stimulus": "At a storytelling festival, a folklorist records $f$ fables and $b$ ballads. Each fable lasts 4 minutes and each ballad lasts 6 minutes, for a total of 90 minutes, so $4f + 6b = 90$.",
+  "choices": [
+   "$b = 12 + \\frac{2}{3}f$",
+   "$b = 12 - \\frac{3}{2}f$",
+   "$b = 15 - \\frac{2}{3}f$",
+   "$b = 12 - \\frac{2}{3}f$"
+  ],
+  "answer": "D",
+  "explanation": "Solve the given equation for $b$: $b = 15 - \\frac{2}{3}f$. A system with no solution needs the same slope, $-\\frac{2}{3}$, and a different intercept. The equation $b = 12 - \\frac{2}{3}f$ meets both conditions. You can also multiply it by 6 to get $4f + 6b = 72$, which contradicts $4f + 6b = 90$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You lost the negative sign when you moved $4f$ across. A slope of $+\\frac{2}{3}$ is not parallel to $-\\frac{2}{3}$, so the lines cross."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You divided the wrong way and got the reciprocal slope, $\\frac{3}{2}$ instead of $\\frac{2}{3}$. Lines with different slopes intersect."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "This equation is the given equation solved for $b$, so it is the same line. That gives infinitely many solutions, not none."
+   }
+  },
+  "id": "orig-no-solution-pa-X-f7a01b",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-X-f7a01b",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the system formed by the equations of the two lines has no solution, what is the value of $k$?",
+  "stimulus": "On a city map placed in the coordinate plane, a rail line runs along line $\\ell$, which passes through the points $(-2, 1)$ and $(4, 10)$. A planned road runs along the line $kx + (k - 10)y = 8$, where $k$ is a constant.",
+  "choices": [
+   "$\\frac{3}{2}$",
+   "$4$",
+   "$6$",
+   "$30$"
+  ],
+  "answer": "C",
+  "explanation": "The slope of line $\\ell$ is $\\frac{10 - 1}{4 - (-2)} = \\frac{9}{6} = \\frac{3}{2}$, and its equation is $y = \\frac{3}{2}x + 4$. The road's slope is $-\\frac{k}{k - 10}$. Setting $-\\frac{k}{k - 10} = \\frac{3}{2}$ gives $-2k = 3k - 30$, so $k = 6$. Check: when $k = 6$, the road is $6x - 4y = 8$, or $y = \\frac{3}{2}x - 2$. Its intercept differs from 4, so the lines are parallel and distinct.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$\\frac{3}{2}$ is the slope of line $\\ell$, not the value of $k$. You stopped after finding the slope."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You computed the slope as run over rise and got $\\frac{2}{3}$. Matching the road's slope to $\\frac{2}{3}$ gives $k = 4$, but the rail line's actual slope is $\\frac{3}{2}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the slope of $Ax + By = C$ as $\\frac{A}{B}$ instead of $-\\frac{A}{B}$. When $k = 30$, the road's slope is $-\\frac{3}{2}$, so it crosses the rail line."
+   }
+  },
+  "id": "orig-no-solution-pa-X-3c4f18",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-X-3c4f18",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the system has no solution, what is the value of $a + b$?",
+  "stimulus": "A printmaker's cost model gives the system below, where $a$ and $b$ are constants and $b = a + 2$.\n$ax + 3y = 1$\n$8x + by = 2$",
+  "choices": [
+   "$-10$",
+   "$-6$",
+   "$10$",
+   "$24$"
+  ],
+  "answer": "A",
+  "explanation": "For no solution, the coefficients must be proportional: $\\frac{a}{8} = \\frac{3}{b}$, so $ab = 24$. Substitute $b = a + 2$ to get $a^2 + 2a - 24 = 0$, which factors as $(a + 6)(a - 4) = 0$. If $a = 4$ and $b = 6$, the second equation is twice the first, so the lines are the same and there are infinitely many solutions. If $a = -6$ and $b = -4$, the coefficient ratio is $-\\frac{3}{4}$ but the constant ratio is $\\frac{1}{2}$, so the lines are parallel and distinct. Therefore $a + b = -10$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$-6$ is the value of $a$ alone. The question asks for $a + b$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "With $a = 4$ and $b = 6$, the equations are $4x + 3y = 1$ and $8x + 6y = 2$. These are the same line, so the system has infinitely many solutions, not none."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "24 is the product $ab$ from the proportion. That is a step along the way, not the sum the question asks for."
+   }
+  },
+  "id": "orig-no-solution-pa-X-fe3189",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-X-fe3189",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The system of equations representing these two conditions has no solution. What is the value of $k$?",
+  "stimulus": "In a corpus study, a linguist counts $x$ nouns and $y$ verbs in a passage. Each noun has 3 syllables and each verb has 2 syllables, for a total of 300 syllables. In translation, each noun becomes 1.5 words and each verb becomes $k$ words, for a total of 160 words.",
+  "choices": [
+   "$\\frac{1}{2}$",
+   "$1$",
+   "$2$",
+   "$4$"
+  ],
+  "answer": "B",
+  "explanation": "The conditions are $3x + 2y = 300$ and $1.5x + ky = 160$. For no solution, the coefficients must be proportional. The $x$-coefficients have ratio $\\frac{1.5}{3} = \\frac{1}{2}$, so $k = \\frac{1}{2} \\cdot 2 = 1$. Check: doubling $1.5x + y = 160$ gives $3x + 2y = 320$, which contradicts $3x + 2y = 300$. So $k = 1$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$\\frac{1}{2}$ is the scale factor between the $x$-coefficients. You still need to multiply the verb coefficient, 2, by it."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You copied the verbs' syllable count from the first condition. When $k = 2$, the coefficient ratios are $\\frac{1}{2}$ and 1, so the lines cross."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You inverted the scale factor and multiplied 2 by 2 instead of by $\\frac{1}{2}$. That gives coefficients that are not proportional."
+   }
+  },
+  "id": "orig-no-solution-pa-X-aa4c54",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-X-aa4c54",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

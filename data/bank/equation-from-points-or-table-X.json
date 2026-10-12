@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-equation-from--X-0e0b60",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,11 +82,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-equation-from--X-f79494",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "__var__ and __var__ for what value of __var__",
     "and __var__ for what value of __var__ does"
@@ -89,5 +99,393 @@
    "residue": 0
   },
   "phrasing": "work_backwards"
+ },
+ {
+  "stem": "If $f(x) = ax + b$, where $a$ and $b$ are constants, what is the value of $f(ab)$?",
+  "stimulus": "A cartographer draws a straight road on a map grid. The linear function $f$ gives the northing $f(x)$, in centimetres, of the road at easting $x$ centimetres. The table shows three values of $x$ and their corresponding values of $f(x)$.\n\nRoad Position on Map Grid (centimetres)\n$x$ | $f(x)$\n2 | 11\n5 | 20\n9 | 32",
+  "choices": [
+   "15",
+   "20",
+   "45",
+   "50"
+  ],
+  "answer": "D",
+  "explanation": "Find the slope from any two rows: $\\frac{20 - 11}{5 - 2} = 3$. Rows 2 and 3 agree: $\\frac{32 - 20}{9 - 5} = 3$. Substitute $(2, 11)$: $11 = 3(2) + b$, so $b = 5$. That makes $f(x) = 3x + 5$ and $ab = 15$. So $f(15) = 3(15) + 5 = 50$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found $ab = 15$ correctly and stopped. The question asks for $f$ evaluated at that product, not the product itself."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You evaluated $f(b) = f(5) = 20$, which you can read straight from the table, but the input should be $ab = 15$, not $b$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You computed $3 \\cdot 15 = 45$ and dropped the intercept. $f(15)$ also needs the $+5$."
+   }
+  },
+  "id": "orig-equation-from--X-0b67d8",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--X-0b67d8",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation gives $A$ in terms of $w$, the number of weeks after treatment?",
+  "stimulus": "An ecologist tracks the area $A$, in square metres, of a pond covered by an invasive water plant after a herbicide treatment. On day 28 after treatment the plant covers 62 square metres, and on day 70 it covers 38 square metres. The covered area decreases linearly over time.",
+  "choices": [
+   "$A = 62 - 4w$",
+   "$A = 78 - 4w$",
+   "$A = 46 + 4w$",
+   "$A = 78 - \\frac{4}{7}w$"
+  ],
+  "answer": "B",
+  "explanation": "Convert the days to weeks first: day 28 is week 4 and day 70 is week 10, which gives the points $(4, 62)$ and $(10, 38)$. The slope is $\\frac{38 - 62}{10 - 4} = -4$ square metres per week. Substitute $(4, 62)$: $62 = -4(4) + b$, so $b = 78$. The equation is $A = 78 - 4w$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used the week-4 area, 62, as the starting value. The starting value is the area at $w = 0$, which is 78."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You gave the slope the wrong sign. This line passes through $(4, 62)$ but predicts 86 at week 10 instead of 38, so it fits only one of the two data points."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You calculated the slope per day ($-\\frac{24}{42} = -\\frac{4}{7}$) but used it with $w$ in weeks. In weeks, the rate is $-4$."
+   }
+  },
+  "id": "orig-equation-from--X-878815",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--X-878815",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which equation gives __var__ in terms of __var__"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "For what number of prints is the amount of ink used, in millilitres, equal to twice the number of prints?",
+  "stimulus": "A printmaker finds that the total amount of ink $y$, in millilitres, used in a run of $x$ prints is a linear function of $x$. A run of 12 prints uses 29 millilitres of ink, and a run of 20 prints uses 35 millilitres.",
+  "choices": [
+   "16",
+   "19.5",
+   "20",
+   "32"
+  ],
+  "answer": "A",
+  "explanation": "The slope is $\\frac{35 - 29}{20 - 12} = \\frac{3}{4}$ mL per print. Substitute $(12, 29)$: $29 = \\frac{3}{4}(12) + b$, so $b = 20$ and $y = \\frac{3}{4}x + 20$. Set $y = 2x$: $2x = \\frac{3}{4}x + 20$, so $\\frac{5}{4}x = 20$ and $x = 16$.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You calculated the slope as change in prints over change in ink ($\\frac{4}{3}$). That gives $b = 13$, and solving $2x = \\frac{4}{3}x + 13$ then gives 19.5."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "20 is the intercept, the ink used before any prints are made. You still need to solve $2x = \\frac{3}{4}x + 20$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "32 mL is the amount of ink used at the matching run. The question asks for the number of prints, which is 16."
+   }
+  },
+  "id": "orig-equation-from--X-53d15a",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--X-53d15a",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $p$?",
+  "stimulus": "In a lake-sediment core, the estimated age of the sediment is a linear function of its depth below the top of the core. The table shows three depths and their corresponding ages.\n\nSediment Core Ages\nDepth (cm) | Age (years)\n40 | 1,150\n65 | 1,750\n110 | $p$",
+  "choices": [
+   "1,680",
+   "2,350",
+   "2,830",
+   "3,162.5"
+  ],
+  "answer": "C",
+  "explanation": "From the first two rows, the slope is $\\frac{1{,}750 - 1{,}150}{65 - 40} = \\frac{600}{25} = 24$ years per centimetre. From 65 cm to 110 cm is 45 cm, so the age increases by $45 \\cdot 24 = 1{,}080$ years. That gives $p = 1{,}750 + 1{,}080 = 2{,}830$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "1,680 is the age increase from 40 cm to 110 cm ($70 \\cdot 24$). You need to add it to the age at 40 cm, 1,150."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You assumed each row goes up by the same 600 years. The depths are unevenly spaced (a 25 cm gap, then a 45 cm gap), so the age increases are not equal."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated age as proportional to depth ($1{,}150 \\cdot \\frac{110}{40}$), which forces the line through the origin. This line has a nonzero intercept of 190 years."
+   }
+  },
+  "id": "orig-equation-from--X-d6fd1e",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--X-d6fd1e",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $L$ is linear. What is the value of $c$?",
+  "stimulus": "A materials scientist measures the length $L(t)$, in micrometres, of a crack in a test sample $t$ hours after loading begins. The table shows three values of $t$ and their corresponding values of $L(t)$.\n\nCrack Length During Loading\n$t$ (hours) | $L(t)$ (micrometres)\n0 | $c$\n4 | $2c$\n6 | 50",
+  "choices": [
+   "5",
+   "20",
+   "25",
+   "40"
+  ],
+  "answer": "B",
+  "explanation": "Write $L(t) = mt + c$, because the row with $t = 0$ gives the intercept. From the second row, $4m + c = 2c$, so $c = 4m$. From the third row, $6m + c = 50$. Substitute $c = 4m$: $10m = 50$, so $m = 5$ and $c = 20$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "5 is the slope, the growth rate in micrometres per hour. The question asks for $c$, the starting length."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You assumed the crack doubles by $t = 6$ and halved 50. In the table, the doubling happens at $t = 4$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "40 is $L(4) = 2c$. You need half of that to get $c$."
+   }
+  },
+  "id": "orig-equation-from--X-faf648",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--X-faf648",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation models $y$ in terms of $x$, the number of days since the booster dose?",
+  "stimulus": "An immunologist counts antibody-producing cells $y$, in thousands per millilitre, in blood samples from a volunteer. A booster dose was given on day 3 of the study. On day 9 of the study the count was 14, and on day 18 of the study it was 26. After the booster, the count increased linearly.",
+  "choices": [
+   "$y = \\frac{4}{3}x + 2$",
+   "$y = \\frac{3}{4}x + \\frac{19}{2}$",
+   "$y = \\frac{4}{3}x + 6$",
+   "$y = -\\frac{4}{3}x + 22$"
+  ],
+  "answer": "C",
+  "explanation": "Measure time from the booster. Day 9 is 6 days after it and day 18 is 15 days after it, so the points are $(6, 14)$ and $(15, 26)$. The slope is $\\frac{26 - 14}{15 - 6} = \\frac{4}{3}$. Substitute $(6, 14)$: $14 = 8 + b$, so $b = 6$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used study days (9 and 18) as $x$ instead of days since the booster. The slope is right, but the intercept is off by $\\frac{4}{3} \\cdot 3 = 4$."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You calculated the slope as change in days over change in count ($\\frac{9}{12} = \\frac{3}{4}$), which flips the rate."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the counts in one order and the days in the other, which gave a negative slope. The count rose, so the slope must be positive."
+   }
+  },
+  "id": "orig-equation-from--X-a6770e",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--X-a6770e",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $a + b$?",
+  "stimulus": "At an altitude of 2,500 metres, the air temperature over a mountain range is 4\u00b0C. In this region, the temperature falls by 0.6\u00b0C for every 100 metres of altitude gained. The temperature $T$, in \u00b0C, at an altitude of $h$ kilometres is modelled by $T = ah + b$, where $a$ and $b$ are constants.",
+  "choices": [
+   "$-5$",
+   "4.9",
+   "13",
+   "19"
+  ],
+  "answer": "C",
+  "explanation": "A fall of 0.6\u00b0C per 100 m is 6\u00b0C per kilometre, and the temperature is going down, so $a = -6$. The given point is $(2.5, 4)$ with $h$ in kilometres. Then $4 = -6(2.5) + b$, so $b = 19$. Therefore $a + b = -6 + 19 = 13$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used $a = +6$, so $b = 4 - 15 = -11$ and $a + b = -5$. Temperature falls with altitude, so the slope must be negative."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $-0.6$ per kilometre without converting from 'per 100 metres'. That gives $b = 5.5$ and a sum of 4.9."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "19 is $b$ alone. The question asks for $a + b$, so you still need to add $a = -6$."
+   }
+  },
+  "id": "orig-equation-from--X-2313bd",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--X-2313bd",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $p(h) = ah + b$, where $a$ and $b$ are constants, what is the value of $a - b$?",
+  "stimulus": "A labour economist studies a warehouse where a worker's weekly pay is a linear function of the hours worked that week. The function $p$ gives the weekly pay $p(h)$, in dollars, for $h$ hours of work. The table shows three values of $h$ and their corresponding values of $p(h)$.\n\nWeekly Pay at a Warehouse\n$h$ (hours) | $p(h)$ (dollars)\n12 | 246\n20 | 390\n32 | 606",
+  "choices": [
+   "$-12$",
+   "12",
+   "18",
+   "48"
+  ],
+  "answer": "A",
+  "explanation": "The slope is $\\frac{390 - 246}{20 - 12} = \\frac{144}{8} = 18$ dollars per hour, and rows 2 and 3 agree: $\\frac{216}{12} = 18$. Substitute $(12, 246)$: $246 = 216 + b$, so $b = 30$. Then $a - b = 18 - 30 = -12$.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You calculated $b - a = 30 - 18$. The question asks for $a - b$, which is negative."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "18 is the hourly rate $a$ alone. The question asks for the combination $a - b$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the constants instead of subtracting them: $18 + 30 = 48$."
+   }
+  },
+  "id": "orig-equation-from--X-0b6149",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "fail",
+  "verification": {
+   "id": "orig-equation-from--X-0b6149",
+   "structure": [
+    "correct answer is far longer than every distractor"
+   ],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "D",
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

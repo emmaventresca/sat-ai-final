@@ -189,5 +189,694 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "How many milligrams of vitamin C does a serving of the juice contain 2 weeks after it is bottled?",
+  "stimulus": "A nutrition researcher finds that the vitamin C in a bottled juice decreases by 10% each week after bottling. A serving contains 80 milligrams of vitamin C when the juice is bottled.",
+  "keys": [
+   "64.8",
+   "324/5"
+  ],
+  "any_of": false,
+  "explanation": "A 10% decrease means each week you keep 90% of the vitamin C, so the growth factor is 0.9, not 0.1. The model is $V(t) = 80(0.9)^t$, where $t$ is the number of weeks. Substitute $t = 2$: $80(0.9)^2 = 80(0.81) = 64.8$. In Desmos, graph $y = 80(0.9)^x$ and read the point at $x = 2$.",
+  "common_errors": [
+   {
+    "value": "0.8",
+    "misconception": "algebra-manipulation",
+    "why": "Used 0.1 as the factor instead of 0.9: $80(0.1)^2 = 0.8$."
+   },
+   {
+    "value": "64",
+    "misconception": "graph-feature-mismatch",
+    "why": "Treated the percent change as linear and subtracted 8 mg each week: $80 - 8 - 8 = 64$."
+   },
+   {
+    "value": "96.8",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used growth instead of decay: $80(1.1)^2 = 96.8$."
+   },
+   {
+    "value": "15.2",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the amount lost, $80 - 64.8$, instead of the amount remaining."
+   },
+   {
+    "value": "72",
+    "misconception": "intermediate-step",
+    "why": "Stopped after one week: $80(0.9) = 72$."
+   }
+  ],
+  "id": "orig-build-exponent-M-9fb9c2",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-9fb9c2",
+   "structure": [],
+   "solver_answer": 64.8,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the printmaker's model, how many grams of ink are left on the plate after 3 prints have been pulled?",
+  "stimulus": "A printmaker inks a monotype plate with 25 grams of ink. Each time a print is pulled from the plate, the amount of ink left on the plate decreases by 40%.",
+  "keys": [
+   "5.4",
+   "27/5"
+  ],
+  "any_of": false,
+  "explanation": "A 40% decrease leaves 60% after each print, so the factor is 0.6. The model is $I(n) = 25(0.6)^n$, where $n$ is the number of prints pulled. Substitute $n = 3$: $25(0.6)^3 = 25(0.216) = 5.4$ grams.",
+  "common_errors": [
+   {
+    "value": "1.6",
+    "misconception": "algebra-manipulation",
+    "why": "Used the percent removed as the factor: $25(0.4)^3 = 1.6$."
+   },
+   {
+    "value": "9",
+    "misconception": "intermediate-step",
+    "why": "Stopped after two prints: $25(0.6)^2 = 9$."
+   },
+   {
+    "value": "19.6",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the ink removed, $25 - 5.4$, instead of the ink left on the plate."
+   },
+   {
+    "value": "15",
+    "misconception": "intermediate-step",
+    "why": "Stopped after the first print: $25(0.6) = 15$."
+   }
+  ],
+  "id": "orig-build-exponent-M-35a659",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-35a659",
+   "structure": [],
+   "solver_answer": 5.4,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The amount of the isotope, in micrograms, $t$ thousand years after the seed fossilized can be modeled by $f(t) = a\\left(\\frac{1}{2}\\right)^{t/k}$, where $a$ and $k$ are constants. What is the value of $a$?",
+  "stimulus": "A paleobotanist measures a radioactive isotope in fossilized seeds of different ages.\n\nIsotope in Fossilized Seeds\nTime since fossilization (thousands of years) | Amount of isotope (micrograms)\n3 | 40\n6 | 20\n9 | 10",
+  "keys": [
+   "80"
+  ],
+  "any_of": false,
+  "explanation": "$a$ is the amount at $t = 0$, and the table has no row for $t = 0$, so you have to work backwards. The amount halves every 3 thousand years ($40 \\to 20 \\to 10$), so 3 thousand years before $t = 3$ there was twice as much: $2(40) = 80$. Check it: $80\\left(\\frac{1}{2}\\right)^{3/3} = 40$. In Desmos, enter the table and fit $y_1 \\sim a(0.5)^{x_1/k}$.",
+  "common_errors": [
+   {
+    "value": "40",
+    "misconception": "misread-given",
+    "why": "Took the first row of the table as the starting amount, but that row is $t = 3$, not $t = 0$."
+   },
+   {
+    "value": "60",
+    "misconception": "graph-feature-mismatch",
+    "why": "Worked backwards linearly and added the 20-microgram drop between rows: $40 + 20 = 60$."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $k$, the half-life in thousands of years, instead of $a$."
+   }
+  ],
+  "id": "orig-build-exponent-M-cca732",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-cca732",
+   "structure": [],
+   "solver_answer": 80,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many hours after the start of the trial will the population first reach 96,000 bacteria?",
+  "stimulus": "An agricultural scientist tracks a population of nitrogen-fixing bacteria in a soil sample. At the start of the trial the population is 3,000 bacteria, and the population doubles every 6 hours.",
+  "keys": [
+   "30"
+  ],
+  "any_of": false,
+  "explanation": "The model is $P(t) = 3{,}000 \\cdot 2^{t/6}$, where $t$ is in hours. Set it equal to the target: $3{,}000 \\cdot 2^{t/6} = 96{,}000$, so $2^{t/6} = 32 = 2^5$. That gives $t/6 = 5$, so $t = 30$ hours. In Desmos, graph the model and the line $y = 96000$ and read where they cross.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "intermediate-step",
+    "why": "Found the number of doublings but did not multiply by 6 hours per doubling."
+   },
+   {
+    "value": "32",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the growth factor $96{,}000 \\div 3{,}000$ instead of the time."
+   },
+   {
+    "value": "186",
+    "misconception": "graph-feature-mismatch",
+    "why": "Treated doubling as adding 3,000 every 6 hours: $(96{,}000 - 3{,}000) \\div 3{,}000 \\times 6 = 186$."
+   }
+  ],
+  "id": "orig-build-exponent-M-d0428e",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-d0428e",
+   "structure": [],
+   "solver_answer": 30,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many centimeters long is the river on the map after the second enlargement?",
+  "stimulus": "A cartographer enlarges a map on a copier twice. Each enlargement increases every length on the map by 25%. On the original map, a river is 32 centimeters long.",
+  "keys": [
+   "50"
+  ],
+  "any_of": false,
+  "explanation": "A 25% increase multiplies every length by 1.25. After two enlargements the length is $32(1.25)^2 = 32(1.5625) = 50$ centimeters.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "Used 0.25 as the factor instead of 1.25: $32(0.25)^2 = 2$."
+   },
+   {
+    "value": "48",
+    "misconception": "graph-feature-mismatch",
+    "why": "Added 25% of the original length twice, as if the change were linear: $32 + 8 + 8 = 48$."
+   },
+   {
+    "value": "18",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used a decrease instead of an increase: $32(0.75)^2 = 18$."
+   },
+   {
+    "value": "40",
+    "misconception": "intermediate-step",
+    "why": "Stopped after the first enlargement: $32(1.25) = 40$."
+   }
+  ],
+  "id": "orig-build-exponent-M-a6b2c1",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-a6b2c1",
+   "structure": [],
+   "solver_answer": 50,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the athlete's blood lactate concentration, in millimoles per liter, 30 minutes after the sprint ends?",
+  "stimulus": "A sports scientist measures an athlete's blood lactate concentration at 16 millimoles per liter right after a sprint. During recovery, the concentration decreases by 25% every 10 minutes.",
+  "keys": [
+   "6.75",
+   "27/4"
+  ],
+  "any_of": false,
+  "explanation": "The factor for each 10-minute step is $1 - 0.25 = 0.75$, and the exponent counts steps, so it is $t/10$: $L(t) = 16(0.75)^{t/10}$. At $t = 30$ there are 3 steps: $16(0.75)^3 = 16 \\cdot \\frac{27}{64} = 6.75$.",
+  "common_errors": [
+   {
+    "value": "0.25",
+    "misconception": "algebra-manipulation",
+    "why": "Used the percent lost as the factor: $16(0.25)^3 = 0.25$."
+   },
+   {
+    "value": "4",
+    "misconception": "graph-feature-mismatch",
+    "why": "Subtracted 25% of the starting value every step, as if the change were linear: $16 - 3(4) = 4$."
+   },
+   {
+    "value": "12",
+    "misconception": "algebra-manipulation",
+    "why": "Applied the 25% decrease only once for the whole 30 minutes."
+   },
+   {
+    "value": "9.25",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the drop in concentration, $16 - 6.75$, instead of the concentration."
+   }
+  ],
+  "id": "orig-build-exponent-M-0b6cf7",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-0b6cf7",
+   "structure": [],
+   "solver_answer": 6.75,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The district's population increases by $p\\%$ each year. What is the value of $p$?",
+  "stimulus": "An urban planner records a growing district's population, which grows by the same percentage each year.\n\nDistrict Population\nYears after 2015 | Population (thousands)\n2 | 32\n4 | 50",
+  "keys": [
+   "25"
+  ],
+  "any_of": false,
+  "explanation": "The table rows are 2 years apart, so $\\frac{50}{32} = 1.5625$ is the factor for two years, not one. The yearly factor $b$ satisfies $b^2 = 1.5625$, so $b = 1.25$. A factor of 1.25 is a 25% increase each year, so $p = 25$.",
+  "common_errors": [
+   {
+    "value": "56.25",
+    "misconception": "intermediate-step",
+    "why": "Read the 2-year factor 1.5625 as the yearly growth and did not take the square root."
+   },
+   {
+    "value": "1.25",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the yearly growth factor instead of the percentage."
+   },
+   {
+    "value": "9",
+    "misconception": "graph-feature-mismatch",
+    "why": "Treated the growth as linear and found a constant amount per year: $(50 - 32) \\div 2 = 9$ thousand."
+   },
+   {
+    "value": "125",
+    "misconception": "algebra-manipulation",
+    "why": "Converted the factor 1.25 straight to 125% without subtracting the original 100%."
+   }
+  ],
+  "id": "orig-build-exponent-M-c6ffef",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-c6ffef",
+   "structure": [],
+   "solver_answer": 25,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the antibody level, in units per milliliter, 12 weeks after the peak?",
+  "stimulus": "An immunologist finds that a patient's antibody level peaks at 640 units per milliliter after vaccination. After the peak, the level is halved every 21 days.",
+  "keys": [
+   "40"
+  ],
+  "any_of": false,
+  "explanation": "Convert to the same unit first: 12 weeks is $12 \\times 7 = 84$ days. The model is $A(t) = 640\\left(\\frac{1}{2}\\right)^{t/21}$, where $t$ is in days, so $A(84) = 640\\left(\\frac{1}{2}\\right)^{4} = \\frac{640}{16} = 40$.",
+  "common_errors": [
+   {
+    "value": "5/32",
+    "misconception": "algebra-manipulation",
+    "why": "Used 12 halvings, one per week, without converting weeks to days or dividing by 21: $640\\left(\\frac{1}{2}\\right)^{12} = 0.15625$."
+   },
+   {
+    "value": "600",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the amount the level fell, $640 - 40$, instead of the level itself."
+   },
+   {
+    "value": "80",
+    "misconception": "intermediate-step",
+    "why": "Stopped one halving short, after 63 days: $640\\left(\\frac{1}{2}\\right)^3 = 80$."
+   },
+   {
+    "value": "4",
+    "misconception": "intermediate-step",
+    "why": "Gave the number of half-lives rather than the antibody level."
+   }
+  ],
+  "id": "orig-build-exponent-M-14622d",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-14622d",
+   "structure": [],
+   "solver_answer": 40,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, how many hand looms were operating in the district in 1818?",
+  "stimulus": "A textile historian estimates that the number of hand looms operating in a weaving district doubled every 6 years from 1800 to 1830. In 1800, there were 150 hand looms operating in the district.",
+  "keys": [
+   "1200"
+  ],
+  "any_of": false,
+  "explanation": "Write the model as $L(t) = 150 \\cdot 2^{t/6}$, where $t$ is the number of years after 1800. The exponent is $t/6$ because the count doubles once every 6 years, not every year. The year 1818 is $t = 18$, so there are $18/6 = 3$ doublings: $L(18) = 150 \\cdot 2^{3} = 150 \\cdot 8 = 1200$.",
+  "common_errors": [
+   {
+    "value": "600",
+    "misconception": "graph-feature-mismatch",
+    "why": "Added 150 looms for each 6-year period (150 + 3\u00b7150), which is a linear model where the problem describes repeated doubling."
+   },
+   {
+    "value": "900",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 150 by 2 and then by 3 instead of raising 2 to the third power: 150\u00b72\u00b73 = 900."
+   },
+   {
+    "value": "3",
+    "misconception": "intermediate-step",
+    "why": "Stopped after counting the number of doublings, 18/6 = 3, and never applied it to the starting count."
+   },
+   {
+    "value": "300",
+    "misconception": "algebra-manipulation",
+    "why": "Doubled 150 once for the whole 18 years instead of once every 6 years."
+   }
+  ],
+  "id": "orig-build-exponent-M-76d3d3",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-76d3d3",
+   "structure": [],
+   "solver_answer": 1200,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $f(t) = a \\cdot b^t$ models the number of storytellers, where $t$ is the number of decades after 1950. What is the value of $a$?",
+  "stimulus": "A folklore archive tracks the number of village storytellers in a region who can recite a particular cycle of legends. The table shows the archive's counts, where $t$ is the number of decades after 1950. The number decreases by the same percent each decade.\n\nStorytellers Who Can Recite the Cycle\n$t$ | Number of storytellers\n1 | 400\n2 | 320\n3 | 256",
+  "keys": [
+   "500"
+  ],
+  "any_of": false,
+  "explanation": "Each row is $0.8$ times the row above it ($320/400 = 0.8$ and $256/320 = 0.8$), so $b = 0.8$. The value $a$ is the number at $t = 0$, and the table doesn't include that row, so work backwards one decade from $t = 1$: divide by the factor. $a = 400 / 0.8 = 500$. Check: $500(0.8)^1 = 400$.",
+  "common_errors": [
+   {
+    "value": "400",
+    "misconception": "wrong-target-quantity",
+    "why": "Took the first table row as the starting amount, but that row is t = 1, not t = 0."
+   },
+   {
+    "value": "480",
+    "misconception": "algebra-manipulation",
+    "why": "Worked backwards by multiplying 400 by 1.2 instead of dividing by 0.8. Undoing a 20% decrease is not the same as a 20% increase."
+   },
+   {
+    "value": "0.8",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the growth factor b instead of the initial value a."
+   },
+   {
+    "value": "0.2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the rate of decrease (20%) as a decimal instead of the initial value a."
+   }
+  ],
+  "id": "orig-build-exponent-M-47e9a0",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-47e9a0",
+   "structure": [],
+   "solver_answer": 500,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the amplitude of the vibration, in millimeters, 0.9 second after the string is plucked?",
+  "stimulus": "A musicologist studying historical harpsichords measures how a plucked string's vibration fades. Right after the string is plucked, the amplitude of its vibration is 2.4 millimeters. The amplitude decreases by 50% every 0.3 second.",
+  "keys": [
+   "0.3",
+   ".3",
+   "3/10"
+  ],
+  "any_of": false,
+  "explanation": "Write the model as $A(t) = 2.4 \\cdot (0.5)^{t/0.3}$, where $t$ is in seconds. The factor is $1 - 0.5 = 0.5$, and the exponent is divided by $0.3$ because the amplitude halves once every 0.3 second. At $t = 0.9$ there are $0.9/0.3 = 3$ halvings: $A(0.9) = 2.4 \\cdot (0.5)^3 = 2.4 / 8 = 0.3$.",
+  "common_errors": [
+   {
+    "value": "2.1",
+    "misconception": "complement-or-direction-flip",
+    "why": "Found the correct remaining amplitude, 0.3, but then subtracted it from 2.4, which gives the amount lost instead of the amount left."
+   },
+   {
+    "value": "0.4",
+    "misconception": "algebra-manipulation",
+    "why": "Divided 2.4 by 2\u00b73 = 6 instead of by 2\u00b3 = 8."
+   },
+   {
+    "value": "0.6",
+    "misconception": "intermediate-step",
+    "why": "Stopped after two halvings (0.6 second) instead of three."
+   },
+   {
+    "value": "1.2",
+    "misconception": "intermediate-step",
+    "why": "Halved only once, the amplitude after 0.3 second, without counting how many 0.3-second steps fit into 0.9 second."
+   }
+  ],
+  "id": "orig-build-exponent-M-6e8c6d",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-6e8c6d",
+   "structure": [],
+   "solver_answer": 0.3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the linguist's model, how many fluent speakers of the dialect were there in 2012?",
+  "stimulus": "A linguist reports that a regional dialect had 8,000 fluent speakers in 2000. Her model assumes that the number of fluent speakers decreases by 10% every 4 years.",
+  "keys": [
+   "5832"
+  ],
+  "any_of": false,
+  "explanation": "Write the model as $N(t) = 8000 \\cdot (0.9)^{t/4}$, where $t$ is years after 2000. The factor is $1 - 0.10 = 0.9$, and the exponent is $t/4$ because the decrease happens once every 4 years. The year 2012 is $t = 12$, so there are $12/4 = 3$ periods: $N(12) = 8000 \\cdot 0.9^3 = 8000 \\cdot 0.729 = 5832$.",
+  "common_errors": [
+   {
+    "value": "5600",
+    "misconception": "graph-feature-mismatch",
+    "why": "Subtracted 10% of 8,000 (800) in every 4-year period, 8000 \u2212 3\u00b7800. That is a linear model for a percent change."
+   },
+   {
+    "value": "2168",
+    "misconception": "complement-or-direction-flip",
+    "why": "Found 5,832 and subtracted it from 8,000, which gives the number of speakers lost instead of the number remaining."
+   },
+   {
+    "value": "6480",
+    "misconception": "intermediate-step",
+    "why": "Applied the factor only twice, which gives the number in 2008 instead of 2012."
+   },
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Used 0.1 as the factor instead of 0.9: 8000\u00b70.1\u00b3 = 8."
+   }
+  ],
+  "id": "orig-build-exponent-M-716ad8",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-716ad8",
+   "structure": [],
+   "solver_answer": 5832,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many days after the sample was prepared will 40 milligrams of the tracer remain?",
+  "stimulus": "Archaeologists use a radioactive tracer when they date bone fragments in a lab. A prepared sample contains 640 milligrams of the tracer, and the mass of the tracer remaining is halved every 5 days.",
+  "keys": [
+   "20"
+  ],
+  "any_of": false,
+  "explanation": "Write the model as $M(t) = 640 \\cdot (0.5)^{t/5}$ and set it equal to 40: $(0.5)^{t/5} = 40/640 = 1/16$. Because $1/16 = (0.5)^4$, you get $t/5 = 4$, so $t = 20$ days. You can also halve step by step: 640, 320, 160, 80, 40. That is 4 halvings of 5 days each, or 20 days. In Desmos, graph the model with the line $y = 40$ and read where they cross.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "intermediate-step",
+    "why": "Found the number of halvings but did not multiply by the 5-day step to convert it to days."
+   },
+   {
+    "value": "80",
+    "misconception": "algebra-manipulation",
+    "why": "Treated the ratio 640/40 = 16 as the number of halvings and multiplied it by 5."
+   },
+   {
+    "value": "9.375",
+    "misconception": "graph-feature-mismatch",
+    "why": "Assumed a constant loss of 320 mg every 5 days (64 mg per day), a linear model, so (640 \u2212 40)/64 = 9.375."
+   },
+   {
+    "value": "15",
+    "misconception": "intermediate-step",
+    "why": "Stopped at 80 mg, after 3 halvings, instead of continuing to 40 mg."
+   }
+  ],
+  "id": "orig-build-exponent-M-23a2dc",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-23a2dc",
+   "structure": [],
+   "solver_answer": 20,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

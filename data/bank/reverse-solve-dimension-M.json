@@ -404,5 +404,758 @@
    "residue": 2
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "Which expression represents the height $h$, in inches, of the panel measured to that base?",
+  "stimulus": "A linguistics exhibit shows a dialect map on a triangular panel. The panel's base is 20 inches long, one slanted edge is 25 inches long, and the panel's area is 150 square inches.",
+  "choices": [
+   "$\\frac{150}{20}$",
+   "$\\frac{2(150)}{20}$",
+   "$\\frac{150}{2(20)}$",
+   "$\\frac{2(150)}{25}$"
+  ],
+  "answer": "B",
+  "explanation": "The area of a triangle is $A = \\frac{1}{2}bh$. Substitute what you know: $150 = \\frac{1}{2}(20)h$. To undo the $\\frac{1}{2}$, multiply both sides by 2, which gives $2(150) = 20h$. Then divide by 20: $h = \\frac{2(150)}{20}$. That is 15 inches, and it agrees with the 25-inch edge, since 15, 20 and 25 make a right triangle.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the area by the base but didn't double it first. This expression would be the height only if the formula had no $\\frac{1}{2}$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by $\\frac{1}{2}$ a second time when you should have undone it. To remove a $\\frac{1}{2}$ from one side, multiply the area by 2."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used the 25-inch slanted edge as the base. The height has to be measured to the 20-inch base, so 20 is the length that goes in the formula."
+   }
+  },
+  "id": "orig-reverse-solve--M-d8fed7",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--M-d8fed7",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the height $h$, in centimeters, of the canister?",
+  "stimulus": "A nutrition lab stores whey protein in a right circular cylindrical canister. The canister has a volume of $360\\pi$ cubic centimeters, and its base has a diameter of 12 centimeters.",
+  "choices": [
+   "$\\frac{360}{6^2}$",
+   "$\\frac{360}{12^2}$",
+   "$\\frac{360}{6}$",
+   "$\\frac{360}{2(6)}$"
+  ],
+  "answer": "A",
+  "explanation": "The volume of a cylinder is $V = \\pi r^2 h$. The diameter is 12, so the radius is 6. Substitute: $360\\pi = \\pi(6)^2 h$. Divide both sides by $\\pi$ and then by $6^2$: $h = \\frac{360}{6^2}$, which is 10 centimeters.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You substituted the 12-centimeter diameter where the formula wants the radius. Halve the diameter to get 6 before you substitute."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided by the radius without squaring it. The formula uses $r^2$, so you need to divide by $6^2$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by $2r$, which comes from the circumference $2\\pi r$. The volume formula needs the area of the base, $\\pi r^2$."
+   }
+  },
+  "id": "orig-reverse-solve--M-9677f2",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--M-9677f2",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "has a volume of __var__ cubic centimeters and"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "Which expression represents the radius $r$, in inches, of the cone's base?",
+  "stimulus": "A folklore exhibit includes a solid clay right circular cone that models a hill from a village legend. The cone is 8 inches tall and has a volume of $96\\pi$ cubic inches.",
+  "choices": [
+   "$\\sqrt{\\frac{96}{8}}$",
+   "$\\frac{3(96)}{8}$",
+   "$\\sqrt{\\frac{3(96)}{8}}$",
+   "$2\\sqrt{\\frac{3(96)}{8}}$"
+  ],
+  "answer": "C",
+  "explanation": "The volume of a cone is $V = \\frac{1}{3}\\pi r^2 h$. Substitute what you know: $96\\pi = \\frac{1}{3}\\pi r^2(8)$. Divide both sides by $\\pi$, multiply by 3, and divide by 8: $r^2 = \\frac{3(96)}{8}$. Take the positive square root: $r = \\sqrt{\\frac{3(96)}{8}}$, which is 6 inches.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the $\\frac{1}{3}$ when you undid the formula. You have to multiply the volume by 3 before you divide by the height."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This expression is $r^2$, not $r$. You stopped before taking the square root."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "Doubling the radius gives the diameter of the base, but the question asks for the radius."
+   }
+  },
+  "id": "orig-reverse-solve--M-1555c2",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--M-1555c2",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A city is planning a rectangular public plaza with an area of 1,200 square meters. The plaza's length must be 3 times its width.",
+  "choices": [
+   "The width of the plaza is 20 meters.",
+   "The width of the plaza is 400 meters.",
+   "The width of the plaza is 60 meters.",
+   "The width of the plaza is 200 meters."
+  ],
+  "answer": "A",
+  "explanation": "Call the width $w$. Then the length is $3w$, and the area is $w \\cdot 3w = 3w^2$. Set this equal to the area you are given: $3w^2 = 1200$. Dividing by 3 gives $w^2 = 400$. Width is a length, so you keep only the positive root: $w = 20$ meters. To check, the length is $60$ meters, and $20 \\times 60 = 1200$.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You found $w^2 = 400$ and stopped. The square of the width is 400, so you still need to take the square root."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "60 meters is the plaza's length, not its width. You solved correctly but then reported the other dimension."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided 400 by 2 when you should have taken its square root. Undoing a square means finding the square root, not halving."
+   }
+  },
+  "id": "orig-reverse-solve--M-df5381",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--M-df5381",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A clinic's water station uses cone-shaped paper cups. Each cup holds $48\\pi$ cubic centimeters of water when full, and the circular opening at the top of each cup has a diameter of 8 centimeters.",
+  "choices": [
+   "The cup is 2.25 centimeters deep.",
+   "The cup is 9 centimeters deep.",
+   "The cup is 3 centimeters deep.",
+   "The cup is 36 centimeters deep."
+  ],
+  "answer": "B",
+  "explanation": "The volume of a cone is $V = \\frac{1}{3}\\pi r^2 h$. The diameter is 8 cm, so the radius is $r = 4$ cm. Substituting gives $\\frac{1}{3}\\pi (4)^2 h = 48\\pi$, which simplifies to $\\frac{16}{3}h = 48$. Then $h = 48 \\cdot \\frac{3}{16} = 9$ centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used 8 as the radius, but 8 cm is the diameter. With $r = 8$ you get $\\frac{64}{3}h = 48$ and $h = 2.25$. Halve the diameter before you substitute."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You left out the $\\frac{1}{3}$ in the cone formula. Solving $16h = 48$ gives 3, which is the depth of a cylinder with the same volume, not a cone."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You didn't square the radius. Solving $\\frac{1}{3}\\pi(4)h = 48\\pi$ gives 36, but the formula needs $r^2 = 16$."
+   }
+  },
+  "id": "orig-reverse-solve--M-ddaca5",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--M-ddaca5",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A straight drainage ditch is 50 feet long, and its cross section is a triangle that is 8 feet wide across the top. When the ditch is completely full, it holds 1,200 cubic feet of water.",
+  "choices": [
+   "The ditch is 24 feet deep.",
+   "The ditch is 3 feet deep.",
+   "The ditch is 6 feet deep.",
+   "The ditch is 48 feet deep."
+  ],
+  "answer": "C",
+  "explanation": "The volume equals the cross-sectional area times the length, so the area of the triangle is $1200 \\div 50 = 24$ square feet. For the triangle, $\\frac{1}{2}(8)d = 24$, which gives $4d = 24$ and $d = 6$ feet.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "24 is the area of the triangular cross section, in square feet. You still need to use the triangle-area formula to get the depth from it."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the area 24 by the width 8 without doubling it first. That drops the $\\frac{1}{2}$ from the triangle-area formula, so your depth is half the real one."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You doubled the cross-sectional area to get 48 and stopped there. You still need to divide by the 8-foot width."
+   }
+  },
+  "id": "orig-reverse-solve--M-1e088f",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--M-1e088f",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the radius, in centimeters, of the base of the bell?",
+  "stimulus": "The bell of a brass instrument is modeled as a right circular cone with a height of 25 centimeters and a volume of $300\\pi$ cubic centimeters.",
+  "choices": [
+   "$2\\sqrt{3}$",
+   "$6$",
+   "$12$",
+   "$36$"
+  ],
+  "answer": "B",
+  "explanation": "Set the cone formula equal to the volume: $\\frac{1}{3}\\pi r^2(25) = 300\\pi$. Divide both sides by $\\pi$ and multiply by 3 to get $25r^2 = 900$, so $r^2 = 36$ and $r = 6$. You can also test the choices: $\\frac{1}{3}\\pi(6)^2(25) = 300\\pi$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the $\\frac{1}{3}$ and solved $25\\pi r^2 = 300\\pi$, which gives $r^2 = 12$. A cone's volume is one third of a cylinder's, so you have to multiply by 3 when you undo the formula."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "12 is the diameter of the base. The question asks for the radius, which is half of that."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "36 is $r^2$. You stopped before taking the square root."
+   }
+  },
+  "id": "orig-reverse-solve--M-721044",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--M-721044",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "and a volume of __var__ cubic centimeters what",
+    "a volume of __var__ cubic centimeters what is",
+    "volume of __var__ cubic centimeters what is the"
+   ],
+   "residue": 5
+  }
+ },
+ {
+  "stem": "What is the height, in inches, of the sign?",
+  "stimulus": "A clinic puts up a triangular hand-washing reminder sign. The base of the triangle is 6 inches longer than its height, and the sign has an area of 216 square inches.",
+  "choices": [
+   "$12$",
+   "$18$",
+   "$24$",
+   "$432$"
+  ],
+  "answer": "B",
+  "explanation": "If the height is $h$, the base is $h + 6$, so $\\frac{1}{2}h(h+6) = 216$, which means $h(h+6) = 432$. Testing the choices is faster than factoring: $18 \\times 24 = 432$, so the height is 18 inches.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You solved $h(h+6) = 216$ and forgot to double the area to undo the $\\frac{1}{2}$. Check it: $\\frac{1}{2}(12)(18) = 108$, not 216."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "24 is the base of the triangle. The height is 6 inches shorter."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "432 is the product $h(h+6)$, which you get partway through. You still need the height that gives that product."
+   }
+  },
+  "id": "orig-reverse-solve--M-d35a51",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--M-d35a51",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "square inches what is the height in inches",
+    "inches what is the height in inches of",
+    "what is the height in inches of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the diameter, in meters, of the borehole?",
+  "stimulus": "A seismology team drills a borehole for a sensor. The borehole is a right circular cylinder 120 meters deep, and the volume of rock removed is $270\\pi$ cubic meters.",
+  "choices": [
+   "$1.5$",
+   "$2.25$",
+   "$3$",
+   "$4.5$"
+  ],
+  "answer": "C",
+  "explanation": "Set $\\pi r^2(120) = 270\\pi$, so $r^2 = 2.25$ and $r = 1.5$. The diameter is twice the radius, so it is $3$ meters. Check: a radius of 1.5 gives $\\pi(1.5)^2(120) = 270\\pi$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "1.5 is the radius. The question asks for the diameter, so you need to double it."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "2.25 is $r^2$. You stopped before taking the square root and before doubling."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You doubled $r^2 = 2.25$ before taking the square root, and $\\sqrt{4.5}$ isn't the diameter either. Take the square root first, then double: $2\\sqrt{2.25} = 3$."
+   }
+  },
+  "id": "orig-reverse-solve--M-afe0e3",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--M-afe0e3",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the height, in meters, of the cistern?",
+  "stimulus": "A hydrology station stores runoff in a cistern shaped like a right circular cylinder. The cistern has an inside diameter of 6 meters and holds $72\\pi$ cubic meters of water when full.",
+  "choices": [
+   "2",
+   "3",
+   "8",
+   "24"
+  ],
+  "answer": "C",
+  "explanation": "The volume of a cylinder is $V = \\pi r^2 h$. The diameter is 6 meters, so the radius is 3 meters. Substitute: $\\pi (3)^2 h = 72\\pi$, so $9\\pi h = 72\\pi$ and $h = 8$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used the diameter, 6, as the radius. Then $36\\pi h = 72\\pi$ gives 2. Halve the diameter before you substitute it."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "3 is the radius of the cistern. The question asks for the height, which is still unknown at that point."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You forgot to square the radius and wrote $3\\pi h = 72\\pi$, which gives 24. The formula has $r^2$, so you should get $9\\pi h$."
+   }
+  },
+  "id": "orig-reverse-solve--M-c7362a",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--M-c7362a",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length, in centimeters, of one edge of the sample's base?",
+  "stimulus": "A materials scientist casts a ceramic test sample shaped like a right pyramid with a square base. The sample has a volume of 96 cubic centimeters and a height of 8 centimeters.",
+  "choices": [
+   "$2\\sqrt{3}$",
+   "6",
+   "12",
+   "36"
+  ],
+  "answer": "B",
+  "explanation": "The volume of a pyramid is $V = \\frac{1}{3}Bh$, and here the base area is $B = s^2$. Substitute: $\\frac{1}{3}s^2(8) = 96$, so $s^2 = 36$. Keep the positive root, so $s = 6$ centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the $\\frac{1}{3}$ and wrote $8s^2 = 96$, so $s^2 = 12$ and $s = 2\\sqrt{3}$. A pyramid has one-third the volume of a prism with the same base and height."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided 96 by 8 but left out the $\\frac{1}{3}$, and then you didn't take the square root either. 12 isn't the edge length or the base area."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "36 is $s^2$, the area of the base. You stopped before taking the square root to find the edge."
+   }
+  },
+  "id": "orig-reverse-solve--M-95fe17",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--M-95fe17",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "centimeters what is the length in centimeters of",
+    "what is the length in centimeters of one"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the length, in centimeters, of the base of the panel?",
+  "stimulus": "A musicologist studying an early harp measures a triangular soundboard panel. The panel has an area of 1,200 square centimeters, and its height to that base is 60 centimeters.",
+  "choices": [
+   "10",
+   "20",
+   "40",
+   "60"
+  ],
+  "answer": "C",
+  "explanation": "The area of a triangle is $A = \\frac{1}{2}bh$. Substitute: $\\frac{1}{2}b(60) = 1{,}200$, so $30b = 1{,}200$ and $b = 40$ centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You halved the area when you should have doubled it, $\\frac{1{,}200}{2 \\cdot 60} = 10$. To undo the $\\frac{1}{2}$, multiply the area by 2."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the area by the height without doubling it first, $\\frac{1{,}200}{60} = 20$. That forgets the $\\frac{1}{2}$ in the formula."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "60 centimeters is the height of the panel, which the question gives you. The question asks for the base."
+   }
+  },
+  "id": "orig-reverse-solve--M-48169e",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--M-48169e",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "centimeters what is the length in centimeters of",
+    "what is the length in centimeters of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "How many meters greater is the height of the larger plot than the height of the smaller plot?",
+  "stimulus": "An ornithologist marks out two triangular plots to survey ground-nesting plovers. Both plots have a base of 12 meters. One plot has an area of 90 square meters, and the other has an area of 144 square meters.",
+  "choices": [
+   "4.5",
+   "9",
+   "24",
+   "54"
+  ],
+  "answer": "B",
+  "explanation": "Use $A = \\frac{1}{2}bh$ for each plot. For the smaller plot, $90 = \\frac{1}{2}(12)h$, so $90 = 6h$ and $h = 15$ meters. For the larger plot, $144 = 6h$, so $h = 24$ meters. The question asks for the difference, so the answer is $24 - 15 = 9$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided each area by the base without doubling it first, so you dropped the $\\frac{1}{2}$ from the formula. That gives heights of 7.5 and 12, which are half the real heights, and their difference is 4.5."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "24 meters is the height of the larger plot alone. The question asks how much greater it is than the smaller plot's height, so you still need to subtract 15."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "54 is the difference between the two areas in square meters. It is not a length, and the question asks for the gap between the heights."
+   }
+  },
+  "id": "orig-reverse-solve--M-095262",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--M-095262",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many centimeters greater is the radius of container B than the radius of container A?",
+  "stimulus": "A nutrition lab stores a protein drink in two containers shaped like right circular cylinders. Each container has a height of 10 centimeters. Container A has a volume of $160\\pi$ cubic centimeters, and container B has a volume of $360\\pi$ cubic centimeters.",
+  "choices": [
+   "2",
+   "4",
+   "6",
+   "20"
+  ],
+  "answer": "A",
+  "explanation": "Use $V = \\pi r^2 h$ with $h = 10$. For container A, $160\\pi = 10\\pi r^2$, so $r^2 = 16$ and $r = 4$ centimeters. For container B, $360\\pi = 10\\pi r^2$, so $r^2 = 36$ and $r = 6$ centimeters. The difference is $6 - 4 = 2$ centimeters.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "4 is the difference between the diameters, 12 and 8. The question asks about the radii, which are half as long, so their difference is half as large too."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "6 centimeters is the radius of container B alone. You found one of the two radii instead of how much greater B's radius is than A's."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $r^2 = 16$ and $r^2 = 36$ and subtracted those without taking the square roots. 20 is the difference between the squared radii, not between the radii."
+   }
+  },
+  "id": "orig-reverse-solve--M-a01f76",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--M-a01f76",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "has a volume of __var__ cubic centimeters and"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "How many meters greater is the radius of basin Q than the radius of basin P?",
+  "stimulus": "Two settling basins at a water treatment plant are shaped like right circular cones. Each has a depth of 6 meters. Basin P holds $72\\pi$ cubic meters of water, and basin Q holds $200\\pi$ cubic meters.",
+  "choices": [
+   "4",
+   "8",
+   "10",
+   "64"
+  ],
+  "answer": "A",
+  "explanation": "Use $V = \\frac{1}{3}\\pi r^2 h$ with $h = 6$, which gives $V = 2\\pi r^2$. For basin P, $72\\pi = 2\\pi r^2$, so $r^2 = 36$ and $r = 6$ meters. For basin Q, $200\\pi = 2\\pi r^2$, so $r^2 = 100$ and $r = 10$ meters. The difference is $10 - 6 = 4$ meters.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the volumes first, solved $128\\pi = 2\\pi r^2$ and took the square root to get 8. Square roots do not split across a subtraction, so you have to find each radius separately before you subtract."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "10 meters is the radius of basin Q alone. The question asks how much greater it is than basin P's radius of 6 meters."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You stopped at $r^2 = 36$ and $r^2 = 100$ without taking the square roots. 64 is the difference between the squared radii, not between the radii."
+   }
+  },
+  "id": "orig-reverse-solve--M-31b676",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--M-31b676",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

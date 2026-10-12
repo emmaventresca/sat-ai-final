@@ -434,11 +434,11 @@ Name it in second_defensible and leave ambiguous false."""
 
 
 def call_list(prompt, model):
-    return call_json_array(prompt, model)
+    return call_json_array(prompt, model, tag="verify")
 
 
 def call(prompt, model):
-    return call_json_object(prompt, model)
+    return call_json_object(prompt, model, tag="verify")
 
 
 # ---------------------------------------------------------------------------
@@ -735,6 +735,14 @@ def main():
             v = verdict(r)
             counts[v] += 1
             totals[v] += 1
+            if v == "error":
+                # The solve did not happen, so we learned nothing about this
+                # item. Recording "error" as its status reads as a defect in
+                # the question and hides it from students; a run that died
+                # against a closed usage window once stamped 1,251 perfectly
+                # good items that way. Leave the item untouched so the next
+                # run picks it up, and let the printed tally report the error.
+                continue
             it["status"] = "verified" if v == "pass" else v
             it["verification"] = r
         json.dump(items, open(path, "w"), indent=1)

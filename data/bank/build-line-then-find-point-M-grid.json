@@ -1,0 +1,876 @@
+[
+ {
+  "stem": "According to the model, how many minutes after grinding begins will the slab's thickness reach 0 millimeters?",
+  "stimulus": "A paleobotanist grinds down a rock slab to expose a fossil leaf. The slab's thickness, in millimeters, is modeled as a linear function of the number of minutes, $x$, since grinding began. The slab is 48 millimeters thick at $x = 0$ and 36 millimeters thick at $x = 4$.",
+  "keys": [
+   "16"
+  ],
+  "any_of": false,
+  "explanation": "First find the slope from the two known points: $\\frac{36 - 48}{4 - 0} = -3$, so the thickness drops 3 millimeters per minute. The starting thickness is the y-intercept, so the model is $y = -3x + 48$. The slab is gone when $y = 0$: $0 = -3x + 48$, so $x = 16$.",
+  "common_errors": [
+   {
+    "value": "12",
+    "misconception": "misread-given",
+    "why": "Used 36 as the starting thickness, not 48, and computed $36 \\div 3$."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Stopped at the size of the slope (the rate of 3 millimeters per minute) and never set y = 0."
+   },
+   {
+    "value": "-3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope itself as the answer, not the x-intercept."
+   },
+   {
+    "value": "20",
+    "misconception": "algebra-manipulation",
+    "why": "Solved $0 = -3x + 48$ as if it were $0 = -3(x - 4) + 48$, adding the 4 minutes back on: $16 + 4$."
+   }
+  ],
+  "id": "orig-build-line-the-M-74c1c7",
+  "skill_cd": "H.C.",
+  "subtype": "build-line-then-find-point",
+  "subtype_name": "Build the line, then use it",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-line-the-M-74c1c7",
+   "structure": [],
+   "solver_answer": "16",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, after how many study sessions will the learner be able to recall 50 words?",
+  "stimulus": "A linguist models the number of words in an invented language that a learner can recall, $y$, as a linear function of the number of study sessions completed, $x$. Two values from the model are shown.\n\nWords Recalled by Study Session\nSessions completed, $x$ | Words recalled, $y$\n0 | 14\n3 | 26",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "The slope is $\\frac{26 - 14}{3 - 0} = 4$ words per session, and the row with $x = 0$ gives you the y-intercept, 14. So the model is $y = 4x + 14$. Set $y = 50$: $4x = 36$, so $x = 9$.",
+  "common_errors": [
+   {
+    "value": "12.5",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the intercept and solved $4x = 50$."
+   },
+   {
+    "value": "36",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $50 - 14 = 36$, the number of words still to learn, before dividing by the slope."
+   },
+   {
+    "value": "6",
+    "misconception": "intermediate-step",
+    "why": "Counted sessions from the second row: $(50 - 26) \\div 4 = 6$, which is the number of sessions after session 3, not the total."
+   },
+   {
+    "value": "214",
+    "misconception": "wrong-target-quantity",
+    "why": "Mixed up which coordinate is unknown and substituted $x = 50$: $4(50) + 14$."
+   }
+  ],
+  "id": "orig-build-line-the-M-73c615",
+  "skill_cd": "H.C.",
+  "subtype": "build-line-then-find-point",
+  "subtype_name": "Build the line, then use it",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-line-the-M-73c615",
+   "structure": [],
+   "solver_answer": "9",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the second model, how many decades after printing will no copies of the second edition remain?",
+  "stimulus": "A music historian models the number of surviving copies of a printed hymnbook's first edition as a linear function of $x$, the number of decades since printing. The model gives 90 copies at $x = 0$ and 75 copies at $x = 3$. A second model for the hymnbook's second edition has the same rate of loss but starts with 30 fewer copies.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "The slope is $\\frac{75 - 90}{3 - 0} = -5$ copies per decade, so the first model is $y = -5x + 90$. Starting with 30 fewer copies shifts the line down 30 units, which changes the intercept: $y = -5x + 60$. Now set $y = 0$: $5x = 60$, so $x = 12$.",
+  "common_errors": [
+   {
+    "value": "18",
+    "misconception": "missed-condition",
+    "why": "Found the x-intercept of the first edition's line, $90 \\div 5$, and forgot to apply the shift."
+   },
+   {
+    "value": "-12",
+    "misconception": "algebra-manipulation",
+    "why": "Applied the shift to the x-intercept rather than to b: $18 - 30$."
+   },
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided the 30-copy shift by the rate, $30 \\div 5$. That is how much sooner the second edition runs out, not when it does."
+   },
+   {
+    "value": "24",
+    "misconception": "complement-or-direction-flip",
+    "why": "Shifted the line up by 30, not down: $120 \\div 5$."
+   }
+  ],
+  "id": "orig-build-line-the-M-e27504",
+  "skill_cd": "H.C.",
+  "subtype": "build-line-then-find-point",
+  "subtype_name": "Build the line, then use it",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-line-the-M-e27504",
+   "structure": [],
+   "solver_answer": "12",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, how many days after arrival will the warbler's fat reserve be 4.6 grams?",
+  "stimulus": "An ornithologist models the fat reserve, in grams, of a migrating warbler at a stopover site as a linear function of $x$, the number of days since the bird arrived. The bird carries 2.5 grams of fat at $x = 0$ and 3.7 grams at $x = 4$.",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "The slope is $\\frac{3.7 - 2.5}{4 - 0} = 0.3$ grams per day, and 2.5 is the y-intercept, so $y = 0.3x + 2.5$. Set $y = 4.6$: $0.3x = 2.1$, so $x = 7$.",
+  "common_errors": [
+   {
+    "value": "46/3",
+    "misconception": "algebra-manipulation",
+    "why": "Ignored the intercept and solved $0.3x = 4.6$. (A student may type 15.33.)"
+   },
+   {
+    "value": "3",
+    "misconception": "intermediate-step",
+    "why": "Counted the days after day 4, $(4.6 - 3.7) \\div 0.3$, and gave that as the total."
+   },
+   {
+    "value": "2.1",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the fat still to be gained, $4.6 - 2.5$, before dividing by the slope."
+   },
+   {
+    "value": "3.88",
+    "misconception": "wrong-target-quantity",
+    "why": "Mixed up which coordinate is unknown and substituted $x = 4.6$: $0.3(4.6) + 2.5$."
+   }
+  ],
+  "id": "orig-build-line-the-M-9d062d",
+  "skill_cd": "H.C.",
+  "subtype": "build-line-then-find-point",
+  "subtype_name": "Build the line, then use it",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-line-the-M-9d062d",
+   "structure": [],
+   "solver_answer": "7",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "For the revised design, at what value of $x$ does the road's elevation equal 0 meters?",
+  "stimulus": "A civil engineer models the elevation $y$, in meters, of a planned road as a linear function of $x$, the horizontal distance in hundreds of meters from the road's start. The original design passes through $(0, 18)$ and $(5, 8)$. A revised design lowers the entire road by 4 meters.",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "The slope is $\\frac{8 - 18}{5 - 0} = -2$, so the original line is $y = -2x + 18$. Lowering the whole road by 4 meters shifts b, not the x-intercept: $y = -2x + 14$. Set $y = 0$: $2x = 14$, so $x = 7$.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "missed-condition",
+    "why": "Found the original design's x-intercept, $18 \\div 2$, and forgot the 4-meter shift."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Applied the shift to the x-intercept rather than to b: $9 - 4$."
+   },
+   {
+    "value": "11",
+    "misconception": "complement-or-direction-flip",
+    "why": "Raised the road by 4 meters, not lowered it: $22 \\div 2$."
+   },
+   {
+    "value": "14",
+    "misconception": "intermediate-step",
+    "why": "Gave the revised y-intercept, 14, without solving for x."
+   }
+  ],
+  "id": "orig-build-line-the-M-5dfccb",
+  "skill_cd": "H.C.",
+  "subtype": "build-line-then-find-point",
+  "subtype_name": "Build the line, then use it",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-line-the-M-5dfccb",
+   "structure": [],
+   "solver_answer": "7",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The point $(k, 25)$ lies on the trail. What is the value of $k$?",
+  "stimulus": "On a cartographer's grid, where each unit is 1 kilometer, a straight trail passes through the points $(0, 7)$ and $(4, 13)$.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "The slope is $\\frac{13 - 7}{4 - 0} = \\frac{3}{2}$, and $(0, 7)$ gives you the y-intercept, so the trail is $y = \\frac{3}{2}x + 7$. The 25 is the y-coordinate, so substitute $y = 25$: $\\frac{3}{2}k = 18$, so $k = 12$.",
+  "common_errors": [
+   {
+    "value": "44.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Mixed up which coordinate is unknown and substituted $x = 25$: $\\frac{3}{2}(25) + 7$."
+   },
+   {
+    "value": "50/3",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the intercept and solved $\\frac{3}{2}k = 25$. (A student may type 16.66 or 16.67.)"
+   },
+   {
+    "value": "27",
+    "misconception": "graph-feature-mismatch",
+    "why": "Inverted the slope to $\\frac{2}{3}$ (run over rise): $18 \\div \\frac{2}{3}$."
+   },
+   {
+    "value": "8",
+    "misconception": "intermediate-step",
+    "why": "Counted only from the point $(4, 13)$: $(25 - 13) \\div \\frac{3}{2}$, which is the distance past $x = 4$, not k."
+   }
+  ],
+  "id": "orig-build-line-the-M-2be156",
+  "skill_cd": "H.C.",
+  "subtype": "build-line-then-find-point",
+  "subtype_name": "Build the line, then use it",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-line-the-M-2be156",
+   "structure": [],
+   "solver_answer": "12",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the second clinic's model, how many doses will remain 5 hours after opening?",
+  "stimulus": "A public health team models the number of vaccine doses remaining at a clinic as a linear function of $x$, the number of hours since the clinic opened. The clinic has 240 doses at $x = 0$ and 180 doses at $x = 2$. A second clinic uses doses at the same rate but opens with 60 fewer doses.",
+  "keys": [
+   "30"
+  ],
+  "any_of": false,
+  "explanation": "The slope is $\\frac{180 - 240}{2 - 0} = -30$ doses per hour, so the first clinic's model is $y = -30x + 240$. Opening with 60 fewer doses changes b: $y = -30x + 180$. Substitute $x = 5$: $y = -150 + 180 = 30$.",
+  "common_errors": [
+   {
+    "value": "90",
+    "misconception": "missed-condition",
+    "why": "Used the first clinic's model, $240 - 150$, and forgot the 60-dose shift."
+   },
+   {
+    "value": "150",
+    "misconception": "intermediate-step",
+    "why": "Gave the number of doses used in 5 hours, $30 \\times 5$, not the number left."
+   },
+   {
+    "value": "150",
+    "misconception": "complement-or-direction-flip",
+    "why": "Added the 60 doses instead of subtracting them, $300 - 150$. This gives the same number as the doses-used error above."
+   },
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Found when the second clinic runs out, $180 \\div 30$, not how many doses remain at hour 5."
+   }
+  ],
+  "id": "orig-build-line-the-M-bc908f",
+  "skill_cd": "H.C.",
+  "subtype": "build-line-then-find-point",
+  "subtype_name": "Build the line, then use it",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-line-the-M-bc908f",
+   "structure": [],
+   "solver_answer": "30",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The height of the seedling is modeled as a linear function of the number of days after sprouting. What is the value of $k$?",
+  "stimulus": "An agricultural scientist records the height of a sorghum seedling.\n\nSorghum Seedling Height\nDays after sprouting | Height (cm)\n0 | 5\n6 | 14\n$k$ | 26",
+  "keys": [
+   "14"
+  ],
+  "any_of": false,
+  "explanation": "Use the first two rows to get the slope: $\\frac{14 - 5}{6 - 0} = \\frac{3}{2}$ centimeters per day. The height at day 0 is the y-intercept, so $y = \\frac{3}{2}x + 5$. In the third row, 26 is the height and k is the day, so set $y = 26$: $\\frac{3}{2}k = 21$, so $k = 14$.",
+  "common_errors": [
+   {
+    "value": "8",
+    "misconception": "intermediate-step",
+    "why": "Counted only from day 6: $(26 - 14) \\div \\frac{3}{2}$, which is the number of days after day 6, not k."
+   },
+   {
+    "value": "52/3",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the intercept and solved $\\frac{3}{2}k = 26$. (A student may type 17.33.)"
+   },
+   {
+    "value": "44",
+    "misconception": "wrong-target-quantity",
+    "why": "Mixed up which coordinate is unknown and substituted $x = 26$: $\\frac{3}{2}(26) + 5$."
+   },
+   {
+    "value": "21",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the growth still needed, $26 - 5$, before dividing by the slope."
+   }
+  ],
+  "id": "orig-build-line-the-M-d669d6",
+  "skill_cd": "H.C.",
+  "subtype": "build-line-then-find-point",
+  "subtype_name": "Build the line, then use it",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-line-the-M-d669d6",
+   "structure": [],
+   "solver_answer": "14",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, how many weeks after the program began will there be 25 stations?",
+  "stimulus": "A public health team models the number of hand-sanitizer stations, $y$, installed in a city $x$ weeks after a hygiene program began as a linear relationship. When the program began there were 4 stations, and 2 weeks later there were 10 stations.",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "The start of the program is $x = 0$, so the y-intercept is 4. From $(0, 4)$ to $(2, 10)$ the slope is $\\frac{10 - 4}{2 - 0} = 3$, which gives $y = 3x + 4$. You know the number of stations, so 25 is the $y$-value. Set $3x + 4 = 25$, so $3x = 21$ and $x = 7$.",
+  "common_errors": [
+   {
+    "value": "79",
+    "misconception": "wrong-target-quantity",
+    "why": "Treated 25 as the number of weeks and found $y = 3(25) + 4$. That mixes up which coordinate is unknown."
+   },
+   {
+    "value": "3",
+    "misconception": "intermediate-step",
+    "why": "Stopped after finding the slope, the weekly increase."
+   },
+   {
+    "value": "29/3",
+    "misconception": "algebra-manipulation",
+    "why": "Added 4 to 25 instead of subtracting it, giving $x = \\frac{29}{3}$."
+   },
+   {
+    "value": "25/3",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the intercept and solved $3x = 25$."
+   }
+  ],
+  "id": "orig-build-line-the-M-404e9b",
+  "skill_cd": "H.C.",
+  "subtype": "build-line-then-find-point",
+  "subtype_name": "Build the line, then use it",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-line-the-M-404e9b",
+   "structure": [],
+   "solver_answer": 7,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the x-coordinate of the x-intercept of line $q$?",
+  "stimulus": "On a paleobotanist's graph of fossil pollen data, line $p$ passes through the points $(0, 12)$ and $(3, 6)$ in the xy-plane. Line $q$ is the result of translating line $p$ down 4 units.",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "The slope of line $p$ is $\\frac{6 - 12}{3 - 0} = -2$ and its y-intercept is 12, so line $p$ is $y = -2x + 12$. Moving the line down 4 units lowers $b$ by 4, so line $q$ is $y = -2x + 8$. Set $y = 0$: $-2x + 8 = 0$, so $x = 4$.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "missed-condition",
+    "why": "Found the x-intercept of line $p$ and forgot the shift."
+   },
+   {
+    "value": "2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Subtracted 4 from the original x-intercept of 6 instead of subtracting it from $b$."
+   },
+   {
+    "value": "8",
+    "misconception": "complement-or-direction-flip",
+    "why": "Shifted the line up instead of down, using $y = -2x + 16$."
+   },
+   {
+    "value": "-2",
+    "misconception": "intermediate-step",
+    "why": "Stopped after finding the slope."
+   }
+  ],
+  "id": "orig-build-line-the-M-4cda98",
+  "skill_cd": "H.C.",
+  "subtype": "build-line-then-find-point",
+  "subtype_name": "Build the line, then use it",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-line-the-M-4cda98",
+   "structure": [],
+   "solver_answer": 4,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "passes through the points __var__ and __var__ in",
+    "through the points __var__ and __var__ in the",
+    "the points __var__ and __var__ in the xy",
+    "points __var__ and __var__ in the xy plane",
+    "line __var__ is the result of translating line",
+    "__var__ is the result of translating line __var__",
+    "is the result of translating line __var__ down",
+    "x coordinate of the x intercept of line",
+    "coordinate of the x intercept of line __var__"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "The point $(k, 22)$ lies on line $n$. What is the value of $k$?",
+  "stimulus": "A musicologist plots tempo data in the xy-plane. The table gives two points on line $m$. Line $n$ is the result of translating line $m$ up 2 units.\n\nPoints on Line m\nx | y\n0 | 5\n4 | 11",
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "From the table, the slope of line $m$ is $\\frac{11 - 5}{4 - 0} = \\frac{3}{2}$ and its y-intercept is 5, so line $m$ is $y = \\frac{3}{2}x + 5$. Moving it up 2 units gives line $n$: $y = \\frac{3}{2}x + 7$. In the point $(k, 22)$ the $y$-value is 22, so $\\frac{3}{2}k + 7 = 22$. Then $\\frac{3}{2}k = 15$ and $k = 10$.",
+  "common_errors": [
+   {
+    "value": "34/3",
+    "misconception": "missed-condition",
+    "why": "Used line $m$ instead of line $n$: $\\frac{3}{2}k + 5 = 22$."
+   },
+   {
+    "value": "40",
+    "misconception": "wrong-target-quantity",
+    "why": "Treated 22 as the $x$-value and found $y = \\frac{3}{2}(22) + 7$."
+   },
+   {
+    "value": "38/3",
+    "misconception": "complement-or-direction-flip",
+    "why": "Shifted down instead of up, solving $\\frac{3}{2}k + 3 = 22$."
+   },
+   {
+    "value": "3/2",
+    "misconception": "intermediate-step",
+    "why": "Stopped after finding the slope."
+   }
+  ],
+  "id": "orig-build-line-the-M-74fddb",
+  "skill_cd": "H.C.",
+  "subtype": "build-line-then-find-point",
+  "subtype_name": "Build the line, then use it",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-line-the-M-74fddb",
+   "structure": [],
+   "solver_answer": 10,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ line __var__ is the result of translating",
+    "line __var__ is the result of translating line",
+    "__var__ is the result of translating line __var__"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "According to the model, how many days after the measurement began will the concentration be 20 units per milliliter?",
+  "stimulus": "An immunologist models the concentration of an antibody in a blood sample, in units per milliliter, as a linear function of the number of days since measurement began. The concentration was 80 units per milliliter when measurement began and 50 units per milliliter 6 days later.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "The starting value is the y-intercept, 80. The slope is $\\frac{50 - 80}{6 - 0} = -5$, so $y = -5x + 80$. The concentration is the $y$-value, so set $-5x + 80 = 20$. Then $-5x = -60$ and $x = 12$.",
+  "common_errors": [
+   {
+    "value": "16",
+    "misconception": "missed-condition",
+    "why": "Found when the concentration reaches 0 (the x-intercept) instead of when it reaches 20."
+   },
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the intercept and divided 20 by the rate of 5."
+   },
+   {
+    "value": "5",
+    "misconception": "intermediate-step",
+    "why": "Gave the daily decrease, which is the size of the slope."
+   },
+   {
+    "value": "6",
+    "misconception": "misread-given",
+    "why": "Used 50 as the starting value and solved $-5x + 50 = 20$."
+   }
+  ],
+  "id": "orig-build-line-the-M-35ad8b",
+  "skill_cd": "H.C.",
+  "subtype": "build-line-then-find-point",
+  "subtype_name": "Build the line, then use it",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-line-the-M-35ad8b",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The point $(k, 18)$ lies on the line for the second lane. What is the value of $k$?",
+  "stimulus": "On an urban planner's coordinate grid, a proposed bike lane follows the line through $(0, -3)$ and $(4, 5)$. A second lane follows the line that results from translating the first line up 7 units.",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "The slope of the first line is $\\frac{5 - (-3)}{4 - 0} = 2$ and its y-intercept is $-3$, so it is $y = 2x - 3$. Moving it up 7 units changes $b$ to $-3 + 7 = 4$, so the second lane is $y = 2x + 4$. Set $2k + 4 = 18$: $2k = 14$, so $k = 7$.",
+  "common_errors": [
+   {
+    "value": "21/2",
+    "misconception": "missed-condition",
+    "why": "Used the first line, $2k - 3 = 18$, and forgot the shift."
+   },
+   {
+    "value": "7/2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Found $k = 10.5$ on the original line and subtracted 7 from the x-coordinate instead of changing $b$."
+   },
+   {
+    "value": "14",
+    "misconception": "complement-or-direction-flip",
+    "why": "Shifted down instead of up, solving $2k - 10 = 18$."
+   },
+   {
+    "value": "40",
+    "misconception": "wrong-target-quantity",
+    "why": "Treated 18 as the $x$-value and found $y = 2(18) + 4$."
+   }
+  ],
+  "id": "orig-build-line-the-M-446629",
+  "skill_cd": "H.C.",
+  "subtype": "build-line-then-find-point",
+  "subtype_name": "Build the line, then use it",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-line-the-M-446629",
+   "structure": [],
+   "solver_answer": 7,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the x-coordinate of the x-intercept of line $t$?",
+  "stimulus": "A marine biologist graphs reef survey data in the xy-plane. Line $s$ passes through $(0, 15)$ and $(4, 9)$. Line $t$ is the result of translating line $s$ down 3 units.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "The slope of line $s$ is $\\frac{9 - 15}{4 - 0} = -\\frac{3}{2}$ and its y-intercept is 15, so line $s$ is $y = -\\frac{3}{2}x + 15$. Moving it down 3 units gives line $t$: $y = -\\frac{3}{2}x + 12$. Set $y = 0$: $\\frac{3}{2}x = 12$, so $x = 8$.",
+  "common_errors": [
+   {
+    "value": "10",
+    "misconception": "missed-condition",
+    "why": "Found the x-intercept of line $s$ and forgot the shift."
+   },
+   {
+    "value": "7",
+    "misconception": "graph-feature-mismatch",
+    "why": "Subtracted 3 from the original x-intercept of 10 instead of subtracting it from $b$."
+   },
+   {
+    "value": "12",
+    "misconception": "complement-or-direction-flip",
+    "why": "Shifted the line up instead of down, using $y = -\\frac{3}{2}x + 18$."
+   },
+   {
+    "value": "18",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 12 by $\\frac{3}{2}$ instead of dividing by it."
+   }
+  ],
+  "id": "orig-build-line-the-M-9598aa",
+  "skill_cd": "H.C.",
+  "subtype": "build-line-then-find-point",
+  "subtype_name": "Build the line, then use it",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-line-the-M-9598aa",
+   "structure": [],
+   "solver_answer": 8,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ line __var__ is the result of translating",
+    "line __var__ is the result of translating line",
+    "__var__ is the result of translating line __var__",
+    "is the result of translating line __var__ down",
+    "x coordinate of the x intercept of line",
+    "coordinate of the x intercept of line __var__"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "According to the model, after how many prints will 60 milliliters of ink remain?",
+  "stimulus": "A printmaking studio models the amount of ink left in a press reservoir, in milliliters, as a linear function of the number of prints made. The reservoir held 240 milliliters before any prints were made and 195 milliliters after 15 prints.",
+  "keys": [
+   "60"
+  ],
+  "any_of": false,
+  "explanation": "Before any prints, the amount is the y-intercept, 240. The slope is $\\frac{195 - 240}{15 - 0} = -3$, so $y = -3x + 240$. The ink remaining is the $y$-value, so set $-3x + 240 = 60$. Then $3x = 180$ and $x = 60$.",
+  "common_errors": [
+   {
+    "value": "80",
+    "misconception": "missed-condition",
+    "why": "Found when the reservoir is empty (the x-intercept) instead of when 60 milliliters remain."
+   },
+   {
+    "value": "20",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the intercept and divided 60 by the rate of 3."
+   },
+   {
+    "value": "45",
+    "misconception": "intermediate-step",
+    "why": "Gave the ink used in the first 15 prints, a value from partway through the work."
+   },
+   {
+    "value": "180",
+    "misconception": "intermediate-step",
+    "why": "Gave the ink used, $240 - 60$, without dividing by the rate."
+   }
+  ],
+  "id": "orig-build-line-the-M-865036",
+  "skill_cd": "H.C.",
+  "subtype": "build-line-then-find-point",
+  "subtype_name": "Build the line, then use it",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-line-the-M-865036",
+   "structure": [],
+   "solver_answer": 60,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The point $(9, k)$ lies on line $w$. What is the value of $k$?",
+  "stimulus": "An agricultural scientist graphs crop-growth data in the xy-plane. Line $v$ passes through $(0, 2)$ and $(5, 12)$. Line $w$ is the result of translating line $v$ down 6 units.",
+  "keys": [
+   "14"
+  ],
+  "any_of": false,
+  "explanation": "The slope of line $v$ is $\\frac{12 - 2}{5 - 0} = 2$ and its y-intercept is 2, so line $v$ is $y = 2x + 2$. Moving it down 6 units changes $b$ to $2 - 6 = -4$, so line $w$ is $y = 2x - 4$. Here the $x$-value is 9, so $k = 2(9) - 4 = 14$.",
+  "common_errors": [
+   {
+    "value": "20",
+    "misconception": "missed-condition",
+    "why": "Substituted into line $v$ and forgot the shift."
+   },
+   {
+    "value": "26",
+    "misconception": "complement-or-direction-flip",
+    "why": "Shifted up instead of down, using $y = 2x + 8$."
+   },
+   {
+    "value": "8",
+    "misconception": "graph-feature-mismatch",
+    "why": "Shifted the line 6 units right instead of down, using $y = 2(x - 6) + 2$."
+   },
+   {
+    "value": "13/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Treated 9 as the $y$-value and solved $2x - 4 = 9$."
+   }
+  ],
+  "id": "orig-build-line-the-M-88a2ff",
+  "skill_cd": "H.C.",
+  "subtype": "build-line-then-find-point",
+  "subtype_name": "Build the line, then use it",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-line-the-M-88a2ff",
+   "structure": [],
+   "solver_answer": 14,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ line __var__ is the result of translating",
+    "line __var__ is the result of translating line",
+    "__var__ is the result of translating line __var__",
+    "is the result of translating line __var__ down"
+   ],
+   "residue": 2
+  }
+ }
+]

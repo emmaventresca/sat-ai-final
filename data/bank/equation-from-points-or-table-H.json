@@ -461,5 +461,53 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "Which equation defines $f$?",
+  "stimulus": "On a topographic map, a surveyor marks a straight route across a hillside. For linear function $f$, $f(x)$ is the elevation, in meters, of the point that is $x$ kilometers along the route. The table shows three values of $x$ and their corresponding values of $f(x)$.\nElevation Along the Surveyed Route\n$x$ (kilometers) | $f(x)$ (meters)\n2 | 1,460\n5 | 1,370\n9 | 1,250",
+  "choices": [
+   "$f(x) = -90x + 1{,}640$",
+   "$f(x) = 30x + 1{,}400$",
+   "$f(x) = -30x + 1{,}520$",
+   "$f(x) = -30x + 1{,}460$"
+  ],
+  "answer": "C",
+  "explanation": "Start with the slope. Between the first two rows, $x$ goes up by $5 - 2 = 3$ and $f(x)$ goes from 1,460 to 1,370, which is a change of $-90$. So $m = \\frac{-90}{3} = -30$. The elevation drops along the route, so a negative slope makes sense. Next, find the intercept. Substitute $(2, 1{,}460)$ into $f(x) = -30x + b$ to get $1{,}460 = -60 + b$, so $b = 1{,}520$. Check the last row: $-30(9) + 1{,}520 = -270 + 1{,}520 = 1{,}250$, which matches. The equation is $f(x) = -30x + 1{,}520$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You took the drop of 90 between the first two rows as the slope and didn't divide by the change in $x$, which is 3, not 1. You then built the intercept from $(2, 1{,}460)$, so this equation works for the first row only. Check $x = 5$: it gives 1,190, not 1,370."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You mixed up the subtraction order: you computed the change in output as $1{,}460 - 1{,}370$ but the change in input as $5 - 2$. That gives a slope of $+30$, but the elevation goes down as $x$ goes up, so the slope has to be negative. Using $+30$ with the point $(2, 1{,}460)$ then gives the wrong intercept of 1,400."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "Your slope is right, but you used the first value in the table, 1,460, as the y-intercept. That value is $f(2)$, not $f(0)$. The intercept is the elevation at $x = 0$, so you have to go back two kilometers: $1{,}460 + 2(30) = 1{,}520$."
+   }
+  },
+  "id": "orig-equation-from--H-ffcfae",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--H-ffcfae",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

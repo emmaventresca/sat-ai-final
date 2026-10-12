@@ -243,5 +243,788 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "At this rate, how many square inches of plate does the brayer ink per second? (1 foot = 12 inches)",
+  "stimulus": "A printmaker rolls ink across a linoleum plate with a brayer. The brayer covers the plate at a constant rate of 3 square feet per minute.",
+  "choices": [
+   "$0.6$",
+   "$7.2$",
+   "$432$",
+   "$25{,}920$"
+  ],
+  "answer": "B",
+  "explanation": "There are two conversions here. For the area, you use the linear factor twice: 1 square foot = $12^2 = 144$ square inches, so 3 square feet per minute is $3 \\times 144 = 432$ square inches per minute. For the time, 1 minute = 60 seconds, so you divide by 60: $\\frac{432}{60} = 7.2$ square inches per second. Check the units as you go: $\\frac{3\\text{ ft}^2}{\\text{min}} \\times \\frac{144\\text{ in}^2}{1\\text{ ft}^2} \\times \\frac{1\\text{ min}}{60\\text{ s}}$. Everything cancels except square inches per second.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "This is the trap for this kind of question. You multiplied by 12 only once, $\\frac{3 \\times 12}{60} = 0.6$, as if square feet changed to square inches by the linear factor. An area unit needs that factor squared, which is 144."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You converted square feet to square inches correctly and got 432 square inches per minute. Then you stopped before changing per minute to per second. Reread the last line: it asks for a rate per second."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by 60 when you should have divided, $432 \\times 60 = 25{,}920$. The brayer covers less area in one second than in one minute, so the per-second number has to be smaller than 432. Writing out the units shows that minutes only cancel if 60 seconds goes in the denominator."
+   }
+  },
+  "id": "orig-compound-and-s-M-95cabc",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-and-s-M-95cabc",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the area of the rupture, in square meters?",
+  "stimulus": "After an earthquake, seismologists estimated that the part of the fault that slipped covered an area of 450 square kilometers. There are 1,000 meters in 1 kilometer.",
+  "choices": [
+   "$450(1{,}000)$",
+   "$450(1{,}000)^2$",
+   "$450(1{,}000)^3$",
+   "$\\frac{450}{(1{,}000)^2}$"
+  ],
+  "answer": "B",
+  "explanation": "One square kilometer is a square 1,000 meters long and 1,000 meters wide, so it holds $(1{,}000)^2$ square meters. Because area has two length dimensions, you apply the linear factor twice: $450(1{,}000)^2$ square meters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the linear factor only once. That converts kilometers to meters, but the area is in square kilometers, so the factor has to be squared."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You cubed the factor, which converts a volume. An area has two dimensions, so the factor is squared."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided when you should have multiplied. A square meter is smaller than a square kilometer, so the number of square meters has to be larger than 450."
+   }
+  },
+  "id": "orig-compound-and-s-M-df0540",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-and-s-M-df0540",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the discharge of the stream, in cubic yards per second?",
+  "stimulus": "A hydrologist measured the discharge of a mountain stream as 84 cubic feet of water per second. There are 3 feet in 1 yard.",
+  "choices": [
+   "$\\frac{84}{3}$",
+   "$\\frac{84}{3^2}$",
+   "$\\frac{84}{3^3}$",
+   "$84(3^3)$"
+  ],
+  "answer": "C",
+  "explanation": "Only the volume part of the unit changes. The \"per second\" part stays the same. One cubic yard is $3 \\times 3 \\times 3 = 3^3$ cubic feet, so you divide 84 cubic feet by $3^3$ to get the number of cubic yards: $\\frac{84}{3^3}$ cubic yards per second.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the linear factor only once. Volume has three dimensions, so you need to divide by 3 three times."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You squared the factor as if this were an area. Cubic units need the factor cubed."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You multiplied when you should have divided. A cubic yard is bigger than a cubic foot, so the stream carries fewer cubic yards per second than cubic feet per second."
+   }
+  },
+  "id": "orig-compound-and-s-M-5716cd",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-and-s-M-5716cd",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the shoot density of the meadow, in shoots per square centimeter?",
+  "stimulus": "A marine biologist surveying a seagrass meadow counted an average of 1,200 shoots per square meter of seafloor. There are 100 centimeters in 1 meter.",
+  "choices": [
+   "$\\frac{1{,}200}{100}$",
+   "$\\frac{1{,}200}{100^2}$",
+   "$1{,}200(100^2)$",
+   "$\\frac{1{,}200}{100^3}$"
+  ],
+  "answer": "B",
+  "explanation": "The shoot count stays the same. Only the \"per square meter\" part changes. One square meter is $100 \\times 100 = 100^2$ square centimeters, so the same 1,200 shoots are spread over $100^2$ times as many units. That gives $\\frac{1{,}200}{100^2}$ shoots per square centimeter.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the linear factor only once. The density is per square meter, so the factor of 100 has to be squared."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You multiplied by the conversion factor when you should have divided by it. A square centimeter is much smaller than a square meter, so it holds far fewer shoots, not more."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You cubed the factor as if the density were per cubic meter. The survey measures area on the seafloor, so the factor is squared."
+   }
+  },
+  "id": "orig-compound-and-s-M-1334d2",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-and-s-M-1334d2",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A lab is testing a thin polymer sheet. Every square centimeter of the sheet has a mass of 0.6 grams, and the mass is spread evenly across the sheet. (1 meter = 100 centimeters)",
+  "choices": [
+   "A piece of the sheet measuring 1 square meter has a mass of 60 grams.",
+   "A piece of the sheet measuring 1 square meter has a mass of 6,000 grams.",
+   "A piece of the sheet measuring 1 square meter has a mass of 600,000 grams.",
+   "A piece of the sheet measuring 1 square meter has a mass of 0.00006 grams."
+  ],
+  "answer": "B",
+  "explanation": "Only the area part of the unit changes, so you keep 'grams' as it is. A square meter is 100 cm by 100 cm, so $1\\text{ m}^2 = 100^2 = 10{,}000\\text{ cm}^2$. That gives $0.6 \\tfrac{\\text{g}}{\\text{cm}^2} \\times 10{,}000 \\tfrac{\\text{cm}^2}{\\text{m}^2} = 6{,}000 \\tfrac{\\text{g}}{\\text{m}^2}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "This is the trap for this kind of question. You multiplied by the linear factor 100 once ($0.6 \\times 100 = 60$). A square meter is 100 cm on each side, so you need to square the factor and multiply by 10,000."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the factor three times ($0.6 \\times 100^3$), which is the conversion for cubic units. The sheet is measured in square units, so you square the factor, not cube it."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided by 10,000 instead of multiplying. A square meter is far bigger than a square centimeter, so it has to hold more mass, not less. If you write the units out, $\\tfrac{\\text{cm}^2}{\\text{m}^2}$ only cancels when you multiply."
+   }
+  },
+  "id": "orig-compound-and-s-M-d1f751",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-and-s-M-d1f751",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A hospital IV pump is set to give a patient saline at a steady rate of 90 milliliters per hour.",
+  "choices": [
+   "The pump delivers saline at 15 milliliters per minute.",
+   "The pump delivers saline at 0.09 liters per minute.",
+   "The pump delivers saline at 1.5 milliliters per minute.",
+   "The pump delivers saline at 5,400 milliliters per minute."
+  ],
+  "answer": "C",
+  "explanation": "All four choices are per minute, so only the time part of the unit has to change. Keep milliliters as they are and convert hours to minutes: $90 \\tfrac{\\text{mL}}{\\text{hr}} \\times \\tfrac{1\\text{ hr}}{60\\text{ min}} = 1.5 \\tfrac{\\text{mL}}{\\text{min}}$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You read the rate as 900 mL per hour ($900 \\div 60 = 15$), or slipped a decimal place. The rate given is 90 mL per hour."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You converted the part that should have stayed the same. You changed 90 mL into 0.09 L, then just relabeled 'per hour' as 'per minute' without dividing by 60. The correct rate in liters is 0.0015 L per minute."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "This is the trap for this kind of question. You flipped the factor and multiplied by 60 ($90 \\times 60$) when you should have divided. A minute is shorter than an hour, so less fluid goes in per minute, not more."
+   }
+  },
+  "id": "orig-compound-and-s-M-82e431",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-and-s-M-82e431",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "On a hiking map, 1 centimeter represents 2 kilometers. On the map, a lake covers 7.5 square centimeters.",
+  "choices": [
+   "The actual lake covers 15 square kilometers.",
+   "The actual lake covers 3.75 square kilometers.",
+   "The actual lake covers 60 square kilometers.",
+   "The actual lake covers 30 square kilometers."
+  ],
+  "answer": "D",
+  "explanation": "The scale is a length scale, so 1 square centimeter on the map is a 2 km by 2 km square: $1\\text{ cm}^2 \\to 2^2 = 4\\text{ km}^2$. So the lake covers $7.5 \\times 4 = 30$ square kilometers.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "This is the trap for this kind of question. You used the length factor once ($7.5 \\times 2$). The map shows area, so you need to square the factor: each square centimeter stands for 4 square kilometers."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided by the scale factor instead of multiplying. Each map centimeter stands for more ground than itself, so the real area has to be bigger than 7.5, not smaller."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You cubed the factor ($7.5 \\times 2^3$), which is the conversion for volume. An area uses the factor twice, not three times."
+   }
+  },
+  "id": "orig-compound-and-s-M-37b1bf",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-and-s-M-37b1bf",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A stream gauge records a steady discharge of 18 cubic feet of water per second. What is this discharge, in cubic yards per minute? (1 yard = 3 feet)",
+  "stimulus": null,
+  "choices": [
+   "0.67",
+   "40",
+   "360",
+   "29,160"
+  ],
+  "answer": "B",
+  "explanation": "A cubic yard is $3^3 = 27$ cubic feet, so convert the volume with the cubed factor and the time with 60 seconds per minute: $18\\ \\frac{\\text{ft}^3}{\\text{s}} \\times \\frac{1\\ \\text{yd}^3}{27\\ \\text{ft}^3} \\times \\frac{60\\ \\text{s}}{1\\ \\text{min}} = \\frac{18 \\times 60}{27} = 40$ cubic yards per minute. Cubic feet and seconds both cancel, and only cubic yards per minute are left.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You converted cubic feet to cubic yards correctly ($18 \\div 27 \\approx 0.67$), but you stopped there. That number is still per second, and the question asks for per minute."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided by 3 instead of 27, using the linear factor once for a cubic unit: $18 \\div 3 \\times 60 = 360$. A cubic yard is $3 \\times 3 \\times 3$ cubic feet, so the factor has to be cubed."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by 27 where you should have divided: $18 \\times 27 \\times 60$. A cubic yard is bigger than a cubic foot, so the same flow is fewer cubic yards. Writing the units down would have shown the cubic feet not cancelling."
+   }
+  },
+  "id": "orig-compound-and-s-M-6244c5",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-and-s-M-6244c5",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In a stained tissue section, a researcher measures an average density of 0.003 T cells per square micrometer. What is this density, in T cells per square millimeter? (1 millimeter = 1,000 micrometers)",
+  "stimulus": null,
+  "choices": [
+   "3",
+   "6",
+   "3,000",
+   "3,000,000"
+  ],
+  "answer": "C",
+  "explanation": "Only the area unit changes. The count of T cells stays as it is. One square millimeter is $1{,}000^2 = 1{,}000{,}000$ square micrometers, so $0.003\\ \\frac{\\text{cells}}{\\mu\\text{m}^2} \\times \\frac{1{,}000{,}000\\ \\mu\\text{m}^2}{1\\ \\text{mm}^2} = 3{,}000$ T cells per square millimeter.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by 1,000 once, as if the unit were a length. Square micrometers to square millimeters needs the factor applied twice: $1{,}000^2$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated \"squared\" as \"times 2\" and computed $0.003 \\times 1{,}000 \\times 2$. Squaring the factor means $1{,}000 \\times 1{,}000$, not $1{,}000 \\times 2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You cubed the factor ($1{,}000^3$), which is the conversion for volume. A density per square unit only needs the factor squared."
+   }
+  },
+  "id": "orig-compound-and-s-M-d90aa1",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-and-s-M-d90aa1",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A power loom in an 1840s cotton mill wove 15 square yards of calico during a 10-hour shift. At this rate, how many square feet of calico did the loom weave per hour? (1 yard = 3 feet)",
+  "stimulus": null,
+  "choices": [
+   "4.5",
+   "13.5",
+   "135",
+   "1,350"
+  ],
+  "answer": "B",
+  "explanation": "A square yard is $3^2 = 9$ square feet, so the shift produced $15 \\times 9 = 135$ square feet. Spread over 10 hours, that is $\\frac{135\\ \\text{ft}^2}{10\\ \\text{h}} = 13.5$ square feet per hour.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by 3 instead of 9, using the linear factor once for an area: $15 \\times 3 \\div 10 = 4.5$. A square yard is 3 feet by 3 feet, which is 9 square feet."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "135 square feet is the total for the whole shift. The question asks for a rate per hour, so you still need to divide by 10."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by the 10 hours instead of dividing by them. Square feet per hour means hours go in the denominator, so the units show the division."
+   }
+  },
+  "id": "orig-compound-and-s-M-247df7",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-and-s-M-247df7",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many more square inches of area does the press bed have than the linoleum block? (1 foot = 12 inches)",
+  "stimulus": "A printmaker's press bed has an area of 3 square feet. The linoleum block she plans to carve has an area of 360 square inches.",
+  "choices": [
+   "0.5",
+   "72",
+   "324",
+   "432"
+  ],
+  "answer": "B",
+  "explanation": "One square foot is $12 \\times 12 = 144$ square inches, so the press bed is $3 \\times 144 = 432$ square inches. The gap is $432 - 360 = 72$ square inches.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You turned the block into square feet ($360 \\div 720$ is not the step, but $360$ in\u00b2 $= 2.5$ ft\u00b2) and gave the gap $3 - 2.5 = 0.5$ in square feet. The question asks for square inches."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by 12 only once, getting $3 \\times 12 = 36$ square inches, and then found $360 - 36 = 324$. Square units need the linear factor twice: $12^2 = 144$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "432 square inches is the area of the press bed. You stopped before subtracting the block's area."
+   }
+  },
+  "id": "orig-compound-and-s-M-5028f9",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-and-s-M-5028f9",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many meters per second faster is sprinter B's top speed than sprinter A's? (1 kilometer = 1,000 meters)",
+  "stimulus": "A sports scientist records sprinter A's top speed as 8 meters per second and sprinter B's top speed as 36 kilometers per hour.",
+  "choices": [
+   "2",
+   "10",
+   "28",
+   "121.6"
+  ],
+  "answer": "A",
+  "explanation": "Convert sprinter B's speed: $36 \\frac{\\text{km}}{\\text{h}} \\times \\frac{1{,}000 \\text{ m}}{1 \\text{ km}} \\times \\frac{1 \\text{ h}}{3{,}600 \\text{ s}} = 10$ meters per second. The difference is $10 - 8 = 2$ meters per second.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "10 meters per second is sprinter B's speed after conversion. You didn't subtract sprinter A's speed to find how much faster."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You subtracted $36 - 8$ as if both speeds were already in meters per second. Sprinter B's speed is in kilometers per hour and has to be converted first."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the conversion and multiplied by 3.6 ($36 \\times 3.6 = 129.6$) when you should have divided, then subtracted 8. Write the units down: a faster-looking number in smaller units per larger time unit doesn't cancel properly."
+   }
+  },
+  "id": "orig-compound-and-s-M-8e2c34",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-and-s-M-8e2c34",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Tank A's volume is how many times tank B's volume? (1 meter = 100 centimeters)",
+  "stimulus": "An orbiting telescope's infrared camera is cooled by two liquid-helium tanks. Tank A has a volume of 2.4 cubic meters, and tank B has a volume of 600,000 cubic centimeters.",
+  "choices": [
+   "0.0004",
+   "0.004",
+   "0.04",
+   "4"
+  ],
+  "answer": "D",
+  "explanation": "One cubic meter is $100^3 = 1{,}000{,}000$ cubic centimeters, so tank A holds $2.4 \\times 1{,}000{,}000 = 2{,}400{,}000$ cubic centimeters. Then $\\frac{2{,}400{,}000}{600{,}000} = 4$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the factor only once: $2.4 \\times 100 = 240$, and $\\frac{240}{600{,}000} = 0.0004$. For volume, the linear factor has to be cubed."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used 1,000 cubic centimeters per cubic meter, which is the number of cubic centimeters in a liter: $\\frac{2{,}400}{600{,}000} = 0.004$. A cubic meter is $100^3 = 1{,}000{,}000$ cubic centimeters."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You squared the factor when it should be cubed: $2.4 \\times 100^2 = 24{,}000$, and $\\frac{24{,}000}{600{,}000} = 0.04$. Cubic units need the factor three times."
+   }
+  },
+  "id": "orig-compound-and-s-M-a87936",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-and-s-M-a87936",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is this rate in millimeters per hour?",
+  "stimulus": "A weather station recorded rain falling at a constant rate of 1.2 inches per hour during a storm. Use $1$ inch $= 2.54$ centimeters and $1$ centimeter $= 10$ millimeters.",
+  "choices": [
+   "3.048",
+   "4.724",
+   "30.48",
+   "304.8"
+  ],
+  "answer": "C",
+  "explanation": "Only the length part of the rate changes. The 'per hour' part stays the same. Build the chain so that inches and then centimeters cancel: $1.2 \\frac{\\text{in}}{\\text{h}} \\times \\frac{2.54 \\text{ cm}}{1 \\text{ in}} \\times \\frac{10 \\text{ mm}}{1 \\text{ cm}} = 30.48$ millimeters per hour.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You converted inches to centimeters ($1.2 \\times 2.54 = 3.048$) and stopped there. That number is the rate in centimeters per hour, so you still have to multiply by 10 to get millimeters."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided by 2.54 when you should have multiplied ($1.2 \\div 2.54 \\times 10 \\approx 4.724$). Write the units into the chain. If inches don't cancel, the factor is upside down."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used 100 millimeters per centimeter in place of 10. That gives $3.048 \\times 100 = 304.8$. A centimeter is 10 millimeters, not 100."
+   }
+  },
+  "id": "orig-compound-and-s-M-e17f1f",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-and-s-M-e17f1f",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is this coating rate in grams per square meter?",
+  "stimulus": "A materials lab sprays a protective ceramic coating onto steel panels at a rate of 0.05 gram per square centimeter of panel surface. Use $1$ meter $= 100$ centimeters.",
+  "choices": [
+   "0.000005",
+   "0.0005",
+   "5",
+   "500"
+  ],
+  "answer": "D",
+  "explanation": "Only the area part of the unit changes. A square meter is $100 \\times 100 = 10{,}000$ square centimeters, so each square meter gets 10,000 times as much coating as one square centimeter: $0.05 \\times 100^2 = 500$ grams per square meter.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You squared the factor correctly but divided when you should have multiplied ($0.05 \\div 10{,}000$). A square meter is larger than a square centimeter, so it needs more coating, not less."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You made two errors here. You applied the linear factor only once and you also divided ($0.05 \\div 100$). The area unit needs $100^2$, and a bigger area needs more coating."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by 100 once, as if the unit were plain centimeters. Square centimeters need the factor applied twice: $100^2 = 10{,}000$."
+   }
+  },
+  "id": "orig-compound-and-s-M-9bc16c",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-and-s-M-9bc16c",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is this density in copepods per cubic centimeter?",
+  "stimulus": "A marine biologist estimates that the water in a coastal plankton bloom contains 1,500 copepods per cubic meter. Use $1$ meter $= 100$ centimeters.",
+  "choices": [
+   "0.0015",
+   "0.15",
+   "15",
+   "$1.5 \\times 10^{9}$"
+  ],
+  "answer": "A",
+  "explanation": "Only the volume part of the unit changes. A cubic meter is $100^3 = 1{,}000{,}000$ cubic centimeters, so each cubic centimeter holds one-millionth as many copepods: $1{,}500 \\div 100^3 = 0.0015$ copepod per cubic centimeter.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You squared the factor ($1{,}500 \\div 100^2$) as if it were an area. Volume needs the linear factor applied three times."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the linear factor only once ($1{,}500 \\div 100$). Cubic centimeters need the factor cubed: $100^3 = 1{,}000{,}000$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You cubed the factor correctly but multiplied instead of dividing. A cubic centimeter is much smaller than a cubic meter, so it holds far fewer copepods."
+   }
+  },
+  "id": "orig-compound-and-s-M-a36b74",
+  "skill_cd": "Q.A.",
+  "subtype": "compound-and-squared-units",
+  "subtype_name": "Converting rates and squared/cubed units",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-and-s-M-a36b74",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

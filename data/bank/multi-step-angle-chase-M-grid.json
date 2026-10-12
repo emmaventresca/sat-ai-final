@@ -87,11 +87,17 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "grid",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-multi-step-ang-M-e0ab3a",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": 24,
+   "agrees": false,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "__var__ and __var__ in triangle __var__ the measure",
     "and __var__ in triangle __var__ the measure of",
@@ -105,8 +111,7 @@
     "__var__ in triangle __var__ the measure of angle"
    ],
    "residue": 1
-  },
-  "phrasing": "direct"
+  }
  },
  {
   "stem": "What is the measure, in degrees, of angle $RBP$?",
@@ -217,5 +222,638 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $BDC$?",
+  "stimulus": "An agronomist's field sketch shows points $A$, $B$, and $C$ on a straight irrigation ditch, with $B$ between $A$ and $C$. Point $D$ is a sensor post off the ditch. Angle $ABD$ measures $128^\\circ$ and angle $BCD$ measures $47^\\circ$.",
+  "keys": [
+   "81"
+  ],
+  "any_of": false,
+  "explanation": "Angle $ABD$ lies outside triangle $BCD$, next to its interior angle $DBC$. Because $A$, $B$, and $C$ are on a line, angle $DBC = 180 - 128 = 52^\\circ$. The angles of triangle $BCD$ add to $180^\\circ$, so angle $BDC = 180 - 52 - 47 = 81^\\circ$. As a shortcut, the exterior angle equals the sum of the two opposite interior angles: $128 = 47 + \\angle BDC$, which also gives $81$.",
+  "common_errors": [
+   {
+    "value": "52",
+    "misconception": "intermediate-step",
+    "why": "Stopped at angle DBC, the linear-pair partner of the 128\u00b0 angle, and didn't go on to use the triangle sum."
+   },
+   {
+    "value": "175",
+    "misconception": "algebra-manipulation",
+    "why": "Added 128 and 47 when the exterior-angle relation called for subtracting."
+   },
+   {
+    "value": "133",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the supplement of angle BCD, which is the exterior angle at C and not angle BDC."
+   }
+  ],
+  "id": "orig-multi-step-ang-M-09123a",
+  "skill_cd": "S.B.",
+  "subtype": "multi-step-angle-chase",
+  "subtype_name": "Multi-step angle chase through a composite figure",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-multi-step-ang-M-09123a",
+   "structure": [],
+   "solver_answer": 81,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of the obtuse angle formed where segment $PR$ meets line $\\ell$?",
+  "stimulus": "On a reef survey chart, transect lines $\\ell$ and $m$ are parallel. Point $P$ is on $\\ell$, and points $Q$ and $R$ are on $m$. In triangle $PQR$, angle $QPR$ measures $38^\\circ$ and angle $PQR$ measures $74^\\circ$.",
+  "keys": [
+   "112"
+  ],
+  "any_of": false,
+  "explanation": "Find the third angle of triangle $PQR$ first: angle $PRQ = 180 - 38 - 74 = 68^\\circ$. Segment $PR$ is a transversal of the parallel lines, so the acute angle it makes with $\\ell$ at $P$ is the alternate interior angle to angle $PRQ$, which is $68^\\circ$. The obtuse angle on the same line is its supplement: $180 - 68 = 112^\\circ$.",
+  "common_errors": [
+   {
+    "value": "68",
+    "misconception": "intermediate-step",
+    "why": "Found the acute angle (triangle angle PRQ) and gave it without converting to the obtuse angle the question asks for."
+   },
+   {
+    "value": "106",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the obtuse angle where PQ meets \u2113, which is 180 \u2212 74, instead of the angle for PR."
+   },
+   {
+    "value": "142",
+    "misconception": "wrong-target-quantity",
+    "why": "Took the supplement of angle QPR (180 \u2212 38), an angle at P that isn't formed by PR and \u2113."
+   }
+  ],
+  "id": "orig-multi-step-ang-M-ddd4a5",
+  "skill_cd": "S.B.",
+  "subtype": "multi-step-angle-chase",
+  "subtype_name": "Multi-step angle chase through a composite figure",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-multi-step-ang-M-ddd4a5",
+   "structure": [],
+   "solver_answer": 112,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ and __var__ are parallel point __var__ is",
+    "what is the measure in degrees of the"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $ODE$?",
+  "stimulus": "In a telescope alignment diagram, line $AB$ and line $CD$ intersect at point $O$, which lies between $A$ and $B$ and between $C$ and $D$. Angle $AOC$ measures $52^\\circ$ and angle $OBD$ measures $61^\\circ$. Points $B$, $D$, and $E$ lie on a line, with $D$ between $B$ and $E$.",
+  "keys": [
+   "113"
+  ],
+  "any_of": false,
+  "explanation": "Angles $AOC$ and $BOD$ are vertical angles, so angle $BOD = 52^\\circ$. In triangle $BOD$, angle $ODB = 180 - 52 - 61 = 67^\\circ$. Angle $ODE$ sits on a straight line with angle $ODB$, so angle $ODE = 180 - 67 = 113^\\circ$. You can also treat it as an exterior angle of triangle $BOD$: $52 + 61 = 113$.",
+  "common_errors": [
+   {
+    "value": "67",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the interior angle ODB and didn't take its supplement."
+   },
+   {
+    "value": "128",
+    "misconception": "wrong-target-quantity",
+    "why": "Used angle AOD or BOC (180 \u2212 52), the angle beside AOC, instead of its vertical partner."
+   },
+   {
+    "value": "119",
+    "misconception": "wrong-target-quantity",
+    "why": "Took the supplement of angle OBD (180 \u2212 61), which is the exterior angle at B and not the one at D."
+   }
+  ],
+  "id": "orig-multi-step-ang-M-3ef9ba",
+  "skill_cd": "S.B.",
+  "subtype": "multi-step-angle-chase",
+  "subtype_name": "Multi-step angle chase through a composite figure",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-multi-step-ang-M-3ef9ba",
+   "structure": [],
+   "solver_answer": 113,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $PRS$?",
+  "stimulus": "An immunology textbook models one arm of an antibody as triangle $PQR$, where $PQ = PR$ and angle $QPR$ measures $34^\\circ$. Point $S$ lies on ray $QR$ beyond $R$.",
+  "keys": [
+   "107"
+  ],
+  "any_of": false,
+  "explanation": "Because $PQ = PR$, the base angles at $Q$ and $R$ are equal. Each one is $\\frac{180 - 34}{2} = 73^\\circ$. Angle $PRS$ makes a straight line with angle $PRQ$, so angle $PRS = 180 - 73 = 107^\\circ$. As a check, the exterior angle equals $34 + 73 = 107$.",
+  "common_errors": [
+   {
+    "value": "73",
+    "misconception": "intermediate-step",
+    "why": "Found the base angle PRQ and stopped before taking its supplement."
+   },
+   {
+    "value": "146",
+    "misconception": "misread-given",
+    "why": "Read the equal sides as making the angles at P and R equal (34\u00b0 each), so took 180 \u2212 34."
+   },
+   {
+    "value": "53",
+    "misconception": "algebra-manipulation",
+    "why": "Got the base angle as (180 \u2212 34)/2 = 73 but then subtracted 73 from 180 again within the triangle, ending at 180 \u2212 73 \u2212 34 \u2212 20 by slips; most often comes from computing 180 \u2212 34 \u2212 93 after doubling 73 incorrectly as 93 instead of 146."
+   }
+  ],
+  "id": "orig-multi-step-ang-M-b83c1e",
+  "skill_cd": "S.B.",
+  "subtype": "multi-step-angle-chase",
+  "subtype_name": "Multi-step angle chase through a composite figure",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-multi-step-ang-M-b83c1e",
+   "structure": [],
+   "solver_answer": 107,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $ACB$?",
+  "stimulus": "A labor economics handout uses a figure in which lines $\\ell$ and $m$ are parallel. Point $A$ is on $\\ell$, point $B$ is on $m$, and point $C$ lies between the two lines. Point $D$ on $\\ell$ and point $E$ on $m$ are on the same side of line $AB$ as $C$. Angle $DAC$ measures $35^\\circ$ and angle $EBC$ measures $50^\\circ$.",
+  "keys": [
+   "85"
+  ],
+  "any_of": false,
+  "explanation": "Draw a line through $C$ parallel to $\\ell$ and $m$. This splits angle $ACB$ into two parts. The upper part is an alternate interior angle with angle $DAC$, so it is $35^\\circ$. The lower part is an alternate interior angle with angle $EBC$, so it is $50^\\circ$. Add them: angle $ACB = 35 + 50 = 85^\\circ$.",
+  "common_errors": [
+   {
+    "value": "95",
+    "misconception": "wrong-target-quantity",
+    "why": "Treated the two given angles as parts of a triangle and found 180 \u2212 35 \u2212 50, which is a different angle from ACB."
+   },
+   {
+    "value": "15",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the given angles instead of adding the two alternate-angle pieces."
+   },
+   {
+    "value": "35",
+    "misconception": "intermediate-step",
+    "why": "Found only the upper piece of angle ACB from the first pair of parallel-line angles."
+   }
+  ],
+  "id": "orig-multi-step-ang-M-2b1150",
+  "skill_cd": "S.B.",
+  "subtype": "multi-step-angle-chase",
+  "subtype_name": "Multi-step angle chase through a composite figure",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-multi-step-ang-M-2b1150",
+   "structure": [],
+   "solver_answer": 85,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ and __var__ are parallel point __var__ is"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $DBC$?",
+  "stimulus": "On a city map, four roads bound a park shaped like quadrilateral $ABCD$, with road $AB$ parallel to road $DC$. A straight footpath runs from $B$ to $D$. Angle $ABD$ measures $41^\\circ$ and angle $BCD$ measures $63^\\circ$.",
+  "keys": [
+   "76"
+  ],
+  "any_of": false,
+  "explanation": "The footpath $BD$ is a transversal of the parallel roads $AB$ and $DC$. That makes angle $BDC$ equal to its alternate interior angle $ABD$, so angle $BDC = 41^\\circ$. In triangle $BCD$, angle $DBC = 180 - 41 - 63 = 76^\\circ$.",
+  "common_errors": [
+   {
+    "value": "117",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the whole angle ABC (180 \u2212 63, co-interior with angle C) instead of the part DBC."
+   },
+   {
+    "value": "104",
+    "misconception": "intermediate-step",
+    "why": "Added the two known triangle angles (41 + 63) and didn't subtract the sum from 180."
+   },
+   {
+    "value": "41",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave angle BDC, the alternate-angle partner of angle ABD, instead of the angle at B."
+   }
+  ],
+  "id": "orig-multi-step-ang-M-c324e9",
+  "skill_cd": "S.B.",
+  "subtype": "multi-step-angle-chase",
+  "subtype_name": "Multi-step angle chase through a composite figure",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-multi-step-ang-M-c324e9",
+   "structure": [],
+   "solver_answer": 76,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $ACB$?",
+  "stimulus": "A sports scientist models a sprinter's stride as triangle $ABC$, with point $D$ on ray $BC$ beyond $C$. Angle $BAC$ measures $(x + 30)^\\circ$, angle $ABC$ measures $(2x)^\\circ$, and angle $ACD$ measures $(4x - 6)^\\circ$.",
+  "keys": [
+   "42"
+  ],
+  "any_of": false,
+  "explanation": "Angle $ACD$ is an exterior angle of the triangle, so it equals the sum of the two opposite interior angles: $4x - 6 = (x + 30) + 2x$. That gives $x = 36$, so angle $ACD = 4(36) - 6 = 138^\\circ$. Angle $ACB$ is on a straight line with angle $ACD$, so angle $ACB = 180 - 138 = 42^\\circ$.",
+  "common_errors": [
+   {
+    "value": "36",
+    "misconception": "intermediate-step",
+    "why": "Solved for x and reported it as the angle."
+   },
+   {
+    "value": "138",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the exterior angle ACD instead of the interior angle ACB next to it."
+   },
+   {
+    "value": "72",
+    "misconception": "wrong-target-quantity",
+    "why": "Substituted x = 36 into the expression for angle ABC instead of finding angle ACB."
+   }
+  ],
+  "id": "orig-multi-step-ang-M-eb5c7a",
+  "skill_cd": "S.B.",
+  "subtype": "multi-step-angle-chase",
+  "subtype_name": "Multi-step angle chase through a composite figure",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-multi-step-ang-M-eb5c7a",
+   "structure": [],
+   "solver_answer": 42,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $CED$?",
+  "stimulus": "A printmaker carves a bow-tie block in which segments $AD$ and $BE$ intersect at point $C$, forming triangles $ABC$ and $DEC$. Angle $CAB$ measures $48^\\circ$, angle $CBA$ measures $70^\\circ$, and angle $CDE$ measures $55^\\circ$.",
+  "keys": [
+   "63"
+  ],
+  "any_of": false,
+  "explanation": "In triangle $ABC$, angle $ACB = 180 - 48 - 70 = 62^\\circ$. Angles $ACB$ and $DCE$ are vertical angles, so angle $DCE = 62^\\circ$. In triangle $DEC$, angle $CED = 180 - 62 - 55 = 63^\\circ$.",
+  "common_errors": [
+   {
+    "value": "62",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the angle at C and didn't carry it into the second triangle."
+   },
+   {
+    "value": "70",
+    "misconception": "overreach-beyond-evidence",
+    "why": "Assumed AB is parallel to DE, which the question never states, and copied angle CBA across as an alternate angle."
+   },
+   {
+    "value": "7",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the angle beside ACB (180 \u2212 62 = 118) instead of its vertical partner, giving 180 \u2212 118 \u2212 55."
+   }
+  ],
+  "id": "orig-multi-step-ang-M-d53261",
+  "skill_cd": "S.B.",
+  "subtype": "multi-step-angle-chase",
+  "subtype_name": "Multi-step angle chase through a composite figure",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-multi-step-ang-M-d53261",
+   "structure": [],
+   "solver_answer": 63,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of $\\angle BAC$?",
+  "stimulus": "A printmaker sketches a woodblock design whose top and bottom borders are parallel lines $\\ell$ and $m$. Point $A$ is on $\\ell$, and points $B$, $C$, and $D$ lie on $m$ in that order. Point $E$ is on $\\ell$, on the opposite side of line $AB$ from $C$. Segments $AB$ and $AC$ are carved into the block. In the design, $m\\angle EAB = 48^\\circ$ and $m\\angle ACD = 115^\\circ$.",
+  "keys": [
+   "67"
+  ],
+  "any_of": false,
+  "explanation": "Mark the figure as you go. Lines $\\ell$ and $m$ are parallel, and $AB$ is a transversal. $\\angle EAB$ and $\\angle ABC$ are alternate interior angles, so $m\\angle ABC = 48^\\circ$. $\\angle ACD$ is an exterior angle of triangle $ABC$, so it equals the sum of the two opposite interior angles: $115 = 48 + m\\angle BAC$, which gives $m\\angle BAC = 67^\\circ$. You can also check it the long way: $m\\angle ACB = 180 - 115 = 65^\\circ$, and $180 - 48 - 65 = 67$.",
+  "common_errors": [
+   {
+    "value": "65",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the interior angle at $C$, $180 - 115 = 65$, and gave that instead of the angle at $A$."
+   },
+   {
+    "value": "17",
+    "misconception": "misread-given",
+    "why": "You used 115\u00b0 as the interior angle $ACB$ instead of the exterior angle $ACD$: $180 - 48 - 115 = 17$."
+   },
+   {
+    "value": "163",
+    "misconception": "algebra-manipulation",
+    "why": "You added the two given angles, $48 + 115$, when you should have subtracted to find the missing interior angle."
+   }
+  ],
+  "id": "orig-multi-step-ang-M-6b7efb",
+  "skill_cd": "S.B.",
+  "subtype": "multi-step-angle-chase",
+  "subtype_name": "Multi-step angle chase through a composite figure",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-multi-step-ang-M-6b7efb",
+   "structure": [],
+   "solver_answer": "67",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the measure in degrees of __var__"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of $\\angle ABF$?",
+  "stimulus": "On a health department map, a straight road runs from vaccination site $A$ to site $D$, and a second straight road runs from site $B$ to site $E$. The two roads cross at point $P$. A third straight road joins $A$ and $B$. The road from $E$ to $B$ continues straight past $B$ to a clinic at point $F$. On the map, $m\\angle PAB = 41^\\circ$ and $m\\angle DPE = 72^\\circ$.",
+  "keys": [
+   "113"
+  ],
+  "any_of": false,
+  "explanation": "Start with the crossing at $P$. $\\angle APB$ and $\\angle DPE$ are vertical angles, so $m\\angle APB = 72^\\circ$. In triangle $APB$, $m\\angle ABP = 180 - 41 - 72 = 67^\\circ$. The question does not ask for that angle. $F$ lies on line $EB$ beyond $B$, so $\\angle ABF$ forms a linear pair with $\\angle ABP$: $180 - 67 = 113^\\circ$. As a shortcut, $\\angle ABF$ is an exterior angle of triangle $APB$, so it equals $41 + 72 = 113$.",
+  "common_errors": [
+   {
+    "value": "67",
+    "misconception": "intermediate-step",
+    "why": "You found the interior angle $ABP$ of the triangle and stopped, even though $\\angle ABF$ is the exterior angle beside it."
+   },
+   {
+    "value": "149",
+    "misconception": "wrong-target-quantity",
+    "why": "You treated $\\angle APB$ as the angle next to $\\angle DPE$ instead of the vertical angle, so you used $180 - 72 = 108$. That gives $\\angle ABP = 31$ and an exterior angle of $149$."
+   },
+   {
+    "value": "139",
+    "misconception": "algebra-manipulation",
+    "why": "You took the exterior angle at $B$ as $180 - 41$, the supplement of just one remote interior angle, instead of adding both remote interior angles."
+   }
+  ],
+  "id": "orig-multi-step-ang-M-fa79f2",
+  "skill_cd": "S.B.",
+  "subtype": "multi-step-angle-chase",
+  "subtype_name": "Multi-step angle chase through a composite figure",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-multi-step-ang-M-fa79f2",
+   "structure": [],
+   "solver_answer": "113",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the measure in degrees of __var__"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $CED$?",
+  "stimulus": "On a seismologist's map, two straight fault traces, $\\overline{AD}$ and $\\overline{BE}$, cross at point $C$. In triangle $ABC$, angle $CAB$ measures $48^\\circ$ and angle $CBA$ measures $67^\\circ$. In triangle $CDE$, angle $CDE$ measures $59^\\circ$.",
+  "keys": [
+   "56"
+  ],
+  "any_of": false,
+  "explanation": "Start in triangle $ABC$, where you know two angles: angle $ACB = 180 - 48 - 67 = 65^\\circ$. Segments $AD$ and $BE$ cross at $C$, so angle $DCE$ is vertical to angle $ACB$ and also measures $65^\\circ$. Write that on the figure, then close triangle $CDE$: angle $CED = 180 - 65 - 59 = 56^\\circ$.",
+  "common_errors": [
+   {
+    "value": "65",
+    "misconception": "intermediate-step",
+    "why": "Found angle ACB (and its vertical partner DCE) and stopped there instead of finishing triangle CDE."
+   },
+   {
+    "value": "115",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the supplement of angle ACB, which is angle BCD (a linear-pair neighbor), instead of an angle of triangle CDE."
+   },
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Moved 65 into triangle CDE as its linear-pair partner 115 instead of its vertical angle, then computed 180 - 115 - 59."
+   }
+  ],
+  "id": "orig-multi-step-ang-M-1a5661",
+  "skill_cd": "S.B.",
+  "subtype": "multi-step-angle-chase",
+  "subtype_name": "Multi-step angle chase through a composite figure",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-multi-step-ang-M-1a5661",
+   "structure": [],
+   "solver_answer": 56,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $PQS$?",
+  "stimulus": "An ecologist maps two parallel stream banks as lines $\\ell$ and $m$. Points $R$, $Q$, and $S$ lie on $m$ in that order, and points $P$ and $T$ lie on $\\ell$, with $T$ and $Q$ on opposite sides of line $PR$. Angle $TPR$ measures $55^\\circ$ and angle $QPR$ measures $40^\\circ$.",
+  "keys": [
+   "95"
+  ],
+  "any_of": false,
+  "explanation": "Line $PR$ is a transversal of the parallel lines $\\ell$ and $m$, and angles $TPR$ and $PRQ$ are alternate interior angles, so angle $PRQ = 55^\\circ$. Now look at triangle $PQR$. Angle $PQS$ lies outside it, on the straight line through $R$, $Q$, and $S$, so it is an exterior angle and equals the sum of the two opposite interior angles: $40 + 55 = 95^\\circ$. If you work it out the long way instead, angle $PQR = 180 - 55 - 40 = 85^\\circ$, and its supplement is $95^\\circ$.",
+  "common_errors": [
+   {
+    "value": "85",
+    "misconception": "intermediate-step",
+    "why": "Found the interior angle PQR of the triangle and stopped, without taking its supplement to reach angle PQS."
+   },
+   {
+    "value": "165",
+    "misconception": "wrong-target-quantity",
+    "why": "Treated angles TPR and PRQ as co-interior, so took angle PRQ as 180 - 55 = 125, then added 40."
+   },
+   {
+    "value": "140",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the supplement of angle QPR, which is an exterior angle at P, not at Q."
+   }
+  ],
+  "id": "orig-multi-step-ang-M-762d13",
+  "skill_cd": "S.B.",
+  "subtype": "multi-step-angle-chase",
+  "subtype_name": "Multi-step angle chase through a composite figure",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-multi-step-ang-M-762d13",
+   "structure": [],
+   "solver_answer": 95,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the measure, in degrees, of angle $ACD$?",
+  "stimulus": "An astronomer draws sight lines between three stars as triangle $ABC$, in which $AB = AC$ and angle $BAC$ measures $44^\\circ$. Point $D$ lies on ray $BC$ so that $C$ is between $B$ and $D$.",
+  "keys": [
+   "112"
+  ],
+  "any_of": false,
+  "explanation": "Since $AB = AC$, the triangle is isosceles, and its base angles are the angles at $B$ and $C$. Those two angles are equal and share $180 - 44 = 136^\\circ$, so each is $68^\\circ$. Angle $ACD$ forms a straight line with angle $ACB$, so angle $ACD = 180 - 68 = 112^\\circ$. You can check this with the exterior-angle shortcut: $44 + 68 = 112$.",
+  "common_errors": [
+   {
+    "value": "68",
+    "misconception": "intermediate-step",
+    "why": "Found the base angle ACB inside the triangle and gave it, instead of the exterior angle ACD beside it."
+   },
+   {
+    "value": "136",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave 180 - 44, the exterior angle at vertex A (or the sum of the two base angles), not the exterior angle at C."
+   },
+   {
+    "value": "88",
+    "misconception": "misread-given",
+    "why": "Took the equal angles to be at A and B instead of at B and C, so angle C = 180 - 44 - 44 = 92, and then 180 - 92 = 88."
+   }
+  ],
+  "id": "orig-multi-step-ang-M-9f4249",
+  "skill_cd": "S.B.",
+  "subtype": "multi-step-angle-chase",
+  "subtype_name": "Multi-step angle chase through a composite figure",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-multi-step-ang-M-9f4249",
+   "structure": [],
+   "solver_answer": 112,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

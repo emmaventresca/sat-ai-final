@@ -217,5 +217,653 @@
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "The expression is equivalent to $ax^{b}$, where $a$ and $b$ are constants. What is the value of $a + b$?",
+  "stimulus": "A textile historian models the thread density of a hand-loomed cloth with the expression $(8x^{9})^{\\frac{2}{3}}$, where $x > 0$.",
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "Apply the exponent $\\frac{2}{3}$ to both factors. For the coefficient, $8^{\\frac{2}{3}}$ means the cube root of 8, squared: $\\sqrt[3]{8} = 2$, and $2^{2} = 4$. For the variable, a power raised to a power means you multiply the exponents: $(x^{9})^{\\frac{2}{3}} = x^{9 \\cdot \\frac{2}{3}} = x^{6}$. So the expression is $4x^{6}$, which gives $a = 4$ and $b = 6$. That makes $a + b = 10$.",
+  "common_errors": [
+   {
+    "value": "14",
+    "misconception": "algebra-manipulation",
+    "why": "Applied the exponent to $x^{9}$ but left the coefficient 8 unchanged, getting $8x^{6}$."
+   },
+   {
+    "value": "34/3",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the coefficient by $\\frac{2}{3}$ instead of raising it to that power, getting $\\frac{16}{3}x^{6}$."
+   },
+   {
+    "value": "41/3",
+    "misconception": "algebra-manipulation",
+    "why": "Added the exponents instead of multiplying them, $9 + \\frac{2}{3} = \\frac{29}{3}$, then added the correct coefficient 4."
+   },
+   {
+    "value": "8",
+    "misconception": "intermediate-step",
+    "why": "Took the cube root of 8 to get 2 but never squared it, getting $2x^{6}$."
+   }
+  ],
+  "id": "orig-exponent-radic-M-689363",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-689363",
+   "structure": [],
+   "solver_answer": 10,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression is equivalent to $p^{k}$, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "A meteorologist's pressure model contains the expression $\\dfrac{\\sqrt{p^{5}}}{p^{-\\frac{1}{2}}}$, where $p > 0$.",
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "Write the root as a fractional exponent: $\\sqrt{p^{5}} = p^{\\frac{5}{2}}$. When you divide powers of the same base, subtract the exponents: $\\frac{5}{2} - \\left(-\\frac{1}{2}\\right) = \\frac{5}{2} + \\frac{1}{2} = 3$. So $k = 3$.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted $\\frac{1}{2}$ instead of subtracting $-\\frac{1}{2}$, so the sign was lost: $\\frac{5}{2} - \\frac{1}{2} = 2$."
+   },
+   {
+    "value": "21/2",
+    "misconception": "algebra-manipulation",
+    "why": "Treated the square root as squaring and wrote $\\sqrt{p^{5}}$ as $p^{10}$, then $10 + \\frac{1}{2} = \\frac{21}{2}$."
+   },
+   {
+    "value": "5/2",
+    "misconception": "intermediate-step",
+    "why": "Rewrote the numerator as $p^{\\frac{5}{2}}$ and stopped before dividing by the denominator."
+   }
+  ],
+  "id": "orig-exponent-radic-M-9b4e36",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-9b4e36",
+   "structure": [],
+   "solver_answer": 3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ is",
+    "is equivalent to __var__ where __var__ is a",
+    "equivalent to __var__ where __var__ is a constant",
+    "to __var__ where __var__ is a constant what"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression is equivalent to $2^{k}$, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "In equal temperament, a musicologist compares two pitch intervals using the expression $\\dfrac{\\left(\\sqrt[12]{2}\\right)^{18}}{\\sqrt[4]{2}}$.",
+  "keys": [
+   "5/4",
+   "1.25"
+  ],
+  "any_of": false,
+  "explanation": "Write each root as a fractional exponent: $\\sqrt[12]{2} = 2^{\\frac{1}{12}}$ and $\\sqrt[4]{2} = 2^{\\frac{1}{4}}$. For the numerator, a power of a power means you multiply: $\\left(2^{\\frac{1}{12}}\\right)^{18} = 2^{\\frac{18}{12}} = 2^{\\frac{3}{2}}$. When you divide, subtract the exponents: $\\frac{3}{2} - \\frac{1}{4} = \\frac{6}{4} - \\frac{1}{4} = \\frac{5}{4}$.",
+  "common_errors": [
+   {
+    "value": "7/4",
+    "misconception": "algebra-manipulation",
+    "why": "Added the exponents instead of subtracting them when dividing: $\\frac{3}{2} + \\frac{1}{4}$."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the exponents instead of subtracting them: $\\frac{3}{2} \\div \\frac{1}{4} = 6$."
+   },
+   {
+    "value": "3/2",
+    "misconception": "intermediate-step",
+    "why": "Simplified the numerator to $2^{\\frac{3}{2}}$ and forgot to divide by the fourth root of 2."
+   }
+  ],
+  "id": "orig-exponent-radic-M-0179a6",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-0179a6",
+   "structure": [],
+   "solver_answer": "5/4",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ is",
+    "is equivalent to __var__ where __var__ is a",
+    "equivalent to __var__ where __var__ is a constant",
+    "to __var__ where __var__ is a constant what"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression is equivalent to $am^{b}n^{c}$, where $a$, $b$, and $c$ are positive constants. What is the value of $a + b + c$?",
+  "stimulus": "A nutrition scientist's model of nutrient absorption uses the expression $\\sqrt[4]{16m^{8}n^{12}}$, where $m > 0$ and $n > 0$.",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "A fourth root is the exponent $\\frac{1}{4}$, and you apply it to every factor. For the coefficient, $\\sqrt[4]{16} = 2$, because $2^{4} = 16$. For the variables, $(m^{8})^{\\frac{1}{4}} = m^{2}$ and $(n^{12})^{\\frac{1}{4}} = n^{3}$. The expression is $2m^{2}n^{3}$, so $a + b + c = 2 + 2 + 3 = 7$.",
+  "common_errors": [
+   {
+    "value": "21",
+    "misconception": "algebra-manipulation",
+    "why": "Took the root of the variables but left the coefficient as 16, getting $16m^{2}n^{3}$."
+   },
+   {
+    "value": "22",
+    "misconception": "algebra-manipulation",
+    "why": "Took the root of the coefficient but left the variable exponents unchanged, getting $2m^{8}n^{12}$."
+   },
+   {
+    "value": "9",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the coefficient by 4 instead of taking its fourth root, getting $4m^{2}n^{3}$."
+   },
+   {
+    "value": "82",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the exponents by 4 instead of dividing, getting $2m^{32}n^{48}$."
+   }
+  ],
+  "id": "orig-exponent-radic-M-1d705b",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-1d705b",
+   "structure": [],
+   "solver_answer": 7,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ __var__",
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression is equivalent to $k^{n}$, where $n$ is a constant. What is the value of $n$?",
+  "stimulus": "A seismologist's formula for wave energy contains the expression $\\dfrac{(k^{2})^{5}}{k^{4}\\sqrt{k}}$, where $k > 0$.",
+  "keys": [
+   "11/2",
+   "5.5"
+  ],
+  "any_of": false,
+  "explanation": "A power of a power means you multiply the exponents: $(k^{2})^{5} = k^{10}$. Write the denominator with a single exponent: $k^{4}\\sqrt{k} = k^{4} \\cdot k^{\\frac{1}{2}} = k^{\\frac{9}{2}}$. Then subtract to divide: $10 - \\frac{9}{2} = \\frac{11}{2}$.",
+  "common_errors": [
+   {
+    "value": "5/2",
+    "misconception": "algebra-manipulation",
+    "why": "Added the exponents in $(k^{2})^{5}$ to get $k^{7}$ instead of multiplying, then $7 - \\frac{9}{2} = \\frac{5}{2}$."
+   },
+   {
+    "value": "13/2",
+    "misconception": "algebra-manipulation",
+    "why": "Divided by $k^{4}$ correctly but then added the $\\frac{1}{2}$ from $\\sqrt{k}$ instead of subtracting it: $10 - 4 + \\frac{1}{2}$."
+   },
+   {
+    "value": "6",
+    "misconception": "intermediate-step",
+    "why": "Divided $k^{10}$ by $k^{4}$ and stopped before also dividing by $\\sqrt{k}$."
+   }
+  ],
+  "id": "orig-exponent-radic-M-89c357",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-89c357",
+   "structure": [],
+   "solver_answer": "11/2",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ is",
+    "is equivalent to __var__ where __var__ is a",
+    "equivalent to __var__ where __var__ is a constant",
+    "to __var__ where __var__ is a constant what"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $a$?",
+  "stimulus": "An ecologist modeling population density finds that $\\dfrac{\\sqrt[3]{x^{a}}}{x^{2}} = x^{4}$ for all positive values of $x$, where $a$ is a constant.",
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "Write the root as a fractional exponent: $\\sqrt[3]{x^{a}} = x^{\\frac{a}{3}}$. Dividing by $x^{2}$ subtracts 2, so the left side is $x^{\\frac{a}{3} - 2}$. Set the exponents equal: $\\frac{a}{3} - 2 = 4$, so $\\frac{a}{3} = 6$ and $a = 18$.",
+  "common_errors": [
+   {
+    "value": "12",
+    "misconception": "algebra-manipulation",
+    "why": "Ignored the denominator $x^{2}$ and solved $\\frac{a}{3} = 4$."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Added 2 to the exponent instead of subtracting it, solving $\\frac{a}{3} + 2 = 4$."
+   },
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote the cube root as $x^{3a}$, multiplying the exponent instead of dividing it, then solved $3a - 2 = 4$."
+   }
+  ],
+  "id": "orig-exponent-radic-M-6bbd04",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-6bbd04",
+   "structure": [],
+   "solver_answer": 18,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression is equivalent to $2^{k}$, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "An agricultural scientist scales a crop-yield estimate by the factor $\\sqrt{8} \\cdot 4^{3}$.",
+  "keys": [
+   "15/2",
+   "7.5"
+  ],
+  "any_of": false,
+  "explanation": "Rewrite each factor as a power of 2. Since $8 = 2^{3}$, $\\sqrt{8} = (2^{3})^{\\frac{1}{2}} = 2^{\\frac{3}{2}}$. Since $4 = 2^{2}$, $4^{3} = (2^{2})^{3} = 2^{6}$. When you multiply, add the exponents: $\\frac{3}{2} + 6 = \\frac{15}{2}$.",
+  "common_errors": [
+   {
+    "value": "13/2",
+    "misconception": "algebra-manipulation",
+    "why": "Rewrote $4^{3}$ as $2^{2+3} = 2^{5}$ by adding exponents instead of multiplying, then $\\frac{3}{2} + 5$."
+   },
+   {
+    "value": "12",
+    "misconception": "algebra-manipulation",
+    "why": "Treated the square root as squaring, writing $\\sqrt{8}$ as $2^{6}$, then $6 + 6 = 12$."
+   },
+   {
+    "value": "9/2",
+    "misconception": "algebra-manipulation",
+    "why": "Left the base 4 unconverted and added its exponent 3 to $\\frac{3}{2}$."
+   }
+  ],
+  "id": "orig-exponent-radic-M-462c3e",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-462c3e",
+   "structure": [],
+   "solver_answer": "15/2",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ is",
+    "is equivalent to __var__ where __var__ is a",
+    "equivalent to __var__ where __var__ is a constant",
+    "to __var__ where __var__ is a constant what"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression is equivalent to $w^{k}$, where $k$ is a constant. What is the value of $k$?",
+  "stimulus": "An archaeologist dating soil layers uses the expression $\\dfrac{w^{2}\\sqrt[3]{w}}{w^{-\\frac{1}{3}}}$, where $w > 0$.",
+  "keys": [
+   "8/3",
+   "2.666",
+   "2.667"
+  ],
+  "any_of": false,
+  "explanation": "Write the root as a fractional exponent: $\\sqrt[3]{w} = w^{\\frac{1}{3}}$. When you multiply, add the exponents, so the numerator is $w^{2 + \\frac{1}{3}} = w^{\\frac{7}{3}}$. When you divide, subtract the exponents: $\\frac{7}{3} - \\left(-\\frac{1}{3}\\right) = \\frac{8}{3}$.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted $\\frac{1}{3}$ instead of subtracting $-\\frac{1}{3}$, so the sign was lost: $\\frac{7}{3} - \\frac{1}{3} = 2$."
+   },
+   {
+    "value": "16/3",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote the cube root of $w$ as $w^{3}$, then $2 + 3 + \\frac{1}{3} = \\frac{16}{3}$."
+   },
+   {
+    "value": "1",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the numerator's exponents instead of adding them, $2 \\cdot \\frac{1}{3} = \\frac{2}{3}$, then $\\frac{2}{3} + \\frac{1}{3} = 1$."
+   },
+   {
+    "value": "7/3",
+    "misconception": "intermediate-step",
+    "why": "Simplified the numerator to $w^{\\frac{7}{3}}$ and stopped before dividing by the denominator."
+   }
+  ],
+  "id": "orig-exponent-radic-M-792ec7",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-792ec7",
+   "structure": [],
+   "solver_answer": "8/3",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ is",
+    "is equivalent to __var__ where __var__ is a",
+    "equivalent to __var__ where __var__ is a constant",
+    "to __var__ where __var__ is a constant what"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the expression is equivalent to $t^k$, what is the value of $k$?",
+  "stimulus": "A paleobotanist's model for the surface area of fossilized leaves contains the expression $\\dfrac{\\sqrt[3]{t^5}}{t^{\\frac{1}{2}}}$, where $t > 0$.",
+  "keys": [
+   "7/6",
+   "1.166",
+   "1.167"
+  ],
+  "any_of": false,
+  "explanation": "First, turn the root into a fractional exponent: $\\sqrt[3]{t^5} = t^{\\frac{5}{3}}$. You are dividing powers of the same base, so subtract the exponents: $\\frac{5}{3} - \\frac{1}{2} = \\frac{10}{6} - \\frac{3}{6} = \\frac{7}{6}$. So $k = \\frac{7}{6}$. To check, put $t = 2$ into the original and into $2^{7/6}$ on a calculator. Both give about 2.245.",
+  "common_errors": [
+   {
+    "value": "13/6",
+    "misconception": "algebra-manipulation",
+    "why": "Added the exponents ($\\frac{5}{3} + \\frac{1}{2}$) when dividing, instead of subtracting them."
+   },
+   {
+    "value": "10/3",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the exponents ($\\frac{5}{3} \\div \\frac{1}{2}$) instead of subtracting them."
+   },
+   {
+    "value": "1/10",
+    "misconception": "algebra-manipulation",
+    "why": "Turned $\\sqrt[3]{t^5}$ into $t^{\\frac{3}{5}}$ by flipping the root index and the power, then subtracted: $\\frac{3}{5} - \\frac{1}{2}$."
+   },
+   {
+    "value": "5/3",
+    "misconception": "intermediate-step",
+    "why": "Converted the numerator to $t^{\\frac{5}{3}}$ but never divided by $t^{\\frac{1}{2}}$."
+   }
+  ],
+  "id": "orig-exponent-radic-M-cbd93f",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-cbd93f",
+   "structure": [],
+   "solver_answer": "7/6",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the expression is equivalent to $cx^d$, where $c$ and $d$ are constants, what is the value of $c + d$?",
+  "stimulus": "In a nutrition study, the expression $(64x^9)^{\\frac{2}{3}}$, where $x > 0$, models how quickly a nutrient is absorbed.",
+  "keys": [
+   "22"
+  ],
+  "any_of": false,
+  "explanation": "The exponent $\\frac{2}{3}$ applies to both the coefficient and the variable. For the coefficient: $64^{\\frac{2}{3}} = (\\sqrt[3]{64})^2 = 4^2 = 16$. For the variable, a power of a power means you multiply the exponents: $(x^9)^{\\frac{2}{3}} = x^{9 \\cdot \\frac{2}{3}} = x^6$. That makes $c = 16$ and $d = 6$, so $c + d = 22$.",
+  "common_errors": [
+   {
+    "value": "70",
+    "misconception": "algebra-manipulation",
+    "why": "Applied the exponent to $x^9$ but left the coefficient at 64, so got $64x^6$."
+   },
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "Took only the cube root of 64 (getting 4) and forgot to square it, so got $4x^6$."
+   },
+   {
+    "value": "59/2",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 9 by $\\frac{3}{2}$ instead of $\\frac{2}{3}$, giving $d = \\frac{27}{2}$, then added it to 16."
+   },
+   {
+    "value": "16",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave only $c$ instead of $c + d$."
+   }
+  ],
+  "id": "orig-exponent-radic-M-d03140",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-d03140",
+   "structure": [],
+   "solver_answer": "22",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the expression is equivalent to $y^m$, what is the value of $m$?",
+  "stimulus": "A sports scientist's model of muscle fatigue contains the expression $\\left(\\dfrac{y^{-4}}{\\sqrt{y}}\\right)^{-2}$, where $y > 0$.",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "Write the root as an exponent: $\\sqrt{y} = y^{\\frac{1}{2}}$. Inside the parentheses you are dividing, so subtract the exponents: $-4 - \\frac{1}{2} = -\\frac{9}{2}$. Raising a power to a power means multiplying: $-\\frac{9}{2} \\cdot (-2) = 9$. So $m = 9$.",
+  "common_errors": [
+   {
+    "value": "-9",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied $-\\frac{9}{2}$ by 2 instead of $-2$, so lost the sign of the outer exponent."
+   },
+   {
+    "value": "7",
+    "misconception": "algebra-manipulation",
+    "why": "Added $\\frac{1}{2}$ instead of subtracting it inside the parentheses, giving $-\\frac{7}{2}$, then multiplied by $-2$."
+   },
+   {
+    "value": "-13/2",
+    "misconception": "algebra-manipulation",
+    "why": "Added the outer exponent ($-\\frac{9}{2} + (-2)$) instead of multiplying by it."
+   },
+   {
+    "value": "-9/2",
+    "misconception": "intermediate-step",
+    "why": "Simplified the inside of the parentheses and stopped before applying the exponent $-2$."
+   }
+  ],
+  "id": "orig-exponent-radic-M-5f7eeb",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-5f7eeb",
+   "structure": [],
+   "solver_answer": "9",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the expression is equivalent to $x^a y^b$, what is the value of $a + b$?",
+  "stimulus": "A materials scientist modeling grain growth in an alloy uses the expression $\\sqrt[3]{x^2 y} \\cdot \\sqrt{x^3 y^5}$, where $x > 0$ and $y > 0$.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "Turn each root into fractional exponents, and apply it to every factor inside: $\\sqrt[3]{x^2y} = x^{\\frac{2}{3}}y^{\\frac{1}{3}}$ and $\\sqrt{x^3y^5} = x^{\\frac{3}{2}}y^{\\frac{5}{2}}$. You are multiplying, so add the exponents for each variable: $a = \\frac{2}{3} + \\frac{3}{2} = \\frac{13}{6}$ and $b = \\frac{1}{3} + \\frac{5}{2} = \\frac{17}{6}$. Then $a + b = \\frac{30}{6} = 5$.",
+  "common_errors": [
+   {
+    "value": "11/6",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the exponents for each variable instead of adding them: $\\frac{2}{3} \\cdot \\frac{3}{2} = 1$ and $\\frac{1}{3} \\cdot \\frac{5}{2} = \\frac{5}{6}$."
+   },
+   {
+    "value": "17/3",
+    "misconception": "algebra-manipulation",
+    "why": "Took the cube root of $x^2$ but not of $y$, so used $y^1$. That gives $b = \\frac{7}{2}$, and $\\frac{13}{6} + \\frac{7}{2} = \\frac{17}{3}$."
+   },
+   {
+    "value": "13/6",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave only the exponent of $x$."
+   },
+   {
+    "value": "17/6",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave only the exponent of $y$."
+   }
+  ],
+  "id": "orig-exponent-radic-M-5c8cda",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-5c8cda",
+   "structure": [],
+   "solver_answer": "5",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

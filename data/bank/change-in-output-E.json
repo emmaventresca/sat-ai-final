@@ -424,5 +424,103 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "By how many beats per minute does the model's heart rate increase when the treadmill speed increases by 3 kilometers per hour?",
+  "stimulus": "A sports scientist models a runner's heart rate with $H(s) = 6s + 72$. Here $H(s)$ is the heart rate in beats per minute and $s$ is the treadmill speed in kilometers per hour, for $8 \\le s \\le 14$.",
+  "choices": [
+   "$6$",
+   "$18$",
+   "$75$",
+   "$90$"
+  ],
+  "answer": "B",
+  "explanation": "The slope, 6, means the heart rate goes up 6 beats per minute for each 1 km/h of speed. The change in output is the slope times the change in input: $6 \\times 3 = 18$. The 72 is in every value of $H$, so it cancels when you subtract one from another. You can check this with any allowed speed: $H(11) - H(8) = 138 - 120 = 18$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "6 is the increase for a 1 km/h change in speed. You stopped at the rate and didn't multiply by the 3 km/h change the question asks about."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the 3 to the constant term, $72 + 3$. A change in input is multiplied by the slope. It is never added to the intercept."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You put 3 straight into the function: $H(3) = 18 + 72 = 90$. That keeps the intercept, which should cancel when you compare two outputs. Also, 3 km/h is outside the model's domain."
+   }
+  },
+  "id": "orig-change-in-outp-E-eb33f5",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-E-eb33f5",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "A",
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "By how much does $N$ decrease when $y$ increases by 5?",
+  "stimulus": "A folklorist estimates the number of storytellers in a region who can recite a particular ballad with $N(y) = 210 - 4y$, where $y$ is the number of years after 2000.",
+  "choices": [
+   "$4$",
+   "$9$",
+   "$20$",
+   "$190$"
+  ],
+  "answer": "C",
+  "explanation": "The slope is $-4$, so the estimate drops by 4 storytellers each year. Over 5 years the change is $-4 \\times 5 = -20$, which is a decrease of 20. The 210 cancels when you compare two outputs. For example, $N(0) - N(5) = 210 - 190 = 20$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "4 is the decrease over 1 year. You found the rate but didn't multiply it by the 5-year change."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the rate and the change in input, $4 + 5$. The change in output is the rate multiplied by the change in input."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You put 5 straight into the function: $N(5) = 210 - 20 = 190$. That is the number of storytellers in 2005, not how much the number fell. The intercept should have cancelled."
+   }
+  },
+  "id": "orig-change-in-outp-E-6aaf32",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-E-6aaf32",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "A",
+   "problem": null,
+   "overlap": [
+    "__var__ where __var__ is the number of years"
+   ],
+   "residue": 0
+  }
  }
 ]

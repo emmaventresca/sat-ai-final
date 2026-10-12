@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-equation-from--X-99bbe9",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "B",
+   "problem": "The problem defines x as hours, but the table header shows time in minutes, creating a unit inconsistency that requires converting the table data from minutes to hours.",
    "overlap": [],
    "residue": 0
   },
@@ -104,16 +109,464 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-equation-from--X-888b91",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "the graph shows the linear relationship between __var__"
    ],
    "residue": 7
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which equation represents the linear relationship between $x$ and $y$?",
+  "stimulus": "A weather balloon records the air temperature $y$, in degrees Celsius, at several altitudes. Let $x$ represent the altitude in kilometers. The relationship between $x$ and $y$ is linear.\n\nBalloon Readings\nAltitude (meters) | Temperature (\u00b0C)\n1,500 | 6\n2,500 | 0\n4,000 | \u22129",
+  "choices": [
+   "$0.006x + y = 15$",
+   "$-6x + y = 15$",
+   "$6x + y = 15$",
+   "$4x + y = 12$"
+  ],
+  "answer": "C",
+  "explanation": "First change the altitudes to kilometers: 1.5, 2.5 and 4. The slope is $\\frac{0-6}{2.5-1.5} = -6$. Moving back 1.5 km from $(1.5, 6)$ raises $y$ by 9, so the y-intercept is 15. That gives $y = -6x + 15$, which is $6x + y = 15$. Check: $6(4) + (-9) = 15$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You set up the line correctly but used altitudes in meters. $x$ is in kilometers, so the slope is \u22126 per kilometer, not \u22120.006 per meter."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $y = -6x + 15$ but kept the sign of $-6x$ when you rearranged it. $-6x + y = 15$ means $y = 6x + 15$, a line that rises."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "This line passes through $(1.5, 6)$ but not $(2.5, 0)$, because $4(2.5) = 10 \\ne 12$. You need a choice that works for every row."
+   }
+  },
+  "id": "orig-equation-from--X-0a3493",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--X-0a3493",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "A",
+   "problem": "The problem defines x as kilometers, but the table header shows altitude in meters, creating a unit inconsistency that requires converting the table data from meters to kilometers.",
+   "overlap": [
+    "which equation represents the linear relationship between __var__",
+    "equation represents the linear relationship between __var__ and",
+    "represents the linear relationship between __var__ and __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "Which equation represents the linear relationship between $x$ and $y$?",
+  "stimulus": "A city planner models the number of street parking spaces $y$ left on a block when $x$ bike-share docks are installed there. The relationship is linear.\n\nParking Spaces After Dock Installation\n$x$ | $y$\n2 | 17\n4 | 14\n10 | 5",
+  "choices": [
+   "$y + 1 = -\\frac{3}{2}(x - 14)$",
+   "$y - 14 = -\\frac{2}{3}(x - 4)$",
+   "$y - 14 = \\frac{3}{2}(x - 4)$",
+   "$y - 17 = -\\frac{3}{2}(x - 4)$"
+  ],
+  "answer": "A",
+  "explanation": "The slope is $\\frac{14-17}{4-2} = -\\frac{3}{2}$, and the line is $y = -\\frac{3}{2}x + 20$. A point-slope equation can use any point on the line, including one not in the table. At $x = 14$, $y = -21 + 20 = -1$, so $(14, -1)$ is on the line and choice A is the same line. Check: when $x = 2$, $y + 1 = -\\frac{3}{2}(-12) = 18$, so $y = 17$.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You divided the change in $x$ by the change in $y$. That gives $-\\frac{2}{3}$, which is run over rise, not the slope."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The point $(4, 14)$ is right, but you dropped the negative sign. $y$ falls as $x$ rises, so the slope must be negative."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used the $y$-value from one row (17) with the $x$-value from another (4). $(4, 17)$ isn't on the line, so this fails at $x = 4$."
+   }
+  },
+  "id": "orig-equation-from--X-8aea45",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--X-8aea45",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which equation represents the linear relationship between __var__",
+    "equation represents the linear relationship between __var__ and",
+    "represents the linear relationship between __var__ and __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "Which equation represents the linear relationship between $x$ and $y$, where $k$ is a positive constant?",
+  "stimulus": "A folklorist tracks how many of a legend's original motifs, $y$, survive in versions of the story collected $x$ years after it was first recorded. The relationship is linear, and $k$ is a positive constant.\n\nSurviving Motifs\n$x$ | $y$\n0 | 12\n$k$ | 8\n$2k$ | 4",
+  "choices": [
+   "$kx + 4y = 48$",
+   "$4x + ky = 12$",
+   "$4x - ky = -12k$",
+   "$4x + ky = 12k$"
+  ],
+  "answer": "D",
+  "explanation": "The y-intercept is 12, since $x = 0$ gives $y = 12$. The slope is $\\frac{8 - 12}{k - 0} = -\\frac{4}{k}$. So $y = -\\frac{4}{k}x + 12$. Multiply every term by $k$: $ky = -4x + 12k$, so $4x + ky = 12k$. Check $(2k, 4)$: $8k + 4k = 12k$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used run over rise and got a slope of $-\\frac{k}{4}$ instead of $-\\frac{4}{k}$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the right slope and intercept, but when you multiplied through by $k$ you didn't multiply the 12. Check $(0, 12)$: $12k \\ne 12$."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "Rearranged, this is $y = \\frac{4}{k}x + 12$, which has a positive slope. The table shows $y$ falling."
+   }
+  },
+  "id": "orig-equation-from--X-2adff9",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--X-2adff9",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which equation represents the linear relationship between __var__",
+    "equation represents the linear relationship between __var__ and",
+    "represents the linear relationship between __var__ and __var__"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which equation represents the linear relationship between $x$ and $y$?",
+  "stimulus": "After a dry spell begins, a hydrologist records the water depth $y$, in meters, of a reservoir $x$ days into the spell. The graph shows the hydrologist's readings, and the relationship is linear.",
+  "figure": {
+   "type": "line",
+   "caption": "Reservoir Depth During Dry Spell",
+   "x_label": "Day of dry spell, x",
+   "y_label": "Water depth (meters), y",
+   "points": [
+    [
+     4,
+     26
+    ],
+    [
+     8,
+     20
+    ],
+    [
+     12,
+     14
+    ],
+    [
+     16,
+     8
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 20,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 32,
+   "y_step": 2,
+   "alt": "A straight line falling from (4, 26) through (8, 20) and (12, 14) to (16, 8)."
+  },
+  "choices": [
+   "$2x + 3y = 96$",
+   "$3x + 2y = 64$",
+   "$3x + 2y = 52$",
+   "$3x - 2y = -64$"
+  ],
+  "answer": "B",
+  "explanation": "From $(4, 26)$ to $(8, 20)$ the slope is $\\frac{-6}{4} = -\\frac{3}{2}$. The graph starts at day 4, not day 0, so extend it back 4 days. The depth is $26 + 6 = 32$ at $x = 0$. So $y = -\\frac{3}{2}x + 32$. Multiply by 2 and rearrange to get $3x + 2y = 64$. Check $(16, 8)$: $48 + 16 = 64$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used run over rise and got a slope of $-\\frac{2}{3}$ instead of $-\\frac{3}{2}$."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the first plotted point's depth, 26, as the y-intercept. That point is at $x = 4$, so the line passes through $(0, 32)$ instead."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "Rearranged, this is $y = \\frac{3}{2}x + 32$. The intercept is right but the slope is positive, while the depth is falling."
+   }
+  },
+  "id": "orig-equation-from--X-e64ecc",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--X-e64ecc",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which equation represents the linear relationship between __var__",
+    "equation represents the linear relationship between __var__ and",
+    "represents the linear relationship between __var__ and __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "Which equation represents the linear relationship between $x$ and $y$?",
+  "stimulus": "At a vaccination clinic, $y$ is the number of doses remaining $x$ hours after the clinic opens. The relationship is linear.\n\nClinic Dose Log\nDoses remaining, $y$ | Hours open, $x$\n840 | 2\n600 | 5\n280 | 9",
+  "choices": [
+   "$y = -80x + 1{,}000$",
+   "$y = -\\frac{1}{80}x + 12.5$",
+   "$y = -80x + 840$",
+   "$y = 80x + 680$"
+  ],
+  "answer": "A",
+  "explanation": "The $y$-values are in the first column. The slope is $\\frac{600 - 840}{5 - 2} = -80$ doses per hour. Going back 2 hours from $(2, 840)$ adds 160, so the y-intercept is 1,000. So $y = -80x + 1{,}000$. Check: $-80(9) + 1{,}000 = 280$.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated the first column as $x$ because it comes first. That gives $x$ in terms of $y$ with the letters swapped, so the slope is run over rise."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used 840 as the starting value. 840 is the number left at hour 2, not at opening ($x = 0$)."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This line passes through $(2, 840)$ but has a positive slope. The number of doses falls as hours pass."
+   }
+  },
+  "id": "orig-equation-from--X-2312b8",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--X-2312b8",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which equation represents the linear relationship between __var__",
+    "equation represents the linear relationship between __var__ and",
+    "represents the linear relationship between __var__ and __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "Which equation represents the linear relationship between $x$ and $y$?",
+  "stimulus": "An engineer heats a metal rod and measures its length $y$, in millimeters, at temperature $x$, in degrees Celsius. The relationship is linear.\n\nRod Expansion\n$x$ | $y$\n20 | 401\n50 | 402.5\n110 | 405.5",
+  "choices": [
+   "$20x - y = -1$",
+   "$x + 20y = 8{,}000$",
+   "$x - 20y = 8{,}000$",
+   "$x - 20y = -8{,}000$"
+  ],
+  "answer": "D",
+  "explanation": "The slope is $\\frac{402.5 - 401}{50 - 20} = \\frac{1.5}{30} = 0.05$. Going back 20 degrees from $(20, 401)$ subtracts 1, so the y-intercept is 400. So $y = 0.05x + 400$. Multiply by 20 to get $20y = x + 8{,}000$, which is $x - 20y = -8{,}000$. Check $(110, 405.5)$: $110 - 8{,}110 = -8{,}000$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used run over rise and got a slope of 20 instead of $\\frac{1}{20}$. This line passes through $(20, 401)$ but none of the other rows."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "Rearranged, this is $y = -0.05x + 400$. The sign of the $x$-term flipped when you moved it, so the rod would shrink as it heats."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "Rearranged, this is $y = 0.05x - 400$. The slope is right, but the sign of the constant flipped, so the y-intercept is negative."
+   }
+  },
+  "id": "orig-equation-from--X-127e78",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--X-127e78",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which equation represents the linear relationship between __var__",
+    "equation represents the linear relationship between __var__ and",
+    "represents the linear relationship between __var__ and __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "Which equation represents the linear relationship between $t$ and $y$?",
+  "stimulus": "An observatory's catalog lists $y$ thousand known near-Earth asteroids $t$ years after 2020. The relationship is linear.\n\nCatalog Size\nYear | Asteroids (thousands)\n2022 | 18\n2025 | 27\n2031 | 45",
+  "choices": [
+   "$y = 3t + 18$",
+   "$y = 3t + 12$",
+   "$y = 9t$",
+   "$y = 3t - 6{,}048$"
+  ],
+  "answer": "B",
+  "explanation": "Convert each year to $t$: 2, 5 and 11. The slope is $\\frac{27 - 18}{5 - 2} = 3$. Going back 2 years from $(2, 18)$ subtracts 6, so the y-intercept is 12. So $y = 3t + 12$. Check: $3(11) + 12 = 45$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You took 2022 as the starting year, but $t = 0$ is 2020. The 18 thousand asteroids belong to $t = 2$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You used the 9 thousand gained between the first two rows as the yearly rate, but those rows are 3 years apart. $y = 9t$ fits $(2, 18)$ only."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "This equation is correct when the variable is the calendar year. The question defines $t$ as years after 2020, so it doesn't fit."
+   }
+  },
+  "id": "orig-equation-from--X-773439",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--X-773439",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which equation represents the linear relationship between __var__",
+    "equation represents the linear relationship between __var__ and",
+    "represents the linear relationship between __var__ and __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "Which table gives three values of $x$ and their corresponding values of $y$ for the given equation?",
+  "stimulus": "An agronomist plans a field trial in which $x$ hectares of barley and $y$ hectares of oats together use the farm's full irrigation allowance. The plan is modeled by the equation below.\n\n$\\frac{x}{80} + \\frac{y}{60} = 1$",
+  "choices": [
+   "$x$: 0, 12, 24; $y$: \u221260, \u221251, \u221242",
+   "$x$: 0, 12, 24; $y$: 60, 51, 44",
+   "$x$: 0, 12, 24; $y$: 60, 51, 42",
+   "$x$: 0, 12, 24; $y$: 80, 64, 48"
+  ],
+  "answer": "C",
+  "explanation": "In this form, the number under $y$ is the y-intercept, so $y = 60$ when $x = 0$. Solving gives $y = 60 - \\frac{3}{4}x$. So $x = 12$ gives $60 - 9 = 51$, and $x = 24$ gives $60 - 18 = 42$. All three pairs work.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "These values fit $\\frac{x}{80} - \\frac{y}{60} = 1$. You read the plus sign as a minus, so every $y$-value has the wrong sign."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "The first two pairs work, but $\\frac{24}{80} + \\frac{44}{60} \\ne 1$. You stopped checking before the last row."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You swapped the intercepts. These values fit $\\frac{x}{60} + \\frac{y}{80} = 1$, which puts the y-intercept at 80 instead of 60."
+   }
+  },
+  "id": "orig-equation-from--X-948853",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--X-948853",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

@@ -251,5 +251,683 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "The expression $3(2x - 5)(x + 4)$ is equivalent to $ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. What is the value of $a + b + c$?",
+  "stimulus": "A civil engineer uses the expression $3(2x - 5)(x + 4)$ to model the bending stress in a steel bridge girder, where $x$ is the distance, in meters, from one support.",
+  "choices": [
+   "$-45$",
+   "$-15$",
+   "$5$",
+   "$6$"
+  ],
+  "answer": "A",
+  "explanation": "First multiply the two binomials: $(2x - 5)(x + 4) = 2x^2 + 8x - 5x - 20 = 2x^2 + 3x - 20$. Then multiply every term by 3: $6x^2 + 9x - 60$. Matching coefficients gives $a = 6$, $b = 9$, and $c = -60$, so $a + b + c = 6 + 9 - 60 = -45$. You can check this quickly: $a + b + c$ is the value of the expression at $x = 1$, and $3(2 - 5)(1 + 4) = 3(-3)(5) = -45$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You expanded $(2x - 5)(x + 4)$ to $2x^2 + 3x - 20$ correctly but dropped the factor of 3 in front, so you added $2 + 3 - 20$. The 3 multiplies the whole expression, so every coefficient has to be tripled."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the 3 to only the $2x$ term and wrote $(6x - 5)(x + 4) = 6x^2 + 19x - 20$. A factor in front of a product multiplies the whole expression. Its effect has to reach every term, which gives $6x^2 + 9x - 60$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found $a = 6$ and stopped there. The question asks for the sum $a + b + c$, so you also need $b = 9$ and $c = -60$."
+   }
+  },
+  "id": "orig-match-coeffici-M-7511e9",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-M-7511e9",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "An astronomer uses the expression $3(x + 4)(x - 2)$ to model a star's brightness. The expression is equivalent to $ax^2 + bx + c$, where $a$, $b$, and $c$ are constants.",
+  "choices": [
+   "$b = 2$",
+   "$c = -24$",
+   "$c = -8$",
+   "$b = -6$"
+  ],
+  "answer": "B",
+  "explanation": "First expand the two binomials: $(x + 4)(x - 2) = x^2 + 2x - 8$. Then multiply every term by 3 to get $3x^2 + 6x - 24$. Matching coefficients gives $a = 3$, $b = 6$, and $c = -24$. So $c = -24$ must be true. As a check, set $x = 0$ in both sides: $3(4)(-2) = -24 = c$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You expanded $(x + 4)(x - 2)$ correctly, but you didn't multiply the middle term by the 3 in front. The 3 multiplies the whole product, so $b = 3 \\cdot 2 = 6$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the 3 to the $x^2$ term only and left the constant as $-8$. A factor in front of a product multiplies every term, so $c = 3(-8) = -24$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You expanded $(x - 4)(x + 2)$ instead of $(x + 4)(x - 2)$, which flips the sign of the middle term. With the factors as written, $b = 6$."
+   }
+  },
+  "id": "orig-match-coeffici-M-43a39f",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-M-43a39f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ __var__",
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "While modelling syllable counts in a set of words, a linguist writes $(2x + k)(x - 3) = 2x^2 + bx - 15$. The equation is true for all values of $x$, and $b$ and $k$ are constants.",
+  "choices": [
+   "$b = -1$",
+   "$b = 5$",
+   "$b = -11$",
+   "$b = -6$"
+  ],
+  "answer": "A",
+  "explanation": "Expanding the left side gives $2x^2 - 6x + kx - 3k = 2x^2 + (k - 6)x - 3k$. Matching the constant terms gives $-3k = -15$, so $k = 5$. Matching the $x$ terms gives $b = k - 6 = 5 - 6 = -1$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You solved for $k$ and stopped there. The statement is about $b$, the coefficient of $x$, and that equals $k - 6$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You made a sign error solving $-3k = -15$ and got $k = -5$, which gives $b = -5 - 6 = -11$. Dividing both sides by $-3$ gives $k = 5$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You counted only the $-6x$ from $2x \\cdot (-3)$ and left out the $kx$ from $k \\cdot x$. Both products are $x$ terms, so $b = k - 6$."
+   }
+  },
+  "id": "orig-match-coeffici-M-a4325e",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-M-a4325e",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A cartographer adjusting a map projection simplifies the expression $5(x^2 - 2x) - 3(x^2 - 4)$ to the equivalent form $ax^2 + bx + c$, where $a$, $b$, and $c$ are constants.",
+  "choices": [
+   "$a + b + c = 4$",
+   "$a + b + c = -12$",
+   "$a + b + c = 12$",
+   "$a + b + c = 24$"
+  ],
+  "answer": "A",
+  "explanation": "Distribute each factor across its whole bracket: $5x^2 - 10x - 3x^2 + 12 = 2x^2 - 10x + 12$. That gives $a = 2$, $b = -10$, and $c = 12$, so $a + b + c = 4$. A shortcut: $a + b + c$ is the value of the expression at $x = 1$, and $5(1 - 2) - 3(1 - 4) = -5 + 9 = 4$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the $x^2$ term by $-3$ but not the $-4$, which left the constant as $-4$. Distributing the $-3$ fully gives $(-3)(-4) = +12$, so $c = 12$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the 5 to $x^2$ only and kept $-2x$ as the middle term. The 5 multiplies both terms, so $b = -10$, not $-2$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $a - b + c$, which is the value of the expression at $x = -1$. The statement asks for $a + b + c$, which is its value at $x = 1$."
+   }
+  },
+  "id": "orig-match-coeffici-M-d71bd5",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-M-d71bd5",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "form __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "The expression $3(x - 4)^2 - 2(x + 1)$ is equivalent to $ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. What is the value of $a + b + c$?",
+  "stimulus": "An ecologist uses the expression below to model how much dissolved oxygen a pond holds, where $x$ is the water temperature above a set baseline.",
+  "choices": [
+   "$-26$",
+   "$7$",
+   "$23$",
+   "$46$"
+  ],
+  "answer": "C",
+  "explanation": "Expand: $3(x^2 - 8x + 16) - 2x - 2 = 3x^2 - 24x + 48 - 2x - 2 = 3x^2 - 26x + 46$. So $a = 3$, $b = -26$ and $c = 46$, which gives $a + b + c = 23$. A quicker route: $a + b + c$ is the value of $ax^2 + bx + c$ at $x = 1$, so substitute $x = 1$ into the original expression: $3(-3)^2 - 2(2) = 27 - 4 = 23$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $b = -26$ correctly but stopped there. The question asks for $a + b + c$, not $b$ alone."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied only the $x^2$ term of $(x - 4)^2$ by 3 and wrote $3x^2 - 8x + 16$. The 3 multiplies every term, so it should be $3x^2 - 24x + 48$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the constant term $c = 46$ instead of the sum $a + b + c$."
+   }
+  },
+  "id": "orig-match-coeffici-M-050fcd",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-M-050fcd",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression $(x + 3)(ax - 2)$ is equivalent to $4x^2 + bx - 6$, where $a$ and $b$ are constants. What is the value of $b$?",
+  "stimulus": "A labour economist models a firm's weekly payroll cost, in hundreds of dollars, with the expression below, where $x$ is the number of overtime hours.",
+  "choices": [
+   "$4$",
+   "$10$",
+   "$12$",
+   "$14$"
+  ],
+  "answer": "B",
+  "explanation": "Expand: $(x + 3)(ax - 2) = ax^2 - 2x + 3ax - 6 = ax^2 + (3a - 2)x - 6$. The $x^2$ coefficients must match, so $a = 4$. Then $b = 3(4) - 2 = 10$. To check, substitute $x = 1$: $(4)(4 - 2) = 8$, and $4 + b - 6 = 8$ gives $b = 10$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $a = 4$ by matching the $x^2$ coefficients, but the question asks for $b$, the coefficient of $x$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You kept only the $3ax = 12x$ part of the middle term and left out the $-2x$ from $x \\cdot (-2)$. The coefficient of $x$ is $12 - 2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You made a sign error on $x \\cdot (-2)$ and added 2 instead of subtracting it, which gave $12 + 2$."
+   }
+  },
+  "id": "orig-match-coeffici-M-bb5107",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-M-bb5107",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression $\\frac{12x + 7}{3x - 1}$ is equivalent to $4 + \\frac{c}{3x - 1}$, where $c$ is a constant and $x \\neq \\frac{1}{3}$. What is the value of $c$?",
+  "stimulus": "A linguist models the ratio of borrowed words to native words in a growing dialect corpus with the expression below, where $x$ is the number of decades since recording began.",
+  "choices": [
+   "$3$",
+   "$4$",
+   "$8$",
+   "$11$"
+  ],
+  "answer": "D",
+  "explanation": "Write $12x + 7$ as $4(3x - 1) + c$. Since $4(3x - 1) = 12x - 4$, you need $-4 + c = 7$, so $c = 11$. Or substitute $x = 0$ into both sides: $\\frac{7}{-1} = -7$ and $4 + \\frac{c}{-1} = 4 - c$, so $4 - c = -7$ and $c = 11$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the sign of $-4$ the wrong way and computed $7 - 4$. Subtracting $12x - 4$ from $12x + 7$ leaves $7 + 4$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "4 is the whole-number part of the rewritten expression. The question asks for the numerator $c$ of the remainder."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied only the $3x$ by 4 and wrote $4(3x - 1)$ as $12x - 1$. The 4 multiplies both terms, so it gives $12x - 4$."
+   }
+  },
+  "id": "orig-match-coeffici-M-614fe7",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-M-614fe7",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ is equivalent to __var__ where __var__ is",
+    "is equivalent to __var__ where __var__ is a",
+    "equivalent to __var__ where __var__ is a constant"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given equation, $a$, $b$, and $c$ are constants, and the equation is true for all values of $x$. How much greater is $a$ than $b$?",
+  "stimulus": "A folklorist who tracks how many versions of a tale are recorded in neighbouring villages works with the product of two counting expressions:\n\n$(3x + 4)(2x - 5) = ax^2 + bx + c$",
+  "choices": [
+   "$-1$",
+   "$6$",
+   "$13$",
+   "$26$"
+  ],
+  "answer": "C",
+  "explanation": "Expand the left side: $(3x + 4)(2x - 5) = 6x^2 - 15x + 8x - 20 = 6x^2 - 7x - 20$. Match coefficients to get $a = 6$, $b = -7$, and $c = -20$. The question asks how much greater $a$ is than $b$, so you need $a - b = 6 - (-7) = 13$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You combined the middle terms as $+15x - 8x = 7x$ and got the sign of $b$ wrong. With $b = 7$, you got $6 - 7 = -1$. The correct value is $-15x + 8x = -7x$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You found $a = 6$ and stopped. The question asks how much greater $a$ is than $b$, so you still have to subtract $b$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You compared $a$ with the constant term $c$ and got $6 - (-20) = 26$. The question asks about $b$, the coefficient of $x$."
+   }
+  },
+  "id": "orig-match-coeffici-M-589545",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-M-589545",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ in the given equation __var__ __var__ and",
+    "in the given equation __var__ __var__ and __var__",
+    "the given equation __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given equation, $a$, $b$, and $c$ are constants, and the equation is true for all values of $x$. How much greater is $c$ than $b$?",
+  "stimulus": "A textile historian estimates how many threads of cloth from two looms survive in a museum collection, using this equation:\n\n$4(x^2 - 3x + 2) - x(x - 5) = ax^2 + bx + c$",
+  "choices": [
+   "$-15$",
+   "$0$",
+   "$8$",
+   "$15$"
+  ],
+  "answer": "D",
+  "explanation": "Distribute across every term: $4x^2 - 12x + 8 - x^2 + 5x = 3x^2 - 7x + 8$. So $a = 3$, $b = -7$, and $c = 8$. How much greater $c$ is than $b$ is $c - b = 8 - (-7) = 15$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You calculated $b - c = -7 - 8 = -15$. That is how much greater $b$ is than $c$, which is the reverse of what was asked."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied only $x^2$ by $4$ and left $-3x + 2$ as it was. That gives $3x^2 + 2x + 2$, so $c - b = 0$. The $4$ multiplies every term inside the parentheses."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You found $c = 8$ and stopped. You still need to subtract $b = -7$ to get the difference."
+   }
+  },
+  "id": "orig-match-coeffici-M-8e46a6",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-M-8e46a6",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ in the given equation __var__ __var__ and",
+    "in the given equation __var__ __var__ and __var__",
+    "the given equation __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given equation, $k$ and $m$ are constants, and the equation is true for all values of $x$. How much greater is $m$ than $k$?",
+  "stimulus": "A sports scientist models a sprinter's power output during a training block with this equation:\n\n$(3x + k)^2 = 9x^2 + 24x + m$",
+  "choices": [
+   "$-12$",
+   "$12$",
+   "$16$",
+   "$56$"
+  ],
+  "answer": "B",
+  "explanation": "Expand the left side: $(3x + k)^2 = 9x^2 + 6kx + k^2$. Matching the $x$ terms gives $6k = 24$, so $k = 4$. Matching the constant terms gives $m = k^2 = 16$. How much greater $m$ is than $k$ is $m - k = 16 - 4 = 12$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You calculated $k - m = 4 - 16 = -12$. That is how much greater $k$ is than $m$, which is the reverse of the gap you were asked for."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You found $m = 16$ and stopped. The question asks how much greater $m$ is than $k$, so you still have to subtract $k = 4$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the middle term of $(3x + k)^2$ as $3kx$ and forgot to double it. That gives $k = 8$ and $m = 64$, so $m - k = 56$. The middle term is $2 \\cdot 3x \\cdot k = 6kx$."
+   }
+  },
+  "id": "orig-match-coeffici-M-3f5344",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-M-3f5344",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "This expression is equivalent to $ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. What is the value of $a + b + c$?",
+  "stimulus": "A city planner models the area, in square meters, of a rectangular public plaza with the expression $4(x + 3)(2x - 1)$, where $x$ is a design parameter in meters.",
+  "choices": [
+   "$4$",
+   "$16$",
+   "$20$",
+   "$40$"
+  ],
+  "answer": "B",
+  "explanation": "First expand the binomials: $(x + 3)(2x - 1) = 2x^2 + 5x - 3$. Then multiply every term by $4$ to get $8x^2 + 20x - 12$. So $a = 8$, $b = 20$, and $c = -12$, and $a + b + c = 8 + 20 - 12 = 16$. To check, set $x = 1$ in the original: $4(4)(1) = 16$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the coefficients of $2x^2 + 5x - 3$ but never multiplied by the $4$ in front. That factor applies to every term before you compare coefficients."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$20$ is $b$, the coefficient of $x$. The question asks for the sum $a + b + c$, not one constant."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the constant term as $+3$ instead of $-3$ when you expanded $(x + 3)(2x - 1)$, which made $c = +12$ and the sum $8 + 20 + 12 = 40$."
+   }
+  },
+  "id": "orig-match-coeffici-M-397b9d",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-M-397b9d",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ __var__",
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression can be rewritten as $(ax + 3)(x + b)$, where $a$ and $b$ are constants. What is the value of $a + b$?",
+  "stimulus": "A civil engineer models the cross-sectional area, in square feet, of a concrete drainage channel with the expression $5x^2 + 13x + 6$, where $x$ is the channel's depth in feet.",
+  "choices": [
+   "$2$",
+   "$7$",
+   "$10$",
+   "$15$"
+  ],
+  "answer": "B",
+  "explanation": "Expand the target form: $(ax + 3)(x + b) = ax^2 + (ab + 3)x + 3b$. Matching the $x^2$ terms gives $a = 5$. Matching the constant terms gives $3b = 6$, so $b = 2$. Check the $x$ term: $5(2) + 3 = 13$, which matches. So $a + b = 5 + 2 = 7$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found $b = 2$ correctly but stopped there. The question asks for $a + b$, so you still need to add $a = 5$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$10$ is the product $ab$, not the sum. You found the right constants but combined them the wrong way."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the $x$ coefficient as $b + 3$ instead of $ab + 3$, dropping the factor $a$. Solving $b + 3 = 13$ gave $b = 10$ and a sum of $15$. Check the constant term: $3b$ would be $30$, not $6$."
+   }
+  },
+  "id": "orig-match-coeffici-M-881ecd",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-M-881ecd",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression can be rewritten as __var__ where __var__",
+    "can be rewritten as __var__ where __var__ and",
+    "be rewritten as __var__ where __var__ and __var__",
+    "rewritten as __var__ where __var__ and __var__ are"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "This expression is equivalent to $ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. What is the value of $c$?",
+  "stimulus": "In an immunology study, the predicted antibody level in a blood sample, in arbitrary units, is modeled by $2(3x^2 - 4x + 1) - 3(x^2 - 2x - 5)$, where $x$ is the number of days after a booster dose.",
+  "choices": [
+   "$-3$",
+   "$-2$",
+   "$17$",
+   "$18$"
+  ],
+  "answer": "C",
+  "explanation": "Distribute each factor to every term inside its parentheses: $2(3x^2 - 4x + 1) = 6x^2 - 8x + 2$ and $-3(x^2 - 2x - 5) = -3x^2 + 6x + 15$. Combine like terms to get $3x^2 - 2x + 17$. The constant term is $c = 17$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the $-3$ only to $x^2$ and left $-2x - 5$ unchanged, which gave $3x^2 - 10x - 3$. The $-3$ multiplies every term in its parentheses, so $-3(-5) = +15$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$-2$ is $b$, the coefficient of $x$. The question asks for $c$, the constant term."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$18$ is $a + b + c = 3 - 2 + 17$. The question asks for $c$ alone."
+   }
+  },
+  "id": "orig-match-coeffici-M-c72da0",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-M-c72da0",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ __var__",
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
  }
 ]

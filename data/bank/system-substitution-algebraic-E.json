@@ -265,5 +265,254 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "Which ordered pair $(x, y)$ is a solution to the given system of equations?",
+  "stimulus": "A folklore studies student uses the system below to check a model of how two versions of a tale change in length.\n\n$y = x^2 + 2x - 3$\n$y = 3x + 3$",
+  "choices": [
+   "$(-2, 3)$",
+   "$(1, 0)$",
+   "$(3, 12)$",
+   "$(2, 9)$"
+  ],
+  "answer": "C",
+  "explanation": "Substitute $3x + 3$ for $y$ in the first equation: $3x + 3 = x^2 + 2x - 3$, so $x^2 - x - 6 = 0$. This factors as $(x - 3)(x + 2) = 0$, so $x = 3$ or $x = -2$. When $x = 3$, $y = 3(3) + 3 = 12$. Check it in the other equation: $9 + 6 - 3 = 12$. So $(3, 12)$ is a solution. The other solution, $(-2, -3)$, isn't among the choices.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $x = -2$ correctly but dropped the negative sign on $y$. The line gives $y = 3(-2) + 3 = -3$, not $3$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "This pair satisfies the quadratic, since $1 + 2 - 3 = 0$, but not the line, since $3(1) + 3 = 6$. A solution to a system has to satisfy both equations."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored $x^2 - x - 6$ with the signs swapped and got $x = 2$, then used the line to get $y = 9$. The point is on the line, but the quadratic gives $4 + 4 - 3 = 5$ there, so it isn't a solution."
+   }
+  },
+  "id": "orig-system-substit-E-55c191",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-E-55c191",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __var__ which ordered pair __var__ is a",
+    "__var__ which ordered pair __var__ is a solution"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $(x, y)$ is a solution to the given system of equations and $x > 0$, what is the value of $y$?",
+  "stimulus": "A linguistics researcher sets up the following system while comparing two word-frequency models.\n\n$y = x^2 - 4$\n$y = 2x + 4$",
+  "choices": [
+   "$12$",
+   "$0$",
+   "$4$",
+   "$16$"
+  ],
+  "answer": "A",
+  "explanation": "Set the two expressions for $y$ equal: $x^2 - 4 = 2x + 4$, so $x^2 - 2x - 8 = 0$. This factors as $(x - 4)(x + 2) = 0$, so $x = 4$ or $x = -2$. Because $x > 0$, $x = 4$, and $y = 2(4) + 4 = 12$. Check it in the quadratic: $16 - 4 = 12$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "This is the $y$-value of the solution where $x = -2$. That solution breaks the condition $x > 0$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the value of $x$ at the positive solution. The question asks for $y$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You put $x = 4$ into $y = x^2$ and left out the $-4$, so this $y$ doesn't come from either given equation."
+   }
+  },
+  "id": "orig-system-substit-E-d67681",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-E-d67681",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which ordered pair $(x, y)$ is a solution to the given system of equations?",
+  "stimulus": "A printmaker models ink coverage on two plates with the system below.\n\n$y = x^2 + 5x$\n$y = 2x$",
+  "choices": [
+   "$(3, 6)$",
+   "$(0, 0)$",
+   "$(-3, 6)$",
+   "$(5, 10)$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute $2x$ for $y$: $2x = x^2 + 5x$, so $x^2 + 3x = 0$. Factor out $x$ to get $x(x + 3) = 0$, so $x = 0$ or $x = -3$. When $x = 0$, $y = 2(0) = 0$, and the quadratic also gives $0$. So $(0, 0)$ is a solution. If you divide both sides by $x$ instead of factoring it out, you lose this solution.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You solved $x + 3 = 0$ as $x = 3$. The point $(3, 6)$ is on the line, but the quadratic gives $9 + 15 = 24$ there."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $x = -3$ correctly but lost the sign on $y$. The line gives $y = 2(-3) = -6$, not $6$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You took the coefficient $5$ from $5x$ as a solution. The point $(5, 10)$ is on the line, but the quadratic gives $25 + 25 = 50$ there."
+   }
+  },
+  "id": "orig-system-substit-E-2c1775",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-E-2c1775",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __var__ which ordered pair __var__ is a",
+    "__var__ which ordered pair __var__ is a solution"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which ordered pair $(x, y)$ is a solution to the given system of equations?",
+  "stimulus": "A musicologist relates two features of a set of folk melodies with the following system.\n\n$x + y = 10$\n$y = x^2 - 2$",
+  "choices": [
+   "$(-3, 7)$",
+   "$(4, 6)$",
+   "$(3, 7)$",
+   "$(3, 13)$"
+  ],
+  "answer": "C",
+  "explanation": "Rewrite the first equation as $y = 10 - x$ and substitute: $10 - x = x^2 - 2$, so $x^2 + x - 12 = 0$. This factors as $(x + 4)(x - 3) = 0$, so $x = 3$ or $x = -4$. When $x = 3$, $y = 10 - 3 = 7$. Check both equations: $3 + 7 = 10$ and $9 - 2 = 7$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "This pair satisfies the quadratic, since $9 - 2 = 7$, but $-3 + 7 = 4$, not $10$. It satisfies only one of the two equations."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored with the signs swapped and got $x = 4$. The pair $(4, 6)$ is on the line, but the quadratic gives $16 - 2 = 14$ there."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $x = 3$ but rearranged the line incorrectly as $y = 10 + x$, so you got the wrong $y$. Neither equation holds for $(3, 13)$."
+   }
+  },
+  "id": "orig-system-substit-E-166629",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-E-166629",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __var__ which ordered pair __var__ is a",
+    "__var__ which ordered pair __var__ is a solution"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $(x, y)$ is a solution to the given system of equations and $x > 0$, what is the value of $x + y$?",
+  "stimulus": "A meteorologist compares two models of overnight temperature change using the system below.\n\n$y = x^2 - 10$\n$y = 3x$",
+  "choices": [
+   "$-8$",
+   "$8$",
+   "$15$",
+   "$20$"
+  ],
+  "answer": "D",
+  "explanation": "Substitute $3x$ for $y$: $3x = x^2 - 10$, so $x^2 - 3x - 10 = 0$. This factors as $(x - 5)(x + 2) = 0$, so $x = 5$ or $x = -2$. Because $x > 0$, $x = 5$ and $y = 3(5) = 15$. So $x + y = 5 + 15 = 20$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "This is $x + y$ for the solution $(-2, -6)$. That solution breaks the condition $x > 0$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored with the signs swapped and got $x = 2$, then $y = 6$ from the line. The quadratic gives $4 - 10 = -6$ there, so $(2, 6)$ isn't a solution."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $y$ alone. The question asks for $x + y$, so you still need to add $x = 5$."
+   }
+  },
+  "id": "orig-system-substit-E-5c12c7",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-E-5c12c7",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

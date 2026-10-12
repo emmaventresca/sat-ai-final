@@ -249,5 +249,53 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. What is the value of $x$?",
+  "stimulus": "$x = \\frac{3y - 8}{2}$\n$4x - 5y = -10$",
+  "choices": [
+   "$-7$",
+   "$5$",
+   "$6$",
+   "$10$"
+  ],
+  "answer": "B",
+  "explanation": "The first equation already gives x, so substitute it into the second: $4\\left(\\frac{3y - 8}{2}\\right) - 5y = -10$. Because $4 \\cdot \\frac{1}{2} = 2$, this becomes $2(3y - 8) - 5y = -10$, so $6y - 16 - 5y = -10$ and $y = 6$. The question asks for x, so substitute back: $x = \\frac{3(6) - 8}{2} = \\frac{10}{2} = 5$. Check it in the second equation: $4(5) - 5(6) = 20 - 30 = -10$. \u2713",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied only the first term by 2 and wrote $2(3y - 8)$ as $6y - 8$. That gives $6y - 8 - 5y = -10$, so $y = -2$ and $x = \\frac{3(-2) - 8}{2} = -7$. Multiply both terms inside the parentheses."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "6 is the value of y, the variable you solved for first. The question asks for x, so you have to substitute $y = 6$ back into the first equation."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You substituted $y = 6$ into the first equation and stopped at the numerator, $3(6) - 8 = 10$. You still need to divide by 2 to get x."
+   }
+  },
+  "id": "orig-bare-system-su-H-b18817",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-H-b18817",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

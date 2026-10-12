@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-zeros-and-fact-X-695eac",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,11 +82,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-zeros-and-fact-X-7941b7",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "by __var__ where __var__ is a constant in",
     "__var__ where __var__ is a constant in the",
@@ -94,5 +104,398 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the value of $p(2)$?",
+  "stimulus": "An urban planner models the change in weekday traffic on a downtown street, in hundreds of vehicles, $x$ years after a new bypass opens, using a cubic polynomial function $p$. The zeros of $p$ are $-3$, $\\frac{1}{2}$, and $4$, and the graph of $y = p(x)$ in the xy-plane passes through the point $(0, 24)$.",
+  "choices": [
+   "$60$",
+   "$-30$",
+   "$-60$",
+   "$100$"
+  ],
+  "answer": "C",
+  "explanation": "Each zero gives a factor, so $p(x) = a(x + 3)(2x - 1)(x - 4)$. The zero $\\frac{1}{2}$ comes from $(2x - 1)$, and $(x - \\frac{1}{2})$ would also work as long as you use it consistently. Substitute the point $(0, 24)$: $a(3)(-1)(-4) = 12a = 24$, so $a = 2$. Then $p(2) = 2(5)(3)(-2) = -60$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote every factor as $(x + r)$ instead of $(x - r)$, which gave $a(x - 3)(2x + 1)(x + 4)$. Then $p(0) = -12a = 24$ made $a = -2$, and every sign after that came out reversed. A zero at $r$ always gives the factor $(x - r)$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You built the factors correctly and evaluated $(x + 3)(2x - 1)(x - 4)$ at $x = 2$, but you never used the point $(0, 24)$ to find the leading coefficient. That product has to be multiplied by $a = 2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the sign of just the fractional zero and wrote $(2x + 1)$. That made $p(0) = -12a$, so $a = -2$, and $p(2) = -2(5)(5)(-2) = 100$. The zero $\\frac{1}{2}$ means $2x - 1 = 0$."
+   }
+  },
+  "id": "orig-zeros-and-fact-X-f04f7b",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-X-f04f7b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "in the xy plane passes through the point",
+    "the xy plane passes through the point __var__"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the product of all the zeros of $f$?",
+  "stimulus": "A meteorologist models how far a city's daily temperature is from its seasonal average, in degrees Celsius, with the function $f(x) = (2x - 3)(x^2 - kx + 12)$, where $k$ is a constant. One of the zeros of $f$ is $2$.",
+  "choices": [
+   "$18$",
+   "$36$",
+   "$-18$",
+   "$8$"
+  ],
+  "answer": "A",
+  "explanation": "The factor $2x - 3$ is not zero at $x = 2$, so the quadratic must be: $4 - 2k + 12 = 0$, which gives $k = 8$. Then $x^2 - 8x + 12 = (x - 2)(x - 6)$. The zero of $2x - 3$ is $\\frac{3}{2}$, not $3$. So the zeros are $\\frac{3}{2}$, $2$, and $6$, and their product is $18$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the zero of $(2x - 3)$ to be $3$. Solve inside the factor: $2x - 3 = 0$ gives $x = \\frac{3}{2}$, which cuts the product in half."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the constant term by the leading coefficient, $\\frac{(-3)(12)}{2} = -18$, and called that the product of the zeros. For a cubic, the constant term is the leading coefficient times $(-r_1)(-r_2)(-r_3)$. Three negatives make the sign flip, so the product of the zeros is $+18$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$8$ is the value of $k$. That is a step on the way, not the product of the zeros you were asked for."
+   }
+  },
+  "id": "orig-zeros-and-fact-X-1fe457",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-X-1fe457",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is NOT an x-intercept of the graph of $y = d(x)$ in the xy-plane?",
+  "stimulus": "A civil engineer models the vertical deflection of a test beam with the function $d(x) = (x^2 + 4)(9x^2 - 4)(x - 1)$.",
+  "choices": [
+   "$\\left(-\\frac{2}{3}, 0\\right)$",
+   "$\\left(\\frac{2}{3}, 0\\right)$",
+   "$(1, 0)$",
+   "$(-2, 0)$"
+  ],
+  "answer": "D",
+  "explanation": "The factor $x^2 + 4$ is always at least $4$, so it is never zero and gives no x-intercepts. $9x^2 - 4 = (3x - 2)(3x + 2)$ is zero at $x = \\pm\\frac{2}{3}$, and $x - 1$ is zero at $x = 1$. The only intercepts are at $-\\frac{2}{3}$, $\\frac{2}{3}$, and $1$, so $(-2, 0)$ is not one of them.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You solved $9x^2 = 4$ but kept only the positive root. Taking a square root gives two values, $x = \\pm\\frac{2}{3}$, so $-\\frac{2}{3}$ is also a zero."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored $9x^2 - 4$ as $(3x - 2)(3x + 2)$ and read the zeros as $\\pm 2$ without dividing by the $3$. That made $(-2, 0)$ look like an intercept and $(\\frac{2}{3}, 0)$ look like it wasn't. Set each factor equal to zero: $3x - 2 = 0$ gives $x = \\frac{2}{3}$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the factor $(x - 1)$ as a zero at $-1$. The factor $(x - r)$ is zero at $x = r$, so $(x - 1)$ gives the intercept $(1, 0)$."
+   }
+  },
+  "id": "orig-zeros-and-fact-X-c5395b",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-X-c5395b",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "an x intercept of the graph of __var__"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "A folklore researcher fits the parabola $y = 2x^2 + bx - 12$, where $b$ is a positive constant, to audience ratings across one telling of a tale. The two x-intercepts of the graph in the xy-plane are $5$ units apart.",
+  "choices": [
+   "$-2$",
+   "$2$",
+   "$1$",
+   "$-3$"
+  ],
+  "answer": "B",
+  "explanation": "Call the intercepts $r$ and $r + 5$. Then $2(x - r)(x - r - 5)$ has constant term $2r(r + 5) = -12$, so $r^2 + 5r + 6 = 0$ and $r = -2$ or $r = -3$. That gives zeros $-2$ and $3$, or zeros $-3$ and $2$. Expanding each, $2(x + 2)(x - 3) = 2x^2 - 2x - 12$ and $2(x + 3)(x - 2) = 2x^2 + 2x - 12$. Only the second has $b > 0$, so $b = 2$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You can get here two ways. You either kept the pair $-2$ and $3$, which ignores the condition that $b$ is positive, or you wrote the zeros $-3$ and $2$ as the factors $(x - 3)(x + 2)$, which flips the signs. Either way $b = -2$, and that fails $b > 0$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the zeros $-3$ and $2$ correctly, but then took $b$ as the negative of their sum, $1$, as if the leading coefficient were $1$. With the $2$ in front, $b = -2(-3 + 2) = 2$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$-3$ is the smaller x-intercept. The question asks for the coefficient $b$."
+   }
+  },
+  "id": "orig-zeros-and-fact-X-d8caec",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-X-d8caec",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $c$?",
+  "stimulus": "An agronomist models the change in a field's yield with the polynomial $p(x) = 2x^3 + bx^2 + cx - 30$, where $b$ and $c$ are constants. Two of the zeros of $p$ are $3$ and $-1$.",
+  "choices": [
+   "$14$",
+   "$-46$",
+   "$-26$",
+   "$6$"
+  ],
+  "answer": "C",
+  "explanation": "Write $p(x) = 2(x - 3)(x + 1)(x - r)$. Its constant term is $2(-3)(1)(-r) = 6r$, and this must equal $-30$, so $r = -5$. Then $p(x) = 2(x^2 - 2x - 3)(x + 5) = 2x^3 + 6x^2 - 26x - 30$, so $c = -26$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You got the sign of the product of the zeros wrong and found the third zero to be $5$. Expanding $2(x - 3)(x + 1)(x - 5)$ gives $c = 14$, but that polynomial has constant term $+30$, not $-30$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You set $3 \\cdot (-1) \\cdot r$ equal to $30$ and left out the leading coefficient $2$, which gave $r = -10$. Expanding $2(x - 3)(x + 1)(x + 10)$ gives $c = -46$, but its constant term is $-60$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$6$ is $b$, the coefficient of $x^2$. The question asks for $c$, the coefficient of $x$."
+   }
+  },
+  "id": "orig-zeros-and-fact-X-1b8adb",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-X-1b8adb",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "are __var__ and __var__ what is the value"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "An astronomer models the brightness variation of a star with $f(x) = (3x + k)(x - 4)$, where $k$ is a positive constant. In the xy-plane, the two x-intercepts of the graph of $y = f(x)$ are $6$ units apart.",
+  "choices": [
+   "$6$",
+   "$2$",
+   "$-30$",
+   "$-2$"
+  ],
+  "answer": "A",
+  "explanation": "The zeros are $4$ and $-\\frac{k}{3}$, since $3x + k = 0$ gives $x = -\\frac{k}{3}$. Being $6$ units apart means $\\left|4 + \\frac{k}{3}\\right| = 6$, so $\\frac{k}{3} = 2$ or $\\frac{k}{3} = -10$. That gives $k = 6$ or $k = -30$. Only $k = 6$ is positive.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the zero of $(3x + k)$ to be $-k$, which led to $|4 + k| = 6$. You didn't divide by the coefficient $3$. The zero is $-\\frac{k}{3}$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "$k = -30$ does put the intercepts $6$ units apart, at $10$ and $4$, but it breaks the condition that $k$ is positive."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$-2$ is the other x-intercept, $-\\frac{k}{3}$. The question asks for $k$ itself."
+   }
+  },
+  "id": "orig-zeros-and-fact-X-ac4c08",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-X-ac4c08",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the sum of the x-coordinates of all the x-intercepts of the graph of $y = f(x)$ in the xy-plane?",
+  "stimulus": "A public health analyst models the weekly change in clinic visits with $f(x) = (x - 1)(x^2 + kx - 10)$, where $k$ is a constant. The graph of $y = f(x)$ has an x-intercept at $(-5, 0)$.",
+  "choices": [
+   "$4$",
+   "$3$",
+   "$-3$",
+   "$-2$"
+  ],
+  "answer": "D",
+  "explanation": "Substitute $x = -5$ into the quadratic factor: $25 - 5k - 10 = 0$, so $k = 3$. Then $x^2 + 3x - 10 = (x + 5)(x - 2)$. The intercepts are at $1$, $-5$, and $2$, and they add up to $-2$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You substituted $x = 5$ instead of $x = -5$, as if the intercept $-5$ came from the factor $(x - 5)$. That gave $k = -3$ and intercepts $1$, $5$, and $-2$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$3$ is the value of $k$. You stopped before finding the intercepts the question asks about."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "$-3$ is the sum of the two zeros from the quadratic factor only. You left out the intercept at $x = 1$ from the factor $(x - 1)$."
+   }
+  },
+  "id": "orig-zeros-and-fact-X-593ac7",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-X-593ac7",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the y-coordinate of the y-intercept of the graph of $y = f(x)$ in the xy-plane?",
+  "stimulus": "A materials scientist models a polymer's strain response with $f(x) = (ax - 3)(x + a)$, where $a$ is a positive constant. The graph of $y = f(x)$ has an x-intercept at $\\left(\\frac{1}{2}, 0\\right)$.",
+  "choices": [
+   "$\\frac{3}{2}$",
+   "$-18$",
+   "$-\\frac{1}{2}$",
+   "$6$"
+  ],
+  "answer": "B",
+  "explanation": "The zeros are $\\frac{3}{a}$ and $-a$. If $-a = \\frac{1}{2}$, then $a$ is negative, which isn't allowed. So $\\frac{3}{a} = \\frac{1}{2}$, which gives $a = 6$. Then $f(0) = (-3)(6) = -18$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You used $-a = \\frac{1}{2}$, so $a = -\\frac{1}{2}$, and got $f(0) = (-3)(-\\frac{1}{2}) = \\frac{3}{2}$. That value of $a$ breaks the condition that $a$ is positive."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the zero of $(ax - 3)$ as $3a$, which gave $a = \\frac{1}{6}$. Solve inside the factor: $ax - 3 = 0$ gives $x = \\frac{3}{a}$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$6$ is the value of $a$. The question asks for $f(0)$, the y-coordinate of the y-intercept."
+   }
+  },
+  "id": "orig-zeros-and-fact-X-abfe5f",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-X-abfe5f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ where __var__ is a positive constant the"
+   ],
+   "residue": 0
+  }
  }
 ]

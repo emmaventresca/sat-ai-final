@@ -243,5 +243,53 @@
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which expression is equivalent to $f(t)$?",
+  "stimulus": "A musicologist studying pitch drift in archival choir recordings models the deviation from concert pitch, in cents, $t$ minutes into a performance with the function $f(t) = 2t^2 - 24t + 85$.",
+  "choices": [
+   "$2(t + 6)^2 + 13$",
+   "$2(t - 6)^2 + 49$",
+   "$2(t - 6)^2 + 13$",
+   "$(t - 6)^2 + 13$"
+  ],
+  "answer": "C",
+  "explanation": "Every choice is in vertex form, so complete the square. First factor the 2 out of the two $t$ terms: $f(t) = 2(t^2 - 12t) + 85$. Half of $-12$ is $-6$, and $(-6)^2 = 36$. Add and subtract 36 inside the parentheses: $2(t^2 - 12t + 36 - 36) + 85 = 2(t - 6)^2 - 72 + 85$. The 36 you took away is still multiplied by the 2 outside, so it costs $2 \\cdot 36 = 72$. That leaves $2(t - 6)^2 + 13$. To check, expand it: $2(t^2 - 12t + 36) + 13 = 2t^2 - 24t + 72 + 13 = 2t^2 - 24t + 85$, which matches. You can also check with $t = 2$: $f(2) = 8 - 48 + 85 = 45$, and $2(2 - 6)^2 + 13 = 32 + 13 = 45$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You got the sign of $h$ wrong. Completing $t^2 - 12t$ gives $(t - 6)^2$, not $(t + 6)^2$. If you expand $2(t + 6)^2$, the middle term is $+24t$, which is the opposite sign. Test $t = 2$: this choice gives $2(8)^2 + 13 = 141$, not 45."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You forgot that the 36 you added sits inside parentheses that are multiplied by 2. You subtracted only 36 from 85 and got 49. You needed to subtract $2 \\cdot 36 = 72$. If you expand this choice, the constant comes out as $72 + 49 = 121$, not 85."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You worked out the right $h$ and $k$ but dropped the leading coefficient 2 that you factored out. Expanding gives $t^2 - 12t + 49$. Both the $t^2$ and $t$ coefficients are half of what they should be."
+   }
+  },
+  "id": "orig-factor-special-H-7e1f0f",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-H-7e1f0f",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

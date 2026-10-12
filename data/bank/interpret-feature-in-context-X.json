@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-interpret-feat-X-892234",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "__var__ where __var__ is the number of years",
     "__var__ is the number of years since the",
@@ -85,14 +90,422 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-interpret-feat-X-8e5b99",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "in_context"
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 240 in this context?",
+  "stimulus": "An agronomist models the extra corn yield produced by nitrogen fertilizer with the function $G(n) = -0.005n(n - 240)$, where $G(n)$ is the predicted increase in yield, in bushels per acre, compared with an unfertilized plot, and $n$ is the amount of nitrogen applied, in kilograms per hectare, for $0 \\le n \\le 240$.",
+  "choices": [
+   "Applying 240 kilograms of nitrogen per hectare produces the greatest predicted gain in yield.",
+   "Applying 240 kilograms of nitrogen per hectare produces a predicted yield of 0 bushels per acre.",
+   "Applying 240 kilograms of nitrogen per hectare produces the same predicted yield as applying none.",
+   "Applying no nitrogen produces a predicted gain in yield of 240 bushels per acre."
+  ],
+  "answer": "C",
+  "explanation": "240 is the nonzero solution of $G(n) = 0$, so it is an input that gives an output of 0. But the output is the gain over an unfertilized plot, not the yield itself. A gain of 0 means the yield at 240 kg/ha is the same as the yield with no nitrogen.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the meaning of the vertex. The greatest gain is halfway between the roots 0 and 240, at $n = 120$, not at 240."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You correctly saw that 240 makes the output 0, then read the output as total yield. $G$ measures the gain over an unfertilized plot, so $G = 0$ means no extra yield, not no yield."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped input and output. 240 is a nitrogen amount ($n$), not a yield. In fact $G(0) = 0$."
+   }
+  },
+  "id": "orig-interpret-feat-X-dc9ab8",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-X-dc9ab8",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 0.75 in this context?",
+  "stimulus": "After a city launched a vaccination campaign, health officials modeled the number of new flu cases reported each week with the function $N(t) = 3{,}200(0.75)^{t/2}$, where $t$ is the number of weeks since the campaign began.",
+  "choices": [
+   "The predicted number of new cases each week falls by 25% every 2 weeks.",
+   "The predicted number of new cases each week falls by 25% every week.",
+   "The predicted number of new cases each week falls to 25% of its value every 2 weeks.",
+   "The predicted number of new cases each week falls by 800 cases every 2 weeks."
+  ],
+  "answer": "A",
+  "explanation": "The exponent is $t/2$, so the factor 0.75 is applied once every time $t$ goes up by 2. Multiplying by 0.75 keeps 75% and removes 25%. So the weekly count falls by 25% every 2 weeks.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You read the base correctly as a 25% decrease but missed the $t/2$ in the exponent. The factor is applied once per 2 weeks, not once per week."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You mixed up the part kept with the part lost. Multiplying by 0.75 leaves 75% of the value, not 25%."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You worked out the first drop, $3{,}200 - 2{,}400 = 800$, and treated it as a fixed amount. An exponential model removes a constant percentage, so later drops are smaller than 800."
+   }
+  },
+  "id": "orig-interpret-feat-X-8b9799",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-X-8b9799",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "where __var__ is the number of weeks since",
+    "__var__ is the number of weeks since the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 35 in this context?",
+  "stimulus": "In a vaccine study, mice received a first dose on day 0 and a second dose on day 21. The researchers modeled the antibody level, in arbitrary units, with the function $A(t) = -0.5(t - 35)^2 + 450$, where $t$ is the number of days since the first dose, for $21 \\le t \\le 49$.",
+  "choices": [
+   "The predicted antibody level is highest 35 days after the second dose.",
+   "The predicted antibody level is highest 14 days after the second dose.",
+   "The predicted antibody level is 35 units at its highest.",
+   "The predicted antibody level is lowest 14 days after the second dose."
+  ],
+  "answer": "B",
+  "explanation": "In vertex form, 35 is the input at the vertex. Because $a = -0.5$ is negative, the vertex is a maximum. $t$ counts days from the first dose, so day 35 is $35 - 21 = 14$ days after the second dose.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You found that 35 is where the maximum occurs but measured it from the wrong dose. $t$ counts from the first dose, so day 35 is 14 days after the second dose."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped input and output. 35 is a time in days, and the highest level is 450 units."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the timing right but the curvature wrong. With a negative leading coefficient, the parabola opens downward, so the vertex is a maximum."
+   }
+  },
+  "id": "orig-interpret-feat-X-3aa029",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-X-3aa029",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of the point $(12, 25)$ in this context?",
+  "stimulus": "A bottle of juice contains 120 milligrams of vitamin C when it is sealed. The function $P(w) = 100(0.5)^{w/6}$ gives the predicted percent of the original vitamin C that remains after $w$ weeks of storage. The point $(12, 25)$ lies on the graph of $y = P(w)$.",
+  "choices": [
+   "After 12 weeks of storage, the juice contains 25 milligrams of vitamin C.",
+   "After 12 weeks of storage, the juice contains 90 milligrams of vitamin C.",
+   "After 25 weeks of storage, the juice contains 12 milligrams of vitamin C.",
+   "After 12 weeks of storage, the juice contains 30 milligrams of vitamin C."
+  ],
+  "answer": "D",
+  "explanation": "The point means $P(12) = 25$, so 25% of the original vitamin C remains after 12 weeks. The original amount is 120 mg, so $0.25 \\times 120 = 30$ milligrams remain.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read the output as milligrams. $P$ gives a percent of the original amount, so 25 means 25% of 120 mg, not 25 mg."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the amount lost, $120 - 30 = 90$ mg, and called it the amount remaining."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You swapped the coordinates. The first coordinate is the time in weeks, and the second is the percent remaining."
+   }
+  },
+  "id": "orig-interpret-feat-X-06401a",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-X-06401a",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "of __var__ which of the following is the",
+    "is the best interpretation of the point __var__",
+    "the best interpretation of the point __var__ in",
+    "best interpretation of the point __var__ in this",
+    "interpretation of the point __var__ in this context"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of $k$ in this context?",
+  "stimulus": "A probe is launched straight up from a platform on the Moon. Its height above the lunar surface, in meters, $t$ seconds after launch is modeled by $h(t) = -0.8t^2 + 16t + 3$. The equation $h(t) = 3$ has two solutions, $t = 0$ and $t = k$.",
+  "choices": [
+   "The probe reaches its greatest height $k$ seconds after launch.",
+   "The probe strikes the lunar surface $k$ seconds after launch.",
+   "The probe is back at the height it was launched from $k$ seconds after launch.",
+   "The probe's greatest height is $k$ meters above the platform."
+  ],
+  "answer": "C",
+  "explanation": "$h(t) = 3$ asks when the height is 3 meters, which is the platform height because $h(0) = 3$. One solution is the launch itself. The other, $k = 20$, is when the probe falls back to the platform's height.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the meaning of the vertex. The greatest height is halfway between the two times at the same height, at $t = 10$, not at $t = k$."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You treated $k$ as a root of $h(t) = 0$. The equation is $h(t) = 3$, so at $t = k$ the probe is 3 meters up, not on the surface."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You treated $k$ as a height. $k$ solves for $t$, so it is a time in seconds."
+   }
+  },
+  "id": "orig-interpret-feat-X-46c196",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-X-46c196",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of the vertex of the graph of $y = H(x)$ in this context?",
+  "stimulus": "A suspension cable hangs between two towers 300 meters apart. Its height above the bridge deck, in meters, is modeled by $H(x) = 0.004x^2 - 1.2x + 92$, where $x$ is the horizontal distance, in meters, from the left tower, for $0 \\le x \\le 300$.",
+  "choices": [
+   "The cable's lowest point is 2 meters above the deck, 150 meters from the left tower.",
+   "The cable's lowest point is 92 meters above the deck, at the left tower.",
+   "The cable's highest point is 2 meters above the deck, 150 meters from the left tower.",
+   "The cable's lowest point is 150 meters above the deck, 2 meters from the left tower."
+  ],
+  "answer": "A",
+  "explanation": "The vertex is at $x = \\frac{1.2}{2(0.004)} = 150$, and $H(150) = 90 - 180 + 92 = 2$. Because $a = 0.004$ is positive, the parabola opens upward, so the vertex is a minimum. The cable sags to 2 meters above the deck, 150 meters from the left tower.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the meaning of the y-intercept. 92 is the height where the cable meets the left tower ($x = 0$), not the vertex."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You found the vertex correctly but got the curvature wrong. A positive leading coefficient means the parabola opens upward, so the vertex is a minimum."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the coordinates. 150 is the horizontal distance and 2 is the height."
+   }
+  },
+  "id": "orig-interpret-feat-X-16396e",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-X-16396e",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "following is the best interpretation of the vertex",
+    "is the best interpretation of the vertex of",
+    "the best interpretation of the vertex of the",
+    "best interpretation of the vertex of the graph",
+    "interpretation of the vertex of the graph of",
+    "of the vertex of the graph of __var__",
+    "the vertex of the graph of __var__ in"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 26,460 in this context?",
+  "stimulus": "A city planner models the population of a growing district with the function $P(t) = 26{,}460(1.05)^{t - 2}$, where $t$ is the number of years since 2020.",
+  "choices": [
+   "The district's estimated population in 2020 was 26,460.",
+   "The district's estimated population grew by 26,460 from 2020 to 2022.",
+   "The district's estimated population in 2018 was 26,460.",
+   "The district's estimated population in 2022 was 26,460."
+  ],
+  "answer": "D",
+  "explanation": "$P(t) = 26{,}460$ exactly when the exponent $t - 2$ is 0, so when $t = 2$. Since $t$ counts years after 2020, that is 2022. The 2020 population is $P(0) = 26{,}460 \\div 1.05^2 = 24{,}000$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You assumed the coefficient is the starting value, but that is only true when the exponent is $t$. Here the exponent is $t - 2$, so 26,460 is the value at $t = 2$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read the coefficient as an amount added. The population grew from 24,000 to 26,460, an increase of 2,460, not 26,460."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You shifted the wrong way. $t - 2 = 0$ gives $t = 2$, which is two years after 2020, not before it."
+   }
+  },
+  "id": "orig-interpret-feat-X-1fa2f5",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-X-1fa2f5",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ where __var__ is the number of years"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 180 in this context?",
+  "stimulus": "A metallurgist removes an alloy sample from a furnace and leaves it to cool in a room kept at $25^\\circ\\text{C}$. The function $D(t) = 180(0.8)^t$ models the difference, in degrees Celsius, between the sample's temperature and the room's temperature $t$ minutes after removal.",
+  "choices": [
+   "The sample's temperature was $180^\\circ\\text{C}$ when it was removed from the furnace.",
+   "The sample was $180^\\circ\\text{C}$ warmer than the room when it was removed from the furnace.",
+   "The sample's temperature fell by 20% each minute after it was removed from the furnace.",
+   "The sample was $180^\\circ\\text{C}$ warmer than the room 1 minute after it was removed from the furnace."
+  ],
+  "answer": "B",
+  "explanation": "180 is $D(0)$, the output when 0 minutes have passed. The output is the temperature difference from the room, so at removal the sample was 180 degrees warmer than the room (an actual temperature of $205^\\circ\\text{C}$).",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You correctly saw that 180 is the starting value but read the output as the sample's temperature. $D$ measures how far above room temperature the sample is."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You described the base, 0.8, instead of 180. That statement is also wrong in itself: it is the temperature difference that shrinks by 20% each minute, not the temperature."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $t = 1$ as the starting time. At $t = 1$ the difference is $180(0.8) = 144$, so 180 is the difference at $t = 0$."
+   }
+  },
+  "id": "orig-interpret-feat-X-353a6e",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-X-353a6e",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

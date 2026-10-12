@@ -1,0 +1,1055 @@
+[
+ {
+  "stem": "What is the value of $\\sin\\left(\\frac{17\\pi}{6}\\right)$?",
+  "stimulus": "In a folklore studies project, a storyteller's prop wheel is turned through an angle of $\\frac{17\\pi}{6}$ radians from its starting position.",
+  "keys": [
+   "1/2",
+   ".5",
+   "0.5"
+  ],
+  "any_of": false,
+  "explanation": "First take away one full turn: $\\frac{17\\pi}{6} - 2\\pi = \\frac{5\\pi}{6}$. That angle is in Quadrant II, and its reference angle is $\\frac{\\pi}{6}$. The unit-circle point is $\\left(-\\frac{\\sqrt{3}}{2}, \\frac{1}{2}\\right)$. Sine is the y-coordinate, and y is positive in Quadrant II, so $\\sin\\left(\\frac{17\\pi}{6}\\right) = \\frac{1}{2}$. In Desmos, with degree mode off, $\\sin(17\\pi/6)$ gives 0.5.",
+  "common_errors": [
+   {
+    "value": "-1/2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Reduced the angle to $\\frac{5\\pi}{6}$ but put it in Quadrant III or IV, so the sine came out negative."
+   },
+   {
+    "value": "-.5",
+    "misconception": "graph-feature-mismatch",
+    "why": "The same quadrant mistake, typed as a decimal."
+   },
+   {
+    "value": ".8660",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the size of the cosine for the reference angle $\\frac{\\pi}{6}$, which is $\\frac{\\sqrt{3}}{2}$, instead of the sine."
+   },
+   {
+    "value": "-.8660",
+    "misconception": "wrong-target-quantity",
+    "why": "Found $\\cos\\left(\\frac{5\\pi}{6}\\right) = -\\frac{\\sqrt{3}}{2}$, the x-coordinate, when the question asks for sine."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-d4f82b",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-d4f82b",
+   "structure": [],
+   "solver_answer": "1/2",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $\\cos(7\\beta)$?",
+  "stimulus": "A labour economist models a yearly hiring cycle using the angle $\\beta = \\frac{\\pi}{4}$ radians.",
+  "keys": [
+   ".7071",
+   "0.7071"
+  ],
+  "any_of": false,
+  "explanation": "First build the angle: $7\\beta = \\frac{7\\pi}{4}$. This is already between 0 and $2\\pi$. It is in Quadrant IV, and its reference angle is $\\frac{\\pi}{4}$. The unit-circle point is $\\left(\\frac{\\sqrt{2}}{2}, -\\frac{\\sqrt{2}}{2}\\right)$. Cosine is the x-coordinate, which is positive in Quadrant IV, so the value is $\\frac{\\sqrt{2}}{2} \\approx 0.7071$.",
+  "common_errors": [
+   {
+    "value": "-.7071",
+    "misconception": "graph-feature-mismatch",
+    "why": "Put $\\frac{7\\pi}{4}$ in Quadrant II or III, where cosine is negative. The same value also comes from using sine, the y-coordinate $-\\frac{\\sqrt{2}}{2}$."
+   },
+   {
+    "value": "4.949",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the cosine by 7, $7 \\cdot \\frac{\\sqrt{2}}{2}$, instead of multiplying the angle by 7 first."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-941a6e",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "fail",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-941a6e",
+   "structure": [],
+   "solver_answer": "\u221a2/2",
+   "agrees": false,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $\\tan\\left(\\frac{13\\pi}{3}\\right)$?",
+  "stimulus": "In an immunology lab, the rotor of a cell centrifuge turns through $\\frac{13\\pi}{3}$ radians.",
+  "keys": [
+   "1.732"
+  ],
+  "any_of": false,
+  "explanation": "First take away two full turns: $\\frac{13\\pi}{3} - 4\\pi = \\frac{\\pi}{3}$. That angle is in Quadrant I, and the unit-circle point is $\\left(\\frac{1}{2}, \\frac{\\sqrt{3}}{2}\\right)$. Tangent is y divided by x: $\\frac{\\sqrt{3}/2}{1/2} = \\sqrt{3} \\approx 1.732$.",
+  "common_errors": [
+   {
+    "value": ".5773",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided x by y instead of y by x, which gives $\\frac{1}{\\sqrt{3}}$."
+   },
+   {
+    "value": ".5774",
+    "misconception": "wrong-target-quantity",
+    "why": "The same x-over-y mistake, rounded instead of truncated."
+   },
+   {
+    "value": ".8660",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $\\sin\\left(\\frac{\\pi}{3}\\right) = \\frac{\\sqrt{3}}{2}$ instead of the tangent."
+   },
+   {
+    "value": "-1.732",
+    "misconception": "graph-feature-mismatch",
+    "why": "Got the reduced angle wrong and put it in Quadrant II or IV, where tangent is negative."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-1ffbc6",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "fail",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-1ffbc6",
+   "structure": [],
+   "solver_answer": "\u221a3",
+   "agrees": false,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $\\cos(11\\theta)$?",
+  "stimulus": "A hydrologist models the daily rise and fall of a reservoir using the angle $\\theta = \\frac{\\pi}{6}$ radians.",
+  "keys": [
+   ".8660",
+   "0.8660",
+   ".866",
+   "0.866"
+  ],
+  "any_of": false,
+  "explanation": "First build the angle: $11\\theta = \\frac{11\\pi}{6}$. This is already between 0 and $2\\pi$. It is in Quadrant IV, and its reference angle is $\\frac{\\pi}{6}$. The unit-circle point is $\\left(\\frac{\\sqrt{3}}{2}, -\\frac{1}{2}\\right)$. Cosine is the x-coordinate, which is positive here, so the value is $\\frac{\\sqrt{3}}{2} \\approx 0.8660$.",
+  "common_errors": [
+   {
+    "value": "-.8660",
+    "misconception": "graph-feature-mismatch",
+    "why": "Put $\\frac{11\\pi}{6}$ in Quadrant II or III, which made the cosine negative."
+   },
+   {
+    "value": "-1/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Found $\\sin\\left(\\frac{11\\pi}{6}\\right)$, the y-coordinate, instead of the cosine."
+   },
+   {
+    "value": "1/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the size of the sine of $\\frac{\\pi}{6}$ instead of the cosine."
+   },
+   {
+    "value": "9.526",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied $\\cos\\left(\\frac{\\pi}{6}\\right)$ by 11 instead of multiplying the angle by 11."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-c358fa",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "fail",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-c358fa",
+   "structure": [],
+   "solver_answer": "\u221a3/2",
+   "agrees": false,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $\\cos\\left(\\frac{29\\pi}{3}\\right)$?",
+  "stimulus": "An archaeologist records that a rotating sieve at a dig site turned through $\\frac{29\\pi}{3}$ radians.",
+  "keys": [
+   "1/2",
+   ".5",
+   "0.5"
+  ],
+  "any_of": false,
+  "explanation": "First take away four full turns: $\\frac{29\\pi}{3} - 8\\pi = \\frac{5\\pi}{3}$. That angle is in Quadrant IV, and its reference angle is $\\frac{\\pi}{3}$. The unit-circle point is $\\left(\\frac{1}{2}, -\\frac{\\sqrt{3}}{2}\\right)$. Cosine is the x-coordinate, so the value is $\\frac{1}{2}$.",
+  "common_errors": [
+   {
+    "value": "-1/2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Put $\\frac{5\\pi}{3}$ in Quadrant II or III, which made the cosine negative."
+   },
+   {
+    "value": "-.5",
+    "misconception": "graph-feature-mismatch",
+    "why": "The same quadrant mistake, typed as a decimal."
+   },
+   {
+    "value": "-.8660",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $\\sin\\left(\\frac{5\\pi}{3}\\right)$, the y-coordinate, instead of the cosine."
+   },
+   {
+    "value": ".8660",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the size of the sine of $\\frac{\\pi}{3}$ instead of the cosine."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-2238a6",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-2238a6",
+   "structure": [],
+   "solver_answer": "1/2",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $\\sin(4\\theta)$?",
+  "stimulus": "On an agricultural test field, an irrigation arm is set to the angle $\\theta = \\frac{2\\pi}{3}$ radians.",
+  "keys": [
+   ".8660",
+   "0.8660",
+   ".866",
+   "0.866"
+  ],
+  "any_of": false,
+  "explanation": "First build the angle: $4\\theta = \\frac{8\\pi}{3}$. Take away one full turn: $\\frac{8\\pi}{3} - 2\\pi = \\frac{2\\pi}{3}$. That angle is in Quadrant II, and the unit-circle point is $\\left(-\\frac{1}{2}, \\frac{\\sqrt{3}}{2}\\right)$. Sine is the y-coordinate, which is positive in Quadrant II, so the value is $\\frac{\\sqrt{3}}{2} \\approx 0.8660$.",
+  "common_errors": [
+   {
+    "value": "-.8660",
+    "misconception": "graph-feature-mismatch",
+    "why": "Put the reduced angle in Quadrant III or IV, which made the sine negative."
+   },
+   {
+    "value": "-1/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Found $\\cos\\left(\\frac{2\\pi}{3}\\right)$, the x-coordinate, instead of the sine."
+   },
+   {
+    "value": "3.464",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied $\\sin\\left(\\frac{2\\pi}{3}\\right)$ by 4 to get $2\\sqrt{3}$, instead of multiplying the angle by 4."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-3e745f",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "fail",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-3e745f",
+   "structure": [],
+   "solver_answer": "\u221a3/2",
+   "agrees": false,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $\\tan\\left(\\frac{19\\pi}{6}\\right)$?",
+  "stimulus": "During a recording, the drum of a seismograph rotates through $\\frac{19\\pi}{6}$ radians.",
+  "keys": [
+   ".5773",
+   ".5774",
+   "0.5773",
+   "0.5774"
+  ],
+  "any_of": false,
+  "explanation": "First take away one full turn: $\\frac{19\\pi}{6} - 2\\pi = \\frac{7\\pi}{6}$. That angle is in Quadrant III, and its reference angle is $\\frac{\\pi}{6}$. The unit-circle point is $\\left(-\\frac{\\sqrt{3}}{2}, -\\frac{1}{2}\\right)$. Both coordinates are negative, so tangent (y divided by x) is positive: $\\frac{-1/2}{-\\sqrt{3}/2} = \\frac{1}{\\sqrt{3}} = \\frac{\\sqrt{3}}{3} \\approx 0.5774$.",
+  "common_errors": [
+   {
+    "value": "-.5773",
+    "misconception": "graph-feature-mismatch",
+    "why": "Gave tangent a negative sign, either by putting $\\frac{7\\pi}{6}$ in Quadrant II or by missing that two negative coordinates give a positive ratio."
+   },
+   {
+    "value": "-.5774",
+    "misconception": "graph-feature-mismatch",
+    "why": "The same sign mistake, rounded instead of truncated."
+   },
+   {
+    "value": "1.732",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided x by y instead of y by x, which gives $\\sqrt{3}$."
+   },
+   {
+    "value": "-1/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $\\sin\\left(\\frac{7\\pi}{6}\\right)$ instead of the tangent."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-c6d89b",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "fail",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-c6d89b",
+   "structure": [],
+   "solver_answer": "\u221a3/3",
+   "agrees": false,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": "Mathematically identical to question 6 (same angle and function).",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $\\sin(3\\varphi)$?",
+  "stimulus": "A printmaker sets the rotating inking disk of a press to the angle $\\varphi = \\frac{5\\pi}{6}$ radians.",
+  "keys": [
+   "1"
+  ],
+  "any_of": false,
+  "explanation": "First build the angle: $3\\varphi = \\frac{15\\pi}{6} = \\frac{5\\pi}{2}$. Take away one full turn: $\\frac{5\\pi}{2} - 2\\pi = \\frac{\\pi}{2}$. That is the top of the unit circle, the point $(0, 1)$. Sine is the y-coordinate, so the value is 1.",
+  "common_errors": [
+   {
+    "value": "3/2",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied $\\sin\\left(\\frac{5\\pi}{6}\\right) = \\frac{1}{2}$ by 3 instead of multiplying the angle by 3."
+   },
+   {
+    "value": "1.5",
+    "misconception": "algebra-manipulation",
+    "why": "The same mistake, typed as a decimal."
+   },
+   {
+    "value": "0",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the x-coordinate of $(0, 1)$, which is the cosine, instead of the sine."
+   },
+   {
+    "value": "-1",
+    "misconception": "graph-feature-mismatch",
+    "why": "Reduced the angle wrongly to $\\frac{3\\pi}{2}$ (the bottom of the circle) instead of $\\frac{\\pi}{2}$ (the top)."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-fc7414",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-fc7414",
+   "structure": [],
+   "solver_answer": "1",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "An archaeologist records the direction of a shadow line cut into a stone fragment as an angle of $\\theta = \\frac{17\\pi}{6}$ radians, measured counterclockwise from due east. What is the value of $\\sin \\theta$?",
+  "stimulus": null,
+  "keys": [
+   "1/2",
+   ".5",
+   "0.5"
+  ],
+  "any_of": false,
+  "explanation": "The angle is bigger than a full turn, so take away $2\\pi$ first: $\\frac{17\\pi}{6} - \\frac{12\\pi}{6} = \\frac{5\\pi}{6}$. That angle lies between $\\frac{\\pi}{2}$ and $\\pi$, so it is in Quadrant II, and its reference angle is $\\pi - \\frac{5\\pi}{6} = \\frac{\\pi}{6}$. The unit-circle point for $\\frac{5\\pi}{6}$ is $\\left(-\\frac{\\sqrt{3}}{2}, \\frac{1}{2}\\right)$. Sine is the y-coordinate, and y is positive in Quadrant II, so $\\sin \\theta = \\frac{1}{2}$. In Desmos, with degree mode off, sin(17\u03c0/6) gives 0.5.",
+  "common_errors": [
+   {
+    "value": "-1/2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Takes away $\\pi$ instead of $2\\pi$, or puts the point in the wrong quadrant. $\\frac{17\\pi}{6} - \\pi = \\frac{11\\pi}{6}$ lands in Quadrant IV, where sine is $-\\frac{1}{2}$."
+   },
+   {
+    "value": "-.8660",
+    "misconception": "wrong-target-quantity",
+    "why": "Reads off the x-coordinate (cosine) of the point for $\\frac{5\\pi}{6}$, which is $-\\frac{\\sqrt{3}}{2}$."
+   },
+   {
+    "value": ".8660",
+    "misconception": "wrong-target-quantity",
+    "why": "Uses the cosine size $\\frac{\\sqrt{3}}{2}$ instead of sine, and also drops the sign."
+   },
+   {
+    "value": "2.618",
+    "misconception": "intermediate-step",
+    "why": "Stops after reducing the angle and enters $\\frac{5\\pi}{6} \\approx 2.618$ instead of its sine."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-07ff34",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-07ff34",
+   "structure": [],
+   "solver_answer": "1/2",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A gear in a drawbridge mechanism turns through an angle of $\\beta = \\frac{7\\pi}{6}$ radians. A second gear turns through an angle of $\\alpha = 2\\beta$. What is the value of $\\cos \\alpha$?",
+  "stimulus": null,
+  "keys": [
+   "1/2",
+   ".5",
+   "0.5"
+  ],
+  "any_of": false,
+  "explanation": "First build the angle: $\\alpha = 2 \\cdot \\frac{7\\pi}{6} = \\frac{7\\pi}{3}$. This is more than $2\\pi$, so take away one full turn: $\\frac{7\\pi}{3} - \\frac{6\\pi}{3} = \\frac{\\pi}{3}$, which is in Quadrant I. The unit-circle point for $\\frac{\\pi}{3}$ is $\\left(\\frac{1}{2}, \\frac{\\sqrt{3}}{2}\\right)$. Cosine is the x-coordinate, so $\\cos \\alpha = \\frac{1}{2}$.",
+  "common_errors": [
+   {
+    "value": "-.8660",
+    "misconception": "wrong-target-quantity",
+    "why": "Finds the cosine of $\\beta$ instead of $\\alpha$: $\\cos \\frac{7\\pi}{6} = -\\frac{\\sqrt{3}}{2}$."
+   },
+   {
+    "value": ".8660",
+    "misconception": "wrong-target-quantity",
+    "why": "Reads the y-coordinate (sine) of the point for $\\frac{\\pi}{3}$, which is $\\frac{\\sqrt{3}}{2}$."
+   },
+   {
+    "value": "-1/2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Takes away $\\pi$ instead of $2\\pi$. That gives $\\frac{4\\pi}{3}$ in Quadrant III, where cosine is $-\\frac{1}{2}$."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-5d4889",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-5d4889",
+   "structure": [],
+   "solver_answer": "1/2",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "An astronomer models a moon's orbit as a circle centered at its planet. Since the last observation, the moon has moved through $\\theta = \\frac{19\\pi}{6}$ radians. What is the value of $\\tan \\theta$?",
+  "stimulus": null,
+  "keys": [
+   ".5773",
+   ".5774"
+  ],
+  "any_of": false,
+  "explanation": "Take away a full turn: $\\frac{19\\pi}{6} - \\frac{12\\pi}{6} = \\frac{7\\pi}{6}$. That angle lies between $\\pi$ and $\\frac{3\\pi}{2}$, so it is in Quadrant III, with reference angle $\\frac{\\pi}{6}$. The unit-circle point is $\\left(-\\frac{\\sqrt{3}}{2}, -\\frac{1}{2}\\right)$. Tangent is $\\frac{y}{x} = \\frac{-1/2}{-\\sqrt{3}/2} = \\frac{1}{\\sqrt{3}} = \\frac{\\sqrt{3}}{3} \\approx 0.5774$. Both coordinates are negative in Quadrant III, so tangent is positive.",
+  "common_errors": [
+   {
+    "value": "-.5773",
+    "misconception": "graph-feature-mismatch",
+    "why": "Gets the size right but gives tangent a negative sign, forgetting that a negative divided by a negative is positive in Quadrant III. Also matches $-.5774$."
+   },
+   {
+    "value": "1.732",
+    "misconception": "wrong-target-quantity",
+    "why": "Divides x by y instead of y by x, which gives $\\sqrt{3}$ (the cotangent)."
+   },
+   {
+    "value": "-1/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the sine of $\\frac{7\\pi}{6}$ instead of the tangent."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-58ddcd",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "fail",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-58ddcd",
+   "structure": [],
+   "solver_answer": "\u221a3/3",
+   "agrees": false,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": "Mathematically identical to question 5 (same angle 19\u03c0/6 and function tan).",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In a circle dance studied by a folklorist, each verse turns a dancer counterclockwise through $\\frac{5\\pi}{6}$ radians. After 3 verses, the dancer has turned through a total angle of $\\varphi$ radians. What is the value of $\\sin \\varphi$?",
+  "stimulus": null,
+  "keys": [
+   "1"
+  ],
+  "any_of": false,
+  "explanation": "Build the angle: $\\varphi = 3 \\cdot \\frac{5\\pi}{6} = \\frac{15\\pi}{6} = \\frac{5\\pi}{2}$. Take away a full turn: $\\frac{5\\pi}{2} - 2\\pi = \\frac{\\pi}{2}$. That is the top of the unit circle, at the point $(0, 1)$. Sine is the y-coordinate, so $\\sin \\varphi = 1$.",
+  "common_errors": [
+   {
+    "value": "1/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Finds the sine of one verse's turn, $\\sin \\frac{5\\pi}{6} = \\frac{1}{2}$, instead of the sine of the total turn."
+   },
+   {
+    "value": "0",
+    "misconception": "wrong-target-quantity",
+    "why": "Reads the x-coordinate (cosine) of the point $(0, 1)$."
+   },
+   {
+    "value": "-1",
+    "misconception": "graph-feature-mismatch",
+    "why": "Takes away $\\pi$ instead of $2\\pi$. That lands on $\\frac{3\\pi}{2}$, the bottom of the circle, where sine is $-1$."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-2c68d2",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-2c68d2",
+   "structure": [],
+   "solver_answer": 1,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "An agricultural scientist tracks a center-pivot irrigation arm. Since being switched on, the arm has rotated counterclockwise through $\\theta = \\frac{23\\pi}{4}$ radians. What is the value of $\\cos \\theta$?",
+  "stimulus": null,
+  "keys": [
+   ".7071"
+  ],
+  "any_of": false,
+  "explanation": "Take away full turns of $2\\pi$ until the angle is between $0$ and $2\\pi$: $\\frac{23\\pi}{4} - 4\\pi = \\frac{23\\pi}{4} - \\frac{16\\pi}{4} = \\frac{7\\pi}{4}$. That angle is in Quadrant IV, with reference angle $\\frac{\\pi}{4}$. The unit-circle point is $\\left(\\frac{\\sqrt{2}}{2}, -\\frac{\\sqrt{2}}{2}\\right)$. Cosine is the x-coordinate, which is positive in Quadrant IV, so $\\cos \\theta = \\frac{\\sqrt{2}}{2} \\approx 0.7071$.",
+  "common_errors": [
+   {
+    "value": "-.7071",
+    "misconception": "wrong-target-quantity",
+    "why": "Reads the y-coordinate (sine) of the point for $\\frac{7\\pi}{4}$. A student who puts $\\frac{7\\pi}{4}$ in Quadrant III, or takes away $3\\pi$ and lands on $\\frac{11\\pi}{4} \\to \\frac{3\\pi}{4}$, also gets $-\\frac{\\sqrt{2}}{2}$."
+   },
+   {
+    "value": "-1",
+    "misconception": "wrong-target-quantity",
+    "why": "Finds the tangent instead: $\\frac{y}{x} = -1$ at $\\frac{7\\pi}{4}$."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-0a6fac",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "fail",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-0a6fac",
+   "structure": [],
+   "solver_answer": "\u221a2/2",
+   "agrees": false,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $\\sin\\theta$?",
+  "stimulus": "An astronomer tracks a moon as it circles a planet. After several orbits, the angle the moon has swept out from its starting position is $\\theta = \\frac{17\\pi}{6}$ radians.",
+  "keys": [
+   "1/2",
+   ".5",
+   "0.5"
+  ],
+  "any_of": false,
+  "explanation": "A full turn is $2\\pi = \\frac{12\\pi}{6}$, so subtract it: $\\frac{17\\pi}{6} - \\frac{12\\pi}{6} = \\frac{5\\pi}{6}$. That angle is in Quadrant II, and its reference angle is $\\frac{\\pi}{6}$. The unit-circle point for $\\frac{5\\pi}{6}$ is $\\left(-\\frac{\\sqrt{3}}{2}, \\frac{1}{2}\\right)$. Sine is the y-coordinate, and y is positive in Quadrant II, so $\\sin\\theta = \\frac{1}{2}$. In Desmos, with degree mode off, sin(17\u03c0/6) gives 0.5.",
+  "common_errors": [
+   {
+    "value": "-1/2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Put $\\frac{5\\pi}{6}$ in Quadrant III or IV, where y is negative, so the sign is wrong."
+   },
+   {
+    "value": "-.8660",
+    "misconception": "wrong-target-quantity",
+    "why": "Found $\\cos\\frac{5\\pi}{6} = -\\frac{\\sqrt{3}}{2}$, the x-coordinate, when the question asks for sine."
+   },
+   {
+    "value": ".8660",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the cosine of the reference angle, $\\cos\\frac{\\pi}{6} = \\frac{\\sqrt{3}}{2}$, in place of the sine."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-ef546b",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-ef546b",
+   "structure": [],
+   "solver_answer": "1/2",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $\\tan\\beta$?",
+  "stimulus": "A folklore studies archive arranges recurring story motifs around a circular wheel. One motif is placed at angle $\\alpha = \\frac{\\pi}{4}$ radians, and a related motif is placed at angle $\\beta = 5\\alpha$.",
+  "keys": [
+   "1",
+   "1.0"
+  ],
+  "any_of": false,
+  "explanation": "First build the angle: $\\beta = 5 \\cdot \\frac{\\pi}{4} = \\frac{5\\pi}{4}$. That is between $\\pi$ and $\\frac{3\\pi}{2}$, so it is in Quadrant III, with reference angle $\\frac{\\pi}{4}$. The unit-circle point is $\\left(-\\frac{\\sqrt{2}}{2}, -\\frac{\\sqrt{2}}{2}\\right)$. Tangent is y divided by x, and a negative divided by a negative is positive, so $\\tan\\beta = 1$.",
+  "common_errors": [
+   {
+    "value": "-1",
+    "misconception": "graph-feature-mismatch",
+    "why": "Placed $\\frac{5\\pi}{4}$ in Quadrant II or IV, where only one coordinate is negative, so tangent came out negative."
+   },
+   {
+    "value": "-.7071",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the sine or cosine of $\\frac{5\\pi}{4}$, which is $-\\frac{\\sqrt{2}}{2}$, when the question asks for tangent."
+   },
+   {
+    "value": ".7071",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the sine or cosine of the reference angle $\\frac{\\pi}{4}$ when the question asks for tangent."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-268fb8",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-268fb8",
+   "structure": [],
+   "solver_answer": 1,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "angle __var__ what is the value of __var__"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the value of $\\cos\\theta$?",
+  "stimulus": "In a sports science study, a sensor records a gymnast's total rotation on the high bar during one routine as $\\theta = \\frac{23\\pi}{6}$ radians.",
+  "keys": [
+   ".8660",
+   "0.866"
+  ],
+  "any_of": false,
+  "explanation": "Subtract one full turn: $\\frac{23\\pi}{6} - \\frac{12\\pi}{6} = \\frac{11\\pi}{6}$. That angle is in Quadrant IV, with reference angle $\\frac{\\pi}{6}$. The unit-circle point is $\\left(\\frac{\\sqrt{3}}{2}, -\\frac{1}{2}\\right)$. Cosine is the x-coordinate, and x is positive in Quadrant IV, so $\\cos\\theta = \\frac{\\sqrt{3}}{2} \\approx .8660$. In Desmos, with degree mode off, cos(23\u03c0/6) gives 0.8660254.",
+  "common_errors": [
+   {
+    "value": "-.8660",
+    "misconception": "graph-feature-mismatch",
+    "why": "Placed $\\frac{11\\pi}{6}$ in Quadrant II or III, where x is negative."
+   },
+   {
+    "value": "-1/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $\\sin\\frac{11\\pi}{6} = -\\frac{1}{2}$, the y-coordinate, when the question asks for cosine."
+   },
+   {
+    "value": "1/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the sine of the reference angle, $\\sin\\frac{\\pi}{6}$, when the question asks for cosine."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-30dc81",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "fail",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-30dc81",
+   "structure": [],
+   "solver_answer": "\u221a3/2",
+   "agrees": false,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $\\tan\\theta$?",
+  "stimulus": "A nutrition science poster shows a circular plate model with labels placed around its rim. One label is placed at angle $\\phi = \\frac{4\\pi}{9}$ radians, and another is placed at angle $\\theta = 3\\phi$.",
+  "keys": [
+   "1.732"
+  ],
+  "any_of": false,
+  "explanation": "Build the angle: $\\theta = 3 \\cdot \\frac{4\\pi}{9} = \\frac{4\\pi}{3}$. That is between $\\pi$ and $\\frac{3\\pi}{2}$, so it is in Quadrant III, with reference angle $\\frac{\\pi}{3}$. The unit-circle point is $\\left(-\\frac{1}{2}, -\\frac{\\sqrt{3}}{2}\\right)$. Tangent is y divided by x: $\\frac{-\\sqrt{3}/2}{-1/2} = \\sqrt{3} \\approx 1.732$.",
+  "common_errors": [
+   {
+    "value": "-1.732",
+    "misconception": "graph-feature-mismatch",
+    "why": "Placed $\\frac{4\\pi}{3}$ in Quadrant II or IV, so tangent came out negative."
+   },
+   {
+    "value": ".5774",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided x by y, which gives $\\frac{1}{\\sqrt{3}}$, the cotangent, instead of y by x."
+   },
+   {
+    "value": "-.8660",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $\\sin\\frac{4\\pi}{3} = -\\frac{\\sqrt{3}}{2}$ when the question asks for tangent."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-2df7a5",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "fail",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-2df7a5",
+   "structure": [],
+   "solver_answer": "\u221a3",
+   "agrees": false,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "angle __var__ what is the value of __var__"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the value of $\\cos\\theta$?",
+  "stimulus": "A meteorologist models a rotating storm band. Over one hour, a point on the band turns through an angle of $\\theta = \\frac{13\\pi}{3}$ radians.",
+  "keys": [
+   "1/2",
+   ".5",
+   "0.5"
+  ],
+  "any_of": false,
+  "explanation": "Two full turns are $4\\pi = \\frac{12\\pi}{3}$. Subtract them: $\\frac{13\\pi}{3} - \\frac{12\\pi}{3} = \\frac{\\pi}{3}$. That angle is in Quadrant I. The unit-circle point is $\\left(\\frac{1}{2}, \\frac{\\sqrt{3}}{2}\\right)$, so $\\cos\\theta = \\frac{1}{2}$.",
+  "common_errors": [
+   {
+    "value": ".8660",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $\\sin\\frac{\\pi}{3} = \\frac{\\sqrt{3}}{2}$, the y-coordinate, when the question asks for cosine."
+   },
+   {
+    "value": "-1/2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Reduced by $3\\pi$ instead of a multiple of $2\\pi$ and landed at $\\frac{4\\pi}{3}$ in Quadrant III, where cosine is negative."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-9e2f1d",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-9e2f1d",
+   "structure": [],
+   "solver_answer": "1/2",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $\\sin\\theta$?",
+  "stimulus": "A civil engineer designs a swing bridge that pivots on a central pier. During testing, the bridge deck rotates through a total angle of $\\theta = \\frac{9\\pi}{2}$ radians.",
+  "keys": [
+   "1",
+   "1.0"
+  ],
+  "any_of": false,
+  "explanation": "Two full turns are $4\\pi = \\frac{8\\pi}{2}$. Subtract them: $\\frac{9\\pi}{2} - \\frac{8\\pi}{2} = \\frac{\\pi}{2}$. The unit-circle point for $\\frac{\\pi}{2}$ is $(0, 1)$, the top of the circle. Sine is the y-coordinate, so $\\sin\\theta = 1$.",
+  "common_errors": [
+   {
+    "value": "0",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the x-coordinate of $(0, 1)$, which is the cosine, when the question asks for sine."
+   },
+   {
+    "value": "-1",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted $3\\pi$ instead of a multiple of $2\\pi$ and got $\\frac{3\\pi}{2}$, whose point is $(0, -1)$."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-077950",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-077950",
+   "structure": [],
+   "solver_answer": 1,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $\\cos\\theta$?",
+  "stimulus": "A labour economist shows workers' time use on a circular chart. One category starts at angle $\\alpha = \\frac{5\\pi}{6}$ radians, and another starts at angle $\\theta = 2\\alpha$.",
+  "keys": [
+   "1/2",
+   ".5",
+   "0.5"
+  ],
+  "any_of": false,
+  "explanation": "Build the angle: $\\theta = 2 \\cdot \\frac{5\\pi}{6} = \\frac{5\\pi}{3}$. That is between $\\frac{3\\pi}{2}$ and $2\\pi$, so it is in Quadrant IV, with reference angle $\\frac{\\pi}{3}$. The unit-circle point is $\\left(\\frac{1}{2}, -\\frac{\\sqrt{3}}{2}\\right)$. Cosine is the x-coordinate, so $\\cos\\theta = \\frac{1}{2}$.",
+  "common_errors": [
+   {
+    "value": "-.8660",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $\\cos\\alpha = \\cos\\frac{5\\pi}{6} = -\\frac{\\sqrt{3}}{2}$ without doubling the angle."
+   },
+   {
+    "value": "-1/2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Placed $\\frac{5\\pi}{3}$ in Quadrant II or III, where x is negative."
+   },
+   {
+    "value": ".8660",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the sine of the reference angle, $\\sin\\frac{\\pi}{3}$, when the question asks for cosine."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-8f5feb",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-8f5feb",
+   "structure": [],
+   "solver_answer": "1/2",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "angle __var__ what is the value of __var__"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the value of $\\sin\\theta$?",
+  "stimulus": "A public health team shows how a disease's reported cases vary over the seasons on a circular calendar. One marker on the calendar is placed at angle $\\theta = -\\frac{7\\pi}{4}$ radians.",
+  "keys": [
+   ".7071",
+   "0.707"
+  ],
+  "any_of": false,
+  "explanation": "Add one full turn to get an angle between $0$ and $2\\pi$: $-\\frac{7\\pi}{4} + \\frac{8\\pi}{4} = \\frac{\\pi}{4}$. That angle is in Quadrant I. The unit-circle point is $\\left(\\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{2}}{2}\\right)$, so $\\sin\\theta = \\frac{\\sqrt{2}}{2} \\approx .7071$. In Desmos, with degree mode off, sin(-7\u03c0/4) gives 0.7071068.",
+  "common_errors": [
+   {
+    "value": "-.7071",
+    "misconception": "misread-given",
+    "why": "Dropped the negative sign and found $\\sin\\frac{7\\pi}{4} = -\\frac{\\sqrt{2}}{2}$, which is in Quadrant IV."
+   },
+   {
+    "value": "1",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $\\tan\\frac{\\pi}{4} = 1$ when the question asks for sine."
+   }
+  ],
+  "id": "orig-unit-circle-tr-M-e44f63",
+  "skill_cd": "S.D.",
+  "subtype": "unit-circle-trig-value",
+  "subtype_name": "Trig value of a radian angle using the unit circle",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "fail",
+  "verification": {
+   "id": "orig-unit-circle-tr-M-e44f63",
+   "structure": [],
+   "solver_answer": "\u221a2/2",
+   "agrees": false,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

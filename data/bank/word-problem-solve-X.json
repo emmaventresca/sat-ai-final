@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-word-problem-s-X-45c219",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,14 +82,403 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-word-problem-s-X-565365",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "On which day after the earthquake will the station first record exactly 52 aftershocks?",
+  "stimulus": "After an earthquake, a seismic station records the number of aftershocks each day. The daily count falls by the same amount every day. The station recorded 148 aftershocks on day 3 and 116 aftershocks on day 7.",
+  "choices": [
+   "Day 8",
+   "Day 12",
+   "Day 15",
+   "Day 19"
+  ],
+  "answer": "C",
+  "explanation": "From day 3 to day 7 the count falls by 148 \u2212 116 = 32 over 4 days, so it drops by 8 per day. From day 7 the count still has to fall 116 \u2212 52 = 64, which takes 64 \u00f7 8 = 8 more days. So the count reaches 52 on day 7 + 8 = 15. As a check, $148 - 8(15 - 3) = 52$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "8 is how many more days it takes after day 7. You stopped there and didn't add those days to day 7 to get the day number."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You worked out (148 \u2212 52) \u00f7 8 = 12 as if 148 were the day-0 count. It's the day-3 count, so you need to add 3."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the 12 days measured from the day-3 reading but added them to day 7. The number of days and the reading you start from have to come from the same data point."
+   }
+  },
+  "id": "orig-word-problem-s-X-873ed9",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-X-873ed9",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A technician has already worked 18 hours this week. How many more hours must the technician work this week to earn exactly $1,065 for the week?",
+  "stimulus": "A technician's weekly pay is a fixed stipend plus a constant hourly wage. In a week with 22 hours worked, the technician earned $790. In a week with 30 hours worked, the technician earned $990.",
+  "choices": [
+   "3",
+   "15",
+   "24.6",
+   "33"
+  ],
+  "answer": "B",
+  "explanation": "The hourly wage is (990 \u2212 790) \u00f7 (30 \u2212 22) = $25, and the stipend is 790 \u2212 25(22) = $240. Solve $240 + 25h = 1065$ to get h = 33 total hours. The technician has worked 18 of those hours, so 33 \u2212 18 = 15 more hours are needed.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You started from the 30-hour week's $990, so you got (1065 \u2212 990) \u00f7 25 = 3. But this week the technician has worked 18 hours, not 30."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided 1,065 by 25 without first subtracting the $240 stipend, which gave 42.6. Then you subtracted 18."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "33 is the total number of hours in the week. The question asks how many more hours are needed beyond the 18 already worked."
+   }
+  },
+  "id": "orig-word-problem-s-X-d48f79",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-X-d48f79",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "On which day of the project will exactly 90 tales remain untranscribed?",
+  "stimulus": "A folklorist is transcribing an archive of recorded folktales at a constant number of tales per day. At the end of day 5, 345 tales remained untranscribed. At the end of day 9, 285 tales remained untranscribed.",
+  "choices": [
+   "Day 6",
+   "Day 13",
+   "Day 17",
+   "Day 22"
+  ],
+  "answer": "D",
+  "explanation": "The folklorist transcribes (345 \u2212 285) \u00f7 4 = 15 tales per day, so the archive started with 345 + 5(15) = 420 tales. Solve $420 - 15d = 90$ to get d = 22.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "90 \u00f7 15 = 6 is how long it takes to transcribe the last 90 tales. That isn't the day on which 90 tales are left."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "(285 \u2212 90) \u00f7 15 = 13 is the number of days after day 9. You need to add 9 to get the day number."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "(345 \u2212 90) \u00f7 15 = 17 is the number of days after day 5. You need to add 5 to get the day number."
+   }
+  },
+  "id": "orig-word-problem-s-X-0f3078",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-X-0f3078",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many minutes after launch will the balloon reach air with a temperature of $-36^{\\circ}\\text{C}$?",
+  "stimulus": "Over a weather station, air temperature falls at a constant rate as altitude increases. It is $3^{\\circ}\\text{C}$ at an altitude of 2 kilometers and $-23^{\\circ}\\text{C}$ at 6 kilometers. A balloon launched from the ground (altitude 0) rises at 0.25 kilometer per minute.",
+  "choices": [
+   "2",
+   "8",
+   "24",
+   "32"
+  ],
+  "answer": "D",
+  "explanation": "The temperature falls by 26 \u00f7 4 = 6.5\u00b0C per kilometer, so at the ground it is 3 + 2(6.5) = 16\u00b0C. Solve $16 - 6.5a = -36$ to get a = 8 kilometers. At 0.25 kilometer per minute, the balloon takes 8 \u00f7 0.25 = 32 minutes to get there.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied 8 by 0.25 instead of dividing. Time is distance divided by rate."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "8 is the altitude in kilometers. The question asks for the time in minutes."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You found the 6 kilometers needed above the 2-kilometer reading and divided by 0.25. But the balloon starts at the ground, not at 2 kilometers."
+   }
+  },
+  "id": "orig-word-problem-s-X-ceb352",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-X-ceb352",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length, in meters, of the site?",
+  "stimulus": "A rectangular construction site is 38 meters wide. A fence runs along its whole boundary except for one 4-meter gate opening. The fencing bill was $2,500: a $340 delivery fee plus $12 per meter of fence.",
+  "choices": [
+   "52",
+   "54",
+   "108",
+   "180"
+  ],
+  "answer": "B",
+  "explanation": "The fence is (2500 \u2212 340) \u00f7 12 = 180 meters long. Adding back the 4-meter gate gives a perimeter of 184 meters. So $2L + 2(38) = 184$, which gives 2L = 108 and L = 54.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You treated the 180 meters of fence as the full perimeter and forgot the 4-meter gate, which is part of the boundary but has no fence."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "108 is 2L, the combined length of the two long sides. You didn't divide by 2."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "180 is the total length of fence bought. It isn't the length of the site."
+   }
+  },
+  "id": "orig-word-problem-s-X-aa1e40",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-X-aa1e40",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many dart tags will the team buy?",
+  "stimulus": "A marine biology team has a $1,970 budget for a shark-tagging trip. It must pay a $260 boat fee. The rest of the budget is spent on acoustic tags at $90 each and dart tags at $12 each, buying exactly 2 dart tags for every acoustic tag and using up the whole budget.",
+  "choices": [
+   "15",
+   "30",
+   "38",
+   "45"
+  ],
+  "answer": "B",
+  "explanation": "After the boat fee, $1,970 \u2212 $260 = $1,710 is left for tags. One acoustic tag plus its 2 dart tags costs 90 + 2(12) = $114. So $114n = 1710$, which gives n = 15 acoustic tags and 2(15) = 30 dart tags.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "15 is the number of acoustic tags. The question asks for dart tags."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You divided $1,710 by $90 alone to get 19 acoustic tags, as if dart tags were free, and then doubled it."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "45 is all the tags together (15 + 30). The question asks only for dart tags."
+   }
+  },
+  "id": "orig-word-problem-s-X-e9beae",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-X-e9beae",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "At the end of which day will the trench first reach the artifact layer?",
+  "stimulus": "An archaeology team deepens a trench by the same amount each day. The trench was 1.9 meters deep at the end of day 4 and 4.3 meters deep at the end of day 10. The artifact layer begins 6.7 meters below the surface.",
+  "choices": [
+   "6",
+   "12",
+   "16",
+   "16.75"
+  ],
+  "answer": "C",
+  "explanation": "The trench gets 2.4 \u00f7 6 = 0.4 meter deeper each day, so it was already 1.9 \u2212 4(0.4) = 0.3 meter deep at the start. Solve $0.3 + 0.4d = 6.7$ to get d = 16.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "(6.7 \u2212 4.3) \u00f7 0.4 = 6 is the number of extra days after day 10. You need to add 10 to get the day number."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "(6.7 \u2212 1.9) \u00f7 0.4 = 12 counts from the day-4 depth as if it were the start. You need to add 4 to get the day number."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided 6.7 by 0.4 without first subtracting the 0.3 meter the trench was already deep at the start."
+   }
+  },
+  "id": "orig-word-problem-s-X-3a30cf",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-X-3a30cf",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many centimeters below the 75-centimeter layer is the layer that is 6,300 years old?",
+  "stimulus": "In a lake-sediment core used to study fossil pollen, a layer's age increases at a constant rate with depth. The layer at 30 centimeters is 2,100 years old, and the layer at 75 centimeters is 4,800 years old.",
+  "choices": [
+   "25",
+   "70",
+   "100",
+   "105"
+  ],
+  "answer": "A",
+  "explanation": "Age increases by 2,700 \u00f7 45 = 60 years per centimeter, so the surface (0 cm) is 2,100 \u2212 30(60) = 300 years old. Solve $300 + 60d = 6300$ to get d = 100 centimeters. That is 100 \u2212 75 = 25 centimeters below the 75-centimeter layer. You can also go straight there: (6,300 \u2212 4,800) \u00f7 60 = 25.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You measured from the 30-centimeter layer (100 \u2212 30) instead of the 75-centimeter layer named in the question."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "100 centimeters is the layer's depth below the surface. The question asks how far it is below the 75-centimeter layer."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided 6,300 by 60 without first subtracting the 300-year age at the surface."
+   }
+  },
+  "id": "orig-word-problem-s-X-02e61a",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-X-02e61a",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

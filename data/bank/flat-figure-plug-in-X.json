@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-flat-figure-pl-X-eb5bae",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,14 +82,413 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-flat-figure-pl-X-dc9a0a",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the area, in square meters, of the excavated region?",
+  "stimulus": "At a dig site, archaeologists mark out a rectangular plot that is 12 meters long and 9 meters wide. They leave one corner of the plot unexcavated. This corner is a right triangle, and its two legs lie along two sides of the rectangle. The leg along the 12-meter side is 6 meters long, and the longest side of the triangle is 10 meters long. They excavate the rest of the plot.",
+  "choices": [
+   "$60$",
+   "$78$",
+   "$84$",
+   "$108$"
+  ],
+  "answer": "C",
+  "explanation": "The triangle's legs lie along the rectangle's sides, so the 10-meter side is the hypotenuse. The other leg is $\\sqrt{10^2 - 6^2} = 8$ meters. The triangle's area is $\\frac{1}{2}(6)(8) = 24$ square meters, and the rectangle's area is $12 \\times 9 = 108$ square meters. The excavated region is $108 - 24 = 84$ square meters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the 6-by-8 triangle but left out the $\\frac{1}{2}$, so you subtracted $48$ instead of $24$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the 10-meter hypotenuse as the height and got $\\frac{1}{2}(6)(10) = 30$. The base and height of a right triangle are its two legs."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "This is the area of the whole rectangle. You still need to subtract the unexcavated triangle."
+   }
+  },
+  "id": "orig-flat-figure-pl-X-fe46d8",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-X-fe46d8",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the area in square meters of",
+    "is the area in square meters of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the area, in square meters, of the part of the plot that is not covered by the pond?",
+  "stimulus": "A research farm sets aside a rectangular test plot. The plot's length is 3 times its width, and its perimeter is 96 meters. A square irrigation pond sits inside the plot, and each side of the pond is half the plot's width.",
+  "choices": [
+   "$396$",
+   "$408$",
+   "$432$",
+   "$1{,}584$"
+  ],
+  "answer": "A",
+  "explanation": "Let the width be $w$. Then $2(3w + w) = 96$, so $8w = 96$ and $w = 12$. The plot is 36 meters by 12 meters, so its area is $432$ square meters. Each side of the pond is $6$ meters, so the pond's area is $36$ square meters. The uncovered part is $432 - 36 = 396$ square meters.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You subtracted the pond's perimeter, $4 \\times 6 = 24$, when you needed its area, $6^2 = 36$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is the area of the whole plot. You did not subtract the pond."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $3w + w = 96$, which treats 96 as the sum of one length and one width. The perimeter counts each side twice."
+   }
+  },
+  "id": "orig-flat-figure-pl-X-69698f",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-X-69698f",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the area in square meters of",
+    "is the area in square meters of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the perimeter, in meters, of the work area?",
+  "stimulus": "A rectangular warehouse floor is $2x$ meters long and $x$ meters wide. One corner is fenced off for storage. This corner is a right triangle whose two legs are each $x$ meters long: one leg runs the full width of the floor, and the other runs along the length. The rest of the floor is the work area, which has an area of 54 square meters.",
+  "choices": [
+   "$30$",
+   "$24 + 6\\sqrt{2}$",
+   "$36$",
+   "$36 + 6\\sqrt{2}$"
+  ],
+  "answer": "B",
+  "explanation": "The work area is $2x \\cdot x - \\frac{1}{2}x \\cdot x = \\frac{3}{2}x^2 = 54$, so $x^2 = 36$ and $x = 6$. The floor is 12 meters by 6 meters. The work area is bounded by the full 12-meter side, the 6-meter side across from the triangle, the $12 - 6 = 6$ meters of length that the triangle does not cover, and the hypotenuse, which is $6\\sqrt{2}$. Its perimeter is $12 + 6 + 6 + 6\\sqrt{2} = 24 + 6\\sqrt{2}$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You traced the right boundary but took the slanted side as 6 meters, the same as a leg. It is the hypotenuse, so it is $6\\sqrt{2}$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is the perimeter of the whole rectangular floor, $2(12 + 6)$. The storage corner changes the work area's boundary."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You added the hypotenuse to the rectangle's perimeter but did not remove the two 6-meter legs, which are no longer part of the work area's boundary."
+   }
+  },
+  "id": "orig-flat-figure-pl-X-13de5b",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-X-13de5b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the perimeter, in meters, of the restoration plot?",
+  "stimulus": "A wetland restoration plot is made of a square with an area of 64 square meters and an equilateral triangle. One side of the triangle is also a side of the square, and the two shapes do not overlap. A fence will run along the outer edge of the whole plot.",
+  "choices": [
+   "$56$",
+   "$48$",
+   "$32$",
+   "$40$"
+  ],
+  "answer": "D",
+  "explanation": "The square's side is $\\sqrt{64} = 8$ meters, so every side of the equilateral triangle is also 8 meters. The shared side is inside the plot, so the fence covers 3 sides of the square and 2 sides of the triangle: $5 \\times 8 = 40$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You added the two full perimeters, $32 + 24$. The shared side is inside the plot and is not fenced."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You gave the triangle 4 sides, as if it were a square, which made $32 + 32 = 64$. Then you subtracted the shared side twice. An equilateral triangle has 3 sides."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is the perimeter of the square alone. You did not account for the triangle."
+   }
+  },
+  "id": "orig-flat-figure-pl-X-60f303",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-X-60f303",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the area, in square centimeters, of the cracker's face?",
+  "stimulus": "A food scientist designs a test cracker for a portion-size study. Its flat face is a rectangle that is 10 centimeters wide and 6 centimeters tall, with an isosceles triangle on top. The triangle's base is the 10-centimeter top edge of the rectangle, and each of its two equal sides is 13 centimeters long.",
+  "choices": [
+   "$48$",
+   "$120$",
+   "$125$",
+   "$180$"
+  ],
+  "answer": "B",
+  "explanation": "The triangle's height splits its base into two 5-centimeter halves, so the height is $\\sqrt{13^2 - 5^2} = 12$ centimeters. The triangle's area is $\\frac{1}{2}(10)(12) = 60$ square centimeters, and the rectangle's area is $10 \\times 6 = 60$ square centimeters. The total is $120$ square centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the perimeter of the face, $10 + 6 + 6 + 13 + 13$. The question asks for the area."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the 13-centimeter slanted side as the height, so you got $\\frac{1}{2}(10)(13) = 65$. The height is perpendicular to the base and measures 12."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the height of 12 but left out the $\\frac{1}{2}$, so you gave the triangle an area of $120$."
+   }
+  },
+  "id": "orig-flat-figure-pl-X-5ce867",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-X-5ce867",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the area, in square centimeters, of the finished patch?",
+  "stimulus": "A historian makes a replica of a 19th-century quilt patch. The patch starts as a square of fabric with 20-centimeter sides. At each of the four corners, an isosceles right triangle is cut away, and each cut edge is $6\\sqrt{2}$ centimeters long. The finished patch is an octagon.",
+  "choices": [
+   "$400$",
+   "$382$",
+   "$328$",
+   "$256$"
+  ],
+  "answer": "C",
+  "explanation": "Each cut edge is the hypotenuse of an isosceles right triangle, so each leg is $\\frac{6\\sqrt{2}}{\\sqrt{2}} = 6$ centimeters. Each corner triangle has an area of $\\frac{1}{2}(6)(6) = 18$ square centimeters, so the four corners remove $72$. The patch's area is $400 - 72 = 328$ square centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "This is the area of the original square. You did not subtract the corners."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You removed only one corner triangle, $400 - 18$. The question says all four corners are cut away."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated each corner as a 6-by-6 square, $36$, by leaving out the $\\frac{1}{2}$. Four of those make $144$."
+   }
+  },
+  "id": "orig-flat-figure-pl-X-69b6e6",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-X-69b6e6",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the area, in square meters, of the waiting room that is open to patients?",
+  "stimulus": "A clinic's waiting room is a rectangle that is $(2x + 1)$ meters long and $(x + 3)$ meters wide. A right-triangular area in one corner is closed off for staff. Its legs lie along two walls and are $x$ meters and $2x$ meters long. The rest of the room is open to patients.",
+  "choices": [
+   "$3x^2 + 7x + 3$",
+   "$2x^2 + 7x + 3$",
+   "$7x + 3$",
+   "$x^2 + 7x + 3$"
+  ],
+  "answer": "D",
+  "explanation": "The room's area is $(2x + 1)(x + 3) = 2x^2 + 7x + 3$. The staff triangle's legs are its base and height, so its area is $\\frac{1}{2}(x)(2x) = x^2$. The open area is $2x^2 + 7x + 3 - x^2 = x^2 + 7x + 3$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You added the triangle's area to the room instead of subtracting it. The staff area is cut out of the room."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is the area of the whole room. You did not take away the staff triangle."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $x \\cdot 2x = 2x^2$ for the triangle and left out the $\\frac{1}{2}$, so you subtracted twice as much as the triangle covers."
+   }
+  },
+  "id": "orig-flat-figure-pl-X-f8aea7",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-X-f8aea7",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the area, in square feet, of the banner?",
+  "stimulus": "A folklore society hangs a right-triangular banner at its storytelling festival. The perimeter of the banner is 60 feet, and its longest side is 25 feet.",
+  "choices": [
+   "$150$",
+   "$187.5$",
+   "$300$",
+   "$600$"
+  ],
+  "answer": "A",
+  "explanation": "The two legs $a$ and $b$ add to $60 - 25 = 35$, and $a^2 + b^2 = 25^2 = 625$. Square the sum: $(a + b)^2 = 1{,}225$, so $2ab = 1{,}225 - 625 = 600$ and $ab = 300$. The area is $\\frac{1}{2}ab = 150$ square feet. If you prefer, you can also find the legs, 15 and 20, and get $\\frac{1}{2}(15)(20) = 150$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the 25-foot hypotenuse with one leg, $\\frac{1}{2}(15)(25)$. The base and height of a right triangle are its two legs."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $ab = 300$, the product of the legs, but left out the $\\frac{1}{2}$ in the area formula."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "This is $2ab$, a step on the way. You still need to divide by 2 to get $ab$, and then halve that for the area."
+   }
+  },
+  "id": "orig-flat-figure-pl-X-f4c17b",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-X-f4c17b",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "feet what is the area in square feet",
+    "what is the area in square feet of",
+    "is the area in square feet of the"
+   ],
+   "residue": 3
+  }
  }
 ]

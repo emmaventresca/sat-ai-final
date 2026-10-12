@@ -145,5 +145,797 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the mean number of ink colors per print for these 20 prints?",
+  "stimulus": "A printmaking studio recorded how many ink colors were layered in each of the 20 screen prints made during a weekend workshop. The results are shown in the frequency table.\n\nInk Colors per Screen Print\nNumber of ink colors | Number of prints\n1 | 4\n2 | 6\n3 | 5\n4 | 3\n5 | 2",
+  "choices": [
+   "$2.5$",
+   "$2.65$",
+   "$3$",
+   "$10.6$"
+  ],
+  "answer": "B",
+  "explanation": "Weight each number of colors by how many prints used it: $1(4) + 2(6) + 3(5) + 4(3) + 5(2) = 4 + 12 + 15 + 12 + 10 = 53$ colors in all. There are $4 + 6 + 5 + 3 + 2 = 20$ prints, so the mean is $\\frac{53}{20} = 2.65$ colors per print.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the median, not the mean. With 20 prints, the 10th value is 2 and the 11th is 3, and their average is $2.5$. The question asks for the mean."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You averaged the five distinct values, $\\frac{1+2+3+4+5}{5} = 3$, and ignored the frequencies. Each value has to count once for every print that used it."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found the weighted total of 53 correctly, then divided by the 5 rows of the table instead of the 20 prints. Divide by the number of data values, which is the sum of the frequencies."
+   }
+  },
+  "id": "orig-compute-mean-o-M-7579a0",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-7579a0",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the mean number of eggs per nest for these 20 nests?",
+  "stimulus": "A field ecologist surveying a marsh recorded how many eggs were in each of 20 red-winged blackbird nests. The results are shown in the frequency table.\n\nRed-Winged Blackbird Nest Survey\nEggs per nest | Number of nests\n2 | 4\n3 | 6\n4 | 8\n5 | 2",
+  "choices": [
+   "$\\frac{2+3+4+5}{4}$",
+   "$\\frac{2(4)+3(6)+4(8)+5(2)}{20}$",
+   "$\\frac{2(4)+3(6)+4(8)+5(2)}{4}$",
+   "$\\frac{4+6+8+2}{4}$"
+  ],
+  "answer": "B",
+  "explanation": "In a frequency table, each egg count appears as many times as its frequency. You multiply each egg count by the number of nests that had it to get the total number of eggs, 2(4)+3(6)+4(8)+5(2). Then you divide by the total number of nests, 4+6+8+2 = 20.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You averaged the four distinct egg counts and ignored how many nests had each one. A frequency table needs to be weighted by frequency. This is the trap the question is built around."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "Your total number of eggs is correct, but you divided by 4, the number of rows in the table, when you should have divided by 20, the number of nests."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You averaged the frequency column. That gives the average number of nests per row, not the average number of eggs per nest."
+   }
+  },
+  "id": "orig-compute-mean-o-M-4423f7",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-4423f7",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the median number of pottery fragments for these six units?",
+  "stimulus": "At an excavation site, archaeologists counted the pottery fragments recovered from each of six excavation units. Listed in the order the units were dug, the counts were 14, 9, 22, 11, 17, and 8.",
+  "choices": [
+   "$\\frac{22+11}{2}$",
+   "$\\frac{11+14}{2}$",
+   "$\\frac{14+9+22+11+17+8}{6}$",
+   "$22-8$"
+  ],
+  "answer": "B",
+  "explanation": "First, sort the counts: 8, 9, 11, 14, 17, 22. There are six values, an even number, so the median is the average of the 3rd and 4th values, 11 and 14. That gives $\\frac{11+14}{2}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the two middle values of the list as it was given, 22 and 11, without sorting it first. A median is the middle of the sorted list."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "This expression is the mean of the six counts, not the median. The question asks for the middle value."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the range, the largest count minus the smallest. It measures spread, not center."
+   }
+  },
+  "id": "orig-compute-mean-o-M-0576bb",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-0576bb",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the mean number of parking spaces per lot for all 8 lots?",
+  "stimulus": "A city planning office studied the public parking lots in two districts. The table shows how many lots are in each district and the mean number of spaces per lot in that district.\n\nPublic Parking Lots by District\nDistrict | Number of lots | Mean spaces per lot\nRiverside | 5 | 40\nHillcrest | 3 | 24",
+  "choices": [
+   "$\\frac{40+24}{2}$",
+   "$\\frac{5(40)+3(24)}{2}$",
+   "$\\frac{3(40)+5(24)}{8}$",
+   "$\\frac{5(40)+3(24)}{8}$"
+  ],
+  "answer": "D",
+  "explanation": "Riverside's 5 lots average 40 spaces, so together they have 5(40) spaces. Hillcrest's 3 lots have 3(24) spaces. Add these to get the total number of spaces, then divide by the total number of lots, 5 + 3 = 8.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You averaged the two district means as if each district had the same number of lots. Riverside has more lots, so its mean should count for more. This is the trap of leaving out the weights."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "Your total number of spaces is correct, but you divided by 2, the number of districts, when you should have divided by 8, the number of lots."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You matched each mean with the wrong district's number of lots, giving Riverside 3 lots and Hillcrest 5."
+   }
+  },
+  "id": "orig-compute-mean-o-M-4a6d88",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-4a6d88",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the median of the data?",
+  "stimulus": "A music historian counted the number of movements in each of 21 symphonies written by composers at a single court orchestra. The results are shown in the frequency table.\n\nMovements per Symphony\nNumber of movements | Number of symphonies\n3 | 2\n4 | 7\n5 | 4\n6 | 8",
+  "choices": [
+   "$3$",
+   "$4.5$",
+   "$5$",
+   "$6$"
+  ],
+  "answer": "C",
+  "explanation": "There are $2 + 7 + 4 + 8 = 21$ symphonies, so the median is the 11th value once they are in order. Add up the frequencies as you go: the 3-movement symphonies fill positions 1\u20132, the 4-movement ones fill positions 3\u20139, and the 5-movement ones fill positions 10\u201313. Position 11 falls in that last group, so the median is $5$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the range, $6 - 3 = 3$. The question asks for the middle value, not the spread."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the median of the four distinct values 3, 4, 5, 6 and ignored the frequencies. Each symphony counts once, so the 8 six-movement symphonies push the middle position into the 5s."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You picked the mode. 6 is the most common number of movements, but the median is the value at the middle position, the 11th."
+   }
+  },
+  "id": "orig-compute-mean-o-M-bf840d",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-bf840d",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the mean of the data?",
+  "stimulus": "A city planning office recorded the number of marked crosswalks at each of 10 intersections along a proposed transit corridor. The results are shown in the frequency table.\n\nCrosswalks per Intersection\nNumber of crosswalks | Number of intersections\n1 | 5\n2 | 2\n3 | 2\n4 | 1",
+  "choices": [
+   "$1.5$",
+   "$1.9$",
+   "$2.5$",
+   "$4.75$"
+  ],
+  "answer": "B",
+  "explanation": "Multiply each value by its frequency to get the total number of crosswalks: $1(5) + 2(2) + 3(2) + 4(1) = 5 + 4 + 6 + 4 = 19$. There are $10$ intersections, so the mean is $\\frac{19}{10} = 1.9$. In Desmos, put the values in one column and the frequencies in another, then enter mean(x_1, y_1).",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the median. The 5th and 6th intersections in order have 1 and 2 crosswalks, and their average is $1.5$, but the question asks for the mean."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You averaged the distinct values, $\\frac{1+2+3+4}{4} = 2.5$, without weighting them by frequency. Five intersections have just 1 crosswalk, and that pulls the mean down."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found the correct total of 19 crosswalks but divided by the 4 rows of the table. Divide by the 10 intersections instead."
+   }
+  },
+  "id": "orig-compute-mean-o-M-caec7f",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-caec7f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the median of the data?",
+  "stimulus": "A linguist recorded the number of distinct vowel sounds in eight regional dialects. The counts, listed in the order the dialects were studied, are $7$, $3$, $9$, $4$, $12$, $5$, $8$, and $6$.",
+  "choices": [
+   "$6.5$",
+   "$6.75$",
+   "$8$",
+   "$9$"
+  ],
+  "answer": "A",
+  "explanation": "Sort the counts first: $3, 4, 5, 6, 7, 8, 9, 12$. There are eight values, so the median is the average of the 4th and 5th: $\\frac{6 + 7}{2} = 6.5$. In Desmos, median([7,3,9,4,12,5,8,6]) gives the same result.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the mean, $\\frac{54}{8} = 6.75$. The question asks for the median, the middle of the sorted list."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You averaged the two middle entries of the unsorted list, 4 and 12, to get 8. Always sort the values before you look for the middle."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the range, $12 - 3 = 9$. The range measures spread, not the center."
+   }
+  },
+  "id": "orig-compute-mean-o-M-655604",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-655604",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __var__ __var__ __var__ and __var__ what is",
+    "__var__ __var__ __var__ and __var__ what is the"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "An amateur astronomer counted the meteors she saw during one hour on each of 7 nights. Her counts, listed in the order of the nights, were 14, 9, 22, 11, 30, 16, and 10.",
+  "choices": [
+   "The median of the counts is 11.",
+   "The median of the counts is 14.",
+   "The mean of the counts is 14.",
+   "The range of the counts is 30."
+  ],
+  "answer": "B",
+  "explanation": "Sort the counts first: 9, 10, 11, 14, 16, 22, 30. There are 7 values, so the median is the 4th one, which is 14. To check the other claims, the sum is 112, so the mean is $112 \\div 7 = 16$, and the range is $30 - 9 = 21$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You took the middle value of the list as it was given, without sorting it. 11 is 4th in the unsorted list, but after sorting, the 4th value is 14."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "14 is the median, not the mean. The counts add to 112, so the mean is $112 \\div 7 = 16$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "30 is the largest count. The range is the largest count minus the smallest: $30 - 9 = 21$."
+   }
+  },
+  "id": "orig-compute-mean-o-M-be1e07",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-be1e07",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__num__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A music historian recorded how many movements each of the 20 symphonies in a catalog has. The table shows the results.\n\nMovements per Symphony\nNumber of movements | Number of symphonies\n3 | 4\n4 | 10\n5 | 4\n6 | 2",
+  "choices": [
+   "The mean number of movements is 4.5.",
+   "The mean number of movements is 4.2.",
+   "The mean number of movements is 21.",
+   "The median number of movements is 4.5."
+  ],
+  "answer": "B",
+  "explanation": "Weight each value by its frequency: $3(4) + 4(10) + 5(4) + 6(2) = 12 + 40 + 20 + 12 = 84$ movements in all. There are 20 symphonies, so the mean is $84 \\div 20 = 4.2$. The median is 4, because the 10th and 11th values in sorted order both fall in the 4-movement row (cumulative counts are 4, then 14).",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You averaged the four listed values, $(3+4+5+6) \\div 4$, without weighting each one by how many symphonies have it."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You found the weighted total of 84 correctly but divided by the 4 table rows instead of the 20 symphonies."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You treated the four rows as four data values and took the middle of 3, 4, 5, 6. With 20 symphonies, the 10th and 11th values are both 4, so the median is 4."
+   }
+  },
+  "id": "orig-compute-mean-o-M-ae674c",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-ae674c",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__num__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A city added 6 new bike lanes this year. The lengths of the lanes, in kilometers, were 3.2, 1.8, 4.6, 2.4, 5.0, and 1.0.",
+  "choices": [
+   "The median length is 3.5 kilometers.",
+   "The median length is 2.8 kilometers.",
+   "The mean length is 2.8 kilometers.",
+   "The median length is 2.4 kilometers."
+  ],
+  "answer": "B",
+  "explanation": "Sort the lengths: 1.0, 1.8, 2.4, 3.2, 4.6, 5.0. With 6 values, the median is the average of the 3rd and 4th: $(2.4 + 3.2) \\div 2 = 2.8$ kilometers. The mean is $18.0 \\div 6 = 3.0$ kilometers, so only the median claim of 2.8 holds.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You averaged the two middle values of the unsorted list, 4.6 and 2.4. Sort first. The middle two values are then 2.4 and 3.2."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "2.8 is the median, not the mean. The lengths add to 18.0 km, so the mean is $18.0 \\div 6 = 3.0$ km."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You sorted correctly but took only the 3rd value. With an even number of values, you have to average the two middle values, 2.4 and 3.2."
+   }
+  },
+  "id": "orig-compute-mean-o-M-aed1f4",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-aed1f4",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "C",
+   "problem": null,
+   "overlap": [
+    "__num__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "How much greater is the mean of these counts than the median of these counts?",
+  "stimulus": "An ornithologist watched a nest of house wrens for 7 one-hour sessions and recorded the number of feeding visits the parents made in each hour: 12, 5, 9, 7, 20, 11, 6.",
+  "choices": [
+   "1",
+   "3",
+   "10",
+   "15"
+  ],
+  "answer": "A",
+  "explanation": "The counts add to $12 + 5 + 9 + 7 + 20 + 11 + 6 = 70$, so the mean is $\\frac{70}{7} = 10$. Sorted, the counts are 5, 6, 7, 9, 11, 12, 20, so the median is the 4th value, 9. The mean is greater than the median by $10 - 9 = 1$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the 4th number in the list as written, 7, as the median without sorting first. That gives $10 - 7 = 3$. Sort the list before you look for the middle."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "10 is the mean on its own. The question asks how much greater the mean is than the median, so you still need to subtract the median, 9."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "15 is the range, $20 - 5$. It describes the spread of the data, not the gap between the mean and the median."
+   }
+  },
+  "id": "orig-compute-mean-o-M-e1996f",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-e1996f",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How much greater is the mean number of sea urchins per quadrat at South Reef than at North Reef?",
+  "stimulus": "A marine biologist counted sea urchins in 10 quadrats at each of two reefs. The table shows how many quadrats at each reef held each number of urchins.\n\nSea Urchins per Quadrat\nNumber of urchins | North Reef quadrats | South Reef quadrats\n1 | 4 | 1\n2 | 3 | 2\n3 | 2 | 3\n6 | 1 | 4",
+  "choices": [
+   "0",
+   "1",
+   "1.6",
+   "3.8"
+  ],
+  "answer": "C",
+  "explanation": "Weight each urchin count by its frequency. North Reef: $1(4) + 2(3) + 3(2) + 6(1) = 22$, so the mean is $\\frac{22}{10} = 2.2$. South Reef: $1(1) + 2(2) + 3(3) + 6(4) = 38$, so the mean is $\\frac{38}{10} = 3.8$. The difference is $3.8 - 2.2 = 1.6$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You averaged the distinct values 1, 2, 3 and 6 for each reef without weighting them by frequency. That gives 3 for both reefs and a difference of 0. Each value has to count once for every quadrat that had it."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "1 is the gap between the medians: 3 at South Reef and 2 at North Reef. The question asks about the means."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "3.8 is South Reef's mean by itself. You stopped before subtracting North Reef's mean of 2.2."
+   }
+  },
+  "id": "orig-compute-mean-o-M-ce090b",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-ce090b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "By how many yards does the median length of Mill A's bolts exceed the median length of Mill B's bolts?",
+  "stimulus": "A textile historian found ledger entries for 6 bolts of calico cloth woven at each of two 19th-century mills. The ledgers list the bolt lengths, in yards, in the order they were recorded.\nMill A: 30, 47, 38, 41, 35, 44\nMill B: 36, 28, 33, 40, 31, 34",
+  "choices": [
+   "1",
+   "5",
+   "6",
+   "39.5"
+  ],
+  "answer": "C",
+  "explanation": "Sort each list first. Mill A: 30, 35, 38, 41, 44, 47. There are 6 values, so the median is the average of the two middle ones: $\\frac{38 + 41}{2} = 39.5$ yards. Mill B: 28, 31, 33, 34, 36, 40, with median $\\frac{33 + 34}{2} = 33.5$ yards. Mill A's median exceeds Mill B's by $39.5 - 33.5 = 6$ yards.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You averaged the 3rd and 4th values in the ledger order without sorting: $\\frac{38 + 41}{2} = 39.5$ for Mill A and $\\frac{33 + 40}{2} = 36.5$ for Mill B, then reported a gap of 1. Mill B's middle values change once its list is sorted."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "5 is the gap between the ranges: $47 - 30 = 17$ for Mill A and $40 - 28 = 12$ for Mill B. Range measures spread, not the middle."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "39.5 yards is Mill A's median by itself. The question asks how far it is above Mill B's median, so you still need to subtract 33.5."
+   }
+  },
+  "id": "orig-compute-mean-o-M-7cfb03",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-7cfb03",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the median number of impressions for these 8 blocks?",
+  "stimulus": "A printmaking studio carved 8 linocut blocks and pulled impressions from each one until the image began to blur. In the order the blocks were tested, the number of clean impressions each block produced was 14, 22, 9, 25, 31, 12, 18, and 16.",
+  "choices": [
+   "16",
+   "17",
+   "22",
+   "28"
+  ],
+  "answer": "B",
+  "explanation": "First sort the values: 9, 12, 14, 16, 18, 22, 25, 31. There are 8 values, an even count, so the median is the average of the 4th and 5th values: $\\frac{16 + 18}{2} = 17$. The median number of clean impressions is 17.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You sorted correctly and found the middle, but you took only the 4th value. With an even number of values, the median is the average of the two middle values, 16 and 18, not just one of them."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the range, $31 - 9 = 22$, not the median. The range measures spread. The median is the middle of the sorted list."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You averaged the two middle values of the list as it was given, 25 and 31, without sorting it first. A median only means something once the values are in order."
+   }
+  },
+  "id": "orig-compute-mean-o-M-0166ac",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-0166ac",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "A",
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the mean number of surface cracks per specimen for these 20 specimens?",
+  "stimulus": "A materials lab bent 20 identical ceramic specimens to the same load and then counted the surface cracks on each one. The results are shown in the table.\n\nSurface Cracks per Ceramic Specimen\nNumber of cracks | Number of specimens\n0 | 6\n1 | 8\n2 | 4\n3 | 2",
+  "choices": [
+   "1",
+   "1.1",
+   "1.5",
+   "5"
+  ],
+  "answer": "B",
+  "explanation": "Weight each crack count by the number of specimens that had it: $0(6) + 1(8) + 2(4) + 3(2) = 0 + 8 + 8 + 6 = 22$ cracks in total. Then divide by the 20 specimens: $\\frac{22}{20} = 1.1$. The mean is 1.1 cracks per specimen.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the median. The 10th and 11th specimens in order both have 1 crack. The question asks for the mean, which counts every crack, including the larger counts of 2 and 3."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You averaged the four crack values, $\\frac{0 + 1 + 2 + 3}{4} = 1.5$, without weighting them by frequency. That treats 3 cracks as just as common as 1 crack, even though 8 specimens had 1 crack and only 2 had 3."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You averaged the 'Number of specimens' column, $\\frac{6 + 8 + 4 + 2}{4} = 5$. That column holds frequencies, not measurements. The values you average are the crack counts."
+   }
+  },
+  "id": "orig-compute-mean-o-M-479cdd",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-479cdd",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the median number of clinic visits for these 25 patients?",
+  "stimulus": "A county health department surveyed 25 patients about how many times each one visited a walk-in clinic during the past year. The results are shown in the table.\n\nWalk-In Clinic Visits in the Past Year\nNumber of visits | Number of patients\n0 | 9\n1 | 4\n2 | 6\n3 | 4\n4 | 2",
+  "choices": [
+   "0",
+   "1",
+   "2",
+   "4"
+  ],
+  "answer": "B",
+  "explanation": "With 25 patients, the median is the 13th value in order. Count the cumulative frequencies: the 0-visit row covers patients 1 through 9, and the 1-visit row covers patients 10 through 13. The 13th patient therefore made 1 visit, so the median is 1.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the mode. More patients made 0 visits than any other number, but the median is the value at the middle position, the 13th patient, who is past the 9 zeros."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You picked the middle of the five visit values, 0, 1, 2, 3, 4, and ignored how many patients are in each row. The median has to come from all 25 patients, counted through the frequencies."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You found the median of the 'Number of patients' column (2, 4, 4, 6, 9 gives 4). Those numbers are frequencies, not visit counts. The answer has to be a number of visits."
+   }
+  },
+  "id": "orig-compute-mean-o-M-abd0fa",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-M-abd0fa",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

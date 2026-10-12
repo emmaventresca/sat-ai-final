@@ -245,5 +245,643 @@
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which expression is equivalent to $\\sqrt[3]{64a^{9}b^{2}}$, where $a > 0$ and $b > 0$?",
+  "stimulus": "A folklorist studying how a trickster tale spread between villages uses the expression $\\sqrt[3]{64a^{9}b^{2}}$ in a model, where $a$ and $b$ are positive quantities taken from her field records.",
+  "choices": [
+   "$64a^{3}b^{\\frac{2}{3}}$",
+   "$4a^{3}b^{\\frac{3}{2}}$",
+   "$4a^{3}b^{\\frac{2}{3}}$",
+   "$4a^{27}b^{6}$"
+  ],
+  "answer": "C",
+  "explanation": "Rewrite the cube root as an exponent of $\\frac{1}{3}$: $(64a^{9}b^{2})^{\\frac{1}{3}}$. Apply it to every factor, including the coefficient. $64^{\\frac{1}{3}} = 4$, $(a^{9})^{\\frac{1}{3}} = a^{3}$, and $(b^{2})^{\\frac{1}{3}} = b^{\\frac{2}{3}}$. The result is $4a^{3}b^{\\frac{2}{3}}$. To check, let $a = 2$ and $b = 8$: the original is $\\sqrt[3]{64 \\cdot 512 \\cdot 64} = 128$, and $4 \\cdot 8 \\cdot 4 = 128$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the cube root of the variables but not of the coefficient. The root applies to $64$ too, and $\\sqrt[3]{64} = 4$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You turned $\\sqrt[3]{b^{2}}$ into $b^{\\frac{3}{2}}$, so the fraction is upside down. In the $n$th root of $x^{m}$, the power $m$ goes on top and the root index $n$ goes on the bottom, which gives $b^{\\frac{2}{3}}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the exponents by 3 when you should have multiplied them by $\\frac{1}{3}$. That is like cubing the variable parts instead of taking their cube root."
+   }
+  },
+  "id": "orig-exponent-radic-M-29e691",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-29e691",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\sqrt[3]{27m^{2}}$, where $m > 0$?",
+  "stimulus": "An ornithologist estimating the wing area of songbirds uses the expression $\\sqrt[3]{27m^{2}}$, where $m$ is a bird's body mass, in grams.",
+  "choices": [
+   "$3m^{\\frac{2}{3}}$",
+   "$27m^{\\frac{2}{3}}$",
+   "$3m^{\\frac{3}{2}}$",
+   "$9m^{\\frac{2}{3}}$"
+  ],
+  "answer": "A",
+  "explanation": "The cube root applies to both factors. $\\sqrt[3]{27} = 3$, and $\\sqrt[3]{m^{2}} = m^{\\frac{2}{3}}$, because the power goes on top and the index of the root goes on the bottom. So the expression equals $3m^{\\frac{2}{3}}$. To check, let $m = 8$: $\\sqrt[3]{27 \\cdot 64} = \\sqrt[3]{1728} = 12$, and $3 \\cdot 8^{\\frac{2}{3}} = 3 \\cdot 4 = 12$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the cube root of $m^{2}$ but left the coefficient 27 as it was. The root applies to the whole product, so 27 becomes 3."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the fractional exponent. In $\\sqrt[n]{x^{k}} = x^{\\frac{k}{n}}$, the power inside the root goes in the numerator and the root's index goes in the denominator, so you get $\\frac{2}{3}$, not $\\frac{3}{2}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You raised 27 to the $\\frac{2}{3}$ power along with $m$, which gives 9. The square belongs only to $m$, so the coefficient just takes a cube root: $\\sqrt[3]{27} = 3$."
+   }
+  },
+  "id": "orig-exponent-radic-M-5af0f8",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-5af0f8",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\left(16a^{6}b^{-2}\\right)^{\\frac{1}{2}}$, where $a > 0$ and $b > 0$?",
+  "stimulus": "In a model of how wetland plants spread, an ecologist writes $\\left(16a^{6}b^{-2}\\right)^{\\frac{1}{2}}$, where $a$ is the area of a plot and $b$ is how often the plot floods.",
+  "choices": [
+   "$\\dfrac{16a^{3}}{b}$",
+   "$\\dfrac{4a^{3}}{b}$",
+   "$4a^{3}b$",
+   "$\\dfrac{4a^{\\frac{13}{2}}}{b^{\\frac{3}{2}}}$"
+  ],
+  "answer": "B",
+  "explanation": "Raising a product to the $\\frac{1}{2}$ power applies that power to every factor. $16^{\\frac{1}{2}} = 4$. For a power of a power, multiply the exponents: $(a^{6})^{\\frac{1}{2}} = a^{3}$ and $(b^{-2})^{\\frac{1}{2}} = b^{-1}$. That gives $4a^{3}b^{-1}$, which is $\\dfrac{4a^{3}}{b}$. To check, let $a = 2$ and $b = 4$: $(16 \\cdot 64 \\cdot \\frac{1}{16})^{\\frac{1}{2}} = 8$, and $\\dfrac{4 \\cdot 8}{4} = 8$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the $\\frac{1}{2}$ power to the variables but not to the coefficient. The power covers the whole product inside the parentheses, so 16 becomes 4."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated the exponent on $b$ as if it were positive. Half of $-2$ is $-1$, and $b^{-1}$ means $b$ belongs in the denominator."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $\\frac{1}{2}$ to each exponent ($6 + \\frac{1}{2}$ and $-2 + \\frac{1}{2}$). When you raise a power to a power, you multiply the exponents."
+   }
+  },
+  "id": "orig-exponent-radic-M-0112de",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-0112de",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following expressions are equivalent to $8x^{\\frac{3}{4}}$, where $x > 0$?\n\nI. $8\\sqrt[4]{x^{3}}$\nII. $\\left(2\\sqrt[4]{x}\\right)^{3}$\nIII. $\\sqrt[4]{8x^{3}}$",
+  "stimulus": "A paleobotanist estimates the area of a fossil fern leaf with the expression $8x^{\\frac{3}{4}}$, where $x$ is the length of the leaf's midrib, in millimeters.",
+  "choices": [
+   "I only",
+   "I and II only",
+   "I and III only",
+   "I, II, and III"
+  ],
+  "answer": "B",
+  "explanation": "Check each statement on its own. I: $x^{\\frac{3}{4}} = \\sqrt[4]{x^{3}}$, so $8\\sqrt[4]{x^{3}}$ is equivalent. II: $\\left(2x^{\\frac{1}{4}}\\right)^{3} = 2^{3}x^{\\frac{3}{4}} = 8x^{\\frac{3}{4}}$, so it is also equivalent. III: here the fourth root covers the 8 as well, which gives $8^{\\frac{1}{4}}x^{\\frac{3}{4}}$, not $8x^{\\frac{3}{4}}$. Only I and II are equivalent. To check, let $x = 16$: the original is $8 \\cdot 8 = 64$, I is $8 \\cdot 8 = 64$, II is $4^{3} = 64$, and III is $\\sqrt[4]{32768} \\approx 13.45$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You confirmed statement I and stopped there. Statement II also works, because cubing $2\\sqrt[4]{x}$ cubes the 2 as well as the root, which gives $8x^{\\frac{3}{4}}$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You accepted III by putting the coefficient under the root. In $\\sqrt[4]{8x^{3}}$ the fourth root applies to the 8 too, which shrinks it to $8^{\\frac{1}{4}}$. You also passed over II, which is equivalent."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found I and II correctly but also accepted III. Moving the 8 under the fourth root changes its value, because the root then applies to the coefficient as well as to $x^{3}$."
+   }
+  },
+  "id": "orig-exponent-radic-M-31cb6f",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-31cb6f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\sqrt[3]{64x^{6}y^{2}}$, where $x > 0$ and $y > 0$?",
+  "stimulus": "A cartographer uses the expression $\\sqrt[3]{64x^{6}y^{2}}$ to estimate the ground area shown on one tile of a regional map.",
+  "choices": [
+   "$64x^{2}y^{\\frac{2}{3}}$",
+   "$4x^{2}y^{\\frac{2}{3}}$",
+   "$4x^{2}y^{\\frac{3}{2}}$",
+   "$4x^{3}y^{-1}$"
+  ],
+  "answer": "B",
+  "explanation": "Write the cube root as an exponent of $\\frac{1}{3}$ and apply it to every factor. $64^{\\frac{1}{3}} = 4$, $(x^{6})^{\\frac{1}{3}} = x^{2}$, and $(y^{2})^{\\frac{1}{3}} = y^{\\frac{2}{3}}$, so the expression equals $4x^{2}y^{\\frac{2}{3}}$. To check by substitution, let $x = 2$ and $y = 8$. The original is $\\sqrt[3]{64 \\cdot 64 \\cdot 64} = 64$, and $4 \\cdot 4 \\cdot 4 = 64$ as well.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the cube root to the variables but not to the coefficient. You left 64 as it was when it should have become $\\sqrt[3]{64} = 4$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the fractional exponent on $y$. The cube root of $y^{2}$ is $y^{\\frac{2}{3}}$, with the power on top and the root on the bottom, not $y^{\\frac{3}{2}}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted 3 from each exponent when you should have divided by 3. A root multiplies the exponent by $\\frac{1}{3}$; it does not take 3 away from it."
+   }
+  },
+  "id": "orig-exponent-radic-M-5767fc",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-5767fc",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\dfrac{(9a^{4}b)^{\\frac{1}{2}}}{a^{-1}b^{2}}$, where $a > 0$ and $b > 0$?",
+  "stimulus": "A sports scientist uses the expression below to compare a sprinter's stride power across training sessions.\n\n$\\dfrac{(9a^{4}b)^{\\frac{1}{2}}}{a^{-1}b^{2}}$",
+  "choices": [
+   "$\\dfrac{9a^{3}}{b\\sqrt{b}}$",
+   "$\\dfrac{3a}{b\\sqrt{b}}$",
+   "$3a^{3}b\\sqrt{b}$",
+   "$\\dfrac{3a^{3}}{b\\sqrt{b}}$"
+  ],
+  "answer": "D",
+  "explanation": "The numerator is $(9a^{4}b)^{\\frac{1}{2}} = 3a^{2}b^{\\frac{1}{2}}$. To divide, subtract exponents: $a^{2-(-1)} = a^{3}$ and $b^{\\frac{1}{2}-2} = b^{-\\frac{3}{2}}$. So the result is $3a^{3}b^{-\\frac{3}{2}} = \\dfrac{3a^{3}}{b\\sqrt{b}}$. To check, let $a = 2$ and $b = 4$. The original is $\\dfrac{\\sqrt{144}}{8} = 3$, and $\\dfrac{3 \\cdot 8}{4 \\cdot 2} = 3$ as well.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the square root to the variables but not to the 9. $9^{\\frac{1}{2}}$ is 3, so the coefficient can't stay 9."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You got the sign wrong on the negative exponent. Dividing by $a^{-1}$ gives $a^{2-(-1)} = a^{3}$, but you worked out $a^{2-1} = a$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the exponents of $b$ when you should have subtracted them. $b^{\\frac{1}{2}}$ divided by $b^{2}$ is $b^{-\\frac{3}{2}}$, not $b^{\\frac{5}{2}}$."
+   }
+  },
+  "id": "orig-exponent-radic-M-c6a753",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-c6a753",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following expressions are equivalent to $\\sqrt[4]{16k^{6}}$, where $k > 0$?\n\nI. $2k^{\\frac{3}{2}}$\nII. $\\sqrt{4k^{3}}$\nIII. $4k\\sqrt{k}$",
+  "stimulus": "A civil engineer models the sag at the middle of a footbridge beam with the expression $\\sqrt[4]{16k^{6}}$, where $k$ is a positive load factor.",
+  "choices": [
+   "I only",
+   "I and II only",
+   "I and III only",
+   "I, II, and III"
+  ],
+  "answer": "B",
+  "explanation": "$\\sqrt[4]{16k^{6}} = 16^{\\frac{1}{4}}k^{\\frac{6}{4}} = 2k^{\\frac{3}{2}}$, so I is equivalent. For II, $\\sqrt{4k^{3}} = 4^{\\frac{1}{2}}k^{\\frac{3}{2}} = 2k^{\\frac{3}{2}}$, so it is equivalent too. III is $4k^{\\frac{3}{2}}$, twice the original, so it is not. To check, let $k = 4$. The original is $\\sqrt[4]{65536} = 16$, I and II both give 16, and III gives 32.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You confirmed statement I and stopped. Each Roman-numeral statement has to be checked on its own, and II also simplifies to $2k^{\\frac{3}{2}}$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the square root of 16 when the root is a fourth root. That gives a coefficient of 4 instead of 2, so you accepted III and missed II."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You accepted III because its variable part, $k\\sqrt{k} = k^{\\frac{3}{2}}$, is correct, but you didn't check the coefficient. $\\sqrt[4]{16} = 2$, not 4."
+   }
+  },
+  "id": "orig-exponent-radic-M-d8da3a",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-d8da3a",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\sqrt[3]{64a^{6}b^{2}}$, where $a > 0$ and $b > 0$?",
+  "stimulus": "An archaeologist estimates the side length, in centimeters, of a cube-shaped clay storage jar with the expression $\\sqrt[3]{64a^{6}b^{2}}$, where $a$ and $b$ are positive measurements taken from fragments at the dig site.",
+  "choices": [
+   "$4a^{2}b^{\\frac{2}{3}}$",
+   "$64a^{2}b^{\\frac{2}{3}}$",
+   "$4a^{2}b^{\\frac{3}{2}}$",
+   "$8a^{3}b$"
+  ],
+  "answer": "A",
+  "explanation": "Write the cube root as a power of $\\frac{1}{3}$ and apply it to every factor, including the coefficient. $64^{\\frac{1}{3}} = 4$, $(a^{6})^{\\frac{1}{3}} = a^{2}$, and $(b^{2})^{\\frac{1}{3}} = b^{\\frac{2}{3}}$. The expression is $4a^{2}b^{\\frac{2}{3}}$. To check, try $a = 2$ and $b = 8$: the original is $\\sqrt[3]{64 \\cdot 64 \\cdot 64} = 64$, and $4 \\cdot 4 \\cdot 4 = 64$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the cube root of the variables but not of the coefficient. $64$ is inside the radical too, so it becomes $\\sqrt[3]{64} = 4$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the fractional exponent on $b$. The root index goes in the denominator: $\\sqrt[3]{b^{2}} = b^{\\frac{2}{3}}$, not $b^{\\frac{3}{2}}$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You took a square root instead of a cube root. $\\sqrt{64a^{6}b^{2}} = 8a^{3}b$, but the radical here has index 3."
+   }
+  },
+  "id": "orig-exponent-radic-M-344c8d",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-344c8d",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the expression __var__ where __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\left(\\dfrac{x^{-2}}{9y^{4}}\\right)^{-\\frac{1}{2}}$, where $x > 0$ and $y > 0$?",
+  "stimulus": "A cartographer redrawing a coastal survey uses the expression $\\left(\\dfrac{x^{-2}}{9y^{4}}\\right)^{-\\frac{1}{2}}$ to rescale distances between two maps, where $x$ and $y$ are positive scale settings.",
+  "choices": [
+   "$9xy^{2}$",
+   "$3xy^{2}$",
+   "$\\dfrac{xy^{2}}{3}$",
+   "$\\dfrac{3y^{2}}{x}$"
+  ],
+  "answer": "B",
+  "explanation": "Raise each factor to the power $-\\frac{1}{2}$ by multiplying the exponents. $(x^{-2})^{-\\frac{1}{2}} = x^{1}$, $9^{-\\frac{1}{2}} = \\frac{1}{3}$, and $(y^{4})^{-\\frac{1}{2}} = y^{-2}$. That gives $\\dfrac{x}{\\frac{1}{3}y^{-2}} = 3xy^{2}$. To check, try $x = 2$ and $y = 3$: the inside is $\\frac{1}{2916}$, and raising it to the power $-\\frac{1}{2}$ gives $54 = 3 \\cdot 2 \\cdot 9$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the exponent to the variables but not to the coefficient. $9$ also gets the power $-\\frac{1}{2}$, so it becomes $3$, not $9$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the variable factors but left the $3$ in the denominator. The negative exponent applies to $9$ too, so $\\frac{1}{3}$ in the denominator becomes $3$ in the numerator."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost a sign on $x$. $(-2)\\left(-\\frac{1}{2}\\right) = +1$, so $x$ ends up in the numerator, not the denominator."
+   }
+  },
+  "id": "orig-exponent-radic-M-2fa56e",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-2fa56e",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\sqrt[4]{n^{3}} \\cdot \\sqrt{n}$, where $n > 0$?",
+  "stimulus": "A folklorist scores how widely a variant of a traditional tale has spread with the index $\\sqrt[4]{n^{3}} \\cdot \\sqrt{n}$, where $n$ is the number of villages in which the variant was recorded.",
+  "choices": [
+   "$n^{\\frac{3}{8}}$",
+   "$n^{\\frac{2}{3}}$",
+   "$n^{\\frac{5}{4}}$",
+   "$n^{\\frac{10}{3}}$"
+  ],
+  "answer": "C",
+  "explanation": "Turn each root into a fractional exponent: $\\sqrt[4]{n^{3}} = n^{\\frac{3}{4}}$ and $\\sqrt{n} = n^{\\frac{1}{2}}$. When you multiply powers with the same base, you add the exponents: $\\frac{3}{4} + \\frac{1}{2} = \\frac{5}{4}$. The product is $n^{\\frac{5}{4}}$. To check, try $n = 16$: $\\sqrt[4]{4096} \\cdot 4 = 8 \\cdot 4 = 32$, and $16^{\\frac{5}{4}} = 2^{5} = 32$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the exponents, $\\frac{3}{4} \\cdot \\frac{1}{2} = \\frac{3}{8}$. You multiply exponents when you raise a power to a power. When you multiply two powers with the same base, you add them."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You combined the radicals by multiplying what was under them, $n^{3} \\cdot n = n^{4}$, and adding the indices, $4 + 2 = 6$. That gives $\\sqrt[6]{n^{4}} = n^{\\frac{2}{3}}$, but you can't add root indices."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped both fractional exponents, writing $n^{\\frac{4}{3}}$ and $n^{2}$. The root index goes in the denominator, so the exponents are $\\frac{3}{4}$ and $\\frac{1}{2}$."
+   }
+  },
+  "id": "orig-exponent-radic-M-20a30b",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-20a30b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{A}{B}$, where $x > 0$?",
+  "stimulus": "A paleobotanist uses a model to compare the resin-canal counts of two fossilized conifer stems. Stem A has $A = \\sqrt{36x^{10}}$ canals and stem B has $B = \\sqrt[3]{8x^{3}}$ canals, where $x$ is a growth factor.",
+  "choices": [
+   "$\\frac{3}{4}x^{4}$",
+   "$3x^{4}$",
+   "$18x^{4}$",
+   "$3x^{19}$"
+  ],
+  "answer": "B",
+  "explanation": "Take each root of both the coefficient and the variable. $\\sqrt{36x^{10}} = 36^{1/2}x^{10/2} = 6x^{5}$, and $\\sqrt[3]{8x^{3}} = 8^{1/3}x^{3/3} = 2x$. To find how many times as many canals stem A has, divide: $\\frac{6x^{5}}{2x} = 3x^{4}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the cube root of $x^{3}$ but left the 8 alone, so you got $B = 8x$ and then $\\frac{6x^{5}}{8x} = \\frac{3}{4}x^{4}$. The root applies to the coefficient too."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the square root of $x^{10}$ but not of 36, so you got $A = 36x^{5}$ and then $\\frac{36x^{5}}{2x} = 18x^{4}$. $\\sqrt{36}$ is 6."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated the square root as multiplying the exponent by 2, so $x^{10}$ became $x^{20}$, and then $\\frac{6x^{20}}{2x} = 3x^{19}$. A square root is the power $\\frac{1}{2}$, so it halves the exponent."
+   }
+  },
+  "id": "orig-exponent-radic-M-3fa8a8",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-3fa8a8",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $A - B$, where $x > 0$?",
+  "stimulus": "A linguist estimates the number of distinct word forms, in thousands, in two text collections as $A = \\sqrt[3]{27x^{6}}$ and $B = x^{\\frac{1}{2}} \\cdot x^{\\frac{3}{2}}$, where $x$ is a positive scale factor.",
+  "choices": [
+   "$2x^{2}$",
+   "$3x^{2}$",
+   "$8x^{2}$",
+   "$26x^{2}$"
+  ],
+  "answer": "A",
+  "explanation": "Write the cube root as the power $\\frac{1}{3}$: $\\sqrt[3]{27x^{6}} = 27^{1/3}x^{6/3} = 3x^{2}$. When you multiply powers of the same base, add the exponents: $x^{1/2} \\cdot x^{3/2} = x^{4/2} = x^{2}$. The question asks for the gap, so subtract: $3x^{2} - x^{2} = 2x^{2}$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$3x^{2}$ is $A$ alone. The question asks how much larger $A$ is than $B$, so you still have to subtract $B = x^{2}$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided 27 by 3 to get 9 instead of taking its cube root, so you got $9x^{2} - x^{2} = 8x^{2}$. The cube root of 27 is 3, because $3^{3} = 27$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the cube root of $x^{6}$ but not of 27, so you got $27x^{2} - x^{2} = 26x^{2}$. The root applies to the coefficient too."
+   }
+  },
+  "id": "orig-exponent-radic-M-1cf41a",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-1cf41a",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{P}{Q}$, where $x > 0$ and $y > 0$?",
+  "stimulus": "A materials scientist models the stiffness of two thin films. Film P has stiffness $P = \\sqrt{25x^{4}y^{6}}$ and film Q has stiffness $Q = x^{-1}y^{2}$, where $x$ and $y$ depend on how the films were processed.",
+  "choices": [
+   "$5xy$",
+   "$25x^{3}y$",
+   "$\\frac{1}{5x^{3}y}$",
+   "$5x^{3}y$"
+  ],
+  "answer": "D",
+  "explanation": "Halve every exponent inside the square root and take the root of 25: $\\sqrt{25x^{4}y^{6}} = 5x^{2}y^{3}$. Then divide by subtracting exponents: $\\frac{5x^{2}y^{3}}{x^{-1}y^{2}} = 5x^{2-(-1)}y^{3-2} = 5x^{3}y$. So film P is $5x^{3}y$ times as stiff as film Q.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost the sign on the negative exponent and worked out $x^{2-1} = x$. Subtracting $-1$ means adding 1, so the answer is $x^{3}$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the square root of the variables but not of 25, so you got $P = 25x^{2}y^{3}$. $\\sqrt{25}$ is 5."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "This is $\\frac{Q}{P}$, which tells you how many times as stiff Q is as P. The question puts P on top."
+   }
+  },
+  "id": "orig-exponent-radic-M-9596a2",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-M-9596a2",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

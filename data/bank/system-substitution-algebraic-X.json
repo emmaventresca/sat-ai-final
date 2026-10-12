@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-system-substit-X-03b051",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,14 +82,412 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-system-substit-X-959d36",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "The point $(2, b)$ is a solution to the given system of equations, where $a$ and $b$ are constants. What is the $y$-coordinate of the other solution to the system?",
+  "stimulus": "A folklorist compares two models for how many retellings of a tale are recorded in a region.\n$y = x^2 + ax - 5$\n$y = 3x + 1$",
+  "choices": [
+   "$-8$",
+   "$-3$",
+   "$7$",
+   "$10$"
+  ],
+  "answer": "A",
+  "explanation": "Because $(2, b)$ is on the line, $b = 3(2) + 1 = 7$. It is also on the parabola, so $7 = 4 + 2a - 5$, which gives $a = 4$. Substitute $3x + 1$ for $y$: $x^2 + 4x - 5 = 3x + 1$, so $x^2 + x - 6 = 0$ and $(x + 3)(x - 2) = 0$. The other solution has $x = -3$, and $y = 3(-3) + 1 = -8$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the $x$-coordinate of the other solution correctly, $-3$, and then reported it as the $y$-coordinate. You still need to put it into $y = 3x + 1$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is $b$, the $y$-coordinate of the solution you were given. You need it to find $a$, but the question asks about the other solution."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You factored $x^2 + x - 6$ with the wrong signs and got $x = 3$, then took $y$ from the line alone. $(3, 10)$ satisfies the line but not the parabola, since $9 + 12 - 5 = 16$, so it isn't a solution."
+   }
+  },
+  "id": "orig-system-substit-X-166629",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-X-166629",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the point __var__ is a solution to the",
+    "point __var__ is a solution to the given"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "If $(x, y)$ is a solution to the given system of equations and $y < 0$, what is the value of $x + y$?",
+  "stimulus": "A linguist relates two measures of how often a borrowed word appears in a corpus.\n$x = y^2 - 2y$\n$x - y = 4$",
+  "choices": [
+   "$-6$",
+   "$-2$",
+   "$2$",
+   "$12$"
+  ],
+  "answer": "C",
+  "explanation": "From the second equation, $x = y + 4$. Substitute: $y + 4 = y^2 - 2y$, so $y^2 - 3y - 4 = 0$ and $(y - 4)(y + 1) = 0$. The solutions are $y = 4$ and $y = -1$. Since $y < 0$, $y = -1$, and $x = -1 + 4 = 3$. Check this in the first equation: $(-1)^2 - 2(-1) = 3$. So $x + y = 3 + (-1) = 2$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "The roots $4$ and $-1$ are values of $y$, but you treated them as values of $x$. That gave you $x = -1$ and $y = -5$ from the line. $(-1, -5)$ satisfies only the line, since $(-5)^2 - 2(-5) = 35$, not $-1$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You chose $y = -1$ correctly, but you evaluated $(-1)^2 - 2(-1)$ as $1 - 2 = -1$ instead of $1 + 2 = 3$. You dropped the sign of the double negative."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the solution with $y = 4$, which gives $8 + 4 = 12$. The question asks for the solution where $y$ is negative."
+   }
+  },
+  "id": "orig-system-substit-X-5c12c7",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-X-5c12c7",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The given system of equations has two solutions, $(x_1, y_1)$ and $(x_2, y_2)$. What is the value of $y_1 + y_2$?",
+  "stimulus": "A meteorologist uses two models of how a storm cell's pressure drop changes with distance.\n$y + 4 = x(x - 5)$\n$y = 3x - 4$",
+  "choices": [
+   "$8$",
+   "$16$",
+   "$20$",
+   "$24$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute $3x - 4$ for $y$ in the first equation: $3x - 4 + 4 = x^2 - 5x$, so $3x = x^2 - 5x$ and $x^2 - 8x = 0$. Factor out $x$: $x(x - 8) = 0$, so $x = 0$ or $x = 8$. The line then gives $y = -4$ and $y = 20$. So $y_1 + y_2 = -4 + 20 = 16$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the $x$-coordinates, $0 + 8$, but the question asks for the sum of the $y$-coordinates."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided both sides of $x^2 = 8x$ by $x$, which throws away the solution $x = 0$. Only $(8, 20)$ was left. You should factor out $x$ instead of dividing by it."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "For $x = 0$, you got $y = 4$ instead of $y = -4$ because the sign flipped when you moved the 4. Putting $x = 0$ into $y = 3x - 4$ gives $-4$."
+   }
+  },
+  "id": "orig-system-substit-X-2eb755",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-X-2eb755",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given system of equations, $k$ is a constant. One solution to the system has an $x$-coordinate of 3. Which ordered pair $(x, y)$ is the other solution to the system?",
+  "stimulus": "A printmaker relates ink coverage to plate pressure using two models.\n$y = x^2 + k$\n$y = kx + 7$",
+  "choices": [
+   "$(2, 5)$",
+   "$(2, 9)$",
+   "$(3, 10)$",
+   "$(-2, 5)$"
+  ],
+  "answer": "D",
+  "explanation": "At $x = 3$ both equations give the same $y$, so $9 + k = 3k + 7$, which gives $k = 1$. Substitute: $x^2 + 1 = x + 7$, so $x^2 - x - 6 = 0$ and $(x - 3)(x + 2) = 0$. The other solution has $x = -2$, and $y = -2 + 7 = 5$. Check it in the first equation: $(-2)^2 + 1 = 5$. The other solution is $(-2, 5)$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You factored with the wrong sign and got $x = 2$, then took $y$ from $y = x^2 + 1$. $(2, 5)$ satisfies the parabola but not the line, since $2 + 7 = 9$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You factored with the wrong sign and got $x = 2$, then took $y$ from $y = x + 7$. $(2, 9)$ satisfies the line but not the parabola, since $4 + 1 = 5$."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "$(3, 10)$ is a solution, but it is the one you were given. The question asks for the other solution."
+   }
+  },
+  "id": "orig-system-substit-X-16b6ae",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-X-16b6ae",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The ordered pair $(a, b)$ is a solution to the given system of equations, and $a < b$. What is the value of $b - a$?",
+  "stimulus": "A musicologist models two features of a song cycle's tempo markings.\n$y = (x - 4)(x + 2)$\n$4x - 2y = 6$",
+  "choices": [
+   "$-4$",
+   "$-2$",
+   "$1$",
+   "$2$"
+  ],
+  "answer": "D",
+  "explanation": "Rewrite the second equation as $y = 2x - 3$. Substitute: $x^2 - 2x - 8 = 2x - 3$, so $x^2 - 4x - 5 = 0$ and $(x - 5)(x + 1) = 0$. The solutions are $(5, 7)$ and $(-1, -5)$. Only $(5, 7)$ has $a < b$, since $-1$ is not less than $-5$. So $b - a = 7 - 5 = 2$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You used $(-1, -5)$, which gives $-5 - (-1) = -4$. That pair solves the system, but it fails $a < b$ because $-1 > -5$."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the right solution, $(5, 7)$, but calculated $a - b$ instead of $b - a$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You set $(x - 4)(x + 2) = 0$ to get $x = 4$ without substituting, then took $y = 5$ from the line. $(4, 5)$ satisfies the line but not the first equation, since $(0)(6) = 0$, not $5$."
+   }
+  },
+  "id": "orig-system-substit-X-3c54ff",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-X-3c54ff",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which ordered pair $(x, y)$ is a solution to the given system of equations?",
+  "stimulus": "A hydrologist relates the depth of a stream channel to the flow it carries using two models.\n$x^2 - y = 2x$\n$y = 3x$",
+  "choices": [
+   "$(-5, -15)$",
+   "$(5, 10)$",
+   "$(0, 0)$",
+   "$(5, 25)$"
+  ],
+  "answer": "C",
+  "explanation": "Substitute $3x$ for $y$: $x^2 - 3x = 2x$, so $x^2 - 5x = 0$ and $x(x - 5) = 0$. Then $x = 0$ or $x = 5$, giving $(0, 0)$ and $(5, 15)$. Only $(0, 0)$ appears among the choices. Check it: $0 - 0 = 2(0)$ and $0 = 3(0)$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You factored $x^2 - 5x$ with the wrong sign and got $x = -5$, then took $y$ from the line. $(-5, -15)$ satisfies $y = 3x$, but in the first equation $25 + 15 = 40$, not $-10$."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You divided by $x$ to get $x = 5$, which loses $x = 0$. Then you took $y$ from the $2x$ term instead of from $y = 3x$. $(5, 10)$ satisfies neither equation."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided by $x$ to get $x = 5$, which loses $x = 0$. Then you took $y = x^2$ and dropped the $-2x$ term. $(5, 25)$ satisfies neither equation."
+   }
+  },
+  "id": "orig-system-substit-X-d43437",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-X-d43437",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __var__ which ordered pair __var__ is a",
+    "__var__ which ordered pair __var__ is a solution"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $(x, y)$ is a solution to the given system of equations and $x > 0$, what is the value of $\\frac{y}{x}$?",
+  "stimulus": "An astronomer uses two models to relate a variable star's brightness to its pulsation period.\n$2y - x^2 = 3x$\n$y - x = 6$",
+  "choices": [
+   "$-\\frac{1}{2}$",
+   "$3$",
+   "$6$",
+   "$9$"
+  ],
+  "answer": "B",
+  "explanation": "From the second equation, $y = x + 6$. Substitute: $2(x + 6) - x^2 = 3x$, so $x^2 + x - 12 = 0$ and $(x + 4)(x - 3) = 0$. The solutions are $(3, 9)$ and $(-4, 2)$. Since $x > 0$, use $(3, 9)$: $\\frac{y}{x} = \\frac{9}{3} = 3$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You used $(-4, 2)$, which gives $\\frac{2}{-4} = -\\frac{1}{2}$. That pair solves the system, but it fails $x > 0$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $x = 3$, but when you took $y$ from the first equation you stopped at $2y = 18$ and used $18$ as $y$. $(3, 18)$ fails both equations. Divide by 2, or use the simpler equation $y = x + 6$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the right solution, $(3, 9)$, but reported $y$ instead of $\\frac{y}{x}$."
+   }
+  },
+  "id": "orig-system-substit-X-135233",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-X-135233",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which ordered pair $(x, y)$ is a solution to the given system of equations and has $x < y$?",
+  "stimulus": "An archaeologist models two measurements taken across the layers of an excavation trench.\n$y = -x^2 + 6x$\n$x + y = 10$",
+  "choices": [
+   "$(2, 8)$",
+   "$(3, 9)$",
+   "$(5, 5)$",
+   "$(8, 2)$"
+  ],
+  "answer": "A",
+  "explanation": "From the second equation, $y = 10 - x$. Substitute: $10 - x = -x^2 + 6x$, so $x^2 - 7x + 10 = 0$ and $(x - 2)(x - 5) = 0$. The solutions are $(2, 8)$ and $(5, 5)$. Only $(2, 8)$ has $x < y$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "$(3, 9)$ is on the parabola, since $-9 + 18 = 9$, and it has $x < y$. But $3 + 9 = 12$, not $10$, so it fails the second equation. You need to test both equations."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "$(5, 5)$ is a real solution to the system, but $x$ equals $y$, so it fails the condition $x < y$."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You swapped the coordinates of $(2, 8)$. $(8, 2)$ satisfies $x + y = 10$, but on the parabola $-64 + 48 = -16$, not $2$. It also fails $x < y$."
+   }
+  },
+  "id": "orig-system-substit-X-015748",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-X-015748",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __var__ which ordered pair __var__ is a",
+    "__var__ which ordered pair __var__ is a solution"
+   ],
+   "residue": 0
+  }
  }
 ]

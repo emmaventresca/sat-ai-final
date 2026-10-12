@@ -393,5 +393,53 @@
   "rated_why": "Expand, combine fractions on left side, isolate x; multiple steps with fractional coefficients",
   "authored_difficulty": "H",
   "phrasing": "direct"
+ },
+ {
+  "stem": "What value of $x$ is the solution to the given equation?",
+  "stimulus": "$\\frac{3}{4}(3x-4)-\\frac{1}{2}(3x-4)=\\frac{x+6}{2}$",
+  "choices": [
+   "$5$",
+   "$8$",
+   "$11$",
+   "$16$"
+  ],
+  "answer": "D",
+  "explanation": "Both terms on the left share the group $(3x-4)$, so factor it out first: $\\left(\\frac{3}{4}-\\frac{1}{2}\\right)(3x-4)=\\frac{1}{4}(3x-4)$. Now the equation is $\\frac{3x-4}{4}=\\frac{x+6}{2}$. Multiply both sides by $4$ to get $3x-4=2(x+6)=2x+12$. Subtract $2x$ from both sides and add $4$ to both sides to get $x=16$. Check: $3(16)-4=44$, and $\\frac{44}{4}=11$; $\\frac{16+6}{2}=11$. Both sides equal $11$, so $x=16$ is correct.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the left side by $4$ to clear its denominator but didn't multiply the right side by $4$ too. You wrote $3x-4=x+6$ when it should be $3x-4=2x+12$, which gave you $x=5$. Whatever you multiply one side by, you have to multiply the other side by the same thing."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You got to $3x-4=2x+12$ correctly, but when you moved the $-4$ across you kept it negative and got $x=12-4=8$. Moving the $-4$ to the other side makes it $+4$, so $x=12+4=16$. If you plug $8$ back in, the left side is $5$ and the right side is $7$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$11$ is the value each side of the equation equals when $x=16$, not the value of $x$. You probably found it while checking your work and then picked it. The question asks for $x$."
+   }
+  },
+  "id": "orig-solve-bare-equ-H-11486f",
+  "skill_cd": "H.A.",
+  "subtype": "solve-bare-equation",
+  "subtype_name": "Solve a bare linear equation for x",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-bare-equ-H-11486f",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-interpret-slop-X-e12e9b",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,14 +82,481 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-interpret-slop-X-c94e81",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "in_context"
+ },
+ {
+  "stem": "What is the best interpretation of 720 in this context?",
+  "stimulus": "Under a warehouse labor contract, any hours an employee works beyond 40 in a week are paid at an overtime rate. For a week in which an employee works $h$ hours, where $40 \\le h \\le 55$, the employee's total pay $P$, in dollars, is given by $P = 27(h - 40) + 720$.",
+  "choices": [
+   "The employee's pay for a week with no hours worked",
+   "The employee's overtime pay for the week",
+   "The employee's pay for a week of exactly 40 hours",
+   "The employee's pay for each hour worked beyond 40"
+  ],
+  "answer": "C",
+  "explanation": "720 is the constant, so it is the value of $P$ when the term $27(h - 40)$ is zero. That term is zero when $h = 40$, not when $h = 0$. So 720 is the pay, in dollars, for a week of exactly 40 hours. The model only applies from 40 hours up, so the input that starts the model is 40.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read the constant as the value at $h = 0$, out of habit with $y = mx + b$. Here the variable is $h - 40$, so the constant is the pay at $h = 40$. A week with no hours is outside the model's domain anyway."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You picked the wrong part of the sum. The overtime pay is $27(h - 40)$. The 720 is the pay that comes before any overtime."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the meaning of the slope. The pay per overtime hour is the coefficient 27, not the constant 720."
+   }
+  },
+  "id": "orig-interpret-slop-X-e0c668",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-X-e0c668",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the best interpretation of 20 in this context?",
+  "stimulus": "A patient's antibody level is $A$ units per milliliter. The number of weeks $t$ after a booster dose at which the patient's antibody level equals $A$ is modeled by $t = \\dfrac{800 - A}{20}$, for $0 \\le t \\le 30$.",
+  "choices": [
+   "The antibody level decreases by 20 units per milliliter each week.",
+   "The antibody level increases by 20 units per milliliter each week.",
+   "The antibody level is 20 units per milliliter at the time of the booster.",
+   "It takes 20 weeks for the antibody level to decrease by 1 unit per milliliter."
+  ],
+  "answer": "A",
+  "explanation": "Solve for the output: $20t = 800 - A$, so $A = 800 - 20t$. The coefficient on $t$ is $-20$. That means the antibody level falls by 20 units per milliliter for each week after the booster.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You saw a positive 20 and didn't rearrange. In $A = 800 - 20t$ the slope is negative, so the level goes down over time."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read 20 as the starting value. The level at $t = 0$ is 800. The 20 is the rate of change."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the rate. Since $t = \\frac{800 - A}{20}$, a 1-unit drop in $A$ takes $\\frac{1}{20}$ of a week, not 20 weeks. The level drops 20 units in 1 week."
+   }
+  },
+  "id": "orig-interpret-slop-X-f0d2b2",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-X-f0d2b2",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of the slope of the line in this context?",
+  "stimulus": "A seismologist models the time it takes a pressure wave from an earthquake to reach a recording station as a linear function of the station's distance from the epicenter. The graph shows the model.",
+  "figure": {
+   "type": "line",
+   "caption": "Pressure Wave Travel Time",
+   "x_label": "Distance from epicenter (kilometers)",
+   "y_label": "Travel time (seconds)",
+   "points": [
+    [
+     0,
+     5
+    ],
+    [
+     60,
+     15
+    ],
+    [
+     120,
+     25
+    ],
+    [
+     180,
+     35
+    ],
+    [
+     240,
+     45
+    ],
+    [
+     300,
+     55
+    ],
+    [
+     360,
+     65
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 360,
+   "x_step": 60,
+   "y_min": 0,
+   "y_max": 70,
+   "y_step": 5,
+   "alt": "A straight increasing line with marked points at (0, 5), (60, 15), (120, 25), (180, 35), (240, 45), (300, 55), and (360, 65)."
+  },
+  "choices": [
+   "Each additional kilometer of distance increases the travel time by 6 seconds.",
+   "Each additional 4 kilometers of distance increases the travel time by 1 second.",
+   "Each additional kilometer of distance increases the travel time by 5 seconds.",
+   "Each additional 6 kilometers of distance increases the travel time by 1 second."
+  ],
+  "answer": "D",
+  "explanation": "Use two grid points, (0, 5) and (60, 15). The rise is 10 seconds and the run is 60 kilometers, so the slope is $\\frac{10}{60} = \\frac{1}{6}$ second per kilometer. That is the same as 1 second for every 6 additional kilometers.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided run by rise. Distance over time gives 6 kilometers per second, but the slope is seconds per kilometer."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You divided one point's coordinates, $\\frac{15}{60}$, which ignores that the line starts at 5 seconds, not 0. Slope is the change in $y$ over the change in $x$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You reported the y-intercept, 5 seconds, as if it were the rate. That 5 is the travel time at zero distance, not the time added per kilometer."
+   }
+  },
+  "id": "orig-interpret-slop-X-cdaca2",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-X-cdaca2",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the best interpretation of 42 in this context?",
+  "stimulus": "A research tank holds 6 reef fish. After the tank's air pump fails, the dissolved oxygen remaining in the tank, $O$, in milligrams, is modeled by $O = 2400 - 42t$, where $t$ is the number of hours since the pump failed.",
+  "choices": [
+   "Each fish in the tank consumes 42 milligrams of oxygen per hour.",
+   "The fish in the tank together consume 42 milligrams of oxygen per hour.",
+   "The tank contains 42 milligrams of oxygen when the pump fails.",
+   "The oxygen in the tank increases by 42 milligrams per hour."
+  ],
+  "answer": "B",
+  "explanation": "42 is the size of the coefficient on $t$, so it is a rate: the tank's oxygen falls by 42 milligrams each hour. $O$ measures all the oxygen in the tank, so 42 is how much the whole group of fish uses per hour. It is not one fish's share.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You found the rate correctly but forgot that $O$ is the whole tank's oxygen. With 6 fish, 42 is the combined use, not each fish's use."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped slope and intercept. The oxygen when the pump fails ($t = 0$) is 2400 milligrams."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You dropped the minus sign. The term is $-42t$, so the oxygen goes down over time."
+   }
+  },
+  "id": "orig-interpret-slop-X-d7a75d",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-X-d7a75d",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the best interpretation of 12 in this context?",
+  "stimulus": "A musicologist is building a 180-minute recital program of a composer's sonatas and minuets. All the sonatas have the same length, and all the minuets have the same length. The equation $12x + 4y = 180$ represents programs with $x$ sonatas and $y$ minuets that fill exactly 180 minutes.",
+  "choices": [
+   "Each additional sonata in the program replaces 12 minuets.",
+   "The program contains a total of 12 sonatas.",
+   "Each sonata in the program lasts 12 minutes.",
+   "All the sonatas in the program together last 12 minutes."
+  ],
+  "answer": "C",
+  "explanation": "Each term is a time in minutes. $12x$ is the total time of $x$ sonatas, so 12 is the number of minutes per sonata. (Solving for $y$ gives $y = 45 - 3x$, so one more sonata replaces 3 minuets, not 12.)",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated the coefficient in standard form as the slope. Rewritten as $y = 45 - 3x$, each extra sonata replaces 3 minuets."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read a coefficient as a value of the variable. The number of sonatas is $x$, and it can vary. 12 is the length of each one."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You mixed up the rate and the total. The combined sonata time is $12x$, which grows with $x$. 12 is the length of one sonata."
+   }
+  },
+  "id": "orig-interpret-slop-X-b35923",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-X-b35923",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the best interpretation of 0.4 in this context?",
+  "stimulus": "An ecologist models the number of days $D$ that a northern lake is covered by ice each winter as $D = 118 - 0.4(y - 1950)$, where $y$ is the year and $1950 \\le y \\le 2020$.",
+  "choices": [
+   "The number of days of ice cover decreases by 0.4 every 10 years.",
+   "The number of days of ice cover increases by 4 every 10 years.",
+   "The number of days of ice cover in 1950 was 0.4.",
+   "The number of days of ice cover decreases by 4 every 10 years."
+  ],
+  "answer": "D",
+  "explanation": "0.4 is the size of the coefficient on $(y - 1950)$, so ice cover drops by 0.4 days per year. Over 10 years that adds up to $10 \\times 0.4 = 4$ fewer days.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You saw that 0.4 is a rate but didn't rescale it. 0.4 is the change per year, so over 10 years it is 4 days."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You scaled correctly but lost the sign. The term is subtracted, so ice cover goes down as the years pass."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You treated the rate as the starting value. In 1950 the term $(y - 1950)$ is 0, so the model gives 118 days."
+   }
+  },
+  "id": "orig-interpret-slop-X-8da1b2",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-X-8da1b2",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the best interpretation of 0.4 in this context?",
+  "stimulus": "Two cartographers each label features on digital maps. For a map with $n$ features, Ana's total time in minutes is $0.8n + 15$ and Ben's is $1.2n + 6$. The difference between their times is $T = 0.4n - 9$, where $T$ is Ben's time minus Ana's time.",
+  "choices": [
+   "Ben spends a total of 0.4 minutes labeling each feature on a map.",
+   "For each additional feature, Ben's time exceeds Ana's by 0.4 more minutes.",
+   "Ben's time exceeds Ana's by 0.4 minutes for a map with no features.",
+   "For each additional feature, Ana's time exceeds Ben's by 0.4 more minutes."
+  ],
+  "answer": "B",
+  "explanation": "$T$ is Ben's time minus Ana's, and 0.4 is the coefficient on $n$. So each extra feature adds 0.4 minutes to the gap between their times. That matches $1.2 - 0.8 = 0.4$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You forgot that $T$ is a difference. Ben's own time per feature is 1.2 minutes. 0.4 is how much more he takes per feature than Ana."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read the coefficient as the value at $n = 0$. When $n = 0$, $T = -9$, so Ben takes 9 minutes less than Ana."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You reversed the subtraction. $T$ is Ben minus Ana, and a positive coefficient means Ben's lead grows with each feature."
+   }
+  },
+  "id": "orig-interpret-slop-X-9fad5e",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-X-9fad5e",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of the slope of the line in this context?",
+  "stimulus": "A city planning office tracks the remaining budget for a streetlight replacement project. The graph shows the remaining budget as a linear function of the number of streetlights replaced.",
+  "figure": {
+   "type": "line",
+   "caption": "Streetlight Replacement Budget",
+   "x_label": "Streetlights replaced",
+   "y_label": "Remaining budget (thousands of dollars)",
+   "points": [
+    [
+     0,
+     360
+    ],
+    [
+     20,
+     270
+    ],
+    [
+     40,
+     180
+    ],
+    [
+     60,
+     90
+    ],
+    [
+     80,
+     0
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 80,
+   "x_step": 20,
+   "y_min": 0,
+   "y_max": 360,
+   "y_step": 90,
+   "alt": "A straight decreasing line with marked points at (0, 360), (20, 270), (40, 180), (60, 90), and (80, 0)."
+  },
+  "choices": [
+   "Each additional streetlight replaced reduces the remaining budget by $4,500.",
+   "Each additional streetlight replaced reduces the remaining budget by $4.50.",
+   "Each additional streetlight replaced reduces the remaining budget by $360,000.",
+   "Each additional streetlight replaced reduces the remaining budget by $90,000."
+  ],
+  "answer": "A",
+  "explanation": "From (0, 360) to (20, 270), the budget falls 90 thousand dollars over 20 streetlights. That is a slope of $-\\frac{90}{20} = -4.5$ thousand dollars per streetlight. So each streetlight reduces the remaining budget by $4,500.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You got 4.5 correctly but ignored that the axis is in thousands of dollars. 4.5 thousand dollars is $4,500."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You reported the y-intercept. $360,000 is the whole starting budget, not the cost of one streetlight."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You counted one horizontal gridline as one streetlight. Each gridline is 20 streetlights, so the 90-thousand-dollar drop is shared across 20 lights."
+   }
+  },
+  "id": "orig-interpret-slop-X-66f301",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-X-66f301",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

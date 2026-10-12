@@ -533,11 +533,17 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "review",
+  "phrasing": "which_expression",
   "verification": {
    "id": "orig-no-solution-pa-H-f9a86e",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "which of the following systems of linear equations",
     "of the following systems of linear equations has",
@@ -545,7 +551,54 @@
     "following systems of linear equations has no solution"
    ],
    "residue": 11
+  }
+ },
+ {
+  "stem": "In the given system of equations, $k$ is a constant. If the system has no solution, what is the value of $k$?",
+  "stimulus": "A sports scientist fits two lines to treadmill data. In each line, $x$ is running speed, in kilometers per hour, and $y$ is a fatigue score.\n$y = \\frac{3}{4}x + 5$\n$kx - 8y = 12$",
+  "choices": [
+   "$-6$",
+   "$\\frac{3}{4}$",
+   "$6$",
+   "$\\frac{32}{3}$"
+  ],
+  "answer": "C",
+  "explanation": "First, put the second equation in the same form as the first. Subtract $kx$ from both sides to get $-8y = -kx + 12$. Then divide by $-8$ to get $y = \\frac{k}{8}x - \\frac{3}{2}$. A system has no solution when its lines are parallel and distinct. The lines are parallel when the slopes are equal, so $\\frac{k}{8} = \\frac{3}{4}$, which gives $k = 6$. Now check that the lines really are different: the y-intercepts are $5$ and $-\\frac{3}{2}$, so they never meet. In Desmos, a slider on $k$ shows the lines stop crossing at $k = 6$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You compared the coefficients without first putting both equations in the same form. You may have matched $k$ and $-8$ with $\\frac{3}{4}$ and $1$, or dropped the negative sign when you divided by $-8$. Either way, you got the slope $-\\frac{k}{8}$ and the answer $-6$. With $k = -6$ the slopes are $-\\frac{3}{4}$ and $\\frac{3}{4}$, so the lines cross."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the slope that both lines must share. But the question asks for $k$, and $k$ is 8 times that slope, because the second line's slope is $\\frac{k}{8}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the ratio and set $\\frac{8}{k} = \\frac{3}{4}$, which gives $\\frac{32}{3}$. The second line's slope is $\\frac{k}{8}$, not $\\frac{8}{k}$. With $k = \\frac{32}{3}$ the slopes are different, so the lines cross at one point."
+   }
   },
-  "phrasing": "which_expression"
+  "id": "orig-no-solution-pa-H-6c9f57",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-H-6c9f57",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

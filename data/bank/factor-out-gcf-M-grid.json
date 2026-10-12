@@ -192,5 +192,389 @@
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "The expression is equivalent to $kx^n(2x + 3)$, where $k$ and $n$ are constants. What is the value of $k + n$?",
+  "stimulus": "An urban planner models the paved area, in square meters, of a scaled plaza design with the expression $24x^3 + 36x^2$, where $x$ is the scale factor.",
+  "keys": [
+   "14"
+  ],
+  "any_of": false,
+  "explanation": "Find the greatest common factor of $24x^3$ and $36x^2$. The GCF of 24 and 36 is 12, and the lowest power of $x$ in both terms is $x^2$, so the GCF is $12x^2$. Divide each term by it: $24x^3 \\div 12x^2 = 2x$ and $36x^2 \\div 12x^2 = 3$. That gives $12x^2(2x + 3)$, which matches the given bracket. So $k = 12$ and $n = 2$, and $k + n = 14$. To check, multiply it back out: $12x^2 \\cdot 2x = 24x^3$ and $12x^2 \\cdot 3 = 36x^2$.",
+  "common_errors": [
+   {
+    "value": "15",
+    "misconception": "algebra-manipulation",
+    "why": "Took the highest power, $x^3$, so $n = 3$ instead of the lowest power both terms share, giving $12 + 3$."
+   },
+   {
+    "value": "8",
+    "misconception": "missed-condition",
+    "why": "Pulled out 6, a common factor that isn't the greatest one, without checking that $6x^2(2x+3)$ multiplies back to the original. That gives $6 + 2$."
+   },
+   {
+    "value": "12",
+    "misconception": "intermediate-step",
+    "why": "Found $k = 12$ correctly and stopped without adding $n$."
+   }
+  ],
+  "id": "orig-factor-out-gcf-M-48442d",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-48442d",
+   "structure": [],
+   "solver_answer": 14,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The greatest common factor of the three terms of this expression can be written as $kx^n$, where $k$ and $n$ are positive integers. What is the value of $k + n$?",
+  "stimulus": "A folklore researcher uses the expression $18x^5 - 30x^4 + 12x^3$ to model how many recorded variants of a tale appear across $x$ generations of retelling.",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "For the coefficients, the greatest number that divides 18, 30, and 12 is 6. For the variable, take the lowest power that appears in every term, which is $x^3$. The GCF is $6x^3$, so $k = 6$ and $n = 3$, and $k + n = 9$. To check, $6x^3(3x^2 - 5x + 2)$ multiplies back to the original, and nothing more can be factored out of the bracket.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "missed-condition",
+    "why": "Used 3 as the coefficient. It divides all three numbers but isn't the greatest common factor, giving $3 + 3$."
+   },
+   {
+    "value": "11",
+    "misconception": "algebra-manipulation",
+    "why": "Took the highest power, $x^5$, instead of the lowest power all the terms share, giving $6 + 5$."
+   },
+   {
+    "value": "5",
+    "misconception": "missed-condition",
+    "why": "Used 2 as the coefficient, a common factor that isn't the greatest, giving $2 + 3$."
+   }
+  ],
+  "id": "orig-factor-out-gcf-M-049e8c",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-049e8c",
+   "structure": [],
+   "solver_answer": 9,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ where __var__ and __var__ are positive integers"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "For all values of $t$, $14t^4 - 35t^3 + 7t^2 = 7t^2(2t^2 - 5t + c)$, where $c$ is a constant. What is the value of $c$?",
+  "stimulus": "An immunologist models the antibody response in a trial with the expression $14t^4 - 35t^3 + 7t^2$, where $t$ is the number of days after a booster dose.",
+  "keys": [
+   "1"
+  ],
+  "any_of": false,
+  "explanation": "Divide every term by the factor $7t^2$, including the last one. $14t^4 \\div 7t^2 = 2t^2$, $-35t^3 \\div 7t^2 = -5t$, and $7t^2 \\div 7t^2 = 1$. The bracket is $2t^2 - 5t + 1$, so $c = 1$. When a term divides by the factor exactly, it leaves a 1 behind. It doesn't disappear. To check, $7t^2 \\cdot 1 = 7t^2$ gives back the last term.",
+  "common_errors": [
+   {
+    "value": "0",
+    "misconception": "algebra-manipulation",
+    "why": "Assumed the term $7t^2$ vanishes once it is factored out, and dropped the quotient of 1."
+   },
+   {
+    "value": "7",
+    "misconception": "algebra-manipulation",
+    "why": "Copied the last coefficient into the bracket without dividing it by the 7 that was pulled out."
+   }
+  ],
+  "id": "orig-factor-out-gcf-M-521fb9",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-521fb9",
+   "structure": [],
+   "solver_answer": 1,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "For all values of $x$, $45x^4 + 60x^3 = 15x^3 \\cdot g(x)$, where $g$ is a polynomial function. What is the value of $g(2)$?",
+  "stimulus": "A paleobotanist models the total area of preserved leaf fragments in a fossil bed with the expression $45x^4 + 60x^3$, where $x$ is the depth of the layer in meters.",
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "Here $g(x)$ is whatever goes in the bracket after you take out $15x^3$. Divide each term: $45x^4 \\div 15x^3 = 3x$ and $60x^3 \\div 15x^3 = 4$. So $g(x) = 3x + 4$, and $g(2) = 3(2) + 4 = 10$.",
+  "common_errors": [
+   {
+    "value": "80",
+    "misconception": "algebra-manipulation",
+    "why": "Divided only the coefficients and kept the original powers, so $g(x) = 3x^4 + 4x^3$, and $3(16) + 4(8) = 80$."
+   },
+   {
+    "value": "1200",
+    "misconception": "wrong-target-quantity",
+    "why": "Evaluated the original expression at $x = 2$ instead of the bracket: $45(16) + 60(8) = 1200$."
+   }
+  ],
+  "id": "orig-factor-out-gcf-M-8bc904",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-8bc904",
+   "structure": [],
+   "solver_answer": 10,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The greatest common factor of the two terms can be written as $km^an^b$, where $k$, $a$, and $b$ are positive integers. What is the value of $k + a + b$?",
+  "stimulus": "A nutrition scientist compares two meal plans using the expression $12m^3n^2 - 20m^2n^3$, where $m$ and $n$ are the daily servings of two food groups.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "The GCF of 12 and 20 is 4. For each variable, take the lowest power that appears in both terms. For $m$, that is $m^2$, and for $n$, it is also $n^2$. The GCF is $4m^2n^2$, so $k + a + b = 4 + 2 + 2 = 8$. To check, $4m^2n^2(3m - 5n)$ multiplies back to the original.",
+  "common_errors": [
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "Took the highest power of each variable, $m^3$ and $n^3$, instead of the lowest, giving $4 + 3 + 3$."
+   },
+   {
+    "value": "6",
+    "misconception": "missed-condition",
+    "why": "Used 2 as the coefficient, a common factor that isn't the greatest, giving $2 + 2 + 2$."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave only the numerical part of the GCF and left out the exponents."
+   }
+  ],
+  "id": "orig-factor-out-gcf-M-449bf7",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-449bf7",
+   "structure": [],
+   "solver_answer": 8,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the expression __var__ where __var__ and __var__ are",
+    "as __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "For all values of $h$, $6h^3 + 27h^2 - 12h = 3h(2h^2 + bh - c)$, where $b$ and $c$ are constants. What is the value of $b + c$?",
+  "stimulus": "A labor economist models a firm's weekly overtime cost, in hundreds of dollars, with the expression $6h^3 + 27h^2 - 12h$, where $h$ is the number of extra shifts scheduled.",
+  "keys": [
+   "13"
+  ],
+  "any_of": false,
+  "explanation": "Divide each term by $3h$. $6h^3 \\div 3h = 2h^2$, $27h^2 \\div 3h = 9h$, and $-12h \\div 3h = -4$. The bracket is $2h^2 + 9h - 4$. The given form is $2h^2 + bh - c$, so $b = 9$ and $c = 4$, because the minus sign is already written in front of $c$. That makes $b + c = 13$.",
+  "common_errors": [
+   {
+    "value": "21",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the first two terms but copied 12 into the bracket undivided, so $c = 12$ and the sum is $9 + 12$."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Took $c = -4$ even though the form already shows the minus sign, so the sum is $9 + (-4)$."
+   },
+   {
+    "value": "39",
+    "misconception": "algebra-manipulation",
+    "why": "Didn't divide the coefficients by 3 at all, giving $27 + 12$."
+   }
+  ],
+  "id": "orig-factor-out-gcf-M-aebcd3",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-aebcd3",
+   "structure": [],
+   "solver_answer": 13,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression can be written as $ax^b(2x^2 - 3)$, where $a$ and $b$ are constants. What is the value of $a + b$?",
+  "stimulus": "A materials scientist models the internal stress in a ceramic sample with the expression $32x^5 - 48x^3$, where $x$ is the applied load in kilonewtons.",
+  "keys": [
+   "19"
+  ],
+  "any_of": false,
+  "explanation": "The GCF of 32 and 48 is 16, and the lowest power of $x$ in both terms is $x^3$, so pull out $16x^3$. Then $32x^5 \\div 16x^3 = 2x^2$ and $48x^3 \\div 16x^3 = 3$, which gives $16x^3(2x^2 - 3)$. That matches the given bracket, so $a = 16$, $b = 3$, and $a + b = 19$.",
+  "common_errors": [
+   {
+    "value": "21",
+    "misconception": "algebra-manipulation",
+    "why": "Took the highest power, $x^5$, for the factor instead of the lowest shared power, giving $16 + 5$."
+   },
+   {
+    "value": "11",
+    "misconception": "missed-condition",
+    "why": "Pulled out 8, a common factor that isn't the greatest, without checking that the bracket would then be $4x^2 - 6$. That gives $8 + 3$."
+   },
+   {
+    "value": "18",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the exponents ($5 - 3 = 2$) and used that as the power in the factor, giving $16 + 2$."
+   }
+  ],
+  "id": "orig-factor-out-gcf-M-b28ecc",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-b28ecc",
+   "structure": [],
+   "solver_answer": 19,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "For all values of $x$, the expression is equivalent to $5x(ax^2 + bx + c)$, where $a$, $b$, and $c$ are constants. What is the value of $a + b + c$?",
+  "stimulus": "An agricultural scientist models the extra grain yield from a fertilizer trial with the expression $10x^3 + 35x^2 + 5x$, where $x$ is the amount of fertilizer applied per plot, in kilograms.",
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "Divide each term by $5x$. $10x^3 \\div 5x = 2x^2$, $35x^2 \\div 5x = 7x$, and $5x \\div 5x = 1$. So $a = 2$, $b = 7$, and $c = 1$, and the sum is 10. Another way: put $x = 1$ into both sides. The left side is $10 + 35 + 5 = 50$, and the right side is $5(a + b + c)$, so $a + b + c = 10$.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the last term after factoring, using $c = 0$ instead of the quotient 1."
+   },
+   {
+    "value": "50",
+    "misconception": "wrong-target-quantity",
+    "why": "Evaluated the original expression at $x = 1$ and didn't divide by the factor $5x$."
+   },
+   {
+    "value": "46",
+    "misconception": "algebra-manipulation",
+    "why": "Divided only by $x$ and not by 5, so the bracket was $10x^2 + 35x + 1$."
+   }
+  ],
+  "id": "orig-factor-out-gcf-M-507309",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-507309",
+   "structure": [],
+   "solver_answer": 10,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "expression is equivalent to __var__ where __var__ __var__",
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
  }
 ]

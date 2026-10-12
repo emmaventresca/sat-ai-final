@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-reverse-solve--X-03ce4c",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,14 +82,413 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-reverse-solve--X-9d45b5",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the inner diameter, in centimeters, of the tube?",
+  "stimulus": "A cylindrical tube made of a ceramic composite is 10 centimeters long and has an outer radius of 5 centimeters. The volume of the material that forms the tube's wall is $160\\pi$ cubic centimeters.",
+  "choices": [
+   "$3$",
+   "$6$",
+   "$9$",
+   "$16$"
+  ],
+  "answer": "B",
+  "explanation": "The wall is the outer cylinder minus the hollow core. Let $r$ be the inner radius. Then $\\pi(5)^2(10) - \\pi r^2(10) = 160\\pi$, so $250 - 10r^2 = 160$. That gives $10r^2 = 90$, so $r^2 = 9$ and $r = 3$. The question asks for the inner diameter, so the answer is $2(3) = 6$ centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the inner radius correctly, but the question asks for the diameter. You needed to double 3."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at $r^2 = 9$ and didn't take the square root. Then you never got to the diameter either."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "16 is $25 - r^2$, the value you get after dividing both sides by $10\\pi$. It isn't a length of the tube at all. You still had to solve for $r$."
+   }
+  },
+  "id": "orig-reverse-solve--X-bd1136",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--X-bd1136",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the perimeter, in inches, of the base of the chamber?",
+  "stimulus": "The interior of a roosting chamber built for chimney swifts is a right pyramid with a square base. The chamber is 9 inches tall and has a volume of 108 cubic inches.",
+  "choices": [
+   "$6$",
+   "$8\\sqrt{3}$",
+   "$24$",
+   "$36$"
+  ],
+  "answer": "C",
+  "explanation": "Let $s$ be the length of a base edge. Then $\\frac{1}{3}s^2(9) = 108$, so $3s^2 = 108$. That gives $s^2 = 36$ and $s = 6$. A square base has four edges, so the perimeter is $4(6) = 24$ inches.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "6 inches is one edge of the base. The perimeter is all four edges added together."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You left out the $\\frac{1}{3}$ in the pyramid formula. That gave you $9s^2 = 108$, so $s = 2\\sqrt{3}$ and the perimeter came out as $8\\sqrt{3}$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "36 is $s^2$, the area of the base. You needed to take the square root and then multiply by 4."
+   }
+  },
+  "id": "orig-reverse-solve--X-0bc724",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "review",
+  "verification": {
+   "id": "orig-reverse-solve--X-0bc724",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "inches what is the perimeter in inches of"
+   ],
+   "residue": 8
+  }
+ },
+ {
+  "stem": "What is the diameter, in centimeters, of the segment?",
+  "stimulus": "A petrified tree trunk segment is shaped like a right circular cylinder. The segment is 250 centimeters long and has a volume of $0.1\\pi$ cubic meters.",
+  "choices": [
+   "$4$",
+   "$20$",
+   "$40$",
+   "$400$"
+  ],
+  "answer": "C",
+  "explanation": "Change the length to meters before you substitute: 250 centimeters is 2.5 meters. Then $\\pi r^2(2.5) = 0.1\\pi$, so $r^2 = 0.04$ and $r = 0.2$ meters, which is 20 centimeters. The diameter is $2(20) = 40$ centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You put 250 into the formula as meters instead of converting it to 2.5. That gives $r^2 = 0.0004$, so $r$ is 2 centimeters and the diameter is 4."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "20 centimeters is the radius. The question asks for the diameter, so you needed to double it."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "400 is $r^2$ written in square centimeters, because $0.04 \\text{ m}^2 = 400 \\text{ cm}^2$. You stopped before taking the square root."
+   }
+  },
+  "id": "orig-reverse-solve--X-a75a39",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "review",
+  "verification": {
+   "id": "orig-reverse-solve--X-a75a39",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the diameter in centimeters of the"
+   ],
+   "residue": 8
+  }
+ },
+ {
+  "stem": "What is the diameter, in centimeters, of the second model?",
+  "stimulus": "A scale model of an exoplanet is a sphere with a volume of $288\\pi$ cubic centimeters. A model of a second exoplanet is a sphere whose volume is 8 times the volume of the first model.",
+  "choices": [
+   "$12$",
+   "$24$",
+   "$48$",
+   "$96$"
+  ],
+  "answer": "B",
+  "explanation": "For the first model, $\\frac{4}{3}\\pi r^3 = 288\\pi$, so $r^3 = 216$ and $r = 6$. Its diameter is 12. When the volume is multiplied by 8, the lengths are multiplied by $\\sqrt[3]{8} = 2$. So the second model's diameter is $2(12) = 24$ centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "12 is the radius of the second model. It's also the diameter of the first model. Either way, it isn't the diameter of the second model."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the length by 4, as if volume grew with the square of length. Volume grows with the cube, so the length factor is only 2."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the diameter by the volume factor of 8. Lengths scale by the cube root of the volume factor, which is 2."
+   }
+  },
+  "id": "orig-reverse-solve--X-dc1825",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "review",
+  "verification": {
+   "id": "orig-reverse-solve--X-dc1825",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the diameter in centimeters of the"
+   ],
+   "residue": 8
+  }
+ },
+ {
+  "stem": "What is the length, in meters, of the shorter parallel side of the floor?",
+  "stimulus": "In a study of how much workspace each employee gets, a warehouse floor is a trapezoid with an area of 576 square meters. The distance between its parallel sides is 12 meters. One parallel side is 3 times as long as the other.",
+  "choices": [
+   "$12$",
+   "$24$",
+   "$48$",
+   "$72$"
+  ],
+  "answer": "B",
+  "explanation": "Let the parallel sides be $x$ and $3x$. Then $\\frac{1}{2}(x + 3x)(12) = 576$, so $24x = 576$ and $x = 24$. The shorter parallel side is 24 meters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the $\\frac{1}{2}$ from the trapezoid formula. That gave $48x = 576$, which halves your answer."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "48 is $\\frac{x + 3x}{2}$, the average of the two parallel sides. You still had to solve for $x$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "72 is $3x$, the longer parallel side. The question asks for the shorter one."
+   }
+  },
+  "id": "orig-reverse-solve--X-ebc980",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--X-ebc980",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length, in centimeters, of the hypotenuse of each triangular end?",
+  "stimulus": "A tide-pool display tank is a right triangular prism that is 60 centimeters long. Each triangular end is a right triangle with one leg of 20 centimeters. The tank holds 18,000 cubic centimeters of water when full.",
+  "choices": [
+   "$25$",
+   "$30$",
+   "$10\\sqrt{13}$",
+   "$50$"
+  ],
+  "answer": "C",
+  "explanation": "Let $h$ be the other leg. Then $\\frac{1}{2}(20)(h)(60) = 18{,}000$, so $600h = 18{,}000$ and $h = 30$. The hypotenuse is $\\sqrt{20^2 + 30^2} = \\sqrt{1{,}300} = 10\\sqrt{13}$ centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You forgot the $\\frac{1}{2}$ in the triangle's area, so you got 15 for the other leg. Then $\\sqrt{20^2 + 15^2} = 25$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "30 is the missing leg. You still had to use the Pythagorean theorem to find the hypotenuse."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the two legs, $20 + 30$. The hypotenuse is the square root of the sum of their squares, not their sum."
+   }
+  },
+  "id": "orig-reverse-solve--X-03de86",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "fail",
+  "verification": {
+   "id": "orig-reverse-solve--X-03de86",
+   "structure": [
+    "correct answer is far longer than every distractor"
+   ],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the length in centimeters of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the height, in centimeters, of the canister?",
+  "stimulus": "A cylindrical canister of protein powder has an inside diameter of 12 centimeters. When the canister holds $864\\pi$ cubic centimeters of powder, the powder fills $\\frac{4}{5}$ of the canister's height.",
+  "choices": [
+   "$7.5$",
+   "$19.2$",
+   "$24$",
+   "$30$"
+  ],
+  "answer": "D",
+  "explanation": "The radius is 6. The powder's depth comes from $\\pi(6)^2 d = 864\\pi$, so $36d = 864$ and $d = 24$. That depth is $\\frac{4}{5}$ of the full height, so the height is $24 \\div \\frac{4}{5} = 30$ centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used the diameter, 12, as the radius. That gave $144d = 864$, so $d = 6$ and the height came out as 7.5."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You multiplied 24 by $\\frac{4}{5}$ when you needed to divide. The full height has to be greater than the powder's depth."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "24 is the depth of the powder. That's only $\\frac{4}{5}$ of the canister's height."
+   }
+  },
+  "id": "orig-reverse-solve--X-a98f71",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--X-a98f71",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the circumference, in meters, of the base of the pile?",
+  "stimulus": "After an earthquake, a landslide left a pile of debris shaped like a right circular cone. The pile is 8 meters tall and has a volume of $96\\pi$ cubic meters.",
+  "choices": [
+   "$6\\pi$",
+   "$4\\sqrt{3}\\pi$",
+   "$12\\pi$",
+   "$36\\pi$"
+  ],
+  "answer": "C",
+  "explanation": "From $\\frac{1}{3}\\pi r^2(8) = 96\\pi$, you get $8r^2 = 288$, so $r^2 = 36$ and $r = 6$. The circumference is $2\\pi(6) = 12\\pi$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $r = 6$ but wrote $\\pi r$ for the circumference. You left out the 2 in $2\\pi r$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the $\\frac{1}{3}$ in the cone formula. That gave $8r^2 = 96$, so $r = 2\\sqrt{3}$ and the circumference came out as $4\\sqrt{3}\\pi$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$36\\pi$ is $\\pi r^2$, the area of the base. The question asks for the distance around the base."
+   }
+  },
+  "id": "orig-reverse-solve--X-4dcc5d",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--X-4dcc5d",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

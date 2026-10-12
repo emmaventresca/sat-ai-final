@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-special-right--X-abcd33",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,14 +82,403 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-special-right--X-0d22fe",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the length of the transect, in meters?",
+  "stimulus": "Ecologists mark out a square sampling plot so that all four of its corners lie on a circular fence of radius 10 meters. A straight transect runs from one corner of the square to the midpoint of one of the two sides that do not touch that corner.",
+  "choices": [
+   "$5\\sqrt{5}$",
+   "$5\\sqrt{10}$",
+   "$10\\sqrt{5}$",
+   "$10\\sqrt{10}$"
+  ],
+  "answer": "B",
+  "explanation": "The square's diagonal is a diameter of the circle, so it is 20 m. The diagonal is the $x\\sqrt{2}$ side of a 45-45-90 triangle, so each side is $\\frac{20}{\\sqrt{2}} = 10\\sqrt{2}$ m. The transect is the hypotenuse of a right triangle whose legs are one full side, $10\\sqrt{2}$, and half a side, $5\\sqrt{2}$. Its length is $\\sqrt{200 + 50} = \\sqrt{250} = 5\\sqrt{10}$ m.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used the radius, 10, as the side of the square. The radius is half the diagonal, not a side, so your legs of 10 and 5 were both too short."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You used the diameter, 20, as the side of the square. The diameter is the square's diagonal, so you have to divide it by $\\sqrt{2}$ to get a side."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You placed the diagonal in the wrong spot in the 45-45-90 pattern. You multiplied 20 by $\\sqrt{2}$ when you should have divided, which made the side $20\\sqrt{2}$."
+   }
+  },
+  "id": "orig-special-right--X-c99bf5",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--X-c99bf5",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the height of the pole, in meters?",
+  "stimulus": "A camera used to film sprint mechanics is mounted on top of a vertical pole on level ground. Two straight cables run from the top of the pole to two anchors on the ground. Both anchors are on the same side of the pole and in line with its base. One cable makes a $45^\\circ$ angle with the ground and the other makes a $60^\\circ$ angle. The anchors are 4 meters apart.",
+  "choices": [
+   "$6-2\\sqrt{3}$",
+   "$2+2\\sqrt{3}$",
+   "$6+2\\sqrt{3}$",
+   "$6\\sqrt{2}+2\\sqrt{6}$"
+  ],
+  "answer": "C",
+  "explanation": "Call the height $h$. The 45\u00b0 cable reaches the ground $h$ from the base. In the 30-60-90 triangle, the height sits opposite the 60\u00b0 angle, so it is the $x\\sqrt{3}$ side. That puts the 60\u00b0 anchor $\\frac{h}{\\sqrt{3}}$ from the base. Since $h - \\frac{h}{\\sqrt{3}} = 4$, you get $h = \\frac{4\\sqrt{3}}{\\sqrt{3}-1} = 2\\sqrt{3}(\\sqrt{3}+1) = 6+2\\sqrt{3}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You set the two ground distances to add up to 4, as if the anchors were on opposite sides of the pole. Both anchors are on the same side, so the distances differ by 4."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated the height as the short leg of the 30-60-90 triangle and put the 60\u00b0 anchor $h\\sqrt{3}$ from the base. The height is opposite the 60\u00b0 angle, so it is the long leg."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the height correctly but then multiplied by $\\sqrt{2}$. That gives the length of the 45\u00b0 cable, not the height of the pole."
+   }
+  },
+  "id": "orig-special-right--X-455d3d",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--X-455d3d",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the area of one face of the tile, in square centimeters?",
+  "stimulus": "An excavated floor tile is a regular hexagon. The distance between two of its opposite parallel sides is 12 centimeters.",
+  "choices": [
+   "$72\\sqrt{3}$",
+   "$144\\sqrt{3}$",
+   "$216\\sqrt{3}$",
+   "$288\\sqrt{3}$"
+  ],
+  "answer": "A",
+  "explanation": "A regular hexagon splits into 6 equilateral triangles. The distance between opposite sides is twice the height of one of these triangles, so each height is 6 cm. The height is the $x\\sqrt{3}$ side of a 30-60-90 triangle, so $x = 2\\sqrt{3}$ and each side is $2x = 4\\sqrt{3}$ cm. The area is $6 \\cdot \\frac{1}{2}(4\\sqrt{3})(6) = 72\\sqrt{3}$ square centimeters.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the side and height correctly but left out the $\\frac{1}{2}$ in the triangle area formula, so you doubled the area."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You treated 12 cm as the length of a side. It is the distance between opposite sides, which is two triangle heights."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the full 12 cm as the height of one equilateral triangle instead of halving it. That made each side $8\\sqrt{3}$, which is too large."
+   }
+  },
+  "id": "orig-special-right--X-518387",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--X-518387",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the area of the top face of the whole bar, in square centimeters?",
+  "stimulus": "In a portion-size study, a square protein bar is cut along both of its diagonals into four congruent triangular pieces. The top face of each piece has a perimeter of $8+8\\sqrt{2}$ centimeters.",
+  "choices": [
+   "$16$",
+   "$32$",
+   "$64$",
+   "$128$"
+  ],
+  "answer": "C",
+  "explanation": "Each piece is a 45-45-90 triangle. Its hypotenuse is a side of the bar, $s$, and each of its two legs is half a diagonal, $\\frac{s}{\\sqrt{2}}$. Its perimeter is $s + 2\\cdot\\frac{s}{\\sqrt{2}} = s + s\\sqrt{2} = s(1+\\sqrt{2})$. Setting this equal to $8(1+\\sqrt{2})$ gives $s = 8$, so the bar's area is $64$ square centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the area of one triangular piece, $\\frac{64}{4}$, instead of the area of the whole bar."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You treated the bar's side as a leg of each piece instead of its hypotenuse. That gave $s(2+\\sqrt{2}) = 8+8\\sqrt{2}$, which leads to $s = 4\\sqrt{2}$ and an area of 32."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You gave each piece an area of leg \u00d7 leg = 32 without the $\\frac{1}{2}$, then multiplied by 4."
+   }
+  },
+  "id": "orig-special-right--X-4bf218",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--X-4bf218",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the perimeter of the triangle formed by the three outer receivers, in meters?",
+  "stimulus": "A radio-astronomy array has three outer receivers at the vertices of an equilateral triangle. A central receiver sits at the point that is the same distance from all three outer receivers, and that distance is 20 meters.",
+  "choices": [
+   "$20\\sqrt{3}$",
+   "$30\\sqrt{3}$",
+   "$60$",
+   "$60\\sqrt{3}$"
+  ],
+  "answer": "D",
+  "explanation": "Draw a line from the center to one vertex and another from the center to the midpoint of a neighboring side. This makes a 30-60-90 triangle with its 30\u00b0 angle at the vertex. Its hypotenuse is 20, so the short leg is 10 and the long leg, which is half a side of the big triangle, is $10\\sqrt{3}$. Each side is $20\\sqrt{3}$, so the perimeter is $60\\sqrt{3}$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found one side of the triangle and stopped there. The question asks for the perimeter, which is three sides."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the half-side, $10\\sqrt{3}$, as if it were a full side and multiplied it by 3."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You took the 20 m from the center to a receiver as a side of the triangle. That distance runs from the center to a vertex, so it is the hypotenuse of a 30-60-90 triangle, not a side."
+   }
+  },
+  "id": "orig-special-right--X-ade5e1",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--X-ade5e1",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the area of the panel, in square feet?",
+  "stimulus": "A steel bracing panel in a bridge is shaped like triangle $ABC$, where angle $A$ measures $45^\\circ$, angle $C$ measures $30^\\circ$, and side $BC$ is 12 feet long.",
+  "choices": [
+   "$6+6\\sqrt{3}$",
+   "$18+18\\sqrt{3}$",
+   "$54+18\\sqrt{3}$",
+   "$36+36\\sqrt{3}$"
+  ],
+  "answer": "B",
+  "explanation": "Drop the altitude from $B$ to $D$ on $\\overline{AC}$. In the 30-60-90 triangle $BDC$, the hypotenuse $BC$ is 12. The altitude $BD$ is opposite the 30\u00b0 angle, so it is 6, and $DC = 6\\sqrt{3}$. Triangle $ABD$ is 45-45-90, so $AD = BD = 6$. The base is $AC = 6+6\\sqrt{3}$, and the area is $\\frac{1}{2}(6+6\\sqrt{3})(6) = 18+18\\sqrt{3}$ square feet.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the length of the base, $AC$, and stopped before working out the area."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You put the altitude opposite the 60\u00b0 angle and made it $6\\sqrt{3}$. The altitude $BD$ is opposite angle $C$, which is 30\u00b0, so it is the short leg, 6."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the base and the altitude correctly but left out the $\\frac{1}{2}$ in the triangle area formula."
+   }
+  },
+  "id": "orig-special-right--X-5abe77",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--X-5abe77",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the perimeter of the outermost square, in centimeters?",
+  "stimulus": "The lid of a nesting box in an aviary is decorated with three nested squares. The vertices of the middle square are the midpoints of the outermost square's sides. The vertices of the innermost square are the midpoints of the middle square's sides. The innermost square has sides 10 centimeters long.",
+  "choices": [
+   "$20$",
+   "$40\\sqrt{2}$",
+   "$80$",
+   "$80\\sqrt{2}$"
+  ],
+  "answer": "C",
+  "explanation": "Each corner triangle cut off between two neighboring squares is a 45-45-90 triangle. The inner square's side is its hypotenuse, and its legs are half the outer square's side. A hypotenuse of 10 gives legs of $5\\sqrt{2}$, so the middle square's side is $10\\sqrt{2}$. Do the same again: a hypotenuse of $10\\sqrt{2}$ gives legs of 10, so the outer square's side is 20. The perimeter is 80 centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided where you should have multiplied, so each square came out smaller than the one inside it. Each step outward multiplies the side by $\\sqrt{2}$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You stepped out only once and found the perimeter of the middle square, $4 \\cdot 10\\sqrt{2}$, not the outermost one."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You treated the inner square's side as a leg of the corner triangle, not its hypotenuse. That doubled the side at each step, giving $20\\sqrt{2}$ after the second step."
+   }
+  },
+  "id": "orig-special-right--X-2b6828",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--X-2b6828",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the area of the plaza, in square meters?",
+  "stimulus": "A city plaza is shaped like a rhombus with one interior angle of $60^\\circ$. The shorter diagonal of the plaza is 40 meters long.",
+  "choices": [
+   "$40\\sqrt{3}$",
+   "$\\frac{800\\sqrt{3}}{3}$",
+   "$800\\sqrt{3}$",
+   "$1{,}600\\sqrt{3}$"
+  ],
+  "answer": "C",
+  "explanation": "The shorter diagonal divides the rhombus into two equilateral triangles, so each side is 40 m. The diagonals cross at right angles and form 30-60-90 triangles with a hypotenuse of 40 and a short leg of 20. The long leg is $20\\sqrt{3}$, so the longer diagonal is $40\\sqrt{3}$. The area is $\\frac{1}{2}(40)(40\\sqrt{3}) = 800\\sqrt{3}$ square meters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the longer diagonal, $40\\sqrt{3}$, and stopped before working out the area."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You treated 40 as the longer diagonal, the one opposite the 120\u00b0 angles. That made the other diagonal $\\frac{40}{\\sqrt{3}}$ and the area too small."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the two diagonals together and left out the $\\frac{1}{2}$ in the rhombus area formula."
+   }
+  },
+  "id": "orig-special-right--X-49f766",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--X-49f766",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

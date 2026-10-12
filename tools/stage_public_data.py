@@ -45,6 +45,11 @@ FORBIDDEN = {
     "standard_stems.json": "an analysis artefact, not content",
     "book_provenance.json": "an analysis artefact, not content",
     "agent_feed.json": "internal tooling telemetry",
+    "lesson_pool": ("questions written for a teacher's generated lesson. They "
+                    "are variants of bank items - same recognition, different "
+                    "numbers - and the point of them is that a student meets "
+                    "them once, on a shared screen, with a teacher talking "
+                    "over them. Serving them in practice too would undo that."),
 }
 
 

@@ -215,5 +215,686 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A union's strike fund holds $\\$9{,}600$ when a strike begins and pays out $\\$1{,}200$ to members every 3 days. No money is added to the fund. The amount of money in the fund, in dollars, $d$ days after the strike begins is modeled by $f(d) = 9{,}600 - kd$.",
+  "keys": [
+   "400"
+  ],
+  "any_of": false,
+  "explanation": "The fund starts at $9,600, so that is the constant. The rate has to be per single day. The fund pays $1,200 every 3 days, so it loses $1,200 \u00f7 3 = $400 per day. The model already has the minus sign that shows the fund going down, so k is the positive number 400.",
+  "common_errors": [
+   {
+    "value": "1200",
+    "misconception": "algebra-manipulation",
+    "why": "Used the payout for 3 days as the daily rate and never divided by 3."
+   },
+   {
+    "value": "3600",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied $1,200 by 3 when it should have been divided."
+   },
+   {
+    "value": "-400",
+    "misconception": "graph-feature-mismatch",
+    "why": "Gave k a negative sign even though the model's minus sign already shows the decrease, so the slope would become +400."
+   }
+  ],
+  "id": "orig-model-from-wor-M-2e2dbd",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-M-2e2dbd",
+   "structure": [],
+   "solver_answer": 400,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A county health plan charges a flat fee of $\\$60$ that covers a member's first 4 clinic visits in a year. Each visit after the fourth costs $\\$12$. For $x \\ge 4$, the total yearly cost, in dollars, of $x$ visits is $C(x) = 12x + k$.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "The $12 charge only applies to visits after the fourth, so the number of charged visits is x \u2212 4. The total is C(x) = 60 + 12(x \u2212 4). Distributing gives 60 + 12x \u2212 48, which is 12x + 12. So k = 12. Check: with 4 visits, C(4) = 48 + 12 = 60, which is the flat fee.",
+  "common_errors": [
+   {
+    "value": "60",
+    "misconception": "missed-condition",
+    "why": "Wrote C = 12x + 60, which charges $12 for every visit, including the 4 the flat fee already covers."
+   },
+   {
+    "value": "108",
+    "misconception": "algebra-manipulation",
+    "why": "Distributed 12(x \u2212 4) as 12x + 48, which gives 60 + 48 = 108."
+   },
+   {
+    "value": "-18",
+    "misconception": "misread-given",
+    "why": "Used the $12 per-visit charge where the flat fee should go: 12 + 12x \u2212 48 \u2212 30, or a similar mix-up of which number is the fixed amount."
+   }
+  ],
+  "id": "orig-model-from-wor-M-3cf138",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-M-3cf138",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "Near a weather station, the air temperature at ground level is $18^\\circ\\text{C}$. The temperature drops by $6.5^\\circ\\text{C}$ for every $1{,}000$ meters of altitude. The temperature, in degrees Celsius, at an altitude of $h$ meters is modeled by $T(h) = 18 - kh$.",
+  "keys": [
+   "0.0065",
+   ".0065",
+   "13/2000"
+  ],
+  "any_of": false,
+  "explanation": "Here h is measured in single meters, so the rate has to be degrees per meter. The temperature drops 6.5\u00b0C per 1,000 meters, so per meter it drops 6.5 \u00f7 1,000 = 0.0065\u00b0C. The constant 18 is the ground-level temperature, and the minus sign is already in the model. So k = 0.0065.",
+  "common_errors": [
+   {
+    "value": "6.5",
+    "misconception": "algebra-manipulation",
+    "why": "Used the drop per 1,000 meters as the drop per meter and never divided."
+   },
+   {
+    "value": "6500",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 6.5 by 1,000 when it should have been divided."
+   },
+   {
+    "value": "18",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the ground-level temperature, which is the constant term, not the rate."
+   }
+  ],
+  "id": "orig-model-from-wor-M-95aa19",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "fail",
+  "verification": {
+   "id": "orig-model-from-wor-M-95aa19",
+   "structure": [
+    "key '13/2000' is longer than the entry box allows"
+   ],
+   "solver_answer": 0.0065,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $a$?",
+  "stimulus": "A city's bike-share network has $340$ docks today. The city plans to install $45$ new docks every 6 months. The number of docks $n$ years from today is modeled by $N(n) = an + 340$.",
+  "keys": [
+   "90"
+  ],
+  "any_of": false,
+  "explanation": "Here n is counted in years, so the rate has to be docks per year. A year has two 6-month periods, so the city adds 45 \u00d7 2 = 90 docks per year. The 340 docks the city has today is the constant. So a = 90.",
+  "common_errors": [
+   {
+    "value": "45",
+    "misconception": "missed-condition",
+    "why": "Used the 6-month figure as the yearly rate and missed that it happens twice a year."
+   },
+   {
+    "value": "7.5",
+    "misconception": "algebra-manipulation",
+    "why": "Divided 45 by 6, which gives docks per month, not per year."
+   },
+   {
+    "value": "270",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 45 by 6 instead of by the 2 half-years in a year."
+   }
+  ],
+  "id": "orig-model-from-wor-M-d862ff",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-M-d862ff",
+   "structure": [],
+   "solver_answer": 90,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A printmaker starts an edition with $480$ milliliters of ink. Every run of 8 prints uses $20$ milliliters of ink. The amount of ink, in milliliters, remaining after $p$ prints is modeled by $I(p) = 480 - kp$.",
+  "keys": [
+   "2.5",
+   "5/2"
+  ],
+  "any_of": false,
+  "explanation": "Here p counts single prints, so you need the ink used per print. Eight prints use 20 mL, so one print uses 20 \u00f7 8 = 2.5 mL. The 480 mL is the starting amount, and the minus sign is already in the model. So k = 2.5.",
+  "common_errors": [
+   {
+    "value": "20",
+    "misconception": "algebra-manipulation",
+    "why": "Used the ink for a run of 8 prints as the ink for one print."
+   },
+   {
+    "value": "160",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 20 by 8 when it should have been divided."
+   },
+   {
+    "value": "0.4",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the wrong way round, 8 \u00f7 20, which gives prints per milliliter."
+   }
+  ],
+  "id": "orig-model-from-wor-M-a4445a",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-M-a4445a",
+   "structure": [],
+   "solver_answer": 2.5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "Engineers began draining a reservoir at 9:00 a.m. The water level has been falling at a steady $0.6$ meter per hour, and at noon the water was $42$ meters deep. The depth, in meters, $t$ hours after 9:00 a.m. is modeled by $D(t) = b - 0.6t$.",
+  "keys": [
+   "43.8",
+   "219/5"
+  ],
+  "any_of": false,
+  "explanation": "The constant b is the depth when t = 0, which is 9:00 a.m., not noon. Noon is 3 hours later, so by noon the level had dropped 0.6 \u00d7 3 = 1.8 m. That means it was 1.8 m deeper at 9:00 a.m.: 42 + 1.8 = 43.8. Check: D(3) = 43.8 \u2212 1.8 = 42.",
+  "common_errors": [
+   {
+    "value": "42",
+    "misconception": "wrong-target-quantity",
+    "why": "Took the depth at noon as the starting value, when t = 0 is 9:00 a.m."
+   },
+   {
+    "value": "40.2",
+    "misconception": "complement-or-direction-flip",
+    "why": "Subtracted 1.8 instead of adding. The water was deeper earlier, not shallower."
+   },
+   {
+    "value": "44.4",
+    "misconception": "misread-given",
+    "why": "Counted 4 hours from 9:00 a.m. to noon instead of 3, which gives 42 + 2.4."
+   }
+  ],
+  "id": "orig-model-from-wor-M-2558c2",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-M-2558c2",
+   "structure": [],
+   "solver_answer": 43.8,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $a$?",
+  "stimulus": "A beaver dam is $1.2$ meters tall when ecologists begin monitoring it. Each week the beavers add $5$ centimeters to its height. The height of the dam, in meters, $w$ weeks after monitoring begins is modeled by $h(w) = aw + b$.",
+  "keys": [
+   "0.05",
+   ".05",
+   "1/20"
+  ],
+  "any_of": false,
+  "explanation": "The model gives height in meters, so the rate has to be in meters per week too. 5 cm is 5 \u00f7 100 = 0.05 m. The starting height of 1.2 m is b, and the weekly growth is a. So a = 0.05.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Kept the rate in centimeters even though the model is in meters."
+   },
+   {
+    "value": "1.2",
+    "misconception": "wrong-target-quantity",
+    "why": "Swapped the parts and gave the starting height, which is b, not the rate a."
+   },
+   {
+    "value": "500",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied by 100 instead of dividing when converting centimeters to meters."
+   }
+  ],
+  "id": "orig-model-from-wor-M-21fdec",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-M-21fdec",
+   "structure": [],
+   "solver_answer": 0.05,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A folklore archive holds $1{,}150$ recorded folktales that have not yet been transcribed. Two volunteers each transcribe $15$ of these tales per week. The number of tales still untranscribed after $w$ weeks is modeled by $U(w) = 1{,}150 - kw$.",
+  "keys": [
+   "30"
+  ],
+  "any_of": false,
+  "explanation": "The 1,150 tales are the starting amount, so that is the constant. The rate is the total transcribed per week by both volunteers: 2 \u00d7 15 = 30 tales. The model already subtracts, so k = 30.",
+  "common_errors": [
+   {
+    "value": "15",
+    "misconception": "missed-condition",
+    "why": "Used one volunteer's rate and missed that there are two."
+   },
+   {
+    "value": "1150",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the starting number of tales, which is the constant term, not the rate."
+   },
+   {
+    "value": "7.5",
+    "misconception": "algebra-manipulation",
+    "why": "Divided 15 by 2 instead of multiplying, as if the volunteers shared one person's output."
+   }
+  ],
+  "id": "orig-model-from-wor-M-fb848d",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-M-fb848d",
+   "structure": [],
+   "solver_answer": 30,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A restored 1830s power loom in a textile history museum starts a weaving demonstration with 240 yards of warp thread on its beam. The loom uses 18 yards of thread every 4 minutes. The function $f(t) = 240 - kt$, where $k$ is a constant, gives the number of yards of thread left on the beam $t$ minutes after the demonstration starts.",
+  "keys": [
+   "4.5",
+   "9/2"
+  ],
+  "any_of": false,
+  "explanation": "The constant 240 is where the thread starts, so $k$ has to be the rate: how many yards are used in a single minute. The rate is given per 4 minutes, so divide: $18 \\div 4 = 4.5$ yards per minute. The thread is going down, and the minus sign in $240 - kt$ already shows that, so $k$ itself is positive. Check it: after 4 minutes, $f(4) = 240 - 4.5(4) = 222$, which is 18 yards less than 240. That matches the story, so $k = 4.5$.",
+  "common_errors": [
+   {
+    "value": "18",
+    "misconception": "algebra-manipulation",
+    "why": "Used the amount for 4 minutes as the rate per minute and never divided by 4."
+   },
+   {
+    "value": "72",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 18 by 4 when they should have divided, so the per-4-minutes figure was scaled up instead of down."
+   },
+   {
+    "value": "2/9",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 4 by 18, which gives minutes per yard, the reverse of the rate the model needs."
+   },
+   {
+    "value": "-4.5",
+    "misconception": "graph-feature-mismatch",
+    "why": "Gave $k$ a negative sign for the decreasing amount even though the minus is already in the function, which makes the model show the thread increasing."
+   },
+   {
+    "value": "240",
+    "misconception": "graph-feature-mismatch",
+    "why": "Mixed up the starting amount and the rate, and gave the starting thread as the per-minute change."
+   }
+  ],
+  "id": "orig-model-from-wor-M-274cb4",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-M-274cb4",
+   "structure": [],
+   "solver_answer": 4.5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A reservoir's water level is 62 feet above its outlet pipe at the start of a dry spell. During the dry spell, the level drops 3 feet every 4 days. The equation $h = 62 - kd$ gives the level $h$, in feet, $d$ days after the dry spell begins. What is the value of $k$?",
+  "stimulus": null,
+  "keys": [
+   "3/4",
+   ".75",
+   "0.75"
+  ],
+  "any_of": false,
+  "explanation": "The starting level, 62 feet, is the constant term. It is already in place. In this equation, $k$ is the drop per single day, but the rate you are given covers 4 days. Divide to get it per day: $3 \\div 4 = 0.75$ feet per day. The equation already has a minus sign for the falling level, so $k$ itself is positive: $h = 62 - 0.75d$. Check it: after 4 days, $62 - 0.75(4) = 59$, which is 3 feet lower, as described.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "misread-given",
+    "why": "Used the 3-foot drop as if it happened every day, when it happens every 4 days, so never divided by 4."
+   },
+   {
+    "value": "4/3",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the wrong way round, days per foot instead of feet per day: 4 \u00f7 3."
+   },
+   {
+    "value": "1.333",
+    "misconception": "algebra-manipulation",
+    "why": "The inverted rate 4/3, entered as a decimal (truncated)."
+   },
+   {
+    "value": "1.334",
+    "misconception": "algebra-manipulation",
+    "why": "The inverted rate 4/3, entered as a rounded decimal."
+   },
+   {
+    "value": "-.75",
+    "misconception": "graph-feature-mismatch",
+    "why": "Saw that the level falls and made k negative, missing that the equation already subtracts kd. That makes the level rise."
+   },
+   {
+    "value": "62",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the starting level, the constant term, instead of the rate k."
+   }
+  ],
+  "id": "orig-model-from-wor-M-d6e1b1",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-M-d6e1b1",
+   "structure": [],
+   "solver_answer": "0.75",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A cartography studio charges a flat fee of $\\$45$ for a custom map order, which includes the first 2 map sheets. Each sheet beyond the first 2 costs $\\$18$. For $n \\ge 2$ sheets, the total cost $C$, in dollars, can be written as $C = an + b$. What is the value of $b$?",
+  "stimulus": null,
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "You only pay the \\$18 for sheets past the first 2, so the number of extra sheets is $n - 2$. The model is $C = 45 + 18(n - 2)$. To put it in the form $an + b$, distribute: $C = 45 + 18n - 36 = 18n + 9$. So $b = 9$. Check it: 2 sheets should cost exactly \\$45, and $18(2) + 9 = 45$. Notice that $b$ is not the \\$45 fee here. Because the charge only starts after a threshold, the constant term changes once you expand.",
+  "common_errors": [
+   {
+    "value": "45",
+    "misconception": "missed-condition",
+    "why": "Wrote C = 18n + 45, charging \\$18 for every sheet. That ignores the 2 sheets the fee already covers."
+   },
+   {
+    "value": "81",
+    "misconception": "algebra-manipulation",
+    "why": "Set up 45 + 18(n \u2212 2) correctly but added the 36 instead of subtracting it when distributing."
+   },
+   {
+    "value": "18",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the per-sheet rate a instead of the constant b."
+   },
+   {
+    "value": "27",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted only one sheet's charge (45 \u2212 18), as if the fee covered 1 sheet instead of 2."
+   }
+  ],
+  "id": "orig-model-from-wor-M-aeba07",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-M-aeba07",
+   "structure": [],
+   "solver_answer": "9",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A musicologist transcribing a collection of folk songs has already filled 40 pages of notation. Each day, the musicologist transcribes 3 more songs, and each song fills 2 pages. The equation $P = 40 + kd$ gives the total number of pages $P$ after $d$ days. What is the value of $k$?",
+  "stimulus": null,
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "The 40 pages already done are the starting amount, the constant term. The coefficient $k$ must be the number of pages added per day, not songs per day. Each day adds 3 songs at 2 pages each, so that is $3 \\times 2 = 6$ pages per day. The amount is growing, so the sign is positive: $P = 40 + 6d$. Check it: after 1 day, there are $40 + 6 = 46$ pages, which is the 40 already done plus 3 songs' worth of 2 pages each.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "missed-condition",
+    "why": "Used songs per day as the rate and ignored that each song fills 2 pages."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Added 3 and 2 instead of multiplying them."
+   },
+   {
+    "value": "1.5",
+    "misconception": "algebra-manipulation",
+    "why": "Divided 3 by 2 instead of multiplying, treating the 2 as 'per 2 units'."
+   },
+   {
+    "value": "40",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the starting number of pages instead of the daily rate k."
+   },
+   {
+    "value": "46",
+    "misconception": "intermediate-step",
+    "why": "Found the total pages after 1 day (40 + 6) instead of the rate alone."
+   }
+  ],
+  "id": "orig-model-from-wor-M-10a6bc",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-M-10a6bc",
+   "structure": [],
+   "solver_answer": "6",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The concentration $C$, in micrograms per milliliter, of the antibody $d$ days after the booster is modeled by the equation $C = a + bd$, where $a$ and $b$ are constants. What is the value of $b$?",
+  "stimulus": "A patient receives a booster vaccine. On the day of the booster, the concentration of a certain antibody in the patient's blood is 40 micrograms per milliliter. Over the next several weeks, the concentration increases by 18 micrograms per milliliter every 4 days.",
+  "keys": [
+   "4.5",
+   "9/2"
+  ],
+  "any_of": false,
+  "explanation": "In $C = a + bd$, $a$ is the concentration on day 0 and $b$ is the change for each single day. The starting amount is 40, so $a = 40$. That number is not what the question asks for. The rate is given for every 4 days, not for one day, so you divide: $18 \\div 4 = 4.5$ micrograms per milliliter per day. The concentration is going up, so $b$ is positive. The model is $C = 40 + 4.5d$, and $b = 4.5$. To check it, put in $d = 4$: $40 + 4.5(4) = 58$, which is 18 more than 40, as the description says.",
+  "common_errors": [
+   {
+    "value": "18",
+    "misconception": "misread-given",
+    "why": "Used the 18 micrograms per 4 days as if it were the change per day, without dividing by 4."
+   },
+   {
+    "value": "72",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 18 by 4 when the 'every 4 days' figure needed dividing."
+   },
+   {
+    "value": "40",
+    "misconception": "wrong-target-quantity",
+    "why": "Mixed up the starting value and the rate, and gave the constant term $a$ instead of the coefficient $b$."
+   },
+   {
+    "value": "2/9",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the wrong way round, days by micrograms ($4 \\div 18$), instead of micrograms by days."
+   }
+  ],
+  "id": "orig-model-from-wor-M-54c83b",
+  "skill_cd": "H.B.",
+  "subtype": "model-from-words",
+  "subtype_name": "Write the linear model from a word description",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-model-from-wor-M-54c83b",
+   "structure": [],
+   "solver_answer": "4.5",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

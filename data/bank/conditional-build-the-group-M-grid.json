@@ -1,0 +1,895 @@
+[
+ {
+  "stem": "A housing unit is selected at random from the units with at least 2 bedrooms. What is the probability that the unit is a townhouse?",
+  "stimulus": "A city planning office surveyed 180 housing units in a new neighborhood. The table shows the units by type and number of bedrooms.\n\nHousing Units by Type and Number of Bedrooms\nType | 1 bedroom | 2 bedrooms | 3 bedrooms | 4 or more bedrooms\nApartment | 54 | 38 | 12 | 6\nTownhouse | 6 | 22 | 28 | 14",
+  "keys": [
+   "8/15",
+   ".5333",
+   "0.5333"
+  ],
+  "any_of": false,
+  "explanation": "No single printed total matches \"at least 2 bedrooms,\" so you have to build that group yourself. \"At least 2\" includes 2, so add the 2-, 3-, and 4-or-more-bedroom columns: $(38+22)+(12+28)+(6+14)=120$ units. Inside that group, the townhouses number $22+28+14=64$. The probability is $\\frac{64}{120}=\\frac{8}{15}$, or about 0.5333.",
+  "common_errors": [
+   {
+    "value": "7/10",
+    "misconception": "missed-condition",
+    "why": "You read \"at least 2\" as \"more than 2\" and dropped the 2-bedroom column: $\\frac{28+14}{40+20}=\\frac{42}{60}$."
+   },
+   {
+    "value": "16/45",
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the 64 townhouses with at least 2 bedrooms by all 180 units instead of by the 120-unit group: $\\frac{64}{180}$."
+   },
+   {
+    "value": "32/35",
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the denominator and found the fraction of townhouses that have at least 2 bedrooms: $\\frac{64}{70}$."
+   },
+   {
+    "value": "7/15",
+    "misconception": "complement-or-direction-flip",
+    "why": "You counted apartments instead of townhouses inside the group: $\\frac{38+12+6}{120}=\\frac{56}{120}$."
+   }
+  ],
+  "id": "orig-conditional-bu-M-ecb0e8",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-ecb0e8",
+   "structure": [],
+   "solver_answer": "8/15",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A participant is selected at random from those who were not on Plan A. What is the probability that the participant met the fiber target?",
+  "stimulus": "In a nutrition study, each participant followed one of three diet plans. The table shows the proportion of all participants in each category of diet plan and fiber outcome.\n\nProportion of Participants by Diet Plan and Fiber Outcome\nDiet plan | Met fiber target | Did not meet fiber target\nPlan A | 0.16 | 0.24\nPlan B | 0.15 | 0.15\nPlan C | 0.21 | 0.09",
+  "keys": [
+   "3/5",
+   ".6",
+   "0.6"
+  ],
+  "any_of": false,
+  "explanation": "\"Not on Plan A\" means Plans B and C together, so build that group by adding both rows: $0.15+0.15+0.21+0.09=0.60$. Inside that group, the share that met the target is $0.15+0.21=0.36$. These are proportions instead of counts, but you can treat them as counts because the scaling cancels. The probability is $\\frac{0.36}{0.60}=0.6$.",
+  "common_errors": [
+   {
+    "value": "2/5",
+    "misconception": "complement-or-direction-flip",
+    "why": "You read \"not on Plan A\" as \"on Plan A\": $\\frac{0.16}{0.40}$."
+   },
+   {
+    "value": "0.36",
+    "misconception": "intermediate-step",
+    "why": "You stopped at the numerator, which divides by the whole study (a total of 1) instead of by the 0.60 group."
+   },
+   {
+    "value": "1/2",
+    "misconception": "missed-condition",
+    "why": "You used only the Plan B row of the combined condition: $\\frac{0.15}{0.30}$."
+   },
+   {
+    "value": "7/10",
+    "misconception": "missed-condition",
+    "why": "You used only the Plan C row of the combined condition: $\\frac{0.21}{0.30}$."
+   },
+   {
+    "value": "9/13",
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the denominator and found the fraction of target-meeters who were not on Plan A: $\\frac{0.36}{0.16+0.15+0.21}=\\frac{0.36}{0.52}$."
+   }
+  ],
+  "id": "orig-conditional-bu-M-68ccf3",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-68ccf3",
+   "structure": [],
+   "solver_answer": "3/5",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A sample is selected at random from the samples that were not cured for 2 hours. What is the probability that the sample passed the stress test?",
+  "stimulus": "A materials lab tested polymer samples arranged on 6 trays with 15 samples on each tray. The samples on trays 1 through 4 were cured for 2 hours, and the samples on trays 5 and 6 were cured for 4 hours. Of all the samples, 18 failed a stress test, and 14 of those 18 came from the 2-hour trays.",
+  "keys": [
+   "13/15",
+   ".8666",
+   ".8667",
+   "0.8666",
+   "0.8667"
+  ],
+  "any_of": false,
+  "explanation": "Build the group first. The samples that were not cured for 2 hours are on trays 5 and 6, so there are $2 \\times 15 = 30$ of them. Of the 18 failures, $18-14=4$ came from these trays, so $30-4=26$ of them passed. The probability is $\\frac{26}{30}=\\frac{13}{15}$, or about 0.8667.",
+  "common_errors": [
+   {
+    "value": "2/15",
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the probability of failing instead of passing: $\\frac{4}{30}$."
+   },
+   {
+    "value": "13/45",
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the 26 passing 4-hour samples by all 90 samples instead of by the 30 in the group."
+   },
+   {
+    "value": "23/30",
+    "misconception": "complement-or-direction-flip",
+    "why": "You read \"not cured for 2 hours\" as \"cured for 2 hours\": the 60 samples on trays 1 to 4, with $60-14=46$ passing, gives $\\frac{46}{60}$."
+   },
+   {
+    "value": "13/36",
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the denominator and found the fraction of all passing samples that were cured for 4 hours: $\\frac{26}{72}$."
+   }
+  ],
+  "id": "orig-conditional-bu-M-924755",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-924755",
+   "structure": [],
+   "solver_answer": "13/15",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A tale is selected at random from the tales with at least 3 known variants. What is the probability that the tale was collected from an oral source?",
+  "stimulus": "A folklore archive classified 120 tales by the type of source they were collected from and by the number of variants of each tale known to scholars.\n\nArchived Tales by Number of Known Variants and Source\nNumber of variants | Oral source | Written source\n1 | 14 | 26\n2 | 18 | 12\n3 | 15 | 5\n4 or more | 21 | 9",
+  "keys": [
+   "18/25",
+   ".72",
+   "0.72"
+  ],
+  "any_of": false,
+  "explanation": "\"At least 3\" includes 3, so the group is the 3 row plus the 4-or-more row: $15+5+21+9=50$ tales. Inside that group, $15+21=36$ came from oral sources. The probability is $\\frac{36}{50}=0.72$.",
+  "common_errors": [
+   {
+    "value": "7/10",
+    "misconception": "missed-condition",
+    "why": "You read \"at least 3\" as \"more than 3\" and used only the 4-or-more row: $\\frac{21}{30}$."
+   },
+   {
+    "value": "3/10",
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the 36 oral tales in the group by all 120 tales."
+   },
+   {
+    "value": "9/17",
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the denominator and found the fraction of oral-source tales with at least 3 variants: $\\frac{36}{14+18+15+21}=\\frac{36}{68}$."
+   },
+   {
+    "value": "3/4",
+    "misconception": "missed-condition",
+    "why": "You used only the row for exactly 3 variants: $\\frac{15}{20}$."
+   },
+   {
+    "value": "7/25",
+    "misconception": "complement-or-direction-flip",
+    "why": "You counted written-source tales instead: $\\frac{5+9}{50}$."
+   }
+  ],
+  "id": "orig-conditional-bu-M-f645b1",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-f645b1",
+   "structure": [],
+   "solver_answer": "18/25",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "An adult is selected at random from those who are not in the 18\u201334 age group. What is the probability that the adult is vaccinated?",
+  "stimulus": "A county health department surveyed 800 adults about whether they had received this season's influenza vaccine.\n\nInfluenza Vaccination Status by Age Group\nAge group | Vaccinated | Not vaccinated\n18\u201334 | 120 | 80\n35\u201349 | 150 | 50\n50\u201364 | 170 | 30\n65 and older | 190 | 10",
+  "keys": [
+   "17/20",
+   ".85",
+   "0.85"
+  ],
+  "any_of": false,
+  "explanation": "\"Not in the 18\u201334 group\" means the other three rows together. Build that group: $200+200+200=600$ adults. Inside it, $150+170+190=510$ are vaccinated. The probability is $\\frac{510}{600}=0.85$.",
+  "common_errors": [
+   {
+    "value": "3/5",
+    "misconception": "complement-or-direction-flip",
+    "why": "You read \"not in the 18\u201334 group\" as \"in the 18\u201334 group\": $\\frac{120}{200}$."
+   },
+   {
+    "value": "51/80",
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the 510 vaccinated adults in the group by all 800 adults."
+   },
+   {
+    "value": "63/80",
+    "misconception": "missed-condition",
+    "why": "You ignored the condition and found the overall vaccination rate: $\\frac{630}{800}$."
+   },
+   {
+    "value": "17/21",
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the denominator and found the fraction of vaccinated adults who are not 18\u201334: $\\frac{510}{630}$."
+   },
+   {
+    "value": "3/20",
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the probability of not being vaccinated inside the group: $\\frac{90}{600}$."
+   }
+  ],
+  "id": "orig-conditional-bu-M-b5a6cb",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-b5a6cb",
+   "structure": [],
+   "solver_answer": "17/20",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A cone is selected at random from the cones with a catalog number greater than or equal to 61. What is the probability that the cone still contains seeds?",
+  "stimulus": "Each fossil cone in a paleobotany collection has a different catalog number, and the catalog numbers are the integers from 1 through 90. The cones numbered 61 or higher were found in the upper rock layer. Exactly 12 of these upper-layer cones still contain seeds.",
+  "keys": [
+   "2/5",
+   ".4",
+   "0.4"
+  ],
+  "any_of": false,
+  "explanation": "Count the integers in the group yourself. From 61 through 90 inclusive there are $90-61+1=30$ integers, so the group has 30 cones. Of those, 12 contain seeds. The probability is $\\frac{12}{30}=0.4$.",
+  "common_errors": [
+   {
+    "value": "12/29",
+    "misconception": "missed-condition",
+    "why": "You counted the range as $90-61=29$ and dropped the boundary cone numbered 61."
+   },
+   {
+    "value": "2/15",
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by all 90 cones instead of the 30 in the group: $\\frac{12}{90}$."
+   },
+   {
+    "value": "3/5",
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the probability that the cone has no seeds: $\\frac{18}{30}$."
+   }
+  ],
+  "id": "orig-conditional-bu-M-c1f660",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-c1f660",
+   "structure": [],
+   "solver_answer": "2/5",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A fish is selected at random from the fish observed at a depth of at least 20 meters. What is the probability that the fish is an adult?",
+  "stimulus": "Marine biologists recorded every parrotfish observed on a reef transect. The table shows the proportion of all observed parrotfish in each category of depth and life stage.\n\nProportion of Observed Parrotfish by Depth and Life Stage\nDepth (meters) | Juvenile | Adult\n0 to 9 | 0.18 | 0.12\n10 to 19 | 0.10 | 0.20\n20 to 29 | 0.06 | 0.14\n30 or more | 0.04 | 0.16",
+  "keys": [
+   "3/4",
+   ".75",
+   "0.75"
+  ],
+  "any_of": false,
+  "explanation": "\"At least 20 meters\" covers the 20-to-29 row and the 30-or-more row. Build the group: $0.06+0.14+0.04+0.16=0.40$. Inside it, the adults make up $0.14+0.16=0.30$. Treat the proportions as counts, because the scaling cancels: $\\frac{0.30}{0.40}=0.75$.",
+  "common_errors": [
+   {
+    "value": "4/5",
+    "misconception": "missed-condition",
+    "why": "You treated \"at least 20\" as only the 30-or-more row and dropped the 20-to-29 row: $\\frac{0.16}{0.20}$."
+   },
+   {
+    "value": "7/10",
+    "misconception": "missed-condition",
+    "why": "You used only the 20-to-29 row: $\\frac{0.14}{0.20}$."
+   },
+   {
+    "value": "0.3",
+    "misconception": "intermediate-step",
+    "why": "You stopped at the numerator, which divides by the whole table (a total of 1) instead of by the 0.40 group."
+   },
+   {
+    "value": "1/4",
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the probability of a juvenile instead: $\\frac{0.10}{0.40}$."
+   },
+   {
+    "value": "15/31",
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the denominator and found the fraction of adults that were at least 20 meters deep: $\\frac{0.30}{0.62}$."
+   }
+  ],
+  "id": "orig-conditional-bu-M-de7030",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-de7030",
+   "structure": [],
+   "solver_answer": "3/4",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A session is selected at random from the sessions recorded in villages that are not on the coast. What is the probability that the borrowed word was used in that session?",
+  "stimulus": "A field linguist recorded 4 sessions in each of 9 villages, which are numbered 1 through 9. Villages 1 through 3 are on the coast, and villages 4 through 9 are inland. In 10 of all the sessions, speakers used a borrowed word for \"boat,\" and 7 of those 10 sessions were in coastal villages.",
+  "keys": [
+   "1/8",
+   ".125",
+   "0.125"
+  ],
+  "any_of": false,
+  "explanation": "Build the group by multiplying. The villages that are not on the coast are villages 4 through 9, which is $9-4+1=6$ villages, so there are $6 \\times 4=24$ inland sessions. The borrowed word appeared in $10-7=3$ of them. The probability is $\\frac{3}{24}=\\frac{1}{8}$, or 0.125.",
+  "common_errors": [
+   {
+    "value": "3/20",
+    "misconception": "algebra-manipulation",
+    "why": "You counted villages 4 through 9 as $9-4=5$ villages, which gives 20 sessions."
+   },
+   {
+    "value": "7/12",
+    "misconception": "complement-or-direction-flip",
+    "why": "You read \"not on the coast\" as \"on the coast\": $\\frac{7}{3 \\times 4}$."
+   },
+   {
+    "value": "1/12",
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the 3 inland sessions by all 36 sessions instead of by the 24 inland sessions."
+   },
+   {
+    "value": "3/10",
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the denominator and found the fraction of borrowed-word sessions that were inland: $\\frac{3}{10}$."
+   },
+   {
+    "value": "5/12",
+    "misconception": "misread-given",
+    "why": "You used all 10 borrowed-word sessions as the numerator instead of the 3 inland ones: $\\frac{10}{24}$."
+   }
+  ],
+  "id": "orig-conditional-bu-M-3853b3",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-3853b3",
+   "structure": [],
+   "solver_answer": "1/8",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these pieces is chosen at random, what is the probability that it is in a minor key, given that it has at least 3 movements?",
+  "stimulus": "A musicologist classified 62 chamber pieces from one composer's archive by key and by number of movements.\n\nChamber Pieces by Key and Number of Movements\nKey | 1 | 2 | 3 | 4 or more\nMajor | 6 | 9 | 12 | 8\nMinor | 4 | 7 | 10 | 6",
+  "keys": [
+   "4/9",
+   ".4444"
+  ],
+  "any_of": false,
+  "explanation": "'At least 3' means the 3 column plus the '4 or more' column. No single printed total covers that group, so you build it: $12 + 8 + 10 + 6 = 36$ pieces. Of those, the minor-key pieces are $10 + 6 = 16$. The probability is $\\frac{16}{36} = \\frac{4}{9}$.",
+  "common_errors": [
+   {
+    "value": "3/7",
+    "misconception": "missed-condition",
+    "why": "Read 'at least 3' as 'more than 3', dropped the 3 column and used only '4 or more': $\\frac{6}{14}$."
+   },
+   {
+    "value": "8/31",
+    "misconception": "wrong-target-quantity",
+    "why": "Put the right numerator, 16, over all 62 pieces instead of over the 36 pieces with at least 3 movements."
+   },
+   {
+    "value": "16/27",
+    "misconception": "complement-or-direction-flip",
+    "why": "Swapped the condition and divided by the 27 minor-key pieces, which answers 'given minor, at least 3 movements'."
+   },
+   {
+    "value": "5/9",
+    "misconception": "complement-or-direction-flip",
+    "why": "Found the major-key share of the group instead: $\\frac{20}{36}$."
+   }
+  ],
+  "id": "orig-conditional-bu-M-24c70b",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-24c70b",
+   "structure": [],
+   "solver_answer": "4/9",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If a fragment is chosen at random from those that are not wool, what is the probability that it is dyed?",
+  "stimulus": "The table shows the proportion of a museum's textile fragments in each category of fiber and dye status.\n\nProportion of Textile Fragments\nFiber | Dyed | Undyed\nWool | 0.24 | 0.16\nLinen | 0.12 | 0.18\nSilk | 0.21 | 0.09",
+  "keys": [
+   "11/20",
+   ".55",
+   "0.55"
+  ],
+  "any_of": false,
+  "explanation": "'Not wool' means the linen row plus the silk row. You can treat the proportions as if they were counts, because the scaling cancels. The group is $0.12 + 0.18 + 0.21 + 0.09 = 0.60$. The dyed part of that group is $0.12 + 0.21 = 0.33$. The probability is $\\frac{0.33}{0.60} = 0.55$.",
+  "common_errors": [
+   {
+    "value": "3/5",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the wool row instead of 'not wool': $\\frac{0.24}{0.40} = 0.6$."
+   },
+   {
+    "value": "33/100",
+    "misconception": "wrong-target-quantity",
+    "why": "Stopped at 0.33, the share of the whole collection that is dyed and not wool, and never divided by the group."
+   },
+   {
+    "value": "7/10",
+    "misconception": "missed-condition",
+    "why": "Used only the silk row: $\\frac{0.21}{0.30}$."
+   },
+   {
+    "value": "9/20",
+    "misconception": "complement-or-direction-flip",
+    "why": "Found the undyed share of the group: $\\frac{0.27}{0.60}$."
+   }
+  ],
+  "id": "orig-conditional-bu-M-c36a47",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-c36a47",
+   "structure": [],
+   "solver_answer": "11/20",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If a sung recording is chosen at random from the archive, what is the probability that it is Welsh?",
+  "stimulus": "A folklore archive stores its Irish tale recordings in 8 boxes of 12 recordings each, and in every Irish box exactly 3 recordings are sung. It stores its Welsh tale recordings in 5 boxes of 10 recordings each, and in every Welsh box exactly 4 recordings are sung.",
+  "keys": [
+   "5/11",
+   ".4545"
+  ],
+  "any_of": false,
+  "explanation": "Build the sung group by multiplying boxes by sung recordings per box. Irish: $8 \\times 3 = 24$. Welsh: $5 \\times 4 = 20$. That gives $44$ sung recordings, and $20$ of them are Welsh. The probability is $\\frac{20}{44} = \\frac{5}{11}$.",
+  "common_errors": [
+   {
+    "value": "4/7",
+    "misconception": "algebra-manipulation",
+    "why": "Skipped the multiplication by the number of boxes and used the per-box counts: $\\frac{4}{3+4}$."
+   },
+   {
+    "value": "10/73",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided the 20 Welsh sung recordings by all $96 + 50 = 146$ recordings."
+   },
+   {
+    "value": "2/5",
+    "misconception": "complement-or-direction-flip",
+    "why": "Reversed the condition and found the sung share of the Welsh recordings: $\\frac{20}{50}$."
+   },
+   {
+    "value": "6/11",
+    "misconception": "complement-or-direction-flip",
+    "why": "Found the Irish share of the sung recordings: $\\frac{24}{44}$."
+   }
+  ],
+  "id": "orig-conditional-bu-M-018751",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-018751",
+   "structure": [],
+   "solver_answer": "5/11",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these nests is chosen at random from those with no more than 3 eggs, what is the probability that it is a ground nest?",
+  "stimulus": "An ornithologist recorded the clutch size of 70 nests of one songbird species.\n\nNests by Location and Clutch Size (eggs)\nLocation | 2 | 3 | 4 | 5\nGround | 5 | 11 | 14 | 6\nTree | 9 | 13 | 8 | 4",
+  "keys": [
+   "8/19",
+   ".4210",
+   ".4211"
+  ],
+  "any_of": false,
+  "explanation": "'No more than 3' includes the 2 column and the 3 column. The group is $5 + 11 + 9 + 13 = 38$ nests. Of those, the ground nests are $5 + 11 = 16$. The probability is $\\frac{16}{38} = \\frac{8}{19}$.",
+  "common_errors": [
+   {
+    "value": "5/14",
+    "misconception": "missed-condition",
+    "why": "Read 'no more than 3' as 'fewer than 3', dropped the boundary column and used only the 2 column."
+   },
+   {
+    "value": "8/35",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 16 by all 70 nests instead of by the 38 nests in the group."
+   },
+   {
+    "value": "4/9",
+    "misconception": "complement-or-direction-flip",
+    "why": "Reversed the condition and divided by the 36 ground nests: $\\frac{16}{36}$."
+   },
+   {
+    "value": "11/19",
+    "misconception": "complement-or-direction-flip",
+    "why": "Found the tree-nest share of the group: $\\frac{22}{38}$."
+   }
+  ],
+  "id": "orig-conditional-bu-M-b45638",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-b45638",
+   "structure": [],
+   "solver_answer": "8/19",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one participant is chosen at random from those with an ID number of at least 25, what is the probability that the participant was assigned the high-fiber diet?",
+  "stimulus": "Participants in a nutrition study received the ID numbers 1 through 40, one number each. Every participant whose ID number is a multiple of 4 was assigned the high-fiber diet.",
+  "keys": [
+   "1/4",
+   ".25",
+   "0.25"
+  ],
+  "any_of": false,
+  "explanation": "Build the group by counting the integers from 25 to 40 inclusive: $40 - 25 + 1 = 16$. The multiples of 4 in that range are 28, 32, 36 and 40, which makes 4. The probability is $\\frac{4}{16} = \\frac{1}{4}$.",
+  "common_errors": [
+   {
+    "value": "4/15",
+    "misconception": "missed-condition",
+    "why": "Left out ID 25. This happens if you read 'at least 25' as 'more than 25', or if you count the range as $40 - 25 = 15$."
+   },
+   {
+    "value": "1/10",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided the 4 high-fiber participants in the range by all 40 participants."
+   },
+   {
+    "value": "2/5",
+    "misconception": "complement-or-direction-flip",
+    "why": "Reversed the condition and found the share of all 10 high-fiber participants whose ID is at least 25: $\\frac{4}{10}$."
+   }
+  ],
+  "id": "orig-conditional-bu-M-1566e7",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-1566e7",
+   "structure": [],
+   "solver_answer": "1/4",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these prints is chosen at random from those that are not etchings, what is the probability that it is printed in color?",
+  "stimulus": "A gallery cataloged 120 prints by technique and by whether they were printed in color.\n\nPrints by Technique and Color\nTechnique | Monochrome | Color\nWoodcut | 18 | 12\nEtching | 25 | 5\nLithograph | 9 | 21\nScreenprint | 3 | 27",
+  "keys": [
+   "2/3",
+   ".6666",
+   ".6667"
+  ],
+  "any_of": false,
+  "explanation": "'Not etchings' means the woodcut, lithograph and screenprint rows. Each row has 30 prints, so the group is $90$ prints. The color prints in the group are $12 + 21 + 27 = 60$. The probability is $\\frac{60}{90} = \\frac{2}{3}$.",
+  "common_errors": [
+   {
+    "value": "1/6",
+    "misconception": "complement-or-direction-flip",
+    "why": "Read 'not etchings' as 'etchings' and used that row: $\\frac{5}{30}$."
+   },
+   {
+    "value": "1/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 60 by all 120 prints instead of by the 90 prints that are not etchings."
+   },
+   {
+    "value": "13/18",
+    "misconception": "missed-condition",
+    "why": "Used all 65 color prints, including the etchings, over the 90 prints that are not etchings."
+   },
+   {
+    "value": "12/13",
+    "misconception": "complement-or-direction-flip",
+    "why": "Reversed the condition and divided by the 65 color prints: $\\frac{60}{65}$."
+   }
+  ],
+  "id": "orig-conditional-bu-M-badbed",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-badbed",
+   "structure": [],
+   "solver_answer": "2/3",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If a plot is chosen at random from those with a yield of at least 150 bushels per acre, what is the probability that it was treated?",
+  "stimulus": "An agricultural trial grouped its test plots by soil treatment and by corn yield. The table shows the percent of all plots in each category.\n\nPercent of Plots by Treatment and Yield (bushels per acre)\nTreatment | Below 150 | 150 to 179 | 180 or more\nTreated | 8% | 22% | 30%\nUntreated | 18% | 14% | 8%",
+  "keys": [
+   "26/37",
+   ".7027"
+  ],
+  "any_of": false,
+  "explanation": "'At least 150' covers the '150 to 179' column and the '180 or more' column. Treat the percents as if they were counts. The group is $22 + 30 + 14 + 8 = 74$. The treated part of the group is $22 + 30 = 52$. The probability is $\\frac{52}{74} = \\frac{26}{37}$.",
+  "common_errors": [
+   {
+    "value": "15/19",
+    "misconception": "missed-condition",
+    "why": "Used only the '180 or more' column: $\\frac{30}{38}$."
+   },
+   {
+    "value": "13/25",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave 52% of all plots, which is 0.52, without dividing by the 74% in the group."
+   },
+   {
+    "value": "13/15",
+    "misconception": "complement-or-direction-flip",
+    "why": "Reversed the condition and divided by the treated total: $\\frac{52}{60}$."
+   },
+   {
+    "value": "11/37",
+    "misconception": "complement-or-direction-flip",
+    "why": "Found the untreated share of the group: $\\frac{22}{74}$."
+   }
+  ],
+  "id": "orig-conditional-bu-M-59e50d",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-59e50d",
+   "structure": [],
+   "solver_answer": "26/37",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If a map that is not hand-colored is chosen at random from the collection, what is the probability that it is a coastal map?",
+  "stimulus": "A map library keeps its coastal maps in 6 drawers of 12 maps each, and in every coastal drawer exactly 4 maps are hand-colored. It keeps its inland maps in 8 drawers of 10 maps each, and in every inland drawer exactly 3 maps are hand-colored.",
+  "keys": [
+   "6/13",
+   ".4615"
+  ],
+  "any_of": false,
+  "explanation": "Build the group of maps that are not hand-colored. Coastal: $6 \\times (12 - 4) = 48$. Inland: $8 \\times (10 - 3) = 56$. That is $104$ maps, and $48$ of them are coastal. The probability is $\\frac{48}{104} = \\frac{6}{13}$.",
+  "common_errors": [
+   {
+    "value": "1/2",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the hand-colored maps instead: $\\frac{24}{24+24}$."
+   },
+   {
+    "value": "8/15",
+    "misconception": "algebra-manipulation",
+    "why": "Skipped the multiplication by the number of drawers and used the per-drawer counts: $\\frac{8}{8+7}$."
+   },
+   {
+    "value": "6/19",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 48 by all $72 + 80 = 152$ maps."
+   },
+   {
+    "value": "2/3",
+    "misconception": "complement-or-direction-flip",
+    "why": "Reversed the condition and found the share of coastal maps that are not hand-colored: $\\frac{48}{72}$."
+   }
+  ],
+  "id": "orig-conditional-bu-M-3feac8",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-3feac8",
+   "structure": [],
+   "solver_answer": "6/13",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

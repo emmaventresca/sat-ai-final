@@ -428,5 +428,210 @@
    "residue": 2
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "For which of the following tables are all the values of $x$ and their corresponding values of $y$ solutions to the given inequality?",
+  "stimulus": "A marine biologist surveying tide-pool plots uses the inequality below to describe plots where hermit crabs are abundant, where $x$ is the number of sea anemones and $y$ is the number of hermit crabs in a plot.\n\n$4x - 2y < 10$",
+  "choices": [
+   "$x$: 3, 5, 7; $y$: 0, 4, 8",
+   "$x$: 3, 5, 7; $y$: 1, 5, 9",
+   "$x$: 3, 5, 7; $y$: 2, 6, 10",
+   "$x$: 3, 5, 7; $y$: 2, 4, 10"
+  ],
+  "answer": "C",
+  "explanation": "Subtract $4x$ from both sides to get $-2y < 10 - 4x$. Dividing by $-2$ flips the sign, so $y > 2x - 5$. For $x = 3, 5, 7$, $y$ must be greater than 1, 5 and 9. In table C, 2 > 1, 6 > 5 and 10 > 9, so every row works.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided by $-2$ without flipping the sign, which gave $y < 2x - 5$. Every row of this table is below the boundary, so none of them are solutions."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "Every row here sits exactly on the boundary $y = 2x - 5$. The inequality is strict, so boundary points are not solutions."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "The first row works, since 2 > 1, but you stopped there. In the second row, $y$ must be greater than 5, and 4 is not."
+   }
+  },
+  "id": "orig-test-points-ta-H-917adf",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-test-points-ta-H-917adf",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the point $(4, b)$ is a solution to the system of inequalities, which of the following could be the value of $b$?",
+  "stimulus": "A sports scientist uses the system below to describe allowable training weeks for an athlete, where $x$ is the number of sprint sessions and $y$ is the number of recovery hours.\n\n$x - 2y \\ge -20$\n$5x + y > 26$",
+  "choices": [
+   "4",
+   "6",
+   "12",
+   "14"
+  ],
+  "answer": "C",
+  "explanation": "Substitute $x = 4$ into each inequality. The first gives $4 - 2b \\ge -20$, so $-2b \\ge -24$. Dividing by $-2$ flips the sign, so $b \\le 12$. The second gives $20 + b > 26$, so $b > 6$. Together, $6 < b \\le 12$. Of the choices, only 12 fits, and it is allowed because the first inequality includes equality.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "4 satisfies the first inequality, $b \\le 12$, but you didn't check the second one. It requires $b > 6$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "6 is the boundary of the second inequality. Because $5x + y > 26$ is strict, $b$ must be greater than 6, not equal to it."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You didn't flip the sign when you divided $-2b \\ge -24$ by $-2$, so you got $b \\ge 12$. The correct bound is $b \\le 12$, and 14 breaks it."
+   }
+  },
+  "id": "orig-test-points-ta-H-75162c",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-test-points-ta-H-75162c",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the point __var__ is a solution to the",
+    "point __var__ is a solution to the system",
+    "__var__ is a solution to the system of",
+    "is a solution to the system of inequalities"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which point $(x, y)$ is a solution to the given system of inequalities in the $xy$-plane?",
+  "stimulus": "A civil engineer models allowable combinations of slab thickness $x$, in inches, and reinforcing bars per meter $y$ with the system below.\n\n$y \\ge 2x - 1$\n$-x - 3y > -18$",
+  "choices": [
+   "$(1, 6)$",
+   "$(2, 4)$",
+   "$(3, 5)$",
+   "$(5, 2)$"
+  ],
+  "answer": "B",
+  "explanation": "Check both inequalities. For $(2, 4)$, the first gives $4 \\ge 3$, which is true. The second gives $-2 - 12 = -14$, and $-14 > -18$ is true. The point satisfies both, so it is in the overlap.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "When you divided $-x - 3y > -18$ by $-3$, you kept the sign and got $y > 6 - \\frac{x}{3}$. The correct result is $y < 6 - \\frac{x}{3}$. Substituting directly gives $-1 - 18 = -19$, and $-19$ is not greater than $-18$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "$(3, 5)$ satisfies the first inequality with equality. In the second, $-3 - 15 = -18$, and the strict inequality $> -18$ excludes boundary points."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "$(5, 2)$ satisfies the second inequality, since $-11 > -18$. You didn't check the first one, though, and it requires $y \\ge 9$."
+   }
+  },
+  "id": "orig-test-points-ta-H-4cd183",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-test-points-ta-H-4cd183",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __var__ which point __var__ is a solution",
+    "__var__ which point __var__ is a solution to",
+    "which point __var__ is a solution to the",
+    "point __var__ is a solution to the given",
+    "a solution to the given system of inequalities",
+    "solution to the given system of inequalities in",
+    "to the given system of inequalities in the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "In which quadrant of the $xy$-plane are there no solutions to the given inequality?",
+  "stimulus": "An ornithologist tracking a gliding hawk records its eastward change in position $x$, in kilometers, and its change in altitude $y$, in hundreds of meters. The combinations she studies satisfy the inequality below.\n\n$15x - 5y < 0$",
+  "choices": [
+   "Quadrant I",
+   "Quadrant II",
+   "Quadrant III",
+   "Quadrant IV"
+  ],
+  "answer": "D",
+  "explanation": "Subtract $15x$ from both sides to get $-5y < -15x$. Dividing by $-5$ flips the sign, so $y > 3x$. In Quadrant IV, $x > 0$, so $3x$ is positive, while $y < 0$. A negative $y$ can never be greater than a positive $3x$, so Quadrant IV has no solutions. Every other quadrant has some, for example $(1, 4)$, $(-1, 1)$ and $(-1, -2)$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You tested a single point such as $(1, 1)$, saw that it fails, and ruled out the whole quadrant. Other points in Quadrant I work, such as $(1, 4)$, because $4 > 3$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided by $-5$ without flipping the sign, which gave $y < 3x$. That reversed region misses Quadrant II, but the real region $y > 3x$ includes all of it."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You tested a single point such as $(-1, -5)$, saw that it fails, and ruled out the whole quadrant. Other points in Quadrant III work, such as $(-1, -2)$, because $-2 > -3$."
+   }
+  },
+  "id": "orig-test-points-ta-H-d5e235",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-test-points-ta-H-d5e235",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

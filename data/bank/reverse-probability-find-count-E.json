@@ -380,17 +380,118 @@
   "section": "math",
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "error",
+  "status": "review",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-reverse-probab-E-98e048",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "is selected at random the probability of selecting",
     "selected at random the probability of selecting an"
    ],
    "residue": 9
+  }
+ },
+ {
+  "stem": "How many exoplanets in the catalog are ice giants?",
+  "stimulus": "A student's catalog lists 80 exoplanets. Each one is classified as rocky, a gas giant, or an ice giant, and 30 of them are rocky. If one exoplanet is selected at random from the catalog, the probability that it is a gas giant is $0.35$.",
+  "choices": [
+   "22",
+   "28",
+   "50",
+   "52"
+  ],
+  "answer": "A",
+  "explanation": "Probability = part / whole, so the number of gas giants is $0.35 \\times 80 = 28$. The question asks about ice giants, the group that is left over. Subtract both known groups from the total: $80 - 30 - 28 = 22$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the number of gas giants, $0.35 \\times 80 = 28$, and stopped there. The probability describes the gas giants, but the question asks how many ice giants there are."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You subtracted the rocky planets, $80 - 30 = 50$. That number counts the gas giants and ice giants together. You still need to take away the 28 gas giants."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You took away the gas giants, $80 - 28 = 52$, but forgot that 30 of the remaining planets are rocky. Those 30 have to be removed as well."
+   }
   },
-  "phrasing": "direct"
+  "id": "orig-reverse-probab-E-2df5ef",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-E-2df5ef",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If a turtle tagged at South Beach is selected at random, the probability that it is a green turtle is $\\frac{3}{5}$. What is the value of $x$?",
+  "stimulus": "Sea Turtles Tagged by Researchers\nSpecies | North Beach | South Beach\nGreen | 12 | x\nLoggerhead | 18 | 10",
+  "choices": [
+   "6",
+   "15",
+   "24",
+   "25"
+  ],
+  "answer": "B",
+  "explanation": "Only the South Beach column counts, so its total, $x + 10$, is the denominator. That gives $\\frac{x}{x+10} = \\frac{3}{5}$. Cross-multiply to get $5x = 3x + 30$, so $2x = 30$ and $x = 15$. To check: $\\frac{15}{25} = \\frac{3}{5}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You computed $\\frac{3}{5} \\times 10 = 6$, which uses only the 10 loggerheads as the whole. The South Beach total also contains the green turtles, so $x$ belongs in the denominator too: $x + 10$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You ignored the condition that the turtle was tagged at South Beach. You took $\\frac{3}{5}$ of the other three cells, $12 + 18 + 10 = 40$, when only the South Beach column should be the denominator."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "25 is the total number of turtles tagged at South Beach, $x + 10$. The question asks for $x$, the number of green turtles, so you still need to subtract the 10 loggerheads."
+   }
+  },
+  "id": "orig-reverse-probab-E-57f29d",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-E-57f29d",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

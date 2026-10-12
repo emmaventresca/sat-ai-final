@@ -445,5 +445,53 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "According to the model, for what value of $m$ is $L(m) = 11$?",
+  "stimulus": "A sports scientist models the blood lactate concentration of a cyclist after a hard interval with the function $L(m) = \\frac{1}{4}(m - 8)^2 + 2$, where $L(m)$ is the concentration, in millimoles per liter, $m$ minutes after the interval ends, for $0 \\le m \\le 8$.",
+  "choices": [
+   "$2$",
+   "$4.25$",
+   "$6$",
+   "$14$"
+  ],
+  "answer": "A",
+  "explanation": "You are given the output, so set the expression equal to 11 and work backwards. Subtract 2: $\\frac{1}{4}(m - 8)^2 = 9$. Multiply by 4: $(m - 8)^2 = 36$. Take both square roots: $m - 8 = 6$ or $m - 8 = -6$, so $m = 14$ or $m = 2$. The model only holds for $0 \\le m \\le 8$, so $m = 2$. Check: $\\frac{1}{4}(2 - 8)^2 + 2 = \\frac{1}{4}(36) + 2 = 11$. In Desmos, graph $y = 11$ with $L(x)$ and click the intersection inside the domain.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You substituted 11 as the input and found $L(11) = \\frac{1}{4}(3)^2 + 2 = 4.25$. The question gives 11 as the concentration (the output) and asks for the minute that produces it, so you needed to solve $L(m) = 11$, not evaluate $L(11)$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You reached $(m - 8)^2 = 36$ and took the square root to get 6, but 6 is the value of $m - 8$ (in size), not $m$. You stopped one step early instead of solving for $m$ itself."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You solved $m - 8 = 6$ correctly and took only the positive root, giving 14. But the model is defined only for $0 \\le m \\le 8$, so 14 lies outside it. The negative root, $m - 8 = -6$, gives the value that satisfies the domain."
+   }
+  },
+  "id": "orig-evaluate-or-in-H-099ed8",
+  "skill_cd": "P.C.",
+  "subtype": "evaluate-or-invert-function",
+  "subtype_name": "Plug in or solve for the input",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-or-in-H-099ed8",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

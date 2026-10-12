@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-rational-expre-X-ed76bc",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,14 +82,403 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-rational-expre-X-cc4c17",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{2x}{x-3}-\\frac{9x+3}{x^2-x-6}$, where $x>3$?",
+  "stimulus": "A folklore researcher uses the expression below to model how quickly a tale's variants spread from village to village, where $x$ is the number of storytellers.",
+  "choices": [
+   "$\\frac{7x+3}{x^2-2x-3}$",
+   "$-\\frac{7x+3}{x^2-x-6}$",
+   "$\\frac{2x+1}{x-3}$",
+   "$\\frac{2x+1}{x+2}$"
+  ],
+  "answer": "D",
+  "explanation": "Factor the second denominator: $x^2-x-6=(x-3)(x+2)$. Rewrite the first fraction over that denominator: $\\frac{2x(x+2)}{(x-3)(x+2)}$. Subtract the numerators: $2x^2+4x-9x-3=2x^2-5x-3=(2x+1)(x-3)$. Because $x>3$, you can cancel $x-3$, which leaves $\\frac{2x+1}{x+2}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the numerators straight across ($2x-(9x+3)$) and the denominators straight across ($(x-3)-(x^2-x-6)$) before finding a common denominator, then tidied the signs."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You put both fractions over $(x-3)(x+2)$ but didn't multiply the first numerator by $x+2$, so you were left with $2x-9x-3$ over the new denominator."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored the numerator correctly as $(2x+1)(x-3)$ but cancelled $x+2$ instead of $x-3$, which leaves the wrong factor in the denominator."
+   }
+  },
+  "id": "orig-rational-expre-X-d30126",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-X-d30126",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{6x^2-5x+7}{2x-3}$, where $x>\\frac{3}{2}$?",
+  "stimulus": "An urban planner models the average walking time to a transit stop with the expression below, where $x$ is the number of blocks between stops.",
+  "choices": [
+   "$6x+4+\\frac{13}{2x-3}$",
+   "$3x-7-\\frac{14}{2x-3}$",
+   "$3x+2+\\frac{13}{2x-3}$",
+   "$3x+2+\\frac{26}{2x-3}$"
+  ],
+  "answer": "C",
+  "explanation": "Divide by $2x-3$: $6x^2\\div 2x=3x$, and $3x(2x-3)=6x^2-9x$. Subtracting leaves $4x+7$. Then $4x\\div 2x=2$, and $2(2x-3)=4x-6$. Subtracting leaves a remainder of $13$. So $6x^2-5x+7=(2x-3)(3x+2)+13$, and the expression equals $3x+2+\\frac{13}{2x-3}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used synthetic division with $\\frac{3}{2}$, which divides by $x-\\frac{3}{2}$, not by $2x-3$. You needed to halve the quotient $6x+4$ but you kept it as it was."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "In the first subtraction you worked out $-5x-9x$ instead of $-5x-(-9x)$, which gave $-14x$. Every step after that carried the sign error."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You halved the synthetic-division quotient correctly but also doubled the remainder. The remainder of $13$ stays the same when you write it over $2x-3$."
+   }
+  },
+  "id": "orig-rational-expre-X-99e5b6",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-X-99e5b6",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{2x^2-7x+3}{9-x^2}+\\frac{5}{x+3}$, where $x>3$?",
+  "stimulus": "An ornithologist uses the expression below to compare the feeding rates of two finch populations, where $x$ is the number of feeders per site.",
+  "choices": [
+   "$\\frac{2x+4}{x+3}$",
+   "$\\frac{6-2x}{x+3}$",
+   "$\\frac{3-x}{x+3}$",
+   "$\\frac{-2x-4}{x+3}$"
+  ],
+  "answer": "B",
+  "explanation": "Factor: $2x^2-7x+3=(2x-1)(x-3)$ and $9-x^2=(3-x)(3+x)$. Since $\\frac{x-3}{3-x}=-1$, the first fraction becomes $-\\frac{2x-1}{x+3}=\\frac{1-2x}{x+3}$. Add $\\frac{5}{x+3}$ to get $\\frac{1-2x+5}{x+3}=\\frac{6-2x}{x+3}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated $x-3$ and $3-x$ as the same factor and cancelled them to 1 instead of $-1$. You got $\\frac{2x-1}{x+3}$, and adding 5 gave $\\frac{2x+4}{x+3}$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You simplified the first fraction correctly but then added the two fractions straight across, adding the denominators to get $2x+6$. Reducing that result gave $\\frac{3-x}{x+3}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You put the negative sign out front correctly but applied it to the whole sum, $-(2x-1+5)$. It belongs only to the first fraction."
+   }
+  },
+  "id": "orig-rational-expre-X-68f288",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-X-68f288",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{a}{a-b}+\\frac{b}{a+b}-\\frac{2b^2}{a^2-b^2}$, where $a>b>0$?",
+  "stimulus": "An agricultural scientist models the share of a field's yield produced by an irrigated plot with the expression below, where $a$ and $b$ are flow rates, in liters per minute.",
+  "choices": [
+   "$\\frac{a+3b}{a+b}$",
+   "$\\frac{a+b}{a-b}$",
+   "$\\frac{a+3b}{a-b}$",
+   "$\\frac{a-3b}{a-b}$"
+  ],
+  "answer": "A",
+  "explanation": "The common denominator is $a^2-b^2=(a-b)(a+b)$. The numerator is $a(a+b)+b(a-b)-2b^2=a^2+2ab-3b^2=(a+3b)(a-b)$. Cancel $a-b$ to get $\\frac{a+3b}{a+b}$. To check, try $a=3$ and $b=1$: both the original and this choice equal $\\frac{3}{2}$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $2b^2$ instead of subtracting it, which made the numerator $a^2+2ab+b^2=(a+b)^2$. Cancelling one $a+b$ then gave $\\frac{a+b}{a-b}$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You got the numerator $(a+3b)(a-b)$ right but cancelled the wrong factor, keeping $a-b$ in the denominator instead of $a+b$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored $a^2+2ab-3b^2$ as $(a-3b)(a+b)$, which has the signs reversed, so you cancelled $a+b$ and kept the wrong factors."
+   }
+  },
+  "id": "orig-rational-expre-X-8cb37a",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-X-8cb37a",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{x^3-2x^2+5}{x^2+1}$?",
+  "stimulus": "A textile historian models the thread count of a woven sample with the expression below, where $x$ is the number of warp threads per millimeter.",
+  "choices": [
+   "$x-2+\\frac{7}{x^2+1}$",
+   "$x-2+\\frac{x-7}{x^2+1}$",
+   "$x-2+\\frac{x+3}{x^2+1}$",
+   "$x-2+\\frac{7-x}{x^2+1}$"
+  ],
+  "answer": "D",
+  "explanation": "The quotient is $x-2$, and $(x^2+1)(x-2)=x^3-2x^2+x-2$. Subtract that from the dividend: $(x^3-2x^2+5)-(x^3-2x^2+x-2)=-x+7$. The remainder is $7-x$, so the expression equals $x-2+\\frac{7-x}{x^2+1}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the divisor by the quotient as $x^3-2x^2-2$ and dropped the $x$ term, so the $-x$ part of the remainder is missing."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You subtracted in the wrong order, product minus dividend, so every sign in the remainder is flipped."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "When you subtracted the product, you added the leftover $x-2$ to 5 instead of subtracting it, which gave $x+3$ instead of $7-x$."
+   }
+  },
+  "id": "orig-rational-expre-X-34d0db",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-X-34d0db",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{3}{x}-\\frac{x-6}{x^2-2x}$, where $x>2$?",
+  "stimulus": "A seismologist uses the expression below to estimate how the delay between two wave arrivals changes, where $x$ is the distance to the epicenter, in hundreds of kilometers.",
+  "choices": [
+   "$\\frac{2x}{x^2-2x}$",
+   "$\\frac{2x-12}{x^2-2x}$",
+   "$\\frac{2x+6}{x^2-2x}$",
+   "$\\frac{9-x}{3x-x^2}$"
+  ],
+  "answer": "A",
+  "explanation": "Since $x^2-2x=x(x-2)$, rewrite $\\frac{3}{x}$ as $\\frac{3(x-2)}{x^2-2x}$. Subtract the whole second numerator: $3x-6-(x-6)=3x-6-x+6=2x$. The result is $\\frac{2x}{x^2-2x}$, which is also equal to $\\frac{2}{x-2}$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the minus sign only to $x$ and not to $-6$, writing $3x-6-x-6$. You needed to subtract the entire numerator $x-6$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied 3 by $x$, a factor the first fraction already has, instead of by the missing factor $x-2$. That gave $3x-(x-6)=2x+6$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the numerators straight across, $3-(x-6)$, and the denominators straight across, $x-(x^2-2x)$, without finding a common denominator."
+   }
+  },
+  "id": "orig-rational-expre-X-052059",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-X-052059",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{x}{x+1}-\\frac{1}{x^2+x}$, where $x>0$?",
+  "stimulus": "A meteorologist models the fraction of a storm's rainfall that reaches a valley floor with the expression below, where $x$ is the wind speed, in meters per second.",
+  "choices": [
+   "$\\frac{x+1}{x}$",
+   "$\\frac{x-1}{x}$",
+   "$\\frac{x-1}{x^2+x}$",
+   "$\\frac{-1}{x+1}$"
+  ],
+  "answer": "B",
+  "explanation": "Since $x^2+x=x(x+1)$, rewrite $\\frac{x}{x+1}$ as $\\frac{x^2}{x(x+1)}$. Subtract: $\\frac{x^2-1}{x(x+1)}=\\frac{(x-1)(x+1)}{x(x+1)}$. Cancel $x+1$ to get $\\frac{x-1}{x}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored $x^2-1$ correctly but cancelled $x-1$ instead of the shared factor $x+1$, as if both factors were in the denominator."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You wrote the first numerator over $x^2+x$ without multiplying it by $x$, so you subtracted $x-1$ instead of $x^2-1$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the numerators and the denominators straight across, which gave $\\frac{x-1}{1-x^2}$, and then reduced it. The reduction was correct, but the first step was not valid."
+   }
+  },
+  "id": "orig-rational-expre-X-51a955",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-X-51a955",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{2x^3-7x+4}{x-2}$, where $x>2$?",
+  "stimulus": "A sports scientist models a sprinter's power output during a training block with the expression below, where $x$ is the number of weeks of training.",
+  "choices": [
+   "$2x^2-4x+1+\\frac{2}{x-2}$",
+   "$2x-3-\\frac{2}{x-2}$",
+   "$2x^2+4x+1+\\frac{6}{x-2}$",
+   "$2x^2+4x-15-\\frac{26}{x-2}$"
+  ],
+  "answer": "C",
+  "explanation": "Use synthetic division with 2 and a 0 placeholder for the missing $x^2$ term: coefficients $2, 0, -7, 4$ become $2, 4, 1$ with a remainder of $6$. So the expression equals $2x^2+4x+1+\\frac{6}{x-2}$. To check, at $x=3$ both the original and this choice equal 37.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You ran synthetic division with $-2$ instead of 2, which is the root of $x+2$, not $x-2$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You left out the 0 placeholder for the missing $x^2$ term, so you divided $2x^2-7x+4$ instead of $2x^3-7x+4$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "In the second step of long division you worked out $-7x-8x$ instead of $-7x-(-8x)$. That sign error carried through to the last term and the remainder."
+   }
+  },
+  "id": "orig-rational-expre-X-2eb3b7",
+  "skill_cd": "P.A.",
+  "subtype": "rational-expression-rewrite",
+  "subtype_name": "Add, simplify or divide rational expressions",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-expre-X-2eb3b7",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

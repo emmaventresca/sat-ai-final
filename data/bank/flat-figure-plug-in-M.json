@@ -246,5 +246,647 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the area, in square meters, of the part of the rectangle that will be excavated?",
+  "stimulus": "An archaeologist marks out a rectangular excavation area that is 14 meters long and 10 meters wide. One corner of the rectangle lies under a modern road, so that corner will not be dug. It is a right triangle whose legs run 6 meters along the long side and 8 meters along the short side.",
+  "choices": [
+   "$92$",
+   "$100$",
+   "$116$",
+   "$140$"
+  ],
+  "answer": "C",
+  "explanation": "The question asks for area, so you need square meters. The whole rectangle is $14 \\times 10 = 140$ square meters. The corner that is left alone is a right triangle, so its base and height are its two legs, 6 and 8. Its area is $\\frac{1}{2}(6)(8) = 24$ square meters. This is a cut-out, so subtract: $140 - 24 = 116$ square meters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the legs to get $6 \\times 8 = 48$ but left out the $\\frac{1}{2}$ in the triangle formula, then subtracted: $140 - 48 = 92$. A triangle covers only half of the rectangle built on its base and height."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used the hypotenuse as one of the triangle's dimensions. The triangle's longest side is $\\sqrt{6^2 + 8^2} = 10$, and $\\frac{1}{2}(10)(8) = 40$ gives $140 - 40 = 100$. In a right triangle, the base and height are the two legs, so leave the hypotenuse out."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found the area of the whole rectangle and stopped there. The road corner is not dug, so you still have to subtract the triangle's area."
+   }
+  },
+  "id": "orig-flat-figure-pl-M-c1651e",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-M-c1651e",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the area in square meters of",
+    "is the area in square meters of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A city planner is designing a new rectangular park. The length of the park is 3 times its width, and the perimeter of the park is 96 meters.",
+  "choices": [
+   "The area of the park is 96 square meters.",
+   "The area of the park is 432 square meters.",
+   "The area of the park is 576 square meters.",
+   "The area of the park is 1,728 square meters."
+  ],
+  "answer": "B",
+  "explanation": "Let the width be $w$, so the length is $3w$. The perimeter adds all four sides: $2(3w) + 2(w) = 8w = 96$, so $w = 12$ meters and the length is $36$ meters. The area is $A = lw = 36 \\cdot 12 = 432$ square meters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the perimeter as the area. The 96 meters is the distance around the park, not the space inside it. You still need to find the length and width and multiply them."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You treated the park as a square with side $96 \\div 4 = 24$ meters and got $24^2 = 576$. But the length is 3 times the width, so the sides are not equal."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You set $3w + w = 96$, which counts each side only once, and got $w = 24$ and a length of $72$. A rectangle has two lengths and two widths, so the perimeter is $8w$, not $4w$."
+   }
+  },
+  "id": "orig-flat-figure-pl-M-1b3d9c",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-M-1b3d9c",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A nutrition science lab bakes a flat whole-grain cracker in the shape of a right triangle so it can measure fiber per square centimeter. The two legs of the triangle are 9 centimeters and 12 centimeters, and the longest side is 15 centimeters.",
+  "choices": [
+   "The area of the cracker is 36 square centimeters.",
+   "The area of the cracker is 54 square centimeters.",
+   "The area of the cracker is 90 square centimeters.",
+   "The area of the cracker is 108 square centimeters."
+  ],
+  "answer": "B",
+  "explanation": "In a right triangle, the two legs are the base and the height, so you leave out the 15-centimeter side. The area is $A = \\frac{1}{2}bh = \\frac{1}{2}(9)(12) = 54$ square centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the three sides, $9 + 12 + 15 = 36$. That is the perimeter in centimeters, not the area in square centimeters."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You used the longest side as the height and got $\\frac{1}{2}(12)(15) = 90$. The longest side of a right triangle is the hypotenuse, which is not perpendicular to either leg, so it cannot be the height."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the legs, $9 \\cdot 12 = 108$, and left out the $\\frac{1}{2}$. That is the area of a rectangle, and the triangle is half of it."
+   }
+  },
+  "id": "orig-flat-figure-pl-M-2dd9f9",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-M-2dd9f9",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A meteorology station sits on a square plot of land with sides of 20 meters. A rectangular concrete pad, 6 meters by 4 meters, is poured inside the plot to hold a rain gauge. The rest of the plot is covered in grass.",
+  "choices": [
+   "The area covered in grass is 80 square meters.",
+   "The area covered in grass is 376 square meters.",
+   "The area covered in grass is 400 square meters.",
+   "The area covered in grass is 424 square meters."
+  ],
+  "answer": "B",
+  "explanation": "The grass is the whole plot with the pad cut out, so subtract. The plot is $20^2 = 400$ square meters and the pad is $6 \\cdot 4 = 24$ square meters. The grass area is $400 - 24 = 376$ square meters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $4 \\cdot 20 = 80$, which is the perimeter of the plot in meters. The question asks for an area, which is in square meters."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You found the area of the whole plot, $20^2 = 400$, and stopped. You still need to take away the 24 square meters covered by the concrete pad."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You added the pad's area to the plot, $400 + 24 = 424$. The pad sits inside the plot, so its area has to be subtracted to leave the grass."
+   }
+  },
+  "id": "orig-flat-figure-pl-M-db70f9",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-M-db70f9",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The area of the rectangular unit is how many square meters greater than the area of the triangular unit?",
+  "stimulus": "At a dig site, an archaeologist marks out two excavation units. One is a rectangle that is 12 meters long and 5 meters wide. The other is a right triangle with legs of 6 meters and 8 meters and a hypotenuse of 10 meters.",
+  "choices": [
+   "$10$",
+   "$12$",
+   "$30$",
+   "$36$"
+  ],
+  "answer": "D",
+  "explanation": "The rectangle's area is $A = lw = 12 \\cdot 5 = 60$ square meters. In a right triangle the two legs are the base and the height, so the triangle's area is $A = \\frac{1}{2}(6)(8) = 24$ square meters. The difference is $60 - 24 = 36$ square meters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You worked out perimeters instead of areas. The rectangle's perimeter is $34$ m and the triangle's is $24$ m, which differ by $10$. The question asks about area, which is measured in square meters."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the legs, $6 \\cdot 8 = 48$, but left out the $\\frac{1}{2}$ in the triangle formula, so you got $60 - 48 = 12$. A triangle covers half of the rectangle built on its base and height."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You used the 10-meter hypotenuse as the height and got $\\frac{1}{2}(6)(10) = 30$, so $60 - 30 = 30$. The height has to be perpendicular to the base. In a right triangle that means the other leg, not the longest side."
+   }
+  },
+  "id": "orig-flat-figure-pl-M-a6998d",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-M-a6998d",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The perimeter of the rectangular basin is how many meters greater than the perimeter of the square basin?",
+  "stimulus": "A water treatment plant has two open settling basins. One is a square with sides of 14 meters. The other is a rectangle that is 20 meters long and 9 meters wide.",
+  "choices": [
+   "$1$",
+   "$2$",
+   "$16$",
+   "$58$"
+  ],
+  "answer": "B",
+  "explanation": "The rectangle's perimeter is $2(20) + 2(9) = 58$ meters. The square's perimeter is $4(14) = 56$ meters. The rectangular basin's perimeter is $58 - 56 = 2$ meters greater.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added only two sides of each shape: $20 + 9 = 29$ and $14 + 14 = 28$. A perimeter is the sum of all four sides, so both totals need to be doubled before you subtract."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You compared areas, $14^2 = 196$ and $20 \\cdot 9 = 180$, and found a gap of $16$. The question asks about perimeter, which is measured in meters, not square meters. Notice that the square has the larger area but the smaller perimeter."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$58$ meters is the rectangle's perimeter by itself. The question asks how much greater it is than the square's perimeter, so you still have to subtract $56$."
+   }
+  },
+  "id": "orig-flat-figure-pl-M-063035",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-M-063035",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The perimeter of the square is how many centimeters greater than the perimeter of the triangle?",
+  "stimulus": "On a city map, a square park is drawn with sides of $5x$ centimeters. Next to it, a plaza is drawn as an equilateral triangle with sides of $6x$ centimeters, where $x > 0$.",
+  "choices": [
+   "$2x$",
+   "$4x$",
+   "$20x$",
+   "$25x^2$"
+  ],
+  "answer": "A",
+  "explanation": "The square has four equal sides, so its perimeter is $4(5x) = 20x$ centimeters. An equilateral triangle has three equal sides, so its perimeter is $3(6x) = 18x$ centimeters. The square's perimeter is $20x - 18x = 2x$ centimeters greater.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the triangle's side by 4, as if it were a square, and got $24x$. That gives a gap of $4x$ in the wrong direction. A triangle has three sides, so its perimeter is $3(6x) = 18x$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "$20x$ is the square's perimeter by itself. You still have to subtract the triangle's perimeter, $18x$, to find how much greater the square's is."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You squared the side and got the square's area, $(5x)^2 = 25x^2$ square centimeters. The question asks about perimeter, which is a length measured in centimeters."
+   }
+  },
+  "id": "orig-flat-figure-pl-M-ff1817",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-M-ff1817",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the width, in centimeters, of the block?",
+  "stimulus": "A printmaker carves a design into a rectangular linoleum block. The length of the block's face is 4 centimeters greater than its width, and the area of the face is 96 square centimeters.",
+  "choices": [
+   "8",
+   "12",
+   "22",
+   "24"
+  ],
+  "answer": "A",
+  "explanation": "The area of a rectangle is $A = lw$. Here $l = w + 4$, so $w(w + 4) = 96$. Testing the choices is faster than solving the quadratic. If $w = 8$, the length is $12$, and $8 \\times 12 = 96$. That matches, so the width is 8 centimeters.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "12 is the length of the block. The question asks for the width, which is 4 centimeters less."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You treated 96 as the perimeter. You solved $2(w + w + 4) = 96$, which gives $w = 22$. But 96 square centimeters is an area, so you need $w(w + 4) = 96$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the area by the 4-centimeter difference, $96 \\div 4 = 24$. The 4 is added to the width to get the length. It is not a factor of the area. A width of 24 would give an area of $24 \\times 28 = 672$."
+   }
+  },
+  "id": "orig-flat-figure-pl-M-5111c0",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "review",
+  "verification": {
+   "id": "orig-flat-figure-pl-M-5111c0",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "centimeters what is the width in centimeters of",
+    "what is the width in centimeters of the"
+   ],
+   "residue": 9
+  }
+ },
+ {
+  "stem": "What is the length, in inches, of the shorter leg of the pennant?",
+  "stimulus": "A pennant in a nineteenth-century textile collection is cut in the shape of a right triangle. One leg of the triangle is 3 inches longer than the other leg, and the area of the pennant is 54 square inches.",
+  "choices": [
+   "6",
+   "9",
+   "12",
+   "18"
+  ],
+  "answer": "B",
+  "explanation": "In a right triangle, the base and height are the two legs, so $A = \\frac{1}{2}x(x + 3) = 54$, which means $x(x + 3) = 108$. Test the choices: if $x = 9$, the other leg is $12$, and $\\frac{1}{2}(9)(12) = 54$. The shorter leg is 9 inches.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You left out the $\\frac{1}{2}$ in the triangle area formula. $6 \\times 9 = 54$ is base times height alone. A triangle with legs 6 and 9 has an area of only 27 square inches."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "12 is the longer leg. The question asks for the shorter leg, which is 3 inches less."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the area by the 3-inch difference, $54 \\div 3 = 18$. The 3 is added to one leg to get the other. It does not divide the area. Legs of 18 and 21 would give an area of 189 square inches."
+   }
+  },
+  "id": "orig-flat-figure-pl-M-dbfd8d",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-M-dbfd8d",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length, in meters, of the longer side of the pad?",
+  "stimulus": "A rectangular concrete pad for a backyard telescope has a perimeter of 34 meters and an area of 60 square meters.",
+  "choices": [
+   "5",
+   "10",
+   "12",
+   "17"
+  ],
+  "answer": "C",
+  "explanation": "The perimeter gives $2(l + w) = 34$, so $l + w = 17$. The area gives $lw = 60$. Test the choices: if the longer side is 12, the shorter side is $17 - 12 = 5$. Then $12 \\times 5 = 60$ and $2(12 + 5) = 34$, so both conditions hold. The longer side is 12 meters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "5 is the length of the shorter side. The question asks for the longer side."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "A 6-by-10 rectangle does have an area of 60 square meters. But its perimeter is $2(6 + 10) = 32$ meters, not 34. You checked the area and skipped the perimeter."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "17 is $l + w$, the sum of the two sides, which you get by halving the perimeter. It is a step along the way, not the length of either side."
+   }
+  },
+  "id": "orig-flat-figure-pl-M-39845b",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-M-39845b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following best describes what 54 represents in this situation?",
+  "stimulus": "An immunologist cuts a test strip shaped like a right triangle from a sheet of antibody-coated membrane. The two shorter sides are 9 millimeters and 12 millimeters long, and the longest side is 15 millimeters. To find how much coated surface the strip has, the immunologist computes $\\frac{1}{2}(9)(12) = 54$.",
+  "choices": [
+   "The perimeter of the strip, in millimeters",
+   "The area of the strip, in square millimeters",
+   "The area of the strip, in millimeters",
+   "Twice the area of the strip, in square millimeters"
+  ],
+  "answer": "B",
+  "explanation": "In a right triangle, the two shorter sides (the legs) are the base and the height, so $\\frac{1}{2}bh = \\frac{1}{2}(9)(12) = 54$ is the triangle's area. Area is measured in square units, so 54 is the area of the strip in square millimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You mixed up area and perimeter. The perimeter is the sum of all three sides, $9 + 12 + 15 = 36$ millimeters, not 54. The expression $\\frac{1}{2}bh$ gives area."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You have the right quantity but the wrong units. Multiplying millimeters by millimeters gives square millimeters, so an area can't be measured in plain millimeters."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated $9 \\times 12$ as the triangle's area and read the $\\frac{1}{2}$ as halving it. In fact $9 \\times 12 = 108$ is the area of a rectangle. The $\\frac{1}{2}$ is part of the triangle formula, so 54 is the area itself."
+   }
+  },
+  "id": "orig-flat-figure-pl-M-3bbb3b",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-M-3bbb3b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following best describes what 31 represents in this situation?",
+  "stimulus": "A paleobotanist is digging for fossil leaves in a rectangular plot 8 meters long and 5 meters wide. A square patch 3 meters on a side, inside the plot, lies under a boulder and will not be dug. The paleobotanist computes $8(5) - 3^2 = 31$.",
+  "choices": [
+   "The area of the whole plot, in square meters",
+   "The area under the boulder, in square meters",
+   "The perimeter of the excavated region, in meters",
+   "The area of the excavated region, in square meters"
+  ],
+  "answer": "D",
+  "explanation": "The term $8(5) = 40$ is the area of the whole rectangular plot, and $3^2 = 9$ is the area of the square patch under the boulder. Subtracting the cut-out from the big shape leaves $40 - 9 = 31$ square meters, which is the area that will actually be dug.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at the first part of the calculation. The whole plot is $8(5) = 40$ square meters. The value 31 comes after the boulder's patch has been subtracted."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You chose the piece that was removed instead of the piece that is left. The area under the boulder is $3^2 = 9$ square meters, and 31 is what remains after you take it away."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You mixed up area and perimeter. Products like $8(5)$ and $3^2$ measure area in square meters. They are not side lengths added together."
+   }
+  },
+  "id": "orig-flat-figure-pl-M-661a3c",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-M-661a3c",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following best describes what the expression $2x + 80$ represents in this situation?",
+  "stimulus": "An ecology team marks off a rectangular wetland study area that is $x$ meters long and 40 meters wide. To order material for a boundary fence that runs all the way around the study area, the team uses the expression $2x + 80$.",
+  "choices": [
+   "The perimeter of the study area, in meters",
+   "The area of the study area, in square meters",
+   "The perimeter of the study area, in square meters",
+   "The total length of the two long sides, in meters"
+  ],
+  "answer": "A",
+  "explanation": "Going all the way around the rectangle covers two lengths and two widths: $x + x + 40 + 40 = 2x + 80$. That is the perimeter. It is a length, so it is measured in meters.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You mixed up perimeter and area. The area would be length times width, $40x$ square meters. The expression $2x + 80$ adds sides together."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You have the right quantity but the wrong units. A perimeter is a sum of lengths, so it is measured in meters. Square meters are for area."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You accounted for only part of the expression. The two long sides add up to $2x$. The $+80$ is the two 40-meter widths, so the expression covers all four sides."
+   }
+  },
+  "id": "orig-flat-figure-pl-M-5a4d94",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-M-5a4d94",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

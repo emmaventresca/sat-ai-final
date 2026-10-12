@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-expand-and-com-X-784342",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,11 +82,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-expand-and-com-X-d0f2ff",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "expression is equivalent to __var__ where __var__ __var__",
     "is equivalent to __var__ where __var__ __var__ and",
@@ -90,5 +100,394 @@
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which expression is equivalent to $2A - 3(B - A)$?",
+  "stimulus": "A folklorist models the number of recorded variants of two tales collected $x$ decades after a survey began with the expressions $A = 3x^2 - 2x + 5$ and $B = x^2 + 4x - 1$.",
+  "choices": [
+   "$12x^2 + 2x + 22$",
+   "$6x^2 - 18x + 18$",
+   "$12x^2 - 22x + 28$",
+   "$-6x^2 - 10x - 2$"
+  ],
+  "answer": "C",
+  "explanation": "First simplify in terms of the letters. $-3(B - A) = -3B + 3A$, so $2A - 3(B - A) = 5A - 3B$. Then substitute: $5A = 15x^2 - 10x + 25$ and $3B = 3x^2 + 12x - 3$. Subtracting gives $15x^2 - 10x + 25 - 3x^2 - 12x + 3 = 12x^2 - 22x + 28$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You got $5A - 3B$ right, but when you subtracted $3x^2 + 12x - 3$ you changed the sign of $3x^2$ only, giving $-3x^2 + 12x - 3$. The minus sign applies to every term in $3B$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $-3(B - A)$ as $-3B + A$, so you multiplied only $B$ by 3. That gives $3A - 3B$. The 3 multiplies both $B$ and $A$, so the result is $5A - 3B$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $-3(B - A)$ as $-3B - 3A$. Subtracting $-A$ is the same as adding $A$, so the $-3$ turns $-A$ into $+3A$, not $-3A$."
+   }
+  },
+  "id": "orig-expand-and-com-X-da94b4",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-X-da94b4",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ and __var__ which expression is equivalent to",
+    "and __var__ which expression is equivalent to __var__"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $f(x)g(x) - x \\cdot f(x)$?",
+  "stimulus": "In an ecology study of a wetland, the functions $f(x) = 2x - 3$ and $g(x) = x^2 + x - 4$ are used to model two plant populations, where $x$ is the number of years since the wetland was restored.",
+  "choices": [
+   "$2x^3 - 3x^2 - 8x + 12$",
+   "$2x^3 - x^2 - 11x + 12$",
+   "$2x^3 - 3x^2 - 14x + 12$",
+   "$2x^3 - 3x^2 - 8x - 12$"
+  ],
+  "answer": "A",
+  "explanation": "Factor out $f(x)$: $f(x)[g(x) - x] = (2x - 3)(x^2 + x - 4 - x) = (2x - 3)(x^2 - 4)$. Expanding gives $2x^3 - 8x - 3x^2 + 12 = 2x^3 - 3x^2 - 8x + 12$. You get the same result by expanding both products fully: $(2x^3 - x^2 - 11x + 12) - (2x^2 - 3x)$.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is $f(x)g(x)$ alone. You stopped before subtracting $x \\cdot f(x) = 2x^2 - 3x$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "When you subtracted $2x^2 - 3x$, you changed the sign of $2x^2$ but not the sign of $-3x$. The minus applies to both terms, so $-3x$ becomes $+3x$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "When you expanded $(2x - 3)(x^2 + x - 4)$, you wrote $(-3)(-4)$ as $-12$. The product of two negatives is positive, so the constant term is $+12$."
+   }
+  },
+  "id": "orig-expand-and-com-X-f23680",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-X-f23680",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ is the number of years since the"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $3P - (2Q - P)$?",
+  "stimulus": "A marine biologist models two measures of plankton density with the expressions $P = 3a^2b - 2ab^2 + ab$ and $Q = a^2b + 4ab^2 - 5ab$, where $a$ is water temperature and $b$ is depth.",
+  "choices": [
+   "$10a^2b - 16ab^2 - 6ab$",
+   "$4a^2b - 12ab^2 + 12ab$",
+   "$10a^2b - 12ab^2 + 9ab$",
+   "$10a^2b - 16ab^2 + 14ab$"
+  ],
+  "answer": "D",
+  "explanation": "$-(2Q - P) = -2Q + P$, so the expression is $4P - 2Q$. Next, $4P = 12a^2b - 8ab^2 + 4ab$ and $2Q = 2a^2b + 8ab^2 - 10ab$. Subtracting gives $10a^2b - 16ab^2 + 14ab$. Keep $a^2b$ and $ab^2$ separate, because they are not like terms.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted $2Q$ but kept $-10ab$ as $-10ab$ when it should become $+10ab$. You didn't apply the minus sign to the last term of $2Q$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $-(2Q - P)$ as $-2Q - P$, which gives $2P - 2Q$. Subtracting $-P$ adds $P$, so the expression is $4P - 2Q$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You doubled only the first term of $Q$, so you subtracted $2a^2b + 4ab^2 - 5ab$. The 2 multiplies every term of $Q$."
+   }
+  },
+  "id": "orig-expand-and-com-X-f0a281",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-X-f0a281",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $2(x - 3)^2 - (x + 4)(2x - 1)$?",
+  "stimulus": "A meteorologist uses the expression $2(x - 3)^2 - (x + 4)(2x - 1)$ to compare two pressure readings, where $x$ is the number of hours after a front passes.",
+  "choices": [
+   "$-19x + 14$",
+   "$-19x + 22$",
+   "$-5x + 14$",
+   "$-7x + 22$"
+  ],
+  "answer": "B",
+  "explanation": "$(x - 3)^2 = x^2 - 6x + 9$, so $2(x - 3)^2 = 2x^2 - 12x + 18$. Next, $(x + 4)(2x - 1) = 2x^2 - x + 8x - 4 = 2x^2 + 7x - 4$. Subtracting gives $2x^2 - 12x + 18 - 2x^2 - 7x + 4 = -19x + 22$. The $x^2$ terms cancel.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted $2x^2$ and $7x$ but kept $-4$ as $-4$ instead of changing it to $+4$. The minus sign applies to every term of the product."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You changed the sign of $2x^2$ only, so you subtracted $2x^2$ and then added $7x - 4$. That is the leading-minus trap: every term inside the bracket changes sign."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You expanded $(x - 3)^2$ as $x^2 + 9$ and left out the middle term $-6x$. Squaring a binomial gives three terms."
+   }
+  },
+  "id": "orig-expand-and-com-X-ba73ce",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-X-ba73ce",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $f(x) - g(x)(x - 2)$?",
+  "stimulus": "At an excavation site, an archaeologist models soil layers with the functions $f(x) = x^2 - 2x + 3$ and $g(x) = 2x - 1$, where $x$ is depth in meters.",
+  "choices": [
+   "$-x^2 + 3x + 1$",
+   "$-x^2 - 7x + 5$",
+   "$-x^2 + 3x + 5$",
+   "$-x^2 + 2x + 1$"
+  ],
+  "answer": "A",
+  "explanation": "Multiply first: $g(x)(x - 2) = (2x - 1)(x - 2) = 2x^2 - 4x - x + 2 = 2x^2 - 5x + 2$. Then subtract every term: $x^2 - 2x + 3 - 2x^2 + 5x - 2 = -x^2 + 3x + 1$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You changed the sign of $2x^2$ only and added $-5x + 2$ unchanged. Subtracting the product changes the sign of every term, so $-5x$ becomes $+5x$ and $+2$ becomes $-2$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "When you expanded $(2x - 1)(x - 2)$, you wrote $(-1)(-2)$ as $-2$. The constant is $+2$, so subtracting it gives $-2$, not $+2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "When you expanded $(2x - 1)(x - 2)$, you left out the cross term $(-1)(x) = -x$, which gives $2x^2 - 4x + 2$. All four products are needed."
+   }
+  },
+  "id": "orig-expand-and-com-X-6b1383",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-X-6b1383",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $(x^2 - 3x + 2)(x + 1) - x(x^2 - 3x - 4)$?",
+  "stimulus": "A seismologist compares two models of ground displacement using the expression $(x^2 - 3x + 2)(x + 1) - x(x^2 - 3x - 4)$, where $x$ is the time in seconds after a tremor begins.",
+  "choices": [
+   "$x^2 - 5x + 2$",
+   "$-5x^2 - 5x + 2$",
+   "$x^2 + 3x + 2$",
+   "$x^2 + x + 2$"
+  ],
+  "answer": "C",
+  "explanation": "$(x^2 - 3x + 2)(x + 1) = x^3 + x^2 - 3x^2 - 3x + 2x + 2 = x^3 - 2x^2 - x + 2$. Next, $x(x^2 - 3x - 4) = x^3 - 3x^2 - 4x$. Subtracting gives $x^3 - 2x^2 - x + 2 - x^3 + 3x^2 + 4x = x^2 + 3x + 2$. The cubic terms cancel.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You changed the signs of $x^3$ and $-3x^2$ but left $-4x$ as $-4x$. Subtracting $-4x$ gives $+4x$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You changed the sign of $x^3$ only and added $-3x^2 - 4x$ unchanged. The minus sign in front of the second product applies to all three terms."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "When you expanded the first product, you left out $2 \\cdot x = 2x$, which gives $x^3 - 2x^2 - 3x + 2$. Every term in the first bracket multiplies both $x$ and $1$."
+   }
+  },
+  "id": "orig-expand-and-com-X-241eb3",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-X-241eb3",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $m^2 - n(x - y)$?",
+  "stimulus": "A sports scientist defines $m = 2x - y$ and $n = x + 3y$, where $x$ is a sprinter's stride rate and $y$ is ground-contact time.",
+  "choices": [
+   "$3x^2 - 2xy + 4y^2$",
+   "$3x^2 - 2xy - 2y^2$",
+   "$3x^2 - 6xy - 2y^2$",
+   "$3x^2 - 6xy + 4y^2$"
+  ],
+  "answer": "D",
+  "explanation": "$m^2 = (2x - y)^2 = 4x^2 - 4xy + y^2$. Next, $n(x - y) = (x + 3y)(x - y) = x^2 - xy + 3xy - 3y^2 = x^2 + 2xy - 3y^2$. Subtracting gives $4x^2 - 4xy + y^2 - x^2 - 2xy + 3y^2 = 3x^2 - 6xy + 4y^2$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You squared $2x - y$ as $4x^2 + y^2$ and left out the middle term $-4xy$. A squared binomial has a cross term equal to twice the product of its two terms."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You changed the sign of $x^2$ only and added $2xy - 3y^2$ unchanged. The leading minus changes the sign of every term in $n(x - y)$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You changed the signs of $x^2$ and $2xy$ but left $-3y^2$ as it was. Subtracting $-3y^2$ gives $+3y^2$."
+   }
+  },
+  "id": "orig-expand-and-com-X-7f4a8e",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-X-7f4a8e",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\frac{1}{2}(6x^2 - 4x + 8) - \\frac{2}{3}(3x^2 - 9x + 6) + (x - 1)^2$?",
+  "stimulus": "A hydrologist estimates the net change in water stored in a reservoir with the expression $\\frac{1}{2}(6x^2 - 4x + 8) - \\frac{2}{3}(3x^2 - 9x + 6) + (x - 1)^2$, where $x$ is the number of weeks after a storm.",
+  "choices": [
+   "$2x^2 - 10x + 9$",
+   "$2x^2 + 2x + 1$",
+   "$2x^2 + 4x + 1$",
+   "$2x^2 + 5x - 1$"
+  ],
+  "answer": "B",
+  "explanation": "$\\frac{1}{2}(6x^2 - 4x + 8) = 3x^2 - 2x + 4$. Next, $-\\frac{2}{3}(3x^2 - 9x + 6) = -2x^2 + 6x - 4$, and $(x - 1)^2 = x^2 - 2x + 1$. Adding these gives $(3 - 2 + 1)x^2 + (-2 + 6 - 2)x + (4 - 4 + 1) = 2x^2 + 2x + 1$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the minus sign only to $2x^2$, so you added $-6x + 4$ instead of $+6x - 4$. The $-\\frac{2}{3}$ multiplies every term in its bracket, including its sign."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You expanded $(x - 1)^2$ as $x^2 + 1$ and left out the middle term $-2x$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied only the first term of $3x^2 - 9x + 6$ by $\\frac{2}{3}$, so you subtracted $2x^2 - 9x + 6$. The fraction multiplies all three terms, which gives $2x^2 - 6x + 4$."
+   }
+  },
+  "id": "orig-expand-and-com-X-1235f3",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-X-1235f3",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

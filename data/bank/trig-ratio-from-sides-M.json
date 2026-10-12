@@ -247,5 +247,697 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the value of $\\tan L$?",
+  "stimulus": "A paleobotanist traces the outline of a fossilized ginkgo leaf fragment as right triangle $JKL$, where angle $K$ is the right angle. In this triangle, $\\sin J = \\frac{20}{29}$.",
+  "choices": [
+   "$\\frac{20}{29}$",
+   "$\\frac{20}{21}$",
+   "$\\frac{21}{20}$",
+   "$\\frac{21}{29}$"
+  ],
+  "answer": "C",
+  "explanation": "Since $\\sin J = \\frac{\\text{opposite}}{\\text{hypotenuse}}$, the side opposite angle $J$ is $KL = 20k$ and the hypotenuse is $JL = 29k$ for some positive $k$. By the Pythagorean theorem, $JK = \\sqrt{(29k)^2 - (20k)^2} = \\sqrt{441k^2} = 21k$. Now label the sides from angle $L$: the opposite side is $JK = 21k$ and the adjacent side is $KL = 20k$. So $\\tan L = \\frac{21k}{20k} = \\frac{21}{20}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $\\cos L$ (which equals $\\sin J$), not $\\tan L$. You put the hypotenuse in the denominator, which is the cosine ratio, when tangent needs opposite over adjacent."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $\\tan J$. You labeled opposite and adjacent from angle $J$ instead of angle $L$, so you got the tangent of the other acute angle. From $L$, the side of length $21k$ is opposite, not adjacent."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found the missing leg $JK = 21k$ correctly, but you paired it with the hypotenuse $29k$ instead of the other leg. That gives $\\sin L$, not $\\tan L$."
+   }
+  },
+  "id": "orig-trig-ratio-fro-M-b9a8af",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-trig-ratio-fro-M-b9a8af",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "B",
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the figure described, angle $B$ is the angle between the guide line and the water's surface. What is the value of $\\sin B$?",
+  "stimulus": "A marine biologist runs a straight guide line from a buoy at point $B$ on the surface down to a coral marker at point $R$. Point $S$ is on the surface directly above $R$, so triangle $BSR$ has a right angle at $S$. The guide line $BR$ is 25 meters long, the depth $SR$ is 15 meters, and the horizontal distance $BS$ is 20 meters.",
+  "choices": [
+   "$\\frac{3}{5}$",
+   "$\\frac{4}{5}$",
+   "$\\frac{3}{4}$",
+   "$\\frac{5}{3}$"
+  ],
+  "answer": "A",
+  "explanation": "From angle $B$, the side opposite is the depth $SR = 15$ and the hypotenuse is the guide line $BR = 25$. So $\\sin B = \\frac{15}{25} = \\frac{3}{5}$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the horizontal distance, 20, as the opposite side. That side is opposite angle $R$, not angle $B$, so $\\frac{20}{25}$ is $\\cos B$ (and $\\sin R$)."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the depth by the horizontal distance, $\\frac{15}{20}$. That is opposite over adjacent, which gives $\\tan B$, not $\\sin B$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You turned the ratio upside down and put the hypotenuse over the opposite side. Sine is opposite over hypotenuse, so the answer can't be greater than 1."
+   }
+  },
+  "id": "orig-trig-ratio-fro-M-00bd70",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-trig-ratio-fro-M-00bd70",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the ramp rises 1.5 meters, what is the horizontal length of the ramp, in meters?",
+  "stimulus": "A city planner is designing a straight wheelchair ramp for a new transit station. The ramp, the level ground, and a vertical rise form a right triangle. The ramp meets the ground at an angle $\\theta$, where $\\sin \\theta = \\frac{5}{13}$.",
+  "choices": [
+   "$3.6$",
+   "$3.9$",
+   "$12$",
+   "$0.625$"
+  ],
+  "answer": "A",
+  "explanation": "$\\sin \\theta = \\frac{5}{13}$ means the rise is $5k$ and the ramp is $13k$. By the Pythagorean theorem, the horizontal length is $\\sqrt{(13k)^2 - (5k)^2} = 12k$. The rise is 1.5 meters, so $5k = 1.5$ and $k = 0.3$. The horizontal length is $12(0.3) = 3.6$ meters.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the ramp's own length, $13k = 3.9$, which is the hypotenuse. The question asks for the horizontal length along the ground."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You took the numbers in the ratio as the actual side lengths. The 5 and 13 are multiples of $k$, so you have to scale them using the 1.5-meter rise."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You set up the proportion upside down and computed $1.5 \\cdot \\frac{5}{12}$. The run is longer than the rise, so you should multiply 1.5 by $\\frac{12}{5}$."
+   }
+  },
+  "id": "orig-trig-ratio-fro-M-064ab3",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-trig-ratio-fro-M-064ab3",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is equal to $0.8$?",
+  "stimulus": "A public health team is mapping walking routes to a vaccination clinic. A route goes from a bus stop $A$ along a street to a corner $C$, then turns $90^\\circ$ onto a second street to reach the clinic $B$. In right triangle $ABC$, the ratio of the street distance $AC$ to the straight-line distance $AB$ is $0.8$.",
+  "choices": [
+   "$\\cos A$",
+   "$\\sin A$",
+   "$\\cos B$",
+   "$\\tan A$"
+  ],
+  "answer": "A",
+  "explanation": "From angle $A$, side $AC$ is adjacent and $AB$ is the hypotenuse. Adjacent over hypotenuse is cosine, so $\\frac{AC}{AB} = \\cos A = 0.8$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You labeled $AC$ as opposite angle $A$. It touches angle $A$, so it is the adjacent side. $\\sin A$ would be $\\frac{BC}{AB}$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "From angle $B$, side $AC$ is the opposite side, not the adjacent side. So $\\frac{AC}{AB}$ is $\\sin B$, and $\\cos B$ is $\\frac{BC}{AB}$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "Tangent compares the two legs, $\\frac{BC}{AC}$. The ratio given has the hypotenuse $AB$ in the denominator, so it can't be a tangent."
+   }
+  },
+  "id": "orig-trig-ratio-fro-M-00a63d",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-trig-ratio-fro-M-00a63d",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents $\\cos R$?",
+  "stimulus": "A musicologist models the frame of a medieval harp as right triangle $RST$, where angle $S$ is a right angle. Side $RS$, the pillar, has length $p$ centimeters, and side $ST$, the neck, has length $q$ centimeters.",
+  "choices": [
+   "$\\frac{q}{\\sqrt{p^2+q^2}}$",
+   "$\\frac{p}{\\sqrt{p^2+q^2}}$",
+   "$\\frac{q}{p}$",
+   "$\\frac{p}{p+q}$"
+  ],
+  "answer": "B",
+  "explanation": "Start from angle $R$. Side $RS = p$ touches $R$ and is not the hypotenuse, so it is the adjacent side. The hypotenuse $RT$ is opposite the right angle at $S$. By the Pythagorean theorem, $RT = \\sqrt{p^2+q^2}$. Cosine is adjacent over hypotenuse, so $\\cos R = \\frac{p}{\\sqrt{p^2+q^2}}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You labeled the sides from angle $T$ instead of angle $R$, so you used $q$ as the adjacent side. This expression is $\\cos T$, which equals $\\sin R$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the opposite side by the adjacent side. That gives $\\tan R$, not $\\cos R$, and it never uses the hypotenuse."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the hypotenuse to be $p + q$ by adding the legs. The hypotenuse comes from the Pythagorean theorem, $\\sqrt{p^2+q^2}$, not from a sum."
+   }
+  },
+  "id": "orig-trig-ratio-fro-M-7e03da",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-trig-ratio-fro-M-7e03da",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the length, in meters, of side $KL$?",
+  "stimulus": "A hydrologist models a cross section of a riverbank as right triangle $JKL$, where angle $K$ is a right angle. Side $JL$, the sloped bank face, has length $h$ meters, and $\\tan J = \\frac{5}{12}$.",
+  "choices": [
+   "$\\frac{12h}{13}$",
+   "$\\frac{5h}{12}$",
+   "$\\frac{5h}{13}$",
+   "$\\frac{13h}{5}$"
+  ],
+  "answer": "C",
+  "explanation": "From angle $J$, side $KL$ is opposite and $JK$ is adjacent. Since $\\tan J = \\frac{5}{12}$, write $KL = 5k$ and $JK = 12k$. By the Pythagorean theorem, the hypotenuse is $JL = \\sqrt{(5k)^2+(12k)^2} = 13k$. Because $JL = h$, you get $k = \\frac{h}{13}$, so $KL = \\frac{5h}{13}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found side $JK$, the side adjacent to angle $J$, when the question asks for $KL$, the side opposite angle $J$."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You treated the 12 in $\\tan J$ as if it went with the hypotenuse, using the ratio like a sine. In a tangent, 12 is a multiple of the adjacent leg, so you first need the Pythagorean theorem to find that the hypotenuse is $13k$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You set up $\\frac{KL}{h} = \\frac{5}{13}$ correctly but flipped the ratio when you solved, multiplying $h$ by $\\frac{13}{5}$ instead of by $\\frac{5}{13}$. A leg can't be longer than the hypotenuse."
+   }
+  },
+  "id": "orig-trig-ratio-fro-M-927da7",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-trig-ratio-fro-M-927da7",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents $\\tan R$?",
+  "stimulus": "A labor economist sketches a right triangle $PQR$ beneath a line on a wage chart, where angle $Q$ is a right angle. For this triangle, $\\sin P = \\frac{m}{n}$, where $m$ and $n$ are positive constants and $m < n$.",
+  "choices": [
+   "$\\frac{m}{\\sqrt{n^2-m^2}}$",
+   "$\\frac{\\sqrt{n^2-m^2}}{n}$",
+   "$\\frac{\\sqrt{n^2+m^2}}{m}$",
+   "$\\frac{\\sqrt{n^2-m^2}}{m}$"
+  ],
+  "answer": "D",
+  "explanation": "Since $\\sin P = \\frac{m}{n}$, let the side opposite $P$ be $QR = mk$ and the hypotenuse be $PR = nk$. By the Pythagorean theorem, the remaining leg is $PQ = k\\sqrt{n^2-m^2}$. From angle $R$, the opposite side is $PQ$ and the adjacent side is $QR$. So $\\tan R = \\frac{\\sqrt{n^2-m^2}}{m}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You labeled opposite and adjacent from angle $P$ instead of angle $R$. This expression is $\\tan P$, the reciprocal of $\\tan R$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the missing leg correctly but divided it by the hypotenuse. That gives $\\cos P$, which equals $\\sin R$, not $\\tan R$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the squares to find the missing leg. Here $n$ is the hypotenuse, so the missing leg is $\\sqrt{n^2-m^2}$, not $\\sqrt{n^2+m^2}$."
+   }
+  },
+  "id": "orig-trig-ratio-fro-M-0cf798",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-trig-ratio-fro-M-0cf798",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "where __var__ and __var__ are positive constants and",
+    "__var__ and __var__ are positive constants and __var__"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the length, in feet, of $BC$?",
+  "stimulus": "A hydrologist models one bank of a drainage channel as right triangle $ABC$, where angle $C$ is a right angle and the sloped bank $AB$ is $51$ feet long. The value of $\\tan A$ is $\\frac{8}{15}$.",
+  "choices": [
+   "$8$",
+   "$17$",
+   "$24$",
+   "$45$"
+  ],
+  "answer": "C",
+  "explanation": "From angle $A$, $BC$ is the opposite side and $AC$ is the adjacent side, so $BC = 8k$ and $AC = 15k$. By the Pythagorean theorem, the hypotenuse is $\\sqrt{(8k)^2 + (15k)^2} = 17k$. Since $AB = 51$, you get $17k = 51$, so $k = 3$ and $BC = 8(3) = 24$ feet. To work backward instead, check each choice: only $24$ gives $AC = 45$ (from the 8 : 15 ratio) with $24^2 + 45^2 = 51^2$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You read the 8 in $\\frac{8}{15}$ as the actual length of $BC$. A ratio only gives the sides' proportions. You still have to scale by $k = 3$ to match the 51-foot hypotenuse."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You found the hypotenuse of the unscaled 8-15-17 triangle and stopped there. The 17 is the value you set equal to 51 to find $k$, so it isn't the length of $BC$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $AC$, the side adjacent to angle $A$, not $BC$. This happens when you label opposite and adjacent from angle $B$ instead of angle $A$."
+   }
+  },
+  "id": "orig-trig-ratio-fro-M-d553a8",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-trig-ratio-fro-M-d553a8",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "angle __var__ is a right angle and the"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "What is the value of $\\tan R$?",
+  "stimulus": "An agricultural engineer designs a triangular brace for a greenhouse roof in the shape of right triangle $PQR$, where angle $Q$ is a right angle. The value of $\\cos P$ is $\\frac{20}{29}$.",
+  "choices": [
+   "$\\frac{20}{21}$",
+   "$\\frac{21}{20}$",
+   "$\\frac{20}{29}$",
+   "$\\frac{20}{9}$"
+  ],
+  "answer": "A",
+  "explanation": "Because $\\cos P = \\frac{PQ}{PR}$, let $PQ = 20k$ and $PR = 29k$. Then $QR = \\sqrt{(29k)^2 - (20k)^2} = \\sqrt{441k^2} = 21k$. From angle $R$, the opposite side is $PQ$ and the adjacent side is $QR$, so $\\tan R = \\frac{20k}{21k} = \\frac{20}{21}$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You labeled opposite and adjacent from angle $P$, so you found $\\tan P$. From angle $R$, $PQ$ is the opposite side, not the adjacent side."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $\\sin R$, which equals $\\cos P$. Tangent uses opposite over adjacent, not opposite over the hypotenuse."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the missing side by subtracting the lengths, $29 - 20 = 9$, instead of their squares. The Pythagorean theorem gives $\\sqrt{29^2 - 20^2} = 21$."
+   }
+  },
+  "id": "orig-trig-ratio-fro-M-b67052",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-trig-ratio-fro-M-b67052",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length, in centimeters, of $DF$?",
+  "stimulus": "In a phonetics textbook diagram, the slope of the tongue during a vowel is drawn as the hypotenuse $DE$ of right triangle $DEF$, where angle $F$ is a right angle. In the diagram, $EF = 15$ centimeters and $\\sin D = \\frac{5}{13}$.",
+  "choices": [
+   "$6.25$",
+   "$12$",
+   "$36$",
+   "$39$"
+  ],
+  "answer": "C",
+  "explanation": "From angle $D$, $EF$ is the opposite side and $DE$ is the hypotenuse, so $EF = 5k$ and $DE = 13k$. The remaining side is $DF = \\sqrt{(13k)^2 - (5k)^2} = 12k$. Since $EF = 15$, you get $5k = 15$, so $k = 3$ and $DF = 12(3) = 36$ centimeters. As a check, $15^2 + 36^2 = 1521 = 39^2$, and $\\frac{15}{39} = \\frac{5}{13}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the 5 : 12 ratio with $EF$ as the 12 side, getting $\\frac{5}{12} \\times 15$. That labels $EF$ as adjacent to angle $D$, which would be correct from angle $E$, not angle $D$."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You treated the sides of the 5-12-13 triangle as actual lengths. Since $EF = 15$, not 5, every side has to be scaled by $k = 3$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the hypotenuse $DE$ ($13 \\times 3$) instead of the leg $DF$ ($12 \\times 3$)."
+   }
+  },
+  "id": "orig-trig-ratio-fro-M-2d91d4",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-trig-ratio-fro-M-2d91d4",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A public health office is building a straight wheelchair ramp up to the entrance of a vaccination clinic. The ramp is 26 feet long and rises 10 feet. The ramp, the vertical rise, and the level ground beneath it form a right triangle. The ramp meets the ground at an angle of $x^\\circ$.",
+  "choices": [
+   "$\\sin x^\\circ = \\frac{5}{13}$",
+   "$\\sin x^\\circ = \\frac{12}{13}$",
+   "$\\tan x^\\circ = \\frac{12}{5}$",
+   "$\\tan x^\\circ = \\frac{5}{13}$"
+  ],
+  "answer": "A",
+  "explanation": "Label the sides from the angle $x^\\circ$ at the ground. The 10-foot rise is opposite that angle, and the 26-foot ramp is the hypotenuse. So $\\sin x^\\circ = \\frac{10}{26} = \\frac{5}{13}$. By the Pythagorean theorem the run is $\\sqrt{26^2 - 10^2} = 24$ feet, so $\\cos x^\\circ = \\frac{12}{13}$ and $\\tan x^\\circ = \\frac{5}{12}$. Neither of those matches another choice, so only A must be true.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You took the opposite side from the angle at the top of the ramp, so you treated the 24-foot run as opposite. $\\frac{24}{26} = \\frac{12}{13}$ is the sine of the other acute angle, which is the same as $\\cos x^\\circ$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You labeled opposite and adjacent from the angle at the top of the ramp. $\\frac{24}{10} = \\frac{12}{5}$ is the tangent of that angle, not of $x^\\circ$, whose tangent is $\\frac{10}{24} = \\frac{5}{12}$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used the 26-foot ramp as the adjacent side when it is the hypotenuse. You need to find the run of 24 feet first, and then $\\tan x^\\circ = \\frac{10}{24} = \\frac{5}{12}$."
+   }
+  },
+  "id": "orig-trig-ratio-fro-M-549500",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-trig-ratio-fro-M-549500",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A materials lab cuts a ceramic test wedge with a cross-section shaped like right triangle $PQR$. The right angle is at $R$, and $\\tan P = \\frac{8}{15}$. The hypotenuse $PQ$ is 51 millimeters long.",
+  "choices": [
+   "$QR = 24$ millimeters",
+   "$QR = 8$ millimeters",
+   "$QR = 45$ millimeters",
+   "$QR = 3$ millimeters"
+  ],
+  "answer": "A",
+  "explanation": "$\\tan P = \\frac{8}{15}$ gives you a ratio, not the actual lengths, so call the side opposite $P$ (which is $QR$) $8k$ and the adjacent side $PR$ $15k$. The hypotenuse is then $\\sqrt{(8k)^2 + (15k)^2} = 17k$. Since $17k = 51$, $k = 3$, so $QR = 8(3) = 24$ millimeters.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You read the 8 in $\\frac{8}{15}$ as the actual length of $QR$. The ratio only gives you the shape of the triangle. You still have to scale it by $k = 3$ so that the hypotenuse comes out to 51."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "45 millimeters is $PR$, the side adjacent to $P$. You labeled opposite and adjacent from angle $Q$ instead of angle $P$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "3 is the scale factor $k$ that you get from $17k = 51$. You stopped there and didn't multiply it by 8 to get $QR$."
+   }
+  },
+  "id": "orig-trig-ratio-fro-M-133b7e",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-trig-ratio-fro-M-133b7e",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "Paleobotanists find a fossilized tree trunk 20 meters long that is preserved in a straight line and leaning against a cliff face. Its upper end touches the cliff 12 meters above the level ground. The trunk, the cliff, and the ground form a right triangle. The trunk makes an angle of $t^\\circ$ with the ground and an angle of $u^\\circ$ with the cliff.",
+  "choices": [
+   "$\\cos u^\\circ = \\frac{3}{5}$",
+   "$\\cos u^\\circ = \\frac{4}{5}$",
+   "$\\tan u^\\circ = \\frac{3}{4}$",
+   "$\\cos u^\\circ = \\frac{5}{3}$"
+  ],
+  "answer": "A",
+  "explanation": "Label the sides from angle $u^\\circ$, which is at the top of the trunk where it meets the cliff. The 12-meter height along the cliff is adjacent to $u^\\circ$, and the 20-meter trunk is the hypotenuse. So $\\cos u^\\circ = \\frac{12}{20} = \\frac{3}{5}$. The distance along the ground is $\\sqrt{20^2 - 12^2} = 16$ meters, so $\\tan u^\\circ = \\frac{16}{12} = \\frac{4}{3}$. That means only A must be true.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You labeled the sides from the ground angle $t^\\circ$. $\\frac{16}{20} = \\frac{4}{5}$ is $\\cos t^\\circ$, which equals $\\sin u^\\circ$, not $\\cos u^\\circ$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$\\frac{12}{16} = \\frac{3}{4}$ is $\\tan t^\\circ$. From angle $u^\\circ$ the opposite side is the 16-meter ground distance, so $\\tan u^\\circ = \\frac{4}{3}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You picked the right two sides but wrote the ratio upside down, hypotenuse over adjacent. Cosine is adjacent over hypotenuse, and a cosine can never be greater than 1."
+   }
+  },
+  "id": "orig-trig-ratio-fro-M-a32b1f",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-trig-ratio-fro-M-a32b1f",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A straight support cable runs from the top of a vertical bridge tower down to an anchor point on the level deck. The cable makes an angle $\\theta$ with the deck, where $\\sin\\theta = \\frac{12}{13}$. The cable is 65 meters long. How many meters longer is the cable than the tower's height above the deck?",
+  "stimulus": null,
+  "choices": [
+   "$1$",
+   "$5$",
+   "$40$",
+   "$60$"
+  ],
+  "answer": "B",
+  "explanation": "The tower, the deck and the cable make a right triangle, and the cable is the hypotenuse. From angle $\\theta$ at the anchor, the tower's height is the opposite side. Since $\\sin\\theta = \\frac{\\text{opposite}}{\\text{hypotenuse}} = \\frac{12}{13}$, the sides are $12k$ and $13k$. Setting $13k = 65$ gives $k = 5$, so the tower is $12(5) = 60$ meters high. The cable is $65 - 60 = 5$ meters longer than the tower is tall.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You took 12 and 13 from the ratio as the actual side lengths and found $13 - 12 = 1$. A ratio only gives the sides as multiples of $k$. You have to scale them up so the hypotenuse is 65 meters."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You labeled the sides from the wrong angle and treated the tower as the side adjacent to $\\theta$. That made its height $5 \\cdot 5 = 25$ meters and the gap $65 - 25 = 40$. But 25 meters is the horizontal distance along the deck, not the tower's height."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You correctly found that the tower is 60 meters high, then stopped. The question asks how much longer the cable is than the tower, so you still need to subtract: $65 - 60$."
+   }
+  },
+  "id": "orig-trig-ratio-fro-M-19c7db",
+  "skill_cd": "S.C.",
+  "subtype": "trig-ratio-from-sides",
+  "subtype_name": "SOHCAHTOA: read or build a trig ratio",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-trig-ratio-fro-M-19c7db",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

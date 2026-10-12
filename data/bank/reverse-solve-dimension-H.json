@@ -137,17 +137,22 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "review",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-reverse-solve--H-fb6ee2",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "what is the diameter in centimeters of the"
    ],
    "residue": 8
-  },
-  "phrasing": "direct"
+  }
  },
  {
   "stem": "What is the length, in millimeters, of the base of the triangular test zone?",
@@ -246,5 +251,59 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the diameter, in centimeters, of the base of the specimen?",
+  "stimulus": "A materials engineer tests how a new resin cures by casting a specimen in a mold shaped like a right circular cone. The cured specimen has a volume of $96\\pi$ cubic centimeters and a height of $8$ centimeters.",
+  "choices": [
+   "$4\\sqrt{3}$",
+   "$6$",
+   "$12$",
+   "$36$"
+  ],
+  "answer": "C",
+  "explanation": "The volume of a cone is $V = \\frac{1}{3}\\pi r^2 h$. Set it equal to the given volume and substitute the height: $\\frac{1}{3}\\pi r^2 (8) = 96\\pi$. Divide both sides by $\\pi$ to get $\\frac{8}{3}r^2 = 96$. Multiply both sides by $\\frac{3}{8}$ to get $r^2 = 36$. Keep only the positive root, so $r = 6$. The question asks for the diameter, which is twice the radius: $2(6) = 12$ centimeters. In Desmos, you can graph $(1/3)\\pi x^2(8) = 96\\pi$, read off $x = 6$, and then double it.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the $\\frac{1}{3}$ and used the cylinder formula $\\pi r^2 h$. That gives $8r^2 = 96$, so $r^2 = 12$, $r = 2\\sqrt{3}$, and a diameter of $4\\sqrt{3}$. The cone's $\\frac{1}{3}$ has to be undone too, which makes $r^2$ three times larger."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$6$ is the radius. You solved the equation correctly but stopped there, and the question asks for the diameter, which is twice the radius."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$36$ is $r^2$. You stopped before taking the square root, so this value is in square centimeters and isn't a length at all."
+   }
+  },
+  "id": "orig-reverse-solve--H-74c911",
+  "skill_cd": "S.A.",
+  "subtype": "reverse-solve-dimension",
+  "subtype_name": "Given the area or volume, find a dimension",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-solve--H-74c911",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "has a volume of __var__ cubic centimeters and",
+    "of __var__ centimeters what is the diameter in",
+    "__var__ centimeters what is the diameter in centimeters",
+    "centimeters what is the diameter in centimeters of",
+    "what is the diameter in centimeters of the"
+   ],
+   "residue": 5
+  }
  }
 ]

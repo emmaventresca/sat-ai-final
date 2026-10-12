@@ -413,6 +413,51 @@ def make_worksheet(req):
     )
 
 
+# ---------------------------------------------------------------------------
+# Questions for a generated lesson
+#
+# tools/lesson_pool.py is the implementation; this is the transport. The
+# teacher asks for a lesson, the planner names recognitions and bank items,
+# and this writes variants of those items for the lesson itself - same
+# recognition, different numbers, spread a tier either side of the target and
+# over-provisioned so she can pick. Teacher portal only, and it writes to
+# data/lesson_pool/ rather than the bank the students practise from.
+# ---------------------------------------------------------------------------
+
+def lesson_items(req):
+    import importlib
+    pool = importlib.import_module("lesson_pool")
+
+    blocks = req.get("blocks") or []
+    if not isinstance(blocks, list) or not blocks:
+        raise ValueError("no lesson blocks were sent")
+    if len(blocks) > 6:
+        raise ValueError("a lesson with more than six blocks is a course")
+    exam = req.get("exam") if req.get("exam") in ("sat", "act") else "sat"
+
+    # Partial results are worth returning. These calls take minutes each, and
+    # a teacher with three of four blocks filled has a lesson she can run; a
+    # 500 because the fourth recognition has no subtype brief has nothing.
+    out, failed = [], []
+    for block in blocks:
+        subtype = block.get("subtype")
+        try:
+            out.append(pool.build(
+                subtype=subtype,
+                skill_cd=block.get("skill_cd"),
+                difficulty=block.get("difficulty") or "M",
+                n=max(1, min(int(block.get("n") or 8), 16)),
+                exam=exam,
+                item_ids=block.get("item_ids") or [],
+                model=MODEL,
+            ))
+        except Exception as exc:
+            failed.append({"subtype": subtype, "error": str(exc)[:300]})
+    if not out:
+        raise RuntimeError(failed[0]["error"] if failed else "nothing was written")
+    return {"blocks": out, "failed": failed}
+
+
 class Handler(BaseHTTPRequestHandler):
     def _send(self, code, payload):
         body = json.dumps(payload).encode()
@@ -457,6 +502,13 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send(200, identify_screenshot(req))
             except Exception as exc:
                 return self._send(500, {"error": str(exc)[:300]})
+        if path == "/lesson-items":
+            try:
+                n = int(self.headers.get("Content-Length", 0))
+                req = json.loads(self.rfile.read(n) or b"{}")
+                return self._send(200, lesson_items(req))
+            except Exception as exc:
+                return self._send(500, {"error": str(exc)[:400]})
         if path == "/generate":
             try:
                 n = int(self.headers.get("Content-Length", 0))

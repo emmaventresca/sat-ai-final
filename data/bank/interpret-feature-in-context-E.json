@@ -254,5 +254,250 @@
    "residue": 0
   },
   "phrasing": "in_context"
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 900 in this context?",
+  "stimulus": "An agronomist models the yield of a wheat field, $Y$, in kilograms per hectare, when $n$ kilograms of nitrogen fertilizer per hectare are applied: $Y(n) = -(n - 30)^2 + 900$.",
+  "choices": [
+   "The predicted yield is 900 kilograms per hectare when no nitrogen is applied.",
+   "The greatest predicted yield is 900 kilograms per hectare.",
+   "The greatest predicted yield occurs when 900 kilograms of nitrogen are applied.",
+   "The predicted yield rises by 900 kilograms per hectare for each kilogram of nitrogen."
+  ],
+  "answer": "B",
+  "explanation": "The model is in vertex form, $Y(n) = a(n - h)^2 + k$, with $a = -1$, so the parabola opens downward and the vertex is a maximum. The vertex is $(30, 900)$: $n = 30$ is the amount of nitrogen and $900$ is the yield. So 900 kilograms per hectare is the greatest yield the model predicts.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read 900 as the y-intercept. With no nitrogen, $Y(0) = -(0 - 30)^2 + 900 = -900 + 900 = 0$, not 900. The 900 is the vertex's output, not the starting value."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped input and output. 900 is the yield (the output). The nitrogen amount that gives the greatest yield is 30 kilograms, the $h$ in the vertex."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated 900 as a constant rate of change, as if the model were linear. In vertex form, $k$ is the height of the vertex, not an amount added per kilogram."
+   }
+  },
+  "id": "orig-interpret-feat-E-339c50",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-E-339c50",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 2,400 in this context?",
+  "stimulus": "The number of active flu cases in a county $t$ weeks after a vaccination campaign began is modeled by $C(t) = 2{,}400(0.85)^t$.",
+  "choices": [
+   "There were 2,400 active flu cases one week after the campaign began.",
+   "The number of active flu cases decreased by 2,400 each week.",
+   "The number of active flu cases decreased by 15% each week.",
+   "There were 2,400 active flu cases when the campaign began."
+  ],
+  "answer": "D",
+  "explanation": "In $y = a \\cdot b^t$, $a$ is the value when $t = 0$. Here, $C(0) = 2{,}400(0.85)^0 = 2{,}400$, and $t = 0$ means 0 weeks after the campaign began. So there were 2,400 active cases when the campaign began.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You plugged in $t = 1$ instead of $t = 0$. One week in, the model gives $2{,}400(0.85) = 2{,}040$ cases. The 2,400 is the count at the start."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the model as linear, with 2,400 subtracted each week. The cases are multiplied by 0.85 each week, so the weekly drop gets smaller over time and is never a fixed 2,400."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "This sentence is true, but it describes the base 0.85, not 2,400. The question asks about the starting value."
+   }
+  },
+  "id": "orig-interpret-feat-E-dc9ab8",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-E-dc9ab8",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the best interpretation of 50 in this context?",
+  "stimulus": "A patient's antibody level, in units per milliliter, $d$ days after a booster shot is modeled by $A(d) = -d^2 + 28d + 50$, for $0 \\le d \\le 28$.",
+  "choices": [
+   "The patient's antibody level was 50 units per milliliter when the booster was given.",
+   "The patient's highest antibody level after the booster was 50 units per milliliter.",
+   "The patient's antibody level rose by 50 units per milliliter each day.",
+   "The patient's antibody level dropped to 0 units per milliliter after 50 days."
+  ],
+  "answer": "A",
+  "explanation": "In standard form, the constant term is the y-intercept: $A(0) = 0 + 0 + 50 = 50$. An input of $d = 0$ means 0 days after the booster, which is the moment it was given. So the antibody level at that moment was 50 units per milliliter.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You took the starting value to be the maximum. The level keeps rising after day 0 and peaks at $d = 14$, where $A(14) = 246$ units per milliliter."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated the constant as a rate added each day. A quadratic has no constant rate of change, and the constant term is the output at $d = 0$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped input and output and read 50 as a number of days when the output is 0. In this model, 50 is the output at $d = 0$, not an input."
+   }
+  },
+  "id": "orig-interpret-feat-E-8b9799",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-E-8b9799",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of the point $(20, 0)$ in this context?",
+  "stimulus": "A meteorite strikes the Moon and throws up a dust particle. The particle's height above the surface, in meters, $t$ seconds after the impact is modeled by $h(t) = -0.8t^2 + 16t$. The graph of $h$ passes through the point $(20, 0)$.",
+  "choices": [
+   "The particle reaches its greatest height 20 seconds after the impact.",
+   "The particle's greatest height above the surface is 20 meters.",
+   "The particle lands back on the surface 20 seconds after the impact.",
+   "The particle is 20 meters above the surface at the moment of impact."
+  ],
+  "answer": "C",
+  "explanation": "The point $(20, 0)$ is an x-intercept, so the output is 0 when the input is 20. The output is height and the input is time. So the particle is 0 meters above the surface, which means it has landed, 20 seconds after the impact.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the meaning of the vertex when the question asks about an intercept. The greatest height comes halfway between the roots 0 and 20, at $t = 10$ seconds."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You read 20 as a height, but 20 is the time. You also treated the point as the vertex. The greatest height is actually $h(10) = 80$ meters."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped input and output, as if the point meant $t = 0$ and $h = 20$. At impact, $h(0) = 0$."
+   }
+  },
+  "id": "orig-interpret-feat-E-3aa029",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-E-3aa029",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is the best interpretation of the point __var__",
+    "the best interpretation of the point __var__ in",
+    "best interpretation of the point __var__ in this",
+    "interpretation of the point __var__ in this context"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 1.04 in this context?",
+  "stimulus": "A city planning office models the population of a growing suburb $t$ years after 2020 with $P(t) = 85{,}000(1.04)^t$.",
+  "choices": [
+   "The suburb's population increases by 1.04 residents each year.",
+   "The suburb's population increases by 4% each year.",
+   "The suburb's population increases by 104% each year.",
+   "The suburb's population increases by 3,400 residents each year."
+  ],
+  "answer": "B",
+  "explanation": "In $y = a \\cdot b^t$, $b$ is the number you multiply by each year. Multiplying by 1.04 keeps 100% of the population and adds 4%. So the population grows by 4% each year.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the base as an amount added each year. In an exponential model, the base is a multiplier, so it describes a percent change, not a number of people."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You turned 1.04 into 104% and called that the increase. Multiplying by 1.04 makes the new population 104% of the old one, which is an increase of only 4%."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You found 4% of 85,000 and assumed the same amount is added every year, which would make the model linear. The 4% applies to a larger population each year, so the yearly gain keeps growing."
+   }
+  },
+  "id": "orig-interpret-feat-E-06401a",
+  "skill_cd": "P.C.",
+  "subtype": "interpret-feature-in-context",
+  "subtype_name": "What does this number or point mean in the story?",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-feat-E-06401a",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

@@ -61,12 +61,67 @@ SMALL = {"and", "or", "of", "the", "a", "an", "to", "in", "on", "with", "vs"}
 SECTION_FILES = {"english": "english", "reading": "reading", "science": "science"}
 
 
-def section_from(source):
+# Which reporting categories belong to which section. The filename is the
+# fast path; this is what decides when the filename does not say.
+SECTION_SKILLS = {
+    "english": {"Usage", "Punctuation", "Sentence Structure & Formation",
+                "Production of Writing", "Knowledge of Language"},
+    "reading": {"Key Ideas & Details", "Craft & Structure",
+                "Integration of Knowledge & Ideas"},
+    "science": {"Interpretation of Data", "Scientific Investigation",
+                "Evaluation of Models & Results"},
+}
+
+
+def section_from(source, skill=None, has_passage=False):
+    """Which section a question belongs to.
+
+    The filename is checked first because it is right nearly always and
+    costs nothing. What matters is the FALLBACK: this used to return "math"
+    for anything it did not recognise, and a pack whose name carried no
+    marker - `questions_mirrors_passage.json` - put 69 Reading questions into
+    the maths section. Nothing failed; they simply appeared in the wrong
+    world, and the serving code downstream read the section off whichever of
+    them happened to sort first.
+
+    So the skill decides when the name cannot, and a question with a passage
+    is never maths: the maths section has no passages.
+    """
     name = os.path.basename(source).lower()
     for marker, section in SECTION_FILES.items():
         if marker in name:
             return section
+    for section, skills in SECTION_SKILLS.items():
+        if skill in skills:
+            return section
+    if has_passage:
+        # A SHARED passage - several questions hanging off one id - is never
+        # maths. Note this tests `passage_id` only: a maths word problem has
+        # a `stimulus` too (the scenario it sets up), and treating that as a
+        # passage moved 156 maths questions into Reading on the first attempt.
+        return "reading"
     return "math"
+
+
+def mixed_sections(items):
+    """Subtypes whose questions do not all agree on a section.
+
+    Worth reporting rather than fixing silently: a subtype split across two
+    sections is usually an authoring slip upstream, and the one time it was
+    not reported the serving code read the section off whichever question
+    happened to sort first and quietly turned a feature off.
+    """
+    by = {}
+    for it in items:
+        if it.get("subtype"):
+            by.setdefault(it["subtype"], Counter())[it.get("section")] += 1
+    out = []
+    for slug, counts in by.items():
+        if len(counts) > 1:
+            major = counts.most_common(1)[0][0]
+            odd = sum(n for sec, n in counts.items() if sec != major)
+            out.append((slug, dict(counts), major, odd))
+    return sorted(out, key=lambda r: -r[3])
 
 
 def readable(slug):
@@ -164,7 +219,14 @@ def passages_in(blob):
         elif isinstance(value, dict):
             out[pid] = {"text": value.get("text") or "",
                         "charts": value.get("charts") or [],
-                        "title": value.get("title")}
+                        "title": value.get("title"),
+                        # One of: literary narrative, social science,
+                        # humanities, natural science. A real dimension of the
+                        # Reading section that topic alone cannot show - a
+                        # student can be fine on Craft & Structure in a science
+                        # passage and lost in prose fiction - so it is carried
+                        # through rather than derived later from the text.
+                        "passage_type": value.get("passage_type")}
     return out
 
 
@@ -335,6 +397,10 @@ def convert(q, source, passages=None):
             mark_underline(passage_text, q.get("underlined"))) or None,
         "explanation": q.get("explanation", ""),
         "passage_id": q.get("passage_id"),
+        # The Reading section's fifth dimension: which KIND of passage this
+        # is. Carried through so a student who is fine on Craft & Structure
+        # in a science passage and lost in prose fiction can see that.
+        "passage_type": linked.get("passage_type") or q.get("passage_type"),
         # Passage-section questions have no arithmetic check, unlike maths'
         # `verify`, so how they were checked is worth keeping rather than
         # flattening into one undifferentiated "verified".
@@ -421,7 +487,8 @@ def main():
     for it in items:
         meta = meta_of.get(it["subtype"], {})
         named = domains.get(it["subtype"])
-        it["section"] = section_from(it["source"])
+        it["section"] = section_from(it["source"], it.get("skill"),
+                                     bool(it.get("passage_id")))
         # The passage sections get their domain from their own taxonomy;
         # maths from the blueprint. Falling back to the section name is what
         # produced a single twenty-seven-stop leg.
@@ -452,6 +519,9 @@ def main():
     for it in items:
         e = by_sub.setdefault(it["subtype"], {
             "name": it.get("subtype_name") or it["subtype"],
+            # Overwritten below with the majority. Taking the first
+            # question's section is how a subtype with two stray maths items
+            # became a maths subtype.
             "section": it["section"], "skill": it["skill"],
             "count": 0, "tiers": Counter(),
             "per_test": it.get("per_test"),
@@ -459,10 +529,14 @@ def main():
         })
         e["count"] += 1
         e["tiers"][it["difficulty"]] += 1
+        e.setdefault("_sections", Counter())[it["section"]] += 1
         if it.get("tests") and not e.get("tests"):
             e["tests"] = it["tests"]
     for e in by_sub.values():
         e["tiers"] = dict(e["tiers"])
+        # The majority, not the first. One stray question should not move a
+        # whole recognition into the wrong section.
+        e["section"] = e.pop("_sections").most_common(1)[0][0]
     json.dump({"subtypes": by_sub, "phrasings": dict(phrasings)},
               open(os.path.join(OUT, "taxonomy.json"), "w"), indent=1)
 
@@ -486,6 +560,15 @@ def main():
             print(f"    gone {i}")
     print(f"  tiers    {dict(tiers)}")
     print(f"  sections {dict(sections)}")
+    odd = mixed_sections(items)
+    if odd:
+        stray = sum(r[3] for r in odd)
+        print(f"\n  {len(odd)} subtypes span more than one section "
+              f"({stray} questions on the minority side).")
+        print("  The taxonomy takes the majority; these are worth a look "
+              "upstream:")
+        for slug, counts, major, n in odd[:8]:
+            print(f"    {slug:34s} {counts}  -> {n} not '{major}'")
     print(f"  phrasing {dict(phrasings.most_common(6))}")
     if problems:
         print(f"\n{len(problems)} skipped:")

@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-direct-solve-q-X-4f6efc",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,11 +82,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-direct-solve-q-X-53f883",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "__var__ which of the following is a solution",
     "which of the following is a solution to",
@@ -92,5 +102,393 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the positive solution to the given equation?",
+  "stimulus": "A marine biologist tracking the drift of a tagged kelp raft reduced her model to the equation below.\n\n$(x-3)^2 = 2(x+1)(x-2) - 7$",
+  "choices": [
+   "$-2+\\sqrt{6}$",
+   "$-2+2\\sqrt{6}$",
+   "$-2+\\sqrt{22}$",
+   "$2+2\\sqrt{6}$"
+  ],
+  "answer": "B",
+  "explanation": "Expand both sides. The left side is $x^2-6x+9$. The right side is $2(x^2-x-2)-7 = 2x^2-2x-11$. Move everything to one side to get $x^2+4x-20=0$. This doesn't factor, so use the quadratic formula: $x = \\frac{-4 \\pm \\sqrt{16+80}}{2} = \\frac{-4 \\pm 4\\sqrt{6}}{2} = -2 \\pm 2\\sqrt{6}$. Since $2\\sqrt{6} \\approx 4.9$, the positive solution is $-2+2\\sqrt{6}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You got $\\frac{-4 \\pm \\sqrt{96}}{2}$ but simplified $\\sqrt{96}$ to $2\\sqrt{6}$ instead of $4\\sqrt{6}$, which halves the radical part of the answer."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "When you expanded $2(x+1)(x-2)$ you doubled $x^2$ and $-x$ but not the $-2$, so you wrote $2x^2-2x-2$. That gives $x^2+4x-18=0$, which is a different equation."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $+b$ instead of $-b$ in the quadratic formula, which flips the sign of the rational part. These are the roots of $x^2-4x-20=0$, which has the sign on $x$ reversed."
+   }
+  },
+  "id": "orig-direct-solve-q-X-0f37b8",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-X-0f37b8",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the sum of the solutions to the given equation?",
+  "stimulus": "A public health analyst estimating vaccination-clinic wait times arrived at the equation below.\n\n$3(2x-5)^2 - 7 = 41$",
+  "choices": [
+   "$-5$",
+   "$\\frac{9}{4}$",
+   "$\\frac{9}{2}$",
+   "$5$"
+  ],
+  "answer": "D",
+  "explanation": "First isolate the squared term: $3(2x-5)^2 = 48$, so $(2x-5)^2 = 16$. Taking both square roots gives $2x-5 = 4$ or $2x-5 = -4$, so $x = \\frac{9}{2}$ or $x = \\frac{1}{2}$. Their sum is $5$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You expanded to $12x^2-60x+27=0$ and used $\\frac{b}{a}$ for the sum instead of $-\\frac{b}{a}$, so the sign came out wrong."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the product of the solutions, $\\frac{9}{2}\\cdot\\frac{1}{2}$ (or $\\frac{c}{a} = \\frac{27}{12}$), when the question asks for the sum."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You took only the positive square root, $2x-5=4$, and lost the solution from $2x-5=-4$. A sum needs both solutions."
+   }
+  },
+  "id": "orig-direct-solve-q-X-b89cd5",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-X-b89cd5",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive solution to the given equation?",
+  "stimulus": "A cartographer correcting the scale of a coastal survey map wrote the equation below.\n\n$\\frac{x(x-1)}{2} + \\frac{x}{6} = \\frac{5}{6}$",
+  "choices": [
+   "$-1$",
+   "$1$",
+   "$\\frac{5}{3}$",
+   "$5$"
+  ],
+  "answer": "C",
+  "explanation": "Multiply every term by 6 to clear the fractions: $3x(x-1) + x = 5$, so $3x^2-3x+x-5=0$, which is $3x^2-2x-5=0$. This factors as $(3x-5)(x+1)=0$, so $x=\\frac{5}{3}$ or $x=-1$. The positive solution is $\\frac{5}{3}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "$-1$ does solve the equation, but it is the negative solution. The question asks for the positive one."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored with the signs swapped, as $(3x+5)(x-1)$. That is the factorization of $3x^2+2x-5$, a nearby equation with the $x$ term's sign flipped."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored correctly but solved $3x-5=0$ as $x=5$, forgetting to divide by the coefficient 3."
+   }
+  },
+  "id": "orig-direct-solve-q-X-b569bd",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "fail",
+  "verification": {
+   "id": "orig-direct-solve-q-X-b569bd",
+   "structure": [
+    "correct answer is far longer than every distractor"
+   ],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What are the solutions to the given equation?",
+  "stimulus": "An astronomer fitting the brightness curve of a variable star simplified her model to the equation below.\n\n$(2x+1)^2 = 3(x+2)(x-1) + 10$",
+  "choices": [
+   "$\\frac{1 \\pm \\sqrt{13}}{2}$",
+   "$-1 \\pm \\sqrt{13}$",
+   "$\\frac{-1 \\pm \\sqrt{13}}{2}$",
+   "$\\frac{3 \\pm \\sqrt{21}}{2}$"
+  ],
+  "answer": "C",
+  "explanation": "Expand the left side: $4x^2+4x+1$. Expand the right side: $3(x^2+x-2)+10 = 3x^2+3x+4$. Subtracting gives $x^2+x-3=0$. By the quadratic formula, $x = \\frac{-1 \\pm \\sqrt{1+12}}{2} = \\frac{-1 \\pm \\sqrt{13}}{2}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $+b$ instead of $-b$ in the quadratic formula. These are the roots of $x^2-x-3=0$, which has the sign on $x$ flipped."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You got $-1 \\pm \\sqrt{13}$ on top but forgot to divide the whole numerator by $2a = 2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You expanded $(2x+1)^2$ as $4x^2+1$ and dropped the $4x$ middle term. That leads to $x^2-3x-3=0$ instead of the correct equation."
+   }
+  },
+  "id": "orig-direct-solve-q-X-f95772",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-X-f95772",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive solution to the given equation?",
+  "stimulus": "A paleobotanist estimating the original width of a fossil fern frond arrived at the equation below.\n\n$x(x - 2\\sqrt{3}) = 9$",
+  "choices": [
+   "$-\\sqrt{3}$",
+   "$\\sqrt{3}$",
+   "$3\\sqrt{3}$",
+   "$6\\sqrt{3}$"
+  ],
+  "answer": "C",
+  "explanation": "Distribute and rearrange: $x^2 - 2\\sqrt{3}x - 9 = 0$. The discriminant is $(2\\sqrt{3})^2 + 36 = 48$, and $\\sqrt{48} = 4\\sqrt{3}$. So $x = \\frac{2\\sqrt{3} \\pm 4\\sqrt{3}}{2}$, which gives $3\\sqrt{3}$ or $-\\sqrt{3}$. The positive solution is $3\\sqrt{3}$. Check: $3\\sqrt{3}\\cdot\\sqrt{3} = 9$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "$-\\sqrt{3}$ does solve the equation, but it is the negative solution, not the positive one asked for."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $+b$ instead of $-b$, which solves $x^2 + 2\\sqrt{3}x - 9 = 0$. That equation's positive root is $\\sqrt{3}$, but it isn't the given equation."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $2\\sqrt{3}$ and $4\\sqrt{3}$ correctly but forgot to divide by $2a = 2$."
+   }
+  },
+  "id": "orig-direct-solve-q-X-a5dd71",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-X-a5dd71",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What are the solutions to the given equation?",
+  "stimulus": "An ornithologist comparing the wing loading of two populations of terns set up the equation below.\n\n$\\frac{2x^2 - 7}{3} = \\frac{x^2 + 9}{5} + 1$",
+  "choices": [
+   "$-11$ and $11$",
+   "$-3$ and $3$",
+   "$\\sqrt{11}$ only",
+   "$-\\sqrt{11}$ and $\\sqrt{11}$"
+  ],
+  "answer": "D",
+  "explanation": "Multiply every term by 15, including the $1$: $5(2x^2-7) = 3(x^2+9) + 15$. That is $10x^2 - 35 = 3x^2 + 42$, so $7x^2 = 77$ and $x^2 = 11$. Taking both square roots gives $x = \\pm\\sqrt{11}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $x^2 = 11$ and stopped, giving the value of $x^2$ instead of taking its square root to find $x$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "When you cleared fractions you multiplied the fractions by 15 but left the $+1$ alone. That gives $7x^2 = 63$ instead of $7x^2 = 77$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You took only the positive square root of $x^2 = 11$. Because $(-\\sqrt{11})^2 = 11$ too, the negative root also solves the equation."
+   }
+  },
+  "id": "orig-direct-solve-q-X-c72614",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "fail",
+  "verification": {
+   "id": "orig-direct-solve-q-X-c72614",
+   "structure": [
+    "correct answer is far longer than every distractor"
+   ],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the sum of the solutions to the given equation?",
+  "stimulus": "A materials scientist modeling crack growth in a ceramic plate obtained the equation below.\n\n$(x+4)(x-4) = 6(x+4)$",
+  "choices": [
+   "$-40$",
+   "$-6$",
+   "$6$",
+   "$10$"
+  ],
+  "answer": "C",
+  "explanation": "Don't divide by $x+4$, because that throws away the solution where $x+4=0$. Instead, expand: $x^2 - 16 = 6x + 24$, so $x^2 - 6x - 40 = 0$. This factors as $(x-10)(x+4) = 0$, so $x = 10$ or $x = -4$. The sum is $6$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$-40$ is the product of the solutions, $10 \\cdot (-4)$, not their sum."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the sum from $x^2-6x-40=0$ as $b$ instead of $-\\frac{b}{a}$, so the sign is wrong."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You divided both sides by $x+4$, which lost the solution $x=-4$. That left only $x=10$, so you reported it as the sum."
+   }
+  },
+  "id": "orig-direct-solve-q-X-d62d98",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-X-d62d98",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive solution to the given equation?",
+  "stimulus": "An immunologist modeling how antibody concentration changes after a booster dose reduced the model to the equation below.\n\n$(x-3)^2 - 2(x-3) = 15$",
+  "choices": [
+   "$2$",
+   "$5$",
+   "$6$",
+   "$8$"
+  ],
+  "answer": "D",
+  "explanation": "Let $u = x-3$. Then $u^2 - 2u - 15 = 0$, which factors as $(u-5)(u+3) = 0$, so $u = 5$ or $u = -3$. Convert back with $x = u + 3$ to get $x = 8$ or $x = 0$. Since $0$ isn't positive, the positive solution is $8$. Check: $5^2 - 2(5) = 15$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $u = 5$ but converted back as $x = u - 3$ instead of $x = u + 3$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "$5$ is the value of $u = x-3$. You stopped before converting back to $x$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored with the signs swapped, as $(u+5)(u-3)$, and took $u = 3$. That solves $u^2 + 2u - 15 = 0$, the nearby equation with the middle sign flipped, and gives $x = 6$."
+   }
+  },
+  "id": "orig-direct-solve-q-X-f8bedd",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-X-f8bedd",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

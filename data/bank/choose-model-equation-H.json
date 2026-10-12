@@ -514,5 +514,528 @@
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which of the following equations best models the data in the scatterplot?",
+  "stimulus": "A civil engineering team placed increasing loads on a test beam made from a recycled composite and measured how far the center of the beam sagged under each load. The scatterplot shows the results, where $x$ is the load, in kilonewtons, and $y$ is the deflection, in millimeters.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Beam Deflection Under Load",
+   "x_label": "Load (kilonewtons)",
+   "y_label": "Deflection (millimeters)",
+   "points": [
+    [
+     2,
+     6.6
+    ],
+    [
+     3,
+     8.7
+    ],
+    [
+     4,
+     9.8
+    ],
+    [
+     5,
+     11.3
+    ],
+    [
+     6,
+     13.4
+    ],
+    [
+     7,
+     14.2
+    ],
+    [
+     8,
+     16.3
+    ],
+    [
+     9,
+     17.4
+    ],
+    [
+     10,
+     19.2
+    ],
+    [
+     11,
+     20.2
+    ],
+    [
+     12,
+     22.3
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 12,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 24,
+   "y_step": 2,
+   "alt": "Scatterplot of deflection in millimeters against load in kilonewtons for 11 loads from 2 to 12 kilonewtons, with the points rising from left to right in a roughly straight pattern."
+  },
+  "choices": [
+   "$y = \\frac{2}{3}x + 4$",
+   "$y = \\frac{3}{2}x + 4$",
+   "$y = \\frac{3}{2}x + 7$",
+   "$y = 4x + \\frac{3}{2}$"
+  ],
+  "answer": "B",
+  "explanation": "The points follow a straight line that rises, so you want a line with a positive slope. Following the trend left to the y-axis, it meets the axis at about $y = 4$. From $x = 4$ to $x = 12$ the deflection rises from about 10 to about 22, so the slope is $\\frac{22 - 10}{12 - 4} = \\frac{12}{8} = \\frac{3}{2}$. As a check, $y = \\frac{3}{2}x + 4$ gives $y = 13$ at $x = 6$, which runs through the middle of the cluster there.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You worked out the slope as run over rise instead of rise over run. A slope of $\\frac{2}{3}$ predicts only 12 mm at 12 kN, but the data reach about 22 mm."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the lowest plotted point, about 7 mm, as the y-intercept. That point is at $x = 2$, not $x = 0$, so this line sits about 3 mm above every point."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You swapped the slope and the intercept. A slope of 4 is far too steep: it predicts about 50 mm at 12 kN, more than double what was measured."
+   }
+  },
+  "id": "orig-choose-model-e-H-fdbebb",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-H-fdbebb",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations best models the data in the scatterplot?",
+  "stimulus": "A folklore researcher tracked one regional ghost story through archived field recordings. For each decade after the story was first documented, she counted the villages where a version of it was still being told. In the scatterplot, $x$ is the number of decades after first documentation and $y$ is the number of villages.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Villages Where the Story Was Still Told",
+   "x_label": "Decades after first documentation",
+   "y_label": "Number of villages",
+   "points": [
+    [
+     0,
+     118
+    ],
+    [
+     1,
+     92
+    ],
+    [
+     2,
+     66
+    ],
+    [
+     3,
+     52
+    ],
+    [
+     4,
+     37
+    ],
+    [
+     5,
+     29
+    ],
+    [
+     6,
+     20
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 6,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 140,
+   "y_step": 20,
+   "alt": "Scatterplot of the number of villages against decades after first documentation, from 0 to 6 decades. The points fall from left to right, steeply at first and then more gradually."
+  },
+  "choices": [
+   "$y = 120(1.25)^x$",
+   "$y = 120(0.25)^x$",
+   "$y = 90(0.75)^x$",
+   "$y = 120(0.75)^x$"
+  ],
+  "answer": "D",
+  "explanation": "The points fall by a smaller amount each decade, which is exponential decay, so the base must be between 0 and 1. At $x = 0$ the data start near 120, so $a = 120$. From one decade to the next the count keeps about three quarters of its value (for example, about 120 to about 90), so the base is 0.75. Check: $120(0.75)^2 = 67.5$, which is close to the point at $x = 2$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "A base greater than 1 means growth. This curve rises to about 366 by $x = 5$, but the data fall."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the 25% that is lost each decade as the base instead of the 75% that remains. This model drops to 30 villages after a single decade, far below the point near 92."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You took the count at $x = 1$ (about 90) as the starting value. The value in front of the base is the count at $x = 0$, which is about 120."
+   }
+  },
+  "id": "orig-choose-model-e-H-e56ef2",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-H-e56ef2",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations best models the data in the scatterplot?",
+  "stimulus": "A cartographer measured the ground height along a straight survey line that crosses a ridge, to use in drawing contour lines. In the scatterplot, $x$ is the horizontal distance from the start of the line, in hundreds of meters, and $y$ is the height above a fixed reference mark, in meters.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Height Along a Survey Line Crossing a Ridge",
+   "x_label": "Horizontal distance (hundreds of meters)",
+   "y_label": "Height above reference mark (meters)",
+   "points": [
+    [
+     0,
+     24
+    ],
+    [
+     1,
+     70
+    ],
+    [
+     2,
+     124
+    ],
+    [
+     3,
+     150
+    ],
+    [
+     4,
+     184
+    ],
+    [
+     5,
+     192
+    ],
+    [
+     6,
+     204
+    ],
+    [
+     7,
+     190
+    ],
+    [
+     8,
+     183
+    ],
+    [
+     9,
+     151
+    ],
+    [
+     10,
+     124
+    ],
+    [
+     11,
+     72
+    ],
+    [
+     12,
+     18
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 12,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 220,
+   "y_step": 20,
+   "alt": "Scatterplot of height in meters against horizontal distance in hundreds of meters, from 0 to 12. The points rise, level off near the middle, then fall in a roughly symmetric arch."
+  },
+  "choices": [
+   "$y = -5x^2 + 60x + 20$",
+   "$y = 5x^2 - 60x + 20$",
+   "$y = -5x^2 - 60x + 20$",
+   "$y = -5x^2 + 60x + 200$"
+  ],
+  "answer": "A",
+  "explanation": "The data rise and then fall, so the model is a parabola that opens downward, which needs a negative leading coefficient. The highest point is near $x = 6$, and for $y = -5x^2 + 60x + 20$ the vertex is at $x = -\\frac{60}{2(-5)} = 6$. The constant term is the height at $x = 0$, and the first point is about 20 m. Check: at $x = 6$ the model gives $-180 + 360 + 20 = 200$, which matches the peak.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The positive leading coefficient makes this parabola open upward. It has a lowest point at $x = 6$, but the ridge has its highest point there."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "It opens downward and has the right intercept, but $-\\frac{b}{2a} = -\\frac{-60}{-10} = -6$ puts the vertex at $x = -6$. This curve only falls for $x > 0$, and the data rise first."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used the peak height, about 200 m, as the constant term. The constant term is the height at $x = 0$, where the data start near 20 m. This curve would reach 380 m at $x = 6$."
+   }
+  },
+  "id": "orig-choose-model-e-H-b74ba8",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-H-b74ba8",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations best models the data in the scatterplot?",
+  "stimulus": "Ornithologists counted red-winged blackbird nests in survey plots set at different distances from the edge of a marsh. In the scatterplot, $x$ is the distance of a plot from the marsh edge, in meters, and $y$ is the number of nests found in that plot.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Blackbird Nests by Distance from Marsh Edge",
+   "x_label": "Distance from marsh edge (meters)",
+   "y_label": "Number of nests",
+   "points": [
+    [
+     20,
+     41
+    ],
+    [
+     25,
+     36
+    ],
+    [
+     30,
+     36
+    ],
+    [
+     35,
+     31
+    ],
+    [
+     40,
+     31
+    ],
+    [
+     45,
+     26
+    ],
+    [
+     50,
+     26
+    ],
+    [
+     55,
+     21
+    ],
+    [
+     60,
+     21
+    ],
+    [
+     65,
+     18
+    ],
+    [
+     70,
+     14
+    ],
+    [
+     75,
+     13
+    ],
+    [
+     80,
+     9
+    ]
+   ],
+   "x_min": 20,
+   "x_max": 80,
+   "x_step": 10,
+   "y_min": 0,
+   "y_max": 50,
+   "y_step": 5,
+   "alt": "Scatterplot of number of nests against distance from the marsh edge, from 20 to 80 meters. The horizontal axis starts at 20. The points fall from left to right in a roughly straight pattern."
+  },
+  "choices": [
+   "$y = -0.5x + 40$",
+   "$y = 0.5x + 50$",
+   "$y = -0.5x + 50$",
+   "$y = -2x + 50$"
+  ],
+  "answer": "C",
+  "explanation": "The points fall in a straight pattern, so the slope is negative. From $x = 20$ to $x = 80$ the count drops from about 40 to about 10, so the slope is $\\frac{10 - 40}{80 - 20} = -0.5$. The horizontal axis starts at 20, not 0, so you have to extend the line back to the y-axis: $y = 40 + 0.5(20) = 50$ at $x = 0$. That gives $y = -0.5x + 50$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the value at the left edge of the graph, about 40, as the y-intercept. The horizontal axis starts at $x = 20$, so that value is not at $x = 0$. This line sits 10 nests below every point."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The intercept is right but the slope has the wrong sign. This line rises, while the nest counts fall as the distance increases."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the change in distance by the change in nests, which inverts the slope. A slope of $-2$ predicts 10 nests at 20 m and $-110$ at 80 m."
+   }
+  },
+  "id": "orig-choose-model-e-H-5a4ed3",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-H-5a4ed3",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations best models the data in the scatterplot?",
+  "stimulus": "A meteorology student measured the most water vapor that a sealed chamber of air could hold at several temperatures. In the scatterplot, $x$ is the air temperature, in degrees Celsius, and $y$ is the vapor pressure at saturation, in hectopascals.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Saturation Vapor Pressure by Temperature",
+   "x_label": "Air temperature (degrees Celsius)",
+   "y_label": "Saturation vapor pressure (hectopascals)",
+   "points": [
+    [
+     0,
+     5
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     10,
+     9
+    ],
+    [
+     15,
+     14
+    ],
+    [
+     20,
+     20
+    ],
+    [
+     25,
+     26
+    ],
+    [
+     30,
+     39
+    ],
+    [
+     35,
+     52
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 35,
+   "x_step": 5,
+   "y_min": 0,
+   "y_max": 60,
+   "y_step": 5,
+   "alt": "Scatterplot of saturation vapor pressure in hectopascals against air temperature from 0 to 35 degrees Celsius. The points rise from left to right, slowly at first and then more and more steeply."
+  },
+  "choices": [
+   "$y = 10(1.07)^x$",
+   "$y = 5(1.07)^x$",
+   "$y = 5(0.93)^x$",
+   "$y = 5(2)^x$"
+  ],
+  "answer": "B",
+  "explanation": "The points climb more steeply as the temperature rises, which is exponential growth, so the base must be greater than 1. At $x = 0$ the data start at about 5, so $a = 5$. From 0\u00b0C to 10\u00b0C the pressure roughly doubles, and $1.07^{10} \\approx 1.97$, so a base of 1.07 per degree fits. Check: $5(1.07)^{30} \\approx 38$, which matches the point near 39.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You took the pressure at 10\u00b0C, about 10 hPa, as the starting value. The value in front of the base is the pressure at $x = 0$, which is about 5."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "A base between 0 and 1 is decay. This curve falls from 5 toward 0, but the pressure rises with temperature."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You saw that the pressure doubles about every 10 degrees but applied the doubling to every single degree. This model gives 160 hPa at only 5\u00b0C."
+   }
+  },
+  "id": "orig-choose-model-e-H-145bb3",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-H-145bb3",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

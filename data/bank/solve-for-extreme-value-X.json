@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-solve-for-extr-X-4c673e",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,16 +82,405 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-solve-for-extr-X-b742de",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "__var__ what is the least possible value of"
    ],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "A city has a budget of \\$18,000 to plant trees along a new transit corridor. A design fee of \\$1,200 comes out of the budget first. Each oak costs \\$340 to plant, each maple costs \\$260, and the plan must include at least 12 maples. What is the maximum number of oaks the city can plant without exceeding the budget?",
+  "stimulus": null,
+  "choices": [
+   "40",
+   "41",
+   "43",
+   "49"
+  ],
+  "answer": "A",
+  "explanation": "To leave the most money for oaks, plant only the required 12 maples. The inequality is $1{,}200 + 260(12) + 340x \\le 18{,}000$, so $340x \\le 13{,}680$ and $x \\le 40.2...$. The number of oaks has to be a whole number no greater than 40.2, so the maximum is 40. As a check, 40 oaks cost \\$13,600, which fits, while 41 oaks cost \\$13,940, which does not.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You solved $x \\le 40.2...$ correctly but rounded up. With 41 oaks the cost goes over the budget, so for a maximum you have to round down."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You left out the \\$1,200 design fee and solved $260(12) + 340x \\le 18{,}000$, which gives $x \\le 43.7...$. The fee comes out of the same budget."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You ignored the requirement for at least 12 maples and spent all of the remaining \\$16,800 on oaks. The plan has to include those maples."
+   }
+  },
+  "id": "orig-solve-for-extr-X-56d6d2",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-X-56d6d2",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A sales job offers two monthly pay plans. Plan A pays \\$1,500 plus 6% of the month's total sales. Plan B pays \\$900 plus 10% of the month's sales above \\$2,000. What is the least whole-dollar amount of monthly sales for which Plan B pays more than Plan A?",
+  "stimulus": null,
+  "choices": [
+   "\\$10,001",
+   "\\$15,001",
+   "\\$20,000",
+   "\\$20,001"
+  ],
+  "answer": "D",
+  "explanation": "For sales of $s$ dollars above \\$2,000, Plan B pays $900 + 0.10(s - 2{,}000) = 700 + 0.10s$. Set up $700 + 0.10s > 1{,}500 + 0.06s$, which gives $0.04s > 800$, so $s > 20{,}000$. The inequality is strict and the sales must be a whole number of dollars, so the least amount is \\$20,001.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the \\$200 from $0.10(2{,}000)$ to the base pay when you distributed, which gave $1{,}100 + 0.10s$. It has to be subtracted, so the correct expression is $700 + 0.10s$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You applied Plan B's 10% to all of the sales. Plan B pays commission only on sales above \\$2,000."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "At \\$20,000 the two plans pay the same amount, so Plan B does not pay more. Because the condition is strict, you need the next whole dollar."
+   }
+  },
+  "id": "orig-solve-for-extr-X-cf7b0b",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-X-cf7b0b",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "An archaeology team begins a season with \\$52,000. Each excavation unit costs \\$1,150 to dig and another \\$350 to process its finds, and the team must keep at least \\$8,000 in reserve. What is the maximum number of units the team can excavate?",
+  "stimulus": null,
+  "choices": [
+   "29",
+   "30",
+   "34",
+   "38"
+  ],
+  "answer": "A",
+  "explanation": "Each unit costs $1{,}150 + 350 = 1{,}500$ dollars. The reserve condition is $52{,}000 - 1{,}500u \\ge 8{,}000$, so $-1{,}500u \\ge -44{,}000$. When you divide by $-1{,}500$, the sign flips, which gives $u \\le 29.3...$. The maximum whole number of units is therefore 29.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You found $u \\le 29.3...$ and then rounded up. With 30 units only \\$7,000 would be left, which is below the reserve. For a maximum, round down."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You spent all \\$52,000 and did not keep the \\$8,000 reserve: $52{,}000 \\div 1{,}500 = 34.6...$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used only the \\$1,150 digging cost and left out the \\$350 processing cost for each unit."
+   }
+  },
+  "id": "orig-solve-for-extr-X-478bc1",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-X-478bc1",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A linguist building a corpus of a regional dialect needs at least 120,000 transcribed words and already has 41,500. Each new interview yields between 2,200 and 2,800 words. What is the minimum number of new interviews that guarantees the corpus reaches its goal?",
+  "stimulus": null,
+  "choices": [
+   "29",
+   "35",
+   "36",
+   "55"
+  ],
+  "answer": "C",
+  "explanation": "The corpus still needs $120{,}000 - 41{,}500 = 78{,}500$ words. To guarantee the goal, you have to assume every interview gives the fewest words, 2,200. Then $2{,}200n \\ge 78{,}500$, so $n \\ge 35.6...$. The count must be a whole number, so round up to 36. As a check, 36 interviews give at least 79,200 words, while 35 interviews could give only 77,000.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You used the best case of 2,800 words per interview. That only shows the goal could be reached. To guarantee it, you need the worst case."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You solved $n \\ge 35.6...$ and rounded down. For a minimum, round up, because 35 interviews might fall short."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You divided the full 120,000 words by 2,200 and ignored the 41,500 words the corpus already has."
+   }
+  },
+  "id": "orig-solve-for-extr-X-8afa60",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-X-8afa60",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A weather balloon is launched from a station 400 meters above sea level, where the air temperature is $18^\\circ\\text{C}$. Temperature falls by $6.5^\\circ\\text{C}$ for every 1,000 meters of rise above the station, and the balloon's sensor works only at temperatures of at least $-40^\\circ\\text{C}$. Controllers set the flight ceiling at a whole number of hundreds of meters above sea level. What is the highest ceiling they can set?",
+  "stimulus": null,
+  "choices": [
+   "3,700 m",
+   "8,900 m",
+   "9,300 m",
+   "9,400 m"
+  ],
+  "answer": "C",
+  "explanation": "Let $h$ be the height above the station in meters. The condition is $18 - 0.0065h \\ge -40$, so $-0.0065h \\ge -58$. Dividing by a negative flips the sign: $h \\le 8{,}923$ (approximately). Add the station's 400 meters to get a height above sea level of about 9,323 m or less. The greatest whole hundred that does not go past this is 9,300 m.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated the temperature change as $40 - 18 = 22$ degrees instead of a fall from $18^\\circ$ to $-40^\\circ$, which is 58 degrees."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at the height above the station and did not add the station's 400 meters to get the height above sea level."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You rounded about 9,323 m up. At 9,400 m the temperature would be $-40.5^\\circ\\text{C}$, which is colder than the sensor allows."
+   }
+  },
+  "id": "orig-solve-for-extr-X-c487a8",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-X-c487a8",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A concert must last at most 90 minutes, including a 15-minute intermission and a 28-minute symphony. The rest of the program must include at least three 6-minute piano pieces, and the remaining time goes to songs that each last from 3.5 to 4.5 minutes. What is the maximum number of songs that can be scheduled while guaranteeing the concert stays within 90 minutes?",
+  "stimulus": null,
+  "choices": [
+   "6",
+   "7",
+   "8",
+   "10"
+  ],
+  "answer": "A",
+  "explanation": "After the intermission, the symphony and the required three piano pieces, $90 - 15 - 28 - 18 = 29$ minutes are left. To guarantee the time limit, assume every song runs the full 4.5 minutes. Then $4.5s \\le 29$, so $s \\le 6.4...$, and the maximum is 6 songs.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You rounded $6.4...$ up. Seven songs could run 31.5 minutes, which is more than the 29 minutes available."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You used the shortest song length, 3.5 minutes. The guarantee has to hold even when every song runs the longest, 4.5 minutes."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You left out the three required piano pieces and used all 47 minutes for songs."
+   }
+  },
+  "id": "orig-solve-for-extr-X-90326e",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-X-90326e",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A vaccination clinic is open for 7 hours and must give at least 2,400 doses. Three pharmacists each give 10 doses per hour for all 7 hours. Each nurse gives 12 doses per hour but takes a 30-minute break. What is the minimum number of nurses the clinic must schedule?",
+  "stimulus": null,
+  "choices": [
+   "27",
+   "28",
+   "29",
+   "31"
+  ],
+  "answer": "C",
+  "explanation": "The pharmacists give $3(10)(7) = 210$ doses, which leaves 2,190. Each nurse works 6.5 hours, so each gives $12(6.5) = 78$ doses. Then $78n \\ge 2{,}190$, so $n \\ge 28.07...$. Round up to 29. As a check, 28 nurses give only 2,184 doses.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You left out each nurse's 30-minute break and counted 84 doses per nurse."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You found $n \\ge 28.07...$ and rounded down. With 28 nurses the clinic falls 6 doses short, so for a minimum you have to round up."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You divided all 2,400 doses among the nurses and forgot the 210 doses the pharmacists give."
+   }
+  },
+  "id": "orig-solve-for-extr-X-0e7bbb",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-X-0e7bbb",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The strength $S$, in megapascals (MPa), of a polymer sample at temperature $T$, in degrees Celsius, is modeled by $S = 420 - 1.8T$. In use, the sample carries a stress of 165 MPa, and its strength must be at least 1.5 times that stress. What is the greatest whole-number temperature at which the sample meets this requirement?",
+  "stimulus": null,
+  "choices": [
+   "95",
+   "96",
+   "141",
+   "172"
+  ],
+  "answer": "A",
+  "explanation": "The required strength is $1.5(165) = 247.5$ MPa. Solve $420 - 1.8T \\ge 247.5$: $-1.8T \\ge -172.5$. Dividing by $-1.8$ flips the sign, which gives $T \\le 95.8...$. The greatest whole number that satisfies this is 95.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You rounded $95.8...$ up. At $96^\\circ\\text{C}$ the strength is 247.2 MPa, which is below the 247.5 MPa required."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You left out the safety factor and required only $S \\ge 165$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the stress by 1.5 when you should have multiplied, so you required $S \\ge 110$ instead of $S \\ge 247.5$."
+   }
+  },
+  "id": "orig-solve-for-extr-X-cc971b",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-X-cc971b",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

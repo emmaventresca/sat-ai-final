@@ -220,5 +220,416 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "The median hourly wage for electricians is $p\\%$ of the median hourly wage for nurses. What is the value of $p$?",
+  "stimulus": "In a regional labor survey, the median hourly wage for electricians was 25% greater than the median hourly wage for retail clerks. The median hourly wage for retail clerks was 20% less than the median hourly wage for nurses.",
+  "keys": [
+   "100"
+  ],
+  "any_of": false,
+  "explanation": "Turn each statement into a multiplier. Electricians $= 1.25 \\times$ clerks, and clerks $= 0.80 \\times$ nurses. Substitute to get electricians $= 1.25(0.80) \\times$ nurses $= 1.00 \\times$ nurses. The electricians' wage is 100% of the nurses' wage, so $p = 100$. If you add the percents (25 \u2212 20 = 5), you get 105, which is wrong. You have to multiply the multipliers.",
+  "common_errors": [
+   {
+    "value": "105",
+    "misconception": "algebra-manipulation",
+    "why": "Added the percent changes, +25 and \u221220, to get a net +5%, instead of multiplying 1.25 by 0.80."
+   },
+   {
+    "value": "125",
+    "misconception": "intermediate-step",
+    "why": "Stopped after the first link and compared electricians with clerks instead of with nurses."
+   },
+   {
+    "value": "80",
+    "misconception": "intermediate-step",
+    "why": "Gave the clerks-to-nurses link alone and never brought in the electricians."
+   },
+   {
+    "value": "0",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the percent difference between the two wages, which is 0, instead of what percent one wage is of the other."
+   }
+  ],
+  "id": "orig-chained-percen-M-3ec02e",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-chained-percen-M-3ec02e",
+   "structure": [],
+   "solver_answer": 100,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many minutes long is the third recording?",
+  "stimulus": "A musicologist compares three recordings of the same symphony. The first lasts 40 minutes. The second is 15% longer than the first, and the third is 10% shorter than the second.",
+  "keys": [
+   "41.4",
+   "207/5"
+  ],
+  "any_of": false,
+  "explanation": "The second recording lasts $40(1.15) = 46$ minutes. The third is 10% shorter than the second, so it lasts $46(0.90) = 41.4$ minutes. You can also do it in one step: $40(1.15)(0.90) = 41.4$. The 10% applies to the second recording, because it comes after 'than'. It does not apply to the first.",
+  "common_errors": [
+   {
+    "value": "42",
+    "misconception": "algebra-manipulation",
+    "why": "Added the percents (+15 \u2212 10 = +5%) and took 40 \u00d7 1.05."
+   },
+   {
+    "value": "46",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the length of the second recording."
+   },
+   {
+    "value": "36",
+    "misconception": "misread-given",
+    "why": "Took 10% off the first recording (40 \u00d7 0.9) instead of the second."
+   },
+   {
+    "value": "41",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted 10% of 50 or another rounded base, getting 46 \u2212 5 instead of 46 \u2212 4.6."
+   }
+  ],
+  "id": "orig-chained-percen-M-d7c23b",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-chained-percen-M-d7c23b",
+   "structure": [],
+   "solver_answer": 41.4,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The number of aftershocks recorded in the third week was $p\\%$ less than the number recorded in the first week. What is the value of $p$?",
+  "stimulus": "After an earthquake, a seismology station counted aftershocks each week. The count in the second week was 40% less than the count in the first week. The count in the third week was 50% less than the count in the second week.",
+  "keys": [
+   "70"
+  ],
+  "any_of": false,
+  "explanation": "Let the first-week count be 100. The second week is $100(0.60) = 60$, and the third week is $60(0.50) = 30$. The count fell from 100 to 30, so it decreased by $\\frac{100-30}{100} = 70\\%$, and $p = 70$. Adding 40% and 50% gives 90%, but that is wrong because the second decrease applies to a smaller count.",
+  "common_errors": [
+   {
+    "value": "90",
+    "misconception": "algebra-manipulation",
+    "why": "Added the two decreases, 40% + 50%, instead of multiplying 0.60 by 0.50."
+   },
+   {
+    "value": "30",
+    "misconception": "complement-or-direction-flip",
+    "why": "Gave the third week as a percent of the first week (30%) instead of the percent decrease."
+   },
+   {
+    "value": "40",
+    "misconception": "intermediate-step",
+    "why": "Gave only the first decrease, from week 1 to week 2."
+   }
+  ],
+  "id": "orig-chained-percen-M-3d4afa",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-chained-percen-M-3d4afa",
+   "structure": [],
+   "solver_answer": 70,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many grams of fiber are in a serving of the rice?",
+  "stimulus": "A nutrition study found that a serving of granola contains 30% more fiber than a serving of oatmeal, and a serving of oatmeal contains 50% more fiber than a serving of rice. A serving of the granola contains 7.8 grams of fiber.",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "Write the multipliers. Granola $= 1.30 \\times$ oatmeal, and oatmeal $= 1.50 \\times$ rice. So granola $= 1.95 \\times$ rice. Then $1.95r = 7.8$, so $r = 4$ grams. You have to divide by the multipliers to work backwards. Taking 30% and 50% off 7.8 does not undo the increases, because each percent was taken of the smaller quantity.",
+  "common_errors": [
+   {
+    "value": "2.73",
+    "misconception": "algebra-manipulation",
+    "why": "Reversed the increases by subtracting the percents from 7.8: 7.8 \u00d7 0.70 \u00d7 0.50."
+   },
+   {
+    "value": "6",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the fiber in the oatmeal, 7.8 \u00f7 1.3."
+   },
+   {
+    "value": "4.333",
+    "misconception": "algebra-manipulation",
+    "why": "Added the percents to get an 80% increase and divided 7.8 by 1.8."
+   },
+   {
+    "value": "4.334",
+    "misconception": "algebra-manipulation",
+    "why": "Same error as 4.333, rounded instead of truncated: 7.8 \u00f7 1.8."
+   }
+  ],
+  "id": "orig-chained-percen-M-d30119",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-chained-percen-M-d30119",
+   "structure": [],
+   "solver_answer": 4,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The third edition contained how many times as many prints as the first edition?",
+  "stimulus": "A printmaker produced three editions of a woodcut. The second edition had 25% more prints than the first, and the third edition had 40% more prints than the second.",
+  "keys": [
+   "1.75",
+   "7/4"
+  ],
+  "any_of": false,
+  "explanation": "Let the first edition be 100 prints. The second has $100(1.25) = 125$ prints, and the third has $125(1.40) = 175$. So the third edition has $\\frac{175}{100} = 1.75$ times as many prints as the first. Multiply the multipliers. Adding 25% and 40% would give 1.65, which is wrong.",
+  "common_errors": [
+   {
+    "value": "1.65",
+    "misconception": "algebra-manipulation",
+    "why": "Added the percents (25 + 40 = 65%) instead of multiplying 1.25 by 1.40."
+   },
+   {
+    "value": "1.4",
+    "misconception": "intermediate-step",
+    "why": "Compared the third edition with the second instead of the first."
+   },
+   {
+    "value": ".75",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the net increase as a decimal (75%) instead of the ratio."
+   },
+   {
+    "value": "75",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the percent increase instead of how many times as many."
+   }
+  ],
+  "id": "orig-chained-percen-M-139f72",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-chained-percen-M-139f72",
+   "structure": [],
+   "solver_answer": 1.75,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The patient's antibody level six months after the booster was what percent of the level just before the booster?",
+  "stimulus": "An immunologist tracked one patient's antibody level. In the month after a booster dose, the level increased by 150%. Over the following six months, the level decreased by 70%.",
+  "keys": [
+   "75"
+  ],
+  "any_of": false,
+  "explanation": "An increase of 150% multiplies by $1 + 1.50 = 2.5$, not by 1.5. A decrease of 70% multiplies by 0.30. Then $2.5(0.30) = 0.75$, so the final level is 75% of the starting level.",
+  "common_errors": [
+   {
+    "value": "180",
+    "misconception": "algebra-manipulation",
+    "why": "Added the changes: 100 + 150 \u2212 70 = 180."
+   },
+   {
+    "value": "45",
+    "misconception": "algebra-manipulation",
+    "why": "Treated a 150% increase as a multiplier of 1.5 and took 1.5 \u00d7 0.30."
+   },
+   {
+    "value": "250",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the peak level after the booster."
+   },
+   {
+    "value": "25",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the net percent decrease instead of the final level as a percent of the original."
+   }
+  ],
+  "id": "orig-chained-percen-M-43ce48",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-chained-percen-M-43ce48",
+   "structure": [],
+   "solver_answer": 75,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the flow rate, in cubic meters per second, of River C?",
+  "stimulus": "A hydrologist measured three rivers. River A's flow rate is 60% greater than River B's, and River C's flow rate is 20% less than River A's. River B has a flow rate of 250 cubic meters per second.",
+  "keys": [
+   "320"
+  ],
+  "any_of": false,
+  "explanation": "River A flows at $250(1.60) = 400$ cubic meters per second. River C is 20% less than River A, so it flows at $400(0.80) = 320$. The base for the 20% is River A, the river named after 'than'.",
+  "common_errors": [
+   {
+    "value": "350",
+    "misconception": "algebra-manipulation",
+    "why": "Added the percents (+60 \u2212 20 = +40%) and took 250 \u00d7 1.4."
+   },
+   {
+    "value": "400",
+    "misconception": "intermediate-step",
+    "why": "Stopped at River A's flow rate."
+   },
+   {
+    "value": "200",
+    "misconception": "misread-given",
+    "why": "Took 20% off River B instead of River A."
+   }
+  ],
+  "id": "orig-chained-percen-M-56dd60",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-chained-percen-M-56dd60",
+   "structure": [],
+   "solver_answer": 320,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The reef's area in 2021 was $p\\%$ less than its area in 2015. What is the value of $p$?",
+  "stimulus": "A marine biologist mapped a coral reef. Its area decreased by 20% from 2015 to 2018, then increased by 20% from 2018 to 2021.",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "Let the 2015 area be 100. In 2018 it is $100(0.80) = 80$, and in 2021 it is $80(1.20) = 96$. The area fell from 100 to 96, a 4% decrease, so $p = 4$. The 20% increase is 20% of a smaller area, so it does not undo the 20% decrease.",
+  "common_errors": [
+   {
+    "value": "0",
+    "misconception": "algebra-manipulation",
+    "why": "Added \u221220% and +20% to get no net change."
+   },
+   {
+    "value": "96",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the 2021 area as a percent of the 2015 area instead of the percent decrease."
+   },
+   {
+    "value": "20",
+    "misconception": "intermediate-step",
+    "why": "Gave only the first change, from 2015 to 2018."
+   }
+  ],
+  "id": "orig-chained-percen-M-4d4da9",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-chained-percen-M-4d4da9",
+   "structure": [],
+   "solver_answer": 4,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

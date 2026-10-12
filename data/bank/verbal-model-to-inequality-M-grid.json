@@ -1,0 +1,1162 @@
+[
+ {
+  "stem": "What is the greatest number of bags of seed the team can buy?",
+  "stimulus": "An agronomy team has a $1,400 grant for a field trial. It will spend $260 on soil testing and $38 for each bag of seed. The team must leave at least $90 of the grant unspent.",
+  "keys": [
+   "27"
+  ],
+  "any_of": false,
+  "explanation": "Write the spending as $260 + 38b$. Leaving at least $90 unspent means spending is at most $90 less than $1,400, so $260 + 38b \\le 1400 - 90 = 1310$. Subtract 260 to get $38b \\le 1050$, so $b \\le 27.6...$. The team can only buy whole bags, so the greatest number is 27. Buying 28 bags would cost $260 + 1064 = 1324$ dollars, which is more than the $1,310 allowed.",
+  "common_errors": [
+   {
+    "value": "30",
+    "misconception": "missed-condition",
+    "why": "Ignored the $90 that must stay unspent and solved $260 + 38b \\le 1400$, getting $b \\le 30$."
+   },
+   {
+    "value": "32",
+    "misconception": "algebra-manipulation",
+    "why": "Read '$90 less than $1,400' as $1400 + 90 = 1490$, so $38b \\le 1230$ and $b \\le 32.4$."
+   },
+   {
+    "value": "28",
+    "misconception": "missed-condition",
+    "why": "Rounded 27.6 up. 28 bags costs $1,324, which goes over the $1,310 limit."
+   },
+   {
+    "value": "34",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the $260 testing fee and solved $38b \\le 1310$, getting $b \\le 34.5$."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-4ef8da",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-4ef8da",
+   "structure": [],
+   "solver_answer": 27,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest possible number of the lowest-numbered unit?",
+  "stimulus": "Along the north wall of a dig site, excavation units are numbered with consecutive odd integers. A crew is assigned three consecutive units whose numbers have a sum of at most 200.",
+  "keys": [
+   "63"
+  ],
+  "any_of": false,
+  "explanation": "Call the lowest number $n$. Consecutive odd integers are 2 apart, so the other two units are $n + 2$ and $n + 4$. 'At most' means \u2264, so $n + (n+2) + (n+4) \\le 200$, which gives $3n + 6 \\le 200$. Then $3n \\le 194$, so $n \\le 64.67$. The number $n$ must be odd, so the greatest value is 63. Check: $63 + 65 + 67 = 195$, which works, and $65 + 67 + 69 = 201$, which is too big.",
+  "common_errors": [
+   {
+    "value": "65",
+    "misconception": "algebra-manipulation",
+    "why": "Used $n+1$ and $n+2$ as the next two odd integers, so $3n + 3 \\le 200$ and $n \\le 65.67$. That gives 65."
+   },
+   {
+    "value": "64",
+    "misconception": "missed-condition",
+    "why": "Solved $n \\le 64.67$ correctly, then took the greatest integer and forgot that the number must be odd."
+   },
+   {
+    "value": "194",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $3n \\le 194$ and gave the right-hand side as the answer."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-a9af5a",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-a9af5a",
+   "structure": [],
+   "solver_answer": 63,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the shortest length, in centimeters, at which the trail can be drawn on the map?",
+  "stimulus": "On a park map, 1 centimeter represents 4 kilometers. The actual length of a planned trail must be no less than 10 kilometers less than the 82-kilometer length of the park's river.",
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "If the trail is $x$ cm long on the map, its actual length is $4x$ km. 'No less than' means \u2265. '10 less than 82' means $82 - 10$. So $4x \\ge 82 - 10 = 72$, and $x \\ge 18$. The shortest map length is 18 cm.",
+  "common_errors": [
+   {
+    "value": "23",
+    "misconception": "algebra-manipulation",
+    "why": "Read '10 less than 82' as $82 + 10 = 92$, so $4x \\ge 92$ and $x \\ge 23$."
+   },
+   {
+    "value": "72",
+    "misconception": "intermediate-step",
+    "why": "Found the shortest actual length in kilometers and never converted it to map centimeters."
+   },
+   {
+    "value": "20.5",
+    "misconception": "missed-condition",
+    "why": "Ignored the '10 kilometers less than' and solved $4x \\ge 82$."
+   },
+   {
+    "value": "288",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 72 by the scale factor instead of dividing by it."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-65296c",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-65296c",
+   "structure": [],
+   "solver_answer": 18,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest number of carts the platform can hold?",
+  "stimulus": "A steel beam is rated to carry 9,000 pounds. Code requires the rating to be at least 1.5 times the total load. The beam supports a 600-pound platform and some carts that weigh 400 pounds each.",
+  "keys": [
+   "13"
+  ],
+  "any_of": false,
+  "explanation": "With $x$ carts, the total load is $600 + 400x$. 'At least 1.5 times the load' means the rating is \u2265 that product, so $9000 \\ge 1.5(600 + 400x)$. Divide both sides by 1.5 to get $6000 \\ge 600 + 400x$. Then $400x \\le 5400$, so $x \\le 13.5$. Only whole carts count, so the greatest number is 13.",
+  "common_errors": [
+   {
+    "value": "14",
+    "misconception": "missed-condition",
+    "why": "Rounded 13.5 up. With 14 carts the load is 6,200 pounds, and 1.5 \u00d7 6,200 = 9,300 is more than the 9,000-pound rating."
+   },
+   {
+    "value": "20",
+    "misconception": "algebra-manipulation",
+    "why": "Applied 1.5 only to the platform, writing $1.5(600) + 400x \\le 9000$, which gives $x \\le 20.25$."
+   },
+   {
+    "value": "21",
+    "misconception": "missed-condition",
+    "why": "Ignored the 1.5 safety factor and solved $600 + 400x \\le 9000$."
+   },
+   {
+    "value": "32",
+    "misconception": "complement-or-direction-flip",
+    "why": "Put the factor on the wrong side, $1.5(9000) \\ge 600 + 400x$, so the load is allowed to be 1.5 times the rating."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-28770b",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-28770b",
+   "structure": [],
+   "solver_answer": 13,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the least number of additional days of banding needed?",
+  "stimulus": "A bird observatory must band at least 250 songbirds this season. It has already banded 72, and its team bands 14 birds per day.",
+  "keys": [
+   "13"
+  ],
+  "any_of": false,
+  "explanation": "After $d$ more days, the total is $72 + 14d$. 'At least' means \u2265, so $72 + 14d \\ge 250$. Then $14d \\ge 178$, so $d \\ge 12.71$. The number of days must be a whole number, so the least value is 13. After 12 days the total is only 240.",
+  "common_errors": [
+   {
+    "value": "12",
+    "misconception": "missed-condition",
+    "why": "Rounded 12.71 down. Twelve more days reaches only 240 birds, which is short of 250."
+   },
+   {
+    "value": "18",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the 72 birds already banded and solved $14d \\ge 250$."
+   },
+   {
+    "value": "23",
+    "misconception": "algebra-manipulation",
+    "why": "Added the 72 instead of subtracting it, so $14d \\ge 322$ and $d \\ge 23$."
+   },
+   {
+    "value": "178",
+    "misconception": "intermediate-step",
+    "why": "Gave the number of birds still needed, not the number of days."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-5abdf0",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-5abdf0",
+   "structure": [],
+   "solver_answer": 13,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest whole number of hours of exposure the coating can receive?",
+  "stimulus": "A polymer coating starts with a strength of 85 megapascals (MPa) and loses 3 MPa for each hour of ultraviolet exposure. Its strength must stay at least 20 MPa more than the 31 MPa minimum set by code.",
+  "keys": [
+   "11"
+  ],
+  "any_of": false,
+  "explanation": "After $t$ hours the strength is $85 - 3t$. '20 more than 31' is $31 + 20 = 51$, and 'at least' means \u2265, so $85 - 3t \\ge 51$. Subtract 85 to get $-3t \\ge -34$. Dividing by $-3$ flips the sign: $t \\le 11.33$. The greatest whole number of hours is 11.",
+  "common_errors": [
+   {
+    "value": "12",
+    "misconception": "complement-or-direction-flip",
+    "why": "Didn't flip the sign when dividing by $-3$, so got $t \\ge 11.33$ and gave the least whole number above it."
+   },
+   {
+    "value": "18",
+    "misconception": "missed-condition",
+    "why": "Used only the 31 MPa code minimum and dropped the extra 20 MPa, so $85 - 3t \\ge 31$."
+   },
+   {
+    "value": "24",
+    "misconception": "misread-given",
+    "why": "Read '20 more than 31' as $31 - 20 = 11$, so $85 - 3t \\ge 11$ and $t \\le 24.67$."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-404040",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-404040",
+   "structure": [],
+   "solver_answer": 11,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest number of crackers the patient can eat?",
+  "stimulus": "A dietitian sets a patient's sodium limit at 100 milligrams less than 2,300 mg per day. By dinner the patient has had 1,640 mg. Dinner is a soup with 380 mg plus crackers with 40 mg each.",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "The limit is $2300 - 100 = 2200$ mg, and the day's total can't go over it. So $1640 + 380 + 40c \\le 2200$, which gives $2020 + 40c \\le 2200$. Then $40c \\le 180$, so $c \\le 4.5$. The patient can eat at most 4 whole crackers.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "missed-condition",
+    "why": "Rounded 4.5 up. Five crackers bring the total to 2,220 mg, which is over the limit."
+   },
+   {
+    "value": "7",
+    "misconception": "missed-condition",
+    "why": "Ignored the '100 milligrams less than' and used 2,300 as the limit."
+   },
+   {
+    "value": "9",
+    "misconception": "algebra-manipulation",
+    "why": "Read '100 less than 2,300' as $2300 + 100 = 2400$, so $40c \\le 380$ and $c \\le 9.5$."
+   },
+   {
+    "value": "13",
+    "misconception": "algebra-manipulation",
+    "why": "Left out the 380 mg of soup, so $1640 + 40c \\le 2200$ and $c \\le 14$... then subtracted wrong. More often this slip gives 14."
+   },
+   {
+    "value": "14",
+    "misconception": "algebra-manipulation",
+    "why": "Left out the 380 mg of soup, so $1640 + 40c \\le 2200$ and $c \\le 14$."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-1befb4",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-1befb4",
+   "structure": [],
+   "solver_answer": 4,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the least number of prints the studio must sell?",
+  "stimulus": "A print studio rents a press for $455 for an edition of linocuts. Paper and ink cost $5 per print, and each print sells for $18. The studio wants a profit of at least $520.",
+  "keys": [
+   "75"
+  ],
+  "any_of": false,
+  "explanation": "Profit is revenue minus all costs: $18p - (455 + 5p) = 13p - 455$. 'At least' means \u2265, so $13p - 455 \\ge 520$. Then $13p \\ge 975$, so $p \\ge 75$. The studio must sell at least 75 prints.",
+  "common_errors": [
+   {
+    "value": "55",
+    "misconception": "missed-condition",
+    "why": "Ignored the $5 per-print cost and solved $18p - 455 \\ge 520$, which gives $p \\ge 54.17$. Rounding up gives 55."
+   },
+   {
+    "value": "43",
+    "misconception": "algebra-manipulation",
+    "why": "Didn't distribute the minus sign, writing $18p - 455 + 5p$. That gives $23p \\ge 975$, so $p \\ge 42.4$."
+   },
+   {
+    "value": "40",
+    "misconception": "missed-condition",
+    "why": "Left out the $455 press rental and solved $13p \\ge 520$."
+   },
+   {
+    "value": "975",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $13p \\ge 975$ and gave the right-hand side as the answer."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-9dd2e3",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-9dd2e3",
+   "structure": [],
+   "solver_answer": 75,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest number of whole acres the agronomist can fertilize?",
+  "stimulus": "An agronomist is buying fertilizer for test plots. Fertilizer costs $35 per acre, plus a one-time delivery fee of $240. The total cost cannot exceed the budget of $2,000.",
+  "keys": [
+   "50"
+  ],
+  "any_of": false,
+  "explanation": "Let $a$ be the number of acres. The cost is the rate times the count plus the fixed fee: $35a + 240$. 'Cannot exceed' means $\\le$, so $35a + 240 \\le 2000$. Subtract 240 to get $35a \\le 1760$, then divide by 35 to get $a \\le 50.28...$. Acres must be whole and you cannot go over the budget, so the greatest number is 50.",
+  "common_errors": [
+   {
+    "value": "57",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the $240 fee and solved $35a \\le 2000$, so $a \\le 57.14$."
+   },
+   {
+    "value": "64",
+    "misconception": "algebra-manipulation",
+    "why": "Moved the fee the wrong way and solved $35a \\le 2240$, so $a \\le 64$."
+   },
+   {
+    "value": "51",
+    "misconception": "missed-condition",
+    "why": "Rounded 50.28 up. 51 acres cost $2,025, which is over the budget."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-2881e7",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-2881e7",
+   "structure": [],
+   "solver_answer": 50,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the plaza has 40 bike racks, what is the greatest possible number of benches?",
+  "stimulus": "A city planning guideline for a new plaza says that the number of bike racks must be at least 15 less than 3 times the number of benches.",
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "Let $b$ be the number of benches. '15 less than 3 times the benches' is $3b - 15$, not $15 - 3b$. 'At least' means $\\ge$, so racks $\\ge 3b - 15$, which gives $40 \\ge 3b - 15$. Add 15 to get $55 \\ge 3b$, so $b \\le 18.33...$. Benches come in whole numbers, so the greatest is 18.",
+  "common_errors": [
+   {
+    "value": "19",
+    "misconception": "complement-or-direction-flip",
+    "why": "Wrote $40 \\le 3b - 15$, so $b \\ge 18.33$. That gives a least value, 19, not a greatest."
+   },
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote '15 less than' as $3b + 15$, then solved $40 \\ge 3b + 15$ to get $b \\le 8.33$."
+   },
+   {
+    "value": "55/3",
+    "misconception": "missed-condition",
+    "why": "Stopped at the boundary $55/3$ and ignored that benches must be a whole number."
+   },
+   {
+    "value": "18.33",
+    "misconception": "missed-condition",
+    "why": "Entered the decimal boundary, but a number of benches has to be whole."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-78f417",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-78f417",
+   "structure": [],
+   "solver_answer": 18,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the least number of boxes the clinic must order?",
+  "stimulus": "Before flu season, an immunization clinic needs at least 320 vaccine doses in stock. It currently has 60 doses and can order more only in boxes of 25 doses each.",
+  "keys": [
+   "11"
+  ],
+  "any_of": false,
+  "explanation": "Let $b$ be the number of boxes. The total stock is $60 + 25b$. 'At least' means $\\ge$, so $60 + 25b \\ge 320$. Subtract 60 to get $25b \\ge 260$, so $b \\ge 10.4$. Boxes are whole, and 10 boxes would leave the clinic short, so the least number is 11.",
+  "common_errors": [
+   {
+    "value": "10",
+    "misconception": "missed-condition",
+    "why": "Rounded 10.4 down. 10 boxes give only 310 doses, which is less than 320."
+   },
+   {
+    "value": "13",
+    "misconception": "algebra-manipulation",
+    "why": "Ignored the 60 doses already in stock and solved $25b \\ge 320$, so $b \\ge 12.8$."
+   },
+   {
+    "value": "16",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the existing stock instead of adding it. Solving $25b - 60 \\ge 320$ gives $b \\ge 15.2$."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-c530db",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-c530db",
+   "structure": [],
+   "solver_answer": 11,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the high temperature was $52^\\circ\\text{F}$, what is the least possible low temperature, in degrees Fahrenheit?",
+  "stimulus": "A meteorologist recorded that on a certain day, the high temperature, in degrees Fahrenheit, was at most 8 less than twice the low temperature.",
+  "keys": [
+   "30"
+  ],
+  "any_of": false,
+  "explanation": "Let $L$ be the low temperature. '8 less than twice the low' is $2L - 8$. 'At most' means $\\le$, so high $\\le 2L - 8$, which gives $52 \\le 2L - 8$. Add 8 to get $60 \\le 2L$, so $L \\ge 30$. The least possible low is 30.",
+  "common_errors": [
+   {
+    "value": "22",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote '8 less than twice the low' as $2L + 8$. Solving $52 \\le 2L + 8$ gives $L \\ge 22$."
+   },
+   {
+    "value": "34",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote the expression as $2(L - 8)$. Solving $52 \\le 2L - 16$ gives $L \\ge 34$."
+   },
+   {
+    "value": "26",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the 8 and solved $52 \\le 2L$."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-4d6894",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-4d6894",
+   "structure": [],
+   "solver_answer": 30,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest possible value of the smallest of the three opus numbers?",
+  "stimulus": "A musicologist cataloguing a composer's works finds three pieces whose opus numbers are consecutive odd integers. The sum of the three opus numbers is at most 200.",
+  "keys": [
+   "63"
+  ],
+  "any_of": false,
+  "explanation": "Let the smallest opus number be $n$. Consecutive odd integers differ by 2, so the three numbers are $n$, $n + 2$ and $n + 4$. 'At most' means $\\le$, so $3n + 6 \\le 200$. That gives $3n \\le 194$, so $n \\le 64.67$. $n$ must be odd, so the greatest possible value is 63. Check: $63 + 65 + 67 = 195 \\le 200$.",
+  "common_errors": [
+   {
+    "value": "64",
+    "misconception": "missed-condition",
+    "why": "Took the greatest whole number under 64.67 and forgot that $n$ must be odd."
+   },
+   {
+    "value": "65",
+    "misconception": "misread-given",
+    "why": "Treated the numbers as consecutive integers $n, n+1, n+2$. Solving $3n + 3 \\le 200$ gives $n \\le 65.67$, and the largest odd value under that is 65."
+   },
+   {
+    "value": "67",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved correctly but reported the largest of the three opus numbers instead of the smallest."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-743eba",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-743eba",
+   "structure": [],
+   "solver_answer": 63,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the snack includes 2 cups of yogurt, what is the least number of ounces of almonds it can include?",
+  "stimulus": "A nutrition scientist designs a recovery snack that must contain a minimum of 50 grams of protein. Almonds provide 8 grams of protein per ounce, and yogurt provides 14 grams of protein per cup.",
+  "keys": [
+   "2.75",
+   "11/4"
+  ],
+  "any_of": false,
+  "explanation": "Let $a$ be the ounces of almonds. The protein is $8a + 14(2) = 8a + 28$. 'A minimum of' means $\\ge$, so $8a + 28 \\ge 50$. Subtract 28 to get $8a \\ge 22$, so $a \\ge 2.75$. Almonds can be measured in fractions of an ounce, so the least amount is 2.75.",
+  "common_errors": [
+   {
+    "value": "6.25",
+    "misconception": "algebra-manipulation",
+    "why": "Left out the yogurt's protein and solved $8a \\ge 50$."
+   },
+   {
+    "value": "4.5",
+    "misconception": "misread-given",
+    "why": "Counted 1 cup of yogurt instead of 2. Solving $8a + 14 \\ge 50$ gives $a \\ge 4.5$."
+   },
+   {
+    "value": "9.75",
+    "misconception": "algebra-manipulation",
+    "why": "Added the yogurt protein to 50 instead of subtracting it. Solving $8a \\ge 78$ gives 9.75."
+   },
+   {
+    "value": "3",
+    "misconception": "missed-condition",
+    "why": "Rounded up to a whole number, but almonds do not have to be whole ounces."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-9a62d5",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-9a62d5",
+   "structure": [],
+   "solver_answer": "2.75",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest possible width of the map, in centimeters?",
+  "stimulus": "A cartographer is printing a rectangular wall map. The length of the map must be 8 centimeters more than its width, and the perimeter can be no more than 124 centimeters.",
+  "keys": [
+   "27"
+  ],
+  "any_of": false,
+  "explanation": "Let $w$ be the width. Then the length is $w + 8$. The perimeter is $2(w + w + 8) = 4w + 16$. 'No more than' means $\\le$, so $4w + 16 \\le 124$. Subtract 16 to get $4w \\le 108$, so $w \\le 27$. The greatest width is 27 centimeters.",
+  "common_errors": [
+   {
+    "value": "58",
+    "misconception": "algebra-manipulation",
+    "why": "Used $w + (w + 8)$ as the perimeter and forgot to double it. Solving $2w + 8 \\le 124$ gives $w \\le 58$."
+   },
+   {
+    "value": "29",
+    "misconception": "algebra-manipulation",
+    "why": "Distributed the 2 to the $w$ terms only and wrote $4w + 8 \\le 124$."
+   },
+   {
+    "value": "35",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved correctly but reported the length, $27 + 8$, instead of the width."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-53a219",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-53a219",
+   "structure": [],
+   "solver_answer": 27,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the least whole number of hours the worker must work in a week to meet this goal?",
+  "stimulus": "A labor economist studies a warehouse worker who earns $25 per hour. Each week, a $40 equipment fee is taken out of the worker's pay. The worker wants weekly pay after the fee to be at least $520.",
+  "keys": [
+   "23"
+  ],
+  "any_of": false,
+  "explanation": "Let $h$ be the hours worked. Pay after the fee is $25h - 40$. 'At least' means $\\ge$, so $25h - 40 \\ge 520$. Add 40 to get $25h \\ge 560$, so $h \\ge 22.4$. The hours must be a whole number, and 22 hours falls short, so the least is 23.",
+  "common_errors": [
+   {
+    "value": "22",
+    "misconception": "missed-condition",
+    "why": "Rounded 22.4 down. 22 hours gives $25(22) - 40 = 510$, which is less than 520."
+   },
+   {
+    "value": "21",
+    "misconception": "algebra-manipulation",
+    "why": "Ignored the fee and solved $25h \\ge 520$, so $h \\ge 20.8$."
+   },
+   {
+    "value": "20",
+    "misconception": "algebra-manipulation",
+    "why": "Added the fee instead of subtracting it. Solving $25h + 40 \\ge 520$ gives $h \\ge 19.2$."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-a9d7fc",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-a9d7fc",
+   "structure": [],
+   "solver_answer": 23,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest whole number of hours of rain the gauge can take without overflowing?",
+  "stimulus": "A rain gauge at a weather station already holds 14 millimeters of water when rain begins to fall into it at a constant rate of 3 millimeters per hour. The gauge overflows if it holds more than 50 millimeters.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "Write the amount in the gauge after h hours: the 14 millimeters already there plus 3 millimeters for each hour, or $14 + 3h$. The gauge must not hold more than 50 millimeters, so $14 + 3h \\le 50$. Subtract 14 to get $3h \\le 36$, so $h \\le 12$. The greatest whole number of hours is 12. Check: after 12 hours the gauge holds exactly 50 millimeters, which is not more than 50.",
+  "common_errors": [
+   {
+    "value": "13",
+    "misconception": "complement-or-direction-flip",
+    "why": "Solved $14 + 3h > 50$ and gave the first whole number of hours at which the gauge overflows, not the last one at which it doesn't."
+   },
+   {
+    "value": "16",
+    "misconception": "algebra-manipulation",
+    "why": "Left out the 14 millimeters already in the gauge, solved $3h \\le 50$ to get $h \\le 16.67$, and took 16."
+   },
+   {
+    "value": "21",
+    "misconception": "algebra-manipulation",
+    "why": "Added 14 to 50 when it should have been subtracted, solved $3h \\le 64$, and took 21."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-da12db",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-da12db",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the least possible number of sparrows counted?",
+  "stimulus": "During a bird count, an ornithologist recorded 52 starlings. The number of starlings was at most 4 less than twice the number of sparrows counted.",
+  "keys": [
+   "28"
+  ],
+  "any_of": false,
+  "explanation": "Let s be the number of sparrows. 'Twice the number of sparrows' is $2s$, and '4 less than' that is $2s - 4$: you take the 4 away from $2s$. 'At most' means the starlings are less than or equal to this amount, so $52 \\le 2s - 4$. Add 4 to get $56 \\le 2s$, so $s \\ge 28$. The least possible number of sparrows is 28.",
+  "common_errors": [
+   {
+    "value": "30",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote '4 less than twice the sparrows' as $2(s - 4)$, then solved $52 \\le 2s - 8$ to get $s \\ge 30$."
+   },
+   {
+    "value": "24",
+    "misconception": "algebra-manipulation",
+    "why": "Moved the 4 across with the wrong sign, writing $52 - 4 \\le 2s$, which gives $s \\ge 24$."
+   },
+   {
+    "value": "26",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the 4 and solved $52 \\le 2s$."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-f1d47b",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-f1d47b",
+   "structure": [],
+   "solver_answer": 28,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the least number of hours the worker must work that week to qualify for the benefit?",
+  "stimulus": "A temporary worker is paid $40 for each shift plus $15 for each hour worked. To qualify for a benefit, the worker's earnings from 3 shifts in one week must be at least $600.",
+  "keys": [
+   "32"
+  ],
+  "any_of": false,
+  "explanation": "Write the week's earnings. The 3 shifts pay $3(40) = 120$ dollars, and h hours pay $15h$ dollars, so the earnings are $120 + 15h$. 'At least' means greater than or equal to, so $120 + 15h \\ge 600$. Subtract 120 to get $15h \\ge 480$, so $h \\ge 32$. The worker must work at least 32 hours.",
+  "common_errors": [
+   {
+    "value": "38",
+    "misconception": "misread-given",
+    "why": "Counted the $40 shift payment once instead of 3 times, solved $40 + 15h \\ge 600$ to get $h \\ge 37.33$, and rounded up to 38."
+   },
+   {
+    "value": "40",
+    "misconception": "algebra-manipulation",
+    "why": "Left out the shift payments and solved $15h \\ge 600$."
+   },
+   {
+    "value": "120",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the total shift payment in dollars instead of the number of hours."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-7d2752",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-7d2752",
+   "structure": [],
+   "solver_answer": 32,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest number of minutes after cooling begins at which the technician can remove the sample?",
+  "stimulus": "A ceramic sample comes out of a kiln at 1,220\u00b0C and cools at a constant rate of 40\u00b0C per minute. A technician must remove the sample from its rack while its temperature is still at least 900\u00b0C.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "Write the temperature t minutes after cooling begins: $1{,}220 - 40t$. 'At least 900' means greater than or equal to 900, so $1{,}220 - 40t \\ge 900$. Subtract 1,220 to get $-40t \\ge -320$. Dividing by $-40$ flips the sign: $t \\le 8$. The latest the technician can remove the sample is 8 minutes after cooling begins.",
+  "common_errors": [
+   {
+    "value": "30.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 1,220 by 40 and found when the sample would reach 0\u00b0C instead of 900\u00b0C."
+   },
+   {
+    "value": "22.5",
+    "misconception": "algebra-manipulation",
+    "why": "Divided 900 by 40 and ignored the starting temperature."
+   },
+   {
+    "value": "53",
+    "misconception": "algebra-manipulation",
+    "why": "Added 900 to 1,220 when it should have been subtracted, then divided 2,120 by 40."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-d865db",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-d865db",
+   "structure": [],
+   "solver_answer": 8,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest possible length, in centimeters, of the new trail on the map?",
+  "stimulus": "The real length of a planned trail can be at most 8 kilometers less than 3 times the length of an existing 20-kilometer trail. A cartographer draws the planned trail on a map on which 1 centimeter represents 4 kilometers.",
+  "keys": [
+   "13"
+  ],
+  "any_of": false,
+  "explanation": "Write the limit in the order the words give it. '3 times the 20-kilometer trail' is $3(20) = 60$, and '8 less than' that is $60 - 8$. 'At most' means less than or equal to, so the real length L must satisfy $L \\le 60 - 8$, or $L \\le 52$ kilometers. Each centimeter on the map stands for 4 kilometers, so the greatest map length is $52 \\div 4 = 13$ centimeters.",
+  "common_errors": [
+   {
+    "value": "52",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the greatest real length in kilometers and didn't convert it to centimeters on the map."
+   },
+   {
+    "value": "9",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote the limit as $3(20 - 8) = 36$ kilometers, then divided by 4."
+   },
+   {
+    "value": "17",
+    "misconception": "misread-given",
+    "why": "Read '8 less than' as '8 more than', got $60 + 8 = 68$ kilometers, then divided by 4."
+   },
+   {
+    "value": "208",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 52 by the scale instead of dividing by it."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-4beab5",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-4beab5",
+   "structure": [],
+   "solver_answer": 13,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest possible ID number of the station with the smallest ID number?",
+  "stimulus": "Three seismic monitoring stations along a fault line have ID numbers that are consecutive odd integers. The sum of the three ID numbers is at most 147.",
+  "keys": [
+   "47"
+  ],
+  "any_of": false,
+  "explanation": "Let n be the smallest ID number. Consecutive odd integers are 2 apart, so the other two are $n + 2$ and $n + 4$. 'At most' means less than or equal to, so $n + (n + 2) + (n + 4) \\le 147$. That simplifies to $3n + 6 \\le 147$, so $3n \\le 141$ and $n \\le 47$. Since 47 is odd, it works: $47 + 49 + 51 = 147$.",
+  "common_errors": [
+   {
+    "value": "48",
+    "misconception": "algebra-manipulation",
+    "why": "Used $n + 1$ and $n + 2$ for the next IDs, as if they were consecutive integers, solved $3n + 3 \\le 147$, and didn't notice that 48 is even."
+   },
+   {
+    "value": "49",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 147 by 3 and got the middle station's ID number, not the smallest."
+   },
+   {
+    "value": "51",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the largest of the three ID numbers instead of the smallest."
+   },
+   {
+    "value": "45",
+    "misconception": "complement-or-direction-flip",
+    "why": "Read 'at most' as 'less than', solved $3n + 6 < 147$, and took the next odd integer below 47."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-e11962",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-e11962",
+   "structure": [],
+   "solver_answer": 47,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest number of recording sessions the folklorist can schedule?",
+  "stimulus": "A folklorist has a budget of $500 to record traditional tales told by village elders. Each recording session costs $35, and the folklorist also pays a one-time equipment rental fee of $80.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "Write the total cost for s sessions: the $80 fee plus $35 per session, or $80 + 35s$. A budget is an upper limit, so $80 + 35s \\le 500$. Subtract 80 to get $35s \\le 420$, so $s \\le 12$. The folklorist can schedule at most 12 sessions, which costs exactly $500.",
+  "common_errors": [
+   {
+    "value": "14",
+    "misconception": "algebra-manipulation",
+    "why": "Left out the $80 rental fee, solved $35s \\le 500$ to get $s \\le 14.29$, and took 14."
+   },
+   {
+    "value": "16",
+    "misconception": "algebra-manipulation",
+    "why": "Added the $80 to the budget instead of subtracting it, solved $35s \\le 580$, and took 16."
+   },
+   {
+    "value": "13",
+    "misconception": "missed-condition",
+    "why": "Rounded up instead of down. 13 sessions cost $80 + 35(13) = 535$ dollars, which is over budget."
+   }
+  ],
+  "id": "orig-verbal-model-t-M-9d02be",
+  "skill_cd": "H.E.",
+  "subtype": "verbal-model-to-inequality",
+  "subtype_name": "Build the inequality from a word model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-verbal-model-t-M-9d02be",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

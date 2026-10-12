@@ -189,5 +189,430 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the solution to the given equation?",
+  "stimulus": "A textile historian modeling thread tension on a hand loom arrives at the equation below.\n\n$\\sqrt{x+10} = x - 2$",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "Square both sides: $x + 10 = (x-2)^2 = x^2 - 4x + 4$. Rearrange to get $x^2 - 5x - 6 = 0$, which factors as $(x-6)(x+1) = 0$, so the candidates are $x = 6$ and $x = -1$. Check each one in the original equation. For $x = 6$: $\\sqrt{16} = 4$ and $6 - 2 = 4$, so it works. For $x = -1$: $\\sqrt{9} = 3$ but $-1 - 2 = -3$. A square root can't equal a negative number, so $-1$ is extraneous. The solution is 6. In Desmos, graph $y=\\sqrt{x+10}$ and $y=x-2$ and you'll see they cross only once, at $x = 6$.",
+  "common_errors": [
+   {
+    "value": "-1",
+    "misconception": "missed-condition",
+    "why": "Kept the root created by squaring without checking it. At $x=-1$ the radical equals 3, but the right side equals $-3$."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Squared $x-2$ as $x^2+4$, which gives $x^2 - x - 6 = 0$ with roots 3 and $-2$, and kept 3."
+   }
+  ],
+  "id": "orig-rational-radic-M-b6fde8",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-b6fde8",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the solution to the given equation?",
+  "stimulus": "A civil engineer comparing load ratios on two bridge spans writes the following equation.\n\n$\\frac{2x}{x-4} = \\frac{8}{x-4} + x$",
+  "keys": [
+   "2"
+  ],
+  "any_of": false,
+  "explanation": "Note that $x \\neq 4$, because 4 makes the denominator zero. Multiply every term by $x - 4$ to get $2x = 8 + x(x-4) = 8 + x^2 - 4x$. Rearrange to $x^2 - 6x + 8 = 0$, which factors as $(x-2)(x-4) = 0$. You have to reject $x = 4$, so the solution is $x = 2$. To check it: the left side is $\\frac{4}{-2} = -2$ and the right side is $\\frac{8}{-2} + 2 = -2$.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "missed-condition",
+    "why": "Kept the root that makes the denominator $x-4$ equal zero, so the original equation is undefined there."
+   },
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the fractions by $x-4$ but forgot to multiply the lone $x$ term as well, which gives $2x = 8 + x$."
+   }
+  ],
+  "id": "orig-rational-radic-M-1628a6",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-1628a6",
+   "structure": [],
+   "solver_answer": 2,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the solution to the given equation?",
+  "stimulus": "A paleobotanist estimating the age of fossil leaf layers uses the equation below.\n\n$\\sqrt{3x+4} + 2 = x$",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "First get the root by itself: $\\sqrt{3x+4} = x - 2$. Square both sides: $3x + 4 = x^2 - 4x + 4$, so $x^2 - 7x = 0$ and $x(x-7) = 0$. The candidates are 0 and 7. For $x = 7$: $\\sqrt{25} + 2 = 7$, which works. For $x = 0$: $\\sqrt{4} + 2 = 4$, not 0, so 0 is extraneous. The solution is 7.",
+  "common_errors": [
+   {
+    "value": "0",
+    "misconception": "missed-condition",
+    "why": "Kept the squared-in root. At $x=0$ the root would have to equal $0-2=-2$."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Squared $x-2$ as $x^2+4$, which gives $x^2 - 3x = 0$, and kept the nonzero root 3."
+   }
+  ],
+  "id": "orig-rational-radic-M-fcd3b1",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-fcd3b1",
+   "structure": [],
+   "solver_answer": 7,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the solution to the given equation?",
+  "stimulus": "A cartographer correcting scale distortion on a regional map arrives at this equation.\n\n$\\frac{x}{x-2} - \\frac{7}{x+2} = \\frac{8}{x^2-4}$",
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "Since $x^2 - 4 = (x-2)(x+2)$, $x$ can't be 2 or $-2$. Multiply every term by $(x-2)(x+2)$ to get $x(x+2) - 7(x-2) = 8$. That gives $x^2 + 2x - 7x + 14 = 8$, so $x^2 - 5x + 6 = 0$ and $(x-2)(x-3) = 0$. You have to reject $x = 2$ because it makes denominators zero. The solution is 3. To check it: $\\frac{3}{1} - \\frac{7}{5} = \\frac{8}{5}$, which matches $\\frac{8}{9-4} = \\frac{8}{5}$.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "missed-condition",
+    "why": "Kept the root that makes $x-2$ and $x^2-4$ equal zero."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied $\\frac{x}{x-2}$ by the common denominator but wrote $x \\cdot x$ instead of $x(x+2)$. This gives $x^2 - 7x + 6 = 0$, and the student kept 6."
+   },
+   {
+    "value": "1",
+    "misconception": "algebra-manipulation",
+    "why": "Made the same multiplying slip, which gives $x^2 - 7x + 6 = 0$, and kept the other root, 1."
+   }
+  ],
+  "id": "orig-rational-radic-M-3afc04",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-3afc04",
+   "structure": [],
+   "solver_answer": 3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the solution to the given equation?",
+  "stimulus": "An immunologist fitting a model of antibody response to dose arrives at the equation below.\n\n$\\sqrt{x+7} = x + 1$",
+  "keys": [
+   "2"
+  ],
+  "any_of": false,
+  "explanation": "Square both sides: $x + 7 = x^2 + 2x + 1$, so $x^2 + x - 6 = 0$ and $(x+3)(x-2) = 0$. For $x = 2$: $\\sqrt{9} = 3$ and $2 + 1 = 3$, which works. For $x = -3$: $\\sqrt{4} = 2$ but $-3 + 1 = -2$, so $-3$ is extraneous. The solution is 2.",
+  "common_errors": [
+   {
+    "value": "-3",
+    "misconception": "missed-condition",
+    "why": "Kept the squared-in root. At $x=-3$ the square root would have to equal $-2$."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Squared $x+1$ as $x^2+1$, which gives $x^2 - x - 6 = 0$ with roots 3 and $-2$, and kept 3."
+   }
+  ],
+  "id": "orig-rational-radic-M-868740",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-868740",
+   "structure": [],
+   "solver_answer": 2,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the solution to the given equation?",
+  "stimulus": "A marine biologist relating kelp density to water depth writes the following equation.\n\n$\\frac{x^2-25}{x-5} = 2x - 3$",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "$x$ can't be 5. Factor the top as $(x-5)(x+5)$ and cancel to get $x + 5 = 2x - 3$, so $x = 8$. If you clear the denominator instead, you get $x^2 - 25 = (2x-3)(x-5)$, which leads to $x^2 - 13x + 40 = 0$ with roots 5 and 8. You must throw out 5 because it makes the denominator zero. The solution is 8.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "missed-condition",
+    "why": "Cleared the denominator, solved the quadratic, and kept $x=5$, which makes the original fraction undefined."
+   },
+   {
+    "value": "-2",
+    "misconception": "algebra-manipulation",
+    "why": "Simplified $\\frac{x^2-25}{x-5}$ to $x-5$ instead of $x+5$, which gives $x - 5 = 2x - 3$."
+   }
+  ],
+  "id": "orig-rational-radic-M-be76c2",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-be76c2",
+   "structure": [],
+   "solver_answer": 8,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the solution to the given equation?",
+  "stimulus": "A musicologist modeling how string tension relates to pitch in early lutes uses this equation.\n\n$\\sqrt{2x+7} = x - 4$",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "Square both sides: $2x + 7 = x^2 - 8x + 16$, so $x^2 - 10x + 9 = 0$ and $(x-1)(x-9) = 0$. For $x = 9$: $\\sqrt{25} = 5$ and $9 - 4 = 5$, which works. For $x = 1$: $\\sqrt{9} = 3$ but $1 - 4 = -3$, so 1 is extraneous. The solution is 9.",
+  "common_errors": [
+   {
+    "value": "1",
+    "misconception": "missed-condition",
+    "why": "Kept the squared-in root without checking it. At $x=1$ the right side is $-3$, which a square root can't equal."
+   }
+  ],
+  "id": "orig-rational-radic-M-9b6d9f",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-9b6d9f",
+   "structure": [],
+   "solver_answer": 9,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the solution to the given equation?",
+  "stimulus": "A linguist modeling how vocabulary size grows with years of exposure arrives at the equation below.\n\n$3\\sqrt{x+4} = x$",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "Square both sides. Remember to square the 3 as well: $9(x+4) = x^2$, so $x^2 - 9x - 36 = 0$ and $(x-12)(x+3) = 0$. For $x = 12$: $3\\sqrt{16} = 12$, which works. For $x = -3$: $3\\sqrt{1} = 3$, not $-3$, so $-3$ is extraneous. The solution is 12.",
+  "common_errors": [
+   {
+    "value": "-3",
+    "misconception": "missed-condition",
+    "why": "Kept the squared-in root. At $x=-3$ the left side is 3 while the right side is $-3$."
+   }
+  ],
+  "id": "orig-rational-radic-M-25f35f",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-25f35f",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the solution to the equation?",
+  "stimulus": "While modeling the arrival times of seismic waves, a seismologist arrives at the equation $\\sqrt{x+7} = x - 5$.",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "The square root is already alone on one side, so square both sides: $x + 7 = (x-5)^2 = x^2 - 10x + 25$. Move everything to one side to get $x^2 - 11x + 18 = 0$, which factors as $(x-2)(x-9) = 0$. That gives two candidates, $x = 2$ and $x = 9$. Put each one back into the original equation. For $x = 9$: $\\sqrt{16} = 4$ and $9 - 5 = 4$, so it works. For $x = 2$: $\\sqrt{9} = 3$, but $2 - 5 = -3$. A square root can't equal a negative number, so $x = 2$ is extraneous: squaring created it. If you graph $y = \\sqrt{x+7}$ and $y = x - 5$ in Desmos, they cross only once, at $x = 9$. The solution is 9.\n\nCommon wrong answers: 2 (you kept the extraneous root that squaring created); 4 (you gave the value of each side at the solution, not $x$).",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "missed-condition",
+    "why": "Solved $x^2 - 11x + 18 = 0$ and kept $x = 2$ without checking it. In the original equation it gives $3 = -3$, so it is extraneous."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Found $x = 9$ but reported the common value of both sides, $\\sqrt{16} = 4$, not $x$."
+   }
+  ],
+  "id": "orig-rational-radic-M-13eb13",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-13eb13",
+   "structure": [],
+   "solver_answer": 9,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": 2,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the solution to the equation?",
+  "stimulus": "While fitting a model to rainfall data, a meteorologist obtains the equation $\\frac{x^2}{x-6} = \\frac{7x-6}{x-6} + 1$.",
+  "keys": [
+   "2"
+  ],
+  "any_of": false,
+  "explanation": "First note that $x$ can't be 6, because that makes the denominators zero. Multiply every term by $x - 6$, including the 1: $x^2 = 7x - 6 + (x - 6)$, so $x^2 = 8x - 12$. Rearrange to $x^2 - 8x + 12 = 0$, which factors as $(x-2)(x-6) = 0$. The candidates are $x = 2$ and $x = 6$. Throw out $x = 6$, since it zeroes the denominator. Check $x = 2$: the left side is $\\frac{4}{-4} = -1$, and the right side is $\\frac{8}{-4} + 1 = -1$. It works. If you graph both sides in Desmos, they meet only at $x = 2$; at $x = 6$ there is just a gap. The solution is 2.\n\nCommon wrong answers: 6 (you kept a value that makes the denominator zero); 8 (you added the two candidates together and never solved for $x$).",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "missed-condition",
+    "why": "Kept the root $x = 6$ from $(x-2)(x-6) = 0$. It makes $x - 6 = 0$, so the original equation is undefined there."
+   },
+   {
+    "value": "8",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $x^2 = 8x - 12$ (or added the two candidates) and entered the coefficient 8 instead of solving for $x$."
+   }
+  ],
+  "id": "orig-rational-radic-M-ee7346",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-M-ee7346",
+   "structure": [],
+   "solver_answer": 2,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": 6,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

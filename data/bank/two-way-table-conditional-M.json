@@ -395,5 +395,842 @@
    "residue": 4
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "If one of the stars that hosts a known planet is selected at random, what is the probability that it is a class K star?",
+  "stimulus": "An astronomy club sorted 400 nearby stars in a catalog by spectral class and by whether at least one planet has been detected orbiting the star.\n\nCatalog Stars by Spectral Class and Planet Detection\nSpectral class | Hosts a known planet | No known planet | Total\nG | 24 | 56 | 80\nK | 30 | 90 | 120\nM | 36 | 164 | 200\nTotal | 90 | 310 | 400",
+  "choices": [
+   "$\\frac{1}{4}$",
+   "$\\frac{1}{3}$",
+   "$\\frac{3}{40}$",
+   "$\\frac{9}{40}$"
+  ],
+  "answer": "B",
+  "explanation": "The condition is that the star hosts a known planet, so the only stars you consider are the 90 in the \"Hosts a known planet\" column. That is your denominator. Of those 90, 30 are class K. The probability is $\\frac{30}{90} = \\frac{1}{3}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the condition and the target. You divided the 30 class K planet hosts by all 120 class K stars, which gives the probability that a class K star hosts a planet. The question asks which fraction of the planet hosts are class K."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided 30 by the grand total of 400. That is the probability that a star picked from the whole catalog is both class K and a planet host. The condition limits you to the 90 planet hosts."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found the probability that a star picked from the whole catalog hosts a known planet, $\\frac{90}{400}$. That total is the denominator you need, not the answer, and you never used the class K cell."
+   }
+  },
+  "id": "orig-two-way-table--M-0e6956",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-0e6956",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If a resident from Riverside is selected at random, what is the probability that the resident chose bus routes?",
+  "stimulus": "A city planning office surveyed residents of two neighborhoods. Each resident picked one improvement they most wanted funded.\n\nPreferred Transportation Improvement by Neighborhood\nNeighborhood | Bike lanes | Bus routes | Sidewalks | Total\nNorthside | 48 | 72 | 30 | 150\nRiverside | 36 | 44 | 40 | 120\nTotal | 84 | 116 | 70 | 270",
+  "choices": [
+   "$\\frac{11}{29}$",
+   "$\\frac{22}{135}$",
+   "$\\frac{11}{30}$",
+   "$\\frac{12}{25}$"
+  ],
+  "answer": "C",
+  "explanation": "The condition names the Riverside row, so only its 120 residents count. That is your denominator. Of them, 44 chose bus routes. The probability is $\\frac{44}{120} = \\frac{11}{30}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You put the bus-routes column total in the denominator, $\\frac{44}{116}$. That answers a different question: of the residents who chose bus routes, what fraction live in Riverside? The condition here is Riverside, so the Riverside total belongs in the denominator."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided 44 by the grand total of 270. That gives the probability that a resident picked from the whole survey both lives in Riverside and chose bus routes. Once you are told the resident is from Riverside, only the 120 Riverside residents count."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You read the Northside row instead of the Riverside row and got $\\frac{72}{150}$. Check which row the condition names before you take any numbers from the table."
+   }
+  },
+  "id": "orig-two-way-table--M-a5fb3c",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-a5fb3c",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these stars is selected at random, which of the following must be true?",
+  "stimulus": "An astronomy team surveyed 200 nearby stars for orbiting planets. The table shows the type of each star and whether a planet was detected.\nStars Surveyed for Planets\nStar type | Planet detected | No planet detected | Total\nRed dwarf | 24 | 56 | 80\nSun-like | 18 | 102 | 120\nTotal | 42 | 158 | 200",
+  "choices": [
+   "The probability that the star has a detected planet, given that it is a red dwarf, is $\\frac{3}{10}$.",
+   "The probability that the star has a detected planet, given that it is a red dwarf, is $\\frac{3}{25}$.",
+   "The probability that the star has a detected planet, given that it is a red dwarf, is $\\frac{4}{7}$.",
+   "The probability that the star has a detected planet, given that it is a red dwarf, is $\\frac{7}{10}$."
+  ],
+  "answer": "A",
+  "explanation": "The condition 'given that it is a red dwarf' makes the red dwarf row your whole world, so the denominator is 80. Of those, 24 have a detected planet. $\\frac{24}{80} = \\frac{3}{10}$, so this statement must be true.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided 24 by the grand total of 200. That gives the probability that a star is a red dwarf AND has a planet, not the probability given that it is a red dwarf."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You divided 24 by 42, the total of stars with a detected planet. That swaps the condition and the target: it is the fraction of planet-hosting stars that are red dwarfs."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used 56, the red dwarfs with no planet detected. $\\frac{56}{80} = \\frac{7}{10}$ is the probability of the opposite outcome."
+   }
+  },
+  "id": "orig-two-way-table--M-9bec5e",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-9bec5e",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is selected at random which of the following"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "At a banding station, ornithologists banded 150 songbirds in spring and recorded which birds were recaptured in the fall. The results are shown.\nSongbirds Banded in Spring\nSpecies | Recaptured | Not recaptured | Total\nChickadee | 45 | 15 | 60\nNuthatch | 12 | 28 | 40\nWren | 18 | 32 | 50\nTotal | 75 | 75 | 150",
+  "choices": [
+   "Of the recaptured birds, $\\frac{3}{4}$ are chickadees.",
+   "Of the recaptured birds, $\\frac{3}{10}$ are chickadees.",
+   "Of the recaptured birds, $\\frac{3}{5}$ are chickadees.",
+   "Of the recaptured birds, $\\frac{1}{5}$ are chickadees."
+  ],
+  "answer": "C",
+  "explanation": "The phrase 'of the recaptured birds' names the group, so the denominator is the Recaptured column total, 75. The chickadees in that column number 45. $\\frac{45}{75} = \\frac{3}{5}$, so this statement must be true.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You divided 45 by 60, the chickadee total. That answers a different question, what fraction of chickadees were recaptured, because you put the target's total in the denominator."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided 45 by the grand total of 150. That is the fraction of all banded birds that are recaptured chickadees, not the fraction of recaptured birds."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used 15, the chickadees that were not recaptured, over 75. That describes the not-recaptured group, the opposite of the group the statement names."
+   }
+  },
+  "id": "orig-two-way-table--M-1ec9a0",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-1ec9a0",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__num__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "If one of these days is selected at random, which of the following must be true?",
+  "stimulus": "A weather station compared its morning forecast with what actually happened on each of 120 days.\nForecasts and Outcomes\nForecast | Rain fell | No rain fell | Total\nRain forecast | 36 | 12 | 48\nNo rain forecast | 9 | 63 | 72\nTotal | 45 | 75 | 120",
+  "choices": [
+   "The probability that rain fell, given that rain was forecast, is $\\frac{4}{5}$.",
+   "The probability that rain fell, given that rain was forecast, is $\\frac{3}{10}$.",
+   "The probability that rain fell, given that rain was forecast, is $\\frac{1}{4}$.",
+   "The probability that rain fell, given that rain was forecast, is $\\frac{3}{4}$."
+  ],
+  "answer": "D",
+  "explanation": "'Given that rain was forecast' limits you to the Rain forecast row, whose total is 48. On 36 of those days rain fell. $\\frac{36}{48} = \\frac{3}{4}$, so this statement must be true.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You divided 36 by 45, the total of days when rain fell. That swaps the condition and the target: it is the probability that rain was forecast, given that rain fell."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided 36 by the grand total of 120. That is the probability that rain was forecast AND rain fell, not the conditional probability."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used 12, the days with a rain forecast but no rain. $\\frac{12}{48} = \\frac{1}{4}$ is the probability that the forecast was wrong, the opposite outcome."
+   }
+  },
+  "id": "orig-two-way-table--M-c3cfba",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-c3cfba",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is selected at random which of the following"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "One of these speakers is chosen at random. Given that the speaker is bilingual, which expression represents the probability that the speaker uses the form?",
+  "stimulus": "A linguist recorded 200 speakers in one town and noted whether each used the plural address form \"yous\" in conversation.\nUse of \"Yous\" by Language Background\nLanguage background | Uses form | Does not use form | Total\nMonolingual | 42 | 78 | 120\nBilingual | 36 | 44 | 80\nTotal | 78 | 122 | 200",
+  "choices": [
+   "$\\frac{36}{200}$",
+   "$\\frac{36}{78}$",
+   "$\\frac{36}{80}$",
+   "$\\frac{44}{80}$"
+  ],
+  "answer": "C",
+  "explanation": "\"Given that the speaker is bilingual\" means you look only at the bilingual row, so the denominator is that row's total, 80. Of those speakers, 36 use the form. The probability is $\\frac{36}{80}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by the grand total, 200. That gives the probability that a speaker is bilingual and uses the form, not the probability given that the speaker is bilingual."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the condition and the target and divided by everyone who uses the form, 78. That is the probability a speaker is bilingual given that they use the form."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the right row but took the bilingual speakers who do not use the form. That is the complement of what was asked."
+   }
+  },
+  "id": "orig-two-way-table--M-708175",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-708175",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Of the residents surveyed who commute by bike, which expression represents the fraction who live in Hillcrest?",
+  "stimulus": "A city planning office surveyed 300 residents of two neighborhoods about how they usually get to work.\nUsual Commute Mode by Neighborhood\nNeighborhood | Bus | Bike | Car | Total\nRiverside | 54 | 26 | 80 | 160\nHillcrest | 31 | 39 | 70 | 140\nTotal | 85 | 65 | 150 | 300",
+  "choices": [
+   "$\\frac{39}{140}$",
+   "$\\frac{39}{65}$",
+   "$\\frac{39}{300}$",
+   "$\\frac{26}{65}$"
+  ],
+  "answer": "B",
+  "explanation": "The phrase \"of the residents who commute by bike\" names the group that is your denominator: the Bike column, with a total of 65. The number of those residents who live in Hillcrest is 39, so the fraction is $\\frac{39}{65}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You put Hillcrest's total in the denominator. That answers a different question, which is what fraction of Hillcrest residents bike."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by all 300 residents. That is the fraction of all residents who both bike and live in Hillcrest, not the fraction of the cyclists."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used the right column but read the Riverside cell, 26, in place of the Hillcrest cell, 39."
+   }
+  },
+  "id": "orig-two-way-table--M-45033f",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-45033f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If a worker chosen at random from this group is a union member, which expression represents the probability that the worker is part-time?",
+  "stimulus": "A labour economist classified 500 warehouse workers by contract type and union membership.\nWarehouse Workers by Contract and Union Status\nContract type | Union member | Not a union member\nFull-time | 132 | 268\nPart-time | 18 | 82",
+  "choices": [
+   "$\\frac{18}{18+82}$",
+   "$\\frac{18}{132}$",
+   "$\\frac{18}{500}$",
+   "$\\frac{18}{18+132}$"
+  ],
+  "answer": "D",
+  "explanation": "The condition \"is a union member\" limits you to the Union member column. That column's total is $132+18=150$, and 18 of those workers are part-time. The probability is $\\frac{18}{18+132}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided by the total of the Part-time row. That gives the probability a worker is a union member given that they are part-time, which reverses the condition and the target."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided by the other cell in the column instead of by the column total. You left the 18 part-time union members out of the group they belong to."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by all 500 workers. That is the probability that a worker is both part-time and a union member, not the probability given union membership."
+   }
+  },
+  "id": "orig-two-way-table--M-d39e19",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-d39e19",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these maps is selected at random, the probability that it is nautical, given that it was made before 1900, is $\\frac{2}{5}$. What is the value of $x$?",
+  "stimulus": "A county archive sorted its printed maps by type and by the era in which each was made. The number of nautical maps made before 1900 is shown as $x$.\n\nArchive Maps by Type and Era\nEra | Topographic | Nautical\nBefore 1900 | 18 | x\n1900 or later | 42 | 30",
+  "choices": [
+   "$12$",
+   "$20$",
+   "$27$",
+   "$60$"
+  ],
+  "answer": "A",
+  "explanation": "\"Given that it was made before 1900\" means the before-1900 row is the only group that counts, so the denominator is that row's total, $18 + x$. The numerator is the nautical cell in that row, $x$. Rather than solving $\\frac{x}{18+x} = \\frac{2}{5}$, try the choices: with $x = 12$, the row total is $30$ and $\\frac{12}{30} = \\frac{2}{5}$. None of the other choices works.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the condition and the target and used the nautical column as the denominator: $\\frac{x}{30+x} = \\frac{2}{5}$ gives $20$. That is the probability that a nautical map was made before 1900, which is not what the question asks."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You made the topographic share of the before-1900 row equal $\\frac{2}{5}$: $\\frac{18}{18+x} = \\frac{2}{5}$ gives $27$. With $x = 27$, the nautical share is $\\frac{27}{45} = \\frac{3}{5}$, not $\\frac{2}{5}$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by the total of the whole table, $90 + x$, and not by the before-1900 row. $\\frac{x}{90+x} = \\frac{2}{5}$ gives $60$, which makes the probability that a map is both nautical and made before 1900 equal $\\frac{2}{5}$. That is a different probability."
+   }
+  },
+  "id": "orig-two-way-table--M-ca7eaa",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-ca7eaa",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these tales is selected at random, the probability that it was recorded in a coastal village, given that it is an origin tale, is $\\frac{1}{4}$. What is the value of $x$?",
+  "stimulus": "A folklore researcher sorted the tales she recorded by tale type and by the kind of village where each was told. The number of origin tales recorded in coastal villages is shown as $x$.\n\nRecorded Tales by Type and Village\nTale type | Coastal | Inland\nTrickster | 20 | 30\nOrigin | x | 36\nGhost | 25 | 42",
+  "choices": [
+   "$9$",
+   "$12$",
+   "$15$",
+   "$51$"
+  ],
+  "answer": "B",
+  "explanation": "\"Given that it is an origin tale\" means only the origin row counts, so the denominator is $x + 36$ and the numerator is the coastal cell, $x$. Try the choices: with $x = 12$, the row total is $48$ and $\\frac{12}{48} = \\frac{1}{4}$. None of the other choices gives $\\frac{1}{4}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used only the known inland cell as the denominator, $\\frac{x}{36} = \\frac{1}{4}$, and forgot that the origin row's total includes $x$ too. With $x = 9$, the actual probability is $\\frac{9}{45} = \\frac{1}{5}$."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the condition and the target and used the coastal column as the denominator: $\\frac{x}{x+45} = \\frac{1}{4}$ gives $15$. That is the probability that a coastal tale is an origin tale."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by every tale in the table, $x + 153$, and not by the origin row. $\\frac{x}{x+153} = \\frac{1}{4}$ gives $51$, which makes the probability that a tale is both an origin tale and coastal equal $\\frac{1}{4}$. That is a different probability."
+   }
+  },
+  "id": "orig-two-way-table--M-43fac3",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-43fac3",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these turtles is selected at random, the probability that it is a green turtle, given that it was tagged at South Beach, is $\\frac{3}{5}$. What is the value of $x$?",
+  "stimulus": "A marine biology team tagged nesting sea turtles at two beaches and recorded each turtle's species. The number of green turtles tagged at South Beach is shown as $x$.\n\nTagged Turtles by Species and Beach\nSpecies | North Beach | South Beach\nLoggerhead | 22 | 7\nGreen | 16 | x\nLeatherback | 10 | 5",
+  "choices": [
+   "$8$",
+   "$18$",
+   "$24$",
+   "$90$"
+  ],
+  "answer": "B",
+  "explanation": "\"Given that it was tagged at South Beach\" means only the South Beach column counts, so the denominator is $7 + x + 5 = x + 12$ and the numerator is the green cell, $x$. Try the choices: with $x = 18$, the column total is $30$ and $\\frac{18}{30} = \\frac{3}{5}$. None of the other choices gives $\\frac{3}{5}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You made the share of South Beach turtles that are not green equal $\\frac{3}{5}$: $\\frac{12}{12+x} = \\frac{3}{5}$ gives $8$. With $x = 8$, the green share is $\\frac{8}{20} = \\frac{2}{5}$, the complement of what was asked."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the condition and the target and used the green row as the denominator: $\\frac{x}{16+x} = \\frac{3}{5}$ gives $24$. That is the probability that a green turtle was tagged at South Beach."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by every turtle in the table, $x + 60$, and not by the South Beach column. $\\frac{x}{x+60} = \\frac{3}{5}$ gives $90$, which makes the probability that a turtle is both green and from South Beach equal $\\frac{3}{5}$. That is a different probability."
+   }
+  },
+  "id": "orig-two-way-table--M-25fec5",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-25fec5",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of the bone artifacts is selected at random, what is the probability that it came from the lower layer?",
+  "stimulus": "An archaeology team sorted 100 artifacts from a dig site by material and by the soil layer where each was found. The results are shown in the table.\n\nArtifacts by Material and Soil Layer\nMaterial | Upper layer | Lower layer | Total\nPottery | 30 | 30 | 60\nBone | 10 | 30 | 40\nTotal | 40 | 60 | 100",
+  "choices": [
+   "$\\frac{3}{10}$",
+   "$\\frac{1}{2}$",
+   "$\\frac{3}{5}$",
+   "$\\frac{3}{4}$"
+  ],
+  "answer": "D",
+  "explanation": "The condition is \"one of the bone artifacts,\" so the Bone row is the only group that counts. Its total, 40, is your denominator. Of those, 30 came from the lower layer, so the probability is $\\frac{30}{40} = \\frac{3}{4}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the 30 lower-layer bone artifacts by the grand total of 100. That gives the probability that an artifact is bone and from the lower layer, not the probability of the lower layer given that it is bone."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the condition and the target and divided 30 by the lower-layer total of 60. That is the probability that a lower-layer artifact is bone, not that a bone artifact is from the lower layer."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You found the share of all artifacts that came from the lower layer, $\\frac{60}{100}$. You ignored the condition that the artifact is bone."
+   }
+  },
+  "id": "orig-two-way-table--M-f4b8d9",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-f4b8d9",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of the specimens that failed is selected at random, what is the probability that it was heat-treated?",
+  "stimulus": "A materials lab ran a bending test on 100 aluminum alloy specimens. Some specimens had been heat-treated and the rest had not. Each specimen either passed or failed the test.\n\nBending Test Results\nTreatment | Passed | Failed | Total\nHeat-treated | 52 | 8 | 60\nUntreated | 28 | 12 | 40\nTotal | 80 | 20 | 100",
+  "choices": [
+   "$\\frac{2}{25}$",
+   "$\\frac{2}{15}$",
+   "$\\frac{2}{5}$",
+   "$\\frac{3}{5}$"
+  ],
+  "answer": "C",
+  "explanation": "The condition is \"specimens that failed,\" so keep only the Failed column. Its total, 20, is your denominator. Of those, 8 were heat-treated, so the probability is $\\frac{8}{20} = \\frac{2}{5}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the 8 heat-treated specimens that failed by the grand total of 100. That gives the probability that a specimen was heat-treated and failed, not the probability that a failed specimen was heat-treated."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the condition and the target and divided 8 by the heat-treated total of 60. That is the probability that a heat-treated specimen failed."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You found the share of all specimens that were heat-treated, $\\frac{60}{100}$. You ignored the condition that the specimen failed."
+   }
+  },
+  "id": "orig-two-way-table--M-b5f58c",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-b5f58c",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "One of the swatches will be selected at random. Which of the following events has a probability of $\\frac{3}{4}$?",
+  "stimulus": "A textile museum catalogued 50 historical fabric swatches by fiber and by the dye used to color them.\n\nFabric Swatches by Fiber and Dye\nFiber | Indigo | Madder | Total\nWool | 18 | 12 | 30\nLinen | 6 | 14 | 20\nTotal | 24 | 26 | 50",
+  "choices": [
+   "The swatch is dyed with indigo, given that it is wool.",
+   "The swatch is wool, given that it is dyed with indigo.",
+   "The swatch is wool, and it is dyed with indigo.",
+   "The swatch is wool, given that it is dyed with madder."
+  ],
+  "answer": "B",
+  "explanation": "In the phrase \"given that it is dyed with indigo,\" the Indigo column becomes your whole world, with 24 swatches. Of those, 18 are wool, so the probability is $\\frac{18}{24} = \\frac{3}{4}$. That makes this the event with probability $\\frac{3}{4}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "This event swaps the condition and the target. Its denominator is the 30 wool swatches, so its probability is $\\frac{18}{30} = \\frac{3}{5}$, not $\\frac{3}{4}$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the \"and\" probability, so it uses the grand total. Its value is $\\frac{18}{50} = \\frac{9}{25}$, not $\\frac{3}{4}$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "This event reads from the Madder column instead of the Indigo column. Its probability is $\\frac{12}{26} = \\frac{6}{13}$, not $\\frac{3}{4}$."
+   }
+  },
+  "id": "orig-two-way-table--M-165c64",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-165c64",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A sonata from the collection will be selected at random. How much greater is the probability that the sonata is in a minor key given that it is from the Romantic period than given that it is from the Baroque period?",
+  "stimulus": "A musicologist sorted 100 surviving sonatas from one archive by period and by key.\n\nSonatas by Period and Key\nPeriod | Major key | Minor key | Total\nBaroque | 32 | 8 | 40\nRomantic | 24 | 36 | 60\nTotal | 56 | 44 | 100",
+  "choices": [
+   "$0.28$",
+   "$0.40$",
+   "$0.60$",
+   "$0.80$"
+  ],
+  "answer": "B",
+  "explanation": "Each 'given that' makes one row your whole world. For the Romantic row, the denominator is 60, so the probability is $\\frac{36}{60} = 0.60$. For the Baroque row, the denominator is 40, so the probability is $\\frac{8}{40} = 0.20$. The question asks for the gap: $0.60 - 0.20 = 0.40$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided both cells by the grand total of 100 instead of by each row's total: $\\frac{36}{100} - \\frac{8}{100} = 0.28$. That compares 'Romantic and minor' with 'Baroque and minor', not the probabilities given each period."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "$0.60$ is the probability of a minor key for the Romantic sonatas alone. You stopped there and never subtracted the Baroque probability to find the gap."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "$0.80$ is $\\frac{32}{40}$, the probability that a Baroque sonata is in a major key. You used the wrong key and only one period, so you never found the gap."
+   }
+  },
+  "id": "orig-two-way-table--M-afacf5",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-afacf5",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "For a bridge selected at random, the probability that it needs repair given that it is concrete is how many times the probability that it needs repair given that it is steel?",
+  "stimulus": "A county engineering office inspected 200 bridges and recorded each bridge's main material and its inspection result.\n\nBridge Inspection Results\nMaterial | Passed | Needs repair | Total\nSteel | 60 | 20 | 80\nConcrete | 72 | 48 | 120\nTotal | 132 | 68 | 200",
+  "choices": [
+   "$0.15$",
+   "$0.40$",
+   "$1.60$",
+   "$2.40$"
+  ],
+  "answer": "C",
+  "explanation": "Use each material's row total as the denominator. Given concrete: $\\frac{48}{120} = 0.40$. Given steel: $\\frac{20}{80} = 0.25$. The question asks how many times as great, so divide: $\\frac{0.40}{0.25} = 1.60$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the difference, $0.40 - 0.25 = 0.15$, but the question asks how many times as great one probability is, so you need to divide them."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "$0.40$ is the probability that a concrete bridge needs repair. That is only one of the two probabilities. You still had to compare it with the steel probability."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You compared the raw counts, $\\frac{48}{20} = 2.40$. That is the same as dividing each cell by the grand total of 200. It ignores the fact that there are more concrete bridges than steel ones, so it does not compare the probabilities given each material."
+   }
+  },
+  "id": "orig-two-way-table--M-9cc7f2",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-9cc7f2",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A print from the exhibition will be selected at random. How much greater is the probability that the print uses colored ink given that it is a woodcut than given that it is an etching?",
+  "stimulus": "A gallery cataloged the 125 prints in an exhibition by technique and by ink.\n\nExhibition Prints by Technique and Ink\nTechnique | Black ink | Colored ink | Total\nWoodcut | 20 | 30 | 50\nEtching | 60 | 15 | 75\nTotal | 80 | 45 | 125",
+  "choices": [
+   "$\\frac{3}{25}$",
+   "$\\frac{1}{3}$",
+   "$\\frac{2}{5}$",
+   "$\\frac{3}{5}$"
+  ],
+  "answer": "C",
+  "explanation": "The condition names the technique, so each row total is your denominator. Given woodcut: $\\frac{30}{50} = \\frac{3}{5}$. Given etching: $\\frac{15}{75} = \\frac{1}{5}$. The gap is $\\frac{3}{5} - \\frac{1}{5} = \\frac{2}{5}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by the grand total of 125 instead of by each technique's total: $\\frac{30}{125} - \\frac{15}{125} = \\frac{3}{25}$. That compares 'woodcut and colored' with 'etching and colored', not probabilities given each technique."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the condition and the target. You divided by the colored-ink total of 45, which gives $\\frac{30}{45} - \\frac{15}{45} = \\frac{1}{3}$. That answers 'of the colored prints, what fraction are woodcuts versus etchings,' which is a different question."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$\\frac{3}{5}$ is the probability that a woodcut uses colored ink. That is only one of the two probabilities. You never subtracted the etching probability to find the gap."
+   }
+  },
+  "id": "orig-two-way-table--M-c26e1b",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-conditional",
+  "subtype_name": "Conditional probability from a table ('given that\u2026')",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-c26e1b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

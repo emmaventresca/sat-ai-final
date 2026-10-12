@@ -216,5 +216,722 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the slope of the graph of this equation in the xy-plane?",
+  "stimulus": "An archaeologist estimates the age of soil layers at a dig site using the equation $8x = 2y + 30$, where $x$ is the depth of a layer, in centimeters, and $y$ is its estimated age, in decades.",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "The equation isn't in slope-intercept form yet, so solve for $y$. Subtract 30 from both sides to get $8x - 30 = 2y$. Then divide by 2 to get $y = 4x - 15$. The slope is the coefficient of $x$, which is 4.",
+  "common_errors": [
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Read the coefficient of $x$ straight off the given equation and never divided by the 2 in front of $y$."
+   },
+   {
+    "value": "-4",
+    "misconception": "algebra-manipulation",
+    "why": "Moved $8x$ to the $y$ side of the equation and lost track of the sign."
+   },
+   {
+    "value": "1/4",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the wrong way and took the coefficient of $y$ over the coefficient of $x$."
+   },
+   {
+    "value": "-15",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved for $y$ correctly but gave the y-intercept instead of the slope."
+   },
+   {
+    "value": "15/4",
+    "misconception": "wrong-target-quantity",
+    "why": "Set $y = 0$ and gave the x-intercept."
+   }
+  ],
+  "id": "orig-read-slope-or--M-ea37b9",
+  "skill_cd": "H.C.",
+  "subtype": "read-slope-or-intercept",
+  "subtype_name": "Read the slope or intercept",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-slope-or--M-ea37b9",
+   "structure": [],
+   "solver_answer": 4,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "of the graph of this equation in the",
+    "the graph of this equation in the xy",
+    "graph of this equation in the xy plane"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "The graph of this equation in the xy-plane has a y-intercept of $(0, k)$. What is the value of $k$?",
+  "stimulus": "An astronomy club tracks how much telescope time it has left on an observing night with the equation $12x + 5y = 600$, where $x$ is the number of targets observed and $y$ is the remaining telescope time, in minutes.",
+  "keys": [
+   "120"
+  ],
+  "any_of": false,
+  "explanation": "The y-intercept is where $x = 0$. Substitute that in to get $5y = 600$, so $y = 120$. In context, the club starts the night with 120 minutes of telescope time.",
+  "common_errors": [
+   {
+    "value": "50",
+    "misconception": "wrong-target-quantity",
+    "why": "Set $y = 0$ instead of $x = 0$ and found the x-intercept, which is the number of targets that uses up all the time."
+   },
+   {
+    "value": "600",
+    "misconception": "algebra-manipulation",
+    "why": "Set $x = 0$ but forgot to divide by the coefficient 5 on $y$."
+   },
+   {
+    "value": "-12/5",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved for $y$ and gave the slope instead of the intercept."
+   }
+  ],
+  "id": "orig-read-slope-or--M-871fc4",
+  "skill_cd": "H.C.",
+  "subtype": "read-slope-or-intercept",
+  "subtype_name": "Read the slope or intercept",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-slope-or--M-871fc4",
+   "structure": [],
+   "solver_answer": 120,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the graph of this equation in the xy",
+    "graph of this equation in the xy plane",
+    "equation in the xy plane has a y",
+    "in the xy plane has a y intercept",
+    "the xy plane has a y intercept of",
+    "xy plane has a y intercept of __var__",
+    "a y intercept of __var__ what is the"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "What is the slope of the line shown?",
+  "stimulus": "A hydrologist recorded the water level in a reservoir during a period of heavy inflow and found that it rose at a constant rate.",
+  "figure": {
+   "type": "line",
+   "caption": "Reservoir Water Level",
+   "x_label": "Time (days)",
+   "y_label": "Water level (meters)",
+   "points": [
+    [
+     0,
+     6
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     4,
+     12
+    ],
+    [
+     6,
+     15
+    ],
+    [
+     8,
+     18
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 21,
+   "y_step": 3,
+   "alt": "A straight line rising from the vertical axis through evenly spaced points, from 0 to 8 days."
+  },
+  "keys": [
+   "3/2",
+   "1.5"
+  ],
+  "any_of": false,
+  "explanation": "Choose two points on the line that sit on gridlines, such as $(0, 6)$ and $(4, 12)$. The slope is rise over run: $\\frac{12 - 6}{4 - 0} = \\frac{6}{4} = \\frac{3}{2}$. Look at the axis labels before you count. Each horizontal gridline is 2 days and each vertical gridline is 3 meters, so counting squares won't give you the slope.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "misread-given",
+    "why": "Counted one square up for each square across as if both axes went up by 1, ignoring that each horizontal step is 2 days."
+   },
+   {
+    "value": "2/3",
+    "misconception": "algebra-manipulation",
+    "why": "Calculated run over rise instead of rise over run."
+   },
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the y-intercept, where the line crosses the vertical axis, instead of the slope."
+   }
+  ],
+  "id": "orig-read-slope-or--M-173218",
+  "skill_cd": "H.C.",
+  "subtype": "read-slope-or-intercept",
+  "subtype_name": "Read the slope or intercept",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-slope-or--M-173218",
+   "structure": [],
+   "solver_answer": "3/2",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graph of this equation in the xy-plane has a y-intercept of $(0, b)$. What is the value of $b$?",
+  "stimulus": "A meteorologist models the air temperature on a spring morning with the equation $y - 14 = 3(x - 2)$, where $y$ is the temperature, in degrees Celsius, $x$ hours after 6:00 a.m.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "The equation is in point-slope form, so it gives you the point $(2, 14)$ and the slope 3. It does not give you the intercept directly. Set $x = 0$: $y - 14 = 3(0 - 2) = -6$, so $y = 8$. The model says it was 8 degrees Celsius at 6:00 a.m.",
+  "common_errors": [
+   {
+    "value": "14",
+    "misconception": "wrong-target-quantity",
+    "why": "Took the y-coordinate of the given point $(2, 14)$ as the y-intercept."
+   },
+   {
+    "value": "20",
+    "misconception": "algebra-manipulation",
+    "why": "Got the sign wrong on $3(0 - 2)$ and added 6 to 14 instead of subtracting."
+   },
+   {
+    "value": "11",
+    "misconception": "algebra-manipulation",
+    "why": "Didn't distribute the 3 across the parentheses and subtracted only 3 from 14."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope from the point-slope form instead of the intercept."
+   }
+  ],
+  "id": "orig-read-slope-or--M-313ab7",
+  "skill_cd": "H.C.",
+  "subtype": "read-slope-or-intercept",
+  "subtype_name": "Read the slope or intercept",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-slope-or--M-313ab7",
+   "structure": [],
+   "solver_answer": 8,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the graph of this equation in the xy",
+    "graph of this equation in the xy plane",
+    "equation in the xy plane has a y",
+    "in the xy plane has a y intercept",
+    "the xy plane has a y intercept of",
+    "xy plane has a y intercept of __var__",
+    "a y intercept of __var__ what is the"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "According to the model, how many versions of the tale had been catalogued when the archive opened?",
+  "stimulus": "A folklore archive models the number of versions of a regional trickster tale it has catalogued with the equation $4y - 3x = 52$, where $y$ is the number of versions catalogued $x$ years after the archive opened.",
+  "keys": [
+   "13"
+  ],
+  "any_of": false,
+  "explanation": "When the archive opened, no time had passed, so $x = 0$. That makes this a y-intercept question. Substitute $x = 0$ to get $4y = 52$, so $y = 13$.",
+  "common_errors": [
+   {
+    "value": "52",
+    "misconception": "algebra-manipulation",
+    "why": "Set $x = 0$ but forgot to divide by the coefficient 4 on $y$."
+   },
+   {
+    "value": "3/4",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved for $y$ and gave the slope, which is the number of versions added each year, instead of the starting number."
+   },
+   {
+    "value": "-52/3",
+    "misconception": "wrong-target-quantity",
+    "why": "Set $y = 0$ and gave the x-intercept instead of the y-intercept."
+   }
+  ],
+  "id": "orig-read-slope-or--M-214124",
+  "skill_cd": "H.C.",
+  "subtype": "read-slope-or-intercept",
+  "subtype_name": "Read the slope or intercept",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-slope-or--M-214124",
+   "structure": [],
+   "solver_answer": 13,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the slope of the graph of this equation in the xy-plane?",
+  "stimulus": "A linguist studying how children learn a second language uses the equation $\\frac{2}{3}x - \\frac{1}{4}y = 5$ to relate $x$, the number of weeks of exposure, to $y$, a vocabulary score.",
+  "keys": [
+   "8/3",
+   "2.666",
+   "2.667"
+  ],
+  "any_of": false,
+  "explanation": "Solve for $y$. Subtract $\\frac{2}{3}x$ from both sides to get $-\\frac{1}{4}y = -\\frac{2}{3}x + 5$. Then multiply both sides by $-4$ to get $y = \\frac{8}{3}x - 20$. The slope is $\\frac{8}{3}$. You can also use the standard-form rule $-\\frac{A}{B} = -\\frac{2/3}{-1/4} = \\frac{8}{3}$.",
+  "common_errors": [
+   {
+    "value": "2/3",
+    "misconception": "algebra-manipulation",
+    "why": "Read the coefficient of $x$ straight off the equation without dividing by the coefficient of $y$."
+   },
+   {
+    "value": "-8/3",
+    "misconception": "algebra-manipulation",
+    "why": "Divided correctly but dropped one of the two negative signs."
+   },
+   {
+    "value": "1/6",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied $\\frac{2}{3}$ by $\\frac{1}{4}$ instead of dividing."
+   },
+   {
+    "value": "3/8",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the coefficient of $y$ by the coefficient of $x$, which inverts the ratio."
+   },
+   {
+    "value": "-20",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved for $y$ correctly but gave the y-intercept."
+   }
+  ],
+  "id": "orig-read-slope-or--M-0713ca",
+  "skill_cd": "H.C.",
+  "subtype": "read-slope-or-intercept",
+  "subtype_name": "Read the slope or intercept",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-slope-or--M-0713ca",
+   "structure": [],
+   "solver_answer": "8/3",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "of the graph of this equation in the",
+    "the graph of this equation in the xy",
+    "graph of this equation in the xy plane"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "The graph of this equation in the xy-plane has a y-intercept of $(0, c)$. What is the value of $c$?",
+  "stimulus": "A textile historian estimates the number of hand-loom workshops in a mill town with the equation $y = \\frac{5}{2}(x + 6) - 3$, where $y$ is the number of workshops $x$ years after 1800.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "Set $x = 0$: $y = \\frac{5}{2}(6) - 3 = 15 - 3 = 12$. The equation looks a lot like slope-intercept form, but because of the parentheses, the $-3$ at the end is not the intercept.",
+  "common_errors": [
+   {
+    "value": "15",
+    "misconception": "intermediate-step",
+    "why": "Worked out $\\frac{5}{2}(6) = 15$ and stopped before subtracting 3."
+   },
+   {
+    "value": "-3",
+    "misconception": "algebra-manipulation",
+    "why": "Treated the equation as if it were already in the form $y = mx + b$ and read the trailing constant as the intercept without distributing."
+   },
+   {
+    "value": "5/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope instead of the intercept."
+   },
+   {
+    "value": "-4.8",
+    "misconception": "wrong-target-quantity",
+    "why": "Set $y = 0$ and found the x-intercept."
+   }
+  ],
+  "id": "orig-read-slope-or--M-b61c32",
+  "skill_cd": "H.C.",
+  "subtype": "read-slope-or-intercept",
+  "subtype_name": "Read the slope or intercept",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-slope-or--M-b61c32",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the graph of this equation in the xy",
+    "graph of this equation in the xy plane",
+    "equation in the xy plane has a y",
+    "in the xy plane has a y intercept",
+    "the xy plane has a y intercept of",
+    "xy plane has a y intercept of __var__",
+    "a y intercept of __var__ what is the"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "According to the model, by how many centimeters does the fish's length increase each week?",
+  "stimulus": "A marine biologist models the length of a tagged juvenile grouper with the equation $6x - 4y = -36$, where $y$ is the fish's length, in centimeters, $x$ weeks after tagging.",
+  "keys": [
+   "3/2",
+   "1.5"
+  ],
+  "any_of": false,
+  "explanation": "The weekly increase is the slope. Solve for $y$: $-4y = -6x - 36$, so $y = \\frac{3}{2}x + 9$. The coefficient of $x$ is $\\frac{3}{2}$, so the model predicts the fish grows 1.5 centimeters each week.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Took the coefficient of $x$ from standard form without dividing by the coefficient of $y$."
+   },
+   {
+    "value": "-3/2",
+    "misconception": "algebra-manipulation",
+    "why": "Divided by 4 instead of $-4$, which flips the sign of the slope."
+   },
+   {
+    "value": "2/3",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the coefficient of $y$ by the coefficient of $x$, which inverts the ratio."
+   },
+   {
+    "value": "9",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the y-intercept, which is the fish's length when it was tagged, instead of the weekly growth."
+   }
+  ],
+  "id": "orig-read-slope-or--M-a81456",
+  "skill_cd": "H.C.",
+  "subtype": "read-slope-or-intercept",
+  "subtype_name": "Read the slope or intercept",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-slope-or--M-a81456",
+   "structure": [],
+   "solver_answer": "3/2",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the $xy$-plane, the graph of this equation has a $y$-intercept at $(0, k)$. What is the value of $k$?",
+  "stimulus": "An ornithologist uses the equation $3x + 4y = 96$ to model a feeder's daily seed supply, where $x$ is the number of chickadees and $y$ is the number of cardinals the supply can feed.",
+  "keys": [
+   "24"
+  ],
+  "any_of": false,
+  "explanation": "The $y$-intercept is the point where $x = 0$. Substitute $x = 0$: $3(0) + 4y = 96$, so $4y = 96$ and $y = 24$. The intercept is $(0, 24)$, and the question asks only for $k$, so the answer is 24. In context, the supply feeds 24 cardinals when no chickadees visit.",
+  "common_errors": [
+   {
+    "value": "32",
+    "misconception": "wrong-target-quantity",
+    "why": "Set $y = 0$ instead of $x = 0$ and solved $3x = 96$. That gives the $x$-intercept."
+   },
+   {
+    "value": "96",
+    "misconception": "algebra-manipulation",
+    "why": "Set $x = 0$ but read $4y = 96$ as $y = 96$, dropping the coefficient 4."
+   },
+   {
+    "value": "-0.75",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the slope, $-\\frac{3}{4}$, instead of the $y$-intercept."
+   }
+  ],
+  "id": "orig-read-slope-or--M-b65377",
+  "skill_cd": "H.C.",
+  "subtype": "read-slope-or-intercept",
+  "subtype_name": "Read the slope or intercept",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-slope-or--M-b65377",
+   "structure": [],
+   "solver_answer": 24,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "a __var__ intercept at __var__ what is the",
+    "__var__ intercept at __var__ what is the value",
+    "intercept at __var__ what is the value of"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the slope of the graph of this equation in the $xy$-plane?",
+  "stimulus": "A marine biologist models the relationship between water temperature $x$, in degrees Celsius above a reef's baseline, and a coral stress score $y$ with the equation $6x - 4y = 20$.",
+  "keys": [
+   "3/2",
+   "1.5"
+  ],
+  "any_of": false,
+  "explanation": "Solve for $y$. Subtract $6x$ from both sides: $-4y = -6x + 20$. Divide by $-4$: $y = \\frac{3}{2}x - 5$. The slope is the coefficient of $x$, which is $\\frac{3}{2}$. As a check, the slope of $Ax + By = C$ is $-\\frac{A}{B} = -\\frac{6}{-4} = \\frac{3}{2}$.",
+  "common_errors": [
+   {
+    "value": "-1.5",
+    "misconception": "algebra-manipulation",
+    "why": "Used $-\\frac{A}{B}$ but dropped the sign of $B = -4$, or divided only the constant by $-4$, so the sign of the slope came out wrong."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Read the slope straight off standard form as the coefficient of $x$ without solving for $y$."
+   },
+   {
+    "value": "2/3",
+    "misconception": "algebra-manipulation",
+    "why": "Inverted the ratio and computed $\\frac{B}{A}$ (with the sign corrected) instead of $-\\frac{A}{B}$."
+   },
+   {
+    "value": "-5",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved for $y$ correctly but gave the $y$-intercept instead of the slope."
+   }
+  ],
+  "id": "orig-read-slope-or--M-5de85f",
+  "skill_cd": "H.C.",
+  "subtype": "read-slope-or-intercept",
+  "subtype_name": "Read the slope or intercept",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-slope-or--M-5de85f",
+   "structure": [],
+   "solver_answer": "3/2",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "of the graph of this equation in the"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "The graph of this equation in the $xy$-plane has a $y$-intercept at $(0, b)$. What is the value of $b$?",
+  "stimulus": "A textile historian models the length $y$, in centimeters, of cloth on a reconstructed medieval hand loom $x$ hours after a weaver resumed work with the equation $y - 14 = 2(x - 5)$.",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "Set $x = 0$: $y - 14 = 2(0 - 5) = -10$, so $y = 4$. The $y$-intercept is $(0, 4)$, so $b = 4$. In context, the loom held 4 centimeters of cloth when the weaver resumed. The point-slope form gives you the point $(5, 14)$, but that point is not the intercept.",
+  "common_errors": [
+   {
+    "value": "14",
+    "misconception": "wrong-target-quantity",
+    "why": "Took the $y$-coordinate of the given point $(5, 14)$ as the $y$-intercept."
+   },
+   {
+    "value": "24",
+    "misconception": "algebra-manipulation",
+    "why": "Distributed $2(x - 5)$ as $2x + 10$, which gives $y = 2x + 24$."
+   },
+   {
+    "value": "-2",
+    "misconception": "wrong-target-quantity",
+    "why": "Set $y = 0$ and solved for $x$. That gives the $x$-intercept."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope instead of the $y$-intercept."
+   }
+  ],
+  "id": "orig-read-slope-or--M-5171cb",
+  "skill_cd": "H.C.",
+  "subtype": "read-slope-or-intercept",
+  "subtype_name": "Read the slope or intercept",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-slope-or--M-5171cb",
+   "structure": [],
+   "solver_answer": 4,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "a __var__ intercept at __var__ what is the",
+    "__var__ intercept at __var__ what is the value",
+    "intercept at __var__ what is the value of"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the slope of the graph of this equation in the $xy$-plane?",
+  "stimulus": "An astronomer calibrating a telescope's light sensor relates the exposure time $x$, in seconds, to the sensor reading $y$ with the equation $7x - 3y = 15$.",
+  "keys": [
+   "7/3",
+   "2.333",
+   "2.334"
+  ],
+  "any_of": false,
+  "explanation": "Solve for $y$: $-3y = -7x + 15$, so $y = \\frac{7}{3}x - 5$. The slope is the coefficient of $x$, which is $\\frac{7}{3}$. Using the shortcut, $-\\frac{A}{B} = -\\frac{7}{-3} = \\frac{7}{3}$.",
+  "common_errors": [
+   {
+    "value": "-7/3",
+    "misconception": "algebra-manipulation",
+    "why": "Lost the sign when dividing by $-3$, or applied $-\\frac{A}{B}$ while ignoring that $B$ is negative."
+   },
+   {
+    "value": "7",
+    "misconception": "algebra-manipulation",
+    "why": "Read the slope off standard form as the coefficient $A$ without dividing by $B$ or changing the sign."
+   },
+   {
+    "value": "3/7",
+    "misconception": "algebra-manipulation",
+    "why": "Inverted the ratio and computed $\\frac{B}{A}$ (with the sign corrected) instead of $-\\frac{A}{B}$."
+   },
+   {
+    "value": "-5",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved for $y$ correctly but gave the $y$-intercept instead of the slope."
+   },
+   {
+    "value": "15/7",
+    "misconception": "wrong-target-quantity",
+    "why": "Set $y = 0$ and gave the $x$-intercept, $\\frac{15}{7}$, instead of the slope."
+   }
+  ],
+  "id": "orig-read-slope-or--M-9a2a8e",
+  "skill_cd": "H.C.",
+  "subtype": "read-slope-or-intercept",
+  "subtype_name": "Read the slope or intercept",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-read-slope-or--M-9a2a8e",
+   "structure": [],
+   "solver_answer": "7/3",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "of the graph of this equation in the"
+   ],
+   "residue": 4
+  }
  }
 ]

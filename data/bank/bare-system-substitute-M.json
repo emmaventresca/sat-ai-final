@@ -243,5 +243,794 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. What is the value of $y$?",
+  "stimulus": "$y = 3x - 5$\n$4x - 2y = 2$",
+  "choices": [
+   "$-23$",
+   "$-17$",
+   "$4$",
+   "$7$"
+  ],
+  "answer": "D",
+  "explanation": "The first equation already gives $y$ in terms of $x$, so substitute $3x - 5$ for $y$ in the second equation: $4x - 2(3x - 5) = 2$. Distributing gives $4x - 6x + 10 = 2$, so $-2x + 10 = 2$. Then $-2x = -8$, and $x = 4$. The question asks for $y$, so substitute back: $y = 3(4) - 5 = 7$. Check this in the second equation: $4(4) - 2(7) = 16 - 14 = 2$. Desmos gives the same result: graph both lines and the intersection is $(4, 7)$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You distributed $-2$ over $(3x - 5)$ as $-6x - 10$ instead of $-6x + 10$. That gave $-2x - 10 = 2$ and $x = -6$, which makes $y = 3(-6) - 5 = -23$. When you multiply $-2$ by $-5$, the result is $+10$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You set up $-2x = -8$ correctly but lost the negative sign when you divided, which gave $x = -4$ and $y = 3(-4) - 5 = -17$. A negative divided by a negative is positive, so $x = 4$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$4$ is the value of $x$, the variable you found first. The question asks for $y$, so you still have to substitute $x = 4$ back into $y = 3x - 5$."
+   }
+  },
+  "id": "orig-bare-system-su-M-b18817",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-M-b18817",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the solution $(x, y)$ to the given system of equations?",
+  "stimulus": "$y = \\frac{2}{3}x - 5$\n$5x - 4y = 34$",
+  "choices": [
+   "$(3, -3)$",
+   "$(6, -1)$",
+   "$(-1, 6)$",
+   "$(2, -6)$"
+  ],
+  "answer": "B",
+  "explanation": "The first equation already gives y, so substitute it into the second: $5x - 4(\\frac{2}{3}x - 5) = 34$, which gives $5x - \\frac{8}{3}x + 20 = 34$. Then $\\frac{7}{3}x = 14$, so $x = 6$, and $y = \\frac{2}{3}(6) - 5 = -1$. Testing the choices is faster: $(6, -1)$ fits both equations, because $\\frac{2}{3}(6) - 5 = -1$ and $5(6) - 4(-1) = 34$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "This pair works in the first equation, since $\\frac{2}{3}(3) - 5 = -3$. But it fails the second, since $5(3) - 4(-3) = 27$, not 34. You checked only one of the two equations."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the right values but swapped them, putting the y-value where x belongs. Check the order: the x-coordinate comes first."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "This pair works in the second equation, since $5(2) - 4(-6) = 34$. But it fails the first, since $\\frac{2}{3}(2) - 5 = -\\frac{11}{3}$, not $-6$. A solution to the system has to satisfy both equations."
+   }
+  },
+  "id": "orig-bare-system-su-M-19e691",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-M-19e691",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. What is the value of $y$?",
+  "stimulus": "$x = 4y + 9$\n$3x - 7y = 2$",
+  "choices": [
+   "$-11$",
+   "$-5$",
+   "$-\\frac{7}{5}$",
+   "$\\frac{29}{5}$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute $4y + 9$ for x in the second equation: $3(4y + 9) - 7y = 2$, so $12y + 27 - 7y = 2$. That gives $5y = -25$, so $y = -5$. Or test each choice: $y = -5$ gives $x = 4(-5) + 9 = -11$, and $3(-11) - 7(-5) = -33 + 35 = 2$ checks.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$-11$ is the value of x. You found the other variable and stopped, but the question asks for y."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied only the $4y$ by 3 and left the 9 alone, so you got $12y + 9 - 7y = 2$ and $5y = -7$. The 3 has to multiply the whole expression $4y + 9$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added 27 to the right side when you should have subtracted it, so you got $5y = 29$ when the correct result is $5y = -25$."
+   }
+  },
+  "id": "orig-bare-system-su-M-a5efd1",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-M-a5efd1",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the solution $(x, y)$ to the given system of equations?",
+  "stimulus": "$2y = -7$\n$3x + 4y = 1$",
+  "choices": [
+   "$(-\\frac{7}{2}, 5)$",
+   "$(-\\frac{13}{3}, -\\frac{7}{2})$",
+   "$(5, -\\frac{7}{2})$",
+   "$(\\frac{29}{3}, -7)$"
+  ],
+  "answer": "C",
+  "explanation": "The first equation has only one variable, so $y = -\\frac{7}{2}$. Substitute that into the second equation: $3x + 4(-\\frac{7}{2}) = 1$, so $3x - 14 = 1$. Then $3x = 15$ and $x = 5$. As a check, $2(-\\frac{7}{2}) = -7$ and $3(5) + 4(-\\frac{7}{2}) = 15 - 14 = 1$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the right values but swapped them. $-\\frac{7}{2}$ is the value of y, so it goes second in the ordered pair."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "From $3x - 14 = 1$ you subtracted 14 when you should have added it, so you got $3x = -13$. Adding 14 to both sides gives $3x = 15$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the coefficient 2 and read the first equation as $y = -7$. That pair works in the second equation but fails $2y = -7$, because $2(-7) = -14$."
+   }
+  },
+  "id": "orig-bare-system-su-M-f645a0",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-M-f645a0",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. What is the value of $y$?",
+  "stimulus": "$y = 3x - 4$\n$5x + 2y = 25$",
+  "choices": [
+   "$3$",
+   "$5$",
+   "$13$",
+   "$33$"
+  ],
+  "answer": "B",
+  "explanation": "The first equation already gives $y$ in terms of $x$, so substitute it into the second: $5x + 2(3x - 4) = 25$, which becomes $11x - 8 = 25$. Then $11x = 33$ and $x = 3$. The question asks for $y$, so substitute back: $y = 3(3) - 4 = 5$. As a check, $5(3) + 2(5) = 25$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $x = 3$ correctly and stopped there. The question asks for $y$, so you still need to substitute $x = 3$ back into $y = 3x - 4$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You got $x = 3$ but made a sign slip when you substituted back, computing $3(3) + 4$ in place of $3(3) - 4$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$33$ is the value of $11x$, a step partway through the solution. Divide by $11$ to get $x$, then use $x$ to find $y$."
+   }
+  },
+  "id": "orig-bare-system-su-M-d362bc",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-M-d362bc",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the solution $(x, y)$ to the given system of equations?",
+  "stimulus": "$x = 2y + 1$\n$3x - 4y = 11$",
+  "choices": [
+   "$(4, 9)$",
+   "$(5, 1)$",
+   "$(5, 2)$",
+   "$(9, 4)$"
+  ],
+  "answer": "D",
+  "explanation": "Substitute $x = 2y + 1$ into the second equation: $3(2y + 1) - 4y = 11$, so $2y + 3 = 11$, which gives $y = 4$. Then $x = 2(4) + 1 = 9$. Check both equations: $9 = 2(4) + 1$ and $3(9) - 4(4) = 11$. Both hold, so the solution is $(9, 4)$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the right values but put them in the wrong slots. The ordered pair is $(x, y)$, so $x = 9$ goes first."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "This pair works in $3x - 4y = 11$, since $15 - 4 = 11$, but it fails $x = 2y + 1$, since $2(1) + 1 = 3$, not $5$. A solution has to satisfy both equations."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "This pair works in $x = 2y + 1$, since $2(2) + 1 = 5$, but it fails the second equation, since $3(5) - 4(2) = 7$, not $11$. Check every choice in both equations."
+   }
+  },
+  "id": "orig-bare-system-su-M-2ae34b",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-M-2ae34b",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. What is the value of $x$?",
+  "stimulus": "$3x - 2y = 1$\n$2y + 9 = 23$",
+  "choices": [
+   "$5$",
+   "$7$",
+   "$11$",
+   "$15$"
+  ],
+  "answer": "A",
+  "explanation": "The second equation has only one variable, so solve it first: $2y = 14$, so $y = 7$. Substitute $2y = 14$ into the first equation: $3x - 14 = 1$, so $3x = 15$ and $x = 5$. As a check, $3(5) - 2(7) = 1$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You solved the one-variable equation and got $y = 7$, then gave that as the answer. The question asks for $x$, so you still need to substitute into $3x - 2y = 1$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $9$ to $23$ when you should have subtracted it, which gave $2y = 32$ and $y = 16$. That makes $3x = 33$ and leads to $11$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$15$ is the value of $3x$. You still need to divide by $3$ to get $x$."
+   }
+  },
+  "id": "orig-bare-system-su-M-d26431",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-M-d26431",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given system of equations, $k$ is a constant. If $(x, y)$ is the solution to the given system of equations, which expression is equal to $y$?",
+  "stimulus": "$y = 3x$\n$4x + 2y = 70k$",
+  "choices": [
+   "$5k$",
+   "$7k$",
+   "$21k$",
+   "$30k$"
+  ],
+  "answer": "C",
+  "explanation": "The first equation already gives $y$ in terms of $x$, so substitute $3x$ for $y$ in the second equation: $4x + 2(3x) = 70k$. That gives $10x = 70k$, so $x = 7k$. The question asks for $y$, so substitute back: $y = 3(7k) = 21k$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You read the first equation as $x = 3y$ instead of $y = 3x$. Substituting that gives $4(3y) + 2y = 14y = 70k$, so $y = 5k$. Check which variable is isolated before you substitute."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$7k$ is the value of $x$, the variable you solve for first. The question asks for $y$, so you still have to substitute $x = 7k$ into $y = 3x$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You replaced $2y$ with $3x$ and dropped the coefficient 2, which gave $4x + 3x = 7x = 70k$, so $x = 10k$ and $y = 30k$. Substituting $3x$ for $y$ turns $2y$ into $2(3x) = 6x$."
+   }
+  },
+  "id": "orig-bare-system-su-M-6328ce",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-M-6328ce",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given system of equations, $a$ is a constant. If $(x, y)$ is the solution to the given system of equations, which expression is equal to $x$?",
+  "stimulus": "$x = 2y + a$\n$3x - 4y = 13a$",
+  "choices": [
+   "$5a$",
+   "$11a$",
+   "$13a$",
+   "$17a$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute $2y + a$ for $x$ in the second equation: $3(2y + a) - 4y = 13a$. Distributing gives $6y + 3a - 4y = 13a$, so $2y + 3a = 13a$. Then $2y = 10a$ and $y = 5a$. The question asks for $x$: $x = 2(5a) + a = 11a$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$5a$ is the value of $y$, which is what substitution gives you first. The question asks for $x$, so substitute $y = 5a$ back into $x = 2y + a$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied only the $2y$ by 3 and wrote $6y + a - 4y = 13a$. That gives $y = 6a$ and $x = 13a$. The 3 multiplies every term of $2y + a$, so the constant term is $3a$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $3a$ across the equals sign you added it instead of subtracting, which gave $2y = 16a$, $y = 8a$ and $x = 17a$. From $2y + 3a = 13a$, subtract $3a$ from both sides."
+   }
+  },
+  "id": "orig-bare-system-su-M-55a1b4",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-M-55a1b4",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given system of equations, $b$ is a constant. If $(x, y)$ is the solution to the given system of equations, which expression is equal to $x$?",
+  "stimulus": "$4y = 20b$\n$2x + 3y = 31b$",
+  "choices": [
+   "$5b$",
+   "$8b$",
+   "$13b$",
+   "$16b$"
+  ],
+  "answer": "B",
+  "explanation": "The first equation has only one variable: $4y = 20b$, so $y = 5b$. Substitute that into the second equation: $2x + 3(5b) = 31b$, so $2x + 15b = 31b$. Then $2x = 16b$ and $x = 8b$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$5b$ is the value of $y$, which comes straight from the first equation. The question asks for $x$, so you still have to substitute $y = 5b$ into the second equation."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You substituted $5b$ for $3y$ instead of for $y$ and dropped the coefficient 3: $2x + 5b = 31b$ gives $2x = 26b$, so $x = 13b$. The term $3y$ becomes $3(5b) = 15b$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$16b$ is the value of $2x$, not $x$. You stopped one step early. Divide both sides of $2x = 16b$ by 2."
+   }
+  },
+  "id": "orig-bare-system-su-M-58a277",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-M-58a277",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. Which of the following must be true?",
+  "stimulus": "An archaeology student checks a worksheet that goes with a stratigraphy lab. It contains this system.\n\n$y = 2x - 5$\n\n$3x + 2y = 32$",
+  "choices": [
+   "$x = 7$",
+   "$y = 3$",
+   "$y = 7$",
+   "$y = 17$"
+  ],
+  "answer": "C",
+  "explanation": "The first equation already gives $y$ in terms of $x$, so substitute it into the second equation: $3x + 2(2x - 5) = 32$. This becomes $7x - 10 = 32$, so $7x = 42$ and $x = 6$. Substitute back to get $y = 2(6) - 5 = 7$. Both equations check: $7 = 12 - 5$ and $18 + 14 = 32$. So $y = 7$ must be true.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "7 is the value of $y$, not $x$. You found the right number but gave it to the wrong variable. The solution has $x = 6$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "The point $(4, 3)$ lies on $y = 2x - 5$, but it gives $3(4) + 2(3) = 18$, not 32. You picked a value that fits only one equation. The solution has to satisfy both."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $x = 6$ correctly and then flipped the sign when you substituted back, computing $2(6) + 5 = 17$. The equation says $-5$, so $y = 12 - 5 = 7$."
+   }
+  },
+  "id": "orig-bare-system-su-M-65f2ad",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-M-65f2ad",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. Which of the following must be true?",
+  "stimulus": "A musicology seminar uses this system as a warm-up before a unit on rhythmic notation.\n\n$4y = 28$\n\n$2x - 3y = 5$",
+  "choices": [
+   "$x = 7$",
+   "$x = 13$",
+   "$x = -8$",
+   "$x = 4$"
+  ],
+  "answer": "B",
+  "explanation": "The first equation has only one variable, so solve it first: $y = 7$. Substitute this into the second equation: $2x - 3(7) = 5$, so $2x - 21 = 5$. Then $2x = 26$ and $x = 13$. So $x = 13$ must be true.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "7 is the value of $y$, which you get from the first equation. The question asks about $x$, so you still have to substitute $y = 7$ into the second equation."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "From $2x - 21 = 5$ you subtracted 21 instead of adding it, which gave $2x = -16$. Adding 21 to both sides gives $2x = 26$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "The pair $(4, 1)$ satisfies $2x - 3y = 5$, but $4(1) = 4$, not 28. You found a point on one line only. The first equation fixes $y$ at 7."
+   }
+  },
+  "id": "orig-bare-system-su-M-171904",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-M-171904",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. Which of the following must be true?",
+  "stimulus": "A nutrition science handout on balancing meal components opens with this system.\n\n$x = 2y + 4$\n\n$3x - 2y = 24$",
+  "choices": [
+   "$x - y = -7$",
+   "$x - y = 5$",
+   "$x - y = 7$",
+   "$x - y = 9$"
+  ],
+  "answer": "C",
+  "explanation": "The first equation already gives $x$, so substitute it into the second: $3(2y + 4) - 2y = 24$. This becomes $6y + 12 - 2y = 24$, so $4y = 12$ and $y = 3$. Substitute back to get $x = 2(3) + 4 = 10$. Then $x - y = 10 - 3 = 7$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You solved correctly but subtracted in the wrong order and computed $y - x = 3 - 10 = -7$. The question asks for $x - y$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "The point $(6, 1)$ satisfies $x = 2y + 4$, but $3(6) - 2(1) = 16$, not 24. You used a pair that fits only the first equation."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You distributed the 3 to only the first term and wrote $3(2y + 4)$ as $6y + 4$. That gives $4y + 4 = 24$, so $y = 5$ and $x = 14$. The correct expansion is $6y + 12$."
+   }
+  },
+  "id": "orig-bare-system-su-M-4584b9",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-M-4584b9",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. What is the value of $y - x$?",
+  "stimulus": "A civil engineer checking a bridge-deck load model reduces it to this system.\n$y = 2x + 5$\n$3x + 2y = 52$",
+  "choices": [
+   "$6$",
+   "$11$",
+   "$17$",
+   "$23$"
+  ],
+  "answer": "B",
+  "explanation": "The first equation already gives $y$ in terms of $x$, so substitute it into the second: $3x + 2(2x + 5) = 52$. That becomes $7x + 10 = 52$, so $7x = 42$ and $x = 6$. Substituting back gives $y = 2(6) + 5 = 17$. The question asks how much greater $y$ is than $x$: $y - x = 17 - 6 = 11$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $x$, the first value you found. You stopped there and never found $y$ or took the difference the question asks for."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $y$ by itself. You solved the system correctly but answered with one of the two values instead of the gap between them."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $x + y = 6 + 17$. You added the two values when the question asks for the difference $y - x$."
+   }
+  },
+  "id": "orig-bare-system-su-M-9ca763",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-M-9ca763",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. What is the value of $x - y$?",
+  "stimulus": "A materials scientist modelling how stiff a polymer sample is writes this system.\n$5x = 30$\n$4x - y = 9$",
+  "choices": [
+   "$-9$",
+   "$6$",
+   "$9$",
+   "$15$"
+  ],
+  "answer": "A",
+  "explanation": "The first equation has only one variable, so solve it on its own: $x = 6$. Substitute into the second: $4(6) - y = 9$, so $24 - y = 9$ and $y = 15$. Then $x - y = 6 - 15 = -9$. Because $y$ is the larger value, the difference in this order is negative.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $x$, which you get straight from $5x = 30$. You answered with the first value you found and never used the second equation."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "This is $y - x$. You found the right gap but subtracted in the wrong order. The question asks for $x - y$, which is negative here."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $y$ by itself. You solved the system correctly but gave one variable instead of the difference $x - y$."
+   }
+  },
+  "id": "orig-bare-system-su-M-1e9be9",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-M-1e9be9",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. What is the value of $x - y$?",
+  "stimulus": "A historian estimating thread counts in two surviving eighteenth-century linen samples sets up this system.\n$x = 3y + 2$\n$2x - 5y = 9$",
+  "choices": [
+   "$-12$",
+   "$5$",
+   "$12$",
+   "$17$"
+  ],
+  "answer": "C",
+  "explanation": "The first equation already gives $x$ in terms of $y$, so substitute it into the second: $2(3y + 2) - 5y = 9$. That becomes $6y + 4 - 5y = 9$, so $y + 4 = 9$ and $y = 5$. Substituting back gives $x = 3(5) + 2 = 17$. Then $x - y = 17 - 5 = 12$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "This is $y - x = 5 - 17$. You solved the system correctly but subtracted in the reverse order from the one the question asks for."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $y$, the first value the substitution gives you. You stopped before finding $x$ and taking the difference."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $x$ by itself. You found both values but gave the larger one instead of the gap $x - y$."
+   }
+  },
+  "id": "orig-bare-system-su-M-8ef75c",
+  "skill_cd": "H.D.",
+  "subtype": "bare-system-substitute",
+  "subtype_name": "Solve a given system, where one variable is already isolated",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-bare-system-su-M-8ef75c",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

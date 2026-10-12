@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-arc-length-sec-X-301cc8",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "__var__ is __var__ radians greater than the measure",
     "is __var__ radians greater than the measure of"
@@ -80,14 +85,412 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-arc-length-sec-X-da21c0",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the length, in centimeters, of the arc removed from the inner circle?",
+  "stimulus": "A flat alloy washer is the region between two concentric circles. The inner circle has a diameter of 12 centimeters, and the outer circle has a radius of 10 centimeters. A wedge with its vertex at the common center is cut out of the washer. The cut removes an arc of length $4\\pi$ centimeters from the outer circle.",
+  "choices": [
+   "$\\frac{12\\pi}{5}$",
+   "$4\\pi$",
+   "$\\frac{24\\pi}{5}$",
+   "$\\frac{20\\pi}{3}$"
+  ],
+  "answer": "A",
+  "explanation": "Both arcs share one central angle. On the outer circle, $10\\theta = 4\\pi$, so $\\theta = \\frac{2\\pi}{5}$ radians. The inner circle has a diameter of 12, so its radius is 6. The inner arc is $6 \\cdot \\frac{2\\pi}{5} = \\frac{12\\pi}{5}$ centimeters.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the outer arc's length. The two arcs have the same central angle, but the inner circle is smaller, so its arc is shorter."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You used 12 as the inner radius. 12 is the diameter, so the radius is 6, and your arc came out twice as long as it should be."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the ratio and scaled $4\\pi$ by $\\frac{10}{6}$. Arc length grows with the radius, so the smaller circle gets the shorter arc and the factor should be $\\frac{6}{10}$."
+   }
+  },
+  "id": "orig-arc-length-sec-X-45b66f",
+  "skill_cd": "S.D.",
+  "subtype": "arc-length-sector-proportion",
+  "subtype_name": "Arc length and central angle as a fraction of the circle",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-arc-length-sec-X-45b66f",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the length in centimeters of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the diameter, in centimeters, of the cross-section?",
+  "stimulus": "Points $P$ and $Q$ lie on the outer edge of a circular cross-section cut from a fossilized tree trunk. Minor arc $PQ$ has a length of $3\\pi$ centimeters. The degree measure of major arc $PQ$ is $270^\\circ$ greater than the degree measure of minor arc $PQ$.",
+  "choices": [
+   "4",
+   "12",
+   "24",
+   "48"
+  ],
+  "answer": "C",
+  "explanation": "The two arcs add to $360^\\circ$ and differ by $270^\\circ$, so the minor arc is $45^\\circ$. That is $\\frac{45}{360} = \\frac{1}{8}$ of the circle. So $\\frac{1}{8}(2\\pi r) = 3\\pi$, which gives $r = 12$. The diameter is 24 centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You took $270^\\circ$ as the minor arc's measure. That gives $r = 2$ and a diameter of 4. But $270^\\circ$ is how much bigger the major arc is, not the measure of either arc."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "12 is the radius. The question asks for the diameter, which is twice the radius. (You also get 12 if you treat the major arc as $270^\\circ$ and the minor arc as $90^\\circ$.)"
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $\\pi r$ as the circumference, which mixes up radius and diameter. That gives $r = 24$, and doubling it gives 48."
+   }
+  },
+  "id": "orig-arc-length-sec-X-1e92e1",
+  "skill_cd": "S.D.",
+  "subtype": "arc-length-sector-proportion",
+  "subtype_name": "Arc length and central angle as a fraction of the circle",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "review",
+  "verification": {
+   "id": "orig-arc-length-sec-X-1e92e1",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "minor arc __var__ has a length of __var__",
+    "arc __var__ has a length of __var__ centimeters",
+    "__var__ has a length of __var__ centimeters the",
+    "what is the diameter in centimeters of the"
+   ],
+   "residue": 8
+  }
+ },
+ {
+  "stem": "What is the radius, in meters, of the path?",
+  "stimulus": "Gates $A$, $B$, and $C$ stand on a circular walking path in a city plaza. Arcs $AB$, $BC$, and $CA$ make up the whole circle without overlapping. Arc $AB$ measures $120^\\circ$, and arc $CA$ has a central angle of $\\frac{4\\pi}{9}$ radians. Arc $BC$ is $8\\pi$ meters long.",
+  "choices": [
+   "4.5",
+   "7",
+   "9",
+   "18"
+  ],
+  "answer": "C",
+  "explanation": "Convert arc $CA$ to degrees: $\\frac{4\\pi}{9} \\cdot \\frac{180}{\\pi} = 80^\\circ$. So arc $BC$ measures $360 - 120 - 80 = 160^\\circ$. Then $\\frac{160}{360}(2\\pi r) = 8\\pi$, so $2\\pi r = 18\\pi$ and $r = 9$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used 180 as the whole circle and set up $\\frac{160}{180}(2\\pi r) = 8\\pi$. A full circle is $360^\\circ$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You left arc $CA$ out and treated arcs $AB$ and $BC$ as the whole circle ($280^\\circ$). The three arcs together make up the circle."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "The circumference is $18\\pi$, so 18 is the diameter. The question asks for the radius, which is half of that."
+   }
+  },
+  "id": "orig-arc-length-sec-X-65b4ca",
+  "skill_cd": "S.D.",
+  "subtype": "arc-length-sector-proportion",
+  "subtype_name": "Arc length and central angle as a fraction of the circle",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-arc-length-sec-X-65b4ca",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Through how many degrees does the arm turn in 3 hours?",
+  "stimulus": "A center-pivot irrigator waters a circular field with a diameter of 600 meters. The arm runs from the pivot at the center to the edge of the field. The tip of the arm moves along the edge at a constant $75\\pi$ meters per hour.",
+  "choices": [
+   "$67.5^\\circ$",
+   "$135^\\circ$",
+   "$225^\\circ$",
+   "$270^\\circ$"
+  ],
+  "answer": "B",
+  "explanation": "In 3 hours the tip travels $225\\pi$ meters. The radius is 300, so the circumference is $600\\pi$. The fraction of the circle covered is $\\frac{225\\pi}{600\\pi} = \\frac{3}{8}$, and $\\frac{3}{8} \\cdot 360^\\circ = 135^\\circ$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used 600 as the radius, which doubles the circumference and halves the angle. Dividing by 180 instead of 360 gives the same wrong answer."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "$225^\\circ$ is the part of the circle the arm has not yet covered. You found the rest of the circle instead of the angle it turned."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $\\pi r = 300\\pi$ as the circumference, which mixes up radius and diameter. That doubles the fraction."
+   }
+  },
+  "id": "orig-arc-length-sec-X-3ea4a0",
+  "skill_cd": "S.D.",
+  "subtype": "arc-length-sector-proportion",
+  "subtype_name": "Arc length and central angle as a fraction of the circle",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-arc-length-sec-X-3ea4a0",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What percent of the daily calories come from carbohydrates?",
+  "stimulus": "A circle graph shows how a meal plan's daily calories split into three categories: fats, protein, and carbohydrates. The graph is drawn as a circle with a diameter of 12 centimeters. The fats sector has an arc length of $3\\pi$ centimeters. The protein sector has a central angle of $\\frac{2\\pi}{5}$ radians. Carbohydrates fill the rest of the circle.",
+  "choices": [
+   "35%",
+   "55%",
+   "67.5%",
+   "75%"
+  ],
+  "answer": "B",
+  "explanation": "The circumference is $12\\pi$, so fats are $\\frac{3\\pi}{12\\pi} = \\frac{1}{4}$ of the circle. Protein is $\\frac{2\\pi/5}{2\\pi} = \\frac{1}{5}$. Carbohydrates are $1 - \\frac{1}{4} - \\frac{1}{5} = \\frac{11}{20}$, which is 55%.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided protein's angle by $\\pi$ instead of $2\\pi$, which is the radian version of dividing by 180. That makes protein $\\frac{2}{5}$ instead of $\\frac{1}{5}$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You used 12 as the radius. That gives a circumference of $24\\pi$ and shrinks the fats share to $\\frac{1}{8}$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You subtracted only the fats share and forgot that protein also takes part of the circle."
+   }
+  },
+  "id": "orig-arc-length-sec-X-fa5bf8",
+  "skill_cd": "S.D.",
+  "subtype": "arc-length-sector-proportion",
+  "subtype_name": "Arc length and central angle as a fraction of the circle",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-arc-length-sec-X-fa5bf8",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many minutes long was the break?",
+  "stimulus": "A factory time clock has a circular dial with a diameter of 18 centimeters. The minute hand reaches exactly to the edge of the dial. During one worker's unpaid break, the tip of the minute hand traveled $30\\pi$ centimeters.",
+  "choices": [
+   "40",
+   "50",
+   "60",
+   "100"
+  ],
+  "answer": "D",
+  "explanation": "The minute hand's length is the radius, 9 centimeters, so one full turn is $18\\pi$ centimeters. $\\frac{30\\pi}{18\\pi} = \\frac{5}{3}$ turns. One turn takes 60 minutes, so the break was $\\frac{5}{3} \\cdot 60 = 100$ minutes.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You counted only the $\\frac{2}{3}$ of a turn left after the first full turn. The tip went more than once around the dial."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used 18 as the radius. That doubles the circumference to $36\\pi$ and halves the time."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "60 minutes is one full turn of the hand. The tip went $\\frac{2}{3}$ of a turn beyond that."
+   }
+  },
+  "id": "orig-arc-length-sec-X-5e2752",
+  "skill_cd": "S.D.",
+  "subtype": "arc-length-sector-proportion",
+  "subtype_name": "Arc length and central angle as a fraction of the circle",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-arc-length-sec-X-5e2752",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How much farther, in meters, must the buoy drift in the same direction to get back to where it started?",
+  "stimulus": "A research buoy is tethered to a seafloor anchor by a 40-meter line. It drifts along a circular arc with the line kept taut. In the first hour it drifts through a central angle of $\\frac{3\\pi}{10}$ radians. In the second hour it drifts another $36^\\circ$ in the same direction.",
+  "choices": [
+   "$20\\pi$",
+   "$52\\pi$",
+   "$60\\pi$",
+   "$64\\pi$"
+  ],
+  "answer": "C",
+  "explanation": "$36^\\circ = \\frac{\\pi}{5}$ radians, so the total angle so far is $\\frac{3\\pi}{10} + \\frac{2\\pi}{10} = \\frac{\\pi}{2}$. That is an arc of $40 \\cdot \\frac{\\pi}{2} = 20\\pi$. The full circle is $80\\pi$, so the buoy has $80\\pi - 20\\pi = 60\\pi$ meters left.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$20\\pi$ is how far the buoy has already drifted. The question asks how far it still has to go."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the second hour's arc as $\\frac{36}{180}$ of the circumference. Dividing by 180 instead of 360 makes that leg $16\\pi$ instead of $8\\pi$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You converted $36^\\circ$ by multiplying by $\\frac{\\pi}{360}$ instead of $\\frac{\\pi}{180}$. That makes the second leg $4\\pi$, which is too short."
+   }
+  },
+  "id": "orig-arc-length-sec-X-26871e",
+  "skill_cd": "S.D.",
+  "subtype": "arc-length-sector-proportion",
+  "subtype_name": "Arc length and central angle as a fraction of the circle",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-arc-length-sec-X-26871e",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length, in centimeters, of the shorter arc between the pointer's starting position and its final position?",
+  "stimulus": "A circle-of-fifths teaching wheel has 12 key names spaced equally around a circle with a diameter of 30 centimeters. A pointer at the center points to one key name. The pointer turns clockwise through 7 positions, then counterclockwise through 2 positions.",
+  "choices": [
+   "$\\frac{25\\pi}{2}$",
+   "$\\frac{35\\pi}{2}$",
+   "$\\frac{45\\pi}{2}$",
+   "$25\\pi$"
+  ],
+  "answer": "A",
+  "explanation": "Overall, the pointer ends 5 positions clockwise from where it started. Going the other way is 7 positions, so the shorter arc covers 5 positions, which is $\\frac{5}{12}$ of the circle. The circumference is $30\\pi$, so the arc is $\\frac{5}{12} \\cdot 30\\pi = \\frac{25\\pi}{2}$ centimeters.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You measured the longer arc, 7 positions. The question asks for the shorter one."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added both turns to get 9 positions. That is how far the pointer moved in total, not the arc between where it started and where it ended."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used 30 as the radius. That doubles the circumference and doubles the arc."
+   }
+  },
+  "id": "orig-arc-length-sec-X-0a2ce3",
+  "skill_cd": "S.D.",
+  "subtype": "arc-length-sector-proportion",
+  "subtype_name": "Arc length and central angle as a fraction of the circle",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-arc-length-sec-X-0a2ce3",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the length in centimeters of the"
+   ],
+   "residue": 3
+  }
  }
 ]

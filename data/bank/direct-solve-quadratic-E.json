@@ -157,5 +157,251 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the positive solution to the given equation?",
+  "stimulus": "A marine biologist's model of how a kelp frond spreads leads to the equation below.\n\n$3x^2 - 75 = 0$",
+  "choices": [
+   "$-5$",
+   "$5$",
+   "$5\\sqrt{3}$",
+   "$25$"
+  ],
+  "answer": "B",
+  "explanation": "There is no $x$ term, so isolate $x^2$ first. Add 75 to both sides to get $3x^2 = 75$, then divide by 3 to get $x^2 = 25$. Taking the square root gives $x = 5$ or $x = -5$. The question asks for the positive solution, so the answer is 5.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "$-5$ does satisfy the equation, but it is the negative solution. The question asks for the positive one."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the square root of 75 without dividing by 3 first. You have to isolate $x^2$ completely before taking the square root."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "25 is the value of $x^2$, not $x$. You stopped one step early and didn't take the square root."
+   }
+  },
+  "id": "orig-direct-solve-q-E-3b9e26",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-E-3b9e26",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive solution to the given equation?",
+  "stimulus": "A public health analyst modeling clinic wait times arrives at the equation below.\n\n$x^2 - 2x = 24$",
+  "choices": [
+   "$-4$",
+   "$2$",
+   "$4$",
+   "$6$"
+  ],
+  "answer": "D",
+  "explanation": "Subtract 24 to put the equation in standard form: $x^2 - 2x - 24 = 0$. Look for two numbers whose product is $-24$ and whose sum is $-2$. Those are $-6$ and $4$, so the equation factors as $(x - 6)(x + 4) = 0$. The solutions are $x = 6$ and $x = -4$, and the positive one is 6.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "$-4$ is a solution, but it is negative. The question asks for the positive solution."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You solved $x^2 - 2x = 0$ and left out the 24. When you factor $x(x - 2)$ and set $x - 2 = 0$, you get 2, but that is a different equation."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You switched the signs when you factored and wrote $(x + 6)(x - 4)$. That expands to $x^2 + 2x - 24$, not $x^2 - 2x - 24$."
+   }
+  },
+  "id": "orig-direct-solve-q-E-7cd672",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-E-7cd672",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is a solution to the given equation?",
+  "stimulus": "A cartographer rescaling a map grid works with the equation below.\n\n$x^2 - 6x + 4 = 0$",
+  "choices": [
+   "$-3 + \\sqrt{5}$",
+   "$3 + \\sqrt{5}$",
+   "$3 + \\sqrt{13}$",
+   "$6 + 2\\sqrt{5}$"
+  ],
+  "answer": "B",
+  "explanation": "This equation doesn't factor over the integers, so use the quadratic formula with $a = 1$, $b = -6$ and $c = 4$: $x = \\frac{6 \\pm \\sqrt{36 - 16}}{2} = \\frac{6 \\pm 2\\sqrt{5}}{2} = 3 \\pm \\sqrt{5}$. Of the choices, only $3 + \\sqrt{5}$ appears. You can also check it in Desmos: graph $y = x^2 - 6x + 4$, and one x-intercept is about 5.236.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "This is a solution to $x^2 + 6x + 4 = 0$. You used $b = 6$ instead of $-6$, so $-b$ came out with the wrong sign."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added instead of subtracting under the radical and computed $36 + 16 = 52$. The discriminant is $b^2 - 4ac = 36 - 16 = 20$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found the numerator $6 + \\sqrt{20}$ but never divided by $2a = 2$. Divide the whole numerator by 2 to finish."
+   }
+  },
+  "id": "orig-direct-solve-q-E-0f37b8",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-E-0f37b8",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following is a solution",
+    "which of the following is a solution to",
+    "of the following is a solution to the",
+    "the following is a solution to the given",
+    "following is a solution to the given equation"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive solution to the given equation?",
+  "stimulus": "An astronomer estimating the radius of a gas cloud uses the equation below.\n\n$2x^2 + 8 = 80$",
+  "choices": [
+   "$6$",
+   "$2\\sqrt{11}$",
+   "$6\\sqrt{2}$",
+   "$36$"
+  ],
+  "answer": "A",
+  "explanation": "Isolate $x^2$ before taking any square root. Subtract 8 from both sides to get $2x^2 = 72$, then divide by 2 to get $x^2 = 36$. That gives $x = 6$ or $x = -6$, and the positive solution is 6.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added 8 to both sides instead of subtracting it. That gives $2x^2 = 88$, so $x^2 = 44$ and $x = 2\\sqrt{11}$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the square root of 72 without dividing by 2 first. The coefficient on $x^2$ has to go before you take the root."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "36 is the value of $x^2$. You still need to take its square root."
+   }
+  },
+  "id": "orig-direct-solve-q-E-b89cd5",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-E-b89cd5",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What are all the solutions to the given equation?",
+  "stimulus": "An ornithologist modeling the flight path of a diving tern sets up the equation below.\n\n$(x - 3)^2 = 16$",
+  "choices": [
+   "$7$ only",
+   "$-1$ and $7$",
+   "$-7$ and $1$",
+   "$-13$ and $19$"
+  ],
+  "answer": "B",
+  "explanation": "The squared expression is already isolated, so take the square root of both sides and keep both signs: $x - 3 = 4$ or $x - 3 = -4$. Add 3 to each to get $x = 7$ and $x = -1$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You used only the positive square root. $x - 3$ can also equal $-4$, which gives the second solution, $x = -1$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "These are the solutions to $(x + 3)^2 = 16$. You subtracted 3 when you should have added it."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You set $x - 3$ equal to $\\pm 16$ instead of $\\pm 4$. You need to take the square root of 16 before you solve for $x$."
+   }
+  },
+  "id": "orig-direct-solve-q-E-b569bd",
+  "skill_cd": "P.B.",
+  "subtype": "direct-solve-quadratic",
+  "subtype_name": "Solve a bare quadratic",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-direct-solve-q-E-b569bd",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

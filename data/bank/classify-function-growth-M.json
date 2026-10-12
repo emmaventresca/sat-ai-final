@@ -247,5 +247,839 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "Which of the following best describes how the mass of the sample changes over time?",
+  "stimulus": "During a curing test, an engineer heats a polymer sample that starts with a mass of $400$ grams. Each hour, the sample loses mass equal to $3\\%$ of its starting mass.",
+  "choices": [
+   "Decreasing linear",
+   "Decreasing exponential",
+   "Increasing linear",
+   "Increasing exponential"
+  ],
+  "answer": "A",
+  "explanation": "The sample loses mass, so the relationship is decreasing. The $3\\%$ is taken of the starting mass every hour, so you lose the same amount each hour: $0.03(400) = 12$ grams. Subtracting a fixed amount each step is linear, so the mass is $m = 400 - 12h$. That is decreasing linear.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You saw a percent and called it exponential. That would be right only if the sample lost $3\\%$ of its current mass each hour. Here the $3\\%$ is of the fixed starting mass, so it's the same $12$ grams every hour, which is linear."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You got the type right, since a fixed $12$ grams per hour is linear, but you flipped the direction. The sample loses mass, so the relationship is decreasing."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got both features wrong. The mass goes down, not up, and the change is a fixed $12$ grams per hour, not a constant multiplier."
+   }
+  },
+  "id": "orig-classify-funct-M-c21456",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-M-c21456",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following best describes the relationship between the number of months since launch and the number of digitized recordings?",
+  "stimulus": "A music archive is digitizing its collection of field recordings of folk songs. The table shows how many digitized recordings it held at several points after the project launched.\n\nDigitized Folk-Song Recordings\nMonths since launch | Recordings\n0 | 85\n2 | 305\n4 | 525\n6 | 745",
+  "choices": [
+   "Decreasing linear",
+   "Decreasing exponential",
+   "Increasing linear",
+   "Increasing exponential"
+  ],
+  "answer": "C",
+  "explanation": "The number of recordings goes up as the months pass, so the relationship is increasing. Check the differences: $305 - 85 = 220$, $525 - 305 = 220$ and $745 - 525 = 220$. The same amount is added every $2$ months, so the relationship is linear. The ratios aren't constant: $305 \\div 85 \\approx 3.6$ but $745 \\div 525 \\approx 1.4$. That is increasing linear.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You saw the constant differences and correctly called it linear, but you got the direction backward. The recordings go up as the months increase."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got both the direction and the type wrong. The values go up, and they go up by a constant difference, not a constant ratio."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The count jumps by hundreds, so it looks fast and you called it exponential. Fast growth isn't the test, though. The differences are all $220$, and the ratios change, so the growth is linear."
+   }
+  },
+  "id": "orig-classify-funct-M-bc15f0",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-M-bc15f0",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__num__ which of the following best describes the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Based on these models, which statement about the workshops' yearly output is true?",
+  "stimulus": "A textile historian models the output of two 19th-century weaving workshops. Workshop A produced $200$ bolts of cloth in year $0$, and its yearly output rose by $100$ bolts each year after that. Workshop B produced $100$ bolts in year $0$, and its yearly output rose by $50\\%$ each year after that.",
+  "choices": [
+   "Workshop A produces more than Workshop B in each year from year 0 to year 10.",
+   "Workshop A produces more through year 2; Workshop B produces more from year 3 on.",
+   "Workshop B produces more through year 4; Workshop A produces more from year 5 on.",
+   "Workshop A produces more through year 4; Workshop B produces more from year 5 on."
+  ],
+  "answer": "D",
+  "explanation": "Workshop A grows linearly: $200 + 100t$. Workshop B grows exponentially: $100(1.5)^t$. In year $4$, A makes $600$ bolts and B makes $100(1.5)^4 = 506.25$, so A is still ahead. In year $5$, A makes $700$ and B makes $100(1.5)^5 \\approx 759$, so B is now ahead. Exponential growth keeps pulling away after that.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You saw that A starts twice as high and assumed it stays ahead. Exponential growth always passes linear growth eventually. B overtakes A in year $5$, and by year $10$ B makes about $5{,}767$ bolts while A makes $1{,}200$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You compared the yearly increases, not the outputs. B's increase first beats A's $100$ in year $3$ (it rises by $112.5$), but B's total that year is only $337.5$, while A's is $500$."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the right crossover year but put the workshops the wrong way around. A starts ahead because it begins at $200$. B, the exponential one, is the one that takes the lead."
+   }
+  },
+  "id": "orig-classify-funct-M-beb2c2",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-M-beb2c2",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following best describes the relationship between $t$ and $N(t)$?",
+  "stimulus": "A laboratory began archiving radiocarbon samples from an excavation in 2015. The function $N(t) = 500(1 + 0.04t)$ gives the number of samples in the archive $t$ years after 2015.",
+  "choices": [
+   "Increasing exponential",
+   "Increasing linear",
+   "Decreasing exponential",
+   "Decreasing linear"
+  ],
+  "answer": "B",
+  "explanation": "Distribute: $N(t) = 500 + 20t$. Each year adds the same $20$ samples, which is $4\\%$ of the original $500$. Adding a fixed amount each step is linear. The slope is positive, so the number goes up. That is increasing linear.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The form $500(1 + 0.04t)$ looks like $4\\%$ growth, so you treated it as $500(1.04)^t$. Here $t$ multiplies $0.04$ and isn't an exponent. The archive gains $4\\%$ of the original $500$ each year, a fixed $20$ samples, which is linear."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You read the function as $500(0.04)^t$, with $0.04$ as a base below $1$. The function adds $0.04t$ inside the parentheses. Nothing is raised to a power, and nothing shrinks."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You correctly saw a constant change, but you read $0.04$ as a loss. The coefficient of $t$ is $+20$, so the archive grows each year."
+   }
+  },
+  "id": "orig-classify-funct-M-4868a9",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-M-4868a9",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__num__ which of the following best describes the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "If each archive's pattern continues, in which year will Archive Q first hold more variants than Archive P?",
+  "stimulus": "Two archives are collecting recorded variants of regional folktales. The table shows the number of variants each archive held at the end of each year of a project.\n\nFolktale Variants Held\nYear | Archive P | Archive Q\n0 | 120 | 15\n1 | 150 | 30\n2 | 180 | 60\n3 | 210 | 120\n4 | 240 | 240",
+  "choices": [
+   "In year 3",
+   "In year 4",
+   "In year 5",
+   "In no year"
+  ],
+  "answer": "C",
+  "explanation": "Archive P adds $30$ each year, which is linear. Archive Q doubles each year, which is exponential. In year $4$ they're tied at $240$. In year $5$, P has $240 + 30 = 270$ and Q has $2(240) = 480$. Q first holds more in year $5$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You compared the yearly gains, not the totals. In year $3$, Q gained $60$ while P gained only $30$, but Q's total was $120$ and P's was $210$. P still held more."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "In year $4$ the archives are equal at $240$. The question asks when Q holds more, and a tie doesn't count."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You saw P far ahead in the early years and assumed it stays there. Q doubles every year, and exponential growth always passes linear growth eventually. Here that happens in year $5$."
+   }
+  },
+  "id": "orig-classify-funct-M-236bc5",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-M-236bc5",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following best describes how the number of folktales in the archive changes over time?",
+  "stimulus": "At the end of 2020, a regional folklore archive held 500 recorded folktales. Each year since then, the archive has added new folktales equal to 6% of its 2020 total.",
+  "choices": [
+   "Increasing linear",
+   "Increasing exponential",
+   "Decreasing linear",
+   "Decreasing exponential"
+  ],
+  "answer": "A",
+  "explanation": "The archive adds 6% of the fixed 2020 total every year. That is $0.06 \\times 500 = 30$ tales each year. The total goes up, so it is increasing. It goes up by the same 30 tales each year, so it is linear: $N(t) = 500 + 30t$. A percent of a fixed starting amount is a constant amount, not a constant multiplier.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You saw a percent and called it exponential. But the 6% is always taken of the 2020 total, not of the current total, so the archive adds the same 30 tales every year. Growth by a constant amount is linear."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You got the type right but the direction wrong. The archive is adding tales, so the total goes up each year, not down."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got both features wrong. Tales are being added, so the total is increasing, and the yearly change is a constant 30 tales, so it is linear."
+   }
+  },
+  "id": "orig-classify-funct-M-ef5094",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-M-ef5094",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following best describes the relationship between the number of reductions and the width of the map?",
+  "stimulus": "A cartographer shrinks a printed map on a copier several times. The table shows the width of the map after each number of reductions.\n\nMap Width After Reductions\nNumber of reductions | Width (centimeters)\n0 | 50\n1 | 40\n2 | 32\n3 | 25.6",
+  "choices": [
+   "Decreasing linear",
+   "Decreasing exponential",
+   "Increasing linear",
+   "Increasing exponential"
+  ],
+  "answer": "B",
+  "explanation": "The width goes down with each reduction, so it is decreasing. The differences are not constant: 10, then 8, then 6.4. The ratios are constant: $\\frac{40}{50} = \\frac{32}{40} = \\frac{25.6}{32} = 0.8$. Each reduction multiplies the width by 0.8, so the relationship is decreasing exponential.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You probably checked only the first drop of 10 cm and assumed every drop is the same. The drops shrink (10, 8, 6.4), but the ratio stays at 0.8, so the relationship is exponential, not linear."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You read the direction backward. The width falls as the number of reductions rises. The relationship is also exponential, not linear."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You were right about the constant multiplier but got the direction backward. A multiplier of 0.8 is less than 1, so the width is decreasing."
+   }
+  },
+  "id": "orig-classify-funct-M-5c7485",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-M-5c7485",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__num__ which of the following best describes the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which of the following statements is true?",
+  "stimulus": "Marine biologists are restoring two kelp beds. At month 0, Bed A covers 40 square meters and grows by 10 square meters each month. At month 0, Bed B covers 6 square meters and doubles in area each month.",
+  "choices": [
+   "Bed A is larger at month 0, and Bed B is larger from month 4 on.",
+   "Bed A is larger at month 0, and Bed A stays larger in every month.",
+   "Bed B is larger at month 0, and Bed A is larger from month 4 on.",
+   "Bed A is larger at month 0, and Bed B is larger from month 3 on."
+  ],
+  "answer": "A",
+  "explanation": "Bed A grows linearly: 40, 50, 60, 70, 80 square meters at months 0 through 4. Bed B grows exponentially: 6, 12, 24, 48, 96 square meters. Bed A is larger until month 3 (70 compared with 48). At month 4, Bed B passes it (96 compared with 80). Exponential growth always eventually passes linear growth, so Bed B stays larger from month 4 on.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You compared only the starting sizes, or the first few months, and missed the crossover. Bed B doubles each month, so it passes Bed A at month 4 and stays larger after that."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the two beds. Bed A starts larger (40 compared with 6 square meters), and it is Bed B, the doubling one, that takes the lead later."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You placed the crossover one month too early. At month 3, Bed B covers $6 \\times 2^3 = 48$ square meters, which is still less than Bed A's 70. Bed B first passes Bed A at month 4."
+   }
+  },
+  "id": "orig-classify-funct-M-839806",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-M-839806",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation represents this situation, where $V$ is the volume of water in the reservoir, in millions of gallons, $w$ weeks after the drought began?",
+  "stimulus": "At the start of a drought, a reservoir held 800 million gallons of water. Each week during the drought, the reservoir lost an amount of water equal to 3% of the volume it held at the start of the drought.",
+  "choices": [
+   "$V = 800(0.97)^w$",
+   "$V = 800 + 24w$",
+   "$V = 800 - 24w$",
+   "$V = 800 - 0.03w$"
+  ],
+  "answer": "C",
+  "explanation": "The 3% is always taken of the starting volume, so each week the reservoir loses the same fixed amount: $0.03(800) = 24$ million gallons. Losing the same amount every week is linear decrease, so you start at 800 and subtract 24 for each week: $V = 800 - 24w$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You saw a percent and assumed exponential decay. Multiplying by 0.97 each week takes 3% of the current volume, which shrinks every week. Here the 3% is of the fixed starting volume, so the weekly loss never changes and the model is linear."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the correct weekly amount of 24 million gallons but added it. The reservoir is losing water, so the volume has to go down as $w$ increases."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the rate 0.03 itself instead of 3% of 800. The weekly loss is $0.03 \\times 800 = 24$ million gallons, not 0.03 million gallons."
+   }
+  },
+  "id": "orig-classify-funct-M-ad5d97",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-M-ad5d97",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation represents this situation, where $P$ is the number of nesting pairs $t$ years after the first count?",
+  "stimulus": "Ecologists counted the nesting pairs of herons in a wetland colony once a year. The table shows the counts for the first four years.\n\nHeron Nesting Pairs in a Wetland Colony\nYears after first count, $t$ | Nesting pairs, $P$\n0 | 320\n1 | 240\n2 | 180\n3 | 135",
+  "choices": [
+   "$P = 320 - 80t$",
+   "$P = 320(0.75)^t$",
+   "$P = 320(0.25)^t$",
+   "$P = 320(1.25)^t$"
+  ],
+  "answer": "B",
+  "explanation": "The count goes down each year, so the model is decreasing. The differences are 80, 60 and 45, which are not constant, so the model is not linear. The ratios are constant: $240 \\div 320 = 180 \\div 240 = 135 \\div 180 = 0.75$. A constant multiplier means exponential decay, so $P = 320(0.75)^t$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used only the first year's drop of 80 and assumed the same drop every year. The later drops are 60 and 45, so the differences aren't constant and a linear model doesn't fit. Check the ratios, not just the first step."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the 25% that is lost each year as the multiplier. When 25% is lost, 75% remains, so each year's count is multiplied by 0.75, not 0.25. Check: $320 \\times 0.25 = 80$, not 240."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the 25% change but treated it as growth. The counts go down every year, so the multiplier must be less than 1."
+   }
+  },
+  "id": "orig-classify-funct-M-2ad9a3",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-M-2ad9a3",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation represents this situation, where $N$ is the number of confirmed asteroids in the catalog $t$ years after the end of the survey's first year?",
+  "stimulus": "At the end of its first year, a sky survey's catalog held 2,000 confirmed asteroids. In each later year, the number of confirmed asteroids increased by 40% of the number the catalog held at the end of the previous year.",
+  "choices": [
+   "$N = 2{,}000 + 800t$",
+   "$N = 2{,}000(0.6)^t$",
+   "$N = 2{,}000(0.4)^t$",
+   "$N = 2{,}000(1.4)^t$"
+  ],
+  "answer": "D",
+  "explanation": "Each year the increase is 40% of the previous year's total, so the amount added keeps getting bigger. A constant percent of the current amount is exponential growth: each year's total is $100\\% + 40\\% = 140\\%$ of the year before. That gives $N = 2{,}000(1.4)^t$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took 40% of 2,000 once and added that same 800 every year. That would only be right if the percent were always of the starting amount. Here it is of the previous year's total, so the yearly increase grows and the model is exponential."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You treated the 40% as a loss and kept 60% each year. The catalog is growing, so the multiplier must be greater than 1."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the percent increase, 0.4, as the multiplier. Multiplying by 0.4 would leave only 40% of the catalog each year. To add 40%, you multiply by $1 + 0.4 = 1.4$."
+   }
+  },
+  "id": "orig-classify-funct-M-9c19ca",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-M-9c19ca",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which statement best describes how the number of manuscript scores held by the library changes over time?",
+  "stimulus": "At the start of 2015, a conservatory library held 1,200 manuscript scores of Baroque cantatas. Each year since then, the library has transferred to a national archive a number of scores equal to 5% of the 1,200 scores it held in 2015. It has acquired no new scores.",
+  "choices": [
+   "Increasing linear",
+   "Decreasing linear",
+   "Increasing exponential",
+   "Decreasing exponential"
+  ],
+  "answer": "B",
+  "explanation": "The library loses scores every year, so the number is decreasing. The 5% is taken of the fixed 2015 amount, not of whatever the library holds that year, so each year it loses the same number of scores: 0.05 \u00d7 1,200 = 60. Subtracting the same amount each year is linear, so the relationship is decreasing linear: 1,200, 1,140, 1,080, and so on.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You described the archive's collection, which grows by 60 scores a year. The question asks about the library, which gives those scores away, so its count goes down."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got both the direction and the type wrong. The library's count falls, and it falls by the same 60 scores each year, so it is neither increasing nor exponential."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You saw a percent and assumed the change was exponential. The 5% is always 5% of the original 1,200, so the library loses a fixed 60 scores each year. A fixed amount each year is linear. It would only be exponential if it lost 5% of its current holdings each year."
+   }
+  },
+  "id": "orig-classify-funct-M-07277a",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-M-07277a",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which statement best describes how the number of flagged candidates changes as the number of nights increases?",
+  "stimulus": "An astronomy survey's software flags possible exoplanets. The table shows the total number of candidates it had flagged after different numbers of observing nights.\n\nExoplanet Candidates Flagged\nNumber of nights | Total candidates flagged\n0 | 180\n2 | 1,140\n4 | 2,100\n6 | 3,060",
+  "choices": [
+   "Decreasing linear",
+   "Increasing linear",
+   "Decreasing exponential",
+   "Increasing exponential"
+  ],
+  "answer": "B",
+  "explanation": "The total goes up as the number of nights increases, so it is increasing. The nights go up in steps of 2. Check the differences for each step: 1,140 \u2212 180 = 960, 2,100 \u2212 1,140 = 960, and 3,060 \u2212 2,100 = 960. Adding the same amount each step is linear. The ratios (about 6.3, then 1.84, then 1.46) are not constant, so it is not exponential. The relationship is increasing linear.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You correctly saw that the differences are constant, but you got the direction backward, probably by reading the table from the bottom up. As the number of nights increases, the total rises from 180 to 3,060."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You worked out the ratios, saw that they get smaller (6.3, 1.84, 1.46), and described the ratios instead of the totals. The totals themselves go up. Because the ratios are not constant, the relationship is not exponential either."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You saw the total jump from 180 to over 1,000 and decided that fast growth must be exponential. Exponential means the same ratio each step, and these ratios change. What stays the same is the difference of 960, so the growth is linear."
+   }
+  },
+  "id": "orig-classify-funct-M-1bdf55",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-M-1bdf55",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which statement best compares the number of gauges in the two networks?",
+  "stimulus": "A weather agency is building two networks of automatic rain gauges. Network P started in year 0 with 120 gauges and adds 30 gauges each year. Network Q started in year 0 with 40 gauges, and its number of gauges increases by 25% each year.",
+  "choices": [
+   "Network P has more gauges than Network Q in every year.",
+   "Network Q first has more gauges than Network P in year 6.",
+   "Network Q first has more gauges than Network P in year 10.",
+   "Network Q first has more gauges than Network P in year 11."
+  ],
+  "answer": "D",
+  "explanation": "Network P is linear: $P(t) = 120 + 30t$. Network Q is exponential: $Q(t) = 40(1.25)^t$. Exponential growth always eventually passes linear growth, so the only question is when. Setting the two equal can't be solved with simple algebra, so test the years in the choices. In year 10, $Q = 40(1.25)^{10} \\approx 372.5$ and $P = 420$, so P is still ahead. In year 11, $Q \\approx 465.7$ and $P = 450$. Network Q has more gauges for the first time in year 11.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You treated 25% as 25% of the starting 40 gauges, which is a fixed 10 gauges a year. That would never catch P's 30 a year. Or you compared only the first year, when P adds 30 and Q adds 10. Q actually adds 25% of its current size, so its yearly gains keep growing until it passes P."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "Year 6 is the first year Q adds more gauges than P (about 30.5 compared with 30). That compares how much each network grows in a year, not how many gauges each network has. In year 6, Q has only about 153 gauges while P has 300."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "The two models are equal at about t \u2248 10.7, and you rounded down. In year 10, Q has about 372 gauges and P has 420, so Q is not ahead yet. The first whole year when Q is ahead comes after the crossover, which is year 11."
+   }
+  },
+  "id": "orig-classify-funct-M-850e65",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-M-850e65",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which statement best describes how the two starting salaries compare over the years?",
+  "stimulus": "A hospital offers a new technician two pay plans. Under Plan A, the starting salary is $48,000 and goes up by $2,500 at the end of each year. Under Plan B, the starting salary is $50,000 and goes up each year by 4% of the starting salary.",
+  "choices": [
+   "Plan B's salary is higher than Plan A's in every year.",
+   "Plan B's salary is higher before year 4, and Plan A's is higher after year 4.",
+   "Plan A's salary is higher than Plan B's in every year.",
+   "Plan A's salary is higher before year 4, and Plan B's is higher after year 4."
+  ],
+  "answer": "B",
+  "explanation": "Plan B's raise is 4% of the starting salary, which is always 0.04 \u00d7 50,000 = $2,000. That is a fixed amount added each year, so Plan B is linear, just like Plan A. After t years, Plan A pays 48,000 + 2,500t and Plan B pays 50,000 + 2,000t. Plan B starts $2,000 ahead, but Plan A gains $500 on it each year, so the gap closes after 2,000 \u00f7 500 = 4 years. In year 4 both pay $58,000. Before that Plan B is higher, and after that Plan A is higher.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You saw a percent and treated Plan B as exponential, as if each raise were 4% of the current salary. But the raise is 4% of the fixed starting salary, so it is always $2,000. Plan B grows linearly, and Plan A's bigger raise lets it catch up."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You swapped the starting salaries and gave Plan A the $50,000. With the bigger start and the bigger raise, Plan A would lead every year. In fact Plan A starts $2,000 behind."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the right crossover year but had the plans the wrong way round. Plan B starts higher and Plan A, with the larger raise, pulls ahead after year 4."
+   }
+  },
+  "id": "orig-classify-funct-M-b6c87c",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-M-b6c87c",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following statements about the two samples is true?",
+  "stimulus": "An immunologist tracks the number of activated T cells in two lab samples over four days.\n\nActivated T Cells (thousands)\nDay | Sample X | Sample Y\n0 | 200 | 50\n1 | 260 | 100\n2 | 320 | 200\n3 | 380 | 400",
+  "choices": [
+   "Sample X has more cells than Sample Y on every day shown.",
+   "Sample Y overtakes Sample X between day 2 and day 3.",
+   "Sample Y overtakes Sample X between day 1 and day 2.",
+   "Sample X overtakes Sample Y between day 2 and day 3."
+  ],
+  "answer": "B",
+  "explanation": "Sample X goes up by 60 each day, so it grows linearly. Sample Y doubles each day, so it grows exponentially, and exponential growth always passes linear growth eventually. On day 2, X is ahead, 320 to 200. On day 3, Y is ahead, 400 to 380. So Y overtakes X somewhere between day 2 and day 3.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You judged from the early rows, where X leads by a lot, and never checked the last one. On day 3, Sample Y has 400 thousand cells and Sample X has 380 thousand."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You compared how much each sample grew instead of how many cells each one had. From day 1 to day 2, Y gains 100 and X gains only 60, but on day 2 X still has more cells, 320 to 200."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the right interval but reversed which sample passes the other. X starts ahead, so X can't overtake. It is the doubling Sample Y that catches up and moves ahead."
+   }
+  },
+  "id": "orig-classify-funct-M-de18c1",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-M-de18c1",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following best describes how the difference between the amounts of nitrogen in the two plots changes over the first 15 weeks?",
+  "stimulus": "At the start of a growing season, Plot P contains 200 kilograms of soil nitrogen. Each week, it loses an amount equal to 5% of that starting amount. Plot Q starts with 80 kilograms of soil nitrogen and loses 4 kilograms each week. The difference is Plot P's amount minus Plot Q's amount.",
+  "choices": [
+   "Decreasing linear",
+   "Decreasing exponential",
+   "Increasing linear",
+   "Increasing exponential"
+  ],
+  "answer": "A",
+  "explanation": "5% of the starting 200 kilograms is 10 kilograms, so Plot P loses a fixed 10 kilograms each week: P = 200 \u2212 10w. Plot Q is Q = 80 \u2212 4w. The difference is (200 \u2212 10w) \u2212 (80 \u2212 4w) = 120 \u2212 6w. It loses the same 6 kilograms every week, so it is decreasing and linear.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You saw '5%' and assumed exponential decay. But the percent is taken of the fixed starting amount, not the current amount, so Plot P loses exactly 10 kilograms every week. That makes it linear."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You followed something that does grow each week, such as the total nitrogen lost, instead of the gap between the plots. Plot P loses more each week than Plot Q does, so the gap shrinks."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You got both parts wrong. The 5% is of a fixed amount, so the change is linear, not exponential. And Plot P loses nitrogen faster than Plot Q, so the difference goes down, not up."
+   }
+  },
+  "id": "orig-classify-funct-M-096e87",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-M-096e87",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

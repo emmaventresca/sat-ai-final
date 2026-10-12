@@ -224,5 +224,446 @@
    "residue": 1
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "In the system above, $a$ is a constant. What is the value of $a$?",
+  "stimulus": "A linguist recorded 36 audio clips for a dialect archive. Each Spanish clip is 150 seconds long, each Quechua clip is 4 minutes long, and all of the clips together run 120 minutes. The system below models this situation, where $x$ is the number of Spanish clips and $y$ is the number of Quechua clips.\n\n$x + y = 36$\n$ax + 4y = 120$",
+  "keys": [
+   "2.5",
+   "5/2"
+  ],
+  "any_of": false,
+  "explanation": "Write down what each variable stands for: $x$ is the number of Spanish clips and $y$ is the number of Quechua clips. The first equation counts clips. The second adds up running time, and its total of 120 and the Quechua rate of 4 are both in minutes, so every term has to be in minutes. A Spanish clip runs 150 seconds, and $150 \\div 60 = 2.5$ minutes, so $a = 2.5$. To check: $2.5x + 4(36 - x) = 120$ gives $x = 16$ and $y = 20$, which are sensible whole numbers.",
+  "common_errors": [
+   {
+    "value": "150",
+    "misconception": "algebra-manipulation",
+    "why": "Used the Spanish clip length in seconds without converting it to minutes, the unit of the total."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the Quechua clip length, which is the rate for the other variable."
+   },
+   {
+    "value": "0.4",
+    "misconception": "algebra-manipulation",
+    "why": "Converted the wrong way up, dividing 60 by 150 instead of 150 by 60."
+   }
+  ],
+  "id": "orig-word-problem-b-M-e1a93d",
+  "skill_cd": "H.D.",
+  "subtype": "word-problem-build-the-system",
+  "subtype_name": "Pick the system that models the story",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-b-M-e1a93d",
+   "structure": [],
+   "solver_answer": 2.5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the system above, $a$ and $b$ are constants. What is the value of $a + b$?",
+  "stimulus": "A paleobotanist sorted 61 fossil specimens into two groups. There are 4 more than twice as many fern specimens as cycad specimens. The system below models this situation, where $c$ is the number of cycad specimens and $f$ is the number of fern specimens.\n\n$c + f = 61$\n$f = ac + b$",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "Name the variables first: $c$ is the number of cycad specimens and $f$ is the number of fern specimens. The fern group is the larger one, so the multiplier goes on $c$: the number of ferns is twice the cycads plus 4, which gives $f = 2c + 4$. So $a = 2$, $b = 4$, and $a + b = 6$. To check: $c + 2c + 4 = 61$ gives $c = 19$ and $f = 42$.",
+  "common_errors": [
+   {
+    "value": "4.5",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote the relationship backwards, putting the 'twice' on the ferns and getting a = 1/2, then added b = 4."
+   },
+   {
+    "value": "-2",
+    "misconception": "algebra-manipulation",
+    "why": "Read '4 more than' as subtracting 4, so b = -4 and a + b = 2 - 4."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave only the value of a instead of a + b."
+   }
+  ],
+  "id": "orig-word-problem-b-M-507d51",
+  "skill_cd": "H.D.",
+  "subtype": "word-problem-build-the-system",
+  "subtype_name": "Pick the system that models the story",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-b-M-507d51",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the system above, $a$ is a constant. What is the value of $a$?",
+  "stimulus": "During a 20-minute training session, a runner alternates between sprinting at 6 meters per second and jogging at 2.5 meters per second, covering 3,840 meters in total. The system below models this session, where $s$ is the number of minutes spent sprinting and $j$ is the number of minutes spent jogging.\n\n$s + j = 20$\n$as + 150j = 3840$",
+  "keys": [
+   "360"
+  ],
+  "any_of": false,
+  "explanation": "Write down what the variables mean and their units: $s$ and $j$ are times in minutes. The second equation adds up distance in meters, so each coefficient has to be meters per minute. Jogging at 2.5 m/s is $2.5 \\times 60 = 150$ meters per minute, which matches the 150 already in the equation. Sprinting at 6 m/s is $6 \\times 60 = 360$ meters per minute, so $a = 360$. To check: $360s + 150(20 - s) = 3840$ gives $s = 4$ and $j = 16$.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Used the sprint speed in meters per second without converting it to meters per minute."
+   },
+   {
+    "value": "150",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the jogging rate, which belongs to the other variable."
+   },
+   {
+    "value": "0.1",
+    "misconception": "algebra-manipulation",
+    "why": "Divided by 60 instead of multiplying when converting from per second to per minute."
+   }
+  ],
+  "id": "orig-word-problem-b-M-766894",
+  "skill_cd": "H.D.",
+  "subtype": "word-problem-build-the-system",
+  "subtype_name": "Pick the system that models the story",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-b-M-766894",
+   "structure": [],
+   "solver_answer": 360,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the system above, $k$ is a constant. What is the value of $k$?",
+  "stimulus": "A musicology society bought 30 items for its library. Printed scores normally cost \\$25 each but were 20% off, and recordings cost \\$8 each at full price. The society spent \\$384 in total. The system below models this purchase, where $p$ is the number of printed scores and $r$ is the number of recordings.\n\n$p + r = 30$\n$kp + 8r = 384$",
+  "keys": [
+   "20"
+  ],
+  "any_of": false,
+  "explanation": "Name the variables: $p$ is the number of printed scores and $r$ is the number of recordings. The second equation adds up money, so $k$ is the price actually paid for each score. With 20% off you pay 80% of the price: $0.8 \\times 25 = 20$, so $k = 20$. To check: $20p + 8(30 - p) = 384$ gives $p = 12$ and $r = 18$.",
+  "common_errors": [
+   {
+    "value": "25",
+    "misconception": "missed-condition",
+    "why": "Used the full price and ignored the discount."
+   },
+   {
+    "value": "5",
+    "misconception": "intermediate-step",
+    "why": "Gave the amount of the discount instead of the price paid."
+   },
+   {
+    "value": "24.8",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the percent as a decimal (25 - 0.2) instead of multiplying by 0.8."
+   },
+   {
+    "value": "8",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the recording price, which goes with the other variable."
+   }
+  ],
+  "id": "orig-word-problem-b-M-204d1d",
+  "skill_cd": "H.D.",
+  "subtype": "word-problem-build-the-system",
+  "subtype_name": "Pick the system that models the story",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-b-M-204d1d",
+   "structure": [],
+   "solver_answer": 20,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the system above, $a$ and $b$ are constants. What is the value of $a - b$?",
+  "stimulus": "An ornithologist surveyed 25 nests in a wetland. Every cup nest held 4 eggs, every cavity nest held 6 eggs, and the nests held 128 eggs in total. The system below models the survey, where $x$ is the number of cavity nests and $y$ is the number of cup nests.\n\n$x + y = 25$\n$ax + by = 128$",
+  "keys": [
+   "2"
+  ],
+  "any_of": false,
+  "explanation": "Write down what each variable stands for before you match any rates. Here $x$ is the number of cavity nests, not cup nests. The egg equation pairs each nest type with its own eggs per nest: cavity nests hold 6, so $a = 6$, and cup nests hold 4, so $b = 4$. That makes $a - b = 2$. To check: $6x + 4(25 - x) = 128$ gives $x = 14$ and $y = 11$.",
+  "common_errors": [
+   {
+    "value": "-2",
+    "misconception": "wrong-target-quantity",
+    "why": "Matched the rates to the variables in the order the story gives them (cup first), so a = 4 and b = 6."
+   },
+   {
+    "value": "10",
+    "misconception": "algebra-manipulation",
+    "why": "Added the two coefficients instead of subtracting them."
+   },
+   {
+    "value": "103",
+    "misconception": "misread-given",
+    "why": "Used the two totals (128 and 25) in place of the per-nest rates."
+   }
+  ],
+  "id": "orig-word-problem-b-M-4b8927",
+  "skill_cd": "H.D.",
+  "subtype": "word-problem-build-the-system",
+  "subtype_name": "Pick the system that models the story",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-b-M-4b8927",
+   "structure": [],
+   "solver_answer": 2,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the system, $s$ is the number of standard doses and $h$ is the number of high-dose shots. What is the value of $k$?",
+  "stimulus": "A public health clinic gave 85 flu shots in one day. Each standard dose cost the clinic $\\$14$, and each high-dose shot cost $\\$22$ more than a standard dose. The clinic spent $\\$1{,}740$ on these shots. The system below represents this situation.\n\n$s + h = 85$\n$14s + kh = 1{,}740$",
+  "keys": [
+   "36"
+  ],
+  "any_of": false,
+  "explanation": "Start by naming the variables: $s$ is the number of standard doses and $h$ is the number of high-dose shots. The first equation counts the shots. The second adds up the cost: price times quantity for each type. A standard dose costs $\\$14$, so that term is $14s$. A high-dose shot costs $\\$22$ more than that, so it costs $14 + 22 = 36$ dollars, and its term is $36h$. That makes $k = 36$. To check: $14(60) + 36(25) = 840 + 900 = 1{,}740$, and $60 + 25 = 85$.",
+  "common_errors": [
+   {
+    "value": "22",
+    "misconception": "intermediate-step",
+    "why": "Used the $22 difference as the high-dose price and never added it to the $14 standard price."
+   },
+   {
+    "value": "14",
+    "misconception": "misread-given",
+    "why": "Swapped the rates, or gave both shot types the standard price."
+   },
+   {
+    "value": "85",
+    "misconception": "wrong-target-quantity",
+    "why": "Put the total number of shots in the cost equation."
+   }
+  ],
+  "id": "orig-word-problem-b-M-6b83bb",
+  "skill_cd": "H.D.",
+  "subtype": "word-problem-build-the-system",
+  "subtype_name": "Pick the system that models the story",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-b-M-6b83bb",
+   "structure": [],
+   "solver_answer": 36,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the system, $n$ is the number of tremors recorded at the north station and $s$ is the number recorded at the south station. What is the value of $k$?",
+  "stimulus": "Over one month, two seismograph stations recorded a combined 156 tremors. The north station recorded 3 times as many tremors as the south station. The system below represents this situation.\n\n$n + s = 156$\n$s = kn$",
+  "keys": [
+   "1/3",
+   ".3333",
+   "0.333",
+   "0.3333"
+  ],
+  "any_of": false,
+  "explanation": "Write down what each variable means first: $n$ is the north count and $s$ is the south count. North has 3 times as many, so the larger count gets the multiplier: $n = 3s$. The system writes the equation the other way round, with $s$ by itself, so divide both sides by 3: $s = \\frac{1}{3}n$. That makes $k = \\frac{1}{3}$. To check: $s = 39$ and $n = 117$. These add to 156, and 117 is 3 times 39.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "complement-or-direction-flip",
+    "why": "Wrote the 'times as many' relationship backwards as $s = 3n$, which puts the multiplier on the station with fewer tremors."
+   },
+   {
+    "value": "156",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the combined total instead of the coefficient that links the two stations."
+   },
+   {
+    "value": "39",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved the system and gave the south station's count instead of $k$."
+   }
+  ],
+  "id": "orig-word-problem-b-M-579b3f",
+  "skill_cd": "H.D.",
+  "subtype": "word-problem-build-the-system",
+  "subtype_name": "Pick the system that models the story",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-b-M-579b3f",
+   "structure": [],
+   "solver_answer": "1/3",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the system, $x$ is the number of short interviews and $y$ is the number of long interviews. What is the value of $c$?",
+  "stimulus": "A linguist recorded 18 interviews with speakers of a regional dialect, for 9 hours of audio in total. Each short interview lasted 20 minutes, and each long interview lasted 1 hour 20 minutes. The system below represents this situation.\n\n$x + y = 18$\n$20x + 80y = c$",
+  "keys": [
+   "540"
+  ],
+  "any_of": false,
+  "explanation": "Name the variables, including their units. $x$ counts short interviews and $y$ counts long ones. The coefficients 20 and 80 are lengths in minutes: 1 hour 20 minutes is 80 minutes. So the right-hand side of the time equation has to be in minutes too. Nine hours is $9 \\times 60 = 540$ minutes, so $c = 540$. To check: $15$ short interviews and $3$ long ones give $15 + 3 = 18$ interviews and $20(15) + 80(3) = 540$ minutes.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "misread-given",
+    "why": "Used the total in hours when the rest of the equation is in minutes."
+   },
+   {
+    "value": "18",
+    "misconception": "wrong-target-quantity",
+    "why": "Put the number of interviews in the time equation."
+   },
+   {
+    "value": "1080",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied 18 interviews by 60, which mixes up the count and the time."
+   }
+  ],
+  "id": "orig-word-problem-b-M-e6c045",
+  "skill_cd": "H.D.",
+  "subtype": "word-problem-build-the-system",
+  "subtype_name": "Pick the system that models the story",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-b-M-e6c045",
+   "structure": [],
+   "solver_answer": 540,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the system, $m$ is the number of heart-rate monitors and $v$ is the number of GPS vests. What is the value of $k$?",
+  "stimulus": "A sports science lab bought 24 tracking devices for $\\$2{,}640$. Heart-rate monitors cost $\\$80$ each. GPS vests are normally $\\$150$ each, but the lab received a $20\\%$ discount on every vest. The system below represents this situation.\n\n$m + v = 24$\n$80m + kv = 2{,}640$",
+  "keys": [
+   "120"
+  ],
+  "any_of": false,
+  "explanation": "Name the variables: $m$ counts monitors and $v$ counts vests. The cost equation is price times quantity for each type. With $20\\%$ off, the lab pays $80\\%$ of the normal price for each vest: $0.8 \\times 150 = 120$ dollars. So $k = 120$. To check: $6$ monitors and $18$ vests give $6 + 18 = 24$ devices and $80(6) + 120(18) = 480 + 2{,}160 = 2{,}640$ dollars.",
+  "common_errors": [
+   {
+    "value": "130",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted 20 from 150 instead of multiplying by 0.8."
+   },
+   {
+    "value": "150",
+    "misconception": "missed-condition",
+    "why": "Used the normal vest price and ignored the discount."
+   },
+   {
+    "value": "30",
+    "misconception": "intermediate-step",
+    "why": "Worked out the discount on each vest and stopped there, instead of finding the price paid."
+   }
+  ],
+  "id": "orig-word-problem-b-M-ca6660",
+  "skill_cd": "H.D.",
+  "subtype": "word-problem-build-the-system",
+  "subtype_name": "Pick the system that models the story",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-b-M-ca6660",
+   "structure": [],
+   "solver_answer": 120,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

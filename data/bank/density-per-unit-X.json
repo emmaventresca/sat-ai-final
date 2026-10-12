@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-density-per-un-X-e978ae",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "has a density of __var__ grams per cubic",
     "a density of __var__ grams per cubic centimeter",
@@ -83,14 +88,403 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-density-per-un-X-ce2755",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "The exoplanet's radius is how many times Earth's radius?",
+  "stimulus": "An exoplanet and Earth are both modeled as solid spheres. The exoplanet's mass is 24 times Earth's mass, and its average density (mass per unit volume) is 3 times Earth's average density.",
+  "choices": [
+   "$\\frac{1}{2}$",
+   "$2$",
+   "$2\\sqrt{2}$",
+   "$8$"
+  ],
+  "answer": "B",
+  "explanation": "Density is mass \u00f7 volume, so volume is mass \u00f7 density. The exoplanet's volume is $\\frac{24}{3} = 8$ times Earth's. A sphere's volume grows with the cube of its radius, so the radius ratio is $\\sqrt[3]{8} = 2$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided density by mass ($\\frac{3}{24} = \\frac{1}{8}$) instead of mass by density, then took the cube root. Check the units: mass \u00f7 density gives a volume, and density \u00f7 mass does not."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the volume ratio of 8 correctly but took a square root instead of a cube root. Volume scales with the cube of the radius, not the square."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "8 is the volume ratio. The question asks about the radius, so you still need to take the cube root."
+   }
+  },
+  "id": "orig-density-per-un-X-7c6b66",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-X-7c6b66",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the edge length, in centimeters, of the block?",
+  "stimulus": "A cube-shaped block of metal foam has a mass of 300 grams. The solid alloy that makes up the foam has a density of 2.4 grams per cubic centimeter, and $\\frac{7}{8}$ of the block's volume is empty pores.",
+  "choices": [
+   "$0.4$",
+   "$5$",
+   "$10$",
+   "$1{,}000$"
+  ],
+  "answer": "C",
+  "explanation": "The solid alloy takes up $\\frac{300 \\text{ g}}{2.4 \\text{ g/cm}^3} = 125 \\text{ cm}^3$. That solid is only $\\frac{1}{8}$ of the block, so the block's volume is $125 \\times 8 = 1{,}000 \\text{ cm}^3$. The edge length is $\\sqrt[3]{1{,}000} = 10$ cm.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided density by mass ($\\frac{2.4}{300} = 0.008$) instead of mass by density. After that, scaling by 8 and taking the cube root gives 0.4. The units of that quotient are not cubic centimeters."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You took the cube root of the solid alloy's volume, 125 cm\u00b3, and ignored the pores. The block is 8 times larger than its solid part."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "1,000 cm\u00b3 is the block's volume. The question asks for the edge, so you still need the cube root."
+   }
+  },
+  "id": "orig-density-per-un-X-6c1bbd",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-X-6c1bbd",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the two districts are combined into one, what is the population density of the combined district, in people per square mile of land?",
+  "stimulus": "Health District A covers 420 square miles, of which 60 square miles are lakes. Its population density is 250 people per square mile of land. Health District B covers 300 square miles, of which 60 square miles are lakes, and it has 30,000 residents.",
+  "choices": [
+   "$0.005$",
+   "$166.7$",
+   "$187.5$",
+   "$200$"
+  ],
+  "answer": "D",
+  "explanation": "District A has $420 - 60 = 360$ square miles of land, so its population is $360 \\times 250 = 90{,}000$. District B has $300 - 60 = 240$ square miles of land. Together they have $120{,}000$ people on $600$ square miles of land, so the density is $\\frac{120{,}000}{600} = 200$ people per square mile of land.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided land area by population ($\\frac{600}{120{,}000}$). That gives square miles per person, not people per square mile."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You divided by the total area of 720 square miles, which includes the lakes. The question asks for density per square mile of land."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You averaged the two districts' densities, 250 and 125. The districts have different amounts of land, so you need total people \u00f7 total land instead."
+   }
+  },
+  "id": "orig-density-per-un-X-7dd748",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-X-7dd748",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length, in centimeters, of each side of the bar's square face?",
+  "stimulus": "A nutrition lab makes an energy bar shaped like a rectangular prism. The bar is 2 centimeters thick, and its top face is a square. The bar's material has an energy density of 4 kilocalories per gram and a mass density of 1.2 grams per cubic centimeter. One bar provides 240 kilocalories.",
+  "choices": [
+   "$5$",
+   "$6$",
+   "$20$",
+   "$25$"
+  ],
+  "answer": "A",
+  "explanation": "Mass: $\\frac{240 \\text{ kcal}}{4 \\text{ kcal/g}} = 60$ g. Volume: $\\frac{60 \\text{ g}}{1.2 \\text{ g/cm}^3} = 50 \\text{ cm}^3$. Area of the square face: $\\frac{50}{2} = 25 \\text{ cm}^2$. Side length: $\\sqrt{25} = 5$ cm.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You multiplied the 60 g by 1.2 instead of dividing. That gives 72 cm\u00b3, then an area of 36 and a side of 6. The g/cm\u00b3 units cancel only when you divide."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You multiplied 240 kcal by 4 instead of dividing, which gives 960 g. That makes the volume 800 cm\u00b3, the face 400 cm\u00b2 and the side 20."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "25 cm\u00b2 is the area of the square face. The question asks for a side length, so you still need the square root."
+   }
+  },
+  "id": "orig-density-per-un-X-731b0b",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-X-731b0b",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What was the density of aftershock epicenters, in aftershocks per square kilometer, in the region more than 10 kilometers but no more than 30 kilometers from the main epicenter?",
+  "stimulus": "In the two weeks after an earthquake, seismologists located 1,800 aftershock epicenters, all within 30 kilometers of the main epicenter. Of these, 600 were within 10 kilometers of the main epicenter.",
+  "choices": [
+   "$\\frac{2}{\\pi}$",
+   "$\\frac{3}{2\\pi}$",
+   "$\\frac{3}{\\pi}$",
+   "$\\frac{2\\pi}{3}$"
+  ],
+  "answer": "B",
+  "explanation": "The region is a ring. Its area is $\\pi(30^2) - \\pi(10^2) = 800\\pi$ km\u00b2. It contains $1{,}800 - 600 = 1{,}200$ aftershocks. Density is $\\frac{1{,}200}{800\\pi} = \\frac{3}{2\\pi}$ aftershocks per km\u00b2.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You used all 1,800 aftershocks over the whole circle of area $900\\pi$. The question asks only about the ring outside 10 km, so you need to remove both the inner count and the inner area."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the radii before squaring, $(30-10)^2 = 400$. The ring's area is $\\pi(30^2 - 10^2)$, not $\\pi(30-10)^2$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided area by count, $\\frac{800\\pi}{1{,}200}$. That gives square kilometers per aftershock, the flipped quotient."
+   }
+  },
+  "id": "orig-density-per-un-X-2c3457",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-X-2c3457",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the width, in kilometers, of the reserve?",
+  "stimulus": "A rectangular wetland reserve is twice as long as it is wide. A 10-square-kilometer pond lies inside the reserve, and the rest of the reserve is land. Ecologists counted 480 heron nests on the reserve, a density of 12 nests per square kilometer of land.",
+  "choices": [
+   "$2\\sqrt{5}$",
+   "$5$",
+   "$10$",
+   "$25$"
+  ],
+  "answer": "B",
+  "explanation": "Land area is $\\frac{480}{12} = 40$ km\u00b2. Adding the pond gives a total area of $40 + 10 = 50$ km\u00b2. With width $w$ and length $2w$, $2w^2 = 50$, so $w^2 = 25$ and $w = 5$ km.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You set $2w^2 = 40$ and used only the land area. The rectangle also contains the pond, so its full area is 50 km\u00b2."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "10 km is the reserve's length. The question asks for the width."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "25 is $w^2$. You still need the square root to get the width."
+   }
+  },
+  "id": "orig-density-per-un-X-b0ee66",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-X-b0ee66",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the population density of the island, in people per square kilometer of land?",
+  "stimulus": "On a map with a scale of 1 centimeter : 5 kilometers, the outline of an island encloses 15 square centimeters. Of that, 3 square centimeters show an inland lake, and the rest is land. The island has 27,000 residents.",
+  "choices": [
+   "$72$",
+   "$90$",
+   "$450$",
+   "$2{,}250$"
+  ],
+  "answer": "B",
+  "explanation": "Land on the map is $15 - 3 = 12$ cm\u00b2. Each centimeter stands for 5 km, so each square centimeter stands for $5^2 = 25$ km\u00b2. The land area is $12 \\times 25 = 300$ km\u00b2, and the density is $\\frac{27{,}000}{300} = 90$ people per km\u00b2.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You used the whole 15 cm\u00b2 outline, or 375 km\u00b2, which includes the lake. The question asks for density per square kilometer of land."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You converted area with the linear scale, $12 \\times 5 = 60$ km\u00b2. Areas scale by the square of the scale factor, which here is 25."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You divided by 12 map square centimeters and never converted to square kilometers."
+   }
+  },
+  "id": "orig-density-per-un-X-6ee622",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-X-6ee622",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "To the nearest hundredth, what is the athlete's body density, in kilograms per liter?",
+  "stimulus": "A sports scientist measures an 84-kilogram athlete's volume by fully submerging the athlete in a tank. The athlete displaces 81.5 liters of water. Of that displaced volume, 1.5 liters is air held in the athlete's lungs and gut, which does not count as body tissue.",
+  "choices": [
+   "$0.95$",
+   "$1.01$",
+   "$1.03$",
+   "$1.05$"
+  ],
+  "answer": "D",
+  "explanation": "Body volume is $81.5 - 1.5 = 80$ L. Density is $\\frac{84 \\text{ kg}}{80 \\text{ L}} = 1.05$ kg/L.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided volume by mass, $\\frac{80}{84} \\approx 0.95$. That gives liters per kilogram, the flipped quotient."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the trapped air instead of subtracting it, $\\frac{84}{83} \\approx 1.01$. The air inflates the displaced volume, so it has to come out."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You divided by the full 81.5 L displaced, $\\frac{84}{81.5} \\approx 1.03$, without removing the 1.5 L of air that isn't body tissue."
+   }
+  },
+  "id": "orig-density-per-un-X-09e79c",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-X-09e79c",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

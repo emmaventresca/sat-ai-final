@@ -33,21 +33,26 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-graph-intersec-X-30446c",
    "structure": [
     "describes the picture in prose instead of drawing it"
    ],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "the line slants down from left to right",
     "and passes through the points __var__ and __var__",
     "and passes through the points __var__ and __var__"
    ],
    "residue": 1
-  },
-  "phrasing": "direct"
+  }
  },
  {
   "stem": "Which system of linear equations could be represented by the graph shown?",
@@ -83,14 +88,20 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "which_expression",
   "verification": {
    "id": "orig-graph-intersec-X-c87ba2",
    "structure": [
     "names a table or graph but shows none",
     "describes the picture in prose instead of drawing it"
    ],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "passes through the points __var__ __var__ and __var__",
     "the line slants down from left to right",
@@ -98,7 +109,1190 @@
     "through the points __var__ __var__ and __var__ which"
    ],
    "residue": 1
+  }
+ },
+ {
+  "stem": "Which system of equations could be represented by the lines shown?",
+  "stimulus": "An ornithologist fit a line to survey data for each of two sparrow populations, where $x$ is the number of weeks after the survey began and $y$ is the population density, in birds per hectare.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Sparrow density models",
+   "x_label": "Weeks after survey began",
+   "y_label": "Birds per hectare",
+   "points": [
+    [
+     0,
+     10
+    ],
+    [
+     1,
+     9.5
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     8.5
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     7.5
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     6.5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     9,
+     5.5
+    ],
+    [
+     10,
+     5
+    ],
+    [
+     11,
+     4.5
+    ],
+    [
+     12,
+     4
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3.5
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     6.5
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     9.5
+    ],
+    [
+     6,
+     11
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 12,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 12,
+   "y_step": 1,
+   "alt": "Two straight lines drawn as rows of dots in the first quadrant, one rising and one falling, which cross once."
   },
-  "phrasing": "which_expression"
+  "choices": [
+   "$x + 2y = 20$ and $3x - 2y = -4$",
+   "$x + 2y = 20$ and $3x + 2y = 28$",
+   "$2x + y = 16$ and $3x - 2y = -4$",
+   "$x + 2y = 20$ and $2x - 3y = -16$"
+  ],
+  "answer": "A",
+  "explanation": "Read two lattice points on each line. The falling line passes through $(0, 10)$ and $(4, 8)$, so $y = -\\frac{1}{2}x + 10$, which is $x + 2y = 20$. The rising line passes through $(0, 2)$ and $(2, 5)$, so $y = \\frac{3}{2}x + 2$, which is $3x - 2y = -4$. Watch out: every choice passes through the crossing point $(4, 8)$, so checking that point alone can't settle it. You have to check slope and intercept for both lines.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "$3x + 2y = 28$ has slope $-\\frac{3}{2}$, so it falls. You got the steepness of the rising line right but not its sign. It still passes through $(4, 8)$, which is why checking the crossing point didn't catch it."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "$2x + y = 16$ has slope $-2$. You took run over rise for the falling line, then chose the constant so the line still passes through $(4, 8)$. Its y-intercept, 16, isn't on the graph."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "$2x - 3y = -16$ has slope $\\frac{2}{3}$, not $\\frac{3}{2}$. You swapped the coefficients of $x$ and $y$ when you converted the rising line. It still passes through $(4, 8)$, but its y-intercept is $\\frac{16}{3}$, not 2."
+   }
+  },
+  "id": "orig-graph-intersec-X-6338a6",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-intersec-X-6338a6",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Both depths continue to change at the same constant rates after hour 8. What is the solution $(x, y)$ to the system of equations represented by the lines?",
+  "stimulus": "Civil engineers tracked the water depth $y$, in centimeters, in two retention basins $x$ hours after a storm began. The graph shows each basin's depth for $0 \\le x \\le 8$.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Water depth in two retention basins",
+   "x_label": "Hours after storm began",
+   "y_label": "Depth (cm)",
+   "points": [
+    [
+     0,
+     8
+    ],
+    [
+     1,
+     12
+    ],
+    [
+     2,
+     16
+    ],
+    [
+     3,
+     20
+    ],
+    [
+     4,
+     24
+    ],
+    [
+     5,
+     28
+    ],
+    [
+     6,
+     32
+    ],
+    [
+     7,
+     36
+    ],
+    [
+     8,
+     40
+    ],
+    [
+     0,
+     28
+    ],
+    [
+     1,
+     30
+    ],
+    [
+     2,
+     32
+    ],
+    [
+     3,
+     34
+    ],
+    [
+     4,
+     36
+    ],
+    [
+     5,
+     38
+    ],
+    [
+     6,
+     40
+    ],
+    [
+     7,
+     42
+    ],
+    [
+     8,
+     44
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 8,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 56,
+   "y_step": 4,
+   "alt": "Two rising straight lines drawn as rows of dots for x from 0 to 8. They do not meet anywhere on the graph."
+  },
+  "choices": [
+   "$(8, 44)$",
+   "$(10, 48)$",
+   "$(48, 10)$",
+   "$(-10, -32)$"
+  ],
+  "answer": "B",
+  "explanation": "The lines don't cross inside the window, so you need their equations. The lower line passes through $(0, 8)$ and $(2, 16)$, so $y = 4x + 8$. The upper line passes through $(0, 28)$ and $(2, 32)$, so $y = 2x + 28$. Setting them equal gives $4x + 8 = 2x + 28$, so $2x = 20$, $x = 10$ and $y = 4(10) + 8 = 48$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "$(8, 44)$ is the end of the upper line, where the two lines look closest. It lies on only one line: the lower line is at 40 there. The lines haven't met yet."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the right values but swapped them, giving $(y, x)$. The hours go first: $x = 10$ and $y = 48$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You moved the constants the wrong way and got $2x = 8 - 28 = -20$. The correct step is $2x = 28 - 8 = 20$."
+   }
+  },
+  "id": "orig-graph-intersec-X-023628",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-intersec-X-023628",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the solution $(x, y)$ to the system of equations represented by the two lines with positive slopes?",
+  "stimulus": "A sports scientist modeled a fitness index $y$ for three athletes over $x$ weeks of training. The graph shows the three models as lines.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Fitness index models for three athletes",
+   "x_label": "Weeks of training",
+   "y_label": "Fitness index",
+   "points": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     10
+    ],
+    [
+     9,
+     11
+    ],
+    [
+     10,
+     12
+    ],
+    [
+     0,
+     10
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     10,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     8,
+     12
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 12,
+   "y_step": 1,
+   "alt": "Three straight lines drawn as rows of dots: two rising and one falling. Each pair of lines crosses at a different point."
+  },
+  "choices": [
+   "$(4, 6)$",
+   "$(8, 6)$",
+   "$(6, 8)$",
+   "$(2, 0)$"
+  ],
+  "answer": "C",
+  "explanation": "The two rising lines are $y = x + 2$, through $(0, 2)$ and $(4, 6)$, and $y = 2x - 4$, through $(2, 0)$ and $(6, 8)$. They cross at $(6, 8)$: $6 + 2 = 8$ and $2(6) - 4 = 8$. The falling line isn't part of this system.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "$(4, 6)$ is where the falling line crosses $y = x + 2$. You found a real crossing point, but it belongs to the wrong pair of lines. The steeper rising line is at 4 there, not 6."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the right crossing point but wrote it as $(y, x)$. The point $(8, 6)$ isn't on either rising line."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "$(2, 0)$ is the x-intercept of $y = 2x - 4$, so it lies on only one of the lines. A solution has to be on both."
+   }
+  },
+  "id": "orig-graph-intersec-X-7b4551",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-intersec-X-7b4551",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following could define $N_A$ and $N_B$?",
+  "stimulus": "The functions $N_A$ and $N_B$ give the number of new flu cases reported per week at clinics A and B, $t$ weeks after a vaccination drive began, where $N_A(0) > N_B(0)$. The graphs of $y = N_A(t)$ and $y = N_B(t)$ are shown.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Weekly new flu cases at two clinics",
+   "x_label": "Weeks after drive began, t",
+   "y_label": "New cases per week (hundreds)",
+   "points": [
+    [
+     0,
+     12
+    ],
+    [
+     1,
+     11
+    ],
+    [
+     2,
+     10
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     10,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3.5
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     4.5
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     5.5
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     7,
+     6.5
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     9,
+     7.5
+    ],
+    [
+     10,
+     8
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 14,
+   "y_step": 1,
+   "alt": "Two straight lines drawn as rows of dots: one falling and one rising. They cross once."
+  },
+  "choices": [
+   "$N_A(t) = 12 - t$ and $N_B(t) = 3 + 0.5t$",
+   "$N_A(t) = 1{,}200 - 50t$ and $N_B(t) = 300 + 100t$",
+   "$N_A(t) = 1{,}200 - 100t$ and $N_B(t) = 300 - 50t$",
+   "$N_A(t) = 1{,}200 - 100t$ and $N_B(t) = 300 + 50t$"
+  ],
+  "answer": "D",
+  "explanation": "The y-axis is in hundreds. Clinic A starts higher, so it's the falling line, through $(0, 12)$ and $(6, 6)$: that's 1,200 cases falling by 100 a week. Clinic B is the rising line, through $(0, 3)$ and $(6, 6)$: that's 300 cases rising by 50 a week. Check the crossing at $t = 6$: $1{,}200 - 600 = 600$ and $300 + 300 = 600$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "These match the picture in hundreds, but $N_A$ and $N_B$ count cases. $N_A(0)$ should be 1,200, not 12. You missed the unit in the axis label."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You put each slope on the wrong line. Clinic A falls by 100 cases a week and clinic B rises by 50, not the other way around. These lines would cross at $t = 6$ at 900 cases, not 600."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "$N_B$ here decreases, but clinic B's line rises. You read the size of B's slope correctly but got the direction wrong."
+   }
+  },
+  "id": "orig-graph-intersec-X-d94df8",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-intersec-X-d94df8",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ the graphs of __var__ and __var__ are",
+    "the graphs of __var__ and __var__ are shown",
+    "graphs of __var__ and __var__ are shown which",
+    "of __var__ and __var__ are shown which of",
+    "__var__ and __var__ are shown which of the",
+    "and __var__ are shown which of the following",
+    "__var__ are shown which of the following could"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which system of equations could be represented by the lines shown?",
+  "stimulus": "A linguist modeled two features of learners' speech over $x$ weeks of instruction. The rising line models borrowed words per transcript, and the falling line models dropped word endings per transcript.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Two features of learner speech",
+   "x_label": "Weeks of instruction",
+   "y_label": "Occurrences per transcript",
+   "points": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     5.5
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     8.5
+    ],
+    [
+     4,
+     10
+    ],
+    [
+     5,
+     11.5
+    ],
+    [
+     6,
+     13
+    ],
+    [
+     0,
+     11
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     1
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 8,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 14,
+   "y_step": 1,
+   "alt": "Two straight lines drawn as rows of dots: one rising and one falling. They cross once."
+  },
+  "choices": [
+   "$y + 10 = \\frac{3}{2}(x + 4)$ and $y + 3 = -2(x + 4)$",
+   "$y - 10 = \\frac{3}{2}(x - 4)$ and $y - 3 = -2(x - 4)$",
+   "$y - 10 = -2(x - 4)$ and $y - 3 = \\frac{3}{2}(x - 4)$",
+   "$y - 10 = \\frac{2}{3}(x - 4)$ and $y - 3 = -\\frac{1}{2}(x - 4)$"
+  ],
+  "answer": "B",
+  "explanation": "The rising line passes through $(0, 4)$ and $(2, 7)$, so its slope is $\\frac{3}{2}$. At $x = 4$ it is at 10, which gives $y - 10 = \\frac{3}{2}(x - 4)$. The falling line passes through $(0, 11)$ and $(2, 7)$, so its slope is $-2$. At $x = 4$ it is at 3, which gives $y - 3 = -2(x - 4)$. Neither choice is written at the crossing point $(2, 7)$, so you have to check which line each point $(4, 10)$ and $(4, 3)$ lies on.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the signs in point-slope form. $y + 10 = \\frac{3}{2}(x + 4)$ passes through $(-4, -10)$, not $(4, 10)$, so neither equation matches its line."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You have the right two points and the right two slopes, but paired them wrongly. The slope $-2$ is attached to the point $(4, 10)$ on the rising line, and $\\frac{3}{2}$ to $(4, 3)$ on the falling line."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took run over rise for each slope. That gives $\\frac{2}{3}$ and $-\\frac{1}{2}$ instead of $\\frac{3}{2}$ and $-2$. The points are right but both lines are too flat."
+   }
+  },
+  "id": "orig-graph-intersec-X-b7d859",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-intersec-X-b7d859",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the solution $(x, y)$ to the system of equations represented by the lines?",
+  "stimulus": "An agronomist modeled the height $y$, in centimeters, of two seedling varieties $x$ days after transplanting. The graph shows the two linear models.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Seedling height models",
+   "x_label": "Days after transplanting",
+   "y_label": "Height (cm)",
+   "points": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     7,
+     11
+    ],
+    [
+     8,
+     12
+    ],
+    [
+     9,
+     13
+    ],
+    [
+     10,
+     14
+    ],
+    [
+     11,
+     15
+    ],
+    [
+     12,
+     16
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3.25
+    ],
+    [
+     2,
+     4.5
+    ],
+    [
+     3,
+     5.75
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     5,
+     8.25
+    ],
+    [
+     6,
+     9.5
+    ],
+    [
+     7,
+     10.75
+    ],
+    [
+     8,
+     12
+    ],
+    [
+     9,
+     13.25
+    ],
+    [
+     10,
+     14.5
+    ],
+    [
+     11,
+     15.75
+    ],
+    [
+     12,
+     17
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 12,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 20,
+   "y_step": 1,
+   "alt": "Two rising straight lines drawn as rows of dots. They have nearly the same steepness and run very close together across the middle of the graph."
+  },
+  "choices": [
+   "$(7, 11)$",
+   "$(12, 8)$",
+   "$(24, 28)$",
+   "$(8, 12)$"
+  ],
+  "answer": "D",
+  "explanation": "The lines are nearly parallel, so where they cross is hard to see. Work it out from lattice points instead. One line passes through $(0, 4)$ and $(4, 8)$, so $y = x + 4$. The other passes through $(0, 2)$ and $(4, 7)$, so $y = \\frac{5}{4}x + 2$. Setting them equal gives $\\frac{1}{4}x = 2$, so $x = 8$ and $y = 12$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "$(7, 11)$ is a gridline point on $y = x + 4$ where the lines look like they touch. The other line is at 10.75 there, so this point lies on only one line."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the right crossing point but wrote it as $(y, x)$. The days go first."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the constants instead of subtracting them, getting $\\frac{1}{4}x = 6$. From $x + 4 = \\frac{5}{4}x + 2$, the correct step is $\\frac{1}{4}x = 4 - 2 = 2$."
+   }
+  },
+  "id": "orig-graph-intersec-X-fbe9ed",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-intersec-X-fbe9ed",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which system of equations could be represented by the lines shown?",
+  "stimulus": "A paleobotanist modeled the percent $y$ of pine pollen and of oak pollen in lake sediment laid down $x$ thousand years after a glacial period ended. The graph shows both models for $2 \\le x \\le 10$.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Pine and oak pollen in lake sediment",
+   "x_label": "Thousands of years after glacial period",
+   "y_label": "Percent of pollen grains",
+   "points": [
+    [
+     2,
+     17
+    ],
+    [
+     3,
+     15.5
+    ],
+    [
+     4,
+     14
+    ],
+    [
+     5,
+     12.5
+    ],
+    [
+     6,
+     11
+    ],
+    [
+     7,
+     9.5
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     9,
+     6.5
+    ],
+    [
+     10,
+     5
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     5.5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     5,
+     6.5
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     7.5
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     9,
+     8.5
+    ],
+    [
+     10,
+     9
+    ]
+   ],
+   "x_min": 2,
+   "x_max": 10,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 20,
+   "y_step": 1,
+   "alt": "Two straight lines drawn as rows of dots for x from 2 to 10: one falling and one rising. They cross once."
+  },
+  "choices": [
+   "$y = -1.5x + 17$ and $y = 0.5x + 5$",
+   "$y = -1.5x + 20$ and $y = 0.5x + 4$",
+   "$y = -0.5x + 20$ and $y = 1.5x + 4$",
+   "$y = -\\frac{2}{3}x + 20$ and $y = 2x + 4$"
+  ],
+  "answer": "B",
+  "explanation": "The horizontal axis starts at 2, so neither y-intercept is shown. The falling line passes through $(2, 17)$ and $(4, 14)$, so its slope is $-1.5$. Going back 2 units from $(2, 17)$ gives a y-intercept of $17 + 3 = 20$. The rising line passes through $(2, 5)$ and $(4, 6)$, so its slope is $0.5$ and its y-intercept is $5 - 1 = 4$. As a check, both lines pass through $(8, 8)$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You read the y-intercepts at the left edge of the graph, but that edge is $x = 2$, not $x = 0$. The slopes are right, but these lines are 3 units and 1 unit off from the graph."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You put each slope on the wrong line. The falling line drops 1.5 per unit and the rising line climbs 0.5, not the other way around."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took run over rise for each slope, getting $-\\frac{2}{3}$ and $2$ instead of $-\\frac{3}{2}$ and $\\frac{1}{2}$. The intercepts are right but the slopes are not."
+   }
+  },
+  "id": "orig-graph-intersec-X-a5a10a",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-intersec-X-a5a10a",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which system of equations could be represented by the lines shown?",
+  "stimulus": "A folklorist modeled the number $y$ of new recordings collected per year for two folktales $x$ years after an archive opened. The graph shows both linear models.",
+  "figure": {
+   "type": "scatter",
+   "caption": "New recordings of two folktales",
+   "x_label": "Years after archive opened",
+   "y_label": "Recordings per year",
+   "points": [
+    [
+     0,
+     30
+    ],
+    [
+     1,
+     27.5
+    ],
+    [
+     2,
+     25
+    ],
+    [
+     3,
+     22.5
+    ],
+    [
+     4,
+     20
+    ],
+    [
+     5,
+     17.5
+    ],
+    [
+     6,
+     15
+    ],
+    [
+     7,
+     12.5
+    ],
+    [
+     8,
+     10
+    ],
+    [
+     9,
+     7.5
+    ],
+    [
+     10,
+     5
+    ],
+    [
+     0,
+     10
+    ],
+    [
+     1,
+     12.5
+    ],
+    [
+     2,
+     15
+    ],
+    [
+     3,
+     17.5
+    ],
+    [
+     4,
+     20
+    ],
+    [
+     5,
+     22.5
+    ],
+    [
+     6,
+     25
+    ],
+    [
+     7,
+     27.5
+    ],
+    [
+     8,
+     30
+    ],
+    [
+     9,
+     32.5
+    ],
+    [
+     10,
+     35
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 40,
+   "y_step": 5,
+   "alt": "Two straight lines drawn as rows of dots: one falling and one rising. They cross once."
+  },
+  "choices": [
+   "$x + y = 30$ and $x - y = -10$",
+   "$2x + 5y = 150$ and $2x - 5y = -50$",
+   "$5x + 2y = 20$ and $5x - 2y = -60$",
+   "$5x + 2y = 60$ and $5x - 2y = -20$"
+  ],
+  "answer": "D",
+  "explanation": "The two axes use different scales: 2 units per gridline across and 5 units per gridline up. The falling line passes through $(0, 30)$ and $(4, 20)$, so $y = -\\frac{5}{2}x + 30$, which is $5x + 2y = 60$. The rising line passes through $(0, 10)$ and $(4, 20)$, so $y = \\frac{5}{2}x + 10$, which is $5x - 2y = -20$. Both pass through $(4, 20)$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You counted gridlines instead of units. Each line moves 2 gridlines up or down for every 2 gridlines across, which looks like a slope of 1. But 2 gridlines across is 4 years and 2 gridlines up is 10 recordings, so the slopes are $\\pm\\frac{5}{2}$."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "These lines have the right y-intercepts, 30 and 10, but slopes of $\\mp\\frac{2}{5}$. You took run over rise."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You have the right slopes but swapped the intercepts. $5x + 2y = 20$ falls from 10, and $5x - 2y = -60$ rises from 30. On the graph, the falling line starts at 30 and the rising line at 10."
+   }
+  },
+  "id": "orig-graph-intersec-X-4b3175",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-intersec-X-4b3175",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

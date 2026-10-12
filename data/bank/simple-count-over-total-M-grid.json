@@ -225,5 +225,603 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "If one of these samples is selected at random, what is the probability that its dominant antibody class is IgA?",
+  "stimulus": "An immunology lab classified each serum sample in a study by the antibody class found at the highest level in it. The results are shown in the table.\n\nDominant Antibody Class in Serum Samples\nAntibody class | Number of samples\nIgG | 14\nIgM | 9\nIgA | 11\nIgE | 6",
+  "keys": [
+   "11/40",
+   ".275",
+   "0.275"
+  ],
+  "any_of": false,
+  "explanation": "You want the IgA samples over all the samples. The table has no Total row, so you find the total yourself: $14 + 9 + 11 + 6 = 40$. There are 11 IgA samples, so the probability is $\\frac{11}{40}$, or 0.275.",
+  "common_errors": [
+   {
+    "value": "11/29",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided IgA by the other three classes ($14 + 9 + 6 = 29$) when the denominator should have been every sample."
+   },
+   {
+    "value": "29/40",
+    "misconception": "complement-or-direction-flip",
+    "why": "Found the probability that the sample is NOT IgA."
+   },
+   {
+    "value": "11/14",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided IgA by the largest single category (IgG) as if it were the total."
+   }
+  ],
+  "id": "orig-simple-count-o-M-5bbf1e",
+  "skill_cd": "Q.E.",
+  "subtype": "simple-count-over-total",
+  "subtype_name": "Basic probability from a list or one-way table",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-simple-count-o-M-5bbf1e",
+   "structure": [],
+   "solver_answer": "11/40",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these days is selected at random, what is the probability that no precipitation was recorded on that day?",
+  "stimulus": "Over a 40-day period, a weather station recorded rain on 13 days and snow on 5 days. No precipitation was recorded on the other days, and no day had both rain and snow.",
+  "keys": [
+   "11/20",
+   ".55",
+   "0.55",
+   "22/40"
+  ],
+  "any_of": false,
+  "explanation": "Start with the number of dry days. Rain and snow together take up $13 + 5 = 18$ days, so $40 - 18 = 22$ days had no precipitation. Divide by all 40 days: $\\frac{22}{40} = \\frac{11}{20} = 0.55$.",
+  "common_errors": [
+   {
+    "value": "9/20",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the 18 days that did have precipitation: $\\frac{18}{40}$."
+   },
+   {
+    "value": "11/9",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided the dry days by the wet days ($\\frac{22}{18}$) instead of by all 40 days."
+   },
+   {
+    "value": "13/40",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the rain count as the numerator instead of the days with no precipitation."
+   },
+   {
+    "value": "1/2",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted only the rain days from 40 and then mis-added, or assumed the dry days were half the period without counting them."
+   }
+  ],
+  "id": "orig-simple-count-o-M-c6e215",
+  "skill_cd": "Q.E.",
+  "subtype": "simple-count-over-total",
+  "subtype_name": "Basic probability from a list or one-way table",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-simple-count-o-M-c6e215",
+   "structure": [],
+   "solver_answer": "11/20",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these fossils is selected at random, what is the probability that it is a conifer or a ginkgo?",
+  "stimulus": "At one dig site, paleobotanists classified 60 fossil leaves: 26 ferns, 15 conifers, 9 ginkgoes, and 10 cycads.",
+  "keys": [
+   "2/5",
+   ".4",
+   "0.4",
+   "24/60"
+  ],
+  "any_of": false,
+  "explanation": "Your favourable count includes both groups: $15 + 9 = 24$ conifers and ginkgoes. The stated total is 60. The probability is $\\frac{24}{60} = \\frac{2}{5} = 0.4$.",
+  "common_errors": [
+   {
+    "value": "1/4",
+    "misconception": "missed-condition",
+    "why": "Counted only the conifers: $\\frac{15}{60}$."
+   },
+   {
+    "value": "3/20",
+    "misconception": "missed-condition",
+    "why": "Counted only the ginkgoes: $\\frac{9}{60}$."
+   },
+   {
+    "value": "2/3",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided the conifers and ginkgoes by the ferns and cycads ($\\frac{24}{36}$) instead of by all 60 fossils."
+   },
+   {
+    "value": "3/5",
+    "misconception": "complement-or-direction-flip",
+    "why": "Found the probability of a fern or a cycad: $\\frac{36}{60}$."
+   }
+  ],
+  "id": "orig-simple-count-o-M-86d114",
+  "skill_cd": "Q.E.",
+  "subtype": "simple-count-over-total",
+  "subtype_name": "Basic probability from a list or one-way table",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-simple-count-o-M-86d114",
+   "structure": [],
+   "solver_answer": "2/5",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these visits is selected at random, what is the probability that its reason was not a routine checkup?",
+  "stimulus": "A community clinic recorded the main reason for each patient visit during one week.\n\nClinic Visits by Main Reason\nReason | Number of visits\nRespiratory illness | 45\nInjury | 30\nRoutine checkup | 57\nOther | 18\nTotal | 150",
+  "keys": [
+   "31/50",
+   ".62",
+   "0.62",
+   "93/150"
+  ],
+  "any_of": false,
+  "explanation": "The visits that were not routine checkups are $150 - 57 = 93$ (or $45 + 30 + 18 = 93$). Use the Total row, 150, as the denominator: $\\frac{93}{150} = \\frac{31}{50} = 0.62$.",
+  "common_errors": [
+   {
+    "value": "19/50",
+    "misconception": "complement-or-direction-flip",
+    "why": "Found the probability that the visit WAS a routine checkup: $\\frac{57}{150}$."
+   },
+   {
+    "value": "31/19",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided the non-checkup visits by the checkup visits ($\\frac{93}{57}$)."
+   },
+   {
+    "value": "31/100",
+    "misconception": "algebra-manipulation",
+    "why": "Added the Total row in with the categories and got a denominator of 300: $\\frac{93}{300}$."
+   }
+  ],
+  "id": "orig-simple-count-o-M-96c150",
+  "skill_cd": "Q.E.",
+  "subtype": "simple-count-over-total",
+  "subtype_name": "Basic probability from a list or one-way table",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-simple-count-o-M-96c150",
+   "structure": [],
+   "solver_answer": "31/50",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one specimen is selected at random from the bin, what is the probability that it is aluminum?",
+  "stimulus": "A materials testing bin holds 12 titanium specimens, 20 copper specimens, and three times as many aluminum specimens as titanium specimens.",
+  "keys": [
+   "9/17",
+   ".5294",
+   "0.5294",
+   "36/68"
+  ],
+  "any_of": false,
+  "explanation": "First work out the aluminum count: $3 \\times 12 = 36$. Then the total is $12 + 20 + 36 = 68$. The probability is $\\frac{36}{68} = \\frac{9}{17} \\approx 0.5294$.",
+  "common_errors": [
+   {
+    "value": "3/35",
+    "misconception": "misread-given",
+    "why": "Treated the multiplier 3 as the aluminum count, giving a total of $12 + 20 + 3 = 35$."
+   },
+   {
+    "value": "9/8",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided aluminum by titanium plus copper ($\\frac{36}{32}$) instead of by every specimen."
+   },
+   {
+    "value": "8/17",
+    "misconception": "complement-or-direction-flip",
+    "why": "Found the probability of NOT aluminum: $\\frac{32}{68}$."
+   },
+   {
+    "value": "3/4",
+    "misconception": "missed-condition",
+    "why": "Left copper out of the total: $\\frac{36}{48}$."
+   }
+  ],
+  "id": "orig-simple-count-o-M-6686ff",
+  "skill_cd": "Q.E.",
+  "subtype": "simple-count-over-total",
+  "subtype_name": "Basic probability from a list or one-way table",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-simple-count-o-M-6686ff",
+   "structure": [],
+   "solver_answer": "9/17",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these frogs is selected at random, what is the probability that it is a leopard frog?",
+  "stimulus": "During a spring survey of a wetland, ecologists caught and released 40 frogs. Of these, 14 were green frogs, 9 were bullfrogs, and the rest were leopard frogs.",
+  "keys": [
+   "17/40",
+   ".425",
+   "0.425"
+  ],
+  "any_of": false,
+  "explanation": "There is no count for leopard frogs, so you work it out first. Green frogs and bullfrogs make 14 + 9 = 23, so there are 40 \u2212 23 = 17 leopard frogs. The total is the 40 frogs that were caught. The probability is $\\frac{17}{40} = 0.425$.",
+  "common_errors": [
+   {
+    "value": "17/23",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided the leopard frogs by the other frogs (23) instead of by all 40 frogs."
+   },
+   {
+    "value": "23/40",
+    "misconception": "complement-or-direction-flip",
+    "why": "Gave the probability of the frogs that are not leopard frogs: the green frogs plus the bullfrogs."
+   },
+   {
+    "value": "9/40",
+    "misconception": "misread-given",
+    "why": "Treated the bullfrog count as the leopard frog count and divided 9 by 40."
+   }
+  ],
+  "id": "orig-simple-count-o-M-ed9173",
+  "skill_cd": "Q.E.",
+  "subtype": "simple-count-over-total",
+  "subtype_name": "Basic probability from a list or one-way table",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-simple-count-o-M-ed9173",
+   "structure": [],
+   "solver_answer": "17/40",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one athlete in the study is selected at random, what is the probability that the athlete is a cyclist?",
+  "stimulus": "A sports science lab recruited endurance athletes for a study of heart rate recovery. The table shows the main sport of each athlete.\nAthletes in the Study\nSport | Number of athletes\nRowing | 12\nCycling | 18\nSwimming | 15\nRunning | 27",
+  "keys": [
+   "1/4",
+   ".25",
+   "0.25",
+   "18/72"
+  ],
+  "any_of": false,
+  "explanation": "The table has no Total row, so add every sport: 12 + 18 + 15 + 27 = 72 athletes. There are 18 cyclists. The probability is $\\frac{18}{72} = \\frac{1}{4}$.",
+  "common_errors": [
+   {
+    "value": "1/3",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided the 18 cyclists by the athletes in the other sports (12 + 15 + 27 = 54) instead of by every athlete."
+   },
+   {
+    "value": "2/5",
+    "misconception": "missed-condition",
+    "why": "Left the running row out of the total and computed 18/45."
+   },
+   {
+    "value": "3/4",
+    "misconception": "complement-or-direction-flip",
+    "why": "Gave the probability that the athlete is not a cyclist, 54/72."
+   }
+  ],
+  "id": "orig-simple-count-o-M-9a2b4a",
+  "skill_cd": "Q.E.",
+  "subtype": "simple-count-over-total",
+  "subtype_name": "Basic probability from a list or one-way table",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-simple-count-o-M-9a2b4a",
+   "structure": [],
+   "solver_answer": "1/4",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these artifacts is selected at random, what is the probability that it is a bone object?",
+  "stimulus": "An excavation team cataloged 48 artifacts from one trench. Of these, 20 were pottery fragments. There were half as many stone tools as pottery fragments. All the other artifacts were bone objects.",
+  "keys": [
+   "3/8",
+   ".375",
+   "0.375",
+   "18/48"
+  ],
+  "any_of": false,
+  "explanation": "First find the stone tools: half of 20 is 10. Pottery and tools together make 20 + 10 = 30, so there are 48 \u2212 30 = 18 bone objects. The probability is $\\frac{18}{48} = \\frac{3}{8}$.",
+  "common_errors": [
+   {
+    "value": "5/24",
+    "misconception": "intermediate-step",
+    "why": "Stopped after finding the 10 stone tools and gave 10/48."
+   },
+   {
+    "value": "3/5",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided the 18 bone objects by the other artifacts (30) instead of by all 48."
+   },
+   {
+    "value": "5/8",
+    "misconception": "complement-or-direction-flip",
+    "why": "Gave the probability that the artifact is not a bone object, 30/48."
+   }
+  ],
+  "id": "orig-simple-count-o-M-e58710",
+  "skill_cd": "Q.E.",
+  "subtype": "simple-count-over-total",
+  "subtype_name": "Basic probability from a list or one-way table",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-simple-count-o-M-e58710",
+   "structure": [],
+   "solver_answer": "3/8",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these vaccinations is selected at random, what is the probability that it was either a hepatitis B or a shingles vaccination?",
+  "stimulus": "A community clinic recorded every vaccination it gave during one week.\nVaccinations Given in One Week\nVaccine | Number given\nInfluenza | 45\nTetanus | 12\nHepatitis B | 18\nShingles | 15\nTotal | 90",
+  "keys": [
+   "11/30",
+   ".3666",
+   ".3667",
+   "0.3666",
+   "0.3667",
+   "33/90"
+  ],
+  "any_of": false,
+  "explanation": "Add the two categories you want: 18 + 15 = 33. Use the Total row, 90, as the denominator. The probability is $\\frac{33}{90} = \\frac{11}{30} \\approx 0.3667$.",
+  "common_errors": [
+   {
+    "value": "11/19",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided the 33 wanted vaccinations by the other vaccinations (45 + 12 = 57) instead of by the total."
+   },
+   {
+    "value": "1/5",
+    "misconception": "missed-condition",
+    "why": "Counted only the hepatitis B vaccinations, 18/90, and forgot the shingles ones."
+   },
+   {
+    "value": "19/30",
+    "misconception": "complement-or-direction-flip",
+    "why": "Gave the probability of influenza or tetanus, 57/90, instead."
+   }
+  ],
+  "id": "orig-simple-count-o-M-759476",
+  "skill_cd": "Q.E.",
+  "subtype": "simple-count-over-total",
+  "subtype_name": "Basic probability from a list or one-way table",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-simple-count-o-M-759476",
+   "structure": [],
+   "solver_answer": "11/30",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these cells is selected at random, what is the probability that it is a monocyte?",
+  "stimulus": "An immunology student counted 120 white blood cells on a stained slide. Of these, 72 were neutrophils. The rest were lymphocytes and monocytes, and there were 3 times as many lymphocytes as monocytes.",
+  "keys": [
+   "1/10",
+   ".1",
+   "0.1",
+   "12/120"
+  ],
+  "any_of": false,
+  "explanation": "The cells that are not neutrophils number 120 \u2212 72 = 48. Split them 3 to 1: if there are $m$ monocytes, then $m + 3m = 48$, so $m = 12$. The probability is $\\frac{12}{120} = \\frac{1}{10}$.",
+  "common_errors": [
+   {
+    "value": "2/5",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the 48 cells that are lymphocytes or monocytes and gave 48/120."
+   },
+   {
+    "value": "1/9",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided the 12 monocytes by the other cells (108) instead of by all 120."
+   },
+   {
+    "value": "3/10",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the lymphocytes (36) instead of the monocytes and gave 36/120."
+   }
+  ],
+  "id": "orig-simple-count-o-M-533626",
+  "skill_cd": "Q.E.",
+  "subtype": "simple-count-over-total",
+  "subtype_name": "Basic probability from a list or one-way table",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-simple-count-o-M-533626",
+   "structure": [],
+   "solver_answer": "1/10",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these permits is selected at random, what is the probability that it was issued for a commercial project?",
+  "stimulus": "A city planning office sorted all the building permits it issued last quarter by project type. The bar graph shows the results.",
+  "figure": {
+   "type": "bar",
+   "caption": "Building Permits Issued Last Quarter",
+   "x_label": "Project type",
+   "y_label": "Number of permits",
+   "categories": [
+    "Residential",
+    "Commercial",
+    "Industrial",
+    "Mixed-use"
+   ],
+   "values": [
+    30,
+    12,
+    6,
+    12
+   ],
+   "y_min": 0,
+   "y_max": 36,
+   "y_step": 6,
+   "alt": "Bar graph of building permits by project type. Residential 30, Commercial 12, Industrial 6, Mixed-use 12."
+  },
+  "keys": [
+   "1/5",
+   ".2",
+   "0.2",
+   "12/60"
+  ],
+  "any_of": false,
+  "explanation": "Read each bar and add them all to get the total: 30 + 12 + 6 + 12 = 60 permits. There are 12 commercial permits. The probability is $\\frac{12}{60} = \\frac{1}{5}$.",
+  "common_errors": [
+   {
+    "value": "1/4",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided the commercial permits by the other permits (48) instead of by all 60."
+   },
+   {
+    "value": "2/5",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided commercial by residential, 12/30, so one category went over another."
+   },
+   {
+    "value": "4/5",
+    "misconception": "complement-or-direction-flip",
+    "why": "Gave the probability that the permit was not for a commercial project, 48/60."
+   }
+  ],
+  "id": "orig-simple-count-o-M-a05bbc",
+  "skill_cd": "Q.E.",
+  "subtype": "simple-count-over-total",
+  "subtype_name": "Basic probability from a list or one-way table",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-simple-count-o-M-a05bbc",
+   "structure": [],
+   "solver_answer": "1/5",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

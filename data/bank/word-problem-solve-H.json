@@ -243,5 +243,53 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "After the 10-hour mark, how many more hours will it take for the card to become completely full?",
+  "stimulus": "A seismometer at a remote field station saves its ground-motion readings to a memory card that holds 1,320 megabytes (MB). When recording began, the card already held a 120 MB calibration file. Ten hours after recording began, 420 MB of the card was in use. The seismometer adds data at a constant rate.",
+  "choices": [
+   "$30$",
+   "$34$",
+   "$40$",
+   "$44$"
+  ],
+  "answer": "A",
+  "explanation": "First find the rate. In 10 hours, the data used went from 120 MB to 420 MB, so the card fills at $\\frac{420 - 120}{10} = 30$ MB per hour. Let $t$ be the total hours since recording began. Then $120 + 30t = 1{,}320$, so $30t = 1{,}200$ and $t = 40$. The question asks how many hours remain after the 10-hour mark, so the answer is $40 - 10 = 30$ hours. You can check it another way: $1{,}320 - 420 = 900$ MB of space is left, and $900 \\div 30 = 30$ hours.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You didn't subtract the 120 MB calibration file before dividing. That gives $1{,}320 \\div 30 = 44$ total hours, and $44 - 10 = 34$. The card already held 120 MB when recording began, so that amount has to come off the capacity first."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You solved $120 + 30t = 1{,}320$ correctly, but 40 is the total number of hours since recording began. The question asks how many more hours after the 10-hour mark, so you still need to subtract the 10 hours that have already passed."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the full 1,320 MB capacity by 30 MB per hour without subtracting the 120 MB calibration file. You also gave a total time when the question asks for the time remaining after the 10-hour mark."
+   }
+  },
+  "id": "orig-word-problem-s-H-6ee1ea",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-H-6ee1ea",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

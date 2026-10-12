@@ -243,5 +243,245 @@
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which inequality represents this situation, where $P$ is the worker's total pay, in dollars, for the week?",
+  "stimulus": "A staffing agency places a warehouse worker for one 5-day week. Each day the worker works at least 6 hours but no more than 9 hours, at $\\$22$ per hour. The worker also receives a one-time $\\$40$ signing bonus that week.",
+  "choices": [
+   "$700 \\le P \\le 1{,}030$",
+   "$660 \\le P \\le 990$",
+   "$172 \\le P \\le 238$",
+   "$860 \\le P \\le 1{,}190$"
+  ],
+  "answer": "A",
+  "explanation": "Over 5 days the worker works between $5(6) = 30$ and $5(9) = 45$ hours, inclusive. Pay for those hours runs from $22(30) = 660$ to $22(45) = 990$ dollars. The $\\$40$ bonus is paid once, so you add it to both ends: $700 \\le P \\le 1{,}030$. Both bounds are inclusive because 'at least' means $\\ge$ and 'no more than' means $\\le$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You scaled the hours correctly but left out the $\\$40$ bonus. It belongs in the total, so it has to be added to both ends of the range."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is one day's pay with the bonus added: $22(6)+40$ to $22(9)+40$. You didn't multiply the hours by the 5 days in the week."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the bonus to every day and then multiplied by 5, so you counted it five times. The bonus is paid once, so you add it after scaling, not before."
+   }
+  },
+  "id": "orig-compound-range-H-aa1c5b",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-H-aa1c5b",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which inequality represents all possible values of $d$, the depth, in centimeters, of the trench at the end of the 4 days?",
+  "stimulus": "An archaeology team has already dug a test trench to a depth of 40 centimeters. On each of the next 4 days, the team deepens the trench by more than 15 centimeters but less than 25 centimeters.",
+  "choices": [
+   "$100 < d < 140$",
+   "$100 \\le d \\le 140$",
+   "$60 < d < 100$",
+   "$55 < d < 140$"
+  ],
+  "answer": "A",
+  "explanation": "Over 4 days the team removes more than $4(15) = 60$ and less than $4(25) = 100$ centimeters. Adding the 40 centimeters already dug to both ends gives $100 < d < 140$. Both ends are strict because the stem says 'more than' and 'less than'.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "Your bounds are right, but 'more than' and 'less than' are strict. A depth of exactly 100 or exactly 140 centimeters can't happen, so the symbols must be $<$, not $\\le$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is the soil removed over the 4 days, not the total depth. You still have to add the 40 centimeters that were already dug to both ends."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You scaled only the upper end. The lower bound $55$ is $40 + 15$, which is one day's minimum. You have to multiply both ends by 4 before adding 40."
+   }
+  },
+  "id": "orig-compound-range-H-0e2756",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-H-0e2756",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which inequality represents all possible values of $t$?",
+  "stimulus": "In a linguistics study, each participant records a 15-second spoken introduction and then reads a list of 30 words aloud, taking $t$ seconds per word. For a recording to be usable, its total length must be at least 90 seconds and at most 150 seconds.",
+  "choices": [
+   "$2.5 \\le t \\le 4.5$",
+   "$3 \\le t \\le 5$",
+   "$3.5 \\le t \\le 5.5$",
+   "$2.5 \\le t \\le 5$"
+  ],
+  "answer": "A",
+  "explanation": "The total length is $15 + 30t$, so $90 \\le 15 + 30t \\le 150$. Subtract 15 from all three parts to get $75 \\le 30t \\le 135$. Then divide by 30 to get $2.5 \\le t \\le 4.5$. Both ends are inclusive because 'at least' and 'at most' mean $\\ge$ and $\\le$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You divided 90 and 150 by 30 without taking off the 15-second introduction first. The introduction counts toward the total length."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added 15 to each bound when you should have subtracted it. That gives $105 \\le 30t \\le 165$ in place of $75 \\le 30t \\le 135$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the 15 seconds from the lower bound only. You have to apply every step to both ends, so the upper bound is $(150-15)/30 = 4.5$, not $150/30$."
+   }
+  },
+  "id": "orig-compound-range-H-b5c3cc",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-H-b5c3cc",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following could be the total mass of fish, in kilograms, that the seal eats over these 7 days?",
+  "stimulus": "A marine biologist caring for a 75-kilogram harbor seal plans its diet so that each day the seal eats a minimum of 4% and a maximum of 6% of its body mass in fish. The seal's body mass stays the same for 7 days.",
+  "choices": [
+   "$4.5$",
+   "$15$",
+   "$30$",
+   "$40$"
+  ],
+  "answer": "C",
+  "explanation": "Each day the seal eats between $0.04(75) = 3$ and $0.06(75) = 4.5$ kilograms, inclusive. Over 7 days the total $F$ satisfies $7(3) \\le F \\le 7(4.5)$, or $21 \\le F \\le 31.5$. Of the choices, only 30 falls in that range.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "This is the most the seal can eat in a single day. You stopped before multiplying by the 7 days."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied only the upper end by 7, which gives $3 \\le F \\le 31.5$. The minimum also applies every day, so the weekly lower bound is 21 and 15 is too small."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You read 4% and 6% as 4 and 6 kilograms per day, which gives $28 \\le F \\le 42$. The percents are of the seal's 75-kilogram body mass, so the real maximum is 31.5 kilograms."
+   }
+  },
+  "id": "orig-compound-range-H-5fd232",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-H-5fd232",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which inequality represents all possible values of $D$, the total length of the performance, in minutes?",
+  "stimulus": "A movement of a string quartet contains 480 beats, and the score directs that it be played at a steady tempo of at least 96 but no more than 120 beats per minute. One performance also includes a 30-second unmetered cadenza.",
+  "choices": [
+   "$4.5 \\le D \\le 5.5$",
+   "$4 \\le D \\le 5$",
+   "$34 \\le D \\le 35$",
+   "$4.5 \\le D \\le 5$"
+  ],
+  "answer": "A",
+  "explanation": "The playing time is $480$ divided by the tempo. At 120 beats per minute that is $480/120 = 4$ minutes, and at 96 beats per minute it is $480/96 = 5$ minutes, so the faster tempo gives the shorter time. The cadenza adds 30 seconds, or $0.5$ minute, to both ends: $4.5 \\le D \\le 5.5$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "This is only the time spent playing the 480 beats. You left out the 30-second cadenza, which adds 0.5 minute to both ends."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You added the cadenza as 30 minutes. It lasts 30 seconds, which is 0.5 minute."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the cadenza to the lower bound only. The cadenza is part of every performance, so it has to be added to the upper bound as well."
+   }
+  },
+  "id": "orig-compound-range-H-b8423c",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-H-b8423c",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

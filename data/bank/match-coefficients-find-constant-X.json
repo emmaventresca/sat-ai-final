@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-match-coeffici-X-aa2d7b",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "form __var__ where __var__ and __var__ are constants",
     "__var__ and __var__ are constants and __var__ what",
@@ -84,11 +89,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-match-coeffici-X-49a198",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "is equivalent to __var__ where __var__ __var__ and",
     "equivalent to __var__ where __var__ __var__ and __var__",
@@ -97,5 +107,414 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "The expression $3(x-2)^2 - 2(x+1)(x-5)$ is equivalent to $a(x-b)^2 + c$, where $a$, $b$, and $c$ are constants. What is the value of $a + b + c$?",
+  "stimulus": "A civil engineer models the sag of a footbridge cable using an expression in $x$, the horizontal distance in meters from the left anchor.",
+  "choices": [
+   "$17$",
+   "$19$",
+   "$21$",
+   "$25$"
+  ],
+  "answer": "C",
+  "explanation": "Expand both products. $3(x-2)^2 = 3x^2 - 12x + 12$ and $-2(x+1)(x-5) = -2(x^2 - 4x - 5) = -2x^2 + 8x + 10$. Adding them gives $x^2 - 4x + 22$. Complete the square: $x^2 - 4x + 22 = (x-2)^2 + 18$. Matching this to $a(x-b)^2 + c$ gives $a = 1$, $b = 2$ and $c = 18$, so $a + b + c = 21$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You completed the square correctly but read $b$ as $-2$. In the form $a(x-b)^2$, the expression $(x-2)^2$ means $b = 2$, not $-2$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the coefficients of the standard form $x^2 - 4x + 22$. The target form is $a(x-b)^2 + c$, so you still had to complete the square before matching constants."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You used $22$, the constant term of the expanded form, as $c$. Once you complete the square, the constant becomes $22 - 4 = 18$."
+   }
+  },
+  "id": "orig-match-coeffici-X-b0304b",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-X-b0304b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression $\\frac{1}{3}(6x + k)^2$ is equivalent to $12x^2 + 20x + c$, where $k$ and $c$ are constants. What is the value of $k + c$?",
+  "stimulus": "A musicologist fits a curve to the tension of a harpsichord string as it is tuned, writing the model in two equivalent forms.",
+  "choices": [
+   "$\\frac{40}{9}$",
+   "$5$",
+   "$\\frac{25}{3}$",
+   "$\\frac{40}{3}$"
+  ],
+  "answer": "D",
+  "explanation": "$(6x + k)^2 = 36x^2 + 12kx + k^2$. Multiplying every term by $\\frac{1}{3}$ gives $12x^2 + 4kx + \\frac{k^2}{3}$. Matching the $x$ terms gives $4k = 20$, so $k = 5$. Matching the constants gives $c = \\frac{25}{3}$. So $k + c = 5 + \\frac{25}{3} = \\frac{40}{3}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied $\\frac{1}{3}$ only to the $36x^2$ term. That left $12kx = 20x$ and gave $k = \\frac{5}{3}$ and $c = \\frac{25}{9}$. The $\\frac{1}{3}$ multiplies every term of the square."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $k$ alone. The question asks for $k + c$, so you still had to find $c$ and add it."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is $c$ alone. You found both constants but stopped before adding $k$."
+   }
+  },
+  "id": "orig-match-coeffici-X-113b2a",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-X-113b2a",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression $(2x + a)(bx - 3) - 2ax$ is equivalent to $8x^2 + cx - 15$, where $a$, $b$, and $c$ are constants. What is the value of $a + b + c$?",
+  "stimulus": "An ornithologist uses a polynomial model to relate the wingspan of migrating terns to the distance they cover in a single flight.",
+  "choices": [
+   "$4$",
+   "$13$",
+   "$23$",
+   "$33$"
+  ],
+  "answer": "B",
+  "explanation": "Expanding gives $2bx^2 - 6x + abx - 3a - 2ax$. Matching the $x^2$ terms gives $2b = 8$, so $b = 4$. Matching the constants gives $-3a = -15$, so $a = 5$. The $x$ coefficient is $-6 + ab - 2a = -6 + 20 - 10 = 4$, so $c = 4$. Then $a + b + c = 5 + 4 + 4 = 13$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "This is $c$ alone. The question asks for $a + b + c$, so you stopped one step early."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You left out the $-2ax$ term when you collected the $x$ terms, which made $c = 14$. That term is part of the given expression and changes the $x$ coefficient."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated $-2ax$ as $+2ax$ and got $c = -6 + 20 + 10 = 24$. Subtracting $2ax$ takes $10$ away from the $x$ coefficient."
+   }
+  },
+  "id": "orig-match-coeffici-X-978a7a",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-X-978a7a",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression $(3x - 2y)^2 - (x + ky)^2$ is equivalent to $8x^2 - 20xy + my^2$, where $k$ and $m$ are constants. What is the value of $m$?",
+  "stimulus": "A nutrition scientist models the calorie surplus of a meal plan in terms of $x$, grams of carbohydrate, and $y$, grams of fat.",
+  "choices": [
+   "$-12$",
+   "$4$",
+   "$16$",
+   "$20$"
+  ],
+  "answer": "A",
+  "explanation": "$(3x - 2y)^2 = 9x^2 - 12xy + 4y^2$ and $(x + ky)^2 = x^2 + 2kxy + k^2y^2$. Subtracting the second from the first gives $8x^2 + (-12 - 2k)xy + (4 - k^2)y^2$. Matching the $xy$ terms gives $-12 - 2k = -20$, so $k = 4$. Then $m = 4 - k^2 = 4 - 16 = -12$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $k$. You used the $xy$ terms to find $k$, but the question asks for $m$, the $y^2$ coefficient."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is $k^2$. You still had to subtract it from the $4y^2$ in the first square: $m = 4 - 16$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the minus sign only to $x^2$, writing $-x^2 + 2kxy + k^2y^2$. That gives $k = -4$ and $m = 4 + 16$. The minus sign applies to the whole square."
+   }
+  },
+  "id": "orig-match-coeffici-X-36cda3",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-X-36cda3",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression $\\frac{6x^2 + 5x - 1}{2x + 3}$ is equivalent to $ax + b + \\frac{c}{2x + 3}$, where $a$, $b$, and $c$ are constants. What is the value of $a + b + c$?",
+  "stimulus": "A linguist models the average number of syllables per sentence in a corpus as a rational function of $x$, the number of words per sentence.",
+  "choices": [
+   "$-6$",
+   "$1$",
+   "$6$",
+   "$21$"
+  ],
+  "answer": "C",
+  "explanation": "Divide $6x^2 + 5x - 1$ by $2x + 3$. First, $3x(2x + 3) = 6x^2 + 9x$, which leaves $-4x - 1$. Next, $-2(2x + 3) = -4x - 6$, which leaves $-1 - (-6) = 5$. So the expression equals $3x - 2 + \\frac{5}{2x + 3}$. That gives $a = 3$, $b = -2$ and $c = 5$, so $a + b + c = 6$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted $-6$ from $-1$ and got $-7$ instead of $5$, so you used $c = -7$. Subtracting a negative means adding: $-1 + 6 = 5$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is $a + b$. You found the quotient $3x - 2$ but never added the remainder $c$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the remainder by plugging in $x = \\frac{3}{2}$ and got $20$. The divisor is $0$ at $x = -\\frac{3}{2}$, and that value gives a remainder of $5$."
+   }
+  },
+  "id": "orig-match-coeffici-X-8e931d",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-X-8e931d",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $a(x+2)^2 + b(x+2) + c = 3x^2 + 5x - 4$ is true for all values of $x$, where $a$, $b$, and $c$ are constants. What is the value of $a + b + c$?",
+  "stimulus": "A marine biologist rewrites a model of coral growth so that it is centered on a reference depth instead of on the surface.",
+  "choices": [
+   "$-18$",
+   "$-6$",
+   "$-2$",
+   "$4$"
+  ],
+  "answer": "B",
+  "explanation": "Expand the left side: $ax^2 + (4a + b)x + (4a + 2b + c)$. Matching the $x^2$ terms gives $a = 3$. Matching the $x$ terms gives $12 + b = 5$, so $b = -7$. Matching the constants gives $12 - 14 + c = -4$, so $c = -2$. Then $a + b + c = 3 - 7 - 2 = -6$. A faster check: $a + b + c$ is the value of the left side when $x + 2 = 1$, which means $x = -1$, and $3 - 5 - 4 = -6$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You expanded $(x+2)^2$ as $x^2 + 4$ and dropped the $4x$ term. That gave $b = 5$ and $c = -26$. The middle term matters when you match the $x$ coefficients."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is $c$ alone. You solved the system correctly but stopped before adding $a$ and $b$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You either matched $a$, $b$ and $c$ straight to $3$, $5$ and $-4$, or you plugged in $x = 1$. The constants multiply powers of $(x+2)$, not $x$, so $a + b + c$ comes from $x = -1$."
+   }
+  },
+  "id": "orig-match-coeffici-X-661eb5",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-X-661eb5",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is true for all values of __var__ where",
+    "true for all values of __var__ where __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "The expression $(x^2 + k)(x^2 - k) - (x^2 - 4)^2$ is equivalent to $ax^2 - 20$, where $a$ and $k$ are constants and $k > 0$. What is the value of $a + k$?",
+  "stimulus": "A public health analyst models the gap between two projections of clinic visits as a function of $x$, the number of weeks since a vaccination campaign began.",
+  "choices": [
+   "$-2$",
+   "$2$",
+   "$10$",
+   "$14$"
+  ],
+  "answer": "C",
+  "explanation": "$(x^2 + k)(x^2 - k) = x^4 - k^2$, and $-(x^2 - 4)^2 = -x^4 + 8x^2 - 16$. Adding them gives $8x^2 - k^2 - 16$. Matching terms gives $a = 8$ and $-k^2 - 16 = -20$, so $k^2 = 4$. Since $k > 0$, $k = 2$, and $a + k = 10$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the minus sign only to $x^4$, writing $-x^4 - 8x^2 + 16$. That gives $a = -8$ and $k = 6$. The minus sign applies to every term of $(x^2 - 4)^2$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is $k$ alone. The question asks for $a + k$, so you still needed to add $a = 8$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You got $a = 8$ but wrote the constant as $+16$ instead of $-16$. That led to $k^2 = 36$ and $k = 6$. The constant from $-(x^2 - 4)^2$ is $-16$."
+   }
+  },
+  "id": "orig-match-coeffici-X-cf79b1",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-X-cf79b1",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ and __var__ are constants and __var__ what",
+    "and __var__ are constants and __var__ what is",
+    "__var__ are constants and __var__ what is the",
+    "are constants and __var__ what is the value",
+    "constants and __var__ what is the value of"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The expression $(x - 3)(ax^2 + bx + 4)$ is equivalent to $2x^3 - 7x^2 + cx - 12$, where $a$, $b$, and $c$ are constants. What is the value of $a + b + c$?",
+  "stimulus": "An ecologist models the change in a wetland's frog population using a cubic expression in $x$, the number of years since a restoration project began.",
+  "choices": [
+   "$-11$",
+   "$4$",
+   "$7$",
+   "$8$"
+  ],
+  "answer": "D",
+  "explanation": "Expanding gives $ax^3 + (b - 3a)x^2 + (4 - 3b)x - 12$. Matching the $x^3$ terms gives $a = 2$. Matching the $x^2$ terms gives $b - 6 = -7$, so $b = -1$. Matching the $x$ terms gives $c = 4 - 3(-1) = 7$. Then $a + b + c = 2 - 1 + 7 = 8$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the constant term $-12$ in place of $c$. Here $c$ is the coefficient of $x$, not the constant term."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You solved $b - 6 = -7$ as $b = 1$. That gave $c = 4 - 3 = 1$, and the sign error carried into both constants."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is $c$ alone. You found it correctly but stopped before adding $a$ and $b$."
+   }
+  },
+  "id": "orig-match-coeffici-X-c1ce41",
+  "skill_cd": "P.A.",
+  "subtype": "match-coefficients-find-constant",
+  "subtype_name": "Equivalent forms: solve for the unknown constant",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-match-coeffici-X-c1ce41",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is equivalent to __var__ where __var__ __var__ and",
+    "equivalent to __var__ where __var__ __var__ and __var__",
+    "to __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
  }
 ]

@@ -261,5 +261,676 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the length, in centimeters, of one edge of the fragment?",
+  "stimulus": "A planetary geologist studies a cube-shaped fragment of an iron meteorite. The fragment has a mass of 216 grams, and the iron alloy it is made of has a density of 8 grams per cubic centimeter.",
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "Density is mass \u00f7 volume, so volume = mass \u00f7 density. Here that is $216 \\text{ g} \\div 8 \\text{ g/cm}^3 = 27 \\text{ cm}^3$. Check the units: grams cancel and cubic centimeters are left. The question asks for an edge length, not a volume. A cube's volume is $s^3$, so $s = \\sqrt[3]{27} = 3$ centimeters. In Desmos, you can graph $y = x^3$ and $y = 27$ and read the positive intersection.",
+  "common_errors": [
+   {
+    "value": "27",
+    "misconception": "intermediate-step",
+    "why": "Found the volume, 27 cubic centimeters, and stopped before taking the cube root to get the edge."
+   },
+   {
+    "value": "1/3",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the quotient and divided density by mass, 8/216 = 1/27, then took the cube root."
+   },
+   {
+    "value": "12",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied mass by density, 216 \u00d7 8 = 1728, instead of dividing, then took the cube root."
+   }
+  ],
+  "id": "orig-density-per-un-M-0bc39f",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-0bc39f",
+   "structure": [],
+   "solver_answer": 3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the length in centimeters of one"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the number of seismometers per 100 square kilometers of land in the region?",
+  "stimulus": "A seismic monitoring region covers 1,250 square kilometers, of which 250 square kilometers is open water. All 60 of the region's seismometers are installed on land.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "First find the land area: $1250 - 250 = 1000$ square kilometers. Density is count \u00f7 area, so $60 \\div 1000 = 0.06$ seismometers per square kilometer. The question asks per 100 square kilometers, so multiply: $0.06 \\times 100 = 6$.",
+  "common_errors": [
+   {
+    "value": "4.8",
+    "misconception": "missed-condition",
+    "why": "Used the total area, 60/1250 \u00d7 100, instead of the land area only."
+   },
+   {
+    "value": "24",
+    "misconception": "misread-given",
+    "why": "Divided by the water area, 60/250 \u00d7 100, instead of the land area."
+   },
+   {
+    "value": "16.67",
+    "misconception": "wrong-target-quantity",
+    "why": "Flipped the quotient: 1000/60 is square kilometers of land per seismometer, not seismometers per area."
+   },
+   {
+    "value": ".06",
+    "misconception": "intermediate-step",
+    "why": "Found the density per single square kilometer and did not scale it to 100 square kilometers."
+   }
+  ],
+  "id": "orig-density-per-un-M-003f03",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-003f03",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the density, in grams per cubic centimeter, of the alloy?",
+  "stimulus": "An engineer casts a rectangular slab of a new alloy measuring 10 centimeters by 5 centimeters by 2 centimeters. A square hole, 2 centimeters by 2 centimeters, is then cut all the way through the slab's 2-centimeter thickness. The finished piece has a mass of 644 grams.",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "Find the volume of metal that is left. The full slab is $10 \\times 5 \\times 2 = 100 \\text{ cm}^3$. The hole removes $2 \\times 2 \\times 2 = 8 \\text{ cm}^3$, which leaves $92 \\text{ cm}^3$. Density is mass \u00f7 volume: $644 \\text{ g} \\div 92 \\text{ cm}^3 = 7$ grams per cubic centimeter.",
+  "common_errors": [
+   {
+    "value": "6.44",
+    "misconception": "missed-condition",
+    "why": "Divided the mass by the full slab volume of 100 and did not subtract the hole."
+   },
+   {
+    "value": "1/7",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the quotient and computed volume \u00f7 mass, 92/644."
+   },
+   {
+    "value": "37.88",
+    "misconception": "algebra-manipulation",
+    "why": "Added the dimensions, 10 + 5 + 2 = 17, instead of multiplying, then divided 644 by 17."
+   }
+  ],
+  "id": "orig-density-per-un-M-ca7fdc",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "review",
+  "verification": {
+   "id": "orig-density-per-un-M-ca7fdc",
+   "structure": [],
+   "solver_answer": 7,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the density in grams per cubic",
+    "is the density in grams per cubic centimeter",
+    "the density in grams per cubic centimeter of",
+    "density in grams per cubic centimeter of the"
+   ],
+   "residue": 11
+  }
+ },
+ {
+  "stem": "What is the length, in meters, of the piece?",
+  "stimulus": "A museum conserving a nineteenth-century wool cloth finds that the fabric weighs 250 grams per square meter. A rectangular piece of this cloth is 0.8 meter wide and weighs 1,000 grams.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "Work backward from the per-area weight: area = mass \u00f7 (mass per area). That is $1000 \\text{ g} \\div 250 \\text{ g/m}^2 = 4 \\text{ m}^2$. The piece is a rectangle, so length = area \u00f7 width $= 4 \\div 0.8 = 5$ meters.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "intermediate-step",
+    "why": "Found the area, 4 square meters, and gave it as the length."
+   },
+   {
+    "value": "3.2",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the area by the width instead of dividing by it."
+   },
+   {
+    "value": ".3125",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the quotient: 250/1000 = 0.25, then divided by 0.8."
+   }
+  ],
+  "id": "orig-density-per-un-M-79d951",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-79d951",
+   "structure": [],
+   "solver_answer": 5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Based on these measurements, what is the athlete's body density, in kilograms per liter?",
+  "stimulus": "A sports scientist estimates an athlete's body density by underwater weighing. The athlete has a mass of 78 kilograms. The measured volume is 76.2 liters, but 1.2 liters of that is air left in the lungs. That air must be removed to get the body's volume.",
+  "keys": [
+   "1.04",
+   "26/25"
+  ],
+  "any_of": false,
+  "explanation": "First remove the lung air: $76.2 - 1.2 = 75$ liters of body volume. Density is mass \u00f7 volume: $78 \\text{ kg} \\div 75 \\text{ L} = 1.04$ kilograms per liter.",
+  "common_errors": [
+   {
+    "value": "1.024",
+    "misconception": "missed-condition",
+    "why": "Divided by the measured 76.2 liters without subtracting the lung air."
+   },
+   {
+    "value": ".9615",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the quotient and computed volume \u00f7 mass, 75/78."
+   },
+   {
+    "value": "1.008",
+    "misconception": "algebra-manipulation",
+    "why": "Added the lung air instead of subtracting it, 78/77.4."
+   }
+  ],
+  "id": "orig-density-per-un-M-9068b5",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-9068b5",
+   "structure": [],
+   "solver_answer": 1.04,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length, in meters, of one edge of the shelter's interior?",
+  "stimulus": "The inside of a weather station's instrument shelter is a cube. The air inside has a density of 1.2 kilograms per cubic meter, and the total mass of that air is 0.15 kilogram.",
+  "keys": [
+   ".5",
+   "0.5",
+   "1/2"
+  ],
+  "any_of": false,
+  "explanation": "Volume = mass \u00f7 density. That is $0.15 \\text{ kg} \\div 1.2 \\text{ kg/m}^3 = 0.125 \\text{ m}^3$. The question wants an edge, so take the cube root: $\\sqrt[3]{0.125} = 0.5$ meter. In Desmos, graph $y = x^3$ and $y = 0.125$ and read the positive intersection.",
+  "common_errors": [
+   {
+    "value": ".125",
+    "misconception": "intermediate-step",
+    "why": "Found the volume and did not take the cube root to get the edge length."
+   },
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the quotient, 1.2/0.15 = 8, then took the cube root."
+   },
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the quotient to get 8 and stopped without taking the cube root."
+   }
+  ],
+  "id": "orig-density-per-un-M-b652ea",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-b652ea",
+   "structure": [],
+   "solver_answer": 0.5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the city's population density, in residents per square mile of land?",
+  "stimulus": "A city covers 48 square miles, of which 8 square miles is a reservoir. The city has 180,000 residents.",
+  "keys": [
+   "4500"
+  ],
+  "any_of": false,
+  "explanation": "Population density uses land area only. Find it first: $48 - 8 = 40$ square miles. Then divide people by land area: $180{,}000 \\div 40 = 4{,}500$ residents per square mile.",
+  "common_errors": [
+   {
+    "value": "3750",
+    "misconception": "missed-condition",
+    "why": "Divided by the total area of 48 square miles, which includes the reservoir."
+   },
+   {
+    "value": "22500",
+    "misconception": "misread-given",
+    "why": "Divided by the reservoir's 8 square miles instead of the land area."
+   },
+   {
+    "value": "1/4500",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the quotient and computed land area \u00f7 population."
+   }
+  ],
+  "id": "orig-density-per-un-M-269993",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-269993",
+   "structure": [],
+   "solver_answer": 4500,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many microliters of the suspension does the immunologist need?",
+  "stimulus": "An immunologist's T-cell suspension contains 800,000 cells per milliliter. One assay requires exactly 20,000 of these cells. (1 milliliter = 1,000 microliters)",
+  "keys": [
+   "25"
+  ],
+  "any_of": false,
+  "explanation": "Volume = amount \u00f7 concentration. That is $20{,}000 \\text{ cells} \\div 800{,}000 \\text{ cells/mL} = 0.025 \\text{ mL}$. Then convert units so that mL cancels: $0.025 \\text{ mL} \\times \\frac{1000 \\ \\mu\\text{L}}{1 \\text{ mL}} = 25$ microliters.",
+  "common_errors": [
+   {
+    "value": ".025",
+    "misconception": "intermediate-step",
+    "why": "Found the volume in milliliters and did not convert to microliters."
+   },
+   {
+    "value": "40",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the quotient: 800,000/20,000."
+   },
+   {
+    "value": ".000025",
+    "misconception": "algebra-manipulation",
+    "why": "Converted the wrong way, dividing 0.025 by 1,000 instead of multiplying."
+   }
+  ],
+  "id": "orig-density-per-un-M-29b482",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-29b482",
+   "structure": [],
+   "solver_answer": 25,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the areal density of the cloth, in grams per square meter?",
+  "stimulus": "A museum conservator weighs a strip of hand-woven 18th-century linen. The strip is 0.75 meter wide and 40 meters long, and it has a mass of 6,000 grams.",
+  "keys": [
+   "200"
+  ],
+  "any_of": false,
+  "explanation": "Areal density is mass divided by area, so you need the area first. The strip is a rectangle, so its area is $0.75 \\times 40 = 30$ square meters. Then divide the mass by the area: $\\frac{6{,}000 \\text{ g}}{30 \\text{ m}^2} = 200$ grams per square meter. Check the units: grams on top and square meters on the bottom are what the question asks for.",
+  "common_errors": [
+   {
+    "value": ".005",
+    "misconception": "wrong-target-quantity",
+    "why": "You divided area by mass ($30 \\div 6{,}000$), which gives square meters per gram. That is the quotient flipped."
+   },
+   {
+    "value": "150",
+    "misconception": "missed-condition",
+    "why": "You divided the mass by the length alone ($6{,}000 \\div 40$) and never multiplied in the width, so you got grams per meter of length, not per square meter."
+   },
+   {
+    "value": "8000",
+    "misconception": "missed-condition",
+    "why": "You divided the mass by the width alone ($6{,}000 \\div 0.75$) and never used the length."
+   },
+   {
+    "value": "180000",
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the mass by the area ($6{,}000 \\times 30$) when you should have divided."
+   }
+  ],
+  "id": "orig-density-per-un-M-fd530f",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-fd530f",
+   "structure": [],
+   "solver_answer": 200,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many tablespoons of the oil does the sample require?",
+  "stimulus": "A nutrition study's test meal uses 108 grams of olive oil. The oil has a density of 0.9 gram per milliliter, and 1 tablespoon is 15 milliliters.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "Work backward from the density. Volume = mass \u00f7 density, so $\\frac{108 \\text{ g}}{0.9 \\text{ g/mL}} = 120$ mL. The grams cancel and leave milliliters. Then convert to tablespoons: $120 \\text{ mL} \\times \\frac{1 \\text{ tbsp}}{15 \\text{ mL}} = 8$ tablespoons.",
+  "common_errors": [
+   {
+    "value": "120",
+    "misconception": "intermediate-step",
+    "why": "You found the volume in milliliters and stopped before converting it to tablespoons."
+   },
+   {
+    "value": "6.48",
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied mass by density ($108 \\times 0.9 = 97.2$) when you should have divided, then divided by 15."
+   },
+   {
+    "value": "97.2",
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied mass by density when you should have divided, and you never converted to tablespoons."
+   },
+   {
+    "value": "7.2",
+    "misconception": "missed-condition",
+    "why": "You divided the grams by 15 and skipped the density, as if 1 gram of oil were 1 milliliter."
+   }
+  ],
+  "id": "orig-density-per-un-M-033175",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-033175",
+   "structure": [],
+   "solver_answer": 8,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the county's population density, in people per square mile of land?",
+  "stimulus": "A public health department is planning clinic locations for a county with 81,000 residents. The county covers 540 square miles in total, and 90 of those square miles are lakes.",
+  "keys": [
+   "180"
+  ],
+  "any_of": false,
+  "explanation": "The question asks per square mile of land, so take the water out first: $540 - 90 = 450$ square miles of land. Then population density = people \u00f7 land area: $\\frac{81{,}000}{450} = 180$ people per square mile.",
+  "common_errors": [
+   {
+    "value": "150",
+    "misconception": "missed-condition",
+    "why": "You divided by the total area ($81{,}000 \\div 540$) and did not subtract the lake area to get land only."
+   },
+   {
+    "value": "900",
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by the lake area ($81{,}000 \\div 90$) when you should have used the land area."
+   },
+   {
+    "value": ".0055",
+    "misconception": "wrong-target-quantity",
+    "why": "You divided land area by population ($450 \\div 81{,}000 = \\frac{1}{180}$), which gives square miles per person. That is the quotient flipped."
+   },
+   {
+    "value": ".0056",
+    "misconception": "wrong-target-quantity",
+    "why": "This is the flipped quotient $\\frac{1}{180}$, rounded instead of truncated."
+   },
+   {
+    "value": "1/180",
+    "misconception": "wrong-target-quantity",
+    "why": "This is the flipped quotient (land per person) written as a fraction."
+   }
+  ],
+  "id": "orig-density-per-un-M-cadb85",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-cadb85",
+   "structure": [],
+   "solver_answer": 180,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many wells are there per square kilometer of actual land in the region?",
+  "stimulus": "On a survey map, 1 centimeter represents 5 kilometers. A rectangular region on the map measures 4 centimeters by 6 centimeters, and it contains 1,800 wells.",
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "Convert each side to real distance before you find the area. $4 \\text{ cm} \\times \\frac{5 \\text{ km}}{1 \\text{ cm}} = 20$ km and $6 \\text{ cm} \\times \\frac{5 \\text{ km}}{1 \\text{ cm}} = 30$ km, so the real area is $20 \\times 30 = 600$ square kilometers. Density = wells \u00f7 area $= \\frac{1{,}800}{600} = 3$ wells per square kilometer.",
+  "common_errors": [
+   {
+    "value": "75",
+    "misconception": "missed-condition",
+    "why": "You used the map area of 24 square centimeters ($1{,}800 \\div 24$) and never applied the scale."
+   },
+   {
+    "value": "15",
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the map area by 5 once ($24 \\times 5 = 120$) when you should have scaled each side, which multiplies the area by 25. Then you divided $1{,}800 \\div 120$."
+   },
+   {
+    "value": "1/3",
+    "misconception": "wrong-target-quantity",
+    "why": "You divided area by wells ($600 \\div 1{,}800$), which gives square kilometers per well. That is the quotient flipped."
+   },
+   {
+    "value": ".3333",
+    "misconception": "wrong-target-quantity",
+    "why": "This is the flipped quotient (area per well) written as a decimal."
+   }
+  ],
+  "id": "orig-density-per-un-M-8f48b2",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-8f48b2",
+   "structure": [],
+   "solver_answer": 3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length, in centimeters, of one edge of the cube?",
+  "stimulus": "A seismometer uses a solid metal cube as its test mass. The cube has a mass of 1,000 grams, and the metal has a density of 8 grams per cubic centimeter.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "Rearrange density = mass \u00f7 volume to get volume = mass \u00f7 density: $\\frac{1{,}000 \\text{ g}}{8 \\text{ g/cm}^3} = 125 \\text{ cm}^3$. The question wants an edge, not a volume, so take the cube root: $\\sqrt[3]{125} = 5$ cm. In Desmos you can graph $y = x^3$ and $y = 125$ and read off the positive intersection.",
+  "common_errors": [
+   {
+    "value": "125",
+    "misconception": "intermediate-step",
+    "why": "You found the volume and stopped there, without taking the cube root to get the edge length."
+   },
+   {
+    "value": "20",
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied mass by density ($1{,}000 \\times 8 = 8{,}000$) when you should have divided, then took the cube root."
+   },
+   {
+    "value": ".5",
+    "misconception": "wrong-target-quantity",
+    "why": "You divided density by mass ($8 \\div 1{,}000 = 0.008$) instead of mass by density, then took the cube root."
+   },
+   {
+    "value": "11.18",
+    "misconception": "algebra-manipulation",
+    "why": "You took the square root of 125 when a volume needs a cube root."
+   }
+  ],
+  "id": "orig-density-per-un-M-c54637",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-c54637",
+   "structure": [],
+   "solver_answer": 5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the length in centimeters of one"
+   ],
+   "residue": 3
+  }
  }
 ]

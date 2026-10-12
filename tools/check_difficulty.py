@@ -70,7 +70,7 @@ def render(it):
 
 
 def call(prompt, model):
-    return call_json_array(prompt, model, timeout=240)
+    return call_json_array(prompt, model, timeout=240, tag="difficulty")
 
 
 def main():

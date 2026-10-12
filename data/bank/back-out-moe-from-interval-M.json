@@ -382,5 +382,836 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the margin of error for this estimate, in percentage points?",
+  "stimulus": "A county health department surveyed a random sample of 900 adult residents of the county about whether they had received a flu vaccine that season. Of the adults surveyed, 34% said they had. Based on this sample, the department estimated that between 30.5% and 37.5% of all adult residents of the county had received the vaccine.",
+  "choices": [
+   "$1.75$",
+   "$3.5$",
+   "$7$",
+   "$37.5$"
+  ],
+  "answer": "B",
+  "explanation": "The interval is the sample percent plus or minus the margin of error. Subtract the sample percent from the upper bound: $37.5 - 34 = 3.5$. Check the lower side: $34 - 30.5 = 3.5$. Both distances match, so the margin of error is $3.5$ percentage points.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the full width correctly, $37.5 - 30.5 = 7$, and then halved it twice. Halving once already gives the margin of error, which is $3.5$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You used the full width of the interval, $37.5 - 30.5 = 7$. The margin of error is the distance from the sample percent to either end, so it is half the width."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the upper end of the interval. That is the largest plausible value for the percent, not the distance from the estimate to that end."
+   }
+  },
+  "id": "orig-back-out-moe-f-M-1c9bf7",
+  "skill_cd": "Q.F.",
+  "subtype": "back-out-moe-from-interval",
+  "subtype_name": "Find the margin of error from a given interval",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-back-out-moe-f-M-1c9bf7",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the margin of error for this estimate, in beats per minute?",
+  "stimulus": "A sports scientist measured the resting heart rates of a random sample of 120 rowers on collegiate teams. Based on the sample, she reported that the mean resting heart rate of all collegiate rowers is plausibly between $46.2$ and $51.8$ beats per minute.",
+  "choices": [
+   "$1.4$",
+   "$2.8$",
+   "$5.6$",
+   "$49.0$"
+  ],
+  "answer": "B",
+  "explanation": "The sample mean isn't given, so it must be the center of the interval, and the margin of error is half the interval's width: $\\frac{51.8 - 46.2}{2} = \\frac{5.6}{2} = 2.8$. Check: the center is $49.0$, and $49.0 + 2.8 = 51.8$ and $49.0 - 2.8 = 46.2$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You halved the width of the interval and then halved it again. Halving $5.6$ once already gives the distance from the center to each end."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at the full width of the interval, $51.8 - 46.2 = 5.6$. The interval reaches one margin of error on each side of the mean, so the width is twice the margin of error."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the center of the interval, which is the sample mean. The question asks how far the interval reaches from that mean, not for the mean itself."
+   }
+  },
+  "id": "orig-back-out-moe-f-M-f45fba",
+  "skill_cd": "Q.F.",
+  "subtype": "back-out-moe-from-interval",
+  "subtype_name": "Find the margin of error from a given interval",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-back-out-moe-f-M-f45fba",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the margin of error, in beats per minute, associated with this estimate?",
+  "stimulus": "A sports scientist measured the resting heart rates of 48 randomly selected members of a city running club. The sample mean was 52 beats per minute, and the scientist concluded that the mean resting heart rate for all members of the club is plausibly between 49 and 55 beats per minute.",
+  "choices": [
+   "$55 - 49$",
+   "$55 - 52$",
+   "$\\frac{55 + 49}{2}$",
+   "$52 - 48$"
+  ],
+  "answer": "B",
+  "explanation": "The interval is the sample mean plus or minus the margin of error. The margin is the distance from the sample mean to either end of the interval: $55 - 52$, which is 3. As a check, the other side gives the same distance: $52 - 49 = 3$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the full width of the interval. The interval stretches one margin below the mean and one margin above it, so $55 - 49$ is twice the margin of error."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the midpoint of the interval, which is the sample mean (52 beats per minute). The question asks how far the interval extends from that mean, not where its center is."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You subtracted the sample size, 48 runners, from the sample mean. The margin of error is a distance in beats per minute, so you have to subtract an endpoint of the interval, not the number of people sampled."
+   }
+  },
+  "id": "orig-back-out-moe-f-M-cd2933",
+  "skill_cd": "Q.F.",
+  "subtype": "back-out-moe-from-interval",
+  "subtype_name": "Find the margin of error from a given interval",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-back-out-moe-f-M-cd2933",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the margin of error, in egg masses per pond, associated with this estimate?",
+  "stimulus": "Ecologists counted frog egg masses in 80 randomly selected ponds in a county wetland preserve. The mean number of egg masses per pond in the sample was 14.6. Based on the sample, they estimated that the mean for all ponds in the preserve is between 12.2 and 17.0 egg masses.",
+  "choices": [
+   "$\\frac{17.0 + 12.2}{2}$",
+   "$17.0 - 12.2$",
+   "$\\frac{17.0 - 14.6}{2}$",
+   "$17.0 - 14.6$"
+  ],
+  "answer": "D",
+  "explanation": "The interval is the sample mean plus or minus the margin of error, so the margin is the distance from 14.6 to the upper bound: $17.0 - 14.6$, which is 2.4. The lower side agrees: $14.6 - 12.2 = 2.4$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You averaged the two endpoints, which gives the center of the interval, 14.6. That's the sample mean, not the margin of error."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the full width of the interval. The width covers one margin on each side of the mean, so it's twice the margin of error."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided by 2 when you didn't need to. Dividing by 2 is only for the full width, $U - L$. The distance from the sample mean to an endpoint is already the margin of error."
+   }
+  },
+  "id": "orig-back-out-moe-f-M-d44ad6",
+  "skill_cd": "Q.F.",
+  "subtype": "back-out-moe-from-interval",
+  "subtype_name": "Find the margin of error from a given interval",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-back-out-moe-f-M-d44ad6",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the margin of error, in percentage points, associated with this estimate?",
+  "stimulus": "Astronomers examined a random sample of 120 stars from a catalog of a single open star cluster. From the sample, they reported an estimate, with a margin of error, of the percentage of the cluster's stars that belong to binary systems. The resulting interval was 18% to 26%.",
+  "choices": [
+   "$26 - 18$",
+   "$\\frac{26 - 18}{2}$",
+   "$\\frac{26 + 18}{2}$",
+   "$26 - \\frac{18}{2}$"
+  ],
+  "answer": "B",
+  "explanation": "The sample percentage isn't given, but it sits at the center of the interval, with one margin of error on each side. The full width is therefore two margins, so the margin of error is $\\frac{26 - 18}{2}$, which is 4 percentage points.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the full width of the interval. The width covers the margin of error on both sides of the estimate, so you still need to divide it by 2."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You averaged the endpoints. That gives the sample estimate at the center of the interval (22%), not how far the interval extends from it."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided only the lower bound by 2 instead of the whole difference. The halving has to apply to $26 - 18$ as a group."
+   }
+  },
+  "id": "orig-back-out-moe-f-M-71fc30",
+  "skill_cd": "Q.F.",
+  "subtype": "back-out-moe-from-interval",
+  "subtype_name": "Find the margin of error from a given interval",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-back-out-moe-f-M-71fc30",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the margin of error for this estimate?",
+  "stimulus": "An agronomist randomly selected 64 soybean plots on a research farm and measured each plot's yield. The mean yield of the sample was 52 bushels per acre. Based on the sample, the agronomist estimated that the mean yield of all soybean plots on the farm is between 48.5 and 55.5 bushels per acre.",
+  "choices": [
+   "1.75 bushels per acre",
+   "3.5 bushels per acre",
+   "7 bushels per acre",
+   "48.5 bushels per acre"
+  ],
+  "answer": "B",
+  "explanation": "The interval is the sample mean plus or minus the margin of error. Subtract the sample mean from the upper bound: $55.5 - 52 = 3.5$. Check the other side: $52 - 48.5 = 3.5$. Both distances match, so the margin of error is 3.5 bushels per acre.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the width of the interval, 7, and then divided by 4 instead of 2. The margin of error is half the width, not a quarter of it."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You found the full width of the interval, $55.5 - 48.5 = 7$. The interval reaches the margin of error on both sides of the mean, so the margin of error is half of that width."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You chose the lower endpoint of the interval. That value is a bound on the plausible mean yield, not the distance from the sample mean to either bound."
+   }
+  },
+  "id": "orig-back-out-moe-f-M-00ffae",
+  "skill_cd": "Q.F.",
+  "subtype": "back-out-moe-from-interval",
+  "subtype_name": "Find the margin of error from a given interval",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-back-out-moe-f-M-00ffae",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the margin of error for this estimate?",
+  "stimulus": "An astronomer selected a random sample of 150 main-sequence stars from a star catalog and recorded each star's surface temperature. The sample mean was 5,800 kelvins (K). Based on the sample, the astronomer estimated that the mean surface temperature of all main-sequence stars in the catalog is between 5,620 K and 5,980 K.",
+  "choices": [
+   "90 K",
+   "180 K",
+   "360 K",
+   "5,620 K"
+  ],
+  "answer": "B",
+  "explanation": "The interval is the sample mean plus or minus the margin of error. Subtract the sample mean from the upper bound: $5{,}980 - 5{,}800 = 180$. Check the other side: $5{,}800 - 5{,}620 = 180$. The margin of error is 180 K.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You correctly found the distance of 180 K from the mean to one bound, then halved it again. That distance already is the margin of error, so it doesn't need to be split."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You found the full width of the interval, $5{,}980 - 5{,}620 = 360$. The margin of error is the distance on one side of the mean only, so it is half of that width."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You chose the lower endpoint of the interval. That is a plausible value for the mean temperature, not the distance between the sample mean and a bound."
+   }
+  },
+  "id": "orig-back-out-moe-f-M-29251c",
+  "skill_cd": "Q.F.",
+  "subtype": "back-out-moe-from-interval",
+  "subtype_name": "Find the margin of error from a given interval",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-back-out-moe-f-M-29251c",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the margin of error for this estimate?",
+  "stimulus": "A city planning office surveyed a random sample of 500 residents about a proposed protected bike lane on Main Street. Based on the survey, the office estimated that between 58% and 66% of all city residents support the bike lane.",
+  "choices": [
+   "4 percentage points",
+   "8 percentage points",
+   "20 residents",
+   "62 percent"
+  ],
+  "answer": "A",
+  "explanation": "The sample percent isn't given, but it falls at the center of the interval, and the margin of error is half the interval's width: $\\frac{66 - 58}{2} = 4$. The margin of error is 4 percentage points, which means the sample percent was $58 + 4 = 62\\%$.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You found the full width of the interval, $66 - 58 = 8$. The interval reaches the margin of error above and below the sample percent, so the margin of error is half of 8."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You turned the margin of error into a count of people by taking 4% of the 500 residents surveyed. The margin of error applies to the estimated percent, so it is stated in percentage points, not in residents."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the center of the interval, which is the sample percent. The margin of error is the distance from that center to either endpoint, not the center itself."
+   }
+  },
+  "id": "orig-back-out-moe-f-M-141215",
+  "skill_cd": "Q.F.",
+  "subtype": "back-out-moe-from-interval",
+  "subtype_name": "Find the margin of error from a given interval",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-back-out-moe-f-M-141215",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is closest to the margin of error for this estimate?",
+  "stimulus": "An astronomer selected 64 stars at random from a single star cluster and measured the surface temperature of each one. Based on the sample, the mean surface temperature of the stars in the cluster is estimated to be 5,840 kelvins (K). The plausible values for the mean lie between 5,615 K and 6,065 K.",
+  "choices": [
+   "112.5 K",
+   "225 K",
+   "450 K",
+   "5,615 K"
+  ],
+  "answer": "B",
+  "explanation": "The margin of error is the distance from the estimate to either end of the interval. Check: $6{,}065 - 5{,}840 = 225$, and $5{,}840 - 5{,}615 = 225$. Both sides match, so the interval is $5{,}840 \\pm 225$ and the margin of error is 225 K.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the full width, $6{,}065 - 5{,}615 = 450$, and then halved it twice. If you test 112.5, the interval would run from 5,727.5 K to 5,952.5 K, which isn't the interval you were given."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You found the full width of the interval, $6{,}065 - 5{,}615 = 450$, and stopped there. The margin of error covers only one side of the estimate, so you need half the width."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the lower end of the interval. That's one of the plausible values for the mean, not the distance between the estimate and the edge of the interval."
+   }
+  },
+  "id": "orig-back-out-moe-f-M-3067c0",
+  "skill_cd": "Q.F.",
+  "subtype": "back-out-moe-from-interval",
+  "subtype_name": "Find the margin of error from a given interval",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-back-out-moe-f-M-3067c0",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the margin of error for this estimate?",
+  "stimulus": "A marine biologist measured the shell length of 120 sea turtles chosen at random at one nesting beach. Using these measurements, the biologist reported that the mean shell length of sea turtles nesting at that beach is plausibly between 78.4 centimeters and 84.2 centimeters.",
+  "choices": [
+   "1.45 cm",
+   "2.9 cm",
+   "5.8 cm",
+   "81.3 cm"
+  ],
+  "answer": "B",
+  "explanation": "The sample mean isn't stated, but it sits at the center of the interval, so the margin of error is half the width: $\\frac{84.2 - 78.4}{2} = \\frac{5.8}{2} = 2.9$. Check: the center is $78.4 + 2.9 = 81.3$, and $81.3 + 2.9 = 84.2$. The margin of error is 2.9 cm.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You halved the width twice. If you test it, $81.3 \\pm 1.45$ gives 79.85 to 82.75, which is narrower than the interval you were given."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You gave the full width of the interval, $84.2 - 78.4 = 5.8$. The margin of error is the distance from the center to one end, which is half of that."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the center of the interval. That's the sample mean, but the question asks how far the interval extends on each side of it."
+   }
+  },
+  "id": "orig-back-out-moe-f-M-25482d",
+  "skill_cd": "Q.F.",
+  "subtype": "back-out-moe-from-interval",
+  "subtype_name": "Find the margin of error from a given interval",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-back-out-moe-f-M-25482d",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the margin of error for this estimate?",
+  "stimulus": "A seismologist selected 400 monitoring stations at random from a network in one region. Of these stations, 38% recorded an aftershock within 24 hours of a moderate earthquake. Based on the sample, the percent of all stations in the regional network that recorded an aftershock is plausibly between 33.5% and 42.5%.",
+  "choices": [
+   "2.25%",
+   "4.5%",
+   "9%",
+   "33.5%"
+  ],
+  "answer": "B",
+  "explanation": "Subtract the sample percent from the upper end: $42.5 - 38 = 4.5$. Then check the other side: $38 - 33.5 = 4.5$. Both distances are the same, so the interval is $38\\% \\pm 4.5\\%$ and the margin of error is 4.5%.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the full width by 4 instead of 2. Testing it, $38 \\pm 2.25$ gives 35.75% to 40.25%, which doesn't match the interval you were given."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You subtracted the lower end from the upper end, $42.5 - 33.5 = 9$. That's the full width of the interval. The margin of error is the distance on just one side of 38%."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the lower end of the interval. That's a plausible value for the population percent, not the distance from the sample percent to the edge of the interval."
+   }
+  },
+  "id": "orig-back-out-moe-f-M-3993a2",
+  "skill_cd": "Q.F.",
+  "subtype": "back-out-moe-from-interval",
+  "subtype_name": "Find the margin of error from a given interval",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-back-out-moe-f-M-3993a2",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Based on the two studies, how much greater is the margin of error for the Baroque estimate than for the Classical-era estimate, in beats per minute?",
+  "stimulus": "A musicologist estimated the mean tempo of recorded performances from two eras. For a random sample of Baroque recordings, the sample mean tempo was 96 beats per minute, and a plausible range for the mean tempo of all such recordings was between 90 and 102 beats per minute. For a random sample of Classical-era recordings, the sample mean was 110 beats per minute, with a plausible range between 108 and 112 beats per minute.",
+  "choices": [
+   "$4$",
+   "$6$",
+   "$8$",
+   "$14$"
+  ],
+  "answer": "A",
+  "explanation": "The margin of error is the distance from the sample mean to either end of the interval. For the Baroque recordings it is $102 - 96 = 6$ (check: $96 - 90 = 6$). For the Classical-era recordings it is $112 - 110 = 2$ (check: $110 - 108 = 2$). The question asks for the gap between them: $6 - 2 = 4$ beats per minute.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the Baroque margin of error, 6, and stopped there. The question asks how much greater it is than the Classical-era margin, so you still need to subtract 2."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You used the full widths of the intervals, $12 - 4 = 8$. Each margin of error is half the width, so the margins are 6 and 2, and their difference is 4."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You subtracted the two sample means, $110 - 96 = 14$. That compares the tempos, not the margins of error."
+   }
+  },
+  "id": "orig-back-out-moe-f-M-173e3b",
+  "skill_cd": "Q.F.",
+  "subtype": "back-out-moe-from-interval",
+  "subtype_name": "Find the margin of error from a given interval",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-back-out-moe-f-M-173e3b",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Based on the survey results, how much greater is the margin of error for Riverside than for Eastside, in minutes?",
+  "stimulus": "A city planning office surveyed random samples of commuters in two neighborhoods about their one-way commute times. For Eastside, a plausible range for the mean commute time of all Eastside commuters was between 31.5 and 36.5 minutes. For Riverside, the sample mean was 28 minutes, and a plausible range for the mean commute time of all Riverside commuters was between 25 and 31 minutes.",
+  "choices": [
+   "$0.5$",
+   "$1$",
+   "$3$",
+   "$6.5$"
+  ],
+  "answer": "A",
+  "explanation": "For Riverside, the margin of error is $31 - 28 = 3$ minutes (check: $28 - 25 = 3$). For Eastside, no sample mean is given, so take half the interval width: $\\frac{36.5 - 31.5}{2} = 2.5$ minutes. The difference is $3 - 2.5 = 0.5$ minute.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You subtracted the full interval widths, $6 - 5 = 1$, without halving them first. The margins of error are 3 and 2.5, so the gap is 0.5."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the Riverside margin of error, 3, and stopped there. The question asks how much greater it is than Eastside's margin of 2.5."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You subtracted the lower endpoints, $31.5 - 25 = 6.5$. The endpoints tell you where the intervals sit, not how wide they are, so this compares the wrong quantities."
+   }
+  },
+  "id": "orig-back-out-moe-f-M-c1d9f9",
+  "skill_cd": "Q.F.",
+  "subtype": "back-out-moe-from-interval",
+  "subtype_name": "Find the margin of error from a given interval",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-back-out-moe-f-M-c1d9f9",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Based on the test results, how much greater is the margin of error for Mix B than for Mix A, in megapascals?",
+  "stimulus": "Engineers tested random samples of concrete cylinders made from two mixes. For Mix A, the sample mean compressive strength was 41.0 megapascals (MPa), and a plausible range for the mean strength of all Mix A cylinders was between 39.2 and 42.8 MPa. For Mix B, the sample mean was 38.5 MPa, and a plausible range was between 35.3 and 41.7 MPa.",
+  "choices": [
+   "$1.4$",
+   "$2.5$",
+   "$2.8$",
+   "$3.2$"
+  ],
+  "answer": "A",
+  "explanation": "For Mix A, the margin of error is $42.8 - 41.0 = 1.8$ MPa (check: $41.0 - 39.2 = 1.8$). For Mix B, it is $41.7 - 38.5 = 3.2$ MPa (check: $38.5 - 35.3 = 3.2$). Mix B's margin is greater by $3.2 - 1.8 = 1.4$ MPa.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You subtracted the sample means, $41.0 - 38.5 = 2.5$. That compares the strengths of the mixes, not their margins of error."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You subtracted the full interval widths, $6.4 - 3.6 = 2.8$. Each margin of error is half the width, so the gap is half of that, 1.4."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the Mix B margin of error, 3.2, and stopped there. The question asks how much greater it is than Mix A's margin of 1.8."
+   }
+  },
+  "id": "orig-back-out-moe-f-M-1968a2",
+  "skill_cd": "Q.F.",
+  "subtype": "back-out-moe-from-interval",
+  "subtype_name": "Find the margin of error from a given interval",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-back-out-moe-f-M-1968a2",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Based on this information, which of the following must be true?",
+  "stimulus": "A city planning office surveyed a random sample of 400 residents about a proposed protected bike lane on Harbor Street. Of those surveyed, 248 said they support the lane. Using this sample, the office estimated that between 58% and 66% of all city residents support the lane.",
+  "choices": [
+   "The margin of error of the estimate is 2 percentage points.",
+   "The margin of error of the estimate is 4 percentage points.",
+   "The margin of error of the estimate is 8 percentage points.",
+   "The margin of error of the estimate is 58 percentage points."
+  ],
+  "answer": "B",
+  "explanation": "First find the sample percent: $\\frac{248}{400} = 0.62$, so the sample value is 62%. The margin of error is the distance from the sample value to either end of the interval: $66 - 62 = 4$ and $62 - 58 = 4$. Both sides give the same distance, so the margin of error is 4 percentage points.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the half-width correctly and then divided by 2 again, or divided the full width of 8 by 4. The margin of error is the whole distance from 62% to either endpoint, which is 4, not 2."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You found the full width of the interval, $66 - 58 = 8$, and stopped there. The interval is estimate \u00b1 margin, so it runs one margin below 62% and one margin above. Its width is twice the margin of error, so you need to halve it."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the interval's lower endpoint. 58% is a boundary of the plausible range, not the distance from the estimate to that boundary."
+   }
+  },
+  "id": "orig-back-out-moe-f-M-47bd98",
+  "skill_cd": "Q.F.",
+  "subtype": "back-out-moe-from-interval",
+  "subtype_name": "Find the margin of error from a given interval",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-back-out-moe-f-M-47bd98",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Based on this information, which of the following must be true?",
+  "stimulus": "A printmaking studio tested a new oil-based relief ink on a random sample of 50 prints and recorded how long each print took to dry. Based on the sample, the studio estimated that the mean drying time for all prints made with this ink is between 34 minutes and 40 minutes.",
+  "choices": [
+   "The margin of error of the estimate is 3 minutes.",
+   "The margin of error of the estimate is 6 minutes.",
+   "The margin of error of the estimate is 34 minutes.",
+   "The margin of error of the estimate is 37 minutes."
+  ],
+  "answer": "A",
+  "explanation": "The sample mean isn't given, but it has to sit at the center of the interval, so the margin of error is half the interval's width: $\\frac{40 - 34}{2} = 3$. As a check, the center is $34 + 3 = 37$ minutes, which is 3 minutes from each endpoint. The margin of error is 3 minutes.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You subtracted the endpoints, $40 - 34 = 6$, and stopped there. That's the full width of the interval, which covers one margin on each side of the sample mean. Divide by 2 to get the margin of error."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the lower endpoint of the interval. 34 minutes is where the plausible range starts, not how far that range reaches from the estimate."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the midpoint of the interval, which is the sample mean drying time. That's the estimate itself. The margin of error is the distance from 37 to either endpoint."
+   }
+  },
+  "id": "orig-back-out-moe-f-M-7171e4",
+  "skill_cd": "Q.F.",
+  "subtype": "back-out-moe-from-interval",
+  "subtype_name": "Find the margin of error from a given interval",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-back-out-moe-f-M-7171e4",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Based on this information, which of the following must be true?",
+  "stimulus": "A labor economist surveyed a random sample of 600 warehouse workers in one region and found a mean hourly wage of \\$18.40. From this sample, the economist estimated that the mean hourly wage of all warehouse workers in the region is between \\$17.65 and \\$19.15.",
+  "choices": [
+   "The margin of error of the estimate is \\$0.375.",
+   "The margin of error of the estimate is \\$0.75.",
+   "The margin of error of the estimate is \\$1.50.",
+   "The margin of error of the estimate is \\$19.15."
+  ],
+  "answer": "B",
+  "explanation": "Subtract the sample mean from the upper bound: $19.15 - 18.40 = 0.75$. Check the other side: $18.40 - 17.65 = 0.75$. The distances match, so the margin of error is \\$0.75.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You halved the margin of error a second time. Either you found $0.75$ and divided by 2 again, or you divided the full width of $1.50$ by 4. The margin of error is the full distance from \\$18.40 to an endpoint, which is \\$0.75."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You found the full width of the interval, $19.15 - 17.65 = 1.50$. That width covers one margin below the sample mean and one above, so it's twice the margin of error."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the interval's upper endpoint. \\$19.15 is the top of the plausible range, not the distance between that boundary and the sample mean."
+   }
+  },
+  "id": "orig-back-out-moe-f-M-9bf2e6",
+  "skill_cd": "Q.F.",
+  "subtype": "back-out-moe-from-interval",
+  "subtype_name": "Find the margin of error from a given interval",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-back-out-moe-f-M-9bf2e6",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

@@ -239,5 +239,670 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the slope of the transect?",
+  "stimulus": "An ecologist draws a coordinate grid over a meadow. A fence runs along the line $5x + 2y = 8$, and a sampling transect will run perpendicular to the fence.",
+  "keys": [
+   "2/5",
+   ".4",
+   "0.4"
+  ],
+  "any_of": false,
+  "explanation": "Start with the slope of the fence. For $Ax + By = C$ the slope is $-\\frac{A}{B}$, so the fence has slope $-\\frac{5}{2}$. A perpendicular line flips the fraction and changes the sign, so the transect has slope $\\frac{2}{5}$.",
+  "common_errors": [
+   {
+    "value": "5/2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Changed the sign of $-\\frac{5}{2}$ but didn't flip the fraction."
+   },
+   {
+    "value": "2.5",
+    "misconception": "graph-feature-mismatch",
+    "why": "The same slip as $\\frac{5}{2}$, typed as a decimal."
+   },
+   {
+    "value": "1/5",
+    "misconception": "algebra-manipulation",
+    "why": "Took the fence's slope as $-5$ (just $-A$, without dividing by $B$), then took the negative reciprocal."
+   },
+   {
+    "value": "-5/2",
+    "misconception": "complement-or-direction-flip",
+    "why": "Gave the fence's own slope, which is what a parallel line would have, not a perpendicular one."
+   }
+  ],
+  "id": "orig-perpendicular--M-f79b06",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-perpendicular--M-f79b06",
+   "structure": [],
+   "solver_answer": "2/5",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Line $q$ crosses the x-axis at the point $(a, 0)$. What is the value of $a$?",
+  "stimulus": "A paleobotanist plots fossil leaf sites on a grid. Line $p$ passes through $(-2, 7)$ and $(4, -5)$. Line $q$ is parallel to line $p$ and passes through $(0, 10)$.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "The slope of $p$ is $\\frac{-5 - 7}{4 - (-2)} = \\frac{-12}{6} = -2$. A parallel line has the same slope, and $q$ passes through $(0, 10)$, so $q$ is $y = -2x + 10$. Set $y = 0$: $0 = -2x + 10$, so $x = 5$.",
+  "common_errors": [
+   {
+    "value": "-20",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the perpendicular slope $\\frac{1}{2}$, giving $0 = \\frac{1}{2}x + 10$."
+   },
+   {
+    "value": "-5",
+    "misconception": "algebra-manipulation",
+    "why": "Got a sign wrong in rise over run, used slope $2$, and solved $0 = 2x + 10$."
+   },
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the y-intercept of $q$ instead of its x-intercept."
+   }
+  ],
+  "id": "orig-perpendicular--M-7a26e1",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-perpendicular--M-7a26e1",
+   "structure": [],
+   "solver_answer": 5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ and __var__ line __var__ is parallel to",
+    "and __var__ line __var__ is parallel to line",
+    "axis at the point __var__ what is the",
+    "at the point __var__ what is the value"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "What is the y-intercept of line $s$?",
+  "stimulus": "An ornithologist models one gull's flight path with line $r$: $y = -\\frac{3}{4}x + 9$. Line $s$ is perpendicular to line $r$ and passes through the point $(6, 10)$.",
+  "keys": [
+   "2"
+  ],
+  "any_of": false,
+  "explanation": "Line $r$ has slope $-\\frac{3}{4}$, so a perpendicular line has slope $\\frac{4}{3}$. Write $s$ as $y = \\frac{4}{3}x + b$ and substitute $(6, 10)$: $10 = 8 + b$, so $b = 2$.",
+  "common_errors": [
+   {
+    "value": "18",
+    "misconception": "graph-feature-mismatch",
+    "why": "Flipped the fraction but kept the sign, so used slope $-\\frac{4}{3}$: $10 = -8 + b$."
+   },
+   {
+    "value": "5.5",
+    "misconception": "graph-feature-mismatch",
+    "why": "Changed the sign but didn't flip the fraction, so used slope $\\frac{3}{4}$: $10 = 4.5 + b$."
+   },
+   {
+    "value": "14.5",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the parallel slope $-\\frac{3}{4}$: $10 = -4.5 + b$."
+   },
+   {
+    "value": "4/3",
+    "misconception": "wrong-target-quantity",
+    "why": "Stopped at the slope of $s$ and didn't go on to find its intercept."
+   }
+  ],
+  "id": "orig-perpendicular--M-94446b",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-perpendicular--M-94446b",
+   "structure": [],
+   "solver_answer": 2,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Line $k$ is parallel to line $j$. What is the slope of line $k$?",
+  "stimulus": "A labour economist graphs line $j$, given by $6x - 9y = 18$, to compare overtime hours with training hours.",
+  "keys": [
+   "2/3",
+   ".6666",
+   ".6667",
+   "0.666",
+   "0.667"
+  ],
+  "any_of": false,
+  "explanation": "For $Ax + By = C$ the slope is $-\\frac{A}{B} = -\\frac{6}{-9} = \\frac{2}{3}$. A parallel line has the same slope, $\\frac{2}{3}$.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Read the coefficient $A$ as the slope and never divided by $B$."
+   },
+   {
+    "value": "-2/3",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the negative sign on $B = -9$ while rearranging."
+   },
+   {
+    "value": "3/2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Flipped the fraction as if the question asked for a perpendicular line, but kept the sign."
+   },
+   {
+    "value": "-3/2",
+    "misconception": "complement-or-direction-flip",
+    "why": "Gave the perpendicular slope instead of the parallel one."
+   }
+  ],
+  "id": "orig-perpendicular--M-8e0cf6",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-perpendicular--M-8e0cf6",
+   "structure": [],
+   "solver_answer": "2/3",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the y-coordinate of the point on line $n$ whose x-coordinate is $9$?",
+  "stimulus": "A sports scientist lays a grid over a training pitch. Line $m$ passes through $(0, 6)$ and $(8, 0)$. Line $n$ is perpendicular to line $m$ and passes through the origin.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "The slope of $m$ is $\\frac{0 - 6}{8 - 0} = -\\frac{3}{4}$. A perpendicular line has slope $\\frac{4}{3}$. Line $n$ passes through the origin, so it is $y = \\frac{4}{3}x$. At $x = 9$, $y = 12$.",
+  "common_errors": [
+   {
+    "value": "6.75",
+    "misconception": "graph-feature-mismatch",
+    "why": "Changed the sign but didn't flip the fraction, so used $\\frac{3}{4}$: $\\frac{3}{4}(9) = 6.75$."
+   },
+   {
+    "value": "-12",
+    "misconception": "graph-feature-mismatch",
+    "why": "Flipped the fraction but kept the sign, so used $-\\frac{4}{3}$."
+   },
+   {
+    "value": "-6.75",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the parallel slope $-\\frac{3}{4}$."
+   },
+   {
+    "value": "4/3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope of $n$ instead of the y-coordinate."
+   }
+  ],
+  "id": "orig-perpendicular--M-a611ef",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-perpendicular--M-a611ef",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "An epidemiologist plots two trend lines. One is $2x + ky = 5$ and the other is $y = 4x - 1$, where $k$ is a constant. The two lines are perpendicular.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "The second line has slope $4$, so a line perpendicular to it has slope $-\\frac{1}{4}$. The first line has slope $-\\frac{2}{k}$. Set $-\\frac{2}{k} = -\\frac{1}{4}$, so $k = 8$.",
+  "common_errors": [
+   {
+    "value": "-1/2",
+    "misconception": "complement-or-direction-flip",
+    "why": "Made the slopes equal, which is the parallel condition: $-\\frac{2}{k} = 4$."
+   },
+   {
+    "value": "-8",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the negative sign and took the slope of $2x + ky = 5$ to be $\\frac{2}{k}$."
+   },
+   {
+    "value": "1/2",
+    "misconception": "algebra-manipulation",
+    "why": "Swapped $A$ and $B$, took the slope to be $-\\frac{k}{2}$, and solved $-\\frac{k}{2} = -\\frac{1}{4}$."
+   }
+  ],
+  "id": "orig-perpendicular--M-583352",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-perpendicular--M-583352",
+   "structure": [],
+   "solver_answer": 8,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The point $(6, b)$ lies on the second line. What is the value of $b$?",
+  "stimulus": "A seismologist traces a fault on a map grid as the line through $(1, 3)$ and $(5, 11)$. A second fault runs parallel to it and passes through $(2, -1)$.",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "The first fault has slope $\\frac{11 - 3}{5 - 1} = 2$. The parallel fault also has slope $2$. Going from $x = 2$ to $x = 6$ is 4 units across, so $y$ rises $2 \\times 4 = 8$: $b = -1 + 8 = 7$.",
+  "common_errors": [
+   {
+    "value": "-3",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the perpendicular slope $-\\frac{1}{2}$: $-1 + (-\\frac{1}{2})(4) = -3$."
+   },
+   {
+    "value": "1",
+    "misconception": "algebra-manipulation",
+    "why": "Calculated run over rise and got slope $\\frac{1}{2}$: $-1 + \\frac{1}{2}(4) = 1$."
+   },
+   {
+    "value": "13",
+    "misconception": "misread-given",
+    "why": "Put $x = 6$ into the first fault's line instead of the second: $3 + 2(5) = 13$."
+   }
+  ],
+  "id": "orig-perpendicular--M-2b5e59",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-perpendicular--M-2b5e59",
+   "structure": [],
+   "solver_answer": 7,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the x-intercept of the culvert line?",
+  "stimulus": "A hydrologist maps a stream bank as the line $4x - y = 3$. A culvert will run perpendicular to the bank and pass through the point $(8, 1)$.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "The bank has slope $-\\frac{4}{-1} = 4$, so the culvert has slope $-\\frac{1}{4}$. Its equation is $y - 1 = -\\frac{1}{4}(x - 8)$. Set $y = 0$: $-1 = -\\frac{1}{4}(x - 8)$, so $x - 8 = 4$ and $x = 12$.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "graph-feature-mismatch",
+    "why": "Flipped the fraction but kept the sign, so used slope $\\frac{1}{4}$: $-1 = \\frac{1}{4}(x - 8)$. You also land here if you misread the bank's slope as $-4$."
+   },
+   {
+    "value": "8.25",
+    "misconception": "graph-feature-mismatch",
+    "why": "Changed the sign but didn't flip the fraction, so used slope $-4$: $-1 = -4(x - 8)$."
+   },
+   {
+    "value": "7.75",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the parallel slope $4$: $-1 = 4(x - 8)$."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the culvert's y-intercept, from $y = -\\frac{1}{4}x + 3$, instead of its x-intercept."
+   }
+  ],
+  "id": "orig-perpendicular--M-0ace3e",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-perpendicular--M-0ace3e",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ what is the x intercept of the"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Line $k$ is perpendicular to line $\\ell$ and passes through the point $(0, 4)$. What is the $y$-coordinate of the point on line $k$ whose $x$-coordinate is $9$?",
+  "stimulus": "A folklorist charting how versions of a trickster tale drift from region to region draws line $\\ell$, defined by $6x + 4y = 15$, in the $xy$-plane.",
+  "keys": [
+   "10",
+   "10.0",
+   "10/1"
+  ],
+  "any_of": false,
+  "explanation": "First get the slope of line $\\ell$. In the form $Ax + By = C$, the slope is $-\\frac{A}{B} = -\\frac{6}{4} = -\\frac{3}{2}$. Line $k$ is perpendicular, so flip the fraction and change the sign: its slope is $\\frac{2}{3}$. Line $k$ passes through $(0, 4)$, so $4$ is its y-intercept, and line $k$ is $y = \\frac{2}{3}x + 4$. Substitute $x = 9$: $y = \\frac{2}{3}(9) + 4 = 6 + 4 = 10$.",
+  "common_errors": [
+   {
+    "value": "-9.5",
+    "misconception": "graph-feature-mismatch",
+    "why": "Kept line \u2113's slope of -3/2, which gives a parallel line instead of a perpendicular one: -3/2 \u00b7 9 + 4 = -9.5."
+   },
+   {
+    "value": "-2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Took the reciprocal of -3/2 but did not change the sign, so used slope -2/3: -2/3 \u00b7 9 + 4 = -2."
+   },
+   {
+    "value": "17.5",
+    "misconception": "graph-feature-mismatch",
+    "why": "Changed the sign of -3/2 but did not take the reciprocal, so used slope 3/2: 3/2 \u00b7 9 + 4 = 17.5."
+   },
+   {
+    "value": "2.5",
+    "misconception": "algebra-manipulation",
+    "why": "Read A = 6 as the slope of \u2113 and took its negative reciprocal, -1/6: -1/6 \u00b7 9 + 4 = 2.5."
+   },
+   {
+    "value": "5.5",
+    "misconception": "algebra-manipulation",
+    "why": "Read -A = -6 as the slope of \u2113 and took its negative reciprocal, 1/6: 1/6 \u00b7 9 + 4 = 5.5."
+   },
+   {
+    "value": "2/3",
+    "misconception": "intermediate-step",
+    "why": "Found the perpendicular slope and entered it, without going on to find the point on line k."
+   },
+   {
+    "value": "6",
+    "misconception": "missed-condition",
+    "why": "Computed 2/3 \u00b7 9 but left off the y-intercept of 4, so the line no longer passes through (0, 4)."
+   }
+  ],
+  "id": "orig-perpendicular--M-bc5d86",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-perpendicular--M-bc5d86",
+   "structure": [],
+   "solver_answer": 10,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ what is the __var__ coordinate of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the slope of the second edge?",
+  "stimulus": "A printmaker lays out a woodcut block on a coordinate grid. One carved edge lies along the line $3x + 5y = 20$. A second carved edge is perpendicular to the first.",
+  "keys": [
+   "5/3",
+   "1.666",
+   "1.667"
+  ],
+  "any_of": false,
+  "explanation": "Start by finding the slope of the first edge. For $Ax + By = C$ the slope is $-\\frac{A}{B}$, so the slope is $-\\frac{3}{5}$. You can also rearrange to $y = -\\frac{3}{5}x + 4$. A perpendicular line has the negative reciprocal slope: flip the fraction and change the sign. That gives $\\frac{5}{3}$.",
+  "common_errors": [
+   {
+    "value": "-3/5",
+    "misconception": "intermediate-step",
+    "why": "Found the slope of the given edge and stopped before taking the perpendicular."
+   },
+   {
+    "value": "-5/3",
+    "misconception": "graph-feature-mismatch",
+    "why": "Flipped the fraction but did not change the sign."
+   },
+   {
+    "value": "3/5",
+    "misconception": "graph-feature-mismatch",
+    "why": "Changed the sign but did not flip the fraction."
+   },
+   {
+    "value": "-1/3",
+    "misconception": "algebra-manipulation",
+    "why": "Read the coefficient A = 3 as the slope, then took its negative reciprocal."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the y-intercept of the first edge, 20/5, when the question asked for a slope."
+   }
+  ],
+  "id": "orig-perpendicular--M-35bdfc",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-perpendicular--M-35bdfc",
+   "structure": [],
+   "solver_answer": "5/3",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The trench crosses the x-axis at $(a, 0)$. What is the value of $a$?",
+  "stimulus": "An archaeologist maps a dig site on a coordinate grid measured in meters. A buried wall runs along the line through stakes at $(-2, 1)$ and $(4, 5)$. A drainage trench is perpendicular to the wall and crosses the y-axis at $(0, 9)$.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "Find the wall's slope from the two stakes: $\\frac{5 - 1}{4 - (-2)} = \\frac{4}{6} = \\frac{2}{3}$. The trench is perpendicular, so its slope is $-\\frac{3}{2}$. The trench crosses the y-axis at 9, so its equation is $y = -\\frac{3}{2}x + 9$. Set $y = 0$: $\\frac{3}{2}a = 9$, so $a = 6$.",
+  "common_errors": [
+   {
+    "value": "-13.5",
+    "misconception": "missed-condition",
+    "why": "Used the wall's own slope, 2/3, which makes the trench parallel instead of perpendicular: 0 = (2/3)a + 9."
+   },
+   {
+    "value": "13.5",
+    "misconception": "graph-feature-mismatch",
+    "why": "Changed the sign of 2/3 but did not flip it, so used slope -2/3."
+   },
+   {
+    "value": "-6",
+    "misconception": "graph-feature-mismatch",
+    "why": "Flipped 2/3 to 3/2 but kept the positive sign."
+   },
+   {
+    "value": "9",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the y-intercept, which was stated in the problem, instead of the x-intercept."
+   }
+  ],
+  "id": "orig-perpendicular--M-2dd769",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-perpendicular--M-2dd769",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Line $k$ is parallel to line $\\ell$ and passes through the point $(6, 5)$. If line $k$ crosses the y-axis at $(0, b)$, what is the value of $b$?",
+  "stimulus": "An astronomer plots a meteor's path on a star chart drawn on a coordinate plane. The path lies along line $\\ell$, given by $4x + 6y = 15$.",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "The slope of line $\\ell$ is $-\\frac{A}{B} = -\\frac{4}{6} = -\\frac{2}{3}$. Parallel lines have the same slope, so line $k$ is $y = -\\frac{2}{3}x + b$. Substitute $(6, 5)$: $5 = -4 + b$, so $b = 9$.",
+  "common_errors": [
+   {
+    "value": "2.5",
+    "misconception": "misread-given",
+    "why": "Gave the y-intercept of line \u2113 (15/6) instead of finding the one for line k."
+   },
+   {
+    "value": "-4",
+    "misconception": "missed-condition",
+    "why": "Used the perpendicular slope, 3/2, so 5 = 9 + b."
+   },
+   {
+    "value": "1",
+    "misconception": "graph-feature-mismatch",
+    "why": "Used +2/3 instead of -2/3 because the sign was dropped, so 5 = 4 + b."
+   },
+   {
+    "value": "14",
+    "misconception": "algebra-manipulation",
+    "why": "Used -B/A = -3/2 as the slope instead of -A/B, so 5 = -9 + b."
+   },
+   {
+    "value": "29",
+    "misconception": "algebra-manipulation",
+    "why": "Read -A = -4 as the slope, so 5 = -24 + b."
+   }
+  ],
+  "id": "orig-perpendicular--M-f35c15",
+  "skill_cd": "H.C.",
+  "subtype": "perpendicular-parallel-slope",
+  "subtype_name": "Parallel / perpendicular slope",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-perpendicular--M-f35c15",
+   "structure": [],
+   "solver_answer": 9,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

@@ -96,5 +96,824 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "A meteorite fragment has a density of $4$ grams per cubic centimeter. A piece of the fragment cut into a cube has a mass of $500$ grams. What is the length, in centimeters, of one edge of the cube?",
+  "stimulus": null,
+  "choices": [
+   "$0.2$",
+   "$5$",
+   "$25$",
+   "$125$"
+  ],
+  "answer": "B",
+  "explanation": "Density is mass \u00f7 volume, so volume = mass \u00f7 density. Here that is $\\frac{500 \\text{ g}}{4 \\text{ g/cm}^3} = 125 \\text{ cm}^3$. The units cancel to cubic centimeters, which is a volume. The question asks for an edge length, and a cube's volume is $s^3$, so $s = \\sqrt[3]{125} = 5$ centimeters. In Desmos, you can graph $y = x^3$ and $y = 125$ and read the positive intersection, $x = 5$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the quotient and worked out density \u00f7 mass, $\\frac{4}{500} = 0.008$, then took the cube root. Check the units: g/cm\u00b3 \u00f7 g gives 1/cm\u00b3, which is not a volume. Volume is mass \u00f7 density."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the right volume and edge, but then answered with the area of one face, $5^2 = 25$ square centimeters. The question asks for the length of an edge."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at the volume, $500 \\div 4 = 125$ cubic centimeters. That is a volume, not a length. Take the cube root to get the edge."
+   }
+  },
+  "id": "orig-density-per-un-M-38af04",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-38af04",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "has a density of __var__ grams per cubic",
+    "a density of __var__ grams per cubic centimeter",
+    "cube has a mass of __var__ grams what",
+    "has a mass of __var__ grams what is",
+    "a mass of __var__ grams what is the",
+    "what is the length in centimeters of one"
+   ],
+   "residue": 5
+  }
+ },
+ {
+  "stem": "Which expression represents the number of nests per square kilometer of land on the island?",
+  "stimulus": "An ornithologist counts $n$ tern nests on an island. The island has a total area of $A$ square kilometers, and $w$ square kilometers of that area is a freshwater lake. All of the nests are on land.",
+  "choices": [
+   "$\\dfrac{A - w}{n}$",
+   "$\\dfrac{n}{A - w}$",
+   "$\\dfrac{n}{A}$",
+   "$\\dfrac{n}{A + w}$"
+  ],
+  "answer": "B",
+  "explanation": "Density is amount divided by space. The amount is $n$ nests. The space is the land only, which is the total area minus the lake: $A - w$ square kilometers. So the density is $\\dfrac{n}{A - w}$ nests per square kilometer. The units check it: nests on top, square kilometers underneath.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You flipped the quotient and divided space by amount. This gives square kilometers per nest, not nests per square kilometer."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You divided by the island's total area. The question asks per square kilometer of land, so you need to take the lake's area away first."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the lake's area when you should have subtracted it. Land area is total area minus water area."
+   }
+  },
+  "id": "orig-density-per-un-M-b3818e",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-b3818e",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the length, in centimeters, of one edge of the cube?",
+  "stimulus": "A materials scientist casts a solid cube from a new alloy. The cube has a mass of $m$ grams, and the alloy has a density of $d$ grams per cubic centimeter.",
+  "choices": [
+   "$\\sqrt[3]{\\dfrac{d}{m}}$",
+   "$\\dfrac{m}{d}$",
+   "$\\sqrt{\\dfrac{m}{d}}$",
+   "$\\sqrt[3]{\\dfrac{m}{d}}$"
+  ],
+  "answer": "D",
+  "explanation": "Rearrange density = mass \u00f7 volume to get volume = mass \u00f7 density. That is $\\dfrac{m}{d}$ cubic centimeters, since grams \u00f7 (grams per cubic centimeter) leaves cubic centimeters. The volume of a cube is its edge length cubed, so the edge is the cube root of the volume: $\\sqrt[3]{\\dfrac{m}{d}}$ centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You flipped the quotient and divided density by mass. Volume is mass \u00f7 density, and the units only cancel to cubic centimeters that way round."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is the cube's volume in cubic centimeters. You stopped there and didn't take the cube root to get the edge length."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took a square root, which turns an area into a length. A volume needs a cube root."
+   }
+  },
+  "id": "orig-density-per-un-M-b1cb7b",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "fail",
+  "verification": {
+   "id": "orig-density-per-un-M-b1cb7b",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "has a density of __var__ grams per cubic",
+    "a density of __var__ grams per cubic centimeter",
+    "which expression represents the length in centimeters of"
+   ],
+   "residue": 12
+  }
+ },
+ {
+  "stem": "Which expression represents the total area, in square miles, of the county?",
+  "stimulus": "A linguist finds that all $N$ speakers of a regional dialect live in one county. The county has $p$ speakers of the dialect per square mile of land. The county also contains a lake that covers $r$ square miles.",
+  "choices": [
+   "$\\dfrac{N}{p} + r$",
+   "$\\dfrac{p}{N} + r$",
+   "$\\dfrac{N}{p}$",
+   "$\\dfrac{N}{p} - r$"
+  ],
+  "answer": "A",
+  "explanation": "Rearrange density = speakers \u00f7 land area to get land area = speakers \u00f7 density. That is $\\dfrac{N}{p}$ square miles, since speakers \u00f7 (speakers per square mile) leaves square miles. That is only the land. The total area also includes the lake, so add $r$: $\\dfrac{N}{p} + r$.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You flipped the quotient and divided density by the number of speakers. That doesn't leave square miles, so it can't be an area."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is the county's land area. You stopped there, but the question asks for the total area, which also includes the lake."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the lake when you should have added it. The density gives you the land area, and the total area is land plus water."
+   }
+  },
+  "id": "orig-density-per-un-M-64076e",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-64076e",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true about the block?",
+  "stimulus": "A violin maker cuts a solid cube of spruce to use for carving bridges. The cube has a mass of 500 grams, and spruce has a density of 0.5 gram per cubic centimeter.",
+  "choices": [
+   "The block has an edge length of 10 centimeters.",
+   "The block has an edge length of 1,000 centimeters.",
+   "The block has a volume of 0.001 cubic centimeter.",
+   "The block has a volume of 250 cubic centimeters."
+  ],
+  "answer": "A",
+  "explanation": "Volume is mass divided by density: $V = \\frac{500 \\text{ g}}{0.5 \\text{ g/cm}^3} = 1{,}000 \\text{ cm}^3$. The grams cancel and leave cubic centimeters, so the setup checks out. The block is a cube, so its edge length is $\\sqrt[3]{1{,}000} = 10$ centimeters.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You found the volume, 1,000 cubic centimeters, and stopped there. The edge of a cube is the cube root of its volume, so you still needed to take $\\sqrt[3]{1{,}000} = 10$."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You flipped the quotient and divided density by mass, $\\frac{0.5}{500} = 0.001$. Check the units: g/cm\u00b3 divided by g gives 1/cm\u00b3, not cm\u00b3. Volume is mass divided by density."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied mass by density, $500 \\times 0.5 = 250$. That leaves g\u00b2/cm\u00b3, which is not a volume. You get volume from $\\frac{\\text{mass}}{\\text{density}}$."
+   }
+  },
+  "id": "orig-density-per-un-M-047c7b",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-047c7b",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true about the county?",
+  "stimulus": "A health department is planning where to put its vaccination clinics. The county it serves covers 450 square miles, and 90 of those square miles are lakes and reservoirs. The county has 72,000 residents, and all of them live on land.",
+  "choices": [
+   "Its population density is 160 residents per square mile of land.",
+   "Its population density is 200 residents per square mile of land.",
+   "Its population density is 800 residents per square mile of land.",
+   "Its population density is 0.005 resident per square mile of land."
+  ],
+  "answer": "B",
+  "explanation": "First find the land area: $450 - 90 = 360$ square miles. Population density is people divided by land area: $\\frac{72{,}000 \\text{ residents}}{360 \\text{ mi}^2} = 200$ residents per square mile of land.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You divided by the total area, $\\frac{72{,}000}{450} = 160$. The choices ask for density per square mile of land, so you had to subtract the 90 square miles of water first."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You divided by the water area, $\\frac{72{,}000}{90} = 800$. Nobody lives on the lakes, so the area you need is the 360 square miles that are left."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You flipped the quotient and divided land area by people, $\\frac{360}{72{,}000} = 0.005$. That gives square miles per resident, not residents per square mile."
+   }
+  },
+  "id": "orig-density-per-un-M-6ad473",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-6ad473",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true about the region?",
+  "stimulus": "A cartographer draws a square survey region on a topographic map. The region contains 600 elevation benchmarks, with an average of 6 benchmarks per square kilometer.",
+  "choices": [
+   "Each side of the region is 0.1 kilometer long.",
+   "Each side of the region is 10 kilometers long.",
+   "Each side of the region is 60 kilometers long.",
+   "Each side of the region is 100 kilometers long."
+  ],
+  "answer": "B",
+  "explanation": "Area is the count divided by the density: $\\frac{600 \\text{ benchmarks}}{6 \\text{ benchmarks/km}^2} = 100 \\text{ km}^2$. The region is a square, so each side is $\\sqrt{100} = 10$ kilometers.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You flipped the quotient, $\\frac{6}{600} = 0.01$, and then took the square root to get 0.1. Area is the number of benchmarks divided by benchmarks per square kilometer, not the other way round."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the count by the density, $600 \\times 6 = 3{,}600$, and took $\\sqrt{3{,}600} = 60$. Check the units: benchmarks times benchmarks/km\u00b2 is not an area. You should have divided."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found the area, 100 square kilometers, and stopped there. The question is about side length, so you still had to take the square root."
+   }
+  },
+  "id": "orig-density-per-un-M-e347fe",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-e347fe",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How much greater, in grams per cubic centimeter, is the density of sample A than the density of sample B?",
+  "stimulus": "A materials lab is testing two new alloy samples. Sample A has a mass of $540$ grams and a volume of $60$ cubic centimeters. Sample B has a mass of $420$ grams and a volume of $70$ cubic centimeters.",
+  "choices": [
+   "$\\frac{1}{18}$",
+   "$3$",
+   "$9$",
+   "$12$"
+  ],
+  "answer": "B",
+  "explanation": "Density is mass \u00f7 volume. Sample A: $\\frac{540\\text{ g}}{60\\text{ cm}^3} = 9$ g/cm\u00b3. Sample B: $\\frac{420\\text{ g}}{70\\text{ cm}^3} = 6$ g/cm\u00b3. The question asks for the gap, so you subtract: $9 - 6 = 3$ g/cm\u00b3.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You flipped the quotient and divided volume by mass: $\\frac{60}{540} = \\frac{1}{9}$ and $\\frac{70}{420} = \\frac{1}{6}$. The gap between those is $\\frac{1}{18}$, but the unit is cm\u00b3 per gram, which isn't a density."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is sample A's density alone. You stopped before subtracting sample B's density, and the question asks for the difference."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the masses ($120$ g) and the volumes ($10$ cm\u00b3) first, then divided. A difference of densities isn't the same as the difference in mass divided by the difference in volume."
+   }
+  },
+  "id": "orig-density-per-un-M-94dde4",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-94dde4",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "has a mass of __var__ grams and a",
+    "a mass of __var__ grams and a volume",
+    "mass of __var__ grams and a volume of",
+    "of __var__ grams and a volume of __var__",
+    "__var__ grams and a volume of __var__ cubic",
+    "grams and a volume of __var__ cubic centimeters",
+    "has a mass of __var__ grams and a",
+    "a mass of __var__ grams and a volume",
+    "mass of __var__ grams and a volume of",
+    "of __var__ grams and a volume of __var__",
+    "__var__ grams and a volume of __var__ cubic",
+    "grams and a volume of __var__ cubic centimeters"
+   ],
+   "residue": 5
+  }
+ },
+ {
+  "stem": "How many more grams of ink does the larger plate require than the smaller plate?",
+  "stimulus": "A printmaker rolls ink onto rectangular plates at a density of $0.2$ gram per square inch. One plate measures $10$ inches by $12$ inches, and a smaller plate measures $8$ inches by $10$ inches.",
+  "choices": [
+   "$8$",
+   "$24$",
+   "$40$",
+   "$200$"
+  ],
+  "answer": "A",
+  "explanation": "Amount = density \u00d7 area. The larger plate is $10 \\times 12 = 120$ in\u00b2 and the smaller one is $8 \\times 10 = 80$ in\u00b2, so the larger plate has $40$ more square inches. $40\\text{ in}^2 \\times 0.2\\ \\frac{\\text{g}}{\\text{in}^2} = 8$ g more ink.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$120 \\times 0.2 = 24$ g is the ink for the larger plate alone. The question asks how much more it needs than the smaller plate."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "$40$ is the extra area in square inches. You stopped before multiplying by the density to turn it into grams."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided the extra area by the density ($40 \\div 0.2$) instead of multiplying. Write out the units: in\u00b2 \u00f7 (g/in\u00b2) gives in\u2074/g, not grams."
+   }
+  },
+  "id": "orig-density-per-un-M-e3b285",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-e3b285",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How much longer, in centimeters, is an edge of the larger weight than an edge of the smaller weight?",
+  "stimulus": "Archaeologists recovered two solid cube-shaped weights made of the same metal, which has a density of $8$ grams per cubic centimeter. The larger weight has a mass of $1{,}728$ grams, and the smaller has a mass of $512$ grams.",
+  "choices": [
+   "$2$",
+   "$6$",
+   "$152$",
+   "$1{,}216$"
+  ],
+  "answer": "A",
+  "explanation": "Volume = mass \u00f7 density. Larger weight: $\\frac{1{,}728}{8} = 216$ cm\u00b3, so its edge is $\\sqrt[3]{216} = 6$ cm. Smaller weight: $\\frac{512}{8} = 64$ cm\u00b3, so its edge is $\\sqrt[3]{64} = 4$ cm. The difference is $6 - 4 = 2$ cm. In Desmos, you can graph $y = x^3$ and $y = 216$ (then $y = 64$) and read the positive intersections.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$6$ cm is the edge of the larger weight. The question asks how much longer it is than the smaller weight's edge."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "$216 - 64 = 152$ is the difference in volume, in cm\u00b3. You stopped at the volumes and never took cube roots to get edge lengths."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$1{,}728 - 512 = 1{,}216$ is the difference in mass, in grams. You never used the density to get from mass to volume, or from volume to edge length."
+   }
+  },
+  "id": "orig-density-per-un-M-75c30e",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-75c30e",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "has a density of __var__ grams per cubic",
+    "a density of __var__ grams per cubic centimeter"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "What is the best interpretation of 2,000 in this context?",
+  "stimulus": "A survey team estimates that a small asteroid has a mass of $3{,}000{,}000$ kilograms and a volume of $1{,}500$ cubic meters. To describe the asteroid, an astronomer calculates $\\frac{3{,}000{,}000}{1{,}500} = 2{,}000$.",
+  "choices": [
+   "The asteroid has 2,000 kilograms of mass per cubic meter of volume.",
+   "The asteroid has 2,000 cubic meters of volume per kilogram of mass.",
+   "The asteroid has 2,000 grams of mass per cubic centimeter of volume.",
+   "The asteroid has a total mass of 2,000 kilograms."
+  ],
+  "answer": "A",
+  "explanation": "The astronomer divided mass (kilograms) by volume (cubic meters). Keep the units with the numbers: kilograms \u00f7 cubic meters = kilograms per cubic meter. So 2,000 is the asteroid's density, 2,000 kilograms of mass for each cubic meter of volume.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You read the quotient upside down. Volume per kilogram would be $1{,}500 \\div 3{,}000{,}000$. The calculation puts mass on top, so the units are kilograms per cubic meter."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You got the meaning right and the units wrong. The calculation uses kilograms and cubic meters, not grams and cubic centimeters. Converted, 2,000 kg/m\u00b3 is only 2 g/cm\u00b3."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You treated the quotient as a total. The total mass is given as 3,000,000 kilograms. The 2,000 is a per-cubic-meter amount, which you get by dividing that total by the volume."
+   }
+  },
+  "id": "orig-density-per-un-M-21bf45",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-21bf45",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the best interpretation of 300 in this context?",
+  "stimulus": "A county covers $450$ square miles, of which $50$ square miles are lakes. The county has $120{,}000$ residents. To plan clinic locations, a health department calculates $\\frac{120{,}000}{450 - 50} = 300$.",
+  "choices": [
+   "The county averages 300 residents per square mile of land.",
+   "The county averages 300 residents per square mile of total area.",
+   "The county averages 300 square miles of land per resident.",
+   "The county has a land area of 300 square miles."
+  ],
+  "answer": "A",
+  "explanation": "The denominator $450 - 50 = 400$ is the land area, in square miles, because the lakes have been taken out. Dividing residents by land area gives residents per square mile of land: $120{,}000 \\div 400 = 300$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You ignored the subtraction. With the 450 square miles of total area, the density would be about 267 residents per square mile. The 300 uses land only."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You flipped the quotient. Residents are on top and square miles are on the bottom, so the units are residents per square mile, not square miles per resident."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You mixed the answer up with a value from partway through. The land area is $450 - 50 = 400$ square miles. The 300 comes from dividing the population by that area."
+   }
+  },
+  "id": "orig-density-per-un-M-685755",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-685755",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the best interpretation of 3 in this context?",
+  "stimulus": "A solid cube of a new alloy has a mass of $216$ grams. The alloy has a density of $8$ grams per cubic centimeter. An engineer calculates $\\sqrt[3]{\\frac{216}{8}} = 3$.",
+  "choices": [
+   "The length of each edge of the cube, in centimeters",
+   "The volume of the cube, in cubic centimeters",
+   "The mass of the alloy per cubic centimeter, in grams",
+   "The volume of the alloy per gram, in cubic centimeters"
+  ],
+  "answer": "A",
+  "explanation": "Mass \u00f7 density gives volume: $216 \\div 8 = 27$ cubic centimeters. A cube's volume is its edge cubed, so the cube root, $\\sqrt[3]{27} = 3$, is the edge length in centimeters.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at the fraction. $\\frac{216}{8} = 27$ is the volume in cubic centimeters. Taking the cube root turns that volume into an edge length."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You picked the density, which the problem gives as 8 grams per cubic centimeter. That is one of the inputs to the calculation, not what it produces."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You flipped the density quotient. Volume per gram would be $\\frac{1}{8}$ cubic centimeter. The calculation divides mass by density to get volume and then takes a cube root."
+   }
+  },
+  "id": "orig-density-per-un-M-51b02f",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-51b02f",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "has a density of __var__ grams per cubic",
+    "a density of __var__ grams per cubic centimeter"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "What is the length, in centimeters, of each edge of the block?",
+  "stimulus": "A vaccine shipping cooler is lined with a solid cube-shaped block of cork insulation. The cork has a density of $0.125$ grams per cubic centimeter, and the block has a mass of $1$ kilogram. ($1$ kilogram $= 1{,}000$ grams)",
+  "choices": [
+   "$2$",
+   "$5$",
+   "$20$",
+   "$8{,}000$"
+  ],
+  "answer": "C",
+  "explanation": "First change the mass to grams: $1$ kilogram is $1{,}000$ grams. Volume = mass \u00f7 density, so the volume is $\\frac{1{,}000}{0.125} = 8{,}000$ cubic centimeters. The edge is the cube root of the volume: $\\sqrt[3]{8{,}000} = 20$ centimeters. It is quicker to test the choices: $20^3 = 8{,}000$, and $8{,}000 \\times 0.125 = 1{,}000$ grams, which is $1$ kilogram.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used $1$ as the mass in grams without converting kilograms to grams. That gives a volume of $\\frac{1}{0.125} = 8$, and $\\sqrt[3]{8} = 2$. Density is given per gram, so the mass has to be in grams too."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the density relationship and multiplied mass by density: $1{,}000 \\times 0.125 = 125$, and $\\sqrt[3]{125} = 5$. Volume = mass \u00f7 density. Write the units down and you'll see $\\text{g} \\times \\frac{\\text{g}}{\\text{cm}^3}$ can't give cubic centimeters."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$8{,}000$ cubic centimeters is the volume of the block. You stopped there and didn't take the cube root to get the edge length."
+   }
+  },
+  "id": "orig-density-per-un-M-c454aa",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-c454aa",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "has a density of __var__ grams per cubic",
+    "a density of __var__ grams per cubic centimeter"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "Based on this estimate, how many speakers of the language live in the region?",
+  "stimulus": "A linguist estimates that a minority language has $45$ speakers per square mile of land in a coastal region. The region covers a total of $1{,}250$ square miles, and $210$ square miles of that is lake and estuary water.",
+  "choices": [
+   "$1{,}040$",
+   "$9{,}450$",
+   "$46{,}800$",
+   "$56{,}250$"
+  ],
+  "answer": "C",
+  "explanation": "The density is per square mile of land, so first find the land area: $1{,}250 - 210 = 1{,}040$ square miles. Speakers = density \u00d7 land area $= 45 \\times 1{,}040 = 46{,}800$. To check, divide: $\\frac{46{,}800}{1{,}040} = 45$ speakers per square mile of land.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$1{,}040$ is the land area in square miles. That's a step on the way. You still have to multiply by the density to get a number of speakers."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You multiplied the density by the water area, $45 \\times 210$. The speakers live on the land, so use the land area instead."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You used the total area, $45 \\times 1{,}250$. The rate is per square mile of land, so subtract the water area first."
+   }
+  },
+  "id": "orig-density-per-un-M-aec1ea",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-aec1ea",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length, in centimeters, of each side of the panel?",
+  "stimulus": "A harpsichord builder cuts a square soundboard panel of uniform thickness from spruce. The panel has a mass of $0.25$ grams per square centimeter of surface, and the whole panel has a mass of $400$ grams.",
+  "choices": [
+   "$10$",
+   "$20$",
+   "$40$",
+   "$1{,}600$"
+  ],
+  "answer": "C",
+  "explanation": "Area = mass \u00f7 mass per square centimeter, so the area is $\\frac{400}{0.25} = 1{,}600$ square centimeters. The panel is square, so each side is $\\sqrt{1{,}600} = 40$ centimeters. Testing the choices is quick: $40^2 = 1{,}600$, and $1{,}600 \\times 0.25 = 400$ grams.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the relationship and multiplied mass by density: $400 \\times 0.25 = 100$, and $\\sqrt{100} = 10$. Area = mass \u00f7 (mass per area). The units show it, because $\\text{g} \\times \\frac{\\text{g}}{\\text{cm}^2}$ isn't an area."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You took $\\sqrt{400} = 20$ and never used the $0.25$ grams per square centimeter. The mass has to be divided by the density before you take the square root."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$1{,}600$ square centimeters is the area of the panel. The question asks for a side length, so you still need the square root."
+   }
+  },
+  "id": "orig-density-per-un-M-bbaf27",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-M-bbaf27",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "has a mass of __var__ grams what is",
+    "a mass of __var__ grams what is the"
+   ],
+   "residue": 4
+  }
  }
 ]

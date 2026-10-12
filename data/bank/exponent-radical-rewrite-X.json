@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-exponent-radic-X-37bc4c",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,14 +82,403 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-exponent-radic-X-f870f0",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which expression is equivalent to $\\dfrac{\\sqrt[3]{(8x^{2}y)^{2}}}{\\sqrt{4xy^{-1}}}$, where $x>0$ and $y>0$?",
+  "stimulus": "An immunologist compares two antibody-binding measurements, $x$ and $y$, using the given expression.",
+  "choices": [
+   "$2x^{5/6}y^{1/6}$",
+   "$2x^{5/6}y^{7/6}$",
+   "$x^{5/6}y^{7/6}$",
+   "$8x^{11/6}y^{1/6}$"
+  ],
+  "answer": "B",
+  "explanation": "Write the numerator as $(8x^{2}y)^{2/3} = 8^{2/3}x^{4/3}y^{2/3} = 4x^{4/3}y^{2/3}$. Write the denominator as $(4xy^{-1})^{1/2} = 2x^{1/2}y^{-1/2}$. Now divide: the coefficient is $4 \\div 2 = 2$, the power of $x$ is $\\tfrac{4}{3}-\\tfrac{1}{2}=\\tfrac{5}{6}$, and the power of $y$ is $\\tfrac{2}{3}-(-\\tfrac{1}{2})=\\tfrac{7}{6}$. That gives $2x^{5/6}y^{7/6}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated $y^{-1/2}$ in the denominator as if it were $y^{1/2}$ and worked out $\\tfrac{2}{3}-\\tfrac{1}{2}$. Subtracting a negative exponent adds it, so the power is $\\tfrac{7}{6}$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the square root of $x$ and $y^{-1}$ but not of the 4, so the coefficient became $4 \\div 4 = 1$. The root applies to the coefficient too: $\\sqrt{4}=2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the numerator and denominator instead of dividing, so you added exponents ($\\tfrac{4}{3}+\\tfrac{1}{2}$) and multiplied the coefficients ($4 \\cdot 2$)."
+   }
+  },
+  "id": "orig-exponent-radic-X-bd074e",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-X-bd074e",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following expressions are equivalent to $\\dfrac{x^{1/2}}{\\sqrt[4]{x^{5}}}$, where $x>0$?\n\nI. $\\dfrac{1}{\\sqrt[3]{x^{4}}}$\nII. $\\dfrac{\\sqrt[4]{x}}{x}$\nIII. $\\sqrt{x^{-1}}\\cdot\\sqrt[4]{x^{-1}}$",
+  "stimulus": "An ecologist's model of how a seed bank shrinks uses the given expression, where $x$ is the soil depth in centimeters.",
+  "choices": [
+   "II only",
+   "I and II only",
+   "II and III only",
+   "I, II, and III"
+  ],
+  "answer": "C",
+  "explanation": "The given expression is $x^{2/4-5/4}=x^{-3/4}$. Check each form on its own. I is $x^{-4/3}$, so it is not equivalent. II is $x^{1/4-1}=x^{-3/4}$, so it is equivalent. III is $x^{-1/2}\\cdot x^{-1/4}=x^{-3/4}$, so it is equivalent. The answer is II and III only.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You confirmed II and stopped, or you rejected III without converting it. When you multiply the two roots, the exponents add: $-\\tfrac{1}{2}+(-\\tfrac{1}{4})=-\\tfrac{3}{4}$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You read $\\sqrt[3]{x^{4}}$ as $x^{3/4}$ by flipping the index and the power. You also multiplied the exponents in III instead of adding them. The root index goes in the denominator: $\\sqrt[3]{x^{4}}=x^{4/3}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You accepted I by reading $\\sqrt[3]{x^{4}}$ as $x^{3/4}$. The index of the root is the denominator of the exponent, so I is $x^{-4/3}$."
+   }
+  },
+  "id": "orig-exponent-radic-X-f81d55",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-X-f81d55",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\dfrac{9^{x}\\cdot 27^{x/3}}{\\sqrt{3^{2x+4}}}$?",
+  "stimulus": "A seismologist compares the energy released by two tremors using the given expression, where $x$ is a magnitude reading.",
+  "choices": [
+   "$3^{x-1}$",
+   "$9^{x-2}$",
+   "$9^{2x-2}$",
+   "$9^{x-1}$"
+  ],
+  "answer": "D",
+  "explanation": "Write everything in base 3. $9^{x}=3^{2x}$, $27^{x/3}=3^{x}$, and $\\sqrt{3^{2x+4}}=3^{(2x+4)/2}=3^{x+2}$. So the expression is $3^{2x+x-(x+2)}=3^{2x-2}$. Since $3^{2}=9$, this equals $(3^{2})^{x-1}=9^{x-1}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You halved the exponent of $3^{2x-2}$ without changing the base. Halving the exponent is only allowed when you square the base at the same time, which turns 3 into 9."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You halved $2x$ but not the 4 when you took the square root, so you got $3^{x+4}$ and then $3^{2x-4}$. The root halves the whole exponent: $(2x+4)/2=x+2$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You changed the base to 9 but kept the exponent $2x-2$. Squaring the base doubles every power, so you have to halve the exponent to make up for it."
+   }
+  },
+  "id": "orig-exponent-radic-X-1d715f",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-X-1d715f",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\sqrt[3]{\\dfrac{8a^{2}}{b}}\\cdot\\sqrt{\\dfrac{b^{3}}{4a}}$, where $a>0$ and $b>0$?",
+  "stimulus": "A materials scientist estimates how a composite panel stiffens using the given expression, where $a$ and $b$ are the thicknesses of its two layers.",
+  "choices": [
+   "$b\\sqrt[6]{ab}$",
+   "$2b\\sqrt[6]{ab}$",
+   "$b\\sqrt[6]{ab^{5}}$",
+   "$\\sqrt[5]{2ab^{2}}$"
+  ],
+  "answer": "A",
+  "explanation": "The first factor is $2a^{2/3}b^{-1/3}$. The second is $\\dfrac{b^{3/2}}{2a^{1/2}}$. Multiply them: the coefficients give $2 \\div 2 = 1$, the power of $a$ is $\\tfrac{2}{3}-\\tfrac{1}{2}=\\tfrac{1}{6}$, and the power of $b$ is $-\\tfrac{1}{3}+\\tfrac{3}{2}=\\tfrac{7}{6}$. Since $a^{1/6}b^{7/6}=b\\cdot a^{1/6}b^{1/6}$, the expression equals $b\\sqrt[6]{ab}$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the roots of the variables but left the coefficients alone, so you got $8 \\div 4 = 2$. Taking the roots first gives $\\sqrt[3]{8}=2$ and $\\sqrt{4}=2$, which cancel."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated the $b$ in the denominator of the cube root as $b^{+1/3}$ and got $b^{11/6}$. Because $b$ is in the denominator, its exponent is $-\\tfrac{1}{3}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the radicands and added the indices $3+2$. You can't combine roots with different indices that way. Convert both to fractional exponents first."
+   }
+  },
+  "id": "orig-exponent-radic-X-29703f",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-X-29703f",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\left(\\dfrac{16p^{-4}q^{6}}{p^{2}q^{-2}}\\right)^{-3/4}$, where $p>0$ and $q>0$?",
+  "stimulus": "A public health analyst uses the given expression to adjust a vaccination-rate index, where $p$ and $q$ are positive population measures.",
+  "choices": [
+   "$\\dfrac{8p^{4}\\sqrt{p}}{q^{6}}$",
+   "$\\dfrac{p^{4}\\sqrt{p}}{8q^{6}}$",
+   "$\\dfrac{p\\sqrt{p}}{8q^{3}}$",
+   "$\\dfrac{1}{8p^{4}q^{6}\\sqrt{p}}$"
+  ],
+  "answer": "B",
+  "explanation": "First simplify inside the parentheses: $16p^{-4-2}q^{6-(-2)}=16p^{-6}q^{8}$. Then raise each part to the $-\\tfrac{3}{4}$ power. $16^{-3/4}=\\tfrac{1}{8}$, $p^{(-6)(-3/4)}=p^{9/2}$, and $q^{8(-3/4)}=q^{-6}$. The result is $\\dfrac{p^{9/2}}{8q^{6}}=\\dfrac{p^{4}\\sqrt{p}}{8q^{6}}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the negative exponent to the variables but not to the coefficient, so you wrote $16^{3/4}=8$ in the numerator. The 16 is raised to $-\\tfrac{3}{4}$ as well, which gives $\\tfrac{1}{8}$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by the denominator instead of dividing, so you got $16p^{-2}q^{4}$ inside the parentheses. Dividing subtracts exponents: $-4-2=-6$ and $6-(-2)=8$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost a sign on the $p$ term. A negative exponent times a negative exponent is positive: $(-6)(-\\tfrac{3}{4})=\\tfrac{9}{2}$, so $p$ belongs in the numerator."
+   }
+  },
+  "id": "orig-exponent-radic-X-53c728",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-X-53c728",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following expressions are equivalent to $\\dfrac{\\sqrt[3]{x^{2}y}}{\\sqrt[6]{xy^{5}}}$, where $x>0$ and $y>0$?\n\nI. $\\sqrt{\\dfrac{x}{y}}$\nII. $\\dfrac{\\sqrt{xy}}{y}$\nIII. $\\sqrt[3]{\\dfrac{x}{y^{4}}}$",
+  "stimulus": "An urban planner compares street density, $x$, with lot size, $y$, in two districts using the given expression.",
+  "choices": [
+   "I only",
+   "I and III only",
+   "I and II only",
+   "I, II, and III"
+  ],
+  "answer": "C",
+  "explanation": "The given expression is $x^{2/3-1/6}y^{1/3-5/6}=x^{1/2}y^{-1/2}$. I is $x^{1/2}y^{-1/2}$, so it is equivalent. II is $x^{1/2}y^{1/2-1}=x^{1/2}y^{-1/2}$, so it is equivalent. III is $x^{1/3}y^{-4/3}$, so it is not. The answer is I and II only.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You confirmed I and stopped. II is the same value with the denominator rationalized: $\\dfrac{\\sqrt{xy}}{y}=x^{1/2}y^{-1/2}$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the radicands even though the roots have different indices, and you rejected II. The indices must match before you can combine radicands, so convert to fractional exponents. II does pass that check."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You accepted III, which comes from dividing $x^{2}y$ by $xy^{5}$ under a single cube root. A cube root and a sixth root can't be combined like that."
+   }
+  },
+  "id": "orig-exponent-radic-X-92e87d",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-X-92e87d",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $\\dfrac{\\sqrt[3]{a^{4}}\\cdot a^{-1/2}}{\\left(\\sqrt{a}\\right)^{-3}}=a^{k}$ for all positive values of $a$, what is the value of $k$?",
+  "stimulus": "An archaeologist uses the given relationship to scale the estimated age of buried layers, where $a$ is the depth of a layer.",
+  "choices": [
+   "$-\\dfrac{2}{3}$",
+   "$\\dfrac{7}{4}$",
+   "$\\dfrac{7}{3}$",
+   "$\\dfrac{10}{3}$"
+  ],
+  "answer": "C",
+  "explanation": "$\\sqrt[3]{a^{4}}=a^{4/3}$ and $(\\sqrt{a})^{-3}=(a^{1/2})^{-3}=a^{-3/2}$. When you divide by $a^{-3/2}$, you add $\\tfrac{3}{2}$. So $k=\\tfrac{4}{3}-\\tfrac{1}{2}+\\tfrac{3}{2}=\\tfrac{4}{3}+1=\\tfrac{7}{3}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted $\\tfrac{3}{2}$ for the denominator. The denominator's exponent is $-\\tfrac{3}{2}$, and subtracting a negative means adding."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $\\sqrt[3]{a^{4}}$ as $a^{3/4}$. The power goes on top and the index goes on the bottom, so it is $a^{4/3}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the exponents in $(a^{1/2})^{-3}$ and got $-\\tfrac{5}{2}$. When you raise a power to a power, you multiply the exponents: $\\tfrac{1}{2}\\cdot(-3)=-\\tfrac{3}{2}$."
+   }
+  },
+  "id": "orig-exponent-radic-X-3aec6d",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-X-3aec6d",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $\\dfrac{\\sqrt{9w\\sqrt[3]{w^{2}}}}{w^{-1/6}}$, where $w>0$?",
+  "stimulus": "An ornithologist uses the given expression to model how wing loading changes with body mass $w$, in grams, for a species of warbler.",
+  "choices": [
+   "$3w$",
+   "$9w$",
+   "$3w^{2/3}$",
+   "$3\\sqrt{w}$"
+  ],
+  "answer": "A",
+  "explanation": "Inside the square root, $w\\cdot w^{2/3}=w^{5/3}$. Taking the square root of $9w^{5/3}$ gives $3w^{5/6}$. Dividing by $w^{-1/6}$ adds $\\tfrac{1}{6}$ to the exponent: $3w^{5/6+1/6}=3w$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the square root of the variable part but not the 9. The outer root covers everything under it, so $\\sqrt{9}=3$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted $\\tfrac{1}{6}$ when dividing by $w^{-1/6}$. Dividing by a negative power adds its size: $\\tfrac{5}{6}+\\tfrac{1}{6}=1$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $w\\cdot w^{2/3}$ by multiplying the exponents and got $w^{2/3}$. When you multiply powers of the same base, you add the exponents, which gives $w^{5/3}$."
+   }
+  },
+  "id": "orig-exponent-radic-X-14f37a",
+  "skill_cd": "P.A.",
+  "subtype": "exponent-radical-rewrite",
+  "subtype_name": "Rewrite using exponent and radical rules",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-exponent-radic-X-14f37a",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

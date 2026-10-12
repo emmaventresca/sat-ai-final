@@ -1,0 +1,909 @@
+[
+ {
+  "stem": "If one of these stars is selected at random, what is the probability that it is not red and has a known planet?",
+  "stimulus": "An astronomy club classified 200 nearby stars by color and by whether at least one planet has been confirmed orbiting the star.\n\nStars by Color and Planet Status\nColor | Known planet | No known planet | Total\nRed | 24 | 36 | 60\nYellow | 12 | 48 | 60\nBlue | 6 | 74 | 80\nTotal | 42 | 158 | 200",
+  "keys": [
+   "9/100",
+   ".09",
+   "0.09"
+  ],
+  "any_of": false,
+  "explanation": "Nothing narrows the group, so your denominator is every star in the table: 200. 'Not red' means yellow or blue, so add those two cells in the Known planet column: 12 + 6 = 18. The probability is 18/200 = 9/100 = 0.09.",
+  "common_errors": [
+   {
+    "value": "3/7",
+    "misconception": "wrong-target-quantity",
+    "why": "Put 18 over the Known planet total of 42. That answers 'given that it has a planet', which the question never asked."
+   },
+   {
+    "value": "9/70",
+    "misconception": "wrong-target-quantity",
+    "why": "Put 18 over the 140 stars that are not red. That makes it a conditional probability."
+   },
+   {
+    "value": "3/25",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the red cell, 24, instead of the stars that are not red: 24/200."
+   },
+   {
+    "value": "7/10",
+    "misconception": "missed-condition",
+    "why": "Counted every star that is not red, 140/200, and dropped the planet condition."
+   }
+  ],
+  "id": "orig-two-way-table--M-68e8ed",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-68e8ed",
+   "structure": [],
+   "solver_answer": "0.09",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one participant is selected at random, what is the probability that the participant ate an egg-based breakfast and did not meet the fiber target?",
+  "stimulus": "In a nutrition study, each participant recorded their usual breakfast. Researchers also noted whether the participant met a daily fiber target.\n\nParticipants by Breakfast Type and Fiber Target\nBreakfast | Met target | Did not meet target\nOat-based | 34 | 16\nEgg-based | 21 | 29\nSkipped | 5 | 45",
+  "keys": [
+   "29/150",
+   ".1933",
+   "0.1933"
+  ],
+  "any_of": false,
+  "explanation": "There is no total printed, so add all six cells to get everyone in the study: 34 + 16 + 21 + 29 + 5 + 45 = 150. The participants who ate egg-based and did not meet the target are the single cell where that row and column meet: 29. The probability is 29/150, about 0.1933.",
+  "common_errors": [
+   {
+    "value": "29/50",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided by the egg-based row total of 50 instead of all 150 participants."
+   },
+   {
+    "value": "29/90",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided by the 90 participants who did not meet the target."
+   },
+   {
+    "value": "7/50",
+    "misconception": "complement-or-direction-flip",
+    "why": "Read the Met target cell, 21, instead of Did not meet: 21/150."
+   },
+   {
+    "value": "1/3",
+    "misconception": "missed-condition",
+    "why": "Counted every egg-based participant, 50/150, and ignored the fiber condition."
+   }
+  ],
+  "id": "orig-two-way-table--M-67045e",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-67045e",
+   "structure": [],
+   "solver_answer": "29/150",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one map is selected at random from the collection, what is the probability that it was made before 1800 and is printed in black only?",
+  "stimulus": "An archive sorted its collection of 250 historical maps by the century the map was made and by how it was finished.\n\nArchive Maps by Century and Finish\nCentury made | Hand-colored | Black only | Total\nBefore 1700 | 27 | 13 | 40\n1700\u20131799 | 45 | 35 | 80\n1800\u20131899 | 38 | 92 | 130\nTotal | 110 | 140 | 250",
+  "keys": [
+   "24/125",
+   ".192",
+   "0.192"
+  ],
+  "any_of": false,
+  "explanation": "The map comes from the whole collection, so your denominator is 250. 'Before 1800' covers two rows, Before 1700 and 1700\u20131799. In the Black only column those cells are 13 and 35, which add to 48. The probability is 48/250 = 24/125 = 0.192.",
+  "common_errors": [
+   {
+    "value": "12/35",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 48 by the Black only total of 140, which makes it a conditional probability."
+   },
+   {
+    "value": "2/5",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 48 by the 120 maps made before 1800."
+   },
+   {
+    "value": "36/125",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the Hand-colored cells, 27 + 45 = 72, instead of Black only: 72/250."
+   },
+   {
+    "value": "7/50",
+    "misconception": "missed-condition",
+    "why": "Counted only the 1700\u20131799 row, 35/250, and left out the maps made before 1700."
+   }
+  ],
+  "id": "orig-two-way-table--M-6a840f",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-6a840f",
+   "structure": [],
+   "solver_answer": "48/250",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one print is selected at random from the exhibition, what is the probability that it is an etching but is not signed?",
+  "stimulus": "A gallery cataloged the 150 prints in an exhibition by technique and by whether the artist signed the print.\n\nExhibition Prints by Technique and Signature\nTechnique | Signed | Unsigned | Total\nWoodcut | 22 | 18 | 40\nEtching | 35 | 25 | 60\nScreenprint | 13 | 37 | 50\nTotal | 70 | 80 | 150",
+  "keys": [
+   "1/6",
+   ".1666",
+   ".1667",
+   "0.1666",
+   "0.1667"
+  ],
+  "any_of": false,
+  "explanation": "Nothing narrows the group, so your denominator is all 150 prints. 'An etching but not signed' is the cell where the Etching row meets the Unsigned column: 25. The probability is 25/150 = 1/6, about 0.1667.",
+  "common_errors": [
+   {
+    "value": "7/30",
+    "misconception": "complement-or-direction-flip",
+    "why": "Took 'etching but not signed' to mean the signed etchings, 35/150."
+   },
+   {
+    "value": "5/12",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 25 by the Etching row total of 60."
+   },
+   {
+    "value": "5/16",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 25 by the Unsigned column total of 80."
+   },
+   {
+    "value": "2/5",
+    "misconception": "missed-condition",
+    "why": "Counted every etching, 60/150, and dropped the signature condition."
+   }
+  ],
+  "id": "orig-two-way-table--M-63fc6e",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-63fc6e",
+   "structure": [],
+   "solver_answer": "25/150",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of the surveyed trees is selected at random, what is the probability that it is a maple that is at least 5 meters tall?",
+  "stimulus": "Ecologists measured every tree in a forest plot and recorded each tree's species and height.\n\nSurveyed Trees by Species and Height\nSpecies | Less than 5 m | 5 m to 10 m | More than 10 m\nOak | 14 | 22 | 24\nMaple | 32 | 16 | 12\nBirch | 26 | 10 | 4",
+  "keys": [
+   "7/40",
+   ".175",
+   "0.175"
+  ],
+  "any_of": false,
+  "explanation": "There is no total printed, so add all nine cells to get every tree surveyed: 60 + 60 + 40 = 160. 'At least 5 meters' covers two columns, 5 m to 10 m and More than 10 m. In the Maple row those cells are 16 and 12, which add to 28. The probability is 28/160 = 7/40 = 0.175.",
+  "common_errors": [
+   {
+    "value": "7/15",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 28 by the 60 maples instead of all 160 trees."
+   },
+   {
+    "value": "7/22",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 28 by the 88 trees that are at least 5 meters tall."
+   },
+   {
+    "value": "1/5",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the maples shorter than 5 meters, 32/160."
+   },
+   {
+    "value": "1/10",
+    "misconception": "missed-condition",
+    "why": "Counted only the 5 m to 10 m column, 16/160, and missed the taller maples."
+   }
+  ],
+  "id": "orig-two-way-table--M-16ae92",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-16ae92",
+   "structure": [],
+   "solver_answer": "28/160",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one tale is selected at random from the collection, what is the probability that it is from the Valley region and does not feature a trickster figure?",
+  "stimulus": "A folklore researcher recorded oral tales in three regions. For each tale, the researcher noted whether it features a trickster figure.\n\nRecorded Tales by Region and Trickster Figure\nRegion | Trickster | No trickster\nNorth | 16 | 34\nCoast | 28 | 22\nValley | 36 | 64",
+  "keys": [
+   "8/25",
+   ".32",
+   "0.32"
+  ],
+  "any_of": false,
+  "explanation": "There is no total printed, so add all six cells to get every tale: 16 + 34 + 28 + 22 + 36 + 64 = 200. The tales from the Valley with no trickster are the single cell where that row and column meet: 64. The probability is 64/200 = 8/25 = 0.32.",
+  "common_errors": [
+   {
+    "value": "16/25",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 64 by the 100 Valley tales instead of all 200."
+   },
+   {
+    "value": "8/15",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 64 by the 120 tales with no trickster."
+   },
+   {
+    "value": "9/50",
+    "misconception": "complement-or-direction-flip",
+    "why": "Read the Trickster cell for the Valley, 36/200."
+   },
+   {
+    "value": "1/2",
+    "misconception": "missed-condition",
+    "why": "Counted every Valley tale, 100/200, and ignored the trickster condition."
+   }
+  ],
+  "id": "orig-two-way-table--M-41f20d",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-41f20d",
+   "structure": [],
+   "solver_answer": "64/200",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these birds is selected at random, what is the probability that it is an adult nuthatch?",
+  "stimulus": "At a banding station, ornithologists recorded each bird they captured by species and by age and sex.\n\nBirds Banded by Species and Category\nSpecies | Adult male | Adult female | Juvenile | Total\nChickadee | 20 | 18 | 12 | 50\nNuthatch | 7 | 12 | 11 | 30\nWarbler | 15 | 13 | 12 | 40\nTotal | 42 | 43 | 35 | 120",
+  "keys": [
+   "19/120",
+   ".1583",
+   "0.1583"
+  ],
+  "any_of": false,
+  "explanation": "The bird comes from every bird banded, so your denominator is 120. 'Adult' covers two columns, Adult male and Adult female. In the Nuthatch row those cells are 7 and 12, which add to 19. The probability is 19/120, about 0.1583.",
+  "common_errors": [
+   {
+    "value": "19/30",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 19 by the Nuthatch row total of 30."
+   },
+   {
+    "value": "19/85",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 19 by the 85 adults (42 + 43)."
+   },
+   {
+    "value": "7/120",
+    "misconception": "missed-condition",
+    "why": "Counted only the adult males, 7/120, and left out the adult females."
+   },
+   {
+    "value": "11/120",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the juvenile nuthatches, 11/120, instead of the adults."
+   },
+   {
+    "value": "1/4",
+    "misconception": "missed-condition",
+    "why": "Counted every nuthatch, 30/120, and ignored the adult condition."
+   }
+  ],
+  "id": "orig-two-way-table--M-d7ebd7",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-d7ebd7",
+   "structure": [],
+   "solver_answer": "19/120",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one sample is selected at random, what is the probability that it is not wool and was colored with a plant dye?",
+  "stimulus": "A museum's textile historians identified the fiber and the dye source in 200 historical fabric samples.\n\nFabric Samples by Fiber and Dye Source\nFiber | Plant dye | Insect dye | Mineral dye | Total\nWool | 36 | 18 | 6 | 60\nLinen | 48 | 4 | 28 | 80\nSilk | 26 | 22 | 12 | 60\nTotal | 110 | 44 | 46 | 200",
+  "keys": [
+   "37/200",
+   ".185",
+   "0.185"
+  ],
+  "any_of": false,
+  "explanation": "Nothing narrows the group, so your denominator is all 200 samples. 'Not wool' means linen or silk. In the Plant dye column those cells are 48 and 26, which add to 74. The probability is 74/200 = 37/200 = 0.185.",
+  "common_errors": [
+   {
+    "value": "37/55",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 74 by the Plant dye total of 110."
+   },
+   {
+    "value": "37/70",
+    "misconception": "wrong-target-quantity",
+    "why": "Divided 74 by the 140 samples that are not wool."
+   },
+   {
+    "value": "9/50",
+    "misconception": "complement-or-direction-flip",
+    "why": "Used the wool cell in the Plant dye column, 36/200, instead of the samples that are not wool."
+   },
+   {
+    "value": "11/20",
+    "misconception": "missed-condition",
+    "why": "Counted every plant-dyed sample, 110/200, and ignored the fiber condition."
+   }
+  ],
+  "id": "orig-two-way-table--M-6b81e9",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "fail",
+  "verification": {
+   "id": "orig-two-way-table--M-6b81e9",
+   "structure": [],
+   "solver_answer": "37/100",
+   "agrees": false,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these fields is selected at random, what is the probability that it uses sprinkler irrigation and showed no pest damage?",
+  "stimulus": "An agronomist surveyed fields on a research farm. For each field, she recorded the irrigation method and whether the crop showed pest damage at harvest. The results are shown in the table.\n\nIrrigation Method and Pest Damage (number of fields)\nIrrigation method | Pest damage | No pest damage\nDrip | 18 | 42\nSprinkler | 30 | 50\nFlood | 22 | 38",
+  "keys": [
+   "1/4",
+   ".25",
+   "0.25"
+  ],
+  "any_of": false,
+  "explanation": "Nothing narrows the group: the field is picked from all the fields in the survey. The table has no Total row or column, so your first job is to find the denominator yourself. Add all six cells: $18 + 42 + 30 + 50 + 22 + 38 = 200$ fields. The question names two traits, sprinkler irrigation and no pest damage, so the numerator is the one cell where the Sprinkler row meets the No pest damage column: 50. The probability is $\\frac{50}{200} = \\frac{1}{4}$, or 0.25.",
+  "common_errors": [
+   {
+    "value": "5/8",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the Sprinkler row total, $18$... no, $30 + 50 = 80$, as the denominator: $\\frac{50}{80}$. That answers 'given that a field uses sprinkler irrigation,' which the question never says."
+   },
+   {
+    "value": "5/13",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the No pest damage column total, $42 + 50 + 38 = 130$, as the denominator: $\\frac{50}{130}$. That is the probability of sprinkler irrigation given no pest damage."
+   },
+   {
+    "value": "3/20",
+    "misconception": "misread-given",
+    "why": "Read the neighbouring cell, sprinkler fields with pest damage: $\\frac{30}{200}$."
+   },
+   {
+    "value": "2/5",
+    "misconception": "missed-condition",
+    "why": "Counted every sprinkler field, $\\frac{80}{200}$, and ignored the 'no pest damage' condition."
+   }
+  ],
+  "id": "orig-two-way-table--M-243fce",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-243fce",
+   "structure": [],
+   "solver_answer": "0.25",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these days is selected at random, what is the probability that rain was forecast but did not occur?",
+  "stimulus": "A weather station kept a record for 150 days. Each day, it noted whether rain had been forecast for that day and whether rain actually fell. The table summarizes the record.\n\nForecasts and Observed Weather (number of days)\nForecast | Rain occurred | No rain occurred | Total\nRain | 36 | 12 | 48\nNo rain | 9 | 93 | 102\nTotal | 45 | 105 | 150",
+  "keys": [
+   "2/25",
+   ".08",
+   "0.08"
+  ],
+  "any_of": false,
+  "explanation": "The day is picked from all 150 days and no condition narrows the group, so the denominator is the grand total in the bottom-right corner: 150. 'Rain was forecast but did not occur' is a pair of traits. Find the cell where the Rain forecast row meets the No rain occurred column: 12. The probability is $\\frac{12}{150} = \\frac{2}{25}$, or 0.08.",
+  "common_errors": [
+   {
+    "value": "1/4",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the Rain forecast row total as the denominator: $\\frac{12}{48}$. That is the probability rain did not occur given that rain was forecast, which is a conditional question nobody asked. (Note: 0.25 also matches this error.)"
+   },
+   {
+    "value": "4/35",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the No rain occurred column total as the denominator: $\\frac{12}{105}$, which a student may enter as .1142 or .1143."
+   },
+   {
+    "value": "6/25",
+    "misconception": "complement-or-direction-flip",
+    "why": "Read 'forecast but did not occur' as 'forecast and occurred' and took that cell: $\\frac{36}{150}$."
+   },
+   {
+    "value": "3/50",
+    "misconception": "complement-or-direction-flip",
+    "why": "Took the reverse mismatch, rain that fell when no rain was forecast: $\\frac{9}{150}$."
+   },
+   {
+    "value": "8/25",
+    "misconception": "missed-condition",
+    "why": "Counted every day on which rain was forecast, $\\frac{48}{150}$, and ignored 'did not occur'."
+   }
+  ],
+  "id": "orig-two-way-table--M-d566e8",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-d566e8",
+   "structure": [],
+   "solver_answer": "0.08",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these maps is selected at random, what is the probability that it is a small-scale map and does not use the Mercator projection?",
+  "stimulus": "A map library sorted 100 maps in one drawer by projection and by scale. The results are shown in the table.\n\nMaps in the Drawer by Projection and Scale\nProjection | Large scale | Small scale | Total\nMercator | 18 | 30 | 48\nConic | 22 | 10 | 32\nAzimuthal | 8 | 12 | 20\nTotal | 48 | 52 | 100",
+  "keys": [
+   "11/50",
+   ".22",
+   "0.22"
+  ],
+  "any_of": false,
+  "explanation": "No condition narrows the group, so the denominator is all 100 maps. For the numerator, look in the Small scale column and leave out the Mercator row. That leaves conic, 10, and azimuthal, 12, so the count is 10 + 12 = 22. The probability is 22/100 = 11/50, or 0.22.",
+  "common_errors": [
+   {
+    "value": "11/26",
+    "misconception": "wrong-target-quantity",
+    "why": "Puts the correct count, 22, over the small-scale column total, 52. That answers the conditional question 'given that the map is small-scale', which nobody asked."
+   },
+   {
+    "value": "3/10",
+    "misconception": "complement-or-direction-flip",
+    "why": "Reads 'does not use the Mercator projection' as 'uses Mercator' and takes the Mercator, small-scale cell: 30/100."
+   },
+   {
+    "value": "13/25",
+    "misconception": "missed-condition",
+    "why": "Keeps only the small-scale condition and uses the whole column: 52/100."
+   },
+   {
+    "value": "7/10",
+    "misconception": "missed-condition",
+    "why": "Keeps only 'not Mercator' and drops the scale condition: (32 + 20)/100 = 70/100."
+   }
+  ],
+  "id": "orig-two-way-table--M-641830",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-641830",
+   "structure": [],
+   "solver_answer": "11/50",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these seeds is selected at random, what is the probability that it is a variety B seed that did not germinate?",
+  "stimulus": "An agronomist planted 100 seeds of each of three wheat varieties and recorded whether each seed germinated.\n\nGermination Results by Wheat Variety\nVariety | Germinated | Did not germinate\nA | 84 | 16\nB | 70 | 30\nC | 91 | 9",
+  "keys": [
+   "1/10",
+   ".1",
+   "0.1"
+  ],
+  "any_of": false,
+  "explanation": "There is no total printed, so add every cell to get the whole group: 84 + 16 + 70 + 30 + 91 + 9 = 300 seeds. The pair of traits 'variety B' and 'did not germinate' meets in one cell, which holds 30. The probability is 30/300 = 1/10, or 0.1.",
+  "common_errors": [
+   {
+    "value": "3/10",
+    "misconception": "wrong-target-quantity",
+    "why": "Uses the variety B row, 100 seeds, as the denominator: 30/100. That is the probability given that the seed is variety B."
+   },
+   {
+    "value": "6/11",
+    "misconception": "wrong-target-quantity",
+    "why": "Uses the 'did not germinate' column total, 16 + 30 + 9 = 55, as the denominator: 30/55."
+   },
+   {
+    "value": "7/30",
+    "misconception": "complement-or-direction-flip",
+    "why": "Takes the 'germinated' cell for variety B instead: 70/300."
+   },
+   {
+    "value": "11/60",
+    "misconception": "missed-condition",
+    "why": "Counts every seed that did not germinate and ignores the variety: 55/300."
+   }
+  ],
+  "id": "orig-two-way-table--M-6a6bd9",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-6a6bd9",
+   "structure": [],
+   "solver_answer": "1/10",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these wells is selected at random, what is the probability that it is at least 30 meters deep and has a nitrate level at or below the limit?",
+  "stimulus": "A county tested 200 wells and compared each well's nitrate level with the drinking-water limit.\n\nWell Nitrate Tests by Well Depth\nDepth | Above limit | At or below limit | Total\nLess than 30 m | 34 | 26 | 60\n30 m to 60 m | 18 | 62 | 80\nMore than 60 m | 6 | 54 | 60\nTotal | 58 | 142 | 200",
+  "keys": [
+   "29/50",
+   ".58",
+   "0.58"
+  ],
+  "any_of": false,
+  "explanation": "The question picks from all 200 wells, so the denominator is the grand total, 200. 'At least 30 meters deep' covers two rows, 30 m to 60 m and More than 60 m. In the 'At or below limit' column those rows hold 62 and 54, so the count is 62 + 54 = 116. The probability is 116/200 = 29/50, or 0.58.",
+  "common_errors": [
+   {
+    "value": "29/35",
+    "misconception": "wrong-target-quantity",
+    "why": "Divides 116 by the wells that are at least 30 m deep, 80 + 60 = 140. That is a conditional probability. Truncated to .8285 or rounded to .8286."
+   },
+   {
+    "value": "58/71",
+    "misconception": "wrong-target-quantity",
+    "why": "Divides 116 by the 'at or below limit' column total, 142."
+   },
+   {
+    "value": "71/100",
+    "misconception": "missed-condition",
+    "why": "Ignores depth and uses the whole 'at or below limit' column: 142/200."
+   },
+   {
+    "value": "31/100",
+    "misconception": "missed-condition",
+    "why": "Counts only the 30 m to 60 m row and forgets that 'at least 30 meters' also includes wells deeper than 60 m: 62/200."
+   },
+   {
+    "value": "3/25",
+    "misconception": "complement-or-direction-flip",
+    "why": "Takes the 'above limit' cells for the deep rows instead: (18 + 6)/200 = 24/200."
+   }
+  ],
+  "id": "orig-two-way-table--M-470b97",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-470b97",
+   "structure": [],
+   "solver_answer": "29/50",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these workers is selected at random, what is the probability that the worker is employed in services and is not a union member?",
+  "stimulus": "A labor economist surveyed 400 workers about their sector of employment and union membership.\n\nSurvey Respondents by Sector and Union Membership\nSector | Union member | Not a member | Total\nManufacturing | 45 | 75 | 120\nServices | 30 | 150 | 180\nPublic sector | 55 | 45 | 100\nTotal | 130 | 270 | 400",
+  "keys": [
+   "3/8",
+   ".375",
+   "0.375"
+  ],
+  "any_of": false,
+  "explanation": "The worker is picked from all 400 respondents, so the denominator is 400. The services row meets the 'Not a member' column in one cell, which holds 150. The probability is 150/400 = 3/8, or 0.375.",
+  "common_errors": [
+   {
+    "value": "5/6",
+    "misconception": "wrong-target-quantity",
+    "why": "Divides 150 by the services row total, 180. That answers 'given that the worker is in services'. Also entered as .8333."
+   },
+   {
+    "value": "5/9",
+    "misconception": "wrong-target-quantity",
+    "why": "Divides 150 by the 'Not a member' column total, 270. Also entered as .5555 or .5556."
+   },
+   {
+    "value": "3/40",
+    "misconception": "complement-or-direction-flip",
+    "why": "Takes the union-member cell for services instead: 30/400 = 0.075."
+   },
+   {
+    "value": "9/20",
+    "misconception": "missed-condition",
+    "why": "Uses all services workers and ignores membership: 180/400."
+   }
+  ],
+  "id": "orig-two-way-table--M-98508d",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-98508d",
+   "structure": [],
+   "solver_answer": "3/8",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these patients is selected at random, what is the probability that the patient is at least 50 years old and did not receive a booster?",
+  "stimulus": "A public health clinic recorded whether each of 400 adult patients received a booster vaccine during one season.\n\nBooster Uptake by Age Group\nAge group (years) | Received booster | Did not receive booster\n18 to 34 | 30 | 90\n35 to 49 | 40 | 80\n50 to 64 | 46 | 34\n65 or older | 54 | 26",
+  "keys": [
+   "3/20",
+   ".15",
+   "0.15"
+  ],
+  "any_of": false,
+  "explanation": "There is no total printed. The cells add up to 400, which matches the 400 patients, so the denominator is 400. 'At least 50 years old' covers the 50 to 64 row and the 65 or older row. In the 'Did not receive booster' column those rows hold 34 and 26, so the count is 34 + 26 = 60. The probability is 60/400 = 3/20, or 0.15.",
+  "common_errors": [
+   {
+    "value": "3/8",
+    "misconception": "wrong-target-quantity",
+    "why": "Divides 60 by the number of patients aged 50 or older, 80 + 80 = 160. That is a conditional probability."
+   },
+   {
+    "value": "6/23",
+    "misconception": "wrong-target-quantity",
+    "why": "Divides 60 by everyone who did not receive a booster, 90 + 80 + 34 + 26 = 230. Also entered as .2608 or .2609."
+   },
+   {
+    "value": "1/4",
+    "misconception": "complement-or-direction-flip",
+    "why": "Uses the 'Received booster' cells for the older rows instead: (46 + 54)/400 = 100/400."
+   },
+   {
+    "value": "2/5",
+    "misconception": "missed-condition",
+    "why": "Counts every patient aged 50 or older and ignores booster status: 160/400."
+   },
+   {
+    "value": "13/200",
+    "misconception": "missed-condition",
+    "why": "Counts only the 65 or older row and forgets that the 50 to 64 row is also at least 50: 26/400 = 0.065."
+   }
+  ],
+  "id": "orig-two-way-table--M-a7f408",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-a7f408",
+   "structure": [],
+   "solver_answer": "3/20",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these samples is selected at random, what is the probability that it is hand-woven and is not cotton?",
+  "stimulus": "A textile history museum catalogued 200 fabric samples from the nineteenth century by fiber and by weaving method.\n\nFabric Samples by Fiber and Weaving Method\nFiber | Hand-woven | Machine-woven | Total\nWool | 36 | 24 | 60\nCotton | 18 | 72 | 90\nSilk | 21 | 9 | 30\nLinen | 15 | 5 | 20\nTotal | 90 | 110 | 200",
+  "keys": [
+   "9/25",
+   ".36",
+   "0.36"
+  ],
+  "any_of": false,
+  "explanation": "The sample is picked from all 200, so the denominator is 200. In the Hand-woven column, leave out the cotton row and add the rest: 36 + 21 + 15 = 72. You can also take the column total and subtract cotton: 90 \u2212 18 = 72. The probability is 72/200 = 9/25, or 0.36.",
+  "common_errors": [
+   {
+    "value": "4/5",
+    "misconception": "wrong-target-quantity",
+    "why": "Divides 72 by the hand-woven column total, 90. That answers 'given that the sample is hand-woven'."
+   },
+   {
+    "value": "36/55",
+    "misconception": "wrong-target-quantity",
+    "why": "Divides 72 by the number of samples that are not cotton, 200 \u2212 90 = 110. Also entered as .6545."
+   },
+   {
+    "value": "9/100",
+    "misconception": "complement-or-direction-flip",
+    "why": "Reads 'not cotton' as 'cotton' and takes the hand-woven cotton cell: 18/200."
+   },
+   {
+    "value": "9/20",
+    "misconception": "missed-condition",
+    "why": "Uses the whole hand-woven column and does not remove cotton: 90/200."
+   },
+   {
+    "value": "11/20",
+    "misconception": "missed-condition",
+    "why": "Counts all samples that are not cotton and ignores the weaving method: 110/200."
+   }
+  ],
+  "id": "orig-two-way-table--M-ea9801",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--M-ea9801",
+   "structure": [],
+   "solver_answer": "9/25",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

@@ -243,5 +243,643 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "At the end of which day will the running total reach 171 aftershocks?",
+  "stimulus": "After a large earthquake, a seismologist keeps a running total of the aftershocks recorded at one monitoring station. The total rises by the same number of aftershocks each day. By the end of day 2, the total was 36 aftershocks. By the end of day 6, it was 72 aftershocks.",
+  "choices": [
+   "Day 9",
+   "Day 11",
+   "Day 17",
+   "Day 19"
+  ],
+  "answer": "C",
+  "explanation": "First find the daily rate. From day 2 to day 6 is 4 days, and the total rose by $72 - 36 = 36$ aftershocks, so the rate is $\\frac{36}{4} = 9$ aftershocks per day. Next, work back to the starting amount: on day 2 the total was 36, so $s + 9(2) = 36$, which gives $s = 18$. The total is therefore $T = 18 + 9d$. Set it equal to 171: $18 + 9d = 171$, so $9d = 153$ and $d = 17$. The total reaches 171 at the end of day 17. In Desmos, graph $y = 18 + 9x$ and $y = 171$ and click where they meet, at $(17, 171)$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "9 is the number of aftershocks added each day. You found the rate correctly but gave it as the answer, when the question asks which day the total reaches 171."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You started from day 6 and solved $72 + 9n = 171$, which gives $n = 11$. That counts the extra days after day 6. The total reaches 171 on day $6 + 11 = 17$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided 171 by the rate of 9 and didn't subtract the starting amount of 18 first. The total doesn't start at 0, so only $171 - 18 = 153$ aftershocks build up at 9 per day."
+   }
+  },
+  "id": "orig-word-problem-s-M-6ee1ea",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-M-6ee1ea",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation represents this situation?",
+  "stimulus": "A cartographer is inking a map grid of 72 squares at a constant rate of 4 squares per hour. After 3 hours of work, the cartographer stops for lunch. Let $h$ be the number of additional hours after lunch needed to finish the grid.",
+  "choices": [
+   "$4h = 72$",
+   "$3(h + 4) = 72$",
+   "$4(h + 3) = 72$",
+   "$4(h - 3) = 72$"
+  ],
+  "answer": "C",
+  "explanation": "The cartographer works 3 hours before lunch and $h$ hours after it, so the total time is $h + 3$ hours. At 4 squares per hour, the squares inked are $4(h + 3)$, and this must equal the 72 squares in the grid.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "In $4h = 72$, $h$ is the total hours for the whole grid. The question asks for the additional hours after lunch, so you can't leave out the 3 hours already worked."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You swapped the rate and the hours already worked. The rate is 4 squares per hour, so 4 is the multiplier and 3 is the time already spent."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the 3 hours already worked when you should have added them. The total time is the hours before lunch plus the hours after, $h + 3$."
+   }
+  },
+  "id": "orig-word-problem-s-M-07e218",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-M-07e218",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation represents this situation?",
+  "stimulus": "In a lab trial, the concentration of an antibody in a sample rose at a constant rate. It was 140 units per milliliter on day 2 and 200 units per milliliter on day 5. Let $d$ be the day on which the concentration reaches 360 units per milliliter.",
+  "choices": [
+   "$140 + 20d = 360$",
+   "$100 + 20d = 360$",
+   "$100 + 60d = 360$",
+   "$100 + 12d = 360$"
+  ],
+  "answer": "B",
+  "explanation": "The rate is $\\frac{200 - 140}{5 - 2} = 20$ units per day. Working back 2 days from day 2 gives a day-0 concentration of $140 - 2(20) = 100$. So the concentration on day $d$ is $100 + 20d$, and you set that equal to 360.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "If you start from 140, $d$ counts the days after day 2, not the day number. Your answer would be 2 days short of the day asked for."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "60 is the total change between the two readings. You still need to divide it by the 3 days between them to get the rate per day."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the change of 60 by 5, the later day number. The time between the readings is $5 - 2 = 3$ days."
+   }
+  },
+  "id": "orig-word-problem-s-M-8f5f3b",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-M-8f5f3b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation represents this situation?",
+  "stimulus": "A folklore archive spent exactly $\\$800$ on materials for a new collection. It bought 20 printed volumes of folktales at $\\$15$ each, and it spent the rest on audio recordings of storytellers at $\\$25$ each. Let $r$ be the number of audio recordings bought.",
+  "choices": [
+   "$20 + 25r = 800$",
+   "$15 + 25r = 800$",
+   "$20(25) + 15r = 800$",
+   "$20(15) + 25r = 800$"
+  ],
+  "answer": "D",
+  "explanation": "The printed volumes cost $20(15) = 300$ dollars, and $r$ recordings cost $25r$ dollars. Together these make the total of 800 dollars, so $20(15) + 25r = 800$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the number of volumes, 20, to a dollar amount. Every term has to be in dollars, so you need what the volumes cost, not how many there were."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the price of one volume and dropped the count of 20. The archive bought 20 volumes, so their cost is $20(15)$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You swapped the two prices. Volumes cost $\\$15$ each and recordings cost $\\$25$ each."
+   }
+  },
+  "id": "orig-word-problem-s-M-9e04b2",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-M-9e04b2",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The depth of the trench increases at a constant rate. After how many days of digging will the trench be 4.10 meters deep?",
+  "stimulus": "An archaeology team digs a trench to reach an older layer of a site. After 3 days of digging, the trench is 1.10 meters deep. After 8 days of digging, it is 2.35 meters deep.",
+  "choices": [
+   "7",
+   "12",
+   "15",
+   "16.4"
+  ],
+  "answer": "C",
+  "explanation": "First find the rate. From day 3 to day 8 the depth grows by $2.35 - 1.10 = 1.25$ meters over 5 days, so the rate is $0.25$ meter per day. Work back to day 0: $1.10 - 3(0.25) = 0.35$ meter. Then solve $0.35 + 0.25d = 4.10$, which gives $0.25d = 3.75$ and $d = 15$. You can also test the choice directly. At day 15 the depth is $2.35 + 7(0.25) = 4.10$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found how many more days are needed after day 8, $(4.10 - 2.35) \\div 0.25 = 7$. The question asks for the total number of days of digging, so you have to add those 7 days to the 8 already done."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You divided $4.10 - 1.10 = 3.00$ by $0.25$ to get 12. That is the number of days counted from day 3, so you still need to add the first 3 days."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided $4.10$ by $0.25$ as though the trench were 0 meters deep at the start. The line through the data points begins at $0.35$ meter, and you have to subtract that before you divide."
+   }
+  },
+  "id": "orig-word-problem-s-M-0d2bce",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-M-0d2bce",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many test kits did the lab buy?",
+  "stimulus": "An immunology lab orders antibody test kits. The kits come in boxes of 4, and each box costs $\\$64$. The supplier also charges a one-time cold-shipping fee of $\\$128$. The lab's total bill for the order is $\\$2{,}176$.",
+  "choices": [
+   "32",
+   "128",
+   "136",
+   "144"
+  ],
+  "answer": "B",
+  "explanation": "Let $b$ be the number of boxes. Then $128 + 64b = 2{,}176$, so $64b = 2{,}048$ and $b = 32$ boxes. Each box holds 4 kits, so the lab bought $32 \\times 4 = 128$ kits. Testing the choice confirms it: 128 kits is 32 boxes, and $32(64) + 128 = 2{,}176$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "32 is the number of boxes. The question asks for kits, and each box holds 4 kits."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You divided the whole bill by the box price, $2{,}176 \\div 64 = 34$ boxes, and forgot to take off the $\\$128$ shipping fee first. When you put 34 boxes back in, the bill comes to $\\$2{,}304$, which does not match the total."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the fee to the total instead of subtracting it: $(2{,}176 + 128) \\div 64 = 36$ boxes, or 144 kits. The fee is part of the bill, so it has to be taken away before you divide."
+   }
+  },
+  "id": "orig-word-problem-s-M-80307c",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-M-80307c",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The area covered by the weed decreases by the same amount each week. At the end of which week will the area covered be 1,185 square meters?",
+  "stimulus": "Volunteers are clearing an invasive water weed from a pond. At the end of week 4 of the project, the weed covers 2,120 square meters of the pond. At the end of week 10, it covers 1,610 square meters.",
+  "choices": [
+   "5",
+   "9",
+   "11",
+   "15"
+  ],
+  "answer": "D",
+  "explanation": "From week 4 to week 10 the area drops by $2{,}120 - 1{,}610 = 510$ square meters over 6 weeks, so it shrinks by $85$ square meters per week. Counting from week 4, solve $2{,}120 - 85t = 1{,}185$. This gives $85t = 935$ and $t = 11$, so the target is reached at week $4 + 11 = 15$. Check it: $1{,}610 - 5(85) = 1{,}185$ at week 15.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found how many weeks after week 10 it takes, $(1{,}610 - 1{,}185) \\div 85 = 5$. The question asks for the week number, not how many weeks remain."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You correctly worked out that 5 more weeks are needed after week 10, but then added them to week 4 instead of week 10."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "11 is the number of weeks counted from week 4. You still need to add it to 4 to get the week number."
+   }
+  },
+  "id": "orig-word-problem-s-M-d11191",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-M-d11191",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the crew keeps this pace, which of the following must be true?",
+  "stimulus": "A crew is resurfacing a 12-kilometer stretch of highway. Before today, 2.4 kilometers of the stretch had already been resurfaced. Starting today, the crew resurfaces 0.8 kilometer of the remaining stretch each day.",
+  "choices": [
+   "The stretch will be finished 12 days from today.",
+   "The stretch will be finished 15 days from today.",
+   "The stretch will be finished 3 days from today.",
+   "The stretch will be finished 9.6 days from today."
+  ],
+  "answer": "A",
+  "explanation": "Write starting amount + (rate)(days) = total: $2.4 + 0.8d = 12$. Subtract 2.4 from both sides to get $0.8d = 9.6$, so $d = 12$. Resurfacing finishes 12 days from today.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You solved $0.8d = 12$, which leaves out the 2.4 kilometers that were already finished. Subtract the starting amount before you divide by the rate."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You computed $2.4 \\div 0.8 = 3$. That is how long the finished part would take at this pace. It is not the time needed for the part that is left."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "9.6 is the number of kilometers still left to resurface, which you get partway through. You still have to divide it by 0.8 kilometer per day to get the number of days."
+   }
+  },
+  "id": "orig-word-problem-s-M-8e70a7",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-M-8e70a7",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the depth keeps decreasing at this rate, which of the following must be true?",
+  "stimulus": "During a thaw, the snow depth at a mountain weather station decreases at a constant rate. The depth was 46 centimeters at 8:00 a.m. and 34 centimeters at 2:00 p.m. the same day.",
+  "choices": [
+   "The depth reaches 20 centimeters 13 hours after 8:00 a.m.",
+   "The depth reaches 20 centimeters 7 hours after 8:00 a.m.",
+   "The depth reaches 20 centimeters 10 hours after 8:00 a.m.",
+   "The depth reaches 20 centimeters 52 hours after 8:00 a.m."
+  ],
+  "answer": "A",
+  "explanation": "Start by finding the rate. The depth fell $46 - 34 = 12$ centimeters in 6 hours, which is 2 centimeters per hour. Measuring from 8:00 a.m., the depth is $46 - 2t$. Set $46 - 2t = 20$ to get $2t = 26$, so $t = 13$ hours.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "7 hours is how long it takes after the 2:00 p.m. reading, because $(34 - 20) \\div 2 = 7$. The question measures from 8:00 a.m., so you also have to add the 6 hours that came before 2:00 p.m."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You solved $2t = 20$ and dropped the 46-centimeter starting depth. The depth has to fall by $46 - 20 = 26$ centimeters, not by 20."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the rate to $6 \\div 12 = 0.5$ centimeter per hour. The rate is the change in depth divided by the time, $12 \\div 6 = 2$ centimeters per hour."
+   }
+  },
+  "id": "orig-word-problem-s-M-490c6e",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-M-490c6e",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the city spends exactly its entire budget, which of the following must be true?",
+  "stimulus": "A city has budgeted $\\$18{,}000$ to improve a public plaza. It will buy one fountain for $\\$4{,}500$ and spend the rest on benches that cost $\\$750$ each.",
+  "choices": [
+   "The city buys 18 benches for the plaza.",
+   "The city buys 24 benches for the plaza.",
+   "The city buys 6 benches for the plaza.",
+   "The city buys 30 benches for the plaza."
+  ],
+  "answer": "A",
+  "explanation": "Write $4{,}500 + 750b = 18{,}000$. Subtract the fountain's cost to get $750b = 13{,}500$, so $b = 18$ benches.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the whole budget by the price of a bench, $18{,}000 \\div 750 = 24$. You forgot to subtract the $\\$4{,}500$ fountain first."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the fountain's cost by the bench price, $4{,}500 \\div 750 = 6$. That tells you how many benches the fountain is worth. It is not the number of benches the city buys."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the fountain's cost to the budget instead of subtracting it: $(18{,}000 + 4{,}500) \\div 750 = 30$. The fountain uses up part of the budget, so it has to come out first."
+   }
+  },
+  "id": "orig-word-problem-s-M-a11bcd",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-M-a11bcd",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the temperature keeps rising at this rate, how many hours after 9:00 a.m. will it reach $17^\\circ\\text{C}$?",
+  "stimulus": "At a weather station, the air temperature rose at a constant rate all morning. It was $-4^\\circ\\text{C}$ at 6:00 a.m. and $5^\\circ\\text{C}$ at 9:00 a.m.",
+  "choices": [
+   "$3$",
+   "$4$",
+   "$7$",
+   "$12$"
+  ],
+  "answer": "B",
+  "explanation": "First find the rate. The temperature went up $5 - (-4) = 9$ degrees in $3$ hours, so it rises $3^\\circ\\text{C}$ per hour. Starting at 9:00 a.m. from $5^\\circ\\text{C}$, you need $5 + 3t = 17$, so $3t = 12$ and $t = 4$. The temperature reaches $17^\\circ\\text{C}$ $4$ hours after 9:00 a.m., at 1:00 p.m.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You stopped at the rate. $3$ is how many degrees the temperature rises each hour, not how many hours it takes to reach $17^\\circ\\text{C}$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You counted the hours from 6:00 a.m. Solving $-4 + 3t = 17$ gives $7$, but the question asks for the hours after 9:00 a.m., which is $3$ fewer."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$12$ is the number of degrees the temperature still has to rise after 9:00 a.m. You need to divide it by the rate of $3$ degrees per hour to get the time."
+   }
+  },
+  "id": "orig-word-problem-s-M-b9ad8c",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-M-b9ad8c",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many hours did the musicologist bill the orchestra for?",
+  "stimulus": "A musicologist charges an orchestra a one-time fee of $\\$180$ to review a historical score, plus $\\$45$ for each hour spent transcribing it. The musicologist's total bill was $\\$765$.",
+  "choices": [
+   "$13$",
+   "$17$",
+   "$21$",
+   "$585$"
+  ],
+  "answer": "A",
+  "explanation": "Write the total as the fee plus the hourly charge: $180 + 45h = 765$. Subtract the fee to get $45h = 585$, then divide to get $h = 13$ hours.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the whole bill by the hourly rate, $765 \\div 45 = 17$, and dropped the one-time fee. Subtract the $\\$180$ before you divide."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the fee to the bill instead of subtracting it, which gives $(765 + 180) \\div 45 = 21$. The fee is already part of the $\\$765$, so it has to come out."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$585$ is the dollar amount charged for transcribing, not the number of hours. Divide it by $\\$45$ per hour to get the time."
+   }
+  },
+  "id": "orig-word-problem-s-M-70055b",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-word-problem-s-M-70055b",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the width, in meters, of the construction site?",
+  "stimulus": "A crew puts safety fencing all the way around a rectangular construction site. The site is $48$ meters long, and the crew uses exactly $260$ meters of fencing with no gaps or overlaps.",
+  "choices": [
+   "$34$",
+   "$41$",
+   "$82$",
+   "$106$"
+  ],
+  "answer": "C",
+  "explanation": "The fencing is the perimeter: $2(48) + 2w = 260$. That simplifies to $96 + 2w = 260$, so $2w = 164$ and $w = 82$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You treated all four sides as $48$ meters long, $(260 - 4 \\cdot 48) \\div 2 = 34$. Only the two lengths are $48$ meters; the other two sides are the unknown width."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided $164$ by $4$ instead of $2$. Once you subtract the two lengths, the $164$ meters left covers only the two widths."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted only one length, $(260 - 48) \\div 2 = 106$. A rectangle has two sides of $48$ meters, so subtract $96$ before you divide."
+   }
+  },
+  "id": "orig-word-problem-s-M-690a0f",
+  "skill_cd": "H.A.",
+  "subtype": "word-problem-solve",
+  "subtype_name": "Set up and solve a one-step context problem",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "review",
+  "verification": {
+   "id": "orig-word-problem-s-M-690a0f",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the width in meters of the"
+   ],
+   "residue": 8
+  }
  }
 ]

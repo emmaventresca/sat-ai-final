@@ -182,17 +182,22 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "review",
+  "phrasing": "must_be_true",
   "verification": {
    "id": "orig-effect-on-cent-M-056529",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "which of the following statements must be true"
    ],
    "residue": 8
-  },
-  "phrasing": "must_be_true"
+  }
  },
  {
   "stem": "Which of the following statements about the streamflow readings is true?",
@@ -242,5 +247,549 @@
    "residue": 0
   },
   "phrasing": "must_be_true"
+ },
+ {
+  "stem": "A 10th patient's wait time of 90 minutes is added to the data. Which of the following best describes how the mean and median of the data change?",
+  "stimulus": "A walk-in vaccination clinic recorded the wait times, in minutes, of 9 patients: 12, 14, 15, 18, 20, 22, 24, 26, and 29.",
+  "choices": [
+   "The mean increases by 7 minutes, and the median increases by 1 minute.",
+   "The mean increases by 7 minutes, and the median does not change.",
+   "The mean increases by 7 minutes, and the median increases by 7 minutes.",
+   "The mean increases by 10 minutes, and the median increases by 1 minute."
+  ],
+  "answer": "A",
+  "explanation": "The original 9 times add up to 180, so the mean is $\\frac{180}{9} = 20$ minutes. Since the list is already sorted, the median is the 5th value, 20 minutes. Adding 90 makes the total 270, so the new mean is $\\frac{270}{10} = 27$ minutes, which is 7 minutes higher. Now there are 10 values, so the median is the average of the 5th and 6th values: $\\frac{20 + 22}{2} = 21$ minutes, which is 1 minute higher. The outlier pulls the mean up a lot, but the median moves only a little.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You got the mean right and remembered that an outlier barely moves the median, but you didn't check the middle again. With 10 values the median becomes the average of the 5th and 6th values, $\\frac{20 + 22}{2} = 21$, so it does change, by 1 minute."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You assumed the median moves as much as the mean does. One extreme value adds a lot to the total, which is why the mean jumps, but it only shifts the middle of the sorted list by one place. So the median goes from 20 to 21, not to 27."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the new total, 270, by 9 and got 30 instead of dividing by 10. There are now 10 patients, so the new mean is 27 minutes, which is 7 minutes higher, not 10."
+   }
+  },
+  "id": "orig-effect-on-cent-M-ea64ea",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-effect-on-cent-M-ea64ea",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A new athlete with a jump height of 95 centimeters is added to the group. Which of the following describes how the mean and the median of the jump heights change?",
+  "stimulus": "A sports scientist measured the vertical jump heights, in centimeters, of 7 athletes: 48, 52, 52, 55, 57, 60, and 61.",
+  "choices": [
+   "The mean increases by 5 cm, and the median increases by 1 cm.",
+   "The mean increases by 5 cm, and the median increases by 5 cm.",
+   "The mean increases by 5 cm, and the median does not change.",
+   "The mean increases by 1 cm, and the median increases by 5 cm."
+  ],
+  "answer": "A",
+  "explanation": "The original 7 heights add up to 385, so the mean is $385 \\div 7 = 55$ cm. With 95 added, the sum is 480 and the mean is $480 \\div 8 = 60$ cm, which is an increase of 5 cm. The original median is the 4th value, 55. Sorted, the 8 values are 48, 52, 52, 55, 57, 60, 61, 95, so the median is $\\frac{55 + 57}{2} = 56$ cm, which is an increase of only 1 cm. The outlier pulls the mean up a lot and moves the median by just one position.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You assumed the median moves as far as the mean when an outlier is added. The median only slides one position, from 55 to the average of 55 and 57."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You remembered that an outlier barely moves the median, but you didn't check. With an even number of values, the median is now the average of 55 and 57, which is 56, not 55."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You worked out both changes correctly but attached each one to the wrong measure. The mean is the one the outlier drags 5 cm; the median moves only 1 cm."
+   }
+  },
+  "id": "orig-effect-on-cent-M-a37dd6",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-effect-on-cent-M-a37dd6",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following statements must be true?",
+  "stimulus": "A textile historian recorded the thread counts, in threads per inch, of 15 surviving linen samples from a 17th-century workshop. The historian then found that one sample, with a thread count of 210, was a modern replacement and removed it. Its count was greater than the count of every other sample.\n\nI. The mean thread count of the remaining 14 samples is less than the mean thread count of the original 15 samples.\nII. The median thread count of the remaining 14 samples is less than the median thread count of the original 15 samples.",
+  "choices": [
+   "I only",
+   "II only",
+   "I and II",
+   "Neither I nor II"
+  ],
+  "answer": "A",
+  "explanation": "The removed value, 210, is greater than every other count, so it is greater than the mean of the 15 samples. Removing a value that is above the mean always lowers the mean, so statement I must be true. The original median is the 8th value. Without the largest value, the new median is the average of the original 7th and 8th values. That is less than the old median only if the 7th and 8th values differ. If they are equal, the median stays the same. So II is possible but not certain.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You reversed which measure is sensitive to an extreme value. Removing the largest value is guaranteed to lower the mean, while the median may not change at all."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You assumed the median must shift because the mean does. The new median is the average of the original 7th and 8th values. If those two values are equal, the median doesn't change, so II is only possible, not certain."
+   },
+   "D": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You decided nothing can be certain because the other 14 counts aren't given. You don't need them: removing a value greater than all the others always lowers the mean."
+   }
+  },
+  "id": "orig-effect-on-cent-M-9c8936",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "review",
+  "verification": {
+   "id": "orig-effect-on-cent-M-9c8936",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which of the following statements must be true"
+   ],
+   "residue": 8
+  }
+ },
+ {
+  "stem": "Which of the following correctly compares the mean word lengths of the three texts?",
+  "stimulus": "A linguist counted the number of letters in each word of a short sample from each of three texts. The results are shown in the table.\n\nWord Lengths in Three Text Samples\nWord length (letters) | 3 | 4 | 5 | 6 | 7\nText A frequency | 2 | 5 | 8 | 5 | 2\nText B frequency | 4 | 4 | 4 | 4 | 4\nText C frequency | 1 | 3 | 8 | 6 | 7",
+  "choices": [
+   "The means of Texts A and B are equal, and the mean of Text C is greater.",
+   "The means of Texts A, B, and C are all equal to one another.",
+   "The means of Texts A and B are equal, and the mean of Text C is less.",
+   "The mean of Text A is greater than the means of Texts B and C."
+  ],
+  "answer": "A",
+  "explanation": "The frequencies for Texts A and B are symmetric around 5 letters, so each has a mean of 5. Text C is not symmetric: it has more 6- and 7-letter words than 3- and 4-letter words, so its mean is pulled above 5. In fact, its mean is $\\frac{3 + 12 + 40 + 36 + 49}{25} = 5.6$. You can check this in Desmos with mean([3,4,5,6,7],[1,3,8,6,7]).",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You saw that every text has its peak, or its middle column, at 5 letters and assumed every mean is 5. Only the symmetric tables are centered at 5. Text C leans toward the longer words."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You spotted that Text C is the unbalanced one but read the lean the wrong way. Its extra frequency is on 6 and 7 letters, which pulls the mean up, not down."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You took Text A's tight clustering around 5 as a larger center. Clustering tells you about spread, not about where the mean is, and Text A's mean is exactly 5."
+   }
+  },
+  "id": "orig-effect-on-cent-M-f73ded",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-effect-on-cent-M-f73ded",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A seventh daily reading is added to the data. The median of the seven readings is 20, and the mean of the seven readings is greater than the median. Which of the following could be the seventh reading?",
+  "stimulus": "A hydrologist recorded the discharge of a mountain stream, in cubic meters per second, on six days: 8, 11, 14, 20, 26, 33.",
+  "choices": [
+   "19",
+   "24",
+   "28",
+   "31"
+  ],
+  "answer": "D",
+  "explanation": "The six readings add up to 112. With seven values, the median is the 4th value once they're sorted. Any added reading of 20 or more leaves 20 in that 4th position, so the median is 20. For the mean to be greater than 20, the total has to be more than $7 \\times 20 = 140$, so the new reading must be greater than $140 - 112 = 28$. Only 31 works: the median stays 20 and the mean is $143/7 \\approx 20.4$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You assumed one added value couldn't move the median off 20. Sort 8, 11, 14, 19, 20, 26, 33 and the 4th value is 19, so the median changes. The mean, $131/7$, isn't greater than 20 either."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "24 keeps the median at 20, but you assumed any value above the median pulls the mean above it. The total is 136, and $136/7 \\approx 19.4$, which is less than 20."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "28 keeps the median at 20, but the total becomes exactly 140, so the mean is exactly 20. That equals the median. It isn't greater than it."
+   }
+  },
+  "id": "orig-effect-on-cent-M-b5876e",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-effect-on-cent-M-b5876e",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following statements must be true about the corrected data compared with the original data?\n\nI. The mean number of eggs increases by 1.\nII. The median number of eggs is unchanged.",
+  "stimulus": "An ornithologist counted the eggs in each of 9 songbird nests. The greatest count recorded, 6, turned out to be a data-entry error, and the correct count for that nest is 15. No other count changes.",
+  "choices": [
+   "I only",
+   "II only",
+   "I and II",
+   "Neither I nor II"
+  ],
+  "answer": "C",
+  "explanation": "Changing 6 to 15 raises the total by 9. Spread over 9 nests, that raises the mean by $9/9 = 1$, so I is true. The median is the 5th of the 9 sorted counts. The changed value was the greatest, and it only gets larger, so it stays in last place and the 5th value doesn't move. II is true as well.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You assumed that a big jump in one value moves the median along with the mean. The changed count stays at the top of the sorted list, so the middle (5th) value is the same."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at the 9-egg increase in the total and treated it as the change in the mean. Divide by the 9 nests: the mean goes up by exactly 1, so I is true."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You rejected both statements, but each one follows from the change. The total rises by 9 over 9 nests, and the greatest value stays the greatest, so the median doesn't move."
+   }
+  },
+  "id": "orig-effect-on-cent-M-ef1393",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "review",
+  "verification": {
+   "id": "orig-effect-on-cent-M-ef1393",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which of the following statements must be true"
+   ],
+   "residue": 8
+  }
+ },
+ {
+  "stem": "Which data set has the greatest mean?",
+  "stimulus": "Engineers inspected spans on four bridges and recorded the number of hairline cracks found in each span. The table shows how many spans on each bridge had each number of cracks.\n\nNumber of Spans by Crack Count\nCracks per span | Bridge A | Bridge B | Bridge C | Bridge D\n1 | 1 | 4 | 1 | 6\n2 | 3 | 2 | 2 | 4\n3 | 5 | 1 | 3 | 3\n4 | 3 | 2 | 4 | 2\n5 | 1 | 4 | 6 | 1",
+  "choices": [
+   "Bridge A",
+   "Bridge B",
+   "Bridge C",
+   "Bridge D"
+  ],
+  "answer": "C",
+  "explanation": "The frequencies for Bridges A and B are symmetric around 3 cracks, so each mean is exactly 3. Bridge C's frequencies climb toward 5 cracks, so its mean is above 3: $60/16 = 3.75$. Bridge D's frequencies lean toward 1 crack, so its mean is below 3: $36/16 = 2.25$. In Desmos, mean([1,2,3,4,5],[1,2,3,4,6]) gives 3.75.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You picked the set with the most spans bunched at the middle value, which is about the mode and the spread. A's counts are symmetric around 3, so its mean is exactly 3."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read the large frequencies at the extremes as a larger mean. That's spread, not center. B is symmetric around 3, so its mean is 3, the same as A's."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the right kind of set, the lopsided one, but read its lean backwards. D's biggest frequency, 6, is at 1 crack, which drags the mean down to 2.25."
+   }
+  },
+  "id": "orig-effect-on-cent-M-a6bb0e",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-effect-on-cent-M-a6bb0e",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the median hardness of all 10 samples?",
+  "stimulus": "A materials lab measured the hardness of 9 ceramic samples and found the values $h_1 < h_2 < \\dots < h_9$. Then it tested a tenth sample with hardness $x$, where $x > h_9$.",
+  "choices": [
+   "$h_5$",
+   "$\\frac{h_5 + h_6}{2}$",
+   "$h_6$",
+   "$\\frac{h_5 + x}{2}$"
+  ],
+  "answer": "B",
+  "explanation": "The tenth value is larger than all the others, so the sorted list is $h_1, \\dots, h_9, x$. With 10 values there is no single middle value, so the median is the average of the 5th and 6th values, $h_5$ and $h_6$. The very large value $x$ moves the median by half a position and no further.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You assumed an extreme value leaves the median exactly where it was. But the list now has an even number of values, so the median is the average of the two middle values, not $h_5$ by itself."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You saw that the middle moves up toward $h_6$, but you stopped there. With 10 values the median is the average of the 5th and 6th values, not the 6th value alone."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You let the outlier pull the median toward itself, which is how the mean behaves. The median depends only on the middle positions, and $x$ sits at the end of the sorted list."
+   }
+  },
+  "id": "orig-effect-on-cent-M-f9d568",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-effect-on-cent-M-f9d568",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which choice gives expressions for the corrected mean and corrected median, in bushels per acre?",
+  "stimulus": "An agronomist recorded corn yields, in bushels per acre, from 11 test plots. The recorded yields have mean $y$ and median $M$. Later, the largest yield turned out to have been recorded $k$ bushels per acre too high. After the correction, it is still the largest of the 11 yields.",
+  "choices": [
+   "Mean: $y - \\frac{k}{11}$; median: $M - \\frac{k}{11}$",
+   "Mean: $y - k$; median: $M$",
+   "Mean: $y$; median: $M - \\frac{k}{11}$",
+   "Mean: $y - \\frac{k}{11}$; median: $M$"
+  ],
+  "answer": "D",
+  "explanation": "The correction lowers the total of the 11 yields by $k$, so the mean drops by $\\frac{k}{11}$ and becomes $y - \\frac{k}{11}$. The corrected value is still the largest, so the sorted order doesn't change. The 6th value is the same as before, so the median stays $M$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You assumed the median shifts by the same amount as the mean. The median is the 6th value in sorted order, and changing the largest value doesn't touch it."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You took $k$ off the mean directly. The $k$ comes off the total, which is shared across 11 plots, so the mean drops by only $\\frac{k}{11}$."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped how the two measures behave. The mean uses every value, so it changes. The median depends only on the middle value, so it stays the same."
+   }
+  },
+  "id": "orig-effect-on-cent-M-3dca31",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-effect-on-cent-M-3dca31",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which choice gives expressions for the mean and median, in dollars, of the remaining 14 wages?",
+  "stimulus": "A small firm lists the hourly wages of its 15 employees, in dollars, as $w_1 < w_2 < \\dots < w_{15}$. The mean of these wages is $a$. The owner's wage, $w_{15}$, is far above the rest, and it is removed from the list.",
+  "choices": [
+   "Mean: $a - \\frac{w_{15} - a}{14}$; median: $w_8$",
+   "Mean: $a - \\frac{w_{15}}{15}$; median: $\\frac{w_7 + w_8}{2}$",
+   "Mean: $a - \\frac{w_{15} - a}{14}$; median: $\\frac{w_7 + w_8}{2}$",
+   "Mean: $a - \\frac{w_{15} - a}{14}$; median: $w_8 - \\frac{w_{15} - a}{14}$"
+  ],
+  "answer": "C",
+  "explanation": "The total was $15a$, so the new mean is $\\frac{15a - w_{15}}{14}$, which simplifies to $a - \\frac{w_{15} - a}{14}$. The remaining wages are $w_1$ through $w_{14}$. With 14 values, the median is the average of the 7th and 8th values, $\\frac{w_7 + w_8}{2}$. Removing the outlier drags the mean down a lot, but the median moves by only half a position.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You kept the old median, $w_8$. With 14 values left there is no single middle value, so the median is the average of $w_7$ and $w_8$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted $w_{15}$ from the total but still divided by 15. Only 14 wages remain, so the new mean is $\\frac{15a - w_{15}}{14}$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You moved the median down by the same amount as the mean. The median depends only on which values sit in the middle, not on how big the removed wage was."
+   }
+  },
+  "id": "orig-effect-on-cent-M-90378f",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-effect-on-cent-M-90378f",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A tenth leaf with a length of 37 millimeters is added to the data set. How much greater is the increase in the mean leaf length than the increase in the median leaf length, in millimeters?",
+  "stimulus": "A paleobotanist measured the lengths, in millimeters, of 9 fossil leaves of an extinct fern recovered from a single shale layer.\n\nFossil Fern Leaf Lengths (millimeters)\nLeaf | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9\nLength | 8 | 5 | 11 | 4 | 7 | 9 | 6 | 5 | 8",
+  "choices": [
+   "$0.5$",
+   "$2$",
+   "$2.5$",
+   "$3$"
+  ],
+  "answer": "C",
+  "explanation": "The 9 lengths add up to $63$, so the original mean is $63 \\div 9 = 7$. Sorted, the lengths are 4, 5, 5, 6, 7, 8, 8, 9, 11, so the original median is the 5th value, $7$. Adding 37 makes the total $100$, so the new mean is $100 \\div 10 = 10$, which is an increase of $3$. Sorted, the 10 values are 4, 5, 5, 6, 7, 8, 8, 9, 11, 37. The new median is the average of the 5th and 6th values, $\\frac{7+8}{2} = 7.5$, which is an increase of $0.5$. The outlier pulls the mean much further than the median, and the difference between the two increases is $3 - 0.5 = 2.5$ millimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found how much the median increased ($0.5$) and stopped there. The question asks how much greater the mean's increase is than the median's increase, so you still have to subtract."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the new median without sorting. In the unsorted list with 37 added at the end, the 5th and 6th values are 7 and 9, which gives a median of 8 and an increase of 1, so you got $3 - 1 = 2$. You must sort before taking a median."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You assumed that adding a value leaves the median exactly where it was, so the whole increase in the mean ($3$) counted as the gap. With 10 values, the median becomes the average of the two middle values, and it moves up to $7.5$."
+   }
+  },
+  "id": "orig-effect-on-cent-M-fba59c",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-effect-on-cent-M-fba59c",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "D",
+   "problem": null,
+   "overlap": [
+    "__num__ __num__ __num__ __num__ __num__ __num__ __num__ a"
+   ],
+   "residue": 1
+  }
  }
 ]

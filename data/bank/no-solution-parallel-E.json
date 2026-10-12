@@ -131,11 +131,17 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "review",
+  "phrasing": "which_expression",
   "verification": {
    "id": "orig-no-solution-pa-E-45b728",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "which of the following systems of linear equations",
     "of the following systems of linear equations has",
@@ -143,8 +149,7 @@
     "following systems of linear equations has no solution"
    ],
    "residue": 11
-  },
-  "phrasing": "which_expression"
+  }
  },
  {
   "stem": "One of the two equations in a linear system is given. The system has no solution. Which equation could be the second equation in the system?",
@@ -243,5 +248,245 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "In the given system of equations, $k$ is a constant. If the system has no solution, what is the value of $k$?",
+  "stimulus": "A sports scientist compares two sprinters' training loads with this system.\n$y = 2x + 5$\n$kx - y = 1$",
+  "choices": [
+   "$-2$",
+   "$\\frac{1}{2}$",
+   "$2$",
+   "$5$"
+  ],
+  "answer": "C",
+  "explanation": "Rewrite the second equation in the same form as the first: $kx - y = 1$ becomes $y = kx - 1$. For the system to have no solution, the lines must be parallel and different, so their slopes must match: $k = 2$. The intercepts, $5$ and $-1$, are different, so the lines never meet.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You compared slopes before you rearranged $kx - y = 1$ properly. Solving for $y$ gives $y = kx - 1$, so the slope is $k$, not $-k$. Mixing forms like this is the classic slip with this kind of question."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the slope. Parallel lines have equal slopes, not reciprocal ones, so $k$ has to be $2$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$5$ is the $y$-intercept of the first line, not its slope. Making two lines parallel depends on the slopes."
+   }
+  },
+  "id": "orig-no-solution-pa-E-405403",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-E-405403",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation, when paired with the given equation, forms a system that has no solution?",
+  "stimulus": "A nutrition scientist models a meal plan's protein and fiber targets with the equation $2x + y = 7$.",
+  "choices": [
+   "$4x + 2y = 9$",
+   "$4x + 2y = 14$",
+   "$2x - y = 7$",
+   "$x + 2y = 7$"
+  ],
+  "answer": "A",
+  "explanation": "Doubling $2x + y = 7$ gives $4x + 2y = 14$. The equation $4x + 2y = 9$ has the same left side, so the lines have the same slope, but $9 \\neq 14$, so the lines are different. Parallel, different lines never meet, so the system has no solution.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "This is just the given equation multiplied by $2$, so it's the same line. That gives infinitely many solutions, not none. You checked that the slopes match but didn't check that the constants differ."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "Changing the sign of the $y$-term changes the slope from $-2$ to $2$. Lines with different slopes cross, so this system has exactly one solution."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You swapped the $x$ and $y$ coefficients. The slope of this line is $-\\frac{1}{2}$, not $-2$, so the lines cross once."
+   }
+  },
+  "id": "orig-no-solution-pa-E-847411",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-E-847411",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given system of equations, $k$ is a constant. If the system has no solution, what is the value of $k$?",
+  "stimulus": "A labor economist relates hours worked and wages in two industries with this system.\n$3x - 5y = 8$\n$kx - 10y = 11$",
+  "choices": [
+   "$2$",
+   "$6$",
+   "$3$",
+   "$-6$"
+  ],
+  "answer": "B",
+  "explanation": "The $y$-coefficient goes from $-5$ to $-10$, which is a factor of $2$. For the lines to be parallel, the $x$-coefficient must be scaled by the same factor: $k = 2(3) = 6$. Then the first equation doubled is $6x - 10y = 16$, and since $16 \\neq 11$, the lines are different and the system has no solution.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$2$ is the scale factor between the $y$-coefficients. You still need to multiply the $x$-coefficient, $3$, by it."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You copied the $x$-coefficient without scaling it. Because the $y$-coefficient doubled, the $x$-coefficient has to double too for the slopes to match."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost track of the sign. $-5$ became $-10$ by multiplying by positive $2$, so $3$ becomes $+6$."
+   }
+  },
+  "id": "orig-no-solution-pa-E-bc3d4b",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-E-bc3d4b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following systems of equations has no solution?",
+  "stimulus": "An archaeologist tests four pairs of linear models for estimating a site's age from soil depth.",
+  "choices": [
+   "$y = 3x + 1$ and $2y = 6x + 2$",
+   "$y = 3x + 1$ and $y = -3x + 1$",
+   "$y = 3x + 1$ and $y = \\frac{1}{3}x + 1$",
+   "$y = 3x + 1$ and $y = 3x - 4$"
+  ],
+  "answer": "D",
+  "explanation": "Both lines in choice D have slope $3$, and their intercepts are $1$ and $-4$. Same slope with different intercepts means the lines are parallel and different, so they never intersect and the system has no solution.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "Dividing $2y = 6x + 2$ by $2$ gives $y = 3x + 1$, which is the same line. That means infinitely many solutions, not none."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "These slopes have opposite signs, so the lines cross at $(0, 1)$. That's exactly one solution."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "A slope of $\\frac{1}{3}$ is the reciprocal of $3$, not equal to it. The lines cross at $(0, 1)$, so the system has one solution."
+   }
+  },
+  "id": "orig-no-solution-pa-E-99dd12",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-E-99dd12",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given system of equations, $k$ is a constant. If the system has no solution, what is the value of $k$?",
+  "stimulus": "A marine biologist models plankton and krill counts in a tide pool with this system.\n$x + 4y = 9$\n$3x + ky = 20$",
+  "choices": [
+   "$3$",
+   "$12$",
+   "$4$",
+   "$7$"
+  ],
+  "answer": "B",
+  "explanation": "The $x$-coefficient goes from $1$ to $3$, a factor of $3$. For the lines to be parallel, the $y$-coefficient must scale the same way: $k = 3(4) = 12$. Tripling the first equation gives $3x + 12y = 27$, and since $27 \\neq 20$, the lines are different and the system has no solution.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$3$ is the $x$-coefficient of the second equation, not the value of $k$ that makes the slopes match."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You copied the $y$-coefficient without scaling it. The $x$-coefficient tripled, so the $y$-coefficient has to triple too."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $3$ to $4$ instead of multiplying. For the lines to be parallel, the coefficients have to be proportional, so you scale by multiplying."
+   }
+  },
+  "id": "orig-no-solution-pa-E-09b6b4",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-E-09b6b4",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

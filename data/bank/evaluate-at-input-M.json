@@ -243,5 +243,806 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the value of $f(-9)$?",
+  "stimulus": "An immunologist models the concentration of an antibody in a patient's blood, in micrograms per milliliter, with the function $f(x) = -\\frac{2}{3}x + 18$, where $x$ is the number of days after a booster dose. Negative values of $x$ represent days before the dose.",
+  "choices": [
+   "$12$",
+   "$18$",
+   "$24$",
+   "$\\frac{81}{2}$"
+  ],
+  "answer": "C",
+  "explanation": "Substitute $-9$ for $x$ and keep it in parentheses: $f(-9) = -\\frac{2}{3}(-9) + 18$. A negative times a negative is positive, so $-\\frac{2}{3}(-9) = 6$. Then $6 + 18 = 24$. The model gives a concentration of 24 micrograms per milliliter 9 days before the booster.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the negative sign on the input. You worked out $-\\frac{2}{3}(9) = -6$ and got $-6 + 18 = 12$, which is $f(9)$. Putting $-9$ in parentheses keeps the two negatives together, and they make a positive."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is $f(0)$, the concentration on the day of the booster. You read off the constant term instead of evaluating the function at $x = -9$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You solved $f(x) = -9$ and found the input that gives an output of $-9$: $-\\frac{2}{3}x + 18 = -9$ gives $x = \\frac{81}{2}$. The question asks for the output when the input is $-9$, which is the reverse."
+   }
+  },
+  "id": "orig-evaluate-at-in-M-7c2f0a",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-M-7c2f0a",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $h$ is defined by $h(w) = 3w + 14$. Which expression represents $h(w + 4)$?",
+  "stimulus": "An agronomist models the height, in centimeters, of a sorghum plant $w$ weeks after its seedlings are moved into an outdoor test plot.",
+  "choices": [
+   "$3w + 2$",
+   "$3w + 18$",
+   "$3w + 26$",
+   "$7w + 14$"
+  ],
+  "answer": "C",
+  "explanation": "Put the whole input $w + 4$ in place of $w$, with parentheses: $h(w + 4) = 3(w + 4) + 14$. Distributing gives $3w + 12 + 14$, which is $3w + 26$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You worked out $h(w - 4) = 3(w - 4) + 14 = 3w + 2$. The question asks for the input shifted up by 4, not down by 4."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added 4 to the output, which gives $h(w) + 4$, instead of putting $w + 4$ in as the input. You get the same expression if you write $3w + 4 + 14$ and forget to multiply the 4 by 3."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the 4 to the coefficient instead of to the input, so you got $(3 + 4)w + 14$. The 4 belongs inside the parentheses with $w$, and then it is multiplied by 3."
+   }
+  },
+  "id": "orig-evaluate-at-in-M-92e8cb",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-M-92e8cb",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the function __var__ is defined by __var__ which",
+    "function __var__ is defined by __var__ which expression",
+    "__var__ is defined by __var__ which expression represents"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "The function $V$ is defined by $V(t) = 480 - 15t$. Which expression represents $V(t - 2)$?",
+  "stimulus": "A county health department runs a walk-in flu clinic. The function $V$ gives the number of vaccine doses remaining $t$ days after the clinic opens.",
+  "choices": [
+   "$450 - 15t$",
+   "$478 - 15t$",
+   "$480 - 13t$",
+   "$510 - 15t$"
+  ],
+  "answer": "D",
+  "explanation": "Put $t - 2$ in for $t$, with parentheses: $V(t - 2) = 480 - 15(t - 2)$. Multiplying $-15$ by $-2$ gives $+30$, so the expression is $480 - 15t + 30 = 510 - 15t$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped a negative sign when you distributed. $-15$ times $-2$ is $+30$, not $-30$. Your expression is actually $V(t + 2)$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You subtracted 2 from the output, which gives $V(t) - 2$, instead of putting $t - 2$ in as the input."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You combined the $-2$ with the coefficient $-15$ instead of putting it inside the input. The 2 has to be multiplied by $-15$, not added to it."
+   }
+  },
+  "id": "orig-evaluate-at-in-M-55cb3b",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-M-55cb3b",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the function __var__ is defined by __var__ which",
+    "function __var__ is defined by __var__ which expression",
+    "__var__ is defined by __var__ which expression represents"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "The function $T$ is defined by $T(d) = 18 - \\frac{2}{5}d$. Which expression represents $T(5k)$?",
+  "stimulus": "A marine biologist studying kelp forest habitat models the water temperature, in degrees Celsius, at a depth of $d$ meters below the surface of a coastal inlet.",
+  "choices": [
+   "$18 - 2k$",
+   "$18 - 10k$",
+   "$90 - 2k$",
+   "$18 - \\frac{2}{25}k$"
+  ],
+  "answer": "A",
+  "explanation": "Put $5k$ in for $d$: $T(5k) = 18 - \\frac{2}{5}(5k)$. The 5s cancel, so $\\frac{2}{5}(5k) = 2k$, and the expression is $18 - 2k$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $2$ by $5k$ but dropped the denominator of 5. $\\frac{2}{5} \\cdot 5k$ is $2k$, not $10k$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You multiplied the whole function by 5, so you got $5T(k) = 90 - 2k$. Only the input changes, which means the constant 18 stays the same."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided by 5 instead of multiplying, which gives $\\frac{2}{5} \\cdot \\frac{k}{5}$. That is $T\\left(\\frac{k}{5}\\right)$, not $T(5k)$."
+   }
+  },
+  "id": "orig-evaluate-at-in-M-658194",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-M-658194",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the function __var__ is defined by __var__ which",
+    "function __var__ is defined by __var__ which expression",
+    "__var__ is defined by __var__ which expression represents"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A meteorologist models air temperature above a weather station with the function $T$ defined by $T(k) = 14 - 6k$, where $T(k)$ is the temperature, in degrees Celsius, at an altitude of $k$ kilometers.",
+  "choices": [
+   "$T(3) = 24$",
+   "$T(-4) = 3$",
+   "$T(3) = -4$",
+   "$T(3) = 32$"
+  ],
+  "answer": "C",
+  "explanation": "Put 3 in for $k$: $T(3) = 14 - 6(3) = 14 - 18 = -4$. So $T(3) = -4$ is true. Do the multiplication before the subtraction, and keep the minus sign in front of the 18.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted first, $(14 - 6) = 8$, and then multiplied by 3. Multiplication comes before subtraction, so $6(3)$ has to be worked out first."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the input and the output. The correct result pairs an input of 3 with an output of $-4$, not the other way round. In fact $T(-4) = 14 + 24 = 38$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the negative sign and added $6(3)$ to 14. The function subtracts $6k$, so the temperature goes down as altitude goes up."
+   }
+  },
+  "id": "orig-evaluate-at-in-M-bccfa6",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-M-bccfa6",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A marine biologist models the diameter of a coral colony with the function $D$ defined by $D(m) = 12 + \\frac{3}{2}m$, where $D(m)$ is the diameter, in centimeters, $m$ months after the colony was first measured.",
+  "choices": [
+   "$D(6) = 9$",
+   "$D(6) = 21$",
+   "$D(21) = 6$",
+   "$D(6) = 81$"
+  ],
+  "answer": "B",
+  "explanation": "Put 6 in for $m$: $D(6) = 12 + \\frac{3}{2}(6) = 12 + 9 = 21$. So the colony's diameter after 6 months is 21 centimeters, and $D(6) = 21$ is true.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "9 centimeters is how much the colony grew in 6 months, $\\frac{3}{2}(6)$. You stopped before adding the starting diameter of 12 centimeters."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the input and the output. 6 is the number of months and 21 is the diameter. Check it: $D(21) = 12 + 31.5 = 43.5$, not 6."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $12 + \\frac{3}{2}$ first and then multiplied by 6. Only the $\\frac{3}{2}$ is multiplied by $m$. The 12 is the starting amount and isn't multiplied by anything."
+   }
+  },
+  "id": "orig-evaluate-at-in-M-242eba",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-M-242eba",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A historian models the number of hand-loom weavers in a mill town with the function $W$ defined by $W(y) = 300 - 4y$, where $y$ is the number of years after 1820. Negative values of $y$ are years before 1820.",
+  "choices": [
+   "$W(-5) = 280$",
+   "$W(320) = -5$",
+   "$W(-5) = 295$",
+   "$W(-5) = 320$"
+  ],
+  "answer": "D",
+  "explanation": "Put $-5$ in for $y$, in parentheses: $W(-5) = 300 - 4(-5) = 300 + 20 = 320$. A negative times a negative is positive, so the model gives 320 weavers in 1815, and $W(-5) = 320$ is true.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the negative on the input and worked out $300 - 4(5)$. With $-5$ in parentheses, $-4(-5) = +20$, so the total goes up, not down."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the input and the output. $-5$ is the year value and 320 is the number of weavers. In fact $W(320) = 300 - 1280 = -980$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You left out the coefficient 4 and combined 300 with $-5$ directly. You have to multiply the input by 4 before combining it with 300."
+   }
+  },
+  "id": "orig-evaluate-at-in-M-53c9cc",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-M-53c9cc",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ where __var__ is the number of years",
+    "__num__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "The function $f$ is defined by $f(x) = -\\frac{3}{4}x + 52$. What is the value of $f(28)$?",
+  "stimulus": "A paleobotanist uses the function $f$ to model a sediment core. In the model, $f(x)$ is the estimated percent of fossil pollen grains that come from conifers in a sample taken $x$ centimeters below the top of the core.",
+  "choices": [
+   "$21$",
+   "$31$",
+   "$32$",
+   "$73$"
+  ],
+  "answer": "B",
+  "explanation": "Replace $x$ with $28$: $f(28) = -\\frac{3}{4}(28) + 52 = -21 + 52 = 31$. You can check this quickly in Desmos by typing the function and then $f(28)$. The output is $31$, so about 31% of the pollen at a depth of 28 centimeters is from conifers.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You worked out $\\frac{3}{4}(28) = 21$ and stopped there. You still have to apply the negative sign and add the $52$ to get the output."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You solved $f(x) = 28$ and got $x = 32$, but the question asks for $f(28)$. That means $28$ is the input, not the output."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost the negative sign on the slope and added $21$ to $52$. The coefficient is $-\\frac{3}{4}$, so $21$ should be subtracted."
+   }
+  },
+  "id": "orig-evaluate-at-in-M-6ada37",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-M-6ada37",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $H$ is defined by $H(x) = 4(x - 15) + 128$. What is the value of $H(9)$?",
+  "stimulus": "A sports scientist models an athlete's heart rate during a treadmill session. In the model, $H(x)$ is the heart rate, in beats per minute, $x$ minutes after the session begins, for $0 \\le x \\le 20$.",
+  "choices": [
+   "$104$",
+   "$128$",
+   "$149$",
+   "$152$"
+  ],
+  "answer": "A",
+  "explanation": "Replace $x$ with $9$ and keep the parentheses: $H(9) = 4(9 - 15) + 128 = 4(-6) + 128 = -24 + 128 = 104$. Nine minutes into the session, the model gives a heart rate of 104 beats per minute.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$128$ is $H(15)$, the output when the parentheses equal zero. You read the constant as the answer instead of evaluating at $x = 9$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied only the $x$ by $4$ and found $4(9) - 15 + 128 = 149$. The $4$ multiplies the whole expression $(x - 15)$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the negative sign on $9 - 15$ and used $4(6) = 24$, which gave $152$. Because $9 - 15 = -6$, the product is $-24$."
+   }
+  },
+  "id": "orig-evaluate-at-in-M-74244d",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-M-74244d",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $w$ is defined by $w(x) = -\\frac{5}{3}x + 210$. What is the value of $w(-6)$?",
+  "stimulus": "A linguist models how many people fluently speak a regional dialect. In the model, $w(x)$ is the estimated number of fluent speakers, in hundreds, $x$ years after 2010. Negative values of $x$ stand for years before 2010.",
+  "choices": [
+   "$200$",
+   "$210$",
+   "$216$",
+   "$220$"
+  ],
+  "answer": "D",
+  "explanation": "Replace $x$ with $-6$, inside parentheses: $w(-6) = -\\frac{5}{3}(-6) + 210 = 10 + 210 = 220$. A negative times a negative is positive, so the output is larger than $210$. That fits the model: there were more speakers before 2010.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost a negative sign and treated $-\\frac{5}{3}(-6)$ as $-10$. Two negatives multiply to a positive, so you should add $10$, not subtract it."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$210$ is $w(0)$, the estimate for 2010. You took the constant term instead of evaluating the function at $x = -6$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You left out the coefficient $-\\frac{5}{3}$ and only combined $-6$ with $210$. The input has to be multiplied by the slope before you add $210$."
+   }
+  },
+  "id": "orig-evaluate-at-in-M-0a9ec0",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-M-0a9ec0",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many more meters of linen had the mill produced 9 days after the order began than 4 days after the order began?",
+  "stimulus": "The function $f(x) = 14x + 30$ gives the total length, in meters, of linen a 19th-century mill had produced $x$ days after a large order began.",
+  "choices": [
+   "$5$",
+   "$70$",
+   "$100$",
+   "$156$"
+  ],
+  "answer": "B",
+  "explanation": "First evaluate the function at each input: $f(9) = 14(9) + 30 = 156$ and $f(4) = 14(4) + 30 = 86$. The question asks for the gap, so subtract: $156 - 86 = 70$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You subtracted the inputs, $9 - 4 = 5$. That's a number of days, not a length of linen. The question wants the difference between the outputs."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the days first and then evaluated $f(5) = 14(5) + 30 = 100$. That means the starting 30 meters gets counted once when it should cancel out. $f(9) - f(4)$ isn't the same as $f(9 - 4)$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found $f(9) = 156$ and stopped. That's the total after 9 days. You still need to subtract the 86 meters produced by day 4."
+   }
+  },
+  "id": "orig-evaluate-at-in-M-e15a35",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-M-e15a35",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How much greater is $g(-2)$ than $g(3)$?",
+  "stimulus": "On a digital trail map, the function $g(x) = -4x + 15$ gives the elevation, in meters above a reference level, of the trail at horizontal grid position $x$.",
+  "choices": [
+   "$-20$",
+   "$4$",
+   "$20$",
+   "$23$"
+  ],
+  "answer": "C",
+  "explanation": "Keep the negative input in parentheses: $g(-2) = -4(-2) + 15 = 8 + 15 = 23$. Then $g(3) = -4(3) + 15 = -12 + 15 = 3$. The gap is $23 - 3 = 20$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You calculated $g(3) - g(-2) = 3 - 23$. That's the reverse subtraction. The question asks how much greater $g(-2)$ is, so $g(-2)$ comes first."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the negative when you substituted and wrote $-4(-2)$ as $-8$, which gives $g(-2) = 7$ and a gap of $7 - 3 = 4$. A negative times a negative is positive."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found $g(-2) = 23$ but never subtracted $g(3) = 3$. The question asks for the difference between the two elevations."
+   }
+  },
+  "id": "orig-evaluate-at-in-M-79b701",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-M-79b701",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, how many centimeters longer is a fish 12 weeks after tagging than 4 weeks after tagging?",
+  "stimulus": "A marine biologist uses the function $p(x) = \\frac{3}{4}x + 6$ to estimate the length, in centimeters, of a juvenile reef fish $x$ weeks after it was tagged.",
+  "choices": [
+   "$6$",
+   "$8$",
+   "$12$",
+   "$15$"
+  ],
+  "answer": "A",
+  "explanation": "Evaluate at each input: $p(12) = \\frac{3}{4}(12) + 6 = 9 + 6 = 15$ and $p(4) = \\frac{3}{4}(4) + 6 = 3 + 6 = 9$. The fish is $15 - 9 = 6$ centimeters longer.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You subtracted the inputs, $12 - 4 = 8$. That's a number of weeks, not a length. You need to put each input into the function and compare the outputs."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You evaluated $p(12 - 4) = p(8) = 6 + 6 = 12$. That keeps the starting 6 centimeters, which should cancel when you subtract one output from the other."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found $p(12) = 15$, the fish's length at 12 weeks, and stopped. You still need to subtract its length at 4 weeks, which is 9 centimeters."
+   }
+  },
+  "id": "orig-evaluate-at-in-M-df9304",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-M-df9304",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $M$ is defined by $M(d) = 4d + 38$, where $M(d)$ is the estimated mass, in grams, of a heron chick $d$ days after hatching. What is the value of $M(12)$, and what does it represent?",
+  "stimulus": null,
+  "choices": [
+   "$48$; the mass the chick gains, in grams, in its first 12 days",
+   "$86$; the chick's mass, in grams, 12 days after hatching",
+   "$86$; the number of days it takes the chick to reach 12 grams",
+   "$4$; the mass the chick gains, in grams, during each day"
+  ],
+  "answer": "B",
+  "explanation": "Put 12 in for $d$: $M(12) = 4(12) + 38 = 48 + 38 = 86$. The input $d = 12$ is the number of days, and the output of $M$ is always a mass in grams. So $M(12) = 86$ means the chick weighs 86 grams 12 days after hatching.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You worked out $4(12) = 48$ and stopped before adding the 38. The 48 is the mass gained since hatching, but $M(12)$ is the chick's whole mass, so the starting 38 grams has to be added."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You got the number right but swapped input and output. The 12 in $M(12)$ is a number of days that goes in, and 86 is the mass in grams that comes out. Finding when the chick reaches 12 grams would mean solving $M(d) = 12$, which is a different question."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read off the slope instead of evaluating the function. The 4 is the rate in grams per day. The question asks for the output when $d = 12$."
+   }
+  },
+  "id": "orig-evaluate-at-in-M-94f82d",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-M-94f82d",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "where __var__ is the estimated mass in grams",
+    "__var__ is the estimated mass in grams of"
+   ],
+   "residue": 6
+  }
+ },
+ {
+  "stem": "The function $T$ is defined by $T(h) = 18 - 3h$, where $T(h)$ is the temperature, in degrees Celsius, of an observatory telescope's mirror $h$ hours after the dome is opened for the night. What is the value of $T(4)$, and what does it represent?",
+  "stimulus": null,
+  "choices": [
+   "$30$; the mirror's temperature, in \u00b0C, 4 hours after the dome opens",
+   "$12$; the drop in the mirror's temperature, in \u00b0C, over 4 hours",
+   "$6$; the number of hours until the mirror's temperature is 4 \u00b0C",
+   "$6$; the mirror's temperature, in \u00b0C, 4 hours after the dome opens"
+  ],
+  "answer": "D",
+  "explanation": "Put 4 in for $h$: $T(4) = 18 - 3(4) = 18 - 12 = 6$. The input is time in hours and the output is temperature in \u00b0C, so $T(4) = 6$ means the mirror is at 6 \u00b0C 4 hours after the dome opens. The answer also fits the story: the mirror is cooling, so its temperature should be lower than the starting 18 \u00b0C.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost the negative sign and added $3(4)$ to 18 instead of subtracting it. The mirror is cooling, so its temperature has to go down from 18, not up."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You found $3(4) = 12$, which is how much the temperature has fallen, and stopped there. $T(4)$ is the temperature itself, so you still need $18 - 12$."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You got the number right but read it the wrong way round. In $T(4)$, the 4 is hours going in and the 6 is degrees coming out. The time it takes to reach 4 \u00b0C would come from solving $T(h) = 4$, and that does not give 6."
+   }
+  },
+  "id": "orig-evaluate-at-in-M-4dfdfc",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-M-4dfdfc",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $K$ is defined by $K(w) = 24w + 50$, where $K(w)$ is the height, in centimeters, of a tagged giant kelp frond $w$ weeks after a marine biologist tags it. What is the value of $K(3)$, and what does it represent?",
+  "stimulus": null,
+  "choices": [
+   "$122$; the frond's height, in centimeters, 3 weeks after tagging",
+   "$122$; the frond's growth, in centimeters, over the 3 weeks",
+   "$72$; the frond's height, in centimeters, 3 weeks after tagging",
+   "$122$; the number of weeks for the frond to reach 3 centimeters"
+  ],
+  "answer": "A",
+  "explanation": "Put 3 in for $w$: $K(3) = 24(3) + 50 = 72 + 50 = 122$. The output of $K$ is a height in centimeters, measured $w$ weeks after tagging. So $K(3) = 122$ means the frond is 122 centimeters tall 3 weeks after it was tagged.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You have the right number but gave it the wrong meaning. 122 cm is the frond's whole height, including the 50 cm it already had when it was tagged. The growth over the 3 weeks is only $24(3) = 72$ cm."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at $24(3) = 72$ without adding the starting height of 50 cm. The 72 cm is the growth since tagging, not the height."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped input and output. The 3 in $K(3)$ is a number of weeks going in, and 122 is the height in centimeters coming out. Finding when the frond is 3 cm tall would mean solving $K(w) = 3$."
+   }
+  },
+  "id": "orig-evaluate-at-in-M-cf7bdb",
+  "skill_cd": "H.B.",
+  "subtype": "evaluate-at-input",
+  "subtype_name": "Plug in and evaluate",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-evaluate-at-in-M-cf7bdb",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

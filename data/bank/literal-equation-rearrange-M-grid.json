@@ -220,5 +220,600 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the speed $b$, in meters per second, on the second leg?",
+  "stimulus": "A sports scientist finds a sprinter's average speed $v$ over two legs of equal length with the formula $v = \\frac{2ab}{a+b}$. In this formula, $a$ and $b$ are the sprinter's speeds, in meters per second, on the first and second legs. In one trial, $v = 8$ and $a = 10$.",
+  "keys": [
+   "20/3",
+   "6.666",
+   "6.667"
+  ],
+  "any_of": false,
+  "explanation": "Multiply both sides by $a+b$ to clear the fraction: $v(a+b) = 2ab$, so $va + vb = 2ab$. Move every term with $b$ to one side: $va = 2ab - vb = b(2a - v)$. Divide: $b = \\frac{va}{2a - v}$. Substitute: $b = \\frac{8 \\cdot 10}{20 - 8} = \\frac{80}{12} = \\frac{20}{3}$.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "misread-given",
+    "why": "Used the ordinary average $\\frac{a+b}{2} = 8$ in place of the given formula, so $b = 16 - 10$."
+   },
+   {
+    "value": "20/7",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped a sign while collecting the $b$ terms: from $80 + 8b = 20b$, wrote $28b = 80$ instead of $12b = 80$."
+   },
+   {
+    "value": "2.857",
+    "misconception": "algebra-manipulation",
+    "why": "Decimal form of the same sign slip, $\\frac{80}{28}$."
+   }
+  ],
+  "id": "orig-literal-equati-M-6a00ab",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-6a00ab",
+   "structure": [],
+   "solver_answer": "20/3",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the dolphin's speed $v$, in meters per second?",
+  "stimulus": "A marine biologist estimates the kinetic energy $E$, in joules, of a swimming dolphin with the formula $E = \\frac{mv^2}{2}$, where $m$ is the dolphin's mass in kilograms and $v > 0$ is its speed in meters per second. A dolphin with mass 150 kilograms has $E = 1{,}200$.",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "Multiply both sides by 2: $2E = mv^2$. Divide by $m$: $v^2 = \\frac{2E}{m}$. Because $v$ is positive, take the positive square root: $v = \\sqrt{\\frac{2E}{m}}$. Substitute: $v = \\sqrt{\\frac{2400}{150}} = \\sqrt{16} = 4$.",
+  "common_errors": [
+   {
+    "value": "16",
+    "misconception": "intermediate-step",
+    "why": "Solved for $v^2$ and stopped before taking the square root."
+   },
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "Divided by 2 instead of multiplying, so $v^2 = \\frac{600}{150} = 4$."
+   },
+   {
+    "value": "2.828",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the factor of 2 altogether, so $v^2 = \\frac{1200}{150} = 8$ and $v = \\sqrt{8}$."
+   }
+  ],
+  "id": "orig-literal-equati-M-97bc07",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-97bc07",
+   "structure": [],
+   "solver_answer": 4,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is $d_i$, in centimeters?",
+  "stimulus": "For a telescope eyepiece lens, $\\frac{1}{f} = \\frac{1}{d_o} + \\frac{1}{d_i}$. Here $f$ is the focal length, $d_o$ is the distance from the object to the lens, and $d_i$ is the distance from the lens to the image, all in centimeters. For one setup, $f = 12$ and $d_o = 20$.",
+  "keys": [
+   "30"
+  ],
+  "any_of": false,
+  "explanation": "Isolate the reciprocal you want: $\\frac{1}{d_i} = \\frac{1}{f} - \\frac{1}{d_o}$. Over a common denominator, $\\frac{1}{d_i} = \\frac{d_o - f}{f d_o}$, so $d_i = \\frac{f d_o}{d_o - f}$. Substitute: $d_i = \\frac{240}{8} = 30$. Or with numbers: $\\frac{1}{12} - \\frac{1}{20} = \\frac{5 - 3}{60} = \\frac{1}{30}$, and taking the reciprocal gives 30.",
+  "common_errors": [
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Undid the reciprocals term by term, treating the formula as $f = d_o - d_i$ or $d_i = d_o - f$."
+   },
+   {
+    "value": "1/30",
+    "misconception": "intermediate-step",
+    "why": "Found $\\frac{1}{d_i}$ and forgot to take the reciprocal."
+   },
+   {
+    "value": ".0333",
+    "misconception": "intermediate-step",
+    "why": "Decimal form of $\\frac{1}{30}$, with the reciprocal step still missing."
+   },
+   {
+    "value": "7.5",
+    "misconception": "algebra-manipulation",
+    "why": "Added the fractions instead of subtracting: $\\frac{1}{12} + \\frac{1}{20} = \\frac{8}{60}$, so $d_i = 7.5$."
+   }
+  ],
+  "id": "orig-literal-equati-M-9cfb65",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-9cfb65",
+   "structure": [],
+   "solver_answer": 30,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is $d$, in kilometers?",
+  "stimulus": "A seismograph records a delay of $t$ seconds between the arrival of a quake's P-wave and its S-wave. A seismologist uses $t = \\frac{d}{v_s} - \\frac{d}{v_p}$, where $d$ is the distance to the quake in kilometers. The S-wave speed is $v_s = 4$ and the P-wave speed is $v_p = 6$, both in kilometers per second. For one quake, $t = 10$.",
+  "keys": [
+   "120"
+  ],
+  "any_of": false,
+  "explanation": "Factor out $d$: $t = d\\left(\\frac{1}{v_s} - \\frac{1}{v_p}\\right) = d \\cdot \\frac{v_p - v_s}{v_s v_p}$. Then $d = \\frac{t\\,v_s v_p}{v_p - v_s}$. Substitute: $d = \\frac{10 \\cdot 24}{2} = 120$. As a check, $\\frac{1}{4} - \\frac{1}{6} = \\frac{1}{12}$, and $10 \\div \\frac{1}{12} = 120$.",
+  "common_errors": [
+   {
+    "value": "20",
+    "misconception": "algebra-manipulation",
+    "why": "Treated $\\frac{1}{4} - \\frac{1}{6}$ as $\\frac{1}{6-4}$, which undoes the fractions term by term, so $d = 10 \\cdot 2$."
+   },
+   {
+    "value": "24",
+    "misconception": "algebra-manipulation",
+    "why": "Added the reciprocals instead of subtracting: $\\frac{1}{4} + \\frac{1}{6} = \\frac{5}{12}$, so $d = 10 \\div \\frac{5}{12}$."
+   },
+   {
+    "value": "5/6",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied by $\\frac{1}{12}$ instead of dividing by it: $d = \\frac{10}{12}$."
+   },
+   {
+    "value": ".8333",
+    "misconception": "algebra-manipulation",
+    "why": "Decimal form of $\\frac{10}{12}$."
+   }
+  ],
+  "id": "orig-literal-equati-M-208a7a",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-208a7a",
+   "structure": [],
+   "solver_answer": 120,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is $K$ when $F = 50$?",
+  "stimulus": "A weather station converts a temperature of $K$ kelvins to $F$ degrees Fahrenheit with the equation $F = \\frac{9}{5}(K - 273) + 32$.",
+  "keys": [
+   "283"
+  ],
+  "any_of": false,
+  "explanation": "Subtract 32: $F - 32 = \\frac{9}{5}(K - 273)$. Multiply by $\\frac{5}{9}$: $\\frac{5}{9}(F - 32) = K - 273$. Add 273: $K = \\frac{5}{9}(F - 32) + 273$. Substitute: $K = \\frac{5}{9}(18) + 273 = 10 + 273 = 283$.",
+  "common_errors": [
+   {
+    "value": "10",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $K - 273$, which is the Celsius value, and never added 273."
+   },
+   {
+    "value": "305.4",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied by $\\frac{9}{5}$ again instead of its reciprocal: $\\frac{9}{5}(18) + 273$."
+   },
+   {
+    "value": "2867/9",
+    "misconception": "algebra-manipulation",
+    "why": "Added 32 instead of subtracting it: $\\frac{5}{9}(82) + 273$."
+   },
+   {
+    "value": "318.5",
+    "misconception": "algebra-manipulation",
+    "why": "Truncated decimal of the same sign slip ($318.555...$)."
+   },
+   {
+    "value": "318.6",
+    "misconception": "algebra-manipulation",
+    "why": "Rounded decimal of the same sign slip ($318.555...$)."
+   }
+  ],
+  "id": "orig-literal-equati-M-5ca931",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-5ca931",
+   "structure": [],
+   "solver_answer": 283,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many stomata are in the sample?",
+  "stimulus": "A paleobotanist studies a fossil leaf with the stomatal index $I = \\frac{100S}{S + E}$. In this formula, $S$ is the number of stomata in a sample and $E$ is the number of ordinary epidermal cells in that sample. One sample has $I = 20$ and $E = 360$.",
+  "keys": [
+   "90"
+  ],
+  "any_of": false,
+  "explanation": "Clear the fraction: $I(S + E) = 100S$, so $IS + IE = 100S$. Collect the $S$ terms: $IE = 100S - IS = S(100 - I)$. Divide: $S = \\frac{IE}{100 - I}$. Substitute: $S = \\frac{20 \\cdot 360}{80} = 90$.",
+  "common_errors": [
+   {
+    "value": "72",
+    "misconception": "algebra-manipulation",
+    "why": "Divided before collecting the $S$ terms, ignoring the $S$ in the denominator: $S = \\frac{20 \\cdot 360}{100}$."
+   },
+   {
+    "value": "60",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped a sign while collecting: wrote $120S = 7200$ instead of $80S = 7200$."
+   },
+   {
+    "value": "450",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the total number of cells, $S + E$, instead of the number of stomata."
+   }
+  ],
+  "id": "orig-literal-equati-M-8de9b4",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-8de9b4",
+   "structure": [],
+   "solver_answer": 90,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What nitrogen rate $N$, in kilograms per hectare, gives a yield of 150 bushels per acre?",
+  "stimulus": "An agronomist models corn yield $Y$, in bushels per acre, with $Y = \\frac{200N}{60 + N}$, where $N$ is the nitrogen applied in kilograms per hectare.",
+  "keys": [
+   "180"
+  ],
+  "any_of": false,
+  "explanation": "Multiply by $60 + N$: $Y(60 + N) = 200N$, so $60Y + YN = 200N$. Collect the $N$ terms: $60Y = N(200 - Y)$. Divide: $N = \\frac{60Y}{200 - Y}$. Substitute: $N = \\frac{9000}{50} = 180$.",
+  "common_errors": [
+   {
+    "value": "45",
+    "misconception": "algebra-manipulation",
+    "why": "Divided before collecting the $N$ terms, treating the $N$ in the denominator as absent: $N = \\frac{150 \\cdot 60}{200}$."
+   },
+   {
+    "value": "180/7",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped a sign while isolating, which gave $N = \\frac{60Y}{200 + Y} = \\frac{9000}{350}$."
+   },
+   {
+    "value": "25.71",
+    "misconception": "algebra-manipulation",
+    "why": "Rounded decimal of the same sign slip."
+   },
+   {
+    "value": "240",
+    "misconception": "intermediate-step",
+    "why": "Solved for the whole denominator, $60 + N$, and stopped there."
+   }
+  ],
+  "id": "orig-literal-equati-M-b683d6",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-b683d6",
+   "structure": [],
+   "solver_answer": 180,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many hours did the worker work that week?",
+  "stimulus": "A labor economist models weekly pay $P$, in dollars, for a worker with a base wage of $w$ dollars per hour who works $h$ hours, where $h > 40$, as $P = 40w + 1.5w(h - 40)$. One worker has $w = 20$ and earned $P = 1{,}040$.",
+  "keys": [
+   "48"
+  ],
+  "any_of": false,
+  "explanation": "Subtract $40w$: $P - 40w = 1.5w(h - 40)$. Divide by $1.5w$: $h - 40 = \\frac{P - 40w}{1.5w}$. Add 40: $h = 40 + \\frac{P - 40w}{1.5w}$. Substitute: $h = 40 + \\frac{240}{30} = 40 + 8 = 48$.",
+  "common_errors": [
+   {
+    "value": "8",
+    "misconception": "intermediate-step",
+    "why": "Found $h - 40$, the overtime hours, and forgot to add the first 40 hours."
+   },
+   {
+    "value": "52",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the 1.5 overtime factor: $h = 40 + \\frac{240}{20}$."
+   },
+   {
+    "value": "64/3",
+    "misconception": "algebra-manipulation",
+    "why": "Expanded to $P = 1.5wh - 20w$, then subtracted $20w$ instead of adding it: $h = \\frac{1040 - 400}{30}$."
+   },
+   {
+    "value": "21.33",
+    "misconception": "algebra-manipulation",
+    "why": "Rounded decimal of the same sign slip."
+   }
+  ],
+  "id": "orig-literal-equati-M-df84b6",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-df84b6",
+   "structure": [],
+   "solver_answer": 48,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the two pumps together fill the pond in 6 hours and one pump alone fills it in 10 hours, how many hours would the other pump take to fill the pond alone?",
+  "stimulus": "A farm fills an irrigation pond using two pumps. When both pumps run together, the time $T$, in hours, to fill the pond satisfies $\\frac{1}{T} = \\frac{1}{a} + \\frac{1}{b}$, where $a$ and $b$ are the times, in hours, each pump would take working alone.",
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "You want $b$, so first isolate the term that contains it. Subtract $\\frac{1}{a}$ from both sides: $\\frac{1}{b} = \\frac{1}{T} - \\frac{1}{a}$. Substitute $T = 6$ and $a = 10$: $\\frac{1}{b} = \\frac{1}{6} - \\frac{1}{10} = \\frac{5}{30} - \\frac{3}{30} = \\frac{2}{30} = \\frac{1}{15}$. You solved for $\\frac{1}{b}$, so take the reciprocal: $b = 15$. Check: $\\frac{1}{10} + \\frac{1}{15} = \\frac{3}{30} + \\frac{2}{30} = \\frac{1}{6}$. To check with Desmos, graph $y = \\frac{1}{10} + \\frac{1}{x}$ and $y = \\frac{1}{6}$. They cross at $x = 15$.",
+  "common_errors": [
+   {
+    "value": "1/15",
+    "misconception": "intermediate-step",
+    "why": "Correctly found $\\frac{1}{b} = \\frac{1}{15}$ but stopped without taking the reciprocal."
+   },
+   {
+    "value": ".0666",
+    "misconception": "intermediate-step",
+    "why": "Typed $\\frac{1}{b}$ as a truncated decimal and never took the reciprocal."
+   },
+   {
+    "value": ".0667",
+    "misconception": "intermediate-step",
+    "why": "Typed $\\frac{1}{b}$ as a rounded decimal and never took the reciprocal."
+   },
+   {
+    "value": "-4",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the sum of reciprocals term by term into $T = a + b$, then got $b = T - a = 6 - 10$."
+   },
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the reciprocals term by term into $T = a + b$, then subtracted the wrong way, $10 - 6$."
+   },
+   {
+    "value": "15/4",
+    "misconception": "algebra-manipulation",
+    "why": "Added instead of subtracting when isolating, $\\frac{1}{b} = \\frac{1}{6} + \\frac{1}{10} = \\frac{4}{15}$, then took the reciprocal."
+   },
+   {
+    "value": "3.75",
+    "misconception": "algebra-manipulation",
+    "why": "Same sign slip as 15/4, entered as a decimal."
+   }
+  ],
+  "id": "orig-literal-equati-M-3326d1",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-3326d1",
+   "structure": [],
+   "solver_answer": 15,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A transcript contains 240 distinct words and has a Guiraud's index of 6. What is the total number of words in the transcript?",
+  "stimulus": "Linguists sometimes measure the variety of a speaker's vocabulary with Guiraud's index, $R = \\frac{V}{\\sqrt{N}}$, where $V$ is the number of distinct words in a transcript and $N$ is the total number of words in it, with $N > 0$.",
+  "keys": [
+   "1600"
+  ],
+  "any_of": false,
+  "explanation": "Rewrite the formula for $N$. Multiply both sides by $\\sqrt{N}$: $R\\sqrt{N} = V$. Divide by $R$: $\\sqrt{N} = \\frac{V}{R}$. Square both sides: $N = \\left(\\frac{V}{R}\\right)^2 = \\frac{V^2}{R^2}$. Substitute: $\\sqrt{N} = \\frac{240}{6} = 40$, so $N = 40^2 = 1600$. Check: $\\frac{240}{\\sqrt{1600}} = \\frac{240}{40} = 6$.",
+  "common_errors": [
+   {
+    "value": "40",
+    "misconception": "intermediate-step",
+    "why": "Found $\\sqrt{N} = \\frac{V}{R} = 40$ and forgot to square it."
+   },
+   {
+    "value": "9600",
+    "misconception": "algebra-manipulation",
+    "why": "Squared only $V$ and not $R$, so computed $N = \\frac{V^2}{R} = \\frac{57600}{6}$."
+   },
+   {
+    "value": "1440",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied $V$ by $R$ instead of dividing, which gives $240 \\cdot 6$."
+   },
+   {
+    "value": "6.324",
+    "misconception": "algebra-manipulation",
+    "why": "Took the square root of $\\frac{V}{R}$ instead of squaring it, $\\sqrt{40} \\approx 6.324$."
+   }
+  ],
+  "id": "orig-literal-equati-M-30c19e",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-30c19e",
+   "structure": [],
+   "solver_answer": 1600,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the combined stiffness is 12 kilonewtons per millimeter and one pad has a stiffness of 20 kilonewtons per millimeter, what is the stiffness, in kilonewtons per millimeter, of the other pad?",
+  "stimulus": "A bridge girder rests on two rubber bearing pads stacked one on top of the other. The combined stiffness $k$ of the stack is given by $k = \\frac{ab}{a + b}$, where $a$ and $b$ are the stiffnesses of the two pads.",
+  "keys": [
+   "30"
+  ],
+  "any_of": false,
+  "explanation": "Clear the fraction by multiplying both sides by $a + b$: $ka + kb = ab$. Move every term that contains $b$ to one side: $ka = ab - kb$. Factor out $b$: $ka = b(a - k)$. Divide: $b = \\frac{ka}{a - k}$. Substitute $k = 12$ and $a = 20$: $b = \\frac{12 \\cdot 20}{20 - 12} = \\frac{240}{8} = 30$. Check: $\\frac{20 \\cdot 30}{20 + 30} = \\frac{600}{50} = 12$.",
+  "common_errors": [
+   {
+    "value": "7.5",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the sign when moving $kb$, which gives $b = \\frac{ka}{a + k} = \\frac{240}{32}$."
+   },
+   {
+    "value": "15/2",
+    "misconception": "algebra-manipulation",
+    "why": "Same sign slip as 7.5, entered as a fraction."
+   },
+   {
+    "value": "8",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the factor $a - k = 8$ and never divided it into $ka$."
+   },
+   {
+    "value": "240",
+    "misconception": "intermediate-step",
+    "why": "Found the numerator $ka = 240$ and forgot to divide by $a - k$."
+   },
+   {
+    "value": "32",
+    "misconception": "algebra-manipulation",
+    "why": "Treated the stack as if stiffnesses simply add, so set $k = a + b$ and got $b = a + k$, not a solution of the given formula."
+   }
+  ],
+  "id": "orig-literal-equati-M-5ab157",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-M-5ab157",
+   "structure": [],
+   "solver_answer": 30,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

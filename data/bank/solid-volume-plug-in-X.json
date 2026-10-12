@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-solid-volume-p-X-60648a",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,14 +82,422 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-solid-volume-p-X-c0a15c",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the volume, in cubic centimeters, of the replica?",
+  "stimulus": "A folklore museum displays a wooden replica of a pointed hat that a trickster figure wears in a regional folk tale. The replica is a right circular cone. Its base has a diameter of 12 centimeters, and its slant height is 10 centimeters.",
+  "choices": [
+   "$120\\pi$",
+   "$96\\pi$",
+   "$384\\pi$",
+   "$288\\pi$"
+  ],
+  "answer": "B",
+  "explanation": "The radius is half the diameter, so $r = 6$. The 10 cm is the slant height, not the height. The radius, height and slant height form a right triangle, so $h = \\sqrt{10^2 - 6^2} = 8$. Then $V = \\frac{1}{3}\\pi(6)^2(8) = 96\\pi$ cubic centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used the slant height of 10 as the height: $\\frac{1}{3}\\pi(36)(10) = 120\\pi$. The height runs straight up from the center of the base, so you have to find it with the Pythagorean theorem first."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You used the diameter 12 as the radius: $\\frac{1}{3}\\pi(144)(8) = 384\\pi$. Halve the diameter before you substitute."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the radius and height correctly but left out the $\\frac{1}{3}$ in the cone formula, which gives $\\pi(36)(8) = 288\\pi$, the volume of a cylinder."
+   }
+  },
+  "id": "orig-solid-volume-p-X-7d4684",
+  "skill_cd": "S.A.",
+  "subtype": "solid-volume-plug-in",
+  "subtype_name": "Volume of a named solid",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solid-volume-p-X-7d4684",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "centimeters what is the volume in cubic centimeters",
+    "what is the volume in cubic centimeters of",
+    "is the volume in cubic centimeters of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the volume, in cubic inches, of the new ball?",
+  "stimulus": "A sports science lab uses a spherical medicine ball with a diameter of 8 inches. For a strength study, the lab orders a new spherical ball whose diameter is 50% greater than the original ball's diameter.",
+  "choices": [
+   "$128\\pi$",
+   "$192\\pi$",
+   "$288\\pi$",
+   "$2{,}304\\pi$"
+  ],
+  "answer": "C",
+  "explanation": "Apply the 50% increase to the diameter: $8 \\times 1.5 = 12$ inches, so the radius is 6 inches. Then $V = \\frac{4}{3}\\pi(6)^3 = \\frac{4}{3}\\pi(216) = 288\\pi$ cubic inches.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the original volume, $\\frac{256}{3}\\pi$, and increased that by 50%. The 50% applies to the diameter, and a volume grows by the cube of the length factor, $1.5^3$, not by 1.5."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You scaled the original volume by $1.5^2 = 2.25$, which is the factor for an area. Volume scales by the cube of the length factor."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used the new diameter of 12 as the radius: $\\frac{4}{3}\\pi(1{,}728) = 2{,}304\\pi$. Halve the diameter first."
+   }
+  },
+  "id": "orig-solid-volume-p-X-69d68d",
+  "skill_cd": "S.A.",
+  "subtype": "solid-volume-plug-in",
+  "subtype_name": "Volume of a named solid",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solid-volume-p-X-69d68d",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the volume, in cubic meters, of the dye in the vat?",
+  "stimulus": "A textile history exhibit reconstructs a dye vat from an eighteenth-century indigo works. The vat is a right circular cylinder with an inside diameter of 3 meters. It is filled with dye to a depth of 80 centimeters.",
+  "choices": [
+   "$1.8\\pi$",
+   "$7.2\\pi$",
+   "$180\\pi$",
+   "$720\\pi$"
+  ],
+  "answer": "A",
+  "explanation": "Convert the depth to meters before substituting: 80 cm = 0.8 m. The radius is $3 \\div 2 = 1.5$ m. Then $V = \\pi(1.5)^2(0.8) = \\pi(2.25)(0.8) = 1.8\\pi$ cubic meters.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used the diameter 3 as the radius: $\\pi(9)(0.8) = 7.2\\pi$. Halve the diameter before you substitute."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You substituted the depth as 80 without converting it to meters, so your units are mixed: $\\pi(2.25)(80) = 180\\pi$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used the diameter as the radius and also left the depth in centimeters: $\\pi(9)(80) = 720\\pi$."
+   }
+  },
+  "id": "orig-solid-volume-p-X-9f3e92",
+  "skill_cd": "S.A.",
+  "subtype": "solid-volume-plug-in",
+  "subtype_name": "Volume of a named solid",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solid-volume-p-X-9f3e92",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the volume in cubic meters of",
+    "is the volume in cubic meters of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the volume, in cubic meters, of the model?",
+  "stimulus": "Ecologists model the inside of a beaver lodge as a hemisphere. The circular floor of the hemisphere has a circumference of $12\\pi$ meters.",
+  "choices": [
+   "$72\\pi$",
+   "$144\\pi$",
+   "$288\\pi$",
+   "$1{,}152\\pi$"
+  ],
+  "answer": "B",
+  "explanation": "From $2\\pi r = 12\\pi$, you get $r = 6$. A hemisphere is half of a sphere, so $V = \\frac{1}{2} \\cdot \\frac{4}{3}\\pi(6)^3 = \\frac{2}{3}\\pi(216) = 144\\pi$ cubic meters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $\\frac{1}{3}\\pi r^3$, taking half of $\\frac{2}{3}$ by mistake, so you halved twice. Half of $\\frac{4}{3}$ is $\\frac{2}{3}$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You found the volume of the full sphere, $\\frac{4}{3}\\pi(216) = 288\\pi$, and didn't halve it for a hemisphere."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You divided the circumference by $\\pi$ alone, which gives the diameter 12, and then used 12 as the radius: $\\frac{2}{3}\\pi(1{,}728) = 1{,}152\\pi$."
+   }
+  },
+  "id": "orig-solid-volume-p-X-80a9d7",
+  "skill_cd": "S.A.",
+  "subtype": "solid-volume-plug-in",
+  "subtype_name": "Volume of a named solid",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solid-volume-p-X-80a9d7",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "of __var__ meters what is the volume in",
+    "__var__ meters what is the volume in cubic",
+    "meters what is the volume in cubic meters",
+    "what is the volume in cubic meters of",
+    "is the volume in cubic meters of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the volume, in cubic meters, of the module?",
+  "stimulus": "Marine biologists sink concrete reef modules to give young fish shelter. Each module is a right pyramid with a square base. A diagonal of the base is $6\\sqrt{2}$ meters long, and the module is 5 meters high.",
+  "choices": [
+   "$360$",
+   "$180$",
+   "$120$",
+   "$60$"
+  ],
+  "answer": "D",
+  "explanation": "A square with diagonal $6\\sqrt{2}$ has side length $6\\sqrt{2} \\div \\sqrt{2} = 6$, so the base area is $36$. Then $V = \\frac{1}{3}(36)(5) = 60$ cubic meters.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You squared the diagonal, $(6\\sqrt{2})^2 = 72$, to get the base area, and you also left out the $\\frac{1}{3}$: $72 \\times 5 = 360$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the base area correctly but left out the $\\frac{1}{3}$ in the pyramid formula: $36 \\times 5 = 180$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You squared the diagonal, which gives 72, and used that as the base area. The diagonal is not a side, so the base area is $6^2 = 36$."
+   }
+  },
+  "id": "orig-solid-volume-p-X-9dc273",
+  "skill_cd": "S.A.",
+  "subtype": "solid-volume-plug-in",
+  "subtype_name": "Volume of a named solid",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solid-volume-p-X-9dc273",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the volume in cubic meters of",
+    "is the volume in cubic meters of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the volume, in cubic centimeters, of the new can?",
+  "stimulus": "A nutrition science team is redesigning a cylindrical soup can to reduce serving size. The original can has a diameter of 10 centimeters and a height of 12 centimeters. The new can's diameter is 20% less than the original's, and its height is 25% greater than the original's.",
+  "choices": [
+   "$240\\pi$",
+   "$300\\pi$",
+   "$315\\pi$",
+   "$960\\pi$"
+  ],
+  "answer": "A",
+  "explanation": "Apply each percent to its dimension. New diameter: $10 \\times 0.8 = 8$, so $r = 4$. New height: $12 \\times 1.25 = 15$. Then $V = \\pi(4)^2(15) = 240\\pi$ cubic centimeters.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is the original can's volume, $\\pi(5)^2(12) = 300\\pi$. You stopped before applying the changes."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You combined the percents into a 5% change in volume, $300\\pi \\times 1.05$. The 20% applies to the diameter, which is squared, so it doesn't combine with the 25% that way."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used the new diameter 8 as the radius: $\\pi(64)(15) = 960\\pi$. Halve the diameter first."
+   }
+  },
+  "id": "orig-solid-volume-p-X-2a147d",
+  "skill_cd": "S.A.",
+  "subtype": "solid-volume-plug-in",
+  "subtype_name": "Volume of a named solid",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solid-volume-p-X-2a147d",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the volume in cubic centimeters of",
+    "is the volume in cubic centimeters of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the volume, in cubic millimeters, of the sample in the well?",
+  "stimulus": "In an immunology assay, each well of a test plate is a right circular cylinder with a diameter of 6 millimeters and a depth of 10 millimeters. A technician fills one well with a serum sample to 80% of the well's depth.",
+  "choices": [
+   "$360\\pi$",
+   "$288\\pi$",
+   "$90\\pi$",
+   "$72\\pi$"
+  ],
+  "answer": "D",
+  "explanation": "The radius is $6 \\div 2 = 3$ mm, and the sample's depth is $0.8 \\times 10 = 8$ mm. Then $V = \\pi(3)^2(8) = 72\\pi$ cubic millimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used the diameter 6 as the radius and also used the full depth of 10: $\\pi(36)(10) = 360\\pi$."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You applied the 80% correctly but used the diameter 6 as the radius: $\\pi(36)(8) = 288\\pi$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "This is the volume of the whole well, $\\pi(9)(10) = 90\\pi$. The sample only fills 80% of the depth."
+   }
+  },
+  "id": "orig-solid-volume-p-X-d2a452",
+  "skill_cd": "S.A.",
+  "subtype": "solid-volume-plug-in",
+  "subtype_name": "Volume of a named solid",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solid-volume-p-X-d2a452",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The volume of the dome, in cubic meters, is $k\\pi$. What is the value of $k$?",
+  "stimulus": "A meteorology station protects its weather radar with a dome in the shape of a hemisphere. The dome's circular base has a diameter of 18 meters.",
+  "choices": [
+   "$3{,}888$",
+   "$972$",
+   "$486$",
+   "$243$"
+  ],
+  "answer": "C",
+  "explanation": "The radius is $18 \\div 2 = 9$. A hemisphere is half of a sphere, so $V = \\frac{2}{3}\\pi(9)^3 = \\frac{2}{3}\\pi(729) = 486\\pi$. The value next to $\\pi$ is $k = 486$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used the diameter 18 as the radius: $\\frac{2}{3}(5{,}832) = 3{,}888$. Halve the diameter first."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You found the volume of the full sphere, $\\frac{4}{3}(729) = 972$, and didn't halve it for a hemisphere."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $\\frac{1}{3}$ instead of $\\frac{2}{3}$, halving the $\\frac{4}{3}$ twice: $\\frac{1}{3}(729) = 243$."
+   }
+  },
+  "id": "orig-solid-volume-p-X-839c84",
+  "skill_cd": "S.A.",
+  "subtype": "solid-volume-plug-in",
+  "subtype_name": "Volume of a named solid",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solid-volume-p-X-839c84",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

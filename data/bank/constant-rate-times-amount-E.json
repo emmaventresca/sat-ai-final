@@ -374,5 +374,101 @@
    "overlap": []
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "How many more grams of protein are in 6 cups of brand A yogurt than in 6 cups of brand B yogurt?",
+  "stimulus": "A nutrition lab measured the protein in two brands of yogurt. Brand A contains 14 grams of protein per cup, and brand B contains 9 grams of protein per cup.",
+  "choices": [
+   "$30$",
+   "$54$",
+   "$84$",
+   "$138$"
+  ],
+  "answer": "A",
+  "explanation": "Total = rate \u00d7 count. Six cups of brand A have $14 \\times 6 = 84$ grams of protein, and six cups of brand B have $9 \\times 6 = 54$ grams. The question asks how many more, so you subtract: $84 - 54 = 30$ grams. You could also find the difference per cup, $14 - 9 = 5$ grams, and multiply: $5 \\times 6 = 30$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the total protein in 6 cups of brand B, $9 \\times 6 = 54$, which is one of the two totals and not the difference the question asks for."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at brand A's total, $14 \\times 6 = 84$ grams, and never took away brand B's total to get the difference."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You added the two totals, $84 + 54 = 138$, when \"how many more\" means you subtract one from the other."
+   }
+  },
+  "id": "orig-constant-rate--E-4aa5b4",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--E-4aa5b4",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the maximum number of sites the department can fully supply for one day?",
+  "stimulus": "A county health department has 680 doses of a flu vaccine to send to vaccination sites. Each site needs at least 30 doses for one day of operation.",
+  "choices": [
+   "$20$",
+   "$22$",
+   "$23$",
+   "$20{,}400$"
+  ],
+  "answer": "B",
+  "explanation": "Count = total \u00f7 rate: $680 \\text{ doses} \\div 30 \\text{ doses per site} \\approx 22.67$ sites. A site that gets less than 30 doses is not fully supplied, so you round down to 22. Check: $22 \\times 30 = 660$ doses, which leaves 20 doses. That is not enough for a 23rd site.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the 20 doses left over after supplying 22 sites, which is the remainder and not the number of sites."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You rounded $22.67$ up to 23. A 23rd site would get only 20 doses, fewer than the 30 it needs, so it would not be fully supplied."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $680 \\times 30$ when you should have divided. Your units would have come out as doses \u00d7 doses per site, which is not a count of sites."
+   }
+  },
+  "id": "orig-constant-rate--E-d19ff5",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--E-d19ff5",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

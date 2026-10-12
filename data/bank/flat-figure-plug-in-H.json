@@ -246,5 +246,57 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the area, in square meters, of the excavated region?",
+  "stimulus": "An archaeological team marks out a rectangular excavation grid that is 18 meters long and 10 meters wide. A right-triangular section in one corner is left unexcavated to protect a tree's roots. The two legs of this triangle lie along the edges of the grid and measure 6 meters and 8 meters. Its longest side measures 10 meters.",
+  "choices": [
+   "$132$",
+   "$150$",
+   "$156$",
+   "$180$"
+  ],
+  "answer": "C",
+  "explanation": "The excavated region is the whole rectangle minus the triangle that was left alone. The rectangle's area is $18 \\times 10 = 180$ square meters. In a right triangle, the base and height are the two legs, so the triangle's area is $\\frac{1}{2}(6)(8) = 24$ square meters. Subtract to get the excavated area: $180 - 24 = 156$ square meters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $6 \\times 8 = 48$ for the triangle and left out the $\\frac{1}{2}$. That treats the corner as a 6-by-8 rectangle, so you subtracted twice as much as you should have: $180 - 48 = 132$."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used the 10-meter longest side as one of the triangle's dimensions and got $\\frac{1}{2}(6)(10) = 30$, then $180 - 30 = 150$. The longest side is the hypotenuse, and it is not perpendicular to either leg. The height has to be the other leg, which is 8 meters."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "180 is the area of the whole grid. You stopped before subtracting the unexcavated triangle, so this counts ground the team never dug."
+   }
+  },
+  "id": "orig-flat-figure-pl-H-c1651e",
+  "skill_cd": "S.A.",
+  "subtype": "flat-figure-plug-in",
+  "subtype_name": "2D area or perimeter: plug in and combine",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-flat-figure-pl-H-c1651e",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "meters what is the area in square meters",
+    "what is the area in square meters of",
+    "is the area in square meters of the"
+   ],
+   "residue": 3
+  }
  }
 ]

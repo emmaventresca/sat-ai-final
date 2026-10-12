@@ -624,5 +624,699 @@
    "residue": 2
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "There is a linear relationship between $x$ and $y$. Which of the following equations represents this relationship?",
+  "stimulus": "A dietitian adds scoops of protein powder to a fruit smoothie. The table shows three values of $x$, the number of scoops added, and their corresponding values of $y$, the total protein in the smoothie, in grams.\n\nProtein in a Smoothie\nScoops, $x$ | Total protein (grams), $y$\n1 | 26\n3 | 50\n5 | 74",
+  "choices": [
+   "$y = 14x + 12$",
+   "$y = 12x + 14$",
+   "$y = 13x + 13$",
+   "$y = 12x + 26$"
+  ],
+  "answer": "B",
+  "explanation": "Use two rows to find the slope: $\\frac{50 - 26}{3 - 1} = \\frac{24}{2} = 12$ grams per scoop. Substitute $(1, 26)$: $26 = 12(1) + b$, so $b = 14$, which is the protein in the smoothie before any powder goes in. The equation $y = 12x + 14$ also works for $(5, 74)$, since $12(5) + 14 = 74$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You swapped the slope and the intercept. The protein added per scoop is 12 grams and the starting amount is 14 grams, not the other way round. Check $(3, 50)$: $14(3) + 12 = 54$, not 50."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "This equation works for $(1, 26)$, since $13 + 13 = 26$, but you didn't check the other rows. At $x = 3$ it gives $13(3) + 13 = 52$, not 50. The equation has to fit every point in the table."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You took the $y$-value in the first row as the starting amount. That row is for 1 scoop, not 0 scoops, so 26 grams already includes one scoop of powder. The $y$-intercept is the value when $x = 0$, which is 14."
+   }
+  },
+  "id": "orig-equation-from--M-9151fe",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-9151fe",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "There is a linear relationship between $x$ and $y$. Which of the following equations represents this relationship?",
+  "stimulus": "During a dry spell, an ecologist records the depth of a seasonal wetland pool. The table shows three values of $x$, the number of days since recording began, and their corresponding values of $y$, the depth of the pool, in centimeters.\n\nDepth of a Wetland Pool\nDays, $x$ | Depth (centimeters), $y$\n2 | 84\n6 | 72\n10 | 60",
+  "choices": [
+   "$y = 3x + 78$",
+   "$y = -3x + 84$",
+   "$y = -4x + 92$",
+   "$y = -3x + 90$"
+  ],
+  "answer": "D",
+  "explanation": "The slope is $\\frac{72 - 84}{6 - 2} = \\frac{-12}{4} = -3$, so the pool loses 3 centimeters per day. Substitute $(2, 84)$: $84 = -3(2) + b$, so $b = 90$, which is the depth on day 0. Check $(10, 60)$: $-3(10) + 90 = 60$. The equation is $y = -3x + 90$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You dropped the negative sign on the slope. The depth goes down as the days go up, so the slope must be negative. Using $+3$ with the point $(2, 84)$ gives you this wrong intercept too."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You used the first depth in the table, 84, as the intercept. That depth is for day 2, not day 0. Going back two days at 3 centimeters per day puts the starting depth at 90."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "This equation works for $(2, 84)$, since $-8 + 92 = 84$, but at $x = 6$ it gives $-24 + 92 = 68$, not 72. You checked only one point. The equation has to fit every row."
+   }
+  },
+  "id": "orig-equation-from--M-9d9d8c",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-9d9d8c",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "There is a linear relationship between $x$ and $y$. Which of the following equations represents this relationship?",
+  "stimulus": "In a materials lab, weights are hung from a polymer strip and the strip's length is measured. The table shows three values of $x$, the mass hung, in grams, and their corresponding values of $y$, the length of the strip, in centimeters.\n\nLength of a Polymer Strip\nMass (grams), $x$ | Length (centimeters), $y$\n50 | 14\n150 | 18\n250 | 22",
+  "choices": [
+   "$y = \\frac{1}{25}x + 12$",
+   "$y = 25x + 12$",
+   "$y = \\frac{1}{25}x + 14$",
+   "$y = \\frac{1}{50}x + 13$"
+  ],
+  "answer": "A",
+  "explanation": "The slope is $\\frac{18 - 14}{150 - 50} = \\frac{4}{100} = \\frac{1}{25}$ centimeter per gram. Substitute $(50, 14)$: $14 = \\frac{1}{25}(50) + b = 2 + b$, so $b = 12$, which is the strip's length with no mass hung. Check $(250, 22)$: $10 + 12 = 22$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the change in $x$ by the change in $y$ ($\\frac{100}{4} = 25$), so you found run over rise. The slope is the change in length divided by the change in mass, which is $\\frac{1}{25}$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You used the first length in the table, 14, as the intercept. That length is for a 50-gram mass, not for 0 grams. With no mass hung, the strip is 12 centimeters long."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "This equation works for $(50, 14)$, since $1 + 13 = 14$, but at $x = 150$ it gives $3 + 13 = 16$, not 18. You checked only one point. The equation has to fit every row."
+   }
+  },
+  "id": "orig-equation-from--M-905141",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-905141",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation represents the relationship between $x$ and $y$?",
+  "stimulus": "A warehouse pays each part-time packer a fixed weekly amount plus a set rate for every hour worked. The table shows the total weekly pay $y$, in dollars, for $x$ hours worked. The relationship between $x$ and $y$ is linear.\n\nWeekly Pay for Part-Time Packers\nHours worked, $x$ | Weekly pay, $y$ (dollars)\n10 | 330\n20 | 510\n30 | 690",
+  "choices": [
+   "$y = 18x + 150$",
+   "$y = 150x + 18$",
+   "$y = \\frac{1}{18}x + 150$",
+   "$y = 33x$"
+  ],
+  "answer": "A",
+  "explanation": "From $x = 10$ to $x = 20$, pay rises by $510 - 330 = 180$ dollars over 10 hours, so the slope is $\\frac{180}{10} = 18$. Substituting $(10, 330)$ gives $330 = 18(10) + b$, so $b = 150$. Check with $(30, 690)$: $18(30) + 150 = 690$. The equation must be $y = 18x + 150$.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You found the right two numbers but swapped them, putting the fixed weekly amount where the hourly rate goes. At $x = 10$ this gives $1{,}518$, not $330$."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You worked out the slope as run over rise, $\\frac{10}{180}$, instead of rise over run, $\\frac{180}{10}$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You divided $330$ by $10$ and used only the first row. $y = 33x$ fits $(10, 330)$, but at $x = 20$ it gives $660$, not $510$. Any choice you pick has to fit every row."
+   }
+  },
+  "id": "orig-equation-from--M-560a90",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-560a90",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which equation represents the relationship between __var__ and",
+    "equation represents the relationship between __var__ and __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "Which equation represents the relationship between $x$ and $y$?",
+  "stimulus": "A linguist models the number of fluent speakers $y$, in hundreds, of a regional dialect $x$ decades after a survey began. The table shows values from the model, where $k$ is a positive constant. The relationship is linear.\n\nFluent Speakers of the Dialect (hundreds)\nDecades after survey, $x$ | Speakers, $y$\n0 | $k$\n2 | $\\frac{k}{2}$\n4 | 0",
+  "choices": [
+   "$y = k - 4x$",
+   "$y = k + \\frac{k}{4}x$",
+   "$y = k - \\frac{k}{4}x$",
+   "$y = 4 - \\frac{4}{k}x$"
+  ],
+  "answer": "C",
+  "explanation": "At $x = 0$, $y = k$, so the y-intercept is $k$. From $(0, k)$ to $(4, 0)$, $y$ changes by $-k$ over 4 decades, so the slope is $-\\frac{k}{4}$. That gives $y = k - \\frac{k}{4}x$. Check: at $x = 2$ it gives $\\frac{k}{2}$, and at $x = 4$ it gives $0$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You treated the 4 decades as the slope and ignored that the drop is $k$. This line goes through $(0, k)$, but at $x = 4$ it gives $k - 16$, which is $0$ only if $k$ happens to be 16. The equation has to hold for every positive $k$."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the size of the slope right but lost its sign. The number of speakers goes down as $x$ increases, so the slope has to be negative."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the x-intercept, 4, as the y-intercept, which also flipped the slope to $-\\frac{4}{k}$. At $x = 0$ this gives 4, not $k$."
+   }
+  },
+  "id": "orig-equation-from--M-c33c5b",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-c33c5b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which equation represents the relationship between __var__ and",
+    "equation represents the relationship between __var__ and __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "Which equation represents the relationship between $x$ and $y$?",
+  "stimulus": "A weather balloon records the air temperature $y$, in degrees Fahrenheit, at an altitude of $x$ thousand feet above a launch site. The points shown lie on a line.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Air Temperature by Altitude",
+   "x_label": "Altitude (thousands of feet)",
+   "y_label": "Temperature (\u00b0F)",
+   "points": [
+    [
+     0,
+     60
+    ],
+    [
+     2,
+     52
+    ],
+    [
+     4,
+     44
+    ],
+    [
+     6,
+     36
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 8,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 72,
+   "y_step": 4,
+   "alt": "Scatterplot of four points showing temperature against altitude, falling steadily from left to right."
+  },
+  "choices": [
+   "$y = 60 + 4x$",
+   "$y = 60 - 4x$",
+   "$y = 60 - \\frac{1}{4}x$",
+   "$y = 68 - 8x$"
+  ],
+  "answer": "B",
+  "explanation": "The point at $x = 0$ is $(0, 60)$, so the y-intercept is 60. From $(0, 60)$ to $(2, 52)$, the temperature drops 8 degrees over 2 thousand feet, so the slope is $\\frac{-8}{2} = -4$. That gives $y = 60 - 4x$. Check: $(4, 44)$ and $(6, 36)$ both fit.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the intercept and the size of the slope correctly but gave the slope the wrong sign. The temperature falls as altitude rises, so the slope has to be negative."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You divided run by rise, getting $\\frac{2}{8}$, instead of dividing rise by run, $\\frac{-8}{2}$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You took the 8-degree drop between neighbouring points as the change per thousand feet, but those points are 2 thousand feet apart. This line goes through $(2, 52)$, but at $x = 4$ it gives $36$, not $44$. The equation has to fit every point."
+   }
+  },
+  "id": "orig-equation-from--M-2c5f63",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-2c5f63",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which equation represents the relationship between __var__ and",
+    "equation represents the relationship between __var__ and __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "The table shows three values of $x$ and their corresponding values of $y$. Which equation represents the linear relationship between $x$ and $y$?",
+  "stimulus": "An astronomer models the altitude $y$, in degrees above the horizon, of a slowly rising star $x$ hours after a reference time. The relationship is linear.\n\nAltitude of the Star\n$x$ (hours) | $y$ (degrees)\n3 | \u22122\n9 | 6\n12 | 10",
+  "choices": [
+   "$3x - 4y = 17$",
+   "$4x - 3y = 18$",
+   "$4x - 3y = -18$",
+   "$2x + 3y = 0$"
+  ],
+  "answer": "B",
+  "explanation": "Put each pair into the choices. For $4x - 3y = 18$: $4(3) - 3(-2) = 12 + 6 = 18$, $4(9) - 3(6) = 36 - 18 = 18$, and $4(12) - 3(10) = 48 - 30 = 18$. All three rows work. You can also check it the other way: the slope is $\\frac{6 - (-2)}{9 - 3} = \\frac{8}{6} = \\frac{4}{3}$, and $4x - 3y = 18$ rearranges to $y = \\frac{4}{3}x - 6$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You worked out the slope as run over rise, $\\frac{6}{8} = \\frac{3}{4}$, and then forced the line through $(3, -2)$. The first row works, but $3(9) - 4(6) = 3$, not $17$, so the line misses the other two points."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "The slope is right, but the y-intercept has the wrong sign. This line crosses at $y = 6$ instead of $y = -6$. Check $(3, -2)$: $12 + 6 = 18$, not $-18$."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This line goes through $(3, -2)$, since $6 - 6 = 0$, but its slope is negative and the altitude in the table is rising. At $(9, 6)$ you get $18 + 18 = 36$, not $0$. Passing through one point isn't enough."
+   }
+  },
+  "id": "orig-equation-from--M-283df9",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-283df9",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "their corresponding values of __var__ which equation represents",
+    "corresponding values of __var__ which equation represents the",
+    "values of __var__ which equation represents the linear",
+    "of __var__ which equation represents the linear relationship",
+    "__var__ which equation represents the linear relationship between",
+    "which equation represents the linear relationship between __var__",
+    "equation represents the linear relationship between __var__ and",
+    "represents the linear relationship between __var__ and __var__"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "$5x + 2y = 140$\n\nWhich table gives three values of $x$ and their corresponding values of $y$ for the given equation?",
+  "stimulus": "A folklorist plans a 140-minute recording session with a village storyteller. Each ballad takes 5 minutes and each riddle takes 2 minutes. The given equation relates the number of ballads, $x$, to the number of riddles, $y$, that fill the session exactly.",
+  "choices": [
+   "$x$: 4, 14, 24; $y$: 60, 35, 10",
+   "$x$: 4, 14, 24; $y$: 60, 85, 110",
+   "$x$: 4, 14, 24; $y$: 130, 105, 80",
+   "$x$: 4, 14, 24; $y$: 60, 56, 52"
+  ],
+  "answer": "A",
+  "explanation": "Check every row of each table in the equation. For the first table: $5(4) + 2(60) = 20 + 120 = 140$, $5(14) + 2(35) = 70 + 70 = 140$, and $5(24) + 2(10) = 120 + 20 = 140$. Each extra ballad uses 5 minutes, which is 2.5 fewer riddles, so 10 more ballads means 25 fewer riddles.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The first row is right, but $y$ goes up by 25 when it should go down. More ballads leave less time for riddles. At $(14, 85)$ you get $70 + 170 = 240$, not $140$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "When you solved for $y$, you divided $5x$ by 2 but not $140$. That gives $y = 140 - 2.5x$, which starts at 130 instead of 60. At $(4, 130)$ you get $20 + 260 = 280$."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used run over rise, a slope of $-\\frac{2}{5}$, so $y$ drops by only 4 for every 10 ballads. The table matches the equation at $x = 4$ but nowhere else: $5(14) + 2(56) = 182$."
+   }
+  },
+  "id": "orig-equation-from--M-4bcaca",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-4bcaca",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The table shows three values of $x$ and their corresponding values of $y$. Which equation represents the linear relationship between $x$ and $y$?",
+  "stimulus": "A meteorologist launches a weather balloon and records the air temperature $y$, in degrees Celsius, at an altitude of $x$ kilometers. Up to 10 kilometers, the relationship is linear.\n\nTemperature Above the Launch Site\n$x$ (km) | $y$ (\u00b0C)\n2 | 7\n6 | \u221219\n10 | \u221245",
+  "choices": [
+   "$2x + 13y = 95$",
+   "$13x + 2y = 20$",
+   "$13x + 2y = 40$",
+   "$13x - 2y = 12$"
+  ],
+  "answer": "C",
+  "explanation": "Put each pair into the choices. For $13x + 2y = 40$: $13(2) + 2(7) = 26 + 14 = 40$, $13(6) + 2(-19) = 78 - 38 = 40$, and $13(10) + 2(-45) = 130 - 90 = 40$. All three rows work. Working forward gives the same line: the slope is $\\frac{-19 - 7}{6 - 2} = -6.5$ and the y-intercept is 20, so $y = -6.5x + 20$. Doubling both sides gives $13x + 2y = 40$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used run over rise, a slope of $-\\frac{2}{13}$, and forced the line through $(2, 7)$. The first row checks out, but $2(6) + 13(-19) = -235$, not $95$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You started from $y = -6.5x + 20$ and doubled the $x$ and $y$ terms but not the constant. Check $(2, 7)$: $26 + 14 = 40$, not $20$."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This line goes through $(2, 7)$, since $26 - 14 = 12$, but its slope is positive and the temperature falls as the balloon rises. At $(6, -19)$ you get $78 + 38 = 116$, not $12$."
+   }
+  },
+  "id": "orig-equation-from--M-023134",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-023134",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "their corresponding values of __var__ which equation represents",
+    "corresponding values of __var__ which equation represents the",
+    "values of __var__ which equation represents the linear",
+    "of __var__ which equation represents the linear relationship",
+    "__var__ which equation represents the linear relationship between",
+    "which equation represents the linear relationship between __var__",
+    "equation represents the linear relationship between __var__ and",
+    "represents the linear relationship between __var__ and __var__"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which equation represents the relationship between $x$ and $d$?",
+  "stimulus": "A hydrologist tracked the water depth in two reservoirs, P and Q, during a dry spell. The table shows the depth of each reservoir $x$ days after the study began. Let $d$ be how many meters deeper Reservoir P is than Reservoir Q after $x$ days.\nWater Depth (meters)\nDay, $x$ | Reservoir P | Reservoir Q\n0 | 40 | 22\n2 | 37 | 23\n4 | 34 | 24\n6 | 31 | 25",
+  "choices": [
+   "$d = 40 - 1.5x$",
+   "$d = 18 - 0.5x$",
+   "$d = 18 - 2x$",
+   "$d = 2x - 18$"
+  ],
+  "answer": "C",
+  "explanation": "Subtract to get the gap on each day: $40 - 22 = 18$, $37 - 23 = 14$, $34 - 24 = 10$, $31 - 25 = 6$. When $x = 0$ the gap is 18, so that is the intercept. Each time $x$ goes up by 2, the gap shrinks by 4, so the slope is $\\frac{-4}{2} = -2$. That gives $d = 18 - 2x$. Check it at $x = 6$: $18 - 12 = 6$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the depth of Reservoir P alone ($40$, falling $1.5$ m per day). The question asks for the gap between the two reservoirs, so you need to subtract Q's depth first."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You worked out the slope as run over rise, $\\frac{2}{-4} = -0.5$. Slope is rise over run: the gap changes by $-4$ for every 2 days, so the slope is $-2$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "This equation gives Q's depth minus P's depth, which comes out negative on day 0. The question asks how much deeper P is than Q, so subtract in the order P minus Q."
+   }
+  },
+  "id": "orig-equation-from--M-426a2c",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-426a2c",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which equation represents the relationship between __var__ and",
+    "equation represents the relationship between __var__ and __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "Which equation represents the relationship between $x$ and $d$?",
+  "stimulus": "A paleobotanist counted stomata (leaf pores) on a fossil leaf at points $x$ millimeters from its base. The graph shows the density on the lower surface, in stomata per square millimeter. At every point, the upper surface has 12 stomata per square millimeter. Let $d$ be how many more stomata per square millimeter the lower surface has than the upper surface.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Lower-Surface Stomata Density on a Fossil Leaf",
+   "x_label": "Distance from base (mm)",
+   "y_label": "Stomata per square millimeter",
+   "points": [
+    [
+     0,
+     42
+    ],
+    [
+     2,
+     36
+    ],
+    [
+     4,
+     30
+    ],
+    [
+     6,
+     24
+    ],
+    [
+     8,
+     18
+    ],
+    [
+     10,
+     12
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 48,
+   "y_step": 6,
+   "alt": "Six points falling in a straight line: (0, 42), (2, 36), (4, 30), (6, 24), (8, 18), and (10, 12)."
+  },
+  "choices": [
+   "$d = 42 - 3x$",
+   "$d = 30 - 3x$",
+   "$d = 30 - \\frac{1}{3}x$",
+   "$d = 54 - 3x$"
+  ],
+  "answer": "B",
+  "explanation": "From the graph, the lower-surface density starts at 42 and falls by 6 for every 2 mm, so its slope is $\\frac{-6}{2} = -3$. That makes the lower-surface density $42 - 3x$. The gap is this minus the upper surface's 12: $d = (42 - 3x) - 12 = 30 - 3x$. Check it at $x = 10$: the lower surface has 12, the same as the upper surface, and $30 - 30 = 0$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the line on the graph, the lower-surface density alone. The question asks how many more stomata the lower surface has than the upper surface, so you still need to subtract 12."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You worked out the slope as run over rise, $\\frac{2}{-6} = -\\frac{1}{3}$. The density falls 6 for every 2 mm, so the slope is rise over run, $-3$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the upper surface's 12 stomata instead of subtracting them. A gap is a difference, so it should be $42 - 12$, not $42 + 12$."
+   }
+  },
+  "id": "orig-equation-from--M-9a245c",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-9a245c",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which equation represents the relationship between __var__ and",
+    "equation represents the relationship between __var__ and __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "Which equation represents the relationship between $x$ and $d$?",
+  "stimulus": "A linguist compared English passages with their Finnish translations. The table shows the total word count of each version for passages that are $x$ sentences long. Let $d$ be how many more words the English version has than the Finnish version.\nWord Counts by Passage Length\nSentences, $x$ | English words | Finnish words\n2 | 30 | 19\n4 | 56 | 37\n6 | 82 | 55\n8 | 108 | 73",
+  "choices": [
+   "$d = 13x + 4$",
+   "$d = 8x - 5$",
+   "$d = 4x + 11$",
+   "$d = 4x + 3$"
+  ],
+  "answer": "D",
+  "explanation": "Subtract to get the gaps: 11, 19, 27, 35. Each time $x$ goes up by 2, the gap grows by 8, so the slope is $\\frac{8}{2} = 4$. The table doesn't start at $x = 0$, so use a point to find the intercept: $11 = 4(2) + b$, which gives $b = 3$. So $d = 4x + 3$. Check it at $x = 8$: $32 + 3 = 35$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This equation gives the English word count alone. The question asks how many more words the English version has than the Finnish one, so you need the difference between the two columns."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You used the change in the gap, 8, as the slope without dividing by the change in $x$, which is 2. This line passes through $(2, 11)$ but gives 27 at $x = 4$ instead of 19. Always check a second point."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the first gap, 11, as the y-intercept. That gap is at $x = 2$, not $x = 0$, so the intercept is $11 - 4(2) = 3$."
+   }
+  },
+  "id": "orig-equation-from--M-226f98",
+  "skill_cd": "H.C.",
+  "subtype": "equation-from-table-or-graph",
+  "subtype_name": "Match the equation to a table or graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-226f98",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which equation represents the relationship between __var__ and",
+    "equation represents the relationship between __var__ and __var__"
+   ],
+   "residue": 4
+  }
  }
 ]

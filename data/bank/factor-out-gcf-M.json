@@ -248,5 +248,647 @@
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which expression is equivalent to $12a^3b^2 + 20a^2b^3 - 4a^2b^2$?",
+  "stimulus": "An astronomer studying a binary star system uses the expression $12a^3b^2 + 20a^2b^3 - 4a^2b^2$ in a model, where $a$ and $b$ are the masses of the two stars, in solar masses.",
+  "choices": [
+   "$4a^2b^2(3a + 5b)$",
+   "$4a^2b^2(3a + 5b + 1)$",
+   "$4a^2b^2(3a + 5b - 1)$",
+   "$4a^2b^2(3a + 5b^2 - 1)$"
+  ],
+  "answer": "C",
+  "explanation": "Every term has a coefficient divisible by 4, and the lowest powers that all three terms share are $a^2$ and $b^2$, so the greatest common factor is $4a^2b^2$. Divide each term by it: $12a^3b^2 \\div 4a^2b^2 = 3a$, $20a^2b^3 \\div 4a^2b^2 = 5b$, and $-4a^2b^2 \\div 4a^2b^2 = -1$. That gives $4a^2b^2(3a + 5b - 1)$. To check, multiply it back out and you get the original three terms.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the third term. Because $-4a^2b^2$ is exactly the common factor, dividing it leaves $-1$, not nothing. If you multiply this choice out, you get only two terms."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored correctly but lost the negative sign on the last term. $-4a^2b^2 \\div 4a^2b^2$ is $-1$, so multiplying this choice out gives $+4a^2b^2$ instead of $-4a^2b^2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You lowered the exponent of $a$ but forgot to lower the exponent of $b$ in the second term. $20a^2b^3 \\div 4a^2b^2$ is $5b$, not $5b^2$, so this choice multiplies out to $20a^2b^4$."
+   }
+  },
+  "id": "orig-factor-out-gcf-M-b1aa39",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-b1aa39",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $24x^3 - 16x^2 + 8x$?",
+  "stimulus": "A county health analyst estimates the yearly cost, in dollars, of running a blood-pressure screening program in a neighborhood of $x$ hundred residents with the expression $24x^3 - 16x^2 + 8x$.",
+  "choices": [
+   "$8x(3x^2 - 2x)$",
+   "$8x(3x^3 - 2x^2 + x)$",
+   "$8x(3x^2 - 2x + 1)$",
+   "$4x(6x^2 - 4x + 1)$"
+  ],
+  "answer": "C",
+  "explanation": "The coefficients 24, 16 and 8 share a greatest common factor of 8, and every term has at least one factor of $x$, so the GCF is $8x$. Dividing each term by $8x$ gives $3x^2$, $-2x$ and $1$, so the expression equals $8x(3x^2 - 2x + 1)$. To check, multiply it back out: $24x^3 - 16x^2 + 8x$. You can also test $x = 2$: both the original and this choice equal 144.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the last term. Dividing $8x$ by $8x$ gives 1, not nothing, so the bracket needs a $+1$. Without it, this expands to $24x^3 - 16x^2$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the coefficients by 8 but left every power of $x$ unchanged. Once you pull out $8x$, each exponent has to go down by one. As written, this expands to $24x^4 - 16x^3 + 8x^2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You pulled out $4x$, which is a common factor but not the greatest one, and then divided the last term wrongly. $8x \\div 4x = 2$, not 1, so this expands to $24x^3 - 16x^2 + 4x$."
+   }
+  },
+  "id": "orig-factor-out-gcf-M-6d3f50",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-6d3f50",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $18a^2b + 27ab^2$, where $a > 0$ and $b > 0$?",
+  "stimulus": "A paleobotanist uses the expression $18a^2b + 27ab^2$ to compare fossil pollen counts across sediment layers, where $a$ is the layer thickness, in centimeters, and $b$ is the sampling depth, in meters.",
+  "choices": [
+   "$9ab(2a^2 + 3b^2)$",
+   "$9ab(3a + 2b)$",
+   "$9ab(2a + 3)$",
+   "$9ab(2a + 3b)$"
+  ],
+  "answer": "D",
+  "explanation": "The GCF of 18 and 27 is 9. Both terms contain at least one $a$ and at least one $b$, so the GCF is $9ab$. $18a^2b \\div 9ab = 2a$ and $27ab^2 \\div 9ab = 3b$, which gives $9ab(2a + 3b)$. To check, pick two different numbers, such as $a = 2$ and $b = 3$: the original and this choice both equal 702.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You pulled out $9ab$ but didn't lower the exponents in the bracket. $a^2 \\div a$ is $a$, not $a^2$. This choice expands to $18a^3b + 27ab^3$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the right GCF but swapped the quotients, putting the 3 with $a$ and the 2 with $b$. This expands to $27a^2b + 18ab^2$, so the coefficients are on the wrong terms."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "When you divided the second term by $9ab$, you also removed the remaining $b$. $27ab^2 \\div 9ab = 3b$, not 3, so this expands to $18a^2b + 27ab$."
+   }
+  },
+  "id": "orig-factor-out-gcf-M-4aa113",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-4aa113",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $15x^4 + 25x^3 - 10x^2$?",
+  "stimulus": "An astronomer models the brightness, in arbitrary units, of a variable star at time $x$ days after observation begins with the expression $15x^4 + 25x^3 - 10x^2$.",
+  "choices": [
+   "$5x^2(3x^2 + 5x - 10)$",
+   "$5x^2(3x^2 + 5x - 2)$",
+   "$5x^3(3x + 5 - 2)$",
+   "$5x^2(3x^2 + 5x + 2)$"
+  ],
+  "answer": "B",
+  "explanation": "The GCF of 15, 25 and 10 is 5. The lowest power of $x$ in all three terms is $x^2$, so the GCF is $5x^2$. Dividing each term by $5x^2$ gives $3x^2$, $5x$ and $-2$, so the expression equals $5x^2(3x^2 + 5x - 2)$. To check, test $x = 2$: both the original and this choice equal 400.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You lowered the power of $x$ in the last term but didn't divide its coefficient by 5. $-10x^2 \\div 5x^2 = -2$, not $-10$, so this expands to $15x^4 + 25x^3 - 50x^2$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You pulled out $x^3$, but the last term contains only $x^2$. A common factor has to divide every term, and the lowest power present is $x^2$. This choice expands to $15x^4 + 25x^3 - 10x^3$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost the negative sign on the last term. $-10x^2 \\div 5x^2 = -2$, so this choice expands to $15x^4 + 25x^3 + 10x^2$."
+   }
+  },
+  "id": "orig-factor-out-gcf-M-d48340",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-d48340",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $18x^3 + 24x^2 - 6x$?",
+  "stimulus": "A sports scientist models the extra power output, in watts, of a cyclist $x$ seconds into a sprint with the expression $18x^3 + 24x^2 - 6x$.",
+  "choices": [
+   "$6x(3x^2 + 4x)$",
+   "$6x(3x^2 + 4x - 1)$",
+   "$3x(6x^2 + 8x - 1)$",
+   "$6x(3x^3 + 4x^2 - 1)$"
+  ],
+  "answer": "B",
+  "explanation": "The greatest common factor of 18, 24 and 6 is 6, and the lowest power of $x$ that all three terms share is $x^1$, so you pull out $6x$. Dividing each term by $6x$ gives $18x^3 \\div 6x = 3x^2$, $24x^2 \\div 6x = 4x$ and $-6x \\div 6x = -1$. That makes $6x(3x^2 + 4x - 1)$. To check, multiply it back out: $18x^3 + 24x^2 - 6x$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided $-6x$ by $6x$, got $-1$, and then left that term out of the bracket. When a term's quotient is 1 or $-1$, it still has to go in the bracket. Multiplying this choice back out gives only $18x^3 + 24x^2$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You pulled out $3x$ and divided the first two terms correctly, but you wrote $-1$ for the last term. $-6x \\div 3x = -2$, so this choice multiplies back out to $-3x$ in place of $-6x$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the coefficients by 6 but didn't take one power of $x$ off each term. Inside the bracket, $x^3$ should be $x^2$ and $x^2$ should be $x$. Multiplying back out gives $18x^4$, which isn't in the original."
+   }
+  },
+  "id": "orig-factor-out-gcf-M-a6b9dd",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-a6b9dd",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $15a^2b - 25ab^2 + 5ab$?",
+  "stimulus": "A paleobotanist estimates the preserved leaf area, in square millimeters, of a fossil fern with the expression $15a^2b - 25ab^2 + 5ab$, where $a$ and $b$ are measured vein lengths.",
+  "choices": [
+   "$5(3a^2b - 5ab^2 + 1)$",
+   "$5ab(3a - 5b)$",
+   "$5ab(3a - 5b + 1)$",
+   "$5ab(3a^2b - 5ab^2 + 1)$"
+  ],
+  "answer": "C",
+  "explanation": "The coefficients 15, 25 and 5 have a GCF of 5. Each term contains at least one $a$ and at least one $b$, so the greatest common factor is $5ab$. Dividing each term by it gives $3a$, $-5b$ and $1$, which makes $5ab(3a - 5b + 1)$. Multiplying this back out gives the original expression.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You took out only the 5, which isn't the greatest common factor, and then wrote $1$ for the last term as if you had divided by $5ab$. $5ab \\div 5 = ab$, not 1, so this choice multiplies back out to $+5$ in place of $+5ab$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided $5ab$ by $5ab$, got 1, and then dropped that term. Its quotient is 1, but it still belongs in the bracket. Without it, the product is only $15a^2b - 25ab^2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You put $5ab$ outside but didn't remove an $a$ and a $b$ from each term inside the bracket. Multiplying back out gives terms like $15a^3b^2$, which aren't in the original."
+   }
+  },
+  "id": "orig-factor-out-gcf-M-f7d78f",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-f7d78f",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the expression __var__ where __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $28x^5 + 14x^3 - 42x^2$?",
+  "stimulus": "An archaeologist models the volume of soil, in liters, removed from a trench $x$ meters deep with the expression $28x^5 + 14x^3 - 42x^2$.",
+  "choices": [
+   "$14x^2(2x^3 - 3)$",
+   "$14x^2(2x^3 + x + 3)$",
+   "$14x^2(2x^5 + x^3 - 3x^2)$",
+   "$14x^2(2x^3 + x - 3)$"
+  ],
+  "answer": "D",
+  "explanation": "The GCF of 28, 14 and 42 is 14, and the lowest power of $x$ in the three terms is $x^2$, so you pull out $14x^2$. Dividing each term by it gives $28x^5 \\div 14x^2 = 2x^3$, $14x^3 \\div 14x^2 = x$ and $-42x^2 \\div 14x^2 = -3$. That makes $14x^2(2x^3 + x - 3)$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the middle term. Dividing $14x^3$ by $14x^2$ gives $x$, whose coefficient is 1, so it's easy to overlook. It still has to go in the bracket, or the product is missing $14x^3$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost the negative sign on the last term. $-42x^2 \\div 14x^2 = -3$, not $+3$, so this choice multiplies back out to $+42x^2$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the coefficients by 14 but kept the original exponents. Taking out $x^2$ lowers each exponent by 2, so $x^5$ becomes $x^3$, $x^3$ becomes $x$ and $x^2$ becomes 1. As written, this choice multiplies out to $28x^7$ and more."
+   }
+  },
+  "id": "orig-factor-out-gcf-M-258377",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-258377",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to the number of grams by which the biomass of plot A exceeds the biomass of plot B?",
+  "stimulus": "An agronomist models the dry biomass of two wheat test plots. Plot A produces $20x^3 + 14x^2$ grams and plot B produces $6x^3 + 2x^2$ grams, where $x > 0$.",
+  "choices": [
+   "$2x^2(7x^2 + 6x)$",
+   "$2x^2(10x + 7)$",
+   "$2x^2(7x + 8)$",
+   "$2x^2(7x + 6)$"
+  ],
+  "answer": "D",
+  "explanation": "First find the gap: $(20x^3 + 14x^2) - (6x^3 + 2x^2) = 14x^3 + 12x^2$. The GCF of 14 and 12 is 2, and the lowest power of $x$ in both terms is $x^2$, so you pull out $2x^2$. That leaves $14x^3 \\div 2x^2 = 7x$ and $12x^2 \\div 2x^2 = 6$, so the result is $2x^2(7x + 6)$. Multiply it back out to check: $14x^3 + 12x^2$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You pulled out $2x^2$ but only divided the coefficients. You didn't lower the exponents, so the bracket still has $x^2$ and $x$ in it. Multiplying back gives $14x^4 + 12x^3$, not $14x^3 + 12x^2$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You factored plot A's biomass, $20x^3 + 14x^2$, by itself. The question asks for the gap between the two plots, so you have to subtract plot B before you factor."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "When you subtracted, the minus sign only reached the first term of plot B. You added $2x^2$ when you should have subtracted it, which gives $14x^3 + 16x^2$."
+   }
+  },
+  "id": "orig-factor-out-gcf-M-c5bfe9",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-c5bfe9",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to how much greater the concentration in sample 1 is than the concentration in sample 2?",
+  "stimulus": "An immunologist models antibody concentrations, in micrograms per milliliter, in two blood samples taken $t$ weeks after vaccination. Sample 1 has a concentration of $24t^2 + 36t$ and sample 2 has a concentration of $9t^2 + 6t$, where $t > 0$.",
+  "choices": [
+   "$15t(t^2 + 2)$",
+   "$12t(2t + 3)$",
+   "$15t(t + 2)$",
+   "$3t(5t + 14)$"
+  ],
+  "answer": "C",
+  "explanation": "First find the difference: $(24t^2 + 36t) - (9t^2 + 6t) = 15t^2 + 30t$. The GCF of 15 and 30 is 15, and both terms contain at least $t^1$, so you pull out $15t$. Then $15t^2 \\div 15t = t$ and $30t \\div 15t = 2$, giving $15t(t + 2)$. Expanding it back gives $15t^2 + 30t$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You took $15t$ out of the first term but didn't lower its exponent, so you left $t^2$ in the bracket when it should be $t$. This expands to $15t^3 + 30t$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You factored sample 1's concentration, $24t^2 + 36t$, by itself. The question asks how much greater it is than sample 2, so you need to subtract first."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the linear terms ($36t + 6t = 42t$) when you should have subtracted them. That gives $15t^2 + 42t$, which factors as $3t(5t + 14)$."
+   }
+  },
+  "id": "orig-factor-out-gcf-M-d7a0c9",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-d7a0c9",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to the number of millimeters by which station P's rainfall exceeds station Q's rainfall?",
+  "stimulus": "A meteorologist models storm rainfall at two weather stations, where $h$ is the number of hours since the storm began. Station P records $16h^3 + 10h^2 + 4h$ millimeters and station Q records $4h^3 + 6h^2$ millimeters, where $h > 0$.",
+  "choices": [
+   "$4h(3h^2 + h)$",
+   "$4h(3h^2 + h + 1)$",
+   "$2h(8h^2 + 5h + 2)$",
+   "$4h(3h^2 + 4h + 1)$"
+  ],
+  "answer": "B",
+  "explanation": "Subtract first: $(16h^3 + 10h^2 + 4h) - (4h^3 + 6h^2) = 12h^3 + 4h^2 + 4h$. The GCF of 12, 4 and 4 is 4, and the lowest power of $h$ is $h^1$, so you pull out $4h$. Dividing each term by $4h$ gives $3h^2$, $h$ and $1$, so the result is $4h(3h^2 + h + 1)$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the last term. When you divide $4h$ by $4h$ you get 1, and that 1 still has to go in the bracket. Without it, the expression expands to $12h^3 + 4h^2$ and the $4h$ is lost."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You factored station P's rainfall, $16h^3 + 10h^2 + 4h$, by itself. The question asks how much more rain P had than Q, so you need to subtract Q first."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the middle term's coefficient incorrectly and left a 4 in front of $h$, when $4h^2 \\div 4h$ is just $h$. This expands to $12h^3 + 16h^2 + 4h$."
+   }
+  },
+  "id": "orig-factor-out-gcf-M-1eae68",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-1eae68",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $18x^4 + 24x^3 - 6x^2$?",
+  "stimulus": "An ecologist studying a meadow models the total seed mass produced by a patch of wildflowers, in grams, with the expression $18x^4 + 24x^3 - 6x^2$, where $x$ is the width of the patch, in meters.",
+  "choices": [
+   "$6x^2(3x^2 + 4x - 1)$",
+   "$6x^2(3x^2 + 4x - 6)$",
+   "$6x^2(3x^4 + 4x^3 - 1)$",
+   "$6x(3x^2 + 4x - 1)$"
+  ],
+  "answer": "A",
+  "explanation": "The coefficients 18, 24 and 6 have a greatest common factor of 6. The lowest power of $x$ in all three terms is $x^2$, so the GCF is $6x^2$. Dividing each term by $6x^2$ gives $3x^2$, $4x$ and $-1$, so the expression is $6x^2(3x^2 + 4x - 1)$. To check, substitute $x = 2$: the original gives $288 + 192 - 24 = 456$, and $24(12 + 8 - 1) = 456$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the $x^2$ out of the last term but didn't divide its coefficient by 6, so you left $-6$ where $-1$ belongs. Multiplied back out, this gives $-36x^2$, not $-6x^2$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You pulled $x^2$ out front but didn't lower the exponents inside the bracket. Multiplied back out, this gives $18x^6 + 24x^5 - 6x^2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You pulled out only $x$ but kept the bracket you'd get from dividing by $x^2$. Each term then comes out one power of $x$ too low: $18x^3 + 24x^2 - 6x$."
+   }
+  },
+  "id": "orig-factor-out-gcf-M-8f6d1f",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-8f6d1f",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the expression __var__ where __var__ is the width"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $15a^3b^2 - 35a^2b^3 + 5a^2b^2$?",
+  "stimulus": "A marine biologist estimates the oxygen use of a kelp-forest sample with the expression $15a^3b^2 - 35a^2b^3 + 5a^2b^2$, where $a$ and $b$ are positive measurements taken at two depths.",
+  "choices": [
+   "$5a^2b^2(3a - 7b)$",
+   "$5a^2b^2(3a - 7b + 1)$",
+   "$5a^2b^2(3a - 7b + 5)$",
+   "$5ab(3a^2b - 7ab^2 + 1)$"
+  ],
+  "answer": "B",
+  "explanation": "The coefficients 15, 35 and 5 share a greatest factor of 5. The lowest powers that every term shares are $a^2$ and $b^2$, so the GCF is $5a^2b^2$. Dividing each term by it gives $3a$, $-7b$ and $1$, so the expression is $5a^2b^2(3a - 7b + 1)$. To check, use $a = 2$ and $b = 3$: the original gives $1080 - 3780 + 180 = -2520$, and $180(6 - 21 + 1) = -2520$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "The last term divided by the GCF is 1, and you dropped it instead of writing $+1$ in the bracket. Multiplied back out, this loses the $5a^2b^2$ term."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the variables out of the last term but not its coefficient, so you left $+5$ instead of $+1$. That makes the last term $25a^2b^2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You pulled out only $5ab$, which divides the first two terms correctly, then wrote 1 for the last term as if you'd divided by all of $5a^2b^2$. Multiplied back out, the last term is $5ab$, not $5a^2b^2$."
+   }
+  },
+  "id": "orig-factor-out-gcf-M-bfcbfc",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-bfcbfc",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the expression __var__ where __var__ and __var__ are"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $28x^5 - 42x^3 + 14x^2$?",
+  "stimulus": "A hydrologist models the volume of water held in a stretch of riverbed, in cubic meters, with the expression $28x^5 - 42x^3 + 14x^2$, where $x$ is the depth of the channel, in meters.",
+  "choices": [
+   "$7x^2(4x^3 - 6x + 1)$",
+   "$14x(2x^4 - 3x^2 + 1)$",
+   "$14x^2(2x^3 - 3x + 1)$",
+   "$14x^2(2x^3 - 3x)$"
+  ],
+  "answer": "C",
+  "explanation": "The greatest common factor of 28, 42 and 14 is 14, and the lowest power of $x$ in all three terms is $x^2$, so the GCF is $14x^2$. Dividing each term by $14x^2$ gives $2x^3$, $-3x$ and $1$, so the expression is $14x^2(2x^3 - 3x + 1)$. To check, substitute $x = 2$: the original gives $896 - 336 + 56 = 616$, and $56(16 - 6 + 1) = 616$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You pulled out 7 instead of the greatest factor, 14. The first two terms still work, but the last term needed a 2 in the bracket, not a 1, so this gives $7x^2$ where $14x^2$ belongs."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You pulled out only $x$ instead of $x^2$, then wrote 1 for the last term as if you'd divided by $14x^2$. Multiplied back out, the last term is $14x$, not $14x^2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "The last term divided by $14x^2$ is 1, and you dropped it instead of writing $+1$. Multiplied back out, this loses the $14x^2$ term."
+   }
+  },
+  "id": "orig-factor-out-gcf-M-7e7451",
+  "skill_cd": "P.A.",
+  "subtype": "factor-out-gcf",
+  "subtype_name": "Pull out the greatest common factor",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-out-gcf-M-7e7451",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

@@ -214,5 +214,593 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "The function $f$ is defined by $f(x) = mx + b$, where $m$ and $b$ are constants. What is the value of $m + b$?",
+  "stimulus": "A linguist uses a linear function $f$ to model the number of words, $f(x)$, on a learner's vocabulary list after $x$ weeks of study. The table shows three values of $f$.\n\nVocabulary List Size\n$x$ | $f(x)$\n2 | 19\n5 | 31\n8 | 43",
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "Find the slope from any two rows: $m = \\frac{31 - 19}{5 - 2} = \\frac{12}{3} = 4$. Substitute a row into $f(x) = 4x + b$: $19 = 4(2) + b$, so $b = 11$. The question asks for the sum, so $m + b = 4 + 11 = 15$. You can check this another way: $m + b$ is just $f(1)$.",
+  "common_errors": [
+   {
+    "value": "11",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the intercept correctly and gave $b$ alone instead of $m + b$."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope alone instead of the sum."
+   },
+   {
+    "value": "18.75",
+    "misconception": "graph-feature-mismatch",
+    "why": "Computed the slope as change in $x$ over change in $f(x)$, $\\frac{3}{12} = \\frac{1}{4}$. That gives $b = 19 - \\frac{1}{2} = 18.5$ and a sum of $18.75$."
+   },
+   {
+    "value": "75/4",
+    "misconception": "graph-feature-mismatch",
+    "why": "Same inverted slope, entered as a fraction."
+   }
+  ],
+  "id": "orig-equation-from--M-b3fb2e",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-b3fb2e",
+   "structure": [],
+   "solver_answer": 15,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Based on the model, what will the chick's wingspan be, in centimeters, when it is 20 days old?",
+  "stimulus": "An ornithologist models the wingspan of a growing chick as a linear function of its age. The chick's wingspan is 22 centimeters at 6 days old and 38 centimeters at 14 days old.",
+  "keys": [
+   "50"
+  ],
+  "any_of": false,
+  "explanation": "The slope is $\\frac{38 - 22}{14 - 6} = \\frac{16}{8} = 2$ centimeters per day. Substitute one point: $22 = 2(6) + b$, so $b = 10$ and $w = 2d + 10$. At $d = 20$: $w = 2(20) + 10 = 50$.",
+  "common_errors": [
+   {
+    "value": "29",
+    "misconception": "graph-feature-mismatch",
+    "why": "Used days over centimeters for the slope, $\\frac{8}{16} = \\frac{1}{2}$. That gives $b = 22 - 3 = 19$ and $\\frac{1}{2}(20) + 19 = 29$."
+   },
+   {
+    "value": "16",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the change in wingspan, $38 - 22$, without dividing by the 8 days."
+   },
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the wingspan at hatching (the intercept) instead of the wingspan at day 20."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the growth rate instead of a wingspan."
+   }
+  ],
+  "id": "orig-equation-from--M-8e6877",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-8e6877",
+   "structure": [],
+   "solver_answer": 50,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many days after installation will the battery's charge be 25 percent?",
+  "stimulus": "A seismometer at a remote station runs on a battery whose charge, in percent, decreases linearly by 3 percentage points per day. Four days after installation, the charge is 76 percent.",
+  "keys": [
+   "21"
+  ],
+  "any_of": false,
+  "explanation": "The charge goes down, so the slope is $-3$. Substitute the point $(4, 76)$ into $C = -3d + b$: $76 = -12 + b$, so $b = 88$. Then set $C = 25$: $25 = -3d + 88$, so $3d = 63$ and $d = 21$.",
+  "common_errors": [
+   {
+    "value": "17",
+    "misconception": "intermediate-step",
+    "why": "Found $\\frac{76 - 25}{3} = 17$, which is the number of days after day 4, and forgot to add the 4 days already passed."
+   },
+   {
+    "value": "13",
+    "misconception": "algebra-manipulation",
+    "why": "Got the sign wrong when solving for the intercept ($b = 76 - 12 = 64$), then found $\\frac{64 - 25}{3} = 13$."
+   },
+   {
+    "value": "88",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the starting charge (the intercept) instead of the number of days."
+   }
+  ],
+  "id": "orig-equation-from--M-60bf63",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-60bf63",
+   "structure": [],
+   "solver_answer": 21,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The estimated age of a layer is a linear function of its depth. What is the value of $k$?",
+  "stimulus": "At an excavation, archaeologists estimate the age, in years, of soil layers at different depths, in centimeters, below the surface.\n\nEstimated Age of Soil Layers\nDepth (cm) | Age (years)\n40 | 1,100\n70 | 1,550\n130 | $k$",
+  "keys": [
+   "2450"
+  ],
+  "any_of": false,
+  "explanation": "Use the first two rows to find the slope: $\\frac{1550 - 1100}{70 - 40} = \\frac{450}{30} = 15$ years per centimeter. From depth 70 to depth 130 is another 60 centimeters, so the age increases by $15 \\times 60 = 900$. That gives $k = 1550 + 900 = 2450$.",
+  "common_errors": [
+   {
+    "value": "2000",
+    "misconception": "algebra-manipulation",
+    "why": "Added the same 450 jump again even though the gap in depth doubled from 30 to 60 centimeters."
+   },
+   {
+    "value": "1554",
+    "misconception": "graph-feature-mismatch",
+    "why": "Computed the slope as depth over age, $\\frac{30}{450} = \\frac{1}{15}$, and then added $\\frac{60}{15} = 4$ to 1,550."
+   },
+   {
+    "value": "3575",
+    "misconception": "graph-feature-mismatch",
+    "why": "Assumed the line passes through the origin and scaled $\\frac{1100}{40} = 27.5$ by 130, ignoring the intercept."
+   },
+   {
+    "value": "500",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the intercept (the age at depth 0) instead of the missing table entry."
+   }
+  ],
+  "id": "orig-equation-from--M-4d4584",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-4d4584",
+   "structure": [],
+   "solver_answer": 2450,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, how many people were on the waiting list at week 0?",
+  "stimulus": "A public health department models the number of people on a waiting list for a vaccine clinic as a linear function of the number of weeks since the clinic opened. There were 1,860 people on the list at week 3 and 1,460 at week 8.",
+  "keys": [
+   "2100"
+  ],
+  "any_of": false,
+  "explanation": "The slope is $\\frac{1460 - 1860}{8 - 3} = \\frac{-400}{5} = -80$ people per week. It is negative because the list gets shorter. Substitute $(3, 1860)$ into $W = -80t + b$: $1860 = -240 + b$, so $b = 2100$.",
+  "common_errors": [
+   {
+    "value": "1620",
+    "misconception": "algebra-manipulation",
+    "why": "Used a positive slope or dropped the sign, and found $b = 1860 - 240$ instead of $1860 + 240$."
+   },
+   {
+    "value": "400",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the total change between weeks 3 and 8."
+   },
+   {
+    "value": "80",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the weekly rate of decrease instead of the starting number."
+   }
+  ],
+  "id": "orig-equation-from--M-4bb158",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-4bb158",
+   "structure": [],
+   "solver_answer": 2100,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The height can be modeled by $h(t) = mt + b$, where $m$ and $b$ are constants. What is the value of $mb$?",
+  "stimulus": "An ecologist measures the height, $h(t)$, in centimeters, of a cattail shoot $t$ days after it first appears above the water.\n\nCattail Shoot Height\n$t$ | $h(t)$\n2 | 13\n6 | 19\n10 | 25",
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "The slope is $\\frac{19 - 13}{6 - 2} = \\frac{6}{4} = \\frac{3}{2}$. Substitute a row: $13 = \\frac{3}{2}(2) + b$, so $b = 10$. The question asks for the product: $mb = \\frac{3}{2} \\times 10 = 15$.",
+  "common_errors": [
+   {
+    "value": "11.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Added $m$ and $b$ instead of multiplying them."
+   },
+   {
+    "value": "23/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Same sum, entered as a fraction."
+   },
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $b$ alone."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Took the change in height, 6, as the slope without dividing by the 4 days. That gives $b = 1$ and $mb = 6$."
+   },
+   {
+    "value": "70/9",
+    "misconception": "graph-feature-mismatch",
+    "why": "Computed the slope as days over centimeters, $\\frac{2}{3}$. That gives $b = 13 - \\frac{4}{3} = \\frac{35}{3}$ and a product of $\\frac{70}{9}$."
+   },
+   {
+    "value": "7.777",
+    "misconception": "graph-feature-mismatch",
+    "why": "Same inverted slope, entered as a truncated decimal."
+   },
+   {
+    "value": "7.778",
+    "misconception": "graph-feature-mismatch",
+    "why": "Same inverted slope, entered as a rounded decimal."
+   }
+  ],
+  "id": "orig-equation-from--M-4913d6",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-4913d6",
+   "structure": [],
+   "solver_answer": 15,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Based on this relationship, what is the cyclist's heart rate, in beats per minute, at a power output of 260 watts?",
+  "stimulus": "A sports scientist finds that a cyclist's heart rate increases linearly with power output, rising by 1 beat per minute for every 4 watts. At a power output of 180 watts, the cyclist's heart rate is 128 beats per minute.",
+  "keys": [
+   "148"
+  ],
+  "any_of": false,
+  "explanation": "The rate is 1 beat per minute per 4 watts, so the slope is $\\frac{1}{4}$. Going from 180 to 260 watts adds 80 watts, which raises the heart rate by $\\frac{1}{4}(80) = 20$. The heart rate is $128 + 20 = 148$. You can also write $H = \\frac{1}{4}P + 83$ and evaluate it at $P = 260$.",
+  "common_errors": [
+   {
+    "value": "448",
+    "misconception": "graph-feature-mismatch",
+    "why": "Flipped the rate to 4 beats per watt and added $4 \\times 80 = 320$."
+   },
+   {
+    "value": "193",
+    "misconception": "algebra-manipulation",
+    "why": "Added $\\frac{260}{4} = 65$ to 128 instead of using the change in power from 180 watts."
+   },
+   {
+    "value": "20",
+    "misconception": "intermediate-step",
+    "why": "Gave the increase in heart rate instead of the new heart rate."
+   },
+   {
+    "value": "83",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the intercept of the model instead of the heart rate at 260 watts."
+   }
+  ],
+  "id": "orig-equation-from--M-f74c9d",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-f74c9d",
+   "structure": [],
+   "solver_answer": 148,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, how many kilometers of protected bike lanes did the city have in 2015?",
+  "stimulus": "A city planner models the total length of the city's protected bike lanes as a linear function of the number of years since 2015. The city had 47 kilometers of protected bike lanes in 2018 and 77 kilometers in 2023.",
+  "keys": [
+   "29"
+  ],
+  "any_of": false,
+  "explanation": "Let $t$ be the number of years since 2015. The points are then $(3, 47)$ and $(8, 77)$. The slope is $\\frac{77 - 47}{8 - 3} = \\frac{30}{5} = 6$ kilometers per year. The year 2015 is $t = 0$, so you want $b$. From $47 = 6(3) + b$, you get $b = 29$.",
+  "common_errors": [
+   {
+    "value": "65",
+    "misconception": "algebra-manipulation",
+    "why": "Added $6 \\times 3$ to 47 instead of subtracting it when going back in time."
+   },
+   {
+    "value": "17",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the full 30-kilometer change from 47 instead of three years' worth."
+   },
+   {
+    "value": "46.5",
+    "misconception": "graph-feature-mismatch",
+    "why": "Computed the slope as years over kilometers, $\\frac{5}{30} = \\frac{1}{6}$, so $b = 47 - \\frac{1}{2}$."
+   },
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the yearly growth rate instead of the 2015 length."
+   }
+  ],
+  "id": "orig-equation-from--M-eae1c7",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-eae1c7",
+   "structure": [],
+   "solver_answer": 29,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $h(t) = mt + b$, where $m$ and $b$ are constants, what is the value of $m + b$?",
+  "stimulus": "A linear function $h$ gives an athlete's heart rate, in beats per minute, $t$ minutes after the start of a warm-up.\n\nAthlete's Heart Rate During Warm-Up\n$t$ | $h(t)$\n2 | 94\n5 | 109\n9 | 129",
+  "keys": [
+   "89"
+  ],
+  "any_of": false,
+  "explanation": "Start with the slope, using any two rows and putting the change in output over the change in input: $m = \\frac{109 - 94}{5 - 2} = \\frac{15}{3} = 5$. Check it against the third row: $\\frac{129 - 109}{9 - 5} = \\frac{20}{4} = 5$. The table has no row where $t = 0$, so substitute a point to find $b$: $94 = 5(2) + b$, which gives $b = 84$. So $h(t) = 5t + 84$. The question asks for the sum, not either constant alone: $m + b = 5 + 84 = 89$.",
+  "common_errors": [
+   {
+    "value": "84",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the intercept correctly and stopped there instead of adding the slope."
+   },
+   {
+    "value": "5",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope alone instead of $m + b$."
+   },
+   {
+    "value": "93.8",
+    "misconception": "algebra-manipulation",
+    "why": "Put the change in input over the change in output, $\\frac{3}{15} = 0.2$, then $b = 94 - 0.2(2) = 93.6$, and added to get $93.8$."
+   },
+   {
+    "value": "99",
+    "misconception": "graph-feature-mismatch",
+    "why": "Took the first table entry, $94$, as the y-intercept even though that row is $t = 2$, not $t = 0$, then added $m = 5$."
+   }
+  ],
+  "id": "orig-equation-from--M-4a34ed",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-4a34ed",
+   "structure": [],
+   "solver_answer": 89,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $D(0)$?",
+  "stimulus": "During a vaccination drive, the number of flu vaccine doses in stock at a public health clinic decreases linearly. The function $D$ gives the number of doses in stock $w$ weeks after the drive began. There were 1,560 doses in stock after 3 weeks and 1,160 doses in stock after 7 weeks.",
+  "keys": [
+   "1860"
+  ],
+  "any_of": false,
+  "explanation": "The two facts are two points on the line: $(3, 1560)$ and $(7, 1160)$. The slope is $m = \\frac{1160 - 1560}{7 - 3} = \\frac{-400}{4} = -100$, so the stock falls by 100 doses each week. This is negative, as it should be for a quantity that is going down. $D(0)$ is the y-intercept $b$. Substitute one point into $D(w) = -100w + b$: $1560 = -100(3) + b$, so $b = 1560 + 300 = 1860$.",
+  "common_errors": [
+   {
+    "value": "1260",
+    "misconception": "graph-feature-mismatch",
+    "why": "Used a positive slope of $100$, either by ignoring the decrease or by mismatching the subtraction order as $\\frac{1160 - 1560}{3 - 7}$. That gives $b = 1560 - 300 = 1260$."
+   },
+   {
+    "value": "-100",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the weekly rate of change instead of the starting stock."
+   },
+   {
+    "value": "400",
+    "misconception": "intermediate-step",
+    "why": "Stopped at the total drop between week 3 and week 7, without dividing by 4 weeks or working back to week 0."
+   },
+   {
+    "value": "1560.03",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the change in weeks by the change in doses, $\\frac{4}{-400} = -0.01$, so got $b = 1560 + 0.03$."
+   }
+  ],
+  "id": "orig-equation-from--M-12305e",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-12305e",
+   "structure": [],
+   "solver_answer": 1860,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "On a calm day, the air temperature above a weather station decreases by 6\u00b0C for every 1-kilometer increase in elevation. At an elevation of 1,500 meters, the air temperature is 12\u00b0C. The function $T(h) = mh + b$ gives the air temperature, in \u00b0C, at an elevation of $h$ kilometers, where $m$ and $b$ are constants.",
+  "keys": [
+   "21"
+  ],
+  "any_of": false,
+  "explanation": "You are given a slope and one point. The temperature goes down as elevation goes up, so $m = -6$. The input $h$ is in kilometers, so convert the point first: 1,500 meters is $h = 1.5$. That gives the point $(1.5, 12)$. Substitute it: $12 = -6(1.5) + b$, so $12 = -9 + b$ and $b = 21$. This is the temperature at the station itself, where $h = 0$.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "graph-feature-mismatch",
+    "why": "Used $m = 6$ instead of $-6$, so got $12 = 6(1.5) + b$ and $b = 3$. That line has temperature rising with elevation."
+   },
+   {
+    "value": "9012",
+    "misconception": "misread-given",
+    "why": "Substituted $h = 1500$ without converting meters to kilometers: $12 = -6(1500) + b$."
+   },
+   {
+    "value": "-6",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope $m$ instead of the intercept $b$."
+   },
+   {
+    "value": "18",
+    "misconception": "algebra-manipulation",
+    "why": "Added one 6\u00b0C step to 12 instead of multiplying the rate by $1.5$, giving $12 + 6$."
+   }
+  ],
+  "id": "orig-equation-from--M-792e23",
+  "skill_cd": "H.B.",
+  "subtype": "equation-from-points-or-table",
+  "subtype_name": "Build the line from two points, a table, or slope plus a point",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-equation-from--M-792e23",
+   "structure": [],
+   "solver_answer": 21,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

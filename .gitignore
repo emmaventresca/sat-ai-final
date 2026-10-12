@@ -34,3 +34,13 @@ apps/web/node_modules/
 data/sat/
 data/act/q/
 data/lessons/
+
+# Questions written on demand for a teacher's generated lesson. Teacher-local
+# by design: they exist so one student meets them once, on a shared screen,
+# and committing them would put them back in everyone's checkout.
+data/lesson_pool/
+
+# Supabase credentials. The anon key is public by design, but the URL pins the
+# project and these belong in the environment, not the repo.
+apps/web/.env
+apps/web/.env.local

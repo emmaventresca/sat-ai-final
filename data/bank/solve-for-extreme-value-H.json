@@ -182,11 +182,17 @@
   "section": "math",
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "error",
+  "status": "review",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-solve-for-extr-H-31bfa2",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "B",
+   "problem": null,
    "overlap": [
     "__var__ __num__ __var__ __num__ __var__ __num__ __var__ __var__",
     "__var__ __num__ __var__ __num__ __var__ __var__ per hour",
@@ -194,8 +200,7 @@
     "hour what is the minimum number of hours"
    ],
    "residue": 9
-  },
-  "phrasing": "direct"
+  }
  },
  {
   "stem": "What is the maximum number of whole hours the bird can fly nonstop while keeping its body mass at least $215$ grams?",
@@ -548,5 +553,245 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the greatest number of LED streetlights the city can install on the corridor?",
+  "stimulus": "A city's budget for new streetlights on one corridor is at most $86,000. The project has a fixed permit fee of $5,000. Each LED streetlight costs $1,900 and each solar streetlight costs $2,700. The plan requires at least 12 solar streetlights.",
+  "choices": [
+   "18",
+   "25",
+   "26",
+   "42"
+  ],
+  "answer": "B",
+  "explanation": "Pay for the required items first so you can spend the rest on LED lights. The 12 solar lights cost $12(2700) = 32{,}400$ dollars. Together with the fee, that leaves $86{,}000 - 5{,}000 - 32{,}400 = 48{,}600$ dollars. Solve $1900x \\le 48{,}600$ to get $x \\le 25.58$. Because you are finding a maximum, round down to 25. Check: 25 LED lights bring the total to $84,900, which is within the budget, but 26 would bring it to $86,800, which is over.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You divided the remaining $48,600 by the solar price, $2,700, when you needed the LED price, $1,900."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You rounded 25.58 up. A count capped by a budget has to round down, and 26 lights would cost $86,800, which is more than $86,000."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You left out the requirement of at least 12 solar lights and spent everything after the fee on LED lights: $81{,}000 \\div 1900 \\approx 42.6$."
+   }
+  },
+  "id": "orig-solve-for-extr-H-a6d4b4",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-H-a6d4b4",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the minimum number of contracts the employee must sign in a week for Offer B to pay more than Offer A?",
+  "stimulus": "An employee is choosing between two job offers. Offer A pays a salary of $900 per week. Offer B pays $420 per week plus $40 for each contract signed, minus a weekly equipment fee of $80.",
+  "choices": [
+   "13",
+   "14",
+   "15",
+   "23"
+  ],
+  "answer": "C",
+  "explanation": "Offer B's weekly pay is $420 + 40c - 80 = 340 + 40c$. Set up $340 + 40c > 900$, which gives $40c > 560$ and $c > 14$. The inequality is strict, so 14 contracts only makes Offer B equal to Offer A. The smallest whole number greater than 14 is 15.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You left out the $80 equipment fee. Solving $420 + 40c > 900$ gives $c > 12$, and the next whole number is 13."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You kept the boundary value. At 14 contracts both offers pay exactly $900, and the question asks for Offer B to pay more."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped Offer B's base pay and fee and solved $40c > 900$, which gives 22.5, and then rounded up to 23."
+   }
+  },
+  "id": "orig-solve-for-extr-H-36f21b",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-H-36f21b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the maximum number of full excavation units the team can complete this season?",
+  "stimulus": "An archaeology team has at most 160 hours of labor for a field season. Setting up the site takes 18 hours. The team must dig at least 4 test pits, which take 2.5 hours each. Each full excavation unit takes 7 hours.",
+  "choices": [
+   "18",
+   "19",
+   "20",
+   "21"
+  ],
+  "answer": "A",
+  "explanation": "Pay for setup and the required test pits first: $18 + 4(2.5) = 28$ hours. That leaves $160 - 28 = 132$ hours. Solve $7u \\le 132$ to get $u \\le 18.86$. For a maximum, round down to 18. Check: 18 units bring the total to 154 hours, but 19 would bring it to 161 hours, which is over the limit.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You rounded 18.86 up. The team doesn't have enough hours to finish a 19th unit, because that would need 161 hours."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You left out the 4 required test pits and divided $160 - 18 = 142$ hours by 7, which is about 20.3."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You left out the 18 setup hours and divided $160 - 10 = 150$ hours by 7, which is about 21.4."
+   }
+  },
+  "id": "orig-solve-for-extr-H-56d6d2",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-H-56d6d2",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the minimum number of additional sessions the linguist must record?",
+  "stimulus": "A linguist documenting a regional dialect needs at least 620 minutes of usable audio. She already has 95 usable minutes. Each new recording session lasts 50 minutes, but 8 minutes of every session are unusable because of background noise.",
+  "choices": [
+   "11",
+   "12",
+   "13",
+   "15"
+  ],
+  "answer": "C",
+  "explanation": "Each session gives $50 - 8 = 42$ usable minutes. Set up $95 + 42s \\ge 620$, which gives $42s \\ge 525$ and $s \\ge 12.5$. Because you are finding a minimum, round up to 13. Twelve sessions would bring her to only 599 minutes.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used the full 50 minutes per session in place of the 42 usable minutes, so you got $525 \\div 50 = 10.5$ and rounded up to 11."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You rounded 12.5 down. For a minimum you have to round up, and 12 sessions bring her to only 599 minutes."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You left out the 95 minutes she already has and solved $42s \\ge 620$, which gives about 14.8, and then rounded up to 15."
+   }
+  },
+  "id": "orig-solve-for-extr-H-cf7b0b",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-H-cf7b0b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest number of crackers the patient can eat that day and be certain of staying within the limit?",
+  "stimulus": "A dietitian limits a patient to at most 2,300 milligrams (mg) of sodium per day. The patient's planned meals for one day contain 1,610 mg of sodium. The crackers the patient eats contain between 45 mg and 60 mg of sodium each, depending on the brand.",
+  "choices": [
+   "11",
+   "12",
+   "15",
+   "38"
+  ],
+  "answer": "A",
+  "explanation": "The meals leave $2300 - 1610 = 690$ mg. To be certain of staying within the limit, use the worst case of 60 mg per cracker. Solve $60c \\le 690$ to get $c \\le 11.5$. For a maximum, round down to 11.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You rounded 11.5 up. Twelve crackers at 60 mg each add 720 mg, which goes over the 690 mg left."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You used the lowest sodium value, 45 mg, so you got $690 \\div 45 \\approx 15.3$. With a higher-sodium brand, 15 crackers would go over the limit."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You left out the 1,610 mg already in the meals and divided the whole 2,300 mg by 60, which is about 38.3."
+   }
+  },
+  "id": "orig-solve-for-extr-H-478bc1",
+  "skill_cd": "H.E.",
+  "subtype": "solve-for-extreme-value",
+  "subtype_name": "Max / min whole-number answer from a word inequality",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-solve-for-extr-H-478bc1",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

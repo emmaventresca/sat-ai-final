@@ -272,5 +272,253 @@
    "residue": 1
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "In the given equation, $k$ is a constant. The equation has exactly one solution. What is the value of $k$?",
+  "stimulus": "A printmaker uses the equation below to model how ink spreads across a woodblock.\n\n$x^2 + 10x = k$",
+  "choices": [
+   "$-25$",
+   "$-5$",
+   "$5$",
+   "$25$"
+  ],
+  "answer": "A",
+  "explanation": "First put the equation in standard form: $x^2 + 10x - k = 0$. Now $a = 1$, $b = 10$ and $c = -k$. A quadratic has exactly one solution when $b^2 - 4ac = 0$, so $100 - 4(1)(-k) = 0$. That gives $100 + 4k = 0$, so $k = -25$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "When $k = -25$, the equation's one solution is $x = -5$. You found the solution for $x$, but the question asks for the constant $k$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You halved $b$ to get $5$ and stopped there. Squaring that half gives the $25$ that leads to $k$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You read $c$ as $+k$ without moving $k$ to the left side first. Subtracting $k$ makes the constant term $-k$, so the sign of your answer flipped."
+   }
+  },
+  "id": "orig-discriminant-n-E-ad4fd0",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-E-ad4fd0",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given equation, $c$ is a constant. The equation has exactly one solution. What is the value of $c$?",
+  "stimulus": "A paleobotanist uses the equation below to estimate the growth rings in a fossilized stem.\n\n$2x^2 - 12x = -c$",
+  "choices": [
+   "$-18$",
+   "$3$",
+   "$18$",
+   "$36$"
+  ],
+  "answer": "C",
+  "explanation": "Add $c$ to both sides to get $2x^2 - 12x + c = 0$, so $a = 2$, $b = -12$ and the constant term is $c$. For exactly one solution, set $b^2 - 4ac = 0$: $144 - 4(2)(c) = 0$, so $144 - 8c = 0$ and $c = 18$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the constant term to be $-c$, the way it appears on the right side, instead of moving it across to become $+c$. That made your answer the wrong sign."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$x = 3$ is the equation's one solution once $c = 18$. The question asks for $c$, not $x$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the leading coefficient $a = 2$ and solved $144 - 4c = 0$. The discriminant is $b^2 - 4ac$, so the $2$ has to be included."
+   }
+  },
+  "id": "orig-discriminant-n-E-1fc83e",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-E-1fc83e",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given equation, $k$ is a constant. The equation has no real solutions. Which of the following could be the value of $k$?",
+  "stimulus": "A hydrologist uses the equation below to model the water level in a drainage channel.\n\n$x^2 + k = 6x$",
+  "choices": [
+   "$-10$",
+   "$3$",
+   "$9$",
+   "$10$"
+  ],
+  "answer": "D",
+  "explanation": "Rewrite the equation as $x^2 - 6x + k = 0$, so $a = 1$, $b = -6$ and $c = k$. No real solutions means $b^2 - 4ac < 0$: $36 - 4k < 0$, which gives $k > 9$. Of the choices, only $10$ is greater than $9$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "A sign slip turned the condition into $k < -9$, the wrong side. With $k = -10$ the discriminant is $76$, which is positive, so the equation has two real solutions."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$3$ is the $x$-coordinate of the parabola's vertex, $-\\frac{b}{2a}$. It is not a value of $k$ that meets the condition."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "When $k = 9$ the discriminant is exactly $0$, so the equation has one solution. For no real solutions, $k$ must be strictly greater than $9$."
+   }
+  },
+  "id": "orig-discriminant-n-E-5c6292",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-E-5c6292",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is a constant the equation has no real",
+    "a constant the equation has no real solutions",
+    "solutions which of the following could be the"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "In the xy-plane, the graph of $y = k$, where $k$ is a constant, intersects the graph of the given equation at exactly one point. What is the value of $k$?",
+  "stimulus": "An agronomist uses the equation below to model the moisture in a test plot.\n\n$y = x^2 - 8x + 20$",
+  "choices": [
+   "$-4$",
+   "$4$",
+   "$16$",
+   "$20$"
+  ],
+  "answer": "B",
+  "explanation": "Set the two expressions equal: $x^2 - 8x + 20 = k$, which becomes $x^2 - 8x + (20 - k) = 0$. For exactly one intersection point, $b^2 - 4ac = 0$: $64 - 4(20 - k) = 0$. Then $20 - k = 16$, so $k = 4$. That is the $y$-coordinate of the parabola's vertex.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $k$ to the left side you added it instead of subtracting it. That made the constant term $20 + k$ and gave the wrong sign."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "$16$ is the value of $20 - k$ that makes the discriminant zero. You stopped one step early, before solving for $k$."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "$20$ is the parabola's $y$-intercept, not its vertex. The line $y = 20$ crosses the parabola twice."
+   }
+  },
+  "id": "orig-discriminant-n-E-7b3624",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-E-7b3624",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "at exactly one point what is the value",
+    "exactly one point what is the value of",
+    "one point what is the value of __var__"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "In the given equation, $k$ is a constant. The equation has exactly one solution. What is the value of $k$?",
+  "stimulus": "A folklorist uses the equation below to model how quickly versions of a ballad spread between villages.\n\n$kx^2 + 4x = 1$",
+  "choices": [
+   "$-16$",
+   "$-4$",
+   "$\\frac{1}{2}$",
+   "$4$"
+  ],
+  "answer": "B",
+  "explanation": "Subtract $1$ from both sides to get $kx^2 + 4x - 1 = 0$, so $a = k$, $b = 4$ and $c = -1$. For exactly one solution, $b^2 - 4ac = 0$: $16 - 4(k)(-1) = 0$, so $16 + 4k = 0$ and $k = -4$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the $4$ in $4ac$ and solved $16 + k = 0$. The discriminant is $b^2 - 4ac$, and the factor of $4$ matters."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "With $k = -4$ the equation becomes $-(2x - 1)^2 = 0$, so its one solution is $x = \\frac{1}{2}$. That is $x$, not $k$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You moved the $1$ across without changing its sign, so you used $c = +1$ instead of $c = -1$. That flipped the sign of your answer."
+   }
+  },
+  "id": "orig-discriminant-n-E-fd2220",
+  "skill_cd": "P.B.",
+  "subtype": "discriminant-number-of-solutions",
+  "subtype_name": "Find the constant from the number of solutions",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-discriminant-n-E-fd2220",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

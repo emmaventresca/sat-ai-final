@@ -243,5 +243,797 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the perimeter, in meters, of the plot?",
+  "stimulus": "An ecologist marks out a square plot of meadow to count wildflower species. She runs a straight measuring tape along one diagonal of the plot, from corner to corner. The tape measures $12$ meters.",
+  "choices": [
+   "$6\\sqrt{2}$",
+   "$24\\sqrt{2}$",
+   "$48$",
+   "$48\\sqrt{2}$"
+  ],
+  "answer": "B",
+  "explanation": "The diagonal splits the square into two 45-45-90 triangles. The diagonal is the hypotenuse, so it is the $x\\sqrt{2}$ side, and each side of the square is a leg of length $x$. From $x\\sqrt{2} = 12$, you get $x = \\frac{12}{\\sqrt{2}} = 6\\sqrt{2}$ meters. The square has four equal sides, so the perimeter is $4 \\cdot 6\\sqrt{2} = 24\\sqrt{2}$ meters, or about $33.9$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "This is the length of one side of the square. You found the side correctly but stopped before multiplying by $4$ to get the perimeter."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You treated the $12$-meter diagonal as if it were a side of the square and multiplied by $4$. A diagonal runs corner to corner, so it is longer than a side."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated the diagonal as a leg and multiplied by $\\sqrt{2}$, which gives a side of $12\\sqrt{2}$ and a perimeter of $48\\sqrt{2}$. The diagonal is the hypotenuse, so you divide by $\\sqrt{2}$ to get the side."
+   }
+  },
+  "id": "orig-special-right--M-2b0080",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--M-2b0080",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How much greater, in meters, is the perimeter of the second trench than the perimeter of the first trench?",
+  "stimulus": "At an archaeological dig, two square trenches are marked out. The diagonal of the first trench is $12$ meters long. Each side of the second trench is $12$ meters long.",
+  "choices": [
+   "$12 - 6\\sqrt{2}$",
+   "$24\\sqrt{2}$",
+   "$48 - 24\\sqrt{2}$",
+   "$48\\sqrt{2} - 48$"
+  ],
+  "answer": "C",
+  "explanation": "A square's diagonal splits it into two 45-45-90 triangles with sides $x$, $x$, $x\\sqrt{2}$. The diagonal is the $x\\sqrt{2}$ side, so $x\\sqrt{2} = 12$ and each side of the first trench is $x = \\frac{12}{\\sqrt{2}} = 6\\sqrt{2}$ meters. Its perimeter is $4(6\\sqrt{2}) = 24\\sqrt{2}$ meters. The second trench has perimeter $4(12) = 48$ meters. The difference is $48 - 24\\sqrt{2}$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "This is how much longer one side of the second trench is than one side of the first. You stopped there and didn't multiply the difference by 4 to compare the perimeters."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is the perimeter of the first trench. You found one of the two quantities but not how much greater the other one is."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You treated the 12-meter diagonal as a leg and multiplied by $\\sqrt{2}$, which made the first trench's side $12\\sqrt{2}$. The diagonal is the hypotenuse, so you divide by $\\sqrt{2}$."
+   }
+  },
+  "id": "orig-special-right--M-fc2f71",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--M-fc2f71",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many kilometers longer is the road from village $C$ to village $A$ than the road from village $C$ to village $M$?",
+  "stimulus": "A linguist is mapping dialects in three villages, $A$, $B$, and $C$. Straight roads join each pair of villages, and the roads form an equilateral triangle with $14$-kilometer sides. Village $M$ is at the midpoint of road $AB$, and a straight road runs from $C$ to $M$.",
+  "choices": [
+   "$7$",
+   "$7\\sqrt{3}$",
+   "$14 - 7\\sqrt{3}$",
+   "$14\\sqrt{3} - 14$"
+  ],
+  "answer": "C",
+  "explanation": "Road $CM$ is the altitude of the equilateral triangle. It splits the triangle into two 30-60-90 triangles with sides $x$, $x\\sqrt{3}$, $2x$. The hypotenuse $CA = 14 = 2x$, so $x = 7$, and the altitude $CM$ is $x\\sqrt{3} = 7\\sqrt{3}$ kilometers. Road $CA$ is $14$ kilometers, so it is $14 - 7\\sqrt{3}$ kilometers longer.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You subtracted $AM = 7$ from $CA = 14$. That compares the side with half the base, not with the road from $C$ to $M$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is the length of road $CM$. You found one of the two roads but not how much longer road $CA$ is."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You put 14 in the short-leg slot and made the altitude $14\\sqrt{3}$. The 14-kilometer side is the hypotenuse $2x$, so the short leg is 7. (An altitude longer than the side it comes from is also a warning sign.)"
+   }
+  },
+  "id": "orig-special-right--M-5955c8",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--M-5955c8",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many feet greater is the horizontal distance than the vertical height?",
+  "stimulus": "A straight support strut for an observatory telescope is $18$ feet long. One end of the strut rests on the level floor, and the strut makes a $30^\\circ$ angle with the floor. The strut covers a horizontal distance along the floor and rises to a vertical height above it.",
+  "choices": [
+   "$9\\sqrt{3}$",
+   "$9\\sqrt{3} - 9$",
+   "$18 - 9\\sqrt{3}$",
+   "$18\\sqrt{3} - 18$"
+  ],
+  "answer": "B",
+  "explanation": "The strut, the floor, and the vertical rise form a 30-60-90 triangle with sides $x$, $x\\sqrt{3}$, $2x$. The strut is the hypotenuse, so $2x = 18$ and $x = 9$. The height is opposite the $30^\\circ$ angle, so it is the short leg, $9$ feet. The horizontal distance is the long leg, $9\\sqrt{3}$ feet. The difference is $9\\sqrt{3} - 9$ feet.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "This is the horizontal distance. You found one of the two lengths but didn't subtract the height."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You compared the strut with the horizontal distance. The question compares the horizontal distance with the vertical height."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You treated the 18-foot strut as the short leg, which made the legs $18$ and $18\\sqrt{3}$. The strut is the hypotenuse $2x$, so the short leg is $9$."
+   }
+  },
+  "id": "orig-special-right--M-9d0238",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--M-9d0238",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the perimeter, in meters, of the plot?",
+  "stimulus": "An agronomist marks out a square test plot for a new wheat variety. A straight irrigation pipe runs along one diagonal of the plot, from one corner to the opposite corner, and the pipe is $d$ meters long.",
+  "choices": [
+   "$2\\sqrt{2}\\,d$",
+   "$\\frac{\\sqrt{2}}{2}\\,d$",
+   "$4\\sqrt{2}\\,d$",
+   "$4d$"
+  ],
+  "answer": "A",
+  "explanation": "The diagonal splits the square into two 45-45-90 triangles, so the diagonal is the $x\\sqrt{2}$ side, where $x$ is the side of the square. From $x\\sqrt{2} = d$ you get $x = \\frac{d}{\\sqrt{2}} = \\frac{\\sqrt{2}}{2}d$. The perimeter is $4x = 4 \\cdot \\frac{\\sqrt{2}}{2}d = 2\\sqrt{2}\\,d$.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is the length of one side of the plot. You found the side correctly but stopped there instead of multiplying by 4 for the perimeter."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated the diagonal as a leg and multiplied by $\\sqrt{2}$ when you should have divided. The diagonal is the longest side of the 45-45-90 triangle, so each side of the square has to be shorter than $d$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used the diagonal $d$ as if it were the side of the square. The pipe runs from corner to corner, so it's longer than any side."
+   }
+  },
+  "id": "orig-special-right--M-3c33b5",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--M-3c33b5",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the length, in meters, of each side of the plot?",
+  "stimulus": "Ecologists mark out an equilateral triangular plot to survey nesting birds in a wetland. The altitude from one corner of the plot to the midpoint of the opposite side is $h$ meters long.",
+  "choices": [
+   "$\\frac{2\\sqrt{3}}{3}\\,h$",
+   "$\\frac{\\sqrt{3}}{3}\\,h$",
+   "$\\frac{\\sqrt{3}}{2}\\,h$",
+   "$2\\sqrt{3}\\,h$"
+  ],
+  "answer": "A",
+  "explanation": "The altitude cuts the equilateral triangle into two 30-60-90 triangles. In each one, the altitude is the $x\\sqrt{3}$ side and the full side of the plot is the hypotenuse $2x$. From $x\\sqrt{3} = h$ you get $x = \\frac{h}{\\sqrt{3}} = \\frac{\\sqrt{3}}{3}h$, so each side is $2x = \\frac{2\\sqrt{3}}{3}h$.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is $x$, the short leg, which is only half of one side of the plot. You needed to double it to get the full side, which is the hypotenuse $2x$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You treated $h$ as the side length and worked out the altitude from it. That swaps the given and the unknown: the altitude is $h$, and the side is what you're looking for."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $h$ by $\\sqrt{3}$ when you should have divided. The altitude is the $x\\sqrt{3}$ side, so you get $x$ by dividing by $\\sqrt{3}$ before you double."
+   }
+  },
+  "id": "orig-special-right--M-537167",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--M-537167",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the combined length, in feet, of the post and the base?",
+  "stimulus": "A physical therapist builds a ramp for a knee-rehabilitation program. The ramp's surface is a board $L$ feet long that rises at a $30^\\circ$ angle from the floor. A vertical post at the high end and a horizontal base along the floor form a right triangle with the board.",
+  "choices": [
+   "$\\frac{1+\\sqrt{3}}{2}\\,L$",
+   "$\\frac{\\sqrt{3}}{2}\\,L$",
+   "$\\left(1+\\sqrt{3}\\right)L$",
+   "$\\frac{2+\\sqrt{3}}{2}\\,L$"
+  ],
+  "answer": "A",
+  "explanation": "The board, the post and the base form a 30-60-90 triangle, and the board is the hypotenuse, $2x = L$, so $x = \\frac{L}{2}$. The post is opposite the $30^\\circ$ angle, so it's $x = \\frac{L}{2}$. The base is $x\\sqrt{3} = \\frac{\\sqrt{3}}{2}L$. Together they make $\\frac{L}{2} + \\frac{\\sqrt{3}}{2}L = \\frac{1+\\sqrt{3}}{2}L$.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "This is only the length of the base. You found one leg and stopped before adding the post, which is $\\frac{L}{2}$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You put the board in the short-leg slot, using $x = L$ instead of $2x = L$. The board is the hypotenuse, so each leg comes from $\\frac{L}{2}$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "This adds the board to the post and base, which gives the whole triangle's perimeter. The question asks only for the post and the base."
+   }
+  },
+  "id": "orig-special-right--M-216416",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--M-216416",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A paleobotanist trims a slab of fossilized fern into a square so that it fits under a camera for imaging. The diagonal of the square slab measures 12 centimeters.",
+  "choices": [
+   "Each side of the slab is $12\\sqrt{2}$ centimeters long.",
+   "Each side of the slab is $6\\sqrt{2}$ centimeters long.",
+   "Each side of the slab is $6$ centimeters long.",
+   "Each side of the slab is $3\\sqrt{2}$ centimeters long."
+  ],
+  "answer": "B",
+  "explanation": "The diagonal cuts the square into two 45-45-90 triangles. The two sides of the square are the legs ($x$), and the diagonal is the hypotenuse ($x\\sqrt{2}$). So $x\\sqrt{2} = 12$, which gives $x = \\frac{12}{\\sqrt{2}} = 6\\sqrt{2}$ centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You treated the 12 cm diagonal as a leg and multiplied by $\\sqrt{2}$. The diagonal is the hypotenuse, so you divide by $\\sqrt{2}$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You halved the diagonal as if the side were half of it. To undo $x\\sqrt{2} = 12$, you divide by $\\sqrt{2}$, not by 2."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided by both 2 and $\\sqrt{2}$. Solving $x\\sqrt{2} = 12$ takes only one division, by $\\sqrt{2}$."
+   }
+  },
+  "id": "orig-special-right--M-12f458",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--M-12f458",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A nutrition scientist designs a snack bar whose top face is an equilateral triangle, so that each serving has the same shape. The height of the triangle, measured from one vertex straight down to the opposite side, is $6\\sqrt{3}$ centimeters.",
+  "choices": [
+   "The perimeter of the triangle is $12$ centimeters.",
+   "The perimeter of the triangle is $18\\sqrt{3}$ centimeters.",
+   "The perimeter of the triangle is $36$ centimeters.",
+   "The perimeter of the triangle is $54$ centimeters."
+  ],
+  "answer": "C",
+  "explanation": "The height splits the equilateral triangle into two 30-60-90 triangles. The height is the long leg, $x\\sqrt{3}$, so $x = 6$. The full side is the hypotenuse, $2x = 12$ centimeters. All three sides are equal, so the perimeter is $3(12) = 36$ centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "12 cm is the length of one side. You stopped there instead of adding all three sides to get the perimeter."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You treated the height as if it were a full side and tripled $6\\sqrt{3}$. In an equilateral triangle, the height is shorter than a side."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the height by $\\sqrt{3}$ to get a side of 18 cm. Since the height equals $x\\sqrt{3}$, you divide by $\\sqrt{3}$ to find $x$, and the side is $2x$."
+   }
+  },
+  "id": "orig-special-right--M-dea382",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--M-dea382",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A meteorologist launches a weather balloon tied to a straight, taut 400-meter cable anchored at a point on level ground. The cable makes a $30^\\circ$ angle with the ground.",
+  "choices": [
+   "The balloon is $200\\sqrt{3}$ meters above the ground.",
+   "The point on the ground directly below the balloon is $200\\sqrt{3}$ meters from the anchor.",
+   "The point on the ground directly below the balloon is $400\\sqrt{3}$ meters from the anchor.",
+   "The balloon is $200\\sqrt{2}$ meters above the ground."
+  ],
+  "answer": "B",
+  "explanation": "The cable, the balloon's height, and the ground make a 30-60-90 triangle, with the 400 m cable as the hypotenuse, $2x$. So $x = 200$. The height is the side across from the $30^\\circ$ angle, which is $x = 200$ m. The ground distance is the side next to the $30^\\circ$ angle, which is $x\\sqrt{3} = 200\\sqrt{3}$ m.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$200\\sqrt{3}$ m is the horizontal distance along the ground. The height is across from the $30^\\circ$ angle, so it is the short leg, 200 m."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You treated the 400 m cable as the short leg and multiplied by $\\sqrt{3}$. The cable is the hypotenuse, so first you halve it to get $x$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the 45-45-90 ratio. A $30^\\circ$ angle means the sides follow the $x : x\\sqrt{3} : 2x$ pattern, which makes the height exactly 200 m."
+   }
+  },
+  "id": "orig-special-right--M-8d754d",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--M-8d754d",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of $6\\sqrt{3}$ in this context?",
+  "stimulus": "A linguist is building a vowel chart on a flat board shaped like an equilateral triangle. Each side is 12 inches long. While planning where to put the labels, the linguist writes the value $6\\sqrt{3}$ in the notes.",
+  "choices": [
+   "The distance, in inches, from one corner of the board to the midpoint of an adjacent side",
+   "The distance, in inches, from one corner of the board to the midpoint of the opposite side",
+   "The length, in inches, of each side of the board",
+   "The area, in square inches, of the board"
+  ],
+  "answer": "B",
+  "explanation": "The line from one corner to the midpoint of the opposite side is the altitude. It splits the equilateral triangle into two 30-60-90 triangles. Each one has a hypotenuse of 12, so $2x = 12$ and $x = 6$. The altitude is the side across from the 60\u00b0 angle, which is $x\\sqrt{3} = 6\\sqrt{3}$ inches.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "The distance from a corner to the midpoint of an adjacent side is half a side, which is 6 inches. That is the short leg $x$ of the 30-60-90 triangle. $6\\sqrt{3}$ is the long leg $x\\sqrt{3}$, so you matched the number to the wrong side."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "The problem tells you each side is 12 inches. You treated the height as a full side, which is the classic mix-up with equilateral triangles. The altitude is always shorter than a side."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "The area is $\\frac{1}{2}(12)(6\\sqrt{3}) = 36\\sqrt{3}$ square inches. $6\\sqrt{3}$ is only the height you use to find the area, and it is measured in inches, not square inches."
+   }
+  },
+  "id": "orig-special-right--M-a66ac6",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--M-a66ac6",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the distance, in feet, from the base of the mast to the stake?",
+  "stimulus": "A cable braces a vertical weather-station mast. It runs straight from the top of the mast to a stake in level ground and meets the ground at a $45^\\circ$ angle. The cable is $18\\sqrt{2}$ feet long.",
+  "choices": [
+   "$9\\sqrt{2}$",
+   "$18$",
+   "$18\\sqrt{2}$",
+   "$36$"
+  ],
+  "answer": "B",
+  "explanation": "The mast, the ground, and the cable form a right triangle with a $45^\\circ$ angle, so it is a 45-45-90 triangle with sides $x$, $x$, $x\\sqrt{2}$. The cable is the hypotenuse, so $x\\sqrt{2} = 18\\sqrt{2}$ and $x = 18$. The distance along the ground is 18 feet.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the hypotenuse by 2, which is the 30-60-90 rule for the short leg. In a 45-45-90 triangle you divide the hypotenuse by $\\sqrt{2}$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$18\\sqrt{2}$ is the length of the cable, which is the hypotenuse. The question asks for the leg along the ground."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You treated the cable as a leg and multiplied by $\\sqrt{2}$: $18\\sqrt{2} \\cdot \\sqrt{2} = 36$. The cable is the hypotenuse, so you divide by $\\sqrt{2}$ instead."
+   }
+  },
+  "id": "orig-special-right--M-bea20f",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--M-bea20f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the perimeter, in meters, of the plaza?",
+  "stimulus": "A city planner is designing a public plaza in the shape of a square. A straight walkway will cross the plaza from one corner to the opposite corner, and it will be 80 meters long.",
+  "choices": [
+   "$40\\sqrt{2}$",
+   "$160\\sqrt{2}$",
+   "$320$",
+   "$320\\sqrt{2}$"
+  ],
+  "answer": "B",
+  "explanation": "The diagonal cuts the square into two 45-45-90 triangles, and the diagonal is the hypotenuse $x\\sqrt{2}$. So $x\\sqrt{2} = 80$, which gives $x = \\frac{80}{\\sqrt{2}} = 40\\sqrt{2}$ meters for each side. The perimeter is $4 \\cdot 40\\sqrt{2} = 160\\sqrt{2}$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$40\\sqrt{2}$ is the length of one side of the plaza. You stopped there. The question asks for the perimeter, so you still need to multiply by 4."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You used the 80-meter diagonal as if it were a side and multiplied by 4. The diagonal is the hypotenuse, which is longer than a side."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the diagonal by $\\sqrt{2}$ and got a side of $80\\sqrt{2}$. To go from the hypotenuse of a 45-45-90 triangle to a leg, you divide by $\\sqrt{2}$."
+   }
+  },
+  "id": "orig-special-right--M-91530f",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--M-91530f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length, in inches, of the hypotenuse of the patch?",
+  "stimulus": "A folklorist is cataloguing a quilt that retells a village legend. One patch is cut in the shape of an isosceles right triangle, and its perimeter is $16 + 8\\sqrt{2}$ inches.",
+  "choices": [
+   "$4\\sqrt{2}$",
+   "$8$",
+   "$8\\sqrt{2}$",
+   "$16$"
+  ],
+  "answer": "C",
+  "explanation": "An isosceles right triangle is a 45-45-90 triangle, so its sides are $x$, $x$, and $x\\sqrt{2}$, where $x\\sqrt{2}$ is the hypotenuse. Test the choices. If the hypotenuse is $8\\sqrt{2}$, each leg is $8$, and the perimeter is $8 + 8 + 8\\sqrt{2} = 16 + 8\\sqrt{2}$. That matches the given perimeter. None of the other choices produces it.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You found that each leg is $8$ but then divided by $\\sqrt{2}$ instead of multiplying. In a 45-45-90 triangle, the hypotenuse is the leg times $\\sqrt{2}$, so it is longer than the leg, not shorter."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You correctly found that each leg is $8$ and stopped there. The question asks for the hypotenuse, which is $8\\sqrt{2}$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$16$ is the combined length of the two legs, the $2x$ part of the perimeter. It is not the hypotenuse."
+   }
+  },
+  "id": "orig-special-right--M-ef83ca",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--M-ef83ca",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is the length in inches of the hypotenuse",
+    "the length in inches of the hypotenuse of"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "What is the length, in centimeters, of the shorter side of the bar?",
+  "stimulus": "In a nutrition study, a rectangular protein bar is sliced along one diagonal into two equal right triangles. The diagonal makes a $30^\\circ$ angle with the longer side of the bar. The perimeter of each triangle is $18 + 6\\sqrt{3}$ centimeters.",
+  "choices": [
+   "$2\\sqrt{3}$",
+   "$6$",
+   "$6\\sqrt{3}$",
+   "$12$"
+  ],
+  "answer": "B",
+  "explanation": "Each triangle is a 30-60-90 triangle with sides $x$, $x\\sqrt{3}$, and $2x$. The shorter side of the bar is opposite the $30^\\circ$ angle, so it is $x$. Test $x = 6$: the sides are $6$, $6\\sqrt{3}$, and $12$, and the perimeter is $18 + 6\\sqrt{3}$, which matches. The shorter side is $6$ centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You put $6$ in the wrong slot. You treated it as the long leg ($x\\sqrt{3}$) and divided by $\\sqrt{3}$. But $6$ is the short leg $x$ itself. With a short side of $2\\sqrt{3}$, the perimeter would be $6 + 6\\sqrt{3}$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$6\\sqrt{3}$ is the longer side of the bar, the one next to the $30^\\circ$ angle. It is not the shorter side."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$12$ is the diagonal, which is the hypotenuse $2x$. The question asks for the shorter side of the bar."
+   }
+  },
+  "id": "orig-special-right--M-2f27a2",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--M-2f27a2",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "triangle is __var__ centimeters what is the length",
+    "is __var__ centimeters what is the length in",
+    "__var__ centimeters what is the length in centimeters",
+    "centimeters what is the length in centimeters of",
+    "what is the length in centimeters of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the height, in meters, of the frame?",
+  "stimulus": "Marine biologists count coral polyps inside a flat frame shaped like an equilateral triangle. The frame encloses an area of $16\\sqrt{3}$ square meters. The height of the frame is the distance from one corner straight down to the opposite side.",
+  "choices": [
+   "$4$",
+   "$4\\sqrt{3}$",
+   "$8$",
+   "$8\\sqrt{3}$"
+  ],
+  "answer": "B",
+  "explanation": "The height cuts the equilateral triangle into two 30-60-90 triangles. The height is the $x\\sqrt{3}$ side, and half of a side is $x$. Test $4\\sqrt{3}$: then $x = 4$, so each side is $8$, and the area is $\\frac{1}{2}(8)(4\\sqrt{3}) = 16\\sqrt{3}$. That matches, so the height is $4\\sqrt{3}$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$4$ is half of one side, the short leg $x$ of each 30-60-90 half. You need to multiply it by $\\sqrt{3}$ to get the height."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$8$ is the full side of the frame. You treated the side as the height, but the height is shorter than the side by a factor of $\\frac{\\sqrt{3}}{2}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the full side, $8$, by $\\sqrt{3}$ and dropped the factor of $\\frac{1}{2}$. The short leg of each half is half of a side, $4$, not $8$."
+   }
+  },
+  "id": "orig-special-right--M-a79f61",
+  "skill_cd": "S.C.",
+  "subtype": "special-right-triangles",
+  "subtype_name": "Special right triangles (45-45-90, 30-60-90) and shapes hiding them",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-special-right--M-a79f61",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

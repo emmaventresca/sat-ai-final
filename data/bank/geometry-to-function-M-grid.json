@@ -209,5 +209,430 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "The function $V$ gives the volume of water in the pan, in cubic inches, in terms of the pan's width $w$, in inches. If $V(w) = aw^2 + bw$, where $a$ and $b$ are constants, what is the value of $b$?",
+  "stimulus": "A weather station measures evaporation with a pan shaped like a rectangular box. The length of the pan's base is 5 inches more than its width. The water in the pan is 3 inches deep.",
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "Write every dimension in terms of the width $w$. The length is $w + 5$ and the depth is 3. Volume is length times width times depth, so $V(w) = 3 \\cdot w(w + 5) = 3w^2 + 15w$. Match this to $aw^2 + bw$: $a = 3$ and $b = 15$.",
+  "common_errors": [
+   {
+    "value": "-15",
+    "misconception": "wrong-target-quantity",
+    "why": "Wrote the length as $w - 5$, as if the width were the longer side, which gives $3w(w - 5) = 3w^2 - 15w$."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Left out the 3-inch depth and used only the base area, $w(w + 5) = w^2 + 5w$."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Built the function correctly but gave the coefficient $a$ instead of $b$."
+   }
+  ],
+  "id": "orig-geometry-to-fu-M-a55956",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-a55956",
+   "structure": [],
+   "solver_answer": "15",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $V$ gives the volume of the slab, in cubic centimeters, in terms of its length $\\ell$, in centimeters. If $V(\\ell) = 192$, what is the value of $\\ell$?",
+  "stimulus": "An engineer testing a new ceramic casts a slab shaped like a rectangular box, 2 centimeters thick. The slab's width is 4 centimeters less than its length.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "The input is the length, so write the width as $\\ell - 4$. Then $V(\\ell) = 2\\ell(\\ell - 4)$. Set $2\\ell(\\ell - 4) = 192$ and divide by 2 to get $\\ell^2 - 4\\ell - 96 = 0$. This factors as $(\\ell - 12)(\\ell + 8) = 0$. A length must be positive, so $\\ell = 12$.",
+  "common_errors": [
+   {
+    "value": "8",
+    "misconception": "wrong-target-quantity",
+    "why": "Wrote the width as $\\ell + 4$. Solving $2\\ell(\\ell + 4) = 192$ gives 8, which is really the width."
+   },
+   {
+    "value": "16",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the 2 cm thickness and solved $\\ell(\\ell - 4) = 192$, which is $(\\ell - 16)(\\ell + 12) = 0$."
+   }
+  ],
+  "id": "orig-geometry-to-fu-M-389e98",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-389e98",
+   "structure": [],
+   "solver_answer": "12",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $V$ gives the volume of the nest box, in cubic inches, in terms of its height $h$, in inches. What is $V(10)$?",
+  "stimulus": "An ornithologist builds a nest box shaped like a rectangular box with a square base. The height of the box is 6 inches more than the side length of its base.",
+  "keys": [
+   "160"
+  ],
+  "any_of": false,
+  "explanation": "The input is the height, so the base side is $h - 6$. Volume is base area times height: $V(h) = (h - 6)^2 h$. Then $V(10) = (10 - 6)^2 \\cdot 10 = 16 \\cdot 10 = 160$.",
+  "common_errors": [
+   {
+    "value": "2560",
+    "misconception": "wrong-target-quantity",
+    "why": "Wrote the base side as $h + 6$, which gives $16^2 \\cdot 10$."
+   },
+   {
+    "value": "400",
+    "misconception": "wrong-target-quantity",
+    "why": "Squared the height instead of the base side: $10^2 \\cdot 4$."
+   },
+   {
+    "value": "40",
+    "misconception": "algebra-manipulation",
+    "why": "Used the base side only once instead of squaring it: $4 \\cdot 10$."
+   }
+  ],
+  "id": "orig-geometry-to-fu-M-deeb5b",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-deeb5b",
+   "structure": [],
+   "solver_answer": "160",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $A$ gives the combined area of the garden and walkway, in square meters, in terms of $w$. If $A(w) = w^2 + bw + c$, where $b$ and $c$ are constants, what is the value of $c$?",
+  "stimulus": "A city plans a rectangular garden that is $w$ meters wide. Its length is 10 meters more than its width. A walkway 2 meters wide will run around the entire garden.",
+  "keys": [
+   "56"
+  ],
+  "any_of": false,
+  "explanation": "The walkway adds 2 meters on both sides of each dimension, so each one grows by 4. The outer width is $w + 4$ and the outer length is $(w + 10) + 4 = w + 14$. Then $A(w) = (w + 4)(w + 14) = w^2 + 18w + 56$, so $c = 56$.",
+  "common_errors": [
+   {
+    "value": "24",
+    "misconception": "missed-condition",
+    "why": "Added the walkway on only one side of each dimension: $(w + 2)(w + 12) = w^2 + 14w + 24$."
+   },
+   {
+    "value": "-24",
+    "misconception": "wrong-target-quantity",
+    "why": "Wrote the length as $w - 10$, which gives $(w + 4)(w - 6) = w^2 - 2w - 24$."
+   },
+   {
+    "value": "18",
+    "misconception": "wrong-target-quantity",
+    "why": "Expanded correctly but gave the coefficient $b$ instead of $c$."
+   }
+  ],
+  "id": "orig-geometry-to-fu-M-bd2647",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-bd2647",
+   "structure": [],
+   "solver_answer": "56",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $A$ gives the area of the membrane, in square centimeters, in terms of the triangle's height $h$, in centimeters. If $A(h) = 56$, what is the value of $h$?",
+  "stimulus": "For an antibody test, a technician cuts a triangular piece of membrane. The base of the triangle is 6 centimeters longer than its height.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "The input is the height, so the base is $h + 6$. The area of a triangle is half the base times the height, so $A(h) = \\frac{1}{2}h(h + 6)$. Set this equal to 56 and multiply by 2: $h^2 + 6h - 112 = 0$. This factors as $(h + 14)(h - 8) = 0$. A height must be positive, so $h = 8$.",
+  "common_errors": [
+   {
+    "value": "14",
+    "misconception": "wrong-target-quantity",
+    "why": "Wrote the base as $h - 6$. Solving $\\frac{1}{2}h(h - 6) = 56$ gives 14, which is really the base."
+   },
+   {
+    "value": "5.062",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the $\\frac{1}{2}$ and solved $h(h + 6) = 56$, which gives $h = -3 + \\sqrt{65}$."
+   },
+   {
+    "value": "53",
+    "misconception": "algebra-manipulation",
+    "why": "Added the base and height instead of multiplying them: $\\frac{1}{2}(h + h + 6) = 56$."
+   }
+  ],
+  "id": "orig-geometry-to-fu-M-529106",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-529106",
+   "structure": [],
+   "solver_answer": "8",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $V$ gives the volume of the box, in cubic centimeters, in terms of its width $w$, in centimeters. If $V(w) = aw^3 + bw^2$, where $a$ and $b$ are constants, what is the value of $a$?",
+  "stimulus": "A nutrition lab designs a cereal box shaped like a rectangular box. The box's length is 3 times its width, and its height is 4 centimeters more than its length.",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "Write every dimension in terms of $w$. The length is $3w$. The height is 4 more than the length, so it is $3w + 4$. Then $V(w) = w \\cdot 3w \\cdot (3w + 4) = 9w^3 + 12w^2$, so $a = 9$.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Set the height 4 more than the width, $w + 4$, instead of 4 more than the length: $3w^2(w + 4) = 3w^3 + 12w^2$."
+   },
+   {
+    "value": "12",
+    "misconception": "wrong-target-quantity",
+    "why": "Built the function correctly but gave the coefficient $b$ instead of $a$."
+   }
+  ],
+  "id": "orig-geometry-to-fu-M-417db6",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-417db6",
+   "structure": [],
+   "solver_answer": "9",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $V$ gives the volume of soil removed, in cubic meters, in terms of the trench's length $\\ell$, in meters. If $V(\\ell) = 36$, what is the value of $\\ell$?",
+  "stimulus": "Archaeologists dig a trench shaped like a rectangular box, 1.5 meters deep. The trench's width is 2 meters less than its length.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "The input is the length, so the width is $\\ell - 2$. Then $V(\\ell) = 1.5\\ell(\\ell - 2)$. Set this equal to 36 and divide by 1.5: $\\ell^2 - 2\\ell - 24 = 0$. This factors as $(\\ell - 6)(\\ell + 4) = 0$. A length must be positive, so $\\ell = 6$.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Wrote the width as $\\ell + 2$. Solving $1.5\\ell(\\ell + 2) = 36$ gives 4, which is really the width."
+   },
+   {
+    "value": "7.083",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the 1.5 m depth and solved $\\ell(\\ell - 2) = 36$, which gives $\\ell = 1 + \\sqrt{37}$."
+   },
+   {
+    "value": "13",
+    "misconception": "algebra-manipulation",
+    "why": "Added the length and width instead of multiplying them: $1.5(\\ell + \\ell - 2) = 36$."
+   }
+  ],
+  "id": "orig-geometry-to-fu-M-5e8da6",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-5e8da6",
+   "structure": [],
+   "solver_answer": "6",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $A$ gives the area of the panel, in square inches, in terms of its width $w$, in inches. What is $A(10)$?",
+  "stimulus": "A folklore museum commissions a rectangular quilt panel that shows a traditional tale. The panel's length is 8 inches less than twice its width.",
+  "keys": [
+   "120"
+  ],
+  "any_of": false,
+  "explanation": "The length is twice the width minus 8, so it is $2w - 8$. Then $A(w) = w(2w - 8)$. At $w = 10$ the length is $2(10) - 8 = 12$, so $A(10) = 10 \\cdot 12 = 120$.",
+  "common_errors": [
+   {
+    "value": "280",
+    "misconception": "misread-given",
+    "why": "Read '8 inches less than' as '8 inches more than' and used a length of $2w + 8 = 28$."
+   },
+   {
+    "value": "44",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the perimeter, $2(10 + 12)$, instead of the area."
+   },
+   {
+    "value": "22",
+    "misconception": "algebra-manipulation",
+    "why": "Added the width and length instead of multiplying them: $10 + 12$."
+   }
+  ],
+  "id": "orig-geometry-to-fu-M-3c12da",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-3c12da",
+   "structure": [],
+   "solver_answer": "120",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $V$ gives the volume, in cubic meters, of the basin in terms of its width $w$, in meters. The function can be written as $V(w) = aw^2 + bw$, where $a$ and $b$ are constants. What is the value of $b$?",
+  "stimulus": "A stormwater detention basin is shaped like a rectangular box with a uniform depth of $3$ meters. The width of the basin is $6$ meters less than its length.",
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "The question names the width $w$ as the input, so write every dimension in terms of $w$. The width is $6$ less than the length, which means the length is $6$ more than the width: length $= w + 6$. The volume of a box is length \u00d7 width \u00d7 depth, so $V(w) = (w + 6)(w)(3) = 3w^2 + 18w$. Matching this to $aw^2 + bw$ gives $a = 3$ and $b = 18$. To check, try $w = 2$. The length is $8$, so the volume is $8 \\cdot 2 \\cdot 3 = 48$, and $3(2)^2 + 18(2) = 12 + 36 = 48$.",
+  "common_errors": [
+   {
+    "value": "-18",
+    "misconception": "wrong-target-quantity",
+    "why": "You read 'width is 6 less than length' as width $= w - 6$, as if $w$ stood for the length. That gives $3w(w - 6) = 3w^2 - 18w$, so the offset has the wrong sign."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied length by width, $w(w + 6) = w^2 + 6w$, and left out the depth of $3$. That gives the floor area, not the volume."
+   },
+   {
+    "value": "-6",
+    "misconception": "algebra-manipulation",
+    "why": "You made both errors: you used $w - 6$ for the length and you left out the depth, giving $w^2 - 6w$."
+   }
+  ],
+  "id": "orig-geometry-to-fu-M-0ca3c5",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-0ca3c5",
+   "structure": [],
+   "solver_answer": 18,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the function can be written as __var__ where",
+    "function can be written as __var__ where __var__"
+   ],
+   "residue": 2
+  }
  }
 ]

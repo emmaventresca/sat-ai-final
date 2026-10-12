@@ -72,11 +72,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-graph-read-or--X-f2090f",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "the __var__ intercept of the graph of __var__",
     "__var__ intercept of the graph of __var__ in"
@@ -154,14 +159,705 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-graph-read-or--X-cf1e55",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "The graph of $y = f(x)$ is shown, where $f$ is a linear function. The function $g$ is defined by $g(x) = f(x) - 6$. What is the x-intercept of the graph of $y = g(x)$ in the xy-plane?",
+  "stimulus": "An ecology student fitted the linear function $f$ to survey data and graphed it in the xy-plane.",
+  "figure": {
+   "type": "line",
+   "caption": "Graph of y = f(x)",
+   "x_label": "x",
+   "y_label": "y",
+   "points": [
+    [
+     -1,
+     6
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     -2
+    ],
+    [
+     4,
+     -4
+    ]
+   ],
+   "x_min": -3,
+   "x_max": 5,
+   "x_step": 1,
+   "y_min": -6,
+   "y_max": 8,
+   "y_step": 2,
+   "alt": "A straight line graphed on a coordinate grid."
+  },
+  "choices": [
+   "$(-1, 0)$",
+   "$(0, -2)$",
+   "$(5, 0)$",
+   "$(2, 0)$"
+  ],
+  "answer": "A",
+  "explanation": "The line crosses the y-axis at $(0, 4)$ and falls 2 for every 1 step right, so $f(x) = -2x + 4$. Then $g(x) = -2x + 4 - 6 = -2x - 2$. Set $g(x) = 0$: $-2x = 2$, so $x = -1$. The x-intercept is $(-1, 0)$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $g(x) = -2x - 2$ correctly but gave its y-intercept, $(0, -2)$, when the question asked for the x-intercept."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You shifted the line up 6 instead of down 6, using $-2x + 10$, which crosses the x-axis at $x = 5$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You read the x-intercept of $f$ straight off the graph and stopped before applying the shift of $-6$ that defines $g$."
+   }
+  },
+  "id": "orig-graph-read-or--X-aac536",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--X-aac536",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the graph of __var__ is shown where __var__",
+    "is defined by __var__ what is the x",
+    "defined by __var__ what is the x intercept",
+    "by __var__ what is the x intercept of",
+    "__var__ what is the x intercept of the"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Line $\\ell$ is shown in the xy-plane. Which equation defines line $\\ell$?",
+  "stimulus": "An astronomy club graphed line $\\ell$ in the xy-plane while calibrating a star chart.",
+  "figure": {
+   "type": "line",
+   "caption": "Line \u2113",
+   "x_label": "x",
+   "y_label": "y",
+   "points": [
+    [
+     -6,
+     -3
+    ],
+    [
+     -3,
+     -1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     6,
+     5
+    ]
+   ],
+   "x_min": -7,
+   "x_max": 7,
+   "x_step": 1,
+   "y_min": -4,
+   "y_max": 6,
+   "y_step": 1,
+   "alt": "A straight line graphed on a coordinate grid."
+  },
+  "choices": [
+   "$2x - 3y = -3$",
+   "$3x - 2y = -2$",
+   "$2x + 3y = 3$",
+   "$2x - 3y = 3$"
+  ],
+  "answer": "A",
+  "explanation": "The line crosses the y-axis at $(0, 1)$ and rises 2 for every 3 steps right, so $y = \\tfrac{2}{3}x + 1$. Multiply by 3: $3y = 2x + 3$, which rearranges to $2x - 3y = -3$. Check with $(3, 3)$: $6 - 9 = -3$.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This line has the right y-intercept, 1, but its slope is $\\tfrac{3}{2}$. You took run over rise instead of rise over run."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This line has the right y-intercept but slope $-\\tfrac{2}{3}$. A sign slipped when you moved $y$ across, so the line falls where the graph rises."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You got the slope right but flipped the sign of the constant when rearranging, so this line crosses the y-axis at $(0, -1)$ instead of $(0, 1)$."
+   }
+  },
+  "id": "orig-graph-read-or--X-309ae2",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--X-309ae2",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Part of the graph of the linear function $y = f(x)$ is shown. What is the y-intercept of the graph of $y = f(x)$ in the xy-plane?",
+  "stimulus": "A folklore researcher graphed a linear function $f$ for only part of its domain.",
+  "figure": {
+   "type": "line",
+   "caption": "Part of the graph of y = f(x)",
+   "x_label": "x",
+   "y_label": "y",
+   "points": [
+    [
+     2,
+     5
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     6,
+     -1
+    ],
+    [
+     8,
+     -4
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 9,
+   "x_step": 1,
+   "y_min": -5,
+   "y_max": 9,
+   "y_step": 1,
+   "alt": "A straight line segment graphed on a coordinate grid."
+  },
+  "choices": [
+   "$(0, 8)$",
+   "$(8, 0)$",
+   "$\\left(\\tfrac{16}{3}, 0\\right)$",
+   "$\\left(0, \\tfrac{19}{3}\\right)$"
+  ],
+  "answer": "A",
+  "explanation": "From $(2, 5)$ to $(4, 2)$ the line falls 3 over a run of 2, so the slope is $-\\tfrac{3}{2}$. Going 2 left from $(2, 5)$ to reach $x = 0$ adds 3, so $y = 8$. The y-intercept is $(0, 8)$.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You found 8 but wrote the point with its coordinates reversed. $(8, 0)$ is on the x-axis, and the line is not even at $y = 0$ when $x = 8$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You solved $-\\tfrac{3}{2}x + 8 = 0$ and gave the x-intercept, but the question asked where the line crosses the y-axis."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $-\\tfrac{2}{3}$ for the slope, which is run over rise, so you only added $\\tfrac{4}{3}$ to 5 when you stepped back to $x = 0$."
+   }
+  },
+  "id": "orig-graph-read-or--X-8e9c20",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--X-8e9c20",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "of the linear function __var__ is shown what",
+    "the linear function __var__ is shown what is",
+    "linear function __var__ is shown what is the",
+    "function __var__ is shown what is the y",
+    "__var__ is shown what is the y intercept",
+    "is shown what is the y intercept of",
+    "shown what is the y intercept of the"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graph of $y = f(x)$ is shown, where $f$ is a linear function. Which equation defines $f$?",
+  "stimulus": "An archaeology team graphed the linear function $f$ in the xy-plane while mapping a trench profile.",
+  "figure": {
+   "type": "line",
+   "caption": "Graph of y = f(x)",
+   "x_label": "x",
+   "y_label": "y",
+   "points": [
+    [
+     -2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     6,
+     -1
+    ]
+   ],
+   "x_min": -4,
+   "x_max": 7,
+   "x_step": 1,
+   "y_min": -2,
+   "y_max": 4,
+   "y_step": 1,
+   "alt": "A straight line graphed on a coordinate grid."
+  },
+  "choices": [
+   "$f(x) = -\\tfrac{1}{2}(x - 4)$",
+   "$f(x) = -\\tfrac{1}{2}(x + 4)$",
+   "$f(x) = -2(x - 4)$",
+   "$f(x) = \\tfrac{1}{2}(x - 4)$"
+  ],
+  "answer": "A",
+  "explanation": "The line falls 1 for every 2 steps right, so the slope is $-\\tfrac{1}{2}$, and it crosses the x-axis at $(4, 0)$. A line with slope $m$ and x-intercept $(4, 0)$ is $f(x) = m(x - 4)$. Check the y-intercept: $-\\tfrac{1}{2}(0 - 4) = 2$, which matches $(0, 2)$ on the graph.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You wrote $(x + 4)$ for an x-intercept at 4. This line crosses the x-axis at $(-4, 0)$ and the y-axis at $(0, -2)$."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The x-intercept and sign are right, but you used run over rise, so the slope is $-2$. This line is four times too steep and crosses the y-axis at $(0, 8)$."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The intercept and steepness are right but the slope has the wrong sign. This line rises left to right, while the graph falls."
+   }
+  },
+  "id": "orig-graph-read-or--X-8e7ece",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--X-8e7ece",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the graph of __var__ is shown where __var__"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graph of $y = f(x)$ is shown, where $f(x) = ax + b$ and $a$ and $b$ are constants. What is the value of $ab$?",
+  "stimulus": "A hydrologist graphed the linear function $f$ in the xy-plane.",
+  "figure": {
+   "type": "line",
+   "caption": "Graph of y = f(x)",
+   "x_label": "x",
+   "y_label": "y",
+   "points": [
+    [
+     -9,
+     2
+    ],
+    [
+     -6,
+     0
+    ],
+    [
+     -3,
+     -2
+    ],
+    [
+     0,
+     -4
+    ],
+    [
+     3,
+     -6
+    ]
+   ],
+   "x_min": -10,
+   "x_max": 4,
+   "x_step": 1,
+   "y_min": -8,
+   "y_max": 4,
+   "y_step": 1,
+   "alt": "A straight line graphed on a coordinate grid."
+  },
+  "choices": [
+   "$\\tfrac{8}{3}$",
+   "$-\\tfrac{8}{3}$",
+   "$6$",
+   "$4$"
+  ],
+  "answer": "A",
+  "explanation": "The y-intercept is $(0, -4)$, so $b = -4$. From $(-6, 0)$ to $(0, -4)$ the line falls 4 over a run of 6, so $a = -\\tfrac{2}{3}$. Then $ab = \\left(-\\tfrac{2}{3}\\right)(-4) = \\tfrac{8}{3}$.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the steepness right but took the slope as positive $\\tfrac{2}{3}$, even though the line falls from left to right."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the slope as run over rise, $-\\tfrac{3}{2}$, and multiplied that by $-4$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the x-intercept, $-6$, for $b$. But $b$ is where the line crosses the y-axis, which is $-4$."
+   }
+  },
+  "id": "orig-graph-read-or--X-27feee",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--X-27feee",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the graph of __var__ is shown where __var__",
+    "graph of __var__ is shown where __var__ and",
+    "of __var__ is shown where __var__ and __var__"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graph of $y = f(x) + 4$ is shown, where $f$ is a linear function. What is the y-intercept of the graph of $y = f(x)$ in the xy-plane?",
+  "stimulus": "A linguist graphed a shifted version of the linear function $f$ in the xy-plane.",
+  "figure": {
+   "type": "line",
+   "caption": "Graph of y = f(x) + 4",
+   "x_label": "x",
+   "y_label": "y",
+   "points": [
+    [
+     -4,
+     -5
+    ],
+    [
+     -2,
+     -2
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     4,
+     7
+    ]
+   ],
+   "x_min": -5,
+   "x_max": 5,
+   "x_step": 1,
+   "y_min": -6,
+   "y_max": 8,
+   "y_step": 1,
+   "alt": "A straight line graphed on a coordinate grid."
+  },
+  "choices": [
+   "$(0, -3)$",
+   "$(0, 5)$",
+   "$(0, 1)$",
+   "$(-3, 0)$"
+  ],
+  "answer": "A",
+  "explanation": "The graph shown is $y = f(x) + 4$, and it crosses the y-axis at $(0, 1)$, so $f(0) + 4 = 1$. That gives $f(0) = -3$, so the graph of $y = f(x)$ has its y-intercept at $(0, -3)$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You saw that the graph was shifted but added 4 to the shown intercept instead of subtracting it, so you moved further from $f$, not back to it."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You read the y-intercept straight off the picture, but the picture is $y = f(x) + 4$, not $y = f(x)$."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You found $-3$ correctly but wrote the point with its coordinates reversed. That point is on the x-axis, not the y-axis."
+   }
+  },
+  "id": "orig-graph-read-or--X-59a168",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--X-59a168",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the graph of __var__ is shown where __var__",
+    "__var__ is a linear function what is the",
+    "is a linear function what is the y",
+    "a linear function what is the y intercept",
+    "linear function what is the y intercept of",
+    "function what is the y intercept of the"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "Part of the graph of the linear function $y = f(x)$ is shown. What is the x-intercept of the graph of $y = f(x)$ in the xy-plane?",
+  "stimulus": "A cartographer graphed a linear function $f$ for only part of its domain.",
+  "figure": {
+   "type": "line",
+   "caption": "Part of the graph of y = f(x)",
+   "x_label": "x",
+   "y_label": "y",
+   "points": [
+    [
+     -12,
+     12
+    ],
+    [
+     -8,
+     9
+    ],
+    [
+     -4,
+     6
+    ]
+   ],
+   "x_min": -12,
+   "x_max": 6,
+   "x_step": 2,
+   "y_min": -3,
+   "y_max": 12,
+   "y_step": 3,
+   "alt": "A straight line segment graphed on a coordinate grid."
+  },
+  "choices": [
+   "$(4, 0)$",
+   "$(0, 3)$",
+   "$(0, 4)$",
+   "$(-12, 0)$"
+  ],
+  "answer": "A",
+  "explanation": "From $(-8, 9)$ to $(-4, 6)$ the line falls 3 over a run of 4, so the slope is $-\\tfrac{3}{4}$. Starting at $(-4, 6)$, the line has to fall 6 more to reach $y = 0$, which takes a run of 8. So $x = -4 + 8 = 4$, and the x-intercept is $(4, 0)$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You extended the line correctly but stopped at the y-axis. $(0, 3)$ is the y-intercept, and the question asked where the line crosses the x-axis."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You found 4 but wrote the point with its coordinates reversed, which puts it on the y-axis."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the slope as $+\\tfrac{3}{4}$ and extended the line the wrong way. The segment falls left to right, so it reaches $y = 0$ to the right."
+   }
+  },
+  "id": "orig-graph-read-or--X-d31264",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--X-d31264",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "of the linear function __var__ is shown what",
+    "the linear function __var__ is shown what is",
+    "linear function __var__ is shown what is the"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graph of $y = f(x)$ is shown, where $f$ is a linear function. What is the x-intercept of the graph of $y = f(x - 3)$ in the xy-plane?",
+  "stimulus": "A marine biologist graphed the linear function $f$ in the xy-plane.",
+  "figure": {
+   "type": "line",
+   "caption": "Graph of y = f(x)",
+   "x_label": "x",
+   "y_label": "y",
+   "points": [
+    [
+     -6,
+     -1
+    ],
+    [
+     -4,
+     0
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     4,
+     4
+    ]
+   ],
+   "x_min": -8,
+   "x_max": 6,
+   "x_step": 2,
+   "y_min": -2,
+   "y_max": 6,
+   "y_step": 1,
+   "alt": "A straight line graphed on a coordinate grid."
+  },
+  "choices": [
+   "$(-1, 0)$",
+   "$(-7, 0)$",
+   "$\\left(0, \\tfrac{1}{2}\\right)$",
+   "$(-4, 0)$"
+  ],
+  "answer": "A",
+  "explanation": "The graph of $f$ crosses the x-axis at $(-4, 0)$, so $f(-4) = 0$. For $y = f(x - 3)$ to be 0 you need $x - 3 = -4$, so $x = -1$. Replacing $x$ with $x - 3$ moves the graph 3 to the right, so the x-intercept is $(-1, 0)$.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You moved the graph 3 to the left. Replacing $x$ with $x - 3$ moves it 3 to the right."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You shifted correctly but found the y-intercept of the new graph, $f(-3) = \\tfrac{1}{2}$, instead of its x-intercept."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You read the x-intercept of $f$ off the graph and never applied the shift."
+   }
+  },
+  "id": "orig-graph-read-or--X-e20112",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--X-e20112",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the graph of __var__ is shown where __var__",
+    "__var__ is a linear function what is the"
+   ],
+   "residue": 4
+  }
  }
 ]

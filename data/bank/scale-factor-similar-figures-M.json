@@ -187,17 +187,22 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "review",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-scale-factor-s-M-b22a30",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "inches what is the width in inches of"
    ],
    "residue": 8
-  },
-  "phrasing": "direct"
+  }
  },
  {
   "stem": "What is the area, in square centimeters, of the smaller amulet?",
@@ -249,5 +254,808 @@
    "residue": 1
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the area, in square centimeters, of the enlarged rectangle?",
+  "stimulus": "An immunologist sketches the rectangular region of a slide where T cells were counted. The sketch's area is $14$ square centimeters. An enlarged sketch is similar to the original, and its perimeter is $3$ times the original's perimeter.",
+  "choices": [
+   "$42$",
+   "$84$",
+   "$126$",
+   "$378$"
+  ],
+  "answer": "C",
+  "explanation": "The ratio of the perimeters is the length scale factor, so $k = 3$. Areas scale by $k^2 = 9$, so the enlarged rectangle's area is $14 \\times 9 = 126$ square centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You multiplied the area by the length scale factor $k = 3$ rather than by $k^2 = 9$. A perimeter ratio tells you how lengths change, not how areas change."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You doubled the scale factor instead of squaring it, so you multiplied by $2 \\times 3 = 6$ instead of $3^2 = 9$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You multiplied by $k^3 = 27$, which is the factor for volume. A rectangle is two-dimensional, so its area scales by $k^2$."
+   }
+  },
+  "id": "orig-scale-factor-s-M-8c1cc3",
+  "skill_cd": "S.A.",
+  "subtype": "scale-factor-similar-figures",
+  "subtype_name": "Scale factor: lengths vs. areas",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-scale-factor-s-M-8c1cc3",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the width, in centimeters, of the larger label?",
+  "stimulus": "A nutrition science lab prints a food label in two sizes, and the two rectangular labels are similar. The smaller label has an area of $24$ square centimeters and a width of $4$ centimeters. The larger label has an area of $54$ square centimeters.",
+  "choices": [
+   "$\\frac{3}{2}$",
+   "$\\frac{8}{3}$",
+   "$6$",
+   "$9$"
+  ],
+  "answer": "C",
+  "explanation": "The ratio of the areas is $\\frac{54}{24} = \\frac{9}{4}$. Areas scale by $k^2$, so $k^2 = \\frac{9}{4}$ and the length scale factor is $k = \\frac{3}{2}$. Widths are lengths, so they scale by $k$: $4 \\cdot \\frac{3}{2} = 6$ centimeters. To check by testing the choices, a width of $6$ gives $k = \\frac{6}{4}$, and $\\left(\\frac{6}{4}\\right)^2 \\cdot 24 = 54$, which matches.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found the length scale factor $k = \\frac{3}{2}$ and stopped. You still have to multiply the smaller width by it."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You scaled the wrong way and multiplied $4$ by $\\frac{2}{3}$. That makes the larger label narrower than the smaller one."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You multiplied the width by the area ratio $\\frac{9}{4}$. A width is a length, so it scales by $k = \\frac{3}{2}$, not by $k^2$."
+   }
+  },
+  "id": "orig-scale-factor-s-M-e40e3e",
+  "skill_cd": "S.A.",
+  "subtype": "scale-factor-similar-figures",
+  "subtype_name": "Scale factor: lengths vs. areas",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "review",
+  "verification": {
+   "id": "orig-scale-factor-s-M-e40e3e",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "centimeters and a width of __var__ centimeters the",
+    "centimeters what is the width in centimeters of",
+    "what is the width in centimeters of the"
+   ],
+   "residue": 9
+  }
+ },
+ {
+  "stem": "What is the area, in square meters, of the larger zone?",
+  "stimulus": "A sports science team marks out two similar triangular agility zones on a field. The smaller zone has a perimeter of $18$ meters and an area of $27$ square meters. The larger zone has a perimeter of $30$ meters.",
+  "choices": [
+   "$9.72$",
+   "$45$",
+   "$75$",
+   "$125$"
+  ],
+  "answer": "C",
+  "explanation": "The ratio of the perimeters is the length scale factor: $k = \\frac{30}{18} = \\frac{5}{3}$. Areas scale by $k^2 = \\frac{25}{9}$, so the larger zone's area is $27 \\cdot \\frac{25}{9} = 75$ square meters.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You multiplied by $\\left(\\frac{3}{5}\\right)^2$ instead of $\\left(\\frac{5}{3}\\right)^2$. That gives an area smaller than the smaller zone's area, which can't be right for the larger zone."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the perimeter ratio $\\frac{5}{3}$ as if it were the area ratio. Areas scale by $k^2$, not by $k$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You cubed the scale factor. $k^3$ is for volumes. For areas, you square it."
+   }
+  },
+  "id": "orig-scale-factor-s-M-f78087",
+  "skill_cd": "S.A.",
+  "subtype": "scale-factor-similar-figures",
+  "subtype_name": "Scale factor: lengths vs. areas",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-scale-factor-s-M-f78087",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "of __var__ meters what is the area in",
+    "__var__ meters what is the area in square",
+    "meters what is the area in square meters",
+    "what is the area in square meters of",
+    "is the area in square meters of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the perimeter, in inches, of the replica?",
+  "stimulus": "A folklore studies archive owns a rectangular carved panel that shows scenes from a village legend. The panel has an area of $200$ square inches and a perimeter of $60$ inches. A replica of the panel is similar to the original and has an area of $72$ square inches.",
+  "choices": [
+   "$7.2$",
+   "$21.6$",
+   "$36$",
+   "$100$"
+  ],
+  "answer": "C",
+  "explanation": "The ratio of the areas is $\\frac{72}{200} = \\frac{9}{25}$, so $k^2 = \\frac{9}{25}$ and $k = \\frac{3}{5}$. Perimeters are lengths, so they scale by $k$: $60 \\cdot \\frac{3}{5} = 36$ inches. To check, the perimeter ratio $\\frac{36}{60} = \\frac{3}{5}$ squared is $\\frac{9}{25}$, which matches the area ratio.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the square root of the numerator only and used $\\frac{3}{25}$. The square root of $\\frac{9}{25}$ is $\\frac{3}{5}$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You multiplied the perimeter by the area ratio $\\frac{9}{25}$. A perimeter is a length, so it scales by $k = \\frac{3}{5}$, not by $k^2$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You multiplied by $\\frac{5}{3}$ instead of $\\frac{3}{5}$. The replica is smaller than the original, so its perimeter has to be less than $60$ inches."
+   }
+  },
+  "id": "orig-scale-factor-s-M-b58f9f",
+  "skill_cd": "S.A.",
+  "subtype": "scale-factor-similar-figures",
+  "subtype_name": "Scale factor: lengths vs. areas",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "review",
+  "verification": {
+   "id": "orig-scale-factor-s-M-b58f9f",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "has an area of __var__ square inches what",
+    "an area of __var__ square inches what is",
+    "area of __var__ square inches what is the",
+    "inches what is the perimeter in inches of"
+   ],
+   "residue": 8
+  }
+ },
+ {
+  "stem": "Which expression represents the area, in square feet, of the scale drawing?",
+  "stimulus": "An archaeologist makes a scale drawing of a rectangular mosaic floor found at a dig site. Each length in the drawing is $\\frac{1}{25}$ of the corresponding length of the floor. The floor has an area of $A$ square feet.",
+  "choices": [
+   "$\\frac{A}{625}$",
+   "$\\frac{A}{25}$",
+   "$625A$",
+   "$\\frac{A}{125}$"
+  ],
+  "answer": "A",
+  "explanation": "The length scale factor from the floor to the drawing is $k = \\frac{1}{25}$. Areas scale by $k^2 = \\left(\\frac{1}{25}\\right)^2 = \\frac{1}{625}$, so the drawing's area is $\\frac{A}{625}$ square feet.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the length scale factor $\\frac{1}{25}$ for the area. Areas scale by $k^2$, not $k$, so you need to square the factor."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You squared the scale factor correctly but went the wrong way. The drawing is smaller than the floor, so its area should be smaller than $A$. You need to divide, not multiply."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied 25 by itself one time too many and got 125 instead of 625. Even then, 125 is not $25^3$, so this isn't a correct volume factor either. For area, multiply the scale factor by itself once: $25 \\times 25 = 625$."
+   }
+  },
+  "id": "orig-scale-factor-s-M-9ccadb",
+  "skill_cd": "S.A.",
+  "subtype": "scale-factor-similar-figures",
+  "subtype_name": "Scale factor: lengths vs. areas",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-scale-factor-s-M-9ccadb",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the area, in square centimeters, of the larger cracker?",
+  "stimulus": "A nutrition science lab tests two similar rectangular crackers. The perimeter of the larger cracker is 3 times the perimeter of the smaller cracker. The smaller cracker has an area of $s$ square centimeters.",
+  "choices": [
+   "$3s$",
+   "$6s$",
+   "$9s$",
+   "$\\frac{s}{9}$"
+  ],
+  "answer": "C",
+  "explanation": "In similar figures, the ratio of the perimeters equals the length scale factor, so $k = 3$. Areas scale by $k^2 = 9$, so the larger cracker's area is $9s$ square centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the perimeter ratio as if it were the area ratio. A ratio of perimeters is a ratio of lengths, and areas scale by its square."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You doubled the scale factor ($3 \\times 2$) when you should have squared it ($3 \\times 3$)."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You squared the scale factor correctly but divided by it. The larger cracker has to have the larger area, so you should multiply $s$ by 9."
+   }
+  },
+  "id": "orig-scale-factor-s-M-94fc62",
+  "skill_cd": "S.A.",
+  "subtype": "scale-factor-similar-figures",
+  "subtype_name": "Scale factor: lengths vs. areas",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-scale-factor-s-M-94fc62",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the length, in micrometers, of the corresponding side of the enlarged triangle?",
+  "stimulus": "An immunology student enlarges a microscope image of a triangular patch of stained tissue. The enlarged triangle is similar to the original, and its area is 16 times the original area. One side of the original triangle is $x$ micrometers long.",
+  "choices": [
+   "$16x$",
+   "$4x$",
+   "$256x$",
+   "$\\frac{x}{4}$"
+  ],
+  "answer": "B",
+  "explanation": "Areas scale by $k^2$, so $k^2 = 16$ and the length scale factor is $k = 4$. Corresponding sides scale by $k$ itself, so the enlarged side is $4x$ micrometers.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the area ratio 16 as the length scale factor. Lengths scale by $k$, and here $k$ is the square root of 16."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You squared the area ratio ($16^2 = 256$) when you should have taken its square root. A side proportion needs $k$, not something larger than the area ratio."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found $k = 4$ correctly but divided by it. The triangle was enlarged, so its sides must be longer than $x$."
+   }
+  },
+  "id": "orig-scale-factor-s-M-0a6c82",
+  "skill_cd": "S.A.",
+  "subtype": "scale-factor-similar-figures",
+  "subtype_name": "Scale factor: lengths vs. areas",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-scale-factor-s-M-0a6c82",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many square centimeters greater is the area of the larger plate than the area of the smaller plate?",
+  "stimulus": "A bridge crew uses two similar triangular steel gusset plates. The smaller plate has a perimeter of 18 centimeters (cm) and an area of 20 square centimeters ($\\text{cm}^2$). The larger plate has a perimeter of 54 cm.",
+  "choices": [
+   "40",
+   "160",
+   "180",
+   "520"
+  ],
+  "answer": "B",
+  "explanation": "The perimeters give you the length scale factor: $k = \\frac{54}{18} = 3$. Areas scale by $k^2 = 9$, so the larger plate's area is $20 \\times 9 = 180\\ \\text{cm}^2$. The question asks for the difference: $180 - 20 = 160\\ \\text{cm}^2$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You scaled the area by $k = 3$, the length ratio, instead of $k^2 = 9$. That gives $60$, and $60 - 20 = 40$. The perimeter ratio is a length ratio, not an area ratio."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "$180\\ \\text{cm}^2$ is the larger plate's whole area. You stopped there and never subtracted the smaller plate's 20 to get the difference."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You cubed the scale factor ($3^3 = 27$), which is the rule for volume. That gives $540 - 20 = 520$. A flat plate's area scales by $k^2$."
+   }
+  },
+  "id": "orig-scale-factor-s-M-831d9e",
+  "skill_cd": "S.A.",
+  "subtype": "scale-factor-similar-figures",
+  "subtype_name": "Scale factor: lengths vs. areas",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-scale-factor-s-M-831d9e",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many kilometers greater is the perimeter of zone B than the perimeter of zone A?",
+  "stimulus": "Seismologists mark off two similar rectangular monitoring zones near a fault line. Zone A has an area of 12 square kilometers and a perimeter of 14 kilometers. Zone B has an area of 75 square kilometers.",
+  "choices": [
+   "21",
+   "35",
+   "63",
+   "73.5"
+  ],
+  "answer": "A",
+  "explanation": "The area ratio is $\\frac{75}{12} = \\frac{25}{4}$, which equals $k^2$. Take the square root to get the length scale factor, $k = \\frac{5}{2}$. A perimeter is a length, so zone B's perimeter is $14 \\times \\frac{5}{2} = 35$ km. The difference is $35 - 14 = 21$ km.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "35 km is zone B's whole perimeter. The question asks how much greater it is than zone A's, so you still had to subtract 14."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$75 - 12 = 63$ is the gap between the two areas, in square kilometers. The question asks about the perimeters, which are lengths."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You scaled the perimeter by the area ratio $\\frac{25}{4}$ and got $87.5$, then $87.5 - 14 = 73.5$. A perimeter is a length, so it scales by $k = \\frac{5}{2}$, the square root of the area ratio."
+   }
+  },
+  "id": "orig-scale-factor-s-M-645f4d",
+  "skill_cd": "S.A.",
+  "subtype": "scale-factor-similar-figures",
+  "subtype_name": "Scale factor: lengths vs. areas",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-scale-factor-s-M-645f4d",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many square miles greater is the area of the second region than the area of the first region?",
+  "stimulus": "On a weather map, a forecaster draws two similar triangular storm-watch regions. One side of the first region is 30 miles long, and the matching side of the second region is 45 miles long. The first region has an area of 400 square miles.",
+  "choices": [
+   "200",
+   "500",
+   "900",
+   "950"
+  ],
+  "answer": "B",
+  "explanation": "The length scale factor is $k = \\frac{45}{30} = \\frac{3}{2}$, so areas scale by $k^2 = \\frac{9}{4}$. The second region's area is $400 \\times \\frac{9}{4} = 900$ square miles. The difference is $900 - 400 = 500$ square miles.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You scaled the area by the length ratio $\\frac{3}{2}$ instead of its square. That gives $600$, and $600 - 400 = 200$. Areas scale by $k^2$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "900 square miles is the second region's whole area. You didn't subtract the first region's 400 to find how much greater it is."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You cubed the scale factor, $\\left(\\frac{3}{2}\\right)^3 = \\frac{27}{8}$, which is the volume rule. That gives $1{,}350 - 400 = 950$. A flat region's area scales by $k^2$."
+   }
+  },
+  "id": "orig-scale-factor-s-M-71b1fd",
+  "skill_cd": "S.A.",
+  "subtype": "scale-factor-similar-figures",
+  "subtype_name": "Scale factor: lengths vs. areas",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-scale-factor-s-M-71b1fd",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A meteorologist draws a triangular hail-watch zone, Zone S, on a regional map. The next day she draws Zone T, a triangle similar to Zone S. The perimeter of Zone S is 150 kilometers, and the perimeter of Zone T is 450 kilometers.",
+  "choices": [
+   "The area of Zone T is 3 times the area of Zone S.",
+   "The area of Zone T is 9 times the area of Zone S.",
+   "Each side of Zone T is 9 times the corresponding side of Zone S.",
+   "The area of Zone T is 27 times the area of Zone S."
+  ],
+  "answer": "B",
+  "explanation": "In similar figures, the ratio of the perimeters is the length scale factor, so $k = \\frac{450}{150} = 3$. Areas scale by $k^2$, so the area of Zone T is $3^2 = 9$ times the area of Zone S.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "3 is the length scale factor, which is also the ratio of the perimeters. You applied it to area, but area scales by $k^2$, not $k$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You squared the scale factor for a side length. Corresponding sides scale by $k = 3$ itself. Only areas scale by $k^2 = 9$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You cubed the scale factor, which is the rule for volume. A flat zone on a map has area, so it scales by $k^2 = 9$."
+   }
+  },
+  "id": "orig-scale-factor-s-M-1f028f",
+  "skill_cd": "S.A.",
+  "subtype": "scale-factor-similar-figures",
+  "subtype_name": "Scale factor: lengths vs. areas",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-scale-factor-s-M-1f028f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "An agronomist lays out two similar rectangular test plots for a wheat trial. Plot P has an area of 144 square meters, and Plot Q has an area of 36 square meters.",
+  "choices": [
+   "Each side of Plot P is 4 times the corresponding side of Plot Q.",
+   "The perimeter of Plot P is 2 times the perimeter of Plot Q.",
+   "The perimeter of Plot P is 16 times the perimeter of Plot Q.",
+   "Each side of Plot P is 12 times the corresponding side of Plot Q."
+  ],
+  "answer": "B",
+  "explanation": "The ratio of the areas is $\\frac{144}{36} = 4$, and this equals $k^2$. So the length scale factor is $k = \\sqrt{4} = 2$. Perimeters are lengths, so the perimeter of Plot P is 2 times the perimeter of Plot Q.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "4 is the ratio of the areas, not the ratio of the lengths. Side lengths scale by $k$, and here $k^2 = 4$, so $k = 2$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You squared the area ratio when you should have taken its square root. Going from areas back to lengths means $k = \\sqrt{4}$, not $4^2$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You took the square root of Plot P's area, 144, and used it as the ratio. The scale factor comes from comparing the two areas, $\\frac{144}{36}$, and the plots are rectangles, not squares."
+   }
+  },
+  "id": "orig-scale-factor-s-M-653c5f",
+  "skill_cd": "S.A.",
+  "subtype": "scale-factor-similar-figures",
+  "subtype_name": "Scale factor: lengths vs. areas",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-scale-factor-s-M-653c5f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A marine biologist marks out two similar triangular survey areas on a seagrass bed. The shortest side of the smaller area is 12 meters, and the shortest side of the larger area is 18 meters.",
+  "choices": [
+   "The area of the larger region is 1.5 times the area of the smaller region.",
+   "The area of the larger region is 2.25 times the area of the smaller region.",
+   "The area of the larger region is 3.375 times the area of the smaller region.",
+   "The perimeter of the larger region is 2.25 times the perimeter of the smaller region."
+  ],
+  "answer": "B",
+  "explanation": "Corresponding sides give the length scale factor $k = \\frac{18}{12} = 1.5$. Areas scale by $k^2 = 1.5^2 = 2.25$, so the larger region has 2.25 times the area of the smaller one.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "1.5 is the scale factor for lengths. You applied it to area, which scales by $k^2 = 2.25$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You cubed the scale factor, $1.5^3 = 3.375$, which is the rule for volume. A flat survey area scales by $k^2$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "2.25 is the area ratio, but perimeter is a length, so it scales by $k = 1.5$. You squared the scale factor for a quantity that needs $k$ itself."
+   }
+  },
+  "id": "orig-scale-factor-s-M-2ef25a",
+  "skill_cd": "S.A.",
+  "subtype": "scale-factor-similar-figures",
+  "subtype_name": "Scale factor: lengths vs. areas",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-scale-factor-s-M-2ef25a",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "An ecologist computes $\\left(\\frac{1.5}{0.5}\\right)^2 = 9$. Which choice best describes what the number 9 represents in this situation?",
+  "stimulus": "To count wildflowers, an ecologist lays out two square sampling frames on a meadow. Frame A has a side length of $0.5$ meter, and frame B has a side length of $1.5$ meters.",
+  "choices": [
+   "The number of times as long each side of frame B is as each side of frame A",
+   "The number of times as long the perimeter of frame B is as the perimeter of frame A",
+   "The number of times as large the area of frame B is as the area of frame A",
+   "The area of frame B, in square meters"
+  ],
+  "answer": "C",
+  "explanation": "The two squares are similar, and the length scale factor is $k = \\frac{1.5}{0.5} = 3$. Areas scale by $k^2$, so $3^2 = 9$ means frame B covers 9 times as much ground as frame A. You can check this directly: frame A's area is $0.25$ square meter, frame B's is $2.25$ square meters, and $2.25 \\div 0.25 = 9$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "The side-length ratio is $k = 3$, the number before it is squared. Squaring it turns a length ratio into an area ratio, so 9 can't still describe lengths."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "Perimeters scale like lengths, by $k$, so frame B's perimeter is 3 times frame A's, not 9 times. You mixed up the perimeter ratio and the area ratio."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "9 is a ratio with no units, not a measurement. Frame B's actual area is $1.5^2 = 2.25$ square meters. You read a comparison as an amount."
+   }
+  },
+  "id": "orig-scale-factor-s-M-c3830b",
+  "skill_cd": "S.A.",
+  "subtype": "scale-factor-similar-figures",
+  "subtype_name": "Scale factor: lengths vs. areas",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-scale-factor-s-M-c3830b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the area, in square meters, of the actual trench floor?",
+  "stimulus": "On an archaeologist's site plan, each $1$ centimeter represents $3$ meters on the ground. The plan shows the floor of an excavation trench with an area of $8$ square centimeters.",
+  "choices": [
+   "$24$",
+   "$72$",
+   "$216$",
+   "$720{,}000$"
+  ],
+  "answer": "B",
+  "explanation": "Every length on the ground is the plan length times $k = 3$, measured in meters. Area scales by $k^2 = 9$, so each square centimeter on the plan stands for $9$ square meters on the ground. The trench floor is $8 \\times 9 = 72$ square meters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the area by the length scale factor $k = 3$. Area scales by $k^2$, so you needed to multiply by 9."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by $k^3 = 27$, which is the factor for volume. A floor is flat, so its area scales by $k^2 = 9$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You converted 3 meters to 300 centimeters and multiplied by $300^2$. That gives the area in square centimeters. The question asks for square meters."
+   }
+  },
+  "id": "orig-scale-factor-s-M-d90bc8",
+  "skill_cd": "S.A.",
+  "subtype": "scale-factor-similar-figures",
+  "subtype_name": "Scale factor: lengths vs. areas",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-scale-factor-s-M-d90bc8",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ square centimeters what is the area in",
+    "square centimeters what is the area in square",
+    "what is the area in square meters of",
+    "is the area in square meters of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the perimeter, in centimeters, of the larger outline?",
+  "stimulus": "A paleobotanist traces the outlines of two fossil leaves and finds that the outlines are similar triangles. The larger outline has $49$ times the area of the smaller one. The smaller outline has a perimeter of $6$ centimeters.",
+  "choices": [
+   "$7$",
+   "$42$",
+   "$55$",
+   "$294$"
+  ],
+  "answer": "B",
+  "explanation": "The area ratio is $k^2 = 49$, so the length scale factor is $k = 7$. Perimeter is a length, so it scales by $k$. The larger outline's perimeter is $6 \\times 7 = 42$ centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "7 is the length scale factor $k$. You found it but didn't multiply the smaller perimeter, 6 centimeters, by it."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $6 + 49$. Similar figures scale by multiplying, and the area ratio has to become a length ratio before you use it on a perimeter."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You multiplied the perimeter by the area ratio, 49. Perimeters scale by $k = 7$, not $k^2 = 49$."
+   }
+  },
+  "id": "orig-scale-factor-s-M-282989",
+  "skill_cd": "S.A.",
+  "subtype": "scale-factor-similar-figures",
+  "subtype_name": "Scale factor: lengths vs. areas",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-scale-factor-s-M-282989",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

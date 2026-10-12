@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-classify-funct-X-d1ae22",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "__num__ which of the following best describes the"
    ],
@@ -79,14 +84,410 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-classify-funct-X-04f129",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "must_be_true"
+ },
+ {
+  "stem": "Which of the following best describes how the value of $r(t)$ changes as $t$ increases?",
+  "stimulus": "A materials scientist tracks the stiffness of two curing resin samples. Sample A's stiffness $t$ hours after mixing is modeled by $a(t) = 30(0.75)^{-t}$, and sample B's is modeled by $b(t) = 20(0.5)^{-t}$, both in gigapascals. The function $r$ is defined by $r(t) = \\dfrac{a(t)}{b(t)}$.",
+  "choices": [
+   "Decreasing exponential",
+   "Decreasing linear",
+   "Increasing exponential",
+   "Increasing linear"
+  ],
+  "answer": "A",
+  "explanation": "Write $r(t) = \\dfrac{30}{20}\\cdot\\dfrac{(0.75)^{-t}}{(0.5)^{-t}} = 1.5\\left(\\dfrac{0.5}{0.75}\\right)^{t} = 1.5\\left(\\dfrac{2}{3}\\right)^{t}$. That is a constant multiplier of $\\tfrac{2}{3}$ for each hour, so it is exponential, and because $\\tfrac{2}{3} < 1$ it is decreasing. Both samples get stiffer, but B gets stiffer faster, so the ratio shrinks.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the direction right but called the ratio linear. $r(t)$ is multiplied by $\\tfrac{2}{3}$ every hour. It does not lose a fixed amount each hour, so it is exponential."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the quotient and got $\\left(\\tfrac{0.75}{0.5}\\right)^{t} = 1.5^{t}$, or you reasoned that two growing quantities must have a growing ratio. With the negative exponents handled correctly, the base is $\\tfrac{0.5}{0.75} = \\tfrac{2}{3}$, which is less than 1."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You saw that both samples get stiffer and assumed their ratio grows steadily. The ratio is neither increasing nor linear. It is multiplied by $\\tfrac{2}{3}$ each hour."
+   }
+  },
+  "id": "orig-classify-funct-X-4868a9",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-X-4868a9",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the function __var__ is defined by __var__ which"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following best describes the relationship between $t$ and $L$ shown in the table?",
+  "stimulus": "A musicologist measures $L$, the average length, in seconds, of a recurring cadenza in recordings of one concerto made $t$ decades after 1920.\nAverage Cadenza Length\nt (decades after 1920) | L (seconds)\n0 | 40\n2 | 34\n3 | 31\n7 | 19",
+  "choices": [
+   "Decreasing exponential",
+   "Decreasing linear",
+   "Increasing exponential",
+   "Increasing linear"
+  ],
+  "answer": "B",
+  "explanation": "The $t$-values are not evenly spaced, so divide each change in $L$ by the change in $t$: $\\frac{-6}{2} = -3$, $\\frac{-3}{1} = -3$, $\\frac{-12}{4} = -3$. $L$ falls by the same 3 seconds per decade, so the relationship is linear and decreasing: $L = 40 - 3t$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You saw changes of $-6$, $-3$, and $-12$ from row to row, decided they weren't constant, and called it exponential. Those rows are 2, 1, and 4 decades apart. Per decade, the change is always $-3$."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You got the direction wrong. As $t$ increases, $L$ goes from 40 down to 19, so it is decreasing. It also isn't exponential, because the change per decade is constant."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You saw the constant rate but flipped its sign, probably by reading the table from the bottom up. $L$ drops 3 seconds per decade as $t$ increases."
+   }
+  },
+  "id": "orig-classify-funct-X-236bc5",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-X-236bc5",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__num__ which of the following best describes the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the least whole number of years $n$ after year 0 for which workshop B's output is greater than workshop A's output?",
+  "stimulus": "In year 0, weaving workshop A produced 600 meters of cloth and workshop B produced 300 meters. Each year after that, A's output increased by 20% of its year-0 output. B's output increased by 25% of the previous year's output.",
+  "choices": [
+   "B's output never exceeds A's",
+   "Year 7",
+   "Year 8",
+   "Year 17"
+  ],
+  "answer": "C",
+  "explanation": "A adds 20% of a fixed amount, which is 120 m every year, so it is linear: $A(n) = 600 + 120n$. B is exponential: $B(n) = 300(1.25)^n$. In year 7, $A = 1{,}440$ and $B \\approx 1{,}430.5$, so A is still ahead. In year 8, $A = 1{,}560$ and $B \\approx 1{,}788.1$. The answer is year 8.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You compared only the start. A begins higher and adds 120 m in year 1 while B adds only 75 m. But exponential growth always passes linear growth eventually, and here it happens in year 8."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You rounded $1.25^7 \\approx 4.77$ up to 4.8, which gives B exactly 1,440. That ties A, it doesn't beat it. With the exact value, B is about 1,430.5, still short of A."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You treated A's 20% increase as compounding, $600(1.2)^n$. But A grows by 20% of its year-0 output, a fixed 120 m each year, so A is linear. Compared with that linear A, B pulls ahead much sooner."
+   }
+  },
+  "id": "orig-classify-funct-X-332ecf",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-X-332ecf",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which statement correctly compares the two collections for whole numbers of decades $n$ from 0 to 25?",
+  "stimulus": "Two archaeological collections of unglazed pottery are deteriorating. Collection P starts with 600 intact pieces and loses 30 pieces each decade until none remain. Collection Q starts with 900 intact pieces and loses 20% of its remaining intact pieces each decade. Use these models to predict the number of intact pieces after $n$ decades.",
+  "choices": [
+   "Q has more pieces than P in every decade from 0 through 25.",
+   "Q has fewer pieces than P in every decade from 3 through 25.",
+   "Q has fewer pieces than P in every decade from 3 through 20 only.",
+   "Q has fewer pieces than P in every decade from 3 through 19 only."
+  ],
+  "answer": "D",
+  "explanation": "$P(n) = 600 - 30n$ until it reaches 0 at $n = 20$, and $Q(n) = 900(0.8)^n$. At $n = 2$, $Q = 576 > 540$. At $n = 3$, $Q = 460.8 < 510$, and Q stays below P through $n = 19$, where $Q \\approx 13.0 < 30$. At $n = 20$, P is 0, but exponential decay never reaches 0 ($Q \\approx 10.4$), so Q has more again from decade 20 through 25.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You judged from the start, where Q has 300 more pieces. Q loses 180 pieces in the first decade, though, and it falls below P by decade 3."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You found the first switch correctly but missed the second one. P's linear loss takes it to exactly 0 at decade 20. Q only shrinks by a factor each decade, so it stays above 0 and passes P again."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You found that P reaches 0 at $n = 20$ and stopped the interval there. In decade 20 itself, P has 0 pieces and Q has about 10, so Q is already ahead in that decade."
+   }
+  },
+  "id": "orig-classify-funct-X-c108d2",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-X-c108d2",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following best describes how the number of recorded variants of Tale A and the number of tellers of Tale B change over time?",
+  "stimulus": "A folklorist tracks two tales beginning in 1900. Each decade, the archive for Tale A gains new recorded variants equal to 40% of the number it held in 1900. Each decade, 40% of the people who could tell Tale B at the start of that decade stop telling it.",
+  "choices": [
+   "A: increasing exponential; B: decreasing exponential",
+   "A: increasing linear; B: decreasing linear",
+   "A: increasing exponential; B: decreasing linear",
+   "A: increasing linear; B: decreasing exponential"
+  ],
+  "answer": "D",
+  "explanation": "For Tale A, 40% of the 1900 total is a fixed number, so the archive gains the same number of variants every decade. That makes A increasing linear. For Tale B, 40% of the tellers at the start of each decade changes as that number changes. Multiplying by 0.6 each decade makes B decreasing exponential.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You saw a percent in A's rule and called it exponential. That percent is of the fixed 1900 total, so A grows by the same amount each decade, which is linear."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You read both rules as percents of the 1900 values because both say 40%. B's percent is of the tellers at the start of each decade, so B is multiplied by 0.6 each decade."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You switched the two rules. A's 40% is taken of a fixed starting amount, which makes it linear. B's is taken of a changing amount, which makes it exponential."
+   }
+  },
+  "id": "orig-classify-funct-X-71b88d",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-X-71b88d",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the least whole number of weeks $w$ for which $a(w) > \\ell(w)$?",
+  "stimulus": "In a pest-control trial, the number of aphids on a test plot $w$ weeks after the trial begins is modeled by $a(w) = 5(2)^w$, and the number of ladybugs released on the plot is modeled by $\\ell(w) = 500 + 60w$.",
+  "choices": [
+   "Never",
+   "Week 4",
+   "Week 8",
+   "Week 10"
+  ],
+  "answer": "C",
+  "explanation": "Test whole values. At $w = 7$, $a = 640$ and $\\ell = 920$. At $w = 8$, $a = 1{,}280$ and $\\ell = 980$. So the aphids first outnumber the ladybugs in week 8. You can also graph both functions in Desmos and find where they intersect, between 7 and 8.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You compared only the first weeks. The ladybugs start at 500 and gain 60 a week, while the aphids gain only 5 in week 1. But exponential growth always passes linear growth eventually."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found when the aphids' weekly increase passes the ladybugs'. From week 4 to week 5 the aphids gain 80, which is more than 60. Growing faster doesn't make them more numerous yet. In week 4 there are only 80 aphids against 740 ladybugs."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided both sides by 5 but divided only the 500. That gave $2^w > 100 + 60w$ instead of $2^w > 100 + 12w$, which pushed the crossover too late."
+   }
+  },
+  "id": "orig-classify-funct-X-28e286",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-X-28e286",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following best describes how the percentage of residents who use the word changes over time?",
+  "stimulus": "A linguist surveys a coastal town every 10 years to find the percentage of residents who still use a regional word for a fishing net.\nResidents Using the Word\nSurvey year | Percentage of residents\n1980 | 80\n1990 | 72\n2000 | 64\n2010 | 56",
+  "choices": [
+   "Decreasing exponential",
+   "Decreasing linear",
+   "Increasing exponential",
+   "Increasing linear"
+  ],
+  "answer": "B",
+  "explanation": "The percentage drops by exactly 8 percentage points every 10 years: 80, 72, 64, 56. A constant difference over equal steps means the relationship is linear, and it is decreasing. The ratios aren't constant: $\\frac{72}{80} = 0.9$, but $\\frac{64}{72} \\approx 0.89$ and $\\frac{56}{64} = 0.875$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You saw that 80 to 72 is a clean 10% drop and stopped after one ratio. The next ratios are about 0.89 and 0.875, so they aren't constant. The differences are constant at 8 points, which makes it linear."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You described the residents who no longer use the word. That share rises, but the table gives the share who still use it, which falls. The change is also constant, so it is linear."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You saw the constant 8-point change but answered for the complement, the residents who have stopped using the word. The share who still use it is decreasing."
+   }
+  },
+  "id": "orig-classify-funct-X-4cfe08",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-X-4cfe08",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following best describes the function $k$?",
+  "stimulus": "A cartographer enlarges a regional map several times. Each enlargement makes every length on the map 25% longer than on the previous version. On the original map, 1 centimeter represents 40 kilometers. Let $k(n)$ be the number of kilometers represented by 1 centimeter after $n$ enlargements.",
+  "choices": [
+   "Decreasing exponential",
+   "Decreasing linear",
+   "Increasing exponential",
+   "Increasing linear"
+  ],
+  "answer": "A",
+  "explanation": "After each enlargement, a ground distance takes up 1.25 times as many centimeters, so 1 centimeter covers $\\frac{1}{1.25} = 0.8$ times as many kilometers as before. That gives $k(n) = 40(0.8)^n$, a constant multiplier less than 1, so $k$ is decreasing exponential.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted 25% of the original 40 km, which is 10 km, at every step. Each enlargement divides the current value by 1.25. That is a constant multiplier of 0.8, not a constant amount subtracted."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You described the lengths drawn on the map, which grow by a factor of 1.25. The question asks how many kilometers 1 centimeter represents. That number goes down as the map gets bigger."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You tracked how the map's drawn lengths grow rather than the scale, and you treated the growth as a fixed amount added each time. The scale $k$ is multiplied by 0.8 each time, so it decreases."
+   }
+  },
+  "id": "orig-classify-funct-X-6db37f",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "review",
+  "verification": {
+   "id": "orig-classify-funct-X-6db37f",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which of the following best describes the function",
+    "of the following best describes the function __var__"
+   ],
+   "residue": 8
+  }
  }
 ]

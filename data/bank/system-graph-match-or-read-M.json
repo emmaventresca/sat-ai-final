@@ -33,13 +33,19 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "which_expression",
   "verification": {
    "id": "orig-system-graph-m-M-9d324c",
    "structure": [
     "names a table or graph but shows none"
    ],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "system of a linear equation and a quadratic",
     "of a linear equation and a quadratic equation",
@@ -49,7 +55,654 @@
     "system of equations is represented by the graph"
    ],
    "residue": 8
+  }
+ },
+ {
+  "stem": "Which ordered pair $(x, y)$ is a solution to the given system of equations?",
+  "stimulus": "An ecologist compares two models of a frog population in a wetland using the system below.\n\n$y = (x - 3)^2 + 1$\n$y = x$",
+  "choices": [
+   "$(-2, -2)$",
+   "$(0, 10)$",
+   "$(3, 1)$",
+   "$(5, 5)$"
+  ],
+  "answer": "D",
+  "explanation": "A solution is a point where the parabola and the line cross. Set $(x - 3)^2 + 1 = x$, which gives $x^2 - 7x + 10 = 0$, or $(x - 2)(x - 5) = 0$. So $x = 2$ or $x = 5$, and since $y = x$, the solutions are $(2, 2)$ and $(5, 5)$. Only $(5, 5)$ is a choice. Check it: $(5 - 3)^2 + 1 = 5$, and that matches the line.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored $x^2 - 7x + 10$ as $(x + 2)(x + 5)$ and took $x = -2$. The parabola gives $y = 26$ at $x = -2$, not $-2$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the parabola's y-intercept. That point is on the parabola, but the line $y = x$ passes through $(0, 0)$, so it isn't where the two graphs cross."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the parabola's vertex. It lies on the parabola, but the line has $y = 3$ when $x = 3$, so the graphs don't meet there."
+   }
   },
-  "phrasing": "which_expression"
+  "id": "orig-system-graph-m-M-089b75",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-089b75",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __var__ which ordered pair __var__ is a",
+    "__var__ which ordered pair __var__ is a solution"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the solution $(x, y)$ to the given system of equations?",
+  "stimulus": "A crop scientist models soil moisture in a test field with the system below.\n\n$y = (x + 1)^2 - 2$\n$y = -4x - 10$",
+  "choices": [
+   "$(-3, 2)$",
+   "$(-1, -2)$",
+   "$(1, -2)$",
+   "$(0, -10)$"
+  ],
+  "answer": "A",
+  "explanation": "Set the two sides equal: $x^2 + 2x - 1 = -4x - 10$, so $x^2 + 6x + 9 = 0$, or $(x + 3)^2 = 0$. The line just touches the parabola at $x = -3$, and $y = -4(-3) - 10 = 2$. Check with the parabola: $(-3 + 1)^2 - 2 = 2$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the parabola's vertex, not the point where the two graphs meet. The line has $y = -6$ at $x = -1$."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the vertex of $(x + 1)^2 - 2$ as $x = +1$. The vertex is at $x = -1$, and this point isn't on either graph anyway."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the line's y-intercept. The parabola has $y = -1$ at $x = 0$, so the graphs don't cross there."
+   }
+  },
+  "id": "orig-system-graph-m-M-8b2aa1",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-8b2aa1",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the $xy$-plane, the graphs of the two equations in a system intersect at exactly the points $(0, -3)$ and $(3, 0)$. Which system of equations could this be?",
+  "stimulus": "A cartographer places a curved coastal road and a straight rail line on a coordinate map of a region.",
+  "choices": [
+   "$y = (x + 1)^2 - 4$ and $y = x - 3$",
+   "$y = (x - 1)^2 - 4$ and $y = -3x + 1$",
+   "$y = (x - 1)^2 + 4$ and $y = x - 3$",
+   "$y = (x - 1)^2 - 4$ and $y = x - 3$"
+  ],
+  "answer": "D",
+  "explanation": "Both points must lie on both graphs. For the parabola: $(0 - 1)^2 - 4 = -3$ and $(3 - 1)^2 - 4 = 0$. For the line: $0 - 3 = -3$ and $3 - 3 = 0$. Both points work. Setting $(x - 1)^2 - 4 = x - 3$ gives $x^2 - 3x = 0$, so $x = 0$ or $x = 3$, which means these are the only two intersections.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You flipped the sign of the vertex. This parabola has its vertex at $x = -1$, and at $x = 3$ it gives $y = 12$, so it misses $(3, 0)$."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You mixed up the line's slope and y-intercept. The line $y = -3x + 1$ crosses the y-axis at $1$, not $-3$, so it misses $(0, -3)$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You changed the sign of the vertical shift. This parabola gives $y = 5$ at $x = 0$, so it misses $(0, -3)$."
+   }
+  },
+  "id": "orig-system-graph-m-M-943182",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-943182",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $(x, y)$ is a solution to the given system of equations and $x > 0$, what is the value of $y$?",
+  "stimulus": "A hydrologist models the cross-section of a river channel and the waterline on a gauge with the system below.\n\n$y = -(x - 2)^2 + 9$\n$y = x + 1$",
+  "choices": [
+   "$0$",
+   "$4$",
+   "$5$",
+   "$9$"
+  ],
+  "answer": "C",
+  "explanation": "Set the two sides equal: $-(x - 2)^2 + 9 = x + 1$, so $-x^2 + 4x + 5 = x + 1$, which gives $x^2 - 3x - 4 = 0$, or $(x - 4)(x + 1) = 0$. The graphs cross at $(4, 5)$ and $(-1, 0)$. Since $x > 0$, the point is $(4, 5)$, and $y = 5$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You took $y$ from the other intersection, $(-1, 0)$. That point has $x < 0$, so it breaks the condition $x > 0$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the intersection $(4, 5)$ but gave its $x$-coordinate. The question asks for $y$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the y-coordinate of the parabola's vertex. The line has $y = 3$ at $x = 2$, so the vertex isn't where the graphs cross."
+   }
+  },
+  "id": "orig-system-graph-m-M-5ebfd9",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-5ebfd9",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which ordered pair $(x, y)$ is a solution to the given system of equations?",
+  "stimulus": "An immunology student compares two models of antibody response after a booster dose using the system below.\n\n$y = 2(x - 1)^2 - 3$\n$y = 2x - 5$",
+  "choices": [
+   "$(-1, -3)$",
+   "$(0, -5)$",
+   "$(-2, -9)$",
+   "$(2, -1)$"
+  ],
+  "answer": "D",
+  "explanation": "Set the two sides equal: $2x^2 - 4x - 1 = 2x - 5$, so $2x^2 - 6x + 4 = 0$, which simplifies to $x^2 - 3x + 2 = 0$, or $(x - 1)(x - 2) = 0$. The graphs cross at $(1, -3)$ and $(2, -1)$. Only $(2, -1)$ is a choice. Check it: $2(1)^2 - 3 = -1$ and $2(2) - 5 = -1$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the vertex of $2(x - 1)^2 - 3$ as $x = -1$ instead of $x = +1$. The line has $y = -7$ at $x = -1$, so this point isn't on it."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the line's y-intercept. The parabola has $y = -1$ at $x = 0$, so the graphs don't cross there."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored $x^2 - 3x + 2$ as $(x + 1)(x + 2)$ and used $x = -2$. The parabola gives $y = 15$ there, not $-9$."
+   }
+  },
+  "id": "orig-system-graph-m-M-48f8e2",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-48f8e2",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __var__ which ordered pair __var__ is a",
+    "__var__ which ordered pair __var__ is a solution"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graphs of the two equations intersect at two points in the xy-plane. How many kilometers greater is the y-coordinate of one intersection point than the y-coordinate of the other?",
+  "stimulus": "A cartographer lays a coordinate grid over a hiking map. A straight trail is modeled by $y = 2x + 1$, and a curved riverbank is modeled by $y = (x - 2)^2 + 2$, where $x$ and $y$ are in kilometers.",
+  "choices": [
+   "$4$",
+   "$5$",
+   "$8$",
+   "$11$"
+  ],
+  "answer": "C",
+  "explanation": "Set the right sides equal: $(x - 2)^2 + 2 = 2x + 1$, so $x^2 - 4x + 6 = 2x + 1$ and $x^2 - 6x + 5 = 0$. That factors as $(x - 1)(x - 5) = 0$, so $x = 1$ or $x = 5$. Putting these into the line gives the points $(1, 3)$ and $(5, 11)$. The y-coordinates differ by $11 - 3 = 8$ kilometers. In Desmos, graph both equations and click the two crossing points.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the gap between the x-coordinates, $5 - 1$. The question asks how far apart the y-coordinates are."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the gap between the y-intercepts, the parabola's $6$ minus the line's $1$. You compared where each graph crosses the y-axis instead of where the two graphs cross each other."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "This is the y-coordinate of the higher intersection point by itself. You stopped before subtracting the lower point's y-coordinate, $3$."
+   }
+  },
+  "id": "orig-system-graph-m-M-8e301f",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-8e301f",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graphs of the two equations intersect at two points in the xy-plane. How much greater is the y-coordinate of the higher intersection point than the y-coordinate of the lower one?",
+  "stimulus": "An agronomist models the cross-section of a raised planting bed with $y = -(x - 4)^2 + 9$ and the path of a drip-irrigation line with $y = -2x + 9$, where $x$ and $y$ are in decimeters.",
+  "choices": [
+   "$5$",
+   "$6$",
+   "$12$",
+   "$16$"
+  ],
+  "answer": "C",
+  "explanation": "Set the right sides equal: $-(x - 4)^2 + 9 = -2x + 9$. That simplifies to $-x^2 + 8x - 7 = -2x + 9$, so $x^2 - 10x + 16 = 0$ and $(x - 2)(x - 8) = 0$. The intersection points are $(2, 5)$ and $(8, -7)$. The higher point is $5 - (-7) = 12$ decimeters above the lower one. Graph both equations in Desmos and click the crossings to check.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "This is the y-coordinate of the higher intersection point by itself. You still needed to subtract the lower point's y-coordinate, $-7$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the gap between the x-coordinates, $8 - 2$. The question asks about the y-coordinates."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the gap between the y-intercepts of the two graphs, $9$ and $-7$. Those are where each graph crosses the y-axis, not where the two graphs meet."
+   }
+  },
+  "id": "orig-system-graph-m-M-6536e0",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-6536e0",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graphs of the two equations intersect at two points in the xy-plane. How much greater is the x-coordinate of the rightmost intersection point than the x-coordinate of the parabola's vertex?",
+  "stimulus": "A musicologist charting a melody's pitch contour models the melody with $y = (x + 2)^2 - 8$ and a reference line with $y = 3x + 2$.",
+  "choices": [
+   "$0$",
+   "$4$",
+   "$5$",
+   "$16$"
+  ],
+  "answer": "B",
+  "explanation": "Set the right sides equal: $(x + 2)^2 - 8 = 3x + 2$, so $x^2 + 4x - 4 = 3x + 2$ and $x^2 + x - 6 = 0$. That factors as $(x + 3)(x - 2) = 0$, so the graphs cross at $(-3, -7)$ and $(2, 8)$. The rightmost crossing has $x = 2$. In vertex form $(x - h)^2 + k$, the vertex here is at $h = -2$, so the answer is $2 - (-2) = 4$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the vertex to be at $x = 2$ instead of $x = -2$. In $(x + 2)^2$, the horizontal shift is $-2$, so you flipped its sign."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the gap between the x-coordinates of the two intersection points, $2 - (-3)$. The question compares the rightmost crossing with the vertex."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "This compares y-coordinates: the rightmost crossing's $8$ minus the vertex's $-8$. The question asks about x-coordinates."
+   }
+  },
+  "id": "orig-system-graph-m-M-9f4e30",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-9f4e30",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. Which of the following is the best interpretation of this solution in this context?",
+  "stimulus": "During a storm, a hydrologist models the depth $y$, in centimeters, of a creek and of a nearby holding pond $x$ hours after midnight, for $0 \\le x \\le 12$.\n\nCreek: $y = -(x - 5)^2 + 54$\nPond: $y = 2x + 20$",
+  "choices": [
+   "At 38 hours after midnight, the creek and the pond each have a depth of 9 centimeters.",
+   "At 9 hours after midnight, the creek and the pond each have a depth of 38 centimeters.",
+   "At 5 hours after midnight, the creek and the pond each have a depth of 54 centimeters.",
+   "At 9 hours after midnight, the creek and the pond each have a depth of 20 centimeters."
+  ],
+  "answer": "B",
+  "explanation": "Set the two depths equal: $-(x-5)^2 + 54 = 2x + 20$, which simplifies to $x^2 - 8x - 9 = 0$, so $(x - 9)(x + 1) = 0$. Only $x = 9$ is in $0 \\le x \\le 12$, and then $y = 2(9) + 20 = 38$. The solution $(9, 38)$ means that 9 hours after midnight, the creek and the pond are both 38 centimeters deep. If you graph both equations in Desmos, they cross at $(9, 38)$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the right point but swapped what each coordinate means. $x$ counts hours and $y$ measures depth, so $(9, 38)$ is 9 hours and 38 centimeters, not 38 hours and 9 centimeters."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read off the vertex of the creek's parabola, $(5, 54)$, which is the creek's deepest point. It's a feature of one curve, not where the two curves cross. At $x = 5$ the pond is only $2(5) + 20 = 30$ centimeters deep."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took 20, the pond line's y-intercept, as the shared depth. That's the pond's depth at midnight. At $x = 9$ the depth is $2(9) + 20 = 38$."
+   }
+  },
+  "id": "orig-system-graph-m-M-e47454",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-e47454",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the following is the best interpretation of this"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. Which of the following is the best interpretation of this solution in this context?",
+  "stimulus": "A city planner models the populations $y$, in thousands of residents, of two districts $x$ years after 2014, for $0 \\le x \\le 12$.\n\nRiverside: $y = (x - 3)^2 + 10$\nHillcrest: $y = 3x + 29$",
+  "choices": [
+   "In 2073, the two districts each have a population of 10,000 residents.",
+   "In 2017, the two districts each have a population of 10,000 residents.",
+   "In 2024, the two districts each have a population of 59 residents.",
+   "In 2024, the two districts each have a population of 59,000 residents."
+  ],
+  "answer": "D",
+  "explanation": "Set the populations equal: $(x-3)^2 + 10 = 3x + 29$, which simplifies to $x^2 - 9x - 10 = 0$, so $(x - 10)(x + 1) = 0$. Only $x = 10$ is in $0 \\le x \\le 12$, and then $y = 3(10) + 29 = 59$. Since $x$ counts years after 2014 and $y$ is in thousands, $(10, 59)$ means that in 2024, each district has 59,000 residents.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the coordinates. You treated 59 as the number of years after 2014 (giving 2073) and 10 as the population in thousands. In $(10, 59)$, the first number is years and the second is thousands of residents."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the vertex of Riverside's parabola, $(3, 10)$. In $(x - 3)^2$ the vertex is at $x = 3$, which is 2017. That's Riverside's smallest population, not a point the two districts share. Hillcrest has $3(3) + 29 = 38$ thousand residents that year."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You got the year right but dropped the units. $y$ is measured in thousands of residents, so $y = 59$ means 59,000 people, not 59."
+   }
+  },
+  "id": "orig-system-graph-m-M-ea9585",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-ea9585",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the following is the best interpretation of this"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "The solution to the given system of equations is $(x, y)$. Which of the following is the best interpretation of this solution in this context?",
+  "stimulus": "A historian of the textile trade models the prices $y$, in cents per yard, of two fabrics sold by one merchant $x$ years after 1830, for $0 \\le x \\le 10$.\n\nCalico: $y = (x - 2)^2 + 6$\nLinen: $y = 3x + 18$",
+  "choices": [
+   "In 1838, the two fabrics each sold for a price of 42 cents per yard.",
+   "In 1872, the two fabrics each sold for a price of 8 cents per yard.",
+   "In 1832, the two fabrics each sold for a price of 6 cents per yard.",
+   "In 1838, the two fabrics each sold for a price of 18 cents per yard."
+  ],
+  "answer": "A",
+  "explanation": "Set the prices equal: $(x-2)^2 + 6 = 3x + 18$, which simplifies to $x^2 - 7x - 8 = 0$, so $(x - 8)(x + 1) = 0$. Only $x = 8$ is in $0 \\le x \\le 10$, and then $y = 3(8) + 18 = 42$. The solution $(8, 42)$ means that in 1838, both fabrics cost 42 cents per yard.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the coordinates. You treated 42 as years after 1830 (giving 1872) and 8 as the price. In $(8, 42)$, the first number is years and the second is cents per yard."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the vertex of the calico parabola, $(2, 6)$, which is calico's lowest price. That's one curve's turning point, not where the curves cross. Linen cost $3(2) + 18 = 24$ cents per yard in 1832."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took 18, the linen line's y-intercept, as the shared price. That's linen's price in 1830. In 1838 linen costs $3(8) + 18 = 42$ cents per yard."
+   }
+  },
+  "id": "orig-system-graph-m-M-6508a0",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-6508a0",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the following is the best interpretation of this"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following must be true about the solutions $(x, y)$ to the system?",
+  "stimulus": "A public health analyst models two quantities for a vaccination drive with the system below, where $x$ is the number of weeks since the drive began.\n\n$y = (x - 2)^2 + 1$\n$y = x + 1$",
+  "choices": [
+   "The solutions are $(1, 2)$ and $(4, 5)$.",
+   "The only solution is $(2, 1)$.",
+   "The solutions are $(-1, 0)$ and $(-4, -3)$.",
+   "The solutions are $(1, 2)$ and $(3, 2)$."
+  ],
+  "answer": "A",
+  "explanation": "A solution is a point where the parabola and the line cross. Set the right sides equal: $(x - 2)^2 + 1 = x + 1$, which gives $x^2 - 4x + 5 = x + 1$, so $x^2 - 5x + 4 = 0$ and $(x - 1)(x - 4) = 0$. At $x = 1$ the line gives $y = 2$, and at $x = 4$ it gives $y = 5$. Both points also lie on the parabola, since $(1 - 2)^2 + 1 = 2$ and $(4 - 2)^2 + 1 = 5$. In Desmos, graph both equations and click the two crossings.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read the parabola's vertex, $(2, 1)$, from the vertex form and gave that as the answer. The vertex is a feature of one curve. It is not on the line, because $2 + 1 = 3$, not $1$, so the two graphs do not cross there."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored $x^2 - 5x + 4$ as $(x + 1)(x + 4)$ and got the signs of the roots backwards. That factoring expands to $x^2 + 5x + 4$. The correct roots are $x = 1$ and $x = 4$, which put both crossings to the right of the y-axis."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "$(3, 2)$ is on the parabola, since $(3 - 2)^2 + 1 = 2$, but it is not on the line, since $3 + 1 = 4$. A solution to a system has to satisfy both equations at once, and $(3, 2)$ satisfies only one of them."
+   }
+  },
+  "id": "orig-system-graph-m-M-6248ec",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-6248ec",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "where __var__ is the number of weeks since",
+    "__var__ is the number of weeks since the",
+    "__var__ which of the following must be true"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which of the following ordered pairs $(x, y)$ is a solution to the given system of equations?",
+  "stimulus": "A cartographer places a coordinate grid over a hand-drawn survey map. On this grid, the edge of a curved lake is modeled by the first equation below, and a straight trail is modeled by the second.\n\n$y = (x - 3)^2 - 4$\n$y = 2x - 7$",
+  "choices": [
+   "$(-3, -4)$",
+   "$(0, -7)$",
+   "$(4, 1)$",
+   "$(6, 5)$"
+  ],
+  "answer": "D",
+  "explanation": "A solution to the system is a point where the lake edge and the trail cross, so it has to satisfy both equations. Try $(6, 5)$. In the first equation, $(6 - 3)^2 - 4 = 9 - 4 = 5$. In the second, $2(6) - 7 = 5$. Both give $y = 5$, so $(6, 5)$ is on both graphs. You can also check it in Desmos: graph both equations and click the crossing on the right. It sits at $(6, 5)$. The other crossing is $(2, -3)$, which isn't one of the choices.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the vertex of $(x - 3)^2 - 4$ as $(-3, -4)$, but the vertex is at $x = +3$. Also, a vertex isn't a solution unless the line passes through it, and $2(-3) - 7 = -13$, not $-4$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$(0, -7)$ is where the trail crosses the y-axis, so it's an intercept of the line alone. The parabola gives $(0 - 3)^2 - 4 = 5$ at $x = 0$, so this point isn't on the lake edge."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "$(4, 1)$ works in the trail equation, since $2(4) - 7 = 1$. It fails the lake equation, though: $(4 - 3)^2 - 4 = -3$. You checked only one of the two equations."
+   }
+  },
+  "id": "orig-system-graph-m-M-57080d",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-57080d",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

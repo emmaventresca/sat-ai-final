@@ -205,5 +205,440 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "In the system of equations, $k$ is a constant. If the system has no solution, what is the value of $k$?",
+  "stimulus": "A city planner models two proposed streets on a coordinate grid of a new neighborhood.\n\n$y = \\frac{2}{3}x + 5$\n\n$kx - 6y = 12$",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "No solution means the lines are parallel and distinct, so their slopes must be equal. The first equation is already in $y = mx + b$ form, with slope $\\frac{2}{3}$. Rewrite the second the same way: $-6y = -kx + 12$, so $y = \\frac{k}{6}x - 2$. Set the slopes equal: $\\frac{k}{6} = \\frac{2}{3}$, so $k = 4$. Then check that the lines are different: the intercepts are $5$ and $-2$, so the lines never meet. In Desmos, put a slider on $k$ and drag it until the lines stop crossing.",
+  "common_errors": [
+   {
+    "value": "-4",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the negative sign when dividing by $-6$, wrote the slope as $-\\frac{k}{6}$, and solved $-\\frac{k}{6} = \\frac{2}{3}$."
+   },
+   {
+    "value": "2/3",
+    "misconception": "algebra-manipulation",
+    "why": "Matched $k$ to the slope $\\frac{2}{3}$ without first rearranging $kx - 6y = 12$ into $y = mx + b$ form."
+   },
+   {
+    "value": "1/9",
+    "misconception": "algebra-manipulation",
+    "why": "Set up $\\frac{k}{6} = \\frac{2}{3}$ correctly, then divided by 6 when they should have multiplied."
+   }
+  ],
+  "id": "orig-no-solution-pa-M-96ef67",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-M-96ef67",
+   "structure": [],
+   "solver_answer": 4,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the system of equations, $a$ is a constant. If the system has no solution, what is the value of $a$?",
+  "stimulus": "An immunologist compares two calibration lines for an antibody assay.\n\n$ax + 9y = 6$\n\n$x + ay = -2$",
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "For the lines to be parallel, the coefficients of $x$ and $y$ must be proportional: $\\frac{a}{1} = \\frac{9}{a}$, so $a^2 = 9$ and $a = 3$ or $a = -3$. Check each one. If $a = 3$, the second equation is $x + 3y = -2$. Multiplied by 3, that gives $3x + 9y = -6$, which contradicts $3x + 9y = 6$, so the lines are parallel and distinct and there is no solution. If $a = -3$, the second equation is $x - 3y = -2$. Multiplied by $-3$, that gives $-3x + 9y = 6$, which is the first equation exactly: the same line, with infinitely many solutions. The answer is $3$.",
+  "common_errors": [
+   {
+    "value": "-3",
+    "misconception": "missed-condition",
+    "why": "Made the coefficients proportional but did not check the constants. With $a = -3$ the two equations describe the same line, which gives infinitely many solutions instead of none."
+   },
+   {
+    "value": "9",
+    "misconception": "algebra-manipulation",
+    "why": "Reached $a^2 = 9$ and did not take the square root."
+   }
+  ],
+  "id": "orig-no-solution-pa-M-feee07",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-M-feee07",
+   "structure": [],
+   "solver_answer": 3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the system of equations, $k$ is a constant. If the system has no solution, what is the value of $k$?",
+  "stimulus": "A meteorologist models the temperatures of two weather stations with the equations below.\n\n$5x - 2y = 7$\n\n$y = \\frac{k}{3}x + 1$",
+  "keys": [
+   "15/2",
+   "7.5"
+  ],
+  "any_of": false,
+  "explanation": "Write both equations in $y = mx + b$ form so you can compare slopes. From $5x - 2y = 7$ you get $-2y = -5x + 7$, so $y = \\frac{5}{2}x - \\frac{7}{2}$. The second line has slope $\\frac{k}{3}$. Set the slopes equal: $\\frac{k}{3} = \\frac{5}{2}$, so $k = \\frac{15}{2}$. The intercepts are $-\\frac{7}{2}$ and $1$, which are different, so the lines are parallel and distinct.",
+  "common_errors": [
+   {
+    "value": "5/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the slope $\\frac{5}{2}$ and entered it as the answer instead of solving $\\frac{k}{3} = \\frac{5}{2}$ for $k$."
+   },
+   {
+    "value": "15",
+    "misconception": "algebra-manipulation",
+    "why": "Did not rearrange the first equation and matched the slope to its $x$-coefficient, solving $\\frac{k}{3} = 5$."
+   },
+   {
+    "value": "-15/2",
+    "misconception": "algebra-manipulation",
+    "why": "Made a sign error when dividing by $-2$, took the slope as $-\\frac{5}{2}$, and solved $\\frac{k}{3} = -\\frac{5}{2}$."
+   }
+  ],
+  "id": "orig-no-solution-pa-M-2928b6",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-M-2928b6",
+   "structure": [],
+   "solver_answer": 7.5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the system of equations, $k$ is a constant. If the system has no solution, what is the value of $k$?",
+  "stimulus": "A linguist models word counts in two sets of transcripts with the equations below.\n\n$\\frac{1}{2}x + \\frac{3}{4}y = 5$\n\n$kx + 3y = 8$",
+  "keys": [
+   "2"
+  ],
+  "any_of": false,
+  "explanation": "Put the equations in the same form by clearing the fractions: multiply the first equation by 4 to get $2x + 3y = 20$. Now both equations have $3y$, so the $x$-coefficients must also match for the lines to be parallel: $k = 2$. Check the constants: $20 \\neq 8$, so the lines are distinct and the system has no solution.",
+  "common_errors": [
+   {
+    "value": "1/2",
+    "misconception": "algebra-manipulation",
+    "why": "Matched $k$ to the $x$-coefficient of the first equation without scaling it to match the $y$-coefficients ($\\frac{3}{4}$ compared with $3$)."
+   },
+   {
+    "value": "4",
+    "misconception": "intermediate-step",
+    "why": "Found the scale factor $3 \\div \\frac{3}{4} = 4$ and stopped before multiplying it by $\\frac{1}{2}$."
+   }
+  ],
+  "id": "orig-no-solution-pa-M-54bf3d",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-M-54bf3d",
+   "structure": [],
+   "solver_answer": 2,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the system of equations, $k$ is a constant. If the system has no solution, what is the value of $k$?",
+  "stimulus": "A dietitian plans $x$ servings of granola and $y$ servings of yogurt. The first equation sets the protein, in grams, and the second sets the carbohydrates, in grams.\n\n$3x + 5y = 40$\n\n$6x + ky = 70$",
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "No solution means the lines are parallel and distinct. The $x$-coefficients go from $3$ to $6$, a factor of 2, so the $y$-coefficients must scale by the same factor: $k = 2 \\cdot 5 = 10$. Check the constants: doubling $40$ gives $80$, not $70$, so the equations $6x + 10y = 80$ and $6x + 10y = 70$ contradict each other. The system has no solution.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "intermediate-step",
+    "why": "Found the scale factor 2 between the $x$-coefficients and entered it as the answer instead of multiplying it by 5."
+   },
+   {
+    "value": "5/2",
+    "misconception": "algebra-manipulation",
+    "why": "Set up the proportion upside down as $\\frac{6}{3} = \\frac{5}{k}$ and solved for $k$."
+   },
+   {
+    "value": "35/4",
+    "misconception": "algebra-manipulation",
+    "why": "Scaled the $y$-coefficient by the ratio of the constants, $\\frac{70}{40}$, instead of the ratio of the $x$-coefficients."
+   }
+  ],
+  "id": "orig-no-solution-pa-M-f52674",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-M-f52674",
+   "structure": [],
+   "solver_answer": 10,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the system has no solution, what is the value of $k$?",
+  "stimulus": "On a map's coordinate grid, a cartographer draws a highway along the line $y = \\frac{3}{2}x + 4$ and a rail line along $9x - ky = 10$, where $k$ is a constant.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "To have no solution, the two lines must be parallel and must not be the same line. First put the rail line in slope-intercept form. Starting from $9x - ky = 10$, you get $-ky = -9x + 10$, so $y = \\frac{9}{k}x - \\frac{10}{k}$. Its slope is $\\frac{9}{k}$. Set that equal to the highway's slope: $\\frac{9}{k} = \\frac{3}{2}$, so $3k = 18$ and $k = 6$. Then check that the lines are different. With $k = 6$ the rail line is $y = \\frac{3}{2}x - \\frac{5}{3}$. Its y-intercept is $-\\frac{5}{3}$ and the highway's is $4$, so the lines are parallel and never meet. In Desmos, put a slider on $k$ and drag it until the lines stop crossing. That happens at $k = 6$.",
+  "common_errors": [
+   {
+    "value": "-6",
+    "misconception": "algebra-manipulation",
+    "why": "Used slope $= -\\frac{A}{B}$ but took $B = k$ instead of $-k$, so got slope $-\\frac{9}{k}$. Setting $-\\frac{9}{k} = \\frac{3}{2}$ gives $k = -6$."
+   },
+   {
+    "value": "27/2",
+    "misconception": "algebra-manipulation",
+    "why": "Mixed up the coefficients because the equations are in different forms. Wrote the slope as $\\frac{k}{9}$ instead of $\\frac{9}{k}$, then solved $\\frac{k}{9} = \\frac{3}{2}$ to get $k = 13.5$."
+   },
+   {
+    "value": "13.5",
+    "misconception": "algebra-manipulation",
+    "why": "Decimal form of the same slip: used $\\frac{k}{9}$ as the slope and set it equal to $\\frac{3}{2}$."
+   },
+   {
+    "value": "3/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the shared slope the lines need and entered that instead of the value of $k$."
+   },
+   {
+    "value": "1.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Decimal form of the shared slope, entered instead of $k$."
+   }
+  ],
+  "id": "orig-no-solution-pa-M-ef297a",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-M-ef297a",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the system has no solution, what is the value of $k$?",
+  "stimulus": "A city planner draws two straight streets on a grid map of a new district. The streets follow the lines below, where $k$ is a constant.\n\n$x + ky = 4$\n$kx + 9y = -12$",
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "The system has no solution when the lines have the same slope but are different lines. For the slopes to match, the coefficients must be proportional: $\\frac{1}{k} = \\frac{k}{9}$. That gives $k^2 = 9$, so $k = 3$ or $k = -3$. Check both. If $k = -3$, the second equation is $-3x + 9y = -12$. Divide by $-3$ to get $x - 3y = 4$, which is exactly the first equation. That is the same line, so there are infinitely many solutions. If $k = 3$, the second equation is $3x + 9y = -12$, or $x + 3y = -4$. The first equation is $x + 3y = 4$. The lines are parallel and never meet, so $k = 3$. In Desmos, put a slider on $k$. At $k = -3$ the lines lie on top of each other. At $k = 3$ they are parallel.",
+  "common_errors": [
+   {
+    "value": "-3",
+    "misconception": "missed-condition",
+    "why": "Solved $k^2 = 9$ and kept the negative root without checking it. At $k = -3$ the two equations are the same line, which gives infinitely many solutions, not none."
+   },
+   {
+    "value": "9",
+    "misconception": "algebra-manipulation",
+    "why": "Cross-multiplied $\\frac{1}{k} = \\frac{k}{9}$ and treated $k \\cdot k$ as $k$, getting $k = 9$ instead of $k^2 = 9$."
+   }
+  ],
+  "id": "orig-no-solution-pa-M-8d7991",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-M-8d7991",
+   "structure": [],
+   "solver_answer": 3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the system has no solution, what is the value of $k$?",
+  "stimulus": "A paleobotanist fits a line to leaf measurements for each of two fossil fern species. In each line, $x$ is leaf width and $y$ is leaf length, both in centimeters. Together the two lines form the system below, where $k$ is a constant.\n\nSpecies A: $y = \\frac{3}{4}x + 2$\nSpecies B: $6x - ky = 15$",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "First, put both equations in the same form. Solve Species B for $y$: $-ky = -6x + 15$, so $y = \\frac{6}{k}x - \\frac{15}{k}$. For no solution, the slopes must be equal: $\\frac{6}{k} = \\frac{3}{4}$, so $3k = 24$ and $k = 8$. Then check that the lines are different. With $k = 8$, the $y$-intercept of Species B is $-\\frac{15}{8}$, not $2$. The lines are parallel and distinct, so the system has no solution.",
+  "common_errors": [
+   {
+    "value": "-8",
+    "misconception": "algebra-manipulation",
+    "why": "Lost the minus sign on $-ky$ while rearranging. That gives a slope of $-\\frac{6}{k}$, and setting it equal to $\\frac{3}{4}$ gives $k = -8$."
+   },
+   {
+    "value": "4.5",
+    "misconception": "algebra-manipulation",
+    "why": "Compared the two equations without first putting them in the same form. Setting $\\frac{k}{6} = \\frac{3}{4}$ (the slope fraction upside down) gives $k = \\frac{9}{2}$."
+   },
+   {
+    "value": "9/2",
+    "misconception": "algebra-manipulation",
+    "why": "The same upside-down ratio, $\\frac{k}{6} = \\frac{3}{4}$, entered as a fraction."
+   },
+   {
+    "value": ".75",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the shared slope $\\frac{3}{4}$ instead of the constant $k$ that produces it."
+   }
+  ],
+  "id": "orig-no-solution-pa-M-c18266",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-M-c18266",
+   "structure": [],
+   "solver_answer": 8,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "For what value of $b$ does the system have no solution?",
+  "stimulus": "A crop scientist plans a soil treatment using $x$ kilograms of a nitrogen additive and $y$ kilograms of a phosphorus additive. Two requirements give the system below, where $b$ is a constant.\n\n$\\frac{1}{2}x + \\frac{1}{3}y = 10$\n$9x + by = 150$",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "Clear the fractions so the equations are easy to compare. Multiply the first equation by $18$ to get $9x + 6y = 180$. Its $x$-coefficient is now $9$, the same as in the second equation. For the slopes to match, the $y$-coefficients must match too, so $b = 6$. Then check the constants: $180 \\neq 150$. The lines are parallel and distinct, so no pair $(x, y)$ satisfies both requirements.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the first equation by $9$ to get an $x$-coefficient of $9$, as if it had started at $1$. Then $\\frac{1}{3} \\cdot 9 = 3$. The $x$-coefficient was really $\\frac{1}{2}$, so the correct factor is $18$."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Scaled the first equation by the ratio of the constants, $\\frac{150}{10} = 15$, and took $15 \\cdot \\frac{1}{3} = 5$. The scale factor has to come from the $x$-coefficients."
+   },
+   {
+    "value": "2/3",
+    "misconception": "algebra-manipulation",
+    "why": "Divided instead of multiplied when matching the coefficients. Setting $\\frac{b}{1/3} = \\frac{1/2}{9}$ wrongly does not give this, but $b = \\frac{1}{3} \\cdot 2$ does. That comes from doubling the first equation to clear only the $\\frac{1}{2}$ and then never scaling it up to $9x$."
+   }
+  ],
+  "id": "orig-no-solution-pa-M-b5e4da",
+  "skill_cd": "H.D.",
+  "subtype": "no-solution-parallel",
+  "subtype_name": "No solution (parallel, distinct lines)",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-no-solution-pa-M-b5e4da",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ for what value of __var__ does the"
+   ],
+   "residue": 1
+  }
  }
 ]

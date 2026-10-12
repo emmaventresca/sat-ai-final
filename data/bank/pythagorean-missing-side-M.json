@@ -98,5 +98,644 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the height, in inches, of the folio?",
+  "stimulus": "A musicologist is cataloguing a rectangular folio from a fifteenth-century choirbook. The folio is 6 inches wide, and the distance between two opposite corners, measured along its diagonal, is 18 inches.",
+  "choices": [
+   "$2\\sqrt{3}$",
+   "$12$",
+   "$12\\sqrt{2}$",
+   "$6\\sqrt{10}$"
+  ],
+  "answer": "C",
+  "explanation": "The diagonal cuts the rectangle into two right triangles. The diagonal is the hypotenuse, and the width and height are the legs. So $6^2 + h^2 = 18^2$, which gives $h^2 = 324 - 36 = 288$. Taking the positive square root, $h = \\sqrt{288} = \\sqrt{144 \\cdot 2} = 12\\sqrt{2}$ inches.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the side lengths first, $18 - 6 = 12$, and then took a square root to get $\\sqrt{12} = 2\\sqrt{3}$. The Pythagorean theorem squares each side before subtracting: $18^2 - 6^2$, not $\\sqrt{18 - 6}$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the lengths, $18 - 6 = 12$, without squaring them. Side lengths of a right triangle don't combine directly. You have to subtract the squares, $324 - 36$, and then take the square root."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the squares, $6^2 + 18^2 = 360$, and got $\\sqrt{360} = 6\\sqrt{10}$. That treats the 18-inch diagonal as a leg. In a rectangle the diagonal is the hypotenuse, so when the unknown is a leg, you subtract: $18^2 - 6^2$."
+   }
+  },
+  "id": "orig-pythagorean-mi-M-cf8461",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-cf8461",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "inches what is the height in inches of",
+    "what is the height in inches of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A seismology crew places three ground sensors, P, Q, and R, so that they form a right triangle with the right angle at sensor Q. The cable from P to R is 26 meters long, and the cable from P to Q is 10 meters long.",
+  "choices": [
+   "$QR = 24$ meters",
+   "$QR = \\sqrt{776}$ meters",
+   "$QR = 16$ meters",
+   "$QR = 576$ meters"
+  ],
+  "answer": "A",
+  "explanation": "The right angle is at Q, so the hypotenuse is the side across from it, PR = 26. PQ and QR are the legs. That gives $10^2 + QR^2 = 26^2$, so $QR^2 = 676 - 100 = 576$ and $QR = 24$ meters.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the squares, $26^2 + 10^2 = 776$, as if QR were the hypotenuse. QR is a leg, so you subtract the known leg's square from the hypotenuse's square."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the side lengths, $26 - 10$, without squaring them first. The Pythagorean theorem relates the squares of the sides, not the lengths themselves."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "576 is $QR^2$. You stopped before taking the square root, which gives the length QR."
+   }
+  },
+  "id": "orig-pythagorean-mi-M-7734e3",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-7734e3",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "Archaeologists mark out a rectangular excavation unit. One side of the unit is 8 meters long, and a string stretched diagonally from one corner to the opposite corner is 17 meters long.",
+  "choices": [
+   "The unit's area is 120 square meters.",
+   "The unit's area is 136 square meters.",
+   "The unit's area is $8\\sqrt{353}$ square meters.",
+   "The unit's area is 60 square meters."
+  ],
+  "answer": "A",
+  "explanation": "The diagonal cuts the rectangle into two right triangles, and the diagonal is the hypotenuse of each. The other side is $\\sqrt{17^2 - 8^2} = \\sqrt{289 - 64} = \\sqrt{225} = 15$ meters. So the area is $8 \\times 15 = 120$ square meters.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You multiplied 8 by 17, using the diagonal as if it were a side of the rectangle. The diagonal is the hypotenuse, so you first need to find the missing side from it."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the other side as $\\sqrt{17^2 + 8^2} = \\sqrt{353}$, which adds the squares. The missing side is a leg, so you subtract: $17^2 - 8^2$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "60 is the area of one of the right triangles the diagonal forms, $\\frac{1}{2}(8)(15)$. The question asks about the whole rectangular unit."
+   }
+  },
+  "id": "orig-pythagorean-mi-M-6c4a42",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-6c4a42",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A printmaker cuts a rectangular linoleum block that is $w$ centimeters wide and $h$ centimeters tall. The distance between opposite corners of the block, measured along its diagonal, is $d$ centimeters.",
+  "choices": [
+   "$h = \\sqrt{d^2 - w^2}$",
+   "$h = \\sqrt{d^2 + w^2}$",
+   "$d = \\sqrt{h^2 - w^2}$",
+   "$h = d - w$"
+  ],
+  "answer": "A",
+  "explanation": "The diagonal splits the block into two right triangles, and $d$ is the hypotenuse of each, so $w^2 + h^2 = d^2$. To isolate the leg $h$, subtract $w^2$ from both sides and take the positive square root: $h = \\sqrt{d^2 - w^2}$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $w^2$ to $d^2$. When the unknown is a leg, you subtract the other leg's square from the hypotenuse's square. Adding would make $h$ longer than the diagonal, which is impossible."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "This equation treats $h$ as the hypotenuse and makes $d$ a leg. The diagonal of a rectangle is always the hypotenuse, so $d$ has to be the longest side."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You took a square root of each term separately, turning $\\sqrt{d^2 - w^2}$ into $d - w$. A square root does not split across subtraction."
+   }
+  },
+  "id": "orig-pythagorean-mi-M-cf2dda",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-cf2dda",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the height of the tower, in meters?",
+  "stimulus": "A straight support cable runs from the top of a vertical communications tower to an anchor on level ground. The cable is 26 meters long, and the anchor is 10 meters from the base of the tower.",
+  "choices": [
+   "16 meters",
+   "24 meters",
+   "$2\\sqrt{194}$ meters",
+   "576 meters"
+  ],
+  "answer": "B",
+  "explanation": "The tower, the ground and the cable make a right triangle. The cable is across from the right angle at the base of the tower, so it is the hypotenuse. The tower is a leg, so you subtract: $h^2 = 26^2 - 10^2 = 676 - 100 = 576$, which gives $h = 24$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the side lengths themselves, $26 - 10$, when you needed to subtract their squares and then take the square root."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the squares, $26^2 + 10^2 = 776$, which treats the tower as the hypotenuse. The cable is the longest side, so the missing leg comes from subtracting."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "576 is $h^2$, not $h$. You stopped before taking the square root."
+   }
+  },
+  "id": "orig-pythagorean-mi-M-6d2431",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-6d2431",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation can be used to find $L$?",
+  "stimulus": "A fossilized fern frond lies across a rectangular slab of shale, running exactly from one corner to the opposite corner. The frond is 17 centimeters long. The slab is 8 centimeters wide and $L$ centimeters long.",
+  "choices": [
+   "$L^2 + 8^2 = 17^2$",
+   "$L^2 = 8^2 + 17^2$",
+   "$L + 8 = 17$",
+   "$L^2 + 8^2 = 17$"
+  ],
+  "answer": "A",
+  "explanation": "The frond runs along the slab's diagonal, and the diagonal of a rectangle is the hypotenuse of the right triangle formed by the length and the width. So the two legs, $L$ and 8, satisfy $L^2 + 8^2 = 17^2$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "This equation makes $L$ the hypotenuse. The diagonal (the frond, 17 cm) is the hypotenuse, and $L$ is a leg."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the side lengths instead of their squares. The Pythagorean theorem relates the squares of the sides."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You squared the legs but forgot to square the hypotenuse, so the two sides of the equation don't match."
+   }
+  },
+  "id": "orig-pythagorean-mi-M-bbddb5",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-bbddb5",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What does 12 represent in this situation?",
+  "stimulus": "A weather balloon rises straight up from its launch site. A radar station on level ground is 5 kilometers from the launch site. At one moment the balloon is 13 kilometers from the station in a straight line, and a meteorologist computes $\\sqrt{13^2 - 5^2} = 12$.",
+  "choices": [
+   "The altitude of the balloon, in kilometers",
+   "The station's distance from the launch site, in kilometers",
+   "The station's distance from the balloon, in kilometers",
+   "The altitude of the balloon, in square kilometers"
+  ],
+  "answer": "A",
+  "explanation": "The ground distance (5 km) and the balloon's altitude are the legs of a right triangle, and the 13 km line of sight is the hypotenuse. Subtracting the square of the known leg from the square of the hypotenuse and taking the square root gives the missing leg, the altitude: 12 kilometers.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "That distance was given as 5 kilometers. It is the leg you subtracted, not the one you found."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "The 13 km line of sight is the hypotenuse, which was given. A calculation that subtracts from $13^2$ gives a leg, which is always shorter than the hypotenuse."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "The square root undoes the squaring, so the result is back in kilometers. Square kilometers would describe $12^2 = 144$, the value before you took the root."
+   }
+  },
+  "id": "orig-pythagorean-mi-M-3c6184",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-3c6184",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many feet longer is the third edge of the banner than its 6-foot edge?",
+  "stimulus": "A folklore society sews a banner shaped like a right triangle to hang beside its collection of local legends. The banner's longest edge is 9 feet, and one of its other two edges is 6 feet.",
+  "choices": [
+   "$3$",
+   "$3\\sqrt{13}-6$",
+   "$3\\sqrt{5}-6$",
+   "$3\\sqrt{5}$"
+  ],
+  "answer": "C",
+  "explanation": "The longest edge, 9 feet, is the hypotenuse, so the third edge is a leg. Subtract the squares: $\\sqrt{9^2-6^2}=\\sqrt{81-36}=\\sqrt{45}=3\\sqrt{5}$ feet. The question asks how much longer that edge is than the 6-foot edge, so the answer is $3\\sqrt{5}-6$ feet, about 0.71 feet.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the side lengths, $9-6$, instead of their squares. The Pythagorean theorem relates the squares of the sides, not the sides themselves."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You added the squares, $\\sqrt{81+36}=3\\sqrt{13}$, which treats the 9-foot edge as a leg. It is the longest edge, so it's the hypotenuse, and the missing leg comes from subtracting."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$3\\sqrt{5}$ is the length of the third edge. The question asks how much longer it is than the 6-foot edge, so you still need to subtract 6."
+   }
+  },
+  "id": "orig-pythagorean-mi-M-bf3333",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-bf3333",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is closest to how many millimeters longer $BC$ is than $AB$?",
+  "stimulus": "To compare where T cells cluster in a tissue section, an immunologist marks points $A$, $B$, and $C$ on the slide so that angle $B$ is a right angle. $AC = 10$ millimeters and $AB = 7$ millimeters.",
+  "choices": [
+   "$2.9$",
+   "$0.1$",
+   "$7.1$",
+   "$5.2$"
+  ],
+  "answer": "B",
+  "explanation": "$AC$ is across from the right angle at $B$, so it is the hypotenuse. Then $BC=\\sqrt{10^2-7^2}=\\sqrt{51}\\approx 7.14$ millimeters. The gap is $BC-AB\\approx 7.14-7=0.14$, which is closest to 0.1 millimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found how much longer $AC$ is than $BC$, $10-7.14\\approx 2.9$. The question compares $BC$ with $AB$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "7.1 is the length of $BC$ itself. You still have to subtract $AB = 7$ to get how much longer it is."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You added the squares, $\\sqrt{100+49}\\approx 12.2$, as if $AC$ were a leg, and then subtracted 7. $AC$ is across from the right angle, so it's the hypotenuse, and you subtract the squares to find a leg."
+   }
+  },
+  "id": "orig-pythagorean-mi-M-eb12fb",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-eb12fb",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many meters longer is the plot's length than its width?",
+  "stimulus": "An agronomist lays a drip-irrigation line straight across a rectangular test plot of sorghum, from one corner to the opposite corner. The line is 12 meters long, and the plot is 9 meters long.",
+  "choices": [
+   "$3$",
+   "$3\\sqrt{7}$",
+   "$6$",
+   "$9-3\\sqrt{7}$"
+  ],
+  "answer": "D",
+  "explanation": "The line runs along the diagonal, so it is the hypotenuse of a right triangle whose legs are the length and the width. The width is $\\sqrt{12^2-9^2}=\\sqrt{144-81}=\\sqrt{63}=3\\sqrt{7}$ meters, about 7.94 meters. The length is longer by $9-3\\sqrt{7}$ meters, about 1.06 meters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the lengths, $12-9$, instead of their squares. To find a missing leg, use $\\sqrt{12^2-9^2}$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "$3\\sqrt{7}$ is the width. The question asks how much longer the length is than the width, so you still need to compute $9-3\\sqrt{7}$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You added the squares, $\\sqrt{144+81}=15$, which treats the diagonal as a side, and then computed $15-9$. In a rectangle, the diagonal is the hypotenuse, so you subtract to find the width."
+   }
+  },
+  "id": "orig-pythagorean-mi-M-519996",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-519996",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "A biologist marks out a triangular nesting plot $ABC$ beside a creek, and angle $C$ is a right angle. Side $AB$, which runs along the creek, is $15$ meters long. Side $AC$ is $x$ meters long, and side $BC$ is $3$ meters longer than side $AC$.",
+  "choices": [
+   "$6$",
+   "$9$",
+   "$12$",
+   "$36$"
+  ],
+  "answer": "B",
+  "explanation": "Side $AB$ is opposite the right angle at $C$, so it is the hypotenuse. The legs are $x$ and $x + 3$, so $x^2 + (x+3)^2 = 15^2$. Solving that quadratic is slow, so test the choices instead. If $x = 9$, the legs are $9$ and $12$, and $81 + 144 = 225 = 15^2$. That works, so $x = 9$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the side lengths instead of their squares and wrote $x + (x + 3) = 15$, which gives $x = 6$. The Pythagorean theorem relates the squares of the sides, not the sides themselves."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$12$ is the length of side $BC$, which is $x + 3$. The question asks for $x$, the length of side $AC$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You treated $BC$ as the hypotenuse and wrote $x^2 + 15^2 = (x+3)^2$, which gives $x = 36$. The hypotenuse is the side across from the right angle at $C$, and that side is $AB$."
+   }
+  },
+  "id": "orig-pythagorean-mi-M-449c54",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-449c54",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $h$?",
+  "stimulus": "A weather balloon drifts in a straight line away from its launch point on level ground. At one moment, its altitude is $h$ kilometers and its horizontal distance from the launch point is $(2h - 1)$ kilometers. At that moment, the balloon is $17$ kilometers from the launch point in a straight line.",
+  "choices": [
+   "$6$",
+   "$8$",
+   "$9$",
+   "$15$"
+  ],
+  "answer": "B",
+  "explanation": "The altitude and the horizontal distance meet at a right angle, so the $17$ km straight-line distance is the hypotenuse: $h^2 + (2h-1)^2 = 17^2$. Expanding gives $5h^2 - 4h - 288 = 0$, which is awkward to solve, so test the choices. If $h = 8$, the legs are $8$ and $15$, and $64 + 225 = 289 = 17^2$. So $h = 8$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the lengths instead of their squares and wrote $h + (2h - 1) = 17$, which gives $h = 6$. With legs $6$ and $11$, $36 + 121 = 157$, not $289$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You set the horizontal distance equal to the $17$ km straight-line distance and solved $2h - 1 = 17$. The horizontal distance is a leg. The straight-line distance is the hypotenuse, so the two can't be equal."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$15$ is the horizontal distance, $2h - 1$. The question asks for $h$, the altitude."
+   }
+  },
+  "id": "orig-pythagorean-mi-M-69dc2c",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-69dc2c",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $w$?",
+  "stimulus": "A coach marks out a rectangular agility area with a diagonal of $26$ yards. The width of the area is $w$ yards, and its length is $4$ yards more than twice its width.",
+  "choices": [
+   "$10$",
+   "$11$",
+   "$24$",
+   "$100$"
+  ],
+  "answer": "A",
+  "explanation": "The diagonal of a rectangle forms a right triangle with the length and the width, and the diagonal is the hypotenuse. So $w^2 + (2w+4)^2 = 26^2$, which expands to $5w^2 + 16w - 660 = 0$. Testing the choices is faster. If $w = 10$, the length is $24$, and $100 + 576 = 676 = 26^2$. So $w = 10$.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You treated the length as the diagonal and solved $2w + 4 = 26$. The diagonal is the hypotenuse of the right triangle, and the length is only one of its legs."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$24$ is the length of the area, $2w + 4$. The question asks for the width, $w$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$100$ is $w^2$. You stopped before taking the square root to find $w$."
+   }
+  },
+  "id": "orig-pythagorean-mi-M-9845b4",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-9845b4",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

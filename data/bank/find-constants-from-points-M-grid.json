@@ -232,5 +232,618 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the value of $a$?",
+  "stimulus": "An astronomer models the distance, in millions of kilometers, between a comet and a reference point $x$ days after observation began with the function $f(x) = ax^2 + bx + 6$, where $a$ and $b$ are constants. For this model, $f(1) = 10$ and $f(2) = 20$.",
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "Substitute each point. From $f(1) = 10$ you get $a + b + 6 = 10$, so $a + b = 4$. From $f(2) = 20$ you get $4a + 2b + 6 = 20$, so $4a + 2b = 14$, which simplifies to $2a + b = 7$. Subtract the first equation from this one: $a = 3$. (Then $b = 1$.)",
+  "common_errors": [
+   {
+    "value": "1",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved the system correctly but reported $b$ instead of $a$."
+   },
+   {
+    "value": "4",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $a + b = 4$ from the first point and gave that sum as $a$."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Forgot to subtract the constant 6 in the second equation, writing $4a + 2b = 20$, so $2a + b = 10$, then $a = 10 - 4 = 6$."
+   }
+  ],
+  "id": "orig-find-constants-M-d6b965",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-d6b965",
+   "structure": [],
+   "solver_answer": 3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "function __var__ where __var__ and __var__ are constants"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the value of $a$?",
+  "stimulus": "A digital map service models the number of map tiles needed to display a region at zoom level $x$ with the function $g(x) = a \\cdot b^x$, where $a$ and $b$ are positive constants. For this model, $g(1) = 12$ and $g(3) = 108$.",
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "Write an equation for each point: $ab = 12$ and $ab^3 = 108$. Divide the second by the first to get $b^2 = 9$, so $b = 3$ because $b$ is positive. Then $a \\cdot 3 = 12$, so $a = 4$.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the multiplier $b$ and reported it instead of $a$."
+   },
+   {
+    "value": "9",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $b^2 = 9$ after dividing the two equations."
+   },
+   {
+    "value": "12",
+    "misconception": "graph-feature-mismatch",
+    "why": "Treated $g(1)$ as the starting value, even though $a$ is the value at $x = 0$."
+   }
+  ],
+  "id": "orig-find-constants-M-c6d304",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-c6d304",
+   "structure": [],
+   "solver_answer": 4,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "A linguist models how often a word appears in a set of texts with the function $f(x) = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. The table shows three values of $f$.\n\nValues of f\nx | -1 | 0 | 2\nf(x) | 0 | 3 | 21",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "Start with $x = 0$: $f(0) = c = 3$. For $x = -1$: $a(-1)^2 + b(-1) + 3 = 0$, so $a - b = -3$. For $x = 2$: $4a + 2b + 3 = 21$, so $2a + b = 9$. Add the two equations: $3a = 6$, so $a = 2$, and then $b = 2 + 3 = 5$.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved the system correctly and reported $a$ instead of $b$."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $c$, the constant you get straight from the y-intercept."
+   },
+   {
+    "value": "-15",
+    "misconception": "algebra-manipulation",
+    "why": "Kept the sign of $b(-1)$ positive, writing $a + b = -3$. With $2a + b = 9$ that gives $a = 12$ and $b = -15$."
+   }
+  ],
+  "id": "orig-find-constants-M-4f069a",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-4f069a",
+   "structure": [],
+   "solver_answer": 5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "A hydrologist models the volume of water, in cubic meters, left in a draining reservoir $t$ hours after a gate opens with $V(t) = a \\cdot b^t$, where $a$ and $b$ are positive constants. For this model, $V(0) = 800$ and $V(2) = 512$.",
+  "keys": [
+   "0.8",
+   ".8",
+   "4/5"
+  ],
+  "any_of": false,
+  "explanation": "Set $t = 0$: $V(0) = a = 800$. Then $800b^2 = 512$, so $b^2 = 0.64$, and $b = 0.8$ because $b$ is positive.",
+  "common_errors": [
+   {
+    "value": "0.64",
+    "misconception": "intermediate-step",
+    "why": "Stopped at $b^2 = 512/800$ without taking the square root."
+   },
+   {
+    "value": "0.2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the hourly rate of decrease, 20%, instead of the multiplier $b$."
+   },
+   {
+    "value": "800",
+    "misconception": "wrong-target-quantity",
+    "why": "Reported $a$, the starting volume, instead of $b$."
+   }
+  ],
+  "id": "orig-find-constants-M-7fad55",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-7fad55",
+   "structure": [],
+   "solver_answer": "0.8",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "An engineer models the height, in meters, of a bridge arch above the road with $h(x) = ax^2 + bx$, where $x$ is the horizontal distance, in meters, from one base of the arch and $a$ and $b$ are constants. For this model, $h(40) = 0$ and $h(10) = 15$.",
+  "keys": [
+   "2"
+  ],
+  "any_of": false,
+  "explanation": "From $h(40) = 0$: $1600a + 40b = 0$, so $b = -40a$. From $h(10) = 15$: $100a + 10b = 15$. Substitute: $100a - 400a = 15$, so $a = -\\frac{1}{20}$. Then $b = -40\\left(-\\frac{1}{20}\\right) = 2$.",
+  "common_errors": [
+   {
+    "value": "-0.05",
+    "misconception": "wrong-target-quantity",
+    "why": "Reported $a = -\\frac{1}{20}$ instead of $b$."
+   },
+   {
+    "value": "1.2",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the sign when solving the first equation, writing $b = 40a$. That gives $500a = 15$, so $a = 0.03$ and $b = 1.2$."
+   },
+   {
+    "value": "1.5",
+    "misconception": "missed-condition",
+    "why": "Used only $h(10) = 15$, ignored $a$, and solved $10b = 15$."
+   }
+  ],
+  "id": "orig-find-constants-M-190f23",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-190f23",
+   "structure": [],
+   "solver_answer": 2,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $a + c$?",
+  "stimulus": "A sports scientist models an athlete's power output, in hundreds of watts, with $f(x) = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. The graph of $y = f(x)$ passes through the points $(0, 7)$, $(1, 12)$, and $(-1, 6)$.",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "From $(0, 7)$, $c = 7$. From $(1, 12)$: $a + b + 7 = 12$, so $a + b = 5$. From $(-1, 6)$: $a - b + 7 = 6$, so $a - b = -1$. Add the two equations: $2a = 4$, so $a = 2$. Then $a + c = 2 + 7 = 9$.",
+  "common_errors": [
+   {
+    "value": "12",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $a + b + c = f(1)$ instead of $a + c$."
+   },
+   {
+    "value": "2",
+    "misconception": "intermediate-step",
+    "why": "Found $a$ and stopped before adding $c$."
+   },
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "Added $b + c = 3 + 7$ instead of $a + c$."
+   }
+  ],
+  "id": "orig-find-constants-M-6eda47",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-6eda47",
+   "structure": [],
+   "solver_answer": 9,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "passes through the points __var__ __var__ and __var__"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $c$?",
+  "stimulus": "An ecologist models the number of frogs in a pond $t$ years after a restoration project began with $N(t) = a \\cdot 2^t + c$, where $a$ and $c$ are constants. For this model, $N(0) = 50$ and $N(3) = 134$.",
+  "keys": [
+   "38"
+  ],
+  "any_of": false,
+  "explanation": "At $t = 0$, $2^0 = 1$, so $a + c = 50$. At $t = 3$, $2^3 = 8$, so $8a + c = 134$. Subtract the first equation: $7a = 84$, so $a = 12$. Then $c = 50 - 12 = 38$.",
+  "common_errors": [
+   {
+    "value": "50",
+    "misconception": "graph-feature-mismatch",
+    "why": "Took the y-intercept as $c$, which misses that $N(0) = a + c$ for this form."
+   },
+   {
+    "value": "12",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved for $a$ and reported it instead of $c$."
+   },
+   {
+    "value": "33.2",
+    "misconception": "algebra-manipulation",
+    "why": "Computed $2^3$ as $6$. That gives $6a + c = 134$, so $5a = 84$, $a = 16.8$, and $c = 33.2$."
+   }
+  ],
+  "id": "orig-find-constants-M-e30d11",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-e30d11",
+   "structure": [],
+   "solver_answer": 38,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $a - b$?",
+  "stimulus": "A nutrition scientist models a patient's blood glucose change, in millimoles per liter, $x$ hours after a meal with $f(x) = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. The graph of $y = f(x)$ has a y-intercept of $9$ and passes through $(2, 1)$ and $(4, 1)$.",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "The y-intercept gives $c = 9$. From $(2, 1)$: $4a + 2b + 9 = 1$, so $2a + b = -4$. From $(4, 1)$: $16a + 4b + 9 = 1$, so $4a + b = -2$. Subtract: $2a = 2$, so $a = 1$ and $b = -6$. Then $a - b = 1 - (-6) = 7$.",
+  "common_errors": [
+   {
+    "value": "-5",
+    "misconception": "algebra-manipulation",
+    "why": "Lost the double negative and computed $1 - 6$ instead of $1 - (-6)$."
+   },
+   {
+    "value": "1",
+    "misconception": "wrong-target-quantity",
+    "why": "Reported $a$ alone instead of $a - b$."
+   },
+   {
+    "value": "-6",
+    "misconception": "wrong-target-quantity",
+    "why": "Reported $b$ alone instead of $a - b$."
+   }
+  ],
+  "id": "orig-find-constants-M-bbfcf3",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-bbfcf3",
+   "structure": [],
+   "solver_answer": 7,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $b + c$?",
+  "stimulus": "A meteorologist models the air temperature at a weather station, in degrees Fahrenheit, $t$ hours after 6:00 a.m. with the function $T(t) = -t^2 + bt + c$, where $b$ and $c$ are constants. The model gives a temperature of 50\u00b0F at 6:00 a.m. and 70\u00b0F at 10:00 a.m.",
+  "keys": [
+   "59"
+  ],
+  "any_of": false,
+  "explanation": "6:00 a.m. is $t = 0$, so $T(0) = c = 50$. 10:00 a.m. is $t = 4$, so $-(4)^2 + 4b + 50 = 70$, which gives $-16 + 4b = 20$, so $4b = 36$ and $b = 9$. The question asks for the sum, so $b + c = 9 + 50 = 59$.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "wrong-target-quantity",
+    "why": "Found $b$ and stopped. The question asks for $b + c$."
+   },
+   {
+    "value": "50",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $c$, the 6:00 a.m. temperature, instead of the sum."
+   },
+   {
+    "value": "51",
+    "misconception": "algebra-manipulation",
+    "why": "Treated $-t^2$ at $t = 4$ as $+16$, so $16 + 4b + 50 = 70$, which gives $b = 1$ and $b + c = 51$."
+   },
+   {
+    "value": "74",
+    "misconception": "misread-given",
+    "why": "Took $t = 10$ from the clock time instead of 4 hours after 6:00. Then $-100 + 10b + 50 = 70$, so $b = 12$, and the sum came out as 62. Some students also used $c = 70$ by mistake, which gives 74 with $b = 4$ from $t = 4$."
+   }
+  ],
+  "id": "orig-find-constants-M-fa5126",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-fa5126",
+   "structure": [],
+   "solver_answer": 59,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "function __var__ where __var__ and __var__ are constants"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the value of $a$?",
+  "stimulus": "A folklore researcher models the number of recorded variants of a traditional tale with $V(t) = a\\cdot b^t$, where $a$ and $b$ are positive constants and $t$ is the number of decades since the tale was first collected. The model gives 24 variants when $t = 1$ and 54 variants when $t = 3$.",
+  "keys": [
+   "16"
+  ],
+  "any_of": false,
+  "explanation": "Write the two points as equations: $ab = 24$ and $ab^3 = 54$. Divide the second by the first to get $b^2 = \\frac{54}{24} = \\frac{9}{4}$. Because $b$ is positive, $b = \\frac{3}{2}$. Then $a = \\frac{24}{b} = \\frac{24}{3/2} = 16$. As a check, $16 \\cdot \\left(\\frac{3}{2}\\right)^3 = 16 \\cdot \\frac{27}{8} = 54$.",
+  "common_errors": [
+   {
+    "value": "1.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved for the growth factor $b$ and entered it instead of $a$."
+   },
+   {
+    "value": "3/2",
+    "misconception": "wrong-target-quantity",
+    "why": "This is $b$, written as a fraction, instead of $a$."
+   },
+   {
+    "value": "24",
+    "misconception": "misread-given",
+    "why": "Took the value at $t = 1$ as the starting value, which is $V(0)$."
+   },
+   {
+    "value": "32/3",
+    "misconception": "algebra-manipulation",
+    "why": "Divided 24 by $b^2 = \\frac{9}{4}$ instead of by $b$, which mixes up the exponent from the $t = 1$ point."
+   }
+  ],
+  "id": "orig-find-constants-M-77a63f",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-77a63f",
+   "structure": [],
+   "solver_answer": 16,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "where __var__ and __var__ are positive constants and",
+    "__var__ and __var__ are positive constants and __var__",
+    "when __var__ what is the value of __var__"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the value of $a$?",
+  "stimulus": "An ecologist models the number of heron nesting pairs at a wetland with $f(x) = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants and $x$ is the number of years after 2020. The table shows three values from the model.\n\nHeron Nesting Pairs\n$x$ | $-2$ | $0$ | $2$\n$f(x)$ | 30 | 18 | 22",
+  "keys": [
+   "2"
+  ],
+  "any_of": false,
+  "explanation": "Start with $x = 0$: $f(0) = c = 18$. Substituting $x = 2$ gives $4a + 2b + 18 = 22$, so $4a + 2b = 4$. Substituting $x = -2$ gives $4a - 2b + 18 = 30$, so $4a - 2b = 12$. Remember that $(-2)^2 = 4$. Adding the two equations gives $8a = 16$, so $a = 2$. You can also enter the table in Desmos and run $y_1 \\sim ax_1^2 + bx_1 + c$.",
+  "common_errors": [
+   {
+    "value": "-2",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved for $b$, since $4(2) + 2b = 4$ gives $b = -2$, and entered it instead of $a$."
+   },
+   {
+    "value": "18",
+    "misconception": "wrong-target-quantity",
+    "why": "Entered $c$, the value at $x = 0$, which is the only constant you can read straight off the table."
+   },
+   {
+    "value": "16",
+    "misconception": "intermediate-step",
+    "why": "Added the equations to get $8a = 16$ and entered 16 without dividing by 8."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Forgot to subtract $c$ from the outputs, so the equations became $4a + 2b = 22$ and $4a - 2b = 30$. Then $8a = 52$, which doesn't give a whole number. Students who also drop the $x = 2$ point and use $4a = 30 - 18$ get 3."
+   }
+  ],
+  "id": "orig-find-constants-M-fb7a22",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-fb7a22",
+   "structure": [],
+   "solver_answer": 2,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ and __var__ are constants and __var__ is",
+    "and __var__ are constants and __var__ is the",
+    "__var__ are constants and __var__ is the number",
+    "are constants and __var__ is the number of"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "A sports scientist models the height, in meters, of a volleyball $t$ seconds after it is served with $h(t) = -5t^2 + bt + c$, where $b$ and $c$ are constants. The ball is 2 meters above the floor when it is struck at $t = 0$, and it is 12 meters above the floor at $t = 2$.",
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "Use $t = 0$ first: $h(0) = c = 2$. Then substitute $t = 2$: $-5(2)^2 + 2b + 2 = 12$, so $-20 + 2b + 2 = 12$. That gives $2b = 30$, so $b = 15$.",
+  "common_errors": [
+   {
+    "value": "-5",
+    "misconception": "algebra-manipulation",
+    "why": "Lost the negative sign on the squared term and wrote $+20$, so $20 + 2b + 2 = 12$ and $b = -5$."
+   },
+   {
+    "value": "16",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the constant $c$ when substituting, so $-20 + 2b = 12$ and $b = 16$."
+   },
+   {
+    "value": "30",
+    "misconception": "intermediate-step",
+    "why": "Reached $2b = 30$ and didn't divide by 2."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Entered $c$, the starting height, instead of $b$."
+   }
+  ],
+  "id": "orig-find-constants-M-a373e1",
+  "skill_cd": "P.C.",
+  "subtype": "find-constants-from-points",
+  "subtype_name": "Find the unknown constants from given points",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constants-M-a373e1",
+   "structure": [],
+   "solver_answer": 15,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

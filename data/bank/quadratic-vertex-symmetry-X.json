@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-quadratic-vert-X-5b6d2d",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,14 +82,407 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-quadratic-vert-X-f8f4dc",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the maximum number of dragonflies predicted by the model?",
+  "stimulus": "An ecologist models the number of adult dragonflies at a pond $t$ days after the first adult emerged with the function $N(t) = at^2 + bt + 120$, where $a$ and $b$ are constants. According to the model, $N(4) = N(12) = 168$.",
+  "choices": [
+   "8",
+   "152",
+   "168",
+   "184"
+  ],
+  "answer": "D",
+  "explanation": "$N(4) = N(12)$, so the vertex is halfway between them, at $t = 8$. Since $N$ equals 168 at $t = 4$ and $t = 12$, you can write $N(t) = a(t-4)(t-12) + 168$. At $t = 0$ this gives $48a + 168 = 120$, so $a = -1$. Then $N(8) = -1(4)(-4) + 168 = 16 + 168 = 184$. Since $a < 0$, the parabola opens downward, so 184 is the maximum.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "8 is the number of days at which the maximum happens. The question asks for the maximum number of dragonflies, which is the y-value of the vertex."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $a = -1$, but then you computed $a(4)(-4)$ as $-16$ instead of $+16$ and subtracted it from 168. A negative times a negative times a positive gives a positive here."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "168 is the count at days 4 and 12, which you were given. The vertex sits between those days, so the peak is higher than 168."
+   }
+  },
+  "id": "orig-quadratic-vert-X-d75765",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-X-d75765",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "function __var__ where __var__ and __var__ are constants"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following could be the value of $a$?",
+  "stimulus": "A materials scientist models the stored energy in a polymer strip with the function $E(x) = ax^2 + bx - 20$, where $a$ and $b$ are constants. In the xy-plane, the graph of $y = E(x)$ has its vertex at $x = 5$ and has no x-intercepts.",
+  "choices": [
+   "$-1$",
+   "$-\\frac{4}{5}$",
+   "$-\\frac{1}{2}$",
+   "$\\frac{1}{2}$"
+  ],
+  "answer": "C",
+  "explanation": "The vertex is at $x = 5$, so $-\\frac{b}{2a} = 5$, which gives $b = -10a$. The y-value of the vertex is $E(5) = 25a - 50a - 20 = -25a - 20$. The y-intercept is $-20$, which is below the x-axis. For the graph to have no x-intercepts, it has to open downward ($a < 0$) and its vertex also has to be below the axis: $-25a - 20 < 0$, so $a > -\\frac{4}{5}$. That means $-\\frac{4}{5} < a < 0$. Only $-\\frac{1}{2}$ fits. Its vertex value is $-7.5$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You saw that the parabola must open downward but didn't check where the vertex is. With $a = -1$, the vertex value is $25 - 20 = 5$. That is above the axis, so the graph crosses the axis twice."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "With $a = -\\frac{4}{5}$, the vertex value is exactly 0. The vertex touches the x-axis, so there is one x-intercept, not zero."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "With $a > 0$, the parabola opens upward from a y-intercept of $-20$. It has to cross the x-axis twice. The parabola has to open away from the axis, which here means downward."
+   }
+  },
+  "id": "orig-quadratic-vert-X-8ad80c",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-X-8ad80c",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "function __var__ where __var__ and __var__ are constants"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the distance, in meters, between the two points where the cable meets the arch?",
+  "stimulus": "A planner is designing a pedestrian arch over a plaza. The height of the arch, in meters, at a horizontal distance of $x$ meters from a lamppost is modeled by $h(x) = -\\frac{1}{80}(x - 6)(x - 86)$. A horizontal cable will be strung 15 meters above the ground and will meet the arch at two points.",
+  "choices": [
+   "20",
+   "40",
+   "66",
+   "80"
+  ],
+  "answer": "B",
+  "explanation": "The roots are 6 and 86, so the vertex is at $x = 46$. The maximum height is $h(46) = -\\frac{1}{80}(40)(-40) = 20$. In vertex form, $h(x) = -\\frac{1}{80}(x - 46)^2 + 20$. Set this equal to 15: $(x - 46)^2 = 400$, so $x - 46 = \\pm 20$. The cable meets the arch at $x = 26$ and $x = 66$, which are 40 meters apart.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "20 is the distance from the vertex to one meeting point. Because of symmetry, there is a second point the same distance away on the other side, so the total is double that."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "66 is the x-coordinate of the farther meeting point, measured from the lamppost. The question asks for the distance between the two points."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "80 is the distance between the arch's two feet, where the height is 0. The cable is at 15 meters, not at ground level."
+   }
+  },
+  "id": "orig-quadratic-vert-X-992145",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-X-992145",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many days after day 3 does the antibody concentration again equal its value on day 3?",
+  "stimulus": "An immunologist models the concentration of an antibody in a patient's blood, in micrograms per milliliter, $t$ days after a vaccine dose with $C(t) = -2(t + 1)(t - 15)$, for $0 \\le t \\le 15$.",
+  "choices": [
+   "4",
+   "8",
+   "10",
+   "11"
+  ],
+  "answer": "B",
+  "explanation": "The zeros of $C$ are at $t = -1$ and $t = 15$, so the peak is at the midpoint, $t = \\frac{-1 + 15}{2} = 7$. Day 3 is 4 days before the peak. By symmetry, the same concentration happens 4 days after the peak, on day 11. That is $11 - 3 = 8$ days after day 3. To check, $C(3) = C(11) = 96$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "4 is how many days separate day 3 from the peak. The question measures from day 3, not from the peak, so you need the full gap."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the factor $(t + 1)$ as a zero at $t = 1$, which put the peak at day 8 and the matching day at 13. The zero of $(t + 1)$ is $t = -1$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "11 is the day on which the concentration repeats. The question asks how many days after day 3 that happens."
+   }
+  },
+  "id": "orig-quadratic-vert-X-602f5b",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-X-602f5b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "At what time $t > 0$, in seconds, is the ball again at the height from which it was struck?",
+  "stimulus": "A volleyball is struck upward at time $t = 0$. Its height, in feet, $t$ seconds later is modeled by $h(t) = -16t^2 + bt + c$, where $b$ and $c$ are constants. The ball is 12 feet high at both $t = 0.25$ and $t = 1.5$.",
+  "choices": [
+   "0.875",
+   "1.25",
+   "1.5",
+   "1.75"
+  ],
+  "answer": "D",
+  "explanation": "Since $h(0.25) = h(1.5)$, the vertex is at $t = \\frac{0.25 + 1.5}{2} = 0.875$. The ball is struck at $t = 0$, which is 0.875 seconds before the vertex. By symmetry, it returns to that height 0.875 seconds after the vertex, at $t = 2(0.875) - 0 = 1.75$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "0.875 is when the ball reaches its maximum height. To return to the starting height, the ball has to fall for as long as it rose."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the two given times ($1.5 - 0.25$). The axis of symmetry comes from their average, and the return time is double the vertex time."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "1.5 seconds is when the ball returns to 12 feet, which pairs with $t = 0.25$. The ball was struck at $t = 0$, not at 12 feet, so it returns to that height later."
+   }
+  },
+  "id": "orig-quadratic-vert-X-52acb0",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-X-52acb0",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "A public health analyst models the change in weekly clinic visits, compared with a baseline, $w$ weeks after a campaign begins with the function $V(w) = w^2 + bw + 7$, where $b$ is a constant. The smallest value of $V(w)$ is $-9$, and it occurs at a positive value of $w$.",
+  "choices": [
+   "$-8$",
+   "$-4$",
+   "8",
+   "16"
+  ],
+  "answer": "A",
+  "explanation": "Since the leading coefficient is 1 and the minimum is $-9$, write $V(w) = (w - h)^2 - 9 = w^2 - 2hw + h^2 - 9$. Matching the constant terms gives $h^2 - 9 = 7$, so $h^2 = 16$ and $h = \\pm 4$. The minimum occurs at a positive $w$, so $h = 4$. Then $b = -2h = -8$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You stopped at $h = 4$ and took its negative. You still need to match the $w$-coefficient: $b = -2h$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You got the sign in $-\\frac{b}{2a}$ (or in $(w - h)$) wrong. With $b = 8$, the vertex would be at $w = -4$, which breaks the condition that the minimum occurs at a positive $w$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "16 is $h^2$, the value you get partway through after matching constant terms. It is not the coefficient of $w$."
+   }
+  },
+  "id": "orig-quadratic-vert-X-7094c9",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-X-7094c9",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "For what value of $n$ in the permitted range is the predicted yield greatest?",
+  "stimulus": "An agronomist models the wheat yield $Y$, in hundreds of kilograms per hectare, when $n$ tens of kilograms of nitrogen fertilizer are applied per hectare, with $Y(n) = -\\frac{1}{2}n^2 + 18n + 40$. Local regulations limit applications to $0 \\le n \\le 12$.",
+  "choices": [
+   "0",
+   "12",
+   "18",
+   "36"
+  ],
+  "answer": "B",
+  "explanation": "The vertex is at $n = -\\frac{18}{2(-1/2)} = 18$. That is outside the permitted range. The parabola opens downward, so $Y$ increases for all $n < 18$, which includes the whole interval $0 \\le n \\le 12$. The greatest permitted yield is at the right endpoint, $n = 12$, where $Y(12) = 184$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "$n = 0$ gives the smallest yield in the range ($Y = 40$), not the greatest. $Y$ is increasing over the whole interval."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "18 is the vertex, which is the right first step. But regulations cap $n$ at 12, so the vertex can't be used. The maximum within the allowed range is at the boundary."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $-\\frac{b}{a}$ and dropped the 2 in $-\\frac{b}{2a}$, which doubled the vertex. 36 is also outside the permitted range."
+   }
+  },
+  "id": "orig-quadratic-vert-X-a82e31",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-X-a82e31",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Based on the model, what is the greatest number of variants recorded in any year?",
+  "stimulus": "A folklore researcher counts the distinct variants of a traditional tale recorded in year $x$ of a field survey. The count is modeled by a quadratic function $f$, and the table shows some of its values.\n\nVariants of the Tale Recorded\nYear, $x$ | 0 | 1 | 6 | 7\nVariants, $f(x)$ | 18 | 32 | 42 | 32",
+  "choices": [
+   "4",
+   "34",
+   "42",
+   "50"
+  ],
+  "answer": "D",
+  "explanation": "$f(1) = f(7) = 32$, so the vertex is at $x = 4$. Write $f(x) = a(x - 4)^2 + k$. From $f(6) = 42$: $4a + k = 42$. From $f(1) = 32$: $9a + k = 32$. Subtracting gives $5a = -10$, so $a = -2$ and $k = 50$. Since $a < 0$, the maximum is 50, in year 4. To check, $f(0) = -32 + 50 = 18$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "4 is the year when the maximum happens, the x-coordinate of the vertex. The question asks for the number of variants, which is the y-coordinate."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "When you subtracted the two equations, you got $5a = 10$ instead of $-10$. That gives $a = 2$ and $k = 34$. But $a = 2$ would make the parabola open upward, which contradicts the table, where the values rise and then fall."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "42 is the largest value in the table, but the table skips the vertex. The model peaks at $x = 4$, which is not one of the listed years, so the peak is higher than 42."
+   }
+  },
+  "id": "orig-quadratic-vert-X-245080",
+  "skill_cd": "P.C.",
+  "subtype": "quadratic-vertex-symmetry",
+  "subtype_name": "Use the vertex and symmetry of a parabola",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-quadratic-vert-X-245080",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

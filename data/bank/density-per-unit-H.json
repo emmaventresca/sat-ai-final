@@ -396,5 +396,59 @@
   "rated_level": "H",
   "rated_why": "Multi-step with a trap: must subtract parkland before applying density, otherwise gets wrong area",
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the length, in centimeters, of one edge of the cube?",
+  "stimulus": "A planetary scientist cuts a solid cube from an iron meteorite to study under a microscope. The meteorite has a density of $8$ grams per cubic centimeter, and the cube has a mass of $1.728$ kilograms.",
+  "choices": [
+   "$0.6$",
+   "$6$",
+   "$12$",
+   "$216$"
+  ],
+  "answer": "B",
+  "explanation": "First convert the mass to grams so it matches the density's units: $1.728 \\text{ kg} \\times \\frac{1{,}000 \\text{ g}}{1 \\text{ kg}} = 1{,}728 \\text{ g}$. Next, rearrange density = mass \u00f7 volume to get volume = mass \u00f7 density: $\\frac{1{,}728 \\text{ g}}{8 \\text{ g/cm}^3} = 216 \\text{ cm}^3$. The grams cancel and leave cubic centimeters, which confirms the setup. The question asks for an edge, not the volume, so take the cube root: $\\sqrt[3]{216} = 6$ cm. In Desmos you can graph $y = x^3$ and $y = 216$ and read the positive intersection at $x = 6$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used $1.728$ as if it were already in grams, so you got $1.728 \\div 8 = 0.216$ and $\\sqrt[3]{0.216} = 0.6$. The density is in grams per cubic centimeter, so the kilograms have to become $1{,}728$ grams before you divide. Writing the units next to each number would have shown that kg and g do not cancel."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the cube root of the mass, $\\sqrt[3]{1{,}728} = 12$, and never divided by the density. A mass in grams is not a volume. You have to divide by $8$ g/cm\u00b3 first to get cubic centimeters, and only then take the cube root."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$216$ is the cube's volume in cubic centimeters, which is correct partway through. The question asks for the length of an edge, so you still need the cube root: $\\sqrt[3]{216} = 6$. Reread the last line before you pick an answer."
+   }
+  },
+  "id": "orig-density-per-un-H-38af04",
+  "skill_cd": "Q.A.",
+  "subtype": "density-per-unit",
+  "subtype_name": "Density and per-unit quotients (including working backward)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-density-per-un-H-38af04",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "has a density of __var__ grams per cubic",
+    "a density of __var__ grams per cubic centimeter",
+    "has a mass of __var__ kilograms what is",
+    "a mass of __var__ kilograms what is the",
+    "what is the length in centimeters of one"
+   ],
+   "residue": 4
+  }
  }
 ]

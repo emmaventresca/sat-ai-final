@@ -173,18 +173,23 @@
   "section": "math",
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "error",
+  "status": "review",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-classify-funct-E-b64565",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "which of the following best describes the function",
     "of the following best describes the function __var__"
    ],
    "residue": 8
-  },
-  "phrasing": "direct"
+  }
  },
  {
   "stem": "Which of the following best describes how the number of mussels changes over time?",
@@ -373,5 +378,103 @@
    "overlap": []
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "Which of the following best describes how the mass of the strip changes over time during the test?",
+  "stimulus": "In a corrosion test, a metal test strip loses $2\\%$ of its original mass every hour.",
+  "choices": [
+   "Decreasing linear",
+   "Decreasing exponential",
+   "Increasing linear",
+   "Increasing exponential"
+  ],
+  "answer": "A",
+  "explanation": "The strip loses mass, so the relationship is decreasing. Each hour it loses $2\\%$ of its original mass. That is the same fixed amount every hour, because the original mass never changes. When the same amount is subtracted each step, the relationship is linear. So the mass is decreasing linearly.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You saw a percent and called the relationship exponential. Exponential decay would mean losing $2\\%$ of the current mass each hour, which is a smaller amount each time. Here the percent is taken of the original mass, so the same amount is lost every hour. That makes it linear."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You got the type right but the direction wrong. The strip loses mass, so the mass goes down over time. It doesn't go up."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You got both the direction and the type wrong. The mass goes down, and because the same amount is lost every hour, the change is linear, not exponential."
+   }
+  },
+  "id": "orig-classify-funct-E-e9dae6",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-E-e9dae6",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "B",
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following best describes the relationship between $w$ and $p$?",
+  "stimulus": "A musicologist is transcribing a collection of handwritten opera scores. The table shows the total number of pages transcribed, $p$, after $w$ weeks.\n\nPages Transcribed\n$w$ | $p$\n0 | 40\n1 | 160\n2 | 280\n3 | 400",
+  "choices": [
+   "Increasing exponential",
+   "Increasing linear",
+   "Decreasing exponential",
+   "Decreasing linear"
+  ],
+  "answer": "B",
+  "explanation": "As $w$ increases, $p$ increases, so the relationship is increasing. Now find the differences: $160 - 40 = 120$, $280 - 160 = 120$, and $400 - 280 = 120$. The same amount is added each week, so the relationship is linear. Together, that makes it an increasing linear relationship.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You saw $p$ jump from 40 to 160 and called it exponential because it grows fast. Check the ratios instead: $160 \\div 40 = 4$, but $280 \\div 160 = 1.75$. The ratios aren't constant, but the differences are all 120, so the relationship is linear."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You got both the direction and the type wrong. The page count goes up every week, and it rises by a constant 120 pages each week, which makes it linear."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You got the type right but the direction wrong. The total number of pages goes up each week, so the relationship is increasing."
+   }
+  },
+  "id": "orig-classify-funct-E-291785",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-E-291785",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__num__ which of the following best describes the"
+   ],
+   "residue": 3
+  }
  }
 ]

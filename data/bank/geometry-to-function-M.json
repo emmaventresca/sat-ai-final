@@ -243,5 +243,655 @@
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which function $V$ gives the volume of the basin, in cubic meters, in terms of its length $x$, in meters?",
+  "stimulus": "A city is building a stormwater basin shaped like a rectangular prism. The basin will be 2 meters deep, and its length will be 5 meters more than its width.",
+  "choices": [
+   "$V(x) = x^2 - 5x$",
+   "$V(x) = 2x^2 - 5x$",
+   "$V(x) = 2x^2 - 10x$",
+   "$V(x) = 2x^2 + 10x$"
+  ],
+  "answer": "C",
+  "explanation": "The question names the length as $x$, so write every dimension in terms of the length. The length is 5 more than the width, which makes the width $x - 5$. The volume is length \u00d7 width \u00d7 depth, so $V(x) = x(x - 5)(2) = 2x^2 - 10x$. To check, take a length of 10 meters. The width is 5 and the volume is $10 \\cdot 5 \\cdot 2 = 100$, and $2(10)^2 - 10(10) = 100$ as well.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "$x(x - 5) = x^2 - 5x$ is the area of the basin's floor. You stopped there and never multiplied by the 2-meter depth, so you have the base area, not the volume."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $x^2 - 5x$ by 2 but only doubled the first term. The 2 has to multiply both terms: $2(x^2 - 5x) = 2x^2 - 10x$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You wrote the width as $x + 5$, which would be right if $x$ were the width. Here $x$ is the length, and the width is 5 less than the length, so it is $x - 5$. Using the wrong dimension as the input flipped the sign of the offset."
+   }
+  },
+  "id": "orig-geometry-to-fu-M-352a3b",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-352a3b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which function __var__ gives the volume of the"
+   ],
+   "residue": 5
+  }
+ },
+ {
+  "stem": "The function $V$ gives the number of cubic inches by which the volume of Cooler A exceeds the volume of Cooler B. Which equation defines $V$?",
+  "stimulus": "A county clinic stores vaccines in two coolers shaped like rectangular prisms. Cooler A has a square base with side length $x$ inches and a height of $6$ inches. Cooler B has a base $x$ inches long and $2$ inches narrower than it is long, and a height of $4$ inches.",
+  "choices": [
+   "$V(x) = 2x^2 - 8x$",
+   "$V(x) = 2x^2 + 8x$",
+   "$V(x) = 4x^2 - 8x$",
+   "$V(x) = 10x^2 - 8x$"
+  ],
+  "answer": "B",
+  "explanation": "Cooler A holds $x \\cdot x \\cdot 6 = 6x^2$ cubic inches. Cooler B's width is $x - 2$, so it holds $x(x - 2)(4) = 4x^2 - 8x$ cubic inches. The amount by which A exceeds B is $6x^2 - (4x^2 - 8x) = 2x^2 + 8x$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote Cooler B's width as $x + 2$ instead of $x - 2$, which gave $4x^2 + 8x$ for B and flipped the sign of the $8x$ term in the difference. The width is 2 inches *less* than the length, and the length is your variable, so subtract."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the volume of Cooler B by itself. The question asks how much greater A's volume is than B's, so you still need to subtract this from $6x^2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the two volumes, $6x^2 + (4x^2 - 8x)$, instead of subtracting. 'Exceeds' asks for the gap, so you need A minus B."
+   }
+  },
+  "id": "orig-geometry-to-fu-M-6b93e1",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-6b93e1",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ inches and a height of __var__ inches"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "The function $f$ gives the number of square feet by which the area of Banner B exceeds the area of Banner A. Which equation defines $f$?",
+  "stimulus": "A folklore society is printing two rectangular banners for a storytelling festival. Banner A is $3$ feet longer than it is wide. Banner B is as wide as Banner A and twice as long. Let $\\ell$ be the length, in feet, of Banner A.",
+  "choices": [
+   "$f(\\ell) = \\ell^2 + 3\\ell$",
+   "$f(\\ell) = 2\\ell^2 - 6\\ell$",
+   "$f(\\ell) = \\ell^2 - 3\\ell$",
+   "$f(\\ell) = 3\\ell^2 - 9\\ell$"
+  ],
+  "answer": "C",
+  "explanation": "Banner A's length is $\\ell$, so its width is $\\ell - 3$ and its area is $\\ell(\\ell - 3) = \\ell^2 - 3\\ell$. Banner B is $2\\ell$ long and $\\ell - 3$ wide, so its area is $2\\ell^2 - 6\\ell$. The difference is $(2\\ell^2 - 6\\ell) - (\\ell^2 - 3\\ell) = \\ell^2 - 3\\ell$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the width as $\\ell + 3$. The banner is 3 feet longer than it is wide, so the width is 3 less than the length: $\\ell - 3$. Using the wrong sign on the offset flips the sign of the $3\\ell$ term."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the area of Banner B by itself. The question asks how much larger B is than A, so you still need to subtract A's area."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the two areas instead of subtracting them. 'Exceeds' asks for the gap between the areas, not their total."
+   }
+  },
+  "id": "orig-geometry-to-fu-M-f2ab17",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-f2ab17",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $g$ gives the number of cubic meters by which the volume of Basin 1 exceeds the volume of Basin 2. Which equation defines $g$?",
+  "stimulus": "A water treatment plant has two settling basins shaped like rectangular prisms. Basin 2 has a length of $L$ meters, a width that is $4$ meters less than its length, and a depth of $2$ meters. Basin 1 has a square base with side length $L$ meters and a depth of $3$ meters.",
+  "choices": [
+   "$g(L) = 2L^2 - 8L$",
+   "$g(L) = L^2 - 8L$",
+   "$g(L) = 5L^2 - 8L$",
+   "$g(L) = L^2 + 8L$"
+  ],
+  "answer": "D",
+  "explanation": "Basin 1 holds $L \\cdot L \\cdot 3 = 3L^2$ cubic meters. Basin 2's width is $L - 4$, so it holds $L(L - 4)(2) = 2L^2 - 8L$ cubic meters. The amount by which Basin 1 exceeds Basin 2 is $3L^2 - (2L^2 - 8L) = L^2 + 8L$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the volume of Basin 2 by itself. You need how much more Basin 1 holds, so subtract this from Basin 1's volume, $3L^2$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote Basin 2's width as $L + 4$ instead of $L - 4$, which made its volume $2L^2 + 8L$ and flipped the sign of the $8L$ term. The width is 4 meters *less* than the length, and $L$ is the length."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the two volumes, $3L^2 + (2L^2 - 8L)$, instead of subtracting. The question asks for the gap between the basins, so you need Basin 1 minus Basin 2."
+   }
+  },
+  "id": "orig-geometry-to-fu-M-cbd601",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-cbd601",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "has a length of __var__ meters a width"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A folklore archive is restoring a rectangular story cloth that shows scenes from a village legend. The cloth's width is 6 centimeters less than its length. The function $f$ gives the area of the cloth, in square centimeters, in terms of its length $L$, in centimeters.",
+  "choices": [
+   "$f(L) = L^2 + 6L$",
+   "$f(L) = L^2 - 6L$",
+   "$f(L) = 2L - 6$",
+   "$f(L) = 4L - 12$"
+  ],
+  "answer": "B",
+  "explanation": "The question names the length $L$ as the input, so write the width in terms of $L$. The width is 6 less than the length, so it is $L - 6$. The area of a rectangle is length times width, so $f(L) = L(L - 6) = L^2 - 6L$. To check, try $L = 10$: the width is 4, so the area is 40, and $10^2 - 6(10) = 40$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You wrote the width as $L + 6$. That would be right if the input were the width, since the length is the width plus 6. But the input here is the length, so the width is $L - 6$ and the sign of the offset flips."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the two dimensions, $L + (L - 6)$, when you should have multiplied them. Area is length times width."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the perimeter, $2L + 2(L - 6)$, not the area. You found the distance around the cloth, not the space it covers."
+   }
+  },
+  "id": "orig-geometry-to-fu-M-7857a8",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-7857a8",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "An observatory stores a telescope mirror in a box shaped like a rectangular prism. The box is 10 inches tall, and the length of its base is 3 inches more than the width of its base. The function $V$ gives the volume of the box, in cubic inches, in terms of the base length $\\ell$, in inches.",
+  "choices": [
+   "$V(\\ell) = 10\\ell^2 + 30\\ell$",
+   "$V(\\ell) = \\ell^2 - 3\\ell$",
+   "$V(\\ell) = 10\\ell^2 - 3\\ell$",
+   "$V(\\ell) = 10\\ell^2 - 30\\ell$"
+  ],
+  "answer": "D",
+  "explanation": "The input is the length $\\ell$. The length is 3 more than the width, so the width is $\\ell - 3$. Volume is length times width times height: $V(\\ell) = 10\\ell(\\ell - 3) = 10\\ell^2 - 30\\ell$. To check, try $\\ell = 5$: the width is 2, so the volume is $5 \\cdot 2 \\cdot 10 = 100$, and $10(25) - 30(5) = 100$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You wrote the width as $\\ell + 3$, as if the width were 3 more than the length. The length is the longer side here, so the width is $\\ell - 3$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "This is only the area of the base, $\\ell(\\ell - 3)$. You never multiplied by the 10-inch height, so it isn't a volume."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "When you expanded $10\\ell(\\ell - 3)$, you multiplied the 10 into the first term but not the second. The second term should be $-30\\ell$, not $-3\\ell$."
+   }
+  },
+  "id": "orig-geometry-to-fu-M-aeab0d",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-aeab0d",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A weather station keeps its thermometers in a shelter shaped like a rectangular prism with a square base. The shelter's height is 2 feet greater than the side length of its base. The function $g$ gives the volume of the shelter, in cubic feet, in terms of its height $h$, in feet.",
+  "choices": [
+   "$g(h) = h(h - 2)^2$",
+   "$g(h) = h(h + 2)^2$",
+   "$g(h) = h^2(h - 2)$",
+   "$g(h) = h(h^2 - 4)$"
+  ],
+  "answer": "A",
+  "explanation": "The input is the height $h$. The height is 2 more than the side of the base, so each base side is $h - 2$. Volume is base area times height, and the base is a square, so $g(h) = (h - 2)^2 \\cdot h = h(h - 2)^2$. To check, try $h = 5$: each base side is 3, so the volume is $9 \\cdot 5 = 45$, and $5(3)^2 = 45$.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You wrote the base side as $h + 2$, as if the base were bigger than the height. The height is the larger number, so the base side is $h - 2$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You squared the wrong dimension. Here the square base has side $h$ and the height is $h - 2$. In this shelter the base side is $h - 2$, and that is the length you square."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $(h - 2)^2$ as $h^2 - 4$. Squaring a binomial gives $h^2 - 4h + 4$, so you lost the middle term."
+   }
+  },
+  "id": "orig-geometry-to-fu-M-a9eaeb",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-a9eaeb",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which function gives the volume $V(\\ell)$, in cubic centimeters, of the tray in terms of its length $\\ell$?",
+  "stimulus": "A paleobotanist stores a fossil fern frond in a tray shaped like a rectangular box. The tray is 3 centimeters tall, and its length is 5 centimeters more than its width.",
+  "choices": [
+   "$V(\\ell) = 3\\ell^2 + 15\\ell$",
+   "$V(\\ell) = 3\\ell^2 - 15\\ell$",
+   "$V(\\ell) = \\ell^2 - 5\\ell$",
+   "$V(\\ell) = 6\\ell - 15$"
+  ],
+  "answer": "B",
+  "explanation": "The question uses length as the input, so first write the width in terms of length. The length is 5 more than the width, so the width is $\\ell - 5$. Volume is length \u00d7 width \u00d7 height: $V(\\ell) = \\ell(\\ell - 5)(3) = 3\\ell^2 - 15\\ell$. To check, take $\\ell = 10$. The width is 5, so the volume is $10 \\cdot 5 \\cdot 3 = 150$, and $3(100) - 150 = 150$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You wrote the width as $\\ell + 5$, which treats $\\ell$ as the width rather than the length. The length is the larger dimension, so the width is 5 less than it, not 5 more."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the length by the width and stopped. That gives the area of the tray's base, not its volume, because you dropped the 3-centimeter height."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the dimensions instead of multiplying them: $3(\\ell + \\ell - 5) = 6\\ell - 15$. Volume is a product of length, width and height, so it has to be quadratic in $\\ell$ here, not linear."
+   }
+  },
+  "id": "orig-geometry-to-fu-M-405eff",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-405eff",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which function gives the volume $V(d)$, in cubic centimeters, of the drum's interior in terms of its depth $d$?",
+  "stimulus": "A musicologist measures a frame drum whose interior is a right circular cylinder. The radius of the drum is 8 centimeters greater than its depth.",
+  "choices": [
+   "$V(d) = \\pi d(d - 8)^2$",
+   "$V(d) = \\pi d^2(d + 8)$",
+   "$V(d) = 2\\pi d(d + 8)$",
+   "$V(d) = \\pi d(d + 8)^2$"
+  ],
+  "answer": "D",
+  "explanation": "The input is the depth, so write the radius in terms of depth. The radius is 8 more than the depth, so $r = d + 8$. A cylinder's volume is $\\pi r^2 h$, and here the height is the depth $d$. That gives $V(d) = \\pi(d + 8)^2 d = \\pi d(d + 8)^2$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You wrote the radius as $d - 8$, as though the depth were the larger measurement. The radius is 8 more than the depth, so it is $d + 8$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You squared the depth instead of the radius. In $\\pi r^2 h$, the squared dimension is the radius, $d + 8$, and the depth appears only once, as the height."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $2\\pi r h$, which is the area of the drum's curved side, not its volume. Volume needs the radius squared: $\\pi r^2 h$."
+   }
+  },
+  "id": "orig-geometry-to-fu-M-438026",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-438026",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which function gives the area $A(b)$, in square meters, of the island in terms of its base $b$?",
+  "stimulus": "A city planner designs a triangular traffic island at a three-way intersection. The base of the triangle is 6 meters longer than its height.",
+  "choices": [
+   "$A(b) = \\frac{1}{2}b^2 - 3b$",
+   "$A(b) = \\frac{1}{2}b^2 + 3b$",
+   "$A(b) = b^2 - 6b$",
+   "$A(b) = \\frac{1}{2}b^2 - 6b$"
+  ],
+  "answer": "A",
+  "explanation": "The input is the base, so write the height in terms of the base. The base is 6 more than the height, so the height is $b - 6$. A triangle's area is $\\frac{1}{2} \\times \\text{base} \\times \\text{height}$, so $A(b) = \\frac{1}{2}b(b - 6) = \\frac{1}{2}b^2 - 3b$. To check, take $b = 10$. The height is 4, so the area is $\\frac{1}{2}(10)(4) = 20$, and $50 - 30 = 20$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You wrote the height as $b + 6$, which treats $b$ as the height rather than the base. The base is the longer side, so the height is $b - 6$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the base by the height but dropped the $\\frac{1}{2}$ from the triangle area formula. $b^2 - 6b$ is the area of a rectangle with those sides, which is twice the triangle's area."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "When you expanded $\\frac{1}{2}b(b - 6)$, you applied the $\\frac{1}{2}$ to $b^2$ but not to $-6b$. Distributed correctly, the second term is $-3b$."
+   }
+  },
+  "id": "orig-geometry-to-fu-M-1886e1",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-1886e1",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which function $V$ gives the volume of the box, in cubic inches, in terms of $\\ell$?",
+  "stimulus": "A sports science lab builds a jump-training box shaped like a rectangular prism. The length of its base, $\\ell$ inches, is 5 inches more than the width of its base, and the box's height is twice that width.",
+  "choices": [
+   "$V(\\ell) = 2\\ell^3 + 10\\ell^2$",
+   "$V(\\ell) = 2\\ell^3 + 20\\ell^2 + 50\\ell$",
+   "$V(\\ell) = 2\\ell^3 - 20\\ell^2 + 50\\ell$",
+   "$V(\\ell) = \\ell^3 - 10\\ell^2 + 25\\ell$"
+  ],
+  "answer": "C",
+  "explanation": "The length is the input, so the width is $\\ell - 5$ and the height is $2(\\ell - 5)$. The volume is $\\ell \\cdot (\\ell - 5) \\cdot 2(\\ell - 5) = 2\\ell(\\ell - 5)^2 = 2\\ell^3 - 20\\ell^2 + 50\\ell$. Testing a value is faster: if $\\ell = 6$, the width is 1 and the height is 2, so the volume is $6 \\cdot 1 \\cdot 2 = 12$. Only choice C gives $2(216) - 20(36) + 50(6) = 12$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You let the variable stand for the width instead of the length. That made the length $\\ell + 5$ and the height $2\\ell$, so you got $2\\ell^2(\\ell + 5)$. The question asks for the volume in terms of the length."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the width as $\\ell + 5$ instead of $\\ell - 5$. The length is the longer side, so the width is 5 less than the length, not 5 more."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You set the height equal to the width, $\\ell - 5$, and dropped the factor of 2. The height is twice the width."
+   }
+  },
+  "id": "orig-geometry-to-fu-M-17aae2",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-17aae2",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which function __var__ gives the volume of the"
+   ],
+   "residue": 5
+  }
+ },
+ {
+  "stem": "Which function $V$ gives the volume of the pit, in cubic feet, in terms of $r$?",
+  "stimulus": "Archaeologists excavate a storage pit shaped like a right circular cylinder with a radius of $r$ feet. The pit's depth is 3 feet more than its diameter.",
+  "choices": [
+   "$V(r) = 2\\pi r^3 - 3\\pi r^2$",
+   "$V(r) = 2\\pi r^3 + 3\\pi r^2$",
+   "$V(r) = \\pi r^3 + 3\\pi r^2$",
+   "$V(r) = 8\\pi r^3 + 12\\pi r^2$"
+  ],
+  "answer": "B",
+  "explanation": "The diameter is $2r$, so the depth is $2r + 3$. A cylinder's volume is $\\pi r^2 h$, so $V(r) = \\pi r^2(2r + 3) = 2\\pi r^3 + 3\\pi r^2$. To check with a test value, let $r = 1$. The depth is 5 and the volume is $\\pi(1)^2(5) = 5\\pi$. Only choice B gives $2\\pi + 3\\pi = 5\\pi$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the depth as $2r - 3$, which flips the sign of the offset. The depth is 3 feet more than the diameter, so it is $2r + 3$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You took the depth to be 3 more than the radius, $r + 3$. The depth is 3 more than the diameter, which is $2r$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the diameter $2r$ as the radius in $\\pi r^2$, which gave $\\pi(2r)^2(2r + 3)$. The base area uses the radius $r$."
+   }
+  },
+  "id": "orig-geometry-to-fu-M-a66375",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "review",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-a66375",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "a right circular cylinder with a radius of",
+    "right circular cylinder with a radius of __var__",
+    "which function __var__ gives the volume of the"
+   ],
+   "residue": 8
+  }
+ },
+ {
+  "stem": "Which function $V$ gives the volume of the block, in cubic centimeters, in terms of $w$?",
+  "stimulus": "A paleobotanist trims a rectangular block of shale that holds a fossil fern. The block's width, $w$ centimeters, is 4 centimeters less than its length, and its thickness is half its length.",
+  "choices": [
+   "$V(w) = \\frac{1}{2}w^3 + 2w^2$",
+   "$V(w) = \\frac{1}{2}w^3 - 4w^2 + 8w$",
+   "$V(w) = w^3 + 8w^2 + 16w$",
+   "$V(w) = \\frac{1}{2}w^3 + 4w^2 + 8w$"
+  ],
+  "answer": "D",
+  "explanation": "The width is the input, so the length is $w + 4$ and the thickness is $\\frac{1}{2}(w + 4)$. The volume is $w(w + 4) \\cdot \\frac{1}{2}(w + 4) = \\frac{1}{2}w(w + 4)^2 = \\frac{1}{2}w^3 + 4w^2 + 8w$. To check with a test value, let $w = 2$. The length is 6 and the thickness is 3, so the volume is $2 \\cdot 6 \\cdot 3 = 36$. Only choice D gives $4 + 16 + 16 = 36$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You made the thickness half the width, $\\frac{1}{2}w$, instead of half the length. That gave $w(w + 4) \\cdot \\frac{1}{2}w$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the length as $w - 4$, which flips the sign of the offset. The width is 4 less than the length, so the length is $w + 4$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the factor of $\\frac{1}{2}$ and used the whole length as the thickness. That doubles every term of the correct volume."
+   }
+  },
+  "id": "orig-geometry-to-fu-M-38545f",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-38545f",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which function __var__ gives the volume of the"
+   ],
+   "residue": 5
+  }
  }
 ]

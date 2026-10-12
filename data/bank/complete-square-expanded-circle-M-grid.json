@@ -221,5 +221,480 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the radius, in kilometers, of the region the radar covers?",
+  "stimulus": "On a map grid measured in kilometers, the edge of the region a weather radar covers is modeled by the equation $x^2 + y^2 - 8x + 6y = 24$.",
+  "keys": [
+   "7"
+  ],
+  "any_of": false,
+  "explanation": "Group the x terms and the y terms: $(x^2 - 8x) + (y^2 + 6y) = 24$. Half of \u22128 is \u22124, and $(-4)^2 = 16$. Half of 6 is 3, and $3^2 = 9$. Add 16 and 9 to both sides: $(x - 4)^2 + (y + 3)^2 = 24 + 16 + 9 = 49$. The right side is $r^2$, so $r = \\sqrt{49} = 7$.",
+  "common_errors": [
+   {
+    "value": "49",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $r^2$ instead of taking its square root to get the radius."
+   },
+   {
+    "value": "4.898",
+    "misconception": "algebra-manipulation",
+    "why": "Added 16 and 9 on the left only, so the right side stayed 24, and took $\\sqrt{24}$."
+   },
+   {
+    "value": "24",
+    "misconception": "algebra-manipulation",
+    "why": "Did not complete the square and read the constant 24 straight off as the radius."
+   }
+  ],
+  "id": "orig-complete-squar-M-00740a",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-00740a",
+   "structure": [],
+   "solver_answer": 7,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the diameter, in meters, of the roundabout?",
+  "stimulus": "A civil engineer models the outer edge of a circular roundabout on a site plan measured in meters with the equation $x^2 + y^2 + 10x - 4y - 7 = 0$.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "Move the constant across and group: $(x^2 + 10x) + (y^2 - 4y) = 7$. Add $5^2 = 25$ and $(-2)^2 = 4$ to both sides: $(x + 5)^2 + (y - 2)^2 = 36$. The radius is 6, so the diameter is $2 \\times 6 = 12$.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the radius and stopped without doubling it to get the diameter."
+   },
+   {
+    "value": "36",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $r^2$ as the answer."
+   },
+   {
+    "value": "72",
+    "misconception": "algebra-manipulation",
+    "why": "Doubled $r^2$ instead of doubling r."
+   },
+   {
+    "value": "5.291",
+    "misconception": "algebra-manipulation",
+    "why": "Added 25 and 4 on the left only, so $r^2 = 7$, then gave $2\\sqrt{7}$."
+   }
+  ],
+  "id": "orig-complete-squar-M-9aae75",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-9aae75",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $F$?",
+  "stimulus": "Marine biologists mark out a circular tagging zone for sea turtles on a grid measured in kilometers. The zone has center $(3, -5)$ and radius 4 kilometers, and its boundary has the equation $x^2 + y^2 + Dx + Ey + F = 0$, where $D$, $E$, and $F$ are constants.",
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "Write the circle in center-radius form, $(x - 3)^2 + (y + 5)^2 = 16$, then expand: $x^2 - 6x + 9 + y^2 + 10y + 25 = 16$. Subtract 16 from both sides: $x^2 + y^2 - 6x + 10y + 18 = 0$. So $F = 9 + 25 - 16 = 18$.",
+  "common_errors": [
+   {
+    "value": "34",
+    "misconception": "algebra-manipulation",
+    "why": "Expanded the squares but forgot to subtract $r^2 = 16$."
+   },
+   {
+    "value": "30",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the radius, 4, instead of $r^2$: $34 - 4$."
+   },
+   {
+    "value": "50",
+    "misconception": "algebra-manipulation",
+    "why": "Added $r^2$ instead of subtracting it when moving it to the left side: $34 + 16$."
+   },
+   {
+    "value": "-16",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the constants 9 and 25 that the center creates and kept only $-r^2$."
+   }
+  ],
+  "id": "orig-complete-squar-M-9ba193",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-9ba193",
+   "structure": [],
+   "solver_answer": 18,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The center of the crater's rim is $(h, k)$. What is the value of $h + k$?",
+  "stimulus": "On a map of the lunar surface with a grid measured in kilometers, the rim of a crater is modeled by the equation $x^2 + y^2 - 14x + 2y + 34 = 0$.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "Group the terms and move the constant: $(x^2 - 14x) + (y^2 + 2y) = -34$. Add $(-7)^2 = 49$ and $1^2 = 1$ to both sides: $(x - 7)^2 + (y + 1)^2 = 16$. The center is $(7, -1)$, so $h + k = 7 + (-1) = 6$.",
+  "common_errors": [
+   {
+    "value": "-6",
+    "misconception": "algebra-manipulation",
+    "why": "Read the center with both signs flipped, as $(-7, 1)$."
+   },
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the y sign only and took the center as $(7, 1)$."
+   },
+   {
+    "value": "-8",
+    "misconception": "algebra-manipulation",
+    "why": "Flipped the x sign only and took the center as $(-7, -1)$."
+   },
+   {
+    "value": "-12",
+    "misconception": "algebra-manipulation",
+    "why": "Used the full coefficients instead of halving them, taking the center as $(-14, 2)$."
+   }
+  ],
+  "id": "orig-complete-squar-M-28b5bd",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-28b5bd",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the radius, in miles, of the commuting zone?",
+  "stimulus": "A labor economist models the boundary of a city's commuting zone on a grid measured in miles with the equation $x^2 + y^2 + 12x + 16y = 0$.",
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "Group the terms: $(x^2 + 12x) + (y^2 + 16y) = 0$. Add $6^2 = 36$ and $8^2 = 64$ to both sides: $(x + 6)^2 + (y + 8)^2 = 100$. The radius is $\\sqrt{100} = 10$.",
+  "common_errors": [
+   {
+    "value": "100",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $r^2$ instead of the radius."
+   },
+   {
+    "value": "0",
+    "misconception": "algebra-manipulation",
+    "why": "Added 36 and 64 on the left only, so the right side stayed 0."
+   },
+   {
+    "value": "14",
+    "misconception": "algebra-manipulation",
+    "why": "Added the halved coefficients, $6 + 8$, instead of squaring them and taking the root of the sum."
+   }
+  ],
+  "id": "orig-complete-squar-M-baaa89",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-baaa89",
+   "structure": [],
+   "solver_answer": 10,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $c$?",
+  "stimulus": "In a diagram of a circular concert stage drawn on a grid measured in meters, the edge of the stage has the equation $x^2 + y^2 - 6x - 10y + c = 0$, where $c$ is a constant. The stage has a radius of 5 meters.",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "Move $c$ across and complete both squares: $(x^2 - 6x + 9) + (y^2 - 10y + 25) = -c + 9 + 25$, so $(x - 3)^2 + (y - 5)^2 = 34 - c$. The right side must equal $r^2 = 25$, so $34 - c = 25$ and $c = 9$.",
+  "common_errors": [
+   {
+    "value": "-25",
+    "misconception": "algebra-manipulation",
+    "why": "Did not add 9 and 25 to the right side as well, so set $-c = 25$."
+   },
+   {
+    "value": "29",
+    "misconception": "algebra-manipulation",
+    "why": "Set $34 - c$ equal to the radius, 5, instead of $r^2$."
+   },
+   {
+    "value": "59",
+    "misconception": "algebra-manipulation",
+    "why": "Made a sign slip when moving c and solved $34 + c = 25$ as $c = 34 + 25$."
+   },
+   {
+    "value": "-9",
+    "misconception": "algebra-manipulation",
+    "why": "Got $c - 34 = -25$ the wrong way round and lost the sign of c."
+   }
+  ],
+  "id": "orig-complete-squar-M-478761",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-478761",
+   "structure": [],
+   "solver_answer": 9,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "has the equation __var__ where __var__ is a",
+    "the equation __var__ where __var__ is a constant"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "The circle reached by the new sprinkler arm can be written as $(x - 2)^2 + (y + 4)^2 = k$. What is the value of $k$?",
+  "stimulus": "On a field plan measured in decameters, the area a center-pivot sprinkler waters is bounded by the circle $x^2 + y^2 - 4x + 8y - 16 = 0$. A replacement arm keeps the same pivot point but has twice the radius.",
+  "keys": [
+   "144"
+  ],
+  "any_of": false,
+  "explanation": "Complete the square on the original circle: $(x^2 - 4x + 4) + (y^2 + 8y + 16) = 16 + 4 + 16$, so $(x - 2)^2 + (y + 4)^2 = 36$ and $r = 6$. The new radius is 12, so $k = 12^2 = 144$. Doubling the radius multiplies $r^2$ by 4.",
+  "common_errors": [
+   {
+    "value": "72",
+    "misconception": "algebra-manipulation",
+    "why": "Doubled $r^2 = 36$ instead of multiplying it by 4."
+   },
+   {
+    "value": "36",
+    "misconception": "missed-condition",
+    "why": "Gave $r^2$ for the original circle and ignored the doubled radius."
+   },
+   {
+    "value": "12",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the new radius instead of its square."
+   },
+   {
+    "value": "64",
+    "misconception": "algebra-manipulation",
+    "why": "Did not add 4 and 16 to the right side, so took $r^2 = 16$ and $r = 4$, then squared 8."
+   }
+  ],
+  "id": "orig-complete-squar-M-3cb4a5",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-3cb4a5",
+   "structure": [],
+   "solver_answer": 144,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The area of the territory is $k\\pi$ square kilometers. What is the value of $k$?",
+  "stimulus": "Ecologists model the boundary of a fox's territory on a grid measured in kilometers with the equation $x^2 + y^2 + 2x - 12y + 12 = 0$.",
+  "keys": [
+   "25"
+  ],
+  "any_of": false,
+  "explanation": "Move the constant across and group: $(x^2 + 2x) + (y^2 - 12y) = -12$. Add $1^2 = 1$ and $(-6)^2 = 36$ to both sides: $(x + 1)^2 + (y - 6)^2 = 25$. The radius is 5, so the area is $\\pi r^2 = 25\\pi$, and $k = 25$.",
+  "common_errors": [
+   {
+    "value": "49",
+    "misconception": "algebra-manipulation",
+    "why": "Moved the 12 across with the wrong sign, so the right side became $12 + 1 + 36$."
+   },
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the circumference, $10\\pi$, instead of the area."
+   },
+   {
+    "value": "5",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the radius instead of the area coefficient $r^2$."
+   },
+   {
+    "value": "37",
+    "misconception": "algebra-manipulation",
+    "why": "Completed the square but forgot to move the constant 12 to the right side: $1 + 36$."
+   }
+  ],
+  "id": "orig-complete-squar-M-ffc7d5",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-ffc7d5",
+   "structure": [],
+   "solver_answer": 25,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the diameter of the wetland, in meters?",
+  "stimulus": "An ecologist mapping a circular wetland on a coordinate grid, where each unit is 1 meter, models the wetland's edge with the equation $x^2 + y^2 - 8x + 6y - 56 = 0$.",
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "First move the constant to the right: $x^2 - 8x + y^2 + 6y = 56$. Then complete the square for x. Half of $-8$ is $-4$, and $(-4)^2 = 16$. For y, half of $6$ is $3$, and $3^2 = 9$. Add both to the left side and to the right side: $x^2 - 8x + 16 + y^2 + 6y + 9 = 56 + 16 + 9$. That gives $(x - 4)^2 + (y + 3)^2 = 81$, so $r^2 = 81$ and the radius is $9$ meters. The question asks for the diameter, which is twice the radius: $2 \\times 9 = 18$ meters. To check in Desmos, type the equation exactly as given. The circle is centered at $(4, -3)$ and runs from $x = -5$ to $x = 13$, which is 18 units across.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the radius correctly but gave it as the answer. The question asks for the diameter, which is twice that."
+   },
+   {
+    "value": "81",
+    "misconception": "wrong-target-quantity",
+    "why": "You read the right side of $(x-4)^2 + (y+3)^2 = 81$ as the size of the circle. That number is $r^2$, not the radius or the diameter."
+   },
+   {
+    "value": "162",
+    "misconception": "algebra-manipulation",
+    "why": "You doubled $r^2 = 81$ to get the diameter. You need to take the square root first and then double: $2\\sqrt{81} = 18$."
+   },
+   {
+    "value": "14.97",
+    "misconception": "algebra-manipulation",
+    "why": "You added 16 and 9 to the left side only, so the right side stayed at 56. Then $r = \\sqrt{56}$ and the diameter came out as $2\\sqrt{56} \\approx 14.97$."
+   },
+   {
+    "value": "16.97",
+    "misconception": "algebra-manipulation",
+    "why": "You added the 16 from the x terms to the right side but left out the 9 from the y terms. That gives $r^2 = 72$ and a diameter of $2\\sqrt{72} \\approx 16.97$."
+   }
+  ],
+  "id": "orig-complete-squar-M-fc5bf3",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-fc5bf3",
+   "structure": [],
+   "solver_answer": 18,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

@@ -518,5 +518,1719 @@
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which of the following equations could represent a line of best fit for the data?",
+  "stimulus": "A civil engineering lab loaded a steel test beam in stages. At each stage, it recorded the load on the beam, $x$, in kilonewtons (kN), and the downward deflection at the beam's midpoint, $y$, in millimeters (mm). The scatterplot shows the 10 measurements.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Midpoint Deflection of a Test Beam",
+   "x_label": "Load (kN)",
+   "y_label": "Deflection (mm)",
+   "points": [
+    [
+     2,
+     3.5
+    ],
+    [
+     4,
+     3.5
+    ],
+    [
+     6,
+     5.5
+    ],
+    [
+     8,
+     5.5
+    ],
+    [
+     10,
+     7.5
+    ],
+    [
+     12,
+     7.5
+    ],
+    [
+     14,
+     8.5
+    ],
+    [
+     16,
+     10.5
+    ],
+    [
+     18,
+     10.5
+    ],
+    [
+     20,
+     12.5
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 20,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 16,
+   "y_step": 2,
+   "alt": "Ten points rise steadily from about (2, 3.5) to about (20, 12.5) in a roughly straight pattern. Extending the pattern back to a load of 0 would reach a deflection of about 2 mm."
+  },
+  "choices": [
+   "$y = 2 - 0.5x$",
+   "$y = 2 + 0.5x$",
+   "$y = 0.5 + 2x$",
+   "$y = 6 + 0.5x$"
+  ],
+  "answer": "B",
+  "explanation": "The points rise in a straight pattern, so the slope is positive. Going from a load of 2 kN to 20 kN, the deflection rises from about 3 mm to about 12 mm, or about 9 mm over 18 kN. That gives a slope of about $0.5$. Extending the pattern back to $x = 0$ gives a deflection of about 2 mm. So $y = 2 + 0.5x$ fits the data.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You have the right intercept and the right size of slope, but the sign is wrong. A negative slope would make the deflection go down as the load goes up, and the points clearly go up."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You swapped the slope and the intercept. A slope of 2 would add 2 mm for every 1 kN of load, so at 20 kN this line gives about 40 mm, far above the data."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You have the right slope, but this line meets the y-axis at 6 instead of about 2. That puts the whole line about 4 mm above the points, so it doesn't run through the middle of them."
+   }
+  },
+  "id": "orig-choose-model-e-M-fdbebb",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-fdbebb",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations best models the data?",
+  "stimulus": "A folklore archive tracks a recently emerged legend. Each year it records $y$, the number of distinct variants of the legend that collectors have documented. Here $x$ is the number of years since the legend was first reported. The scatterplot shows the results.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Documented Variants of a Legend",
+   "x_label": "Years since first report",
+   "y_label": "Number of variants",
+   "points": [
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     21
+    ],
+    [
+     3,
+     38
+    ],
+    [
+     4,
+     82
+    ],
+    [
+     5,
+     158
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 6,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 180,
+   "y_step": 20,
+   "alt": "Six points start near (0, 6) and rise slowly at first, then more and more steeply, reaching about (5, 158). The counts roughly double each year."
+  },
+  "choices": [
+   "$y = 5(0.5)^x$",
+   "$y = 2(5)^x$",
+   "$y = 20(2)^x$",
+   "$y = 5(2)^x$"
+  ],
+  "answer": "D",
+  "explanation": "The points curve upward more and more steeply, so this is exponential growth and the base must be greater than 1. At $x = 0$, the count is about 5, so $a = 5$. After that the count roughly doubles each year (about 10, 20, 40, 80, 160), so $b = 2$. That gives $y = 5(2)^x$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took a base between 0 and 1 to mean growth. A base of 0.5 halves the count each year, so this model falls toward zero while the data climb."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You swapped the starting value and the growth factor. This model starts at 2 and multiplies by 5 each year, which gives 250 by year 3. The data at year 3 is about 40."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The growth factor is right, but the starting value is wrong. At $x = 0$, this model gives 20, and it gives 640 at year 5, four times the data. You may have read the point at year 2 as the starting value."
+   }
+  },
+  "id": "orig-choose-model-e-M-e56ef2",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-e56ef2",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ is the number of years since the"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following equations best models the data?",
+  "stimulus": "A cartographer surveying a ridge for a new topographic map recorded the elevation $y$, in meters above a reference point, at nine stations. Here $x$ is each station's horizontal distance, in kilometers, from the western edge of the survey line. The scatterplot shows the measurements.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Elevation Along a Ridge Survey Line",
+   "x_label": "Distance from western edge (km)",
+   "y_label": "Elevation (m)",
+   "points": [
+    [
+     0,
+     110
+    ],
+    [
+     1,
+     230
+    ],
+    [
+     2,
+     350
+    ],
+    [
+     3,
+     390
+    ],
+    [
+     4,
+     430
+    ],
+    [
+     5,
+     395
+    ],
+    [
+     6,
+     345
+    ],
+    [
+     7,
+     230
+    ],
+    [
+     8,
+     105
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 8,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 500,
+   "y_step": 50,
+   "alt": "Nine points start near (0, 110), rise to a peak near (4, 430), and then fall symmetrically to near (8, 105), forming an upside-down U shape."
+  },
+  "choices": [
+   "$y = -20x^2 + 160x + 100$",
+   "$y = 20x^2 - 160x + 100$",
+   "$y = -20x^2 + 80x + 100$",
+   "$y = -20x^2 + 160x + 400$"
+  ],
+  "answer": "A",
+  "explanation": "The points rise and then fall, so the model is a parabola that opens downward, and the leading coefficient is negative. The data start near 100 m at $x = 0$, so the constant term is about 100. The peak is near $x = 4$. For choice A, $-\\frac{b}{2a} = -\\frac{160}{2(-20)} = 4$, which matches the peak, and $y(4) = -320 + 640 + 100 = 420$, which matches the highest points.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The leading coefficient is positive, so this parabola opens upward. Its lowest point is at $x = 4$, where the data are actually highest."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "This parabola opens the right way and has the right intercept, but you didn't check the vertex. Here $-\\frac{b}{2a} = -\\frac{80}{2(-20)} = 2$, so its peak is at 2 km instead of about 4 km."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The shape and vertex location are right, but the intercept is 400 instead of about 100. You may have used the peak height as the starting elevation. This curve starts at 400 m and peaks at 720 m, well above every point."
+   }
+  },
+  "id": "orig-choose-model-e-M-b74ba8",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-b74ba8",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": "The ideal parabola y = -20x\u00b2 + 160x + 110 would fit the data (symmetric around x=4, peak 430) more accurately; option A has constant 100 rather than 110, creating a systematic 10-unit bias.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations best models the data?",
+  "stimulus": "Ornithologists counted the nesting pairs of a seabird at one island colony each spring. Here $y$ is the number of nesting pairs and $x$ is the number of years since the first count. The scatterplot shows the counts.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Nesting Pairs at a Seabird Colony",
+   "x_label": "Years since first count",
+   "y_label": "Nesting pairs",
+   "points": [
+    [
+     0,
+     630
+    ],
+    [
+     1,
+     490
+    ],
+    [
+     2,
+     350
+    ],
+    [
+     3,
+     280
+    ],
+    [
+     4,
+     195
+    ],
+    [
+     5,
+     160
+    ],
+    [
+     6,
+     110
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 6,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 700,
+   "y_step": 100,
+   "alt": "Seven points start near (0, 630) and fall, steeply at first and then more gradually, to about (6, 110). Each year's count is roughly three-quarters of the year before."
+  },
+  "choices": [
+   "$y = 640(1.25)^x$",
+   "$y = 0.75(640)^x$",
+   "$y = 640(0.75)^x$",
+   "$y = 480(0.75)^x$"
+  ],
+  "answer": "C",
+  "explanation": "The counts fall quickly at first and then level off toward the x-axis. That is exponential decay, so the base must be between 0 and 1. The count at $x = 0$ is about 640, so $a = 640$. Each count is about three-quarters of the year before (640, 480, 360, 270, and so on), so $b = 0.75$. That gives $y = 640(0.75)^x$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "A base greater than 1 means growth. This model has the colony getting bigger by 25% each year, but the counts go down."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You swapped the starting value and the base. This model starts at 0.75 and multiplies by 640 each year, which doesn't match any part of the plot."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The decay factor is right, but you used the year-1 count, about 480, as the starting value. At $x = 0$, the data are near 640, so this curve runs well below every point."
+   }
+  },
+  "id": "orig-choose-model-e-M-5a4ed3",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-5a4ed3",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ is the number of years since the"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following equations could represent a line of best fit for the data?",
+  "stimulus": "A meteorologist launched a weather balloon and recorded the air temperature $y$, in degrees Celsius, at eight altitudes. Here $x$ is the altitude in kilometers above the launch site. The scatterplot shows the readings.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Air Temperature During a Balloon Ascent",
+   "x_label": "Altitude (km)",
+   "y_label": "Temperature (\u00b0C)",
+   "points": [
+    [
+     0.5,
+     21
+    ],
+    [
+     1,
+     18.5
+    ],
+    [
+     1.5,
+     14.5
+    ],
+    [
+     2,
+     12.5
+    ],
+    [
+     2.5,
+     9
+    ],
+    [
+     3,
+     6.5
+    ],
+    [
+     3.5,
+     2.5
+    ],
+    [
+     4,
+     0.5
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 4,
+   "x_step": 0.5,
+   "y_min": 0,
+   "y_max": 30,
+   "y_step": 3,
+   "alt": "Eight points fall in a roughly straight pattern from about (0.5, 21) to about (4, 0.5). Extending the pattern back to an altitude of 0 would reach a temperature of about 24 degrees."
+  },
+  "choices": [
+   "$y = 24 + 6x$",
+   "$y = 18 - 6x$",
+   "$y = 24 - 0.6x$",
+   "$y = 24 - 6x$"
+  ],
+  "answer": "D",
+  "explanation": "The points fall in a straight pattern, so the slope is negative. From 1 km to 4 km, the temperature drops from about 18\u00b0C to about 0\u00b0C, or about 18 degrees over 3 km. That gives a slope of about $-6$. Extending the pattern back to $x = 0$ gives about 24\u00b0C. So $y = 24 - 6x$ fits the data.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The intercept is right, but the sign of the slope is wrong. This line has the temperature going up with altitude, and the data go down."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The slope is right, but you used the reading at 1 km, about 18\u00b0C, as the y-intercept. The line has to be extended back to $x = 0$, where it reaches about 24\u00b0C. This line runs about 6 degrees below every point."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost a factor of 10 when finding the slope, maybe by miscounting the gridlines. This line drops only 0.6 degrees per kilometer, so at 4 km it still gives about 21.6\u00b0C, while the data are near 0\u00b0C."
+   }
+  },
+  "id": "orig-choose-model-e-M-145bb3",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-145bb3",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations best models the data in the scatterplot?",
+  "stimulus": "A hydrologist recorded the water level of a small reservoir every two days during a 20-day period with no rainfall. The scatterplot shows the water level $y$, in meters, $x$ days after the period began.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Reservoir Water Level During a Dry Period",
+   "x_label": "Days since dry period began",
+   "y_label": "Water level (meters)",
+   "points": [
+    [
+     0,
+     40.5
+    ],
+    [
+     2,
+     36.5
+    ],
+    [
+     4,
+     34.5
+    ],
+    [
+     6,
+     31
+    ],
+    [
+     8,
+     28.5
+    ],
+    [
+     10,
+     25
+    ],
+    [
+     12,
+     22.5
+    ],
+    [
+     14,
+     19
+    ],
+    [
+     16,
+     16.5
+    ],
+    [
+     18,
+     13
+    ],
+    [
+     20,
+     10.5
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 20,
+   "x_step": 4,
+   "y_min": 0,
+   "y_max": 50,
+   "y_step": 10,
+   "alt": "Scatterplot of 11 points that fall in a nearly straight line from about 40 meters at day 0 down to about 10 meters at day 20."
+  },
+  "choices": [
+   "$y = 40 + 1.5x$",
+   "$y = 40 - 1.5x$",
+   "$y = 10 - 1.5x$",
+   "$y = 40 - 3x$"
+  ],
+  "answer": "B",
+  "explanation": "The points fall in a straight line, so you want a linear model. The level drops as days pass, so the slope is negative. The data would meet the y-axis near 40, so the intercept is 40. From about 40 m at day 0 to about 10 m at day 20, the level falls 30 m over 20 days, which gives a slope of $-30/20 = -1.5$. So the model is $y = 40 - 1.5x$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "Your intercept and slope size are right, but the slope is positive. That line rises, and the water level is falling. This is the trap: you got the shape right and the slope's sign wrong."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You took the intercept from the level at the right-hand end of the plot (day 20). The y-intercept is the level at day 0, which is about 40."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the 30-meter drop by 10 days when it happened over 20 days. A slope of $-3$ would take the level below zero by day 14."
+   }
+  },
+  "id": "orig-choose-model-e-M-30b119",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-30b119",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations best models the data in the scatterplot?",
+  "stimulus": "Engineers tested how a plastic used in outdoor furniture holds up under ultraviolet light. The scatterplot shows the tensile strength $y$, in megapascals, of test samples after $x$ weeks of exposure in a UV chamber.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Tensile Strength After UV Exposure",
+   "x_label": "Weeks of UV exposure",
+   "y_label": "Tensile strength (megapascals)",
+   "points": [
+    [
+     0,
+     80
+    ],
+    [
+     1,
+     65
+    ],
+    [
+     2,
+     50
+    ],
+    [
+     3,
+     42
+    ],
+    [
+     4,
+     32
+    ],
+    [
+     5,
+     27
+    ],
+    [
+     6,
+     20
+    ],
+    [
+     7,
+     17
+    ],
+    [
+     8,
+     13
+    ],
+    [
+     9,
+     11
+    ],
+    [
+     10,
+     9
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 90,
+   "y_step": 10,
+   "alt": "Scatterplot of 11 points that start at 80 megapascals at week 0 and fall steeply at first, then more and more slowly, flattening toward the horizontal axis by week 10."
+  },
+  "choices": [
+   "$y = 80(1.2)^x$",
+   "$y = 64(0.8)^x$",
+   "$y = 80(0.2)^x$",
+   "$y = 80(0.8)^x$"
+  ],
+  "answer": "D",
+  "explanation": "The points fall quickly at first and then level off toward the x-axis, which is exponential decay. A decay model needs a base between 0 and 1. The strength at week 0 is 80, so the starting value is 80. Between week 0 and week 1 the strength falls from 80 to about 64, so each week keeps about 80% of the last value, a base of 0.8. The model is $y = 80(0.8)^x$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "A base of 1.2 is greater than 1, so this model grows by 20% each week. The data decreases. This is the trap: you treated a 20% weekly change as a base above 1 when the change is a loss."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You took the starting value from the week-1 point (about 64). In $a(b)^x$, $a$ is the value at $x = 0$, which is 80."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the share lost each week (20%) as the base. The base is the share kept, 0.8. With 0.2, the strength would drop to 16 after one week."
+   }
+  },
+  "id": "orig-choose-model-e-M-000c17",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-000c17",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations best models the data in the scatterplot?",
+  "stimulus": "A city transportation office counted cyclists crossing a downtown bridge, one count each hour. The scatterplot shows the number of cyclists $y$ counted in the hour that began $x$ hours after 6:00 a.m.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Hourly Cyclist Counts on a Downtown Bridge",
+   "x_label": "Hours after 6:00 a.m.",
+   "y_label": "Number of cyclists",
+   "points": [
+    [
+     0,
+     25
+    ],
+    [
+     1,
+     70
+    ],
+    [
+     2,
+     125
+    ],
+    [
+     3,
+     150
+    ],
+    [
+     4,
+     185
+    ],
+    [
+     5,
+     190
+    ],
+    [
+     6,
+     205
+    ],
+    [
+     7,
+     195
+    ],
+    [
+     8,
+     175
+    ],
+    [
+     9,
+     160
+    ],
+    [
+     10,
+     115
+    ],
+    [
+     11,
+     80
+    ],
+    [
+     12,
+     15
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 12,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 250,
+   "y_step": 50,
+   "alt": "Scatterplot of 13 points that rise from about 20 cyclists at hour 0 to a peak of about 200 near hour 6, then fall back to about 20 at hour 12, forming an arch that is symmetric about hour 6."
+  },
+  "choices": [
+   "$y = -5x^2 + 60x + 20$",
+   "$y = 5x^2 - 60x + 20$",
+   "$y = -5x^2 + 60x + 200$",
+   "$y = -5x^2 + 30x + 20$"
+  ],
+  "answer": "A",
+  "explanation": "The counts rise and then fall, so you want a quadratic that opens downward, with a negative leading coefficient. The data would meet the y-axis near 20, so the constant term is 20. The peak is at about $x = 6$. Check the vertex with $-\\frac{b}{2a} = -\\frac{60}{2(-5)} = 6$. So the model is $y = -5x^2 + 60x + 20$.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This parabola has the right intercept and the right vertex x-value, but its leading coefficient is positive, so it opens upward. It would show a minimum near hour 6 where the data has a peak. This is the trap: you matched the intercept and missed the sign."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the peak count (about 200) as the constant term. The constant is the y-intercept, the count at $x = 0$, which is about 20."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "This opens downward and starts at 20, but its vertex is at $-\\frac{30}{2(-5)} = 3$. The data peaks near hour 6, not hour 3."
+   }
+  },
+  "id": "orig-choose-model-e-M-d6ec02",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-d6ec02",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations best models the data in the scatterplot, where $y$ is the number of mussels and $x$ is the number of months since monitoring began?",
+  "stimulus": "An ecologist counted the invasive mussels attached to a settlement plate in a lake at the start of monitoring and once a month for the next 6 months. The results are shown in the scatterplot.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Mussels on a Settlement Plate",
+   "x_label": "Months since monitoring began",
+   "y_label": "Number of mussels",
+   "points": [
+    [
+     0,
+     48
+    ],
+    [
+     1,
+     80
+    ],
+    [
+     2,
+     108
+    ],
+    [
+     3,
+     175
+    ],
+    [
+     4,
+     245
+    ],
+    [
+     5,
+     390
+    ],
+    [
+     6,
+     560
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 7,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 600,
+   "y_step": 100,
+   "alt": "Seven points that rise more steeply each month, starting near 50 at month 0 and reaching about 560 at month 6."
+  },
+  "choices": [
+   "$y = 50(1.5)^x$",
+   "$y = 50(0.5)^x$",
+   "$y = 1.5(50)^x$",
+   "$y = 500(1.5)^x$"
+  ],
+  "answer": "A",
+  "explanation": "The points climb faster each month, so the model is exponential growth, $y = ab^x$ with $b > 1$. The count at $x = 0$ is about 50, so $a = 50$. Check one point: $50(1.5)^4 \\approx 253$, which is close to the plotted 245. The model is $y = 50(1.5)^x$.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the starting value right, but a base of 0.5 is between 0 and 1, so this is exponential decay. It predicts the count halving every month, while the data rise."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You swapped the starting value and the growth factor. This model starts at 1.5 mussels and multiplies by 50 every month, so it would pass 3,700 by month 2."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the growth factor right but used the wrong starting value. At $x = 0$ this model gives 500 mussels, while the data begin near 50."
+   }
+  },
+  "id": "orig-choose-model-e-M-e7862f",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-e7862f",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following could be an equation of the line of best fit for the data, where $y$ is the estimated age in years and $x$ is the depth in centimeters?",
+  "stimulus": "At a dig site, archaeologists recorded the depth below the surface of nine charcoal samples and the estimated age of each sample. The results are shown in the scatterplot.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Charcoal Samples at a Dig Site",
+   "x_label": "Depth (centimeters)",
+   "y_label": "Estimated age (years)",
+   "points": [
+    [
+     10,
+     340
+    ],
+    [
+     20,
+     520
+    ],
+    [
+     30,
+     640
+    ],
+    [
+     40,
+     790
+    ],
+    [
+     50,
+     980
+    ],
+    [
+     60,
+     1080
+    ],
+    [
+     70,
+     1270
+    ],
+    [
+     80,
+     1390
+    ],
+    [
+     90,
+     1570
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 100,
+   "x_step": 10,
+   "y_min": 0,
+   "y_max": 1800,
+   "y_step": 200,
+   "alt": "Nine points that rise steadily in a straight-line pattern, from about 340 years at 10 centimeters to about 1,570 years at 90 centimeters."
+  },
+  "choices": [
+   "$y = 15x + 200$",
+   "$y = -15x + 200$",
+   "$y = 200x + 15$",
+   "$y = 15x + 800$"
+  ],
+  "answer": "A",
+  "explanation": "The points rise in a roughly straight line, so you need a positive slope. Between 10 cm and 90 cm the age goes up by about $1{,}570 - 340 = 1{,}230$ years over 80 cm, which is about 15 years per centimeter. If you extend the trend back to a depth of 0, it meets the y-axis near 200 years. So $y = 15x + 200$ fits.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the size of the slope and the intercept right but flipped the slope's sign. A negative slope would mean deeper samples are younger, while the data rise from left to right."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the slope and the intercept. This line adds 200 years per centimeter and starts at 15 years, so it would predict an age of more than 2,000 years at just 10 cm."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the rate right but the y-intercept is too high. This line predicts 950 years at 10 cm, but the sample there is about 340 years old, so the line runs far above all the points."
+   }
+  },
+  "id": "orig-choose-model-e-M-199598",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-199598",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which of the following could be an equation",
+    "of the following could be an equation of"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which of the following equations best models the data in the scatterplot, where $y$ is the height of the ball in meters and $x$ is the time in seconds?",
+  "stimulus": "A sports scientist filmed a soccer kick and measured the ball's height above the field every half second, from the moment it was kicked until it landed. The results are shown in the scatterplot.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Height of a Kicked Soccer Ball",
+   "x_label": "Time (seconds)",
+   "y_label": "Height (meters)",
+   "points": [
+    [
+     0,
+     1.4
+    ],
+    [
+     0.5,
+     9.2
+    ],
+    [
+     1,
+     16.5
+    ],
+    [
+     1.5,
+     19.4
+    ],
+    [
+     2,
+     21.3
+    ],
+    [
+     2.5,
+     19.9
+    ],
+    [
+     3,
+     15.6
+    ],
+    [
+     3.5,
+     10.1
+    ],
+    [
+     4,
+     1.2
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 4,
+   "x_step": 0.5,
+   "y_min": 0,
+   "y_max": 24,
+   "y_step": 4,
+   "alt": "Nine points that rise from about 1 meter at 0 seconds to a peak of about 21 meters at 2 seconds, then fall back to about 1 meter at 4 seconds."
+  },
+  "choices": [
+   "$y = -5x^2 + 20x + 1$",
+   "$y = 5x^2 - 20x + 1$",
+   "$y = -5x^2 - 20x + 1$",
+   "$y = -5x^2 + 20x + 21$"
+  ],
+  "answer": "A",
+  "explanation": "The points rise and then fall, so the parabola opens down and the leading coefficient is negative. The vertex should be near $x = 2$, and for $y = -5x^2 + 20x + 1$ you get $-\\frac{b}{2a} = -\\frac{20}{2(-5)} = 2$. At $x = 0$ it gives 1 meter, which matches the first point. At $x = 2$ it gives 21 meters, which matches the peak.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "A positive leading coefficient means the parabola opens up. This model falls to a minimum of $-19$ meters at 2 seconds, which is the opposite of the ball's path."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The parabola opens down, but the vertex is at $x = -\\frac{-20}{2(-5)} = -2$. So it only falls from $x = 0$ onward and never rises toward the 21-meter peak in the data."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the ball's highest point as the constant term. The constant is the height at $x = 0$, which is about 1 meter. This model starts at 21 meters and peaks at 41."
+   }
+  },
+  "id": "orig-choose-model-e-M-e01a1a",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-e01a1a",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations is the most appropriate linear model for the data shown?",
+  "stimulus": "At an excavation, archaeologists counted pottery fragments in sample squares at different distances from the center of an ancient hearth. The scatterplot shows $y$, the number of fragments per square meter, against $x$, the distance from the hearth, in meters.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Pottery Fragments by Distance from Hearth",
+   "x_label": "Distance from hearth (meters)",
+   "y_label": "Fragments per square meter",
+   "points": [
+    [
+     2,
+     38
+    ],
+    [
+     4,
+     33
+    ],
+    [
+     6,
+     32
+    ],
+    [
+     8,
+     27
+    ],
+    [
+     10,
+     26
+    ],
+    [
+     12,
+     21
+    ],
+    [
+     14,
+     20
+    ],
+    [
+     16,
+     15
+    ],
+    [
+     18,
+     14
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 20,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 50,
+   "y_step": 5,
+   "alt": "Nine points that fall steadily from left to right. They start near 38 fragments at 2 meters and end near 14 fragments at 18 meters."
+  },
+  "choices": [
+   "$y = 40 - 1.5x$",
+   "$y = 40 + 1.5x$",
+   "$y = 14 - 1.5x$",
+   "$y = 40 - 0.6x$"
+  ],
+  "answer": "A",
+  "explanation": "The points fall at a steady rate, so you want a line with a negative slope. Test the choices against two points. At $x = 2$, $40 - 1.5(2) = 37$, close to the plotted 38. At $x = 18$, $40 - 1.5(18) = 13$, close to the plotted 14. The line passes through the middle of the points from end to end, so it is the best model.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You chose the right intercept but the wrong sign on the slope. At $x = 18$ this line gives 67, but the fragment counts go down as distance grows, so the slope has to be negative."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You took 14, the value at the last point ($x = 18$), and used it as the y-intercept. The y-intercept is where the data would meet the y-axis at $x = 0$, which is about 40. This line gives $-13$ at $x = 18$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the slope as run over rise (about 16 meters for every 24 fragments) instead of rise over run. At $x = 18$ this line gives about 29, far above the plotted 14."
+   }
+  },
+  "id": "orig-choose-model-e-M-7e869c",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-7e869c",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations best represents the data shown?",
+  "stimulus": "A library tracked how many printed copies of a regional road atlas were still in active use in the years after it was published. The scatterplot shows $y$, the number of copies in use, against $x$, the number of years since publication.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Road Atlas Copies Still in Use",
+   "x_label": "Years since publication",
+   "y_label": "Copies in use",
+   "points": [
+    [
+     0,
+     800
+    ],
+    [
+     1,
+     650
+    ],
+    [
+     2,
+     500
+    ],
+    [
+     3,
+     420
+    ],
+    [
+     4,
+     320
+    ],
+    [
+     5,
+     270
+    ],
+    [
+     6,
+     200
+    ],
+    [
+     7,
+     170
+    ],
+    [
+     8,
+     130
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 8,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 900,
+   "y_step": 100,
+   "alt": "Nine points that start at 800 copies in year 0 and fall quickly at first, then more slowly, curving toward the x-axis. They reach about 130 copies by year 8."
+  },
+  "choices": [
+   "$y = 800(1.2)^x$",
+   "$y = 800(0.8)^x$",
+   "$y = 800(0.2)^x$",
+   "$y = 500(0.8)^x$"
+  ],
+  "answer": "B",
+  "explanation": "The points drop by large amounts at first and smaller amounts later, curving toward the x-axis. That is exponential decay, so the base must be between 0 and 1. The data start at 800 when $x = 0$. Check $x = 1$: $800(0.8) = 640$, close to 650. Check $x = 4$: $800(0.8)^4 \\approx 328$, close to 320. This equation tracks the points.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated a 20% yearly change as growth. A base of 1.2 makes $y$ increase, giving 960 at $x = 1$, but the number of copies falls every year."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used 0.2, the share of copies lost each year, as the base. The base should be the share that remains, 0.8. With 0.2, the model drops to 160 at $x = 1$, far below the plotted 650."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You took 500, the value at $x = 2$, as the starting amount. In $y = a(b)^x$, $a$ is the value at $x = 0$, and the plot shows 800 there."
+   }
+  },
+  "id": "orig-choose-model-e-M-ccaeb7",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-ccaeb7",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations best represents the data shown?",
+  "stimulus": "A musicologist counted how many times a little-known string quartet was performed each year after its premiere. The scatterplot shows $y$, the number of performances in a year, against $x$, the number of years since the premiere.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Yearly Performances of a String Quartet",
+   "x_label": "Years since premiere",
+   "y_label": "Performances per year",
+   "points": [
+    [
+     0,
+     12
+    ],
+    [
+     2,
+     26
+    ],
+    [
+     4,
+     43
+    ],
+    [
+     6,
+     50
+    ],
+    [
+     8,
+     59
+    ],
+    [
+     10,
+     61
+    ],
+    [
+     12,
+     57
+    ],
+    [
+     14,
+     53
+    ],
+    [
+     16,
+     40
+    ],
+    [
+     18,
+     29
+    ],
+    [
+     20,
+     9
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 20,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 70,
+   "y_step": 10,
+   "alt": "Eleven points that rise from about 12 performances at year 0 to a peak near 60 around year 10, then fall back to about 9 by year 20, forming an upside-down U."
+  },
+  "choices": [
+   "$y = 0.5x^2 - 10x + 10$",
+   "$y = -0.5x^2 - 10x + 10$",
+   "$y = -0.5x^2 + 10x + 10$",
+   "$y = -0.5x^2 + 10x + 60$"
+  ],
+  "answer": "C",
+  "explanation": "The points rise and then fall, so the model is a parabola that opens downward, with a negative leading coefficient. The data start near 10 at $x = 0$, so the constant term should be about 10. Check the peak: $-\\frac{b}{2a} = -\\frac{10}{2(-0.5)} = 10$, and $y = -0.5(100) + 100 + 10 = 60$, which matches the top of the data.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You chose a positive leading coefficient, which makes a U-shaped parabola that opens upward. Its lowest point is $-40$ at $x = 10$, but the data reach their highest point there."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "This parabola does open downward with the right intercept, but its vertex is at $x = -\\frac{-10}{2(-0.5)} = -10$. Over the plotted years it only goes down, reaching $-140$ at $x = 10$, and it never rises."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the peak value, about 60, as the constant term. The constant term is the value at $x = 0$, which is about 10. This equation gives 110 at the peak, almost twice the highest point in the data."
+   }
+  },
+  "id": "orig-choose-model-e-M-8ab290",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-8ab290",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations best models the data in the scatterplot?",
+  "stimulus": "A county health office recorded the gap, in percentage points, between the flu vaccination rate of adults aged 65 and older and the rate of adults aged 18 to 64. In 2014, about 70% of the older group was vaccinated. In the scatterplot, $x$ is the number of years since 2014 and $y$ is the gap.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Vaccination Rate Gap Between Age Groups",
+   "x_label": "Years since 2014",
+   "y_label": "Gap (percentage points)",
+   "points": [
+    [
+     0,
+     20
+    ],
+    [
+     1,
+     19
+    ],
+    [
+     2,
+     17
+    ],
+    [
+     3,
+     15
+    ],
+    [
+     4,
+     14
+    ],
+    [
+     5,
+     12
+    ],
+    [
+     6,
+     11
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     10,
+     5
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 25,
+   "y_step": 5,
+   "alt": "Scatterplot of 11 points for years 0 through 10 since 2014, showing the vaccination rate gap between the two age groups in percentage points."
+  },
+  "choices": [
+   "$y = -1.5x + 20$",
+   "$y = 1.5x + 20$",
+   "$y = -1.5x + 5$",
+   "$y = -1.5x + 70$"
+  ],
+  "answer": "A",
+  "explanation": "The points fall in a straight line going down, so the slope is negative. The cloud meets the y-axis at about 20 and drops to about 5 after 10 years. That is a fall of about 15 over 10 years, so the slope is about $-1.5$. The model is $y = -1.5x + 20$.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the intercept right but gave the slope the wrong sign. The gap shrinks each year, so the slope has to be negative. A line with slope $+1.5$ would climb off the top of the plot."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You read the y-value at the right end of the plot, $x = 10$, as the intercept. The intercept is the value at $x = 0$, which is about 20."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the older group's vaccination rate, 70%, as the starting value. The scatterplot shows the gap between the two groups, which starts at about 20 percentage points, not one group's rate."
+   }
+  },
+  "id": "orig-choose-model-e-M-abbdaa",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-abbdaa",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations best models the data in the scatterplot?",
+  "stimulus": "A musicologist compared a pianist's recorded tempo with the printed tempo marking across one phrase of a nocturne. In the scatterplot, $x$ is the beat number within the phrase and $y$ is how many beats per minute faster the pianist played than the marking.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Pianist's Tempo Above the Printed Marking",
+   "x_label": "Beat number",
+   "y_label": "Tempo above marking (beats per minute)",
+   "points": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     2,
+     14
+    ],
+    [
+     3,
+     16
+    ],
+    [
+     4,
+     18
+    ],
+    [
+     5,
+     17
+    ],
+    [
+     6,
+     15
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     2
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 8,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 20,
+   "y_step": 2,
+   "alt": "Scatterplot of 9 points for beats 0 through 8, showing how many beats per minute faster than the printed marking the pianist played."
+  },
+  "choices": [
+   "$y = -x^2 + 8x + 2$",
+   "$y = x^2 - 8x + 2$",
+   "$y = -x^2 + 4x + 2$",
+   "$y = -x^2 + 8x + 18$"
+  ],
+  "answer": "A",
+  "explanation": "The points rise and then fall, so the model is a parabola that opens down, and the leading coefficient must be negative. The highest point is near $x = 4$. For $y = -x^2 + 8x + 2$, the vertex is at $x = -\\frac{8}{2(-1)} = 4$, where $y = 18$. At $x = 0$, $y = 2$. Both values match the data.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the intercept right but chose a positive leading coefficient. This parabola opens up and gives negative values in the middle of the phrase, but the data rise to a peak."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You set $b$ equal to the vertex's x-value, 4, instead of using $x = -\\frac{b}{2a}$. With $b = 4$, the vertex is at $x = 2$, which is too early."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the peak height, 18, as the constant term. The constant is the value at $x = 0$, which is about 2. With 18 there, the curve would start at the top of the plot."
+   }
+  },
+  "id": "orig-choose-model-e-M-7d3592",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-7d3592",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following equations best models the data in the scatterplot?",
+  "stimulus": "A paleobotanist counted fossil fern spores and conifer pollen grains in successive rock layers. For each layer, the researcher recorded how many times as many fern spores as conifer grains it contained. In the scatterplot, $x$ is the layer number, counted upward from the oldest layer, and $y$ is that ratio.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Ratio of Fern Spores to Conifer Pollen by Layer",
+   "x_label": "Layer number",
+   "y_label": "Fern spores per conifer grain",
+   "points": [
+    [
+     0,
+     60
+    ],
+    [
+     1,
+     31
+    ],
+    [
+     2,
+     15
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     6,
+     1
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 6,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 70,
+   "y_step": 10,
+   "alt": "Scatterplot of 7 points for layers 0 through 6, showing the number of fern spores per conifer pollen grain in each layer."
+  },
+  "choices": [
+   "$y = 60(0.5)^x$",
+   "$y = 60(1.5)^x$",
+   "$y = 0.5(60)^x$",
+   "$y = 30(0.5)^x$"
+  ],
+  "answer": "A",
+  "explanation": "The ratio falls quickly at first and then levels off toward zero, so this is exponential decay and the base is between 0 and 1. The ratio drops by about half from each layer to the next, so the base is 0.5. At $x = 0$ the ratio is 60, so the model is $y = 60(0.5)^x$.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the starting value right but used a base above 1. A base of 1.5 means growth, but the ratio shrinks from layer to layer."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You swapped the starting value and the base. In $y = a(b)^x$, $a$ is the value at $x = 0$ and $b$ is the factor for each step. This equation gives 0.5 at $x = 0$ and then grows very fast."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You took the value at layer 1, about 30, as the starting value. The starting value is the ratio at $x = 0$, which is 60."
+   }
+  },
+  "id": "orig-choose-model-e-M-81b12f",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-81b12f",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

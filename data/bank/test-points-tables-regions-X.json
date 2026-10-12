@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-test-points-ta-X-463785",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "values of __var__ solutions to the given system",
     "of __var__ solutions to the given system of",
@@ -81,14 +86,439 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-test-points-ta-X-ac9a56",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "For which of the following tables are all the values of $x$ and their corresponding values of $y$ solutions to the given system of inequalities?",
+  "stimulus": "A marine biologist uses the system below to model conditions under which a reef coral can recover, where $x$ and $y$ are scaled anomalies in water temperature and acidity.\n\n$3x - 2y < 12$\n$-4y \\ge 2x - 20$",
+  "choices": [
+   "$x$: 0, 2, 4; $y$: 5, \u22122, 1",
+   "$x$: 0, 2, 4; $y$: 5, \u22122, 0",
+   "$x$: 0, 2, 4; $y$: 6, 4, 3",
+   "$x$: 0, 2, 4; $y$: \u22125, 6, 2"
+  ],
+  "answer": "A",
+  "explanation": "Solve each inequality for $y$. The first gives $-2y < 12 - 3x$. Dividing by $-2$ flips the sign, so $y > \\frac{3}{2}x - 6$. The second gives $y \\le 5 - \\frac{1}{2}x$, also flipped because you divide by $-4$. At $x = 0, 2, 4$ the allowed ranges are $-6 < y \\le 5$, $-3 < y \\le 4$ and $0 < y \\le 3$. Every row of choice A lands inside its range. The row $(0, 5)$ sits on the solid boundary, which is allowed.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "Your first two rows pass, but at $x = 4$ the first inequality needs $y > 0$. With $y = 0$ you get $3(4) - 2(0) = 12$, and $12 < 12$ is false. You treated a point on a strict (dashed) boundary as a solution."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided $-4y \\ge 2x - 20$ by $-4$ without flipping the sign, so you got $y \\ge 5 - \\frac{1}{2}x$. Every row fits that wrong version. In the real inequality, $(0, 6)$ gives $-24 \\ge -20$, which is false."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "All three rows satisfy $3x - 2y < 12$, but you never checked the second inequality. At $(2, 6)$ you get $-24 \\ge -16$, which is false."
+   }
+  },
+  "id": "orig-test-points-ta-X-4cd183",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-test-points-ta-X-4cd183",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "values of __var__ solutions to the given system",
+    "of __var__ solutions to the given system of",
+    "__var__ solutions to the given system of inequalities"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "If the point $(6, b)$ is a solution to the given system of inequalities, which of the following could be the value of $b$?",
+  "stimulus": "A sports scientist describes acceptable combinations of training load $x$ and recovery score $y$ for an athlete with the system below.\n\n$-3y < 2x - 33$\n$x + 2y \\le 24$\n$4x - y > 15$",
+  "choices": [
+   "5",
+   "7",
+   "8",
+   "9"
+  ],
+  "answer": "C",
+  "explanation": "Substitute $x = 6$ into each inequality. The first gives $-3b < -21$. Dividing by $-3$ flips the sign, so $b > 7$. The second gives $2b \\le 18$, so $b \\le 9$. The third gives $24 - b > 15$, so $b < 9$. All three hold together only when $7 < b < 9$, and the only choice in that range is 8.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided $-3b < -21$ by $-3$ without flipping the sign and got $b < 7$. The value 5 fits that, but the first inequality actually needs $b > 7$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You found the bound $b > 7$ correctly but then let $b$ equal 7. That gives $-21 < -21$, which is false. The boundary of a strict inequality is not a solution."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "The value 9 satisfies the first two inequalities, since $6 + 18 \\le 24$ allows equality. You stopped there. The third gives $24 - 9 > 15$, which is false, so $b$ must be less than 9."
+   }
+  },
+  "id": "orig-test-points-ta-X-d5e235",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-test-points-ta-X-d5e235",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the point __var__ is a solution to the",
+    "point __var__ is a solution to the given",
+    "a solution to the given system of inequalities"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "In the xy-plane, which of the following quadrants contains no solutions to the given system of inequalities?",
+  "stimulus": "A civil engineer models the safe combinations of two load readings on a bridge deck with the system below.\n\n$6x - 3y < 0$\n$-2y < 2x + 8$",
+  "choices": [
+   "Quadrant I",
+   "Quadrant II",
+   "Quadrant III",
+   "Quadrant IV"
+  ],
+  "answer": "D",
+  "explanation": "Rewrite each inequality as $y > \\ldots$. The first becomes $-3y < -6x$, so $y > 2x$ (dividing by $-3$ flips the sign). The second becomes $y > -x - 4$, again flipped. In Quadrant IV, $x > 0$ makes $2x$ positive, but $y$ is negative, so $y > 2x$ can never hold. The other three quadrants all contain solutions, such as $(1, 5)$, $(-1, 1)$ and $(-1, -1)$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You forgot to flip the sign in the second inequality and wrote $y < -x - 4$. That half-plane never reaches Quadrant I. The real inequality is $y > -x - 4$, which includes points such as $(1, 5)$."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You forgot to flip the sign in the first inequality and wrote $y < 2x$, which is empty in Quadrant II. The real condition is $y > 2x$, and $(-1, 1)$ satisfies both inequalities."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "The two boundary lines meet at $\\left(-\\frac{4}{3}, -\\frac{8}{3}\\right)$ in Quadrant III, so you picked the quadrant that holds the corner of the region. Points just above that corner, such as $(-1, -1)$, satisfy both inequalities."
+   }
+  },
+  "id": "orig-test-points-ta-X-c6c181",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-test-points-ta-X-c6c181",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which point $(x, y)$ is a solution to the given system of inequalities in the xy-plane?",
+  "stimulus": "A nutrition scientist models allowable daily intakes of two supplements, $x$ and $y$, in grams, with the system below.\n\n$-\\frac{y}{3} > x - 5$\n$2y - x \\ge 4$",
+  "choices": [
+   "$(2, 5)$",
+   "$(2, 9)$",
+   "$(3, 2)$",
+   "$(4, 6)$"
+  ],
+  "answer": "A",
+  "explanation": "Multiply the first inequality by $-3$ and flip the sign: $y < -3x + 15$. The second gives $y \\ge \\frac{1}{2}x + 2$. For $(2, 5)$, $5 < 9$ and $5 \\ge 3$, so both inequalities hold.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "At $x = 2$ the first inequality needs $y < 9$, and the point $(2, 9)$ sits on the boundary. Because the inequality is strict, $-3 > -3$ is false. You counted a point on a dashed line as a solution."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "The point $(3, 2)$ satisfies the first inequality ($2 < 6$), but you didn't check the second. It gives $2(2) - 3 = 1$, and $1 \\ge 4$ is false."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You multiplied by $-3$ without flipping the sign and got $y > -3x + 15$, which $(4, 6)$ satisfies. The correct inequality is $y < -3x + 15$, and $6 < 3$ is false."
+   }
+  },
+  "id": "orig-test-points-ta-X-9698c6",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-test-points-ta-X-9698c6",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __var__ which point __var__ is a solution",
+    "__var__ which point __var__ is a solution to",
+    "which point __var__ is a solution to the",
+    "point __var__ is a solution to the given",
+    "a solution to the given system of inequalities",
+    "solution to the given system of inequalities in",
+    "to the given system of inequalities in the",
+    "the given system of inequalities in the xy",
+    "given system of inequalities in the xy plane"
+   ],
+   "residue": 5
+  }
+ },
+ {
+  "stem": "For which of the following tables are all the values of $x$ and their corresponding values of $y$ solutions to the given inequality?",
+  "stimulus": "An ornithologist relates a scaled wind-speed reading $x$ to a scaled flock-altitude reading $y$ during migration with the inequality below.\n\n$\\frac{2x - y}{-3} \\le 4$",
+  "choices": [
+   "$x$: \u22124, \u22121, 2; $y$: 3, 8, 17",
+   "$x$: \u22124, \u22121, 2; $y$: 4, 7, 15",
+   "$x$: \u22124, \u22121, 2; $y$: 6, 12, 8",
+   "$x$: \u22124, \u22121, 2; $y$: 6, 10, 18"
+  ],
+  "answer": "B",
+  "explanation": "Multiply both sides by $-3$ and flip the sign: $2x - y \\ge -12$. That rearranges to $y \\le 2x + 12$. At $x = -4, -1, 2$ the bounds are $y \\le 4$, $y \\le 10$ and $y \\le 16$. The values 4, 7 and 15 meet every bound. The value 4 sits on the boundary, which is allowed because the inequality includes equality.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "The first two rows pass, but at $x = 2$ the bound is $y \\le 16$, and 17 breaks it. You stopped checking before the last row."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You moved $2x$ across with the wrong sign and got $y \\le 12 - 2x$, which gives looser bounds of 20, 14 and 8. In the real inequality, $(-4, 6)$ already fails because $6 > 4$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You multiplied by $-3$ without flipping the sign and got $y \\ge 2x + 12$. This table meets that reversed bound exactly, so every row actually fails the real inequality."
+   }
+  },
+  "id": "orig-test-points-ta-X-455972",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-test-points-ta-X-455972",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the point $(a, -2)$ is a solution to the given system of inequalities, which of the following could be the value of $a$?",
+  "stimulus": "A seismologist uses the system below to model which combinations of scaled ground acceleration $x$ and scaled depth $y$ are flagged for review.\n\n$4x + 6y < 32$\n$-3x - 2y \\le -8$",
+  "choices": [
+   "2",
+   "7",
+   "11",
+   "13"
+  ],
+  "answer": "B",
+  "explanation": "Substitute $y = -2$ into each inequality. The first gives $4a - 12 < 32$, so $a < 11$. The second gives $-3a + 4 \\le -8$, so $-3a \\le -12$. Dividing by $-3$ flips the sign, so $a \\ge 4$. Together $4 \\le a < 11$, and only 7 is in that range.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided $-3a \\le -12$ by $-3$ without flipping the sign and got $a \\le 4$. The value 2 fits that, but the system actually needs $a \\ge 4$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You found $a < 11$ but treated 11 as allowed. That gives $4(11) - 12 = 32$, and $32 < 32$ is false. The boundary of a strict inequality is not a solution."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "The value 13 satisfies $a \\ge 4$, but you didn't check the first inequality. It gives $4(13) - 12 = 40$, which is not less than 32."
+   }
+  },
+  "id": "orig-test-points-ta-X-7b0d6a",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-test-points-ta-X-7b0d6a",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the point __var__ is a solution to the",
+    "point __var__ is a solution to the given",
+    "a solution to the given system of inequalities"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which point $(x, y)$ is a solution to the given system of inequalities in the xy-plane?",
+  "stimulus": "A meteorologist flags combinations of scaled humidity $x$ and scaled pressure drop $y$ that signal a squall line with the system below.\n\n$y \\ge 2x - 7$\n$x + y < 9$\n$-\\frac{1}{2}y \\le x - 4$",
+  "choices": [
+   "$(1, 4)$",
+   "$(3, 6)$",
+   "$(4, 3)$",
+   "$(6, 2)$"
+  ],
+  "answer": "C",
+  "explanation": "Multiply the third inequality by $-2$ and flip the sign: $y \\ge -2x + 8$. For $(4, 3)$: $3 \\ge 1$, $4 + 3 = 7 < 9$, and $3 \\ge 0$. All three inequalities hold.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You multiplied by $-2$ without flipping the sign and got $y \\le -2x + 8$, which $(1, 4)$ satisfies. The correct inequality is $y \\ge -2x + 8$, and at $x = 1$ that needs $y \\ge 6$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "The point $(3, 6)$ satisfies the first and third inequalities, but $3 + 6 = 9$ lies on the boundary of $x + y < 9$. Because the inequality is strict, that boundary point is not a solution."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "The point $(6, 2)$ satisfies the second and third inequalities, but you didn't check the first. It needs $y \\ge 5$ at $x = 6$, and $2 < 5$."
+   }
+  },
+  "id": "orig-test-points-ta-X-388c00",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-test-points-ta-X-388c00",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __var__ which point __var__ is a solution",
+    "__var__ which point __var__ is a solution to",
+    "which point __var__ is a solution to the",
+    "point __var__ is a solution to the given",
+    "a solution to the given system of inequalities",
+    "solution to the given system of inequalities in",
+    "to the given system of inequalities in the",
+    "the given system of inequalities in the xy",
+    "given system of inequalities in the xy plane"
+   ],
+   "residue": 5
+  }
+ },
+ {
+  "stem": "For which of the following tables are all the values of $x$ and their corresponding values of $y$ solutions to the given system of inequalities?",
+  "stimulus": "A musicologist models the combinations of scaled tempo deviation $x$ and scaled pitch drift $y$ that listeners still hear as one performance with the system below.\n\n$x - 2y \\ge -8$\n$5x + y > -10$",
+  "choices": [
+   "$x$: \u22122, 0, 2; $y$: 0, \u22126, 5",
+   "$x$: \u22122, 0, 2; $y$: 2, 4, 7",
+   "$x$: \u22122, 0, 2; $y$: 4, 4, 6",
+   "$x$: \u22122, 0, 2; $y$: 3, \u22126, 5"
+  ],
+  "answer": "D",
+  "explanation": "The first inequality gives $-2y \\ge -8 - x$. Dividing by $-2$ flips the sign, so $y \\le \\frac{1}{2}x + 4$. The second gives $y > -5x - 10$. At $x = -2$ the range is $0 < y \\le 3$. At $x = 0$ it is $-10 < y \\le 4$. At $x = 2$ it is $-20 < y \\le 5$. Every row of D fits. The rows $(-2, 3)$ and $(2, 5)$ sit on the solid boundary, which is allowed.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "At $x = -2$ the second inequality needs $y > 0$. The value $y = 0$ gives $-10 > -10$, which is false. You treated the dashed boundary as part of the solution set."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "The first two rows pass, so you stopped there. At $x = 2$ the bound is $y \\le 5$, and $y = 7$ gives $2 - 14 = -12$, which is not $\\ge -8$."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided by $-2$ without flipping the sign and got $y \\ge \\frac{1}{2}x + 4$. This table fits that reversed bound, but $(-2, 4)$ gives $-10 \\ge -8$, which is false."
+   }
+  },
+  "id": "orig-test-points-ta-X-8f4485",
+  "skill_cd": "H.E.",
+  "subtype": "test-points-tables-regions",
+  "subtype_name": "Which point / table / region satisfies it",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-test-points-ta-X-8f4485",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "values of __var__ solutions to the given system",
+    "of __var__ solutions to the given system of",
+    "__var__ solutions to the given system of inequalities"
+   ],
+   "residue": 1
+  }
  }
 ]

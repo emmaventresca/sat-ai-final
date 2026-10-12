@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-rational-radic-X-0925cb",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,11 +82,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-rational-radic-X-81fcb5",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "__var__ is a constant what is the sum",
     "is a constant what is the sum of",
@@ -90,5 +100,402 @@
    "residue": 1
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What are all the solutions to the given equation?",
+  "stimulus": "A seismologist comparing wave arrival times at two stations reduces a timing model to the equation below.\n\n$\\sqrt{3x+1} + \\sqrt{x-1} = 2$",
+  "choices": [
+   "$5$ only",
+   "$1$ and $5$",
+   "There is no solution.",
+   "$1$ only"
+  ],
+  "answer": "D",
+  "explanation": "Isolate one root: $\\sqrt{3x+1} = 2 - \\sqrt{x-1}$. Squaring gives $3x+1 = 4 - 4\\sqrt{x-1} + x - 1$, so $x - 1 = -2\\sqrt{x-1}$. Square again: $(x-1)^2 = 4(x-1)$, so $x = 1$ or $x = 5$. Check each one in the original equation. At $x = 1$: $\\sqrt{4} + \\sqrt{0} = 2$, so it works. At $x = 5$: $\\sqrt{16} + \\sqrt{4} = 6$, not 2, so it fails. The line $x - 1 = -2\\sqrt{x-1}$ already told you this: a nonnegative quantity can equal $-2$ times a square root only when both are zero. The only solution is $1$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided both sides of $(x-1)^2 = 4(x-1)$ by $x - 1$. That threw away $x = 1$ and left only $x = 5$, which you never checked. It gives $4 + 2 = 6$, not 2."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You solved the squared equation correctly but kept both candidates without checking them. Squaring added $x = 5$. At $x = 5$ the left side is 6, because $x - 1 = -2\\sqrt{x-1}$ would need a positive number to equal a negative one."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided $x - 1 = -2\\sqrt{x-1}$ by $\\sqrt{x-1}$ and got $\\sqrt{x-1} = -2$, which is impossible. But dividing by $\\sqrt{x-1}$ assumes it isn't zero, and $\\sqrt{x-1} = 0$ is exactly where the real solution is."
+   }
+  },
+  "id": "orig-rational-radic-X-24f94a",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-X-24f94a",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given equation, $k$ is a constant. The equation has exactly one real solution, and that solution is an integer. What is the value of $k$?",
+  "stimulus": "A civil engineer checking the deflection of a beam segment arrives at the equation below.\n\n$\\frac{x+k}{x-2} = x$",
+  "choices": [
+   "$-\\frac{9}{4}$",
+   "$-2$",
+   "$1$",
+   "$2$"
+  ],
+  "answer": "B",
+  "explanation": "Multiply by $x - 2$, remembering that $x \\neq 2$: $x + k = x^2 - 2x$, so $x^2 - 3x - k = 0$. The original equation has exactly one solution in two cases. Either this quadratic has a double root, or one of its two roots is the excluded value 2. A double root needs $9 + 4k = 0$, so $k = -\\frac{9}{4}$, but that root is $x = \\frac{3}{2}$, which isn't an integer. A root at 2 needs $4 - 6 - k = 0$, so $k = -2$. The quadratic is then $(x-1)(x-2) = 0$, and once you remove 2 the only solution left is the integer $x = 1$. So $k = -2$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You treated 'exactly one solution' as 'discriminant equals zero'. That k does give one solution, but the solution is $\\frac{3}{2}$, which isn't an integer. You also missed the second route to one solution: a root landing on the excluded value $x = 2$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "1 is the surviving solution $x$ when $k = -2$. The question asks for $k$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You moved $k$ across with the wrong sign and wrote $x^2 - 3x + k = 0$. Then substituting $x = 2$ gave $k = 2$ instead of $-2$."
+   }
+  },
+  "id": "orig-rational-radic-X-6aff33",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-X-6aff33",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "a constant the equation has exactly one real",
+    "constant the equation has exactly one real solution",
+    "is an integer what is the value of",
+    "an integer what is the value of __var__"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "In the given equation, $k$ is a positive constant. If $x = 5$ is a solution to the equation, what is the value of $k$?",
+  "stimulus": "A musicologist modeling how string tension relates to pitch on a reconstructed lute writes the equation below.\n\n$\\sqrt{x + 2k} = x - k$",
+  "choices": [
+   "$2$",
+   "$3$",
+   "$10$",
+   "$12$"
+  ],
+  "answer": "A",
+  "explanation": "Substitute $x = 5$: $\\sqrt{5 + 2k} = 5 - k$. Squaring gives $5 + 2k = 25 - 10k + k^2$, so $k^2 - 12k + 20 = 0$ and $k = 2$ or $k = 10$. Both are positive, so the stated sign doesn't decide between them. The check does. With $k = 2$: $\\sqrt{9} = 3$ and $5 - 2 = 3$, so it works. With $k = 10$: $\\sqrt{25} = 5$, but $5 - 10 = -5$, so it fails. The value of $k$ is 2.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "3 is the value of each side, $\\sqrt{9} = 5 - 2$, when $k = 2$. It isn't $k$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You kept the root that squaring added. With $k = 10$ the right side is $5 - 10 = -5$, and a square root can't equal a negative number. Being positive doesn't save this value of $k$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "12 is the sum of the two roots of $k^2 - 12k + 20 = 0$. You read it off the coefficient instead of solving for $k$ and checking each root."
+   }
+  },
+  "id": "orig-rational-radic-X-be48e3",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-X-be48e3",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the product of all solutions to the given equation?",
+  "stimulus": "A nutrition scientist balancing a two-phase dosing schedule arrives at the equation below.\n\n$\\frac{2x}{x-3} = \\frac{6}{x-3} + \\frac{x}{2}$",
+  "choices": [
+   "$3$",
+   "$4$",
+   "$7$",
+   "$12$"
+  ],
+  "answer": "B",
+  "explanation": "Multiply by $2(x-3)$, noting that $x \\neq 3$: $4x = 12 + x(x-3)$, so $x^2 - 7x + 12 = 0$ and $(x-3)(x-4) = 0$. The candidate $x = 3$ makes a denominator zero, so throw it out. The only solution is $x = 4$, so the product of all solutions is 4. (You can also see this directly: $\\frac{2x-6}{x-3} = 2$ for $x \\neq 3$, so $2 = \\frac{x}{2}$.)",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You discarded the wrong root. You kept $x = 3$, the value that makes the denominators zero, and dropped the real solution $x = 4$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "7 is the sum of the roots of $x^2 - 7x + 12 = 0$. The question asks for a product, and one of those roots isn't a solution anyway."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You used the constant term of the quadratic, $3 \\cdot 4 = 12$, as the product. That counts $x = 3$, which makes the original denominators zero and can't be a solution."
+   }
+  },
+  "id": "orig-rational-radic-X-fdf40f",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-X-fdf40f",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What value of $x$ is the solution to the given equation?",
+  "stimulus": "A sports scientist relating a sprinter's stride data to recovery time arrives at the equation below.\n\n$x + 2 = 3\\sqrt{x+2} + 10$",
+  "choices": [
+   "$2$",
+   "$5$",
+   "$23$",
+   "$25$"
+  ],
+  "answer": "C",
+  "explanation": "Let $u = \\sqrt{x+2}$, so $u \\geq 0$ and the equation becomes $u^2 = 3u + 10$. Then $u^2 - 3u - 10 = 0$ factors as $(u-5)(u+2) = 0$, so $u = 5$ or $u = -2$. A square root can't be $-2$, so $u = 5$. That gives $x + 2 = 25$ and $x = 23$. Check: $25 = 3(5) + 10$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You kept $u = -2$ and squared it to get $x + 2 = 4$. But $\\sqrt{4}$ is $+2$, and with $x = 2$ the equation reads $4 = 16$, which is false. Squaring brought in a root that doesn't work."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "5 is the value of $u = \\sqrt{x+2}$. You stopped before converting it back to $x$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "25 is $x + 2$. You squared $u$ correctly but didn't subtract the 2 to get $x$."
+   }
+  },
+  "id": "orig-rational-radic-X-a8a675",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-X-a8a675",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the sum of all solutions to the given equation?",
+  "stimulus": "A printmaker calibrating ink coverage across two plate sizes arrives at the equation below.\n\n$\\frac{x}{x-2} - \\frac{8}{x^2-4} = \\frac{3}{x+2}$",
+  "choices": [
+   "$-1$",
+   "$1$",
+   "$2$",
+   "$3$"
+  ],
+  "answer": "A",
+  "explanation": "The common denominator is $(x-2)(x+2)$, and $x \\neq \\pm 2$. Multiplying through gives $x(x+2) - 8 = 3(x-2)$, so $x^2 + 2x - 8 = 3x - 6$ and $x^2 - x - 2 = 0$. That factors as $(x-2)(x+1) = 0$. The candidate $x = 2$ makes $x - 2$ and $x^2 - 4$ zero, so reject it. The only solution is $-1$, so the sum is $-1$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You took the sum straight from the quadratic, $-b/a = 1$. That shortcut includes $x = 2$, which makes a denominator zero. Vieta's formulas add the roots of the polynomial, not the solutions of the original equation."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You rejected the wrong candidate. 2 is the root that zeroes the denominators, and $-1$ is the one that works."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You expanded $x(x+2)$ as $x^2 + 2$. That gave $x^2 - 3x = 0$, with roots 0 and 3."
+   }
+  },
+  "id": "orig-rational-radic-X-9410da",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-X-9410da",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive solution to the given equation?",
+  "stimulus": "A folklore scholar estimating how quickly variants of a tale spread between villages arrives at the equation below.\n\n$\\frac{x-5}{\\sqrt{x+1}} = -1$",
+  "choices": [
+   "$2$",
+   "$3$",
+   "$8$",
+   "$11$"
+  ],
+  "answer": "B",
+  "explanation": "Multiply by $\\sqrt{x+1}$, with $x > -1$: $x - 5 = -\\sqrt{x+1}$. Squaring gives $x^2 - 10x + 25 = x + 1$, so $x^2 - 11x + 24 = 0$ and $x = 3$ or $x = 8$. Both are positive, so the word 'positive' doesn't decide between them. Check each one. At $x = 3$: $\\frac{-2}{2} = -1$, so it works. At $x = 8$: $\\frac{3}{3} = 1$, so it fails. The positive solution is 3.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "2 is $\\sqrt{x+1}$ when $x = 3$, the denominator's value rather than $x$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You assumed that whichever candidate is positive must be the answer. But both candidates are positive, and 8 is the one squaring added. It makes $x - 5$ positive, so the left side equals $+1$, not $-1$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "11 is the sum of the two roots of $x^2 - 11x + 24 = 0$, a coefficient you read off partway through. It isn't a solution."
+   }
+  },
+  "id": "orig-rational-radic-X-a00534",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-X-a00534",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given equation, $a$ is a positive constant. Which of the following is a solution to the equation?",
+  "stimulus": "An ecologist comparing predator and prey densities across two survey plots arrives at the equation below.\n\n$\\frac{x^2}{x-a} = \\frac{a^2}{x-a} + 3a$",
+  "choices": [
+   "$a$",
+   "$2a$",
+   "$3a$",
+   "$4a$"
+  ],
+  "answer": "B",
+  "explanation": "Multiply by $x - a$, noting that $x \\neq a$: $x^2 - a^2 = 3a(x - a)$. Factor the left side: $(x-a)(x+a) = 3a(x-a)$. So either $x = a$, which is excluded because it makes the denominator zero, or $x + a = 3a$, which gives $x = 2a$. Because $a > 0$, the value $2a$ is different from $a$ and is allowed. Check: $\\frac{4a^2 - a^2}{a} = 3a$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "$x = a$ does satisfy the cleared equation, but it makes $x - a$ zero, so the original equation is undefined there. It's the extraneous root."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "$3a$ is the right side of $x + a = 3a$. You stopped before subtracting $a$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You factored $x^2 - a^2$ as $(x-a)^2$. That reduces the equation to $x - a = 3a$ instead of $x + a = 3a$."
+   }
+  },
+  "id": "orig-rational-radic-X-825a0b",
+  "skill_cd": "P.B.",
+  "subtype": "rational-radical-extraneous",
+  "subtype_name": "Rational or radical equations and extraneous roots",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-rational-radic-X-825a0b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "given equation __var__ is a positive constant which",
+    "equation __var__ is a positive constant which of",
+    "__var__ is a positive constant which of the",
+    "is a positive constant which of the following",
+    "a positive constant which of the following is",
+    "which of the following is a solution to",
+    "of the following is a solution to the"
+   ],
+   "residue": 0
+  }
  }
 ]

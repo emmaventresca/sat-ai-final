@@ -252,5 +252,814 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the sum of the solutions to the given equation?",
+  "stimulus": "While studying weekly overtime, a labour economist arrives at the following equation, where $x$ is a number of hours.\n\n$(x - 4)(3x + 2) = 5(x - 4)$",
+  "choices": [
+   "$-5$",
+   "$1$",
+   "$\\frac{10}{3}$",
+   "$5$"
+  ],
+  "answer": "D",
+  "explanation": "Don't divide both sides by $x - 4$. Instead, move everything to one side and factor out the common factor: $(x - 4)(3x + 2) - 5(x - 4) = 0$, so $(x - 4)(3x + 2 - 5) = 0$, which gives $(x - 4)(3x - 3) = 0$. The solutions are $x = 4$ and $x = 1$, and their sum is $5$. You can check this another way. Expanding gives $3x^2 - 15x + 12 = 0$, and the sum of the roots is $-\\frac{b}{a} = -\\frac{-15}{3} = 5$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the equation correctly as $3x^2 - 15x + 12 = 0$, but then you used $\\frac{b}{a}$ instead of $-\\frac{b}{a}$ for the sum of the roots, which gives the wrong sign."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You divided both sides by $x - 4$ and got $3x + 2 = 5$, so $x = 1$. Dividing by a factor that contains $x$ loses the solution $x = 4$, so $1$ is only one of the two solutions, not their sum."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took $a$ and $b$ from the expanded left side, $3x^2 - 10x - 8$, before moving $5(x - 4)$ across. You have to subtract $5x - 20$ first, which makes the $x$-coefficient $-15$."
+   }
+  },
+  "id": "orig-sum-or-structu-M-a80343",
+  "skill_cd": "P.B.",
+  "subtype": "sum-or-structure-of-solutions",
+  "subtype_name": "Sum of the solutions and unknown-coefficient roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sum-or-structu-M-a80343",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true about the sum of the solutions to the given equation?",
+  "stimulus": "A folklore student converts a traditional counting riddle into an equation.\n\n$(x-3)(2x+5)=(x-3)(x+9)$",
+  "choices": [
+   "The sum is $4$.",
+   "The sum is $7$.",
+   "The sum is $-7$.",
+   "The sum is $12$."
+  ],
+  "answer": "B",
+  "explanation": "Don't divide both sides by $x-3$. Move everything to one side and factor out the common factor instead: $(x-3)\\big[(2x+5)-(x+9)\\big]=0$, which simplifies to $(x-3)(x-4)=0$. The solutions are $x=3$ and $x=4$. You can also expand to $x^2-7x+12=0$, where the sum of the roots is $-\\tfrac{b}{a}=-\\tfrac{-7}{1}=7$. Either way, the sum must be $7$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided both sides by $x-3$. That factor contains $x$, so dividing by it threw away the solution $x=3$. Only $x=4$ was left, and you reported that as the sum."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You correctly reached $x^2-7x+12=0$ but used $+\\tfrac{b}{a}$ for the sum of the roots. The sum is $-\\tfrac{b}{a}$, which is $7$, not $-7$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$12$ is $\\tfrac{c}{a}$, the product of the solutions $3$ and $4$. The question asks for their sum."
+   }
+  },
+  "id": "orig-sum-or-structu-M-7a2812",
+  "skill_cd": "P.B.",
+  "subtype": "sum-or-structure-of-solutions",
+  "subtype_name": "Sum of the solutions and unknown-coefficient roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sum-or-structu-M-7a2812",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "In the given equation, $k$ is a constant. If the sum of the solutions to the given equation is $3$, which of the following must be true?",
+  "stimulus": "An ornithologist's model of a falcon's dive leads to the following equation.\n\n$2x^2+kx-30=0$",
+  "choices": [
+   "$k=6$",
+   "$k=-3$",
+   "$k=-6$",
+   "$k=-\\tfrac{3}{2}$"
+  ],
+  "answer": "C",
+  "explanation": "For $ax^2+bx+c=0$, the sum of the solutions is $-\\tfrac{b}{a}$. Here $a=2$ and $b=k$, so the sum is $-\\tfrac{k}{2}$. Setting $-\\tfrac{k}{2}=3$ gives $k=-6$. As a check, $2x^2-6x-30=0$ has a positive discriminant, so it has two real solutions, and their sum is $\\tfrac{6}{2}=3$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $+\\tfrac{b}{a}$ for the sum. Solving $\\tfrac{k}{2}=3$ gives $k=6$, but the sum of the roots is $-\\tfrac{b}{a}$, so the sign is wrong."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the leading coefficient $2$ and treated the sum as $-k$. Solving $-k=3$ gives $-3$. You have to divide $b$ by $a=2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You set up $-\\tfrac{k}{2}=3$ correctly but divided by $2$ when you should have multiplied, which gave $-\\tfrac{3}{2}$ instead of $-6$."
+   }
+  },
+  "id": "orig-sum-or-structu-M-4f532c",
+  "skill_cd": "P.B.",
+  "subtype": "sum-or-structure-of-solutions",
+  "subtype_name": "Sum of the solutions and unknown-coefficient roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sum-or-structu-M-4f532c",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "of the solutions to the given equation is",
+    "the solutions to the given equation is __var__",
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following must be true about the sum of the solutions to the given equation?",
+  "stimulus": "A hydrologist's model of how a reservoir drains produces the following equation.\n\n$x^3-5x^2-7x+35=0$",
+  "choices": [
+   "The sum is $5$.",
+   "The sum is $-5$.",
+   "The sum is $12$.",
+   "The sum is $5+\\sqrt{7}$."
+  ],
+  "answer": "A",
+  "explanation": "Factor by grouping: $x^2(x-5)-7(x-5)=0$, which becomes $(x-5)(x^2-7)=0$. The solutions are $x=5$, $x=\\sqrt{7}$ and $x=-\\sqrt{7}$. The two square-root solutions cancel when you add them, so the sum is $5$. This matches $-\\tfrac{b}{a}=-\\tfrac{-5}{1}=5$ for a cubic.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the coefficient $-5$ and kept its sign, which is the same as using $+\\tfrac{b}{a}$. The sum of the roots is $-\\tfrac{b}{a}$, which is $5$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You solved $x^2-7=0$ as $x=7$ instead of $x=\\pm\\sqrt{7}$, then added $5+7$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You listed $5$ and $\\sqrt{7}$ but left out $-\\sqrt{7}$. The equation $x^2=7$ has two solutions, and they cancel in the sum."
+   }
+  },
+  "id": "orig-sum-or-structu-M-a2e9df",
+  "skill_cd": "P.B.",
+  "subtype": "sum-or-structure-of-solutions",
+  "subtype_name": "Sum of the solutions and unknown-coefficient roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sum-or-structu-M-a2e9df",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which expression represents the sum of the solutions to the given equation?",
+  "stimulus": "An agricultural scientist models the two planting depths $x$, in centimeters, at which a seed variety reaches a target emergence rate with the equation below, where $k$ is a constant greater than 1.\n\n$3x^2 - 12kx + 7 = 0$",
+  "choices": [
+   "$-4k$",
+   "$4k$",
+   "$12k$",
+   "$\\frac{7}{3}$"
+  ],
+  "answer": "B",
+  "explanation": "The equation is already in the form $ax^2 + bx + c = 0$, with $a = 3$, $b = -12k$ and $c = 7$. For a quadratic, the sum of the solutions is $-\\frac{b}{a} = -\\frac{-12k}{3} = 4k$. You don't need to find the depths themselves.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $\\frac{b}{a}$ instead of $-\\frac{b}{a}$, so your sum has the wrong sign."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the opposite of $b$ but forgot to divide by the leading coefficient, $a = 3$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $\\frac{c}{a}$, which is the product of the solutions, not their sum."
+   }
+  },
+  "id": "orig-sum-or-structu-M-a88723",
+  "skill_cd": "P.B.",
+  "subtype": "sum-or-structure-of-solutions",
+  "subtype_name": "Sum of the solutions and unknown-coefficient roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sum-or-structu-M-a88723",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the sum of the solutions to the given equation?",
+  "stimulus": "A musicologist studying string tension on early lutes uses the equation below, where $a$ is a constant greater than 3.\n\n$(x - 5)(2x + a) = (x - 5)(x + 3a)$",
+  "choices": [
+   "$2a$",
+   "$2a + 5$",
+   "$4a + 5$",
+   "$10a$"
+  ],
+  "answer": "B",
+  "explanation": "Don't divide both sides by $x - 5$. Move everything to one side and factor out the common factor: $(x - 5)\\left[(2x + a) - (x + 3a)\\right] = 0$, so $(x - 5)(x - 2a) = 0$. The solutions are $x = 5$ and $x = 2a$, and their sum is $2a + 5$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided both sides by $x - 5$, which threw away the solution $x = 5$, so you were left with only $x = 2a$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "When you solved $2x + a = x + 3a$, you added $a$ to the right side instead of subtracting it and got $x = 4a$ instead of $x = 2a$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You multiplied the two solutions, $5$ and $2a$, instead of adding them."
+   }
+  },
+  "id": "orig-sum-or-structu-M-74a6b8",
+  "skill_cd": "P.B.",
+  "subtype": "sum-or-structure-of-solutions",
+  "subtype_name": "Sum of the solutions and unknown-coefficient roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sum-or-structu-M-74a6b8",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the sum of the solutions to the given equation?",
+  "stimulus": "A textile historian models how dye uptake in antique wool samples changed over time with the equation below, where $m$ is a positive constant.\n\n$x^3 - 4mx^2 - 5x + 20m = 0$",
+  "choices": [
+   "$-4m$",
+   "$4m$",
+   "$4m + \\sqrt{5}$",
+   "$-20m$"
+  ],
+  "answer": "B",
+  "explanation": "Factor by grouping: $x^2(x - 4m) - 5(x - 4m) = (x^2 - 5)(x - 4m) = 0$. The solutions are $x = \\sqrt{5}$, $x = -\\sqrt{5}$ and $x = 4m$. The two square-root solutions cancel, so the sum is $4m$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the sum straight from the $x^2$ coefficient but kept its sign, as if the sum were $\\frac{b}{a}$ instead of $-\\frac{b}{a}$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You solved $x^2 = 5$ and kept only $x = \\sqrt{5}$. You dropped $x = -\\sqrt{5}$, which is also a solution and cancels the $\\sqrt{5}$ in the sum."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You multiplied the three solutions, $\\sqrt{5} \\cdot (-\\sqrt{5}) \\cdot 4m = -20m$, instead of adding them."
+   }
+  },
+  "id": "orig-sum-or-structu-M-fa58f1",
+  "skill_cd": "P.B.",
+  "subtype": "sum-or-structure-of-solutions",
+  "subtype_name": "Sum of the solutions and unknown-coefficient roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sum-or-structu-M-fa58f1",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given equation, $k$ is a constant greater than 4. What is the sum of the solutions to the given equation?",
+  "stimulus": "A linguist comparing how often two word endings appear in a set of dialect recordings arrives at the following equation.\n\n$(x - k)(2x + 5) = (x - k)(x + 9)$",
+  "choices": [
+   "$4$",
+   "$4k$",
+   "$k + 4$",
+   "$-k - 4$"
+  ],
+  "answer": "C",
+  "explanation": "Don't divide by $x - k$. Move everything to one side and factor it out instead: $(x - k)[(2x + 5) - (x + 9)] = 0$, so $(x - k)(x - 4) = 0$. The solutions are $x = k$ and $x = 4$. They are different because $k > 4$, so their sum is $k + 4$. You can check this by expanding to $x^2 - (k + 4)x + 4k = 0$, where the sum of the roots is $-b/a = k + 4$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided both sides by $x - k$, which threw away the solution $x = k$. You were left with $2x + 5 = x + 9$ and its single root, 4."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$4k$ is the product of the solutions, $c/a$. The question asks for their sum."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $+b/a$ in place of $-b/a$. The coefficient of $x$ is $-(k + 4)$, so the sum of the roots is $k + 4$, not $-(k + 4)$."
+   }
+  },
+  "id": "orig-sum-or-structu-M-54df51",
+  "skill_cd": "P.B.",
+  "subtype": "sum-or-structure-of-solutions",
+  "subtype_name": "Sum of the solutions and unknown-coefficient roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sum-or-structu-M-54df51",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the sum of the solutions to the given equation?",
+  "stimulus": "A meteorologist modeling how air pressure changes as a storm front passes arrives at the following equation.\n\n$x^3 - 5x^2 = 7x - 35$",
+  "choices": [
+   "$-5$",
+   "$0$",
+   "$5$",
+   "$12$"
+  ],
+  "answer": "C",
+  "explanation": "Factor each side: $x^2(x - 5) = 7(x - 5)$. Move everything to one side and factor out $x - 5$ to get $(x - 5)(x^2 - 7) = 0$. The solutions are $5$, $\\sqrt{7}$ and $-\\sqrt{7}$. The two square-root solutions cancel, so the sum is $5$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the sum from the coefficient with the wrong sign. In $x^3 - 5x^2 - 7x + 35 = 0$ the solutions add to $-(-5)/1 = 5$, not $-5$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided both sides by $x - 5$, which lost the solution $x = 5$. Only $\\pm\\sqrt{7}$ remained, and they add to 0."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You solved $x^2 = 7$ as $x = 7$ and added it to 5. In fact $x^2 = 7$ gives $\\pm\\sqrt{7}$, and those two roots cancel."
+   }
+  },
+  "id": "orig-sum-or-structu-M-41670b",
+  "skill_cd": "P.B.",
+  "subtype": "sum-or-structure-of-solutions",
+  "subtype_name": "Sum of the solutions and unknown-coefficient roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sum-or-structu-M-41670b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given equation, $c$ is a constant. If the sum of the solutions to the equation is $-6$, what is the value of $c$?",
+  "stimulus": "A paleobotanist fitting a model to the widths of fossil leaf impressions arrives at the following equation.\n\n$(x + c)^2 = 4x + 20$",
+  "choices": [
+   "$-1$",
+   "$1$",
+   "$5$",
+   "$10$"
+  ],
+  "answer": "C",
+  "explanation": "Expand and write the equation in standard form: $x^2 + (2c - 4)x + c^2 - 20 = 0$. The sum of the solutions is $-b/a = 4 - 2c$. Setting $4 - 2c = -6$ gives $c = 5$. To check, $c = 5$ gives $x^2 + 6x + 5 = 0$, whose solutions are $-1$ and $-5$, and those add to $-6$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $+b/a$ for the sum and set $2c - 4 = -6$. With $c = -1$ the equation is $x^2 - 6x - 19 = 0$, and its solutions add to $6$, not $-6$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You set up $4 - 2c = -6$ correctly but moved the 4 across with the wrong sign, which gave $-2c = -2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You expanded $(x + c)^2$ as $x^2 + cx + c^2$ and dropped the 2 in the middle term. That gave a sum of $4 - c$. With $c = 10$ the equation is $x^2 + 16x + 80 = 0$, which has no real solutions at all."
+   }
+  },
+  "id": "orig-sum-or-structu-M-cd59d4",
+  "skill_cd": "P.B.",
+  "subtype": "sum-or-structure-of-solutions",
+  "subtype_name": "Sum of the solutions and unknown-coefficient roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sum-or-structu-M-cd59d4",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the sum of the solutions to the equation",
+    "sum of the solutions to the equation is",
+    "of the solutions to the equation is __var__",
+    "the solutions to the equation is __var__ what",
+    "solutions to the equation is __var__ what is",
+    "to the equation is __var__ what is the",
+    "the equation is __var__ what is the value",
+    "equation is __var__ what is the value of"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "What is the sum of the solutions to the given equation?",
+  "stimulus": "A linguist studying how quickly speakers recognize borrowed words reduces a model to the equation below, where $x$ is a scaled response score.\n\n$(x - 3)(2x + 1) = x + 7$",
+  "choices": [
+   "$-5$",
+   "$-3$",
+   "$\\frac{5}{2}$",
+   "$3$"
+  ],
+  "answer": "D",
+  "explanation": "Expand the left side to get $2x^2 - 5x - 3$. Then move everything to one side: $2x^2 - 5x - 3 - x - 7 = 0$, which is $2x^2 - 6x - 10 = 0$. For a quadratic, the sum of the solutions is $-\\frac{b}{a} = -\\frac{-6}{2} = 3$. You don't need to find the roots themselves.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $\\frac{c}{a} = \\frac{-10}{2} = -5$. That is the product of the solutions, but the question asks for their sum."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $+\\frac{b}{a}$ in place of $-\\frac{b}{a}$. With $b = -6$ and $a = 2$, the sum is $-\\frac{-6}{2} = 3$, not $-3$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You read $b$ and $a$ from the expanded left side, $2x^2 - 5x - 3$, before moving $x + 7$ across. The $-x$ changes $b$ from $-5$ to $-6$, so you have to combine the terms first."
+   }
+  },
+  "id": "orig-sum-or-structu-M-bd6abd",
+  "skill_cd": "P.B.",
+  "subtype": "sum-or-structure-of-solutions",
+  "subtype_name": "Sum of the solutions and unknown-coefficient roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sum-or-structu-M-bd6abd",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the sum of the solutions to the given equation?",
+  "stimulus": "A nutrition scientist modeling how a vitamin is absorbed at different doses arrives at the equation below.\n\n$(x - 4)(x^2 - 5) = 3(x - 4)$",
+  "choices": [
+   "$0$",
+   "$4$",
+   "$4 + 2\\sqrt{2}$",
+   "$12$"
+  ],
+  "answer": "B",
+  "explanation": "Don't divide by $x - 4$. Move everything to one side and factor it out: $(x - 4)(x^2 - 5) - 3(x - 4) = (x - 4)(x^2 - 8) = 0$. That gives $x = 4$, $x = 2\\sqrt{2}$ and $x = -2\\sqrt{2}$. The two radical roots cancel when you add them, so the sum is $4$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided both sides by $x - 4$ and lost the solution $x = 4$. Only $\\pm 2\\sqrt{2}$ were left, and they add to $0$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You kept $x = 4$ and $x = 2\\sqrt{2}$ but dropped $x = -2\\sqrt{2}$. Since $x^2 = 8$ has two solutions, both of them belong in the sum."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated $x^2 = 8$ as if it gave $x = 8$ and added $4 + 8$. You have to take the square root, which gives $\\pm 2\\sqrt{2}$."
+   }
+  },
+  "id": "orig-sum-or-structu-M-e73880",
+  "skill_cd": "P.B.",
+  "subtype": "sum-or-structure-of-solutions",
+  "subtype_name": "Sum of the solutions and unknown-coefficient roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sum-or-structu-M-e73880",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given equation, $k$ is a constant. If the sum of the solutions to the equation is $5$, what is the value of $k$?",
+  "stimulus": "A paleobotanist fitting a growth curve to fossil leaf widths uses the equation below.\n\n$3x^2 - 7 = kx + 2x$",
+  "choices": [
+   "$-17$",
+   "$13$",
+   "$15$",
+   "$17$"
+  ],
+  "answer": "B",
+  "explanation": "Move everything to one side: $3x^2 - (k + 2)x - 7 = 0$. Here $a = 3$ and $b = -(k + 2)$, so the sum of the solutions is $-\\frac{b}{a} = \\frac{k + 2}{3}$. Setting $\\frac{k + 2}{3} = 5$ gives $k + 2 = 15$, so $k = 13$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $+\\frac{b}{a}$ and set $-\\frac{k + 2}{3} = 5$, which gives $k = -17$. The sum of the solutions is $-\\frac{b}{a}$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "$15$ is the value of $k + 2$, the whole coefficient of $x$. You still need to subtract the $2$ that came from the $2x$ term."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You made a sign error when you moved $2x$ across, which gave $k - 2 = 15$. Both $kx$ and $2x$ move to the left with the same sign, so the coefficient is $-(k + 2)$."
+   }
+  },
+  "id": "orig-sum-or-structu-M-aa7178",
+  "skill_cd": "P.B.",
+  "subtype": "sum-or-structure-of-solutions",
+  "subtype_name": "Sum of the solutions and unknown-coefficient roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sum-or-structu-M-aa7178",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the sum of the solutions to the equation",
+    "sum of the solutions to the equation is",
+    "of the solutions to the equation is __var__",
+    "the solutions to the equation is __var__ what",
+    "solutions to the equation is __var__ what is",
+    "to the equation is __var__ what is the",
+    "the equation is __var__ what is the value",
+    "equation is __var__ what is the value of"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "How much greater is the sum of the solutions to equation A than the sum of the solutions to equation B?",
+  "stimulus": "An ornithology student modeling the dive paths of two kestrels writes the equations below.\n\nA: $x^2 - 9x + 14 = 0$\n\nB: $2x^2 - 6x - 5 = 0$",
+  "choices": [
+   "$-6$",
+   "$6$",
+   "$9$",
+   "$12$"
+  ],
+  "answer": "B",
+  "explanation": "For a quadratic $ax^2 + bx + c = 0$, the sum of the solutions is $-\\frac{b}{a}$. In equation A, the sum is $-\\frac{-9}{1} = 9$. In equation B, the sum is $-\\frac{-6}{2} = 3$. The sum for A is $9 - 3 = 6$ greater than the sum for B.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You subtracted in the wrong order and found B's sum minus A's sum, $3 - 9 = -6$. The question asks how much greater A's sum is than B's."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the sum of the solutions to equation A, $9$, and stopped there. The question asks for the gap between the two sums."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $+\\frac{b}{a}$ for equation B, which gave a sum of $-3$ instead of $3$, so you got $9 - (-3) = 12$. The sum of the roots is $-\\frac{b}{a}$."
+   }
+  },
+  "id": "orig-sum-or-structu-M-c15918",
+  "skill_cd": "P.B.",
+  "subtype": "sum-or-structure-of-solutions",
+  "subtype_name": "Sum of the solutions and unknown-coefficient roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sum-or-structu-M-c15918",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How much greater is the sum of the solutions to equation 1 than the sum of the solutions to equation 2?",
+  "stimulus": "A materials scientist comparing the strain responses of two alloy samples writes the equations below.\n\nEquation 1: $x(x - 4) = 5(x - 4)$\n\nEquation 2: $x^2 - 3x - 10 = 0$",
+  "choices": [
+   "$-6$",
+   "$2$",
+   "$6$",
+   "$9$"
+  ],
+  "answer": "C",
+  "explanation": "Move everything in equation 1 to one side and factor out the common factor: $x(x - 4) - 5(x - 4) = 0$, so $(x - 4)(x - 5) = 0$. The solutions are $4$ and $5$, which add to $9$. In equation 2, the sum of the solutions is $-\\frac{-3}{1} = 3$. The difference is $9 - 3 = 6$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You subtracted equation 1's sum from equation 2's sum, $3 - 9 = -6$. The question asks how much greater equation 1's sum is."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided both sides of equation 1 by $x - 4$, which threw away the solution $x = 4$ and left only $x = 5$. That gave $5 - 3 = 2$. Don't divide by a factor that contains $x$. Factor it out instead."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$9$ is the sum of the solutions to equation 1 by itself. You still need to subtract equation 2's sum."
+   }
+  },
+  "id": "orig-sum-or-structu-M-60a59c",
+  "skill_cd": "P.B.",
+  "subtype": "sum-or-structure-of-solutions",
+  "subtype_name": "Sum of the solutions and unknown-coefficient roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sum-or-structu-M-60a59c",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How much greater is the sum of the solutions to equation A than the sum of the solutions to equation B?",
+  "stimulus": "An immunologist modeling antibody levels in two trial groups writes the equations below.\n\nA: $x^3 - 6x^2 - 7x + 42 = 0$\n\nB: $3x^2 + 15x - 8 = 0$",
+  "choices": [
+   "$-11$",
+   "$1$",
+   "$6$",
+   "$11$"
+  ],
+  "answer": "D",
+  "explanation": "Factor equation A by grouping: $x^2(x - 6) - 7(x - 6) = (x^2 - 7)(x - 6) = 0$. The solutions are $\\sqrt{7}$, $-\\sqrt{7}$ and $6$. The two root terms cancel, so the sum is $6$. In equation B, the sum of the solutions is $-\\frac{15}{3} = -5$. The difference is $6 - (-5) = 11$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found B's sum minus A's sum, $-5 - 6 = -11$. The question asks how much greater A's sum is than B's."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used $+\\frac{b}{a}$ for equation B, which gave a sum of $5$ instead of $-5$, so you got $6 - 5 = 1$. The sum of the roots is $-\\frac{b}{a}$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$6$ is the sum of the solutions to equation A alone. You didn't subtract the sum for equation B."
+   }
+  },
+  "id": "orig-sum-or-structu-M-6c66bb",
+  "skill_cd": "P.B.",
+  "subtype": "sum-or-structure-of-solutions",
+  "subtype_name": "Sum of the solutions and unknown-coefficient roots",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-sum-or-structu-M-6c66bb",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

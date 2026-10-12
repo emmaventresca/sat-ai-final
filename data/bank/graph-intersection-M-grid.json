@@ -383,5 +383,730 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "The graph shows the height $h$, in centimeters, of the seedlings in Plot A $d$ days after planting. The seedlings in Plot B are modeled by $h = d + 20$. If $(d, h)$ is the solution to the system made up of the graphed line and Plot B's equation, what is the value of $d$?",
+  "stimulus": "An agronomist compares two plots of sorghum seedlings. Plot A was planted in tilled soil, and Plot B was planted in untilled soil a week earlier.",
+  "figure": {
+   "type": "line",
+   "caption": "Plot A Seedling Height",
+   "x_label": "Days after planting, d",
+   "y_label": "Height (cm)",
+   "points": [
+    [
+     0,
+     4
+    ],
+    [
+     2,
+     10
+    ],
+    [
+     4,
+     16
+    ],
+    [
+     6,
+     22
+    ],
+    [
+     8,
+     28
+    ],
+    [
+     10,
+     34
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 12,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 40,
+   "y_step": 2,
+   "alt": "A straight increasing line passing through (0, 4), (2, 10), (4, 16), (6, 22), (8, 28), and (10, 34)."
+  },
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "Only one line is drawn, so first read its equation off the graph. It crosses the vertical axis at 4 and rises 6 cm every 2 days, so its slope is 3 and the line is $h = 3d + 4$. The solution is the point on both lines, so set them equal: $3d + 4 = d + 20$. Subtract $d$ and 4 from both sides to get $2d = 16$, so $d = 8$. Check: $3(8) + 4 = 28$ and $8 + 20 = 28$.",
+  "common_errors": [
+   {
+    "value": "28",
+    "misconception": "wrong-target-quantity",
+    "why": "Solved correctly but entered the shared height $h$ instead of the day $d$, which swaps the coordinates of the solution."
+   },
+   {
+    "value": "4",
+    "misconception": "graph-feature-mismatch",
+    "why": "Read the graphed line's vertical intercept. That point lies on only one of the two lines."
+   },
+   {
+    "value": "20",
+    "misconception": "misread-given",
+    "why": "Took the constant in Plot B's equation as the answer."
+   },
+   {
+    "value": "12",
+    "misconception": "algebra-manipulation",
+    "why": "Added 4 to 20 instead of subtracting it: $2d = 24$, so $d = 12$."
+   }
+  ],
+  "id": "orig-graph-intersec-M-a62421",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-intersec-M-a62421",
+   "structure": [],
+   "solver_answer": 8,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graph shows the number of sea urchins $y$ per square meter on Reef P, $t$ months after sea otters returned. On Reef Q, $y = 2t + 6$. If $(t, y)$ is the solution to the system of the graphed line and Reef Q's equation, what is the value of $y$?",
+  "stimulus": "Marine biologists are tracking sea urchins on two kelp reefs. On Reef P, otters are eating the urchins. On Reef Q, which has no otters, the urchins are spreading.",
+  "figure": {
+   "type": "line",
+   "caption": "Sea Urchin Density on Reef P",
+   "x_label": "Months after otters returned, t",
+   "y_label": "Urchins per square meter",
+   "points": [
+    [
+     0,
+     60
+    ],
+    [
+     3,
+     48
+    ],
+    [
+     6,
+     36
+    ],
+    [
+     9,
+     24
+    ],
+    [
+     12,
+     12
+    ],
+    [
+     15,
+     0
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 15,
+   "x_step": 3,
+   "y_min": 0,
+   "y_max": 72,
+   "y_step": 12,
+   "alt": "A straight decreasing line passing through (0, 60), (3, 48), (6, 36), (9, 24), (12, 12), and (15, 0)."
+  },
+  "keys": [
+   "24"
+  ],
+  "any_of": false,
+  "explanation": "First get the graphed line's equation. It starts at 60 and falls 12 urchins every 3 months, so its slope is $-4$ and the line is $y = 60 - 4t$. Set the two expressions equal: $60 - 4t = 2t + 6$. Then $54 = 6t$, so $t = 9$. The question asks for $y$: $y = 2(9) + 6 = 24$. Check: $60 - 4(9) = 24$.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "wrong-target-quantity",
+    "why": "Stopped at $t$ and entered the month instead of the urchin density the question asks for."
+   },
+   {
+    "value": "60",
+    "misconception": "graph-feature-mismatch",
+    "why": "Read Reef P's starting value, the line's vertical intercept, which is not on Reef Q's line."
+   },
+   {
+    "value": "6",
+    "misconception": "misread-given",
+    "why": "Took the constant in Reef Q's equation as the answer."
+   },
+   {
+    "value": "28",
+    "misconception": "algebra-manipulation",
+    "why": "Added 6 to 60 instead of subtracting it: $6t = 66$, so $t = 11$ and $y = 2(11) + 6 = 28$."
+   }
+  ],
+  "id": "orig-graph-intersec-M-8c1171",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-intersec-M-8c1171",
+   "structure": [],
+   "solver_answer": 24,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graph shows the number of activated T cells $y$, in thousands, in Culture A, $x$ hours after an antigen is added. Culture B is modeled by $y = 5x - 12$. If $(x, y)$ is the solution to the system made up of the graphed line and Culture B's equation, what is the value of $x$?",
+  "stimulus": "An immunology lab adds the same antigen to two T-cell cultures. Culture B starts with fewer activated cells but responds faster.",
+  "figure": {
+   "type": "line",
+   "caption": "Culture A Activated T Cells",
+   "x_label": "Hours after antigen, x",
+   "y_label": "Activated T cells (thousands)",
+   "points": [
+    [
+     0,
+     8
+    ],
+    [
+     4,
+     20
+    ],
+    [
+     8,
+     32
+    ],
+    [
+     12,
+     44
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 16,
+   "x_step": 4,
+   "y_min": 0,
+   "y_max": 56,
+   "y_step": 4,
+   "alt": "A straight increasing line passing through (0, 8), (4, 20), (8, 32), and (12, 44)."
+  },
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "Read the graphed line's equation first. It crosses the vertical axis at 8 and rises 12 thousand cells every 4 hours, so its slope is 3 and the line is $y = 3x + 8$. Set the two equal: $3x + 8 = 5x - 12$. Subtract $3x$ and add 12 to get $20 = 2x$, so $x = 10$. Check: $3(10) + 8 = 38$ and $5(10) - 12 = 38$.",
+  "common_errors": [
+   {
+    "value": "38",
+    "misconception": "wrong-target-quantity",
+    "why": "Entered the shared cell count $y$ instead of the time $x$, which swaps the coordinates."
+   },
+   {
+    "value": "8",
+    "misconception": "graph-feature-mismatch",
+    "why": "Read Culture A's vertical intercept, a point on only the graphed line."
+   },
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "Combined $-12$ and $8$ as $-4$ instead of $-20$: $-2x = -4$, so $x = 2$."
+   }
+  ],
+  "id": "orig-graph-intersec-M-338e70",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-intersec-M-338e70",
+   "structure": [],
+   "solver_answer": 10,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graph shows the number of new flu cases $y$ reported per day in County A, $x$ weeks after a vaccine drive began. In County B, $y = 3x + 42$. If $(x, y)$ is the solution to the system of the graphed line and County B's equation, what is the value of $y$?",
+  "stimulus": "A public health office compares daily flu reports from two counties. County A held a vaccine drive, and County B did not.",
+  "figure": {
+   "type": "line",
+   "caption": "County A Daily Flu Cases",
+   "x_label": "Weeks after drive began, x",
+   "y_label": "New cases per day",
+   "points": [
+    [
+     0,
+     90
+    ],
+    [
+     2,
+     80
+    ],
+    [
+     4,
+     70
+    ],
+    [
+     6,
+     60
+    ],
+    [
+     8,
+     50
+    ],
+    [
+     10,
+     40
+    ],
+    [
+     12,
+     30
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 14,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 100,
+   "y_step": 10,
+   "alt": "A straight decreasing line passing through (0, 90), (2, 80), (4, 70), (6, 60), (8, 50), (10, 40), and (12, 30)."
+  },
+  "keys": [
+   "60"
+  ],
+  "any_of": false,
+  "explanation": "Find the graphed line's equation. It starts at 90 and falls 10 cases every 2 weeks, so its slope is $-5$ and the line is $y = 90 - 5x$. Set the two equal: $90 - 5x = 3x + 42$. Then $48 = 8x$, so $x = 6$. The question asks for $y$: $y = 3(6) + 42 = 60$. Check: $90 - 5(6) = 60$.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Entered the week $x$ instead of the number of cases $y$."
+   },
+   {
+    "value": "90",
+    "misconception": "graph-feature-mismatch",
+    "why": "Read County A's vertical intercept, which is not on County B's line."
+   },
+   {
+    "value": "42",
+    "misconception": "misread-given",
+    "why": "Took the constant in County B's equation as the answer."
+   }
+  ],
+  "id": "orig-graph-intersec-M-3a6559",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-intersec-M-3a6559",
+   "structure": [],
+   "solver_answer": 60,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graph shows the percent $y$ of fern spores among all the plant microfossils in a sediment core, at depth $d$ meters. For conifer pollen, $y = 64 - 2d$. If $(d, y)$ is the solution to the system of the graphed line and the conifer equation, what is $d$?",
+  "stimulus": "A paleobotanist counts plant microfossils in a lake-bed core. Fern spores become more common deeper in the core, and conifer pollen becomes less common.",
+  "figure": {
+   "type": "line",
+   "caption": "Fern Spores by Core Depth",
+   "x_label": "Depth, d (meters)",
+   "y_label": "Fern spores (% of microfossils)",
+   "points": [
+    [
+     0,
+     4
+    ],
+    [
+     2,
+     12
+    ],
+    [
+     4,
+     20
+    ],
+    [
+     6,
+     28
+    ],
+    [
+     8,
+     36
+    ],
+    [
+     10,
+     44
+    ],
+    [
+     12,
+     52
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 14,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 64,
+   "y_step": 4,
+   "alt": "A straight increasing line passing through (0, 4), (2, 12), (4, 20), (6, 28), (8, 36), (10, 44), and (12, 52)."
+  },
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "Read the fern line's equation from the graph. It crosses the vertical axis at 4 and rises 8 percentage points every 2 meters, so its slope is 4 and the line is $y = 4d + 4$. Set the two equal: $4d + 4 = 64 - 2d$. Add $2d$ and subtract 4 to get $6d = 60$, so $d = 10$. Check: $4(10) + 4 = 44$ and $64 - 2(10) = 44$.",
+  "common_errors": [
+   {
+    "value": "44",
+    "misconception": "wrong-target-quantity",
+    "why": "Entered the shared percent $y$ instead of the depth $d$, which swaps the coordinates."
+   },
+   {
+    "value": "4",
+    "misconception": "graph-feature-mismatch",
+    "why": "Read the fern line's vertical intercept, a point on only one line."
+   },
+   {
+    "value": "64",
+    "misconception": "misread-given",
+    "why": "Took the constant in the conifer equation as the answer."
+   },
+   {
+    "value": "30",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted $2d$ from both sides instead of adding it: $2d = 60$, so $d = 30$."
+   }
+  ],
+  "id": "orig-graph-intersec-M-26ef23",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-intersec-M-26ef23",
+   "structure": [],
+   "solver_answer": 10,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graph shows the distance $y$, in thousands of kilometers, between Probe A and a moon $t$ hours after tracking began. Probe B's distance is $y = 120 - 10t$. If $(t, y)$ is the solution to the system of the graphed line and Probe B's equation, what is $t + y$?",
+  "stimulus": "Astronomers are tracking two probes near the same moon. Probe A is drifting away from it, and Probe B is closing in for a landing.",
+  "figure": {
+   "type": "line",
+   "caption": "Probe A Distance from Moon",
+   "x_label": "Hours after tracking began, t",
+   "y_label": "Distance (thousands of km)",
+   "points": [
+    [
+     0,
+     15
+    ],
+    [
+     2,
+     25
+    ],
+    [
+     4,
+     35
+    ],
+    [
+     6,
+     45
+    ],
+    [
+     8,
+     55
+    ],
+    [
+     10,
+     65
+    ],
+    [
+     12,
+     75
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 14,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 80,
+   "y_step": 5,
+   "alt": "A straight increasing line passing through (0, 15), (2, 25), (4, 35), (6, 45), (8, 55), (10, 65), and (12, 75)."
+  },
+  "keys": [
+   "57"
+  ],
+  "any_of": false,
+  "explanation": "Read Probe A's equation from the graph. It starts at 15 and rises 10 thousand km every 2 hours, so its slope is 5 and the line is $y = 5t + 15$. Set the two equal: $5t + 15 = 120 - 10t$. Then $15t = 105$, so $t = 7$, and $y = 5(7) + 15 = 50$. Check: $120 - 10(7) = 50$. The question asks for the sum: $7 + 50 = 57$.",
+  "common_errors": [
+   {
+    "value": "7",
+    "misconception": "intermediate-step",
+    "why": "Found $t$ and stopped before working out $y$ and adding."
+   },
+   {
+    "value": "50",
+    "misconception": "intermediate-step",
+    "why": "Found the solution but entered $y$ alone instead of $t + y$."
+   },
+   {
+    "value": "15",
+    "misconception": "graph-feature-mismatch",
+    "why": "Used Probe A's vertical intercept $(0, 15)$, a point on only the graphed line, and added its coordinates."
+   },
+   {
+    "value": "120",
+    "misconception": "misread-given",
+    "why": "Used Probe B's starting point $(0, 120)$ from its equation as the solution, giving $0 + 120$."
+   }
+  ],
+  "id": "orig-graph-intersec-M-de0560",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-intersec-M-de0560",
+   "structure": [],
+   "solver_answer": 57,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graph shows Rosa's weekly pay $y$, in dollars, at Job A for $x$ hours of work, which includes a fixed stipend. At Job B, $y = 17x$. If $(x, y)$ is the solution to the system of the graphed line and Job B's equation, what is the value of $x$?",
+  "stimulus": "A labor economist studies how part-time workers choose between two jobs. Job A pays an hourly wage plus a fixed weekly stipend. Job B pays a higher hourly wage and no stipend.",
+  "figure": {
+   "type": "line",
+   "caption": "Job A Weekly Pay",
+   "x_label": "Hours worked, x",
+   "y_label": "Weekly pay (dollars)",
+   "points": [
+    [
+     0,
+     60
+    ],
+    [
+     5,
+     120
+    ],
+    [
+     10,
+     180
+    ],
+    [
+     15,
+     240
+    ],
+    [
+     20,
+     300
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 20,
+   "x_step": 5,
+   "y_min": 0,
+   "y_max": 360,
+   "y_step": 60,
+   "alt": "A straight increasing line passing through (0, 60), (5, 120), (10, 180), (15, 240), and (20, 300)."
+  },
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "Read Job A's equation from the graph. It crosses the vertical axis at 60 and rises \\$60 every 5 hours, so its slope is 12 and the line is $y = 12x + 60$. Set the two equal: $12x + 60 = 17x$. Subtract $12x$ to get $60 = 5x$, so $x = 12$. Check: $12(12) + 60 = 204$ and $17(12) = 204$.",
+  "common_errors": [
+   {
+    "value": "204",
+    "misconception": "wrong-target-quantity",
+    "why": "Entered the shared weekly pay $y$ instead of the hours $x$."
+   },
+   {
+    "value": "60",
+    "misconception": "graph-feature-mismatch",
+    "why": "Read Job A's vertical intercept, the stipend, which is a point on only one line."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Stopped at $5x = 60$ and took the coefficient 5 as the answer instead of dividing."
+   }
+  ],
+  "id": "orig-graph-intersec-M-1c4ad9",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-intersec-M-1c4ad9",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graph shows the water level $y$, in meters, in Reservoir P, $x$ hours after a spillway gate opened. Reservoir Q's level is $y = x + 8$. If $(x, y)$ is the solution to the system of the graphed line and Reservoir Q's equation, what is the value of $y$?",
+  "stimulus": "During a dam inspection, civil engineers lower Reservoir P through a spillway into the basin of Reservoir Q, so Q fills as P drains.",
+  "figure": {
+   "type": "line",
+   "caption": "Reservoir P Water Level",
+   "x_label": "Hours after gate opened, x",
+   "y_label": "Water level (m)",
+   "points": [
+    [
+     0,
+     36
+    ],
+    [
+     2,
+     30
+    ],
+    [
+     4,
+     24
+    ],
+    [
+     6,
+     18
+    ],
+    [
+     8,
+     12
+    ],
+    [
+     10,
+     6
+    ],
+    [
+     12,
+     0
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 12,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 42,
+   "y_step": 6,
+   "alt": "A straight decreasing line passing through (0, 36), (2, 30), (4, 24), (6, 18), (8, 12), (10, 6), and (12, 0)."
+  },
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "Find Reservoir P's equation from the graph. It starts at 36 m and falls 6 m every 2 hours, so its slope is $-3$ and the line is $y = 36 - 3x$. Set the two equal: $36 - 3x = x + 8$. Then $28 = 4x$, so $x = 7$. The question asks for $y$: $y = 7 + 8 = 15$. Check: $36 - 3(7) = 15$.",
+  "common_errors": [
+   {
+    "value": "7",
+    "misconception": "wrong-target-quantity",
+    "why": "Entered the time $x$ instead of the water level $y$."
+   },
+   {
+    "value": "36",
+    "misconception": "graph-feature-mismatch",
+    "why": "Read Reservoir P's starting level, its vertical intercept, which is not on Q's line."
+   },
+   {
+    "value": "8",
+    "misconception": "misread-given",
+    "why": "Took the constant in Reservoir Q's equation as the answer."
+   },
+   {
+    "value": "22",
+    "misconception": "algebra-manipulation",
+    "why": "Combined $-3x$ and $-x$ as $-2x$: $2x = 28$, so $x = 14$ and $y = 14 + 8 = 22$."
+   }
+  ],
+  "id": "orig-graph-intersec-M-b2addf",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-intersec-M-b2addf",
+   "structure": [],
+   "solver_answer": 15,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

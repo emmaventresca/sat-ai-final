@@ -243,5 +243,53 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the greatest number of full days the container can supply this participant?",
+  "stimulus": "A fiber supplement powder contains 5 grams of fiber in every 12 grams of powder. A participant in a nutrition study must get at least 20 grams of fiber from the powder each day. One container holds 750 grams of the powder.",
+  "choices": [
+   "15",
+   "16",
+   "37",
+   "62"
+  ],
+  "answer": "A",
+  "explanation": "First find how much fiber the container holds: $750 \\text{ g powder} \\times \\frac{5 \\text{ g fiber}}{12 \\text{ g powder}} = 312.5$ grams of fiber. Then divide by the daily amount: $312.5 \\text{ g fiber} \\div \\frac{20 \\text{ g fiber}}{1 \\text{ day}} = 15.625$ days. A day only counts if the participant gets at least 20 grams, so you round down. The container covers 15 full days.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You rounded 15.625 up to 16. On day 16 only 12.5 grams of fiber are left, which is less than the required 20 grams, so that day is not fully supplied. With 'at least' and 'full days', you round down."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You divided 750 grams of powder by 20 grams of fiber per day, as if the powder were all fiber. Check the units: grams of powder divided by grams of fiber per day doesn't give days. Convert powder to fiber first."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found how many 12-gram portions of powder are in the container ($750 \\div 12 = 62.5$) and stopped there. That's a count of portions, not days. You still need to convert those portions to fiber and divide by 20 grams per day."
+   }
+  },
+  "id": "orig-constant-rate--H-a230fb",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--H-a230fb",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

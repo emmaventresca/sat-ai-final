@@ -211,5 +211,656 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "Which ordered pair $(x, y)$ is a solution to the given system of equations?",
+  "stimulus": "$y = 2x^2 - 3x + 1$\n$y = 3x + 1$",
+  "choices": [
+   "$(1, 0)$",
+   "$(-3, -8)$",
+   "$(3, 10)$",
+   "$(1, 4)$"
+  ],
+  "answer": "C",
+  "explanation": "Substitute $3x + 1$ for $y$ in the first equation: $2x^2 - 3x + 1 = 3x + 1$. Subtracting $3x + 1$ from both sides gives $2x^2 - 6x = 0$. Factor out $2x$ to get $2x(x - 3) = 0$, so $x = 0$ or $x = 3$. Don't divide by $x$, because that loses $x = 0$. Put each value into the simpler equation, $y = 3x + 1$. When $x = 0$, $y = 1$, and when $x = 3$, $y = 10$. Only $(3, 10)$ is among the choices. To check it, $2(9) - 9 + 1 = 10$ and $3(3) + 1 = 10$, so it satisfies both equations.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "$(1, 0)$ lies on the parabola, because $2 - 3 + 1 = 0$. It is not on the line, because $3(1) + 1 = 4$, not $0$. A solution to a system has to satisfy both equations, and you checked only the first."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You made a sign error when you moved $3x$ across the equals sign and got $2x^2 + 6x = 0$, which gives $x = -3$. You then found $y$ from the line. If you check the parabola, $2(9) + 9 + 1 = 28$, not $-8$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "$(1, 4)$ is on the line, because $3(1) + 1 = 4$. It is not on the parabola, because $2(1) - 3(1) + 1 = 0$. You tested only one of the two equations."
+   }
+  },
+  "id": "orig-system-substit-M-b29f95",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-M-b29f95",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ __var__ which ordered pair __var__ is a",
+    "__var__ which ordered pair __var__ is a solution"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $(x, y)$ is a solution to the given system of equations and $x \\neq 0$, which expression represents $x$ in terms of $k$?",
+  "stimulus": "A historian puts a scan of an 18th-century embroidery sample on a coordinate grid. One curved stitch and one straight guide thread are modeled by the system below, where $k$ is a constant and $k \\neq 3$.\n\n$y = x^2 + kx$\n$y = 3x$",
+  "choices": [
+   "$3 - k$",
+   "$k - 3$",
+   "$9 - 3k$",
+   "$3 + k$"
+  ],
+  "answer": "A",
+  "explanation": "Substitute $3x$ for $y$ in the first equation: $3x = x^2 + kx$. Move everything to one side to get $x^2 + kx - 3x = 0$, then factor out $x$ to get $x(x + k - 3) = 0$. Since $x \\neq 0$, you have $x + k - 3 = 0$, so $x = 3 - k$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You moved the terms to the wrong side and flipped a sign. You solved $x + 3 - k = 0$ when you should have solved $x + k - 3 = 0$, which gave you $k - 3$ when the answer is $3 - k$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the $y$-coordinate of the solution, $3(3 - k)$. The question asks for $x$, so you went one step too far."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $3x$ to both sides when you should have subtracted it. That turned $x^2 + kx - 3x = 0$ into $x^2 + kx + 3x = 0$, and you then dropped the sign on the solution."
+   }
+  },
+  "id": "orig-system-substit-M-05f583",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-M-05f583",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "where __var__ is a constant and __var__ __var__",
+    "__var__ is a constant and __var__ __var__ __var__"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $(x, y)$ is a solution to the given system of equations and $x \\neq 0$, which expression represents $y$ in terms of $a$?",
+  "stimulus": "A materials scientist models the strain response of a polymer sample and a straight reference load line with the system below, where $a$ is a positive constant.\n\n$y = x^2 - 4x$\n$y = ax$",
+  "choices": [
+   "$a^2 + 4a$",
+   "$a + 4$",
+   "$a^2 - 4a$",
+   "$a^2 + 8a + 16$"
+  ],
+  "answer": "A",
+  "explanation": "Substitute $ax$ for $y$: $ax = x^2 - 4x$. This gives $x^2 - (4 + a)x = 0$, which factors to $x(x - (a + 4)) = 0$. Since $x \\neq 0$, $x = a + 4$. Put that into the simpler equation $y = ax$ to get $y = a(a + 4) = a^2 + 4a$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the $x$-coordinate, $a + 4$. You stopped after solving for $x$ and never substituted it back in to find $y$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost a sign when you collected the $x$ terms and got $x = a - 4$ when it should be $a + 4$. Your $y$ is then $a(a - 4)$, which is also wrong."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You found $x = a + 4$ correctly but then put it into $y = x^2$, which leaves out the $-4x$ term of the curve. That equation isn't part of the given system."
+   }
+  },
+  "id": "orig-system-substit-M-026184",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-M-026184",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "In the given system of equations, $m$ is a positive constant. Which ordered pair $(x, y)$ is a solution to the system with $x > 0$?",
+  "stimulus": "An engineer models the cross-section of a drainage channel and a straight survey line with the system below.\n\n$y = x(x - 2m)$\n$y = mx$",
+  "choices": [
+   "$(m, m^2)$",
+   "$(3m, 3m^2)$",
+   "$(3m, 9m^2)$",
+   "$(0, 0)$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute $mx$ for $y$: $mx = x^2 - 2mx$, so $x^2 - 3mx = 0$, which factors to $x(x - 3m) = 0$. The solution with $x > 0$ has $x = 3m$. Then $y = m(3m) = 3m^2$. As a check, $3m(3m - 2m) = 3m^2$, so $(3m, 3m^2)$ satisfies both equations.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "This pair satisfies only the line, since $m \\cdot m = m^2$. Put it into the curve and you get $m(m - 2m) = -m^2$, not $m^2$. A solution to a system has to satisfy both equations."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $x = 3m$ but then worked out $y$ by squaring $x$ and dropping the $-2mx$ part of the curve. This pair doesn't satisfy either equation."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "$(0, 0)$ does satisfy both equations, and it's the solution you get from the factor $x = 0$. The question asks for the solution with $x > 0$, so it doesn't fit."
+   }
+  },
+  "id": "orig-system-substit-M-2a8ef9",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-M-2a8ef9",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "given system of equations __var__ is a positive",
+    "system of equations __var__ is a positive constant"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $(x, y)$ is a solution to the given system of equations, which of the following must be true?",
+  "stimulus": "A printmaker compares two ways of pricing a run of $x$ hand-pulled linocut plates, where $y$ is the cost in dollars. The two pricing rules give the same cost exactly when this system holds:\n\n$y = x^2 - 4x + 7$\n$y = 2x - 1$",
+  "choices": [
+   "$x = 2$",
+   "$y > x$",
+   "$y < x$",
+   "$x < 0$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute $2x - 1$ for $y$ in the first equation: $x^2 - 4x + 7 = 2x - 1$, so $x^2 - 6x + 8 = 0$, which factors as $(x - 2)(x - 4) = 0$. So $x = 2$ or $x = 4$. Putting each into $y = 2x - 1$ gives the solutions $(2, 3)$ and $(4, 7)$. In both pairs the $y$-value is larger than the $x$-value ($3 > 2$ and $7 > 4$), so $y > x$ must be true.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You found one solution, $(2, 3)$, and stopped. The system also has the solution $(4, 7)$, so $x$ does not have to equal 2."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the coordinates and read the solutions as $(3, 2)$ and $(7, 4)$. The first coordinate is $x$, so the solutions are $(2, 3)$ and $(4, 7)$, and in both $y$ is larger."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You made a sign error when you factored $x^2 - 6x + 8$ and got $(x + 2)(x + 4)$, which gives $x = -2$ and $x = -4$. Expanding $(x - 2)(x - 4)$ shows that both roots are positive."
+   }
+  },
+  "id": "orig-system-substit-M-42b179",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-M-42b179",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "A",
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $(x, y)$ is a solution to the given system of equations, which of the following must be true?",
+  "stimulus": "A public health analyst models clinic visits during a flu season. One model gives $y = x^2 + 3x$ and another gives $y = 5x$, where $x$ is the number of weeks after a vaccination drive and $y$ is visits in hundreds. The two models agree at the solutions of this system.",
+  "choices": [
+   "$x = 2$",
+   "$y > x$",
+   "$x = -2$",
+   "$y \\le 10$"
+  ],
+  "answer": "D",
+  "explanation": "Set the two expressions for $y$ equal: $x^2 + 3x = 5x$, so $x^2 - 2x = 0$. Factor out $x$ to get $x(x - 2) = 0$, so $x = 0$ or $x = 2$. Then $y = 5x$ gives the solutions $(0, 0)$ and $(2, 10)$. The $y$-value is 0 or 10, so $y \\le 10$ must be true.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided both sides of $x^2 - 2x = 0$ by $x$ and lost the solution $x = 0$. If you factor out $x$ instead, you get both $x = 0$ and $x = 2$, so $x$ does not have to be 2."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "This is true for $(2, 10)$ but not for $(0, 0)$, where $y$ equals $x$. A must-be-true statement has to hold for every solution."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You moved $5x$ to the wrong side with the wrong sign and got $x^2 = -2x$, which gives $x = -2$. Subtracting $5x$ from both sides gives $x^2 - 2x = 0$, and its roots are 0 and 2."
+   }
+  },
+  "id": "orig-system-substit-M-7a253e",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-M-7a253e",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "A",
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $(x, y)$ is a solution to the given system of equations, which of the following must be true?",
+  "stimulus": "An ecologist compares two models of a wetland's dragonfly population, where $y$ is a population index and $x$ is a temperature offset in degrees Celsius. The models give the same value at the solutions of this system:\n\n$y = x^2 - 5$\n$x + y = 7$",
+  "choices": [
+   "$y > 0$",
+   "$x > 0$",
+   "$y > 5$",
+   "$y < x$"
+  ],
+  "answer": "A",
+  "explanation": "Substitute $x^2 - 5$ for $y$ in the second equation: $x + x^2 - 5 = 7$, so $x^2 + x - 12 = 0$, which factors as $(x + 4)(x - 3) = 0$. So $x = 3$ or $x = -4$. Then $y = 7 - x$ gives the solutions $(3, 4)$ and $(-4, 11)$. Both $y$-values are positive, so $y > 0$ must be true.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "This holds for $(3, 4)$ but not for $(-4, 11)$. Check every solution, not just the first one you find."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You moved the $-5$ across the equals sign without changing its sign and got $x^2 + x - 2 = 0$. That equation gives the wrong roots, and their $y$-values are both above 5. The correct solution $(3, 4)$ has $y = 4$, so $y > 5$ is not always true."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You reversed the coordinates and read the solutions as $(4, 3)$ and $(11, -4)$. The $x$-values are 3 and $-4$, and in both solutions $y$ is larger than $x$."
+   }
+  },
+  "id": "orig-system-substit-M-50c7cb",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-M-50c7cb",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The system has two solutions. How much greater is the $y$-coordinate of one solution than the $y$-coordinate of the other?",
+  "stimulus": "A civil engineer models the height of a sagging support cable and the height of a straight access ramp, both in meters, where $x$ is the horizontal distance in meters from a tower.\n\n$y = x^2 - 4x + 9$\n$y = 2x + 1$",
+  "choices": [
+   "$2$",
+   "$4$",
+   "$6$",
+   "$9$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute $2x + 1$ for $y$ in the first equation: $2x + 1 = x^2 - 4x + 9$, so $x^2 - 6x + 8 = 0$, which factors as $(x - 2)(x - 4) = 0$. So $x = 2$ or $x = 4$. Put each value into the line: $y = 2(2) + 1 = 5$ and $y = 2(4) + 1 = 9$. The gap between the $y$-coordinates is $9 - 5 = 4$ meters.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the difference between the $x$-coordinates, $4 - 2$, but the question asks about the $y$-coordinates."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at the coefficient in $x^2 - 6x + 8 = 0$. The number 6 is the sum of the two $x$-values, not the gap between the heights."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You reported the larger $y$-coordinate by itself instead of how much greater it is than the smaller one."
+   }
+  },
+  "id": "orig-system-substit-M-5db8ed",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-M-5db8ed",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The system has two solutions. How much greater is the $y$-coordinate of one solution than the $y$-coordinate of the other?",
+  "stimulus": "A textile historian models the thread tension along a reconstructed 18th-century loom. In the model, $x$ is the position along the warp and $y$ is the tension in newtons.\n\n$y = x^2 - 3x + 5$\n$y = 2x + 5$",
+  "choices": [
+   "$5$",
+   "$10$",
+   "$15$",
+   "$20$"
+  ],
+  "answer": "B",
+  "explanation": "Set the right sides equal: $x^2 - 3x + 5 = 2x + 5$, so $x^2 - 5x = 0$. Factor out $x$ to get $x(x - 5) = 0$, so $x = 0$ or $x = 5$. Put each value into the line: $y = 5$ when $x = 0$ and $y = 15$ when $x = 5$. The gap is $15 - 5 = 10$ newtons.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the difference between the $x$-coordinates, $5 - 0$, instead of the difference between the $y$-coordinates."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided both sides of $x^2 = 5x$ by $x$, which threw away the solution $x = 0$. That left one point, and you reported its $y$-value."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the two $y$-coordinates, $5 + 15$, when the question asks how much greater one is than the other."
+   }
+  },
+  "id": "orig-system-substit-M-eaa552",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-M-eaa552",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The system has two solutions. How much greater is the $x$-coordinate of one solution than the $x$-coordinate of the other?",
+  "stimulus": "An immunologist models a patient's antibody level, $y$, in arbitrary units, $x$ days after a booster dose. The curve is the measured response and the line is a rising protection threshold.\n\n$y = -x^2 + 10x$\n$y = 2x + 12$",
+  "choices": [
+   "$2$",
+   "$4$",
+   "$6$",
+   "$8$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute: $-x^2 + 10x = 2x + 12$, so $x^2 - 8x + 12 = 0$, which factors as $(x - 2)(x - 6) = 0$. So $x = 2$ or $x = 6$. The gap between the $x$-coordinates is $6 - 2 = 4$ days.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You solved the quadratic and reported the smaller root, $x = 2$, instead of finding how far apart the two roots are."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You reported the larger $x$-coordinate by itself instead of how much greater it is than the smaller one."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the difference between the $y$-coordinates, $24 - 16$, but the question asks about the $x$-coordinates."
+   }
+  },
+  "id": "orig-system-substit-M-f04132",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-M-f04132",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The given system of equations has a solution $(x, y)$ with $x > 0$. Which of the following is the best interpretation of this solution in this context?",
+  "stimulus": "An archaeologist uses two models for the density of pottery fragments at a dig site. In both models, $x$ is the depth below the surface, in meters, and $y$ is the number of fragments per cubic meter.\n$y = x^2 + 2$\n$y = 3x + 6$",
+  "choices": [
+   "At a depth of 18 meters, both models predict 4 fragments per cubic meter.",
+   "At a depth of 4 meters, both models predict 16 fragments per cubic meter.",
+   "At a depth of 4 meters, both models predict 18 fragments per cubic meter.",
+   "At a depth of 1 meter, both models predict 9 fragments per cubic meter."
+  ],
+  "answer": "C",
+  "explanation": "Substitute $x^2 + 2$ for $y$ in the second equation: $x^2 + 2 = 3x + 6$, so $x^2 - 3x - 4 = 0$, which factors as $(x - 4)(x + 1) = 0$. Because $x > 0$, $x = 4$. Then $y = 3(4) + 6 = 18$, and the first equation agrees: $4^2 + 2 = 18$. Here $x$ is a depth in meters and $y$ is a density in fragments per cubic meter, so the two models agree at 4 meters deep, where both predict 18 fragments per cubic meter.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the right pair, $(4, 18)$, but swapped what the numbers mean. The 4 is the depth and the 18 is the density, not the other way round."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You worked out $x^2 = 16$ from the first model and stopped there. You still need to add 2, which gives 18 fragments per cubic meter."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "A sign slip in the factoring gave you $x = 1$, and you took $y$ from the line alone. $(1, 9)$ works in $y = 3x + 6$ but not in $y = x^2 + 2$, which gives 3. A solution has to work in both equations."
+   }
+  },
+  "id": "orig-system-substit-M-551a07",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-M-551a07",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the following is the best interpretation of this"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "The given system of equations has a solution $(x, y)$ with $x > 0$. Which of the following is the best interpretation of this solution in this context?",
+  "stimulus": "A linguist tracks two adults learning the same language. In both equations, $x$ is the number of weeks of study and $y$ is the number of vocabulary words the learner knows, in tens of words.\nLearner P: $y = 2x^2 - 5x + 20$\nLearner Q: $y = 3x + 30$",
+  "choices": [
+   "After 5 weeks of study, both learners know 450 words.",
+   "After 5 weeks of study, both learners know 45 words.",
+   "After 45 weeks of study, both learners know 50 words.",
+   "After 1 week of study, both learners know 330 words."
+  ],
+  "answer": "A",
+  "explanation": "Set the expressions equal: $2x^2 - 5x + 20 = 3x + 30$, so $2x^2 - 8x - 10 = 0$, or $x^2 - 4x - 5 = 0$. This factors as $(x - 5)(x + 1) = 0$, and since $x > 0$, $x = 5$. Then $y = 3(5) + 30 = 45$, and Learner P's equation agrees: $2(25) - 25 + 20 = 45$. Because $y$ counts tens of words, 45 means 450 words. After 5 weeks, both learners know 450 words.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You solved the system correctly but missed that $y$ is in tens of words. A value of 45 means 450 words, not 45."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the coordinates. You read 45 as the number of weeks and turned the 5 into 50 words, when 5 is the number of weeks and 45 is the vocabulary measure."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You read the root $x = -1$ as $x = 1$ and took $y$ from Learner Q's equation, which gives 33, or 330 words. Learner P's equation gives 17 at $x = 1$, so this pair works in only one equation and is not a solution."
+   }
+  },
+  "id": "orig-system-substit-M-acc1e1",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-M-acc1e1",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the following is the best interpretation of this"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "The given system of equations has a solution $(x, y)$ with $x > 0$. Which of the following is the best interpretation of this solution in this context?",
+  "stimulus": "A sports scientist studies a soccer ball kicked toward a hill that slopes upward. In both equations, $x$ is the horizontal distance from the kick, in meters, and $y$ is the height above the kicking spot, in meters. The first equation models the ball's path and the second models the hill.\n$y = -0.1x^2 + 2x$\n$y = 0.5x$",
+  "choices": [
+   "The ball lands on the hill 7.5 meters from the kick, at a height of 15 meters.",
+   "The ball lands on the hill 10 meters from the kick, at a height of 10 meters.",
+   "The ball lands on the hill 25 meters from the kick, at a height of 12.5 meters.",
+   "The ball lands on the hill 15 meters from the kick, at a height of 7.5 meters."
+  ],
+  "answer": "D",
+  "explanation": "Substitute $0.5x$ for $y$: $-0.1x^2 + 2x = 0.5x$, so $-0.1x^2 + 1.5x = 0$. Factor out $x$ to get $x(-0.1x + 1.5) = 0$, so $x = 0$ or $x = 15$. The solution $x = 0$ is the kick itself, and the question asks for $x > 0$, so $x = 15$. Then $y = 0.5(15) = 7.5$, and the path agrees: $-0.1(225) + 30 = 7.5$. The ball meets the hill 15 meters out, 7.5 meters above the kicking spot.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $(15, 7.5)$ but swapped the meanings. The 15 is the horizontal distance and the 7.5 is the height."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You chose the top of the ball's path, its vertex. $(10, 10)$ fits the path equation but not the hill: $0.5(10) = 5$, not 10. A solution has to fit both equations."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $0.5x$ across, you added it instead of subtracting, which gave $-0.1x^2 + 2.5x = 0$ and $x = 25$. Subtracting gives $1.5x$, so $x = 15$."
+   }
+  },
+  "id": "orig-system-substit-M-d853ac",
+  "skill_cd": "P.B.",
+  "subtype": "system-substitution-algebraic",
+  "subtype_name": "Solve a line\u2013quadratic system algebraically",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-substit-M-d853ac",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the following is the best interpretation of this"
+   ],
+   "residue": 1
+  }
  }
 ]

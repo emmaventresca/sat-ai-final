@@ -246,5 +246,647 @@
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which expression is equivalent to $2A - B$?",
+  "stimulus": "A folklore student uses the expressions $A = 3x^2 - 5x + 4$ and $B = x^2 + 2x - 6$ to model how many tale variants two collections contain, where $x$ is a positive integer.",
+  "choices": [
+   "$5x^2 - 8x + 2$",
+   "$5x^2 - 12x + 14$",
+   "$7x^2 - 8x + 2$",
+   "$5x^2 - 7x + 10$"
+  ],
+  "answer": "B",
+  "explanation": "First, put each expression in parentheses: $2(3x^2 - 5x + 4) - (x^2 + 2x - 6)$. Multiply every term in the first bracket by 2 to get $6x^2 - 10x + 8$. Then apply the minus sign to every term in the second bracket to get $-x^2 - 2x + 6$. Now combine like terms: $6x^2 - x^2 = 5x^2$, $-10x - 2x = -12x$, and $8 + 6 = 14$. The result is $5x^2 - 12x + 14$. To check, pick $x = 2$: $A = 6$ and $B = 2$, so $2A - B = 10$, and $5(4) - 12(2) + 14 = 10$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the minus sign only to $x^2$, the first term of $B$, and then added $2x$ and subtracted 6 instead of subtracting $2x$ and adding 6. The minus sign has to reach every term inside the parentheses."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added $B$ instead of subtracting it, so you found $2A + B$. Subtracting $B$ changes the sign of all three of its terms."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You doubled only the $3x^2$ term of $A$ and left $-5x + 4$ unchanged. The 2 multiplies every term in $A$, which gives $6x^2 - 10x + 8$."
+   }
+  },
+  "id": "orig-expand-and-com-M-f7b360",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-f7b360",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $P - Q$?",
+  "stimulus": "A seismologist models two parts of a ground-motion reading with the polynomials $P = 3x^2 - 5x + 4$ and $Q = x^2 - 2x - 6$, where $x$ is a scaled time value.",
+  "choices": [
+   "$2x^2 - 7x - 2$",
+   "$4x^2 - 7x - 2$",
+   "$2x^2 - 3x + 10$",
+   "$2x^2 - 3x - 2$"
+  ],
+  "answer": "C",
+  "explanation": "Write $P - Q = (3x^2 - 5x + 4) - (x^2 - 2x - 6)$. The minus sign applies to every term in the second bracket, so this becomes $3x^2 - 5x + 4 - x^2 + 2x + 6$. Then combine like terms: $3x^2 - x^2 = 2x^2$, $-5x + 2x = -3x$, and $4 + 6 = 10$. The result is $2x^2 - 3x + 10$. To check, put in $x = 2$: $P = 6$ and $Q = -6$, so $P - Q = 12$, and $2(4) - 6 + 10 = 12$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted only $x^2$ and then added $-2x$ and $-6$ as written. When a minus sign sits in front of a bracket, it changes the sign of every term inside it, so $-2x$ becomes $+2x$ and $-6$ becomes $+6$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You added the two polynomials. $4x^2 - 7x - 2$ is $P + Q$, but the question asks for $P - Q$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You changed the sign of the $x$-term but not the constant. Subtracting $-6$ gives $+6$, so the constant term is $4 + 6 = 10$, not $-2$."
+   }
+  },
+  "id": "orig-expand-and-com-M-200f84",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-200f84",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $(2x - 3)(x + 4) - x(x - 5)$?",
+  "stimulus": "A printmaker cuts a rectangular linoleum block that measures $(2x - 3)$ inches by $(x + 4)$ inches. They carve away a region with an area of $x(x - 5)$ square inches, where $x > 5$. The area of the uncarved surface, in square inches, is $(2x - 3)(x + 4) - x(x - 5)$.",
+  "choices": [
+   "$x^2 - 12$",
+   "$x^2 + 10x - 12$",
+   "$x^2 + 5x - 12$",
+   "$3x^2 - 12$"
+  ],
+  "answer": "B",
+  "explanation": "First expand the product: $(2x - 3)(x + 4) = 2x^2 + 8x - 3x - 12 = 2x^2 + 5x - 12$. Next, $x(x - 5) = x^2 - 5x$. Subtracting it changes both signs: $2x^2 + 5x - 12 - x^2 + 5x$. Combine like terms to get $x^2 + 10x - 12$. To check, put in $x = 6$: the block is $9 \\times 10 = 90$ square inches and the carved region is $6$, so $84$ is left, and $36 + 60 - 12 = 84$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted $x^2$ but then added $-5x$ as it was written, which cancels the $5x$. When you subtract $x^2 - 5x$, the $-5x$ becomes $+5x$, so the $x$-terms add to $10x$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "When you expanded $(2x - 3)(x + 4)$, you multiplied only the first terms and the last terms. That gave $2x^2 - 12$ and lost the middle terms $8x$ and $-3x$, which add to $5x$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You added $x(x - 5)$ instead of subtracting it. That gives $2x^2 + 5x - 12 + x^2 - 5x = 3x^2 - 12$, which is the block's area plus the carved region."
+   }
+  },
+  "id": "orig-expand-and-com-M-053118",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-053118",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $A - 2B$?",
+  "stimulus": "An archaeologist uses two expressions to model soil removed from two trenches: $A = 4x^2y - 3xy + 2y$ and $B = x^2y + 5xy - 2y$, where $x$ and $y$ are positive.",
+  "choices": [
+   "$2x^2y + 7xy - 2y$",
+   "$2x^2y - 8xy + 4y$",
+   "$6x^2y + 7xy - 2y$",
+   "$2x^2y - 13xy + 6y$"
+  ],
+  "answer": "D",
+  "explanation": "First find $2B = 2x^2y + 10xy - 4y$. Subtracting it changes every sign: $4x^2y - 3xy + 2y - 2x^2y - 10xy + 4y$. Combine terms only when they have the same variables to the same powers: $4x^2y - 2x^2y = 2x^2y$, $-3xy - 10xy = -13xy$, and $2y + 4y = 6y$. To check, put in $x = 2$ and $y = 3$: $A = 36$ and $B = 36$, so $A - 2B = -36$, and $24 - 78 + 18 = -36$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted only the first term of $2B$ and added the other two as written. Every term of $2B$ must change sign, so $+10xy$ becomes $-10xy$ and $-4y$ becomes $+4y$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied only the first term of $B$ by 2. The 2 applies to every term, so you should subtract $10xy$, not $5xy$, and add $4y$, not $2y$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You worked out $A + 2B$ instead of $A - 2B$. Adding $2B$ gives $6x^2y + 7xy - 2y$."
+   }
+  },
+  "id": "orig-expand-and-com-M-fd9d94",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-fd9d94",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $A - 3B$?",
+  "stimulus": "A marine biologist tracking a kelp forest uses two expressions in terms of $x$, the number of weeks since a storm: $A = 4x^2 - 3x + 6$ and $B = 2x^2 - 5x - 1$.",
+  "choices": [
+   "$-2x^2 + 2x + 7$",
+   "$-2x^2 - 18x + 3$",
+   "$-2x^2 + 12x + 9$",
+   "$-2x^2 + 12x + 3$"
+  ],
+  "answer": "C",
+  "explanation": "First substitute $3B = 6x^2 - 15x - 3$. Subtracting it changes every sign: $4x^2 - 3x + 6 - 6x^2 + 15x + 3 = -2x^2 + 12x + 9$. To check, put in $x = 2$: $A = 16$ and $B = -3$, so $A - 3B = 25$. Only $-2(4) + 24 + 9 = 25$ gives the same value.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied only the first term of $B$ by 3, so you subtracted $6x^2 - 5x - 1$ when you should have subtracted $6x^2 - 15x - 3$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the minus sign only to $6x^2$ and then added $-15x$ and $-3$. The minus sign has to change the sign of every term in $3B$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated $-3 \\cdot (-1)$ as $-3$, so your constant came out as $6 - 3 = 3$. It should be $6 + 3 = 9$."
+   }
+  },
+  "id": "orig-expand-and-com-M-483063",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-483063",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ and __var__ which expression is equivalent to",
+    "and __var__ which expression is equivalent to __var__"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $w\\ell$?",
+  "stimulus": "A rectangular image sensor in an astronomy camera has a width of $w = 2x - 3$ millimeters and a length of $\\ell = x^2 + 4x - 5$ millimeters, where $x > 2$.",
+  "choices": [
+   "$2x^3 + 11x^2 - 22x + 15$",
+   "$2x^3 + 5x^2 - 22x + 15$",
+   "$2x^3 + 5x^2 + 2x - 15$",
+   "$2x^3 + 5x^2 - 22x - 15$"
+  ],
+  "answer": "B",
+  "explanation": "Multiply each term of $2x - 3$ by each term of $\\ell$. That gives $2x^3 + 8x^2 - 10x$ and $-3x^2 - 12x + 15$. Combining like terms gives $2x^3 + 5x^2 - 22x + 15$. To check, put in $x = 3$: $w\\ell = 3 \\cdot 16 = 48$, and $54 + 45 - 66 + 15 = 48$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $-3 \\cdot x^2$ as $+3x^2$, so the $x^2$ terms added to $11x^2$. They should give $8x^2 - 3x^2 = 5x^2$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You kept the minus sign of $-3$ only on the first term it multiplied. That turned $-12x$ into $+12x$ and $+15$ into $-15$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated $(-3)(-5)$ as $-15$. Two negatives multiply to $+15$."
+   }
+  },
+  "id": "orig-expand-and-com-M-7d67a9",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-7d67a9",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $P - Q$?",
+  "stimulus": "A public health team estimates clinic visits using two expressions, where $x$ is the number of outreach workers and $y$ is the number of weeks: $P = 5x^2y - 2xy^2 + 3xy$ and $Q = 2x^2y + 4xy^2 - xy$.",
+  "choices": [
+   "$7x^2y - 6xy^2 + 4xy$",
+   "$3x^2y + 2xy^2 + 2xy$",
+   "$3x^2y - 6xy^2 + 2xy$",
+   "$3x^2y - 6xy^2 + 4xy$"
+  ],
+  "answer": "D",
+  "explanation": "Subtracting $Q$ changes the sign of every term in it: $5x^2y - 2xy^2 + 3xy - 2x^2y - 4xy^2 + xy$. Group the like terms: $x^2y$ terms give $3x^2y$, $xy^2$ terms give $-6xy^2$, and $xy$ terms give $4xy$. To check, put in $x = 2$ and $y = 3$: $P - Q = 42 - 102 = -60$, and $36 - 108 + 24 = -60$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the $x^2y$ terms ($5 + 2$) when you should have subtracted them. Subtracting $Q$ means taking away $2x^2y$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the minus sign only to the first term of $Q$, so you added $4xy^2$ and $-xy$. Every term of $Q$ has to change sign."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated $-(-xy)$ as $-xy$, so your $xy$ term came out as $3 - 1 = 2$. Subtracting a negative adds, which gives $3 + 1 = 4$."
+   }
+  },
+  "id": "orig-expand-and-com-M-42a49f",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-42a49f",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ and __var__ which expression is equivalent to",
+    "and __var__ which expression is equivalent to __var__"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $P(x) - Q(x)$?",
+  "stimulus": "An agronomist models the harvest, in kilograms, from two test plots, where $x$ is the kilograms of fertilizer applied. Plot P yields $P(x) = 4x^2 + 7x - 3$ and plot Q yields $Q(x) = x^2 - 2x + 5$. The difference $P(x) - Q(x)$ gives how many more kilograms plot P yields than plot Q.",
+  "choices": [
+   "$3x^2 + 5x + 2$",
+   "$3x^2 + 9x - 8$",
+   "$3x^2 + 9x + 2$",
+   "$-3x^2 - 9x + 8$"
+  ],
+  "answer": "B",
+  "explanation": "Distribute the minus sign to every term of $Q(x)$: $4x^2 + 7x - 3 - x^2 + 2x - 5$. Then combine like terms: $4x^2 - x^2 = 3x^2$, $7x + 2x = 9x$, and $-3 - 5 = -8$. That gives $3x^2 + 9x - 8$. To check, at $x = 2$ you get $P(2) = 27$ and $Q(2) = 5$, so the gap is $22$, and $3(4) + 18 - 8 = 22$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted only the $x^2$ term of $Q(x)$ and left $-2x + 5$ unchanged, so you got $7x - 2x = 5x$ and $-3 + 5 = 2$. The minus sign has to reach every term in the second bracket."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You handled the $x^2$ and $x$ terms correctly but didn't distribute the minus to the $+5$, so you got $-3 + 5 = 2$ instead of $-3 - 5 = -8$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "This is $Q(x) - P(x)$, which is how much more plot Q yields. The question asks how much more plot P yields, so you need $P(x) - Q(x)$."
+   }
+  },
+  "id": "orig-expand-and-com-M-cdcd97",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-cdcd97",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $M(t) - N(t)$?",
+  "stimulus": "An ornithologist models the number of birds counted at two wetland sites $t$ weeks after migration begins. The count at the marsh is $M(t) = (2t + 3)(t - 4)$ and the count at the lagoon is $N(t) = t^2 - 6t + 1$. The difference $M(t) - N(t)$ gives how many more birds are counted at the marsh.",
+  "choices": [
+   "$t^2 - 11t - 11$",
+   "$t^2 + 6t - 13$",
+   "$t^2 + t - 11$",
+   "$t^2 + t - 13$"
+  ],
+  "answer": "D",
+  "explanation": "First expand the product: $(2t + 3)(t - 4) = 2t^2 - 8t + 3t - 12 = 2t^2 - 5t - 12$. Next, subtract every term of $N(t)$: $2t^2 - 5t - 12 - t^2 + 6t - 1$. Combining like terms gives $t^2 + t - 13$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted only the $t^2$ term of $N(t)$ and kept $-6t + 1$ as written, so you got $-5t - 6t = -11t$ and $-12 + 1 = -11$. The minus sign applies to every term inside the second bracket."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You expanded $(2t + 3)(t - 4)$ as just $2t^2 - 12$ and left out the middle terms $-8t$ and $3t$. Multiply every term in the first factor by every term in the second."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You got the $t^2$ and $t$ terms right but added the lagoon's constant instead of subtracting it. That gives $-12 + 1 = -11$ instead of $-12 - 1 = -13$."
+   }
+  },
+  "id": "orig-expand-and-com-M-0c8399",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-0c8399",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $A - B$?",
+  "stimulus": "A civil engineer models the sag, in millimeters, of two bridge beams under load, where $x$ is the span in meters and $y$ is the load in kilonewtons. Beam A sags $A = 2x^2y + 3xy - 5x$ and beam B sags $B = x^2y - 4xy + 2x$. The difference $A - B$ gives how much more beam A sags.",
+  "choices": [
+   "$x^2y + 7xy - 7x$",
+   "$x^2y - xy - 3x$",
+   "$x^2y - xy - 7x$",
+   "$-x^2y - 7xy + 7x$"
+  ],
+  "answer": "A",
+  "explanation": "Distribute the minus sign across all of $B$: $2x^2y + 3xy - 5x - x^2y + 4xy - 2x$. Then combine only like terms, meaning the same variables raised to the same powers: $2x^2y - x^2y = x^2y$, $3xy + 4xy = 7xy$, and $-5x - 2x = -7x$. That gives $x^2y + 7xy - 7x$. To check, try $x = 2$ and $y = 3$: $A = 32$ and $B = -8$, so the gap is $40$, and $12 + 42 - 14 = 40$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted only the first term of $B$ and left $-4xy + 2x$ unchanged, so you got $3xy - 4xy = -xy$ and $-5x + 2x = -3x$. The minus sign has to reach every term in the bracket."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You changed the signs of $x^2y$ and $2x$ but not $-4xy$. Subtracting $-4xy$ means adding $4xy$, so the middle term is $3xy + 4xy = 7xy$, not $-xy$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "This is $B - A$, which is how much more beam B sags. The question asks how much more beam A sags, so every sign here is reversed."
+   }
+  },
+  "id": "orig-expand-and-com-M-370825",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-370825",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $A(x) - B(x)$?",
+  "stimulus": "An astronomer models meteor counts on two clear nights. On the first night, the count is modeled by $A(x) = 3x^2 + 5x - 4$, and on the second night by $B(x) = x^2 - 2x - 7$, where $x$ is the number of hours after midnight.",
+  "choices": [
+   "$2x^2 + 7x + 3$",
+   "$2x^2 + 3x - 11$",
+   "$2x^2 + 7x - 11$",
+   "$4x^2 + 3x - 11$"
+  ],
+  "answer": "A",
+  "explanation": "Substitute the definitions inside parentheses: $(3x^2 + 5x - 4) - (x^2 - 2x - 7)$. The minus sign applies to every term in the second bracket, so you get $3x^2 + 5x - 4 - x^2 + 2x + 7$. Then combine like terms: $(3 - 1)x^2 + (5 + 2)x + (-4 + 7) = 2x^2 + 7x + 3$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the minus sign only to $x^2$ and left $-2x - 7$ as it was. That gives $3x^2 + 5x - 4 - x^2 - 2x - 7 = 2x^2 + 3x - 11$. The minus sign has to change the sign of every term in the bracket."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You changed the sign of the $x$-term but not the constant, so you subtracted 7 when you should have added it. $-(-7)$ is $+7$, which makes the constant $-4 + 7 = 3$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You found $A(x) + B(x)$ when the question asks for $A(x) - B(x)$. Adding the brackets gives $4x^2 + 3x - 11$, which is the sum of the two models, not their difference."
+   }
+  },
+  "id": "orig-expand-and-com-M-5d94f0",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-5d94f0",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $T(x) \\cdot H(x)$?",
+  "stimulus": "A meteorologist builds a forecasting model from two parts: $T(x) = 2x - 3$ and $H(x) = x^2 + 4x - 1$, where $x$ is the number of days since a cold front arrived.",
+  "choices": [
+   "$2x^3 + 5x^2 - 14x + 3$",
+   "$2x^3 + 5x^2 + 2x - 1$",
+   "$2x^3 + 11x^2 - 14x + 3$",
+   "$2x^3 + 5x^2 - 14x - 3$"
+  ],
+  "answer": "A",
+  "explanation": "Multiply each term of $2x - 3$ by every term of $x^2 + 4x - 1$. First, $2x(x^2 + 4x - 1) = 2x^3 + 8x^2 - 2x$. Next, $-3(x^2 + 4x - 1) = -3x^2 - 12x + 3$. Then combine like terms: $2x^3 + (8 - 3)x^2 + (-2 - 12)x + 3 = 2x^3 + 5x^2 - 14x + 3$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $-3$ by $x^2$ only and copied $+4x - 1$ unchanged, which gave $-3x^2 + 4x - 1$. The $-3$ has to multiply all three terms, giving $-3x^2 - 12x + 3$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $(-3)(x^2)$ as $+3x^2$, so the $x^2$ terms added up to $8x^2 + 3x^2 = 11x^2$. A negative times a positive is negative, so the coefficient is $8 - 3 = 5$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You made a sign slip on the constant. $(-3)(-1)$ is $+3$, not $-3$. A negative times a negative is positive."
+   }
+  },
+  "id": "orig-expand-and-com-M-1b468a",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-1b468a",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $3(2x^2y - xy + 4) - 2(x^2y - 3xy + 5)$?",
+  "stimulus": "A civil engineer estimates the load on a bridge deck panel with an expression in $x$ and $y$, where $x$ and $y$ are the panel's two side lengths, in meters.",
+  "choices": [
+   "$4x^2y + 3xy + 2$",
+   "$4x^2y - 6xy + 17$",
+   "$4x^2y - 9xy + 2$",
+   "$4x^2y + 3xy + 22$"
+  ],
+  "answer": "A",
+  "explanation": "Distribute each factor across its whole bracket. $3(2x^2y - xy + 4) = 6x^2y - 3xy + 12$, and $-2(x^2y - 3xy + 5) = -2x^2y + 6xy - 10$. Then group like terms. $x^2y$ and $xy$ are different terms, so keep them apart: $(6 - 2)x^2y + (-3 + 6)xy + (12 - 10) = 4x^2y + 3xy + 2$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You applied the $-2$ only to the first term in the second bracket and left $-3xy + 5$ as it was. That gives $6x^2y - 3xy + 12 - 2x^2y - 3xy + 5 = 4x^2y - 6xy + 17$. The $-2$ multiplies every term."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $(-2)(-3xy)$ as $-6xy$, so the $xy$ terms became $-3xy - 6xy = -9xy$. A negative times a negative is positive, so it's $+6xy$, and the $xy$ terms add up to $3xy$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $(-2)(5)$ as $+10$, so the constants became $12 + 10 = 22$. The product is $-10$, which makes the constant $12 - 10 = 2$."
+   }
+  },
+  "id": "orig-expand-and-com-M-fc4e41",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-M-fc4e41",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

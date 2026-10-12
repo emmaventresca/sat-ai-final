@@ -243,5 +243,982 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "If one of the pieces with at least 3 movements is selected at random, what is the probability of selecting a Classical-era piece?",
+  "stimulus": "A music historian sorted 80 instrumental pieces in an archive by era and by number of movements.\n\nArchived Pieces by Era and Number of Movements\nEra | 1 movement | 2 movements | 3 movements | 4 movements\nBaroque | 12 | 8 | 14 | 6\nClassical | 4 | 6 | 18 | 12",
+  "choices": [
+   "$\\frac{3}{8}$",
+   "$\\frac{3}{5}$",
+   "$\\frac{2}{3}$",
+   "$\\frac{3}{4}$"
+  ],
+  "answer": "B",
+  "explanation": "\"At least 3 movements\" means the 3-movement and 4-movement columns together. That group has $14 + 6 + 18 + 12 = 50$ pieces. Of those, $18 + 12 = 30$ are Classical. The probability is $\\frac{30}{50} = \\frac{3}{5}$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found the 30 Classical pieces with at least 3 movements but divided by all 80 pieces in the archive. You need to divide by the 50 pieces with at least 3 movements."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You read \"at least 3\" as \"more than 3\" and used only the 4-movement column, which gives $\\frac{12}{18}$. The 3-movement column belongs in the group too."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the denominator. $\\frac{30}{40}$ is the fraction of Classical pieces that have at least 3 movements, but the question starts from pieces with at least 3 movements and asks how many of them are Classical."
+   }
+  },
+  "id": "orig-conditional-bu-M-2ce81b",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-2ce81b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one worker who is not in services is selected at random, what is the probability of selecting a union member?",
+  "stimulus": "A labor economist described a region's workforce by sector. The table shows each sector's share of all workers and the share of that sector's workers who belong to a union.\n\nRegional Workforce by Sector\nSector | Share of workforce | Share unionized\nManufacturing | 30% | 50%\nServices | 50% | 30%\nAgriculture | 20% | 25%",
+  "choices": [
+   "$0.20$",
+   "$0.30$",
+   "$0.40$",
+   "$0.50$"
+  ],
+  "answer": "C",
+  "explanation": "Treat the shares as counts out of 100 workers. The workers not in services are the 30 in manufacturing and the 20 in agriculture, so the group has 50 workers. The union members in that group are $0.50(30) + 0.25(20) = 15 + 5 = 20$. The probability is $\\frac{20}{50} = 0.40$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found the 20 union members outside services (out of 100) but divided by the whole workforce. You need to divide by the 50 workers who are not in services."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You read \"not in services\" as \"in services\" and used that sector's 30% union rate."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You used only manufacturing's 50% union rate. The group \"not in services\" includes agriculture too, and agriculture has a lower rate."
+   }
+  },
+  "id": "orig-conditional-bu-M-8e0430",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-8e0430",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one athlete who used the new protocol is selected at random, what is the probability of selecting a cyclist?",
+  "stimulus": "A sports science study placed swimmers in 5 groups of 4 and cyclists in 5 groups of 6. In each swimmer group, exactly 1 athlete used a new recovery protocol. In each cyclist group, exactly 3 athletes used it.",
+  "choices": [
+   "$\\frac{1}{4}$",
+   "$\\frac{3}{10}$",
+   "$\\frac{1}{2}$",
+   "$\\frac{3}{4}$"
+  ],
+  "answer": "D",
+  "explanation": "Start by building the group of athletes who used the protocol. That is $5 \\times 1 = 5$ swimmers and $5 \\times 3 = 15$ cyclists, so 20 athletes. Of those 20, 15 are cyclists. The probability is $\\frac{15}{20} = \\frac{3}{4}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You built the right group of 20 but counted the 5 swimmers, not the 15 cyclists."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You divided the 15 cyclists who used the protocol by all $20 + 30 = 50$ athletes. You need to divide by the 20 athletes who used the protocol."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found $\\frac{15}{30}$, the fraction of cyclists who used the protocol. The question starts from athletes who used the protocol, so those 20 are the denominator."
+   }
+  },
+  "id": "orig-conditional-bu-M-d7f34a",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-d7f34a",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of the days that was not clear is selected at random, what is the probability of selecting a day with rain?",
+  "stimulus": "A meteorologist classified 90 days at a coastal station by morning sky condition and by whether any rain fell that day.\n\nDays by Sky Condition and Rainfall\nSky condition | Rain | No rain\nClear | 2 | 28\nPartly cloudy | 9 | 21\nOvercast | 24 | 6",
+  "choices": [
+   "$\\frac{1}{15}$",
+   "$\\frac{11}{20}$",
+   "$\\frac{4}{5}$",
+   "$\\frac{33}{35}$"
+  ],
+  "answer": "B",
+  "explanation": "The days that were not clear are the partly cloudy and overcast rows together, so the group has $30 + 30 = 60$ days. Rain fell on $9 + 24 = 33$ of them. The probability is $\\frac{33}{60} = \\frac{11}{20}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You read \"not clear\" as \"clear\" and used that row, which gives $\\frac{2}{30}$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You used only the overcast row, $\\frac{24}{30}$. The group \"not clear\" also includes the partly cloudy days."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the denominator. $\\frac{33}{35}$ is the fraction of rainy days that were not clear, but the question starts from days that were not clear."
+   }
+  },
+  "id": "orig-conditional-bu-M-5ab1e8",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-5ab1e8",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of the participants who ate at most 2 servings per day is selected at random, what is the probability of selecting a participant who met the fiber target?",
+  "stimulus": "A nutrition study recorded how many servings of vegetables each of 140 participants ate per day and whether each participant met a daily fiber target.\n\nParticipants by Daily Vegetable Servings\nFiber target | 0 | 1 | 2 | 3 | 4 or more\nMet | 3 | 7 | 12 | 15 | 23\nNot met | 27 | 23 | 18 | 10 | 2",
+  "choices": [
+   "$\\frac{11}{70}$",
+   "$\\frac{1}{6}$",
+   "$\\frac{11}{45}$",
+   "$\\frac{11}{30}$"
+  ],
+  "answer": "C",
+  "explanation": "\"At most 2 servings\" means the 0, 1, and 2 columns together, which is $30 + 30 + 30 = 90$ participants. Of those, $3 + 7 + 12 = 22$ met the target. The probability is $\\frac{22}{90} = \\frac{11}{45}$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found the 22 participants who met the target but divided by all 140 participants. You need to divide by the 90 who ate at most 2 servings."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You read \"at most 2\" as \"fewer than 2\" and dropped the 2-serving column, which gives $\\frac{10}{60}$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the denominator. $\\frac{22}{60}$ is the fraction of participants who met the target and ate at most 2 servings. The question starts from participants who ate at most 2 servings."
+   }
+  },
+  "id": "orig-conditional-bu-M-7def6b",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-7def6b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the probability of selecting a participant"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "If one of the surveyed workers who work at least 40 hours per week is selected at random, what is the probability of selecting a union member?",
+  "stimulus": "A labour economist surveyed 200 warehouse workers about how many hours they work per week and whether they belong to a union. The results are shown in the table.\n\nWeekly Hours Worked by Union Membership\nWeekly hours | Union member | Not a union member\nFewer than 30 | 14 | 26\n30 to 39 | 22 | 38\n40 to 49 | 31 | 29\n50 or more | 13 | 27",
+  "choices": [
+   "$\\frac{11}{50}$",
+   "$\\frac{11}{25}$",
+   "$\\frac{31}{60}$",
+   "$\\frac{11}{20}$"
+  ],
+  "answer": "B",
+  "explanation": "\"At least 40\" covers two rows, 40 to 49 and 50 or more, so you build the given group by adding them: $(31+29)+(13+27)=100$ workers. Inside that group, the union members are $31+13=44$. The probability is $\\frac{44}{100}=\\frac{11}{25}$. You can check it in one line: $(31+13)/(31+29+13+27)=0.44$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the right numerator, 44, but divided by all 200 workers. 'At least 40 hours' means your denominator is only the 100 workers in those two rows, not the whole table."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You used only the 40 to 49 row ($\\frac{31}{60}$) and dropped the 50 or more row. Workers who work 50 or more hours also work at least 40 hours, so both rows belong in the group."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided 44 by the 80 union members. That answers a different question: of the union members, what fraction work at least 40 hours? The condition here is the hours, so the 100 workers who work at least 40 hours are the denominator."
+   }
+  },
+  "id": "orig-conditional-bu-M-3afe1e",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-3afe1e",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of the books that is not in cabinet 2 is selected at random, what is the probability of selecting a book that uses indigo dye?",
+  "stimulus": "A textile history museum keeps its 19th-century dye-sample books in three cabinets. Every shelf holds exactly 20 books. Cabinet 1 has 6 full shelves, cabinet 2 has 4 full shelves, and cabinet 3 has 5 full shelves. A curator records that 30 of the books in cabinet 1, 18 of the books in cabinet 2, and 22 of the books in cabinet 3 use indigo dye.",
+  "choices": [
+   "$\\frac{13}{75}$",
+   "$\\frac{9}{40}$",
+   "$\\frac{13}{55}$",
+   "$\\frac{26}{35}$"
+  ],
+  "answer": "C",
+  "explanation": "Build the given group first. 'Not in cabinet 2' means cabinets 1 and 3: $6\\times20+5\\times20=120+100=220$ books. Inside that group, the indigo books number $30+22=52$. The probability is $\\frac{52}{220}=\\frac{13}{55}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You had the right numerator, 52, but divided by all $15\\times20=300$ books. The condition shrinks your denominator to the 220 books outside cabinet 2."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You worked out the probability for cabinet 2 itself: $\\frac{18}{4\\times20}=\\frac{18}{80}=\\frac{9}{40}$. The condition says 'not in cabinet 2,' so cabinet 2 is the one group you leave out."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided 52 by the $30+18+22=70$ indigo books. That answers 'of the indigo books, what fraction are outside cabinet 2?', which swaps the denominator. Here the books outside cabinet 2 are the group you divide by."
+   }
+  },
+  "id": "orig-conditional-bu-M-b19cef",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-b19cef",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of the tagged fish is selected at random, what is the probability of selecting a fish caught at the Outer Ridge?",
+  "stimulus": "Marine biologists caught reef fish at three survey sites and fitted some of them with acoustic tags. The table shows each site's share of all the fish caught, and the share of that site's fish that were tagged.\n\nReef Fish Survey by Site\nSite | Share of all fish caught | Share of the site's fish tagged\nNorth Lagoon | 0.40 | 0.10\nChannel Mouth | 0.35 | 0.20\nOuter Ridge | 0.25 | 0.40",
+  "choices": [
+   "$\\frac{1}{10}$",
+   "$\\frac{1}{4}$",
+   "$\\frac{2}{5}$",
+   "$\\frac{10}{21}$"
+  ],
+  "answer": "D",
+  "explanation": "There are no counts, so treat the proportions as counts. The scaling cancels. The given group is every tagged fish, and it comes from all three sites: $0.40(0.10)+0.35(0.20)+0.25(0.40)=0.04+0.07+0.10=0.21$. The tagged fish from the Outer Ridge make up $0.10$ of that. The probability is $\\frac{0.10}{0.21}=\\frac{10}{21}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$0.10$ is the share of all fish that are tagged and from the Outer Ridge. You divided by the whole catch (1) when you should have divided by the tagged group (0.21)."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "$0.25$ is the Outer Ridge's share of all fish caught. It ignores the condition that the fish is tagged, so the given group was never built."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "$0.40$ is the share of Outer Ridge fish that were tagged. That answers 'of the Outer Ridge fish, what fraction are tagged?', which swaps the condition and the target. Here the tagged fish are the denominator."
+   }
+  },
+  "id": "orig-conditional-bu-M-e712b0",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-e712b0",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "One bird with a wing length of at least 60 millimeters is selected at random from the birds in the table. Which of the following must be true?",
+  "stimulus": "An ornithologist banded 84 warblers at a coastal station and recorded each bird's age class and wing length.\n\nWarblers Banded, by Wing Length and Age Class\nWing length (mm) | Adult | Juvenile\n50\u201354 | 6 | 14\n55\u201359 | 10 | 12\n60\u201364 | 18 | 6\n65\u201369 | 16 | 2",
+  "choices": [
+   "The probability that the bird is an adult is $\\frac{17}{21}$.",
+   "The probability that the bird is an adult is $\\frac{8}{9}$.",
+   "The probability that the bird is an adult is $\\frac{17}{42}$.",
+   "The probability that the bird is an adult is $\\frac{17}{25}$."
+  ],
+  "answer": "A",
+  "explanation": "\"At least 60 mm\" covers two rows, 60\u201364 and 65\u201369, so first you rebuild that group: $18 + 6 + 16 + 2 = 42$ birds. The adults in that group number $18 + 16 = 34$. The probability is $\\frac{34}{42} = \\frac{17}{21}$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You read \"at least 60\" as \"more than 64\" and used only the 65\u201369 row: $\\frac{16}{18} = \\frac{8}{9}$. The 60\u201364 row is part of the condition too, so you dropped the boundary bin."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the right numerator, 34 adults, but divided by all 84 birds. The condition means your denominator is the 42 birds with wing length of at least 60 mm, not the whole table."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided by all 50 adults: $\\frac{34}{50} = \\frac{17}{25}$. That is the probability an adult has a wing length of at least 60 mm, which is the reverse of what was asked."
+   }
+  },
+  "id": "orig-conditional-bu-M-cf3cef",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-cf3cef",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "One speaker who is not monolingual is selected at random from the survey. Which of the following must be true?",
+  "stimulus": "A linguist surveyed speakers in a river valley. She grouped them by how many languages they speak, then recorded the share of each group that uses the regional dialect at home.\n\nSurvey of Valley Speakers\nLanguage group | Share of all speakers | Share of group using dialect at home\nMonolingual | 0.40 | 0.10\nBilingual | 0.40 | 0.30\nMultilingual | 0.20 | 0.75",
+  "choices": [
+   "The probability that the speaker uses the dialect at home is 0.27.",
+   "The probability that the speaker uses the dialect at home is 0.45.",
+   "The probability that the speaker uses the dialect at home is 0.10.",
+   "The probability that the speaker uses the dialect at home is 0.30."
+  ],
+  "answer": "B",
+  "explanation": "\"Not monolingual\" means bilingual or multilingual, so the group is $0.40 + 0.20 = 0.60$ of all speakers. The dialect users inside it make up $0.40(0.30) + 0.20(0.75) = 0.12 + 0.15 = 0.27$ of all speakers. Treat these proportions as counts, since the scaling cancels: $\\frac{0.27}{0.60} = 0.45$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "0.27 is the share of all speakers who are not monolingual and use the dialect. You stopped before dividing by the 0.60 that makes up the given group."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You read \"not monolingual\" as \"monolingual\" and took that group's rate of 0.10. The condition leaves the monolingual row out."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You used only the bilingual row's rate of 0.30. \"Not monolingual\" also includes multilingual speakers, so you have to combine both rows, weighted by their shares."
+   }
+  },
+  "id": "orig-conditional-bu-M-456041",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-456041",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "One disc that is not an opera recording is selected at random from the archive. Which of the following must be true?",
+  "stimulus": "A music library stores its classical recordings on shelves. Every shelf of a given genre holds the same number of discs.\n\nRecording Archive Holdings\nGenre | Shelves | Discs per shelf | Live recordings (total)\nString quartet | 6 | 15 | 30\nSymphony | 4 | 20 | 50\nOpera | 5 | 12 | 24",
+  "choices": [
+   "The probability that the disc is a live recording is $\\frac{8}{23}$.",
+   "The probability that the disc is a live recording is $\\frac{2}{5}$.",
+   "The probability that the disc is a live recording is $\\frac{8}{17}$.",
+   "The probability that the disc is a live recording is $\\frac{5}{8}$."
+  ],
+  "answer": "C",
+  "explanation": "Build the given group by multiplying shelves by discs per shelf. There are $6 \\times 15 = 90$ string quartet discs and $4 \\times 20 = 80$ symphony discs, for 170 discs that are not opera. Of these, $30 + 50 = 80$ are live, so the probability is $\\frac{80}{170} = \\frac{8}{17}$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the 80 non-opera live discs by all 230 discs in the archive. The condition limits you to the 170 non-opera discs, so that is the denominator."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You worked with the opera row, $\\frac{24}{60} = \\frac{2}{5}$. That is the group the condition leaves out."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You used only the symphony row, $\\frac{50}{80} = \\frac{5}{8}$. \"Not opera\" also includes the string quartet discs, so you have to add both rows."
+   }
+  },
+  "id": "orig-conditional-bu-M-2ab4a3",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-2ab4a3",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "An athlete will be selected at random. How much greater is the probability that the athlete was injured, given that the athlete trains at least 10 hours per week, than the probability that the athlete was injured, given that the athlete trains fewer than 10 hours per week?",
+  "stimulus": "A sports science lab tracked 200 athletes for one season and recorded their weekly training hours and whether they had an overuse injury.\n\nAthletes by Weekly Training Hours and Injury Status\nHours per week | Injured | Not injured\n0\u20134 | 4 | 36\n5\u20139 | 8 | 52\n10\u201314 | 14 | 36\n15 or more | 16 | 34",
+  "choices": [
+   "$0.09$",
+   "$0.18$",
+   "$0.20$",
+   "$0.30$"
+  ],
+  "answer": "B",
+  "explanation": "Build each group yourself. At least 10 hours means the 10\u201314 and 15-or-more rows: $14+16=30$ injured out of $50+50=100$, so the probability is $0.30$. Fewer than 10 hours means the 0\u20134 and 5\u20139 rows: $4+8=12$ injured out of $40+60=100$, so the probability is $0.12$. The difference is $0.30-0.12=0.18$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided both injury counts by the grand total of 200 instead of by each rebuilt group of 100: $\\frac{30}{200}-\\frac{12}{200}=0.09$. With 'given that', the group named is the whole denominator."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You used only the 15-or-more row for 'at least 10 hours' and dropped the 10\u201314 row, getting $\\frac{16}{50}-0.12=0.20$. 'At least 10' includes the 10\u201314 row."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$0.30$ is the probability for the at-least-10-hours group alone. The question asks how much greater it is than the other group's probability, so you still have to subtract $0.12$."
+   }
+  },
+  "id": "orig-conditional-bu-M-7eeca6",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-7eeca6",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A print will be selected at random from the archive. How much greater is the probability that the print is signed, given that it is not a woodcut, than the probability that the print is signed, given that it is a woodcut?",
+  "stimulus": "In a printmaking studio's archive, 40% of the prints are woodcuts, 30% are etchings, and 30% are screen prints. Of the woodcuts, 30% are signed by the artist. Of the etchings, 50% are signed, and of the screen prints, 70% are signed.",
+  "choices": [
+   "$0.06$",
+   "$0.20$",
+   "$0.30$",
+   "$0.60$"
+  ],
+  "answer": "C",
+  "explanation": "Treat the percentages as counts out of 100 prints. 'Not a woodcut' is the etchings and screen prints together, so $30+30=60$ prints. Of those, $0.5(30)+0.7(30)=15+21=36$ are signed, so the probability is $\\frac{36}{60}=0.60$. For woodcuts it is $0.30$. The difference is $0.60-0.30=0.30$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the 36 signed non-woodcut prints by all 100 prints, which gives $0.36$, and then subtracted $0.30$. The given group is only the 60 prints that aren't woodcuts."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You used only the etchings for 'not a woodcut' ($0.50-0.30=0.20$). 'Not a woodcut' covers both the etchings and the screen prints."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$0.60$ is the probability for the prints that aren't woodcuts. You stopped before subtracting the woodcut probability of $0.30$."
+   }
+  },
+  "id": "orig-conditional-bu-M-0fc87f",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-0fc87f",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "An earthquake will be selected at random from these records. The probability that it was deep, given that it was not in Region 2, is how many times the probability that it was deep, given that it was in Region 2?",
+  "stimulus": "A seismology network classified 130 recorded earthquakes by region and by focal depth.\n\nRecorded Earthquakes by Region and Depth\nDepth | Region 1 | Region 2 | Region 3\nShallow | 21 | 45 | 27\nDeep | 9 | 5 | 23",
+  "choices": [
+   "$3$",
+   "$4$",
+   "$4.6$",
+   "$6.4$"
+  ],
+  "answer": "B",
+  "explanation": "'Not in Region 2' means Regions 1 and 3 together: $30+50=80$ earthquakes, of which $9+23=32$ were deep, so the probability is $\\frac{32}{80}=0.4$. In Region 2, $5$ of $50$ were deep, so the probability is $0.1$. Then $\\frac{0.4}{0.1}=4$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You used only Region 1 for 'not in Region 2': $\\frac{9}{30}=0.3$, and $\\frac{0.3}{0.1}=3$. The group has to include Region 3 as well."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You used only Region 3 for 'not in Region 2': $\\frac{23}{50}=0.46$, and $\\frac{0.46}{0.1}=4.6$. You need to add Region 1 and Region 3 together before you divide."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided both deep counts by the grand total of 130, so the ratio became $\\frac{32}{5}=6.4$. The two groups have different sizes (80 and 50), so each count has to be divided by its own group."
+   }
+  },
+  "id": "orig-conditional-bu-M-f79ac7",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-f79ac7",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these days is selected at random, what is the probability that a thunderstorm was recorded, given that the day had at least 20 mm of rainfall?",
+  "stimulus": "A weather station classified each of 125 days by total rainfall, in millimeters (mm), and by whether a thunderstorm was recorded that day.\n\nDays by Rainfall and Thunderstorm Activity\nRainfall (mm) | Thunderstorm | No thunderstorm\n0 to 9 | 4 | 41\n10 to 19 | 11 | 23\n20 to 29 | 15 | 9\n30 or more | 18 | 4",
+  "choices": [
+   "$\\frac{18}{18+4}$",
+   "$\\frac{15+18}{15+18+9+4}$",
+   "$\\frac{15+18}{4+11+15+18}$",
+   "$\\frac{15+18}{125}$"
+  ],
+  "answer": "B",
+  "explanation": "The condition 'at least 20 mm' isn't a single row. It covers both the 20 to 29 row and the 30 or more row, so you have to build the group yourself: $15+9$ days plus $18+4$ days. Within that group, the days with a thunderstorm are $15+18$. The probability is $\\frac{15+18}{15+18+9+4}$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You read 'at least 20' as 'more than 29' and dropped the 20 to 29 row. 'At least 20' includes the boundary bin, so both the 20 to 29 row and the 30 or more row belong in the group."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by every thunderstorm day. That answers a reversed question: of the thunderstorm days, what fraction had at least 20 mm of rain? The given group is the rainy days, so their total goes in the denominator."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You found the right numerator but divided by all 125 days. That ignores the 'given that' condition, which shrinks your world to only the days with at least 20 mm of rain."
+   }
+  },
+  "id": "orig-conditional-bu-M-1e1558",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-1e1558",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these artifacts is selected at random, what is the probability that it is pottery, given that it was not recovered from Trench B?",
+  "stimulus": "An excavation team recovered 171 artifacts from four trenches at a site. The table shows the number of artifacts of each material found in each trench.\n\nArtifacts Recovered by Trench and Material\nMaterial | Trench A | Trench B | Trench C | Trench D\nPottery | 26 | 31 | 18 | 22\nBone | 9 | 14 | 12 | 7\nStone | 5 | 10 | 6 | 11\nTotal | 40 | 55 | 36 | 40",
+  "choices": [
+   "$\\frac{31}{55}$",
+   "$\\frac{26+18+22}{171}$",
+   "$\\frac{26+18+22}{26+31+18+22}$",
+   "$\\frac{26+18+22}{40+36+40}$"
+  ],
+  "answer": "D",
+  "explanation": "'Not from Trench B' means Trenches A, C, and D together. No single printed total covers that group, so you add the column totals: $40+36+40$. The pottery inside that group is $26+18+22$. The probability is $\\frac{26+18+22}{40+36+40}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You read 'not from Trench B' as 'from Trench B' and used only that column. The given group is every trench except B."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You divided by all 171 artifacts, so the condition did nothing. Once you're told the artifact isn't from Trench B, the Trench B artifacts leave the denominator."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by all the pottery. That gives the probability that a piece of pottery came from somewhere other than Trench B, which swaps the denominator. The group after 'given that' is the artifacts outside Trench B, not the pottery."
+   }
+  },
+  "id": "orig-conditional-bu-M-d3fc22",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-d3fc22",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these earthquakes is selected at random, what is the probability that it was shallow, given that its magnitude was greater than or equal to 5.0?",
+  "stimulus": "A seismic network classified every earthquake it recorded in one year by magnitude and by focal depth. The table shows the proportion of all recorded earthquakes that fall in each category.\n\nProportion of Recorded Earthquakes by Depth and Magnitude\nDepth | Under 4.0 | 4.0 to 4.9 | 5.0 to 5.9 | 6.0 or greater\nShallow | 0.42 | 0.18 | 0.07 | 0.03\nDeep | 0.16 | 0.09 | 0.04 | 0.01",
+  "choices": [
+   "$\\frac{0.07}{0.07+0.04}$",
+   "$\\frac{0.07+0.03}{0.42+0.18+0.07+0.03}$",
+   "$\\frac{0.07+0.03}{0.07+0.03+0.04+0.01}$",
+   "$\\frac{0.03}{0.03+0.01}$"
+  ],
+  "answer": "C",
+  "explanation": "'Greater than or equal to 5.0' covers two columns: 5.0 to 5.9 and 6.0 or greater. Build that group by adding all four of its cells: $0.07+0.03+0.04+0.01$. The shallow part of the group is $0.07+0.03$. You can treat the proportions as counts, because the overall scale cancels when you divide. The probability is $\\frac{0.07+0.03}{0.07+0.03+0.04+0.01}$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You used only the 5.0 to 5.9 column. The condition covers both columns at or above 5.0, so the 6.0 or greater column belongs in both the numerator and the denominator."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided by the whole shallow row. That gives the probability that a shallow earthquake had magnitude 5.0 or greater, which reverses the question. The given group is the strong earthquakes, not the shallow ones."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You read 'greater than or equal to 5.0' as '6.0 or greater' and dropped the 5.0 to 5.9 column. The 'or equal to' brings that boundary column back into the group."
+   }
+  },
+  "id": "orig-conditional-bu-M-7a1769",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-7a1769",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of the stars with at least 2 known planets is selected at random, what is the probability of selecting a class G star?",
+  "stimulus": "An observatory catalogued 80 nearby stars by spectral class and by the number of planets known to orbit each star.\n\nStars by Spectral Class and Number of Known Planets\nKnown planets | Class G | Class K | Total\n0 | 14 | 22 | 36\n1 | 9 | 12 | 21\n2 | 7 | 5 | 12\n3 or more | 10 | 1 | 11\nTotal | 40 | 40 | 80",
+  "choices": [
+   "$\\frac{17}{80}$",
+   "$\\frac{17}{40}$",
+   "$\\frac{10}{11}$",
+   "$\\frac{17}{23}$"
+  ],
+  "answer": "D",
+  "explanation": "The table has no single row for \"at least 2,\" so you build that group yourself. It is the \"2\" row plus the \"3 or more\" row: $12 + 11 = 23$ stars. Class G stars in those rows: $7 + 10 = 17$. The probability is $\\frac{17}{23}$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found the right numerator, 17, but divided by all 80 stars in the catalogue. The selection is made only from the 23 stars with at least 2 planets."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided by the 40 class G stars. That answers a different question: of the class G stars, what fraction have at least 2 planets? The group being selected from is the stars with at least 2 planets, so that group is the denominator."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You read \"at least 2\" as \"more than 2\" and used only the \"3 or more\" row. \"At least 2\" includes stars with exactly 2 planets, so that row belongs in the group too."
+   }
+  },
+  "id": "orig-conditional-bu-M-a40c43",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-a40c43",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of the amphibians that was not caught at Pond 2 is selected at random, what is the probability of selecting a spring peeper?",
+  "stimulus": "During a wetland survey, ecologists caught and released 120 amphibians at three ponds. The results are shown.\n\nAmphibians Caught by Species and Pond\nSpecies | Pond 1 | Pond 2 | Pond 3 | Total\nGreen frog | 18 | 30 | 12 | 60\nSpring peeper | 30 | 10 | 20 | 60\nTotal | 48 | 40 | 32 | 120",
+  "choices": [
+   "$\\frac{1}{4}$",
+   "$\\frac{5}{8}$",
+   "$\\frac{3}{8}$",
+   "$\\frac{5}{12}$"
+  ],
+  "answer": "B",
+  "explanation": "\"Not caught at Pond 2\" means Pond 1 and Pond 3 together: $48 + 32 = 80$ amphibians. Spring peepers in those two ponds: $30 + 20 = 50$. The probability is $\\frac{50}{80} = \\frac{5}{8}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used Pond 2 itself, $\\frac{10}{40}$, and missed the word \"not.\" The group is every pond except Pond 2."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You built the right group of 80, but you counted the green frogs in it, $\\frac{30}{80}$. The question asks for spring peepers."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You counted the 50 spring peepers outside Pond 2 but divided by all 120 amphibians. Only the 80 amphibians not caught at Pond 2 can be selected."
+   }
+  },
+  "id": "orig-conditional-bu-M-f0641e",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-f0641e",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of the prints in drawer 3 or higher is selected at random, what is the probability of selecting a linocut?",
+  "stimulus": "A printmaking studio stores its work in a flat file with 9 numbered drawers. Drawers 1 through 4 each hold 15 prints, and all of them are linocuts. Drawers 5 through 9 each hold 12 prints: 4 linocuts and 8 etchings.",
+  "choices": [
+   "$\\frac{7}{15}$",
+   "$\\frac{4}{9}$",
+   "$\\frac{5}{9}$",
+   "$\\frac{5}{12}$"
+  ],
+  "answer": "C",
+  "explanation": "Build the group by multiplying drawers by prints per drawer. Drawers 3 and 4 hold $2 \\times 15 = 30$ prints, all linocuts. Drawers 5 through 9 hold $5 \\times 12 = 60$ prints, of which $5 \\times 4 = 20$ are linocuts. That makes $30 + 60 = 90$ prints, and $30 + 20 = 50$ of them are linocuts. The probability is $\\frac{50}{90} = \\frac{5}{9}$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You read \"drawer 3 or higher\" as \"higher than drawer 3\" and left drawer 3 out. That gives $\\frac{15 + 20}{15 + 60} = \\frac{35}{75}$. Drawer 3 is part of the group."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You built the right group of 90, but you counted the 40 etchings in it instead of the linocuts."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You counted the 50 linocuts in drawers 3 through 9 but divided by all 120 prints in the flat file. Only the 90 prints in drawer 3 or higher can be selected."
+   }
+  },
+  "id": "orig-conditional-bu-M-345023",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-M-345023",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

@@ -83,21 +83,26 @@
   "section": "math",
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "which_expression",
   "verification": {
    "id": "orig-system-graph-m-E-a4a305",
    "structure": [
     "names a table or graph but shows none"
    ],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "line passes through the points __var__ and __var__",
     "which system of equations is represented by the",
     "system of equations is represented by the graph"
    ],
    "residue": 8
-  },
-  "phrasing": "which_expression"
+  }
  },
  {
   "stem": "What is the solution $(x, y)$ to this system?",
@@ -282,21 +287,26 @@
   "section": "math",
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "which_expression",
   "verification": {
    "id": "orig-system-graph-m-E-c4320f",
    "structure": [
     "names a table or graph but shows none"
    ],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "line passes through the points __var__ and __var__",
     "which system of equations is represented by the",
     "system of equations is represented by the graph"
    ],
    "residue": 8
-  },
-  "phrasing": "which_expression"
+  }
  },
  {
   "stem": "The system has two solutions. What is the solution $(x, y)$ for which $x < 0$?",
@@ -379,20 +389,164 @@
   "section": "math",
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "which_expression",
   "verification": {
    "id": "orig-system-graph-m-E-37f68e",
    "structure": [
     "names a table or graph but shows none"
    ],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "line passes through the points __var__ and __var__",
     "which system of equations is represented by the",
     "system of equations is represented by the graph"
    ],
    "residue": 8
+  }
+ },
+ {
+  "stem": "Which of the following points is a solution to the system formed by the equation of the line shown and the equation $y = (x - 3)^2 - 1$?",
+  "stimulus": "An ecology student models two trends on the same axes. One model is the line shown. The other model is $y = (x - 3)^2 - 1$.",
+  "figure": {
+   "type": "line",
+   "caption": "Graph of the linear model",
+   "x_label": "x",
+   "y_label": "y",
+   "points": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     5,
+     -1
+    ],
+    [
+     6,
+     -2
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 6,
+   "x_step": 1,
+   "y_min": -2,
+   "y_max": 6,
+   "y_step": 1,
+   "alt": "A straight line on a coordinate grid, falling from left to right."
   },
-  "phrasing": "which_expression"
+  "choices": [
+   "$(2, 0)$",
+   "$(-3, -1)$",
+   "$(4, 0)$",
+   "$(0, 4)$"
+  ],
+  "answer": "C",
+  "explanation": "The line crosses the y-axis at 4 and drops 1 unit for every 1 unit it moves right, so its equation is $y = -x + 4$. A solution has to lie on both graphs. For $(4, 0)$, the line gives $-4 + 4 = 0$ and the parabola gives $(4 - 3)^2 - 1 = 0$. Both equations hold, so $(4, 0)$ is a solution.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$(2, 0)$ is an x-intercept of the parabola, since $(2 - 3)^2 - 1 = 0$. It is not on the line, though: $-2 + 4 = 2$, not 0. You gave a point where one curve meets an axis instead of a point where the two curves meet."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the vertex of $y = (x - 3)^2 - 1$ as $(-3, -1)$ by flipping the sign of 3. The vertex is actually $(3, -1)$, and even the vertex is not where the parabola crosses the line."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$(0, 4)$ is the line's y-intercept. On the parabola, $x = 0$ gives $(0 - 3)^2 - 1 = 8$, not 4, so this point is on the line only."
+   }
+  },
+  "id": "orig-system-graph-m-E-ff7f9f",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-E-ff7f9f",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the solution $(x, y)$ to the given system of equations?",
+  "stimulus": "An agricultural scientist uses the system below in a model that compares two fertilizer treatments.\n\n$y = (x + 1)^2 - 4$\n$y = 6x - 7$",
+  "choices": [
+   "$(-1, -4)$",
+   "$(2, 5)$",
+   "$(1, -4)$",
+   "$(0, -7)$"
+  ],
+  "answer": "B",
+  "explanation": "Set the right sides equal: $(x + 1)^2 - 4 = 6x - 7$. Expand to get $x^2 + 2x - 3 = 6x - 7$, so $x^2 - 4x + 4 = 0$, which is $(x - 2)^2 = 0$. That makes $x = 2$, and then $y = 6(2) - 7 = 5$. The line touches the parabola only at $(2, 5)$. In Desmos, graph both equations and click the single point where they meet.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$(-1, -4)$ is the vertex of the parabola, not the point where the line meets it. On the line, $x = -1$ gives $y = -13$."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the vertex of $y = (x + 1)^2 - 4$ to be at $x = +1$. In $(x + 1)^2$ the vertex is at $x = -1$, and neither point is where the two graphs meet."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$(0, -7)$ is the line's y-intercept. The parabola passes through $(0, -3)$, so this point is on the line only."
+   }
+  },
+  "id": "orig-system-graph-m-E-5ec4a7",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-E-5ec4a7",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

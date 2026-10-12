@@ -258,5 +258,809 @@
    "residue": 4
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "An urban planner models the depth of a new stormwater channel with the function $f(x) = 3x^2 + bx + c$, where $f(x)$ is the height, in meters, of the channel floor relative to street level, $x$ is the horizontal distance, in meters, from a survey marker, and $b$ and $c$ are constants. The graph of $y = f(x)$ in the xy-plane has x-intercepts at $(-2, 0)$ and $(6, 0)$.",
+  "choices": [
+   "$-12$",
+   "$-4$",
+   "$12$",
+   "$-36$"
+  ],
+  "answer": "A",
+  "explanation": "Each zero $r$ gives you a factor $(x - r)$, so the zeros $-2$ and $6$ give you $(x + 2)$ and $(x - 6)$. The leading coefficient is $3$, so $f(x) = 3(x + 2)(x - 6)$. Expanding gives $(x + 2)(x - 6) = x^2 - 4x - 12$, and multiplying by $3$ gives $f(x) = 3x^2 - 12x - 36$. The coefficient of $x$ is $b = -12$. To check in Desmos, graph $y = 3x^2 - 12x - 36$ and confirm that the x-intercepts are at $-2$ and $6$.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You expanded $(x + 2)(x - 6)$ to get $x^2 - 4x - 12$, then stopped before multiplying by the leading coefficient $3$. The $-4$ is the coefficient of $x$ before you scale by $3$, so it isn't $b$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the factors as $(x - 2)(x + 6)$, using $(x + r)$ in place of $(x - r)$. That flips the sign of the $x$-term, so you got $3x^2 + 12x - 36$. A zero at $-2$ comes from the factor $(x + 2)$, not $(x - 2)$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You expanded correctly to $3x^2 - 12x - 36$, but $-36$ is the constant term $c$, not the coefficient $b$ of $x$."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-45144f",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-45144f",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "of __var__ in the xy plane has x",
+    "__var__ in the xy plane has x intercepts",
+    "in the xy plane has x intercepts at",
+    "the xy plane has x intercepts at __var__"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A nutrition scientist uses the function $g$, defined by $g(x) = (x - 6)(2x + 3)$, as part of a model of how quickly the body absorbs a vitamin supplement.",
+  "choices": [
+   "$g(-6) = 0$",
+   "$g(-3) = 0$",
+   "$g\\left(-\\frac{3}{2}\\right) = 0$",
+   "$g(-18) = 0$"
+  ],
+  "answer": "C",
+  "explanation": "A zero of $g$ is any value that makes one of the factors equal 0. Setting $x - 6 = 0$ gives $x = 6$. Setting $2x + 3 = 0$ gives $2x = -3$, so $x = -\\frac{3}{2}$. That makes $g\\left(-\\frac{3}{2}\\right) = 0$ true. You can check it: $\\left(-\\frac{3}{2} - 6\\right)(-3 + 3) = 0$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the factor $(x - 6)$ as if it gave the zero $-6$. A factor $(x - r)$ gives the zero $r$, so this factor gives $6$. In fact $g(-6) = (-12)(-9) = 108$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You solved $2x + 3 = 0$ but left out the coefficient 2 and got $x = -3$. You still have to divide by 2, which gives $-\\frac{3}{2}$. In fact $g(-3) = (-9)(-3) = 27$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You took the constant term of the expanded form, $-18$, to be a zero. That constant is $g(0)$, the y-intercept. It is not an x-value where $g$ equals 0."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-a404f9",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "fail",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-a404f9",
+   "structure": [
+    "correct answer is far longer than every distractor"
+   ],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "An ecologist models changes in a pond's frog population with the function $p(x) = (x + 2)(x - 5)(x - k)$, where $k$ is a constant. The graph of $y = p(x)$ in the $xy$-plane passes through the point $(0, 30)$.",
+  "choices": [
+   "$p(-3) = 0$",
+   "$p(3) = 0$",
+   "$p(10) = 0$",
+   "$p(30) = 0$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute $x = 0$: $p(0) = (2)(-5)(-k) = 10k$. Since $p(0) = 30$, you get $10k = 30$, so $k = 3$. The factor $(x - 3)$ means 3 is a zero, so $p(3) = 0$ must be true.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You found $k = 3$ but then flipped the sign. The factor $(x - k)$ gives the zero $k$, not $-k$. In fact $p(-3) = (-1)(-8)(-6) = -48$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "10 is the product $(2)(-5)(-1)$, which you meet partway through. You stopped before dividing 30 by 10 to get $k$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "30 is the y-intercept, the output when $x = 0$. It is not a value of $x$ that makes $p$ equal 0."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-b52eb1",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-b52eb1",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "graph of __var__ in the __var__ plane passes",
+    "of __var__ in the __var__ plane passes through",
+    "__var__ in the __var__ plane passes through the",
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A paleobotanist uses the function $h(x) = -2(3x - 4)(x + 5)$ to model the thickness of fossil leaf layers in a rock core. The graph of $y = h(x)$ is drawn in the $xy$-plane.",
+  "choices": [
+   "The graph has an $x$-intercept at $(4, 0)$.",
+   "The graph has an $x$-intercept at $(5, 0)$.",
+   "The graph has an $x$-intercept at $(40, 0)$.",
+   "The graph has an $x$-intercept at $\\left(\\frac{4}{3}, 0\\right)$."
+  ],
+  "answer": "D",
+  "explanation": "The x-intercepts are where $h(x) = 0$, so set each factor equal to 0. From $3x - 4 = 0$ you get $x = \\frac{4}{3}$. From $x + 5 = 0$ you get $x = -5$. The leading $-2$ can never be 0, so it adds no intercept. That means $\\left(\\frac{4}{3}, 0\\right)$ must be an x-intercept.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the 4 straight off $(3x - 4)$ without dividing by the coefficient 3. The zero of $3x - 4$ is $\\frac{4}{3}$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated $(x + 5)$ as if it gave the zero $5$. A factor $(x + 5)$ is $(x - (-5))$, so the intercept is at $x = -5$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "40 is $h(0) = -2(-4)(5)$, the y-intercept. You put the y-intercept value in the x-coordinate position."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-3c351e",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-3c351e",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $k$?",
+  "stimulus": "A labor economist models the weekly change in overtime hours at a warehouse, $t$ weeks after a scheduling policy began, with the function $H(t) = 2t^3 - 9t^2 + kt - 12$, where $k$ is a constant. One zero of $H$ is $t = 4$.",
+  "choices": [
+   "$-71$",
+   "$-7$",
+   "$7$",
+   "$28$"
+  ],
+  "answer": "C",
+  "explanation": "A zero is an input where the output is 0, so substitute $t = 4$ and set $H(4) = 0$: $2(64) - 9(16) + 4k - 12 = 128 - 144 - 12 + 4k = -28 + 4k$. Setting $-28 + 4k = 0$ gives $k = 7$. You can also test the choices: only $k = 7$ makes $H(4) = 0$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated the zero 4 as if it came from a factor $(t + 4)$ and substituted $t = -4$. That gives $-128 - 144 - 4k - 12 = 0$, so $k = -71$. A zero of 4 means $H(4) = 0$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You reached $-28 + 4k = 0$ but moved the $-28$ without changing its sign, which gave $4k = -28$. Adding 28 to both sides gives $4k = 28$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "28 is the value of $4k$. You stopped one step early. Divide by 4 to get $k$."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-fd74ab",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-fd74ab",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "A textile historian models the shrinkage of a wool sample with the function $p(x) = 6x^2 + bx - 10$, where $b$ is a constant and $x$ is the sample's adjusted moisture reading. The zeros of $p$ are $\\frac{2}{3}$ and $-\\frac{5}{2}$.",
+  "choices": [
+   "$-11$",
+   "$-\\frac{11}{6}$",
+   "$\\frac{22}{3}$",
+   "$11$"
+  ],
+  "answer": "D",
+  "explanation": "Each zero $r$ gives a factor $(x - r)$, so $p(x) = 6\\left(x - \\frac{2}{3}\\right)\\left(x + \\frac{5}{2}\\right) = (3x - 2)(2x + 5) = 6x^2 + 11x - 10$, and $b = 11$. Testing the choices also works: substitute $x = \\frac{2}{3}$ to get $\\frac{8}{3} + \\frac{2b}{3} - 10 = 0$, which only $b = 11$ satisfies.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote each factor as $(x + r)$ instead of $(x - r)$, which gave $(3x + 2)(2x - 5) = 6x^2 - 11x - 10$. A zero of $\\frac{2}{3}$ comes from $(3x - 2)$, not $(3x + 2)$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "$-\\frac{11}{6}$ is the sum of the zeros. The coefficient $b$ equals the leading coefficient times the negative of that sum: $-6 \\cdot \\left(-\\frac{11}{6}\\right) = 11$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "After substituting $x = \\frac{2}{3}$, you found that $\\frac{2b}{3} = \\frac{22}{3}$ and stopped there. Multiply by $\\frac{3}{2}$ to get $b$."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-1aa653",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-1aa653",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "are __var__ and __var__ what is the value"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is an $x$-intercept of the graph of $y = d(x)$ in the $xy$-plane?",
+  "stimulus": "A hydrologist models how far a river's level is from a gauge's reference mark, in centimeters, $x$ hours after noon with the function $d(x) = -(x + 2)(x - 6)(x - k)$, where $k$ is a constant. The graph of $y = d(x)$ passes through the point $(0, 48)$.",
+  "choices": [
+   "$(-4, 0)$",
+   "$(0, 48)$",
+   "$(2, 0)$",
+   "$(4, 0)$"
+  ],
+  "answer": "A",
+  "explanation": "Substitute the point $(0, 48)$: $d(0) = -(2)(-6)(-k) = -12k$, so $-12k = 48$ and $k = -4$. The factor $(x - k)$ is then $(x + 4)$, which is zero at $x = -4$, so $(-4, 0)$ is an $x$-intercept. In Desmos, put a slider on $k$ and move it until the curve passes through $(0, 48)$, then read where it crosses the $x$-axis.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$(0, 48)$ is the $y$-intercept you were given. An $x$-intercept needs a $y$-coordinate of 0."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the zero of $(x + 2)$ to be 2. That factor equals 0 at $x = -2$, so the intercept is $(-2, 0)$, not $(2, 0)$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You lost a sign. The product $-(2)(-6)(-k)$ is $-12k$, not $12k$, because it has three negative factors. Solving $12k = 48$ gives $k = 4$ and the wrong intercept $(4, 0)$."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-ca2557",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-ca2557",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ intercept of the graph of __var__ in"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "For how many seconds is the bird below the water's surface?",
+  "stimulus": "An ornithologist models the vertical position of a diving gannet with the function $d(t) = (2t - 3)(t - 6)$, where $d(t)$ is the bird's height, in meters, above the water's surface $t$ seconds after it is first observed, for $0 \\le t \\le 8$. Negative values of $d(t)$ mean the bird is underwater.",
+  "choices": [
+   "$3$",
+   "$4.5$",
+   "$6$",
+   "$7.5$"
+  ],
+  "answer": "B",
+  "explanation": "The bird is at the surface when $d(t) = 0$. Set each factor to zero: $2t - 3 = 0$ gives $t = 1.5$, and $t - 6 = 0$ gives $t = 6$. Because the leading coefficient is positive, $d(t)$ is negative between these zeros, so the bird is underwater from $t = 1.5$ to $t = 6$. The gap is $6 - 1.5 = 4.5$ seconds.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the zero of $(2t - 3)$ as $3$ instead of solving $2t - 3 = 0$ to get $1.5$, then found $6 - 3$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the time the bird comes back up, $t = 6$, rather than how long it stays underwater, which is the gap between the two zeros."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the sign of the first zero to $-1.5$, as if the factor were $(2t + 3)$, and found $6 - (-1.5)$."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-25be2b",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-25be2b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How much greater is the constant term of $p(x)$ than the constant term of $q(x)$?",
+  "stimulus": "Two public health analysts each model the weekly change in clinic visits after a flu-vaccine campaign with a quadratic function that has a leading coefficient of $1$. Analyst P's function, $p(x)$, has zeros at $x = 2$ and $x = 9$. Analyst Q's function, $q(x)$, has zeros at $x = -2$ and $x = 9$.",
+  "choices": [
+   "$-36$",
+   "$0$",
+   "$18$",
+   "$36$"
+  ],
+  "answer": "D",
+  "explanation": "Each zero $r$ gives a factor $(x - r)$. So $p(x) = (x - 2)(x - 9)$, whose constant term is $(-2)(-9) = 18$, and $q(x) = (x + 2)(x - 9)$, whose constant term is $(2)(-9) = -18$. The constant term of $p(x)$ is greater by $18 - (-18) = 36$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You subtracted in the wrong order, finding $-18 - 18$, which is how much greater $q$'s constant term is than $p$'s."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You missed the sign of the product for $q(x)$: with one negative zero, the constant term is $-18$, not $18$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the constant term of $p(x)$ alone and stopped, instead of finding how much greater it is than $q$'s."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-1f2bd9",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-1f2bd9",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the positive difference between the two zeros of $f$?",
+  "stimulus": "An agronomist uses the function $f(x) = (3x - k)(x + 2)$, where $k$ is a positive constant, to model the change in a test plot's soil nitrogen level. In this model, $f(0) = -24$.",
+  "choices": [
+   "$2$",
+   "$6$",
+   "$12$",
+   "$14$"
+  ],
+  "answer": "B",
+  "explanation": "Substitute $x = 0$: $f(0) = (-k)(2) = -2k = -24$, so $k = 12$. Then $f(x) = (3x - 12)(x + 2)$. Setting each factor to zero gives $x = 4$ and $x = -2$. The positive difference is $4 - (-2) = 6$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the zero of $(x + 2)$ as $2$ instead of $-2$, then found $4 - 2$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the constant $k = 12$ and stopped, instead of using it to find the zeros and the gap between them."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated $k = 12$ as the zero of $(3x - k)$ without dividing by $3$, then found $12 - (-2)$."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-a60cba",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-a60cba",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation defines $f$?",
+  "stimulus": "A materials scientist models the net internal stress in a ceramic coating with a quadratic function $f$, where $x$ is the difference between the curing temperature and a reference temperature. In the $xy$-plane, the graph of $y = f(x)$ has x-intercepts at $(-4, 0)$ and $\\left(\\frac{3}{2}, 0\\right)$ and a y-intercept at $(0, -12)$.",
+  "choices": [
+   "$f(x) = (2x + 3)(x - 4)$",
+   "$f(x) = (x - 3)(x + 4)$",
+   "$f(x) = (2x - 3)(x + 4)$",
+   "$f(x) = \\frac{1}{2}(2x - 3)(x + 4)$"
+  ],
+  "answer": "C",
+  "explanation": "A zero at $-4$ gives the factor $(x + 4)$. A zero at $\\frac{3}{2}$ gives $(2x - 3)$, because $2x - 3 = 0$ when $x = \\frac{3}{2}$. So $f(x) = a(2x - 3)(x + 4)$. Substitute $x = 0$: $a(-3)(4) = -12a$. This must equal $-12$, so $a = 1$ and $f(x) = (2x - 3)(x + 4)$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped the signs inside both factors. Setting each factor to zero gives zeros at $-\\frac{3}{2}$ and $4$, not $\\frac{3}{2}$ and $-4$. The y-intercept still comes out to $-12$, which is why checking only that point didn't catch the mistake."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped the coefficient on $x$ in the first factor, so this graph crosses the x-axis at $3$ instead of $\\frac{3}{2}$. To get a zero at $\\frac{3}{2}$ with whole numbers, the factor needs to be $(2x - 3)$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "These zeros are right, but you didn't check the y-intercept. At $x = 0$ this gives $\\frac{1}{2}(-3)(4) = -6$, not $-12$. You probably divided by 2 to make the leading coefficient 1, and that changes the intercept."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-eba194",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-eba194",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "in the __var__ plane the graph of __var__",
+    "the __var__ plane the graph of __var__ has",
+    "a y intercept at __var__ which equation defines",
+    "y intercept at __var__ which equation defines __var__"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which equation defines $g$?",
+  "stimulus": "An agronomist models the change in a wheat field's yield, in bushels per acre, with the cubic polynomial $g(x)$, where $x$ is how far the nitrogen applied differs from the recommended rate, in tens of pounds per acre. The zeros of $g$ are $-1$, $2$, and $6$, and $g(0) = 24$.",
+  "choices": [
+   "$g(x) = 2(x - 1)(x + 2)(x + 6)$",
+   "$g(x) = 2(x + 1)(x - 2)(x - 6)$",
+   "$g(x) = -2(x + 1)(x - 2)(x - 6)$",
+   "$g(x) = 24(x + 1)(x - 2)(x - 6)$"
+  ],
+  "answer": "B",
+  "explanation": "Each zero $r$ gives a factor $(x - r)$, so $g(x) = a(x + 1)(x - 2)(x - 6)$. At $x = 0$ the factors are $(1)(-2)(-6) = 12$, so $g(0) = 12a$. Setting $12a = 24$ gives $a = 2$, so $g(x) = 2(x + 1)(x - 2)(x - 6)$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote each factor as $(x + r)$ instead of $(x - r)$. That gives zeros at $1$, $-2$, and $-6$, and it makes $g(0) = -24$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You got the sign of the constant product wrong. $(1)(-2)(-6)$ has two negative factors, so it equals $+12$, not $-12$. That led you to $a = -2$, which makes $g(0) = -24$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the y-intercept, $24$, as the leading coefficient. The leading coefficient is the number that makes the constant term equal $24$. Here the factors already multiply to $12$ at $x = 0$, so you only need $2$."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-251b25",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-251b25",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation defines $d$?",
+  "stimulus": "A folklorist compares two versions of a regional legend in archived story collections. The quadratic function $d$ gives how many more times the first version is recorded than the second, $x$ decades after the archive opened. The table shows three values of $x$ and their corresponding values of $d(x)$.\nDifference in Recorded Versions\n$x$ | $0$ | $2$ | $9$\n$d(x)$ | $-54$ | $0$ | $0$",
+  "choices": [
+   "$d(x) = 3(x - 2)(x - 9)$",
+   "$d(x) = -3(x + 2)(x + 9)$",
+   "$d(x) = -(3x - 2)(x - 9)$",
+   "$d(x) = -3(x - 2)(x - 9)$"
+  ],
+  "answer": "D",
+  "explanation": "The table shows $d(x) = 0$ at $x = 2$ and $x = 9$, so those are the zeros and the factors are $(x - 2)$ and $(x - 9)$. Then $d(x) = a(x - 2)(x - 9)$. At $x = 0$ this is $a(-2)(-9) = 18a$. Setting $18a = -54$ gives $a = -3$, so $d(x) = -3(x - 2)(x - 9)$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the zeros right but the sign of the leading coefficient wrong. This parabola opens upward and gives $d(0) = 54$, but the table says $d(0) = -54$. Two negative zeros-factors multiply to a positive, so $a$ must be negative."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the factors as $(x + 2)$ and $(x + 9)$, which puts the zeros at $-2$ and $-9$. This happens to give $d(0) = -54$, but $d(2)$ is not $0$. A zero at $r$ needs the factor $(x - r)$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You put the coefficient inside the factor instead of in front. $(3x - 2)$ is zero at $x = \\frac{2}{3}$, not $2$, and this equation gives $d(0) = -18$."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-f7a2a3",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-f7a2a3",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of the positive zero of $T$ in this context?",
+  "stimulus": "An ecologist models the number of tadpoles in a pond, in hundreds, $t$ weeks after a batch of eggs hatches with the function $T(t) = -(t - 12)(t + 2)$, for $0 \\le t \\le 12$.",
+  "choices": [
+   "There are no tadpoles left in the pond 12 weeks after the eggs hatch.",
+   "There are no tadpoles left in the pond 2 weeks after the eggs hatch.",
+   "There are 1,200 tadpoles in the pond at the moment the eggs hatch.",
+   "The number of tadpoles in the pond is greatest 12 weeks after hatching."
+  ],
+  "answer": "A",
+  "explanation": "A zero is a value of $t$ that makes $T(t) = 0$. The factor $(t - 12)$ equals 0 when $t = 12$, and the factor $(t + 2)$ equals 0 when $t = -2$. So 12 is the positive zero. It is a time in weeks, and the output there is 0 tadpoles. That means the pond has no tadpoles 12 weeks after the eggs hatch.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the zero from $(t + 2)$ as $+2$. Setting $t + 2 = 0$ actually gives $t = -2$, which is negative and falls outside the model's domain."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You treated 12 as a number of tadpoles, in hundreds, at $t = 0$. The zero is an input, a time in weeks. It isn't an output. The model actually gives $T(0) = 24$, or 2,400 tadpoles."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated the zero as the vertex. The greatest number of tadpoles occurs halfway between the zeros, at $t = 5$, and not at 12."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-74bc2e",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-74bc2e",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of the fact that $(2t - 5)$ is a factor of $d(t)$ in this context?",
+  "stimulus": "A materials scientist heats a thin alloy strip and records its tip's vertical displacement from the resting position. The displacement $d$, in millimeters, $t$ seconds after heating begins is modeled by $d(t) = (2t - 5)(t - 8)$, for $0 \\le t \\le 8$.",
+  "choices": [
+   "The tip is at its resting position 2.5 seconds after heating begins.",
+   "The tip is at its resting position 5 seconds after heating begins.",
+   "The tip is 2.5 millimeters from rest at the moment heating begins.",
+   "The tip is farthest from rest 2.5 seconds after heating begins."
+  ],
+  "answer": "A",
+  "explanation": "If $(2t - 5)$ is a factor, then $d(t) = 0$ when $2t - 5 = 0$, which gives $t = \\frac{5}{2} = 2.5$. A displacement of 0 millimeters means the tip is at its resting position. So the tip is at rest 2.5 seconds after heating begins.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You took 5 straight from the factor without dividing by the coefficient 2. Solving $2t - 5 = 0$ gives $t = 2.5$, not 5."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the input and the output. 2.5 is a time in seconds, not a distance in millimeters. At $t = 0$ the displacement is actually $d(0) = 40$ millimeters."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the zero as the turning point. At $t = 2.5$ the displacement is 0, which is the closest the tip can be to rest, not the farthest."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-d0fb19",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-d0fb19",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of the zero 4 of $P$ in this context?",
+  "stimulus": "A printmaker sells an edition of woodcut prints. The profit $P$, in dollars, from an edition of $x$ prints is modeled by $P(x) = -5(x - 4)(x - 60)$.",
+  "choices": [
+   "An edition of 4 prints gives the printmaker a profit of $0.",
+   "An edition of 0 prints gives the printmaker a profit of $4.",
+   "An edition of 4 prints gives the printmaker the greatest profit.",
+   "An edition of 20 prints gives the printmaker a profit of $0."
+  ],
+  "answer": "A",
+  "explanation": "The factor $(x - 4)$ makes $P(4) = 0$. The input $x$ counts prints, and the output $P$ is in dollars. So an edition of 4 prints earns a profit of exactly $0, which means the printmaker breaks even.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You swapped the roles of the numbers. 4 is the number of prints, not a dollar amount. With 0 prints the model gives $P(0) = -1200$, a loss of $1,200."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated a zero as the vertex. The greatest profit comes halfway between the zeros, at 32 prints, and not at 4."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied the zero by the leading coefficient, $4 \\times 5 = 20$. The coefficient $-5$ stretches the graph but doesn't move the zeros. Setting $x - 4 = 0$ gives $x = 4$."
+   }
+  },
+  "id": "orig-zeros-and-fact-M-dbf09f",
+  "skill_cd": "P.C.",
+  "subtype": "zeros-and-factored-form",
+  "subtype_name": "Zeros \u2194 factors",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-zeros-and-fact-M-dbf09f",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

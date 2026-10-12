@@ -272,17 +272,22 @@
   "section": "math",
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "must_be_true",
   "verification": {
    "id": "orig-must-be-true-s-E-0f26bf",
    "structure": [
     "correct answer is far longer than every distractor"
    ],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
-  },
-  "phrasing": "must_be_true"
+  }
  },
  {
   "stem": "Which of the following must be true?",
@@ -379,5 +384,107 @@
    "residue": 0
   },
   "phrasing": "must_be_true"
+ },
+ {
+  "stem": "Which of the following statements must be true?\n\nI. Exactly 25% of all 2,000 plots at the farm are nitrogen deficient.\nII. If another 80 plots were randomly selected from the farm, exactly 25% of them would be nitrogen deficient.",
+  "stimulus": "An agronomist randomly selected 80 of the 2,000 wheat plots at a research farm and tested each selected plot for nitrogen deficiency. Of the selected plots, 25% were nitrogen deficient.",
+  "choices": [
+   "I only",
+   "II only",
+   "I and II",
+   "Neither I nor II"
+  ],
+  "answer": "D",
+  "explanation": "A random sample makes 25% a reasonable estimate of the share of all 2,000 plots that are deficient, but an estimate is not a guarantee. The true share for the whole farm could be a little above or below 25%, so Statement I need not be true. A second random sample of 80 plots would very likely give a different percent, because results vary from sample to sample, so Statement II need not be true either. Neither statement must be true.",
+  "distractors": {
+   "A": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You treated the sample percent as the exact percent for the whole farm. Random selection makes 25% a good estimate for all 2,000 plots. It does not make the population value exactly 25%."
+   },
+   "B": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You assumed that a new random sample would give the same result. Two random samples from the same farm usually differ a little, so nothing guarantees that a second sample would show exactly 25%."
+   },
+   "C": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You accepted both exact claims because the sample was random. The key word is 'must': a random sample gives a reasonable estimate, but it does not fix the population value or the result of any other sample."
+   }
+  },
+  "id": "orig-must-be-true-s-E-5a5e25",
+  "skill_cd": "Q.G.",
+  "subtype": "must-be-true-sample-to-population",
+  "subtype_name": "What must be true from a random sample result",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "fail",
+  "verification": {
+   "id": "orig-must-be-true-s-E-5a5e25",
+   "structure": [
+    "correct answer is far longer than every distractor"
+   ],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which of the following statements must be true"
+   ],
+   "residue": 8
+  }
+ },
+ {
+  "stem": "Which of the following statements must be true?",
+  "stimulus": "A meteorologist randomly selected 40 days from the past 5 years at a coastal weather station. The mean high temperature of the 40 selected days was 21\u00b0C.",
+  "choices": [
+   "The mean high temperature of all days at the station in those 5 years was exactly 21\u00b0C.",
+   "A second random sample of 40 days from those 5 years would have a mean high of 21\u00b0C.",
+   "The mean high temperature at a nearby inland station over those 5 years was 21\u00b0C.",
+   "At least one of the 40 selected days had a high temperature of 21\u00b0C or greater."
+  ],
+  "answer": "D",
+  "explanation": "A mean cannot be greater than every value it averages. If all 40 selected days had highs below 21\u00b0C, their mean would also be below 21\u00b0C. So at least one selected day must have reached 21\u00b0C or more. The other choices all treat a sample mean as exact for something beyond the sample, and a random sample only estimates those values.",
+  "distractors": {
+   "A": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You treated the sample mean as the exact mean of every day in the 5 years. Random selection makes 21\u00b0C a reasonable estimate of that mean, but the true value could be somewhat higher or lower."
+   },
+   "B": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You assumed that a repeat sample would give the same mean. A different random set of 40 days would almost certainly have a slightly different mean, so 21\u00b0C is not guaranteed."
+   },
+   "C": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You applied the result to a population that was never sampled. The days were selected only at the coastal station, so the sample tells you nothing certain about an inland station."
+   }
+  },
+  "id": "orig-must-be-true-s-E-072dfc",
+  "skill_cd": "Q.G.",
+  "subtype": "must-be-true-sample-to-population",
+  "subtype_name": "What must be true from a random sample result",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "review",
+  "verification": {
+   "id": "orig-must-be-true-s-E-072dfc",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which of the following statements must be true"
+   ],
+   "residue": 8
+  }
  }
 ]

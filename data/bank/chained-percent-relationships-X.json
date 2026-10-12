@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-chained-percen-X-1a82c1",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,14 +82,403 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-chained-percen-X-68b46b",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "compare"
+ },
+ {
+  "stem": "D is what percent greater than C?",
+  "stimulus": "A public health department compared how many flu vaccinations four clinics gave last season. Clinic A gave 25% more vaccinations than Clinic B. Clinic B gave 20% fewer vaccinations than Clinic C. Clinic D gave 40% more vaccinations than Clinic A.",
+  "choices": [
+   "28.6%",
+   "40.0%",
+   "45.0%",
+   "45.8%"
+  ],
+  "answer": "B",
+  "explanation": "Let C = 100. B is 20% fewer than C, so $B = 0.8(100) = 80$. A is 25% more than B, so $A = 1.25(80) = 100$. D is 40% more than A, so $D = 1.4(100) = 140$. Then $D = 1.4C$, so D is 40.0% greater than C. The multipliers $1.25 \\times 0.8$ cancel exactly, which is why the answer is clean.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $D = 1.4C$ but then worked out how much less C is than D, $1 - \\frac{1}{1.4} \\approx 0.286$. The question uses C as the base, so the answer is $1.4 - 1 = 0.4$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added and subtracted the percents: $25 - 20 + 40 = 45$. Percent changes on different bases multiply. They don't add, and here $1.25 \\times 0.8 \\times 1.4 = 1.4$."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You read 'B gave 20% fewer than C' as 'C gave 20% more than B' and wrote $B = \\frac{C}{1.2}$. The base is the quantity after 'than', which is C, so $B = 0.8C$."
+   }
+  },
+  "id": "orig-chained-percen-X-208889",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-chained-percen-X-208889",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $p$?",
+  "stimulus": "Ornithologists counted the breeding pairs of a warbler species at one wetland. The count rose 20% from 2019 to 2020, then fell 25% from 2020 to 2021. From 2021 to 2022 it rose $p$%, and the 2022 count was 8% greater than the 2019 count.",
+  "choices": [
+   "10",
+   "13",
+   "18",
+   "20"
+  ],
+  "answer": "D",
+  "explanation": "Let the 2019 count be 100. In 2020 it is $1.2(100) = 120$, and in 2021 it is $0.75(120) = 90$. The 2022 count is $1.08(100) = 108$. From 90 to 108 the change is $\\frac{108 - 90}{90} = 0.2$, so $p = 20$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You compared 2022 with 2020, $\\frac{120 - 108}{120} = 0.1$. The question asks for the change from 2021 to 2022."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the percents: $20 - 25 + p = 8$. Successive changes multiply, so you need $1.2 \\times 0.75 \\times (1 + \\frac{p}{100}) = 1.08$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You correctly found that 2021 was 10% below 2019 but then added percents: $10 + 8 = 18$. The 18 pairs gained are measured against the 2021 count of 90, not against 100."
+   }
+  },
+  "id": "orig-chained-percen-X-7f0625",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-chained-percen-X-7f0625",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Performance A's tempo is what percent slower than the composer's marked tempo?",
+  "stimulus": "A musicologist compared recorded tempos of one movement with the composer's marked tempo of 120 beats per minute. The marked tempo is 25% faster than the tempo of Performance B. The tempo of Performance A is 12.5% faster than the tempo of Performance B.",
+  "choices": [
+   "10%",
+   "11.1%",
+   "12.5%",
+   "15.6%"
+  ],
+  "answer": "A",
+  "explanation": "The marked tempo is 25% faster than B, so $1.25B = 120$ and $B = 96$. A is 12.5% faster than B, so $A = 1.125(96) = 108$. Compared with the marking, $\\frac{120 - 108}{120} = 0.1$, so A is 10% slower.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided the 12-beat difference by A's 108 instead of by 120. That tells you how much faster the marking is than A, not how much slower A is than the marking."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the percents, $25 - 12.5 = 12.5$. The two percents use different bases (B in both statements, but the marking is the base for the answer), so you need to go through actual tempos."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You took 25% off 120 to get $B = 90$. The sentence says the marking is 25% faster than B, so B is the base: $1.25B = 120$, which gives $B = 96$."
+   }
+  },
+  "id": "orig-chained-percen-X-3f8c84",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-chained-percen-X-3f8c84",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "By what percent did the yield per kilogram of nitrogen applied decrease from the first season to the second?",
+  "stimulus": "On an experimental plot, total yield equals the number of plants times the yield per plant. From the first season to the second, the number of plants fell 20%, the yield per plant rose 50%, and the total nitrogen applied to the plot rose 60%.",
+  "choices": [
+   "6.25%",
+   "25%",
+   "30%",
+   "40%"
+  ],
+  "answer": "B",
+  "explanation": "Total yield changes by a factor of $0.8 \\times 1.5 = 1.2$. Nitrogen changes by a factor of 1.6. Yield per kilogram of nitrogen changes by a factor of $\\frac{1.2}{1.6} = 0.75$, which is a 25% decrease.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You used only the yield per plant and the nitrogen, $\\frac{1.5}{1.6} = 0.9375$, and left out the 20% drop in plant count."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You combined the percents by adding: $-20 + 50 - 60 = -30$. Each change is a factor, so you multiply and divide the factors."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You correctly found that total yield rose 20%, then subtracted percents: $20 - 60 = -40$. Dividing by more nitrogen means dividing by 1.6, not subtracting 60 points."
+   }
+  },
+  "id": "orig-chained-percen-X-14d712",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-chained-percen-X-14d712",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The density of treated Alloy P is what percent less than the density of untreated Alloy Q?",
+  "stimulus": "Density equals mass divided by volume. A heat treatment reduced a sample of Alloy P's mass by 10% and its volume by 25%. Before treatment, Alloy P's density was 30% less than the density of untreated Alloy Q.",
+  "choices": [
+   "10%",
+   "15%",
+   "16%",
+   "19%"
+  ],
+  "answer": "C",
+  "explanation": "Treatment multiplies P's density by $\\frac{0.9}{0.75} = 1.2$. Untreated P's density is $0.7Q$, so treated P's density is $1.2(0.7Q) = 0.84Q$. That is 16% less than Q's density.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You correctly found the 20% rise in density, then subtracted percents: $20 - 30 = -10$. The 20% rise applies to $0.7Q$, so you multiply: $1.2 \\times 0.7 = 0.84$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added and subtracted percents all the way through: $-10 + 25 - 30 = -15$. Dividing by a 25% smaller volume multiplies density by $\\frac{1}{0.75}$, not by 1.25."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You calculated $\\frac{1}{0.84} \\approx 1.19$, which is how much greater Q is than treated P. The question uses Q as the base."
+   }
+  },
+  "id": "orig-chained-percen-X-51e17f",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-chained-percen-X-51e17f",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "After these losses, the volume of water in Reservoir A is approximately what percent greater than the volume in Reservoir B?",
+  "stimulus": "At the start of a dry month, Reservoir A held 40% more water than Reservoir B. During the month, Reservoir A lost 25% of its water and Reservoir B lost 10% of its water. No water was added to either reservoir.",
+  "choices": [
+   "5.0%",
+   "14.3%",
+   "16.7%",
+   "25.0%"
+  ],
+  "answer": "C",
+  "explanation": "Let B start at 100, so A starts at 140. After the losses, A holds $0.75(140) = 105$ and B holds $0.9(100) = 90$. Then $\\frac{105 - 90}{90} = \\frac{1}{6} \\approx 0.167$, so A holds about 16.7% more.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You compared A's new volume of 105 with B's starting volume of 100. B also lost 10%, so the base is 90."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You divided the difference of 15 by A's 105. That tells you how much less B holds than A, not how much more A holds than B."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You combined the percents by adding, $40 - 25 + 10 = 25$. Each loss multiplies a different reservoir's volume, so you have to track actual volumes."
+   }
+  },
+  "id": "orig-chained-percen-X-09366a",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-chained-percen-X-09366a",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "At the end of the season, the cyclist's power-to-mass ratio is approximately what percent of the teammate's?",
+  "stimulus": "A sports scientist tracks power-to-mass ratio, which is power output divided by body mass. Over one season, a cyclist's power output rose 20% and body mass fell 10%. At the start of the season, the cyclist's ratio was 25% less than a teammate's. The teammate's ratio did not change.",
+  "choices": [
+   "90%",
+   "100%",
+   "105%",
+   "108.3%"
+  ],
+  "answer": "B",
+  "explanation": "The cyclist's ratio changes by a factor of $\\frac{1.2}{0.9} = \\frac{4}{3}$. It started at $0.75T$, where T is the teammate's ratio, so it ends at $\\frac{4}{3}(0.75T) = T$. That is 100% of the teammate's ratio.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You applied the 20% rise in power to $0.75T$ ($1.2 \\times 0.75 = 0.9$) and left out the drop in body mass, which also raises the ratio."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the percents: $+20 + 10 - 25 = +5$. Dividing by a 10% smaller mass multiplies by $\\frac{1}{0.9}$, and every change multiplies."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You correctly found the 33.3% rise in the ratio, then subtracted percents: $33.3 - 25 = 8.3$. The rise applies to $0.75T$, so you multiply: $\\frac{4}{3} \\times 0.75 = 1$."
+   }
+  },
+  "id": "orig-chained-percen-X-a14ca1",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-chained-percen-X-a14ca1",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Edition 3's total revenue is what percent greater than Edition 1's total revenue?",
+  "stimulus": "A printmaking studio sells three editions of a woodcut. Total revenue for an edition equals the number of prints times the price per print. Edition 2 had 25% fewer prints than Edition 1, and its price per print was 60% higher. Edition 3's total revenue was 10% less than Edition 2's.",
+  "choices": [
+   "8%",
+   "10%",
+   "20%",
+   "25%"
+  ],
+  "answer": "A",
+  "explanation": "Edition 2's revenue is $0.75 \\times 1.6 = 1.2$ times Edition 1's. Edition 3's revenue is $0.9 \\times 1.2 = 1.08$ times Edition 1's, so it is 8% greater.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You correctly found that Edition 2 earned 20% more than Edition 1, then subtracted percents: $20 - 10 = 10$. The 10% cut applies to Edition 2's larger revenue, so $1.2 \\times 0.9 = 1.08$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "20% is how much more Edition 2 earned than Edition 1. The question asks about Edition 3."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the percents: $-25 + 60 - 10 = 25$. Percent changes on different quantities multiply."
+   }
+  },
+  "id": "orig-chained-percen-X-bb34b9",
+  "skill_cd": "Q.B.",
+  "subtype": "chained-percent-relationships",
+  "subtype_name": "Chained percents across several quantities",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-chained-percen-X-bb34b9",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

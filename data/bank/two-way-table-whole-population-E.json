@@ -386,5 +386,101 @@
    "residue": 1
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "If one of these samples is selected at random, what is the probability of selecting a steel sample that failed the test?",
+  "stimulus": "An engineering lab tested metal alloy samples for cracking under repeated bending. The table shows the results by alloy type.\n\nBending Test Results by Alloy Type\nAlloy | Passed | Failed | Total\nAluminum | 18 | 6 | 24\nTitanium | 22 | 2 | 24\nSteel | 20 | 12 | 32\nTotal | 60 | 20 | 80",
+  "choices": [
+   "$\\frac{3}{20}$",
+   "$\\frac{1}{4}$",
+   "$\\frac{3}{8}$",
+   "$\\frac{3}{5}$"
+  ],
+  "answer": "A",
+  "explanation": "No condition narrows the group, so your denominator is every sample tested: the grand total, 80. The samples that are both steel and failed sit where the Steel row meets the Failed column: 12. The probability is $\\frac{12}{80} = \\frac{3}{20}$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used all 20 failed samples instead of only the steel ones. $\\frac{20}{80} = \\frac{1}{4}$ is the probability of choosing any failed sample, whatever its alloy."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You divided 12 by the Steel row total, 32. $\\frac{12}{32} = \\frac{3}{8}$ answers a different question: given that a sample is steel, what is the chance it failed? The sample is chosen from all 80, so the denominator has to be 80."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You divided 12 by the Failed column total, 20. $\\frac{12}{20} = \\frac{3}{5}$ is the share of failed samples that are steel, which is a conditional question. Here the sample is chosen from all 80."
+   }
+  },
+  "id": "orig-two-way-table--E-c24504",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--E-c24504",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these specimens is selected at random, what is the probability of selecting a specimen with a toothed leaf margin that was not found at the North quarry?",
+  "stimulus": "Paleobotanists sorted fossil leaf specimens from two quarries by leaf edge: toothed (jagged) or smooth. The table shows the counts.\n\nFossil Leaf Specimens by Quarry and Margin Type\nQuarry | Toothed | Smooth | Total\nNorth | 12 | 28 | 40\nSouth | 33 | 27 | 60\nTotal | 45 | 55 | 100",
+  "choices": [
+   "$\\frac{3}{25}$",
+   "$\\frac{33}{100}$",
+   "$\\frac{11}{20}$",
+   "$\\frac{11}{15}$"
+  ],
+  "answer": "B",
+  "explanation": "The specimen is chosen from all of them, so your denominator is the grand total, 100. 'Not found at the North quarry' means found at the South quarry, so you need the cell where South meets Toothed: 33. The probability is $\\frac{33}{100}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You read 'not found at the North quarry' as 'found at the North quarry' and used the North\u2013Toothed cell, 12. $\\frac{12}{100} = \\frac{3}{25}$ counts the wrong quarry."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You divided 33 by the South row total, 60. $\\frac{33}{60} = \\frac{11}{20}$ is the chance that a South quarry specimen is toothed, which is a conditional question. The specimen is chosen from all 100."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You divided 33 by the Toothed column total, 45. $\\frac{33}{45} = \\frac{11}{15}$ is the share of toothed specimens that came from the South quarry, which is also conditional. The denominator should be all 100 specimens."
+   }
+  },
+  "id": "orig-two-way-table--E-01e977",
+  "skill_cd": "Q.E.",
+  "subtype": "two-way-table-whole-population",
+  "subtype_name": "Two-way table, probability out of everyone",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-two-way-table--E-01e977",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

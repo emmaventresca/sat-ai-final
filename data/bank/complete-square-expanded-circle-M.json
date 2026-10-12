@@ -202,11 +202,17 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "review",
+  "phrasing": "which_expression",
   "verification": {
    "id": "orig-complete-squar-M-c68ec0",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "circle a in the xy plane has the",
     "a in the xy plane has the equation",
@@ -221,8 +227,7 @@
     "b has the same center as circle a"
    ],
    "residue": 9
-  },
-  "phrasing": "which_expression"
+  }
  },
  {
   "stem": "The graph of the given equation is a circle in the xy-plane. What is the length of the circle's diameter?",
@@ -278,5 +283,680 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the radius of the zone, in meters?",
+  "stimulus": "A sports scientist marks a circular agility zone on a training field. In the xy-plane, the zone's boundary is given by $x^2 + y^2 - 10x + 4y - 7 = 0$, where $x$ and $y$ are measured in meters.",
+  "choices": [
+   "$\\sqrt{7}$",
+   "$4\\sqrt{2}$",
+   "$6$",
+   "$36$"
+  ],
+  "answer": "C",
+  "explanation": "First put the $x$ terms together and the $y$ terms together, and move the constant to the right: $(x^2 - 10x) + (y^2 + 4y) = 7$. Half of $-10$ is $-5$, and $(-5)^2 = 25$. Half of $4$ is $2$, and $2^2 = 4$. Add both to each side: $(x^2 - 10x + 25) + (y^2 + 4y + 4) = 7 + 25 + 4$. This becomes $(x - 5)^2 + (y + 2)^2 = 36$. The right side is $r^2$, so $r^2 = 36$ and the radius is $6$ meters. To check, graph the original equation in Desmos. You'll see a circle centered at $(5, -2)$ with radius $6$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You completed the square on the left side but didn't add $25$ and $4$ to the right side, so you kept $r^2 = 7$. Whatever you add to one side of the equation, you have to add to the other side too."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You added the $25$ for the $x$ terms to the right side but forgot the $4$ for the $y$ terms. That gives $r^2 = 32$ and $r = 4\\sqrt{2}$. Both squares have to be completed before you read off $r^2$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You completed the square correctly but stopped at $r^2 = 36$. The right side of centre-radius form is the radius squared, so you need to take its square root to get $6$."
+   }
+  },
+  "id": "orig-complete-squar-M-37244b",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-37244b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graph of the given equation is a circle in the xy-plane. What is the length of the radius of the circle, in kilometers?",
+  "stimulus": "An ornithologist models the boundary of a red-tailed hawk's hunting range with the equation $x^2 + y^2 - 8x + 6y - 11 = 0$, where $x$ and $y$ are measured in kilometers from a field station.",
+  "choices": [
+   "$\\sqrt{11}$",
+   "$5$",
+   "$6$",
+   "$36$"
+  ],
+  "answer": "C",
+  "explanation": "Group the terms and complete the square for each variable: $(x^2 - 8x + 16) + (y^2 + 6y + 9) = 11 + 16 + 9$. This gives $(x - 4)^2 + (y + 3)^2 = 36$. The right side is $r^2$, so the radius is $\\sqrt{36} = 6$ kilometers. That is how far the edge of the hawk's range is from the center of the range.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You completed the square on the left but didn't add $16$ and $9$ to the right side too, so you took $r^2 = 11$. Whatever you add to one side has to go on the other."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $16$ and $9$ to get $25$, but you lost the $11$ when you moved it across the equals sign. The right side should be $11 + 16 + 9 = 36$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$36$ is $r^2$, not $r$. The radius is the square root of the right side, so it's $6$ kilometers."
+   }
+  },
+  "id": "orig-complete-squar-M-dd505e",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-dd505e",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "of the given equation is a circle in",
+    "the given equation is a circle in the",
+    "given equation is a circle in the xy",
+    "equation is a circle in the xy plane",
+    "what is the length of the radius of"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A circle in the xy-plane has its center at $(5, -2)$ and has a radius of $4$. An equation of this circle is $x^2 + y^2 + Dx + Ey + F = 0$, where $D$, $E$, and $F$ are constants. What is the value of $F$?",
+  "stimulus": "An agricultural scientist maps the edge of the area watered by a center-pivot sprinkler on a field grid. Each grid unit is $10$ meters.",
+  "choices": [
+   "$-16$",
+   "$13$",
+   "$25$",
+   "$29$"
+  ],
+  "answer": "B",
+  "explanation": "Start from center-radius form: $(x - 5)^2 + (y + 2)^2 = 16$. Expand it to get $x^2 - 10x + 25 + y^2 + 4y + 4 = 16$. Move the $16$ to the left: $x^2 + y^2 - 10x + 4y + 13 = 0$. So $F = 25 + 4 - 16 = 13$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You expanded the brackets but dropped the constants $25$ and $4$ that come from the center, so only $-16$ was left. When you expand back out, the squares of the center's coordinates stay in the constant term."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You subtracted the radius, $4$, instead of the radius squared, $16$: $25 + 4 - 4 = 25$. The right side of the circle equation is $r^2$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "$29$ is $25 + 4$, the constant from expanding the brackets. You stopped before moving $r^2 = 16$ to the left side and subtracting it."
+   }
+  },
+  "id": "orig-complete-squar-M-00eeda",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-00eeda",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ and has a radius of __var__ an",
+    "and has a radius of __var__ an equation",
+    "has a radius of __var__ an equation of",
+    "a radius of __var__ an equation of this",
+    "radius of __var__ an equation of this circle",
+    "of __var__ an equation of this circle is",
+    "__var__ an equation of this circle is __var__",
+    "an equation of this circle is __var__ where",
+    "equation of this circle is __var__ where __var__",
+    "of this circle is __var__ where __var__ __var__",
+    "this circle is __var__ where __var__ __var__ and",
+    "circle is __var__ where __var__ __var__ and __var__",
+    "is __var__ where __var__ __var__ and __var__ are"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "The graph of the given equation is a circle in the xy-plane. What is the length of the diameter of the circle, in kilometers?",
+  "stimulus": "After a small earthquake, a seismologist models the edge of the region where the shaking was felt with the equation $x^2 + y^2 + 10x - 4y - 7 = 0$, where $x$ and $y$ are measured in kilometers from a monitoring station.",
+  "choices": [
+   "$2\\sqrt{7}$",
+   "$6$",
+   "$12$",
+   "$72$"
+  ],
+  "answer": "C",
+  "explanation": "Complete the square for each variable: $(x^2 + 10x + 25) + (y^2 - 4y + 4) = 7 + 25 + 4$. This gives $(x + 5)^2 + (y - 2)^2 = 36$, so the radius is $6$ kilometers. The diameter is twice the radius, so the felt region is $12$ kilometers across.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You didn't add $25$ and $4$ to the right side, so you took $r^2 = 7$ and doubled $\\sqrt{7}$. Constants you add to complete the square have to be added to both sides."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$6$ kilometers is the radius, the distance from the center of the felt region to its edge. The question asks for the diameter, which is twice that."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You doubled $r^2 = 36$ instead of doubling $r$. The diameter is $2r = 2 \\times 6$, not $2r^2$."
+   }
+  },
+  "id": "orig-complete-squar-M-3baf3a",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-3baf3a",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "of the given equation is a circle in",
+    "the given equation is a circle in the",
+    "given equation is a circle in the xy",
+    "equation is a circle in the xy plane"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $F$?",
+  "stimulus": "A historian studying a medieval tapestry lays a coordinate grid over a photograph of it, with units in centimeters. One woven roundel is a circle with center $(3, -4)$, and it passes through the point $(8, 8)$. The roundel's border is given by $x^2 + y^2 - 6x + 8y + F = 0$, where $F$ is a constant.",
+  "choices": [
+   "$-169$",
+   "$-160$",
+   "$-144$",
+   "$144$"
+  ],
+  "answer": "C",
+  "explanation": "The radius is the distance from $(3, -4)$ to $(8, 8)$, so $r^2 = 5^2 + 12^2 = 169$. Expand $(x - 3)^2 + (y + 4)^2 = 169$ to get $x^2 + y^2 - 6x + 8y + 9 + 16 - 169 = 0$, so $F = 25 - 169 = -144$. You can also test the choices: put $(8, 8)$ into the equation. That gives $64 + 64 - 48 + 64 + F = 144 + F$, which equals $0$ only when $F = -144$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You set $F = -r^2$ and dropped the $9 + 16$ that comes from expanding $(x - 3)^2$ and $(y + 4)^2$. The center creates its own constant, and that constant belongs in $F$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You included the $9$ from $(x - 3)^2$ but left out the $16$ from $(y + 4)^2$. Both squared center terms go into the constant."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the right size, but the sign is wrong. Once $169$ is moved to the left side, the constant is $25 - 169$, which is negative."
+   }
+  },
+  "id": "orig-complete-squar-M-9461b5",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-9461b5",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the radius, in kilometers, of this circle?",
+  "stimulus": "A labor economist models the area from which a factory can draw workers who commute less than a set time. On a map grid measured in kilometers, the boundary of this area is the circle $2x^2 + 2y^2 - 8x + 12y - 46 = 0$.",
+  "choices": [
+   "$\\sqrt{23}$",
+   "$6$",
+   "$7\\sqrt{2}$",
+   "$36$"
+  ],
+  "answer": "B",
+  "explanation": "First divide every term by $2$: $x^2 + y^2 - 4x + 6y = 23$. Complete the square by adding $4$ and $9$ to both sides: $(x - 2)^2 + (y + 3)^2 = 23 + 4 + 9 = 36$. So $r^2 = 36$ and the radius is $6$ kilometers.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added $4$ and $9$ on the left to complete the squares but didn't add them on the right, so you used $r^2 = 23$. Whatever you add to one side, you must add to the other."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You completed the square without first dividing by the leading coefficient $2$. That gave $46 + 16 + 36 = 98$ on the right. The method works only when $x^2$ and $y^2$ each have coefficient $1$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "$36$ is $r^2$, the right side of the equation in center-radius form. The radius is its square root."
+   }
+  },
+  "id": "orig-complete-squar-M-6b71c2",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-6b71c2",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Circle $B$ has the same center as circle $A$ and twice its radius. Its equation is $x^2 + y^2 - 4x + 10y + F = 0$. What is the value of $F$?",
+  "stimulus": "A paleobotanist maps fossilized tree stumps at a dig site on a grid measured in meters. The outline of one stump is modeled by circle $A$, $x^2 + y^2 - 4x + 10y + 13 = 0$.",
+  "choices": [
+   "$-64$",
+   "$-35$",
+   "$-3$",
+   "$35$"
+  ],
+  "answer": "B",
+  "explanation": "Complete the square for circle $A$: $(x - 2)^2 + (y + 5)^2 = -13 + 4 + 25 = 16$. That gives center $(2, -5)$ and radius $4$. Circle $B$ has radius $8$, so $r^2 = 64$. Expand $(x - 2)^2 + (y + 5)^2 = 64$ to get $x^2 + y^2 - 4x + 10y + 29 - 64 = 0$, so $F = -35$. To check, the point $(2, 3)$ is $8$ above the center, so it lies on circle $B$. Substituting it gives $4 + 9 - 8 + 30 + F = 35 + F = 0$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You set $F = -64$ and left out the $4 + 25$ that the center $(2, -5)$ adds when you expand the squares back out."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You doubled $r^2$ from $16$ to $32$ instead of doubling $r$. A radius of $8$ means $r^2 = 64$, which is four times $16$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You got the size right but flipped the sign. Moving $64$ to the left side makes the constant $29 - 64$, which is negative."
+   }
+  },
+  "id": "orig-complete-squar-M-4a19e6",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-4a19e6",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ circle __var__ has the same center as",
+    "circle __var__ has the same center as circle",
+    "__var__ has the same center as circle __var__",
+    "has the same center as circle __var__ and",
+    "equation is __var__ what is the value of"
+   ],
+   "residue": 6
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A materials scientist models the circular cross-section of a ceramic fiber in the xy-plane, where both axes are measured in micrometers. The edge of the cross-section is the graph of $x^2 + y^2 - 8x + 6y = 24$.",
+  "choices": [
+   "The center is $(4, -3)$ and the radius is $7$ micrometers.",
+   "The center is $(-4, 3)$ and the radius is $7$ micrometers.",
+   "The center is $(4, -3)$ and the radius is $2\\sqrt{6}$ micrometers.",
+   "The center is $(4, -3)$ and the radius is $49$ micrometers."
+  ],
+  "answer": "A",
+  "explanation": "Put the x terms together and the y terms together: $(x^2 - 8x) + (y^2 + 6y) = 24$. Half of $-8$ is $-4$, and $(-4)^2 = 16$. Half of $6$ is $3$, and $3^2 = 9$. Add both to both sides to get $(x - 4)^2 + (y + 3)^2 = 24 + 16 + 9 = 49$. That makes the center $(4, -3)$ and the radius $\\sqrt{49} = 7$ micrometers.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the signs inside the brackets as the coordinates. $(x - 4)^2$ means the center's x-coordinate is $+4$, and $(y + 3)^2$ means its y-coordinate is $-3$. Reading them straight off flips both."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You completed the square on the left but didn't add $16$ and $9$ to the right side, so you treated $24$ as $r^2$. Then you got $r = \\sqrt{24} = 2\\sqrt{6}$. Whatever you add to one side, you have to add to the other."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $49$ correctly, but $49$ is $r^2$. The radius is its square root, $7$."
+   }
+  },
+  "id": "orig-complete-squar-M-08da1c",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-08da1c",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "On a radar map measured in kilometers, a meteorologist models the edge of a storm cell as the circle $x^2 + y^2 + 10x - 4y - 7 = 0$. A warning boundary is drawn as a second circle with the same center and twice the storm cell's radius.",
+  "choices": [
+   "The warning boundary is the graph of $(x + 5)^2 + (y - 2)^2 = 144$.",
+   "The warning boundary is the graph of $(x + 5)^2 + (y - 2)^2 = 72$.",
+   "The warning boundary is the graph of $(x + 5)^2 + (y - 2)^2 = 28$.",
+   "The warning boundary is the graph of $(x - 5)^2 + (y + 2)^2 = 144$."
+  ],
+  "answer": "A",
+  "explanation": "Move the constant across: $x^2 + 10x + y^2 - 4y = 7$. Add $\\left(\\tfrac{10}{2}\\right)^2 = 25$ and $\\left(\\tfrac{-4}{2}\\right)^2 = 4$ to both sides to get $(x + 5)^2 + (y - 2)^2 = 36$. The storm cell's center is $(-5, 2)$ and its radius is $6$ km. The warning boundary keeps that center and has radius $12$ km, so its right side is $12^2 = 144$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You doubled $r^2$ when you should have doubled $r$. If the radius goes from $6$ to $12$, $r^2$ goes from $36$ to $144$, which is 4 times as big, not 2 times."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You didn't add $25$ and $4$ to the right side, so you treated $7$ as $r^2$, and then you multiplied that by $4$. The storm cell's $r^2$ is $7 + 25 + 4 = 36$, not $7$."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You scaled the radius correctly but flipped the center. The $+10x$ term gives $(x + 5)^2$, so the center's x-coordinate is $-5$. The $-4y$ term gives $(y - 2)^2$, so its y-coordinate is $+2$."
+   }
+  },
+  "id": "orig-complete-squar-M-72839a",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-72839a",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A paleobotanist models the outer edge of a petrified tree trunk's cross-section as the circle $x^2 + y^2 - 6x + 2y + c = 0$, where $c$ is a constant and units are centimeters. The point $(3, 4)$ lies on the circle.",
+  "choices": [
+   "$c = -35$",
+   "$c = -25$",
+   "$c = -15$",
+   "$c = 15$"
+  ],
+  "answer": "C",
+  "explanation": "Complete the square: $(x^2 - 6x + 9) + (y^2 + 2y + 1) = -c + 9 + 1$, so $(x - 3)^2 + (y + 1)^2 = 10 - c$. The center is $(3, -1)$. The point $(3, 4)$ is directly above the center, $5$ cm away, so $r^2 = 25$. Set $10 - c = 25$ to get $c = -15$. To check, substitute the point into the original equation: $9 + 16 - 18 + 8 + c = 15 + c = 0$, which also gives $c = -15$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You placed the center at $(-3, 1)$ by flipping the signs. The distance from there to $(3, 4)$ is $\\sqrt{45}$, so you got $10 - c = 45$. The $-6x$ and $+2y$ terms actually put the center at $(3, -1)$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You set $-c$ equal to $r^2 = 25$ but forgot the $9$ and $1$ that completing the square adds to the right side. The right side is $10 - c$, not just $-c$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You made a sign slip moving $c$ across the equals sign, so you solved $10 + c = 25$. When $c$ moves to the right side it becomes $-c$, so the right side is $10 - c$."
+   }
+  },
+  "id": "orig-complete-squar-M-a197ab",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-a197ab",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "point __var__ lies on the circle which of",
+    "__var__ lies on the circle which of the",
+    "lies on the circle which of the following"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many kilometers greater is the radius of circle $B$ than the radius of circle $A$?",
+  "stimulus": "A folklorist uses circles in the xy-plane to model the regions where two versions of a village legend are told. Distances are in kilometers.\n\nCircle $A$: $x^2 + y^2 - 4x + 8y = 16$\nCircle $B$: $x^2 + y^2 - 6x + 8y = 144$",
+  "choices": [
+   "$8$",
+   "$13$",
+   "$7$",
+   "$133$"
+  ],
+  "answer": "C",
+  "explanation": "Complete the square for each circle. For circle $A$, add $4$ and $16$ to both sides: $(x - 2)^2 + (y + 4)^2 = 36$, so its radius is $6$. For circle $B$, add $9$ and $16$ to both sides: $(x - 3)^2 + (y + 4)^2 = 169$, so its radius is $13$. The radius of circle $B$ is $13 - 6 = 7$ kilometers greater.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the completing-the-square constants to the left side but not the right, so you read $16$ and $144$ as $r^2$. That gives radii of $4$ and $12$, which differ by $8$. Whatever you add on the left, you must add on the right too."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$13$ is the radius of circle $B$ by itself. The question asks how much greater it is than circle $A$'s radius, so subtract $6$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You subtracted the right-hand sides, $169 - 36 = 133$. Those numbers are $r^2$, not $r$. Take the square root of each first, then subtract."
+   }
+  },
+  "id": "orig-complete-squar-M-311a9f",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-311a9f",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many square centimeters greater is the area of circle $Q$ than the area of circle $P$?",
+  "stimulus": "A paleobotanist models the cross section of a fossilized tree trunk in the xy-plane, with units in centimeters. The trunk's inner growth ring is circle $P$, given by $x^2 + y^2 - 10x + 6y + 18 = 0$. The trunk's outer edge is circle $Q$. It has the same center as circle $P$ and twice its radius.",
+  "choices": [
+   "$16\\pi$",
+   "$48\\pi$",
+   "$64\\pi$",
+   "$8\\pi$"
+  ],
+  "answer": "B",
+  "explanation": "Move $18$ to the right side, then add $25$ and $9$ to both sides: $(x - 5)^2 + (y + 3)^2 = 16$. Circle $P$ has radius $4$ and area $16\\pi$. Circle $Q$ has radius $8$, so its area is $64\\pi$. The difference is $64\\pi - 16\\pi = 48\\pi$ square centimeters.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You doubled $r^2$ from $16$ to $32$, which gives a difference of $32\\pi - 16\\pi = 16\\pi$. Doubling the radius multiplies $r^2$ by $4$, not by $2$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$64\\pi$ is the area of circle $Q$ by itself. The question asks how much greater it is than circle $P$'s area, so subtract $16\\pi$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the difference in circumferences, $16\\pi - 8\\pi = 8\\pi$. The question asks about area, which uses $\\pi r^2$."
+   }
+  },
+  "id": "orig-complete-squar-M-7e69bc",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-7e69bc",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "has the same center as circle __var__ and"
+   ],
+   "residue": 6
+  }
+ },
+ {
+  "stem": "What is the value of $c - d$?",
+  "stimulus": "An ecologist models two foraging zones around a heron nest as circles in the xy-plane. Both circles have the same center. The inner zone has radius $5$ and the equation $x^2 + y^2 + 4x - 12y + c = 0$. The outer zone has radius $10$ and the equation $x^2 + y^2 + 4x - 12y + d = 0$. In these equations, $c$ and $d$ are constants.",
+  "choices": [
+   "$25$",
+   "$-75$",
+   "$15$",
+   "$75$"
+  ],
+  "answer": "D",
+  "explanation": "Complete the square: $x^2 + 4x + y^2 - 12y = (x + 2)^2 + (y - 6)^2 - 40$. So each equation becomes $(x + 2)^2 + (y - 6)^2 = 40 - (\\text{constant})$. For radius $5$, $40 - c = 25$, so $c = 15$. For radius $10$, $40 - d = 100$, so $d = -60$. Then $c - d = 15 - (-60) = 75$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated doubling the radius as doubling $r^2$, using $50$ in place of $100$. That gives $d = -10$ and $c - d = 25$. The radius doubled, so $r^2$ goes from $25$ to $100$."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found $d - c$ instead of $c - d$. The two constants are right, but you subtracted in the wrong order."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$15$ is the value of $c$ alone. The question asks for the gap between $c$ and $d$, so you still have to subtract $d = -60$."
+   }
+  },
+  "id": "orig-complete-squar-M-17aaae",
+  "skill_cd": "S.D.",
+  "subtype": "complete-square-expanded-circle",
+  "subtype_name": "Expanded circle equation: complete the square",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-complete-squar-M-17aaae",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

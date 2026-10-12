@@ -346,5 +346,873 @@
    "residue": 3
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "If the graph is extended as a line, what is the value of $f(0)$?",
+  "stimulus": "For a musicology seminar on tempo, a student plotted the linear function $f$. Its graph is shown for $2 \\le x \\le 6$.",
+  "figure": {
+   "type": "line",
+   "caption": "Graph of $y = f(x)$",
+   "x_label": "x",
+   "y_label": "y",
+   "points": [
+    [
+     2,
+     7
+    ],
+    [
+     4,
+     10
+    ],
+    [
+     6,
+     13
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 8,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 15,
+   "y_step": 1,
+   "alt": "A line segment rising from the point (2, 7) through (4, 10) to (6, 13). The segment does not reach the y-axis."
+  },
+  "keys": [
+   "4"
+  ],
+  "any_of": false,
+  "explanation": "Read two points off the graph, such as (2, 7) and (4, 10). The slope is $\\frac{10 - 7}{4 - 2} = \\frac{3}{2}$, so each step 1 to the right raises y by 1.5. To get from x = 2 back to x = 0, you move 2 to the left, so y drops by 3: $f(0) = 7 - 3 = 4$.",
+  "common_errors": [
+   {
+    "value": "7",
+    "misconception": "misread-given",
+    "why": "Takes the left end of the drawn segment, f(2), as the y-intercept because it is the lowest point shown."
+   },
+   {
+    "value": "3/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the slope instead of the value where x = 0."
+   },
+   {
+    "value": "10",
+    "misconception": "graph-feature-mismatch",
+    "why": "Uses a slope of -3/2 when moving back to x = 0, so adds 3 to 7 instead of subtracting it."
+   },
+   {
+    "value": "17/3",
+    "misconception": "graph-feature-mismatch",
+    "why": "Finds the slope as run over rise (2/3) and then works out 7 - 2(2/3)."
+   }
+  ],
+  "id": "orig-graph-read-or--M-abe841",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--M-abe841",
+   "structure": [],
+   "solver_answer": 4,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the graph is extended as a line and $f(a) = 0$, what is the value of $a$?",
+  "stimulus": "A folklore studies course uses the graph below to introduce linear models. The linear function $f$ is shown for $0 \\le x \\le 4$.",
+  "figure": {
+   "type": "line",
+   "caption": "Graph of $y = f(x)$",
+   "x_label": "x",
+   "y_label": "y",
+   "points": [
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 6,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 1,
+   "alt": "A line segment falling from (0, 9) through (1, 7), (2, 5) and (3, 3) to (4, 1)."
+  },
+  "keys": [
+   "4.5",
+   "9/2"
+  ],
+  "any_of": false,
+  "explanation": "The graph crosses the y-axis at (0, 9), so b = 9. Each step 1 to the right takes y down by 2, so the slope is -2 and $f(x) = -2x + 9$. Set $-2a + 9 = 0$ to get $a = 4.5$. The question asks for the x-intercept, not the 9 where the line crosses the y-axis.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the y-intercept when the question asks where f(x) = 0."
+   },
+   {
+    "value": "-2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the slope instead of the x-intercept."
+   },
+   {
+    "value": "18",
+    "misconception": "graph-feature-mismatch",
+    "why": "Uses a slope of -1/2 (run over rise), so solves -x/2 + 9 = 0."
+   },
+   {
+    "value": "4",
+    "misconception": "misread-given",
+    "why": "Takes the last plotted x-value as the crossing point, although y is still 1 there."
+   }
+  ],
+  "id": "orig-graph-read-or--M-f875b3",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--M-f875b3",
+   "structure": [],
+   "solver_answer": 4.5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The line shown is the graph of $y = ax + b$, where $a$ and $b$ are constants. What is the value of $a + b$?",
+  "stimulus": "A nutrition science handout includes the following graph.",
+  "figure": {
+   "type": "line",
+   "caption": "A line in the xy-plane",
+   "x_label": "x",
+   "y_label": "y",
+   "points": [
+    [
+     0,
+     8
+    ],
+    [
+     4,
+     0
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 6,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 2,
+   "alt": "A line segment from (0, 8) on the y-axis down to (4, 0) on the x-axis."
+  },
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "The line crosses the y-axis at (0, 8), so b = 8. From (0, 8) to (4, 0), y falls 8 while x rises 4, so the slope is $a = \\frac{0 - 8}{4 - 0} = -2$. Then $a + b = -2 + 8 = 6$.",
+  "common_errors": [
+   {
+    "value": "10",
+    "misconception": "graph-feature-mismatch",
+    "why": "Uses a slope of +2 even though the line falls from left to right."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Uses the x-intercept, 4, as b and gets -2 + 4."
+   },
+   {
+    "value": "7.5",
+    "misconception": "algebra-manipulation",
+    "why": "Computes the slope as run over rise (-1/2) and gets -1/2 + 8."
+   },
+   {
+    "value": "8",
+    "misconception": "missed-condition",
+    "why": "Reports b alone and forgets to add a."
+   }
+  ],
+  "id": "orig-graph-read-or--M-57e568",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--M-57e568",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the graph is extended as a line and $g(c) = 0$, what is the value of $c$?",
+  "stimulus": "A labour economics problem set shows the graph of the linear function $g$ for $1 \\le x \\le 3$.",
+  "figure": {
+   "type": "line",
+   "caption": "Graph of $y = g(x)$",
+   "x_label": "x",
+   "y_label": "y",
+   "points": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     8
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 4,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 1,
+   "alt": "A line segment rising from (1, 2) through (2, 5) to (3, 8)."
+  },
+  "keys": [
+   "1/3",
+   ".3333",
+   "0.3333"
+  ],
+  "any_of": false,
+  "explanation": "From (1, 2) to (2, 5), y rises 3 for each step 1 to the right, so the slope is 3. Moving back from x = 1 to x = 0 takes y down by 3, so $g(0) = -1$ and $g(x) = 3x - 1$. Set $3c - 1 = 0$ to get $c = \\frac{1}{3}$.",
+  "common_errors": [
+   {
+    "value": "-1",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the y-intercept instead of the value of x that makes g(x) = 0."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the slope."
+   },
+   {
+    "value": "-1/3",
+    "misconception": "algebra-manipulation",
+    "why": "Drops a sign when solving 3c - 1 = 0."
+   },
+   {
+    "value": "-5",
+    "misconception": "graph-feature-mismatch",
+    "why": "Uses a slope of 1/3 (run over rise), so writes y = x/3 + 5/3 and solves for the zero."
+   }
+  ],
+  "id": "orig-graph-read-or--M-ff69fb",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--M-ff69fb",
+   "structure": [],
+   "solver_answer": "1/3",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graph of $3x - 4y = -24$ in the xy-plane crosses the y-axis at the point $(0, b)$. What is the value of $b$?",
+  "stimulus": "This exercise comes from a hydrology methods worksheet.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "The y-axis is where x = 0. Substitute x = 0: $-4y = -24$, so $y = 6$. As a check, $y = \\frac{3}{4}x + 6$ gives the same intercept.",
+  "common_errors": [
+   {
+    "value": "-8",
+    "misconception": "wrong-target-quantity",
+    "why": "Sets y = 0 instead and gives the x-intercept."
+   },
+   {
+    "value": "-6",
+    "misconception": "algebra-manipulation",
+    "why": "Loses the sign when dividing -24 by -4."
+   },
+   {
+    "value": "3/4",
+    "misconception": "wrong-target-quantity",
+    "why": "Rewrites the equation in slope-intercept form and gives the slope."
+   },
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Divides -24 by -3, the x-coefficient, instead of by -4."
+   }
+  ],
+  "id": "orig-graph-read-or--M-5126c8",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--M-5126c8",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the y axis at the point __var__ what",
+    "y axis at the point __var__ what is",
+    "axis at the point __var__ what is the",
+    "at the point __var__ what is the value"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "If the line shown is extended, it crosses the y-axis at the point $(0, k)$. What is the value of $k$?",
+  "stimulus": "A linguistics data module includes the graph below.",
+  "figure": {
+   "type": "line",
+   "caption": "A line in the xy-plane",
+   "x_label": "x",
+   "y_label": "y",
+   "points": [
+    [
+     2,
+     10
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     8,
+     1
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 15,
+   "y_step": 1,
+   "alt": "A line segment falling from (2, 10) through (4, 7) and (6, 4) to (8, 1)."
+  },
+  "keys": [
+   "13"
+  ],
+  "any_of": false,
+  "explanation": "From (2, 10) to (4, 7), y falls 3 over 2 units, so the slope is $-\\frac{3}{2}$. Going from x = 2 back to x = 0 is 2 units to the left. Because the line falls as you move right, it rises as you move left: y goes up by 3, so $k = 10 + 3 = 13$.",
+  "common_errors": [
+   {
+    "value": "7",
+    "misconception": "graph-feature-mismatch",
+    "why": "Treats the slope as positive and subtracts 3 from 10 when moving back to x = 0."
+   },
+   {
+    "value": "10",
+    "misconception": "misread-given",
+    "why": "Takes the left end of the drawn segment, at x = 2, as the y-intercept."
+   },
+   {
+    "value": "26/3",
+    "misconception": "wrong-target-quantity",
+    "why": "Finds y = -1.5x + 13 and then gives the x-intercept."
+   },
+   {
+    "value": "-3/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the slope."
+   }
+  ],
+  "id": "orig-graph-read-or--M-e79f92",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--M-e79f92",
+   "structure": [],
+   "solver_answer": 13,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the y axis at the point __var__ what",
+    "y axis at the point __var__ what is",
+    "axis at the point __var__ what is the",
+    "at the point __var__ what is the value"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "If the line shown is extended, it crosses the x-axis at the point $(c, 0)$. What is the value of $c$?",
+  "stimulus": "An ecology field guide uses the graph below to practise reading lines.",
+  "figure": {
+   "type": "line",
+   "caption": "A line in the xy-plane",
+   "x_label": "x",
+   "y_label": "y",
+   "points": [
+    [
+     2,
+     -6
+    ],
+    [
+     4,
+     -3
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 8,
+   "x_step": 1,
+   "y_min": -8,
+   "y_max": 1,
+   "y_step": 1,
+   "alt": "A line segment rising from (2, -6) to (4, -3)."
+  },
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "From (2, -6) to (4, -3), y rises 3 over 2 units, so the slope is $\\frac{3}{2}$. From (4, -3), y must rise 3 more to reach 0, which takes 2 more units to the right. So $c = 6$. You can also write $y = \\frac{3}{2}x - 9$ and solve $\\frac{3}{2}c - 9 = 0$.",
+  "common_errors": [
+   {
+    "value": "-9",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the y-intercept instead of the x-intercept."
+   },
+   {
+    "value": "2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Uses a slope of -3/2, so writes y = -1.5x + 3 through (4, -3) and solves for its zero."
+   },
+   {
+    "value": "8.5",
+    "misconception": "graph-feature-mismatch",
+    "why": "Uses a slope of 2/3 (run over rise) through (4, -3) and solves (2/3)c - 17/3 = 0."
+   },
+   {
+    "value": "3/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the slope."
+   }
+  ],
+  "id": "orig-graph-read-or--M-2deb85",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--M-2deb85",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "axis at the point __var__ what is the",
+    "at the point __var__ what is the value"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "In the xy-plane, the graph of $y = f(x)$ crosses the y-axis at $(0, b)$. What is the value of $b$?",
+  "stimulus": "A cartography class models a map feature with the function $f(x) = 3(x - 4) + 15$.",
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "The y-intercept is the value of the function when x = 0: $f(0) = 3(0 - 4) + 15 = -12 + 15 = 3$. The 15 is not the intercept. Here it is the value of f at x = 4.",
+  "common_errors": [
+   {
+    "value": "15",
+    "misconception": "graph-feature-mismatch",
+    "why": "Reads the constant term of this form as the y-intercept, without simplifying first."
+   },
+   {
+    "value": "27",
+    "misconception": "algebra-manipulation",
+    "why": "Gets the sign wrong when distributing and adds 12 to 15."
+   },
+   {
+    "value": "11",
+    "misconception": "algebra-manipulation",
+    "why": "Distributes the 3 only to x, writing 3x - 4 + 15."
+   },
+   {
+    "value": "-1",
+    "misconception": "wrong-target-quantity",
+    "why": "Solves f(x) = 0 and gives the x-intercept."
+   }
+  ],
+  "id": "orig-graph-read-or--M-05533e",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--M-05533e",
+   "structure": [],
+   "solver_answer": 3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The line shown crosses the $y$-axis at the point $(0, b)$. What is the value of $b$?",
+  "stimulus": null,
+  "figure": {
+   "type": "line",
+   "caption": "Fossil Leaf Count by Layer Depth",
+   "x_label": "Layer depth (meters)",
+   "y_label": "Fossil leaves per sample",
+   "points": [
+    [
+     2,
+     9
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     6,
+     3
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 8,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 15,
+   "y_step": 3,
+   "alt": "A straight line segment drawn from (2, 9) through (4, 6) to (6, 3), falling as depth increases. The segment does not reach either axis."
+  },
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "The drawn segment stops before it reaches the y-axis, so first work out the slope and then extend the line back to x = 0. From (2, 9) to (4, 6), y falls 3 while x rises 2, so the slope is \u22123/2. Going from x = 2 back to x = 0 is 2 units to the left, so y goes up by 3: 9 + 3 = 12. Check it with the equation $y = -\\tfrac{3}{2}x + 12$: at x = 6, y = \u22129 + 12 = 3. So b = 12.",
+  "common_errors": [
+   {
+    "value": "8",
+    "misconception": "wrong-target-quantity",
+    "why": "Extended the line the other way to where it meets the x-axis, at (8, 0), and gave the x-intercept instead of the y-intercept."
+   },
+   {
+    "value": "9",
+    "misconception": "intermediate-step",
+    "why": "Took the y-value of the leftmost plotted point, (2, 9), as the intercept without extending the line back to x = 0."
+   },
+   {
+    "value": "6",
+    "misconception": "graph-feature-mismatch",
+    "why": "Used a slope of +3/2 instead of \u22123/2, so going 2 units left subtracted 3 from 9 when it should have added 3."
+   },
+   {
+    "value": "-3/2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope of the line, not its y-intercept."
+   }
+  ],
+  "id": "orig-graph-read-or--M-e4f1a2",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--M-e4f1a2",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "axis at the point __var__ what is the",
+    "at the point __var__ what is the value"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "The line shown crosses the $x$-axis at the point $(a, 0)$. What is the value of $a$?",
+  "stimulus": null,
+  "figure": {
+   "type": "line",
+   "caption": "Antibody Level After a Booster Dose",
+   "x_label": "Weeks after booster",
+   "y_label": "Antibody level (units per mL)",
+   "points": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     8
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 4,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 12,
+   "y_step": 1,
+   "alt": "A straight line segment drawn from (1, 2) through (2, 5) to (3, 8), rising as weeks increase. The segment does not reach either axis."
+  },
+  "keys": [
+   "1/3",
+   ".3333",
+   "0.333"
+  ],
+  "any_of": false,
+  "explanation": "Read two points that sit exactly on gridlines, (1, 2) and (2, 5). The slope is (5 \u2212 2)/(2 \u2212 1) = 3. Going 1 unit left from (1, 2) to x = 0 lowers y by 3, so the y-intercept is \u22121 and the line is $y = 3x - 1$. The x-intercept is where y = 0: 3a \u2212 1 = 0, so a = 1/3. That fits the picture, since the line would cross the x-axis just to the right of the origin, a little before x = 1.",
+  "common_errors": [
+   {
+    "value": "-1",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the y-intercept, \u22121, and gave that when the question asked where the line crosses the x-axis."
+   },
+   {
+    "value": "-1/3",
+    "misconception": "algebra-manipulation",
+    "why": "Solved 3a \u2212 1 = 0 as a = \u22121/3, getting the sign wrong when moving the constant across."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope of the line instead of the x-intercept."
+   },
+   {
+    "value": "1",
+    "misconception": "intermediate-step",
+    "why": "Took the leftmost plotted point, (1, 2), as the point where the line meets the axis, without extending the line down to y = 0."
+   }
+  ],
+  "id": "orig-graph-read-or--M-9ff064",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--M-9ff064",
+   "structure": [],
+   "solver_answer": "1/3",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "axis at the point __var__ what is the",
+    "at the point __var__ what is the value"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "The graph of $y = h(x)$ is shown, where $h(x) = mx + b$ and $m$ and $b$ are constants. What is the value of $m$?",
+  "stimulus": null,
+  "figure": {
+   "type": "line",
+   "caption": "Altitude of a Rising Star",
+   "x_label": "Hours after sunset",
+   "y_label": "Altitude (degrees)",
+   "points": [
+    [
+     2,
+     0
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     8,
+     15
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 8,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 20,
+   "y_step": 5,
+   "alt": "A straight line drawn from (2, 0) through (4, 5) and (6, 10) to (8, 15), rising from left to right."
+  },
+  "keys": [
+   "5/2",
+   "2.5"
+  ],
+  "any_of": false,
+  "explanation": "m is the slope, so pick two points that land exactly on gridlines, such as (2, 0) and (4, 5). Going 2 units to the right, the line rises 5, so m = rise \u00f7 run = 5/2. The line rises from left to right, so m has to be positive. Check it with another pair of points: from (4, 5) to (8, 15), the line rises 10 over a run of 4, and 10/4 = 5/2.",
+  "common_errors": [
+   {
+    "value": "2/5",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the run by the rise instead of the rise by the run."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the x-intercept, read where the line meets the x-axis at (2, 0), instead of the slope."
+   },
+   {
+    "value": "-5",
+    "misconception": "wrong-target-quantity",
+    "why": "Extended the line back to x = 0 and gave the y-intercept, b = \u22125, instead of m."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Read the rise of 5 between (2, 0) and (4, 5) but forgot to divide by the run of 2."
+   },
+   {
+    "value": "-5/2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Got the steepness right but gave the slope a negative sign, even though the line rises from left to right."
+   }
+  ],
+  "id": "orig-graph-read-or--M-a773de",
+  "skill_cd": "H.B.",
+  "subtype": "graph-read-or-match",
+  "subtype_name": "Read a feature off the graph, or match an equation to its graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-graph-read-or--M-a773de",
+   "structure": [],
+   "solver_answer": "5/2",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the graph of __var__ is shown where __var__",
+    "graph of __var__ is shown where __var__ and",
+    "of __var__ is shown where __var__ and __var__"
+   ],
+   "residue": 0
+  }
  }
 ]

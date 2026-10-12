@@ -422,5 +422,363 @@
    "residue": 0
   },
   "phrasing": "work_backwards"
+ },
+ {
+  "stem": "The graphs of the two equations intersect at two points in the xy-plane. What is the y-coordinate of the intersection point with the greater x-coordinate?",
+  "stimulus": "A meteorology student models an air-pressure reading with the parabola $y = (x - 4)^2 - 2$ and a forecast trend with the line $y = x - 4$.",
+  "keys": [
+   "2"
+  ],
+  "any_of": false,
+  "explanation": "The curves cross where their y-values match, so set them equal: $(x - 4)^2 - 2 = x - 4$. Expand to get $x^2 - 8x + 14 = x - 4$, which simplifies to $x^2 - 9x + 18 = 0$. That factors as $(x - 3)(x - 6) = 0$, so the curves cross at $x = 3$ and $x = 6$. The greater x-coordinate is 6. Put it into the line: $y = 6 - 4 = 2$. The intersection point is $(6, 2)$. In Desmos, type both equations and click the crossing farther to the right.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the x-coordinate of the intersection when the question asked for the y-coordinate."
+   },
+   {
+    "value": "-1",
+    "misconception": "missed-condition",
+    "why": "Used the other intersection, (3, -1), which has the smaller x-coordinate."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the x-coordinate of the parabola's vertex, (4, -2), instead of a point where the two graphs cross."
+   },
+   {
+    "value": "-2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the y-coordinate of the parabola's vertex instead of an intersection point."
+   },
+   {
+    "value": "-4",
+    "misconception": "graph-feature-mismatch",
+    "why": "Gave the line's y-intercept, which is an axis intercept of one graph and not the point where the two graphs cross."
+   }
+  ],
+  "id": "orig-system-graph-m-M-6f743d",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-6f743d",
+   "structure": [],
+   "solver_answer": "2",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "in the xy plane what is the y"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The point $(a, b)$ is a solution to the system, and $a > 0$. What is the value of $b$?",
+  "stimulus": "An archaeologist describes the profile of an excavated mound with $y = -(x - 1)^2 + 10$ and a survey line across it with $y = -x + 9$.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "A solution to the system is a point where the parabola and the line cross. Set the two expressions equal: $-(x - 1)^2 + 10 = -x + 9$. Expand to get $-x^2 + 2x + 9 = -x + 9$, which simplifies to $x^2 - 3x = 0$, or $x(x - 3) = 0$. So $x = 0$ or $x = 3$. You need $a > 0$, so $a = 3$. Then $b = -3 + 9 = 6$. In Desmos, graph both equations and click the crossing that is to the right of the y-axis: it is $(3, 6)$.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "missed-condition",
+    "why": "Used the intersection at (0, 9), which is also where the line meets the y-axis. That point fails the condition a > 0."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave a, the x-coordinate, instead of b."
+   },
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the y-coordinate of the parabola's vertex, (1, 10), instead of the point where the two graphs cross."
+   },
+   {
+    "value": "1",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the x-coordinate of the vertex as the solution."
+   }
+  ],
+  "id": "orig-system-graph-m-M-2c1235",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-2c1235",
+   "structure": [],
+   "solver_answer": "6",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the point __var__ is a solution to the",
+    "point __var__ is a solution to the system"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "The graphs of the two equations intersect at two points in the xy-plane. What is the x-coordinate of the intersection point that lies in the first quadrant?",
+  "stimulus": "A seismologist compares a ground-motion curve, $y = x^2 - 6x + 5$, with a threshold line, $y = 2x - 7$.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "Set the two expressions equal: $x^2 - 6x + 5 = 2x - 7$. Move everything to one side to get $x^2 - 8x + 12 = 0$, which factors as $(x - 2)(x - 6) = 0$. At $x = 2$ the line gives $y = -3$, so the point $(2, -3)$ is in the fourth quadrant. At $x = 6$ the line gives $y = 5$, so the point $(6, 5)$ is in the first quadrant. The answer is 6. In Desmos, click both crossings and keep the one where both coordinates are positive.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "missed-condition",
+    "why": "Gave the x-coordinate of the other intersection, (2, -3). That point is in the fourth quadrant, not the first."
+   },
+   {
+    "value": "5",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the y-coordinate of (6, 5), or the parabola's x-intercept at x = 5, instead of the x-coordinate of the crossing."
+   },
+   {
+    "value": "1",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the parabola's other x-intercept, which is where the parabola meets the x-axis, not where it meets the line."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the x-coordinate of the parabola's vertex, (3, -4)."
+   },
+   {
+    "value": "8",
+    "misconception": "intermediate-step",
+    "why": "Gave the sum of the two x-coordinates, which you can read off the coefficient in x^2 - 8x + 12 = 0, instead of picking one point."
+   }
+  ],
+  "id": "orig-system-graph-m-M-00ad48",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-00ad48",
+   "structure": [],
+   "solver_answer": "6",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "in the xy plane what is the x",
+    "the xy plane what is the x coordinate",
+    "xy plane what is the x coordinate of",
+    "plane what is the x coordinate of the"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The graphs of the two equations intersect at two points in the xy-plane. What is the y-coordinate of the intersection point with a positive x-coordinate?",
+  "stimulus": "In a materials science lab, the stress in a polymer sample is modeled by $y = 2(x + 1)^2 - 8$, and a reference load is modeled by $y = 6x - 2$.",
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "Set the two expressions equal: $2(x + 1)^2 - 8 = 6x - 2$. Expand the left side to get $2x^2 + 4x - 6 = 6x - 2$, which becomes $2x^2 - 2x - 4 = 0$. Divide by 2 to get $x^2 - x - 2 = 0$, which factors as $(x - 2)(x + 1) = 0$. So $x = 2$ or $x = -1$. Only $x = 2$ is positive. The line gives $y = 6(2) - 2 = 10$, so the point is $(2, 10)$. Note that the vertex of $2(x + 1)^2 - 8$ is at $x = -1$, not $x = +1$.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the x-coordinate of the intersection instead of the y-coordinate."
+   },
+   {
+    "value": "-8",
+    "misconception": "missed-condition",
+    "why": "Used the other intersection, (-1, -8), whose x-coordinate is negative. That point is also the parabola's vertex."
+   },
+   {
+    "value": "-6",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the parabola's y-intercept, where it meets the y-axis, instead of where it meets the line."
+   },
+   {
+    "value": "-2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Gave the line's y-intercept instead of the intersection."
+   },
+   {
+    "value": "6",
+    "misconception": "graph-feature-mismatch",
+    "why": "Gave the slope of the line instead of a coordinate of the intersection."
+   }
+  ],
+  "id": "orig-system-graph-m-M-daeeff",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-daeeff",
+   "structure": [],
+   "solver_answer": "10",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "in the xy plane what is the y"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the $y$-coordinate of the intersection point that has the greater $x$-coordinate?",
+  "stimulus": "A civil engineer models the profile of a dip in a roadway with $y = (x - 3)^2 + 1$ and a straight access ramp with $y = x + 4$, where $x$ and $y$ are measured in meters. The graphs of the two equations intersect at two points.",
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "The graphs meet where the two equations give the same $y$, so set them equal: $(x - 3)^2 + 1 = x + 4$. Expand the left side to get $x^2 - 6x + 10 = x + 4$, which simplifies to $x^2 - 7x + 6 = 0$. This factors as $(x - 1)(x - 6) = 0$, so $x = 1$ or $x = 6$. The greater $x$-coordinate is $6$. Put it into the line: $y = 6 + 4 = 10$. Check it in the parabola: $(6 - 3)^2 + 1 = 10$. The point is $(6, 10)$, so the answer is $10$. In Desmos, type both equations and click the right-hand crossing.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the $x$-coordinate of the correct intersection point instead of its $y$-coordinate."
+   },
+   {
+    "value": "5",
+    "misconception": "missed-condition",
+    "why": "Used the other intersection, $(1, 5)$, which has the smaller $x$-coordinate."
+   },
+   {
+    "value": "2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Placed the vertex at $x = -3$ by working with $(x + 3)^2 + 1$. That gives $x^2 + 5x + 6 = 0$, so $x = -2$ or $x = -3$, and the larger one gives $y = -2 + 4 = 2$."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the line's $y$-intercept instead of a point where the two graphs cross."
+   },
+   {
+    "value": "1",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the $y$-coordinate of the parabola's vertex instead of an intersection point."
+   }
+  ],
+  "id": "orig-system-graph-m-M-afcca2",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-afcca2",
+   "structure": [],
+   "solver_answer": 10,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "For $x > 0$, the graphs of the two models intersect at the point $(a, b)$. What is the value of $b$?",
+  "stimulus": "An ecologist compares two models for the number of frogs $y$, in hundreds, at a pond $x$ years after 2020: $y = -(x - 2)^2 + 25$ and $y = 2x + 13$.",
+  "keys": [
+   "21"
+  ],
+  "any_of": false,
+  "explanation": "Set the two models equal: $-(x - 2)^2 + 25 = 2x + 13$. Expand to get $-x^2 + 4x - 4 + 25 = 2x + 13$, which is $-x^2 + 4x + 21 = 2x + 13$. Move everything to one side: $x^2 - 2x - 8 = 0$, which factors as $(x - 4)(x + 2) = 0$. So $x = 4$ or $x = -2$. Only $x = 4$ satisfies $x > 0$, so $a = 4$. Then $b = 2(4) + 13 = 21$. Check it in the parabola: $-(4 - 2)^2 + 25 = 21$. In Desmos, graph both equations and click the crossing to the right of the $y$-axis.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave $a$, the $x$-coordinate of the intersection, instead of $b$."
+   },
+   {
+    "value": "9",
+    "misconception": "missed-condition",
+    "why": "Used the intersection at $x = -2$, giving $(-2, 9)$, and ignored the condition $x > 0$."
+   },
+   {
+    "value": "25",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the parabola's maximum, the $y$-coordinate of its vertex, instead of the point where it meets the line."
+   },
+   {
+    "value": "13",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the line's $y$-intercept instead of the point where the two graphs cross."
+   },
+   {
+    "value": "17",
+    "misconception": "algebra-manipulation",
+    "why": "Expanded $-(x - 2)^2$ as $-x^2 - 4x + 4$ by negating only the $x^2$ term. That gives $x^2 + 6x - 16 = 0$, so $x = 2$, and then $y = 2(2) + 13 = 17$."
+   }
+  ],
+  "id": "orig-system-graph-m-M-23ef5b",
+  "skill_cd": "P.B.",
+  "subtype": "system-graph-match-or-read",
+  "subtype_name": "Linear\u2013quadratic system on a graph",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-system-graph-m-M-23ef5b",
+   "structure": [],
+   "solver_answer": 21,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "intersect at the point __var__ what is the",
+    "at the point __var__ what is the value"
+   ],
+   "residue": 0
+  }
  }
 ]

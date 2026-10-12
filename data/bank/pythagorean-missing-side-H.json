@@ -395,5 +395,53 @@
   "rated_level": "H",
   "rated_why": "Two Pythagorean applications with complex square root calculation",
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the length of the longer side of the page, in inches?",
+  "stimulus": "A musicologist is restoring a rectangular page from a fifteenth-century choirbook. The diagonal of the page, measured from one corner to the opposite corner, is $\\sqrt{85}$ inches. The shorter side of the page is $2\\sqrt{5}$ inches.",
+  "choices": [
+   "$\\sqrt{65}$",
+   "$\\sqrt{105}$",
+   "$5\\sqrt{3}$",
+   "$65$"
+  ],
+  "answer": "A",
+  "explanation": "The diagonal cuts the rectangle into two right triangles, and the diagonal is the hypotenuse of each. The two sides of the page are the legs. Square the shorter side: $(2\\sqrt{5})^2 = 4 \\cdot 5 = 20$. Then $20 + L^2 = (\\sqrt{85})^2 = 85$, so $L^2 = 65$ and $L = \\sqrt{65}$ inches. As a check, $\\sqrt{65} \\approx 8.06$, which is longer than $2\\sqrt{5} \\approx 4.47$ and shorter than $\\sqrt{85} \\approx 9.22$, as it should be.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You added the squares, $85 + 20 = 105$. That treats the diagonal as a leg when it is really the hypotenuse. When the missing side is a leg, you subtract."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You squared $2\\sqrt{5}$ as $2 \\cdot 5 = 10$ instead of $4 \\cdot 5 = 20$. That gives $85 - 10 = 75$ and $\\sqrt{75} = 5\\sqrt{3}$. The 2 has to be squared as well."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You found $L^2 = 65$ correctly and then stopped. That is the square of the side, not the side. Take the square root to finish."
+   }
+  },
+  "id": "orig-pythagorean-mi-H-cf8461",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-H-cf8461",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

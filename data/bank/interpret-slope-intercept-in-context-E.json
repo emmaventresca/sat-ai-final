@@ -390,5 +390,103 @@
   "rated_level": "E",
   "rated_why": "One clear signal: slope as rate of change, with unit awareness required (thousands of years)",
   "phrasing": "in_context"
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 36 in this context?",
+  "stimulus": "A warehouse worker's total pay for one week, $P$, in dollars, is given by $P = 36h + 840$, where $h$ is the number of overtime hours the worker logs that week.",
+  "choices": [
+   "The worker earns $36 in a week with no overtime hours.",
+   "The worker earns an additional $36 for each overtime hour.",
+   "The worker logs a total of 36 overtime hours each week.",
+   "The worker's total pay increases by $36 with each week."
+  ],
+  "answer": "B",
+  "explanation": "The coefficient on $h$ is the slope, so it is a rate in dollars per overtime hour. Each time $h$ goes up by 1, $P$ goes up by 36. That means the worker earns an extra $36 for every overtime hour. The 840 is the fixed pay for a week with no overtime.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You described the y-intercept, not the slope. Pay for a week with no overtime is the value of $P$ when $h = 0$, which is $840, not $36."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You read the coefficient as the value of the variable. The number of overtime hours is $h$, which changes from week to week. The 36 is what each of those hours pays."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You tied the rate to the wrong input. The input in this model is overtime hours, not weeks, so the 36 is dollars per overtime hour, not dollars per week."
+   }
+  },
+  "id": "orig-interpret-slop-E-95e9f8",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-E-95e9f8",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is given by __var__ where __var__ is the"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of 480 in this context?",
+  "stimulus": "After a booster shot, a patient's antibody level peaks. The level $A$, in units per milliliter, $t$ weeks after the peak is modeled by $A = 480 - 15t$ for $0 \\le t \\le 20$.",
+  "choices": [
+   "The antibody level at the peak was 480 units per milliliter.",
+   "The antibody level falls by 480 units per milliliter each week.",
+   "The antibody level 15 weeks after the peak was 480 units per milliliter.",
+   "The antibody level drops to 0 units per milliliter after 480 weeks."
+  ],
+  "answer": "A",
+  "explanation": "480 is the constant term, so it is the y-intercept: the value of $A$ when $t = 0$. In this model, $t = 0$ is the moment of the peak, so the level at the peak was 480 units per milliliter. The $-15$ is the rate: the level drops 15 units per milliliter each week.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You treated the constant as the rate. The weekly drop comes from the coefficient on $t$, which is 15 units per milliliter per week. The 480 is the starting level."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You paired the two numbers as if they were a point $(15, 480)$. Substituting $t = 15$ gives $A = 480 - 225 = 255$, not 480."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You mixed up the y-intercept with the x-intercept. The level reaches 0 when $480 - 15t = 0$, which is $t = 32$ weeks, not 480. The model only covers the first 20 weeks anyway."
+   }
+  },
+  "id": "orig-interpret-slop-E-0cbbee",
+  "skill_cd": "H.B.",
+  "subtype": "interpret-slope-intercept-in-context",
+  "subtype_name": "Say what the slope or intercept means",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-interpret-slop-E-0cbbee",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

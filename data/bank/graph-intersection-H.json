@@ -33,19 +33,24 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "which_expression",
   "verification": {
    "id": "orig-graph-intersec-H-8dedb9",
    "structure": [
     "names a table or graph but shows none"
    ],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "the line slants down from left to right"
    ],
    "residue": 0
-  },
-  "phrasing": "which_expression"
+  }
  },
  {
   "stem": "The graph of a system of linear equations is shown. What is the solution $(x, y)$ to the system?",
@@ -132,19 +137,24 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "which_expression",
   "verification": {
    "id": "orig-graph-intersec-H-bb91e1",
    "structure": [
     "names a table or graph but shows none"
    ],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "the line slants down from left to right"
    ],
    "residue": 0
-  },
-  "phrasing": "which_expression"
+  }
  },
  {
   "stem": "The graph of a system of linear equations is shown. What is the solution $(x, y)$ to the system?",
@@ -229,16 +239,73 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "which_expression",
   "verification": {
    "id": "orig-graph-intersec-H-b434c1",
    "structure": [
     "names a table or graph but shows none"
    ],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
+  }
+ },
+ {
+  "stem": "Which system of linear equations is represented by the lines shown?",
+  "stimulus": "On a field chart, an ornithologist draws the flight paths of two tagged terns as lines in the xy-plane, where x and y are distances, in kilometers, east and north of the nesting colony.",
+  "choices": [
+   "$2x + y = 6$ and $x - 2y = -2$",
+   "$2x - y = 6$ and $x - 2y = -2$",
+   "$x + 2y = 6$ and $2x - y = 2$",
+   "$2x + y = 6$ and $x - 2y = 2$"
+  ],
+  "answer": "A",
+  "explanation": "Read each line from two lattice points. The falling line passes through (0, 6) and (1, 4), so its slope is \u22122 and its y-intercept is 6. That gives y = \u22122x + 6, which is 2x + y = 6. The rising line passes through (0, 1) and (2, 2), so its slope is 1/2 and its y-intercept is 1. That gives y = (1/2)x + 1. Multiply by 2 to get 2y = x + 2, which is x \u2212 2y = \u22122. Only choice A matches both lines.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "2x \u2212 y = 6 is y = 2x \u2212 6, which has a positive slope. You mixed up which line is increasing. The line through (0, 6) falls from left to right, so its slope must be negative."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "Both of these lines do pass through the crossing point (2, 2). But you only checked that point. x + 2y = 6 has slope \u22121/2 and 2x \u2212 y = 2 has slope 2, so neither matches the steepness of the line drawn. The equations have to match each whole line, not just the place where they meet."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the rising line correctly as y = (1/2)x + 1 but flipped a sign when you rearranged it. x \u2212 2y = 2 is y = (1/2)x \u2212 1, which has a y-intercept of \u22121, not 1."
+   }
   },
-  "phrasing": "which_expression"
+  "id": "orig-graph-intersec-H-aab0a4",
+  "skill_cd": "H.D.",
+  "subtype": "graph-intersection",
+  "subtype_name": "Read or match the solution on a graph",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "review",
+  "verification": {
+   "id": "orig-graph-intersec-H-aab0a4",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": false,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": "Graph referenced as 'lines shown' is not provided; question lacks the visual coordinates needed to verify the system.",
+   "overlap": [
+    "system of linear equations is represented by the",
+    "of linear equations is represented by the lines",
+    "linear equations is represented by the lines shown"
+   ],
+   "residue": 5
+  }
  }
 ]

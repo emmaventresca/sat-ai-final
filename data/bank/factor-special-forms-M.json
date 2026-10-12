@@ -384,5 +384,595 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A hydrologist models the depth of water above a gauge's zero mark, in centimeters, $t$ hours after a sluice gate is opened as $d(t) = t^2 - 10t + 31$, for $0 \\le t \\le 10$.",
+  "choices": [
+   "$d(t)$ is equivalent to $(t - 5)^2 + 6$",
+   "$d(t)$ is equivalent to $(t + 5)^2 + 6$",
+   "$d(t)$ is equivalent to $(t - 5)^2 + 31$",
+   "$d(t)$ is equivalent to $(t - 10)^2 + 6$"
+  ],
+  "answer": "A",
+  "explanation": "Halve the $t$-coefficient: half of $-10$ is $-5$, so the square is $(t - 5)^2 = t^2 - 10t + 25$. The original constant is 31, so you need $31 - 25 = 6$ more: $d(t) = (t - 5)^2 + 6$. Expanding gives back $t^2 - 10t + 31$, so this equivalence holds for every $t$.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the sign of $h$ wrong. $(t + 5)^2$ expands to $t^2 + 10t + 25$, which has the wrong middle term and puts the vertex at $t = -5$ instead of $t = 5$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You wrote the correct square, $(t - 5)^2$, but kept the original constant. That square already contributes 25, so the total becomes $t^2 - 10t + 56$. You had to subtract 25 from 31."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the whole coefficient, 10, instead of half of it. $(t - 10)^2$ expands to $t^2 - 20t + 100$, which doubles the middle term."
+   }
+  },
+  "id": "orig-factor-special-M-b0ebe4",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-b0ebe4",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A folklorist models the number of distinct variants of a folktale recorded in a region as $V(x) = 9x^2 - 30x + 25$, where $x$ is the number of decades since collecting began.",
+  "choices": [
+   "$V(x)$ is equivalent to $(3x + 5)^2$",
+   "$V(x)$ is equivalent to $(9x - 5)^2$",
+   "$V(x)$ is equivalent to $(3x - 5)^2$",
+   "$V(x)$ is equivalent to $(3x - 5)(3x + 5)$"
+  ],
+  "answer": "C",
+  "explanation": "The first and last terms are perfect squares: $9x^2 = (3x)^2$ and $25 = 5^2$. Check the middle term: $2(3x)(5) = 30x$, and it is subtracted, so the pattern is $a^2 - 2ab + b^2 = (a - b)^2$. That gives $V(x) = (3x - 5)^2$. Expanding confirms $9x^2 - 30x + 25$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the sign of the middle term as $+$. $(3x + 5)^2 = 9x^2 + 30x + 25$, and its root is at $x = -\\tfrac{5}{3}$ rather than $x = \\tfrac{5}{3}$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You forgot to take the square root of the coefficient 9. $(9x - 5)^2 = 81x^2 - 90x + 25$, which has the wrong leading term and the wrong middle term."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "This product matches the first and last terms, but it is a difference of squares: $(3x - 5)(3x + 5) = 9x^2 - 25$. There is no $-30x$ term, so it fails the middle-term check."
+   }
+  },
+  "id": "orig-factor-special-M-6f5584",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-6f5584",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "In an immunology lab, the signal from an antibody assay is modeled by $R(x) = x^4 - 13x^2 + 36$, where $x$ is a scaled measure of antibody concentration.",
+  "choices": [
+   "$x - 4$ is a factor of $R(x)$",
+   "$x - 6$ is a factor of $R(x)$",
+   "$x^2 + 4$ is a factor of $R(x)$",
+   "$x + 3$ is a factor of $R(x)$"
+  ],
+  "answer": "D",
+  "explanation": "Only even powers appear, so let $u = x^2$: $u^2 - 13u + 36 = (u - 4)(u - 9)$, because $4 \\cdot 9 = 36$ and $4 + 9 = 13$. Put $x^2$ back in to get $(x^2 - 4)(x^2 - 9)$. Each of those is a difference of squares, so $R(x) = (x - 2)(x + 2)(x - 3)(x + 3)$. That makes $x + 3$ a factor. As a check, $R(-3) = 81 - 117 + 36 = 0$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at $u - 4$ and wrote $x$ where you needed $x^2$. The factor is $x^2 - 4$, which splits into $x - 2$ and $x + 2$. $R(4) = 84$, so $x - 4$ is not a factor."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You picked $6 \\cdot 6 = 36$, a factor pair that gives the right product but adds to 12, not 13. $R(6) = 864$, so $x - 6$ is not a factor."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped a sign when you factored $u^2 - 13u + 36$. Both factors have minus signs, $(x^2 - 4)(x^2 - 9)$, so $x^2 + 4$ does not divide $R(x)$."
+   }
+  },
+  "id": "orig-factor-special-M-437a78",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-437a78",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $16x^2 - 72x + 81$?",
+  "stimulus": "A materials scientist studying cracking in a ceramic coating uses the expression $16x^2 - 72x + 81$ to model the stress mismatch between the coating and the metal beneath it, where $x$ is a scaled measure of the coating's thickness.",
+  "choices": [
+   "$(4x + 9)(4x + 9)$",
+   "$(4x - 9)(4x - 9)$",
+   "$(4x + 9)(4x - 9)$",
+   "$(8x - 9)(2x - 9)$"
+  ],
+  "answer": "B",
+  "explanation": "The first term, $16x^2$, is $(4x)^2$, and the last term, $81$, is $9^2$. The middle term is $-72x = -2(4x)(9)$, so this is a perfect square: $(4x - 9)^2$. You can check it by picking a number. With $x = 2$, the original gives $64 - 144 + 81 = 1$, and $(4 \\cdot 2 - 9)^2 = (-1)^2 = 1$. None of the other choices gives 1.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You spotted the perfect square but used the wrong sign. $(4x + 9)^2$ expands to $16x^2 + 72x + 81$. The middle term of the original is negative, so the binomial needs a minus sign."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You mixed up a perfect square with a difference of squares. $(4x + 9)(4x - 9) = 16x^2 - 81$, so the $x$-term cancels out completely, and the original has a $-72x$ term."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You chose factors that give the right first and last terms ($8x \\cdot 2x = 16x^2$ and $(-9)(-9) = 81$), but you never checked the middle term. Expanding gives $-18x - 72x = -90x$, not $-72x$."
+   }
+  },
+  "id": "orig-factor-special-M-48181b",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-48181b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $x^2 + 14x + 40$?",
+  "stimulus": "An ornithologist uses the expression $x^2 + 14x + 40$ to model the energy a migrating warbler spends, where $x$ is a scaled flight speed. To find the minimum more easily, the ornithologist wants to rewrite the expression in vertex form.",
+  "choices": [
+   "$(x - 7)^2 - 9$",
+   "$(x + 14)^2 - 156$",
+   "$(x + 7)^2 + 40$",
+   "$(x + 7)^2 - 9$"
+  ],
+  "answer": "D",
+  "explanation": "Half of $14$ is $7$, so start with $(x + 7)^2 = x^2 + 14x + 49$. The original has a constant of $40$, which is $9$ less than $49$, so the expression equals $(x + 7)^2 - 9$. To check, try $x = 2$: the original gives $4 + 28 + 40 = 72$, and $(9)^2 - 9 = 72$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the sign of $h$ wrong. $(x - 7)^2$ expands to $x^2 - 14x + 49$, which puts the vertex at $x = 7$ instead of $x = -7$. To get $+14x$, you need $(x + 7)^2$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the whole $x$-coefficient instead of halving it. $(x + 14)^2 = x^2 + 28x + 196$, which doubles the middle term. Lowering the constant to make it match doesn't fix that."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You wrote the correct square but carried the original constant across unchanged. $(x + 7)^2$ already contributes $49$, so the constant has to drop to $-9$ for the total to stay $40$."
+   }
+  },
+  "id": "orig-factor-special-M-b4b8cc",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-b4b8cc",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is a factor of $x^4 - 13x^2 + 36$?",
+  "stimulus": "A musicologist studying how the strings of a historical harp were tuned uses the expression $x^4 - 13x^2 + 36$, where $x$ is related to a string's frequency ratio.",
+  "choices": [
+   "$x^2 + 4$",
+   "$x - 9$",
+   "$x - 3$",
+   "$x^2 - 12$"
+  ],
+  "answer": "C",
+  "explanation": "Every power of $x$ is even, so let $u = x^2$. That gives $u^2 - 13u + 36$, which factors as $(u - 4)(u - 9)$, because $-4$ and $-9$ multiply to $36$ and add to $-13$. Put $x^2$ back in to get $(x^2 - 4)(x^2 - 9)$. Each of those is a difference of squares, so the full factorisation is $(x - 2)(x + 2)(x - 3)(x + 3)$, and $x - 3$ is one of the factors. Check it: substituting $x = 3$ gives $81 - 117 + 36 = 0$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You dropped a sign when factoring. The quadratic in $u$ is $(u - 4)(u - 9)$, so the factor is $x^2 - 4$, not $x^2 + 4$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You stopped at $u = 9$ and forgot that $u$ stands for $x^2$. If $x^2 = 9$, then $x = \\pm 3$, so the factor is $x - 3$. Substituting $x = 9$ into the original gives $5544$, not $0$."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You picked a factor pair of $36$, namely $12$ and $3$, that multiplies correctly but adds to $15$ instead of $13$. The pair you need is $4$ and $9$."
+   }
+  },
+  "id": "orig-factor-special-M-11ff47",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-11ff47",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $4t^2 - 12t + 9$?",
+  "stimulus": "A musicologist studying tempo drift in recorded string quartets models how far a performance strays from the written tempo with the expression $4t^2 - 12t + 9$, where $t$ is the time, in minutes, since the movement began.",
+  "choices": [
+   "$(4t - 3)^2$",
+   "$(2t - 3)^2$",
+   "$(2t - 3)(2t + 3)$",
+   "$(2t + 3)^2$"
+  ],
+  "answer": "B",
+  "explanation": "The first term, $4t^2$, is $(2t)^2$, and the last term, $9$, is $3^2$. That makes this a possible perfect square. Check the middle term: $2 \\cdot (2t) \\cdot 3 = 12t$, and its sign is negative, so the expression is $(2t - 3)^2$. Expand it to confirm: $4t^2 - 12t + 9$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the coefficient 4 as it is instead of taking its square root. $(4t - 3)^2$ expands to $16t^2 - 24t + 9$. When the leading coefficient is a perfect square, you have to factor it as well: $4t^2 = (2t)^2$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You reached for the difference-of-squares pattern. $(2t - 3)(2t + 3) = 4t^2 - 9$, which has no middle term and the wrong sign on the constant. Expand your choice and check the middle term before you commit."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You lost the sign. $(2t + 3)^2$ expands to $4t^2 + 12t + 9$. The original middle term is $-12t$, so the binomial needs a minus sign."
+   }
+  },
+  "id": "orig-factor-special-M-6c39bc",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-6c39bc",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $h^2 - 10h + 31$?",
+  "stimulus": "A labour economist models the hourly cost to a warehouse, in dollars, of staffing a shift as $h^2 - 10h + 31$, where $h$ is the number of overtime hours scheduled for that shift.",
+  "choices": [
+   "$(h - 5)^2 + 31$",
+   "$(h + 5)^2 + 6$",
+   "$(h - 5)^2 + 6$",
+   "$(h - 10)^2 - 69$"
+  ],
+  "answer": "C",
+  "explanation": "To get vertex form, halve the $h$-coefficient: $-10 \\div 2 = -5$, so the square is $(h - 5)^2 = h^2 - 10h + 25$. The original constant is 31, and $31 - 25 = 6$. That gives $(h - 5)^2 + 6$. Expand it to confirm: $h^2 - 10h + 25 + 6 = h^2 - 10h + 31$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You built the square correctly but didn't adjust the constant. $(h - 5)^2$ already contributes 25, so writing $+31$ gives a total of 56. You need to subtract the 25 to keep the expression equal."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the sign of $h$ wrong. $(h + 5)^2$ expands to $h^2 + 10h + 25$, which has the wrong middle term. A $-10h$ term needs $(h - 5)^2$, which puts the vertex at $h = +5$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You forgot to halve the coefficient. $(h - 10)^2$ expands to $h^2 - 20h + 100$, so the middle term doubles. The number inside the square should be half of 10."
+   }
+  },
+  "id": "orig-factor-special-M-c7d6c0",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-c7d6c0",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to $x^4 - 13x^2 + 36$?",
+  "stimulus": "A printmaker planning a series of linocut plates uses the expression $x^4 - 13x^2 + 36$ to estimate how much ink a plate needs, where $x$ is the width of the plate in inches.",
+  "choices": [
+   "$(x - 2)(x + 2)(x - 3)(x + 3)$",
+   "$(x^2 - 12)(x^2 - 3)$",
+   "$(x - 4)(x + 4)(x - 9)(x + 9)$",
+   "$(x - 2)^2(x - 3)^2$"
+  ],
+  "answer": "A",
+  "explanation": "This quartic has only even powers, so let $u = x^2$. That turns it into $u^2 - 13u + 36$. You need two numbers that multiply to 36 and add to $-13$: $-4$ and $-9$. So the expression is $(x^2 - 4)(x^2 - 9)$, and each factor is a difference of squares. The full factorisation is $(x - 2)(x + 2)(x - 3)(x + 3)$. To check, try $x = 4$: $256 - 208 + 36 = 84$, and $(2)(6)(1)(7) = 84$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You picked a factor pair of 36 that multiplies correctly but doesn't add to the middle coefficient. $-12$ and $-3$ add to $-15$, not $-13$, so this expands to $x^4 - 15x^2 + 36$."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You found the correct values for $u$, which are 4 and 9, but then treated them as values of $x$. Since $u = x^2$, you need $x^2 - 4 = (x - 2)(x + 2)$, not $(x - 4)(x + 4)$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $x^2 - 4$ as $(x - 2)^2$, but that square expands to $x^2 - 4x + 4$. A difference of squares splits into $(x - 2)(x + 2)$, and squaring the binomial adds odd powers of $x$ that the original doesn't have."
+   }
+  },
+  "id": "orig-factor-special-M-df4e92",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-df4e92",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to how many more square meters the plaza covers than the fountain pad?",
+  "stimulus": "A civil engineer is designing a square concrete plaza with side length $(2x + 5)$ meters. A square fountain pad with side length $(x + 1)$ meters will sit inside the plaza, where $x > 0$.",
+  "choices": [
+   "$3(x + 1)(x + 8)$",
+   "$3(x + 2)(x + 4)$",
+   "$3(x + 2)(x + 6)$",
+   "$(x + 4)^2$"
+  ],
+  "answer": "B",
+  "explanation": "The gap is $(2x + 5)^2 - (x + 1)^2$, which is a difference of squares. Factor it as $[(2x + 5) - (x + 1)][(2x + 5) + (x + 1)] = (x + 4)(3x + 6)$. Then pull out the 3 to get $3(x + 2)(x + 4)$. To check, expand: $4x^2 + 20x + 25 - (x^2 + 2x + 1) = 3x^2 + 18x + 24 = 3(x^2 + 6x + 8)$. That matches.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You correctly reached $3(x^2 + 6x + 8)$, but then you chose factors of 8 that multiply to 8 (1 and 8) without checking that they add to 6. Since $1 + 8 = 9$, this choice expands to $3x^2 + 27x + 24$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "When you subtracted $(x + 1)$, the negative sign didn't reach the 1, so you got $x + 6$ instead of $x + 4$ for the first factor. Distribute the minus sign to both terms."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the side lengths first and then squared, which treats $a^2 - b^2$ as if it were $(a - b)^2$. That gives the area of a square whose side is the difference, not the difference between the two areas."
+   }
+  },
+  "id": "orig-factor-special-M-309fd6",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-309fd6",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to the number of genus A grains minus the number of genus B grains?",
+  "stimulus": "A paleobotanist counts fossil pollen in a sediment core. In a core section $x$ centimeters long, the model predicts $2x^2 - 6x + 31$ grains of genus A and $x^2 + 4x + 2$ grains of genus B.",
+  "choices": [
+   "$(x + 5)^2 + 4$",
+   "$(x - 5)^2 + 29$",
+   "$(x - 5)^2 + 8$",
+   "$(x - 5)^2 + 4$"
+  ],
+  "answer": "D",
+  "explanation": "Subtract term by term: $(2x^2 - x^2) + (-6x - 4x) + (31 - 2) = x^2 - 10x + 29$. Half of $-10$ is $-5$, and $(x - 5)^2 = x^2 - 10x + 25$. You need 4 more to reach 29, so the gap is $(x - 5)^2 + 4$.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You got the sign of $h$ wrong. $(x + 5)^2$ expands to $x^2 + 10x + 25$, so its middle term is $+10x$, not $-10x$. The vertex would then sit at $x = -5$ instead of $x = 5$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote $(x - 5)^2$ and kept the original constant 29. You forgot that squaring the binomial already adds 25, so you have to subtract that 25 back out."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the constants ($31 + 2 = 33$) instead of subtracting them. That gives $x^2 - 10x + 33$, which is $(x - 5)^2 + 8$."
+   }
+  },
+  "id": "orig-factor-special-M-531af9",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-531af9",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression is equivalent to how many more word forms the model predicts for Corpus P than for Corpus Q?",
+  "stimulus": "A linguist compares two text collections. For a sample of size index $x$, the model predicts $x^4 - 6x^2 + 20$ distinct word forms in Corpus P and $7x^2 - 16$ distinct word forms in Corpus Q.",
+  "choices": [
+   "$(x^2 - 1)(x^2 - 36)$",
+   "$(x^2 + 4)(x^2 + 9)$",
+   "$(x^2 - 4)(x^2 - 9)$",
+   "$(x - 2)^2(x - 3)^2$"
+  ],
+  "answer": "C",
+  "explanation": "The gap is $x^4 - 6x^2 + 20 - 7x^2 + 16 = x^4 - 13x^2 + 36$. Let $u = x^2$, which gives $u^2 - 13u + 36$. You need two numbers that multiply to 36 and add to $-13$: $-4$ and $-9$. So the gap is $(u - 4)(u - 9) = (x^2 - 4)(x^2 - 9)$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "1 and 36 do multiply to 36, but they add to 37, not 13. This choice expands to $x^4 - 37x^2 + 36$. Always check that the pair gives the middle coefficient."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the right pair, 4 and 9, but gave both of them plus signs. That makes the middle term $+13x^2$ instead of $-13x^2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated $x^2 - 4$ as $(x - 2)^2$. In fact $x^2 - 4$ is a difference of squares, $(x - 2)(x + 2)$. The squared binomials also add odd powers of $x$, such as $-10x^3$, that the gap doesn't have."
+   }
+  },
+  "id": "orig-factor-special-M-ea5a04",
+  "skill_cd": "P.A.",
+  "subtype": "factor-special-forms",
+  "subtype_name": "Special factoring patterns and vertex form",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-factor-special-M-ea5a04",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

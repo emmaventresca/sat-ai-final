@@ -82,17 +82,22 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "review",
+  "phrasing": "must_be_true",
   "verification": {
    "id": "orig-effect-on-cent-E-57723f",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "which of the following statements must be true"
    ],
    "residue": 8
-  },
-  "phrasing": "must_be_true"
+  }
  },
  {
   "stem": "Which printmaker's data has the greatest mean number of proofs per print?",
@@ -240,5 +245,247 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "If a sixth visit with a wait time of 60 minutes is added to the data, which of the following best describes how the mean and the median change?",
+  "stimulus": "A public health researcher recorded the wait times, in minutes, for five visits to a walk-in clinic: 12, 14, 15, 15, and 18.",
+  "choices": [
+   "The mean and the median both increase.",
+   "The mean increases, and the median stays the same.",
+   "The median increases, and the mean stays the same.",
+   "The mean and the median both stay the same."
+  ],
+  "answer": "B",
+  "explanation": "The original median is the third value, $15$. With six values, $12, 14, 15, 15, 18, 60$, the median is the mean of the third and fourth values: $\\frac{15+15}{2} = 15$, so it doesn't change. The mean goes from $\\frac{74}{5} = 14.8$ to $\\frac{134}{6} \\approx 22.3$, so it increases. A value far above the rest pulls the mean up and leaves the median where it was.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You saw that a large value was added and assumed both measures go up. The two middle values are both 15, so the median stays at 15. Only the mean increases."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the two measures. The mean is the one an extreme value pulls hard. The median depends only on the middle position, and that value is still 15."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You were right that the median holds at 15, but you forgot that the mean uses every value. Adding 60 raises the total from 74 to 134, and the mean rises to about 22.3."
+   }
+  },
+  "id": "orig-effect-on-cent-E-b33526",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-effect-on-cent-E-b33526",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the sample with 98 threads per inch is removed from the data, which of the following best describes how the mean and the median change?",
+  "stimulus": "A textile historian counted the threads per inch in nine linen samples from a 19th-century mill: 40, 42, 44, 45, 46, 47, 48, 50, and 98.",
+  "choices": [
+   "Both decrease, and the mean decreases by more.",
+   "Both decrease, and by the same amount.",
+   "Only the median decreases.",
+   "The mean decreases, and the median is unchanged."
+  ],
+  "answer": "A",
+  "explanation": "Before the removal, the median is the fifth value, $46$, and the mean is $\\frac{460}{9} \\approx 51.1$. After the removal, eight values remain, so the median is $\\frac{45+46}{2} = 45.5$ and the mean is $\\frac{362}{8} = 45.25$. The median drops by only $0.5$, and the mean drops by almost $6$. Both decrease, and the mean decreases by more.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You assumed the median shifts as much as the mean. Removing one value moves the median by at most one position, which here is a drop of 0.5. The mean drops by almost 6."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You reversed which measure the extreme value affects. Removing 98 lowers the total a lot, so the mean falls sharply. The median changes only slightly."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You remembered that outliers barely move the median but didn't check the middle value. With an even count, the median becomes $\\frac{45+46}{2} = 45.5$, not 46, so it does change."
+   }
+  },
+  "id": "orig-effect-on-cent-E-fe73fd",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-effect-on-cent-E-fe73fd",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following statements is true about the two data sets?",
+  "stimulus": "The hourly wages, in dollars, of five workers at each of two print shops are shown.\n\nShop A: 18, 20, 22, 24, 26\nShop B: 18, 20, 22, 24, 46",
+  "choices": [
+   "The medians are equal, and Shop B has the greater mean.",
+   "The means are equal, and Shop B has the greater median.",
+   "Shop B has both the greater mean and the greater median.",
+   "The means are equal, and the medians are also equal."
+  ],
+  "answer": "A",
+  "explanation": "Both lists are already in order, and the middle value of each is $22$, so the medians are equal. The mean of Shop A is $\\frac{110}{5} = 22$, and the mean of Shop B is $\\frac{130}{5} = 26$. Replacing 26 with 46 raises the mean and leaves the median where it was.",
+  "distractors": {
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You switched the measures. The larger top wage changes the total, which changes the mean. The middle value is 22 in both lists, so the medians match."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You assumed that a larger extreme value raises the median along with the mean. Only the top value differs, and the middle value is still 22 in both lists."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You checked the medians and stopped. The totals are 110 and 130, so the means are 22 and 26, and they are not equal."
+   }
+  },
+  "id": "orig-effect-on-cent-E-0aef69",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-effect-on-cent-E-0aef69",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following statements must be true?",
+  "stimulus": "Two cartography teams measured the position error, in meters, of landmarks on their survey maps. The table gives a summary of each team's errors.\n\nPosition Error (meters)\nTeam | Minimum | First quartile | Median | Third quartile | Maximum\nNorth | 2 | 4 | 6 | 8 | 12\nSouth | 1 | 3 | 9 | 10 | 11",
+  "choices": [
+   "The median error for South is greater than for North.",
+   "The mean error for South is greater than for North.",
+   "The median error for North is greater than for South.",
+   "The maximum error for South is greater than for North."
+  ],
+  "answer": "A",
+  "explanation": "The table gives each team's median directly. South's median is $9$ and North's is $6$, so South's median error is greater. A five-number summary doesn't give enough information to find either mean.",
+  "distractors": {
+   "B": {
+    "misconception": "overreach-beyond-evidence",
+    "why": "You treated the median as if it settled the mean. A five-number summary shows only the minimum, quartiles, median, and maximum, and the individual values could produce either mean being larger. That makes the claim possible, but it isn't something that must be true."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You reversed the comparison. North's median is 6 and South's is 9, so South's is the greater one."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You misread the Maximum column. South's maximum is 11 and North's is 12, so North's maximum is greater."
+   }
+  },
+  "id": "orig-effect-on-cent-E-1d1926",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-effect-on-cent-E-1d1926",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "which of the following statements must be true"
+   ],
+   "residue": 4
+  }
+ },
+ {
+  "stem": "If a sixth sample with a strength of 120 megapascals is added to the data, which of the following best describes the change in the mean and the median?",
+  "stimulus": "A materials scientist measured the tensile strength, in megapascals, of five alloy samples: 400, 410, 420, 430, and 440.",
+  "choices": [
+   "The mean decreases by 5, and the median decreases by 50.",
+   "The mean decreases by 50, and the median decreases by 5.",
+   "The mean decreases by 50, and the median decreases by 50.",
+   "The mean decreases by 50, and the median decreases by 0."
+  ],
+  "answer": "B",
+  "explanation": "Originally, the mean is $\\frac{2100}{5} = 420$ and the median is $420$. With six values, $120, 400, 410, 420, 430, 440$, the mean is $\\frac{2220}{6} = 370$, which is a decrease of $50$. The median is $\\frac{410+420}{2} = 415$, which is a decrease of $5$. The low value pulls the mean down hard and moves the median only slightly.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You calculated both changes correctly but attached each one to the wrong measure. The mean falls by 50 because it uses every value. The median moves by only half a step between neighbouring values."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You assumed the median shifts as much as the mean. The new median is $\\frac{410+420}{2} = 415$, which is only 5 below 420."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You assumed the median doesn't move at all. With six values, the median is the average of the third and fourth values, 410 and 420, so it becomes 415."
+   }
+  },
+  "id": "orig-effect-on-cent-E-2be2ee",
+  "skill_cd": "Q.C.",
+  "subtype": "effect-on-center-and-comparisons",
+  "subtype_name": "Effect of changing data, and comparing centers across sets",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-effect-on-cent-E-2be2ee",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

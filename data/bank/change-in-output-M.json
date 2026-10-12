@@ -421,5 +421,873 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "By how many beats per minute does the model's predicted heart rate increase when the treadmill speed increases by 3 kilometers per hour?",
+  "stimulus": "In a sports science lab, a runner's heart rate during a treadmill test is modeled by $H(s) = 4s + 92$, where $H(s)$ is the heart rate, in beats per minute, at a treadmill speed of $s$ kilometers per hour.",
+  "choices": [
+   "$\\frac{3}{4}$",
+   "$4$",
+   "$12$",
+   "$104$"
+  ],
+  "answer": "C",
+  "explanation": "The change in output equals the slope times the change in input. The slope is 4 beats per minute for each kilometer per hour, so a 3 km/h increase raises the heart rate by $4 \\times 3 = 12$ beats per minute. The constant 92 is in both heart rates, so it cancels out. You can check this with any speed: $H(5) - H(2) = 112 - 100 = 12$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the change in speed by the slope ($3 \\div 4$) when you should have multiplied them. The heart rate goes up 4 beats for each km/h, so 3 km/h means $4 \\times 3$."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "4 is the increase for a 1 km/h change, which is the slope. The question asks about a 3 km/h increase, so you still need to multiply by 3."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "You put 3 straight into the function and got $H(3) = 104$. That's the heart rate at a speed of 3 km/h, not the amount it changes. It also includes the starting value of 92, which cancels when you take a difference."
+   }
+  },
+  "id": "orig-change-in-outp-M-eb33f5",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-eb33f5",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, by how much does the number of storytellers who can recite the ballad decrease from 2005 to 2015?",
+  "stimulus": "A folklorist estimates that the number of storytellers in a mountain region who can recite a traditional ballad is modeled by $N(t) = 210 - 6t$, where $t$ is the number of years since 2000.",
+  "choices": [
+   "$6$",
+   "$60$",
+   "$120$",
+   "$150$"
+  ],
+  "answer": "B",
+  "explanation": "From 2005 to 2015, $t$ goes from 5 to 15, which is a change of 10 years. The slope is $-6$ storytellers per year, so the change is $-6 \\times 10 = -60$. That means the number goes down by 60. To check: $N(5) = 180$ and $N(15) = 120$, and $180 - 120 = 60$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "6 is how much the number drops in one year, which is the size of the slope. The interval is 10 years long, so you need to multiply by 10."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You found $N(15) = 120$, which is the number of storytellers left in 2015. The question asks how many fewer there are than in 2005, so you still need to subtract that from $N(5) = 180$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You put the 10-year change straight into the function and got $N(10) = 150$. That number still includes the starting value of 210. A change in output comes from the slope alone: $6 \\times 10$."
+   }
+  },
+  "id": "orig-change-in-outp-M-6aaf32",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-6aaf32",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ where __var__ is the number of years"
+   ],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the increase in the predicted number of words a child produces when $t$ increases by $n$ months?",
+  "stimulus": "A linguist studying early language development uses the equation $V = 48t + 310$ to estimate the number of distinct words, $V$, that a child produces $t$ months after the child's second birthday.",
+  "choices": [
+   "$48n$",
+   "$48n + 310$",
+   "$310n$",
+   "$48 + n$"
+  ],
+  "answer": "A",
+  "explanation": "The coefficient 48 is the rate: 48 more words for each month. When $t$ goes up by $n$ months, the output goes up by $48 \\times n = 48n$. The 310 is part of both the starting and ending values, so it cancels when you subtract: $(48(t+n) + 310) - (48t + 310) = 48n$.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You plugged $n$ into the equation and kept the 310. That gives the predicted vocabulary after $n$ months, not how much it grew. The constant cancels when you find a change."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You used 310 as the rate. But 310 is the starting vocabulary, the value when $t = 0$. The rate per month is the coefficient on $t$, which is 48."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the monthly rate to the number of months when you should have multiplied. Each of the $n$ months adds 48 words, so the total change is $48n$."
+   }
+  },
+  "id": "orig-change-in-outp-M-478cb2",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-478cb2",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the decrease in the predicted number of active cases over $w$ weeks?",
+  "stimulus": "During a county's flu outbreak, a public health office models the number of active cases, $C$, with the equation $C = 900 - 15d$, where $d$ is the number of days since the peak of the outbreak.",
+  "choices": [
+   "$105w$",
+   "$15w$",
+   "$\\dfrac{15w}{7}$",
+   "$900 - 105w$"
+  ],
+  "answer": "A",
+  "explanation": "The model loses 15 cases per day. The input is in days, so first convert: $w$ weeks is $7w$ days. The decrease is the rate times the change in input, $15 \\times 7w = 105w$. The 900 cancels when you subtract the later value from the earlier one.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You treated $w$ as a number of days. The model's input is days, so $w$ weeks has to become $7w$ days before you multiply by the rate."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You converted in the wrong direction and divided by 7. A week is longer than a day, so a number of weeks is multiplied by 7 to get days."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "This is the number of active cases left after $w$ weeks, not how many cases the count dropped by. To get the change, subtract, and the 900 cancels."
+   }
+  },
+  "id": "orig-change-in-outp-M-a45098",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-a45098",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which expression represents the increase in the predicted mass, in grams, of a hatchling from week $a$ to week $b$, where $b > a$?",
+  "stimulus": "A marine biologist raising loggerhead sea turtle hatchlings models the mass $M$, in grams, of a hatchling $t$ weeks after it hatches with the equation $M = 6t + 35$.",
+  "choices": [
+   "$6(b - a)$",
+   "$6(b - a) + 35$",
+   "$6(a - b)$",
+   "$6b + 35$"
+  ],
+  "answer": "A",
+  "explanation": "The mass goes up by 6 grams for each week, and the time goes up by $b - a$ weeks. So the increase is $6(b - a)$. You can check it: $(6b + 35) - (6a + 35) = 6b - 6a = 6(b - a)$. The 35 cancels.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You found the change in time and then put it back into the equation, so the 35 stayed in. The 35 is in both the week-$a$ mass and the week-$b$ mass, so it cancels when you subtract."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You subtracted in the wrong order. Since $b > a$, the expression $a - b$ is negative, so this gives a negative number for a mass that is going up."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the hatchling's mass at week $b$, the output at the end of the interval. The question asks how much the mass went up between the two weeks."
+   }
+  },
+  "id": "orig-change-in-outp-M-bed412",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "which_expression",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-bed412",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, by how much does the estimated trunk diameter decrease from a height of 3 meters to a height of 12 meters?",
+  "stimulus": "A paleobotanist models the diameter of a petrified conifer trunk using the function $d(h) = 118 - \\frac{5}{3}h$, where $d(h)$ is the estimated diameter, in centimeters, at a height of $h$ meters above the trunk's base.",
+  "choices": [
+   "$15$",
+   "$20$",
+   "$98$",
+   "$103$"
+  ],
+  "answer": "A",
+  "explanation": "The change in output is the slope times the change in input, and the constant 118 cancels out. The height goes up by $12 - 3 = 9$ meters, so the diameter changes by $-\\frac{5}{3} \\times 9 = -15$. The diameter decreases by 15 centimeters. As a check, $d(3) = 113$ and $d(12) = 98$, and $113 - 98 = 15$.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You multiplied the slope by the ending height, $\\frac{5}{3} \\times 12 = 20$, instead of by the change in height, which is 9 meters."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You plugged the change of 9 meters straight into the function and kept the intercept: $d(9) = 118 - 15 = 103$. That is the diameter at a height of 9 meters, not the amount the diameter decreases."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "This is $d(12)$, the diameter at the top of the interval. You stopped partway through and never subtracted it from $d(3) = 113$."
+   }
+  },
+  "id": "orig-change-in-outp-M-d56ba6",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-d56ba6",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If the number of contour lines on a sheet increases by 20, by how many minutes does the estimated digitizing time increase?",
+  "stimulus": "A cartography lab estimates the time needed to digitize a topographic map sheet using the function $T(x) = \\frac{9}{4}x + 35$, where $T(x)$ is the time, in minutes, for a sheet with $x$ contour lines.",
+  "choices": [
+   "$\\frac{9}{4}$",
+   "$45$",
+   "$80$",
+   "$180$"
+  ],
+  "answer": "B",
+  "explanation": "Change in output = slope \u00d7 change in input. The 35 minutes is a fixed amount that doesn't change, so you can ignore it. $\\frac{9}{4} \\times 20 = 45$, so the time increases by 45 minutes.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "$\\frac{9}{4}$ is how much the time increases for each extra contour line. The question asks about an increase of 20 lines, so you still need to multiply by 20."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You evaluated $T(20) = 45 + 35 = 80$, which kept the fixed 35 minutes. That is the total time for a sheet with 20 lines, not the increase."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied 20 by 9 and forgot to divide by 4. The slope is $\\frac{9}{4}$, not 9."
+   }
+  },
+  "id": "orig-change-in-outp-M-0e678e",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-0e678e",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Based on the graph, by how many kilometers does the satellite's predicted altitude decrease from day 10 to day 30?",
+  "stimulus": "The graph shows a linear model of the predicted altitude of a satellite whose orbit is slowly decaying, $x$ days after a tracking measurement.",
+  "figure": {
+   "type": "line",
+   "caption": "Predicted Satellite Altitude",
+   "x_label": "Days after measurement",
+   "y_label": "Altitude (kilometers)",
+   "points": [
+    [
+     0,
+     420
+    ],
+    [
+     10,
+     405
+    ],
+    [
+     20,
+     390
+    ],
+    [
+     30,
+     375
+    ],
+    [
+     40,
+     360
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 40,
+   "x_step": 10,
+   "y_min": 300,
+   "y_max": 435,
+   "y_step": 15,
+   "alt": "A straight line falling from left to right across the grid, starting at day 0 and ending at day 40."
+  },
+  "choices": [
+   "$30$",
+   "$45$",
+   "$375$",
+   "$405$"
+  ],
+  "answer": "A",
+  "explanation": "Read the altitude at each end of the interval and subtract. At day 10 the altitude is 405 km, and at day 30 it is 375 km. $405 - 375 = 30$, so the altitude decreases by 30 kilometers.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You started from day 0 (420 km) instead of day 10. $420 - 375 = 45$ is the decrease over 30 days, not over the 20 days the question asks about."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "375 km is the altitude at day 30, the end of the interval. The question asks how much the altitude changed, so you need the difference between the two ends."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "405 km is the altitude at day 10, where the interval starts. It is a single reading from the graph, not the change from day 10 to day 30."
+   }
+  },
+  "id": "orig-change-in-outp-M-b047aa",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-b047aa",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, by how many centimeters does the turtle's shell length increase over any 4-month period?",
+  "stimulus": "A marine biologist tracks a juvenile green sea turtle after tagging it. She models its shell length $L$, in centimeters, $t$ months after tagging with the function $L(t) = 1.5t + 12$.",
+  "choices": [
+   "$6$",
+   "$18$",
+   "$1.5$",
+   "$0.375$"
+  ],
+  "answer": "A",
+  "explanation": "The change in output is the slope times the change in input. The slope is $1.5$ centimeters per month, so over 4 months the length grows by $1.5 \\times 4 = 6$ centimeters. The $12$ is the length at tagging. It appears at both ends of the period, so it cancels out.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You found $L(4) = 1.5(4) + 12 = 18$. That's the turtle's length 4 months after tagging, not how much it grew. Putting the 4 straight into the function keeps the starting length of $12$ in your answer."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$1.5$ is the growth in one month. The question asks about a 4-month period, so you still need to multiply by 4."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided the rate by 4 ($1.5 \\div 4$) when you should have multiplied. A longer period means more growth, not less."
+   }
+  },
+  "id": "orig-change-in-outp-M-94b308",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-94b308",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "By how many centimeters did the water depth decrease from week 3 to week 8?",
+  "stimulus": "An ecologist measured the depth of water in a seasonal wetland pond once a week during a dry summer. The graph shows the depth over time. The relationship is linear.",
+  "figure": {
+   "type": "line",
+   "caption": "Pond Depth During a Dry Summer",
+   "x_label": "Week",
+   "y_label": "Water depth (centimeters)",
+   "points": [
+    [
+     0,
+     84
+    ],
+    [
+     1,
+     78
+    ],
+    [
+     2,
+     72
+    ],
+    [
+     3,
+     66
+    ],
+    [
+     4,
+     60
+    ],
+    [
+     5,
+     54
+    ],
+    [
+     6,
+     48
+    ],
+    [
+     7,
+     42
+    ],
+    [
+     8,
+     36
+    ],
+    [
+     9,
+     30
+    ],
+    [
+     10,
+     24
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 90,
+   "y_step": 6,
+   "alt": "A straight line falling from a depth of 84 centimeters at week 0 to 24 centimeters at week 10."
+  },
+  "choices": [
+   "$30$",
+   "$36$",
+   "$6$",
+   "$48$"
+  ],
+  "answer": "A",
+  "explanation": "Read the graph at both ends of the interval. At week 3 the depth is $66$ centimeters, and at week 8 it is $36$ centimeters. The decrease is $66 - 36 = 30$ centimeters. You can also get it from the slope: the depth falls $6$ centimeters per week, and $6 \\times 5 = 30$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "$36$ centimeters is the depth at week 8, the end of the interval. The question asks how much the depth dropped between the two weeks, so you need to subtract the week-8 depth from the week-3 depth."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$6$ centimeters is how much the depth drops in one week. The interval from week 3 to week 8 is 5 weeks long."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You multiplied $6$ by 8, as if the interval began at week 0. It begins at week 3, so the interval is 5 weeks, not 8."
+   }
+  },
+  "id": "orig-change-in-outp-M-aa2305",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-aa2305",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, how does the length of thread remaining on the spool change when the weaver completes 10 more ribbons?",
+  "stimulus": "In a 19th-century silk workshop, a weaver loaded a large spool of thread onto a ribbon loom. The length of thread left on the spool, $R$, in meters, after the weaver finished $p$ ribbons is modeled by $R(p) = 2{,}400 - 35p$.",
+  "choices": [
+   "It decreases by $350$ meters.",
+   "It decreases by $2{,}050$ meters.",
+   "It decreases by $35$ meters.",
+   "It increases by $350$ meters."
+  ],
+  "answer": "A",
+  "explanation": "The slope, $-35$, means each ribbon uses $35$ meters of thread. For 10 more ribbons, the change is $-35 \\times 10 = -350$, so the thread remaining goes down by $350$ meters. The $2{,}400$ is the length of thread on the full spool. It cancels when you compare any two points, so it doesn't affect the change.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You calculated $R(10) = 2{,}400 - 350 = 2{,}050$. That's the thread left after 10 ribbons, not how much was used. Putting 10 into the function keeps the starting amount in your answer."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "$35$ meters is the thread used for one ribbon. The question asks about 10 ribbons, so multiply by 10."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You have the right size of change but the wrong direction. The slope is negative, and weaving uses up thread, so the amount on the spool goes down."
+   }
+  },
+  "id": "orig-change-in-outp-M-6b68f0",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-6b68f0",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, how much greater is the estimated population of the neighborhood 14 years after construction began than 6 years after construction began?",
+  "stimulus": "The function $P$ is defined by $P(t) = 1{,}250t + 18{,}000$, where $P(t)$ is the estimated population of a newly planned city neighborhood $t$ years after construction began.",
+  "choices": [
+   "$1{,}250$",
+   "$10{,}000$",
+   "$28{,}000$",
+   "$35{,}500$"
+  ],
+  "answer": "B",
+  "explanation": "The input goes up by $14 - 6 = 8$ years. Each year adds $1{,}250$ people, so the population goes up by $1{,}250 \\times 8 = 10{,}000$. The $18{,}000$ is in both $P(14)$ and $P(6)$, so it cancels. You can check this: $P(14) - P(6) = 35{,}500 - 25{,}500 = 10{,}000$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found the yearly rate of change, $1{,}250$, but didn't multiply it by the 8 years between the two times. That's the increase over one year, not over eight."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You plugged the 8-year change straight into the function and got $P(8) = 28{,}000$. That keeps the starting $18{,}000$, which should cancel when you subtract two outputs."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $P(14) = 35{,}500$, the population at the later time. The question asks how much greater it is than at year 6, so you still needed to subtract $P(6)$."
+   }
+  },
+  "id": "orig-change-in-outp-M-6e9704",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-6e9704",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the model, how many kilometers lower is the satellite's altitude 50 days after the measurements began than 20 days after the measurements began?",
+  "stimulus": "Because of atmospheric drag, a small research satellite's orbit is slowly getting lower. The function $A$ is defined by $A(d) = 540 - 0.6d$, where $A(d)$ is the satellite's estimated altitude, in kilometers, $d$ days after the measurements began.",
+  "choices": [
+   "$18$",
+   "$30$",
+   "$522$",
+   "$528$"
+  ],
+  "answer": "A",
+  "explanation": "The input goes up by $50 - 20 = 30$ days. The altitude drops $0.6$ kilometer each day, so over 30 days it drops $0.6 \\times 30 = 18$ kilometers. The constant $540$ cancels, so you can ignore it. Check: $A(20) - A(50) = 528 - 510 = 18$.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You found $0.6 \\times 50 = 30$, the total altitude lost from day 0 to day 50. The question starts at day 20, so the 12 kilometers lost before day 20 shouldn't be counted."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You plugged the 30-day change into the function and got $A(30) = 522$. That's an altitude, not a change. The starting $540$ should cancel when you compare two days."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found $A(20) = 528$, the altitude on one of the two days. The question asks for the gap between the two altitudes, so you still needed to subtract $A(50)$."
+   }
+  },
+  "id": "orig-change-in-outp-M-0d7e1d",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-0d7e1d",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "According to the graph, how many more yards of cloth were on the loom 8 hours after the shift began than 2 hours after the shift began?",
+  "stimulus": "A museum ran a restored 19th-century power loom for one shift. The graph shows the total length $y$, in yards, of cloth on the loom $x$ hours after the shift began. The relationship is linear.",
+  "figure": {
+   "type": "line",
+   "caption": "Cloth on a Restored Power Loom",
+   "x_label": "Hours after shift began",
+   "y_label": "Cloth on loom (yards)",
+   "points": [
+    [
+     0,
+     10
+    ],
+    [
+     2,
+     16
+    ],
+    [
+     4,
+     22
+    ],
+    [
+     6,
+     28
+    ],
+    [
+     8,
+     34
+    ],
+    [
+     10,
+     40
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 40,
+   "y_step": 2,
+   "alt": "A straight line rising from left to right, from 10 yards at 0 hours to 40 yards at 10 hours."
+  },
+  "choices": [
+   "$18$",
+   "$24$",
+   "$28$",
+   "$34$"
+  ],
+  "answer": "A",
+  "explanation": "Read the graph at both ends of the interval: at 2 hours there are 16 yards, and at 8 hours there are 34 yards. The difference is $34 - 16 = 18$ yards. You can also get this from the slope: the line rises 3 yards per hour, and $3 \\times 6 = 18$.",
+  "distractors": {
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You found $3 \\times 8 = 24$, the cloth woven from hour 0 to hour 8. The question starts at hour 2, so the 6 yards woven before hour 2 shouldn't be counted."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the 6-hour change as an input and read the graph at $x = 6$, which gives 28 yards. That includes the 10 yards that were on the loom at the start, and that amount should cancel."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You read 34 yards at hour 8, the end of the interval, and stopped. The question asks how many more yards there were than at hour 2, so you still needed to subtract 16."
+   }
+  },
+  "id": "orig-change-in-outp-M-580263",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-580263",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A nutritionist uses the function $C(s) = 35s + 140$ to estimate $C(s)$, the total number of calories in a fruit smoothie that contains $s$ scoops of protein powder.",
+  "choices": [
+   "Adding 2 more scoops of protein powder increases the smoothie's estimated total by 70 calories.",
+   "Adding 2 more scoops of protein powder increases the smoothie's estimated total by 210 calories.",
+   "Adding 2 more scoops of protein powder increases the smoothie's estimated total by 280 calories.",
+   "Adding 2 more scoops of protein powder increases the smoothie's estimated total by 35 calories."
+  ],
+  "answer": "A",
+  "explanation": "The question asks how much the output changes, so the change in calories is the slope times the change in input. The slope is 35 calories per scoop, and the input goes up by 2 scoops, so the total goes up by $35 \\times 2 = 70$ calories. The 140 is the smoothie's calories with no protein powder. It's the same at both ends, so it cancels: $C(s+2) - C(s) = 35(s+2) + 140 - (35s + 140) = 70$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You put 2 into the function and found $C(2) = 35(2) + 140 = 210$. That's the total calories in a smoothie with 2 scoops, not the increase from adding 2 scoops. The 140 is in both smoothies, so it belongs in neither the change nor the answer."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You mixed up m and b and treated 140 as the calories per scoop, so you got $140 \\times 2 = 280$. The rate is the coefficient on $s$, which is 35. The 140 is the starting amount with zero scoops."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You found the right rate, 35 calories per scoop, but didn't multiply by the change in input. 35 is the increase for 1 scoop. For 2 scoops it's $35 \\times 2 = 70$."
+   }
+  },
+  "id": "orig-change-in-outp-M-4dc0ac",
+  "skill_cd": "H.B.",
+  "subtype": "change-in-output",
+  "subtype_name": "How much does the output change?",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-change-in-outp-M-4dc0ac",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

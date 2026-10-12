@@ -82,17 +82,22 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-compute-mean-o-H-1c655c",
    "structure": [
     "correct answer is far longer than every distractor"
    ],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
-  },
-  "phrasing": "direct"
+  }
  },
  {
   "stem": "What is the median of the hourly meteor counts for all six nights?",
@@ -240,5 +245,53 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the median of the data?",
+  "stimulus": "A printmaking studio recorded how many ink colors were layered in each of the 20 prints in a student exhibition. The results are shown in the frequency table.\n\nInk Colors per Print\nNumber of ink colors | Number of prints\n1 | 4\n2 | 6\n3 | 3\n4 | 6\n5 | 1",
+  "choices": [
+   "$2$",
+   "$2.5$",
+   "$2.7$",
+   "$3$"
+  ],
+  "answer": "B",
+  "explanation": "There are $4 + 6 + 3 + 6 + 1 = 20$ prints, so the median is the average of the 10th and 11th values once they are sorted. Count up the running totals. The 1-color prints are positions 1 to 4, and the 2-color prints are positions 5 to 10. The 3-color prints are positions 11 to 13. That makes the 10th value $2$ and the 11th value $3$, so the median is $\\frac{2 + 3}{2} = 2.5$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You found the 10th value, $2$, and stopped there. With an even count of 20 there are two middle values, the 10th and the 11th, and you have to average them. The 11th value is $3$."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You worked out the mean, not the median: $\\frac{1(4) + 2(6) + 3(3) + 4(6) + 5(1)}{20} = \\frac{54}{20} = 2.7$. The question asks for the middle value."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the middle of the five distinct values 1, 2, 3, 4, 5 and ignored the frequencies. Each value counts once for every print that has it, so you need running totals to find the 10th and 11th prints."
+   }
+  },
+  "id": "orig-compute-mean-o-H-7579a0",
+  "skill_cd": "Q.C.",
+  "subtype": "compute-mean-or-median",
+  "subtype_name": "Compute the mean or median of a given set",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compute-mean-o-H-7579a0",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

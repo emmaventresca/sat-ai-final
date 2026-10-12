@@ -249,5 +249,56 @@
    "residue": 0
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which expression is equivalent to $2P(x) - (x - 1)Q(x)$?",
+  "stimulus": "A folklore studies student uses two polynomials to model features of a collection of regional trickster tales. The polynomials are defined as $P(x) = 3x^2 - 2x + 5$ and $Q(x) = x^2 + 4x - 1$.",
+  "choices": [
+   "$-x^3 + 3x^2 + 3x + 4$",
+   "$-x^3 + 3x^2 + x + 9$",
+   "$-x^3 + 2x^2 - 3x + 10$",
+   "$-x^3 + 9x^2 - 9x + 11$"
+  ],
+  "answer": "B",
+  "explanation": "First, put the definitions in parentheses. Then $2P(x) = 6x^2 - 4x + 10$. Next, $(x - 1)Q(x) = x^3 + 4x^2 - x - x^2 - 4x + 1 = x^3 + 3x^2 - 5x + 1$. When you subtract, the minus sign applies to every term: $6x^2 - 4x + 10 - x^3 - 3x^2 + 5x - 1$. Combine like terms to get $-x^3 + 3x^2 + x + 9$. To check, substitute $x = 2$: $P(2) = 13$ and $Q(2) = 11$, so the original is $26 - 11 = 15$. Choice B also gives $-8 + 12 + 2 + 9 = 15$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied only the first term of $P(x)$ by 2, which gave $6x^2 - 2x + 5$ instead of $6x^2 - 4x + 10$. The 2 has to multiply every term of $P(x)$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $Q(x)$ by $x$ but not by $-1$, so you subtracted $x^3 + 4x^2 - x$ instead of the full product $x^3 + 3x^2 - 5x + 1$. Both terms of $(x - 1)$ must multiply every term of $Q(x)$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You expanded $(x - 1)Q(x)$ correctly, but you applied the minus sign only to the $x^3$ term. The terms $3x^2$, $-5x$ and $1$ kept their signs when they should have flipped."
+   }
+  },
+  "id": "orig-expand-and-com-H-f7b360",
+  "skill_cd": "P.A.",
+  "subtype": "expand-and-combine-like-terms",
+  "subtype_name": "Expand, distribute, combine like terms",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-expand-and-com-H-f7b360",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__var__ and __var__ which expression is equivalent to",
+    "and __var__ which expression is equivalent to __var__"
+   ],
+   "residue": 1
+  }
  }
 ]

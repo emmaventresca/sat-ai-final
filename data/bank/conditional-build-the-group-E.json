@@ -243,5 +243,245 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "If one of these pieces is selected at random, what is the probability that it is in a minor key, given that it is not from the Baroque era?",
+  "stimulus": "A music archive sorted 80 keyboard pieces by era and by key.\n\nKeyboard Pieces by Era and Key\nKey | Baroque | Classical | Romantic | Total\nMajor | 14 | 18 | 12 | 44\nMinor | 6 | 10 | 20 | 36\nTotal | 20 | 28 | 32 | 80",
+  "choices": [
+   "$\\frac{3}{10}$",
+   "$\\frac{3}{8}$",
+   "$\\frac{1}{2}$",
+   "$\\frac{5}{8}$"
+  ],
+  "answer": "C",
+  "explanation": "The condition \"not from the Baroque era\" covers two columns, Classical and Romantic, so you build the group: $28 + 32 = 60$ pieces. Inside that group, the minor-key pieces number $10 + 20 = 30$. The probability is $\\frac{30}{60} = \\frac{1}{2}$.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You read \"not Baroque\" as \"Baroque\" and used the Baroque column: $\\frac{6}{20} = \\frac{3}{10}$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You found the 30 minor-key pieces that are not Baroque but divided by all 80 pieces, not by the 60 that are not Baroque."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You used only the Romantic column, $\\frac{20}{32} = \\frac{5}{8}$, and left out the Classical pieces that are also not Baroque."
+   }
+  },
+  "id": "orig-conditional-bu-E-2ce81b",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-E-2ce81b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these workers is selected at random, what is the probability that the worker has a second job, given that the worker works at least 40 hours per week?",
+  "stimulus": "A labor survey asked 120 workers how many hours they work each week at their main job and whether they also hold a second job.\n\nWeekly Hours at Main Job\nHours | Second job | No second job | Total\nFewer than 40 | 12 | 28 | 40\nExactly 40 | 6 | 44 | 50\nMore than 40 | 14 | 16 | 30\nTotal | 32 | 88 | 120",
+  "choices": [
+   "$\\frac{1}{6}$",
+   "$\\frac{1}{4}$",
+   "$\\frac{7}{15}$",
+   "$\\frac{5}{8}$"
+  ],
+  "answer": "B",
+  "explanation": "\"At least 40\" includes exactly 40, so the group is the \"Exactly 40\" row plus the \"More than 40\" row: $50 + 30 = 80$ workers. Of these, $6 + 14 = 20$ have a second job. The probability is $\\frac{20}{80} = \\frac{1}{4}$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found the 20 workers in the group who have a second job but divided by all 120 workers: $\\frac{20}{120} = \\frac{1}{6}$."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You read \"at least 40\" as \"more than 40\" and left out the \"Exactly 40\" row: $\\frac{14}{30} = \\frac{7}{15}$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the denominator and found the fraction of second-job holders who work at least 40 hours: $\\frac{20}{32} = \\frac{5}{8}$."
+   }
+  },
+  "id": "orig-conditional-bu-E-8e0430",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-E-8e0430",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these athletes is selected at random, what is the probability that the athlete is a thrower, given that the athlete recovered in under 24 hours?",
+  "stimulus": "In a sports science study, each athlete was classified by event and by recovery time after a hard training session. The table shows the proportion of all athletes in the study that falls in each category.\n\nProportion of Athletes by Event and Recovery Time\nRecovery time | Sprinters | Jumpers | Throwers\nUnder 24 hours | 0.15 | 0.10 | 0.05\n24 hours or more | 0.30 | 0.20 | 0.20",
+  "choices": [
+   "$\\frac{1}{20}$",
+   "$\\frac{1}{6}$",
+   "$\\frac{1}{5}$",
+   "$\\frac{5}{6}$"
+  ],
+  "answer": "B",
+  "explanation": "No total is printed, so you build the group yourself. The \"Under 24 hours\" row adds to $0.15 + 0.10 + 0.05 = 0.30$. Throwers make up $0.05$ of that row. You can treat the proportions as counts because the scaling cancels: $\\frac{0.05}{0.30} = \\frac{1}{6}$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You took the thrower proportion of $0.05$ as the answer. That is the share of the whole study, so you divided by the full total of 1, not by the under-24-hour group."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the Throwers column as the denominator, $\\frac{0.05}{0.25} = \\frac{1}{5}$. That answers the reversed question: of the throwers, what fraction recovered quickly."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You found the share of the under-24-hour group who are not throwers, $\\frac{0.25}{0.30} = \\frac{5}{6}$, which is the complement of what was asked."
+   }
+  },
+  "id": "orig-conditional-bu-E-d7f34a",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-E-d7f34a",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these days is selected at random, what is the probability that it had rain, given that its wind speed was at least 20 kilometers per hour?",
+  "stimulus": "A weather station recorded the peak wind speed and whether any rain fell on each of 90 days.\n\nDays by Peak Wind Speed and Rain\nWind speed (km/h) | Rain | No rain | Total\n0 to 9 | 4 | 26 | 30\n10 to 19 | 9 | 21 | 30\n20 to 29 | 10 | 10 | 20\n30 or more | 7 | 3 | 10\nTotal | 30 | 60 | 90",
+  "choices": [
+   "$\\frac{17}{90}$",
+   "$\\frac{13}{30}$",
+   "$\\frac{17}{30}$",
+   "$\\frac{7}{10}$"
+  ],
+  "answer": "C",
+  "explanation": "\"At least 20\" covers two rows, 20 to 29 and 30 or more, so the group is $20 + 10 = 30$ days. Rain fell on $10 + 7 = 17$ of them. The probability is $\\frac{17}{30}$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You counted the 17 rainy days in the group correctly but divided by all 90 days, not by the 30 days with wind of at least 20 km/h."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You counted the days in the group with no rain, $10 + 3 = 13$, which answers the opposite of what was asked."
+   },
+   "D": {
+    "misconception": "missed-condition",
+    "why": "You used only the \"30 or more\" row, $\\frac{7}{10}$, and dropped the 20 to 29 row, which is also part of \"at least 20.\""
+   }
+  },
+  "id": "orig-conditional-bu-E-5ab1e8",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-E-5ab1e8",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If one of these samples is selected at random, what is the probability that it is high-fiber, given that it is not wheat?",
+  "stimulus": "A nutrition lab stores grain samples on trays. Every tray holds 10 samples. The table shows how many trays of each grain the lab has and how many samples on each of those trays are high-fiber.\n\nGrain Samples in the Lab\nGrain | Number of trays | High-fiber samples per tray\nWheat | 4 | 3\nOat | 2 | 6\nRice | 4 | 1",
+  "choices": [
+   "$\\frac{4}{25}$",
+   "$\\frac{4}{15}$",
+   "$\\frac{3}{10}$",
+   "$\\frac{7}{20}$"
+  ],
+  "answer": "B",
+  "explanation": "\"Not wheat\" means oat and rice together: $2 + 4 = 6$ trays, which is $6 \\times 10 = 60$ samples. The high-fiber samples in that group number $2 \\times 6 + 4 \\times 1 = 16$. The probability is $\\frac{16}{60} = \\frac{4}{15}$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found the 16 high-fiber samples that are not wheat but divided by all $10 \\times 10 = 100$ samples in the lab: $\\frac{16}{100} = \\frac{4}{25}$."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You read \"not wheat\" as \"wheat\" and used the wheat trays: $\\frac{4 \\times 3}{4 \\times 10} = \\frac{3}{10}$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the per-tray counts for oat and rice, $6 + 1 = 7$, over two trays' worth of samples, 20. You never multiplied by the number of trays of each grain."
+   }
+  },
+  "id": "orig-conditional-bu-E-7def6b",
+  "skill_cd": "Q.E.",
+  "subtype": "conditional-build-the-group",
+  "subtype_name": "Conditional probability where you must build the given group",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-conditional-bu-E-7def6b",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

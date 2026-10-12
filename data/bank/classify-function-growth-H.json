@@ -247,5 +247,249 @@
    "residue": 0
   },
   "phrasing": "must_be_true"
+ },
+ {
+  "stem": "Which of the following best describes the relationship between $T$ and $h$?",
+  "stimulus": "In an abrasion test on a protective coating, $T$ is the coating's thickness, in micrometers, after $h$ hours of testing. The coating starts at 250 micrometers, and each hour the test removes 4% of the coating's initial thickness.",
+  "choices": [
+   "Decreasing exponential",
+   "Decreasing linear",
+   "Increasing linear",
+   "Increasing exponential"
+  ],
+  "answer": "B",
+  "explanation": "The thickness goes down as the hours go up, so the relationship is decreasing. The 4% is always taken from the initial thickness, so the test removes the same 0.04 \u00d7 250 = 10 micrometers every hour: $T = 250 - 10h$. When the same amount is subtracted each step, the relationship is linear. That makes it decreasing linear.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You saw a percent and called it exponential. That would be right if 4% came off whatever thickness was left. Here it is 4% of the initial 250 micrometers every hour, so the same 10 micrometers comes off each time. That is linear."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "You tracked the coating worn away, which does rise by 10 micrometers an hour. The question asks about $T$, the thickness that remains, and that goes down."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You got both parts wrong: you called a fixed percent of the starting amount exponential, and you followed the material removed rather than the thickness left."
+   }
+  },
+  "id": "orig-classify-funct-H-c21456",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-H-c21456",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following best describes the relationship between $t$ and $R$?",
+  "stimulus": "A music archive is restoring its wax-cylinder recordings. The table shows $R$, the number of recordings still unrestored, $t$ years after the program began.\nUnrestored Recordings by Year\n$t$ | 0 | 1 | 2 | 3\n$R$ | 1,000 | 900 | 810 | 729",
+  "choices": [
+   "Decreasing linear",
+   "Increasing exponential",
+   "Decreasing exponential",
+   "Increasing linear"
+  ],
+  "answer": "C",
+  "explanation": "R goes down as t goes up, so the relationship is decreasing. The differences are \u2212100, \u221290 and \u221281, which are not constant, so it is not linear. The ratios are 900/1,000 = 810/900 = 729/810 = 0.9. Each year R is multiplied by 0.9, so the relationship is decreasing exponential.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You saw a drop of 100 in the first year and assumed every year was the same. The drops get smaller (100, 90, 81), so the change is not constant. The ratio is what stays constant."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "You thought about the recordings that have been restored, which goes up. $R$ counts the recordings still unrestored, and that goes down."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You reversed the direction and also assumed a constant difference. $R$ goes down, and it changes by a constant ratio, not a constant amount."
+   }
+  },
+  "id": "orig-classify-funct-H-bc15f0",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-H-bc15f0",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__num__ which of the following best describes the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which statement about the two guilds' memberships is true?",
+  "stimulus": "Two weavers' guilds were founded in the same year. In year $t = 0$, Guild P had 80 members and then gained 20 members each year. Guild Q had 10 members in year $t = 0$, and its membership doubled each year.",
+  "choices": [
+   "Guild Q never has more members than Guild P.",
+   "Guild Q first has more members than Guild P when $t = 3$.",
+   "Guild Q first has more members than Guild P when $t = 4$.",
+   "Guild Q first has more members than Guild P when $t = 5$."
+  ],
+  "answer": "D",
+  "explanation": "Guild P has $80 + 20t$ members and Guild Q has $10(2)^t$ members. Test whole years. At $t = 3$: P has 140 and Q has 80. At $t = 4$: P has 160 and Q has 160, so they are equal. At $t = 5$: P has 180 and Q has 320. Guild Q first has more members when $t = 5$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You compared only the first few years, when Guild P leads. Exponential growth always passes linear growth eventually, so Guild Q has to overtake at some point."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "At $t = 3$, Guild Q's yearly gain (40) first beats Guild P's (20). Gaining faster is not the same as having more members, and in that year Q has 80 to P's 140."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "At $t = 4$ both guilds have exactly 160 members. Being equal is not having more, so Guild Q only pulls ahead the following year."
+   }
+  },
+  "id": "orig-classify-funct-H-beb2c2",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-H-beb2c2",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following best describes the relationship between $d$ and $s$?",
+  "stimulus": "At an excavation, $s$ is the total number of pottery sherds catalogued after $d$ days of digging. The table shows $s$ on four of those days.\nSherds Catalogued\n$d$ | 0 | 2 | 5 | 9\n$s$ | 15 | 135 | 315 | 555",
+  "choices": [
+   "Increasing linear",
+   "Increasing exponential",
+   "Decreasing linear",
+   "Decreasing exponential"
+  ],
+  "answer": "A",
+  "explanation": "s goes up as d goes up, so the relationship is increasing. The days are not evenly spaced, so compare the change per day. From 0 to 2 days it is 120/2 = 60. From 2 to 5 it is 180/3 = 60. From 5 to 9 it is 240/4 = 60. A constant 60 sherds per day means $s = 15 + 60d$, which is increasing linear.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You saw the jumps grow (120, 180, 240) and called it exponential. Those jumps cover 2, 3 and 4 days. Per day, the change is 60 every time, so the relationship is linear."
+   },
+   "C": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You subtracted each later value from the earlier one, which gave you negative changes. The count rises from 15 to 555, so the relationship is increasing."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided earlier values by later ones, got ratios below 1 and read them as decay. The count is rising, and the ratios (9, then about 2.3) are not constant anyway."
+   }
+  },
+  "id": "orig-classify-funct-H-4868a9",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-H-4868a9",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__num__ which of the following best describes the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "Which statement best describes how the two collections change over time?",
+  "stimulus": "A folklore archive began with 600 recorded tales. Each year it adds 10% of its original 600 tales. A second archive began with 300 tales, and each year its total grows by 20% of the previous year's total.",
+  "choices": [
+   "Both grow exponentially, and the first archive always holds more tales.",
+   "The first grows linearly and the second exponentially, so the second eventually holds more.",
+   "The first grows linearly and the second exponentially, but the first always holds more.",
+   "Both grow linearly, and the second archive never catches up to the first."
+  ],
+  "answer": "B",
+  "explanation": "The first archive adds 10% of the fixed 600 tales, which is 60 tales every year: $600 + 60t$, which is linear. The second archive grows by 20% of each year's total: $300(1.2)^t$, which is exponential. Exponential growth always overtakes linear growth eventually. Here the second archive passes the first when $t = 7$ (about 1,075 tales against 1,020).",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You saw the percent in the first archive's rule and called it exponential. Because the 10% is always of the original 600, the archive adds the same 60 tales each year, so it grows linearly."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You classified both archives correctly but judged only the first few years, when the first archive leads. A quantity that grows by a constant percent always passes one that grows by a constant amount."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You read the second archive as adding 20% of its original 300, which would be 60 tales a year. It grows by 20% of the previous year's total, so it multiplies by 1.2 each year and is exponential."
+   }
+  },
+  "id": "orig-classify-funct-H-236bc5",
+  "skill_cd": "Q.D.",
+  "subtype": "classify-function-growth",
+  "subtype_name": "Linear vs exponential, increasing vs decreasing",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-classify-funct-H-236bc5",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

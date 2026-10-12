@@ -134,21 +134,26 @@
   "section": "math",
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-scale-sample-p-E-2f3a89",
    "structure": [
     "correct answer is far longer than every distractor"
    ],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "following is the best estimate of the total",
     "is the best estimate of the total number",
     "the best estimate of the total number of"
    ],
    "residue": 3
-  },
-  "phrasing": "direct"
+  }
  },
  {
   "stem": "Which of the following is the best estimate of the number of shorebirds at the refuge that are not juveniles?",
@@ -404,5 +409,108 @@
    "residue": 2
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "Based on the survey, which of the following is the best estimate of the number of households in the city that would use the new bike lane?",
+  "stimulus": "A city has 48,000 households. Planners surveyed a random sample of 400 of these households, and 60 of the sampled households said they would use a proposed new bike lane.",
+  "choices": [
+   "60",
+   "720",
+   "7,200",
+   "40,800"
+  ],
+  "answer": "C",
+  "explanation": "The sample fraction is $\\frac{60}{400} = 0.15$. The sample was random and drawn from the city's households, so you can apply that fraction to all of them: $0.15 \\times 48{,}000 = 7{,}200$. Your best estimate is 7,200 households.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "60 is how many households in the sample said yes. You stopped there and didn't scale the sample fraction up to all 48,000 households."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You slipped a decimal place, using 0.015 instead of 0.15. $\\frac{60}{400} = 0.15$, and $0.15 \\times 48{,}000 = 7{,}200$, not 720."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "40,800 is the estimate for households that would NOT use the lane: $0.85 \\times 48{,}000$. The question asks about households that would use it."
+   }
+  },
+  "id": "orig-scale-sample-p-E-e98f49",
+  "skill_cd": "Q.F.",
+  "subtype": "scale-sample-proportion-to-population",
+  "subtype_name": "Scale a sample up to the population",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-scale-sample-p-E-e98f49",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "survey which of the following is the best",
+    "following is the best estimate of the number",
+    "is the best estimate of the number of"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "Based on the sample, which of the following is the best estimate of the number of earthquakes recorded in the region last year that had a magnitude less than 3.0?",
+  "stimulus": "A seismic station recorded 2,500 earthquakes in a region last year. A seismologist selected a random sample of 200 of these earthquakes and found that 36 of them had a magnitude of 3.0 or greater.",
+  "choices": [
+   "164",
+   "450",
+   "2,050",
+   "2,464"
+  ],
+  "answer": "C",
+  "explanation": "The question asks about earthquakes below 3.0, so first find that count in the sample: $200 - 36 = 164$. The sample fraction is $\\frac{164}{200} = 0.82$. Applied to all recorded earthquakes, that gives $0.82 \\times 2{,}500 = 2{,}050$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "164 is how many sampled earthquakes were below 3.0. You didn't scale that sample count up to the 2,500 earthquakes recorded in total."
+   },
+   "B": {
+    "misconception": "complement-or-direction-flip",
+    "why": "450 is the estimate for earthquakes of magnitude 3.0 or greater: $\\frac{36}{200} \\times 2{,}500$. The question asks about the ones below 3.0."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the sample count from the total ($2{,}500 - 36$), which mixes a sample count with a population count. Scale the fraction first: $\\frac{164}{200} \\times 2{,}500 = 2{,}050$."
+   }
+  },
+  "id": "orig-scale-sample-p-E-d32d92",
+  "skill_cd": "Q.F.",
+  "subtype": "scale-sample-proportion-to-population",
+  "subtype_name": "Scale a sample up to the population",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-scale-sample-p-E-d32d92",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "following is the best estimate of the number",
+    "is the best estimate of the number of"
+   ],
+   "residue": 2
+  }
  }
 ]

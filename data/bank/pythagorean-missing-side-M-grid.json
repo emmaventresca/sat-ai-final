@@ -146,17 +146,22 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "grid",
-  "status": "error",
+  "status": "review",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-pythagorean-mi-M-a8cd1e",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": 5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "what is the width in meters of the"
    ],
    "residue": 8
-  },
-  "phrasing": "direct"
+  }
  },
  {
   "stem": "What is the actual length, in meters, of the plaza?",
@@ -211,5 +216,669 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the perimeter, in meters, of the floor of the tent?",
+  "stimulus": "A county health department sets up a rectangular tent for a vaccination clinic. The floor of the tent is 10 meters wide, and the distance along its diagonal from one corner to the opposite corner is 26 meters.",
+  "keys": [
+   "68"
+  ],
+  "any_of": false,
+  "explanation": "The diagonal splits the rectangle into two right triangles, and the diagonal is the hypotenuse of each. The width and the length are the legs. The length is the missing leg, so subtract: $26^2 - 10^2 = 676 - 100 = 576$, and the length is $\\sqrt{576} = 24$ meters. The perimeter is $2(24 + 10) = 68$ meters.",
+  "common_errors": [
+   {
+    "value": "24",
+    "misconception": "intermediate-step",
+    "why": "Found the length of the floor and stopped before working out the perimeter."
+   },
+   {
+    "value": "75.71",
+    "misconception": "algebra-manipulation",
+    "why": "Added the squares, as if the diagonal were a leg: $\\sqrt{676 + 100} \\approx 27.86$, then $2(27.86 + 10) \\approx 75.71$."
+   },
+   {
+    "value": "240",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the length correctly but gave the area, $24 \\times 10$, not the perimeter."
+   },
+   {
+    "value": "72",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the diagonal as the length: $2(26 + 10)$."
+   }
+  ],
+  "id": "orig-pythagorean-mi-M-7baed6",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-7baed6",
+   "structure": [],
+   "solver_answer": 68,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the distance, in millimeters, between spot $A$ and spot $C$?",
+  "stimulus": "An immunology technician places three antibody spots, $A$, $B$, and $C$, on a slide so that they form a right triangle with the right angle at $C$. The distance from $A$ to $B$ is $3\\sqrt{5}$ millimeters, and the distance from $B$ to $C$ is 3 millimeters.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "The right angle is at $C$, so the side across from it, $AB$, is the hypotenuse. $AC$ is a leg, so subtract: $AC^2 = (3\\sqrt{5})^2 - 3^2 = 45 - 9 = 36$. Take the positive square root: $AC = 6$ millimeters.",
+  "common_errors": [
+   {
+    "value": "7.348",
+    "misconception": "algebra-manipulation",
+    "why": "Added the squares as though $AC$ were the hypotenuse: $\\sqrt{45 + 9} = \\sqrt{54} \\approx 7.348$."
+   },
+   {
+    "value": "36",
+    "misconception": "intermediate-step",
+    "why": "Found $AC^2$ and never took the square root."
+   },
+   {
+    "value": "3.708",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the lengths instead of their squares: $3\\sqrt{5} - 3 \\approx 3.708$."
+   },
+   {
+    "value": "12",
+    "misconception": "algebra-manipulation",
+    "why": "Squared $3\\sqrt{5}$ as $3 \\cdot 5 = 15$ instead of $9 \\cdot 5 = 45$, giving $AC^2 = 15 - 9 = 6$, then doubled something along the way; most often the slip is squaring only the radical."
+   }
+  ],
+  "id": "orig-pythagorean-mi-M-49fcbc",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "review",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-49fcbc",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "millimeters what is the distance in millimeters between"
+   ],
+   "residue": 8
+  }
+ },
+ {
+  "stem": "What is the area, in square meters, of the plot?",
+  "stimulus": "An ecologist marks out a survey plot in the shape of a right triangle. The longest side of the plot is 25 meters, and one of the two shorter sides is 7 meters.",
+  "keys": [
+   "84"
+  ],
+  "any_of": false,
+  "explanation": "The longest side, 25 meters, is the hypotenuse. The missing side is a leg, so subtract: $25^2 - 7^2 = 625 - 49 = 576$, and the leg is $\\sqrt{576} = 24$ meters. The two legs are perpendicular, so they serve as base and height: area $= \\frac{1}{2}(7)(24) = 84$ square meters.",
+  "common_errors": [
+   {
+    "value": "24",
+    "misconception": "intermediate-step",
+    "why": "Found the missing leg and stopped before working out the area."
+   },
+   {
+    "value": "90.87",
+    "misconception": "algebra-manipulation",
+    "why": "Added the squares, $\\sqrt{625 + 49} \\approx 25.96$, then found $\\frac{1}{2}(7)(25.96) \\approx 90.87$."
+   },
+   {
+    "value": "87.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the hypotenuse as the height: $\\frac{1}{2}(7)(25)$."
+   },
+   {
+    "value": "56",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the perimeter, $7 + 24 + 25$, instead of the area."
+   },
+   {
+    "value": "168",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the legs, $7 \\times 24$, and forgot the factor of $\\frac{1}{2}$."
+   }
+  ],
+  "id": "orig-pythagorean-mi-M-b2b270",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-b2b270",
+   "structure": [],
+   "solver_answer": 84,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "meters what is the area in square meters",
+    "what is the area in square meters of",
+    "is the area in square meters of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the straight-line distance, in kilometers, between the two towns?",
+  "stimulus": "On a map grid, one town is at $(2, 3)$ and another is at $(14, 8)$. Each grid unit represents 0.5 kilometer.",
+  "keys": [
+   "6.5",
+   "13/2"
+  ],
+  "any_of": false,
+  "explanation": "The horizontal and vertical separations are the legs of a right triangle: $14 - 2 = 12$ units and $8 - 3 = 5$ units. The straight-line distance is the hypotenuse: $\\sqrt{12^2 + 5^2} = \\sqrt{169} = 13$ units. Convert: $13 \\times 0.5 = 6.5$ kilometers.",
+  "common_errors": [
+   {
+    "value": "13",
+    "misconception": "intermediate-step",
+    "why": "Found the distance in grid units and never converted to kilometers."
+   },
+   {
+    "value": "26",
+    "misconception": "algebra-manipulation",
+    "why": "Divided by 0.5 instead of multiplying by it."
+   },
+   {
+    "value": "8.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Added the legs, $12 + 5 = 17$ units, which is the distance along the grid lines rather than the straight-line distance."
+   },
+   {
+    "value": "5.454",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the squares as though 12 were the hypotenuse: $\\sqrt{144 - 25} \\approx 10.91$ units, then multiplied by 0.5."
+   }
+  ],
+  "id": "orig-pythagorean-mi-M-57680e",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-57680e",
+   "structure": [],
+   "solver_answer": 6.5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length, in feet, of the vertical edge of the banner, to the nearest tenth of a foot?",
+  "stimulus": "A banner for a linguistics museum exhibit is shaped like a right triangle. The banner's horizontal edge is 4 feet long, its vertical edge meets the horizontal edge at a right angle, and its slanted edge is 9 feet long.",
+  "keys": [
+   "8.1"
+  ],
+  "any_of": false,
+  "explanation": "The slanted edge is across from the right angle, so it is the hypotenuse. The vertical edge is a leg, so subtract: $9^2 - 4^2 = 81 - 16 = 65$. The vertical edge is $\\sqrt{65} \\approx 8.06$ feet, which is 8.1 to the nearest tenth.",
+  "common_errors": [
+   {
+    "value": "9.8",
+    "misconception": "algebra-manipulation",
+    "why": "Added the squares as though the vertical edge were the hypotenuse: $\\sqrt{81 + 16} = \\sqrt{97} \\approx 9.8$."
+   },
+   {
+    "value": "65",
+    "misconception": "intermediate-step",
+    "why": "Found the square of the vertical edge and never took the square root."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the lengths instead of their squares: $9 - 4$."
+   },
+   {
+    "value": "8",
+    "misconception": "algebra-manipulation",
+    "why": "Rounded $\\sqrt{65}$ down to the nearest whole number instead of the nearest tenth."
+   }
+  ],
+  "id": "orig-pythagorean-mi-M-9c6bce",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-9c6bce",
+   "structure": [],
+   "solver_answer": 8.1,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "what is the length in feet of the"
+   ],
+   "residue": 3
+  }
+ },
+ {
+  "stem": "What is the height, in meters, of the panel?",
+  "stimulus": "A materials scientist reinforces a rectangular composite test panel with a rigid rod that runs exactly along the panel's diagonal. The panel is 1.2 meters wide, and the rod is 2 meters long.",
+  "keys": [
+   "1.6",
+   "8/5"
+  ],
+  "any_of": false,
+  "explanation": "The rod lies along the diagonal, so it is the hypotenuse of the right triangle formed by the width and the height. The height is a leg, so subtract: $2^2 - 1.2^2 = 4 - 1.44 = 2.56$, and the height is $\\sqrt{2.56} = 1.6$ meters.",
+  "common_errors": [
+   {
+    "value": "2.332",
+    "misconception": "algebra-manipulation",
+    "why": "Added the squares as though the height were the diagonal: $\\sqrt{4 + 1.44} = \\sqrt{5.44} \\approx 2.332$."
+   },
+   {
+    "value": "2.56",
+    "misconception": "intermediate-step",
+    "why": "Found the square of the height and never took the square root."
+   },
+   {
+    "value": "0.8",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the lengths instead of their squares: $2 - 1.2$."
+   },
+   {
+    "value": "1.666",
+    "misconception": "algebra-manipulation",
+    "why": "Squared 1.2 as 1.22 or a similar slip, giving $\\sqrt{4 - 1.22} \\approx 1.667$; any arithmetic slip in $1.2^2 = 1.44$ lands near here."
+   }
+  ],
+  "id": "orig-pythagorean-mi-M-3f594a",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-3f594a",
+   "structure": [],
+   "solver_answer": 1.6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How far, in meters, from the base of the cliff does the hawk land?",
+  "stimulus": "A hawk's nest sits 4 meters above the top of a vertical cliff that is 20 meters tall. The hawk flies in a straight line from the nest to a point on the level ground below, covering 26 meters.",
+  "keys": [
+   "10"
+  ],
+  "any_of": false,
+  "explanation": "First find the nest's height above the ground: $20 + 4 = 24$ meters. That height and the distance along the ground are the legs of a right triangle, and the 26-meter flight path is the hypotenuse. The ground distance is a leg, so subtract: $26^2 - 24^2 = 676 - 576 = 100$, and the distance is $\\sqrt{100} = 10$ meters.",
+  "common_errors": [
+   {
+    "value": "16.61",
+    "misconception": "misread-given",
+    "why": "Used the cliff height of 20 m instead of the nest height of 24 m: $\\sqrt{676 - 400} = \\sqrt{276} \\approx 16.61$."
+   },
+   {
+    "value": "35.38",
+    "misconception": "algebra-manipulation",
+    "why": "Added the squares as though the ground distance were the hypotenuse: $\\sqrt{676 + 576} = \\sqrt{1252} \\approx 35.38$."
+   },
+   {
+    "value": "100",
+    "misconception": "intermediate-step",
+    "why": "Found the square of the distance and never took the square root."
+   },
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the lengths instead of their squares: $26 - 24$."
+   }
+  ],
+  "id": "orig-pythagorean-mi-M-cab89c",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-cab89c",
+   "structure": [],
+   "solver_answer": 10,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the width, in centimeters, of the slab?",
+  "stimulus": "A paleobotanist photographs a rectangular slab of shale that holds a fossil fern frond. The slab is $2\\sqrt{6}$ centimeters long, and its diagonal is 7 centimeters.",
+  "keys": [
+   "5"
+  ],
+  "any_of": false,
+  "explanation": "The diagonal of the rectangle is the hypotenuse of the right triangle formed by the length and the width. The width is a leg, so subtract: $7^2 - (2\\sqrt{6})^2 = 49 - 24 = 25$, and the width is $\\sqrt{25} = 5$ centimeters.",
+  "common_errors": [
+   {
+    "value": "8.544",
+    "misconception": "algebra-manipulation",
+    "why": "Added the squares as though the width were the diagonal: $\\sqrt{49 + 24} = \\sqrt{73} \\approx 8.544$."
+   },
+   {
+    "value": "25",
+    "misconception": "intermediate-step",
+    "why": "Found the square of the width and never took the square root."
+   },
+   {
+    "value": "2.101",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the lengths instead of their squares: $7 - 2\\sqrt{6} \\approx 2.101$."
+   },
+   {
+    "value": "6.083",
+    "misconception": "algebra-manipulation",
+    "why": "Squared $2\\sqrt{6}$ as $2 \\cdot 6 = 12$ instead of $4 \\cdot 6 = 24$, giving $\\sqrt{49 - 12} = \\sqrt{37} \\approx 6.083$."
+   }
+  ],
+  "id": "orig-pythagorean-mi-M-c06c4f",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "review",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-c06c4f",
+   "structure": [],
+   "solver_answer": 5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "centimeters what is the width in centimeters of",
+    "what is the width in centimeters of the"
+   ],
+   "residue": 9
+  }
+ },
+ {
+  "stem": "What is the perimeter, in meters, of the quadrat?",
+  "stimulus": "A marine biologist marks out a rectangular quadrat on a seagrass bed to count juvenile seahorses. A rope stretched diagonally across the quadrat, from one corner to the opposite corner, is 26 meters long. One side of the quadrat is 10 meters long.",
+  "keys": [
+   "68"
+  ],
+  "any_of": false,
+  "explanation": "The diagonal cuts the rectangle into two right triangles, and the diagonal is the hypotenuse of each. The 10-meter side is a leg, so the missing side is also a leg, which means you subtract: $26^2 - 10^2 = 676 - 100 = 576$, and $\\sqrt{576} = 24$. The quadrat is 10 meters by 24 meters, so its perimeter is $2(10 + 24) = 68$ meters.",
+  "common_errors": [
+   {
+    "value": "24",
+    "misconception": "intermediate-step",
+    "why": "Found the missing side correctly but stopped there instead of going on to the perimeter."
+   },
+   {
+    "value": "75.71",
+    "misconception": "algebra-manipulation",
+    "why": "Added the squares as if the missing side were the hypotenuse: $\\sqrt{26^2 + 10^2} = \\sqrt{776} \\approx 27.857$, so the perimeter came out as $2(10 + 27.857) \\approx 75.71$."
+   },
+   {
+    "value": "34",
+    "misconception": "algebra-manipulation",
+    "why": "Added one length and one width ($10 + 24$) without doubling, so got half the perimeter."
+   },
+   {
+    "value": "72",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the diagonal as a side of the rectangle: $2(26 + 10) = 72$."
+   },
+   {
+    "value": "52",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the lengths rather than their squares ($26 - 10 = 16$), then took $2(10 + 16) = 52$."
+   }
+  ],
+  "id": "orig-pythagorean-mi-M-b4fc77",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-b4fc77",
+   "structure": [],
+   "solver_answer": 68,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The station's distance from the epicenter, measured along the ground, is $\\sqrt{k}$ kilometers. What is the value of $k$?",
+  "stimulus": "An earthquake's focus is 8 kilometers directly below its epicenter, which is on flat ground. A seismic station on the same flat ground is 12 kilometers from the focus, measured in a straight line.",
+  "keys": [
+   "80"
+  ],
+  "any_of": false,
+  "explanation": "The focus, the epicenter and the station form a right triangle, with the right angle at the epicenter. The 12-kilometer straight line from the focus to the station is across from that right angle, so it is the hypotenuse. The 8-kilometer depth and the ground distance are the legs. The ground distance is a leg, so you subtract: $12^2 - 8^2 = 144 - 64 = 80$. The distance is $\\sqrt{80}$ kilometers, so $k = 80$. Don't simplify to $4\\sqrt{5}$, because the question asks for the number under the root in $\\sqrt{k}$.",
+  "common_errors": [
+   {
+    "value": "208",
+    "misconception": "algebra-manipulation",
+    "why": "Added the squares, $8^2 + 12^2 = 208$, as if the ground distance were the hypotenuse."
+   },
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the lengths rather than their squares: $12 - 8 = 4$."
+   },
+   {
+    "value": "16",
+    "misconception": "algebra-manipulation",
+    "why": "Squared the difference of the lengths, $(12 - 8)^2 = 16$, rather than taking the difference of the squares."
+   },
+   {
+    "value": "5",
+    "misconception": "wrong-target-quantity",
+    "why": "Simplified $\\sqrt{80}$ to $4\\sqrt{5}$ and entered the number left under the radical, not $k$."
+   },
+   {
+    "value": "8.944",
+    "misconception": "wrong-target-quantity",
+    "why": "Entered the distance itself, $\\sqrt{80} \\approx 8.944$, rather than $k$."
+   }
+  ],
+  "id": "orig-pythagorean-mi-M-4f6243",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-4f6243",
+   "structure": [],
+   "solver_answer": 80,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length, in millimeters, of the other side of the counting region?",
+  "stimulus": "An immunologist draws a rectangular counting region on a microscope slide to tally lymphocytes. The diagonal of the region is 6.5 millimeters long, and one side of the region is 2.5 millimeters long.",
+  "keys": [
+   "6"
+  ],
+  "any_of": false,
+  "explanation": "The diagonal cuts the rectangle into two right triangles. The diagonal is the hypotenuse, and the two sides of the rectangle are the legs. The missing side is a leg, so you subtract: $6.5^2 - 2.5^2 = 42.25 - 6.25 = 36$. Then take the positive square root: $\\sqrt{36} = 6$. The other side is 6 millimeters.",
+  "common_errors": [
+   {
+    "value": "6.964",
+    "misconception": "algebra-manipulation",
+    "why": "Added the squares, treating the diagonal as a leg: $\\sqrt{6.5^2 + 2.5^2} = \\sqrt{48.5} \\approx 6.964$."
+   },
+   {
+    "value": "36",
+    "misconception": "intermediate-step",
+    "why": "Found $6.5^2 - 2.5^2 = 36$ correctly but stopped before taking the square root."
+   },
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted the side lengths directly, $6.5 - 2.5$, without squaring them first."
+   },
+   {
+    "value": "9",
+    "misconception": "algebra-manipulation",
+    "why": "Added the side lengths directly, $6.5 + 2.5$, instead of using the Pythagorean theorem."
+   }
+  ],
+  "id": "orig-pythagorean-mi-M-229bc1",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-229bc1",
+   "structure": [],
+   "solver_answer": 6,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the length, in meters, of the remaining side of the plot?",
+  "stimulus": "A wetland ecologist stakes out a survey plot in the shape of a right triangle. The longest side of the plot is $4\\sqrt{5}$ meters, and one of the two shorter sides is 4 meters.",
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "The longest side of a right triangle is the hypotenuse, so $4\\sqrt{5}$ is the hypotenuse and the side you need is a leg. Square the hypotenuse: $(4\\sqrt{5})^2 = 16 \\cdot 5 = 80$. Subtract the square of the known leg: $80 - 4^2 = 80 - 16 = 64$. Then take the positive square root: $\\sqrt{64} = 8$. The remaining side is 8 meters.",
+  "common_errors": [
+   {
+    "value": "9.798",
+    "misconception": "algebra-manipulation",
+    "why": "Added the squares, treating $4\\sqrt{5}$ as a leg: $\\sqrt{80 + 16} = \\sqrt{96} \\approx 9.798$ (rounded)."
+   },
+   {
+    "value": "9.797",
+    "misconception": "algebra-manipulation",
+    "why": "Added the squares, treating $4\\sqrt{5}$ as a leg: $\\sqrt{96} \\approx 9.797$ (truncated)."
+   },
+   {
+    "value": "64",
+    "misconception": "intermediate-step",
+    "why": "Found $80 - 16 = 64$ correctly but stopped before taking the square root."
+   },
+   {
+    "value": "2",
+    "misconception": "algebra-manipulation",
+    "why": "Squared $4\\sqrt{5}$ as $4 \\cdot 5 = 20$ instead of $16 \\cdot 5 = 80$, then found $\\sqrt{20 - 16} = 2$."
+   }
+  ],
+  "id": "orig-pythagorean-mi-M-a5ee58",
+  "skill_cd": "S.C.",
+  "subtype": "pythagorean-missing-side",
+  "subtype_name": "Pythagorean theorem: find the missing side",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-pythagorean-mi-M-a5ee58",
+   "structure": [],
+   "solver_answer": 8,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

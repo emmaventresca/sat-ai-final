@@ -17,6 +17,7 @@ needed once a student opens one recognition, so they travel per recognition.
     -> data/<exam>/q/<subtype>.json    the bodies, one file per recognition
 """
 import json, os, re, shutil, sys
+from datetime import date
 from collections import Counter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,7 +34,16 @@ INDEX_FIELDS = ("id", "section", "skill", "skill_cd", "subtype",
                 # One line on what the recognition tests. The ACT bank
                 # carries it; it is what a stop shows before there is a
                 # written page for it.
-                "tests")
+                "tests",
+                # Which passage a question hangs off, and what kind of
+                # passage it is. Both are DECISIONS, not display: the serving
+                # order groups a Reading round by passage so a student reads
+                # one passage and answers ten questions on it rather than
+                # meeting a fresh passage every question, and passage type is
+                # a dimension of its own - a student can be fine on Craft &
+                # Structure in a science passage and lost in prose fiction,
+                # which a topic average hides completely.
+                "passage_id", "passage_type")
 
 # One line of the stem, so a picker can show WHICH question without pulling
 # the body. Ninety characters across both banks costs about half a megabyte
@@ -59,6 +69,37 @@ def chunk_name(subtype):
     return SAFE.sub("-", str(subtype).lower()).strip("-") or "_unsorted"
 
 
+def first_seen(exam, ids):
+    """When each question entered the bank.
+
+    The bank gains questions constantly, and a student who has worked
+    through a recognition should be told when new ones land rather than
+    having to notice the count went up. Nothing in the item records this, so
+    it is kept beside the bank: ids already known keep their date, ids that
+    are new get today.
+
+    Written back every run, so a question added this morning is still marked
+    new tomorrow and not re-dated.
+    """
+    path = os.path.join(ROOT, "data", exam, "added.json")
+    known = {}
+    if os.path.exists(path):
+        known = json.load(open(path))
+    today = date.today().isoformat()
+    # The first ever run would mark the whole bank as new, which would mean
+    # a student's first visit screams NEW at all 4,275 questions. Treat a
+    # cold start as "already here".
+    cold = not known
+    for qid in ids:
+        if qid not in known:
+            known[qid] = "" if cold else today
+    # Drop anything no longer in the bank, so the file does not grow forever.
+    known = {k: v for k, v in known.items() if k in ids}
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    json.dump(known, open(path, "w"))
+    return known, sum(1 for v in known.values() if v == today)
+
+
 def split(exam, path):
     if not os.path.exists(path):
         return None
@@ -71,6 +112,8 @@ def split(exam, path):
         shutil.rmtree(chunks_dir)
     os.makedirs(chunks_dir, exist_ok=True)
 
+    seen, fresh = first_seen(exam, {it["id"] for it in items})
+
     index, chunks = [], {}
     for it in items:
         entry = {k: it[k] for k in INDEX_FIELDS if it.get(k) is not None}
@@ -78,6 +121,8 @@ def split(exam, path):
         # so the two can never disagree about how a slug becomes a filename.
         entry["chunk"] = chunk_name(it.get("subtype"))
         entry["teaser"] = teaser(it)
+        if seen.get(it["id"]):
+            entry["added"] = seen[it["id"]]
         index.append(entry)
         chunks.setdefault(entry["chunk"], []).append(it)
 
@@ -95,7 +140,7 @@ def split(exam, path):
     return {
         "items": len(items), "chunks": len(chunks),
         "index_mb": index_size / 1e6, "body_mb": body / 1e6,
-        "biggest": biggest,
+        "biggest": biggest, "fresh": fresh,
     }
 
 
@@ -135,6 +180,9 @@ def main():
         print(f"{exam}: {stats['items']} questions -> "
               f"index {stats['index_mb']:.2f}MB + "
               f"{stats['chunks']} chunks ({stats['body_mb']:.1f}MB total)")
+        if stats["fresh"]:
+            print(f"     {stats['fresh']} added today, and marked new for "
+                  f"students who have already been through that recognition")
         print(f"     a student opening one recognition downloads the index "
               f"plus one chunk; the largest is {size / 1e3:.0f}KB ({name})")
         total["index"] += stats["index_mb"]

@@ -245,5 +245,53 @@
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "What is the value of $f(40)$?",
+  "stimulus": "A materials lab tests a polymer strip by hanging weights from it. The function $f(x) = ax + 84$ gives the length of the strip, in millimeters, when it carries a load of $x$ newtons, where $a$ is a constant. When the load is 15 newtons, the strip is 93 millimeters long, so $f(15) = 93$.",
+  "choices": [
+   "$0.6$",
+   "$24$",
+   "$108$",
+   "$248$"
+  ],
+  "answer": "C",
+  "explanation": "Put the known pair into the rule: $93 = a(15) + 84$. Subtract 84 to get $15a = 9$, so $a = 0.6$. The function is now $f(x) = 0.6x + 84$. Evaluate it at the new load: $f(40) = 0.6(40) + 84 = 24 + 84 = 108$. The strip is 108 millimeters long under a 40-newton load.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found the constant correctly, $a = 0.6$, but stopped there. The question asks for the length at 40 newtons, so you still need to put $a$ back into the function and evaluate $f(40)$."
+   },
+   "B": {
+    "misconception": "intermediate-step",
+    "why": "You worked out $0.6(40) = 24$ but left off the $+84$. That 24 is only how much the strip stretched. Its full length also includes the 84 millimeters it measures with no load."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated length as directly proportional to load and scaled $93 \\times \\frac{40}{15} = 248$. That only works when the intercept is 0. Here the strip starts at 84 millimeters, so you have to solve for $a$ first."
+   }
+  },
+  "id": "orig-find-constant--H-701e2c",
+  "skill_cd": "H.B.",
+  "subtype": "find-constant-from-one-value",
+  "subtype_name": "Find the hidden constant from one known output",
+  "difficulty": "H",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-find-constant--H-701e2c",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "B",
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

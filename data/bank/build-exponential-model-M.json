@@ -393,5 +393,595 @@
   "rated_why": "one clear signal: convert percentage decrease to base (0.98) and apply over 10 years",
   "authored_difficulty": "M",
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A marine biologist grows a coral fragment in a tank. When she first measures it, its surface area is 64 square centimeters. She finds that its area increases by 25% every 3 months.",
+  "choices": [
+   "Six months after the first measurement, the area is 100 square centimeters.",
+   "Six months after the first measurement, the area is 96 square centimeters.",
+   "Six months after the first measurement, the area is about 244 square centimeters.",
+   "Six months after the first measurement, the area is 4 square centimeters."
+  ],
+  "answer": "A",
+  "explanation": "The area is multiplied by 1.25 every 3 months, so the model is $A(t) = 64(1.25)^{t/3}$, where $t$ is the number of months. At $t = 6$ the exponent is $\\frac{6}{3} = 2$, so $A(6) = 64(1.25)^2 = 64(1.5625) = 100$ square centimeters.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You added the same amount, 25% of 64, which is 16, in each 3-month period: $64 + 16 + 16 = 96$. That is a linear model. A percent change makes the model exponential, so the second increase is 25% of 80, not 25% of 64."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You calculated $64(1.25)^6$ and forgot to divide the exponent by the 3-month step. The 25% increase happens only twice in 6 months, not six times."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You used 0.25 as the growth factor and calculated $64(0.25)^2 = 4$. A 25% increase means multiplying by $1 + 0.25 = 1.25$. Multiplying by 0.25 would shrink the coral."
+   }
+  },
+  "id": "orig-build-exponent-M-7a0a85",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-7a0a85",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "A historian studying madder-dyed cotton from the 1800s measures how a sample's color intensity changes as it is washed. The intensity decreases by the same percentage with each washing. The table shows the intensity after several washings.\n\nColor Intensity of a Madder-Dyed Sample\nNumber of washings | Intensity (units)\n1 | 400\n2 | 320\n3 | 256",
+  "choices": [
+   "Before any washing, the intensity was 500 units.",
+   "Before any washing, the intensity was 400 units.",
+   "Each washing removes exactly 80 units of intensity.",
+   "Each washing leaves 20% of the previous intensity."
+  ],
+  "answer": "A",
+  "explanation": "Each row is 0.8 times the row above it: $\\frac{320}{400} = 0.8$ and $\\frac{256}{320} = 0.8$. The table has no row for 0 washings, so work backward from 1 washing: $400 \\div 0.8 = 500$. The model is $I(n) = 500(0.8)^n$, so the intensity before any washing was 500 units.",
+  "distractors": {
+   "B": {
+    "misconception": "misread-given",
+    "why": "You took the first row of the table as the starting amount. That row shows the intensity after 1 washing, not after 0, so you have to work back one step to find the starting value."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You assumed the same amount is lost each time, which would be a linear model. That works from 400 to 320, but from 320 to 256 only 64 units are lost. The loss is a constant percentage, not a constant amount."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated the 20% decrease as the factor. Each washing removes 20%, so it leaves 80%. The factor is $1 - 0.2 = 0.8$, not 0.2."
+   }
+  },
+  "id": "orig-build-exponent-M-650882",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-650882",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "__num__ which of the following must be true"
+   ],
+   "residue": 1
+  }
+ },
+ {
+  "stem": "Which of the following must be true?",
+  "stimulus": "During an outbreak, a county health department reports 150 cases of a respiratory illness on day 0. Officials estimate that the number of cases doubles every 4 days.",
+  "choices": [
+   "On day 12, the estimated number of cases is 1,200.",
+   "On day 12, the estimated number of cases is 600.",
+   "On day 12, the estimated number of cases is 2,400.",
+   "On day 12, the estimated number of cases is 614,400."
+  ],
+  "answer": "A",
+  "explanation": "The model is $C(t) = 150 \\cdot 2^{t/4}$, where $t$ is the number of days. On day 12 the exponent is $\\frac{12}{4} = 3$, so $C(12) = 150 \\cdot 2^3 = 150 \\cdot 8 = 1{,}200$ cases.",
+  "distractors": {
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You added 150 cases every 4 days: $150 + 3(150) = 600$. That is a linear model. Doubling means the amount added keeps growing, so the model is exponential."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You counted one doubling too many and used $2^4$. From day 0 to day 12 there are $\\frac{12}{4} = 3$ four-day periods, so the cases double 3 times."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You calculated $150 \\cdot 2^{12}$ and forgot to divide the exponent by the 4-day doubling time. The cases double once every 4 days, not every day."
+   }
+  },
+  "id": "orig-build-exponent-M-d8efa8",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "must_be_true",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-d8efa8",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many more jellyfish does the model predict in lagoon Q than in lagoon P 12 weeks after the counts?",
+  "stimulus": "A marine biologist counts moon jellyfish in two lagoons on the same day. Lagoon P holds 300 jellyfish, and its population doubles every 4 weeks. Lagoon Q holds 2,000 jellyfish, and its population doubles every 6 weeks.",
+  "choices": [
+   "4,800",
+   "5,600",
+   "8,000",
+   "13,600"
+  ],
+  "answer": "B",
+  "explanation": "Write each model with the exponent divided by that lagoon's doubling time. Lagoon P: $300 \\cdot 2^{t/4}$, so at $t = 12$ you get $300 \\cdot 2^{3} = 2{,}400$. Lagoon Q: $2{,}000 \\cdot 2^{t/6}$, so at $t = 12$ you get $2{,}000 \\cdot 2^{2} = 8{,}000$. The gap is $8{,}000 - 2{,}400 = 5{,}600$ jellyfish.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated doubling as adding the starting amount once per period, which is a linear model. That gives P as $300 + 3(300) = 1{,}200$ and Q as $2{,}000 + 2(2{,}000) = 6{,}000$. Doubling means you multiply by 2 each period, so the growth is exponential."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "8,000 is the population of lagoon Q at week 12. The question asks how many more jellyfish Q has than P, so you still need to subtract P's 2,400."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used lagoon P's 4-week doubling time for lagoon Q too, which gives $2{,}000 \\cdot 2^{3} = 16{,}000$. Lagoon Q doubles every 6 weeks, so its exponent is $12/6 = 2$."
+   }
+  },
+  "id": "orig-build-exponent-M-3871bd",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-3871bd",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many more milligrams of medication B than of medication A remain in the bloodstream 2 hours after the doses?",
+  "stimulus": "At a clinic, two patients each receive a 200-milligram dose at the same time. Patient 1 gets medication A, and the amount of it in the bloodstream is cut in half each hour. Patient 2 gets medication B, and the amount of it in the bloodstream decreases by 20% each hour.",
+  "choices": [
+   "42",
+   "78",
+   "120",
+   "128"
+  ],
+  "answer": "B",
+  "explanation": "Medication A has a factor of 0.5 per hour, so after 2 hours $200(0.5)^{2} = 50$ mg remain. Medication B loses 20% each hour, so its factor is $1 - 0.20 = 0.80$, and after 2 hours $200(0.80)^{2} = 128$ mg remain. The difference is $128 - 50 = 78$ milligrams.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used 0.20 as medication B's factor, which gives $200(0.20)^{2} = 8$ mg, and then found $50 - 8 = 42$. A 20% decrease leaves 80% each hour, so the factor is 0.80."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You subtracted a fixed amount each hour, which is a linear model. That takes A down to $200 - 2(100) = 0$ and B down to $200 - 2(40) = 120$. A percent decrease takes a share of what is left each hour, so the decay is exponential."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "128 mg is how much medication B remains. The question asks how much more B there is than A, so you still need to subtract A's 50 mg."
+   }
+  },
+  "id": "orig-build-exponent-M-e067ab",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-e067ab",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Based on the model, how many more recordings were in the collection 5 years after the project began than when it began, at $t = 0$?",
+  "stimulus": "A music archive began digitizing its recordings of traditional work songs, adding to a small digital collection it already had. The number of recordings in the collection tripled each year. The table shows the number of recordings, $R$, $t$ years after the project began.\nDigitized Work-Song Recordings\n$t$ (years) | $R$\n1 | 90\n2 | 270\n3 | 810",
+  "choices": [
+   "2,400",
+   "7,200",
+   "7,260",
+   "7,290"
+  ],
+  "answer": "C",
+  "explanation": "The table has no row for $t = 0$, so work backward one year: $90 \\div 3 = 30$. The model is $R = 30 \\cdot 3^{t}$. At $t = 5$, $R = 30 \\cdot 3^{5} = 30 \\cdot 243 = 7{,}290$. The increase over the starting collection is $7{,}290 - 30 = 7{,}260$ recordings.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used an exponent of 4 instead of 5, which gives $30 \\cdot 3^{4} = 2{,}430$, and then subtracted 30. At $t = 5$ the starting amount has been tripled five times."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You took the first table row, 90, as the starting amount and subtracted it from 7,290. That row is the value at $t = 1$. At $t = 0$ the collection held $90 \\div 3 = 30$ recordings."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "7,290 is the size of the collection at $t = 5$. The question asks how many more recordings there were than at the start, so you still need to subtract the original 30."
+   }
+  },
+  "id": "orig-build-exponent-M-aa634e",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "compare",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-aa634e",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of $1.15$ in this context?",
+  "stimulus": "Marine biologists are restoring a seagrass meadow in a shallow bay. They model the meadow's area with the function $A(t) = 840(1.15)^{t/4}$. Here $A(t)$ is the area, in square meters, $t$ years after the restoration began.",
+  "choices": [
+   "The area increases by 15% each year.",
+   "The area increases by 15% every 4 years.",
+   "The area increases by 115% every 4 years.",
+   "The area increases by 15 square meters every 4 years."
+  ],
+  "answer": "B",
+  "explanation": "The base $1.15$ is the growth factor, and $1.15 = 1 + 0.15$, so each time the factor is applied, the area grows by 15%. The exponent is $\\frac{t}{4}$, which goes up by 1 only when $t$ goes up by 4. So the factor is applied once every 4 years, and the area increases by 15% every 4 years.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the 15% correctly but missed that the exponent is $\\frac{t}{4}$, not $t$. The factor of $1.15$ is applied once for every 4 years, not once a year. You forgot to divide by the step interval."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated the whole factor as the percent increase. Multiplying by $1.15$ means the new area is 115% of the old one, so the increase is only 15%. An increase of 115% would mean multiplying by $2.15$."
+   },
+   "D": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the change as a fixed amount added each time, which describes a linear model. A base raised to a power means a constant percentage change. So $1.15$ means 15% more each time, not 15 more square meters."
+   }
+  },
+  "id": "orig-build-exponent-M-49cf10",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-49cf10",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of $0.94$ in this context?",
+  "stimulus": "A linguist is tracking an endangered language. She estimates its number of fluent speakers with the function $S(t) = 3{,}200(0.94)^t$. Here $S(t)$ is the estimated number of fluent speakers $t$ years after 2010.",
+  "choices": [
+   "Each year, the number of speakers decreases by 94%.",
+   "Each year, the number of speakers increases by 6%.",
+   "Each year, the number of speakers decreases by 6% of the 2010 total.",
+   "Each year, the number of speakers decreases by 6%."
+  ],
+  "answer": "D",
+  "explanation": "The base $0.94$ is the yearly multiplier. Because $0.94 = 1 - 0.06$, each year keeps 94% of the previous year's speakers and loses 6%. The exponent is just $t$, so this happens every year. The number of speakers decreases by 6% each year.",
+  "distractors": {
+   "A": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You mixed up the share that stays with the share that is lost. Multiplying by $0.94$ keeps 94% of the speakers, so only 6% are lost each year. A 94% decrease would mean multiplying by $0.06$."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You found the 6% but got the direction wrong. A base less than 1 means decay, so the number of speakers is shrinking. A 6% increase would need a base of $1.06$."
+   },
+   "C": {
+    "misconception": "graph-feature-mismatch",
+    "why": "Losing 6% of the 2010 total every year means losing the same number of speakers each year (192), which is a linear model. In this exponential model, the 6% is taken from the previous year's count, so fewer speakers are lost each year."
+   }
+  },
+  "id": "orig-build-exponent-M-668608",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-668608",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which of the following is the best interpretation of $3$ in this context?",
+  "stimulus": "After a strong earthquake, seismologists modeled the number of aftershocks recorded each day with the function $N(d) = 480\\left(\\frac{1}{2}\\right)^{d/3}$. Here $N(d)$ is the number of aftershocks recorded on day $d$, and $d = 0$ is the day of the main earthquake.",
+  "choices": [
+   "The daily number of aftershocks is cut in half 3 times each day.",
+   "The daily number of aftershocks decreases by 3 every day.",
+   "The daily number of aftershocks is cut in half every 3 days.",
+   "The daily number of aftershocks is cut to one-third every day."
+  ],
+  "answer": "C",
+  "explanation": "The factor $\\frac{1}{2}$ means the daily count is halved each time it is applied. The exponent $\\frac{d}{3}$ goes up by 1 only when $d$ goes up by 3. So the 3 is the length of each step: the daily number of aftershocks is cut in half every 3 days. For example, $N(3) = 240$ and $N(6) = 120$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You read the exponent as $3d$ instead of $\\frac{d}{3}$. Halving 3 times a day would multiply the count by $\\frac{1}{8}$ each day. Dividing by 3 in the exponent stretches each halving over 3 days."
+   },
+   "B": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated the model as linear, with the same number subtracted each day. The 3 is in the exponent, so it sets how often the count is halved. It is not an amount taken away."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You swapped the roles of the two numbers and treated 3 as the decay factor. The factor is $\\frac{1}{2}$, which is the base. The 3 divides $d$ in the exponent, so it is a number of days, not a fraction kept."
+   }
+  },
+  "id": "orig-build-exponent-M-d6569d",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "in_context",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-d6569d",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which equation represents this situation, where $S$ is the number of viable seeds $t$ years after burial?",
+  "stimulus": "A paleobotanist studies a buried seed bank of an extinct pine species. In the model, the number of seeds that can still sprout drops by 25% every 4 years. The table shows the estimated number of viable seeds at two times after burial.\n\nViable Seeds in a Buried Seed Bank\nYears after burial, $t$ | Viable seeds, $S$\n4 | 1,200\n8 | 900",
+  "choices": [
+   "$S = 1{,}200(0.75)^{t/4}$",
+   "$S = 1{,}600(0.25)^{t/4}$",
+   "$S = 1{,}600(0.75)^{4t}$",
+   "$S = 1{,}600(0.75)^{t/4}$"
+  ],
+  "answer": "D",
+  "explanation": "A 25% drop means you multiply by $1 - 0.25 = 0.75$, and it happens once every 4 years, so the exponent is $t/4$. The table has no row for $t = 0$, so work back one step: $1{,}200 \\div 0.75 = 1{,}600$. That gives $S = 1{,}600(0.75)^{t/4}$. Check: at $t = 4$ you get $1{,}600(0.75) = 1{,}200$, and at $t = 8$ you get $1{,}600(0.75)^2 = 900$. Both rows match.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used the first table row, 1,200, as the starting amount. That row is at $t = 4$, not $t = 0$. Put in $t = 4$ and this model gives 900, not 1,200."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the percent lost, 0.25, as the multiplier. After a 25% drop, 75% is left, so each step multiplies by 0.75. This model gives 400 at $t = 4$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied by the 4-year interval instead of dividing by it. With $4t$, the decrease happens 16 times by year 4 instead of once, so the model drops far below 1,200."
+   }
+  },
+  "id": "orig-build-exponent-M-b1364c",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-b1364c",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If this trend continues, after how many whole years will the number of fluent speakers first be less than 30,000?",
+  "stimulus": "A linguist estimates that a regional language currently has 50,000 fluent speakers and that this number decreases by 8% each year.",
+  "choices": [
+   "5",
+   "6",
+   "7",
+   "11"
+  ],
+  "answer": "C",
+  "explanation": "A decrease of 8% each year means the model is $50{,}000(0.92)^t$. Solving this directly takes logarithms, so test the choices. At $t = 6$: $50{,}000(0.92)^6 \\approx 30{,}318$, which is still above 30,000. At $t = 7$: $50{,}000(0.92)^7 \\approx 27{,}892$, which is below. So 7 years is the first whole year below 30,000.",
+  "distractors": {
+   "A": {
+    "misconception": "graph-feature-mismatch",
+    "why": "You took off 8% of 50,000, or 4,000 speakers, every year, which is a linear model. A percent decrease is exponential: each year's 8% comes from a smaller number, so the yearly losses get smaller. After 5 years, about 32,954 speakers remain."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You probably solved $0.92^t = 0.6$, got about 6.1, and rounded down. After 6 years there are still about 30,318 speakers, which is not less than 30,000. You have to go up to the next whole year."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You found when the number of speakers lost first passes 30,000, which happens when fewer than 20,000 remain. The question asks when the number remaining drops below 30,000."
+   }
+  },
+  "id": "orig-build-exponent-M-4b320c",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-4b320c",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $b$?",
+  "stimulus": "An immunologist models the number of B cells in a culture $d$ days after an experiment begins with the function $N(d) = 4{,}000b^d$, where $b$ is a constant. The number of B cells increases by 50% every 12 hours.",
+  "choices": [
+   "1.50",
+   "2.00",
+   "2.25",
+   "3.00"
+  ],
+  "answer": "C",
+  "explanation": "A 50% increase means you multiply by 1.5 every 12 hours. One day has two 12-hour periods, so in one day the count is multiplied by $1.5 \\times 1.5 = 2.25$. Check a choice: after 1 day there should be $4{,}000(1.5)(1.5) = 9{,}000$ cells, and $4{,}000(2.25)^1 = 9{,}000$. So $b = 2.25$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You used the 12-hour multiplier as if it were the daily one. Because $d$ is measured in days, $b$ has to cover two 12-hour periods. If you use 1.5, the model gives only 6,000 cells after 1 day instead of 9,000."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You added the two 50% increases to get 100%, as if each were 50% of the original amount. The second increase applies to the larger count, so the multipliers combine as $1.5 \\times 1.5$, not $1 + 0.5 + 0.5$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You doubled the multiplier, $2 \\times 1.5$, instead of squaring it. Repeating a growth step twice means multiplying by the factor twice: $1.5^2 = 2.25$."
+   }
+  },
+  "id": "orig-build-exponent-M-c38b74",
+  "skill_cd": "P.C.",
+  "subtype": "build-exponential-model",
+  "subtype_name": "Write or use an exponential growth or decay model",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "phrasing": "work_backwards",
+  "status": "verified",
+  "verification": {
+   "id": "orig-build-exponent-M-c38b74",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

@@ -377,5 +377,101 @@
    "overlap": []
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "If $h$ represents the number of hours the employee works in a week, which inequality represents this situation?",
+  "stimulus": "Under a union contract, a part-time employee at a grocery chain must work at least 12 hours but no more than 20 hours each week.",
+  "choices": [
+   "$12 < h < 20$",
+   "$0 \\le h \\le 20$",
+   "$12 \\le h < 20$",
+   "$12 \\le h \\le 20$"
+  ],
+  "answer": "D",
+  "explanation": "Turn each phrase into its own symbol. \"At least 12\" means $h \\ge 12$, so 12 is allowed. \"No more than 20\" means $h \\le 20$, so 20 is allowed too. Put the lower bound on the left and join them: $12 \\le h \\le 20$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You read the bounds as \"more than 12\" and \"less than 20\" and made both ends strict. \"At least\" and \"no more than\" both include the endpoint, so a 12-hour week and a 20-hour week both count."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You kept the maximum but dropped the minimum. The contract also says the employee works at least 12 hours, so a 5-hour week does not fit this situation."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You treated \"no more than 20\" as \"less than 20\". \"No more than\" means $\\le$, so a 20-hour week is allowed and the right end must include 20."
+   }
+  },
+  "id": "orig-compound-range-E-b17557",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-E-b17557",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $d$ represents the depth, in meters, of an artifact from this layer, which inequality represents this situation?",
+  "stimulus": "At an excavation site, every artifact in one soil layer was found more than 1.2 meters but no more than 1.8 meters below the surface.",
+  "choices": [
+   "$1.2 \\le d \\le 1.8$",
+   "$1.2 < d < 1.8$",
+   "$1.2 < d \\le 1.8$",
+   "$1.2 \\le d < 1.8$"
+  ],
+  "answer": "C",
+  "explanation": "Turn each phrase into its own symbol. \"More than 1.2\" is strict, so $d > 1.2$. \"No more than 1.8\" includes the endpoint, so $d \\le 1.8$. Put the lower bound on the left and join them: $1.2 < d \\le 1.8$.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You read \"more than 1.2\" as \"at least 1.2\" and used $\\le$ on the left. \"More than\" is strict, so a depth of exactly 1.2 meters is not in this layer."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You got the left end right but treated \"no more than 1.8\" as \"less than 1.8\". A depth of exactly 1.8 meters is allowed, so the right end must use $\\le$."
+   },
+   "D": {
+    "misconception": "complement-or-direction-flip",
+    "why": "You swapped the strictness at the two ends. You included 1.2, which \"more than\" excludes, and you left out 1.8, which \"no more than\" includes."
+   }
+  },
+  "id": "orig-compound-range-E-bd3c3b",
+  "skill_cd": "H.E.",
+  "subtype": "compound-range-to-inequality",
+  "subtype_name": "Between / min-max range \u2192 double inequality",
+  "difficulty": "E",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-compound-range-E-bd3c3b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

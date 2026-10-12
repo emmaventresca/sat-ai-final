@@ -33,15 +33,20 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "fail",
+  "phrasing": "direct",
   "verification": {
    "id": "orig-constant-rate--X-8d45be",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": false,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
-  },
-  "phrasing": "direct"
+  }
  },
  {
   "stem": "How many more hours than the godwit does the plover take to fly the route?",
@@ -77,14 +82,403 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-constant-rate--X-6e0045",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "compare"
+ },
+ {
+  "stem": "If the athlete takes the same number of whole scoops every day and opens no other container, for how many full days can this container supply the plan?",
+  "stimulus": "A sports dietitian designs a plan in which an athlete must get at least 120 grams of protein per day from a protein powder. Each level scoop is 30 grams of powder and contains 18 grams of protein. Only whole scoops are used. One container holds 1,000 grams of powder.",
+  "choices": [
+   "4",
+   "5",
+   "8",
+   "33"
+  ],
+  "answer": "A",
+  "explanation": "The container holds $1{,}000 \\div 30 = 33.\\overline{3}$ scoops, so it gives 33 whole scoops. Each day needs at least $120 \\div 18 = 6.\\overline{6}$ scoops of protein, so the athlete must take 7 whole scoops a day. Then $33 \\div 7 \\approx 4.71$, so the container covers 4 full days.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You treated the powder as if it could be split freely: $1{,}000 \\div 30 \\times 18 = 600$ grams of protein, and $600 \\div 120 = 5$. Because only whole scoops are allowed, the athlete takes 7 scoops a day, not $6.\\overline{6}$, and 33 scoops only cover 4 days."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You divided 1,000 grams of powder by 120 grams of protein, as if the powder were all protein. Each 30-gram scoop has only 18 grams of protein."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "33 is the number of whole scoops in the container. You still have to divide by the 7 scoops needed each day."
+   }
+  },
+  "id": "orig-constant-rate--X-17cd88",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--X-17cd88",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the minimum number of vials the clinic must open to give all 200 doses?",
+  "stimulus": "A public health clinic plans to give 200 people one 0.3-milliliter dose of a vaccine each. Each vial contains 5.0 milliliters, but 0.35 milliliter of every vial stays in the vial and cannot be drawn into a syringe. Each dose must come entirely from a single vial.",
+  "choices": [
+   "12",
+   "13",
+   "14",
+   "15"
+  ],
+  "answer": "C",
+  "explanation": "The usable volume per vial is $5.0 - 0.35 = 4.65$ mL, and $4.65 \\div 0.3 = 15.5$, so each vial gives 15 complete doses. Then $200 \\div 15 = 13.\\overline{3}$. Thirteen vials give only 195 doses, so the clinic needs 14 vials.",
+  "distractors": {
+   "A": {
+    "misconception": "misread-given",
+    "why": "You used the full 5.0 mL and allowed fractions of a dose: $5.0 \\div 0.3 = 16.\\overline{6}$ doses per vial, and $200 \\div 16.\\overline{6} = 12$. You left out the 0.35 mL that can't be drawn and the rule that each dose comes from a single vial."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You rounded $13.\\overline{3}$ down, or you counted the half dose left in each vial. Thirteen vials give only $13 \\times 15 = 195$ doses, which is 5 short."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "15 is the number of whole doses in one vial, not the number of vials."
+   }
+  },
+  "id": "orig-constant-rate--X-a6203b",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--X-a6203b",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the minimum number of workdays needed to digitize the entire collection?",
+  "stimulus": "A folklore archive is digitizing 38 cassette tapes of recorded folktales. Each tape holds 45 minutes of audio and must be played in real time. Each tape also needs 6 minutes of setup before it plays. The technician works 5 hours per day, and a tape's setup and playback must be finished on the same day.",
+  "choices": [
+   "5",
+   "6",
+   "7",
+   "8"
+  ],
+  "answer": "D",
+  "explanation": "Each tape takes $45 + 6 = 51$ minutes, and a workday is $5 \\times 60 = 300$ minutes. Since $300 \\div 51 \\approx 5.88$, only 5 whole tapes fit in one day. Then $38 \\div 5 = 7.6$, so the technician needs 8 days.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "5 is the number of tapes that fit in one day, not the number of days."
+   },
+   "B": {
+    "misconception": "misread-given",
+    "why": "You left out the setup time: $38 \\times 45 = 1{,}710$ minutes, and $1{,}710 \\div 300 = 5.7$, which you rounded to 6. You also have to count the 6 minutes of setup for each tape and keep each tape within one day."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You divided the total time, $38 \\times 51 = 1{,}938$ minutes, by 300 to get about 6.46 and rounded up to 7. That splits tapes across days. Only 5 whole tapes fit in a day, so the work takes 8 days."
+   }
+  },
+  "id": "orig-constant-rate--X-2cf407",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--X-2cf407",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many fewer nights does Telescope Q need than Telescope P to complete the survey?",
+  "stimulus": "Two telescopes will each survey the same 2,000-square-degree region of sky on their own. Telescope P covers 25 square degrees per hour and observes 5 hours per night. Telescope Q covers 0.6 square degree per minute and also observes 5 hours per night. If a telescope finishes partway through a night, that night still counts as a full night.",
+  "choices": [
+   "4",
+   "5",
+   "12",
+   "16"
+  ],
+  "answer": "A",
+  "explanation": "Telescope P covers $25 \\times 5 = 125$ square degrees per night, so it needs $2{,}000 \\div 125 = 16$ nights. Telescope Q covers $0.6 \\times 60 \\times 5 = 180$ square degrees per night, and $2{,}000 \\div 180 \\approx 11.1$, so it needs 12 nights. The difference is $16 - 12 = 4$.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You rounded Telescope Q's 11.1 nights down to 11. A partial night still counts as a full night, so Q needs 12."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "12 is Telescope Q's total number of nights. The question asks how many fewer nights Q needs than P."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "16 is Telescope P's total number of nights. You still have to subtract Q's total."
+   }
+  },
+  "id": "orig-constant-rate--X-dc61a1",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--X-dc61a1",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "At this rate, for how many hours can the warbler fly before it reaches its required reserve?",
+  "stimulus": "During migration, a warbler burns 0.4 gram of stored fat for every 100 kilometers it flies, at a constant speed of 40 kilometers per hour. It starts a nonstop flight with 6.2 grams of fat and must land with at least 1.0 gram left.",
+  "choices": [
+   "13",
+   "32.5",
+   "38.75",
+   "1,300"
+  ],
+  "answer": "B",
+  "explanation": "The fat available for flying is $6.2 - 1.0 = 5.2$ grams. Each 100 km uses 0.4 g, so the bird can fly $\\frac{5.2}{0.4} \\times 100 = 1{,}300$ km. At 40 km/h, that takes $1{,}300 \\div 40 = 32.5$ hours.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "13 is the number of 100-kilometer stretches the bird can fly. You still need to convert that to kilometers and then to hours."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You used all 6.2 grams and didn't hold back the 1.0-gram reserve: $1{,}550 \\div 40 = 38.75$."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "1,300 is the distance in kilometers. The question asks for hours, so divide by 40 km/h."
+   }
+  },
+  "id": "orig-constant-rate--X-9da8e0",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--X-9da8e0",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the minimum number of tins of ink the printmaker must buy to print the entire edition?",
+  "stimulus": "A printmaker is pulling an edition of 140 relief prints. Each print uses 2.5 grams of ink. At the start of each printing session, 20 grams of ink is used to charge the roller, and no session can produce more than 40 prints. Ink is sold only in 60-gram tins.",
+  "choices": [
+   "6",
+   "7",
+   "8",
+   "9"
+  ],
+  "answer": "C",
+  "explanation": "The edition needs $140 \\div 40 = 3.5$ sessions, so the printmaker must hold 4. The ink needed is $140 \\times 2.5 + 4 \\times 20 = 350 + 80 = 430$ grams. Then $430 \\div 60 \\approx 7.17$, so the printmaker must buy 8 tins.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You counted only the ink on the prints: $350 \\div 60 \\approx 5.83$, rounded to 6. You left out the 20 grams used to charge the roller in each session."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You either rounded 7.17 tins down, or you used 3.5 sessions instead of 4, which gives exactly $420 \\div 60 = 7$. Sessions are whole events, and a partial tin means buying another one."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You may have counted 5 sessions, adding a roller charge at the end: $350 + 100 = 450$ grams, which needs 8 tins. Or you may have rounded up twice. Four sessions and 430 grams need 8 tins, not 9."
+   }
+  },
+  "id": "orig-constant-rate--X-3c7b9a",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--X-3c7b9a",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest number of complete pages the musicologist can order?",
+  "stimulus": "A musicologist orders scans of a baroque manuscript from a European archive that charges \u20ac3.50 per page. The musicologist has \\$500. The bank first deducts a \\$20 transfer fee and then converts the rest at 1 U.S. dollar = 0.80 euro.",
+  "choices": [
+   "109",
+   "110",
+   "114",
+   "171"
+  ],
+  "answer": "A",
+  "explanation": "After the fee, $500 - 20 = 480$ dollars is converted. That gives $480 \\times 0.80 = 384$ euros. Then $384 \\div 3.50 \\approx 109.7$, so the musicologist can order 109 complete pages.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You rounded 109.7 up. The money runs out partway through page 110, so the greatest number of complete pages is 109."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You converted the whole \\$500 before the fee came out: $400 \\div 3.50 \\approx 114.3$. The \\$20 fee is deducted first."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You divided by 0.80 when you should have multiplied, which turned \\$480 into 600 euros. Check the units: dollars \u00d7 (euros per dollar) gives euros, and a euro is worth more than a dollar, so you should get fewer euros than dollars."
+   }
+  },
+  "id": "orig-constant-rate--X-101224",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--X-101224",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the greatest whole number of years the plate can remain in service?",
+  "stimulus": "A steel test plate is 6.0 millimeters thick when installed. In a corrosive environment it loses thickness at a constant rate of 40 micrometers every 6 months ($1 \\text{ millimeter} = 1{,}000 \\text{ micrometers}$). The plate must be removed from service once its thickness falls below 70% of its original thickness.",
+  "choices": [
+   "22",
+   "23",
+   "45",
+   "52"
+  ],
+  "answer": "A",
+  "explanation": "The minimum allowed thickness is $0.70 \\times 6.0 = 4.2$ mm, so the plate can lose $1.8$ mm, or 1,800 micrometers. The rate is 40 micrometers every half year, which is 80 micrometers per year. Then $1{,}800 \\div 80 = 22.5$ years. After 23 years the plate is below the limit, so 22 is the greatest whole number of years.",
+  "distractors": {
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You rounded 22.5 up. By the end of year 23 the plate has fallen below 4.2 mm, so it can't still be in service."
+   },
+   "C": {
+    "misconception": "misread-given",
+    "why": "You read the rate as 40 micrometers per year: $1{,}800 \\div 40 = 45$. The rate is 40 micrometers every 6 months, which is 80 micrometers per year."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You divided the 4.2 mm the plate must keep by the yearly loss: $4{,}200 \\div 80 = 52.5$. The limit depends on the 1.8 mm the plate is allowed to lose."
+   }
+  },
+  "id": "orig-constant-rate--X-d055e8",
+  "skill_cd": "Q.A.",
+  "subtype": "constant-rate-times-amount",
+  "subtype_name": "Constant rate: rate \u00d7 time (or amount \u00f7 rate)",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-constant-rate--X-d055e8",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

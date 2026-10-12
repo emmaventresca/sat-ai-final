@@ -120,10 +120,15 @@ def plan(counts, good, pending, per_tier, floor, mode):
             continue
         # Hard only where the test actually asks it, and never without the
         # Medium tier that the app's ladder reaches it through.
+        # Foundations and Challenge are ours, not the exam's, and both now
+        # count toward the ten-per-cell floor the app promises. Challenge in
+        # particular is the largest gap in the bank: it is the tier a student
+        # aiming at 1500+ lives in, and it was never authored systematically.
         tiers = ["E", "M"]
         if total >= floor and meta.get("count_h", 0):
             tiers.append("H")
-        in_subtype = sum(counts[(slug, t)] for t in ("E", "M", "H"))
+            tiers.append("X")
+        in_subtype = sum(counts[(slug, t)] for t in ("E", "M", "H", "X"))
         if mode in ("empty", "thin") and mode == "empty" and in_subtype:
             continue
         for tier in tiers:

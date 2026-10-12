@@ -1,0 +1,1787 @@
+[
+ {
+  "stem": "The equation $y = a(b)^x$, where $a$ and $b$ are positive constants, models the data shown. What is the value of $b$?",
+  "stimulus": "A paleobotanist counted fossil fern spores in rock samples taken at different depths below a dig site's surface.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Fossil Spores by Sample Depth",
+   "x_label": "Depth below surface (meters)",
+   "y_label": "Spores per gram of rock",
+   "points": [
+    [
+     0,
+     80
+    ],
+    [
+     1,
+     40
+    ],
+    [
+     2,
+     20
+    ],
+    [
+     3,
+     10
+    ],
+    [
+     4,
+     5
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 5,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 80,
+   "y_step": 5,
+   "alt": "Scatterplot of spores per gram against depth in meters, with five points falling and flattening as depth increases."
+  },
+  "keys": [
+   "1/2",
+   ".5",
+   "0.5"
+  ],
+  "any_of": false,
+  "explanation": "The points curve down toward the x-axis, so this is exponential decay and $b$ must be between 0 and 1. Divide any value by the one before it: $40 \\div 80 = \\tfrac{1}{2}$, $20 \\div 40 = \\tfrac{1}{2}$, and so on. Each extra meter multiplies the count by $\\tfrac{1}{2}$, so $b = \\tfrac{1}{2}$. The value at $x = 0$, which is 80, is $a$, not $b$.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Divided each value by the next one instead of the one before ($80 \\div 40$), which gives a growth base for data that is falling."
+   },
+   {
+    "value": "80",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the starting value at depth 0, which is $a$, not the base $b$."
+   },
+   {
+    "value": "40",
+    "misconception": "graph-feature-mismatch",
+    "why": "Treated the data as linear and gave the first drop ($80 - 40$) as a constant change instead of finding the constant ratio."
+   }
+  ],
+  "id": "orig-choose-model-e-M-6d6e78",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-6d6e78",
+   "structure": [],
+   "solver_answer": 0.5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = mx + b$, where $m$ and $b$ are constants, models the data shown. What is the value of $b$?",
+  "stimulus": "Nutrition researchers varied the fiber in a breakfast and recorded how long each participant went before reporting hunger.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Breakfast Fiber and Time Until Hunger",
+   "x_label": "Fiber in breakfast (grams)",
+   "y_label": "Time until hunger (minutes)",
+   "points": [
+    [
+     4,
+     132
+    ],
+    [
+     8,
+     144
+    ],
+    [
+     12,
+     156
+    ],
+    [
+     16,
+     168
+    ],
+    [
+     20,
+     180
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 24,
+   "x_step": 4,
+   "y_min": 108,
+   "y_max": 192,
+   "y_step": 12,
+   "alt": "Scatterplot of time until hunger in minutes against grams of fiber, with five points rising in a straight line from 4 to 20 grams."
+  },
+  "keys": [
+   "120"
+  ],
+  "any_of": false,
+  "explanation": "The points lie on a straight line that rises. First find the slope: from 4 g to 8 g the time goes up by 12 minutes, so $m = \\tfrac{12}{4} = 3$ minutes per gram. The first point is at $x = 4$, not $x = 0$, so step back 4 grams to reach the y-axis: $b = 132 - 3(4) = 120$.",
+  "common_errors": [
+   {
+    "value": "132",
+    "misconception": "misread-given",
+    "why": "Took the first plotted point as the intercept, but it is at 4 grams, not 0."
+   },
+   {
+    "value": "3",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the slope $m$ instead of the intercept $b$."
+   },
+   {
+    "value": "84",
+    "misconception": "algebra-manipulation",
+    "why": "Used 12 (the rise per 4-gram step) as the rise per gram, so $132 - 12(4) = 84$."
+   },
+   {
+    "value": "108",
+    "misconception": "graph-feature-mismatch",
+    "why": "Read the bottom of the vertical axis as where the data meets the y-axis."
+   }
+  ],
+  "id": "orig-choose-model-e-M-052a34",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-052a34",
+   "structure": [],
+   "solver_answer": 120,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants, models the data shown. What is the value of $b$?",
+  "stimulus": "An ecologist counted bird species at survey points set at different distances from the edge of a forest.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Bird Species by Distance from Forest Edge",
+   "x_label": "Distance from edge (hundreds of meters)",
+   "y_label": "Number of species",
+   "points": [
+    [
+     0,
+     20
+    ],
+    [
+     2,
+     32
+    ],
+    [
+     4,
+     36
+    ],
+    [
+     6,
+     32
+    ],
+    [
+     8,
+     20
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 40,
+   "y_step": 4,
+   "alt": "Scatterplot of number of bird species against distance from the forest edge, with five points rising to a peak and then falling symmetrically."
+  },
+  "keys": [
+   "8"
+  ],
+  "any_of": false,
+  "explanation": "The data rise and then fall, so the parabola opens down and $a < 0$. By symmetry the vertex is at $(4, 36)$. Two units from the vertex the value falls by 4, so $a(2)^2 = -4$ and $a = -1$. The vertex x-value is $-\\tfrac{b}{2a}$, so $4 = -\\tfrac{b}{2(-1)}$, which gives $b = 8$. Check with the y-intercept: $-x^2 + 8x + 20$ gives 20 at $x = 0$.",
+  "common_errors": [
+   {
+    "value": "-8",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped a sign when solving $4 = -\\tfrac{b}{2a}$ with $a = -1$."
+   },
+   {
+    "value": "16",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the drop of 4 by 2 instead of by $2^2$, so got $a = -2$ and then $b = 16$."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the x-value of the vertex instead of $b$."
+   },
+   {
+    "value": "36",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the maximum number of species."
+   },
+   {
+    "value": "20",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the y-intercept $c$."
+   },
+   {
+    "value": "-1",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the leading coefficient $a$."
+   }
+  ],
+  "id": "orig-choose-model-e-M-0f1c1e",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-0f1c1e",
+   "structure": [],
+   "solver_answer": 8,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = a(b)^x$, where $a$ and $b$ are positive constants, models the data shown. What is the value of $a$?",
+  "stimulus": "A sports science department tracked the total training sessions logged each month by members of a newly launched conditioning program.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Sessions Logged in a New Program",
+   "x_label": "Month since launch",
+   "y_label": "Sessions logged (hundreds)",
+   "points": [
+    [
+     1,
+     6
+    ],
+    [
+     2,
+     12
+    ],
+    [
+     3,
+     24
+    ],
+    [
+     4,
+     48
+    ],
+    [
+     5,
+     96
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 6,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 96,
+   "y_step": 6,
+   "alt": "Scatterplot of sessions logged in hundreds against month since launch, with five points rising more and more steeply from month 1 to month 5."
+  },
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "The points get steeper each month, so this is exponential growth. Each value is double the one before, so $b = 2$. The value $a$ is the model's value at $x = 0$, which isn't plotted. Step back one month from $(1, 6)$ by dividing by the base: $a = 6 \\div 2 = 3$. Check: $3(2)^1 = 6$ and $3(2)^5 = 96$.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "misread-given",
+    "why": "Took the first plotted point as $a$, but it is at month 1, not month 0."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the growth factor $b$ instead of the initial value $a$."
+   },
+   {
+    "value": "12",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied by the base to step back a month ($6 \\times 2$) instead of dividing."
+   },
+   {
+    "value": "0",
+    "misconception": "graph-feature-mismatch",
+    "why": "Extended a straight line through the first two points (slope 6) back to $x = 0$, treating the growth as linear."
+   }
+  ],
+  "id": "orig-choose-model-e-M-ba50e7",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-ba50e7",
+   "structure": [],
+   "solver_answer": 3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = c - kx$, where $c$ and $k$ are positive constants, models the data shown. What is the value of $k$?",
+  "stimulus": "Marine biologists counted the fish species seen during dives on a reef wall at several depths.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Fish Species Observed by Depth",
+   "x_label": "Depth (meters)",
+   "y_label": "Number of fish species",
+   "points": [
+    [
+     10,
+     75
+    ],
+    [
+     20,
+     60
+    ],
+    [
+     30,
+     45
+    ],
+    [
+     40,
+     30
+    ],
+    [
+     50,
+     15
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 60,
+   "x_step": 10,
+   "y_min": 0,
+   "y_max": 90,
+   "y_step": 15,
+   "alt": "Scatterplot of number of fish species against depth in meters, with five points falling in a straight line from 10 to 50 meters."
+  },
+  "keys": [
+   "1.5",
+   "3/2"
+  ],
+  "any_of": false,
+  "explanation": "The points lie on a straight line that falls, so the slope is negative. In $y = c - kx$ the slope is $-k$, so $k$ is the size of the drop per meter. From 10 m to 20 m the count drops by 15 over 10 meters: the slope is $-\\tfrac{15}{10} = -1.5$, so $k = 1.5$.",
+  "common_errors": [
+   {
+    "value": "15",
+    "misconception": "algebra-manipulation",
+    "why": "Gave the drop per 10-meter gridline step instead of per meter."
+   },
+   {
+    "value": "-1.5",
+    "misconception": "graph-feature-mismatch",
+    "why": "Gave the slope itself, but the equation already has the minus sign, so $k$ is positive."
+   },
+   {
+    "value": "90",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the intercept $c$ instead of $k$."
+   },
+   {
+    "value": "2/3",
+    "misconception": "algebra-manipulation",
+    "why": "Divided run by rise ($10 \\div 15$) instead of rise by run."
+   }
+  ],
+  "id": "orig-choose-model-e-M-cb12b6",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-cb12b6",
+   "structure": [],
+   "solver_answer": 1.5,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants, models the data shown. What is the value of $c$?",
+  "stimulus": "A labour economist studied a packing plant's average labour cost per crate for different numbers of workers on a shift.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Labour Cost per Crate by Shift Size",
+   "x_label": "Workers on shift",
+   "y_label": "Average labour cost per crate (dollars)",
+   "points": [
+    [
+     2,
+     20
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     10,
+     20
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 12,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 24,
+   "y_step": 4,
+   "alt": "Scatterplot of average labour cost per crate in dollars against workers on shift, with five points falling to a low point and rising again symmetrically."
+  },
+  "keys": [
+   "40"
+  ],
+  "any_of": false,
+  "explanation": "The data fall and then rise, so the parabola opens up. By symmetry the vertex is $(6, 4)$. Two workers away from the vertex the cost rises by 4, so $a(2)^2 = 4$ and $a = 1$. In vertex form the model is $y = (x - 6)^2 + 4$. The constant $c$ is the value at $x = 0$: $(0 - 6)^2 + 4 = 40$. Expanded, it is $x^2 - 12x + 40$.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the y-value of the vertex, which is the minimum cost, not the y-intercept."
+   },
+   {
+    "value": "20",
+    "misconception": "misread-given",
+    "why": "Took the leftmost plotted point as the intercept, but it is at 2 workers, not 0."
+   },
+   {
+    "value": "36",
+    "misconception": "intermediate-step",
+    "why": "Expanded $(x - 6)^2$ and stopped without adding the vertex's 4."
+   },
+   {
+    "value": "76",
+    "misconception": "algebra-manipulation",
+    "why": "Divided the rise of 4 by 2 instead of $2^2$, so used $a = 2$: $2(36) + 4 = 76$."
+   },
+   {
+    "value": "-12",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the coefficient $b$ instead of $c$."
+   }
+  ],
+  "id": "orig-choose-model-e-M-5740e0",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-5740e0",
+   "structure": [],
+   "solver_answer": 40,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = a(b)^x$, where $a$ and $b$ are positive constants, models the data shown. What is the value of $b$?",
+  "stimulus": "Immunologists measured antibody-producing cells in a blood sample at several times after a vaccine dose.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Antibody-Producing Cells After a Vaccine Dose",
+   "x_label": "Days after dose",
+   "y_label": "Cells per microliter (thousands)",
+   "points": [
+    [
+     0,
+     10
+    ],
+    [
+     2,
+     40
+    ],
+    [
+     4,
+     160
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 6,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 160,
+   "y_step": 10,
+   "alt": "Scatterplot of cells per microliter in thousands against days after the dose, with points at days 0, 2, and 4 rising more and more steeply."
+  },
+  "keys": [
+   "2"
+  ],
+  "any_of": false,
+  "explanation": "The points rise more and more steeply, so this is exponential growth with $b > 1$. The readings are 2 days apart, and each is 4 times the one before. Over 2 days the model multiplies by $b^2$, so $b^2 = 4$ and $b = 2$ per day. Check: $10(2)^4 = 160$.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "missed-condition",
+    "why": "Gave the factor per 2-day gap between readings, but $x$ counts single days."
+   },
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the initial value $a$ instead of the base."
+   },
+   {
+    "value": "15",
+    "misconception": "graph-feature-mismatch",
+    "why": "Found a linear slope from the first two points, $\\tfrac{40 - 10}{2}$, treating the growth as linear."
+   },
+   {
+    "value": "16",
+    "misconception": "intermediate-step",
+    "why": "Gave the total factor from day 0 to day 4 ($160 \\div 10$) without taking it per day."
+   }
+  ],
+  "id": "orig-choose-model-e-M-45b5b9",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-45b5b9",
+   "structure": [],
+   "solver_answer": 2,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants, models the data shown. What is the value of $b$?",
+  "stimulus": "A civil engineer measured the height of a concrete footbridge arch above its base at points along its span.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Footbridge Arch Profile",
+   "x_label": "Horizontal distance from left base (meters)",
+   "y_label": "Height of arch (meters)",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     10,
+     5
+    ],
+    [
+     12,
+     0
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 12,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 1,
+   "alt": "Scatterplot of arch height in meters against horizontal distance in meters, with seven points rising from 0 to a peak and returning to 0 symmetrically."
+  },
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "The points form an upside-down U, so $a < 0$. The arch starts at $(0, 0)$, so $c = 0$, and by symmetry the vertex is $(6, 9)$. Two meters from the vertex the height drops by 1, so $a(2)^2 = -1$ and $a = -\\tfrac{1}{4}$. The vertex x-value is $-\\tfrac{b}{2a}$, so $6 = -\\tfrac{b}{2(-1/4)} = 2b$, which gives $b = 3$. Check: $-\\tfrac{1}{4}(12)^2 + 3(12) = 0$.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the x-value of the vertex instead of $b$."
+   },
+   {
+    "value": "9",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the maximum height of the arch."
+   },
+   {
+    "value": "-3",
+    "misconception": "algebra-manipulation",
+    "why": "Lost the sign when solving $6 = -\\tfrac{b}{2a}$ with negative $a$."
+   },
+   {
+    "value": "12",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the span of the arch, the second x-intercept."
+   },
+   {
+    "value": "-1/4",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the leading coefficient $a$."
+   }
+  ],
+  "id": "orig-choose-model-e-M-0668ad",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-0668ad",
+   "structure": [],
+   "solver_answer": 3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = b - mx$, where $m$ and $b$ are positive constants, models the data shown. What is the value of $m$?",
+  "stimulus": "A city planner recorded the number of street parking spaces on blocks at different distances from a new light-rail station.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Parking Spaces by Distance from Station",
+   "x_label": "Distance from station (blocks)",
+   "y_label": "Street parking spaces",
+   "points": [
+    [
+     0,
+     40
+    ],
+    [
+     2,
+     34
+    ],
+    [
+     4,
+     28
+    ],
+    [
+     6,
+     22
+    ],
+    [
+     8,
+     16
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 44,
+   "y_step": 2,
+   "alt": "Five points falling steadily from left to right in a straight line."
+  },
+  "keys": [
+   "3"
+  ],
+  "any_of": false,
+  "explanation": "Check the shape first. The points fall in a straight line, so a linear model fits, and because the model is written as $b - mx$, the drop per block is $m$. Read two points: (0, 40) and (2, 34). Over 2 blocks the count falls by 6, so the drop per block is $6 \\div 2 = 3$. The plotted points are 2 blocks apart, not 1, so divide by 2. As a check, $40 - 3(8) = 16$, which matches the last point.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "intermediate-step",
+    "why": "You took the drop between neighbouring points, which are 2 blocks apart, and stopped before dividing by 2."
+   },
+   {
+    "value": "-3",
+    "misconception": "graph-feature-mismatch",
+    "why": "You entered the slope of the line. The model already supplies the minus sign, so $m$ itself is positive."
+   },
+   {
+    "value": "40",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the y-intercept $b$ instead of $m$."
+   },
+   {
+    "value": "1/3",
+    "misconception": "algebra-manipulation",
+    "why": "You divided the run by the rise (2 \u00f7 6) instead of the rise by the run."
+   }
+  ],
+  "id": "orig-choose-model-e-M-6dc151",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-6dc151",
+   "structure": [],
+   "solver_answer": 3,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = a(b)^x$, where $a$ and $b$ are constants, best models the data shown. What is the value of $a$?",
+  "stimulus": "A folklorist tracked how many villages in a region still told a particular legend in each generation after it was first written down.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Villages Telling the Legend",
+   "x_label": "Generations after first recording",
+   "y_label": "Number of villages",
+   "points": [
+    [
+     1,
+     160
+    ],
+    [
+     2,
+     80
+    ],
+    [
+     3,
+     40
+    ],
+    [
+     4,
+     20
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 5,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 180,
+   "y_step": 20,
+   "alt": "Four points that drop steeply at first and then level off toward the horizontal axis."
+  },
+  "keys": [
+   "320"
+  ],
+  "any_of": false,
+  "explanation": "The points halve with each generation, falling quickly and then flattening toward the axis. That is exponential decay, so $b$ is between 0 and 1. Divide each value by the one before it: $80 \\div 160 = \\frac{1}{2}$, so $b = \\frac{1}{2}$. The constant $a$ is the value at $x = 0$, and there is no point plotted there, so work back one generation from (1, 160): $a \\cdot \\frac{1}{2} = 160$, which gives $a = 320$.",
+  "common_errors": [
+   {
+    "value": "160",
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the first plotted point as the starting value, but it is at $x = 1$, not $x = 0$."
+   },
+   {
+    "value": "80",
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated the model as growth with $b = 2$, so you divided 160 by 2 instead of doubling it."
+   },
+   {
+    "value": "240",
+    "misconception": "graph-feature-mismatch",
+    "why": "You extended the data as a straight line, adding the first drop of 80, instead of using a constant factor."
+   },
+   {
+    "value": "1/2",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the base $b$ instead of $a$."
+   }
+  ],
+  "id": "orig-choose-model-e-M-836a66",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-836a66",
+   "structure": [],
+   "solver_answer": 320,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = -x^2 + bx$, where $b$ is a constant, models the data shown. What is the value of $b$?",
+  "stimulus": "An immunologist measured a volunteer's antibody level, in units per milliliter, at several times after a booster dose.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Antibody Level After a Booster",
+   "x_label": "Days after booster",
+   "y_label": "Antibody level (units/mL)",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     20
+    ],
+    [
+     4,
+     32
+    ],
+    [
+     6,
+     36
+    ],
+    [
+     8,
+     32
+    ],
+    [
+     10,
+     20
+    ],
+    [
+     12,
+     0
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 14,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 40,
+   "y_step": 4,
+   "alt": "Seven points that rise to a peak and then fall back symmetrically, forming an upside-down U."
+  },
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "The data rise and then fall, so a parabola that opens downward fits. The given $-x^2$ term agrees with that. The data are symmetric about the peak at $x = 6$, so the vertex is at $x = 6$. For $y = ax^2 + bx$ the vertex is at $x = -\\frac{b}{2a} = -\\frac{b}{2(-1)} = \\frac{b}{2}$, so $\\frac{b}{2} = 6$ and $b = 12$. As a check, the model is $y = -x(x - 12)$, which is 0 at $x = 0$ and at $x = 12$, and at $x = 6$ gives $-36 + 72 = 36$.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "intermediate-step",
+    "why": "You found the vertex's x-value and stopped before solving $\\frac{b}{2} = 6$."
+   },
+   {
+    "value": "36",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the peak antibody level instead of the coefficient $b$."
+   },
+   {
+    "value": "-12",
+    "misconception": "graph-feature-mismatch",
+    "why": "You used $-\\frac{b}{2a}$ with $a = 1$, as for an upward-opening parabola, which gives the wrong sign on $b$."
+   }
+  ],
+  "id": "orig-choose-model-e-M-94d5f4",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-94d5f4",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the equation __var__ where __var__ is a constant"
+   ],
+   "residue": 2
+  }
+ },
+ {
+  "stem": "The equation $y = mx + b$, where $m$ and $b$ are constants, best models the data shown. What is the value of $b$?",
+  "stimulus": "A sports scientist recorded an athlete's vertical jump height, in centimeters, at several points during a plyometric training program.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Vertical Jump During Training",
+   "x_label": "Weeks of training",
+   "y_label": "Jump height (cm)",
+   "points": [
+    [
+     1,
+     40
+    ],
+    [
+     3,
+     44
+    ],
+    [
+     5,
+     48
+    ],
+    [
+     7,
+     52
+    ],
+    [
+     9,
+     56
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1,
+   "y_min": 30,
+   "y_max": 60,
+   "y_step": 2,
+   "alt": "Five points rising steadily from left to right in a straight line, beginning just right of the vertical axis."
+  },
+  "keys": [
+   "38"
+  ],
+  "any_of": false,
+  "explanation": "The points rise in a straight line, so a linear model with a positive slope fits. From (1, 40) to (3, 44) the height goes up 4 cm over 2 weeks, so $m = 2$. The constant $b$ is the height at week 0, which is not plotted. Go back one week from (1, 40): $b = 40 - 2 = 38$. As a check, $2(9) + 38 = 56$, which matches the last point.",
+  "common_errors": [
+   {
+    "value": "40",
+    "misconception": "graph-feature-mismatch",
+    "why": "You read the first plotted point as the y-intercept, but it is at week 1, not week 0."
+   },
+   {
+    "value": "36",
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted the 4 cm gap between neighbouring points instead of one week's change of 2 cm."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the slope $m$ instead of $b$."
+   }
+  ],
+  "id": "orig-choose-model-e-M-f3d7ee",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-f3d7ee",
+   "structure": [],
+   "solver_answer": 38,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = a(b)^x$, where $a$ and $b$ are positive constants, models the data in the table. What is the value of $b$?",
+  "stimulus": "A paleobotanist counted fern spores in sediment layers deposited at different times after an ancient wildfire.\n\nFern Spores After a Wildfire\nCenturies after fire, x | Spores per gram, y\n0 | 30\n2 | 120\n4 | 480\n6 | 1920",
+  "keys": [
+   "2"
+  ],
+  "any_of": false,
+  "explanation": "The counts are multiplied by the same factor at each step, so the growth is exponential and $b$ is greater than 1. Each step in the table covers 2 centuries, and over that span the count is multiplied by $120 \\div 30 = 4$. That means $b^2 = 4$, and since $b$ is positive, $b = 2$. As a check, $30(2)^6 = 30 \\cdot 64 = 1920$.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "intermediate-step",
+    "why": "You took the growth factor between rows, which are 2 centuries apart, and stopped before solving $b^2 = 4$."
+   },
+   {
+    "value": "1/2",
+    "misconception": "graph-feature-mismatch",
+    "why": "You divided each value by the next one, giving a decay factor for data that are clearly growing."
+   },
+   {
+    "value": "30",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the starting value $a$ instead of $b$."
+   },
+   {
+    "value": "45",
+    "misconception": "graph-feature-mismatch",
+    "why": "You treated the data as linear and took the first difference per century, $(120 - 30) \\div 2$."
+   }
+  ],
+  "id": "orig-choose-model-e-M-9c150e",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-9c150e",
+   "structure": [],
+   "solver_answer": 2,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = x^2 + bx + c$, where $b$ and $c$ are constants, models the data shown. What is the value of $c$?",
+  "stimulus": "An astronomer recorded a comet's distance from the Sun, in tens of millions of kilometers, once a week as it passed through its closest approach.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Comet's Distance from the Sun",
+   "x_label": "Week of observation",
+   "y_label": "Distance (tens of millions of km)",
+   "points": [
+    [
+     1,
+     11
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     7,
+     11
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 8,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 12,
+   "y_step": 1,
+   "alt": "Seven points that fall to a low point and then rise again symmetrically, forming a U shape."
+  },
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "The distance falls and then rises, so a parabola that opens upward fits, which matches the leading coefficient of 1. The lowest point is (4, 2), so the model is $y = (x - 4)^2 + 2$. Expand it: $x^2 - 8x + 16 + 2 = x^2 - 8x + 18$, so $c = 18$. As a check, $1 - 8 + 18 = 11$, which matches the point at week 1.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the vertex's height as the constant term. $c$ is the value at $x = 0$, not the minimum."
+   },
+   {
+    "value": "16",
+    "misconception": "intermediate-step",
+    "why": "You expanded $(x - 4)^2$ but left off the $+2$ shift."
+   },
+   {
+    "value": "-8",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the coefficient $b$ instead of $c$."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the x-value of the vertex."
+   }
+  ],
+  "id": "orig-choose-model-e-M-c5927d",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-c5927d",
+   "structure": [],
+   "solver_answer": 18,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = mx + b$, where $m$ and $b$ are constants, best models the data shown. What is the value of $m$?",
+  "stimulus": "A linguist surveyed speakers of a regional dialect and recorded the percent who used a new verb form, at five-year intervals.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Use of a New Verb Form",
+   "x_label": "Years since 1995",
+   "y_label": "Speakers using the form (%)",
+   "points": [
+    [
+     0,
+     12
+    ],
+    [
+     5,
+     20
+    ],
+    [
+     10,
+     28
+    ],
+    [
+     15,
+     36
+    ],
+    [
+     20,
+     44
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 25,
+   "x_step": 5,
+   "y_min": 0,
+   "y_max": 48,
+   "y_step": 4,
+   "alt": "Five points rising steadily from left to right in a straight line."
+  },
+  "keys": [
+   "1.6",
+   "8/5"
+  ],
+  "any_of": false,
+  "explanation": "The points rise by the same amount at each step, so a linear model with a positive slope fits. Between neighbouring points the percent goes up by $20 - 12 = 8$, but the points are 5 years apart. The slope is a rate per year, so $m = \\frac{8}{5} = 1.6$. As a check, $1.6(20) + 12 = 44$.",
+  "common_errors": [
+   {
+    "value": "8",
+    "misconception": "intermediate-step",
+    "why": "You found the rise between neighbouring points and stopped before dividing by the 5-year gap."
+   },
+   {
+    "value": "5/8",
+    "misconception": "algebra-manipulation",
+    "why": "You divided the run by the rise instead of the rise by the run."
+   },
+   {
+    "value": "12",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the y-intercept $b$ instead of the slope."
+   }
+  ],
+  "id": "orig-choose-model-e-M-80bae1",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-80bae1",
+   "structure": [],
+   "solver_answer": "1.6",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = a(b)^x$, where $a$ and $b$ are constants, models the data in the table. What is the value of $b$?",
+  "stimulus": "A printmaker inked a woodblock once and pulled several prints from it in a row, weighing the ink transferred to each sheet.\n\nInk Transferred per Print\nPull number, x | Ink transferred (milligrams), y\n1 | 100\n2 | 80\n3 | 64\n4 | 51.2",
+  "keys": [
+   "0.8",
+   ".8",
+   "4/5"
+  ],
+  "any_of": false,
+  "explanation": "The amount drops by less each time: 20, then 16, then 12.8. So the model is exponential decay, not a line, and $b$ is between 0 and 1. Divide each value by the one before it: $80 \\div 100 = 0.8$, $64 \\div 80 = 0.8$ and $51.2 \\div 64 = 0.8$. The ratio is constant, so $b = 0.8$.",
+  "common_errors": [
+   {
+    "value": "1.25",
+    "misconception": "graph-feature-mismatch",
+    "why": "You divided each value by the next one, which gives a growth factor for amounts that are shrinking."
+   },
+   {
+    "value": "0.2",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the rate of decrease (20% per pull) instead of the factor that multiplies each value."
+   },
+   {
+    "value": "20",
+    "misconception": "graph-feature-mismatch",
+    "why": "You took the first difference, as if the data were linear, instead of the ratio."
+   },
+   {
+    "value": "125",
+    "misconception": "wrong-target-quantity",
+    "why": "You worked out the starting value $a$, the amount at $x = 0$, instead of $b$."
+   }
+  ],
+  "id": "orig-choose-model-e-M-7bdc3c",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-7bdc3c",
+   "structure": [],
+   "solver_answer": "0.8",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = a(b)^x$, where $a$ and $b$ are positive constants, models the data shown. What is the value of $b$?",
+  "stimulus": "A paleobotanist counts the fossil pollen grains of one conifer species in successive layers of a lake sediment core. Layer 0 is the top layer, and layer numbers increase going down.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Conifer Pollen in a Sediment Core",
+   "x_label": "Layer number",
+   "y_label": "Pollen grains per gram of sediment",
+   "points": [
+    [
+     0,
+     800
+    ],
+    [
+     1,
+     400
+    ],
+    [
+     2,
+     200
+    ],
+    [
+     3,
+     100
+    ],
+    [
+     4,
+     50
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 5,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 800,
+   "y_step": 50,
+   "alt": "Scatterplot of five points: (0, 800), (1, 400), (2, 200), (3, 100), (4, 50). The values fall steeply at first and then level off toward the x-axis."
+  },
+  "keys": [
+   ".5",
+   "0.5",
+   "1/2"
+  ],
+  "any_of": false,
+  "explanation": "The points curve down toward the x-axis, so the model shows exponential decay and $b$ must be between 0 and 1. In $y = a(b)^x$, $b$ is the factor that y is multiplied by each time x goes up by 1. Read two neighbouring points: from $(0, 800)$ to $(1, 400)$ the count is multiplied by $\\frac{400}{800} = \\frac{1}{2}$. The same holds for every step (400 to 200, 200 to 100, 100 to 50), so $b = \\frac{1}{2}$. As a check, $a = 800$, which is the value at $x = 0$.",
+  "common_errors": [
+   {
+    "value": "2",
+    "misconception": "graph-feature-mismatch",
+    "why": "Divides the earlier value by the later one (800/400) and gets a base above 1, which would model growth, not the decay the plot shows."
+   },
+   {
+    "value": "800",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the initial value $a$, read at $x = 0$, instead of the base $b$."
+   },
+   {
+    "value": "-400",
+    "misconception": "graph-feature-mismatch",
+    "why": "Treats the data as linear and gives the change between the first two points, which is a slope, not an exponential base."
+   }
+  ],
+  "id": "orig-choose-model-e-M-8208bf",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-8208bf",
+   "structure": [],
+   "solver_answer": "0.5",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = mx + b$ models the data shown. What is the value of $m$?",
+  "stimulus": "A materials scientist hangs different loads from a strip of a new polymer and measures the strip's length under each load.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Polymer Strip Length Under Load",
+   "x_label": "Load (newtons)",
+   "y_label": "Length (centimeters)",
+   "points": [
+    [
+     10,
+     15
+    ],
+    [
+     20,
+     18
+    ],
+    [
+     30,
+     21
+    ],
+    [
+     40,
+     24
+    ],
+    [
+     50,
+     27
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 60,
+   "x_step": 10,
+   "y_min": 0,
+   "y_max": 30,
+   "y_step": 3,
+   "alt": "Scatterplot of five points: (10, 15), (20, 18), (30, 21), (40, 24), (50, 27). The points lie on a straight line that rises from left to right."
+  },
+  "keys": [
+   ".3",
+   "0.3",
+   "3/10"
+  ],
+  "any_of": false,
+  "explanation": "The points lie on a straight line that rises, so $m$ is positive and equals the change in length per newton. Use two points that are easy to read, such as $(10, 15)$ and $(50, 27)$: $m = \\frac{27 - 15}{50 - 10} = \\frac{12}{40} = 0.3$. Check the x-axis labels: each gridline is 10 newtons, not 1. The strip gets 0.3 centimeter longer for every newton of load.",
+  "common_errors": [
+   {
+    "value": "3",
+    "misconception": "misread-given",
+    "why": "Counts each 10-newton gridline on the x-axis as 1 newton, so divides the 3 cm rise by 1 instead of by 10."
+   },
+   {
+    "value": "10/3",
+    "misconception": "graph-feature-mismatch",
+    "why": "Puts run over rise (40/12), which gives the wrong slope."
+   },
+   {
+    "value": "12",
+    "misconception": "wrong-target-quantity",
+    "why": "Finds the y-intercept $b$ (length at a load of 0 N) instead of the slope $m$."
+   }
+  ],
+  "id": "orig-choose-model-e-M-2583e6",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-2583e6",
+   "structure": [],
+   "solver_answer": "0.3",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants, models the data shown. What is the value of $b$?",
+  "stimulus": "A city's planning office counts the cyclists passing an automated counter on a new bike lane. In the scatterplot, $x$ is the number of hours after 8:00 a.m. and $y$ is the number of cyclists counted in a 10-minute interval.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Cyclists on the Elm Street Bike Lane",
+   "x_label": "Hours after 8:00 a.m.",
+   "y_label": "Cyclists per 10 minutes",
+   "points": [
+    [
+     0,
+     20
+    ],
+    [
+     2,
+     80
+    ],
+    [
+     4,
+     100
+    ],
+    [
+     6,
+     80
+    ],
+    [
+     8,
+     20
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "alt": "Scatterplot of five points: (0, 20), (2, 80), (4, 100), (6, 80), (8, 20). The points rise to a highest value in the middle and fall again symmetrically."
+  },
+  "keys": [
+   "40"
+  ],
+  "any_of": false,
+  "explanation": "The points rise and then fall, so the model is a downward-opening parabola and $a < 0$. The point at $x = 0$ gives $c = 20$. The data are symmetric about $x = 4$, so the vertex is at $x = 4$, which means $-\\frac{b}{2a} = 4$, or $b = -8a$. Substitute the vertex $(4, 100)$: $100 = 16a + 4b + 20$. Replace $b$ with $-8a$: $80 = 16a - 32a = -16a$, so $a = -5$ and $b = -8(-5) = 40$. Check: $y = -5x^2 + 40x + 20$ gives 80 at $x = 2$.",
+  "common_errors": [
+   {
+    "value": "-40",
+    "misconception": "graph-feature-mismatch",
+    "why": "Drops the negative sign in the vertex formula and uses $b = 8a$, which puts the vertex at $x = -4$ instead of $x = 4$."
+   },
+   {
+    "value": "-5",
+    "misconception": "wrong-target-quantity",
+    "why": "Solves correctly for the leading coefficient $a$ and reports it instead of $b$."
+   },
+   {
+    "value": "4",
+    "misconception": "wrong-target-quantity",
+    "why": "Gives the x-coordinate of the vertex instead of the coefficient $b$."
+   }
+  ],
+  "id": "orig-choose-model-e-M-df6720",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-df6720",
+   "structure": [],
+   "solver_answer": "40",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = mx + b$ models the data shown. What is the value of $b$?",
+  "stimulus": "A printmaker adds different amounts of a drying agent to six batches of relief-printing ink and records how long each batch takes to dry.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Drying Agent and Ink Drying Time",
+   "x_label": "Drying agent (drops per 100 grams of ink)",
+   "y_label": "Drying time (hours)",
+   "points": [
+    [
+     2,
+     30
+    ],
+    [
+     4,
+     27
+    ],
+    [
+     6,
+     24
+    ],
+    [
+     8,
+     21
+    ],
+    [
+     10,
+     18
+    ],
+    [
+     12,
+     15
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 14,
+   "x_step": 2,
+   "y_min": 0,
+   "y_max": 36,
+   "y_step": 3,
+   "alt": "Scatterplot of six points: (2, 30), (4, 27), (6, 24), (8, 21), (10, 18), (12, 15). The points lie on a straight line that falls from left to right."
+  },
+  "keys": [
+   "33"
+  ],
+  "any_of": false,
+  "explanation": "The points lie on a falling line, so the slope is negative. Each step of 2 drops lowers the drying time by 3 hours, so $m = \\frac{-3}{2} = -1.5$. The first point is at $x = 2$, not $x = 0$, so you can't read $b$ straight off the plot. Go back one step of 2 drops from $(2, 30)$, which raises y by 3: $b = 30 + 3 = 33$. In algebra: $30 = -1.5(2) + b$, so $b = 33$.",
+  "common_errors": [
+   {
+    "value": "30",
+    "misconception": "wrong-target-quantity",
+    "why": "Reads the y-value of the first data point, at $x = 2$, as the y-intercept instead of extending the line to $x = 0$."
+   },
+   {
+    "value": "27",
+    "misconception": "graph-feature-mismatch",
+    "why": "Uses a positive slope of 1.5, solving $30 = 1.5(2) + b$, so the line rises when the data fall."
+   },
+   {
+    "value": "36",
+    "misconception": "algebra-manipulation",
+    "why": "Takes the slope as -3 per drop (the change per 2-drop step) and solves $30 = -3(2) + b$."
+   }
+  ],
+  "id": "orig-choose-model-e-M-c2f05b",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-c2f05b",
+   "structure": [],
+   "solver_answer": "33",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $y = a(2)^x$, where $a$ is a positive constant, models the data shown. What is the value of $a$?",
+  "stimulus": "Astronomers track a nova as it brightens. In the scatterplot, $x$ is the number of days after the nova was first detected and $y$ is its brightness, in arbitrary units.",
+  "figure": {
+   "type": "scatter",
+   "caption": "Brightness of a Nova After Detection",
+   "x_label": "Days after detection",
+   "y_label": "Brightness (arbitrary units)",
+   "points": [
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     10
+    ],
+    [
+     4,
+     20
+    ],
+    [
+     5,
+     40
+    ],
+    [
+     6,
+     80
+    ]
+   ],
+   "x_min": 0,
+   "x_max": 7,
+   "x_step": 1,
+   "y_min": 0,
+   "y_max": 80,
+   "y_step": 5,
+   "alt": "Scatterplot of five points: (2, 5), (3, 10), (4, 20), (5, 40), (6, 80). The values rise more and more steeply from left to right."
+  },
+  "keys": [
+   "1.25",
+   "5/4"
+  ],
+  "any_of": false,
+  "explanation": "The brightness doubles each day, which matches the base 2 in the model. $a$ is the model's value at $x = 0$, but the first data point is at $x = 2$, so you have to work backward. Substitute $(2, 5)$: $5 = a(2)^2 = 4a$, so $a = \\frac{5}{4} = 1.25$. Or halve twice going back from day 2: $5 \\to 2.5 \\to 1.25$.",
+  "common_errors": [
+   {
+    "value": "5",
+    "misconception": "wrong-target-quantity",
+    "why": "Takes the y-value of the first plotted point, at $x = 2$, as the initial value instead of extending the model back to $x = 0$."
+   },
+   {
+    "value": "2.5",
+    "misconception": "algebra-manipulation",
+    "why": "Divides 5 by 2 only once, as if $2^2$ were 2."
+   },
+   {
+    "value": "20",
+    "misconception": "graph-feature-mismatch",
+    "why": "Treats the model as decay with base $\\frac{1}{2}$, solves $5 = a(\\frac{1}{2})^2$, and multiplies instead of dividing."
+   }
+  ],
+  "id": "orig-choose-model-e-M-d50792",
+  "skill_cd": "Q.D.",
+  "subtype": "choose-model-equation",
+  "subtype_name": "Pick the equation that fits the scatterplot",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-choose-model-e-M-d50792",
+   "structure": [],
+   "solver_answer": "1.25",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "the equation __var__ where __var__ is a positive",
+    "equation __var__ where __var__ is a positive constant"
+   ],
+   "residue": 2
+  }
+ }
+]

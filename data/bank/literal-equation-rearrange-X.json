@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-literal-equati-X-8ddf67",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,16 +82,405 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-literal-equati-X-76af13",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [
     "is given by __var__ where __var__ is the"
    ],
    "residue": 2
   },
   "phrasing": "which_expression"
+ },
+ {
+  "stem": "The given equation relates the positive numbers $Y$, $m$, $c$, and $N$, where $Y < m$. Which equation correctly expresses $N$ in terms of $Y$, $m$, and $c$?",
+  "stimulus": "An agronomist models the yield $Y$ of a wheat plot, in bushels per acre, as a function of the nitrogen applied, $N$, in pounds per acre: $\\frac{1}{Y} = \\frac{1}{m} + \\frac{c}{N^2}$. In this model, $m$ is the largest yield the plot could reach and $c$ is a constant for the soil type.",
+  "choices": [
+   "$N = \\sqrt{\\frac{c(m - Y)}{mY}}$",
+   "$N = \\sqrt{\\frac{cmY}{m - Y}}$",
+   "$N = \\frac{cmY}{m - Y}$",
+   "$N = \\sqrt{c(Y - m)}$"
+  ],
+  "answer": "B",
+  "explanation": "Subtract $\\frac{1}{m}$ from both sides: $\\frac{c}{N^2} = \\frac{1}{Y} - \\frac{1}{m} = \\frac{m - Y}{mY}$. Take reciprocals of both sides to get $\\frac{N^2}{c} = \\frac{mY}{m - Y}$, so $N^2 = \\frac{cmY}{m - Y}$. Because $N$ is positive, $N = \\sqrt{\\frac{cmY}{m - Y}}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You isolated $\\frac{c}{N^2}$ correctly, but then you multiplied by $c$ without taking the reciprocal. That expression is $\\frac{c}{N}$ under a square root, not $N$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is $N^2$. You stopped before taking the square root."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You flipped each fraction separately, turning the equation into $Y = m + \\frac{N^2}{c}$. You can't undo a sum of reciprocals one term at a time. The expression is also undefined here, because $Y < m$."
+   }
+  },
+  "id": "orig-literal-equati-X-b477f4",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-X-b477f4",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The given equation relates the positive numbers $C$, $a$, $h$, and $N$, where $Ch < 1$. Which equation correctly expresses $N$ in terms of $C$, $a$, and $h$?",
+  "stimulus": "Ecologists studying a dragonfly nymph that hunts mosquito larvae model its consumption rate, $C$ (larvae per hour), as $C = \\frac{aN}{1 + ahN}$. Here $N$ is the larval density, $a$ is the attack rate, and $h$ is the handling time per larva.",
+  "choices": [
+   "$N = \\frac{C}{a(1 + Ch)}$",
+   "$N = \\frac{C}{a - Ch}$",
+   "$N = \\frac{Ch - 1}{ah}$",
+   "$N = \\frac{C}{a(1 - Ch)}$"
+  ],
+  "answer": "D",
+  "explanation": "Multiply both sides by $1 + ahN$ to get $C + aChN = aN$. Move every term with $N$ to one side: $C = aN - aChN = aN(1 - Ch)$. Divide to get $N = \\frac{C}{a(1 - Ch)}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $aChN$ across the equals sign, you kept it positive. The factor should be $1 - Ch$, not $1 + Ch$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You collected the $N$ terms correctly, but you lost the $a$ in $aChN$ when you factored. The coefficient of $N$ is $a - aCh$, not $a - Ch$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You rewrote the equation as $\\frac{1}{C} = \\frac{1}{aN} + h$ and then flipped each term separately. You can't undo a sum of fractions one term at a time."
+   }
+  },
+  "id": "orig-literal-equati-X-13c1bc",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-X-13c1bc",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The given equation relates the positive numbers $\\theta$, $L$, and $K$, where $\\theta < 1$. Which equation correctly expresses $L$ in terms of $\\theta$ and $K$?",
+  "stimulus": "In a model of antibody binding, the fraction $\\theta$ of receptor sites on a B cell that are occupied by antigen is $\\theta = \\frac{L^2}{L^2 + K^2}$. Here $L$ is the antigen concentration and $K$ is a dissociation constant, both in nanomolar.",
+  "choices": [
+   "$L = K\\sqrt{\\frac{\\theta}{1 - \\theta}}$",
+   "$L = K\\sqrt{\\frac{1 - \\theta}{\\theta}}$",
+   "$L = \\frac{K\\theta}{1 - \\theta}$",
+   "$L = K\\sqrt{\\frac{\\theta}{1 + \\theta}}$"
+  ],
+  "answer": "A",
+  "explanation": "Multiply both sides by $L^2 + K^2$ to get $\\theta L^2 + \\theta K^2 = L^2$. Collect the $L^2$ terms: $\\theta K^2 = L^2(1 - \\theta)$, so $L^2 = \\frac{K^2\\theta}{1 - \\theta}$. Because $L$ is positive, $L = K\\sqrt{\\frac{\\theta}{1 - \\theta}}$.",
+  "distractors": {
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "This expression equals $\\frac{K^2}{L}$, not $L$. You turned the ratio upside down, probably by solving for $\\frac{K^2}{L^2}$ and forgetting to take the reciprocal."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the square root of $K^2$ but not of $\\frac{\\theta}{1 - \\theta}$. The root applies to the whole of $L^2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $\\theta L^2$ to the other side, you added it instead of subtracting it. That made the factor $1 + \\theta$ instead of $1 - \\theta$."
+   }
+  },
+  "id": "orig-literal-equati-X-74625b",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-X-74625b",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The given equation relates the positive numbers $T$, $d$, $v$, and $u$, where $u < v$. Which equation correctly expresses $d$ in terms of $T$, $v$, and $u$?",
+  "stimulus": "A tagged sea turtle swims a distance $d$ kilometers against a current and then the same distance back with it. Its speed in still water is $v$ kilometers per hour, and the current's speed is $u$ kilometers per hour. The total time, $T$ hours, satisfies $T = \\frac{d}{v - u} + \\frac{d}{v + u}$.",
+  "choices": [
+   "$d = \\frac{2vT}{v^2 - u^2}$",
+   "$d = \\frac{T(v^2 + u^2)}{2v}$",
+   "$d = \\frac{T(v^2 - u^2)}{2v}$",
+   "$d = \\frac{T(v^2 - u^2)}{v}$"
+  ],
+  "answer": "C",
+  "explanation": "Write both fractions over the common denominator $v^2 - u^2$: $T = \\frac{d(v + u) + d(v - u)}{v^2 - u^2} = \\frac{2vd}{v^2 - u^2}$. Then multiply both sides by $v^2 - u^2$ and divide by $2v$ to get $d = \\frac{T(v^2 - u^2)}{2v}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You combined the fractions correctly, but then you divided by $\\frac{2v}{v^2 - u^2}$ the wrong way round. This choice is $\\frac{T}{d}$ multiplied by $T$, not $d$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You treated the common denominator $(v - u)(v + u)$ as $v^2 + u^2$. It actually expands to $v^2 - u^2$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "When you added $d(v + u) + d(v - u)$, you got $vd$ instead of $2vd$. That drops a factor of 2."
+   }
+  },
+  "id": "orig-literal-equati-X-db586c",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-X-db586c",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The given equation relates the positive numbers $V$, $a$, $N$, and $M$, where $V < M$. Which equation correctly expresses $N$ in terms of $V$, $a$, and $M$?",
+  "stimulus": "A corpus linguist models the number of distinct words, $V$, found in a sample of $N$ running words from a language's texts as $\\frac{1}{V} = \\frac{1}{aN} + \\frac{1}{M}$. Here $M$ is the size of the full vocabulary and $a$ is a constant for the genre.",
+  "choices": [
+   "$N = \\frac{M - V}{aMV}$",
+   "$N = \\frac{MV}{a(M - V)}$",
+   "$N = \\frac{aMV}{M - V}$",
+   "$N = \\frac{MV}{a(M + V)}$"
+  ],
+  "answer": "B",
+  "explanation": "Subtract $\\frac{1}{M}$ from both sides: $\\frac{1}{aN} = \\frac{1}{V} - \\frac{1}{M} = \\frac{M - V}{MV}$. Take reciprocals to get $aN = \\frac{MV}{M - V}$, then divide by $a$: $N = \\frac{MV}{a(M - V)}$.",
+  "distractors": {
+   "A": {
+    "misconception": "intermediate-step",
+    "why": "You found $\\frac{M - V}{MV}$ correctly and then divided by $a$ without taking the reciprocal. You have solved for $\\frac{1}{a^2 N}$, not $N$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took the reciprocal and then multiplied by $a$ instead of dividing by it. In $\\frac{1}{aN}$, the $a$ is part of the denominator, so it has to end up dividing."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $\\frac{1}{M}$ across the equals sign, you added it instead of subtracting it. That made the numerator $M + V$ instead of $M - V$."
+   }
+  },
+  "id": "orig-literal-equati-X-f80cb8",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-X-f80cb8",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The given equation relates the positive numbers $p$, $a$, $b$, $m$, and $x$, where $b < p < a$. Which equation correctly expresses $x$ in terms of $p$, $a$, $b$, and $m$?",
+  "stimulus": "An eighteenth-century dye manual tells the dyer to strengthen a weak indigo bath by mixing it with a stronger one. If $m$ liters of a bath with $a$ grams of indigo per liter are mixed with $x$ liters of a bath with $b$ grams per liter, the mixture's strength $p$, in grams per liter, is $p = \\frac{am + bx}{m + x}$.",
+  "choices": [
+   "$x = \\frac{m(a - p)}{p + b}$",
+   "$x = \\frac{m(a - p)}{b - p}$",
+   "$x = \\frac{m(p - b)}{a - p}$",
+   "$x = \\frac{m(a - p)}{p - b}$"
+  ],
+  "answer": "D",
+  "explanation": "Multiply both sides by $m + x$ to get $pm + px = am + bx$. Collect the $x$ terms: $px - bx = am - pm$, so $x(p - b) = m(a - p)$. Divide to get $x = \\frac{m(a - p)}{p - b}$. Both factors are positive because $b < p < a$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $bx$ to the side with $px$, you added it instead of subtracting it. The coefficient of $x$ is $p - b$."
+   },
+   "B": {
+    "misconception": "missed-condition",
+    "why": "You flipped one subtraction when you collected the terms. Because $b < p$, this choice gives a negative volume, which the setup rules out."
+   },
+   "C": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the ratio $\\frac{m}{x}$ multiplied by $m$. You turned the correct fraction upside down, which gives an expression for $\\frac{m^2}{x}$, not $x$."
+   }
+  },
+  "id": "orig-literal-equati-X-532cf2",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-X-532cf2",
+   "structure": [],
+   "solver_answer": "D",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The given equation relates the positive numbers $S$, $P$, and $E$, where $P < S$. Which equation correctly expresses $E$ in terms of $S$ and $P$?",
+  "stimulus": "For a planet orbiting closer to its star than an observing planet does, astronomers relate the inner planet's orbital period $P$, the observing planet's orbital period $E$, and the time $S$ between successive alignments, all in days, by $\\frac{1}{S} = \\frac{1}{P} - \\frac{1}{E}$.",
+  "choices": [
+   "$E = \\frac{PS}{S - P}$",
+   "$E = \\frac{PS}{P - S}$",
+   "$E = \\frac{S - P}{PS}$",
+   "$E = \\frac{PS}{S + P}$"
+  ],
+  "answer": "A",
+  "explanation": "Add $\\frac{1}{E}$ to both sides and subtract $\\frac{1}{S}$: $\\frac{1}{E} = \\frac{1}{P} - \\frac{1}{S} = \\frac{S - P}{PS}$. Take reciprocals to get $E = \\frac{PS}{S - P}$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You isolated $\\frac{1}{E}$ with the wrong sign, so you subtracted in the wrong order. Because $P < S$, this choice gives a negative period."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "This is $\\frac{1}{E}$. You isolated it correctly but forgot to take the reciprocal at the end."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $\\frac{1}{S}$ to the other side, you kept it positive. That made the denominator $S + P$ instead of $S - P$."
+   }
+  },
+  "id": "orig-literal-equati-X-c5c55a",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-X-c5c55a",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The given equation relates the positive numbers $R$, $n$, $a$, and $b$, where $R > 1$ and $n > b$. Which equation correctly expresses $n$ in terms of $R$, $a$, and $b$?",
+  "stimulus": "At a dig site, an archaeologist models the ratio $R$ of charcoal fragments to bone fragments recovered at a depth of $n$ centimeters below the surface as $R = \\frac{n + a}{n - b}$. In this model, $a$ and $b$ are constants for the site.",
+  "choices": [
+   "$n = \\frac{a + b}{R - 1}$",
+   "$n = \\frac{a + Rb}{R + 1}$",
+   "$n = \\frac{a + Rb}{R - 1}$",
+   "$n = \\frac{Rb - a}{R - 1}$"
+  ],
+  "answer": "C",
+  "explanation": "Multiply both sides by $n - b$ to get $Rn - Rb = n + a$. Collect the $n$ terms: $Rn - n = a + Rb$, so $n(R - 1) = a + Rb$. Divide to get $n = \\frac{a + Rb}{R - 1}$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "When you multiplied $R$ by $(n - b)$, you distributed $R$ to $n$ but not to $b$. That gives $Rn - b$ instead of $Rn - Rb$."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "When you moved $n$ to the side with $Rn$, you added it instead of subtracting it. The coefficient of $n$ is $R - 1$."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You collected the $n$ terms correctly, but you kept the wrong sign on $a$ when you moved it. The constant side is $a + Rb$, not $Rb - a$."
+   }
+  },
+  "id": "orig-literal-equati-X-806d65",
+  "skill_cd": "P.B.",
+  "subtype": "literal-equation-rearrange",
+  "subtype_name": "Rearrange a formula for one variable",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-literal-equati-X-806d65",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

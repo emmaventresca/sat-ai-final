@@ -33,11 +33,16 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-data-tests-hyp-X-e5bece",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
@@ -77,14 +82,451 @@
   "source": "original - written for this project",
   "license": "CC BY 4.0 - original item, not College Board content",
   "format": "mc",
-  "status": "error",
+  "status": "verified",
   "verification": {
    "id": "orig-data-tests-hyp-X-f713ce",
    "structure": [],
-   "solve_error": "12 calls in a row failed - stopping rather than working through the rest of the queue. Usually the usage limit; try again later.",
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
    "overlap": [],
    "residue": 0
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "Which choice most effectively uses data from the table to complete the statement?",
+  "stimulus": "Public health researchers sent text-message reminders to some patients due for the second dose of a two-dose vaccine and compared their completion rates with those of patients who received no reminder. Because missed doses were far more common among patients living far from the clinic, the team judged a reminder's effectiveness by the share of otherwise-missed doses it recovered, not by the raw gain in completion. They hypothesized that, by this measure, reminders would be most effective for the most distant patients. The data, however, do not support this hypothesis: ______\n\nSecond-Dose Completion Rate (%)\nDistance from clinic | No reminder | Reminder\nUnder 5 km | 80 | 90\n5\u201315 km | 60 | 78\nOver 15 km | 40 | 64",
+  "choices": [
+   "reminders raised completion by 24 percentage points for patients over 15 km away but by only 10 points for those under 5 km away.",
+   "reminders recovered half of the otherwise-missed doses for patients under 5 km away but only two-fifths for those over 15 km away.",
+   "reminders recovered a smaller share of otherwise-missed doses for patients 5\u201315 km away than for those over 15 km away.",
+   "patients over 15 km away who received reminders completed the series at a lower rate than patients under 5 km away who received none."
+  ],
+  "answer": "B",
+  "explanation": "The passage sets the measure: the share of otherwise-missed doses that reminders recovered. That is the drop in missed doses divided by the missed-dose rate without reminders. Under 5 km, 20% of doses were missed without reminders and reminders recovered 10 points, so 10/20 = one-half. Over 15 km, 60% were missed and reminders recovered 24 points, so 24/60 = two-fifths. The share falls as distance grows, which is the opposite of the hypothesis. That is the result the statement needs.",
+  "distractors": {
+   "A": {
+    "misconception": "off-focus",
+    "why": "Your numbers are right, but you used the raw gain in percentage points, which is the measure the passage tells you the team rejected. On raw gain the hypothesis even looks supported, so this choice can't finish a sentence saying the data do not support it."
+   },
+   "C": {
+    "misconception": "contradicts-text",
+    "why": "Do the calculation for the middle row: reminders recovered 18 of 40 missed points, or 45%. That is more than the 40% recovered for the over-15 km group, not less."
+   },
+   "D": {
+    "misconception": "off-focus",
+    "why": "This comparison is accurate, but it sets a reminder group against a no-reminder group at a different distance. It says nothing about how effective reminders were within any distance band, which is what the hypothesis is about."
+   }
+  },
+  "id": "orig-data-tests-hyp-X-588305",
+  "skill_cd": "COE",
+  "subtype": "data-tests-hypothesis",
+  "subtype_name": "Use a multi-variable graph or table to support or weaken a researcher's claim",
+  "difficulty": "X",
+  "section": "rw",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-data-tests-hyp-X-588305",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which choice best describes data from the table that support the astronomers' hypothesis?",
+  "stimulus": "Stars rich in heavy elements, or metals, host giant planets more often than metal-poor stars do. The usual explanation is that metal-rich disks of gas and dust build planetary cores faster. Low-mass stars, however, have thin disks that may disperse before any core, however quickly it forms, can grow into a giant. After surveying stars in three mass ranges, astronomers hypothesized that high metallicity raises giant-planet occurrence only for stars of at least 0.7 solar masses.\n\nStars Hosting a Giant Planet (%)\nStellar mass (solar masses) | Low metallicity | High metallicity\nBelow 0.7 | 2 | 2\n0.7 to 1.2 | 3 | 11\nAbove 1.2 | 5 | 16",
+  "choices": [
+   "High metallicity raised occurrence from 5% to 16% for stars above 1.2 solar masses, more than tripling the rate.",
+   "Among high-metallicity stars, occurrence rose from 2% to 16% as stellar mass increased across the three ranges.",
+   "High metallicity raised occurrence from 3% to 11% for stars of 0.7 to 1.2 solar masses but not at all below 0.7.",
+   "High metallicity raised occurrence in all three mass ranges, though least for stars below 0.7 solar masses."
+  ],
+  "answer": "C",
+  "explanation": "The hypothesis has two parts, signalled by 'only': metallicity should matter at or above 0.7 solar masses and should not matter below it. To support it, you need a metallicity comparison at both ends of that boundary. C shows a rise from 3% to 11% just above the boundary and no change (2% and 2%) below it.",
+  "distractors": {
+   "A": {
+    "misconception": "off-focus",
+    "why": "You found the right comparison, low against high metallicity, but you stopped after half the claim. The word 'only' means the evidence must also show no effect below 0.7 solar masses, and this choice never looks there."
+   },
+   "B": {
+    "misconception": "off-focus",
+    "why": "This is accurate, but it compares rows within the high-metallicity column, so it shows an effect of stellar mass. The hypothesis is about metallicity's effect within each mass range."
+   },
+   "D": {
+    "misconception": "contradicts-text",
+    "why": "Below 0.7 solar masses, occurrence is 2% at both metallicities, so high metallicity raised nothing there. This choice describes a small effect that the table doesn't show."
+   }
+  },
+  "id": "orig-data-tests-hyp-X-e0d437",
+  "skill_cd": "COE",
+  "subtype": "data-tests-hypothesis",
+  "subtype_name": "Use a multi-variable graph or table to support or weaken a researcher's claim",
+  "difficulty": "X",
+  "section": "rw",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-data-tests-hyp-X-e0d437",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which choice best describes data from the table that support the musicologist's hypothesis?",
+  "stimulus": "Between 1830 and 1880, minor-key hymns were becoming scarcer in churches across one region. A musicologist traces part of this shift to the pipe organ: organists favored the keys that sounded best on the instrument, mostly major ones, and congregations sang what their organists chose. Congregations that bought organs in the 1850s, however, were already using fewer minor-key hymns than other congregations beforehand. The musicologist hypothesizes that acquiring an organ made the existing decline steeper.\n\nMinor-Key Hymns in Congregational Hymnals (% of hymns)\nCongregations | 1830\u20131849 | 1860\u20131879\nAcquired an organ in the 1850s | 26 | 12\nNever acquired an organ | 34 | 30",
+  "choices": [
+   "In congregations that acquired organs, the minor-key share of hymns fell by more than half, from 26% to 12%.",
+   "By 1860\u20131879, organ congregations' minor-key share (12%) was less than half that of other congregations (30%).",
+   "The minor-key share fell by 14 percentage points with organs but by only 4 points in congregations without them.",
+   "The minor-key share fell by more in congregations that never acquired organs than in those that did."
+  ],
+  "answer": "C",
+  "explanation": "The claim is about a steeper decline in congregations with organs, set against a decline that was happening everywhere. You therefore need to compare the size of the drop in each row. The organ congregations fell 14 points (26 to 12) and the others fell 4 points (34 to 30), so the decline was steeper with organs.",
+  "distractors": {
+   "A": {
+    "misconception": "off-focus",
+    "why": "You correctly looked at change over time, but in only one row. The passage says minor-key hymns were declining everywhere, so a drop in organ congregations shows the decline was steeper only when you set it beside the drop in congregations without organs."
+   },
+   "B": {
+    "misconception": "off-focus",
+    "why": "This compares end points, but the passage warns that organ congregations already had a lower minor-key share before the organs arrived. A gap in the later period doesn't show that the decline was steeper."
+   },
+   "D": {
+    "misconception": "contradicts-text",
+    "why": "Congregations without organs fell 4 points and organ congregations fell 14, so you have the direction reversed."
+   }
+  },
+  "id": "orig-data-tests-hyp-X-f583c5",
+  "skill_cd": "COE",
+  "subtype": "data-tests-hypothesis",
+  "subtype_name": "Use a multi-variable graph or table to support or weaken a researcher's claim",
+  "difficulty": "X",
+  "section": "rw",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-data-tests-hyp-X-f583c5",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which choice best describes data from the table that support the engineers' hypothesis?",
+  "stimulus": "A drainage layer beneath a road is meant to keep water out of the soil that supports the pavement, because saturated soil deforms under traffic and leaves ruts. Engineers built road sections with and without such a layer at wet and dry sites and measured them after five years. They hypothesized that the layer reduces rutting only where it substantially lowers soil moisture, so it should make little difference at dry sites.\n\nTest Section Results After Five Years\nSite | Drainage layer | Soil moisture (%) | Rut depth (mm)\nWet | Absent | 24 | 18\nWet | Present | 15 | 9\nDry | Absent | 12 | 8\nDry | Present | 11 | 8",
+  "choices": [
+   "The layer halved rut depth at wet sites, from 18 mm to 9 mm, showing that it works where the soil is saturated.",
+   "The layer cut wet-site moisture by 9 points and halved rutting, but cut dry-site moisture by 1 point and left rutting unchanged.",
+   "Dry sections without the layer rutted less than wet sections with the layer did, 8 mm compared with 9 mm.",
+   "The layer lowered soil moisture about as much at dry sites as at wet sites but reduced rutting only at wet sites."
+  ],
+  "answer": "B",
+  "explanation": "The hypothesis ties rutting to moisture and includes the condition 'only where it substantially lowers soil moisture'. Supporting it takes both columns at both kinds of site. At wet sites the layer lowers moisture a lot (24 to 15) and rutting drops (18 to 9). At dry sites moisture barely changes (12 to 11) and rutting stays at 8 mm.",
+  "distractors": {
+   "A": {
+    "misconception": "off-focus",
+    "why": "This is accurate, but it uses only the wet-site rows and only the rut column. It never checks the moisture link the hypothesis depends on, and it never shows that the layer makes little difference at dry sites."
+   },
+   "C": {
+    "misconception": "off-focus",
+    "why": "Both numbers are right, but this compares a dry section without the layer to a wet section with it. Two things differ at once, so the comparison can't isolate what the layer does."
+   },
+   "D": {
+    "misconception": "contradicts-text",
+    "why": "The layer cut moisture by 9 points at wet sites and by only 1 point at dry sites, so it did not lower moisture about as much at both. If this were true, it would weaken the hypothesis rather than support it."
+   }
+  },
+  "id": "orig-data-tests-hyp-X-2e8341",
+  "skill_cd": "COE",
+  "subtype": "data-tests-hypothesis",
+  "subtype_name": "Use a multi-variable graph or table to support or weaken a researcher's claim",
+  "difficulty": "X",
+  "section": "rw",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-data-tests-hyp-X-2e8341",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which choice most effectively uses data from the table to complete the statement?",
+  "stimulus": "When a city adds a bike lane, the number of cyclists on that street usually rises, whatever kind of lane it is. Planners in one city cared about something narrower: who rides. Surveys suggest that many women avoid cycling in traffic unless they are physically separated from cars. The planners therefore hypothesized that protected lanes, unlike painted ones, would increase the proportion of cyclists who are women. Counts taken on both kinds of street support this hypothesis: ______\n\nAverage Daily Cyclists Counted\nStreet | Period | Women | Men\nProtected lane | Before | 60 | 240\nProtected lane | After | 150 | 350\nPainted lane | Before | 50 | 200\nPainted lane | After | 100 | 400",
+  "choices": [
+   "the daily count of women cyclists on protected-lane streets rose from 60 to 150, an increase of 150 percent.",
+   "women's share of cyclists rose from 20% to 30% on protected-lane streets but stayed at 20% on painted-lane streets.",
+   "after the lanes were added, protected-lane streets drew more women per day (150) than painted-lane streets did (100).",
+   "women's share of cyclists fell on painted-lane streets while it rose on protected-lane streets."
+  ],
+  "answer": "B",
+  "explanation": "The hypothesis is about a proportion, women as a share of all cyclists, and it contrasts protected lanes with painted ones. On protected-lane streets the share went from 60/300 = 20% to 150/500 = 30%. On painted-lane streets it went from 50/250 = 20% to 100/500 = 20%, so it didn't change.",
+  "distractors": {
+   "A": {
+    "misconception": "off-focus",
+    "why": "You used raw counts where the claim needs a share. Men's counts rose too, and the passage warns that any new lane draws more riders. A rise in the number of women alone can't show that their proportion grew."
+   },
+   "C": {
+    "misconception": "off-focus",
+    "why": "This compares raw counts across two different streets after the change. It ignores both the share and the before-and-after change that the hypothesis is about."
+   },
+   "D": {
+    "misconception": "contradicts-text",
+    "why": "The protected-lane half is right, but on painted-lane streets women were 20% of cyclists both before and after. Their share didn't fall. Check every part of a choice, not just the first half that matches."
+   }
+  },
+  "id": "orig-data-tests-hyp-X-2b420d",
+  "skill_cd": "COE",
+  "subtype": "data-tests-hypothesis",
+  "subtype_name": "Use a multi-variable graph or table to support or weaken a researcher's claim",
+  "difficulty": "X",
+  "section": "rw",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-data-tests-hyp-X-2b420d",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which choice best describes data from the graph that support the researchers' conclusion?",
+  "stimulus": "Habitual caffeine users often gain less from a pre-race dose of caffeine than people who rarely consume it. Some scientists attribute this to tolerance, which should fade with abstinence. Others suspect that habitual users simply differ from nonusers in some lasting way. Runners completed a 3 km time trial after taking caffeine and, on another day, after taking a placebo. Habitual users were tested twice: once on their usual routine and again after seven days without caffeine. The researchers concluded that tolerance, not a lasting difference, explains the smaller benefit.",
+  "figure": {
+   "type": "bar",
+   "caption": "Average 3 km Time-Trial Times",
+   "x_label": "Group and trial",
+   "y_label": "Time (seconds)",
+   "categories": [
+    "Nonusers: placebo",
+    "Nonusers: caffeine",
+    "Habitual, usual routine: placebo",
+    "Habitual, usual routine: caffeine",
+    "Habitual, after abstaining: placebo",
+    "Habitual, after abstaining: caffeine"
+   ],
+   "values": [
+    660,
+    648,
+    640,
+    636,
+    652,
+    640
+   ],
+   "y_min": 600,
+   "y_max": 680,
+   "y_step": 4,
+   "alt": "Bar graph of average 3 km times: nonusers 660 s with placebo and 648 s with caffeine; habitual users on their usual routine 640 s with placebo and 636 s with caffeine; habitual users after abstaining 652 s with placebo and 640 s with caffeine."
+  },
+  "choices": [
+   "On their usual routine, habitual users ran 4 seconds faster with caffeine than with placebo, while nonusers ran 12 seconds faster.",
+   "After abstaining, habitual users ran 12 seconds faster with caffeine than with placebo, the same gain that nonusers showed.",
+   "After abstaining, habitual users' caffeine time (640 seconds) was slower than their caffeine time on their usual routine (636 seconds).",
+   "After abstaining, habitual users gained less from caffeine than they had gained on their usual routine."
+  ],
+  "answer": "B",
+  "explanation": "The benefit is each group's placebo time minus its caffeine time, so you have to compute it rather than read single bars. The conclusion picks tolerance over a lasting difference, so the evidence must show that abstinence brings the benefit back. After abstaining, habitual users gained 652 \u2212 640 = 12 seconds, which matches nonusers' 660 \u2212 648 = 12. If habitual users differed in some lasting way, the gap would have stayed.",
+  "distractors": {
+   "A": {
+    "misconception": "off-focus",
+    "why": "You computed the benefits correctly, but this only confirms what the passage already accepts: habitual users gain less. Both explanations predict that, so it can't separate tolerance from a lasting difference."
+   },
+   "C": {
+    "misconception": "off-focus",
+    "why": "This compares raw caffeine-trial times across two test periods. It ignores the placebo baseline, which also moved, so it says nothing about how much caffeine helped."
+   },
+   "D": {
+    "misconception": "contradicts-text",
+    "why": "After abstaining, the benefit was 12 seconds. On the usual routine it was 4 seconds. The gain grew rather than shrank."
+   }
+  },
+  "id": "orig-data-tests-hyp-X-32a5a5",
+  "skill_cd": "COE",
+  "subtype": "data-tests-hypothesis",
+  "subtype_name": "Use a multi-variable graph or table to support or weaken a researcher's claim",
+  "difficulty": "X",
+  "section": "rw",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-data-tests-hyp-X-32a5a5",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which choice best describes data from the table that support the folklorist's hypothesis?",
+  "stimulus": "In one region, a common folktale ends in one of two ways: the trickster either escapes or is punished. From about 1850, local presses printed cheap chapbook versions of the tale, nearly all with the punishment ending. A folklorist hypothesizes that this ending spread mainly through the chapbooks rather than by word of mouth. If so, tellers who could read should favor it over tellers who could not, but only in towns where chapbooks were printed and sold.\n\nRecorded Versions Ending in Punishment (%)\nTown | Tellers who could read | Tellers who could not read\nWith a print shop | 70 | 35\nWithout a print shop | 30 | 28",
+  "choices": [
+   "In both kinds of towns, tellers who could read used the punishment ending more often than tellers who could not.",
+   "Tellers who could not read used the punishment ending more often in print-shop towns than in other towns.",
+   "Readers used the ending 35 points more often than nonreaders in print-shop towns but only 2 points more often elsewhere.",
+   "In towns without a print shop, tellers who could not read used the punishment ending more often than readers did."
+  ],
+  "answer": "C",
+  "explanation": "The prediction is about a gap between readers and nonreaders, and that gap should appear only where chapbooks circulated. So you compare the reader\u2013nonreader difference in each row. It is large in print-shop towns (70 \u2212 35 = 35 points) and almost nothing in other towns (30 \u2212 28 = 2 points).",
+  "distractors": {
+   "A": {
+    "misconception": "off-focus",
+    "why": "This is technically true, but it skips the word 'only'. The hypothesis needs the reading advantage to be confined to print-shop towns. Saying it appears in both kinds of town points away from that."
+   },
+   "B": {
+    "misconception": "off-focus",
+    "why": "This compares nonreaders across towns, which tracks the town, not the ability to read. If anything, more use of the ending among people who couldn't read hints at word of mouth, the route the hypothesis plays down."
+   },
+   "D": {
+    "misconception": "contradicts-text",
+    "why": "In towns without a print shop, readers used the ending 30% of the time and nonreaders 28%, so readers were still slightly ahead. This choice reverses that."
+   }
+  },
+  "id": "orig-data-tests-hyp-X-f07730",
+  "skill_cd": "COE",
+  "subtype": "data-tests-hypothesis",
+  "subtype_name": "Use a multi-variable graph or table to support or weaken a researcher's claim",
+  "difficulty": "X",
+  "section": "rw",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-data-tests-hyp-X-f07730",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "Which choice best describes data from the graph that support the immunologists' hypothesis?",
+  "stimulus": "Older mice produce far fewer antibodies after vaccination than young mice do. Immunologists tested an adjuvant, an additive meant to strengthen the immune response, by vaccinating young and old mice with and without it. Because old mice start from such a low level, the team measured the age deficit as young mice's antibody level divided by old mice's, rather than as the difference between them. They hypothesized that the adjuvant shrinks the age deficit by this measure.",
+  "figure": {
+   "type": "bar",
+   "caption": "Antibody Levels After Vaccination",
+   "x_label": "Mice and vaccine",
+   "y_label": "Antibody level (units)",
+   "categories": [
+    "Young, no adjuvant",
+    "Old, no adjuvant",
+    "Young, adjuvant",
+    "Old, adjuvant"
+   ],
+   "values": [
+    800,
+    200,
+    1200,
+    600
+   ],
+   "y_min": 0,
+   "y_max": 1400,
+   "y_step": 200,
+   "alt": "Bar graph of antibody levels: young mice without adjuvant 800 units, old mice without adjuvant 200 units, young mice with adjuvant 1,200 units, old mice with adjuvant 600 units."
+  },
+  "choices": [
+   "Young mice's antibody levels were four times old mice's without the adjuvant but only twice old mice's with it.",
+   "The adjuvant raised antibody levels by 400 units in young mice and by the same 400 units in old mice.",
+   "Old mice given the adjuvant still had lower antibody levels than young mice given no adjuvant.",
+   "The adjuvant multiplied young mice's antibody levels by a larger factor than it multiplied old mice's."
+  ],
+  "answer": "A",
+  "explanation": "The passage defines the deficit as a ratio: young level divided by old level. Without the adjuvant it is 800/200 = 4. With the adjuvant it is 1,200/600 = 2. The deficit halves, so it shrinks just as the hypothesis predicts.",
+  "distractors": {
+   "B": {
+    "misconception": "off-focus",
+    "why": "Both gains really are 400 units, but that is the difference measure the team set aside. On differences the adjuvant looks equally helpful at both ages, so you'd miss that the ratio deficit shrank."
+   },
+   "C": {
+    "misconception": "off-focus",
+    "why": "This is accurate, but it compares old mice with the adjuvant to young mice without it. That pairing doesn't show the deficit within either vaccine condition, so it can't show the deficit changing."
+   },
+   "D": {
+    "misconception": "contradicts-text",
+    "why": "The adjuvant multiplied young mice's levels by 1.5 (800 to 1,200) and old mice's by 3 (200 to 600). Old mice got the larger factor, so this has it reversed."
+   }
+  },
+  "id": "orig-data-tests-hyp-X-c28924",
+  "skill_cd": "COE",
+  "subtype": "data-tests-hypothesis",
+  "subtype_name": "Use a multi-variable graph or table to support or weaken a researcher's claim",
+  "difficulty": "X",
+  "section": "rw",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-data-tests-hyp-X-c28924",
+   "structure": [],
+   "solver_answer": "A",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

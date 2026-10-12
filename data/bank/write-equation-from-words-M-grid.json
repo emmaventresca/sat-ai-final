@@ -201,5 +201,480 @@
    "residue": 2
   },
   "phrasing": "direct"
+ },
+ {
+  "stem": "The equation $ax + by = 6$ represents this situation, where $x$ is the number of leaf impressions and $y$ is the number of pollen slides she processes. What is the value of $a$?",
+  "stimulus": "A paleobotanist has 6 hours to process fossil samples. Each leaf impression takes 4 minutes to photograph, and each pollen slide takes 7 minutes to scan.",
+  "keys": [
+   "1/15",
+   ".0666",
+   ".0667",
+   "0.0666",
+   "0.0667"
+  ],
+  "any_of": false,
+  "explanation": "The total, 6, is in hours, so every term on the left must also be in hours. Pair each time with the variable that counts that item. The leaf impressions are counted by $x$, and each one takes 4 minutes, which is $\\frac{4}{60} = \\frac{1}{15}$ hour. Each pollen slide takes $\\frac{7}{60}$ hour, so the equation is $\\frac{1}{15}x + \\frac{7}{60}y = 6$. The coefficient on $x$ is $a = \\frac{1}{15}$.",
+  "common_errors": [
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "Used the leaf time in minutes without converting it to hours, even though the total of 6 is in hours."
+   },
+   {
+    "value": "7/60",
+    "misconception": "wrong-target-quantity",
+    "why": "Converted correctly but gave the coefficient for the pollen slides ($b$), not the coefficient on $x$."
+   },
+   {
+    "value": "7",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the pollen-slide time in minutes: the coefficients were swapped and the time was never converted."
+   },
+   {
+    "value": "15",
+    "misconception": "algebra-manipulation",
+    "why": "Turned the conversion upside down, dividing 60 by 4 instead of 4 by 60."
+   }
+  ],
+  "id": "orig-write-equation-M-9fdbb7",
+  "skill_cd": "H.C.",
+  "subtype": "write-equation-from-words",
+  "subtype_name": "Translate the story into an equation",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-write-equation-M-9fdbb7",
+   "structure": [],
+   "solver_answer": "1/15",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": "4",
+   "problem": "The problem requires unit conversion that isn't explicitly prompted: times are stated in minutes (4 and 7) but the constraint is given in hours (6), and the equation uses 6. Students must convert to get (1/15)x + (7/60)y = 6 and thus a = 1/15, but many may incorrectly write 4x + 7y = 6 and answer a = 4 by overlooking the unit mismatch.",
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $ax + by = 495$ represents this situation, where $x$ is the number of folktales and $y$ is the number of ballads she transcribed. What is the value of $a$?",
+  "stimulus": "A folklore archive pays a transcriber $\\$9$ for each ballad and $\\$0.75$ per minute of recording for each folktale. Every folktale recording is 20 minutes long. Last month she earned $\\$495$.",
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "First, work out the pay per folktale: 20 minutes at $\\$0.75$ per minute is $20(0.75) = \\$15$. Then pair each rate with the variable that counts that item. Folktales are counted by $x$, so they get 15, and ballads are counted by $y$, so they get 9. That gives $15x + 9y = 495$, so $a = 15$.",
+  "common_errors": [
+   {
+    "value": "9",
+    "misconception": "wrong-target-quantity",
+    "why": "Swapped the coefficients and put the ballad rate on $x$."
+   },
+   {
+    "value": "0.75",
+    "misconception": "intermediate-step",
+    "why": "Used the per-minute rate without multiplying by the 20 minutes in each folktale."
+   },
+   {
+    "value": "20",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the length of a folktale in minutes instead of the pay per folktale."
+   }
+  ],
+  "id": "orig-write-equation-M-d8a6b4",
+  "skill_cd": "H.C.",
+  "subtype": "write-equation-from-words",
+  "subtype_name": "Translate the story into an equation",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-write-equation-M-d8a6b4",
+   "structure": [],
+   "solver_answer": "15",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $x$ and $y$ are last year's counts of Quechua and Aymara recordings, respectively, the equation $ax + by = 520$ represents this situation. What is the value of $a$?",
+  "stimulus": "A linguistics lab is building a library of recorded speech. From last year to this year, its number of Quechua recordings increased by $20\\%$ and its number of Aymara recordings increased by $5\\%$. This year the lab has 520 recordings in these two languages combined.",
+  "keys": [
+   "1.2",
+   "6/5"
+  ],
+  "any_of": false,
+  "explanation": "This year's Quechua count is last year's count plus $20\\%$ of it, which is $x + 0.2x = 1.2x$. In the same way, this year's Aymara count is $1.05y$. Add the two parts and set the sum equal to this year's total: $1.2x + 1.05y = 520$. So $a = 1.2$.",
+  "common_errors": [
+   {
+    "value": "0.2",
+    "misconception": "algebra-manipulation",
+    "why": "Used the percent increase itself as the coefficient instead of the growth factor $1 + 0.2$."
+   },
+   {
+    "value": "20",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote the percent as a whole number instead of turning it into a growth factor."
+   },
+   {
+    "value": "1.05",
+    "misconception": "wrong-target-quantity",
+    "why": "Swapped the coefficients and put the Aymara growth factor on $x$."
+   },
+   {
+    "value": "0.8",
+    "misconception": "algebra-manipulation",
+    "why": "Treated the increase as a decrease and used $1 - 0.2$."
+   }
+  ],
+  "id": "orig-write-equation-M-7e2835",
+  "skill_cd": "H.C.",
+  "subtype": "write-equation-from-words",
+  "subtype_name": "Translate the story into an equation",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-write-equation-M-7e2835",
+   "structure": [],
+   "solver_answer": "1.2",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $x$ is the number of spectra and $y$ is the number of images, the equation $15x + 6y = c$ represents this situation. What is the value of $c$?",
+  "stimulus": "An astronomer has 10 hours of telescope time. Each spectrum she records uses 15 minutes, and each image uses 6 minutes. After recording $x$ spectra and $y$ images, she still has 90 minutes of telescope time left.",
+  "keys": [
+   "510"
+  ],
+  "any_of": false,
+  "explanation": "The coefficients 15 and 6 are in minutes, so $c$ must also be in minutes. The full allotment is $10 \\times 60 = 600$ minutes. The time used is everything except the 90 minutes left: $600 - 90 = 510$. So $15x + 6y = 510$, and $c = 510$.",
+  "common_errors": [
+   {
+    "value": "600",
+    "misconception": "missed-condition",
+    "why": "Set the time used equal to the full allotment and ignored the 90 minutes left over."
+   },
+   {
+    "value": "690",
+    "misconception": "algebra-manipulation",
+    "why": "Added the leftover 90 minutes instead of subtracting it."
+   },
+   {
+    "value": "8.5",
+    "misconception": "algebra-manipulation",
+    "why": "Subtracted 1.5 hours from 10 hours but never converted to minutes to match the coefficients."
+   },
+   {
+    "value": "90",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the time left over instead of the time used."
+   }
+  ],
+  "id": "orig-write-equation-M-db7fe9",
+  "skill_cd": "H.C.",
+  "subtype": "write-equation-from-words",
+  "subtype_name": "Translate the story into an equation",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-write-equation-M-db7fe9",
+   "structure": [],
+   "solver_answer": "510",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $ax + by = 840$ represents this situation, where $x$ is the number of linocut prints and $y$ is the number of woodcut prints sold. What is the value of $b$?",
+  "stimulus": "At a fair, a printmaker sold linocut prints for $\\$18$ each. She also sold woodcut prints, which have a list price of $\\$40$ each, at $25\\%$ off. Her total sales were $\\$840$.",
+  "keys": [
+   "30"
+  ],
+  "any_of": false,
+  "explanation": "Each woodcut sold for $25\\%$ off $\\$40$, so its price was $40(1 - 0.25) = \\$30$. Woodcuts are counted by $y$, so $y$ gets 30, and linocuts are counted by $x$, so $x$ gets 18. That gives $18x + 30y = 840$, so $b = 30$.",
+  "common_errors": [
+   {
+    "value": "18",
+    "misconception": "wrong-target-quantity",
+    "why": "Swapped the coefficients and gave the linocut price as the coefficient on $y$."
+   },
+   {
+    "value": "40",
+    "misconception": "missed-condition",
+    "why": "Used the woodcut list price and ignored the $25\\%$ discount."
+   },
+   {
+    "value": "10",
+    "misconception": "intermediate-step",
+    "why": "Gave the discount amount ($25\\%$ of 40) instead of the sale price."
+   },
+   {
+    "value": "50",
+    "misconception": "algebra-manipulation",
+    "why": "Added the $25\\%$ to the list price instead of taking it off."
+   }
+  ],
+  "id": "orig-write-equation-M-fd2f70",
+  "skill_cd": "H.C.",
+  "subtype": "write-equation-from-words",
+  "subtype_name": "Translate the story into an equation",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-write-equation-M-fd2f70",
+   "structure": [],
+   "solver_answer": "30",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $15x + by = 2400$ represents this situation, where the total mass is measured in grams. What is the value of $b$?",
+  "stimulus": "A paleobotanist packs fossil fragments into a crate for shipping. Each fern fragment has a mass of 15 grams, and each cycad fragment has a mass of 0.04 kilograms. The crate holds $x$ fern fragments and $y$ cycad fragments, with a total mass of 2.4 kilograms.",
+  "keys": [
+   "40"
+  ],
+  "any_of": false,
+  "explanation": "First match each mass to the variable that counts it. The 15 is on $x$, so $x$ counts fern fragments and $b$ has to be the mass of one cycad fragment. The total of 2400 tells you the equation works in grams, so convert the cycad mass: $0.04 \\text{ kg} = 0.04 \\times 1000 = 40$ grams. The equation is $15x + 40y = 2400$, so $b = 40$.",
+  "common_errors": [
+   {
+    "value": "0.04",
+    "misconception": "algebra-manipulation",
+    "why": "Used the cycad mass in kilograms and never converted it to grams to match the 2400-gram total."
+   },
+   {
+    "value": "15",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the fern coefficient, which belongs on $x$, instead of the coefficient on $y$."
+   },
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "Converted kilograms to grams by multiplying by 100 instead of 1000."
+   }
+  ],
+  "id": "orig-write-equation-M-29fd33",
+  "skill_cd": "H.C.",
+  "subtype": "write-equation-from-words",
+  "subtype_name": "Translate the story into an equation",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-write-equation-M-29fd33",
+   "structure": [],
+   "solver_answer": "40",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $2x + ky = 64$ represents this situation. What is the value of $k$?",
+  "stimulus": "During a storm, a weather station's rain gauge collected rain at a rate of 2 millimeters per hour for $x$ hours of drizzle and 0.25 millimeters per minute for $y$ hours of downpour. In total, the gauge collected 64 millimeters of rain.",
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "$x$ and $y$ are both counted in hours, so each coefficient has to be a rate in millimeters per hour. The drizzle rate is already 2 mm per hour, and that 2 sits on $x$. The downpour rate is given per minute, so multiply by 60: $0.25 \\times 60 = 15$ mm per hour. Each rate times its hours gives a depth of rain, and the two depths add up to 64: $2x + 15y = 64$. So $k = 15$.",
+  "common_errors": [
+   {
+    "value": "0.25",
+    "misconception": "algebra-manipulation",
+    "why": "Used the per-minute rate even though $y$ counts hours."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the drizzle rate, which belongs on $x$, instead of the coefficient on $y$."
+   },
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "Inverted the rate ($1 \\div 0.25$) instead of converting minutes to hours."
+   },
+   {
+    "value": "240",
+    "misconception": "algebra-manipulation",
+    "why": "Divided by the rate instead of multiplying the time conversion through ($60 \\div 0.25$)."
+   }
+  ],
+  "id": "orig-write-equation-M-776861",
+  "skill_cd": "H.C.",
+  "subtype": "write-equation-from-words",
+  "subtype_name": "Translate the story into an equation",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-write-equation-M-776861",
+   "structure": [],
+   "solver_answer": "15",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $1.2x + by = 870$ represents this situation. What is the value of $b$?",
+  "stimulus": "Last year a public health clinic gave $x$ flu vaccinations to adults and $y$ flu vaccinations to children. This year the number of adult vaccinations went up by 20% and the number of child vaccinations went up by 5%. The clinic gave 870 vaccinations this year.",
+  "keys": [
+   "1.05",
+   "21/20"
+  ],
+  "any_of": false,
+  "explanation": "This year's count for each group is last year's count times a growth factor. A 20% increase makes the adult count $1.2x$, and that is why 1.2 sits on $x$. A 5% increase makes the child count $(1 + 0.05)y = 1.05y$. Add the two new counts and set the sum equal to this year's total: $1.2x + 1.05y = 870$. So $b = 1.05$.",
+  "common_errors": [
+   {
+    "value": "0.05",
+    "misconception": "algebra-manipulation",
+    "why": "Used the percent increase as the coefficient instead of the growth factor $1 + 0.05$."
+   },
+   {
+    "value": "5",
+    "misconception": "algebra-manipulation",
+    "why": "Wrote the percent as a whole number and left out the original count."
+   },
+   {
+    "value": "1.5",
+    "misconception": "algebra-manipulation",
+    "why": "Turned 5% into 0.5 before adding 1."
+   },
+   {
+    "value": "1.2",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the adult growth factor, which belongs on $x$, instead of the coefficient on $y$."
+   }
+  ],
+  "id": "orig-write-equation-M-96db01",
+  "skill_cd": "H.C.",
+  "subtype": "write-equation-from-words",
+  "subtype_name": "Translate the story into an equation",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-write-equation-M-96db01",
+   "structure": [],
+   "solver_answer": "1.05",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The equation $8x + 3y = c$ represents this situation, where $c$ is the total recording time in minutes. What is the value of $c$?",
+  "stimulus": "A folklore researcher recorded $x$ spoken legends and $y$ work songs in a village. Each legend recording lasts 8 minutes and each song recording lasts 3 minutes. Together the recordings last exactly 6 hours.",
+  "keys": [
+   "360"
+  ],
+  "any_of": false,
+  "explanation": "Each length is paired with the variable that counts it: $8x$ minutes of legends and $3y$ minutes of songs. Their sum is the whole recording time, so it goes alone on the other side. The coefficients are in minutes, so the total has to be in minutes as well: $6 \\times 60 = 360$. The equation is $8x + 3y = 360$, so $c = 360$.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Left the total in hours while the coefficients are in minutes."
+   },
+   {
+    "value": "48",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the total by a per-item length ($8 \\times 6$) instead of converting hours to minutes."
+   },
+   {
+    "value": "66",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the total by the sum of the lengths ($11 \\times 6$)."
+   },
+   {
+    "value": "18",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied the total by the song length ($3 \\times 6$)."
+   }
+  ],
+  "id": "orig-write-equation-M-040b73",
+  "skill_cd": "H.C.",
+  "subtype": "write-equation-from-words",
+  "subtype_name": "Translate the story into an equation",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-write-equation-M-040b73",
+   "structure": [],
+   "solver_answer": "360",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "represents this situation where __var__ is the total"
+   ],
+   "residue": 1
+  }
  }
 ]

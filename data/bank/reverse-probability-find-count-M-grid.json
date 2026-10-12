@@ -1,0 +1,800 @@
+[
+ {
+  "stem": "A seed is chosen at random from the coated seeds. The probability that it did not germinate is $0.3$. What is the value of $x$?",
+  "stimulus": "An agricultural scientist tested whether a clay coating affects how many seeds of a drought-tolerant sorghum variety germinate. The results are shown in the table.\n\nSeed Germination Results\nTreatment | Germinated | Did not germinate\nCoated | 84 | $x$\nUncoated | 66 | 34",
+  "keys": [
+   "36"
+  ],
+  "any_of": false,
+  "explanation": "The words \"chosen at random from the coated seeds\" mean only the Coated row counts. That row's total is $84 + x$, and $x$ of those seeds did not germinate. Set up $\\frac{x}{84 + x} = 0.3$. Cross-multiply to get $x = 0.3(84 + x) = 25.2 + 0.3x$, so $0.7x = 25.2$ and $x = 36$. Check: $\\frac{36}{120} = 0.3$.",
+  "common_errors": [
+   {
+    "value": "25.2",
+    "misconception": "algebra-manipulation",
+    "why": "You used 84 alone as the denominator, $x = 0.3 \\times 84$, and forgot that $x$ is also part of the Coated row's total."
+   },
+   {
+    "value": "78.857",
+    "misconception": "missed-condition",
+    "why": "You ignored \"from the coated seeds\" and used the whole table as the denominator, $\\frac{x}{184 + x} = 0.3$."
+   },
+   {
+    "value": "120",
+    "misconception": "intermediate-step",
+    "why": "You found the Coated row's total, $84 + 36$, and reported that instead of $x$."
+   }
+  ],
+  "id": "orig-reverse-probab-M-95f606",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-95f606",
+   "structure": [],
+   "solver_answer": 36,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many of the planets in the catalog are ice giants?",
+  "stimulus": "Each of the 250 planets in an astronomer's catalog is classified as exactly one of three types: gas giant, rocky, or ice giant. If a planet is chosen at random from the catalog, the probability that it is a gas giant is $0.44$, and the probability that it is rocky is $0.32$.",
+  "keys": [
+   "60"
+  ],
+  "any_of": false,
+  "explanation": "Each type gets the probability times the total. Gas giants: $0.44 \\times 250 = 110$. Rocky planets: $0.32 \\times 250 = 80$. Every planet is one of the three types, so the ice giants are the rest: $250 - 110 - 80 = 60$. A quicker route is to take the leftover probability, $1 - 0.44 - 0.32 = 0.24$, and multiply: $0.24 \\times 250 = 60$.",
+  "common_errors": [
+   {
+    "value": "110",
+    "misconception": "wrong-target-quantity",
+    "why": "You stopped at the count of gas giants, the group the first probability describes, instead of finding the leftover group."
+   },
+   {
+    "value": "80",
+    "misconception": "wrong-target-quantity",
+    "why": "You reported the number of rocky planets."
+   },
+   {
+    "value": "190",
+    "misconception": "intermediate-step",
+    "why": "You added the gas giants and rocky planets and forgot to subtract that sum from 250."
+   },
+   {
+    "value": "0.24",
+    "misconception": "wrong-target-quantity",
+    "why": "You gave the probability of an ice giant instead of the number of ice giants."
+   }
+  ],
+  "id": "orig-reverse-probab-M-184481",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-184481",
+   "structure": [],
+   "solver_answer": 60,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A word is chosen at random from the words of Latin origin. The probability that it entered English in the medieval period is $\\frac{3}{8}$. What is the value of $x$?",
+  "stimulus": "A linguist sorted a sample of English loanwords by the language they came from and when they entered English.\n\nLoanwords by Origin and Period of Entry\nOrigin | Medieval | Modern\nLatin | $x$ | 45\nGreek | 18 | 22",
+  "keys": [
+   "27"
+  ],
+  "any_of": false,
+  "explanation": "\"Chosen from the words of Latin origin\" means the Latin row is the whole set. That row's total is $x + 45$. Set up $\\frac{x}{x + 45} = \\frac{3}{8}$. Cross-multiply: $8x = 3x + 135$, so $5x = 135$ and $x = 27$. Check: $\\frac{27}{72} = \\frac{3}{8}$.",
+  "common_errors": [
+   {
+    "value": "16.875",
+    "misconception": "algebra-manipulation",
+    "why": "You computed $\\frac{3}{8} \\times 45$. That uses 45 as the whole, but the Latin total also includes $x$."
+   },
+   {
+    "value": "51",
+    "misconception": "missed-condition",
+    "why": "You ignored the Latin-only condition and used the whole table, $\\frac{x}{x + 85} = \\frac{3}{8}$."
+   },
+   {
+    "value": "72",
+    "misconception": "intermediate-step",
+    "why": "You reported the total number of Latin words, $27 + 45$, instead of $x$."
+   }
+  ],
+  "id": "orig-reverse-probab-M-77d45e",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-77d45e",
+   "structure": [],
+   "solver_answer": 27,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A fossil is chosen at random from the conifer fossils. The probability that it came from Site B is $0.4$. What is the value of $p$?",
+  "stimulus": "A paleobotanist recorded the plant fossils found at two excavation sites.\n\nPlant Fossils by Site\nSite | Fern | Conifer\nSite A | 28 | 42\nSite B | 12 | $p$",
+  "keys": [
+   "28"
+  ],
+  "any_of": false,
+  "explanation": "The fossil comes from the conifers, so the Conifer column is the whole set. Its total is $42 + p$, and $p$ of those fossils are from Site B. Set up $\\frac{p}{42 + p} = 0.4$. Then $p = 16.8 + 0.4p$, so $0.6p = 16.8$ and $p = 28$. Check: $\\frac{28}{70} = 0.4$.",
+  "common_errors": [
+   {
+    "value": "8",
+    "misconception": "complement-or-direction-flip",
+    "why": "You reversed the condition and used the Site B row as the denominator, $\\frac{p}{12 + p} = 0.4$, which answers \"of the Site B fossils, what fraction are conifers.\""
+   },
+   {
+    "value": "16.8",
+    "misconception": "algebra-manipulation",
+    "why": "You computed $0.4 \\times 42$ and forgot that $p$ also belongs in the Conifer column's total."
+   },
+   {
+    "value": "54.667",
+    "misconception": "missed-condition",
+    "why": "You used the whole table as the denominator, $\\frac{p}{82 + p} = 0.4$, and ignored the conifer-only condition."
+   }
+  ],
+  "id": "orig-reverse-probab-M-e1fb16",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-e1fb16",
+   "structure": [],
+   "solver_answer": 28,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If 81 of the permits are industrial, how many of the permits are residential?",
+  "stimulus": "Every building permit a city planning office issued last year was classified as residential, commercial, or industrial. If a permit is chosen at random, the probability that it is residential is $0.55$, and the probability that it is commercial is $0.30$.",
+  "keys": [
+   "297"
+  ],
+  "any_of": false,
+  "explanation": "The three probabilities add to 1, so the probability of an industrial permit is $1 - 0.55 - 0.30 = 0.15$. Those 81 industrial permits are $0.15$ of the total, so $0.15T = 81$ and $T = 540$ permits. The residential permits are $0.55 \\times 540 = 297$.",
+  "common_errors": [
+   {
+    "value": "540",
+    "misconception": "intermediate-step",
+    "why": "You found the total number of permits and stopped there."
+   },
+   {
+    "value": "162",
+    "misconception": "wrong-target-quantity",
+    "why": "You found the number of commercial permits, $0.30 \\times 540$."
+   },
+   {
+    "value": "459",
+    "misconception": "wrong-target-quantity",
+    "why": "You found residential and commercial together, $0.85 \\times 540$, instead of residential alone."
+   },
+   {
+    "value": "44.55",
+    "misconception": "algebra-manipulation",
+    "why": "You multiplied $0.55 \\times 81$ as if 81 were the total number of permits."
+   }
+  ],
+  "id": "orig-reverse-probab-M-ad3d91",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-ad3d91",
+   "structure": [],
+   "solver_answer": 297,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "A participant is chosen at random from those who became infected. The probability that the participant was in the vaccinated group is $\\frac{1}{5}$. What is the value of $x$?",
+  "stimulus": "Researchers tracked infections among participants in a vaccine trial.\n\nInfection Outcomes by Trial Group\nGroup | Infected | Not infected\nVaccinated | $x$ | 388\nPlacebo | 48 | 352",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "\"Chosen from those who became infected\" makes the Infected column the whole set. Its total is $x + 48$. Set up $\\frac{x}{x + 48} = \\frac{1}{5}$. Cross-multiply: $5x = x + 48$, so $4x = 48$ and $x = 12$. Check: $\\frac{12}{60} = \\frac{1}{5}$.",
+  "common_errors": [
+   {
+    "value": "97",
+    "misconception": "complement-or-direction-flip",
+    "why": "You used the Vaccinated row as the denominator, $\\frac{x}{x + 388} = \\frac{1}{5}$, which reverses the condition."
+   },
+   {
+    "value": "9.6",
+    "misconception": "algebra-manipulation",
+    "why": "You computed $\\frac{1}{5} \\times 48$ and forgot that $x$ is also part of the Infected column's total."
+   },
+   {
+    "value": "197",
+    "misconception": "missed-condition",
+    "why": "You used the whole table as the denominator, $\\frac{x}{x + 788} = \\frac{1}{5}$."
+   },
+   {
+    "value": "60",
+    "misconception": "intermediate-step",
+    "why": "You reported the total number of infected participants, $12 + 48$."
+   }
+  ],
+  "id": "orig-reverse-probab-M-0f8c9f",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-0f8c9f",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many of the textiles are silk?",
+  "stimulus": "A museum's collection of 96 eighteenth-century textiles contains only wool, linen, and silk pieces. If a textile is chosen at random from the collection, the probability that it is wool is $0.375$, and the probability that it is linen is $\\frac{1}{6}$.",
+  "keys": [
+   "44"
+  ],
+  "any_of": false,
+  "explanation": "Wool: $0.375 \\times 96 = 36$. Linen: $\\frac{1}{6} \\times 96 = 16$. Every piece is wool, linen, or silk, so the silk pieces are the rest: $96 - 36 - 16 = 44$.",
+  "common_errors": [
+   {
+    "value": "36",
+    "misconception": "wrong-target-quantity",
+    "why": "You stopped at the count of wool pieces, the group the first probability describes."
+   },
+   {
+    "value": "16",
+    "misconception": "wrong-target-quantity",
+    "why": "You reported the number of linen pieces."
+   },
+   {
+    "value": "52",
+    "misconception": "intermediate-step",
+    "why": "You added wool and linen and didn't subtract that sum from 96."
+   },
+   {
+    "value": "60",
+    "misconception": "algebra-manipulation",
+    "why": "You subtracted only the wool pieces, $96 - 36$, and forgot to subtract the linen pieces too."
+   }
+  ],
+  "id": "orig-reverse-probab-M-0b034d",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-0b034d",
+   "structure": [],
+   "solver_answer": 44,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "An earthquake is chosen at random from all the earthquakes recorded at the two stations. The probability that it was recorded at the North station with a magnitude of 4 or above is $\\frac{1}{10}$. What is the value of $x$?",
+  "stimulus": "A seismology lab counted the earthquakes recorded at two monitoring stations over one year.\n\nRecorded Earthquakes by Station and Magnitude\nStation | Below 4 | 4 or above\nNorth | 54 | $x$\nSouth | 82 | 26",
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "This time the earthquake is chosen from all the recorded earthquakes, so the denominator is the whole table: $54 + x + 82 + 26 = 162 + x$. Set up $\\frac{x}{162 + x} = \\frac{1}{10}$. Cross-multiply: $10x = 162 + x$, so $9x = 162$ and $x = 18$. In Desmos, you can graph $y = \\frac{x}{162 + x}$ and $y = 0.1$ and read off where they cross. Check: $\\frac{18}{180} = \\frac{1}{10}$.",
+  "common_errors": [
+   {
+    "value": "6",
+    "misconception": "missed-condition",
+    "why": "You used only the North row as the denominator, $\\frac{x}{54 + x} = \\frac{1}{10}$, but the earthquake is chosen from the whole table."
+   },
+   {
+    "value": "16.2",
+    "misconception": "algebra-manipulation",
+    "why": "You computed $\\frac{1}{10} \\times 162$ and forgot that $x$ is also part of the table's total."
+   },
+   {
+    "value": "180",
+    "misconception": "intermediate-step",
+    "why": "You reported the grand total, $162 + 18$, instead of $x$."
+   }
+  ],
+  "id": "orig-reverse-probab-M-a66c12",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-a66c12",
+   "structure": [],
+   "solver_answer": 18,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If a part-time worker from the survey is selected at random, the probability that the worker is a union member is $\\frac{1}{4}$. What is the value of $x$?",
+  "stimulus": "A labor researcher surveyed workers at a regional distribution center about union membership and work schedule. The table shows the results.\n\nWorkers by Union Membership and Schedule\nMembership | Full-time | Part-time\nUnion member | 48 | $x$\nNot a union member | 72 | 60",
+  "keys": [
+   "20"
+  ],
+  "any_of": false,
+  "explanation": "The words 'a part-time worker... is selected' tell you which group is the whole: only the Part-time column. That column has $x + 60$ workers, and $x$ of them are union members. So set up $\\frac{x}{x + 60} = \\frac{1}{4}$. $x$ appears in the denominator because the union members are part of the part-time total. Cross-multiply to get $4x = x + 60$, so $3x = 60$ and $x = 20$. Check: $\\frac{20}{80} = \\frac{1}{4}$.",
+  "common_errors": [
+   {
+    "value": "15",
+    "misconception": "algebra-manipulation",
+    "why": "Used only the 60 non-union part-time workers as the denominator and solved $\\frac{x}{60} = \\frac{1}{4}$. That leaves the unknown cell out of its own column total."
+   },
+   {
+    "value": "60",
+    "misconception": "missed-condition",
+    "why": "Ignored the condition that the worker is part-time and divided by the whole table: $\\frac{x}{180 + x} = \\frac{1}{4}$, so $3x = 180$."
+   },
+   {
+    "value": "16",
+    "misconception": "complement-or-direction-flip",
+    "why": "Reversed the condition and used union members as the group: $\\frac{x}{x + 48} = \\frac{1}{4}$, so $3x = 48$."
+   },
+   {
+    "value": "80",
+    "misconception": "intermediate-step",
+    "why": "Solved correctly but reported the part-time total $x + 60 = 80$ instead of $x$."
+   }
+  ],
+  "id": "orig-reverse-probab-M-05655a",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-05655a",
+   "structure": [],
+   "solver_answer": 20,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many of the fossil leaves came from site C?",
+  "stimulus": "A paleobotanist catalogued 240 fossil leaves, each from exactly one of three sites: A, B, or C. If one of these leaves is selected at random, the probability that it came from site A is 0.35, and the probability that it came from site B is 0.40.",
+  "keys": [
+   "60"
+  ],
+  "any_of": false,
+  "explanation": "Each probability is a part over the whole, so multiply it by 240 to get the count. Site A has $0.35 \\times 240 = 84$ leaves and site B has $0.40 \\times 240 = 96$. Together that is $84 + 96 = 180$, which leaves $240 - 180 = 60$ for site C. A quicker way: the probability for site C is $1 - 0.35 - 0.40 = 0.25$, and $0.25 \\times 240 = 60$.",
+  "common_errors": [
+   {
+    "value": "84",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the count for site A, the group the first probability describes, and stopped there."
+   },
+   {
+    "value": "96",
+    "misconception": "wrong-target-quantity",
+    "why": "Found the count for site B instead of site C."
+   },
+   {
+    "value": "180",
+    "misconception": "intermediate-step",
+    "why": "Added sites A and B together but didn't subtract from 240."
+   },
+   {
+    "value": "0.25",
+    "misconception": "wrong-target-quantity",
+    "why": "Gave the probability for site C instead of the number of leaves."
+   }
+  ],
+  "id": "orig-reverse-probab-M-09af4a",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-09af4a",
+   "structure": [],
+   "solver_answer": 60,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "A linguist sorted words from a text by origin and by length.\nWord Counts by Origin and Length\nOrigin | Short | Long\nLatin | $x$ | 18\nGermanic | 42 | 12\nIf a word of Latin origin is selected at random, the probability that it is short is 0.4.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "\"A word of Latin origin\" means you only look at the Latin row, so the denominator is that row's total, $x + 18$. Write $\\frac{x}{x+18} = 0.4$. Multiply both sides by $x + 18$ to get $x = 0.4x + 7.2$, so $0.6x = 7.2$ and $x = 12$. Check: $\\frac{12}{30} = 0.4$.",
+  "common_errors": [
+   {
+    "value": "7.2",
+    "misconception": "algebra-manipulation",
+    "why": "Used $\\frac{x}{18} = 0.4$, leaving the unknown cell out of the row total."
+   },
+   {
+    "value": "48",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the whole table as the denominator: $\\frac{x}{x+72} = 0.4$."
+   },
+   {
+    "value": "30",
+    "misconception": "intermediate-step",
+    "why": "Gave the Latin row total, $x + 18$, instead of $x$."
+   }
+  ],
+  "id": "orig-reverse-probab-M-79e812",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-79e812",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "An observatory recorded the conditions on each night it observed at one of its two domes.\nObserving Nights by Dome and Sky Condition\nCondition | North dome | South dome\nClear | 36 | $x$\nCloudy | 24 | 20\nIf one of the clear nights is selected at random, the probability that it was recorded at the South dome is 0.6.",
+  "keys": [
+   "54"
+  ],
+  "any_of": false,
+  "explanation": "The probability is about clear nights, so the Clear row is the only part of the table that counts. Its total is $36 + x$. Write $\\frac{x}{36+x} = 0.6$. Then $x = 21.6 + 0.6x$, so $0.4x = 21.6$ and $x = 54$. Check: $\\frac{54}{90} = 0.6$.",
+  "common_errors": [
+   {
+    "value": "30",
+    "misconception": "complement-or-direction-flip",
+    "why": "Swapped the condition and used the South dome column as the denominator: $\\frac{x}{x+20} = 0.6$."
+   },
+   {
+    "value": "21.6",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied $0.6 \\times 36$, leaving $x$ out of the row total."
+   },
+   {
+    "value": "90",
+    "misconception": "intermediate-step",
+    "why": "Gave the total number of clear nights instead of $x$."
+   }
+  ],
+  "id": "orig-reverse-probab-M-884d7c",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-884d7c",
+   "structure": [],
+   "solver_answer": 54,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "To the nearest whole number, how many of the 230 prints are expected to be accepted?",
+  "stimulus": "Based on its past press runs, a printmaking studio estimates that the probability a linocut print will be rejected for a smudge is 0.14. The studio plans to pull 230 prints.",
+  "keys": [
+   "198"
+  ],
+  "any_of": false,
+  "explanation": "The question asks about accepted prints, not rejected ones. The probability that a print is accepted is $1 - 0.14 = 0.86$. The expected count is $0.86 \\times 230 = 197.8$, which rounds to 198.",
+  "common_errors": [
+   {
+    "value": "32",
+    "misconception": "complement-or-direction-flip",
+    "why": "Found the expected number of rejected prints, $0.14 \\times 230 = 32.2$, rounded to 32."
+   },
+   {
+    "value": "197.8",
+    "misconception": "missed-condition",
+    "why": "Gave the unrounded product even though the question asks for the nearest whole number."
+   },
+   {
+    "value": "197",
+    "misconception": "algebra-manipulation",
+    "why": "Truncated 197.8 instead of rounding it."
+   }
+  ],
+  "id": "orig-reverse-probab-M-f9150b",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-f9150b",
+   "structure": [],
+   "solver_answer": 198,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "A library's map collection is sorted by how each map was made and when.\nMaps in the Collection\nMethod | Before 1900 | 1900 or later\nHand-drawn | 30 | 16\nPrinted | $x$ | 50\nIf one map is selected at random from the entire collection, the probability that it is a printed map made before 1900 is $\\frac{1}{5}$.",
+  "keys": [
+   "24"
+  ],
+  "any_of": false,
+  "explanation": "The map comes from the entire collection, so the denominator is the grand total, $30 + 16 + 50 + x = 96 + x$. Write $\\frac{x}{96+x} = \\frac{1}{5}$. Cross-multiply to get $5x = 96 + x$, so $4x = 96$ and $x = 24$. Check: $\\frac{24}{120} = \\frac{1}{5}$.",
+  "common_errors": [
+   {
+    "value": "19.2",
+    "misconception": "algebra-manipulation",
+    "why": "Used $\\frac{x}{96} = \\frac{1}{5}$, leaving $x$ out of the grand total."
+   },
+   {
+    "value": "120",
+    "misconception": "intermediate-step",
+    "why": "Gave the total number of maps instead of $x$."
+   },
+   {
+    "value": "7.5",
+    "misconception": "wrong-target-quantity",
+    "why": "Used only the Before 1900 column as the denominator: $\\frac{x}{x+30} = \\frac{1}{5}$."
+   }
+  ],
+  "id": "orig-reverse-probab-M-d790ed",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-d790ed",
+   "structure": [],
+   "solver_answer": 24,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "How many of the vaccinated participants did not develop antibodies?",
+  "stimulus": "In a vaccine trial, 162 of the vaccinated participants developed antibodies. If one vaccinated participant is selected at random, the probability that the participant developed antibodies is 0.9.",
+  "keys": [
+   "18"
+  ],
+  "any_of": false,
+  "explanation": "Here the unknown is the denominator. Let $n$ be the number of vaccinated participants. Then $\\frac{162}{n} = 0.9$, so $n = \\frac{162}{0.9} = 180$. The number who did not develop antibodies is $180 - 162 = 18$.",
+  "common_errors": [
+   {
+    "value": "180",
+    "misconception": "intermediate-step",
+    "why": "Found the total number of vaccinated participants and stopped there."
+   },
+   {
+    "value": "16.2",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied $0.1 \\times 162$ as though 162 were the whole group."
+   },
+   {
+    "value": "145.8",
+    "misconception": "algebra-manipulation",
+    "why": "Multiplied $0.9 \\times 162$ instead of dividing, which treats 162 as the total."
+   }
+  ],
+  "id": "orig-reverse-probab-M-23fa0c",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-23fa0c",
+   "structure": [],
+   "solver_answer": 18,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "What is the value of $x$?",
+  "stimulus": "A city surveyed residents of two neighborhoods about how they prefer to commute.\nPreferred Commute by Neighborhood\nNeighborhood | Transit | Car | Bike\nRiverside | 45 | 30 | $x$\nHilltop | 25 | 50 | 10\nIf a Riverside resident from the survey is selected at random, the probability that the resident prefers to bike is $\\frac{1}{6}$.",
+  "keys": [
+   "15"
+  ],
+  "any_of": false,
+  "explanation": "\"A Riverside resident\" means only the Riverside row counts, and its total is $45 + 30 + x = 75 + x$. Write $\\frac{x}{75+x} = \\frac{1}{6}$. Cross-multiply to get $6x = 75 + x$, so $5x = 75$ and $x = 15$. Check: $\\frac{15}{90} = \\frac{1}{6}$. In Desmos, you can graph $y = \\frac{x}{75+x}$ and $y = \\frac{1}{6}$ and read off where they intersect.",
+  "common_errors": [
+   {
+    "value": "12.5",
+    "misconception": "algebra-manipulation",
+    "why": "Used $\\frac{x}{75} = \\frac{1}{6}$, leaving $x$ out of the row total."
+   },
+   {
+    "value": "32",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the whole survey as the denominator: $\\frac{x}{160+x} = \\frac{1}{6}$."
+   },
+   {
+    "value": "90",
+    "misconception": "intermediate-step",
+    "why": "Gave the Riverside row total instead of $x$."
+   }
+  ],
+  "id": "orig-reverse-probab-M-519912",
+  "skill_cd": "Q.E.",
+  "subtype": "reverse-probability-find-count",
+  "subtype_name": "Given the probability, find a count or a missing entry",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-reverse-probab-M-519912",
+   "structure": [],
+   "solver_answer": 15,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ }
+]

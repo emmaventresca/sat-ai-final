@@ -262,9 +262,58 @@ def modelled_block(modelled_on, kind):
 """)
 
 
+# ---------------------------------------------------------------------------
+# Wording families
+#
+# A dimension of its own, separate from topic. A student can lose every
+# "which of the following must be true" across six different subjects, and a
+# topic-only breakdown hides it completely - which is why the bank tracks it.
+#
+# It also turned out to be the biggest hole in the bank's VARIETY: 105 of 181
+# recognitions had only one wording family, and the whole bank carried eight
+# "EXCEPT" questions. A student who has only ever met a recognition phrased
+# directly has not met the way the test actually asks it.
+# ---------------------------------------------------------------------------
+PHRASING_BRIEF = {
+    "must_be_true": (
+        "Phrase every item as a MUST-BE-TRUE question: give a situation or a "
+        "relationship and ask which statement must be true, rather than "
+        "asking for a value. The work is testing claims against what is "
+        "given, not solving. Wrong choices should be statements that are "
+        "sometimes true, or true of a different quantity."),
+    "not_except": (
+        "Phrase every item as a NEGATIVE question - 'which of the following "
+        "is NOT', or 'all of the following EXCEPT'. Put the negative word in "
+        "capitals, as the test does. Three choices must be genuinely true or "
+        "valid and exactly one must fail; the trap is a student who finds a "
+        "true statement and picks it."),
+    "which_expression": (
+        "Ask which EXPRESSION or EQUATION represents the situation, not what "
+        "value it produces. The answer choices are expressions. A student "
+        "should be able to answer without arriving at a number, and the wrong "
+        "choices should be the expressions produced by the common setup "
+        "errors."),
+    "work_backwards": (
+        "Write items where testing the answer choices is faster than deriving "
+        "the result - the choices are candidate values and the efficient "
+        "route is substitution. Keep the algebra genuinely awkward so the "
+        "backward route really is the better one."),
+    "in_context": (
+        "The computation is done or nearly done; the question asks what a "
+        "number MEANS in the situation - what the slope represents, what the "
+        "intercept is in the story's own units. Wrong choices should swap the "
+        "two, or give the right meaning in the wrong units."),
+    "compare": (
+        "Give two quantities, two groups or two scenarios and ask about the "
+        "GAP between them - how much greater, how many times as many, which "
+        "is larger and by how much. The trap is answering about one of them "
+        "instead of the difference."),
+}
+
+
 def build_prompt(skill, lesson, families, difficulty, n, seed_topics,
                  subtype=None, patterns=None, focus=None, fmt="mc",
-                 modelled_on=None, kind="twins"):
+                 modelled_on=None, kind="twins", phrasing=None):
     stem_line = SKILL_STEMS.get(skill["skill_cd"])
     stem_line = (f'"{stem_line}"' if stem_line else
                  "write the instruction the test would use for this skill, in "
@@ -283,6 +332,7 @@ DIFFICULTY: {difficulty} - {DIFFICULTY_GUIDE[difficulty]}
 
 {style_brief(skill["section"], difficulty)}
 {FOUNDATION_RULES if difficulty == "F" else ""}{EXTRA_HARD_RULES if difficulty == "X" else ""}
+{("WORDING: " + PHRASING_BRIEF[phrasing]) if phrasing in PHRASING_BRIEF else ""}
 
 WRITE {n} ORIGINAL ITEMS.
 
@@ -298,9 +348,12 @@ Hard requirements:
    recognise the subtype from the tell above. Do not drift into a neighbouring
    subtype of the same skill.
 
-{modelled_block(modelled_on, kind)}{focus_block(families, focus)}4. EVERY DISTRACTOR CATCHES A NAMED ERROR. Pick from these families and say
-   which one each distractor targets. At least one distractor per item must
-   be the subtype's own trap, described above:
+{modelled_block(modelled_on, kind)}{focus_block(families, focus)}4. EVERY DISTRACTOR CATCHES A NAMED ERROR. "misconception" must be one of the
+   slugs listed below, copied exactly. It is not the subtype name and not a
+   phrase of your own - items came back naming the subtype as the
+   misconception, which is the one thing it cannot be. The subtype's own trap
+   is still one of these slugs: pick the one it falls under. At least one
+   distractor per item must be that trap:
 {chr(10).join(f"     {f['slug']}: {f['when']}" for f in fams)}
 
 {"5. Nothing in the wording may give the answer away, and nothing may make it ambiguous - say what form you want only when the mathematics leaves a real choice." if fmt == "grid" else "5. Choices length-matched and parallel in form. The correct answer must not be distinguishable by being longest, most hedged, or most detailed."}
@@ -486,15 +539,16 @@ def assert_no_cb_text(prompt):
 
 
 def call(prompt, model):
-    return call_json_array(prompt, model)
+    return call_json_array(prompt, model, tag="author")
 
 
 def author(skill, lesson, families, difficulty, n, model, rng,
            subtype=None, patterns=None, focus=None, fmt="mc",
-           modelled_on=None, kind="twins"):
+           modelled_on=None, kind="twins", phrasing=None):
     topics = rng.sample(TOPICS, min(n, len(TOPICS)))
     prompt = build_prompt(skill, lesson, families, difficulty, n, topics,
-                          subtype, patterns, focus, fmt, modelled_on, kind)
+                          subtype, patterns, focus, fmt, modelled_on, kind,
+                          phrasing)
     assert_no_cb_text(prompt)
     items = call(prompt, model)
     out = []
@@ -510,6 +564,10 @@ def author(skill, lesson, families, difficulty, n, model, rng,
         it["source"] = "original - written for this project"
         it["license"] = LICENSE
         it["format"] = fmt
+        # Record the family it was written in, so the bank can be measured
+        # on variety rather than only on topic and tier.
+        if phrasing:
+            it["phrasing"] = phrasing
         it["status"] = "unverified"
         fig = clean_figure(it.get("figure"))
         if fig:
@@ -529,6 +587,10 @@ def main():
     ap.add_argument("--n", type=int, default=10)
     ap.add_argument("--model", default="claude-opus-5-5")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--phrasing", choices=sorted(PHRASING_BRIEF),
+                    help="write in one wording family. A student can lose a "
+                         "whole family across six topics, and 105 of 181 "
+                         "recognitions carried only 'direct'.")
     ap.add_argument("--format", default="mc", choices=("mc", "grid"),
                     dest="fmt",
                     help="grid: student-produced response, no answer choices. "
@@ -539,6 +601,12 @@ def main():
     ap.add_argument("--kind", default="twins", choices=("twins", "cousins"),
                     help="twins: same structure and trap. cousins: same "
                          "recognition, a different route in.")
+    ap.add_argument("--out-dir", dest="out_dir", default=OUT_DIR,
+                    help="where to write. Defaults to data/bank - the pool "
+                         "students practise from. The lesson planner points "
+                         "this elsewhere so a question written to be worked "
+                         "on a shared screen never also turns up in a solo "
+                         "round two days later.")
     ap.add_argument("--misconceptions",
                     help="comma-separated family slugs to aim the distractors "
                          "at - used when a student keeps making one error")
@@ -593,17 +661,18 @@ def main():
                        fmt=args.fmt,
                        modelled_on=(json.load(open(args.modelled_on))
                                     if args.modelled_on else None),
-                       kind=args.kind)
+                       kind=args.kind, phrasing=args.phrasing)
         r.count(authored=len(items))
         if len(items) < args.n:
             r.note(f"asked for {args.n}, got {len(items)}")
 
-    os.makedirs(OUT_DIR, exist_ok=True)
+    out_dir = args.out_dir or OUT_DIR
+    os.makedirs(out_dir, exist_ok=True)
     stem = (args.subtype if args.subtype else args.skill.replace(".", ""))
     # Grid-ins live in their own file: they are a different format of the same
     # recognition, and keeping them apart means a cell's counts stay readable.
     suffix = "-grid" if args.fmt == "grid" else ""
-    path = os.path.join(OUT_DIR, f"{stem}-{args.difficulty}{suffix}.json")
+    path = os.path.join(out_dir, f"{stem}-{args.difficulty}{suffix}.json")
     existing = json.load(open(path)) if os.path.exists(path) else []
     existing += items
     json.dump(existing, open(path, "w"), indent=1)
