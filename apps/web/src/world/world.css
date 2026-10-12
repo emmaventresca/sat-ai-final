@@ -1,0 +1,104 @@
+/* The explorable world. Full-bleed and fixed: a world you can scroll away
+   from is a panel, not a place. */
+.world{
+  position:fixed;inset:0;overflow:hidden;z-index:60;
+  background:#0c1118;user-select:none;
+  font-family:inherit;
+}
+.world-art{position:absolute;inset:0}
+.world-art svg{width:100%;height:100%;display:block}
+/* A little depth at the bottom so the walker stands ON the world rather than
+   floating in front of a picture. */
+.world-haze{
+  position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to bottom,
+    rgba(8,12,18,.34) 0%, rgba(8,12,18,0) 26%,
+    rgba(8,12,18,0) 58%, rgba(8,12,18,.52) 100%);
+}
+
+.world-hud{
+  position:absolute;top:0;left:0;right:0;z-index:4;
+  display:flex;align-items:center;gap:18px;
+  padding:14px 20px;color:#fff;
+  text-shadow:0 2px 8px rgba(0,0,0,.6);
+}
+.world-x{
+  background:rgba(12,18,26,.52);border:1px solid rgba(255,255,255,.26);
+  color:#fff;border-radius:11px;padding:8px 14px;cursor:pointer;
+  font-size:.86rem;font-weight:600;backdrop-filter:blur(6px);
+}
+.world-x:hover{background:rgba(12,18,26,.78)}
+.world-where{display:flex;flex-direction:column;gap:1px;margin-right:auto}
+.world-where strong{font-size:1.18rem;letter-spacing:-.01em}
+.world-where span{font-size:.76rem;opacity:.82}
+.world-tally{display:flex;flex-direction:column;align-items:flex-end;
+  font-size:1.05rem;font-weight:800;line-height:1}
+.world-tally span{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;opacity:.75}
+
+/* The walking line. */
+.world-ground{
+  position:absolute;left:0;right:0;bottom:16%;height:2px;
+  background:linear-gradient(to right,
+    rgba(255,255,255,0), rgba(255,255,255,.22) 12%,
+    rgba(255,255,255,.22) 88%, rgba(255,255,255,0));
+}
+
+.world-walker{
+  position:absolute;bottom:16%;z-index:3;
+  transform:translate(-50%,0);color:#fdfbf2;
+  filter:drop-shadow(0 3px 7px rgba(0,0,0,.55));
+}
+.walker{line-height:0}
+.walker .legs-b{display:none}
+/* Two frames swapped on a short loop is all it takes to read as walking. */
+.walker.moving .legs-a{animation:stride .34s steps(1) infinite}
+.walker.moving .legs-b{display:block;animation:stride .34s steps(1) infinite reverse}
+@keyframes stride{0%,49%{opacity:1}50%,100%{opacity:0}}
+
+.world-stop{
+  position:absolute;bottom:16%;z-index:2;transform:translate(-50%,0);
+  display:flex;flex-direction:column;align-items:center;gap:5px;
+  background:none;border:0;cursor:pointer;color:#fff;
+  text-shadow:0 2px 7px rgba(0,0,0,.7);
+}
+.world-stop-pin{
+  width:15px;height:15px;border-radius:50%;
+  background:rgba(255,255,255,.34);border:2.5px solid #fff;
+  box-shadow:0 0 0 5px rgba(255,255,255,.12);
+  transition:transform .16s ease,background .16s ease;
+}
+.world-stop.done .world-stop-pin{background:#ffe08a;border-color:#fff8e0}
+.world-stop.near .world-stop-pin{transform:scale(1.45);background:#fff}
+.world-stop-name{
+  font-size:.7rem;font-weight:700;max-width:130px;
+  opacity:0;transition:opacity .16s ease;
+}
+.world-stop.near .world-stop-name,.world-stop:hover .world-stop-name{opacity:.95}
+
+.world-prompt{
+  position:absolute;left:50%;bottom:7%;transform:translateX(-50%);z-index:5;
+  display:flex;flex-direction:column;gap:3px;align-items:center;
+  padding:13px 22px;border-radius:15px;text-align:center;max-width:460px;
+  background:rgba(12,18,26,.84);border:1px solid rgba(255,255,255,.22);
+  color:#fff;backdrop-filter:blur(8px);
+}
+.world-prompt strong{font-size:1rem}
+.world-prompt-d{font-size:.8rem;opacity:.82;line-height:1.35}
+.world-prompt-k{font-size:.75rem;opacity:.7;margin-top:3px}
+.world-hint{
+  position:absolute;left:50%;bottom:7%;transform:translateX(-50%);z-index:5;
+  color:#fff;opacity:.72;font-size:.8rem;text-shadow:0 2px 7px rgba(0,0,0,.7);
+}
+.world kbd{
+  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+  border-radius:5px;padding:1px 6px;font-size:.78em;font-family:inherit;
+}
+.world-arc{
+  position:absolute;left:20px;bottom:14px;z-index:4;margin:0;
+  color:#fff;opacity:.4;font-size:.72rem;font-style:italic;
+  text-shadow:0 2px 6px rgba(0,0,0,.7);max-width:320px;
+}
+@media (max-width:640px){
+  .world-arc{display:none}
+  .world-where strong{font-size:1rem}
+}

@@ -634,5 +634,212 @@
    ],
    "residue": 2
   }
+ },
+ {
+  "stem": "The function $V$ gives the volume of the block, in cubic centimeters, where $x$ is the block's length, in centimeters. What is the value of $V(10)$?",
+  "stimulus": "A printmaker carves designs into a rectangular linoleum block that is 2 centimeters thick. The block's length is 6 centimeters more than its width.",
+  "keys": [
+   "80"
+  ],
+  "any_of": false,
+  "explanation": "Write every dimension in terms of the length, $x$. The length is 6 more than the width, so the width is $x - 6$, not $x + 6$. The thickness is fixed at 2 cm. Volume is length \u00d7 width \u00d7 thickness, so $V(x) = 2x(x - 6)$. Then $V(10) = 2(10)(10 - 6) = 2(10)(4) = 80$. To check, a block 10 cm long is 4 cm wide and 2 cm thick, and $10 \\cdot 4 \\cdot 2 = 80$.",
+  "common_errors": [
+   {
+    "value": "320",
+    "misconception": "wrong-target-quantity",
+    "why": "Treated $x$ as the width, so wrote the other side as $x + 6$: $2(10)(16) = 320$."
+   },
+   {
+    "value": "40",
+    "misconception": "algebra-manipulation",
+    "why": "Found the area of the face, $10 \\cdot 4 = 40$, and dropped the thickness of 2."
+   },
+   {
+    "value": "28",
+    "misconception": "algebra-manipulation",
+    "why": "Added the length and width before multiplying by the thickness: $2(10 + 4) = 28$."
+   }
+  ],
+  "id": "orig-geometry-to-fu-M-769de0",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-769de0",
+   "structure": [],
+   "solver_answer": 80,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $f$ gives the area of the zone, in square meters, where $x$ is the zone's length, in meters. If $f(x) = 200$, what is the value of $x$?",
+  "stimulus": "A sports scientist marks out a rectangular zone on a gym floor for agility testing. The zone's length is 10 meters more than its width.",
+  "keys": [
+   "20"
+  ],
+  "any_of": false,
+  "explanation": "The input is the length, $x$, so the width is $x - 10$. Area is length \u00d7 width, so $f(x) = x(x - 10)$. Set this equal to 200: $x^2 - 10x - 200 = 0$, which factors as $(x - 20)(x + 10) = 0$. A length can't be negative, so $x = 20$. To check, a zone 20 m long is 10 m wide, and $20 \\cdot 10 = 200$. In Desmos, graph $y = x(x - 10)$ and $y = 200$ and click the intersection where $x$ is positive.",
+  "common_errors": [
+   {
+    "value": "10",
+    "misconception": "wrong-target-quantity",
+    "why": "Wrote the function in terms of the width, $x(x + 10) = 200$, and found the width (10) instead of the length."
+   },
+   {
+    "value": "105",
+    "misconception": "algebra-manipulation",
+    "why": "Added the dimensions instead of multiplying: $x + (x - 10) = 200$."
+   },
+   {
+    "value": "55",
+    "misconception": "wrong-target-quantity",
+    "why": "Used the perimeter instead of the area: $2x + 2(x - 10) = 200$."
+   }
+  ],
+  "id": "orig-geometry-to-fu-M-3bc6b3",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-3bc6b3",
+   "structure": [],
+   "solver_answer": 20,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $V$ gives the volume of the bar, in cubic centimeters, where $x$ is the bar's length, in centimeters. What is the value of $V(9)$?",
+  "stimulus": "An engineer tests a ceramic bar in the shape of a rectangular prism. Both ends of the bar are squares, and the bar's length is 7 centimeters more than the side length of each square end.",
+  "keys": [
+   "36"
+  ],
+  "any_of": false,
+  "explanation": "The input is the length, $x$, so each side of the square end is $x - 7$. Volume is the area of the end times the length, so $V(x) = x(x - 7)^2$. Then $V(9) = 9(9 - 7)^2 = 9(2)^2 = 9 \\cdot 4 = 36$. To check, a bar 9 cm long has 2 cm by 2 cm ends, and $2 \\cdot 2 \\cdot 9 = 36$.",
+  "common_errors": [
+   {
+    "value": "2304",
+    "misconception": "wrong-target-quantity",
+    "why": "Treated $x$ as the side of the square end, so wrote the side as $x + 7$: $9(9 + 7)^2 = 9 \\cdot 256 = 2304$."
+   },
+   {
+    "value": "1296",
+    "misconception": "wrong-target-quantity",
+    "why": "Used 9 as the side of the square and $9 + 7 = 16$ as the length: $9^2 \\cdot 16 = 1296$."
+   },
+   {
+    "value": "18",
+    "misconception": "algebra-manipulation",
+    "why": "Forgot to square the side of the end: $9(9 - 7) = 18$."
+   },
+   {
+    "value": "288",
+    "misconception": "algebra-manipulation",
+    "why": "Expanded $(x - 7)^2$ wrongly as $x^2 - 49$: $9(81 - 49) = 288$."
+   }
+  ],
+  "id": "orig-geometry-to-fu-M-2cf6b4",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-2cf6b4",
+   "structure": [],
+   "solver_answer": 36,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $V(w)$ is written in the form $V(w) = aw^2 + bw$, where $a$ and $b$ are constants, what is the value of $b$?",
+  "stimulus": "A sports science lab builds a plyometric jump box shaped like a rectangular prism. The box is 20 inches tall, and the width of its top is 4 inches less than the length of its top. The function $V$ gives the volume of the box, in cubic inches, in terms of $w$, the width of the top, in inches.",
+  "keys": [
+   "80"
+  ],
+  "any_of": false,
+  "explanation": "The question names the width $w$ as the variable, so write every dimension in terms of $w$. The width is 4 inches less than the length, so the length is 4 inches more than the width: length $= w + 4$. The height is a fixed 20 inches. The volume of a rectangular prism is length \u00d7 width \u00d7 height, so $V(w) = 20 \\cdot w(w + 4)$. The form you're asked for is expanded, so expand it: $V(w) = 20w^2 + 80w$. That makes $a = 20$ and $b = 80$. To check, try $w = 1$: the box is 1 by 5 by 20, which gives 100 cubic inches, and $20(1)^2 + 80(1) = 100$. Common wrong answers: $-80$ comes from writing the length as $w - 4$, which flips the direction of the offset. $4$ comes from forgetting to multiply by the height of 20. $20$ is the value of $a$, not $b$. $40$ comes from adding the dimensions instead of multiplying them.",
+  "common_errors": [
+   {
+    "value": "-80",
+    "misconception": "wrong-target-quantity",
+    "why": "Wrote the length as $w - 4$, treating $w$ as if it were the length. That gives $V = 20w(w - 4) = 20w^2 - 80w$."
+   },
+   {
+    "value": "4",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the height of 20 and expanded only $w(w + 4) = w^2 + 4w$."
+   },
+   {
+    "value": "20",
+    "misconception": "wrong-target-quantity",
+    "why": "Correctly found $20w^2 + 80w$ but reported the coefficient $a$ instead of $b$."
+   },
+   {
+    "value": "40",
+    "misconception": "algebra-manipulation",
+    "why": "Added the dimensions instead of multiplying them, getting $20(w + (w + 4)) = 40w + 80$, and took 40 as the coefficient of $w$."
+   }
+  ],
+  "id": "orig-geometry-to-fu-M-b9dd06",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-b9dd06",
+   "structure": [],
+   "solver_answer": 80,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [
+    "is written in the form __var__ where __var__",
+    "in the form __var__ where __var__ and __var__",
+    "the form __var__ where __var__ and __var__ are",
+    "form __var__ where __var__ and __var__ are constants"
+   ],
+   "residue": 5
+  }
  }
 ]

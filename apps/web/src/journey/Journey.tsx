@@ -20,6 +20,7 @@ import { errorLog, open as openOnly } from '../errors/log'
 import { StopGrid } from './StopGrid'
 import './greenwood.css'
 import { NextPoints } from './NextPoints'
+import { World } from '../world/World'
 
 /**
  * The map, not the inventory.
@@ -58,6 +59,9 @@ export function Journey({ exam }: { exam: Exam }) {
   }, [exam])
 
   useEffect(() => { setOpenRealm(null); setOpen(null) }, [exam])
+
+  /** The world the student is walking, if any. Escape or Leave comes back. */
+  const [walking, setWalking] = useState<string | null>(null)
 
   const regions = useMemo(
     () => (bank.length ? buildJourney(exam, bank, skills) : []),
@@ -178,8 +182,22 @@ export function Journey({ exam }: { exam: Exam }) {
           first and the geography second. */}
       <NextPoints exam={exam} />
 
+      {walking && (() => {
+        const region = regions.find((r) => r.id === walking)
+        if (!region) return null
+        return (
+          <World region={region}
+            onLeave={() => setWalking(null)}
+            onEnter={(leg, subtype) => {
+              setWalking(null)
+              setOpen({ leg, subtype, mode: 'stage' })
+            }} />
+        )
+      })()}
+
       {regions.map((region) => (
         <Region key={region.id} region={region} exam={exam}
+          onWalk={setWalking}
           openRealm={openRealm} setOpenRealm={setOpenRealm}
           onOpen={(leg, subtype, mode) => setOpen({ leg, subtype, mode })} />
       ))}
@@ -188,10 +206,11 @@ export function Journey({ exam }: { exam: Exam }) {
 }
 
 function Region({
-  region, exam, openRealm, setOpenRealm, onOpen,
+  region, exam, onWalk, openRealm, setOpenRealm, onOpen,
 }: {
   region: Region
   exam: Exam
+  onWalk: (id: string) => void
   openRealm: string | null
   setOpenRealm: (id: string | null) => void
   onOpen: (leg: Leg, subtype: string | null, mode: StageMode) => void
@@ -202,6 +221,10 @@ function Region({
           className={`region world-${region.terrain} reveal ${shown ? 'in' : ''}`}>
           <div className="region-head">
             <h2>{region.name}</h2>
+            <button className="btn-sm enter-world"
+              onClick={() => onWalk(region.id)}>
+              Walk this world
+            </button>
             <span className="region-count">
               {region.cleared}/{region.stages} stops
             </span>
