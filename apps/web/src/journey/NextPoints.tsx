@@ -74,13 +74,14 @@ export function NextPoints({ exam, onOpen }: {
       <div className="spread">
         <h2>Your next points</h2>
         <span className="nextpts-head" title="Estimated, assuming the section scales evenly">
-          about {Math.round(report.headroom)} points on the table
+          about {report.headroomLabel} points on the table
         </span>
       </div>
       <p className="tiny muted" style={{ marginTop: -4 }}>
         Ranked by questions missed on a real test &mdash; how often the exam
         asks it, times how often you get it wrong. The point figures are an
-        estimate; the ranking is not.
+        estimate, rounded to the {report.step === 10 ? 'ten' : 'one'}-point
+        steps the score actually moves in; the ranking is not an estimate.
       </p>
 
       <ol className="gaplist">
@@ -116,8 +117,9 @@ function GapRow({ g, onOpen }: { g: Gap; onOpen?: (subtype: string) => void }) {
         </span>
       </div>
       <div className="gap-side">
-        <span className="gap-pts" title="Estimated scaled points">
-          ~{Math.round(g.points)}
+        <span className={`gap-pts${g.points < 1 ? ' tiny-pts' : ''}`}
+          title="Estimated, in the steps the score actually moves in">
+          {g.pointsLabel}
         </span>
         <span className="gap-pts-l">points</span>
         {onOpen && (

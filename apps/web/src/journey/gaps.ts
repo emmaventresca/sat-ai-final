@@ -34,6 +34,31 @@ import type { Attempt } from '../practice/mastery'
 /** Below this many attempts, accuracy is noise rather than a measurement. */
 export const ENOUGH = 5
 
+/**
+ * The smallest step a reported score can actually move.
+ *
+ * SAT section scores run 200-800 in TENS: there is no 643, and a student
+ * cannot gain one point. Reporting "~1 point" for a recognition was telling
+ * them about a quantity the score cannot express - it reads as "not worth
+ * doing" when the honest statement is "under one step".
+ *
+ * ACT is 1-36 in whole points, so its step is one.
+ */
+export const POINT_STEP: Record<string, number> = { sat: 10, act: 1 }
+
+/**
+ * A point estimate in the units the score actually moves in.
+ *
+ * Deliberately refuses to round up to a step that has not been earned: 4
+ * estimated SAT points is "under 10", not "10". Overstating the prize is how
+ * a diagnosis stops being trusted the first time someone does the work and
+ * the number does not move.
+ */
+export function formatPoints(points: number, step: number): string {
+  if (points < step) return `under ${step}`
+  return String(Math.round(points / step) * step)
+}
+
 export interface SubtypeCount {
   slug: string
   skill: string
@@ -58,6 +83,8 @@ export interface Gap {
   missedPerTest: number
   /** Estimated scaled points, assuming the section scales evenly. */
   points: number
+  /** The same figure in the steps the score really moves in. */
+  pointsLabel: string
   /** Too few attempts to call this a weakness yet. */
   thin: boolean
   /** Questions in the bank they have not answered here. */
@@ -66,6 +93,10 @@ export interface Gap {
 
 export interface GapReport {
   gaps: Gap[]
+  /** The smallest step this exam's score can move. */
+  step: number
+  /** Total headroom, in those steps. */
+  headroomLabel: string
   /** Recognitions never attempted at all - unknown, not strong. */
   untested: number
   /** Sum of `points` over the non-thin gaps. */
@@ -110,6 +141,7 @@ export function scoreGaps(
     const missedPerTest = perTest * (1 - accuracy)
     const perQuestion = (section.score[1] - section.score[0]) / section.questions
 
+    const points = missedPerTest * perQuestion
     gaps.push({
       subtype: slug,
       name: names[slug] ?? slug,
@@ -120,7 +152,8 @@ export function scoreGaps(
       accuracy,
       perTest,
       missedPerTest,
-      points: missedPerTest * perQuestion,
+      points,
+      pointsLabel: formatPoints(points, POINT_STEP[exam] ?? 1),
       thin: t.seen < ENOUGH,
       left: bankBySubtype[slug] ?? 0,
     })
@@ -134,12 +167,16 @@ export function scoreGaps(
     || b.perTest - a.perTest)
 
   const solid = gaps.filter((g) => !g.thin)
+  const step = POINT_STEP[exam] ?? 1
+  const headroom = solid.reduce((n, g) => n + g.points, 0)
   return {
     gaps,
+    step,
+    headroomLabel: formatPoints(headroom, step),
     untested: Object.keys(counts).filter(
       (s) => counts[s] && !tally.has(s)
         && bySection.has(counts[s].section)).length,
-    headroom: solid.reduce((n, g) => n + g.points, 0),
+    headroom,
   }
 }
 

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 
-const { scoreGaps, ENOUGH } = await import('../apps/web/src/journey/gaps.ts')
+const { scoreGaps, ENOUGH, formatPoints } = await import('../apps/web/src/journey/gaps.ts')
 
 const SPEC = {
   label: 'SAT',
@@ -94,4 +94,34 @@ test('untested counts recognitions never attempted', () => {
 test('an unknown subtype is skipped rather than guessed at', () => {
   const r = scoreGaps('sat', SPEC, at('nonsense', false, 10), COUNTS, NAMES)
   assert.equal(r.gaps.length, 0)
+})
+
+test('SAT points are reported in the ten-point steps the score moves in', () => {
+  // 10% of a 44-question section, answered 50% -> 2.2 missed x 13.6 = ~30.
+  const r = scoreGaps('sat', SPEC,
+    [...at('common', true, 5), ...at('common', false, 5)], COUNTS, NAMES)
+  assert.equal(r.step, 10)
+  assert.equal(Number(r.gaps[0].pointsLabel) % 10, 0, 'must land on a real score')
+})
+
+test('a gap smaller than one step says so rather than claiming a point', () => {
+  // The SAT cannot express a one-point gain; "~1" reads as "not worth doing".
+  assert.equal(formatPoints(1.4, 10), 'under 10')
+  assert.equal(formatPoints(4, 10), 'under 10')
+  assert.equal(formatPoints(0.2, 1), 'under 1')
+})
+
+test('rounding never overstates the prize', () => {
+  // 4 points is under a step and must not round UP to a whole step.
+  assert.equal(formatPoints(4, 10), 'under 10')
+  assert.equal(formatPoints(14, 10), '10')
+  assert.equal(formatPoints(16, 10), '20')
+})
+
+test('ACT reports in whole points, not tens', () => {
+  const ACT_SPEC = { label: 'ACT', total_score: [1, 36], sections: [
+    { id: 'math', label: 'Math', questions: 60, score: [1, 36] }] }
+  const r = scoreGaps('act', ACT_SPEC,
+    at('common', false, 10).map((a) => ({ ...a, exam: 'act' })), COUNTS, NAMES)
+  assert.equal(r.step, 1)
 })
