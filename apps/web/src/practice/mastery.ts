@@ -45,11 +45,26 @@ interface Store {
 }
 
 function read(): Store {
+  const empty: Store = { attempts: [], mastery: {} }
   try {
     const raw = localStorage.getItem(KEY)
-    return raw ? (JSON.parse(raw) as Store) : { attempts: [], mastery: {} }
+    if (!raw) return empty
+    const parsed = JSON.parse(raw) as Partial<Store> | null
+    if (!parsed || typeof parsed !== 'object') return empty
+    // Both halves are checked rather than cast. A stored object missing
+    // `mastery` - an older schema, a half-written record, anything hand-set
+    // during testing - used to flow straight through and throw somewhere far
+    // away, in buildJourney, taking the whole app down to a white screen. A
+    // store we cannot read is a store we have no progress from; that is
+    // recoverable, and a blank app is not.
+    return {
+      attempts: Array.isArray(parsed.attempts) ? parsed.attempts : [],
+      mastery: parsed.mastery && typeof parsed.mastery === 'object'
+        ? parsed.mastery
+        : {},
+    }
   } catch {
-    return { attempts: [], mastery: {} }
+    return empty
   }
 }
 

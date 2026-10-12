@@ -19,6 +19,7 @@ import { current, signOut } from '../auth/auth'
 import { errorLog, open as openOnly } from '../errors/log'
 import { StopGrid } from './StopGrid'
 import './greenwood.css'
+import { NextPoints } from './NextPoints'
 
 /**
  * The map, not the inventory.
@@ -171,6 +172,11 @@ export function Journey({ exam }: { exam: Exam }) {
           <div className="goal-note">questions a day</div>
         </div>
       </div>
+
+      {/* What is actually costing marks, before the map. A student who
+          opens the app to "do some practice" should meet the diagnosis
+          first and the geography second. */}
+      <NextPoints exam={exam} />
 
       {regions.map((region) => (
         <Region key={region.id} region={region} exam={exam}
