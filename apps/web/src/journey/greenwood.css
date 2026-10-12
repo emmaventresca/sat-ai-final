@@ -510,3 +510,15 @@
 /* Room above a realm when the map scrolls you to it, so it does not land
    jammed against the top of the window. */
 .journey .realm-card { scroll-margin-top: 26px; }
+
+/* A dot per sub-sub-unit on the world map, sitting on the road itself.
+   Small and quiet: these are milestones the traveller passes, not controls -
+   the realm dots are what you click. Cleared ones fill in, so the road
+   shows how far along it you are at a glance. */
+.map-stop circle{
+  fill:rgba(255,255,255,.5);
+  stroke:rgba(255,255,255,.75);
+  stroke-width:1.4;
+  transition:fill .3s ease, stroke .3s ease;
+}
+.map-stop.done circle{fill:#ffe9a8;stroke:#fff}

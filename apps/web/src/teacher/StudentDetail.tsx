@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
-import type { Exam } from '../exams/types'
+import type { Exam, Question } from '../exams/types'
+import { renderStimulus } from '../lesson/math'
 import { EXAM_IDS, examSpec } from '../exams/registry'
-import { loadIndex } from '../lib/bank'
+import { loadBodies, loadIndex } from '../lib/bank'
 import { difficultyLabel } from '../lesson/types'
 import { AssignErrors } from './AssignErrors'
 import { duration, metricsFor } from './metrics'
@@ -19,7 +20,25 @@ import { examTone } from './tone'
 export function StudentDetail({ student }: { student: Student }) {
   const sitting = EXAM_IDS.filter((id) => student.access[id])
   const [exam, setExam] = useState<Exam>(sitting[0] ?? 'sat')
+  /**
+   * The attempt row the teacher has opened, and its question.
+   *
+   * Fetched on demand rather than with the page: a student detail view
+   * would otherwise pull ten full question bodies nobody asked to read.
+   */
+  const [seeing, setSeeing] = useState<string | null>(null)
+  const [body, setBody] = useState<Question | 'loading' | 'gone' | null>(null)
+
   const [names, setNames] = useState<Record<string, string>>({})
+
+  function openQuestion(id: string) {
+    if (seeing === id) { setSeeing(null); setBody(null); return }
+    setSeeing(id)
+    setBody('loading')
+    void loadBodies(exam, [id])
+      .then(([q]) => setBody(q ?? 'gone'))
+      .catch(() => setBody('gone'))
+  }
   const [phrasingOf, setPhrasingOf] = useState<Record<string, string>>({})
   const [genreOf, setGenreOf] = useState<Record<string, string>>({})
   const [setting, setSetting] = useState(false)
@@ -238,11 +257,22 @@ export function StudentDetail({ student }: { student: Student }) {
 
           <details className="tableview">
             <summary>The last {m.recent.length} questions they answered</summary>
+            <p className="tiny muted" style={{ margin: '2px 0 8px' }}>
+              Click a row to read the question they were actually looking at.
+            </p>
             <table><thead><tr>
               <th>When</th><th>Question type</th><th>Level</th><th>Result</th><th className="num">Time</th>
             </tr></thead><tbody>
               {m.recent.map((a, i) => (
-                <tr key={`${a.questionId}-${i}`}>
+                <tr key={`${a.questionId}-${i}`}
+                  className={`clickable${seeing === a.questionId ? ' on' : ''}`}
+                  onClick={() => openQuestion(a.questionId)}
+                  tabIndex={0} role="button"
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault(); openQuestion(a.questionId)
+                    }
+                  }}>
                   <td className="muted small">{new Date(a.at).toLocaleString()}</td>
                   <td>{a.subtype ? names[a.subtype] ?? a.subtype : a.skill}</td>
                   <td><span className={`badge ${a.difficulty.toLowerCase()}`}>
@@ -254,6 +284,46 @@ export function StudentDetail({ student }: { student: Student }) {
                 </tr>
               ))}
             </tbody></table>
+
+            {/* The question itself, under the table rather than inside it:
+                a whole stem and four choices in a table cell is unreadable,
+                and the teacher is reading it to understand one row. */}
+            {seeing && (
+              <div className="peek-panel" style={{ marginTop: 12 }}>
+                <div className="peek-head">
+                  <strong>The question they saw</strong>
+                  <button className="btn-sm" onClick={() => setSeeing(null)}>Close</button>
+                </div>
+                {body === 'loading' && <p className="tiny muted">Fetching&hellip;</p>}
+                {body === 'gone' && (
+                  <p className="tiny muted">
+                    This one is not in the bank any more, so there is nothing
+                    to show. The attempt still counts.
+                  </p>
+                )}
+                {body && body !== 'loading' && body !== 'gone' && (
+                  <>
+                    {body.stimulus && (
+                      <div className="stim" dangerouslySetInnerHTML={{
+                        __html: renderStimulus(body.stimulus),
+                      }} />
+                    )}
+                    <div className="q" dangerouslySetInnerHTML={{
+                      __html: renderStimulus(body.stem),
+                    }} />
+                    {body.choices && (
+                      <ol className="peek-choices">
+                        {body.choices.map((c, n) => (
+                          <li key={n} className={
+                            body.answer === String.fromCharCode(65 + n) ? 'right' : ''
+                          } dangerouslySetInnerHTML={{ __html: c }} />
+                        ))}
+                      </ol>
+                    )}
+                  </>
+                )}
+              </div>
+            )}
           </details>
         </>
       )}

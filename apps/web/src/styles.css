@@ -72,8 +72,18 @@ button:disabled{opacity:.45;cursor:default}
 .grow{flex:1}
 .spread{display:flex;justify-content:space-between;align-items:center;gap:12px}
 
-input,select{font:inherit;color:var(--ink);background:#fcfaff;border:1.5px solid var(--line2);
+/* Text fields and selects fill their column; checkboxes and radios must not.
+   This said plain `input`, so a checkbox was stretched to width:100% too -
+   on the Assign page that made the tickbox 858px wide, left the question's
+   own button 0px, and every teaser wrapped one character per line into an
+   invisible 200px-tall sliver. The row looked empty and the questions looked
+   like they had failed to load. */
+input:not([type=checkbox]):not([type=radio]),
+select{font:inherit;color:var(--ink);background:#fcfaff;border:1.5px solid var(--line2);
   border-radius:13px;padding:12px 14px;width:100%}
+input[type=checkbox],input[type=radio]{
+  width:auto;flex:0 0 auto;accent-color:var(--purple);
+}
 input::placeholder{color:#a9a2c4}
 input:focus,select:focus{outline:none;border-color:var(--purple);box-shadow:0 0 0 4px rgba(124,92,255,.15)}
 label{display:block;font-size:.84rem;color:var(--dim);margin-bottom:6px;font-weight:600}
@@ -1554,3 +1564,57 @@ mark.hl-blue{background:#c3e0ff;box-shadow:inset 0 -.42em 0 #c3e0ff}
 }
 .revisit.right{background:var(--good-bg);border-color:var(--good-ln);color:#0f7a56}
 .revisit.wrong{background:var(--bad-bg);border-color:var(--bad-ln);color:#b3324a}
+
+/* The skill heading in the error log: what it is, then where it sits.
+   It read "Q.B." before - the College Board's code, which tells a student
+   nothing about the fact they keep losing percentages. */
+.err-skill-t{
+  flex:1;                       /* kept from the original rule above */
+  display:flex;flex-direction:column;gap:2px;text-align:left;
+  font-weight:800;font-size:1rem;letter-spacing:-.01em;
+}
+.err-skill-d{
+  font-style:normal;font-size:.76rem;font-weight:500;
+  color:var(--dim);letter-spacing:.01em;
+}
+
+/* The round navigator. The first pass was 30px hard squares in a plain row,
+   which read as a strip of chopped-off boxes rather than a set of controls:
+   too tight, too square, and the current one marked with an outline that
+   sat outside the shape. Rounder, roomier, and the current question is
+   filled rather than ringed. */
+.navstrip{
+  display:flex;flex-wrap:wrap;gap:7px;
+  list-style:none;padding:12px 14px;margin:18px 0 6px;
+  background:var(--panel2);border:1px solid var(--line);border-radius:14px;
+}
+.nav-q{
+  min-width:34px;height:34px;padding:0 4px;
+  border-radius:10px;cursor:pointer;
+  font-size:.8rem;font-weight:700;font-variant-numeric:tabular-nums;
+  border:1px solid var(--line2);background:var(--panel);color:var(--dim);
+  position:relative;
+  transition:transform .08s ease, background .12s ease, border-color .12s ease;
+}
+.nav-q:hover{border-color:var(--purple);color:var(--purple);transform:translateY(-1px)}
+.nav-q.right{background:var(--good-bg);border-color:var(--good-ln);color:#0f7a56}
+.nav-q.wrong{background:var(--bad-bg);border-color:var(--bad-ln);color:#b3324a}
+.nav-q.here{
+  background:var(--purple);border-color:var(--purple);color:#fff;
+  box-shadow:0 2px 8px rgba(124,92,255,.35);
+}
+.nav-q.here:hover{color:#fff;transform:none}
+.nav-q.flagged::after{
+  content:'';position:absolute;top:-3px;right:-3px;
+  width:9px;height:9px;border-radius:50%;
+  background:#f0b35c;border:2px solid var(--panel2);
+}
+.navkey{margin-top:6px}
+
+/* Attempt rows the teacher can open to read the question itself. */
+.tableview tr.clickable{cursor:pointer}
+.tableview tr.clickable:hover td{background:var(--panel2)}
+.tableview tr.clickable.on td{background:#efe9ff}
+.peek-choices{margin:10px 0 0;padding-left:22px;font-size:.88rem}
+.peek-choices li{margin-bottom:5px}
+.peek-choices li.right{font-weight:700;color:#0f7a56}

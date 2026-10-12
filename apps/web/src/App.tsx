@@ -12,6 +12,9 @@ import { Login } from './auth/Login'
 import { Sheet } from './journey/Sheet'
 import { current, type Account } from './auth/auth'
 import { useEffect, useState } from 'react'
+import { TopNav } from './ui/TopNav'
+import { assignmentsFor } from './teacher/assignments'
+import { roster } from './teacher/roster'
 
 /**
  * Two exams, two front doors, one teacher.
@@ -82,7 +85,22 @@ function Gate() {
     )
   }
 
+  // Outstanding assignment items, for the Homework badge. A student should
+  // learn that work was set by opening the app, not by being told in person.
+  const pending = account.role === 'student'
+    ? (() => {
+      const list = roster()
+      const me = list.find((st) => st.id === account.id)
+        ?? list.find((st) =>
+          st.name.trim().toLowerCase() === account.name.trim().toLowerCase())
+      if (!me) return 0
+      return assignmentsFor(me.id).reduce((n, a) => n + a.items.length, 0)
+    })()
+    : 0
+
   return (
+    <>
+      <TopNav account={account} pending={pending} />
       <Routes>
         {/* The chooser, for everyone.
             
@@ -117,5 +135,6 @@ function Gate() {
         <Route path="/lesson-preview" element={<LessonPreview />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+    </>
   )
 }

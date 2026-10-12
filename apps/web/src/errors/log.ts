@@ -195,10 +195,21 @@ export interface TopicGroup {
 }
 
 export interface SkillGroup {
+  /** The skill code, e.g. "Q.B.". Stable, and not for showing. */
   skill: string
+  /** What that code means, e.g. "Percentages". */
+  name: string
+  /** The domain it sits in, e.g. "Problem-Solving and Data Analysis". */
+  domain: string
   open: number
   fixed: number
   topics: TopicGroup[]
+}
+
+/** skill_cd -> what to call it, from data/skills.json. */
+export interface SkillLabel {
+  skill_name: string
+  domain_name: string
 }
 
 /**
@@ -216,6 +227,7 @@ export interface SkillGroup {
 export function grouped(
   log: readonly ErrorEntry[],
   names: Record<string, string> = {},
+  skills: Record<string, SkillLabel> = {},
 ): SkillGroup[] {
   const topics = new Map<string, TopicGroup>()
   for (const e of log) {
@@ -235,16 +247,26 @@ export function grouped(
     topics.set(key, t)
   }
 
-  const skills = new Map<string, SkillGroup>()
+  const groups = new Map<string, SkillGroup>()
   for (const t of topics.values()) {
-    const g = skills.get(t.skill) ?? { skill: t.skill, open: 0, fixed: 0, topics: [] }
+    // The code is what the data carries; the name is what a student can
+    // read. A heading of "Q.B." tells nobody they keep losing percentages.
+    const label = skills[t.skill]
+    const g = groups.get(t.skill) ?? {
+      skill: t.skill,
+      name: (label?.skill_name ?? t.skill).trim(),
+      domain: (label?.domain_name ?? '').trim(),
+      open: 0,
+      fixed: 0,
+      topics: [],
+    }
     g.topics.push(t)
     g.open += t.open
     g.fixed += t.fixed
-    skills.set(t.skill, g)
+    groups.set(t.skill, g)
   }
 
-  for (const g of skills.values()) {
+  for (const g of groups.values()) {
     g.topics.sort((a, b) => b.open - a.open || b.fixed - a.fixed)
     // Within a recognition: open first, then most recently missed.
     for (const t of g.topics) {
@@ -253,5 +275,5 @@ export function grouped(
         || b.firstMissed.localeCompare(a.firstMissed))
     }
   }
-  return [...skills.values()].sort((a, b) => b.open - a.open || b.fixed - a.fixed)
+  return [...groups.values()].sort((a, b) => b.open - a.open || b.fixed - a.fixed)
 }

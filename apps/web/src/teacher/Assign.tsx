@@ -259,13 +259,26 @@ export function Assign() {
               </span>
             </div>
 
-            {hidden > 0 && (
-              <label className="tiny muted" style={{ display: 'block', marginTop: 8 }}>
-                <input type="checkbox" checked={showUsed}
-                  onChange={(e) => setShowUsed(e.target.checked)} />{' '}
-                Show the {hidden} already set for {student?.name ?? 'this student'}
-                {' '}&mdash; worth it for a deliberate re-test, not otherwise
-              </label>
+            {(hidden > 0 || showUsed) && (
+              /* A button rather than a tick box. This is a mode - "show me
+                 what I have already given them" - and it was a checkbox so
+                 small and so quiet that it read as a stray mark. */
+              <div style={{ marginTop: 10 }}>
+                <button className={`btn-sm${showUsed ? ' on' : ''}`}
+                  aria-pressed={showUsed}
+                  onClick={() => setShowUsed(!showUsed)}>
+                  {showUsed
+                    ? 'Hide questions already assigned'
+                    : `Questions assigned in the past to ${student?.name ?? 'this student'}`
+                      + ` (${hidden})`}
+                </button>
+                <p className="tiny muted" style={{ marginTop: 6 }}>
+                  {showUsed
+                    ? 'These are already set. Assigning one again is a'
+                      + ' deliberate re-test, not an accident.'
+                    : 'Hidden so the same question is not set twice by mistake.'}
+                </p>
+              </div>
             )}
 
             <ol className="peek" style={{ maxHeight: 280, overflowY: 'auto' }}>

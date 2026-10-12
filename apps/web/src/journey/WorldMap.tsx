@@ -59,6 +59,18 @@ export function WorldMap({
     return `C ${mx} ${prev.y}, ${mx} ${n.y}, ${n.x} ${n.y}`
   }).join(' ')
 
+  // Every sub-sub-unit in this region, in road order. These are the steps
+  // the traveller actually takes: a student who clears one recognition
+  // should see the figure move, and realm-sized strides left it standing
+  // still through a whole domain.
+  const stops = chapters.flatMap((c) =>
+    c.legs.flatMap((leg) => leg.stages.map((st) => ({
+      key: `${c.id}|${leg.skill}|${st.subtype}`,
+      name: st.name,
+      cleared: st.cleared,
+    }))))
+  const walked = stops.filter((st) => st.cleared).length
+
   const doneUpTo = nodes.findIndex((n) => n.chapter.cleared < n.chapter.stages)
   const reached = doneUpTo === -1 ? nodes.length - 1 : doneUpTo
 
@@ -68,9 +80,16 @@ export function WorldMap({
   // seeing movement matters most.
   const here = nodes[reached]?.chapter
   const within = here && here.stages ? here.cleared / here.stages : 0
-  const along = nodes.length > 1
-    ? (reached + Math.min(0.95, within)) / (nodes.length - 1)
-    : 0.5
+  // One step per stop cleared, landing ON the dot rather than near it: the
+  // dots sit at i/(n-1), so the figure has to use the same denominator or
+  // it stands just short of the marker it has actually reached.
+  // Falls back to the old realm-based position where a region has no stops
+  // to count, so an empty map still places the figure sensibly.
+  const along = stops.length > 1
+    ? walked / (stops.length - 1)
+    : nodes.length > 1
+      ? (reached + Math.min(0.95, within)) / (nodes.length - 1)
+      : 0.5
 
   return (
     <svg className="worldmap" viewBox={`0 0 ${W} ${H}`} role="img"
@@ -127,6 +146,21 @@ export function WorldMap({
       {/* The road already walked, drawn over the dotted one. */}
       <path d={road} className="map-road-done"
         pathLength={1} strokeDasharray={1} strokeDashoffset={1 - along} />
+
+      {/* A dot per sub-sub-unit, pinned to the road the same way the
+          traveller is, so they can never drift off the line it walks. */}
+      {stops.map((st, i) => (
+        <g key={st.key}
+          className={`map-stop${st.cleared ? ' done' : ''}`}
+          style={{
+            offsetPath: `path("${road}")`,
+            offsetDistance: `${(stops.length > 1 ? i / (stops.length - 1) : 0.5) * 100}%`,
+            offsetRotate: '0deg',
+          }}>
+          <circle r="4.5" />
+          <title>{st.name}</title>
+        </g>
+      ))}
 
       <Traveller terrain={terrain} road={road} at={along} />
 

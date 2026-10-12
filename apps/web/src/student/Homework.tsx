@@ -10,6 +10,7 @@ import {
   type Assignment, type AssignmentItem, type Attempt, type ItemStatus,
 } from '../teacher/assignments'
 import { roster } from '../teacher/roster'
+import { current } from '../auth/auth'
 import { selfReports, setSelfReport, type SelfReports } from './selfReports'
 
 /**
@@ -27,10 +28,27 @@ import { selfReports, setSelfReport, type SelfReports } from './selfReports'
  * actually set.
  */
 export function Homework() {
-  // TODO: replace with real auth. There is no sign-in yet, so "me" is simply
-  // the first student on the roster - enough to build and demo the screen,
-  // and wrong the moment two students share a browser.
-  const me = roster()[0]
+  /**
+   * Whose homework this is.
+   *
+   * This used to be `roster()[0]` behind a "no sign-in yet" TODO. There is
+   * sign-in now, and the TODO outlived it: every student was shown the first
+   * student on the roster's work, which is both wrong and a small privacy
+   * leak between classmates.
+   *
+   * Matched on id first, then on name, because a locally-created account and
+   * a roster entry added by the teacher are two records of the same person
+   * that were never introduced to each other.
+   */
+  const me = useMemo(() => {
+    const who = current()
+    const list = roster()
+    if (!who) return list[0]
+    const byId = list.find((s) => s.id === who.id)
+    if (byId) return byId
+    const name = who.name.trim().toLowerCase()
+    return list.find((s) => s.name.trim().toLowerCase() === name) ?? null
+  }, [])
 
   const [openId, setOpenId] = useState<string | null>(null)
   const [ticks, setTicks] = useState<SelfReports>(selfReports)

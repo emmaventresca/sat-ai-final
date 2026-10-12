@@ -1,0 +1,32 @@
+.topnav{
+  display:flex;align-items:center;gap:16px;
+  padding:10px 20px;margin:0 0 14px;
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:30;
+}
+.topnav-home{
+  font-weight:800;font-size:1rem;letter-spacing:-.02em;
+  color:var(--ink);text-decoration:none;
+}
+.topnav-links{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.topnav-link{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 12px;border-radius:9px;
+  font-size:.86rem;font-weight:600;color:var(--dim);text-decoration:none;
+  transition:background .12s ease,color .12s ease;
+}
+.topnav-link:hover{background:var(--panel2);color:var(--ink)}
+.topnav-link.here{background:var(--purple);color:#fff}
+.topnav-badge{
+  min-width:18px;height:18px;padding:0 5px;border-radius:9px;
+  background:var(--bad);color:#fff;
+  font-size:.7rem;font-weight:800;line-height:18px;text-align:center;
+}
+.topnav-link.here .topnav-badge{background:#fff;color:var(--purple)}
+.topnav-who{margin-left:auto;font-size:.82rem;color:var(--dim)}
+@media (max-width:640px){
+  .topnav{gap:10px;padding:8px 12px}
+  .topnav-who{display:none}
+}

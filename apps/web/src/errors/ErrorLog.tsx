@@ -7,6 +7,7 @@ import { Round } from '../practice/Round'
 import { difficultyLabel } from '../lesson/types'
 import {
   errorLog, fixed, grouped, noteFor, open as openOnly, saveNote,
+  type SkillLabel,
   type ErrorEntry, type TopicGroup,
 } from './log'
 
@@ -30,6 +31,7 @@ import {
  */
 export function ErrorLog({ exam }: { exam: Exam }) {
   const [names, setNames] = useState<Record<string, string>>({})
+  const [skills, setSkills] = useState<Record<string, SkillLabel>>({})
   const [round, setRound] = useState<Question[] | null>(null)
   const [busy, setBusy] = useState(false)
   const [tab, setTab] = useState<'open' | 'fixed'>('open')
@@ -47,6 +49,19 @@ export function ErrorLog({ exam }: { exam: Exam }) {
       }
       setNames(map)
     })
+    // Skill codes are what the bank stores; names are what a student can
+    // read. Without this the log headed its groups "Q.B." and "Q.F.".
+    void fetch(`${import.meta.env.BASE_URL}data/skills.json`)
+      .then((r) => r.json())
+      .then((b: { skills?: (SkillLabel & { skill_cd: string })[] }) => {
+        if (!live) return
+        const map: Record<string, SkillLabel> = {}
+        for (const s of b.skills ?? []) {
+          map[s.skill_cd] = { skill_name: s.skill_name, domain_name: s.domain_name }
+        }
+        setSkills(map)
+      })
+      .catch(() => undefined)
     return () => { live = false }
   }, [exam])
 
@@ -58,7 +73,7 @@ export function ErrorLog({ exam }: { exam: Exam }) {
   const shown = tab === 'open' ? stillOpen : done
   // Grouped on whichever tab is showing, so the tree always matches the
   // list underneath it rather than describing the other one.
-  const tree = useMemo(() => grouped(shown, names), [shown, names])
+  const tree = useMemo(() => grouped(shown, names, skills), [shown, names, skills])
   const [openSkills, setOpenSkills] = useState<Set<string>>(new Set())
   const [openTopics, setOpenTopics] = useState<Set<string>>(new Set())
 
@@ -136,7 +151,10 @@ export function ErrorLog({ exam }: { exam: Exam }) {
                   return next
                 })}>
                 <span className="err-caret">{isOpen ? '\u2212' : '+'}</span>
-                <span className="err-skill-t">{g.skill}</span>
+                <span className="err-skill-t">
+                  {g.name}
+                  {g.domain && <em className="err-skill-d">{g.domain}</em>}
+                </span>
                 <span className="err-skill-n">
                   {g.open > 0 && <b className="et-open">{g.open} open</b>}
                   {g.fixed > 0 && <span className="et-fixed">{g.fixed} fixed</span>}

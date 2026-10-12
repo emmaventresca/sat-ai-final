@@ -73,6 +73,32 @@ SECTION_SKILLS = {
 }
 
 
+
+CHOICE_REF = re.compile(r'\b(choice)(\s+)([0-9])\b', re.I)
+
+
+def letter_choices(text, choices):
+    """Rewrite 0-based choice references in prose as the letter shown.
+
+    Left alone where the digit is out of range, or where a choice's own value
+    IS that digit - on an item whose choices are 2, 4, 8, 16, "the choice 2"
+    means the one equal to two, and relabelling it "choice C" would point the
+    student at 8. Same rule as tools/fix_choice_refs.py, which repaired the
+    bank that was imported before this existed.
+    """
+    if not text:
+        return text
+    plain = [re.sub(r"<[^>]+>", "", str(c)).strip() for c in (choices or [])]
+
+    def sub(m):
+        digit = m.group(3)
+        if int(digit) >= len(plain) or digit in plain:
+            return m.group(0)
+        return f"{m.group(1)}{m.group(2)}{chr(65 + int(digit))}"
+
+    return CHOICE_REF.sub(sub, text)
+
+
 def section_from(source, skill=None, has_passage=False):
     """Which section a question belongs to.
 
@@ -395,7 +421,12 @@ def convert(q, source, passages=None):
         "answer": LETTERS[idx],
         "stimulus": pipe_tables(
             mark_underline(passage_text, q.get("underlined"))) or None,
-        "explanation": q.get("explanation", ""),
+        # The pack numbers choices from ZERO inside explanation prose
+        # ("Choice 2 adds an independent clause") while the key uses letters,
+        # so a student reading it looked at the second choice and saw the
+        # wrong one. Converted on the way in, and skipped wherever the digit
+        # could be a value rather than a position - see fix_choice_refs.
+        "explanation": letter_choices(q.get("explanation", ""), choices),
         "passage_id": q.get("passage_id"),
         # The Reading section's fifth dimension: which KIND of passage this
         # is. Carried through so a student who is fine on Craft & Structure
