@@ -19,29 +19,31 @@ that shipped. So it gets written down here instead.
 4. Close an item only when it is actually in the app and `npx tsc --noEmit`
    passes — not when the data layer behind it exists.
 
-Status: `open` · `partial` (data layer done, nothing surfaced) · `blocked`
+Status: `open` · `partial` (data layer done, nothing surfaced) · `blocked` ·
+`needs-verification` (built, never seen working)
 
 ---
 
 ## Open
 
-### ACT importer is behind the ACT bank's schema
-`open` — relayed 2026-10-08 by the ACT session
+### ACT importer: one re-run left
+`partial` — relayed 2026-10-08, re-audited 2026-10-12
 
-`tools/import_act.py` needs re-checking against four changes, then re-run
-`tools/sync_act.sh`:
+The bug that mattered is fixed. Explanations reference choices by LETTER now:
+`tools/fix_choice_refs.py` rewrote 221 refs across 86 items in
+`data/act/questions.json` (verified: no `choice <digit>` left in any
+`explanation` field there or in the `data/act/q/` shards; 45 deliberately left
+where the digit is a value, e.g. "the choice 5 + sqrt(169)i", which live in
+`trap`/`per_choice`, and the UI does not read those). `import_act.py` gained
+`letter_choices()` so a re-import cannot reintroduce it. chart-as-list,
+`passage_id` and the underlined handling were already in the importer
+(audited 2026-10-11).
 
-- `chart` may now be a **list** of specs, not one (most likely to break the importer)
-- questions carry `passage_id` into a pack-level `passages` map
-- English carries `underlined`
-- **explanations reference choices by LETTER, not 0-based index** — this one
-  fails silently and mis-keys every explanation rather than erroring
-
-Audited 2026-10-11: `import_act.py` already handles chart-as-list (wraps a
-dict, reads `passages[pid].charts`), `passage_id` and the answer index->letter
-conversion. Nothing in it reads or rewrites choice references inside
-`explanation`, so the letter-vs-index change is **not handled**. Not re-run
-since the schema change.
+Left: `tools/sync_act.sh` has **not** been re-run since. The repair was applied
+to the committed output, not the source: `~/act-mastery/backend/content/`
+still carries the 0-based refs (194 `choice <digit>` hits, some of them values).
+Re-run once and confirm the diff to `data/act/` is empty or explained, so the
+fix is shown to survive a real import rather than assumed.
 
 ### Sixty environmental concept art backdrops (real artwork)
 `partial` — manifest done, assets do not exist. Audited 2026-10-11.
@@ -51,13 +53,6 @@ since the schema change.
 the stand-in, not the artwork. Needs image files dropped at the documented
 paths (see `docs/ART_DIRECTION.md`) and the question screen wired to prefer
 them over the code-drawn scene.
-
-### ACT map: a route across all four sections
-`partial` — asked 2026-10-08, code changed, unconfirmed
-
-`grouping()` in `journey/map.ts` now returns the ACT reporting category
-(skill) as chapter, which should give each region several stops. Uncommitted
-and not looked at on screen; confirm the map draws a route, then close.
 
 ### Mini lessons themed like the rest of the quest
 `open` — asked 2026-10-08, re-checked 2026-10-11
@@ -114,19 +109,70 @@ re-measured here. Needs a detector or a re-author, then a render check.
 `open` — nothing built (no practice-test code in `apps/web/src`)
 
 Timed and untimed modes, highlighter, cross-out, a Desmos prompt, slightly
-harder than the bank. The highlighter exists (`practice/Annotatable.tsx`);
-cross-out, Desmos, timing and the test assembly do not.
+harder than the bank. The highlighter exists (`practice/Annotatable.tsx`) and
+`Round.tsx` now has a clock (off by default), previous/next, flag and a
+question navigator; a Desmos prompt, test-length timed mode and the test
+assembly do not.
 
-### Re-author the 176 failed items, review the 69
-`open` — counted 2026-10-11 from `data/bank/*.json`: 176 `fail`, 69 `review`,
-185 `unverified`, 7,712 `verified`
+### Re-author the failed items, review the flagged ones
+`open` — re-measured 2026-10-12 from `data/bank/*.json`: **188** `fail`,
+**100** `review`, **7** `unverified`, **10,155** `verified`
 
-Reasons per the verifier: 25 name a table or graph but show none, 22 correct
-answer far longer than every distractor, ~16 unknown misconception family
-(the `author_items.py` rule-4 prompt bug is fixed, so these may now pass on
-re-author), plus others (reason breakdown not re-derived). The 185 unverified
-include the 1,251 reset from `error`, minus whatever has been re-verified
-since; they still need a `verify_items.py` run to reach students.
+(Was 176 / 69 / 185 / 7,712 on 2026-10-11. The unverified backlog is cleared;
+fail and review rose because more items were verified and some of them
+failed, not because anything regressed.) The bank files carry no reason string
+at item level, so the old breakdown (tables named but not shown, correct
+answer far longer than the distractors, unknown misconception family) is not
+re-derived; re-run `verify_items.py` reporting to get it. Items in `fail`
+and `review` do not reach students.
+
+### ACT passage stems: 155 still duplicate the passage
+`open` — new 2026-10-12
+
+`tools/fix_act_stems.py` fixed 917 of 1,072 stems that repeated the passage
+text (committed in 9fc09ae). The 155 left are all Reading, concentrated in
+rhetorical-choice, vocabulary-in-context and point-of-view. Count is as
+reported by the session that ran it; not re-measured here.
+
+### Tokenomics: what it costs to run the app
+`partial` — asked, metering built 2026-10-12, no view
+
+Emma wants to see the cost of authoring questions, developing lesson plans,
+and students requesting more questions. Done: `tools/cli.py` records real
+per-call cost and tokens to `corpus/usage.jsonl` (model, usd, in/out, cache
+read/write), tagged by activity (so far the tag seen is `verify`). Left: a
+summariser tool and a page that shows it; nothing reads `usage.jsonl` yet.
+Also check every authoring/planner caller actually passes a `tag`, or the
+split by activity will be one lump.
+
+### Mystical cave: student-generated question banks
+`open` — asked 2026-10-12, nothing built (no code for it in `apps/web/src` or `tools/`)
+
+A student asks for e.g. "another systems question that's a word problem", has
+it generated, and saves it to their own personal bank, as the teacher side
+does but for students. **Teachers must be able to see each student's search
+history and generated questions, and the student must be told on screen that
+teachers can see it.** Constraint: generation runs through the local `claude`
+CLI (`tools/cli.py`), so like the teacher Planner it works only on Emma's
+machine, not for a deployed student. Needs a decision on that before
+building. Keep SAT and ACT banks separate for students.
+
+### Assign page: create more and add to bank
+`open` — asked 2026-10-12, not built
+
+A button on the Assign page that generates questions on demand for a chosen
+category and adds them to the platform. `teacher/Assign.tsx` has no generation
+call. Same local-CLI constraint as above; the planner server is the likely
+route.
+
+### Clickable attempt rows in StudentDetail
+`needs-verification` — implemented 2026-10-12 (committed bdd74c6; `QuestionPeek`
+is imported in `StudentDetail.tsx`), never seen rendering
+
+A student detail page cannot be reached in local mode (the roster does not
+surface one without Supabase), so the peek panel has not been looked at.
+`tsc` passes, which says nothing about it working. Needs Supabase connected,
+or a seeded local roster, and a look.
 
 ### Retire the old vanilla app at `web/`
 `open`
@@ -155,16 +201,13 @@ Two dimensions the bank was blind to:
   only ever sees multiple choice has an eliminating strategy that works on
   three quarters of the section and nothing for the rest.
 
-Re-measured 2026-10-11: **64** of 181 recognitions ask only one way (was
-112); 20 maths recognitions have no grid-in (was 36); grid-ins 13.2% of maths
-(down from 15.9% while wording jobs buried the grid jobs; now fixed). The
-reachable ceiling is ~24.7%, not 27%, because 395 maths questions sit in
-recognitions whose answers are claims, not values. `not_except` is 1.2%
-(94 questions, was 8).
+Re-measured 2026-10-12 by `check_variety.py`: **0** recognitions ask only one
+way (was 112, then 64); **0** maths recognitions lack a grid-in; grid-ins are
+**26.8%** of maths against 27% on the real paper (the checker's own reachable
+ceiling is 25.1%, so it is at or past it; worth Emma knowing). `not_except` is
+2.2% (224 questions, was 8).
 
-**Remaining: 557 cells / 1,844 questions** (was 799 / 2,449). A grid-only
-pass (`author_variety.py --only grid`) was running at audit time, so the
-number is still falling; re-run `check_variety.py` for the live figure.
+**Remaining: 71 cells / 105 questions** (was 557 / 1,844).
 
 `author_items.py` gained `--phrasing`, with a written brief per family; it
 already had `--format grid`. Authored items now record the family so the bank
@@ -178,19 +221,44 @@ The floor is ten each at Easy, Medium, Hard and **Challenge** for every
 subtype — the smallest grouping a student practises from. Below ten a round
 repeats itself and a streak means nothing.
 
-At the start: SAT 3,572 short, ACT 3,231. Measured 2026-10-11 by
-`check_coverage.py`: **3,371 still to author** for ten at E/M/H/X.
+At the start: SAT 3,572 short, ACT 3,231. Measured 2026-10-12 by
+`check_coverage.py`: **3,348 still to author** for ten at E/M/H/X.
 
-* SAT: 1,048 — E 56, M 34, H 377, X 581. The `author_missing.py` run of 232/232
-  cells finished with 0 failures; what is left is Hard and Challenge.
-* ACT: 2,323 — E 684, M 529, H 498, X 612. Attributed to the ACT session, not
-  authored here (see below). Only 1 of 123 ACT recognitions is complete.
+* SAT: 1,025 — E 63, M 8, H 386, X 568; 96 of 182 recognitions complete.
+  What is left is mostly Hard and Challenge.
+* ACT: 2,323 — E 684, M 529, H 498, X 612 (unchanged since 2026-10-11).
+  Only 1 of 123 ACT recognitions is complete.
 
 A long job: 2,406 items on the SAT side in this pass. **ACT authoring belongs
 in the ACT project**, not here — this repo imports that bank one way, and
 writing ACT questions on both sides would fork it.
 
 ## Done this session
+
+### Shipped 2026-10-12 (commits b0b0f64 .. bdd74c6)
+Verified in code unless marked; `npx tsc --noEmit` passes from `apps/web`.
+
+- **ACT map draws a route across all four sections.** `grouping()` in
+  `journey/map.ts` files ACT stops under the reporting category. From
+  `data/act`: English 5 chapters, Math 8, Reading 10, Science 3, 148
+  recognitions. Emma confirmed it on screen. (Moved here from Open.)
+- ACT explanations say "Choice C", not "Choice 2" (see the importer item for
+  what is left).
+- ACT passages show line numbers (`practice/LineNumbers.tsx`, used by
+  `Annotatable.tsx`); underlines render in the passage. ACT English is
+  passage-grouped (`PASSAGE_SECTIONS` in `journey/passages.ts`).
+- Round: Previous/Next (skip records nothing), flag, question navigator, clock.
+- Shared header `ui/TopNav.tsx`, mounted from `App.tsx`.
+- `Homework.tsx` reads the signed-in student, not `roster()[0]`. If no roster
+  entry matches the signed-in account it now shows nothing rather than someone
+  else's work.
+- Error log headings show skill names, not codes.
+- World maps: a dot per recognition, the traveller steps one dot per stop
+  cleared (`WorldMap.tsx`). This replaced the dropped trail map below.
+- Global CSS: `input,select{width:100%}` no longer stretches checkboxes (was
+  breaking the Assign page).
+- `tools/cli.py` meters real per-call cost to `corpus/usage.jsonl`.
+- 917 of 1,072 duplicated ACT stems fixed (remainder is an Open item).
 
 ### Verifier no longer hides good items; variety tooling fixes
 Shipped 2026-10-11, verified in code. `verify_items.py` no longer overwrites
@@ -199,11 +267,11 @@ items, which `build_bank_index.py` then withheld from students); all 1,251
 were reset to `unverified`. `author_items.py` rule 4 no longer emits the
 subtype name as the misconception slug. `check_variety.py` reports the
 reachable grid-in ceiling. `npx tsc --noEmit` passes.
-**Caveat: the working tree is ~743 files uncommitted; HEAD is still the
-2026-10-07 commit.** Reset items were not re-verified.
+Committed since (HEAD is bdd74c6, 2026-10-12). The 1,251 reset items have since
+been re-verified down to 7 unverified.
 
 ### Challenge gate, traveller, worked examples
-Found built 2026-10-11 (uncommitted): `challengeGate` is wired in `Stage.tsx`
+Found built 2026-10-11 (now committed): `challengeGate` is wired in `Stage.tsx`
 with a locked tile; `Traveller.tsx` is mounted in `WorldMap.tsx`;
 `WorkedExample` renders in `Stage.tsx`. Difference from the ask: the gate
 opens when every Hard question has been *attempted*, not ~ten answered right,
@@ -462,3 +530,22 @@ start-of-session rule in `CLAUDE.md`.
 Superseded 2026-10-06 by Emma: *"i dont want to deal w the legal stuff here"* —
 replaced by a local logout prompt that nudges her to the teacher portal to
 enter what the homework should be generated from. That replacement is built.
+
+### Treasure map / winding trail, and a student-chosen traveller avatar
+Dropped 2026-10-12. Built, shown to Emma, rejected: *"i hate that, put it back
+to the way it was"*. Fully reverted (`TrailMap.tsx` and `Avatars.tsx` deleted,
+`Journey.tsx` and `greenwood.css` restored; neither file name exists in
+`apps/web/src/journey` now). She asked instead for small dots on the EXISTING
+world maps with the traveller walking per sub-sub-unit, which is done (see
+Done). **Do not rebuild a trail map or avatar picker.**
+
+---
+
+## Deliberately not done
+
+### Deploy
+Emma said explicitly on 2026-10-12: do NOT publish anything public yet.
+`DEPLOY.md` documents Cloudflare Pages behind Access. The repo is private, no
+site exists, and `.github/workflows/ci.yml` builds but its own comment says
+deployment is Cloudflare's job, not the workflow's. Do not connect the Pages
+project or turn on a deploy step until she says so.

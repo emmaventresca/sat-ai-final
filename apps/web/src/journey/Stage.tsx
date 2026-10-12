@@ -16,6 +16,7 @@ import { groupedBySection, passageRound, shapeOf } from './passages'
 import { Gem } from './Gem'
 import { Rungs } from './Icons'
 import { WorkedExample } from './Worked'
+import { makeMore, plannerUp } from '../teacher/plannerApi'
 
 interface SubLesson {
   subtype: string
@@ -56,6 +57,36 @@ export function StageView({
   const [tier, setTier] = useState<Tier | null>(null)
   const [fetching, setFetching] = useState(false)
   const [scored, setScored] = useState<{ right: number; total: number } | null>(null)
+  /**
+   * Making more questions when a level has been worked dry.
+   *
+   * The bank is finite and lumpy - forty questions at Medium and four at
+   * Challenge in the same recognition - so running out is normal rather than
+   * exceptional, and the honest answer is to write more of exactly the thing
+   * they ran out of.
+   *
+   * Only offered when the local authoring server is actually up. A button
+   * that fails is worse than no button, and this one needs a machine that
+   * can run the model.
+   */
+  const [canMake, setCanMake] = useState(false)
+  const [making, setMaking] = useState<Tier | null>(null)
+  const [madeNote, setMadeNote] = useState<string | null>(null)
+
+  useEffect(() => { void plannerUp().then(setCanMake) }, [])
+
+  async function makeFor(t: Tier) {
+    setMaking(t)
+    setMadeNote(null)
+    const res = await makeMore(exam, {
+      skill_cd: leg.skill, subtype, difficulty: t, n: 8,
+    })
+    setMaking(null)
+    setMadeNote(res.made
+      ? `Wrote ${res.made} new ${difficultyLabel(t).toLowerCase()} question`
+        + `${res.made === 1 ? '' : 's'}. Reload to see them.`
+      : `Could not make more: ${res.error ?? 'nothing was written'}`)
+  }
 
   /**
    * Answered CORRECTLY, not merely met.
@@ -378,6 +409,43 @@ export function StageView({
             )
         })}
       </div>
+
+      {/* Levels this student has worked dry, with an offer to write more of
+          exactly that. They go into the shared bank, not a private stash:
+          the next person to reach this recognition gets them too. */}
+      {canMake && subtype && (() => {
+        const dry = tiers.filter((t) => {
+          const here = pool.filter((q) => q.difficulty === t)
+          if (!here.length) return false
+          if (t === 'X' && !gate.open) return false
+          return remainingIn(here, attempted,
+            lastTouched(exam, subtype as string)).left === 0
+        })
+        if (!dry.length && !madeNote) return null
+        return (
+          <div className="make-more">
+            {dry.length > 0 && (
+              <>
+                <p className="tiny muted">
+                  Worked dry here. New questions are written into the shared
+                  bank, so everyone gets them &mdash; it takes a minute or two.
+                </p>
+                <div className="row tight">
+                  {dry.map((t) => (
+                    <button key={t} className="btn-sm" disabled={making !== null}
+                      onClick={() => void makeFor(t as Tier)}>
+                      {making === t
+                        ? `Writing ${difficultyLabel(t as Tier).toLowerCase()}…`
+                        : `Make more ${difficultyLabel(t as Tier).toLowerCase()}`}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
+            {madeNote && <p className="tiny" style={{ marginTop: 8 }}>{madeNote}</p>}
+          </div>
+        )
+      })()}
     </div>
   )
 }

@@ -482,5 +482,241 @@
    "overlap": [],
    "residue": 0
   }
+ },
+ {
+  "stem": "Which of the following functions gives $V(L)$, the volume of the tray, in cubic centimeters, in terms of $L$?",
+  "stimulus": "An engineer testing a new aluminum alloy starts with a rectangular sheet whose length, $L$ centimeters, is $10$ centimeters more than its width. She cuts a square measuring $2$ centimeters on each side from each of the four corners, then folds up the four flaps to form an open-top tray.",
+  "choices": [
+   "$V(L) = 2(L - 4)(L + 6)$",
+   "$V(L) = 2(L - 4)(L - 14)$",
+   "$V(L) = 2(L - 2)(L - 12)$",
+   "$V(L) = (L - 4)(L - 14)$"
+  ],
+  "answer": "B",
+  "explanation": "The question asks for the volume in terms of the length, so you write the width as $L - 10$. Cutting a $2$ cm square from each corner takes $2$ cm off each end of each side, so each side gets $4$ cm shorter. The base is $L - 4$ by $(L - 10) - 4 = L - 14$. The folded flaps are $2$ cm tall, so $V(L) = 2(L - 4)(L - 14)$. To check, try $L = 20$: the sheet is $20$ by $10$, the tray is $16$ by $6$ by $2$, which is $192$, and $2(16)(6) = 192$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You wrote the width as $L + 10$, as if the width were the variable and the length came from it. The length is the input here, so the width is $L - 10$, and the base side is $L - 14$, not $L + 6$."
+   },
+   "C": {
+    "misconception": "algebra-manipulation",
+    "why": "You took $2$ cm off each side only once. A square is cut from both ends of every side, so each side loses $2 \\cdot 2 = 4$ cm, not $2$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "This is the area of the tray's base, which you get partway through. You still have to multiply by the $2$ cm height of the folded flaps to get the volume."
+   }
+  },
+  "id": "orig-geometry-to-fu-X-6bf1f7",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-X-6bf1f7",
+   "structure": [],
+   "solver_answer": "B",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null
+  }
+ },
+ {
+  "stem": "Which of the following functions gives $V(r)$, the volume of the structure, in cubic meters, in terms of $r$?",
+  "stimulus": "A small observatory is shaped like a right circular cylinder with a hemispherical dome on top. The cylinder and the dome both have radius $r$ meters. The total height of the observatory, from the floor to the top of the dome, is $4$ meters more than the diameter of the cylinder.",
+  "choices": [
+   "$V(r) = \\frac{8}{3}\\pi r^3 + 4\\pi r^2$",
+   "$V(r) = \\frac{7}{3}\\pi r^3 + 4\\pi r^2$",
+   "$V(r) = \\frac{5}{3}\\pi r^3 + 4\\pi r^2$",
+   "$V(r) = \\pi r^3 + 4\\pi r^2$"
+  ],
+  "answer": "C",
+  "explanation": "The total height is $2r + 4$. The dome takes up the top $r$ meters of that height, so the cylinder is only $(2r + 4) - r = r + 4$ meters tall. The cylinder's volume is $\\pi r^2(r + 4) = \\pi r^3 + 4\\pi r^2$. The hemisphere's volume is half of $\\frac{4}{3}\\pi r^3$, which is $\\frac{2}{3}\\pi r^3$. Add them: $V(r) = \\frac{5}{3}\\pi r^3 + 4\\pi r^2$.",
+  "distractors": {
+   "A": {
+    "misconception": "wrong-target-quantity",
+    "why": "You used the total height $2r + 4$ as the cylinder's height. That height includes the dome, so the cylinder is only $r + 4$ meters tall. Using the total height counts the dome's $r$ meters twice."
+   },
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You got the cylinder's height right but added a full sphere, $\\frac{4}{3}\\pi r^3$. The dome is a hemisphere, so its volume is half of that, $\\frac{2}{3}\\pi r^3$."
+   },
+   "D": {
+    "misconception": "intermediate-step",
+    "why": "This is the cylinder's volume alone, which you get partway through. You still have to add the $\\frac{2}{3}\\pi r^3$ for the dome."
+   }
+  },
+  "id": "orig-geometry-to-fu-X-766e0e",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-X-766e0e",
+   "structure": [],
+   "solver_answer": "C",
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null
+  }
+ },
+ {
+  "stem": "Which function $V$ gives the volume, in cubic centimeters, of the interior in terms of $x$, the outer length of the case, in centimeters?",
+  "stimulus": "A telescope's camera is protected by a closed rectangular case. The outer width of the case is 3 centimeters less than its outer length, and the outer height of the case is 2 centimeters more than half its outer width. Every face of the case, including the top and bottom, is 1 centimeter thick, so the hollow interior is a smaller rectangular box.",
+  "choices": [
+   "$V(x) = \\frac{1}{2}(x-2)(x-5)(x+1)$",
+   "$V(x) = \\frac{1}{2}x(x-3)(x+1)$",
+   "$V(x) = \\frac{1}{2}(x-2)(x-5)(x-3)$",
+   "$V(x) = \\frac{1}{2}(x-2)(x+1)(x+3)$"
+  ],
+  "answer": "C",
+  "explanation": "Start with the outer dimensions in terms of the outer length $x$. The outer width is $x-3$. The outer height is $\\frac{x-3}{2}+2 = \\frac{x+1}{2}$. Each face is 1 cm thick, so every interior dimension is 2 cm smaller than the outer one, because there is a wall at both ends. The interior length is $x-2$, the interior width is $x-5$, and the interior height is $\\frac{x+1}{2}-2 = \\frac{x-3}{2}$. Multiply: $V(x) = \\frac{1}{2}(x-2)(x-5)(x-3)$. Check with $x=7$: the interior is $5 \\times 2 \\times 2 = 20$, and the formula gives $\\frac{1}{2}(5)(2)(4) = 20$.",
+  "distractors": {
+   "A": {
+    "misconception": "missed-condition",
+    "why": "You took the walls off the length and the width but left the height at $\\frac{x+1}{2}$. The top and bottom are also 1 cm thick, so the interior height is $\\frac{x-3}{2}$. Test $x=7$: this choice gives 40 instead of 20."
+   },
+   "B": {
+    "misconception": "wrong-target-quantity",
+    "why": "This is the volume of the whole case, outer dimensions only: $x$ by $x-3$ by $\\frac{x+1}{2}$. The question asks for the hollow interior, so every dimension still has to lose 2 cm."
+   },
+   "D": {
+    "misconception": "algebra-manipulation",
+    "why": "You wrote the width as $x+3$ instead of $x-3$, then built the height from that wrong width. Since $x$ is the length and the width is 3 less than the length, the width has to be $x-3$, not $x+3$."
+   }
+  },
+  "id": "orig-geometry-to-fu-X-0e912c",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "Which function $A$ gives the area, in square inches, of the printed image in terms of $x$, the length of the sheet, in inches?",
+  "stimulus": "A folklorist reproduces a woodcut of a village legend on a rectangular sheet of paper. The sheet's length is 4 inches more than twice its width. The image is printed with a 1-inch margin along the left, right, and top edges of the sheet and a 3-inch margin along the bottom edge, which leaves room for a caption.",
+  "choices": [
+   "$A(x) = \\frac{1}{2}x^2 - 2x$",
+   "$A(x) = \\frac{1}{2}x^2 - 6x + 16$",
+   "$A(x) = \\frac{1}{2}x^2 - 4x + 8$",
+   "$A(x) = \\frac{1}{2}x^2 - 7x + 24$"
+  ],
+  "answer": "B",
+  "explanation": "The sheet length is the input, so write the width in terms of $x$. Since $x = 2w + 4$, the width is $w = \\frac{x-4}{2}$. The side margins total 2 inches, so the image width is $\\frac{x-4}{2} - 2 = \\frac{x-8}{2}$. The top and bottom margins total $1 + 3 = 4$ inches, so the image length is $x-4$. The area is $\\frac{(x-4)(x-8)}{2} = \\frac{1}{2}x^2 - 6x + 16$. Check with $x=12$: the sheet is 12 by 4, the image is 8 by 2, and the area is 16. The formula gives $72 - 72 + 16 = 16$.",
+  "distractors": {
+   "A": {
+    "misconception": "algebra-manipulation",
+    "why": "You solved $x = 2w+4$ for the width as $\\frac{x+4}{2}$, which flips the sign of the offset. The sheet's length is the larger quantity, so the width has to be $\\frac{x-4}{2}$. The wrong width gives an image of $\\frac{x}{2}$ by $x-4$, which is this choice."
+   },
+   "C": {
+    "misconception": "missed-condition",
+    "why": "You subtracted the top and bottom margins but forgot the two 1-inch side margins, so the image width stayed at $\\frac{x-4}{2}$. That gives $\\frac{(x-4)^2}{2}$. At $x=12$ this gives 32, which is larger than the whole 8-by-2 image."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You used the 3-inch margin at both the top and the bottom, which makes the image length $x-6$. The top margin is only 1 inch, so the vertical margins total 4 inches and the image length is $x-4$."
+   }
+  },
+  "id": "orig-geometry-to-fu-X-c7d0a8",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "A museum curator designs a tall display case for an ornithology collection featuring rare bird nesting materials. The case has a square base with side length $s$ inches. The height of the case is 5 inches greater than the side length of the base. Which equation correctly expresses the volume $V$ of the display case in terms of $s$?",
+  "stimulus": null,
+  "choices": [
+   "$V = s^3 + 5s^2$",
+   "$V = s^3 - 5s^2$",
+   "$V = (s + 5)^2$",
+   "$V = 5s^3 + s^2$"
+  ],
+  "answer": "A",
+  "explanation": "You have a square base with area $s^2$ and height $(s + 5)$ inches. The volume is base area times height: $V = s^2(s + 5)$. Expanding with the distributive property gives $V = s^3 + 5s^2$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You've reversed the sign on the 5, treating the height as if it were 5 inches less than the side length instead of 5 inches more. The height is $(s + 5)$, not $(s - 5)$."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You squared the height $(s + 5)^2$ instead of multiplying the base area $s^2$ by the height. The volume formula for a rectangular prism is base area times height, not height squared alone."
+   },
+   "D": {
+    "misconception": "wrong-target-quantity",
+    "why": "You multiplied the 5 by $s^3$ instead of by $s^2$. When you distribute in $s^2(s + 5) = s^3 + 5s^2$, the 5 coefficient applies only to the $s^2$ term from the base."
+   }
+  },
+  "id": "orig-geometry-to-fu-X-e4252e",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
+ },
+ {
+  "stem": "A textile historian examines a historical weaving loom with a rectangular frame. The length of the frame is 3 times the width minus 2 inches. If $w$ represents the width in inches, which equation correctly expresses the area $A$ of the weaving frame in terms of $w$?",
+  "stimulus": null,
+  "choices": [
+   "$A = 3w^2 - 2w$",
+   "$A = 3w^2 + 2w$",
+   "$A = (3w - 2)^2$",
+   "$A = 3w^2 - 6w$"
+  ],
+  "answer": "A",
+  "explanation": "The width is $w$ inches and the length is $(3w - 2)$ inches. Area equals width times length: $A = w(3w - 2)$. Expanding with the distributive property gives $A = 3w^2 - 2w$.",
+  "distractors": {
+   "B": {
+    "misconception": "algebra-manipulation",
+    "why": "You've changed the minus sign to a plus sign. The length is \"3 times the width minus 2,\" so it is $(3w - 2)$, not $(3w + 2)$. When you distribute $w(3w - 2)$, the negative sign stays attached to the 2."
+   },
+   "C": {
+    "misconception": "intermediate-step",
+    "why": "You squared the length $(3w - 2)^2$ instead of multiplying width times length. The area of a rectangle requires you to multiply the two dimensions together, not square one of them."
+   },
+   "D": {
+    "misconception": "misread-given",
+    "why": "You interpreted the length as \"3 times the quantity (width minus 2)\" rather than \"(3 times the width) minus 2.\" This gives $3(w - 2) = 3w - 6$ as the length, leading to $w(3w - 6) = 3w^2 - 6w$, but the expression should be $w(3w - 2)$."
+   }
+  },
+  "id": "orig-geometry-to-fu-X-bcb8e8",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "X",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "mc",
+  "status": "unverified"
  }
 ]

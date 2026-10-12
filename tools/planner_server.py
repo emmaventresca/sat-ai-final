@@ -281,7 +281,12 @@ def generate_items(req):
         raise ValueError("skill_cd is required")
     n = max(1, min(int(req.get("n") or 10), 20))
     difficulty = req.get("difficulty") or "M"
-    if difficulty not in ("E", "M", "H"):
+    # F and X are ours rather than the exam's, and they are exactly the tiers
+    # a student runs dry in first: Foundations because it is where someone
+    # who is struggling lives, Challenge because it was authored last and is
+    # thinnest. Refusing them here meant "make me more" failed precisely
+    # where it was needed.
+    if difficulty not in ("F", "E", "M", "H", "X"):
         raise ValueError(f"unknown difficulty {difficulty!r}")
 
     # author_items.py appends to data/bank/<stem>-<tier>.json. Diff the file
@@ -346,7 +351,29 @@ def generate_items(req):
     if not passed:
         raise RuntimeError(f"wrote {len(fresh)} questions but none passed "
                            f"verification; nothing was served")
+
+    # Rebuild, or the new questions exist only in data/bank and the app never
+    # sees them. The student asked for more because they had run out; handing
+    # back items that are not in the served index leaves them still out.
+    if req.get("publish", True):
+        rebuild()
     return passed[:n]
+
+
+def rebuild():
+    """Put newly authored questions into what the app actually serves.
+
+    data/bank/*.json is the source; practice.json, the per-recognition chunks
+    and apps/web/public/data are all derived from it. Best effort: the
+    questions are written and verified by this point, and failing the whole
+    request over a rebuild would throw away work that is already paid for.
+    """
+    for tool in ("build_bank_index.py", "split_bank.py", "stage_public_data.py"):
+        try:
+            subprocess.run([sys.executable, os.path.join(TOOLS, tool)],
+                           capture_output=True, text=True, timeout=300)
+        except Exception:
+            pass
 
 
 # ---------------------------------------------------------------------------

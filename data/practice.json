@@ -193824,6 +193824,104 @@
    }
   },
   {
+   "id": "orig-geometry-to-fu-X-6bf1f7",
+   "skill_cd": "P.C.",
+   "subtype": "geometry-to-function",
+   "subtype_name": "Write a function for a geometric quantity",
+   "difficulty": "X",
+   "stimulus": "An engineer testing a new aluminum alloy starts with a rectangular sheet whose length, $L$ centimeters, is $10$ centimeters more than its width. She cuts a square measuring $2$ centimeters on each side from each of the four corners, then folds up the four flaps to form an open-top tray.",
+   "stem": "Which of the following functions gives $V(L)$, the volume of the tray, in cubic centimeters, in terms of $L$?",
+   "choices": [
+    "$V(L) = 2(L - 4)(L + 6)$",
+    "$V(L) = 2(L - 4)(L - 14)$",
+    "$V(L) = 2(L - 2)(L - 12)$",
+    "$V(L) = (L - 4)(L - 14)$"
+   ],
+   "answer": "B",
+   "explanation": "The question asks for the volume in terms of the length, so you write the width as $L - 10$. Cutting a $2$ cm square from each corner takes $2$ cm off each end of each side, so each side gets $4$ cm shorter. The base is $L - 4$ by $(L - 10) - 4 = L - 14$. The folded flaps are $2$ cm tall, so $V(L) = 2(L - 4)(L - 14)$. To check, try $L = 20$: the sheet is $20$ by $10$, the tray is $16$ by $6$ by $2$, which is $192$, and $2(16)(6) = 192$.",
+   "distractors": {
+    "A": {
+     "misconception": "wrong-target-quantity",
+     "why": "You wrote the width as $L + 10$, as if the width were the variable and the length came from it. The length is the input here, so the width is $L - 10$, and the base side is $L - 14$, not $L + 6$."
+    },
+    "C": {
+     "misconception": "algebra-manipulation",
+     "why": "You took $2$ cm off each side only once. A square is cut from both ends of every side, so each side loses $2 \\cdot 2 = 4$ cm, not $2$."
+    },
+    "D": {
+     "misconception": "intermediate-step",
+     "why": "This is the area of the tray's base, which you get partway through. You still have to multiply by the $2$ cm height of the folded flaps to get the volume."
+    }
+   },
+   "source": "original - written for this project",
+   "license": "CC BY 4.0 - original item, not College Board content",
+   "format": "mc",
+   "type": "item",
+   "section": "math",
+   "band_floor": 200,
+   "band_ceiling": 1600,
+   "per_choice": {
+    "correct": "<p>The question asks for the volume in terms of the length, so you write the width as $L - 10$. Cutting a $2$ cm square from each corner takes $2$ cm off each end of each side, so each side gets $4$ cm shorter. The base is $L - 4$ by $(L - 10) - 4 = L - 14$. The folded flaps are $2$ cm tall, so $V(L) = 2(L - 4)(L - 14)$. To check, try $L = 20$: the sheet is $20$ by $10$, the tray is $16$ by $6$ by $2$, which is $192$, and $2(16)(6) = 192$.</p>",
+    "A": "<p>You wrote the width as $L + 10$, as if the width were the variable and the length came from it. The length is the input here, so the width is $L - 10$, and the base side is $L - 14$, not $L + 6$.</p>",
+    "C": "<p>You took $2$ cm off each side only once. A square is cut from both ends of every side, so each side loses $2 \\cdot 2 = 4$ cm, not $2$.</p>",
+    "D": "<p>This is the area of the tray's base, which you get partway through. You still have to multiply by the $2$ cm height of the folded flaps to get the volume.</p>"
+   },
+   "misconceptions": {
+    "A": "wrong-target-quantity",
+    "C": "algebra-manipulation",
+    "D": "intermediate-step"
+   }
+  },
+  {
+   "id": "orig-geometry-to-fu-X-766e0e",
+   "skill_cd": "P.C.",
+   "subtype": "geometry-to-function",
+   "subtype_name": "Write a function for a geometric quantity",
+   "difficulty": "X",
+   "stimulus": "A small observatory is shaped like a right circular cylinder with a hemispherical dome on top. The cylinder and the dome both have radius $r$ meters. The total height of the observatory, from the floor to the top of the dome, is $4$ meters more than the diameter of the cylinder.",
+   "stem": "Which of the following functions gives $V(r)$, the volume of the structure, in cubic meters, in terms of $r$?",
+   "choices": [
+    "$V(r) = \\frac{8}{3}\\pi r^3 + 4\\pi r^2$",
+    "$V(r) = \\frac{7}{3}\\pi r^3 + 4\\pi r^2$",
+    "$V(r) = \\frac{5}{3}\\pi r^3 + 4\\pi r^2$",
+    "$V(r) = \\pi r^3 + 4\\pi r^2$"
+   ],
+   "answer": "C",
+   "explanation": "The total height is $2r + 4$. The dome takes up the top $r$ meters of that height, so the cylinder is only $(2r + 4) - r = r + 4$ meters tall. The cylinder's volume is $\\pi r^2(r + 4) = \\pi r^3 + 4\\pi r^2$. The hemisphere's volume is half of $\\frac{4}{3}\\pi r^3$, which is $\\frac{2}{3}\\pi r^3$. Add them: $V(r) = \\frac{5}{3}\\pi r^3 + 4\\pi r^2$.",
+   "distractors": {
+    "A": {
+     "misconception": "wrong-target-quantity",
+     "why": "You used the total height $2r + 4$ as the cylinder's height. That height includes the dome, so the cylinder is only $r + 4$ meters tall. Using the total height counts the dome's $r$ meters twice."
+    },
+    "B": {
+     "misconception": "algebra-manipulation",
+     "why": "You got the cylinder's height right but added a full sphere, $\\frac{4}{3}\\pi r^3$. The dome is a hemisphere, so its volume is half of that, $\\frac{2}{3}\\pi r^3$."
+    },
+    "D": {
+     "misconception": "intermediate-step",
+     "why": "This is the cylinder's volume alone, which you get partway through. You still have to add the $\\frac{2}{3}\\pi r^3$ for the dome."
+    }
+   },
+   "source": "original - written for this project",
+   "license": "CC BY 4.0 - original item, not College Board content",
+   "format": "mc",
+   "type": "item",
+   "section": "math",
+   "band_floor": 200,
+   "band_ceiling": 1600,
+   "per_choice": {
+    "correct": "<p>The total height is $2r + 4$. The dome takes up the top $r$ meters of that height, so the cylinder is only $(2r + 4) - r = r + 4$ meters tall. The cylinder's volume is $\\pi r^2(r + 4) = \\pi r^3 + 4\\pi r^2$. The hemisphere's volume is half of $\\frac{4}{3}\\pi r^3$, which is $\\frac{2}{3}\\pi r^3$. Add them: $V(r) = \\frac{5}{3}\\pi r^3 + 4\\pi r^2$.</p>",
+    "A": "<p>You used the total height $2r + 4$ as the cylinder's height. That height includes the dome, so the cylinder is only $r + 4$ meters tall. Using the total height counts the dome's $r$ meters twice.</p>",
+    "B": "<p>You got the cylinder's height right but added a full sphere, $\\frac{4}{3}\\pi r^3$. The dome is a hemisphere, so its volume is half of that, $\\frac{2}{3}\\pi r^3$.</p>",
+    "D": "<p>This is the cylinder's volume alone, which you get partway through. You still have to add the $\\frac{2}{3}\\pi r^3$ for the dome.</p>"
+   },
+   "misconceptions": {
+    "A": "wrong-target-quantity",
+    "B": "algebra-manipulation",
+    "D": "intermediate-step"
+   }
+  },
+  {
    "id": "orig-graph-intersec-E-a8426e",
    "skill_cd": "H.D.",
    "subtype": "graph-intersection",

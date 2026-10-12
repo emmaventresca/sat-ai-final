@@ -151,3 +151,45 @@ export async function lessonItems(
   if (!r.ok) throw new Error(data.error || `planner returned ${r.status}`)
   return { blocks: data.blocks ?? [], failed: data.failed ?? [] }
 }
+
+/**
+ * Write more questions into the global bank for one recognition and tier.
+ *
+ * For when a student has worked a cell dry. The bank is finite and lumpy -
+ * some recognitions hold forty questions at Medium and four at Challenge -
+ * so "there is nothing left here" is a normal thing to hit, and the honest
+ * answer is to make more rather than to send them somewhere else.
+ *
+ * They go into `data/bank`, the same place every other question lives, and
+ * the server rebuilds the served index before returning. Not a private
+ * stash: the next student to reach this cell gets them too.
+ *
+ * Needs the local planner running, so this only works on a machine that has
+ * it. `plannerUp()` is the check; callers should not offer the button
+ * otherwise rather than letting it fail.
+ */
+export async function makeMore(
+  exam: Exam,
+  req: { skill_cd: string; subtype?: string | null; difficulty: string; n?: number },
+): Promise<{ made: number; error?: string }> {
+  try {
+    const r = await fetch(`${PLANNER}/generate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        exam,
+        skill_cd: req.skill_cd,
+        subtype: req.subtype || undefined,
+        difficulty: req.difficulty,
+        n: Math.max(1, Math.min(req.n ?? 8, 20)),
+      }),
+      signal: AbortSignal.timeout(900_000),
+    })
+    const body = await r.json().catch(() => ({}))
+    if (!r.ok) return { made: 0, error: body?.error || `server said ${r.status}` }
+    const items = Array.isArray(body) ? body : (body.items ?? [])
+    return { made: items.length }
+  } catch (e) {
+    return { made: 0, error: e instanceof Error ? e.message : 'could not reach the planner' }
+  }
+}
