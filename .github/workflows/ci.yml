@@ -1,4 +1,4 @@
-# Build the app and publish it to GitHub Pages.
+# Build the app and prove the data still stages.
 #
 # The ACT and SAT question data is NOT committed - apps/web/public/data is
 # gitignored, because it is generated. It gets rebuilt here instead: the
@@ -7,9 +7,13 @@
 # edit on the ACT side show up on the site without anyone remembering to
 # stage it by hand.
 #
+# The site itself is deployed by Cloudflare Pages, which builds from this
+# repo on its own. This job exists so a push that breaks the build or the
+# data staging is caught here rather than discovered on the live site.
+#
 # stage_public_data.py is an allowlist, deliberately: a new file under data/
 # is private until someone adds it. Publishing stays opt-in even here.
-name: Deploy
+name: CI
 
 on:
   push:
@@ -18,12 +22,9 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
-# Never let two deploys race; the later push is the one that should win.
 concurrency:
-  group: pages
+  group: ci-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -51,25 +52,10 @@ jobs:
       - name: Build
         run: npm run build --prefix apps/web
 
-      - name: Say what went online
+      - name: Report what was built
         run: |
-          echo "### Published" >> $GITHUB_STEP_SUMMARY
+          echo "### Built" >> $GITHUB_STEP_SUMMARY
           du -sh apps/web/dist >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "SAT questions: $(python3 -c "import json;print(len(json.load(open('data/practice.json'))))" 2>/dev/null || echo '?')" >> $GITHUB_STEP_SUMMARY
           echo "ACT questions: $(python3 -c "import json;d=json.load(open('data/act/questions.json'));print(len(d.get('items',d)))" 2>/dev/null || echo '?')" >> $GITHUB_STEP_SUMMARY
-
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: apps/web/dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
