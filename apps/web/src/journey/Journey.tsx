@@ -22,6 +22,8 @@ import { StopGrid } from './StopGrid'
 import './greenwood.css'
 import { NextPoints } from './NextPoints'
 import { Traps } from './Traps'
+import { Atlas } from './Atlas'
+import { Land } from './Land'
 
 /**
  * The map, not the inventory.
@@ -63,6 +65,8 @@ export function Journey({ exam }: { exam: Exam }) {
 
   /** A drill built around one recurring mistake, not one topic. */
   const [drill, setDrill] = useState<{ questions: Question[]; label: string } | null>(null)
+  /** The land being adventured through, full-page. */
+  const [inLand, setInLand] = useState<string | null>(null)
 
   const regions = useMemo(
     () => (bank.length ? buildJourney(exam, bank, skills) : []),
@@ -185,6 +189,24 @@ export function Journey({ exam }: { exam: Exam }) {
         </div>
       )}
 
+      {/* The lands, as surveyed plates. Leads the page because it is the
+          thing a student came to walk, and because a photograph says where
+          they are going faster than a list of names. */}
+      {inLand && (() => {
+        const region = regions.find((r) => r.id === inLand)
+        if (!region) return null
+        return (
+          <Land region={region} exam={exam}
+            onExit={() => setInLand(null)}
+            onPractise={(leg, subtype) => {
+              setInLand(null)
+              setOpen({ leg, subtype, mode: 'stage' })
+            }} />
+        )
+      })()}
+
+      <Atlas regions={regions} exam={exam} onOpen={setInLand} />
+
       <NextPoints exam={exam} />
 
       {/* The habit behind the misses, across every recognition. A drill
@@ -211,7 +233,7 @@ function Region({
 }) {
   const [ref, shown] = useReveal<HTMLElement>()
   return (
-        <section ref={ref}
+        <section ref={ref} id={`realm-anchor-${region.id}`}
           className={`region world-${region.terrain} reveal ${shown ? 'in' : ''}`}>
           <div className="region-head">
             <h2>{region.name}</h2>

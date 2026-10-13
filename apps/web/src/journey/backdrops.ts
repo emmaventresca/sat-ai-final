@@ -94,6 +94,7 @@ const SCENES: Record<Terrain, string[]> = {
  * worse than one that waits to be told.
  */
 const SHIPPED = new Set<string>([
+  'alpine/glacier-crossing',
   'alpine/mountain-ridge',
   'boardwalk/the-boardwalk-at-night',
   'hawaii/volcanic-coast',
@@ -151,4 +152,16 @@ export function allBackdrops(): Backdrop[] {
 export function artProgress(): { done: number; total: number } {
   const all = allBackdrops()
   return { done: all.filter((b) => !b.placeholder).length, total: all.length }
+}
+
+/**
+ * The real photographs a world actually has, in slot order.
+ *
+ * The atlas leads each world with a picture, and a world with no artwork
+ * yet must not lead with a blank frame - so this returns only what exists
+ * and the caller decides what to do when the list is empty.
+ */
+export function realBackdrops(terrain: Terrain): Backdrop[] {
+  return Array.from({ length: SLOTS }, (_, i) => backdrop(terrain, i))
+    .filter((b) => !b.placeholder)
 }

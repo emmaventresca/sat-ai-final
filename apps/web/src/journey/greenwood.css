@@ -75,8 +75,15 @@
    Scoped past the ivy rather than applied to every child: `.journey > *`
    matches the ivy columns too, and at equal specificity the later rule won -
    which dropped them out of `fixed` and into the flow, pushing the whole page
-   2,600px down behind them. */
-.journey > *:not(.ivy) { position:relative; z-index:1; }
+   2,600px down behind them.
+
+   `.land` is excluded for exactly the same reason, and it cost the same hour
+   to find: the full-page land is `position:fixed`, this rule turned it back
+   into `relative`, and it rendered as a 131px strip in the middle of the
+   scroll instead of covering the window. Any new full-screen child of the
+   journey needs adding here too - which is the argument for this rule not
+   existing, but it is load-bearing for the stacking everywhere else. */
+.journey > *:not(.ivy):not(.land) { position:relative; z-index:1; }
 
 /* --- Signage --------------------------------------------------------------
    The region heading was 1.3rem, which is a label. A region is a COUNTRY -
