@@ -255,17 +255,20 @@ export function Land({ region, exam, onExit, onPractise }: {
       </div>
 
       <div className={`land-field${zoomAt ? ' zooming' : ''}`}>
-        {/* The road. Pods sit in a ring, and a ring does not tell you where
-            to start - so the route is drawn through them in curriculum
-            order with arrowheads, and the student can see which way round
-            to travel rather than guessing. */}
-        <Route pods={pods}
-          along={!domain
-            ? ROUTE[region.terrain as Terrain]
-            : inner
-              ? [inner.entry, ...pods.map((p) => [p.x, p.y] as [number, number]),
-                 inner.exit]
-              : undefined} />
+        {/* The road, but only where there is a journey to describe.
+            Inside a single question type the boxes are five ways of asking
+            the same thing, not stops on a route - a line threading them
+            invents an order that does not exist, and at this depth it
+            looped back over the artwork besides. */}
+        {!skill && (
+          <Route pods={pods}
+            along={!domain
+              ? ROUTE[region.terrain as Terrain]
+              : inner
+                ? [inner.entry, ...pods.map((p) => [p.x, p.y] as [number, number]),
+                   inner.exit]
+                : undefined} />
+        )}
 
         {pods.map((p) => (!domain ? (
           /* On the land itself the marker sits ON its feature - the meadow,
