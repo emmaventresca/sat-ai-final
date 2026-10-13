@@ -38,6 +38,14 @@ CREDITS = os.path.join(ROOT, "data", "art_credits.json")
 SIZES = [(960, "-sm"), (1600, ""), (2400, "-lg")]
 QUALITY = 82
 
+# Quality is a starting point, not a result. A snowy forest at q82 came out
+# at 1.3MB where a calm seascape came out at 86KB - detail, not dimensions,
+# decides the file - and a backdrop that size is a practice round that takes
+# seconds to appear on a school laptop. Each size is re-encoded downward
+# until it fits, and the floor stops it chasing a budget into mush.
+BUDGET_KB = {"-sm": 220, "": 420, "-lg": 900}
+MIN_QUALITY = 58
+
 
 def slots():
     """Every theme/scene key, read from backdrops.ts rather than duplicated."""
@@ -113,9 +121,21 @@ def convert(src_path, theme, scene):
             scale = min(1.0, width / im.width)
             size = (round(im.width * scale), round(im.height * scale))
             dest = os.path.join(out_dir, f"{scene}{suffix}.webp")
-            im.resize(size, Image.LANCZOS).save(
-                dest, "WEBP", quality=QUALITY, method=6)
-            written.append((dest, os.path.getsize(dest) / 1024))
+            resized = im.resize(size, Image.LANCZOS)
+            budget = BUDGET_KB.get(suffix, 420)
+            q = QUALITY
+            while True:
+                resized.save(dest, "WEBP", quality=q, method=6)
+                kb = os.path.getsize(dest) / 1024
+                if kb <= budget or q <= MIN_QUALITY:
+                    break
+                q -= 8
+            # Say so rather than shipping it quietly. Some pictures - frosted
+            # forest, dense foliage - will not fit any sane budget, and the
+            # honest answer is to pick a different photograph, not to grind
+            # the quality into mush chasing a number.
+            over = kb > budget
+            written.append((dest, kb, over))
     return written
 
 
@@ -228,7 +248,9 @@ def main():
         mark_shipped(done_keys)
 
     for path, key, written in placed:
-        sizes = ", ".join(f"{kb:.0f}KB" for _, kb in written) or "dry run"
+        sizes = ", ".join(
+            f"{kb:.0f}KB{'!' if over else ''}" for _, kb, over in written
+        ) or "dry run"
         print(f"  {os.path.basename(path)}  ->  {key}   [{sizes}]")
     for path, why in skipped:
         print(f"  SKIPPED {os.path.basename(path)}: {why}")
@@ -240,6 +262,12 @@ def main():
     if skipped:
         print("\nFor a skipped file, name the slot yourself:")
         print("  python3 tools/add_art.py FILE --slot theme/scene")
+    heavy = [(k, w) for _, k, w in placed
+             for w in [[x for x in w if len(x) > 2 and x[2]]] if w]
+    if heavy:
+        print("\n! marks a file that would not fit its size budget even at the")
+        print("  lowest quality. It will work, but it is a slow first paint on a")
+        print("  school laptop - a less detailed photograph is the real fix.")
     if args.dry_run:
         print("\nDRY RUN - nothing was written.")
     return 0
