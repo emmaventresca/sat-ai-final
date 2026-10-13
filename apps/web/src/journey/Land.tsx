@@ -3,7 +3,7 @@ import type { Exam, Tier } from '../exams/types'
 import type { Chapter, Leg, Region, Stage, Terrain } from './map'
 import { backdrop, realBackdrops } from './backdrops'
 import { fallbackSpot, HERO, ROUTE, SPOTS } from './places'
-import { innerMapFor } from './innermap'
+import { innerMapFor, siteArt, type MapPlace } from './innermap'
 import { VIBE, VIBE_NAME, type Vibe } from './Hubs'
 import './land.css'
 
@@ -71,6 +71,17 @@ export function Land({ region, exam, onExit, onPractise }: {
 
   const domain = region.chapters.find((c) => c.id === domainId) ?? null
   const skill = domain?.legs.find((l) => l.skill === skillId) ?? null
+  /**
+   * The place this skill sits on, which is also the plate you stand on
+   * once you walk into it. Bound by position in the land's own leg order,
+   * so Moonlit Lake is the same skill every visit.
+   */
+  const site: MapPlace | null = useMemo(() => {
+    if (!domain || !skill) return null
+    const map = innerMapFor(domain.name)
+    const i = domain.legs.findIndex((l) => l.skill === skill.skill)
+    return i < 0 ? null : map.places[i % map.places.length]
+  }, [domain, skill])
   const vibe: Vibe = (domain && VIBE[domain.name]) || 'valley'
 
   const pods = useMemo<Pod[]>(() => {
@@ -165,7 +176,12 @@ export function Land({ region, exam, onExit, onPractise }: {
 
   return (
     <div className={`land land-${vibe}`}>
-      {inner ? (
+      {site ? (
+        <img className={`land-bg land-drawn${zoomAt ? ' zooming' : ''}`}
+          src={`${import.meta.env.BASE_URL}${siteArt(site.slug)}`} alt={site.name}
+          key={site.slug}
+          style={zoomAt ? { transformOrigin: `${zoomAt.x}% ${zoomAt.y}%` } : undefined} />
+      ) : inner ? (
         <img className={`land-bg land-drawn${zoomAt ? ' zooming' : ''}`}
           src={`${import.meta.env.BASE_URL}${inner.src}`} alt={inner.title}
           key={inner.src}
@@ -227,6 +243,7 @@ export function Land({ region, exam, onExit, onPractise }: {
             {inner.title} &mdash; <em>{inner.motto}</em>
           </p>
         )}
+        {site && <p className="land-motto">{site.name}</p>}
         <p>
           {pods.length} {standing}
           {skill
@@ -271,6 +288,11 @@ export function Land({ region, exam, onExit, onPractise }: {
             onClick={() => onPod(p)}>
             <span className="pod-art"><Ring done={p.cleared} total={p.total} /></span>
             <span className="pod-body">
+              {/* The site first: on a map you go to Moonlit Lake, and the
+                  work is what you do when you get there. */}
+              {!skill && p.place !== p.name && (
+                <span className="pod-place">{p.place}</span>
+              )}
               <strong>{p.name}</strong>
               <em>{p.sub}</em>
               <span className="pod-n">
