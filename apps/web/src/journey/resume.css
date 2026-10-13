@@ -1,0 +1,31 @@
+/* Pick up where you left off. First on the page, because it is the most
+   likely reason the student opened the app at all. */
+.resume{
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+  margin:0 0 18px;padding:16px 20px;border-radius:16px;
+  background:linear-gradient(100deg,#223018 0%,#36492a 60%,#43583a 100%);
+  color:#f4f8ee;box-shadow:0 2px 4px rgba(24,38,16,.16), 0 14px 30px rgba(24,38,16,.22);
+}
+.resume-body{flex:1;min-width:220px;display:flex;flex-direction:column;gap:2px}
+.resume-kicker{
+  font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(244,248,238,.68);
+}
+.resume h2{
+  /* The journey page uppercases its headings; a recognition's name is a
+     sentence, not a label, and small-caps mangles it. */
+  text-transform:none;letter-spacing:-.015em;
+  margin:2px 0 0;font-family:var(--serif);font-size:1.26rem;
+  line-height:1.2;letter-spacing:-.015em;color:#fff;
+}
+.resume-where{margin:3px 0 0;font-size:.8rem;color:rgba(244,248,238,.74)}
+.resume-when{margin:5px 0 0;font-size:.78rem;color:rgba(244,248,238,.62)}
+.resume-when strong{color:#ffd98a}
+.resume-go{
+  flex:0 0 auto;padding:11px 20px;border-radius:11px;cursor:pointer;
+  font-size:.92rem;font-weight:700;
+  background:#ffd98a;color:#33270c;border:1px solid #ffd98a;
+  transition:transform .14s ease,background .14s ease;
+}
+.resume-go:hover{background:#ffe6ac;transform:translateY(-1px)}
+@media (max-width:560px){ .resume-go{width:100%} }

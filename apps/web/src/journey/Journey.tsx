@@ -24,6 +24,7 @@ import { NextPoints } from './NextPoints'
 import { Traps } from './Traps'
 import { Atlas } from './Atlas'
 import { Land } from './Land'
+import { ResumeCard } from './ResumeCard'
 
 /**
  * The map, not the inventory.
@@ -204,6 +205,11 @@ export function Journey({ exam }: { exam: Exam }) {
             }} />
         )
       })()}
+
+      {/* Before the atlas: a student who was mid-recognition last night
+          wants that, not a tour of the lands. */}
+      <ResumeCard exam={exam} regions={regions}
+        onResume={(leg, subtype) => setOpen({ leg, subtype, mode: 'stage' })} />
 
       <Atlas regions={regions} exam={exam} onOpen={setInLand} />
 

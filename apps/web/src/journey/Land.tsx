@@ -169,6 +169,12 @@ export function Land({ region, exam, onExit, onPractise }: {
       </div>
 
       <div className="land-field">
+        {/* The road. Pods sit in a ring, and a ring does not tell you where
+            to start - so the route is drawn through them in curriculum
+            order with arrowheads, and the student can see which way round
+            to travel rather than guessing. */}
+        <Route pods={pods} />
+
         {pods.map((p) => (
           <button key={p.key} className={`pod${p.cleared >= p.total ? ' done' : ''}`}
             style={{ left: `${p.x}%`, top: `${p.y}%` }}
@@ -191,6 +197,42 @@ export function Land({ region, exam, onExit, onPractise }: {
         ))}
       </div>
     </div>
+  )
+}
+
+/**
+ * The dotted route through the pods, in order, with direction.
+ *
+ * Drawn in its own SVG at viewBox 100x100 so it shares the pods' percentage
+ * coordinates exactly: anything pixel-based would drift the moment the
+ * window changed, and the line would stop meeting the places it connects.
+ */
+function Route({ pods }: { pods: Pod[] }) {
+  if (pods.length < 2) return null
+  const d = pods.map((p, i) => `${i ? 'L' : 'M'} ${p.x.toFixed(2)} ${p.y.toFixed(2)}`).join(' ')
+  return (
+    <svg className="land-route" viewBox="0 0 100 100" preserveAspectRatio="none"
+      aria-hidden="true">
+      <defs>
+        <marker id="land-arrow" viewBox="0 0 10 10" refX="7" refY="5"
+          markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse">
+          <path d="M0 1 L9 5 L0 9 z" fill="rgba(255,232,170,.95)" />
+        </marker>
+      </defs>
+      <path d={d} className="land-route-line" />
+      {/* Arrowheads on each leg rather than one at the end, so direction is
+          readable wherever the eye lands. */}
+      {pods.slice(0, -1).map((p, i) => {
+        const q = pods[i + 1]
+        return (
+          <path key={p.key} className="land-route-arrow"
+            d={`M ${p.x.toFixed(2)} ${p.y.toFixed(2)} L ${((p.x + q.x) / 2).toFixed(2)} `
+              + `${((p.y + q.y) / 2).toFixed(2)}`}
+            markerEnd="url(#land-arrow)" />
+        )
+      })}
+      <circle cx={pods[0].x} cy={pods[0].y} r="1.5" className="land-route-start" />
+    </svg>
   )
 }
 
