@@ -332,3 +332,25 @@
   color:#e9cf96;
 }
 .land-drawn ~ .land-field .pod-place{color:#e9cf96}
+
+/* ---------------------------------------------------------------- *
+ * Keep the heading off the artwork.
+ *
+ * The painted panels carry their own lettering - CEDAR LAKE, a compass, a
+ * legend - and the page title was landing straight on it, two titles
+ * fighting in the same inch. A fixed header height did not fix it: a long
+ * recognition name wraps to three lines and blows through any number you
+ * pick. So the header is ordinary flow, and the artwork and the pods share
+ * a stage that takes whatever room is left.
+ * ---------------------------------------------------------------- */
+.land-stage{
+  position:relative;flex:1;
+  /* A floor, not min-height:0. With flex:1 and a long wrapping title the
+     stage collapsed to 340x0 in a short window - the artwork was still
+     "there" and occupied no pixels at all. */
+  min-height:min(58vh,340px);
+}
+.land-stage .land-bg{position:absolute;inset:0;width:100%;height:100%}
+.land-stage .land-field{position:absolute;inset:0}
+.land-drawn{object-fit:contain;background:#0b0d0c;filter:none}
+.land-at{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7}

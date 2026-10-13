@@ -176,23 +176,6 @@ export function Land({ region, exam, onExit, onPractise }: {
 
   return (
     <div className={`land land-${vibe}`}>
-      {site ? (
-        <img className={`land-bg land-drawn${zoomAt ? ' zooming' : ''}`}
-          src={`${import.meta.env.BASE_URL}${siteArt(site.slug)}`} alt={site.name}
-          key={site.slug}
-          style={zoomAt ? { transformOrigin: `${zoomAt.x}% ${zoomAt.y}%` } : undefined} />
-      ) : inner ? (
-        <img className={`land-bg land-drawn${zoomAt ? ' zooming' : ''}`}
-          src={`${import.meta.env.BASE_URL}${inner.src}`} alt={inner.title}
-          key={inner.src}
-          style={zoomAt ? { transformOrigin: `${zoomAt.x}% ${zoomAt.y}%` } : undefined} />
-      ) : hero && (
-        <img className={`land-bg${zoomAt ? ' zooming' : ''}`} src={hero.src} alt=""
-          key={hero.src}
-          style={zoomAt
-            ? { transformOrigin: `${zoomAt.x}% ${zoomAt.y}%` }
-            : undefined} />
-      )}
       {/* The sheet everything sits on: a warm wash, grain, and a handled
           edge, multiplied over the photograph so the road and the labels
           are printed on the same paper rather than floating above it. */}
@@ -243,7 +226,7 @@ export function Land({ region, exam, onExit, onPractise }: {
             {inner.title} &mdash; <em>{inner.motto}</em>
           </p>
         )}
-        {site && <p className="land-motto">{site.name}</p>}
+        {site && <p className="land-motto land-at">{site.name}</p>}
         <p>
           {pods.length} {standing}
           {skill
@@ -254,6 +237,24 @@ export function Land({ region, exam, onExit, onPractise }: {
         </p>
       </div>
 
+      <div className="land-stage">
+      {site ? (
+        <img className={`land-bg land-drawn${zoomAt ? ' zooming' : ''}`}
+          src={`${import.meta.env.BASE_URL}${siteArt(site.slug)}`} alt={site.name}
+          key={site.slug}
+          style={zoomAt ? { transformOrigin: `${zoomAt.x}% ${zoomAt.y}%` } : undefined} />
+      ) : inner ? (
+        <img className={`land-bg land-drawn${zoomAt ? ' zooming' : ''}`}
+          src={`${import.meta.env.BASE_URL}${inner.src}`} alt={inner.title}
+          key={inner.src}
+          style={zoomAt ? { transformOrigin: `${zoomAt.x}% ${zoomAt.y}%` } : undefined} />
+      ) : hero && (
+        <img className={`land-bg${zoomAt ? ' zooming' : ''}`} src={hero.src} alt=""
+          key={hero.src}
+          style={zoomAt
+            ? { transformOrigin: `${zoomAt.x}% ${zoomAt.y}%` }
+            : undefined} />
+      )}
       <div className={`land-field${zoomAt ? ' zooming' : ''}`}>
         {/* The road, but only where there is a journey to describe.
             Inside a single question type the boxes are five ways of asking
@@ -304,6 +305,7 @@ export function Land({ region, exam, onExit, onPractise }: {
             </span>
           </button>
         )))}
+      </div>
       </div>
     </div>
   )
