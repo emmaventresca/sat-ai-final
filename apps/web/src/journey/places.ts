@@ -72,9 +72,11 @@ export const ROUTE: Partial<Record<Terrain, [number, number][]>> = {
   // peak, along the skyline saddle to the pale ridge, then down its flank
   // into the shadowed wood.
   cliffs: [
-    [20, 60], [26, 55], [31, 47], [29, 36], [25, 27], [23, 19],
-    [31, 21], [40, 25], [50, 27], [60, 24], [71, 20],
-    [74, 31], [77, 44], [77, 55], [74, 64],
+    [-5, 97], [8, 88], [16, 80], [16, 74],
+    [27, 70], [36, 68], [46, 66],
+    [57, 61], [66, 56], [72, 52],
+    [75, 40], [74, 28], [76, 18],
+    [86, 12], [97, 6], [106, 1],
   ],
   // The Departure: the near water, out past the ship's bow, along the
   // horizon under the cloud bank and back down the open swell.
@@ -87,20 +89,23 @@ export const ROUTE: Partial<Record<Terrain, [number, number][]>> = {
 
 /** terrain -> domain name -> where it is and what is inside it. */
 export const SPOTS: Record<Terrain, Record<string, Spot>> = {
-  // THE GREEN COUNTRY. Read off the photograph: a lit oak-dotted pasture
-  // filling the lower left, a deep shadowed wooded ravine on the right, a
-  // dark peak on the back left, a pale sunlit ridge on the back right.
-  // There is no coast anywhere in it.
+  // THE GREEN COUNTRY. Placed so curriculum order IS the journey: in from
+  // the bottom-left corner, up the pasture, through the wooded middle, onto
+  // the rise and up to the sunlit ridge, then off the top-right corner. The
+  // first version looped back on itself, which reads as a circuit rather
+  // than a road to somewhere - and Geometry ending on the high ridge is
+  // Emma's own note that geometry should be the peak.
   cliffs: {
     'Algebra': {
-      x: 20, y: 60, name: 'The Grazed Valley', into: 'the-long-road' },
+      x: 16, y: 74, name: 'The Grazed Valley', into: 'the-long-road' },
     'Advanced Math': {
-      x: 23, y: 19, name: 'The Dark Peak', into: 'the-high-pass' },
+      x: 46, y: 66, name: 'The Shadowed Wood', into: 'the-elder-wood' },
     'Problem-Solving and Data Analysis': {
-      x: 74, y: 64, name: 'The Shadowed Wood', into: 'the-elder-wood' },
+      x: 72, y: 52, name: 'The Oak Rise', into: 'the-river-crossing' },
     'Geometry and Trigonometry': {
-      x: 71, y: 20, name: 'The Pale Ridge', into: 'the-watchtower' },
+      x: 76, y: 18, name: 'The Pale Ridge', into: 'the-watchtower' },
   },
+
   // THE DEPARTURE. A tall ship on open water, high horizon, cloud bank
   // along it. Everything here is sea and sky, so everything is named for
   // sea and sky.

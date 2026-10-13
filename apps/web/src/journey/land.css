@@ -306,3 +306,22 @@
   vector-effect:non-scaling-stroke;filter:none;
 }
 .land-route-start{fill:#d2552c;stroke:rgba(249,239,216,.9);stroke-width:.5}
+
+/* Inside a land you stand on drawn artwork, so it is shown whole rather
+   than cropped to fill, and nothing is washed over it. */
+.land-drawn{object-fit:contain;background:#0b0d0c;filter:none}
+.land-motto{
+  margin:3px 0 0;font-size:.78rem;color:rgba(255,255,255,.66);
+  font-family:var(--serif);
+}
+.land-motto em{font-style:italic;opacity:.85}
+/* On the drawn map the pods are small plates, not big cards: the artwork
+   already carries the place, so the plate only has to name the work. */
+.land-drawn ~ .land-field .pod{width:clamp(116px,12vw,150px)}
+.land-drawn ~ .land-field .pod-art{display:none}
+.land-drawn ~ .land-field .pod-body{
+  background:rgba(26,22,14,.82);border:1px solid rgba(240,226,194,.4);
+  border-radius:5px;padding:6px 10px 5px;
+}
+.land-drawn ~ .land-field .pod-body strong{font-size:.8rem;text-shadow:none}
+.land-drawn ~ .land-field .pod-body em{font-size:.62rem}

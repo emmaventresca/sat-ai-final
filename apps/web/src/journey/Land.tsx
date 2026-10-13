@@ -3,6 +3,7 @@ import type { Exam, Tier } from '../exams/types'
 import type { Chapter, Leg, Region, Stage, Terrain } from './map'
 import { backdrop, realBackdrops } from './backdrops'
 import { fallbackSpot, HERO, ROUTE, SPOTS } from './places'
+import { innerMapFor } from './innermap'
 import { VIBE, VIBE_NAME, type Vibe } from './Hubs'
 import './land.css'
 
@@ -84,14 +85,24 @@ export function Land({ region, exam, onExit, onPractise }: {
       })), region.terrain as Terrain, false)
     }
     if (domain) {
-      return anchor(domain.legs.map((leg) => ({
-        key: leg.skill,
-        name: leg.name,
-        sub: `${leg.stages.length} question type${leg.stages.length === 1 ? '' : 's'}`,
-        cleared: leg.cleared,
-        total: leg.stages.length,
-        left: leg.left,
-      })), region.terrain as Terrain, false)
+      // On the drawn map the skills take its own named places, in walking
+      // order. A ring of pods over a picture is not a map; standing on
+      // Cedar Lake and Old Chapel Ruins is.
+      const map = innerMapFor(domain.name)
+      return domain.legs.map((leg, i) => {
+        const at = map.places[i % map.places.length]
+        return {
+          key: leg.skill,
+          name: leg.name,
+          sub: `${leg.stages.length} question type${leg.stages.length === 1 ? '' : 's'}`,
+          cleared: leg.cleared,
+          total: leg.stages.length,
+          left: leg.left,
+          x: at.x,
+          y: at.y,
+          place: at.name,
+        }
+      })
     }
     return anchor(region.chapters.map((c: Chapter) => ({
       key: c.id,
@@ -113,6 +124,7 @@ export function Land({ region, exam, onExit, onPractise }: {
    * closer view of that country is what makes the move feel like arriving.
    */
   const [arrived, setArrived] = useState<string | null>(null)
+  const inner = domain ? innerMapFor(domain.name) : null
   const hero = useMemo(() => {
     if (arrived) {
       const b = backdrop(region.terrain as Terrain,
@@ -153,7 +165,12 @@ export function Land({ region, exam, onExit, onPractise }: {
 
   return (
     <div className={`land land-${vibe}`}>
-      {hero && (
+      {inner ? (
+        <img className={`land-bg land-drawn${zoomAt ? ' zooming' : ''}`}
+          src={`${import.meta.env.BASE_URL}${inner.src}`} alt={inner.title}
+          key={inner.src}
+          style={zoomAt ? { transformOrigin: `${zoomAt.x}% ${zoomAt.y}%` } : undefined} />
+      ) : hero && (
         <img className={`land-bg${zoomAt ? ' zooming' : ''}`} src={hero.src} alt=""
           key={hero.src}
           style={zoomAt
@@ -163,7 +180,9 @@ export function Land({ region, exam, onExit, onPractise }: {
       {/* The sheet everything sits on: a warm wash, grain, and a handled
           edge, multiplied over the photograph so the road and the labels
           are printed on the same paper rather than floating above it. */}
-      <div className="land-paper" aria-hidden="true" />
+      {/* The wash belongs over a photograph, not over artwork that is
+          already a map - it would only muddy someone else's drawing. */}
+      {!inner && <div className="land-paper" aria-hidden="true" />}
       <svg className="land-grain" aria-hidden="true">
         <filter id="land-grain-f">
           <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4"
@@ -177,7 +196,11 @@ export function Land({ region, exam, onExit, onPractise }: {
 
       <header className="land-top">
         <button className="land-back" onClick={back}>
-          &larr; {skill ? domain?.name : domain ? region.name : 'Back to the map'}
+          &larr; {skill
+            ? domain?.name
+            : domain
+              ? `Back to ${region.name}`
+              : 'Back to the adventure map'}
         </button>
         <nav className="land-crumbs" aria-label="Where you are">
           <button className={!domain ? 'on' : ''}
@@ -199,6 +222,11 @@ export function Land({ region, exam, onExit, onPractise }: {
 
       <div className="land-title">
         <h1>{title}</h1>
+        {inner && !skill && (
+          <p className="land-motto">
+            {inner.title} &mdash; <em>{inner.motto}</em>
+          </p>
+        )}
         <p>
           {pods.length} {standing}
           {skill
@@ -215,7 +243,12 @@ export function Land({ region, exam, onExit, onPractise }: {
             order with arrowheads, and the student can see which way round
             to travel rather than guessing. */}
         <Route pods={pods}
-          along={!domain ? ROUTE[region.terrain as Terrain] : undefined} />
+          along={!domain
+            ? ROUTE[region.terrain as Terrain]
+            : inner
+              ? [inner.entry, ...pods.map((p) => [p.x, p.y] as [number, number]),
+                 inner.exit]
+              : undefined} />
 
         {pods.map((p) => (!domain ? (
           /* On the land itself the marker sits ON its feature - the meadow,
