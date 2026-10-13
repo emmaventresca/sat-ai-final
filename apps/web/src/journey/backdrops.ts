@@ -94,7 +94,7 @@ const SCENES: Record<Terrain, string[]> = {
  * worse than one that waits to be told.
  */
 const SHIPPED = new Set<string>([
-  // e.g. 'exposition/wheel-from-beneath'
+  // e.g. 'quest/the-high-pass'
 ])
 
 export function backdropFor(exam: Exam, section: string, seed: string): Backdrop {
