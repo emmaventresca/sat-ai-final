@@ -17,7 +17,6 @@ import { Ivy } from './Ivy'
 import { Blades, CheckMark, Star } from './Icons'
 import { useReveal } from './reveal'
 import { progress } from '../practice/mastery'
-import { current, signOut } from '../auth/auth'
 import { errorLog, open as openOnly } from '../errors/log'
 import { StopGrid } from './StopGrid'
 import './greenwood.css'
@@ -101,17 +100,6 @@ export function Journey({ exam }: { exam: Exam }) {
             {cleared} of {all} stops behind you. Start anywhere &mdash; the
             route is advice, not a gate.
           </p>
-        </div>
-        <div className="row tight">
-          <Link className="btn-sm" to="/homework">Homework</Link>
-          <Link className="btn-sm" to="/">Switch test</Link>
-          {/* Only a teacher sees the door to the portal. A student should not
-              be one click from the roster, and hiding it is not the control -
-              the database is - but there is no reason to show it either. */}
-          {current()?.role === 'teacher' && (
-            <Link className="btn-sm" to="/teacher">Teacher portal</Link>
-          )}
-          <button className="btn-sm" onClick={() => void signOut()}>Sign out</button>
         </div>
       </div>
 

@@ -7,7 +7,6 @@ import { roster, type Student } from './roster'
 import { StudentDetail } from './StudentDetail'
 import { examTone } from './tone'
 import { Codes } from './Codes'
-import { current, signOut } from '../auth/auth'
 
 /**
  * One portal, both exams.
@@ -38,14 +37,6 @@ export function TeacherHome() {
     <div className="wrap wide">
       <div className="top">
         <div><h1>Teacher</h1><p className="who">Both tests, one roster</p></div>
-        <div className="row tight">
-          <Link className="btn-sm" to="/plan">Plan a lesson</Link>
-          <Link className="btn-sm" to="/assign">Assign</Link>
-          <Link className="btn-sm" to="/">Student view</Link>
-          <button className="btn-sm" onClick={() => void signOut()}>
-            Sign out{current()?.name ? ` (${current()?.name})` : ''}
-          </button>
-        </div>
       </div>
 
       <div className="exam-row">

@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import type { Account } from '../auth/auth'
+import { signOut, type Account } from '../auth/auth'
 import './topnav.css'
 
 /**
@@ -44,6 +44,7 @@ export function TopNav({ account, pending }: {
       <Link className="topnav-home" to={account.role === 'teacher' ? '/teacher' : '/'}>
         Prep
       </Link>
+      <span className="topnav-rule" aria-hidden="true" />
       <ul className="topnav-links">
         {links.map((l) => {
           // "/" would match everything under startsWith, and /sat must not
@@ -61,7 +62,12 @@ export function TopNav({ account, pending }: {
           )
         })}
       </ul>
-      <span className="topnav-who">{account.name}</span>
+      <div className="topnav-end">
+        <span className="topnav-who">{account.name}</span>
+        <button className="topnav-out" onClick={() => void signOut()}>
+          Sign out
+        </button>
+      </div>
     </nav>
   )
 }

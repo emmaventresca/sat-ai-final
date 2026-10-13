@@ -777,20 +777,23 @@ mark.hl-blue{background:#c3e0ff;box-shadow:inset 0 -.42em 0 #c3e0ff}
   background:var(--panel);box-shadow:var(--shadow);
 }
 .brush::before{
-  content:"";position:absolute;inset:0;z-index:-1;opacity:.92;
+  /* One wash, entering from the top-left, rather than three overlapping
+     radials at full strength. Three of them met in the middle and averaged
+     into a muddy pastel that read as decoration; the tone is meant to say
+     WHICH EXAM at a glance, and a colour that says "pretty" says nothing.
+     Held to the top third so the content below sits on clean paper. */
+  content:"";position:absolute;inset:0;z-index:-1;opacity:.55;
   background:
-    radial-gradient(120% 90% at 6% 0%, var(--tone-a) 0%, transparent 62%),
-    radial-gradient(130% 110% at 98% 8%, var(--tone-b) 0%, transparent 58%),
-    radial-gradient(80% 70% at 50% 120%, var(--tone-a) 0%, transparent 70%);
-  /* The wobble is the brushstroke: straight edges read as a card, and the
-     point of this surface is that it does not. */
+    linear-gradient(165deg, var(--tone-a) 0%, transparent 46%),
+    radial-gradient(110% 70% at 96% 0%, var(--tone-b) 0%, transparent 54%);
   border-radius:inherit;
-  filter:blur(6px);
+  filter:blur(5px);
 }
 .brush::after{
-  content:"";position:absolute;left:24px;right:24px;top:0;height:5px;z-index:-1;
-  border-radius:99px;opacity:.75;
-  background:linear-gradient(90deg,transparent,var(--tone-b) 18%,var(--tone-a) 72%,transparent);
+  /* The edge does the signalling now: a solid bar of the exam's own colour,
+     full width, where the eye lands first when scanning a roster. */
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;z-index:-1;
+  background:linear-gradient(90deg,var(--tone-b),var(--tone-a));
 }
 .brush h2,.brush h3{letter-spacing:-.02em}
 .brush h3{margin:20px 0 8px;font-size:.96rem}
@@ -1020,30 +1023,9 @@ mark.hl-blue{background:#c3e0ff;box-shadow:inset 0 -.42em 0 #c3e0ff}
    rather than a rectangle. Teacher side only - a student is only ever
    looking at one test, so colour there would carry no information and would
    just make the two halves look like different products. */
-.brush{
-  position:relative;isolation:isolate;overflow:hidden;
-  margin:14px 0;padding:22px 24px;border-radius:22px 26px 20px 28px;
-  background:var(--panel);box-shadow:var(--shadow);
-}
-.brush::before{
-  content:"";position:absolute;inset:0;z-index:-1;opacity:.92;
-  background:
-    radial-gradient(120% 90% at 6% 0%, var(--tone-a) 0%, transparent 62%),
-    radial-gradient(130% 110% at 98% 8%, var(--tone-b) 0%, transparent 58%),
-    radial-gradient(80% 70% at 50% 120%, var(--tone-a) 0%, transparent 70%);
-  /* The wobble is the brushstroke: straight edges read as a card, and the
-     point of this surface is that it does not. */
-  border-radius:inherit;
-  filter:blur(6px);
-}
-.brush::after{
-  content:"";position:absolute;left:24px;right:24px;top:0;height:5px;z-index:-1;
-  border-radius:99px;opacity:.75;
-  background:linear-gradient(90deg,transparent,var(--tone-b) 18%,var(--tone-a) 72%,transparent);
-}
-.brush h2,.brush h3{letter-spacing:-.02em}
-.brush h3{margin:20px 0 8px;font-size:.96rem}
-.brush table{background:rgba(255,255,255,.72);backdrop-filter:blur(2px)}
+/* The .brush family is defined once, above. A second copy lived here and
+   silently won on source order, so edits to the first had no effect at
+   all - which is how the tuned version looked identical in the browser. */
 
 /* SAT light pink and purple, ACT light green and blue, both warm. */
 /* Strong enough to read across a roster at a glance, which is the whole
@@ -1669,3 +1651,50 @@ mark.hl-blue{background:#c3e0ff;box-shadow:inset 0 -.42em 0 #c3e0ff}
 .digest-habits strong{color:#b3324a}
 .digest-habits span{color:var(--dim);font-size:.78rem}
 .digest-new{margin:14px 0 0;font-size:.82rem;color:var(--dim);line-height:1.45}
+
+/* ---------------------------------------------------------------- *
+ * The surfaces we did not draw.
+ *
+ * Selection, the caret, focus rings, scrollbars and the numerals in a
+ * table all ship with browser defaults that belong to no design system.
+ * The student journey already themed its own; everything else - the whole
+ * teacher portal - was running on Chrome's blue. Theming them is the
+ * difference between a page that was built and one that was assembled.
+ * ---------------------------------------------------------------- */
+::selection{background:#ded3ff;color:var(--ink)}
+input,textarea{caret-color:var(--purple-d)}
+
+/* One focus ring, on keyboard focus only, in the product's own colour.
+   Browsers draw a 1px blue outline that sits under rounded corners; this
+   follows the shape it is on. */
+:where(a,button,input,select,textarea,[tabindex]):focus-visible{
+  outline:2px solid var(--purple);
+  outline-offset:2px;
+  border-radius:8px;
+}
+
+/* Scrollbars, in the page's own palette rather than system grey. */
+*{scrollbar-color:var(--line2) transparent}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{
+  background:var(--line2);border-radius:999px;
+  border:3px solid transparent;background-clip:content-box;
+}
+::-webkit-scrollbar-thumb:hover{background:#c3b2f0;background-clip:content-box}
+
+/* Numbers that sit in columns must not dance as they change. */
+table td.n, table th.n, .stat strong, .digest-stat strong,
+.gap-pts, .nav-q, .topnav-badge, .num{font-variant-numeric:tabular-nums}
+
+/* Links in prose carry the product's underline rather than the browser's,
+   which sits on the baseline and cuts descenders. */
+.wrap a:not([class]), .card a:not([class]){
+  color:var(--purple-d);
+  text-decoration-color:var(--line2);
+  text-underline-offset:3px;
+  text-decoration-thickness:1.5px;
+}
+.wrap a:not([class]):hover, .card a:not([class]):hover{
+  text-decoration-color:var(--purple);
+}

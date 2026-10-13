@@ -1,32 +1,69 @@
+/* The header.
+ *
+ * It was a floating translucent bar of pill-shaped links, which is the
+ * default shape of every app header built this decade and belongs to no
+ * design system in particular. Worse, it duplicated a second row of the same
+ * links inside each page - two navigations saying the same thing is the
+ * clearest signal a screen was assembled rather than designed.
+ *
+ * So: one navigation. It sits ON the page rather than hovering over it, the
+ * wordmark is set in the serif the rest of the product reads in, and the
+ * current section is marked by weight and a rule underneath rather than by a
+ * coloured capsule. The rule is the same hairline the page uses elsewhere,
+ * which is what makes the header read as part of the document.
+ */
 .topnav{
-  display:flex;align-items:center;gap:16px;
-  padding:10px 20px;margin:0 0 14px;
-  background:rgba(255,255,255,.82);
-  backdrop-filter:blur(8px);
+  display:flex;align-items:stretch;gap:0;
+  padding:0 clamp(16px,4vw,34px);
+  margin:0 0 clamp(18px,3vw,30px);
+  background:transparent;
   border-bottom:1px solid var(--line);
   position:sticky;top:0;z-index:30;
+  /* Opaque enough to read over scrolling content without the glass look. */
+  backdrop-filter:saturate(1.4) blur(10px);
+  background:linear-gradient(to bottom,rgba(255,255,255,.92),rgba(255,255,255,.78));
 }
 .topnav-home{
-  font-weight:800;font-size:1rem;letter-spacing:-.02em;
+  display:flex;align-items:center;
+  font-family:var(--serif);
+  font-size:1.14rem;font-weight:700;letter-spacing:-.015em;
   color:var(--ink);text-decoration:none;
+  padding-right:18px;
 }
-.topnav-links{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.topnav-home:hover{color:var(--purple-d)}
+.topnav-rule{
+  width:1px;margin:14px 18px 14px 0;background:var(--line);
+}
+.topnav-links{display:flex;gap:2px;list-style:none;margin:0;padding:0}
 .topnav-link{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:6px 12px;border-radius:9px;
-  font-size:.86rem;font-weight:600;color:var(--dim);text-decoration:none;
-  transition:background .12s ease,color .12s ease;
+  display:inline-flex;align-items:center;gap:7px;
+  padding:14px 13px 12px;
+  border-bottom:2px solid transparent;
+  font-size:.88rem;font-weight:600;color:var(--dim);text-decoration:none;
+  transition:color .14s ease,border-color .14s ease;
 }
-.topnav-link:hover{background:var(--panel2);color:var(--ink)}
-.topnav-link.here{background:var(--purple);color:#fff}
+.topnav-link:hover{color:var(--ink);border-bottom-color:var(--line2)}
+.topnav-link.here{color:var(--ink);font-weight:700;border-bottom-color:var(--purple)}
 .topnav-badge{
-  min-width:18px;height:18px;padding:0 5px;border-radius:9px;
+  min-width:19px;height:19px;padding:0 6px;border-radius:999px;
   background:var(--bad);color:#fff;
-  font-size:.7rem;font-weight:800;line-height:18px;text-align:center;
+  font-size:.68rem;font-weight:800;line-height:19px;text-align:center;
+  font-variant-numeric:tabular-nums;
 }
-.topnav-link.here .topnav-badge{background:#fff;color:var(--purple)}
-.topnav-who{margin-left:auto;font-size:.82rem;color:var(--dim)}
-@media (max-width:640px){
-  .topnav{gap:10px;padding:8px 12px}
-  .topnav-who{display:none}
+.topnav-end{display:flex;align-items:center;gap:12px;margin-left:auto}
+.topnav-who{
+  font-size:.82rem;color:var(--dim);
+  /* The name is data, not a label: set it in the reading face. */
+  font-family:var(--serif);
+}
+.topnav-out{
+  padding:6px 12px;border-radius:9px;font-size:.8rem;font-weight:600;
+  color:var(--dim);background:transparent;border:1px solid transparent;
+  cursor:pointer;
+}
+.topnav-out:hover{color:var(--ink);border-color:var(--line2);background:var(--panel)}
+@media (max-width:680px){
+  .topnav{gap:0;padding:0 12px}
+  .topnav-rule,.topnav-who{display:none}
+  .topnav-link{padding:12px 9px;font-size:.82rem}
 }
