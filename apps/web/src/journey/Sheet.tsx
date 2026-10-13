@@ -53,17 +53,27 @@ export function Sheet() {
         ))}
       </div>
       <div className="sheet-grid">
-        {Array.from({ length: 10 }, (_, i) => (
-          <figure key={`${world}${i}`}>
-            <div className="sheet-frame">
-              <Poster terrain={world} slot={i} />
-              <div className="sheet-card">question card</div>
-            </div>
-            <figcaption>
-              <b>{i + 1}. {pretty(backdrop(world, i).scene)}</b>
-            </figcaption>
-          </figure>
-        ))}
+        {Array.from({ length: 10 }, (_, i) => {
+          // Show the real artwork where it exists. This sheet is the tool for
+          // reviewing the sixty backdrops, and it was rendering the drawn
+          // placeholder every time - so the one screen built to judge the art
+          // was the one screen that never showed it.
+          const art = backdrop(world, i)
+          return (
+            <figure key={`${world}${i}`}>
+              <div className="sheet-frame">
+                {art.placeholder
+                  ? <Poster terrain={world} slot={i} />
+                  : <img className="sheet-art" src={art.src} alt="" loading="lazy" />}
+                <div className="sheet-card">question card</div>
+              </div>
+              <figcaption>
+                <b>{i + 1}. {pretty(art.scene)}</b>
+                {art.placeholder && <em className="sheet-ph"> &middot; drawn placeholder</em>}
+              </figcaption>
+            </figure>
+          )
+        })}
       </div>
     </div>
   )

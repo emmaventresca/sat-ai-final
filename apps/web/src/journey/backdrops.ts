@@ -94,7 +94,17 @@ const SCENES: Record<Terrain, string[]> = {
  * worse than one that waits to be told.
  */
 const SHIPPED = new Set<string>([
-  // e.g. 'quest/the-high-pass'
+  'alpine/mountain-ridge',
+  'boardwalk/the-boardwalk-at-night',
+  'hawaii/volcanic-coast',
+  'quest/the-green-country',
+  'quest/the-long-road',
+  'quest/the-river-crossing',
+  'quest/the-stair-of-kings',
+  'quest/the-watchtower',
+  'voyage/the-departure',
+  'voyage/the-far-shore',
+  'voyage/the-storm',
 ])
 
 export function backdropFor(exam: Exam, section: string, seed: string): Backdrop {
