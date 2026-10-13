@@ -233,3 +233,76 @@
   .spot-plate em{flex:1;text-align:left}
   .spot-n{margin-top:0}
 }
+
+/* ---------------------------------------------------------------- *
+ * The map treatment.
+ *
+ * The photograph itself is filtered rather than redrawn: lifted blacks,
+ * pulled saturation and a touch of contrast give it the flatness of a
+ * printed plate, and a paper grain multiplied over the top puts everything
+ * - photograph, road, labels - on the same sheet. That shared sheet is
+ * what stops the markers reading as UI stacked on a picture.
+ *
+ * Deliberately NOT an SVG redraw of the scene. Emma was explicit, and she
+ * is right: a vector tracing of a photograph looks worse than the
+ * photograph and throws away the only real thing on the screen.
+ * ---------------------------------------------------------------- */
+.land-bg{
+  filter:saturate(.72) contrast(1.04) brightness(1.02) sepia(.14);
+}
+/* Paper: a warm wash plus grain, multiplied so the photograph's own darks
+   still read through it. */
+.land-paper{
+  position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:
+    radial-gradient(120% 90% at 50% 40%, rgba(247,236,210,.08) 0%, rgba(126,104,66,.2) 100%),
+    linear-gradient(180deg, rgba(244,231,201,.14) 0%, rgba(214,192,150,.1) 100%);
+  mix-blend-mode:multiply;
+}
+.land-grain{
+  position:absolute;inset:0;pointer-events:none;z-index:1;opacity:.1;
+  mix-blend-mode:multiply;
+}
+/* Edges darken like a plate that has been handled. */
+.land-vignette{
+  position:absolute;inset:0;pointer-events:none;z-index:2;
+  box-shadow:inset 0 0 120px 18px rgba(44,33,14,.3);
+}
+
+/* Labels as map annotation rather than glass cards: flat, warm, hairline,
+   sitting ON the sheet. */
+.spot-plate{
+  background:rgba(32,27,18,.74);
+  backdrop-filter:none;
+  border:1px solid rgba(240,226,194,.4);
+  border-radius:4px;
+  box-shadow:0 2px 10px rgba(22,16,6,.5);
+  padding:6px 11px 5px;min-width:0;
+}
+.spot-plate strong{
+  font-size:.86rem;letter-spacing:.005em;color:#f6ecd6;
+  text-shadow:none;
+}
+.spot-plate em{
+  font-size:.58rem;letter-spacing:.12em;color:rgba(246,236,214,.62);
+}
+.spot-n{
+  margin-top:3px;background:rgba(246,236,214,.14);color:#f6ecd6;
+  border-radius:3px;padding:0 6px;font-size:.62rem;
+}
+.spot.done .spot-plate{border-color:rgba(255,217,138,.85)}
+.spot-pin{height:20px;background:linear-gradient(to bottom,rgba(246,236,214,.75),rgba(246,236,214,.2))}
+.spot-pin i{width:8px;height:8px;background:#f0d79a;border-color:rgba(40,30,12,.8)}
+.spot-pin em{border-color:rgba(240,215,154,.5)}
+
+/* The road, inked on the same sheet. Casing under, dashes over. */
+.land-route-case{
+  fill:none;stroke:rgba(38,27,10,.58);stroke-width:5.5;
+  stroke-linecap:round;vector-effect:non-scaling-stroke;
+}
+.land-route-line{
+  fill:none;stroke:rgba(249,239,216,.95);stroke-width:2.6;
+  stroke-dasharray:5 7;stroke-linecap:round;
+  vector-effect:non-scaling-stroke;filter:none;
+}
+.land-route-start{fill:#d2552c;stroke:rgba(249,239,216,.9);stroke-width:.5}

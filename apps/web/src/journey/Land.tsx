@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import type { Exam, Tier } from '../exams/types'
 import type { Chapter, Leg, Region, Stage, Terrain } from './map'
 import { backdrop, realBackdrops } from './backdrops'
-import { fallbackSpot, HERO, SPOTS } from './places'
+import { fallbackSpot, HERO, ROUTE, SPOTS } from './places'
 import { VIBE, VIBE_NAME, type Vibe } from './Hubs'
 import './land.css'
 
@@ -160,6 +160,19 @@ export function Land({ region, exam, onExit, onPractise }: {
             ? { transformOrigin: `${zoomAt.x}% ${zoomAt.y}%` }
             : undefined} />
       )}
+      {/* The sheet everything sits on: a warm wash, grain, and a handled
+          edge, multiplied over the photograph so the road and the labels
+          are printed on the same paper rather than floating above it. */}
+      <div className="land-paper" aria-hidden="true" />
+      <svg className="land-grain" aria-hidden="true">
+        <filter id="land-grain-f">
+          <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4"
+            stitchTiles="stitch" />
+          <feColorMatrix type="saturate" values="0" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#land-grain-f)" />
+      </svg>
+      <div className="land-vignette" aria-hidden="true" />
       <div className="land-scrim" aria-hidden="true" />
 
       <header className="land-top">
@@ -201,7 +214,8 @@ export function Land({ region, exam, onExit, onPractise }: {
             to start - so the route is drawn through them in curriculum
             order with arrowheads, and the student can see which way round
             to travel rather than guessing. */}
-        <Route pods={pods} />
+        <Route pods={pods}
+          along={!domain ? ROUTE[region.terrain as Terrain] : undefined} />
 
         {pods.map((p) => (!domain ? (
           /* On the land itself the marker sits ON its feature - the meadow,
@@ -269,9 +283,14 @@ function meander(ps: Pod[]): string {
   return d.join(' ')
 }
 
-function Route({ pods }: { pods: Pod[] }) {
+function Route({ pods, along }: { pods: Pod[]; along?: [number, number][] }) {
   if (pods.length < 2) return null
-  const d = meander(pods)
+  // An authored road beats a line between the places: it knows the valley
+  // floor is passable and the cliff is not.
+  const pts: Pod[] = along
+    ? along.map(([x, y], i) => ({ ...pods[0], key: `w${i}`, x, y }))
+    : pods
+  const d = meander(pts)
   return (
     <svg className="land-route" viewBox="0 0 100 100" preserveAspectRatio="none"
       aria-hidden="true">
@@ -281,11 +300,16 @@ function Route({ pods }: { pods: Pod[] }) {
           <path d="M0 1 L9 5 L0 9 z" fill="rgba(255,232,170,.95)" />
         </marker>
       </defs>
+      {/* Two strokes, the way a printed map draws a road: a dark casing so
+          the line survives pale pasture, and light dashes over it so it
+          survives dark woodland. One stroke only ever works on half a
+          photograph - the first version vanished into the trees. */}
+      <path d={d} className="land-route-case" />
       <path d={d} className="land-route-line" />
       {/* Arrowheads on each leg rather than one at the end, so direction is
           readable wherever the eye lands. */}
-      {pods.slice(0, -1).map((p, i) => {
-        const q = pods[i + 1]
+      {pts.slice(0, -1).map((p, i) => {
+        const q = pts[i + 1]
         return (
           <path key={p.key} className="land-route-arrow"
             d={`M ${p.x.toFixed(2)} ${p.y.toFixed(2)} L ${((p.x + q.x) / 2).toFixed(2)} `
@@ -293,7 +317,7 @@ function Route({ pods }: { pods: Pod[] }) {
             markerEnd="url(#land-arrow)" />
         )
       })}
-      <circle cx={pods[0].x} cy={pods[0].y} r="1.5" className="land-route-start" />
+      <circle cx={pts[0].x} cy={pts[0].y} r="1.5" className="land-route-start" />
     </svg>
   )
 }

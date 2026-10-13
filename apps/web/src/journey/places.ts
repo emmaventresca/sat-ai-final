@@ -55,6 +55,36 @@ export const HERO: Partial<Record<Terrain, string>> = {
   tropic: 'volcanic-coast',
 }
 
+/**
+ * The road, traced along the ground of each photograph.
+ *
+ * Curving straight between hotspots produced a loop floating over the
+ * country - correct about where the places are and wrong about everything
+ * between them. A road goes along the valley floor, up the slope, over the
+ * saddle; it does not cut across a mountain.
+ *
+ * So these are waypoints read off the picture. They pass through every
+ * hotspot in curriculum order and hug the terrain in between, which is what
+ * stops the line looking stuck on top of the photograph.
+ */
+export const ROUTE: Partial<Record<Terrain, [number, number][]>> = {
+  // Green Country: out along the pasture, up the left slope to the dark
+  // peak, along the skyline saddle to the pale ridge, then down its flank
+  // into the shadowed wood.
+  cliffs: [
+    [20, 60], [26, 55], [31, 47], [29, 36], [25, 27], [23, 19],
+    [31, 21], [40, 25], [50, 27], [60, 24], [71, 20],
+    [74, 31], [77, 44], [77, 55], [74, 64],
+  ],
+  // The Departure: the near water, out past the ship's bow, along the
+  // horizon under the cloud bank and back down the open swell.
+  ocean: [
+    [18, 72], [27, 66], [36, 57], [47, 46],
+    [54, 36], [60, 28], [64, 24],
+    [72, 33], [78, 46], [80, 70],
+  ],
+}
+
 /** terrain -> domain name -> where it is and what is inside it. */
 export const SPOTS: Record<Terrain, Record<string, Spot>> = {
   // THE GREEN COUNTRY. Read off the photograph: a lit oak-dotted pasture
