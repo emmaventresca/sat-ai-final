@@ -8,6 +8,7 @@ import { AssignErrors } from './AssignErrors'
 import { duration, metricsFor } from './metrics'
 import type { Student } from './roster'
 import { examTone } from './tone'
+import { WeeklyDigest } from './WeeklyDigest'
 
 /**
  * One student, in detail.
@@ -93,6 +94,11 @@ export function StudentDetail({ student }: { student: Student }) {
           </div>
         )}
       </div>
+
+      {/* First, because everything below describes the whole term and
+          barely moves week to week - true, and useless when you are
+          deciding what to do in the next session. */}
+      <WeeklyDigest exam={exam} names={names} />
 
       <div className="stat-row">
         <Stat n={m.answered} of="questions answered" />
