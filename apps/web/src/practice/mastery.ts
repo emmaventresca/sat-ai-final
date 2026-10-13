@@ -1,5 +1,5 @@
 import type { Exam, Question, Tier } from '../exams/types'
-import { nextReview } from './engine'
+import { nextReview } from './engine.ts'
 
 /**
  * What the student has done, and what they got wrong.

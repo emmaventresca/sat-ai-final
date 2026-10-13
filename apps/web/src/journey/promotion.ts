@@ -1,5 +1,5 @@
 import type { Exam, Question, Tier } from '../exams/types'
-import { cellKey, progress } from '../practice/mastery'
+import { cellKey, progress } from '../practice/mastery.ts'
 
 /**
  * When to offer a student the next rung.

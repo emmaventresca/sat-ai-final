@@ -1,6 +1,6 @@
 import type { Exam, Tier } from '../exams/types'
 import type { QuestionRef } from '../lib/bank'
-import { cellKey, progress, type Cell } from './mastery'
+import { cellKey, progress, type Cell } from './mastery.ts'
 
 /**
  * What to study next, and when to see it again.
