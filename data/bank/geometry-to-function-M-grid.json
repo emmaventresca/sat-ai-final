@@ -634,5 +634,207 @@
    ],
    "residue": 2
   }
+ },
+ {
+  "stem": "The function $V$ gives the volume of the vat, in cubic feet, in terms of the base length $\\ell$, in feet. $V(\\ell)$ can be written as $a\\ell^2 + b\\ell$, where $a$ and $b$ are constants. What is the value of $a - b$?",
+  "stimulus": "A historian is rebuilding an 18th-century dye vat shaped like a rectangular box. The vat is 3 feet tall, and the length of its base is 2 feet greater than the width of its base.",
+  "keys": [
+   "9"
+  ],
+  "any_of": false,
+  "explanation": "The question asks for the volume in terms of the length, so write every dimension in terms of $\\ell$. The length is 2 feet greater than the width, so the width is $\\ell - 2$, not $\\ell + 2$. Volume is length times width times height: $V(\\ell) = \\ell(\\ell - 2)(3) = 3\\ell^2 - 6\\ell$. That gives $a = 3$ and $b = -6$, so $a - b = 3 - (-6) = 9$. To check, pick $\\ell = 5$. The width is 3, so the volume is $5 \\cdot 3 \\cdot 3 = 45$, and $3(25) - 6(5) = 45$ as well. Wrong values students produce: $-3$ if you write the function in terms of the width, or add 2 to $\\ell$ instead of subtracting it ($3\\ell^2 + 6\\ell$). $3$ if you leave out the 3-foot height ($\\ell^2 - 2\\ell$). $-6$ if you stop at $b$ and don't compute $a - b$.",
+  "common_errors": [
+   {
+    "value": "-3",
+    "misconception": "wrong-target-quantity",
+    "why": "Treated $\\ell$ as the width, so the other side became $\\ell + 2$. That gives $3\\ell^2 + 6\\ell$ and $a - b = 3 - 6$."
+   },
+   {
+    "value": "3",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the height of 3. That gives $\\ell^2 - 2\\ell$ and $a - b = 1 - (-2)$."
+   },
+   {
+    "value": "-6",
+    "misconception": "intermediate-step",
+    "why": "Found $b = -6$ correctly but reported it instead of $a - b$."
+   }
+  ],
+  "id": "orig-geometry-to-fu-M-c135b4",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-c135b4",
+   "structure": [],
+   "solver_answer": 9,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $A$ gives the area of the rest area, in square meters, in terms of its length $x$, in meters. What is the value of $A(10)$?",
+  "stimulus": "A new labor contract requires a warehouse to give each shift a rectangular rest area. The length of each rest area must be 6 meters more than its width.",
+  "keys": [
+   "40"
+  ],
+  "any_of": false,
+  "explanation": "The input is the length, so write the width in terms of the length. The length is 6 more than the width, so the width is $x - 6$. Area is length times width: $A(x) = x(x - 6)$. Then $A(10) = 10(10 - 6) = 10 \\cdot 4 = 40$. Wrong values students produce: $160$ if you treat 10 as the width, so the length becomes 16. $28$ if you find the perimeter instead of the area. $14$ if you add the two sides instead of multiplying them. $4$ if you stop at the width.",
+  "common_errors": [
+   {
+    "value": "160",
+    "misconception": "wrong-target-quantity",
+    "why": "Wrote the function in terms of the width, $A = x(x + 6)$, so 10 was treated as the width and the length as 16."
+   },
+   {
+    "value": "28",
+    "misconception": "wrong-target-quantity",
+    "why": "Computed the perimeter, $2(10 + 4)$, instead of the area."
+   },
+   {
+    "value": "14",
+    "misconception": "algebra-manipulation",
+    "why": "Added the dimensions, $10 + 4$, instead of multiplying them."
+   },
+   {
+    "value": "4",
+    "misconception": "intermediate-step",
+    "why": "Found the width, $10 - 6$, and stopped there."
+   }
+  ],
+  "id": "orig-geometry-to-fu-M-b8aa08",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-b8aa08",
+   "structure": [],
+   "solver_answer": 40,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "The function $M$ gives the area of the printed region, in square centimeters, in terms of the sheet's length $L$, in centimeters. $M(L)$ can be written as $L^2 + bL + c$, where $b$ and $c$ are constants. What is the value of $c$?",
+  "stimulus": "A cartographer prints a regional map on a rectangular sheet whose width is 10 centimeters less than its length. A blank margin 2 centimeters wide runs along all four edges of the sheet, and the map fills the region inside the margin.",
+  "keys": [
+   "56"
+  ],
+  "any_of": false,
+  "explanation": "Write the sheet's dimensions in terms of $L$. The length is $L$ and the width is $L - 10$. The margin takes 2 cm from each end of every side, so each dimension loses 4 cm. The printed region is $L - 4$ by $L - 14$. Multiply: $M(L) = (L - 4)(L - 14) = L^2 - 18L + 56$, so $c = 56$. To check, pick $L = 20$. The sheet is 20 by 10, the printed region is 16 by 6, and its area is 96. The function gives $400 - 360 + 56 = 96$. Wrong values students produce: $24$ if you take the margin off only one end of each side, giving $(L - 2)(L - 12)$. $-24$ if you make the width $L + 10$, or write the function in terms of the width. $0$ if you ignore the margin and use $L(L - 10)$.",
+  "common_errors": [
+   {
+    "value": "24",
+    "misconception": "missed-condition",
+    "why": "Subtracted the 2 cm margin only once from each dimension, giving $(L - 2)(L - 12) = L^2 - 14L + 24$."
+   },
+   {
+    "value": "-24",
+    "misconception": "wrong-target-quantity",
+    "why": "Wrote the dimensions in terms of the width, so the other side became $+10$. That gives $(L - 4)(L + 6) = L^2 + 2L - 24$."
+   },
+   {
+    "value": "0",
+    "misconception": "missed-condition",
+    "why": "Ignored the margin and used the whole sheet, $L(L - 10) = L^2 - 10L$."
+   }
+  ],
+  "id": "orig-geometry-to-fu-M-675467",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-675467",
+   "structure": [],
+   "solver_answer": 56,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
+ },
+ {
+  "stem": "If $V(w) = aw^2 + bw$, where $a$ and $b$ are constants, what is the value of $b$?",
+  "stimulus": "A printmaker cuts a rectangular block of wood to carve a relief print. The block is 2 centimeters thick, and its width is 6 centimeters less than its length. The function $V$ gives the volume, in cubic centimeters, of the block in terms of its width $w$, in centimeters.",
+  "keys": [
+   "12"
+  ],
+  "any_of": false,
+  "explanation": "The function uses the width as its input, so write every dimension in terms of $w$. The width is 6 less than the length, which means the length is 6 more than the width: length $= w + 6$. The thickness is a fixed 2 cm. Volume is length \u00d7 width \u00d7 thickness, so $V(w) = (w + 6)(w)(2) = 2w(w + 6) = 2w^2 + 12w$. Match this with $aw^2 + bw$: $a = 2$ and $b = 12$. To check, pick a width such as $w = 4$. The length is 10, so the volume is $10 \\cdot 4 \\cdot 2 = 80$. The function gives $2(16) + 12(4) = 32 + 48 = 80$, so it matches.",
+  "common_errors": [
+   {
+    "value": "-12",
+    "misconception": "wrong-target-quantity",
+    "why": "Wrote the length as $w - 6$, which treats $w$ as the length rather than the width. That gives $V = 2w(w - 6) = 2w^2 - 12w$, so the offset has the wrong sign."
+   },
+   {
+    "value": "6",
+    "misconception": "algebra-manipulation",
+    "why": "Dropped the thickness of 2 and used only length \u00d7 width, $w(w + 6) = w^2 + 6w$. Distributing the 2 onto only the first term, $2w^2 + 6w$, gives the same wrong value."
+   },
+   {
+    "value": "2",
+    "misconception": "wrong-target-quantity",
+    "why": "Found $V(w) = 2w^2 + 12w$ correctly but gave the coefficient $a$ instead of $b$."
+   },
+   {
+    "value": "-6",
+    "misconception": "wrong-target-quantity",
+    "why": "Used $w - 6$ for the length and also left out the thickness: $w(w - 6) = w^2 - 6w$."
+   }
+  ],
+  "id": "orig-geometry-to-fu-M-712dcd",
+  "skill_cd": "P.C.",
+  "subtype": "geometry-to-function",
+  "subtype_name": "Write a function for a geometric quantity",
+  "difficulty": "M",
+  "section": "math",
+  "source": "original - written for this project",
+  "license": "CC BY 4.0 - original item, not College Board content",
+  "format": "grid",
+  "status": "verified",
+  "verification": {
+   "id": "orig-geometry-to-fu-M-712dcd",
+   "structure": [],
+   "solver_answer": 12,
+   "agrees": true,
+   "confident": true,
+   "ambiguous": false,
+   "second_defensible": null,
+   "problem": null,
+   "overlap": [],
+   "residue": 0
+  }
  }
 ]

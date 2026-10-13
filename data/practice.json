@@ -192483,6 +192483,216 @@
    }
   },
   {
+   "id": "orig-geometry-to-fu-M-c135b4",
+   "skill_cd": "P.C.",
+   "subtype": "geometry-to-function",
+   "subtype_name": "Write a function for a geometric quantity",
+   "difficulty": "M",
+   "stimulus": "A historian is rebuilding an 18th-century dye vat shaped like a rectangular box. The vat is 3 feet tall, and the length of its base is 2 feet greater than the width of its base.",
+   "stem": "The function $V$ gives the volume of the vat, in cubic feet, in terms of the base length $\\ell$, in feet. $V(\\ell)$ can be written as $a\\ell^2 + b\\ell$, where $a$ and $b$ are constants. What is the value of $a - b$?",
+   "explanation": "The question asks for the volume in terms of the length, so write every dimension in terms of $\\ell$. The length is 2 feet greater than the width, so the width is $\\ell - 2$, not $\\ell + 2$. Volume is length times width times height: $V(\\ell) = \\ell(\\ell - 2)(3) = 3\\ell^2 - 6\\ell$. That gives $a = 3$ and $b = -6$, so $a - b = 3 - (-6) = 9$. To check, pick $\\ell = 5$. The width is 3, so the volume is $5 \\cdot 3 \\cdot 3 = 45$, and $3(25) - 6(5) = 45$ as well. Wrong values students produce: $-3$ if you write the function in terms of the width, or add 2 to $\\ell$ instead of subtracting it ($3\\ell^2 + 6\\ell$). $3$ if you leave out the 3-foot height ($\\ell^2 - 2\\ell$). $-6$ if you stop at $b$ and don't compute $a - b$.",
+   "source": "original - written for this project",
+   "license": "CC BY 4.0 - original item, not College Board content",
+   "format": "grid",
+   "keys": [
+    "9"
+   ],
+   "any_of": false,
+   "common_errors": [
+    {
+     "value": "-3",
+     "misconception": "wrong-target-quantity",
+     "why": "Treated $\\ell$ as the width, so the other side became $\\ell + 2$. That gives $3\\ell^2 + 6\\ell$ and $a - b = 3 - 6$."
+    },
+    {
+     "value": "3",
+     "misconception": "algebra-manipulation",
+     "why": "Dropped the height of 3. That gives $\\ell^2 - 2\\ell$ and $a - b = 1 - (-2)$."
+    },
+    {
+     "value": "-6",
+     "misconception": "intermediate-step",
+     "why": "Found $b = -6$ correctly but reported it instead of $a - b$."
+    }
+   ],
+   "type": "item",
+   "section": "math",
+   "band_floor": 200,
+   "band_ceiling": 1600,
+   "per_choice": {
+    "correct": "<p>The question asks for the volume in terms of the length, so write every dimension in terms of $\\ell$. The length is 2 feet greater than the width, so the width is $\\ell - 2$, not $\\ell + 2$. Volume is length times width times height: $V(\\ell) = \\ell(\\ell - 2)(3) = 3\\ell^2 - 6\\ell$. That gives $a = 3$ and $b = -6$, so $a - b = 3 - (-6) = 9$. To check, pick $\\ell = 5$. The width is 3, so the volume is $5 \\cdot 3 \\cdot 3 = 45$, and $3(25) - 6(5) = 45$ as well. Wrong values students produce: $-3$ if you write the function in terms of the width, or add 2 to $\\ell$ instead of subtracting it ($3\\ell^2 + 6\\ell$). $3$ if you leave out the 3-foot height ($\\ell^2 - 2\\ell$). $-6$ if you stop at $b$ and don't compute $a - b$.</p>",
+    "-3": "<p>Treated $\\ell$ as the width, so the other side became $\\ell + 2$. That gives $3\\ell^2 + 6\\ell$ and $a - b = 3 - 6$.</p>",
+    "3": "<p>Dropped the height of 3. That gives $\\ell^2 - 2\\ell$ and $a - b = 1 - (-2)$.</p>",
+    "-6": "<p>Found $b = -6$ correctly but reported it instead of $a - b$.</p>"
+   },
+   "misconceptions": {
+    "-3": "wrong-target-quantity",
+    "3": "algebra-manipulation",
+    "-6": "intermediate-step"
+   }
+  },
+  {
+   "id": "orig-geometry-to-fu-M-b8aa08",
+   "skill_cd": "P.C.",
+   "subtype": "geometry-to-function",
+   "subtype_name": "Write a function for a geometric quantity",
+   "difficulty": "M",
+   "stimulus": "A new labor contract requires a warehouse to give each shift a rectangular rest area. The length of each rest area must be 6 meters more than its width.",
+   "stem": "The function $A$ gives the area of the rest area, in square meters, in terms of its length $x$, in meters. What is the value of $A(10)$?",
+   "explanation": "The input is the length, so write the width in terms of the length. The length is 6 more than the width, so the width is $x - 6$. Area is length times width: $A(x) = x(x - 6)$. Then $A(10) = 10(10 - 6) = 10 \\cdot 4 = 40$. Wrong values students produce: $160$ if you treat 10 as the width, so the length becomes 16. $28$ if you find the perimeter instead of the area. $14$ if you add the two sides instead of multiplying them. $4$ if you stop at the width.",
+   "source": "original - written for this project",
+   "license": "CC BY 4.0 - original item, not College Board content",
+   "format": "grid",
+   "keys": [
+    "40"
+   ],
+   "any_of": false,
+   "common_errors": [
+    {
+     "value": "160",
+     "misconception": "wrong-target-quantity",
+     "why": "Wrote the function in terms of the width, $A = x(x + 6)$, so 10 was treated as the width and the length as 16."
+    },
+    {
+     "value": "28",
+     "misconception": "wrong-target-quantity",
+     "why": "Computed the perimeter, $2(10 + 4)$, instead of the area."
+    },
+    {
+     "value": "14",
+     "misconception": "algebra-manipulation",
+     "why": "Added the dimensions, $10 + 4$, instead of multiplying them."
+    },
+    {
+     "value": "4",
+     "misconception": "intermediate-step",
+     "why": "Found the width, $10 - 6$, and stopped there."
+    }
+   ],
+   "type": "item",
+   "section": "math",
+   "band_floor": 200,
+   "band_ceiling": 1600,
+   "per_choice": {
+    "correct": "<p>The input is the length, so write the width in terms of the length. The length is 6 more than the width, so the width is $x - 6$. Area is length times width: $A(x) = x(x - 6)$. Then $A(10) = 10(10 - 6) = 10 \\cdot 4 = 40$. Wrong values students produce: $160$ if you treat 10 as the width, so the length becomes 16. $28$ if you find the perimeter instead of the area. $14$ if you add the two sides instead of multiplying them. $4$ if you stop at the width.</p>",
+    "160": "<p>Wrote the function in terms of the width, $A = x(x + 6)$, so 10 was treated as the width and the length as 16.</p>",
+    "28": "<p>Computed the perimeter, $2(10 + 4)$, instead of the area.</p>",
+    "14": "<p>Added the dimensions, $10 + 4$, instead of multiplying them.</p>",
+    "4": "<p>Found the width, $10 - 6$, and stopped there.</p>"
+   },
+   "misconceptions": {
+    "160": "wrong-target-quantity",
+    "28": "wrong-target-quantity",
+    "14": "algebra-manipulation",
+    "4": "intermediate-step"
+   }
+  },
+  {
+   "id": "orig-geometry-to-fu-M-675467",
+   "skill_cd": "P.C.",
+   "subtype": "geometry-to-function",
+   "subtype_name": "Write a function for a geometric quantity",
+   "difficulty": "M",
+   "stimulus": "A cartographer prints a regional map on a rectangular sheet whose width is 10 centimeters less than its length. A blank margin 2 centimeters wide runs along all four edges of the sheet, and the map fills the region inside the margin.",
+   "stem": "The function $M$ gives the area of the printed region, in square centimeters, in terms of the sheet's length $L$, in centimeters. $M(L)$ can be written as $L^2 + bL + c$, where $b$ and $c$ are constants. What is the value of $c$?",
+   "explanation": "Write the sheet's dimensions in terms of $L$. The length is $L$ and the width is $L - 10$. The margin takes 2 cm from each end of every side, so each dimension loses 4 cm. The printed region is $L - 4$ by $L - 14$. Multiply: $M(L) = (L - 4)(L - 14) = L^2 - 18L + 56$, so $c = 56$. To check, pick $L = 20$. The sheet is 20 by 10, the printed region is 16 by 6, and its area is 96. The function gives $400 - 360 + 56 = 96$. Wrong values students produce: $24$ if you take the margin off only one end of each side, giving $(L - 2)(L - 12)$. $-24$ if you make the width $L + 10$, or write the function in terms of the width. $0$ if you ignore the margin and use $L(L - 10)$.",
+   "source": "original - written for this project",
+   "license": "CC BY 4.0 - original item, not College Board content",
+   "format": "grid",
+   "keys": [
+    "56"
+   ],
+   "any_of": false,
+   "common_errors": [
+    {
+     "value": "24",
+     "misconception": "missed-condition",
+     "why": "Subtracted the 2 cm margin only once from each dimension, giving $(L - 2)(L - 12) = L^2 - 14L + 24$."
+    },
+    {
+     "value": "-24",
+     "misconception": "wrong-target-quantity",
+     "why": "Wrote the dimensions in terms of the width, so the other side became $+10$. That gives $(L - 4)(L + 6) = L^2 + 2L - 24$."
+    },
+    {
+     "value": "0",
+     "misconception": "missed-condition",
+     "why": "Ignored the margin and used the whole sheet, $L(L - 10) = L^2 - 10L$."
+    }
+   ],
+   "type": "item",
+   "section": "math",
+   "band_floor": 200,
+   "band_ceiling": 1600,
+   "per_choice": {
+    "correct": "<p>Write the sheet's dimensions in terms of $L$. The length is $L$ and the width is $L - 10$. The margin takes 2 cm from each end of every side, so each dimension loses 4 cm. The printed region is $L - 4$ by $L - 14$. Multiply: $M(L) = (L - 4)(L - 14) = L^2 - 18L + 56$, so $c = 56$. To check, pick $L = 20$. The sheet is 20 by 10, the printed region is 16 by 6, and its area is 96. The function gives $400 - 360 + 56 = 96$. Wrong values students produce: $24$ if you take the margin off only one end of each side, giving $(L - 2)(L - 12)$. $-24$ if you make the width $L + 10$, or write the function in terms of the width. $0$ if you ignore the margin and use $L(L - 10)$.</p>",
+    "24": "<p>Subtracted the 2 cm margin only once from each dimension, giving $(L - 2)(L - 12) = L^2 - 14L + 24$.</p>",
+    "-24": "<p>Wrote the dimensions in terms of the width, so the other side became $+10$. That gives $(L - 4)(L + 6) = L^2 + 2L - 24$.</p>",
+    "0": "<p>Ignored the margin and used the whole sheet, $L(L - 10) = L^2 - 10L$.</p>"
+   },
+   "misconceptions": {
+    "24": "missed-condition",
+    "-24": "wrong-target-quantity",
+    "0": "missed-condition"
+   }
+  },
+  {
+   "id": "orig-geometry-to-fu-M-712dcd",
+   "skill_cd": "P.C.",
+   "subtype": "geometry-to-function",
+   "subtype_name": "Write a function for a geometric quantity",
+   "difficulty": "M",
+   "stimulus": "A printmaker cuts a rectangular block of wood to carve a relief print. The block is 2 centimeters thick, and its width is 6 centimeters less than its length. The function $V$ gives the volume, in cubic centimeters, of the block in terms of its width $w$, in centimeters.",
+   "stem": "If $V(w) = aw^2 + bw$, where $a$ and $b$ are constants, what is the value of $b$?",
+   "explanation": "The function uses the width as its input, so write every dimension in terms of $w$. The width is 6 less than the length, which means the length is 6 more than the width: length $= w + 6$. The thickness is a fixed 2 cm. Volume is length \u00d7 width \u00d7 thickness, so $V(w) = (w + 6)(w)(2) = 2w(w + 6) = 2w^2 + 12w$. Match this with $aw^2 + bw$: $a = 2$ and $b = 12$. To check, pick a width such as $w = 4$. The length is 10, so the volume is $10 \\cdot 4 \\cdot 2 = 80$. The function gives $2(16) + 12(4) = 32 + 48 = 80$, so it matches.",
+   "source": "original - written for this project",
+   "license": "CC BY 4.0 - original item, not College Board content",
+   "format": "grid",
+   "keys": [
+    "12"
+   ],
+   "any_of": false,
+   "common_errors": [
+    {
+     "value": "-12",
+     "misconception": "wrong-target-quantity",
+     "why": "Wrote the length as $w - 6$, which treats $w$ as the length rather than the width. That gives $V = 2w(w - 6) = 2w^2 - 12w$, so the offset has the wrong sign."
+    },
+    {
+     "value": "6",
+     "misconception": "algebra-manipulation",
+     "why": "Dropped the thickness of 2 and used only length \u00d7 width, $w(w + 6) = w^2 + 6w$. Distributing the 2 onto only the first term, $2w^2 + 6w$, gives the same wrong value."
+    },
+    {
+     "value": "2",
+     "misconception": "wrong-target-quantity",
+     "why": "Found $V(w) = 2w^2 + 12w$ correctly but gave the coefficient $a$ instead of $b$."
+    },
+    {
+     "value": "-6",
+     "misconception": "wrong-target-quantity",
+     "why": "Used $w - 6$ for the length and also left out the thickness: $w(w - 6) = w^2 - 6w$."
+    }
+   ],
+   "type": "item",
+   "section": "math",
+   "band_floor": 200,
+   "band_ceiling": 1600,
+   "per_choice": {
+    "correct": "<p>The function uses the width as its input, so write every dimension in terms of $w$. The width is 6 less than the length, which means the length is 6 more than the width: length $= w + 6$. The thickness is a fixed 2 cm. Volume is length \u00d7 width \u00d7 thickness, so $V(w) = (w + 6)(w)(2) = 2w(w + 6) = 2w^2 + 12w$. Match this with $aw^2 + bw$: $a = 2$ and $b = 12$. To check, pick a width such as $w = 4$. The length is 10, so the volume is $10 \\cdot 4 \\cdot 2 = 80$. The function gives $2(16) + 12(4) = 32 + 48 = 80$, so it matches.</p>",
+    "-12": "<p>Wrote the length as $w - 6$, which treats $w$ as the length rather than the width. That gives $V = 2w(w - 6) = 2w^2 - 12w$, so the offset has the wrong sign.</p>",
+    "6": "<p>Dropped the thickness of 2 and used only length \u00d7 width, $w(w + 6) = w^2 + 6w$. Distributing the 2 onto only the first term, $2w^2 + 6w$, gives the same wrong value.</p>",
+    "2": "<p>Found $V(w) = 2w^2 + 12w$ correctly but gave the coefficient $a$ instead of $b$.</p>",
+    "-6": "<p>Used $w - 6$ for the length and also left out the thickness: $w(w - 6) = w^2 - 6w$.</p>"
+   },
+   "misconceptions": {
+    "-12": "wrong-target-quantity",
+    "6": "algebra-manipulation",
+    "2": "wrong-target-quantity",
+    "-6": "wrong-target-quantity"
+   }
+  },
+  {
    "id": "orig-geometry-to-fu-M-e76d76",
    "skill_cd": "P.C.",
    "subtype": "geometry-to-function",
@@ -193919,6 +194129,200 @@
     "A": "wrong-target-quantity",
     "B": "algebra-manipulation",
     "D": "intermediate-step"
+   }
+  },
+  {
+   "id": "orig-geometry-to-fu-X-0e912c",
+   "skill_cd": "P.C.",
+   "subtype": "geometry-to-function",
+   "subtype_name": "Write a function for a geometric quantity",
+   "difficulty": "X",
+   "stimulus": "A telescope's camera is protected by a closed rectangular case. The outer width of the case is 3 centimeters less than its outer length, and the outer height of the case is 2 centimeters more than half its outer width. Every face of the case, including the top and bottom, is 1 centimeter thick, so the hollow interior is a smaller rectangular box.",
+   "stem": "Which function $V$ gives the volume, in cubic centimeters, of the interior in terms of $x$, the outer length of the case, in centimeters?",
+   "choices": [
+    "$V(x) = \\frac{1}{2}(x-2)(x-5)(x+1)$",
+    "$V(x) = \\frac{1}{2}x(x-3)(x+1)$",
+    "$V(x) = \\frac{1}{2}(x-2)(x-5)(x-3)$",
+    "$V(x) = \\frac{1}{2}(x-2)(x+1)(x+3)$"
+   ],
+   "answer": "C",
+   "explanation": "Start with the outer dimensions in terms of the outer length $x$. The outer width is $x-3$. The outer height is $\\frac{x-3}{2}+2 = \\frac{x+1}{2}$. Each face is 1 cm thick, so every interior dimension is 2 cm smaller than the outer one, because there is a wall at both ends. The interior length is $x-2$, the interior width is $x-5$, and the interior height is $\\frac{x+1}{2}-2 = \\frac{x-3}{2}$. Multiply: $V(x) = \\frac{1}{2}(x-2)(x-5)(x-3)$. Check with $x=7$: the interior is $5 \\times 2 \\times 2 = 20$, and the formula gives $\\frac{1}{2}(5)(2)(4) = 20$.",
+   "distractors": {
+    "A": {
+     "misconception": "missed-condition",
+     "why": "You took the walls off the length and the width but left the height at $\\frac{x+1}{2}$. The top and bottom are also 1 cm thick, so the interior height is $\\frac{x-3}{2}$. Test $x=7$: this choice gives 40 instead of 20."
+    },
+    "B": {
+     "misconception": "wrong-target-quantity",
+     "why": "This is the volume of the whole case, outer dimensions only: $x$ by $x-3$ by $\\frac{x+1}{2}$. The question asks for the hollow interior, so every dimension still has to lose 2 cm."
+    },
+    "D": {
+     "misconception": "algebra-manipulation",
+     "why": "You wrote the width as $x+3$ instead of $x-3$, then built the height from that wrong width. Since $x$ is the length and the width is 3 less than the length, the width has to be $x-3$, not $x+3$."
+    }
+   },
+   "source": "original - written for this project",
+   "license": "CC BY 4.0 - original item, not College Board content",
+   "format": "mc",
+   "type": "item",
+   "section": "math",
+   "band_floor": 200,
+   "band_ceiling": 1600,
+   "per_choice": {
+    "correct": "<p>Start with the outer dimensions in terms of the outer length $x$. The outer width is $x-3$. The outer height is $\\frac{x-3}{2}+2 = \\frac{x+1}{2}$. Each face is 1 cm thick, so every interior dimension is 2 cm smaller than the outer one, because there is a wall at both ends. The interior length is $x-2$, the interior width is $x-5$, and the interior height is $\\frac{x+1}{2}-2 = \\frac{x-3}{2}$. Multiply: $V(x) = \\frac{1}{2}(x-2)(x-5)(x-3)$. Check with $x=7$: the interior is $5 \\times 2 \\times 2 = 20$, and the formula gives $\\frac{1}{2}(5)(2)(4) = 20$.</p>",
+    "A": "<p>You took the walls off the length and the width but left the height at $\\frac{x+1}{2}$. The top and bottom are also 1 cm thick, so the interior height is $\\frac{x-3}{2}$. Test $x=7$: this choice gives 40 instead of 20.</p>",
+    "B": "<p>This is the volume of the whole case, outer dimensions only: $x$ by $x-3$ by $\\frac{x+1}{2}$. The question asks for the hollow interior, so every dimension still has to lose 2 cm.</p>",
+    "D": "<p>You wrote the width as $x+3$ instead of $x-3$, then built the height from that wrong width. Since $x$ is the length and the width is 3 less than the length, the width has to be $x-3$, not $x+3$.</p>"
+   },
+   "misconceptions": {
+    "A": "missed-condition",
+    "B": "wrong-target-quantity",
+    "D": "algebra-manipulation"
+   }
+  },
+  {
+   "id": "orig-geometry-to-fu-X-c7d0a8",
+   "skill_cd": "P.C.",
+   "subtype": "geometry-to-function",
+   "subtype_name": "Write a function for a geometric quantity",
+   "difficulty": "X",
+   "stimulus": "A folklorist reproduces a woodcut of a village legend on a rectangular sheet of paper. The sheet's length is 4 inches more than twice its width. The image is printed with a 1-inch margin along the left, right, and top edges of the sheet and a 3-inch margin along the bottom edge, which leaves room for a caption.",
+   "stem": "Which function $A$ gives the area, in square inches, of the printed image in terms of $x$, the length of the sheet, in inches?",
+   "choices": [
+    "$A(x) = \\frac{1}{2}x^2 - 2x$",
+    "$A(x) = \\frac{1}{2}x^2 - 6x + 16$",
+    "$A(x) = \\frac{1}{2}x^2 - 4x + 8$",
+    "$A(x) = \\frac{1}{2}x^2 - 7x + 24$"
+   ],
+   "answer": "B",
+   "explanation": "The sheet length is the input, so write the width in terms of $x$. Since $x = 2w + 4$, the width is $w = \\frac{x-4}{2}$. The side margins total 2 inches, so the image width is $\\frac{x-4}{2} - 2 = \\frac{x-8}{2}$. The top and bottom margins total $1 + 3 = 4$ inches, so the image length is $x-4$. The area is $\\frac{(x-4)(x-8)}{2} = \\frac{1}{2}x^2 - 6x + 16$. Check with $x=12$: the sheet is 12 by 4, the image is 8 by 2, and the area is 16. The formula gives $72 - 72 + 16 = 16$.",
+   "distractors": {
+    "A": {
+     "misconception": "algebra-manipulation",
+     "why": "You solved $x = 2w+4$ for the width as $\\frac{x+4}{2}$, which flips the sign of the offset. The sheet's length is the larger quantity, so the width has to be $\\frac{x-4}{2}$. The wrong width gives an image of $\\frac{x}{2}$ by $x-4$, which is this choice."
+    },
+    "C": {
+     "misconception": "missed-condition",
+     "why": "You subtracted the top and bottom margins but forgot the two 1-inch side margins, so the image width stayed at $\\frac{x-4}{2}$. That gives $\\frac{(x-4)^2}{2}$. At $x=12$ this gives 32, which is larger than the whole 8-by-2 image."
+    },
+    "D": {
+     "misconception": "misread-given",
+     "why": "You used the 3-inch margin at both the top and the bottom, which makes the image length $x-6$. The top margin is only 1 inch, so the vertical margins total 4 inches and the image length is $x-4$."
+    }
+   },
+   "source": "original - written for this project",
+   "license": "CC BY 4.0 - original item, not College Board content",
+   "format": "mc",
+   "type": "item",
+   "section": "math",
+   "band_floor": 200,
+   "band_ceiling": 1600,
+   "per_choice": {
+    "correct": "<p>The sheet length is the input, so write the width in terms of $x$. Since $x = 2w + 4$, the width is $w = \\frac{x-4}{2}$. The side margins total 2 inches, so the image width is $\\frac{x-4}{2} - 2 = \\frac{x-8}{2}$. The top and bottom margins total $1 + 3 = 4$ inches, so the image length is $x-4$. The area is $\\frac{(x-4)(x-8)}{2} = \\frac{1}{2}x^2 - 6x + 16$. Check with $x=12$: the sheet is 12 by 4, the image is 8 by 2, and the area is 16. The formula gives $72 - 72 + 16 = 16$.</p>",
+    "A": "<p>You solved $x = 2w+4$ for the width as $\\frac{x+4}{2}$, which flips the sign of the offset. The sheet's length is the larger quantity, so the width has to be $\\frac{x-4}{2}$. The wrong width gives an image of $\\frac{x}{2}$ by $x-4$, which is this choice.</p>",
+    "C": "<p>You subtracted the top and bottom margins but forgot the two 1-inch side margins, so the image width stayed at $\\frac{x-4}{2}$. That gives $\\frac{(x-4)^2}{2}$. At $x=12$ this gives 32, which is larger than the whole 8-by-2 image.</p>",
+    "D": "<p>You used the 3-inch margin at both the top and the bottom, which makes the image length $x-6$. The top margin is only 1 inch, so the vertical margins total 4 inches and the image length is $x-4$.</p>"
+   },
+   "misconceptions": {
+    "A": "algebra-manipulation",
+    "C": "missed-condition",
+    "D": "misread-given"
+   }
+  },
+  {
+   "id": "orig-geometry-to-fu-X-e4252e",
+   "skill_cd": "P.C.",
+   "subtype": "geometry-to-function",
+   "subtype_name": "Write a function for a geometric quantity",
+   "difficulty": "X",
+   "stem": "A museum curator designs a tall display case for an ornithology collection featuring rare bird nesting materials. The case has a square base with side length $s$ inches. The height of the case is 5 inches greater than the side length of the base. Which equation correctly expresses the volume $V$ of the display case in terms of $s$?",
+   "choices": [
+    "$V = s^3 + 5s^2$",
+    "$V = s^3 - 5s^2$",
+    "$V = (s + 5)^2$",
+    "$V = 5s^3 + s^2$"
+   ],
+   "answer": "A",
+   "explanation": "You have a square base with area $s^2$ and height $(s + 5)$ inches. The volume is base area times height: $V = s^2(s + 5)$. Expanding with the distributive property gives $V = s^3 + 5s^2$.",
+   "distractors": {
+    "B": {
+     "misconception": "algebra-manipulation",
+     "why": "You've reversed the sign on the 5, treating the height as if it were 5 inches less than the side length instead of 5 inches more. The height is $(s + 5)$, not $(s - 5)$."
+    },
+    "C": {
+     "misconception": "intermediate-step",
+     "why": "You squared the height $(s + 5)^2$ instead of multiplying the base area $s^2$ by the height. The volume formula for a rectangular prism is base area times height, not height squared alone."
+    },
+    "D": {
+     "misconception": "wrong-target-quantity",
+     "why": "You multiplied the 5 by $s^3$ instead of by $s^2$. When you distribute in $s^2(s + 5) = s^3 + 5s^2$, the 5 coefficient applies only to the $s^2$ term from the base."
+    }
+   },
+   "source": "original - written for this project",
+   "license": "CC BY 4.0 - original item, not College Board content",
+   "format": "mc",
+   "type": "item",
+   "section": "math",
+   "band_floor": 200,
+   "band_ceiling": 1600,
+   "per_choice": {
+    "correct": "<p>You have a square base with area $s^2$ and height $(s + 5)$ inches. The volume is base area times height: $V = s^2(s + 5)$. Expanding with the distributive property gives $V = s^3 + 5s^2$.</p>",
+    "B": "<p>You've reversed the sign on the 5, treating the height as if it were 5 inches less than the side length instead of 5 inches more. The height is $(s + 5)$, not $(s - 5)$.</p>",
+    "C": "<p>You squared the height $(s + 5)^2$ instead of multiplying the base area $s^2$ by the height. The volume formula for a rectangular prism is base area times height, not height squared alone.</p>",
+    "D": "<p>You multiplied the 5 by $s^3$ instead of by $s^2$. When you distribute in $s^2(s + 5) = s^3 + 5s^2$, the 5 coefficient applies only to the $s^2$ term from the base.</p>"
+   },
+   "misconceptions": {
+    "B": "algebra-manipulation",
+    "C": "intermediate-step",
+    "D": "wrong-target-quantity"
+   }
+  },
+  {
+   "id": "orig-geometry-to-fu-X-bcb8e8",
+   "skill_cd": "P.C.",
+   "subtype": "geometry-to-function",
+   "subtype_name": "Write a function for a geometric quantity",
+   "difficulty": "X",
+   "stem": "A textile historian examines a historical weaving loom with a rectangular frame. The length of the frame is 3 times the width minus 2 inches. If $w$ represents the width in inches, which equation correctly expresses the area $A$ of the weaving frame in terms of $w$?",
+   "choices": [
+    "$A = 3w^2 - 2w$",
+    "$A = 3w^2 + 2w$",
+    "$A = (3w - 2)^2$",
+    "$A = 3w^2 - 6w$"
+   ],
+   "answer": "A",
+   "explanation": "The width is $w$ inches and the length is $(3w - 2)$ inches. Area equals width times length: $A = w(3w - 2)$. Expanding with the distributive property gives $A = 3w^2 - 2w$.",
+   "distractors": {
+    "B": {
+     "misconception": "algebra-manipulation",
+     "why": "You've changed the minus sign to a plus sign. The length is \"3 times the width minus 2,\" so it is $(3w - 2)$, not $(3w + 2)$. When you distribute $w(3w - 2)$, the negative sign stays attached to the 2."
+    },
+    "C": {
+     "misconception": "intermediate-step",
+     "why": "You squared the length $(3w - 2)^2$ instead of multiplying width times length. The area of a rectangle requires you to multiply the two dimensions together, not square one of them."
+    },
+    "D": {
+     "misconception": "misread-given",
+     "why": "You interpreted the length as \"3 times the quantity (width minus 2)\" rather than \"(3 times the width) minus 2.\" This gives $3(w - 2) = 3w - 6$ as the length, leading to $w(3w - 6) = 3w^2 - 6w$, but the expression should be $w(3w - 2)$."
+    }
+   },
+   "source": "original - written for this project",
+   "license": "CC BY 4.0 - original item, not College Board content",
+   "format": "mc",
+   "type": "item",
+   "section": "math",
+   "band_floor": 200,
+   "band_ceiling": 1600,
+   "per_choice": {
+    "correct": "<p>The width is $w$ inches and the length is $(3w - 2)$ inches. Area equals width times length: $A = w(3w - 2)$. Expanding with the distributive property gives $A = 3w^2 - 2w$.</p>",
+    "B": "<p>You've changed the minus sign to a plus sign. The length is \"3 times the width minus 2,\" so it is $(3w - 2)$, not $(3w + 2)$. When you distribute $w(3w - 2)$, the negative sign stays attached to the 2.</p>",
+    "C": "<p>You squared the length $(3w - 2)^2$ instead of multiplying width times length. The area of a rectangle requires you to multiply the two dimensions together, not square one of them.</p>",
+    "D": "<p>You interpreted the length as \"3 times the quantity (width minus 2)\" rather than \"(3 times the width) minus 2.\" This gives $3(w - 2) = 3w - 6$ as the length, leading to $w(3w - 6) = 3w^2 - 6w$, but the expression should be $w(3w - 2)$.</p>"
+   },
+   "misconceptions": {
+    "B": "algebra-manipulation",
+    "C": "intermediate-step",
+    "D": "misread-given"
    }
   },
   {
@@ -372228,6 +372632,234 @@
    }
   },
   {
+   "id": "orig-read-key-point-M-6f064f",
+   "skill_cd": "P.C.",
+   "subtype": "read-key-point-off-graph",
+   "subtype_name": "Read a feature straight off the graph",
+   "difficulty": "M",
+   "stimulus": "An ornithologist modeled the number of breeding terns in a colony, $P$, in hundreds of birds, as a function of $x$, the number of years since a study began. The graph of the model is shown.",
+   "stem": "According to the model, how many birds were in the colony at the start of the study?",
+   "explanation": "The start of the study is x = 0, so you want the P-intercept. The curve meets the vertical axis at 12. That axis is measured in hundreds of birds, so 12 hundred is 1,200 birds.",
+   "figure": {
+    "type": "curve",
+    "caption": "Tern colony size",
+    "x_label": "Years since study began, x",
+    "y_label": "Birds P (hundreds)",
+    "points": [
+     [
+      0,
+      12
+     ],
+     [
+      0.25,
+      11.349
+     ],
+     [
+      0.5,
+      10.733
+     ],
+     [
+      0.75,
+      10.151
+     ],
+     [
+      1,
+      9.6
+     ],
+     [
+      1.25,
+      9.079
+     ],
+     [
+      1.5,
+      8.587
+     ],
+     [
+      1.75,
+      8.121
+     ],
+     [
+      2,
+      7.68
+     ],
+     [
+      2.25,
+      7.263
+     ],
+     [
+      2.5,
+      6.869
+     ],
+     [
+      2.75,
+      6.496
+     ],
+     [
+      3,
+      6.144
+     ],
+     [
+      3.25,
+      5.811
+     ],
+     [
+      3.5,
+      5.495
+     ],
+     [
+      3.75,
+      5.197
+     ],
+     [
+      4,
+      4.915
+     ],
+     [
+      4.25,
+      4.649
+     ],
+     [
+      4.5,
+      4.396
+     ],
+     [
+      4.75,
+      4.158
+     ],
+     [
+      5,
+      3.932
+     ],
+     [
+      5.25,
+      3.719
+     ],
+     [
+      5.5,
+      3.517
+     ],
+     [
+      5.75,
+      3.326
+     ],
+     [
+      6,
+      3.146
+     ],
+     [
+      6.25,
+      2.975
+     ],
+     [
+      6.5,
+      2.814
+     ],
+     [
+      6.75,
+      2.661
+     ],
+     [
+      7,
+      2.517
+     ],
+     [
+      7.25,
+      2.38
+     ],
+     [
+      7.5,
+      2.251
+     ],
+     [
+      7.75,
+      2.129
+     ],
+     [
+      8,
+      2.013
+     ],
+     [
+      8.25,
+      1.904
+     ],
+     [
+      8.5,
+      1.801
+     ],
+     [
+      8.75,
+      1.703
+     ],
+     [
+      9,
+      1.611
+     ],
+     [
+      9.25,
+      1.523
+     ],
+     [
+      9.5,
+      1.441
+     ],
+     [
+      9.75,
+      1.362
+     ],
+     [
+      10,
+      1.288
+     ]
+    ],
+    "x_min": 0,
+    "x_max": 10,
+    "x_step": 1,
+    "y_min": 0,
+    "y_max": 14,
+    "y_step": 2,
+    "alt": "A decreasing curve over 0 to 10 years that starts high on the vertical axis and flattens toward zero."
+   },
+   "source": "original - written for this project",
+   "license": "CC BY 4.0 - original item, not College Board content",
+   "format": "grid",
+   "keys": [
+    "1200"
+   ],
+   "any_of": false,
+   "common_errors": [
+    {
+     "value": "12",
+     "misconception": "misread-given",
+     "why": "Read the intercept correctly but ignored that the axis is in hundreds of birds."
+    },
+    {
+     "value": "6",
+     "misconception": "misread-given",
+     "why": "Counted the intercept as the 6th gridline without using the axis step of 2."
+    },
+    {
+     "value": "600",
+     "misconception": "misread-given",
+     "why": "Counted 6 gridlines and converted to hundreds, but missed the step of 2."
+    }
+   ],
+   "type": "item",
+   "section": "math",
+   "band_floor": 200,
+   "band_ceiling": 1600,
+   "per_choice": {
+    "correct": "<p>The start of the study is x = 0, so you want the P-intercept. The curve meets the vertical axis at 12. That axis is measured in hundreds of birds, so 12 hundred is 1,200 birds.</p>",
+    "12": "<p>Read the intercept correctly but ignored that the axis is in hundreds of birds.</p>",
+    "6": "<p>Counted the intercept as the 6th gridline without using the axis step of 2.</p>",
+    "600": "<p>Counted 6 gridlines and converted to hundreds, but missed the step of 2.</p>"
+   },
+   "misconceptions": {
+    "12": "misread-given",
+    "6": "misread-given",
+    "600": "misread-given"
+   }
+  },
+  {
    "id": "orig-read-key-point-M-5b84c4",
    "skill_cd": "P.C.",
    "subtype": "read-key-point-off-graph",
@@ -465482,6 +466114,50 @@
    "misconceptions": {
     "4": "missed-condition",
     "3": "complement-or-direction-flip"
+   }
+  },
+  {
+   "id": "orig-sufficient-inf-M-e2932a",
+   "skill_cd": "S.B.",
+   "subtype": "sufficient-information-proof",
+   "subtype_name": "Which extra fact is sufficient to prove it?",
+   "difficulty": "M",
+   "stimulus": "An astronomer models two rays of starlight entering a telescope as lines $\\ell$ and $m$. A line $t$ crosses $\\ell$ at point $P$ and crosses $m$ at point $Q$. The four angles at $P$ are numbered 1 (upper left), 2 (upper right), 3 (lower left) and 4 (lower right). The four angles at $Q$ are numbered 5, 6, 7 and 8 in the same positions.\n\nStatement 1: $\\angle 1 = \\angle 4$\nStatement 2: $\\angle 3 = \\angle 6$\nStatement 3: $m\\angle 1 + m\\angle 2 = 180^\\circ$\nStatement 4: $m\\angle 4 + m\\angle 6 = 180^\\circ$\nStatement 5: $\\angle 1 = \\angle 5$",
+   "stem": "Which numbered statement, on its own, is sufficient to prove that line $\\ell$ is parallel to line $m$?\n\nIf there is more than one correct answer, enter only one.",
+   "explanation": "To prove that two lines are parallel, you need a pair of corresponding angles that are equal, a pair of alternate interior angles that are equal, or a pair of same-side interior angles that add to $180^\\circ$. The angle pairs must be at different intersections. Statement 1 compares vertical angles at $P$, which are always equal, so it proves nothing. Statement 3 is a linear pair at $P$, which always adds to $180^\\circ$, so it also proves nothing. Statement 2 pairs $\\angle 3$ and $\\angle 6$, which are alternate interior angles, so they are equal only when the lines are parallel. Statement 4 pairs $\\angle 4$ and $\\angle 6$, which are same-side interior angles, so a sum of $180^\\circ$ proves the lines are parallel. Statement 5 pairs $\\angle 1$ and $\\angle 5$, which are corresponding angles. Any of 2, 4 or 5 is correct.",
+   "source": "original - written for this project",
+   "license": "CC BY 4.0 - original item, not College Board content",
+   "format": "grid",
+   "keys": [
+    "2",
+    "4",
+    "5"
+   ],
+   "any_of": true,
+   "common_errors": [
+    {
+     "value": "1",
+     "misconception": "missed-condition",
+     "why": "You chose a pair of vertical angles. They are equal whenever two lines cross, so they cannot show anything about line $m$."
+    },
+    {
+     "value": "3",
+     "misconception": "missed-condition",
+     "why": "You chose a linear pair. Those angles add to $180^\\circ$ on any line, so the pair does not involve line $m$ at all."
+    }
+   ],
+   "type": "item",
+   "section": "math",
+   "band_floor": 200,
+   "band_ceiling": 1600,
+   "per_choice": {
+    "correct": "<p>To prove that two lines are parallel, you need a pair of corresponding angles that are equal, a pair of alternate interior angles that are equal, or a pair of same-side interior angles that add to $180^\\circ$. The angle pairs must be at different intersections. Statement 1 compares vertical angles at $P$, which are always equal, so it proves nothing. Statement 3 is a linear pair at $P$, which always adds to $180^\\circ$, so it also proves nothing. Statement 2 pairs $\\angle 3$ and $\\angle 6$, which are alternate interior angles, so they are equal only when the lines are parallel. Statement 4 pairs $\\angle 4$ and $\\angle 6$, which are same-side interior angles, so a sum of $180^\\circ$ proves the lines are parallel. Statement 5 pairs $\\angle 1$ and $\\angle 5$, which are corresponding angles. Any of 2, 4 or 5 is correct.</p>",
+    "1": "<p>You chose a pair of vertical angles. They are equal whenever two lines cross, so they cannot show anything about line $m$.</p>",
+    "3": "<p>You chose a linear pair. Those angles add to $180^\\circ$ on any line, so the pair does not involve line $m$ at all.</p>"
+   },
+   "misconceptions": {
+    "1": "missed-condition",
+    "3": "missed-condition"
    }
   },
   {

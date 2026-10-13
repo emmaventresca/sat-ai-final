@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import type { Exam } from '../exams/types'
 import { examSpec } from '../exams/registry'
 import { loadIndex, type QuestionRef } from '../lib/bank'
+import type { Question } from '../exams/types'
+import { Round } from '../practice/Round'
 import { buildJourney, type Chapter, type Leg, type Region, type SkillMeta } from './map'
 import { StageView, type StageMode } from './Stage'
 import { gemFor, gemHue, type GemState } from './gems'
@@ -20,6 +22,7 @@ import { errorLog, open as openOnly } from '../errors/log'
 import { StopGrid } from './StopGrid'
 import './greenwood.css'
 import { NextPoints } from './NextPoints'
+import { Traps } from './Traps'
 
 /**
  * The map, not the inventory.
@@ -58,6 +61,9 @@ export function Journey({ exam }: { exam: Exam }) {
   }, [exam])
 
   useEffect(() => { setOpenRealm(null); setOpen(null) }, [exam])
+
+  /** A drill built around one recurring mistake, not one topic. */
+  const [drill, setDrill] = useState<{ questions: Question[]; label: string } | null>(null)
 
   const regions = useMemo(
     () => (bank.length ? buildJourney(exam, bank, skills) : []),
@@ -176,7 +182,26 @@ export function Journey({ exam }: { exam: Exam }) {
       {/* What is actually costing marks, before the map. A student who
           opens the app to "do some practice" should meet the diagnosis
           first and the geography second. */}
+      {drill && (
+        <div className="drill-run">
+          <div className="spread" style={{ marginBottom: 10 }}>
+            <h2 style={{ margin: 0 }}>Drill: {drill.label}</h2>
+            <button className="btn-sm" onClick={() => setDrill(null)}>Close</button>
+          </div>
+          <p className="tiny muted" style={{ marginTop: -4, marginBottom: 12 }}>
+            {drill.questions.length} questions from different topics, every one
+            of them built so this mistake is available to make.
+          </p>
+          <Round questions={drill.questions}
+            onDone={() => { setDrill(null); setVersion((v) => v + 1) }} />
+        </div>
+      )}
+
       <NextPoints exam={exam} />
+
+      {/* The habit behind the misses, across every recognition. A drill
+          here mixes topics on purpose - the mistake is the subject. */}
+      <Traps exam={exam} onDrill={(questions, label) => setDrill({ questions, label })} />
 
       {regions.map((region) => (
         <Region key={region.id} region={region} exam={exam}

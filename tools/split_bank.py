@@ -100,6 +100,27 @@ def first_seen(exam, ids):
     return known, sum(1 for v in known.values() if v == today)
 
 
+def traps_of(item):
+    """The misconception slugs this question's wrong answers are built on.
+
+    Lifted into the INDEX rather than left in the body, because a drill on
+    "you keep flipping the inequality" has to select questions by the error
+    they punish, and selecting by that in the browser would otherwise mean
+    downloading all 47MB of bodies to read a handful of slugs.
+
+    Deduplicated and sorted so the index is stable between builds - an index
+    that churns on every rebuild makes every diff unreadable.
+    """
+    found = set()
+    for v in (item.get("distractors") or {}).values():
+        if isinstance(v, dict) and v.get("misconception"):
+            found.add(str(v["misconception"]))
+    for e in item.get("common_errors") or []:
+        if isinstance(e, dict) and e.get("misconception"):
+            found.add(str(e["misconception"]))
+    return sorted(found)
+
+
 def split(exam, path):
     if not os.path.exists(path):
         return None
@@ -114,19 +135,29 @@ def split(exam, path):
 
     seen, fresh = first_seen(exam, {it["id"] for it in items})
 
-    index, chunks = [], {}
+    index, chunks, vocab = [], {}, {}
     for it in items:
         entry = {k: it[k] for k in INDEX_FIELDS if it.get(k) is not None}
         # Which chunk to fetch. Stored rather than recomputed in the browser
         # so the two can never disagree about how a slug becomes a filename.
         entry["chunk"] = chunk_name(it.get("subtype"))
         entry["teaser"] = teaser(it)
+        # Stored as indices into a per-file vocabulary. The slugs repeat
+        # across thousands of questions, so writing them out in full added
+        # about 600KB to an index every student downloads first.
+        traps = traps_of(it)
+        if traps:
+            entry["traps"] = [vocab.setdefault(t, len(vocab)) for t in traps]
         if seen.get(it["id"]):
             entry["added"] = seen[it["id"]]
         index.append(entry)
         chunks.setdefault(entry["chunk"], []).append(it)
 
-    json.dump({"items": index}, open(os.path.join(out_dir, "index.json"), "w"))
+    json.dump({
+        "items": index,
+        # slug -> id, so the browser can read `traps` without the bodies.
+        "traps": [slug for slug, _ in sorted(vocab.items(), key=lambda kv: kv[1])],
+    }, open(os.path.join(out_dir, "index.json"), "w"))
     for name, rows in chunks.items():
         json.dump({"items": rows},
                   open(os.path.join(chunks_dir, f"{name}.json"), "w"))

@@ -65,6 +65,15 @@ export interface QuestionRef {
    * fiction, and a topic average cannot show that.
    */
   passageType?: string
+  /**
+   * The misconceptions this question's wrong answers are built on.
+   *
+   * In the index rather than the body because selecting questions by the
+   * error they punish - "you keep flipping the inequality" - has to happen
+   * before any body is fetched, and doing it from bodies would mean
+   * downloading the whole bank to read a few slugs.
+   */
+  traps?: string[]
 }
 
 const indexes = new Map<Exam, QuestionRef[]>()
@@ -76,7 +85,10 @@ export async function loadIndex(exam: Exam): Promise<QuestionRef[]> {
 
   const res = await fetch(`${BASE}data/${exam}/index.json`)
   if (!res.ok) throw new Error(`could not load the ${exam.toUpperCase()} bank`)
-  const blob = (await res.json()) as { items?: RawRef[] }
+  const blob = (await res.json()) as { items?: RawRef[]; traps?: string[] }
+  // The misconception slugs are written once per file and referenced by
+  // index, so resolve them here rather than making every caller know that.
+  const vocab = blob.traps ?? []
   const refs = (blob.items ?? []).map((raw) => ({
     id: raw.id,
     exam,
@@ -93,6 +105,9 @@ export async function loadIndex(exam: Exam): Promise<QuestionRef[]> {
     added: raw.added,
     passageId: raw.passage_id,
     passageType: raw.passage_type,
+    traps: (raw.traps ?? [])
+      .map((i) => vocab[i])
+      .filter((s): s is string => Boolean(s)),
   } as QuestionRef))
   indexes.set(exam, refs)
   return refs
@@ -145,6 +160,7 @@ export async function loadSubtypes(
 }
 
 interface RawRef {
+  traps?: number[]
   id: string
   section?: string
   skill?: string
