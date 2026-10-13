@@ -129,3 +129,87 @@
 .land-route-arrow{fill:none;stroke:none;vector-effect:non-scaling-stroke}
 .land-route-start{fill:#ffe8aa;stroke:rgba(0,0,0,.55);stroke-width:.4}
 .pod{z-index:2}
+
+/* ---------------------------------------------------------------- *
+ * Hotspots, embedded in the photograph.
+ *
+ * The pods used to float in a ring over the picture, which made the
+ * picture wallpaper: nothing in it was the thing you clicked. A spot is
+ * pinned to its feature, so clicking "The Grazed Valley" is clicking the
+ * valley.
+ * ---------------------------------------------------------------- */
+.spot{
+  position:absolute;transform:translate(-50%,-100%);
+  display:flex;flex-direction:column;align-items:center;gap:0;
+  background:none;border:0;cursor:pointer;color:#fff;padding:0;
+  transition:transform .18s cubic-bezier(.4,0,.2,1);
+}
+.spot:hover,.spot:focus-visible{transform:translate(-50%,-100%) scale(1.07)}
+
+.spot-plate{
+  order:1;display:flex;flex-direction:column;align-items:center;gap:1px;
+  padding:9px 14px 8px;border-radius:12px;text-align:center;
+  background:rgba(14,20,28,.72);backdrop-filter:blur(9px) saturate(1.3);
+  border:1px solid rgba(255,255,255,.3);
+  box-shadow:0 10px 26px rgba(0,0,0,.5);
+  min-width:140px;
+}
+.spot-plate strong{
+  font-family:var(--serif);font-size:.98rem;line-height:1.15;color:#fff;
+}
+.spot-plate em{
+  font-style:normal;font-size:.68rem;letter-spacing:.06em;
+  color:rgba(255,255,255,.66);text-transform:uppercase;
+}
+.spot-n{
+  margin-top:4px;font-size:.68rem;font-weight:800;
+  background:rgba(255,255,255,.15);border-radius:999px;padding:1px 9px;
+  font-variant-numeric:tabular-nums;
+}
+.spot.done .spot-plate{border-color:#ffd98a}
+.spot.done .spot-n{background:#ffd98a;color:#3a2a08}
+
+/* The pin: a stem down to the exact point, and a pulsing ring on it, so the
+   label is clearly ABOUT that spot rather than floating near it. */
+.spot-pin{order:2;position:relative;display:block;width:2px;height:26px;
+  background:linear-gradient(to bottom,rgba(255,255,255,.9),rgba(255,255,255,.25))}
+.spot-pin i{
+  position:absolute;left:50%;bottom:-5px;transform:translateX(-50%);
+  width:11px;height:11px;border-radius:50%;
+  background:#ffd98a;border:2px solid rgba(20,26,34,.72);
+}
+.spot-pin em{
+  position:absolute;left:50%;bottom:-13px;transform:translateX(-50%);
+  width:27px;height:27px;border-radius:50%;
+  border:2px solid rgba(255,217,138,.6);
+  animation:spot-pulse 2.6s ease-out infinite;
+}
+@keyframes spot-pulse{
+  0%{transform:translateX(-50%) scale(.5);opacity:.9}
+  70%{transform:translateX(-50%) scale(1.25);opacity:0}
+  100%{opacity:0}
+}
+@media (prefers-reduced-motion:reduce){ .spot-pin em{animation:none;opacity:.5} }
+
+/* Travelling in: the photograph grows toward the spot while the markers
+   drop away, then the next photograph arrives. Zooming the SAME picture
+   just gets you blur - the arrival is a different photograph. */
+.land-bg{transition:transform .42s cubic-bezier(.4,0,.6,1), opacity .42s ease}
+.land-bg.zooming{transform:scale(1.9);opacity:.25}
+.land-field{transition:opacity .3s ease, transform .42s cubic-bezier(.4,0,.6,1)}
+.land-field.zooming{opacity:0;transform:scale(1.12);pointer-events:none}
+.land-bg{animation:land-arrive .6s cubic-bezier(.2,0,.2,1)}
+@keyframes land-arrive{
+  from{transform:scale(1.14);opacity:.4}
+  to{transform:scale(1);opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .land-bg,.land-field{transition:none;animation:none}
+  .land-bg.zooming{transform:none;opacity:1}
+}
+
+@media (max-width:720px){
+  .spot{position:absolute}
+  .spot-plate{min-width:112px;padding:7px 10px}
+  .spot-plate strong{font-size:.84rem}
+}

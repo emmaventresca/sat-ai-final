@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react'
 import type { Exam, Tier } from '../exams/types'
-import type { Chapter, Leg, Region, Stage } from './map'
-import { realBackdrops } from './backdrops'
-import { Vignette, VIBE, VIBE_NAME, type Vibe } from './Hubs'
+import type { Chapter, Leg, Region, Stage, Terrain } from './map'
+import { backdrop, realBackdrops } from './backdrops'
+import { fallbackSpot, SPOTS } from './places'
+import { VIBE, VIBE_NAME, type Vibe } from './Hubs'
 import './land.css'
 
 /**
@@ -31,39 +32,28 @@ export interface Pod {
   cleared: number
   total: number
   left: number
-  /** Where it sits on the land, as percentages. */
+  /** Where it sits ON the photograph, as percentages. */
   x: number
   y: number
-}
-
-/** Seeded, so a land is the same country every time it is opened. */
-function seeded(s: string): number {
-  let h = 2166136261
-  for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619) }
-  return (Math.abs(h) % 10000) / 10000
+  /** The scene slug you arrive at, where one is authored. */
+  into?: string
 }
 
 /**
- * Scatter pods around the land without letting any two collide.
+ * Anchor each pod to its feature in the photograph.
  *
- * A ring rather than a grid: a grid is the spreadsheet again, and a ring
- * reads as places arranged around a valley. The seeded jitter keeps it from
- * looking like a clock face.
+ * Authored coordinates first, because a label on the actual valley is the
+ * entire point; the ring is only what happens when nobody has looked at that
+ * picture yet.
  */
-function place<T extends { key: string }>(items: T[]): (T & { x: number; y: number })[] {
-  const n = items.length
+function anchor<T extends { key: string; name: string }>(
+  items: T[], terrain: Terrain, authored: boolean,
+): (T & { x: number; y: number; into?: string })[] {
+  const table = SPOTS[terrain] ?? {}
   return items.map((it, i) => {
-    if (n === 1) return { ...it, x: 50, y: 52 }
-    const t = i / n
-    const angle = t * Math.PI * 2 - Math.PI / 2
-    const wobble = (seeded(it.key) - 0.5) * 0.18
-    const rx = 31 + wobble * 22
-    const ry = 25 + wobble * 16
-    return {
-      ...it,
-      x: 50 + Math.cos(angle) * rx,
-      y: 50 + Math.sin(angle) * ry,
-    }
+    const spot = authored ? table[it.name] : undefined
+    const at = spot ?? fallbackSpot(i, items.length)
+    return { ...it, x: at.x, y: at.y, into: spot?.into }
   })
 }
 
@@ -82,42 +72,74 @@ export function Land({ region, exam, onExit, onPractise }: {
 
   const pods = useMemo<Pod[]>(() => {
     if (skill) {
-      return place(skill.stages.map((st: Stage) => ({
+      return anchor(skill.stages.map((st: Stage) => ({
         key: st.subtype,
         name: st.name,
         sub: st.tests || `${st.total} questions`,
         cleared: st.cleared ? 1 : 0,
         total: 1,
         left: st.left,
-      })))
+      })), region.terrain as Terrain, false)
     }
     if (domain) {
-      return place(domain.legs.map((leg) => ({
+      return anchor(domain.legs.map((leg) => ({
         key: leg.skill,
         name: leg.name,
         sub: `${leg.stages.length} question type${leg.stages.length === 1 ? '' : 's'}`,
         cleared: leg.cleared,
         total: leg.stages.length,
         left: leg.left,
-      })))
+      })), region.terrain as Terrain, false)
     }
-    return place(region.chapters.map((c: Chapter) => ({
+    return anchor(region.chapters.map((c: Chapter) => ({
       key: c.id,
       name: c.name,
       sub: VIBE_NAME[VIBE[c.name] ?? 'valley'],
       cleared: c.cleared,
       total: c.stages,
       left: c.left,
-    })))
+    })), region.terrain as Terrain, true)
   }, [region, domain, skill])
 
-  const art = useMemo(() => realBackdrops(region.terrain as never), [region.terrain])
-  const hero = art[Math.min(art.length - 1, domain ? 2 : 0)]
+  const art = useMemo(() => realBackdrops(region.terrain as Terrain), [region.terrain])
+  /**
+   * The photograph you are standing in.
+   *
+   * At the top it is the land's first picture. Inside a domain it is the
+   * picture that domain's hotspot said it leads to - a DIFFERENT photograph,
+   * not a crop, because zooming a backdrop gets you blur and cutting to a
+   * closer view of that country is what makes the move feel like arriving.
+   */
+  const [arrived, setArrived] = useState<string | null>(null)
+  const hero = useMemo(() => {
+    if (arrived) {
+      const b = backdrop(region.terrain as Terrain,
+        Math.max(0, art.findIndex((x) => x.scene === arrived)))
+      if (!b.placeholder && b.scene === arrived) return b
+      const found = art.find((x) => x.scene === arrived)
+      if (found) return found
+    }
+    return art[0]
+  }, [arrived, art, region.terrain])
+
+  /** Where the zoom is heading, so the photograph grows toward the place. */
+  const [zoomAt, setZoomAt] = useState<{ x: number; y: number } | null>(null)
 
   function onPod(p: Pod) {
     if (skill) { onPractise(skill, p.key, null); return }
-    if (domain) { setSkillId(p.key); return }
-    setDomainId(p.key)
+    // Grow the picture toward the spot that was clicked, then arrive.
+    setZoomAt({ x: p.x, y: p.y })
+    window.setTimeout(() => {
+      if (domain) setSkillId(p.key)
+      else { setDomainId(p.key); if (p.into) setArrived(p.into) }
+      setZoomAt(null)
+    }, 420)
+  }
+
+  function back() {
+    if (skill) { setSkillId(null); return }
+    if (domain) { setDomainId(null); setArrived(null); return }
+    onExit()
   }
 
   const title = skill?.name ?? domain?.name ?? region.name
@@ -127,20 +149,22 @@ export function Land({ region, exam, onExit, onPractise }: {
 
   return (
     <div className={`land land-${vibe}`}>
-      {hero && <img className="land-bg" src={hero.src} alt="" />}
+      {hero && (
+        <img className={`land-bg${zoomAt ? ' zooming' : ''}`} src={hero.src} alt=""
+          key={hero.src}
+          style={zoomAt
+            ? { transformOrigin: `${zoomAt.x}% ${zoomAt.y}%` }
+            : undefined} />
+      )}
       <div className="land-scrim" aria-hidden="true" />
 
       <header className="land-top">
-        <button className="land-back" onClick={() => {
-          if (skill) setSkillId(null)
-          else if (domain) setDomainId(null)
-          else onExit()
-        }}>
+        <button className="land-back" onClick={back}>
           &larr; {skill ? domain?.name : domain ? region.name : 'Back to the map'}
         </button>
         <nav className="land-crumbs" aria-label="Where you are">
           <button className={!domain ? 'on' : ''}
-            onClick={() => { setDomainId(null); setSkillId(null) }}>
+            onClick={() => { setDomainId(null); setSkillId(null); setArrived(null) }}>
             {region.name}
           </button>
           {domain && (
@@ -168,33 +192,42 @@ export function Land({ region, exam, onExit, onPractise }: {
         </p>
       </div>
 
-      <div className="land-field">
+      <div className={`land-field${zoomAt ? ' zooming' : ''}`}>
         {/* The road. Pods sit in a ring, and a ring does not tell you where
             to start - so the route is drawn through them in curriculum
             order with arrowheads, and the student can see which way round
             to travel rather than guessing. */}
         <Route pods={pods} />
 
-        {pods.map((p) => (
+        {pods.map((p) => (!domain ? (
+          /* On the land itself the marker sits ON its feature - the meadow,
+             the ridge - so clicking the valley is clicking the valley. */
+          <button key={p.key} className={`spot${p.cleared >= p.total ? ' done' : ''}`}
+            style={{ left: `${p.x}%`, top: `${p.y}%` }}
+            onClick={() => onPod(p)}>
+            <span className="spot-pin" aria-hidden="true">
+              <i /><em />
+            </span>
+            <span className="spot-plate">
+              <strong>{VIBE_NAME[VIBE[p.name] ?? 'valley']}</strong>
+              <em>{p.name}</em>
+              <span className="spot-n">{p.cleared}/{p.total}</span>
+            </span>
+          </button>
+        ) : (
           <button key={p.key} className={`pod${p.cleared >= p.total ? ' done' : ''}`}
             style={{ left: `${p.x}%`, top: `${p.y}%` }}
             onClick={() => onPod(p)}>
-            <span className="pod-art">
-              {!domain
-                ? <Vignette vibe={VIBE[p.name] ?? 'valley'} />
-                : <Ring done={p.cleared} total={p.total} />}
-            </span>
+            <span className="pod-art"><Ring done={p.cleared} total={p.total} /></span>
             <span className="pod-body">
               <strong>{p.name}</strong>
               <em>{p.sub}</em>
               <span className="pod-n">
-                {skill
-                  ? (p.cleared ? 'cleared' : `${p.left} left`)
-                  : `${p.cleared}/${p.total}`}
+                {skill ? (p.cleared ? 'cleared' : `${p.left} left`) : `${p.cleared}/${p.total}`}
               </span>
             </span>
           </button>
-        ))}
+        )))}
       </div>
     </div>
   )
