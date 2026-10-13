@@ -75,17 +75,58 @@ export function renderText(s: unknown): string {
  */
 export function renderBody(lines: readonly string[]): string {
   const out: string[] = []
-  let list: string[] | null = null
+  let bullets: string[] | null = null
+  let numbers: string[] | null = null
+  let rows: string[] | null = null
+
   const flush = () => {
-    if (list) { out.push(`<ul class="lsn-list">${list.join('')}</ul>`); list = null }
+    if (bullets) { out.push(`<ul class="lsn-list">${bullets.join('')}</ul>`); bullets = null }
+    if (numbers) { out.push(`<ol class="lsn-steps">${numbers.join('')}</ol>`); numbers = null }
+    if (rows) { out.push(renderTable(rows, null)); rows = null }
   }
+
+  // A planner writes prose the way a person writes it: headings, numbered
+  // steps, the occasional table. Those three arrived here as literal "##",
+  // "1." and rows of pipes, which is the whole difference between a lesson
+  // that reads as a document and one that reads as a chat window. Questions
+  // already rendered all of this; the lesson path simply never learned to.
   for (const line of lines) {
-    const t = line.trim()
-    if (!t) { flush(); continue }
-    if (t.startsWith('- ')) {
-      if (!list) list = []
-      list.push(`<li>${renderText(t.slice(2))}</li>`)
-    } else {
+    for (const raw of String(line).split('\n')) {
+      const t = raw.trim()
+      if (!t) { flush(); continue }
+
+      const heading = /^(#{1,4})\s+(.*)$/.exec(t)
+      if (heading) {
+        flush()
+        // Capped at h4: a lesson sits inside the page's own heading level,
+        // and an <h1> here would outrank the lesson's title.
+        const level = Math.min(4, heading[1].length + 2)
+        out.push(`<h${level} class="lsn-h">${renderText(heading[2])}</h${level}>`)
+        continue
+      }
+
+      if (t.startsWith('|') && t.endsWith('|')) {
+        if (bullets || numbers) flush()
+        if (!rows) rows = []
+        rows.push(t)
+        continue
+      }
+      if (rows) { out.push(renderTable(rows, null)); rows = null }
+
+      const numbered = /^(\d{1,2})[.)]\s+(.*)$/.exec(t)
+      if (numbered) {
+        if (bullets) flush()
+        if (!numbers) numbers = []
+        numbers.push(`<li>${renderText(numbered[2])}</li>`)
+        continue
+      }
+      if (numbers) { out.push(`<ol class="lsn-steps">${numbers.join('')}</ol>`); numbers = null }
+
+      if (t.startsWith('- ') || t.startsWith('* ')) {
+        if (!bullets) bullets = []
+        bullets.push(`<li>${renderText(t.slice(2))}</li>`)
+        continue
+      }
       flush()
       out.push(`<p>${renderText(t)}</p>`)
     }

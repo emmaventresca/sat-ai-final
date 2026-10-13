@@ -467,3 +467,32 @@
   margin-bottom: 0.5em;
   line-height: 1.6;
 }
+
+/* Lesson prose, set like the question bank rather than like a transcript.
+   The planner writes headings, numbered steps and the occasional table; all
+   three used to arrive as literal "##", "1." and rows of pipes. */
+.lsn-h{
+  margin:18px 0 6px;font-weight:800;letter-spacing:-.01em;
+  color:var(--ink);line-height:1.25;
+}
+h3.lsn-h{font-size:1.06rem}
+h4.lsn-h{font-size:.95rem}
+h5.lsn-h,h6.lsn-h{font-size:.88rem;color:var(--dim);
+  text-transform:uppercase;letter-spacing:.08em}
+.lsn-body > .lsn-h:first-child{margin-top:0}
+
+/* Numbered steps: the number is the point, so it is set in the margin and
+   given weight rather than left as a default list marker. */
+.lsn-steps{
+  counter-reset:step;list-style:none;margin:10px 0;padding:0;
+  display:flex;flex-direction:column;gap:7px;
+}
+.lsn-steps li{
+  counter-increment:step;position:relative;padding-left:34px;line-height:1.5;
+}
+.lsn-steps li::before{
+  content:counter(step);position:absolute;left:0;top:1px;
+  width:23px;height:23px;border-radius:50%;
+  background:var(--panel2);border:1px solid var(--line2);color:var(--purple-d);
+  font-size:.74rem;font-weight:800;line-height:22px;text-align:center;
+}
