@@ -40,7 +40,10 @@
   color:rgba(255,255,255,.62);
 }
 
-.land-title{position:relative;z-index:3;text-align:center;padding:4px 20px 0}
+/* Bottom padding is load-bearing: without it the last line's descenders
+   sat 15px into the artwork, because the stage begins where this block's
+   box ends and a text box ends at its baseline, not below its tails. */
+.land-title{position:relative;z-index:3;text-align:center;padding:4px 20px 14px}
 .land-title h1{
   /* Explicit white: the journey page sets headings to a dark moss green,
      which on a night-lit photograph is invisible. */
@@ -309,7 +312,11 @@
 
 /* Inside a land you stand on drawn artwork, so it is shown whole rather
    than cropped to fill, and nothing is washed over it. */
-.land-drawn{object-fit:contain;background:#0b0d0c;filter:none}
+/* These panels are 2560x1600 with the plate centred in its own surround,
+   so they are built to fill a screen: cover crops only into that surround
+   rather than into the artwork, where contain would letterbox a picture
+   that already carries its own border. */
+.land-drawn{object-fit:cover;background:#0b0d0c;filter:none}
 .land-motto{
   margin:3px 0 0;font-size:.78rem;color:rgba(255,255,255,.66);
   font-family:var(--serif);
@@ -352,5 +359,6 @@
 }
 .land-stage .land-bg{position:absolute;inset:0;width:100%;height:100%}
 .land-stage .land-field{position:absolute;inset:0}
-.land-drawn{object-fit:contain;background:#0b0d0c;filter:none}
+/* (the .land-drawn rule lives once, above - a second copy here silently
+   won on source order and held object-fit at contain) */
 .land-at{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
