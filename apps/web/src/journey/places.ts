@@ -24,43 +24,92 @@ export interface Spot {
   y: number
   /** Scene slug to show once you are inside. */
   into?: string
+  /**
+   * What this place is called, in THIS photograph.
+   *
+   * Per picture rather than per domain, because the name has to describe
+   * what is actually there. "The Cliff Coast" was printed over a Spanish
+   * pasture with no coast in it, which breaks the thing the map is for: if
+   * the label does not match the ground, the photograph stops being a map
+   * and goes back to being wallpaper.
+   */
+  name: string
+}
+
+/**
+ * The photograph each land leads with.
+ *
+ * Named rather than taken from slot order, for two reasons. The hotspot
+ * coordinates are authored against ONE picture, so the land must open on
+ * that picture or every label lands somewhere arbitrary. And a full-bleed
+ * hero has to be landscape: `object-fit: cover` on a 2:3 portrait crops to
+ * the middle 29-71% of its height, so an authored y of 76 is on pixels
+ * nobody can see. Adding the lighthouse photograph - a portrait - silently
+ * became the sea world's hero and put "The Ship" on a lighthouse.
+ */
+export const HERO: Partial<Record<Terrain, string>> = {
+  cliffs: 'the-green-country',
+  ocean: 'the-departure',
+  park: 'yosemite-valley',
+  peaks: 'mountain-ridge',
+  tropic: 'volcanic-coast',
 }
 
 /** terrain -> domain name -> where it is and what is inside it. */
 export const SPOTS: Record<Terrain, Record<string, Spot>> = {
-  // The Green Country: meadows across the lower half, wooded slopes right,
-  // blue ridges along the skyline.
+  // THE GREEN COUNTRY. Read off the photograph: a lit oak-dotted pasture
+  // filling the lower left, a deep shadowed wooded ravine on the right, a
+  // dark peak on the back left, a pale sunlit ridge on the back right.
+  // There is no coast anywhere in it.
   cliffs: {
-    'Algebra': { x: 24, y: 63, into: 'the-long-road' },
-    'Advanced Math': { x: 76, y: 34, into: 'the-stair-of-kings' },
-    'Problem-Solving and Data Analysis': { x: 58, y: 72, into: 'the-river-crossing' },
-    'Geometry and Trigonometry': { x: 44, y: 22, into: 'the-watchtower' },
+    'Algebra': {
+      x: 20, y: 60, name: 'The Grazed Valley', into: 'the-long-road' },
+    'Advanced Math': {
+      x: 23, y: 19, name: 'The Dark Peak', into: 'the-high-pass' },
+    'Problem-Solving and Data Analysis': {
+      x: 74, y: 64, name: 'The Shadowed Wood', into: 'the-elder-wood' },
+    'Geometry and Trigonometry': {
+      x: 71, y: 20, name: 'The Pale Ridge', into: 'the-watchtower' },
   },
-  // The Departure: a tall ship on open water under a high horizon.
+  // THE DEPARTURE. A tall ship on open water, high horizon, cloud bank
+  // along it. Everything here is sea and sky, so everything is named for
+  // sea and sky.
   ocean: {
-    'Information and Ideas': { x: 47, y: 44, into: 'the-storm' },
-    'Craft and Structure': { x: 20, y: 70, into: 'the-far-shore' },
-    'Expression of Ideas': { x: 78, y: 66, into: 'the-far-shore' },
-    'Standard English Conventions': { x: 66, y: 26, into: 'the-storm' },
+    'Information and Ideas': {
+      x: 47, y: 46, name: 'The Ship', into: 'the-storm' },
+    'Craft and Structure': {
+      x: 18, y: 72, name: 'The Near Water', into: 'the-home-harbour' },
+    'Expression of Ideas': {
+      x: 80, y: 70, name: 'The Open Swell', into: 'the-narrow-strait' },
+    'Standard English Conventions': {
+      x: 64, y: 24, name: 'The Cloud Bank', into: 'the-misted-isles' },
   },
   park: {
-    'Interpretation of Data': { x: 30, y: 58, into: 'zion' },
-    'Scientific Investigation': { x: 68, y: 40, into: 'grand-canyon' },
-    'Evaluation of Models & Results': { x: 50, y: 74, into: 'yosemite-valley' },
+    'Interpretation of Data': {
+      x: 30, y: 58, name: 'The Canyon Floor', into: 'zion' },
+    'Scientific Investigation': {
+      x: 68, y: 40, name: 'The Red Walls', into: 'grand-canyon' },
+    'Evaluation of Models & Results': {
+      x: 50, y: 74, name: 'The Valley Mouth', into: 'yosemite-valley' },
   },
   fair: {},
   peaks: {
-    'Sentence Structure & Formation': { x: 34, y: 46, into: 'glacier-crossing' },
-    'Punctuation': { x: 70, y: 36, into: 'glacier-crossing' },
-    'Usage': { x: 52, y: 66, into: 'mountain-ridge' },
-    'Production of Writing': { x: 20, y: 62, into: 'mountain-ridge' },
-    'Knowledge of Language': { x: 82, y: 60, into: 'mountain-ridge' },
+    'Sentence Structure & Formation': {
+      x: 34, y: 46, name: 'The Icefall', into: 'glacier-crossing' },
+    'Punctuation': {
+      x: 70, y: 36, name: 'The Cloud Line', into: 'glacier-crossing' },
+    'Usage': {
+      x: 52, y: 66, name: 'The Long Ridge', into: 'mountain-ridge' },
+    'Production of Writing': {
+      x: 20, y: 62, name: 'The Lower Slope', into: 'mountain-ridge' },
+    'Knowledge of Language': {
+      x: 82, y: 60, name: 'The Far Shoulder', into: 'mountain-ridge' },
   },
   tropic: {
-    'Algebra': { x: 28, y: 60, into: 'volcanic-coast' },
-    'Math': { x: 62, y: 44, into: 'volcanic-coast' },
-    'Geometry': { x: 44, y: 72, into: 'waikiki-beach' },
-    'Functions': { x: 76, y: 56, into: 'waikiki-beach' },
+    'Algebra': { x: 28, y: 60, name: 'The Green Cleft', into: 'volcanic-coast' },
+    'Math': { x: 62, y: 44, name: 'The Lit Ridge', into: 'volcanic-coast' },
+    'Geometry': { x: 44, y: 72, name: 'The Deep Valley', into: 'waikiki-beach' },
+    'Functions': { x: 76, y: 56, name: 'The Far Spur', into: 'waikiki-beach' },
   },
 }
 
@@ -71,8 +120,8 @@ export const SPOTS: Record<Terrain, Record<string, Spot>> = {
  * each other. It is the fallback, not the design - a spot placed on a real
  * feature always beats one placed by arithmetic.
  */
-export function fallbackSpot(i: number, n: number): Spot {
-  if (n <= 1) return { x: 50, y: 52 }
+export function fallbackSpot(i: number, n: number, name: string): Spot {
+  if (n <= 1) return { x: 50, y: 52, name }
   const a = (i / n) * Math.PI * 2 - Math.PI / 2
-  return { x: 50 + Math.cos(a) * 30, y: 52 + Math.sin(a) * 23 }
+  return { x: 50 + Math.cos(a) * 30, y: 52 + Math.sin(a) * 23, name }
 }

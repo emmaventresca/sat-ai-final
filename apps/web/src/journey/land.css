@@ -208,8 +208,28 @@
   .land-bg.zooming{transform:none;opacity:1}
 }
 
-@media (max-width:720px){
-  .spot{position:absolute}
-  .spot-plate{min-width:112px;padding:7px 10px}
-  .spot-plate strong{font-size:.84rem}
+/* Narrow: the hotspots stop being hotspots.
+   Pinned labels need room around them, and under about 760px four plates
+   on one photograph overlap into an unreadable pile - which is worse than
+   not showing them on the picture at all. They become a list over the same
+   photograph, so the place names and the picture still arrive together. */
+@media (max-width:760px){
+  .land-field{
+    display:flex;flex-direction:column;gap:8px;
+    padding:10px clamp(10px,3vw,18px) 18px;overflow-y:auto;
+  }
+  .land-route{display:none}
+  .spot{
+    position:static;transform:none;width:100%;
+    flex-direction:row;align-items:center;gap:0;
+  }
+  .spot:hover,.spot:focus-visible{transform:none}
+  .spot-pin{display:none}
+  .spot-plate{
+    width:100%;min-width:0;flex-direction:row;align-items:center;gap:10px;
+    text-align:left;padding:11px 14px;
+  }
+  .spot-plate strong{font-size:.92rem;flex:0 0 auto}
+  .spot-plate em{flex:1;text-align:left}
+  .spot-n{margin-top:0}
 }

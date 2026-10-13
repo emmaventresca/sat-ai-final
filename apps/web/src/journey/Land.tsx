@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import type { Exam, Tier } from '../exams/types'
 import type { Chapter, Leg, Region, Stage, Terrain } from './map'
 import { backdrop, realBackdrops } from './backdrops'
-import { fallbackSpot, SPOTS } from './places'
+import { fallbackSpot, HERO, SPOTS } from './places'
 import { VIBE, VIBE_NAME, type Vibe } from './Hubs'
 import './land.css'
 
@@ -37,6 +37,8 @@ export interface Pod {
   y: number
   /** The scene slug you arrive at, where one is authored. */
   into?: string
+  /** What this place is called in this photograph. */
+  place: string
 }
 
 /**
@@ -48,12 +50,12 @@ export interface Pod {
  */
 function anchor<T extends { key: string; name: string }>(
   items: T[], terrain: Terrain, authored: boolean,
-): (T & { x: number; y: number; into?: string })[] {
+): (T & { x: number; y: number; into?: string; place: string })[] {
   const table = SPOTS[terrain] ?? {}
   return items.map((it, i) => {
     const spot = authored ? table[it.name] : undefined
-    const at = spot ?? fallbackSpot(i, items.length)
-    return { ...it, x: at.x, y: at.y, into: spot?.into }
+    const at = spot ?? fallbackSpot(i, items.length, it.name)
+    return { ...it, x: at.x, y: at.y, into: spot?.into, place: at.name }
   })
 }
 
@@ -119,7 +121,9 @@ export function Land({ region, exam, onExit, onPractise }: {
       const found = art.find((x) => x.scene === arrived)
       if (found) return found
     }
-    return art[0]
+    // The land opens on the picture its hotspots were authored against.
+    const want = HERO[region.terrain as Terrain]
+    return art.find((x) => x.scene === want) ?? art[0]
   }, [arrived, art, region.terrain])
 
   /** Where the zoom is heading, so the photograph grows toward the place. */
@@ -209,7 +213,7 @@ export function Land({ region, exam, onExit, onPractise }: {
               <i /><em />
             </span>
             <span className="spot-plate">
-              <strong>{VIBE_NAME[VIBE[p.name] ?? 'valley']}</strong>
+              <strong>{p.place}</strong>
               <em>{p.name}</em>
               <span className="spot-n">{p.cleared}/{p.total}</span>
             </span>
@@ -240,9 +244,34 @@ export function Land({ region, exam, onExit, onPractise }: {
  * coordinates exactly: anything pixel-based would drift the moment the
  * window changed, and the line would stop meeting the places it connects.
  */
+/**
+ * A path that wanders between the places instead of cornering at them.
+ *
+ * Straight segments made the route a zigzag of hard angles, which reads as
+ * a diagram laid over the country rather than a track worn across it.
+ * Catmull-Rom through the same points gives a line that leans into each
+ * turn and passes exactly through every place, which is what a path does.
+ */
+function meander(ps: Pod[]): string {
+  const d = [`M ${ps[0].x.toFixed(2)} ${ps[0].y.toFixed(2)}`]
+  for (let i = 0; i < ps.length - 1; i++) {
+    const p0 = ps[i - 1] ?? ps[i]
+    const p1 = ps[i]
+    const p2 = ps[i + 1]
+    const p3 = ps[i + 2] ?? p2
+    // A looser tension than the usual 6 gives the line more swing between
+    // places, which is the difference between a route and a ruler.
+    const k = 4.2
+    d.push(`C ${(p1.x + (p2.x - p0.x) / k).toFixed(2)} ${(p1.y + (p2.y - p0.y) / k).toFixed(2)}, `
+      + `${(p2.x - (p3.x - p1.x) / k).toFixed(2)} ${(p2.y - (p3.y - p1.y) / k).toFixed(2)}, `
+      + `${p2.x.toFixed(2)} ${p2.y.toFixed(2)}`)
+  }
+  return d.join(' ')
+}
+
 function Route({ pods }: { pods: Pod[] }) {
   if (pods.length < 2) return null
-  const d = pods.map((p, i) => `${i ? 'L' : 'M'} ${p.x.toFixed(2)} ${p.y.toFixed(2)}`).join(' ')
+  const d = meander(pods)
   return (
     <svg className="land-route" viewBox="0 0 100 100" preserveAspectRatio="none"
       aria-hidden="true">
