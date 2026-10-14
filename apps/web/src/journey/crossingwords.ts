@@ -26,6 +26,20 @@ export const RETURNING = [
 
 export type Crossing = 'start' | 'resume'
 
+/** The button that opens the curtain. Setting out, and coming back. */
+export const BEGIN = [
+  'Huzzah!',
+  'Ready to begin!',
+  'Commence!',
+  'Set out!',
+]
+
+export const BEGIN_AGAIN = [
+  'Back to it!',
+  'Onward!',
+  'Pick up the trail',
+]
+
 /**
  * Seeded by the place rather than random.
  *
@@ -33,9 +47,25 @@ export type Crossing = 'start' | 'resume'
  * the student has not moved reads as a glitch, and the point of the beat is
  * that it feels like a place.
  */
+function hash(seed: string, salt: number): number {
+  let h = salt
+  for (const ch of seed) h = (h * 31 + ch.charCodeAt(0)) >>> 0
+  return h
+}
+
 export function thresholdWords(kind: Crossing, seed: string): string {
   const pool = kind === 'resume' ? RETURNING : SETTING_OUT
-  let h = 0
-  for (const ch of seed) h = (h * 31 + ch.charCodeAt(0)) >>> 0
-  return pool[h % pool.length]
+  return pool[hash(seed, 0) % pool.length]
+}
+
+/**
+ * The word on the button.
+ *
+ * Salted differently from the line above it, so the pairing varies instead
+ * of the same line always arriving with the same button - five lines times
+ * four buttons reads as more than five openings.
+ */
+export function beginWords(kind: Crossing, seed: string): string {
+  const pool = kind === 'resume' ? BEGIN_AGAIN : BEGIN
+  return pool[hash(seed, 7919) % pool.length]
 }

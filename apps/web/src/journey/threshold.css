@@ -2,8 +2,11 @@
 
 .threshold{
   position:fixed; inset:0; z-index:90;
-  display:grid; place-items:center;
-  cursor:pointer;
+  /* Column flex rather than grid: with two children a centred grid gives
+     them half the window each and the line floats a third of the way up.
+     These two are one block and have to be centred as one. */
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
   /* Deep ink rather than flat black, with a faint warmth at the centre so it
      reads as a held moment and not as the screen having switched off. */
   background:
@@ -12,7 +15,8 @@
   transition:opacity .46s ease;
 }
 .threshold-closing{ opacity:1 }
-.threshold-open{ opacity:1; transition:none }
+.threshold-held,
+.threshold-ready{ opacity:1; transition:none }
 .threshold-lifting{ opacity:0; transition:opacity .55s ease }
 
 .threshold-words{
@@ -23,7 +27,8 @@
   transition:opacity .4s ease .1s, transform .55s cubic-bezier(.2,.7,.3,1) .1s;
 }
 .threshold-closing .threshold-words,
-.threshold-open .threshold-words{ opacity:1; transform:none }
+.threshold-held .threshold-words,
+.threshold-ready .threshold-words{ opacity:1; transform:none }
 /* Goes before the curtain does, so the words are gone by the time the
    lesson starts showing through. */
 .threshold-lifting .threshold-words{ opacity:0; transition:opacity .22s ease }
@@ -46,10 +51,40 @@
   color:rgba(255,255,255,.52);
 }
 
+/* The button that opens the curtain. Absent rather than disabled for the
+   first two seconds: a greyed-out control invites you to wait for it, which
+   is the opposite of a held beat. */
+.threshold-go{
+  margin-top:34px;
+  font-family:var(--ui);
+  font-size:14px; font-weight:700; letter-spacing:.02em;
+  color:#15202e;
+  background:#f6f1e6;
+  border:0; border-radius:999px;
+  padding:13px 30px;
+  cursor:pointer;
+  box-shadow:0 2px 5px rgba(0,0,0,.3), 0 16px 40px rgba(0,0,0,.42);
+  opacity:0; transform:translateY(8px) scale(.97);
+  pointer-events:none;
+  transition:opacity .45s ease, transform .5s cubic-bezier(.2,.7,.3,1);
+}
+.threshold-ready .threshold-go{
+  opacity:1; transform:none; pointer-events:auto;
+}
+.threshold-go:hover{ background:#fff }
+.threshold-go:focus-visible{
+  outline:2px solid #fff; outline-offset:3px;
+}
+.threshold-go:active{ transform:translateY(1px) }
+/* Goes with the words, before the curtain does. */
+.threshold-lifting .threshold-go{
+  opacity:0; transition:opacity .2s ease; pointer-events:none;
+}
+
 /* A student who asked for less motion gets the beat without the movement:
    the parent skips the curtain entirely, but if one is on screen when the
    setting changes it must not slide. */
 @media (prefers-reduced-motion:reduce){
-  .threshold, .threshold-words{ transition-duration:.01ms !important }
-  .threshold-words{ transform:none }
+  .threshold, .threshold-words, .threshold-go{ transition-duration:.01ms !important }
+  .threshold-words, .threshold-go{ transform:none }
 }
