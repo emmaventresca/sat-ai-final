@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import type { Exam } from '../exams/types'
 import type { Region, Terrain } from './map'
 import { realBackdrops, THEME } from './backdrops'
+import { HERO } from './places'
 import './atlas.css'
 
 /**
@@ -54,7 +55,12 @@ function Plate({ region, n, onOpen }: {
 }) {
   const terrain = region.terrain as Terrain
   const art = useMemo(() => realBackdrops(terrain), [terrain])
-  const hero = art[0]
+  // The same plate the land itself opens on. Taking art[0] instead meant
+  // the card promised "Waikiki Beach - where this land begins" and then the
+  // land began somewhere else, which makes the caption a lie and the card
+  // picture a stranger to the one behind the hotspots.
+  const want = HERO[terrain]
+  const hero = art.find((x) => x.scene === want) ?? art[0]
   const pct = region.stages ? (region.cleared / region.stages) * 100 : 0
   const theme = THEME[terrain]
 

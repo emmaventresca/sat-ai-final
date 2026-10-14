@@ -94,18 +94,18 @@ export const ROUTE: Partial<Record<Terrain, [number, number][]>> = {
   // down to the open beach, out to the sail and back along the surf line to
   // the pool deck.
   tropic: [
-    [-4, 72], [2, 66], [9, 60],
-    [18, 55], [26, 52], [34, 50],
-    [38, 62], [41, 74], [44, 86],
-    [52, 76], [58, 66], [63, 59],
-    [69, 68], [73, 73], [76, 77],
-    [82, 74], [87, 71], [91, 68], [99, 65],
+    [-4, 70], [2, 66], [8, 62],
+    [16, 60], [25, 58], [33, 58],
+    [39, 64], [46, 72],
+    [54, 66], [62, 60],
+    [69, 70], [73, 77],
+    [82, 70], [90, 62], [99, 58],
   ],
   fair: [
     [10, 99], [14, 86], [17, 72],
     [23, 67], [29, 62],
     [36, 57], [42, 52], [49, 46],
-    [60, 47], [74, 49], [90, 51],
+    [57, 55], [67, 62], [79, 66], [92, 69],
   ],
 }
 
@@ -191,17 +191,17 @@ export const SPOTS: Record<Terrain, Record<string, Spot>> = {
   // itself however much it rises and falls.
   tropic: {
     'Geometry': {
-      x: 9, y: 60, name: 'The Surf Shack', into: 'waikiki-beach' },
+      x: 8, y: 62, name: 'The Surf Shack', into: 'waikiki-beach' },
     'Functions': {
-      x: 34, y: 50, name: 'The Headland', into: 'volcanic-coast' },
+      x: 33, y: 58, name: 'The Headland', into: 'volcanic-coast' },
     'Statistics & Probability': {
-      x: 44, y: 86, name: 'The Open Sand' },
+      x: 46, y: 72, name: 'The Shallows' },
     'Algebra': {
-      x: 63, y: 59, name: 'The Lone Sail' },
+      x: 62, y: 60, name: 'The Lone Sail' },
     'Integrating Essential Skills': {
-      x: 76, y: 77, name: 'The Surf Line' },
+      x: 73, y: 77, name: 'The Sun Path' },
     'Number & Quantity': {
-      x: 91, y: 68, name: 'The Pool Deck' },
+      x: 90, y: 62, name: 'The Pool Deck' },
   },
 }
 
