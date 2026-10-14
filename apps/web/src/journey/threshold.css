@@ -1,0 +1,55 @@
+/* The curtain between the map and the lesson. See Threshold.tsx. */
+
+.threshold{
+  position:fixed; inset:0; z-index:90;
+  display:grid; place-items:center;
+  cursor:pointer;
+  /* Deep ink rather than flat black, with a faint warmth at the centre so it
+     reads as a held moment and not as the screen having switched off. */
+  background:
+    radial-gradient(120% 90% at 50% 46%, #1b2435 0%, #0d1118 62%, #080a0f 100%);
+  opacity:0;
+  transition:opacity .46s ease;
+}
+.threshold-closing{ opacity:1 }
+.threshold-open{ opacity:1; transition:none }
+.threshold-lifting{ opacity:0; transition:opacity .55s ease }
+
+.threshold-words{
+  text-align:center; padding:0 28px;
+  /* Lifts very slightly as it arrives: the line settles rather than lands. */
+  transform:translateY(7px);
+  opacity:0;
+  transition:opacity .4s ease .1s, transform .55s cubic-bezier(.2,.7,.3,1) .1s;
+}
+.threshold-closing .threshold-words,
+.threshold-open .threshold-words{ opacity:1; transform:none }
+/* Goes before the curtain does, so the words are gone by the time the
+   lesson starts showing through. */
+.threshold-lifting .threshold-words{ opacity:0; transition:opacity .22s ease }
+
+.threshold-words strong{
+  display:block;
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(25px, 4.4vw, 40px);
+  letter-spacing:.012em;
+  color:#fff;
+  text-wrap:balance;
+}
+.threshold-words em{
+  display:block; margin-top:14px;
+  font-style:normal;
+  font-family:var(--ui);
+  font-size:11.5px; font-weight:650;
+  letter-spacing:.17em; text-transform:uppercase;
+  color:rgba(255,255,255,.52);
+}
+
+/* A student who asked for less motion gets the beat without the movement:
+   the parent skips the curtain entirely, but if one is on screen when the
+   setting changes it must not slide. */
+@media (prefers-reduced-motion:reduce){
+  .threshold, .threshold-words{ transition-duration:.01ms !important }
+  .threshold-words{ transform:none }
+}

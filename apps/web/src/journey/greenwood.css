@@ -82,8 +82,13 @@
    into `relative`, and it rendered as a 131px strip in the middle of the
    scroll instead of covering the window. Any new full-screen child of the
    journey needs adding here too - which is the argument for this rule not
-   existing, but it is load-bearing for the stacking everywhere else. */
-.journey > *:not(.ivy):not(.land) { position:relative; z-index:1; }
+   existing, but it is load-bearing for the stacking everywhere else.
+
+   `.threshold` is the third one, and it went the same way: the curtain
+   between the map and a lesson is `fixed`, this rule made it `relative`, and
+   it laid itself out in the flow as a content-sized block instead of
+   covering the screen. */
+.journey > *:not(.ivy):not(.land):not(.threshold) { position:relative; z-index:1; }
 
 /* --- Signage --------------------------------------------------------------
    The region heading was 1.3rem, which is a label. A region is a COUNTRY -

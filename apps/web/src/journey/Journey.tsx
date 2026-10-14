@@ -7,6 +7,7 @@ import type { Question } from '../exams/types'
 import { Round } from '../practice/Round'
 import { buildJourney, type Chapter, type Leg, type Region, type SkillMeta } from './map'
 import { StageView, type StageMode } from './Stage'
+import { Threshold, type Crossing } from './Threshold'
 import { gemFor, gemHue, type GemState } from './gems'
 import { Gem } from './Gem'
 import { WorldMap } from './WorldMap'
@@ -47,9 +48,25 @@ export function Journey({ exam }: { exam: Exam }) {
   const [bank, setBank] = useState<QuestionRef[]>([])
   const [skills, setSkills] = useState<SkillMeta[]>([])
   const [openRealm, setOpenRealm] = useState<string | null>(null)
-  const [open, setOpen] = useState<
-    { leg: Leg; subtype: string | null; mode: StageMode } | null
-  >(null)
+  type Pending = { leg: Leg; subtype: string | null; mode: StageMode }
+  const [open, setOpen] = useState<Pending | null>(null)
+  /**
+   * A lesson that has been chosen but not arrived at yet.
+   *
+   * Every way into a lesson goes through `enter`, so the curtain cannot be
+   * skipped by one entry point quietly calling setOpen - which is how the
+   * last three transitions in this app ended up inconsistent.
+   */
+  const [crossing, setCrossing] = useState<{ to: Pending; kind: Crossing } | null>(null)
+
+  function enter(to: Pending, kind: Crossing = 'start') {
+    if (typeof window !== 'undefined'
+      && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setOpen(to)
+      return
+    }
+    setCrossing({ to, kind })
+  }
   const [version, setVersion] = useState(0)
 
   useEffect(() => {
@@ -62,7 +79,7 @@ export function Journey({ exam }: { exam: Exam }) {
     return () => { live = false }
   }, [exam])
 
-  useEffect(() => { setOpenRealm(null); setOpen(null) }, [exam])
+  useEffect(() => { setOpenRealm(null); setOpen(null); setCrossing(null) }, [exam])
 
   /** A drill built around one recurring mistake, not one topic. */
   const [drill, setDrill] = useState<{ questions: Question[]; label: string } | null>(null)
@@ -83,11 +100,28 @@ export function Journey({ exam }: { exam: Exam }) {
   const [goal, setGoal] = useState(() => dailyGoal(exam))
   useEffect(() => { setGoal(dailyGoal(exam)) }, [exam])
 
+  /**
+   * The name of the stop being entered, for the curtain to print. A
+   * recognition where there is one, otherwise the path it belongs to.
+   */
+  const placeOf = (p: Pending) =>
+    (p.subtype && p.leg.stages.find((st) => st.subtype === p.subtype)?.name) || p.leg.name
+
+  const curtain = crossing ? (
+    <Threshold kind={crossing.kind} place={placeOf(crossing.to)}
+      onCovered={() => setOpen(crossing.to)}
+      onDone={() => setCrossing(null)} />
+  ) : null
+
   if (open) {
     return (
-      <StageView exam={exam} bank={bank}
-        leg={open.leg} subtype={open.subtype} mode={open.mode}
-        onBack={() => { setOpen(null); setVersion((v) => v + 1) }} />
+      <>
+        <StageView exam={exam} bank={bank}
+          leg={open.leg} subtype={open.subtype} mode={open.mode}
+          onBack={() => { setOpen(null); setVersion((v) => v + 1) }} />
+        {/* Still lifting: the lesson is already mounted underneath it. */}
+        {curtain}
+      </>
     )
   }
 
@@ -201,7 +235,7 @@ export function Journey({ exam }: { exam: Exam }) {
             onExit={() => setInLand(null)}
             onPractise={(leg, subtype) => {
               setInLand(null)
-              setOpen({ leg, subtype, mode: 'stage' })
+              enter({ leg, subtype, mode: 'stage' })
             }} />
         )
       })()}
@@ -209,7 +243,7 @@ export function Journey({ exam }: { exam: Exam }) {
       {/* Before the atlas: a student who was mid-recognition last night
           wants that, not a tour of the lands. */}
       <ResumeCard exam={exam} regions={regions}
-        onResume={(leg, subtype) => setOpen({ leg, subtype, mode: 'stage' })} />
+        onResume={(leg, subtype) => enter({ leg, subtype, mode: 'stage' }, 'resume')} />
 
       <Atlas regions={regions} exam={exam} onOpen={setInLand} />
 
@@ -222,8 +256,10 @@ export function Journey({ exam }: { exam: Exam }) {
       {regions.map((region) => (
         <Region key={region.id} region={region} exam={exam}
           openRealm={openRealm} setOpenRealm={setOpenRealm}
-          onOpen={(leg, subtype, mode) => setOpen({ leg, subtype, mode })} />
+          onOpen={(leg, subtype, mode) => enter({ leg, subtype, mode })} />
       ))}
+
+      {curtain}
     </div>
   )
 }
