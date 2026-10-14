@@ -11,6 +11,8 @@ import {
   challengeGate, lastTouched, promotionFor, remainingIn, serveOrder, streakNeeded,
 } from './promotion'
 import { gemFor, lastQuiz, QUIZ_PASS, recordQuiz } from './gems'
+import { worldOf } from './world'
+import './forest.css'
 import { resolved as resolvedIds } from '../errors/log'
 import { groupedBySection, passageRound, shapeOf } from './passages'
 import { Gem } from './Gem'
@@ -170,10 +172,33 @@ export function StageView({
     return best
   }, [pool, bank])
 
+  /**
+   * Which world's art direction this screen wears.
+   *
+   * Deliberately NOT read off `section` above. That one is derived from
+   * `pool`, which filters by subtype - and in quiz and trial mode there is
+   * no subtype, so the pool is empty and it falls back to the first item in
+   * the bank. For the SAT that is a Reading question, so the unit quiz came
+   * up in the app's lavender while the lesson it belongs to was in the
+   * forest: the same path, two identities, one click apart.
+   *
+   * `section` is left alone because passage-grouped serving depends on it
+   * and it has already been the cause of one silent bug.
+   */
+  const world = useMemo(() => {
+    const from = subtype ? pool : bank.filter((q) => q.skill === leg.skill)
+    const tally = new Map<string, number>()
+    for (const q of from) tally.set(q.section, (tally.get(q.section) ?? 0) + 1)
+    let best = ''
+    let most = 0
+    for (const [sec, n] of tally) if (n > most) { best = sec; most = n }
+    return worldOf(exam, best)
+  }, [exam, bank, pool, subtype, leg.skill])
+
   if (round) {
     const quiz = mode === 'quiz'
     return (
-      <div className="wrap">
+      <div className="wrap" data-world={world}>
         <Round questions={round}
           verdict={quiz ? quizVerdict : undefined}
           offer={!quiz && subtype && tier
@@ -209,7 +234,7 @@ export function StageView({
     const questions = leg.quiz ? quizRefs(bank, leg.quiz) : []
     const sat = lastQuiz(exam, leg.skill)
     return (
-      <div className="wrap journey">
+      <div className="wrap journey" data-world={world}>
         <button className="btn-sm" onClick={onBack}>&larr; Back to the map</button>
         <div className="trial-card quiz-card">
           <h1>The {leg.name} quiz</h1>
@@ -266,7 +291,7 @@ export function StageView({
   if (mode === 'trial') {
     const questions = leg.trial ? trialRefs(bank, leg.trial) : []
     return (
-      <div className="wrap journey">
+      <div className="wrap journey" data-world={world}>
         <button className="btn-sm" onClick={onBack}>&larr; Back to the map</button>
         <div className="trial-card">
           <h1>Trial: reading the question</h1>
@@ -296,7 +321,7 @@ export function StageView({
   const tiers = examSpec(exam).tiers.filter((t) => (stage?.pool[t] ?? 0) > 0)
 
   return (
-    <div className="wrap journey">
+    <div className="wrap journey" data-world={world}>
       <button className="btn-sm" onClick={onBack}>&larr; Back to the map</button>
 
       <div className="stage-card">

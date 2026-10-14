@@ -7,6 +7,8 @@ import { difficultyLabel } from '../lesson/types'
 import { accuracy, seenIds } from './mastery'
 import { Round } from './Round'
 import { dueNow, rank, type Bands, type Ranked } from './engine'
+import { worldOf } from '../journey/world'
+import '../journey/forest.css'
 
 const ROUND = 10
 
@@ -96,7 +98,7 @@ export function Practice({ exam }: { exam: Exam }) {
 
   if (round) {
     return (
-      <div className="wrap">
+      <div className="wrap" data-world={worldOf(exam, section)}>
         <Round questions={round} onDone={() => setRound(null)}
           misconceptionLabel={(slug) => labels[slug] ?? readable(slug)} />
       </div>
@@ -104,7 +106,7 @@ export function Practice({ exam }: { exam: Exam }) {
   }
 
   return (
-    <div className="wrap">
+    <div className="wrap" data-world={worldOf(exam, section)}>
       <div className="top">
         <div>
           <h1>{spec.label} Practice</h1>

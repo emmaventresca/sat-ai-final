@@ -1,0 +1,712 @@
+/* ---------------------------------------------------------------------------
+   THE FOREST — art direction for the SAT Maths learning screens.
+
+   Scoped to `[data-world="forest"][data-world]`, never to a component. Stage, Round and
+   QuestionCard are shared with the ACT, so dressing them directly would drag
+   the alpine, boardwalk and island worlds into a pine palette they were not
+   drawn for. The shell carries the attribute; everything inside inherits.
+
+   Every colour below is sampled from the quest artwork this world already
+   owns - the elder wood, the green country, the long road - rather than
+   invented. The hex values and their source are named at each token.
+
+   Every selector doubles the attribute - [data-world="forest"][data-world].
+   That is not a typo. `.journey h1` is (0,1,1) and a single attribute
+   selector is also (0,1,1), so the winner was decided by which file Vite
+   happened to emit last. Source order has silently beaten this codebase
+   three times now (.brush, .land-drawn, and this), so the specificity is
+   made explicit rather than left to import order.
+
+   The restraint is the design. A forest read as "more decoration" would
+   bury the one thing these screens exist for, which is a student reading a
+   question carefully. The atmosphere lives in the ground, the rules, the
+   typography and the margins; the content itself sits on quiet parchment at
+   full contrast.
+   --------------------------------------------------------------------------- */
+
+[data-world="forest"][data-world] {
+  /* Sampled: quest/the-green-country, quest/the-long-road, sites/cedar-lake */
+  --fr-pine-deep:#1d3d3d;   /* deepest evergreen, the shadowed cleft */
+  --fr-pine:#2f392e;        /* bark-dark green, cedar lake canopy */
+  --fr-needle:#42673a;      /* the long road's true pine */
+  --fr-moss:#778e54;        /* lit moss on the green country's slope */
+  --fr-fern:#5d7444;        /* between moss and needle, for secondary accent */
+
+  /* Sampled: quest/the-elder-wood, sites/whispering-pines */
+  --fr-bark:#2e1f13;        /* wet bark, the elder wood's trunks */
+  --fr-bark-l:#403b20;      /* dry bark and leaf litter */
+  --fr-gold:#b57d37;        /* antique gold - sunlight through the elder wood */
+  --fr-gold-d:#996026;      /* the same light, one step in */
+
+  /* Sampled: quest/the-river-crossing */
+  --fr-slate:#525549;       /* slate blue-grey stone */
+  --fr-mist:#c1bdce;        /* river mist */
+
+  /* Derived, not sampled: the forest art carries no light surface, and
+     lesson prose needs one. Warmed to the bark's own hue so it reads as
+     aged paper under the canopy rather than as white card stock. */
+  --fr-parch:#f4eddd;
+  --fr-parch-2:#ece2cd;
+  --fr-rule:#cfc1a4;
+  --fr-ink:#1f2419;         /* near-black with the green in it, for body text */
+  --fr-ink-2:#4b5243;       /* secondary prose */
+
+  /* One serif for the whole world, Times first. KaTeX declares its own
+     font-family on .katex, which beats inheritance - so this is set once,
+     here, and never on a descendant selector. A rule that reached katex
+     spans would swap the maths glyphs for Times and break the notation. */
+  --fr-serif:"Times New Roman", Times, "Liberation Serif", "Nimbus Roman", serif;
+
+  font-family:var(--fr-serif);
+  color:var(--fr-ink);
+}
+
+/* --- The ground ---------------------------------------------------------- */
+
+/* A wash, not a texture. Tiling leaves behind body text is the fastest way
+   to make a page unreadable; depth comes from the edges instead. */
+[data-world="forest"][data-world]::before{
+  content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:
+    radial-gradient(90% 60% at 50% -10%, #223027 0%, transparent 70%),
+    linear-gradient(180deg, #121a15 0%, #0e1511 52%, #0b100d 100%);
+}
+
+/* --- Typography ---------------------------------------------------------- */
+
+[data-world="forest"][data-world] h1,
+[data-world="forest"][data-world] h2,
+[data-world="forest"][data-world] h3{
+  font-family:var(--fr-serif);
+  font-weight:700;
+  letter-spacing:-.005em;
+  color:var(--fr-pine-deep);
+}
+[data-world="forest"][data-world] h1{
+  font-size:2.05rem; line-height:1.17; margin:0 0 6px;
+  letter-spacing:-.018em;
+}
+[data-world="forest"][data-world] h2{ font-size:1.42rem; line-height:1.25 }
+[data-world="forest"][data-world] h3{ font-size:1.12rem; line-height:1.3 }
+
+[data-world="forest"][data-world] p,
+[data-world="forest"][data-world] li{ font-size:1.035rem; line-height:1.62 }
+
+/* The one piece of small-caps signage in the world: it labels a part of the
+   page without becoming another badge. */
+[data-world="forest"][data-world] .stage-where,
+[data-world="forest"][data-world] .stage-lesson-h{
+  font-size:.74rem; font-weight:700;
+  letter-spacing:.17em; text-transform:uppercase;
+  color:var(--fr-gold-d);
+  margin:0 0 14px;
+}
+[data-world="forest"][data-world] .stage-lesson-h{
+  margin:26px 0 2px;
+  padding-top:14px;
+  border-top:1px solid var(--fr-rule);
+}
+
+/* --- The lesson: a page in a field guide --------------------------------- */
+
+/* Squared, not a rounded card. A hairline and a parchment ground read as a
+   printed page; a 18px radius with a soft shadow reads as a dashboard tile,
+   and the brief for this world is the first thing and not the second. */
+[data-world="forest"][data-world] .stage-card,
+[data-world="forest"][data-world] .trial-card,
+[data-world="forest"][data-world] .card{
+  background:linear-gradient(177deg, var(--fr-parch) 0%, var(--fr-parch-2) 100%);
+  border:1px solid var(--fr-rule);
+  border-radius:3px;
+  box-shadow:0 1px 0 rgba(255,255,255,.5) inset, 0 14px 36px rgba(0,0,0,.34);
+  padding:30px 32px;
+}
+[data-world="forest"][data-world] .stage-card h1{ margin-bottom:4px }
+
+/* Sections are separated by air and a rule, not by being boxed again. A
+   lesson made of five nested cards is the dashboard look the brief rules
+   out, and it also buries the hierarchy it is trying to show. */
+[data-world="forest"][data-world] .stage-sec{
+  margin-top:22px; padding-top:0; border:0; background:none;
+}
+[data-world="forest"][data-world] .stage-sec h3{
+  color:var(--fr-needle);
+  margin:0 0 7px;
+}
+/* A short rule under each section heading: the field-guide tell, and cheap
+   enough in ink that it can appear on every one without becoming noise. */
+[data-world="forest"][data-world] .stage-sec h3::after{
+  content:""; display:block; width:34px; height:2px; margin-top:7px;
+  background:var(--fr-gold);
+  opacity:.8;
+}
+
+/* --- Equations ----------------------------------------------------------- */
+
+/* A displayed equation gets quiet rules above and below and nothing else:
+   the notation is the ornament. No border box, no tint strong enough to
+   compete with the glyphs. */
+[data-world="forest"][data-world] .mth-block{
+  margin:16px 0;
+  padding:14px 10px;
+  background:rgba(120,142,84,.07);
+  border-top:1px solid var(--fr-rule);
+  border-bottom:1px solid var(--fr-rule);
+  border-radius:0;
+}
+/* Recolour only. Never font-family - see the note on --fr-serif. */
+[data-world="forest"][data-world] .mth .katex{ color:var(--fr-pine-deep) }
+
+/* --- Worked examples ------------------------------------------------------ */
+
+/* Given its own treatment rather than another card: a bark rule down the
+   left says "this is the demonstration" at a glance, and reads differently
+   from the prose above it without being louder. */
+[data-world="forest"][data-world] .worked,
+[data-world="forest"][data-world] .worked-step{
+  border-left:3px solid var(--fr-bark-l);
+  padding-left:18px;
+  background:none;
+  border-radius:0;
+}
+[data-world="forest"][data-world] .worked-step + .worked-step{ margin-top:14px }
+
+/* --- Figures and tables --------------------------------------------------- */
+
+[data-world="forest"][data-world] .lsn-figure,
+[data-world="forest"][data-world] .stim figure{
+  margin:16px 0; padding:12px;
+  background:#fffdf7;
+  border:1px solid var(--fr-rule);
+  border-radius:2px;
+}
+[data-world="forest"][data-world] figcaption{
+  font-size:.82rem; color:var(--fr-ink-2); margin-top:8px;
+}
+[data-world="forest"][data-world] .stim table,
+[data-world="forest"][data-world] .q table{ border-color:var(--fr-rule) }
+[data-world="forest"][data-world] .stim th,
+[data-world="forest"][data-world] .q th{
+  background:rgba(120,142,84,.14);
+  color:var(--fr-pine-deep);
+  font-family:var(--fr-serif);
+}
+
+/* --- The question --------------------------------------------------------- */
+
+/* Highest contrast on the page, and the least decorated thing on it. */
+[data-world="forest"][data-world] .q{
+  color:var(--fr-ink);
+  font-size:1.14rem; line-height:1.6;
+}
+[data-world="forest"][data-world] .stim{
+  background:#fffdf7;
+  border:1px solid var(--fr-rule);
+  border-left:3px solid var(--fr-fern);
+  border-radius:2px;
+  color:var(--fr-ink);
+}
+
+/* --- Answer choices ------------------------------------------------------- */
+
+[data-world="forest"][data-world] .choice{
+  background:#fffdf7;
+  border:1px solid var(--fr-rule);
+  border-radius:3px;
+  color:var(--fr-ink);
+  font-family:var(--fr-serif);
+  font-size:1.02rem;
+}
+[data-world="forest"][data-world] .choice:hover{ border-color:var(--fr-fern) }
+
+/* The lettered circle stays - it is Emma's own call from the lavender app
+   and it survives the change of world. Only its colours move. */
+[data-world="forest"][data-world] .choice .k{
+  border-color:var(--fr-rule);
+  color:var(--fr-ink-2);
+  font-family:var(--fr-serif);
+  font-weight:700;
+}
+[data-world="forest"][data-world] .choice:hover .k{ border-color:var(--fr-fern) }
+
+/* Chosen but not yet submitted. The class is `chosen`, not `picked` -
+   styles.css carries a `.choice.picked` rule that the component never sets,
+   and styling that one instead leaves the selected answer looking unselected.
+   
+   A ring rather than a fill, keeping the app's own grammar: the ring is "my
+   pick", a filled circle is "the verdict". Gold, because an intention held
+   before submitting is exactly what this world spends gold on. */
+[data-world="forest"][data-world] .choice.chosen{
+  border-color:var(--fr-gold);
+  background:rgba(181,125,55,.09);
+}
+[data-world="forest"][data-world] .choice.chosen .k{
+  border-color:var(--fr-gold);
+  border-width:2.5px;
+  background:transparent;
+  color:var(--fr-gold-d);
+}
+
+/* Marked. Earthy rather than traffic-light: pine for right, a deep russet
+   for wrong. Both carry a solid letter circle as well as a colour, so the
+   state does not rest on hue alone. */
+[data-world="forest"][data-world] .choice.right{
+  background:rgba(66,103,58,.13);
+  border-color:var(--fr-needle);
+  color:#20361c;
+}
+[data-world="forest"][data-world] .choice.right .k{
+  background:var(--fr-needle); border-color:var(--fr-needle); color:#f2f6ea;
+}
+[data-world="forest"][data-world] .choice.wrong{
+  background:rgba(124,58,38,.1);
+  border-color:#7c3a26;
+  color:#5e2a1b;
+}
+[data-world="forest"][data-world] .choice.wrong .k{
+  background:#7c3a26; border-color:#7c3a26; color:#f7ece7;
+}
+[data-world="forest"][data-world] .choice.struck{ opacity:.55 }
+
+/* --- Grid-ins ------------------------------------------------------------- */
+
+[data-world="forest"][data-world] .grid-box{
+  font-family:var(--fr-serif);
+  font-size:1.2rem;
+  background:#fffdf7;
+  border:1px solid var(--fr-rule);
+  border-radius:2px;
+  color:var(--fr-ink);
+}
+[data-world="forest"][data-world] .grid-box:focus{
+  outline:2px solid var(--fr-gold); outline-offset:1px;
+}
+
+/* --- Buttons -------------------------------------------------------------- */
+
+[data-world="forest"][data-world] .btn-primary{
+  font-family:var(--fr-serif);
+  font-size:1rem; font-weight:700; letter-spacing:.01em;
+  background:var(--fr-needle);
+  border:1px solid var(--fr-pine-deep);
+  border-radius:3px;
+  color:#f4f0e2;
+  box-shadow:none;
+}
+[data-world="forest"][data-world] .btn-primary:hover:not(:disabled){ background:var(--fr-pine-deep) }
+[data-world="forest"][data-world] .btn-primary:disabled{ background:var(--fr-slate); border-color:var(--fr-slate) }
+
+[data-world="forest"][data-world] .btn-sm{
+  font-family:var(--fr-serif);
+  background:rgba(244,237,221,.1);
+  border:1px solid rgba(207,193,164,.4);
+  border-radius:3px;
+  color:var(--fr-parch);
+}
+[data-world="forest"][data-world] .btn-sm:hover{ background:rgba(244,237,221,.2) }
+
+/* --- The level ladder ----------------------------------------------------- */
+
+/* Varied from the lesson surface on purpose: these are the doors out of the
+   page, not more of the page. Dark bark plates with gold rules. */
+[data-world="forest"][data-world] .level{
+  background:linear-gradient(180deg, rgba(47,57,46,.92), rgba(29,37,29,.94));
+  border:1px solid rgba(207,193,164,.26);
+  border-radius:3px;
+  color:var(--fr-parch);
+  font-family:var(--fr-serif);
+  box-shadow:none;
+}
+[data-world="forest"][data-world] .level:hover:not(:disabled){
+  border-color:var(--fr-gold);
+  background:linear-gradient(180deg, rgba(60,72,56,.95), rgba(36,46,35,.96));
+}
+[data-world="forest"][data-world] .level-t{
+  font-size:1.06rem; font-weight:700; color:var(--fr-parch);
+}
+[data-world="forest"][data-world] .level-d,
+[data-world="forest"][data-world] .level-shape{ color:rgba(244,237,221,.66) }
+[data-world="forest"][data-world] .level-rung{ color:var(--fr-moss) }
+[data-world="forest"][data-world] .level-bar{ background:rgba(0,0,0,.4) }
+[data-world="forest"][data-world] .level-bar i{ background:var(--fr-gold) }
+[data-world="forest"][data-world] .level-new{ background:var(--fr-gold); color:#2a1c0b }
+[data-world="forest"][data-world] .level.locked{ opacity:.52 }
+
+/* --- Prose on the dark ground --------------------------------------------- */
+
+/* Anything sitting straight on the forest floor rather than on parchment. */
+[data-world="forest"][data-world] > h1,
+[data-world="forest"][data-world] > h2{ color:var(--fr-parch) }
+[data-world="forest"][data-world] > p,
+[data-world="forest"][data-world] > .muted,
+[data-world="forest"][data-world] > .tiny{ color:rgba(244,237,221,.74) }
+[data-world="forest"][data-world] > p.muted,
+[data-world="forest"][data-world] .round-tools,
+[data-world="forest"][data-world] .spread .tiny{ color:rgba(244,237,221,.66) }
+
+/* --- Quiz ----------------------------------------------------------------- */
+
+/* The quiz keeps the lesson's parchment so it reads as the same publication,
+   and takes a gold top rule as the only sign that it is the assessment. */
+[data-world="forest"][data-world] .quiz-card{
+  border-top:3px solid var(--fr-gold);
+}
+[data-world="forest"][data-world] .trial-ways li{ color:var(--fr-ink-2) }
+
+/* --- Mobile --------------------------------------------------------------- */
+
+@media (max-width:640px){
+  [data-world="forest"][data-world] .stage-card,
+  [data-world="forest"][data-world] .trial-card,
+  [data-world="forest"][data-world] .card{ padding:20px 17px }
+  [data-world="forest"][data-world] h1{ font-size:1.62rem }
+  [data-world="forest"][data-world] h2{ font-size:1.24rem }
+  [data-world="forest"][data-world] .q{ font-size:1.06rem }
+  [data-world="forest"][data-world] .mth-block{ padding:12px 4px }
+}
+
+/* --- Worked examples (the real markup) ------------------------------------
+   `.worked` is the section, `.worked-card` the demonstration inside it. The
+   heading and its standfirst sit straight on the forest floor, so they take
+   parchment ink; everything below sits on paper and takes forest ink. This
+   is the pairing that was unreadable first time round - dark pine type on
+   dark ground, which looked fine in the stylesheet and vanished on screen.
+   -------------------------------------------------------------------------- */
+
+/* `.journey .worked h2` is (0,2,1) and ties, so the heading over the worked
+   examples kept Georgia while every other heading moved. Named with the
+   section class to clear it. */
+[data-world="forest"][data-world] .worked h2{
+  font-family:var(--fr-serif);
+  color:var(--fr-parch);
+}
+[data-world="forest"][data-world] .worked > p.muted,
+[data-world="forest"][data-world] .worked > .tiny{ color:rgba(244,237,221,.74) }
+
+/* The demonstration is a plate, not another lesson page: paper, squared, and
+   a bark rule down the side that says "worked through" before it is read. */
+[data-world="forest"][data-world] .worked-card{
+  background:#fffdf7;
+  border:1px solid var(--fr-rule);
+  border-left:3px solid var(--fr-bark-l);
+  border-radius:2px;
+  box-shadow:0 10px 26px rgba(0,0,0,.26);
+}
+[data-world="forest"][data-world] .worked-card.open{
+  border-color:var(--fr-rule);
+  border-left-color:var(--fr-gold);
+  box-shadow:0 12px 30px rgba(0,0,0,.3);
+}
+[data-world="forest"][data-world] .worked-n{
+  background:var(--fr-gold); color:#2a1c0b;
+  font-family:var(--fr-serif); font-weight:700;
+}
+[data-world="forest"][data-world] .worked-stim,
+[data-world="forest"][data-world] .worked-stem,
+[data-world="forest"][data-world] .worked-why > div{
+  font-family:var(--fr-serif);
+  color:var(--fr-ink);
+}
+[data-world="forest"][data-world] .worked-stim{ border-bottom-color:var(--fr-rule) }
+
+[data-world="forest"][data-world] .worked-choices li{
+  font-family:var(--fr-serif);
+  border-color:var(--fr-rule);
+  color:var(--fr-ink);
+  border-radius:2px;
+}
+[data-world="forest"][data-world] .worked-choices li.right{
+  background:rgba(66,103,58,.13);
+  color:#20361c;
+  border-color:var(--fr-needle);
+}
+[data-world="forest"][data-world] .worked-letter{
+  font-family:var(--fr-serif);
+  border-color:var(--fr-rule); color:var(--fr-ink-2);
+}
+[data-world="forest"][data-world] .worked-choices li.right .worked-letter{
+  background:var(--fr-needle); border-color:var(--fr-needle); color:#f2f6ea;
+}
+/* Hairlines rather than dashes: a dashed rule on paper reads as a cut line. */
+[data-world="forest"][data-world] .worked-why{ border-top:1px solid var(--fr-rule) }
+[data-world="forest"][data-world] .worked-trap{ border-top:1px solid var(--fr-rule) }
+[data-world="forest"][data-world] .worked-why h4{
+  font-family:var(--fr-serif); color:var(--fr-needle);
+}
+[data-world="forest"][data-world] .worked-trap h4{ color:var(--fr-gold-d) }
+
+/* The difficulty label. Kept, because it is information, but demoted from a
+   filled lavender pill to a rule-and-caps mark - the brief rules out badges
+   used as decoration, not labels that say what tier a question is. */
+[data-world="forest"][data-world] .badge{
+  background:none;
+  border:1px solid var(--fr-rule);
+  border-radius:2px;
+  color:var(--fr-gold-d);
+  font-family:var(--fr-serif);
+  font-weight:700;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  font-size:.66rem;
+  padding:3px 8px;
+}
+
+/* --- Buttons that sit on paper, not on the forest floor --------------------
+   `.btn-sm` above is dressed for the dark ground: parchment type on a faint
+   light fill. Inside the worked card that is pale-on-white and all but
+   invisible - the same way the Next button disappeared twice by being
+   styled as a muted link. Anything on paper takes ink.
+   -------------------------------------------------------------------------- */
+[data-world="forest"][data-world] .worked-card .btn-sm,
+[data-world="forest"][data-world] .stage-card .btn-sm,
+[data-world="forest"][data-world] .trial-card .btn-sm,
+[data-world="forest"][data-world] .card .btn-sm{
+  background:rgba(66,103,58,.09);
+  border:1px solid var(--fr-needle);
+  color:var(--fr-pine-deep);
+  font-weight:700;
+}
+[data-world="forest"][data-world] .worked-card .btn-sm:hover,
+[data-world="forest"][data-world] .stage-card .btn-sm:hover,
+[data-world="forest"][data-world] .trial-card .btn-sm:hover,
+[data-world="forest"][data-world] .card .btn-sm:hover{
+  background:rgba(66,103,58,.17);
+}
+
+/* Maths carried the old lavender ink (#241c48) wherever it rendered. Colour
+   only - never font-family, or the glyphs stop being maths. */
+[data-world="forest"][data-world] .katex{ color:var(--fr-pine-deep) }
+
+/* A dashed rule on paper reads as a cut line; the stimulus divider is a
+   hairline like every other rule in the world. */
+[data-world="forest"][data-world] .worked-stim{
+  border-bottom:1px solid var(--fr-rule);
+}
+
+/* --- The rungs -------------------------------------------------------------
+   The ladder's pips were the app's lavender, a pale blue and an amber. The
+   three-way distinction is real information - ours, the exam's, past the
+   exam's - so it is kept, and only the hues move into the palette: river
+   mist for the groundwork below the test, moss for the test's own tiers,
+   gold for the stretch beyond it.
+
+   Written with the state class included (0,3,1) because `.level.open
+   .level-rung` is itself (0,2,1) and would otherwise tie and win on order.
+   -------------------------------------------------------------------------- */
+[data-world="forest"][data-world] .level.foundation .level-rung{ color:var(--fr-mist) }
+[data-world="forest"][data-world] .level.open .level-rung{ color:var(--fr-moss) }
+[data-world="forest"][data-world] .level.stretch .level-rung{ color:var(--fr-gold) }
+
+/* --- The round sits on the forest floor too --------------------------------
+   `.scene-scrim` is a cream wash the round lays over the page at z-index -1.
+   Painted after this world's own ground, it won - so a practice set came up
+   on pale grey while the lesson it started from was on dark pine, and the
+   two read as different applications. Same world, same floor.
+   -------------------------------------------------------------------------- */
+[data-world="forest"][data-world] .scene-scrim{
+  background:
+    radial-gradient(90% 60% at 50% -10%, rgba(34,48,39,.92) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(18,26,21,.94) 0%, rgba(14,21,17,.96) 52%, rgba(11,16,13,.97) 100%);
+}
+
+/* --- Inline maths ----------------------------------------------------------
+   Every quantity in a stem was a lavender chip. Kept as a chip, because it
+   is what stops an equation dissolving into the prose around it - just on
+   paper rather than in the old identity.
+   -------------------------------------------------------------------------- */
+[data-world="forest"][data-world] .mth{
+  background:rgba(120,142,84,.1);
+  border:1px solid var(--fr-rule);
+  border-radius:3px;
+  box-shadow:none;
+  font-family:var(--fr-serif);
+}
+
+/* --- Round navigation ------------------------------------------------------ */
+
+[data-world="forest"][data-world] .btn-next{
+  font-family:var(--fr-serif);
+  font-weight:700;
+  background:var(--fr-parch);
+  border:1px solid var(--fr-rule);
+  border-radius:3px;
+  color:var(--fr-pine-deep);
+  box-shadow:none;
+}
+[data-world="forest"][data-world] .btn-next:hover:not(:disabled){
+  background:#fff; border-color:var(--fr-gold);
+}
+[data-world="forest"][data-world] .btn-next:disabled{ opacity:.4 }
+
+[data-world="forest"][data-world] .btn-tool{
+  font-family:var(--fr-serif);
+  background:rgba(244,237,221,.1);
+  border:1px solid rgba(207,193,164,.4);
+  border-radius:3px;
+  color:var(--fr-parch);
+}
+[data-world="forest"][data-world] .btn-tool:hover{ background:rgba(244,237,221,.2) }
+
+[data-world="forest"][data-world] .clock,
+[data-world="forest"][data-world] .navkey{ color:rgba(244,237,221,.72) }
+
+/* The question navigator: small plates, gold for where you are. */
+[data-world="forest"][data-world] .navstrip button{
+  font-family:var(--fr-serif);
+  background:rgba(244,237,221,.09);
+  border:1px solid rgba(207,193,164,.34);
+  border-radius:3px;
+  color:var(--fr-parch);
+}
+[data-world="forest"][data-world] .navstrip button.at{
+  background:var(--fr-gold); border-color:var(--fr-gold); color:#2a1c0b;
+}
+[data-world="forest"][data-world] .navstrip button.done{
+  background:rgba(66,103,58,.5); border-color:var(--fr-needle);
+}
+
+/* The round's progress bar. */
+[data-world="forest"][data-world] .bar{ background:rgba(0,0,0,.34) }
+[data-world="forest"][data-world] .bar > i,
+[data-world="forest"][data-world] .bar.good > i{ background:var(--fr-gold) }
+
+/* --- Inline maths, the class it actually uses ------------------------------
+   The chips in a stem are `.lsn-math`, not `.mth` - `.mth` is the other
+   renderer and matches nothing here, which is why the first attempt at this
+   left every quantity sitting in a lavender pill on parchment.
+   -------------------------------------------------------------------------- */
+[data-world="forest"][data-world] .lsn-math{
+  font-family:var(--fr-serif);
+}
+[data-world="forest"][data-world] .lsn-math .katex{ color:var(--fr-pine-deep) }
+
+/* The chip itself only exists on the bottom two rungs - it is a scaffold for
+   a student still learning to read an expression as one object, and
+   lesson/styles.css drops it from Medium up on purpose. Recolouring plain
+   `.lsn-math` would have had a higher specificity than that rule and put the
+   chip back on every tier: a pedagogical decision undone by a paint job.
+   So the chip is recoloured exactly where it is drawn, and nowhere else. */
+[data-world="forest"][data-world] .tier-F .lsn-math,
+[data-world="forest"][data-world] .tier-E .lsn-math{
+  background:rgba(120,142,84,.12);
+  border:1px solid var(--fr-rule);
+  border-radius:4px;
+  box-shadow:none;
+}
+[data-world="forest"][data-world] .lsn-math-block{
+  background:rgba(120,142,84,.07);
+  border-top:1px solid var(--fr-rule);
+  border-bottom:1px solid var(--fr-rule);
+  border-radius:0;
+}
+
+/* --- Over a scene ----------------------------------------------------------
+   scene.css dresses the round's top bar for a bright photograph behind it:
+   a near-white button on `body:has(.scene) .spread .btn-sm`, which is
+   (0,3,1) and beat this world's (0,2,1) - so "Back" was parchment type on a
+   white button, invisible. Same failure as the Next button twice before.
+   Matched at (0,5,1), narrowly, rather than by reaching for !important.
+   -------------------------------------------------------------------------- */
+body:has(.scene) [data-world="forest"][data-world] .spread .btn-sm{
+  background:rgba(244,237,221,.1);
+  border-color:rgba(207,193,164,.4);
+  color:var(--fr-parch);
+  box-shadow:none;
+}
+body:has(.scene) [data-world="forest"][data-world] .spread .btn-sm:hover{
+  background:rgba(244,237,221,.2);
+}
+body:has(.scene) [data-world="forest"][data-world] .spread .tiny.muted{
+  color:rgba(244,237,221,.78); text-shadow:none;
+}
+
+/* --- Verdict and explanation ----------------------------------------------
+   The two things a student actually reads after answering, and both were
+   still in the lavender identity: a mint "you got this right" banner whose
+   text had gone parchment-on-mint and could not be read at all, and the
+   explanation itself in purple on paper.
+
+   The explanation is the most valuable prose in the app. It gets full ink
+   and the lesson's own measure, not a tinted call-out.
+   -------------------------------------------------------------------------- */
+
+/* This banner sits ABOVE the question card, on the forest floor rather than
+   on paper - so it takes parchment type on a dark plate. Inked like the
+   paper surfaces it would be dark green on dark green, which is exactly how
+   it rendered the first time: a sentence that was there and unreadable. */
+[data-world="forest"][data-world] .revisit{
+  border-radius:2px;
+  font-family:var(--fr-serif);
+  background:rgba(20,28,22,.72);
+  border:1px solid rgba(207,193,164,.3);
+  border-left:3px solid var(--fr-slate);
+  color:rgba(244,237,221,.85);
+}
+[data-world="forest"][data-world] .revisit.right{
+  border-left-color:var(--fr-moss);
+  color:#dce8cc;
+}
+[data-world="forest"][data-world] .revisit.wrong{
+  border-left-color:#b4714f;
+  color:#f0d6c8;
+}
+
+[data-world="forest"][data-world] .why{
+  font-family:var(--fr-serif);
+  color:var(--fr-ink);
+  font-size:1.0rem; line-height:1.66;
+  /* Hairline, like every other rule in this world. The dashed lavender one
+     it replaces was the last of the old identity on this screen. */
+  border-top:1px solid var(--fr-rule);
+}
+[data-world="forest"][data-world] .why-h{
+  font-family:var(--fr-serif);
+  color:var(--fr-needle);
+  letter-spacing:.14em;
+}
+/* The student's own wrong answer, kept as the one tinted block here because
+   it is a diagnosis and not more prose - in russet rather than pink. */
+[data-world="forest"][data-world] .why-yours{
+  background:rgba(124,58,38,.08);
+  border:1px solid #c0a08f;
+  border-radius:2px;
+}
+[data-world="forest"][data-world] .why-yours .why-h{ color:#7c3a26 }
+[data-world="forest"][data-world] .why-alt{ border-color:var(--fr-rule) }
+[data-world="forest"][data-world] .why-alt .why-h{ color:var(--fr-ink-2) }
+[data-world="forest"][data-world] .why-name{ font-family:var(--fr-serif) }
+[data-world="forest"][data-world] .why-more summary{
+  font-family:var(--fr-serif);
+  color:var(--fr-needle);
+}
+
+/* `.journey .lead` names Georgia explicitly, so it beat the world's
+   inheritance - the standfirst under a quiz title stayed in the old serif
+   while its heading had moved. Found by walking every element inside the
+   world and listing any whose computed font was not Times; this was the
+   only one. */
+[data-world="forest"][data-world] .lead{
+  font-family:var(--fr-serif);
+  color:var(--fr-ink);
+}
+
+/* `.stage-sec p, .stage-sec li` name Georgia explicitly, and the lesson body
+   is injected as HTML into those sections - so the prose a student actually
+   reads stayed in the old serif while its headings had moved. Found by
+   walking the world and listing every computed font that was not Times. */
+[data-world="forest"][data-world] .stage-sec p,
+[data-world="forest"][data-world] .stage-sec li,
+[data-world="forest"][data-world] .stage-sec strong,
+[data-world="forest"][data-world] .stage-sec h2,
+[data-world="forest"][data-world] .stage-card p,
+[data-world="forest"][data-world] .stage-card li{
+  font-family:var(--fr-serif);
+}
+
+/* The two small-caps labels measured 4.44:1 on parchment - under the 4.5 the
+   rest of the world clears, and they are 12px, which is where it matters
+   most. One step darker into the same sampled bark-gold, not a new hue. */
+[data-world="forest"][data-world] .stage-where,
+[data-world="forest"][data-world] .stage-lesson-h{
+  color:#7d4d1c;
+}
