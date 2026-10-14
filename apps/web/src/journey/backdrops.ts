@@ -96,7 +96,9 @@ const SCENES: Record<Terrain, string[]> = {
 const SHIPPED = new Set<string>([
   'alpine/glacier-crossing',
   'alpine/mountain-ridge',
+  'boardwalk/the-boardwalk',
   'boardwalk/the-boardwalk-at-night',
+  'hawaii/hawaiian-sunset',
   'hawaii/volcanic-coast',
   'hawaii/waikiki-beach',
   'parks/grand-canyon',

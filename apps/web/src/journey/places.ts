@@ -52,7 +52,8 @@ export const HERO: Partial<Record<Terrain, string>> = {
   ocean: 'the-departure',
   park: 'yosemite-valley',
   peaks: 'mountain-ridge',
-  tropic: 'volcanic-coast',
+  tropic: 'hawaiian-sunset',
+  fair: 'the-boardwalk',
 }
 
 /**
@@ -84,6 +85,27 @@ export const ROUTE: Partial<Record<Terrain, [number, number][]>> = {
     [18, 72], [27, 66], [36, 57], [47, 46],
     [54, 36], [60, 28], [64, 24],
     [72, 33], [78, 46], [80, 70],
+  ],
+  // The Boardwalk: in off the bottom-left boards, past the carousel, along
+  // the shopfronts, then up the deck to the wheel at the pier head and out
+  // along the water. The deck itself does the work - it already recedes to
+  // the wheel, so the road only has to follow the boards.
+  // Retro Hawaii: in along the sand under the palms, up to the headland,
+  // down to the open beach, out to the sail and back along the surf line to
+  // the pool deck.
+  tropic: [
+    [-4, 72], [2, 66], [9, 60],
+    [18, 55], [26, 52], [34, 50],
+    [38, 62], [41, 74], [44, 86],
+    [52, 76], [58, 66], [63, 59],
+    [69, 68], [73, 73], [76, 77],
+    [82, 74], [87, 71], [91, 68], [99, 65],
+  ],
+  fair: [
+    [10, 99], [14, 86], [17, 72],
+    [23, 67], [29, 62],
+    [36, 57], [42, 52], [49, 46],
+    [60, 47], [74, 49], [90, 51],
   ],
 }
 
@@ -127,7 +149,20 @@ export const SPOTS: Record<Terrain, Record<string, Spot>> = {
     'Evaluation of Models & Results': {
       x: 50, y: 74, name: 'The Valley Mouth', into: 'yosemite-valley' },
   },
-  fair: {},
+  // THE BOARDWALK, at dusk. Three stops down one pier, placed by depth so
+  // curriculum order is also the walk: the carousel is the thing you are
+  // standing next to, the booths are halfway along, the wheel is the far end
+  // you can see from anywhere. Nothing doubles back, because the boards do
+  // not. Each name is a thing visibly in the photograph - if a student looks
+  // for the carousel they find horses, not an empty stretch of deck.
+  fair: {
+    'Key Ideas & Details': {
+      x: 17, y: 72, name: 'The Carousel' },
+    'Craft & Structure': {
+      x: 29, y: 62, name: 'The Painted Booths' },
+    'Integration of Knowledge & Ideas': {
+      x: 49, y: 46, name: 'The Great Wheel' },
+  },
   peaks: {
     'Sentence Structure & Formation': {
       x: 34, y: 46, name: 'The Icefall', into: 'glacier-crossing' },
@@ -140,11 +175,33 @@ export const SPOTS: Record<Terrain, Record<string, Spot>> = {
     'Knowledge of Language': {
       x: 82, y: 60, name: 'The Far Shoulder', into: 'mountain-ridge' },
   },
+  // RETRO HAWAII, at sunset. This land used to open on the volcanic-coast
+  // plate, which is a dark Na Pali valley with no coast in it - the same
+  // mismatch Emma caught on the Spanish pasture - and it was dark enough
+  // that four of six labels would have sat on unreadable rock. The sunset
+  // plate carries six features anyone can point at, so all six domains get
+  // a place instead of four plus a leftover.
+  //
+  // One of those four was keyed 'Math', a placeholder skill no question
+  // carries any more, so it pointed at nothing.
+  //
+  // Order is the order the app lists the legs - most recognitions first -
+  // and the walk runs left to right along the beach, weaving between the
+  // shore and the water. x only ever increases, so the road cannot cross
+  // itself however much it rises and falls.
   tropic: {
-    'Algebra': { x: 28, y: 60, name: 'The Green Cleft', into: 'volcanic-coast' },
-    'Math': { x: 62, y: 44, name: 'The Lit Ridge', into: 'volcanic-coast' },
-    'Geometry': { x: 44, y: 72, name: 'The Deep Valley', into: 'waikiki-beach' },
-    'Functions': { x: 76, y: 56, name: 'The Far Spur', into: 'waikiki-beach' },
+    'Geometry': {
+      x: 9, y: 60, name: 'The Surf Shack', into: 'waikiki-beach' },
+    'Functions': {
+      x: 34, y: 50, name: 'The Headland', into: 'volcanic-coast' },
+    'Statistics & Probability': {
+      x: 44, y: 86, name: 'The Open Sand' },
+    'Algebra': {
+      x: 63, y: 59, name: 'The Lone Sail' },
+    'Integrating Essential Skills': {
+      x: 76, y: 77, name: 'The Surf Line' },
+    'Number & Quantity': {
+      x: 91, y: 68, name: 'The Pool Deck' },
   },
 }
 
