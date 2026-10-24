@@ -9,6 +9,8 @@ import { Assign } from './teacher/Assign'
 import { Homework } from './student/Homework'
 import { Review } from './review/Review'
 import { Login } from './auth/Login'
+import { Overture } from './journey/Overture'
+import { overtureFor, prefersReduced } from './journey/overtureState'
 import { Sheet } from './journey/Sheet'
 import { current, type Account } from './auth/auth'
 import { useEffect, useState } from 'react'
@@ -61,6 +63,19 @@ function OnlyTeacher(
  */
 function Gate() {
   const [account, setAccount] = useState<Account | null>(() => current())
+  /**
+   * The opening, when there is one.
+   *
+   * Held here rather than inside Login because it plays AFTER the account
+   * exists: the app behind it is already mounted and its data already
+   * loading, so skipping lands on a page that is ready rather than on a
+   * spinner. A cinematic that is also a loading screen is just a loading
+   * screen with better art.
+   *
+   * Students only. A teacher signing in is going to the portal to set
+   * work, and an establishing shot in front of an admin screen is a toll.
+   */
+  const [overture, setOverture] = useState<'full' | 'short' | null>(null)
   const nav = useNavigate()
   useEffect(() => {
     const sync = () => setAccount(current())
@@ -77,6 +92,10 @@ function Gate() {
       <Login onDone={() => {
         const who = current()
         setAccount(who)
+        if (who && who.role !== 'teacher') {
+          const want = overtureFor(prefersReduced())
+          if (want !== 'none') setOverture(want)
+        }
         // Sent to the portal once, on the way in. Doing this as a route
         // redirect instead made "/" unreachable for a teacher, and "/" is
         // where the portal's own Student view link points.
@@ -100,6 +119,9 @@ function Gate() {
 
   return (
     <>
+      {overture && (
+        <Overture kind={overture} onDone={() => setOverture(null)} />
+      )}
       <TopNav account={account} pending={pending} />
       <Routes>
         {/* The chooser, for everyone.

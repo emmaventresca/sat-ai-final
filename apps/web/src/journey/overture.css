@@ -1,0 +1,232 @@
+/* ---------------------------------------------------------------------------
+   THE OVERTURE — the way into the world. See Overture.tsx.
+
+   Depth is layers moving at different rates, which is where depth comes from
+   in film too. Five of them, from the back:
+
+     photograph   pushes in slowly               1.04 -> 1.26
+     beams        sweep and brighten
+     mist         drifts across, two speeds
+     motes        hang, drifting up (canvas)
+     trunks       push out HARD and leave frame  1.00 -> 2.05
+
+   The trunks are the whole trick. A background that merely scales reads as
+   a zoom; a foreground that scales twice as fast and slides off the edges
+   reads as the camera physically moving between the trees.
+   --------------------------------------------------------------------------- */
+
+.ov{
+  position:fixed; inset:0; z-index:200;
+  overflow:hidden;
+  background:#050706;
+  cursor:pointer;
+}
+
+/* --- the forest --------------------------------------------------------- */
+
+.ov-forest{ position:absolute; inset:0; }
+.ov-forest img{
+  position:absolute; inset:0;
+  width:100%; height:100%; object-fit:cover;
+  transform:scale(1.04);
+  opacity:0;
+  will-change:transform,opacity;
+}
+.ov-at-forest .ov-forest img{
+  animation:ov-push 3.1s cubic-bezier(.33,0,.5,1) forwards,
+            ov-wake .9s ease forwards;
+}
+@keyframes ov-push{ to{ transform:scale(1.26) } }
+/* Comes up out of black rather than cutting in: the brief asks for a screen
+   that begins nearly black, and an image that simply appears is a slide. */
+@keyframes ov-wake{ from{ opacity:0 } to{ opacity:1 } }
+
+/* Shafts through the canopy. Two gradients crossed at a slight angle, so
+   the light has a direction and is not a symmetrical glow. */
+.ov-beams{
+  position:absolute; inset:-18%;
+  background:
+    linear-gradient(104deg, transparent 38%, rgba(255,206,130,.17) 44%,
+      transparent 50%),
+    linear-gradient(97deg, transparent 50%, rgba(255,214,150,.13) 56%,
+      transparent 62%),
+    radial-gradient(42% 52% at 50% 34%, rgba(255,205,135,.26), transparent 70%);
+  opacity:0; mix-blend-mode:screen;
+  will-change:opacity,transform;
+}
+.ov-at-forest .ov-beams{ animation:ov-beams 3.1s ease-out forwards }
+@keyframes ov-beams{
+  0%{ opacity:0; transform:translateX(-2%) scale(1.02) }
+  45%{ opacity:1 }
+  100%{ opacity:.92; transform:translateX(2.5%) scale(1.14) }
+}
+
+/* Wide, soft and low-contrast. The first pass was a 60%-tall radial band
+   with a 16px blur, which photographed as a grey smear across the middle of
+   the frame - mist does not have a waistline. Bigger, fainter, blurred far
+   enough that no edge of it is findable. */
+.ov-mist{
+  position:absolute; left:-40%; right:-40%; height:96%;
+  background:radial-gradient(74% 38% at 50% 50%,
+    rgba(222,206,178,.2), transparent 76%);
+  filter:blur(44px);
+  opacity:0;
+  will-change:transform,opacity;
+}
+.ov-mist-a{ top:8% }
+.ov-mist-b{ top:34%; height:78%; opacity:0 }
+.ov-at-forest .ov-mist-a{ animation:ov-drift-a 3.1s linear forwards }
+.ov-at-forest .ov-mist-b{ animation:ov-drift-b 3.1s linear forwards }
+@keyframes ov-drift-a{
+  0%{ transform:translateX(-7%) scale(1) ; opacity:0 }
+  30%{ opacity:.62 }
+  100%{ transform:translateX(8%) scale(1.3); opacity:.38 }
+}
+@keyframes ov-drift-b{
+  0%{ transform:translateX(9%) scale(1.05); opacity:0 }
+  40%{ opacity:.44 }
+  100%{ transform:translateX(-6%) scale(1.4); opacity:.24 }
+}
+
+.ov-motes{ position:absolute; inset:0; width:100%; height:100%; opacity:.9 }
+
+/* The trunks: out of the frame as the camera passes between them.
+   Blurred, and blurring further as they approach, because a trunk a foot
+   from the lens is not in focus. That one property is what stops them
+   reading as flat black cut-outs pasted over a photograph. */
+.ov-trunks{
+  position:absolute; inset:0; width:100%; height:100%;
+  transform:scale(1);
+  filter:blur(2.5px);
+  will-change:transform,opacity,filter;
+}
+.ov-at-forest .ov-trunks{
+  animation:ov-pass 3.1s cubic-bezier(.4,0,.55,1) forwards;
+}
+@keyframes ov-pass{
+  0%{ transform:scale(1); opacity:1; filter:blur(2.5px) }
+  85%{ opacity:1 }
+  100%{ transform:scale(2.05); opacity:.9; filter:blur(8px) }
+}
+
+/* --- the vista ----------------------------------------------------------- */
+
+/* Settles BACK as it arrives, against the forest's push. Two opposed moves
+   either side of the cut is what sells coming out of the trees rather than
+   cross-dissolving between two pictures. */
+.ov-vista{
+  position:absolute; inset:0;
+  opacity:0;
+  will-change:opacity;
+}
+.ov-vista img{
+  position:absolute; inset:0;
+  width:100%; height:100%; object-fit:cover;
+  transform:scale(1.17);
+  will-change:transform;
+}
+.ov-at-vista .ov-vista,
+.ov-at-title .ov-vista,
+.ov-at-out .ov-vista{ opacity:1; transition:opacity 1.05s ease }
+.ov-at-vista .ov-vista img,
+.ov-at-title .ov-vista img,
+.ov-at-out .ov-vista img{
+  animation:ov-settle 4.2s cubic-bezier(.17,.6,.3,1) forwards;
+}
+@keyframes ov-settle{ to{ transform:scale(1.005) } }
+
+/* The vignette also has to earn the title its contrast. The lake reflects
+   the sky, so the bottom third of this photograph is the brightest part of
+   it - and the subtitle was sitting right on top of that at 0.76 alpha. A
+   scrim weighted to the lower third darkens the type's ground without
+   touching the mountains or the ruin, which is the part worth looking at. */
+.ov-vignette{
+  position:absolute; inset:0;
+  background:
+    radial-gradient(120% 86% at 50% 42%, transparent 44%, rgba(6,9,8,.72) 100%),
+    linear-gradient(180deg, rgba(6,9,8,.46) 0%, transparent 26%),
+    linear-gradient(180deg, transparent 52%, rgba(5,8,7,.3) 70%,
+      rgba(4,7,6,.66) 88%, rgba(4,7,6,.78) 100%);
+}
+
+/* --- the title ----------------------------------------------------------- */
+
+.ov-title{
+  position:absolute; left:0; right:0; bottom:13%;
+  text-align:center; padding:0 26px;
+  opacity:0; transform:translateY(10px);
+  will-change:opacity,transform;
+}
+.ov-at-title .ov-title,
+.ov-at-out .ov-title{
+  opacity:1; transform:none;
+  transition:opacity .95s ease, transform 1.2s cubic-bezier(.2,.7,.3,1);
+}
+.ov-eyebrow{
+  margin:0 0 10px;
+  font-family:var(--ui);
+  font-size:10.5px; font-weight:700;
+  letter-spacing:.3em; text-transform:uppercase;
+  color:rgba(248,242,228,.82);
+  text-shadow:0 1px 3px rgba(0,0,0,.8);
+}
+.ov-title h1{
+  margin:0;
+  font-family:Georgia,"Libre Baskerville","Times New Roman",serif;
+  font-weight:400;
+  font-size:clamp(34px, 7.2vw, 72px);
+  line-height:1.04;
+  color:#f8f2e4;
+  /* Settles out of a wide track, which reads as an engraved title coming
+     into focus rather than a label appearing. */
+  letter-spacing:.14em;
+  text-shadow:0 2px 26px rgba(0,0,0,.6);
+  transition:letter-spacing 1.6s cubic-bezier(.2,.7,.3,1);
+}
+.ov-at-title .ov-title h1,
+.ov-at-out .ov-title h1{ letter-spacing:.015em }
+.ov-sub{
+  margin:14px 0 0;
+  font-family:Georgia,"Libre Baskerville","Times New Roman",serif;
+  font-size:clamp(13px, 2.1vw, 16.5px);
+  color:rgba(248,242,228,.92);
+  text-shadow:0 1px 3px rgba(0,0,0,.85), 0 2px 18px rgba(0,0,0,.75);
+}
+
+/* --- out ----------------------------------------------------------------- */
+
+.ov-at-out{ opacity:0; transition:opacity .62s ease; pointer-events:none }
+
+/* --- skip ---------------------------------------------------------------- */
+
+.ov-skip{
+  position:absolute; right:18px; bottom:18px;
+  z-index:2;
+  font-family:var(--ui);
+  font-size:11.5px; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:rgba(246,238,220,.74);
+  background:rgba(8,12,10,.42);
+  border:1px solid rgba(246,238,220,.26);
+  border-radius:999px;
+  padding:9px 18px;
+  cursor:pointer;
+  backdrop-filter:blur(6px);
+  transition:color .18s ease, border-color .18s ease, background .18s ease;
+}
+.ov-skip:hover{
+  color:#fff; border-color:rgba(246,238,220,.6); background:rgba(8,12,10,.62);
+}
+.ov-skip:focus-visible{ outline:2px solid #fff; outline-offset:3px }
+
+@media (max-width:640px){
+  .ov-title{ bottom:16% }
+  .ov-skip{ right:12px; bottom:12px }
+}
+
+/* Belt and braces: the component is not mounted at all under reduced
+   motion, but if the preference changes mid-sequence nothing should move. */
+@media (prefers-reduced-motion:reduce){
+  .ov *, .ov{ animation:none !important; transition:none !important }
+  .ov-vista, .ov-title{ opacity:1; transform:none }
+}
