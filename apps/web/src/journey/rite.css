@@ -1,0 +1,144 @@
+/* ---------------------------------------------------------------------------
+   THE RITE — a stop is cleared. See Rite.tsx.
+
+   One light, in the dark, growing. Everything else on screen is held back
+   so that the only thing moving is the flame - a celebration that throws
+   six effects at once reads as a notification, not as a moment.
+   --------------------------------------------------------------------------- */
+
+.rite{
+  position:fixed; inset:0; z-index:150;
+  display:flex; align-items:center; justify-content:center;
+  background:
+    radial-gradient(70% 55% at 50% 44%, rgba(36,28,14,.82) 0%,
+      rgba(8,11,9,.93) 62%, rgba(5,7,6,.97) 100%);
+  cursor:pointer;
+  animation:rite-in .42s ease both;
+}
+@keyframes rite-in{ from{ opacity:0 } to{ opacity:1 } }
+
+.rite-inner{ text-align:center; padding:0 26px; max-width:430px }
+
+/* --- the lantern --------------------------------------------------------- */
+
+.rite-lamp{ width:74px; height:111px; display:block; margin:0 auto 18px }
+.rite-iron{
+  fill:none; stroke:#7b6a4e; stroke-width:2.4;
+  stroke-linecap:round; stroke-linejoin:round;
+}
+.rite-glass{
+  fill:rgba(255,226,170,.05);
+  stroke:rgba(214,196,160,.5); stroke-width:1.4;
+  transition:fill 1.1s ease;
+}
+.rite-lit .rite-glass{ fill:rgba(255,206,122,.2) }
+
+/* The flame. Catches rather than switches on: a scale from nothing, a
+   flicker that never fully settles, and a halo that bleeds past the glass
+   the way a real one does. */
+.rite-flame > path{ fill:#ffd489 }
+.rite-halo{ fill:#ffbe5c; filter:blur(7px); opacity:.0 }
+.rite-flame{
+  transform-origin:32px 54px;
+  transform:scale(.05);
+  opacity:0;
+}
+.rite-lit .rite-flame{
+  animation:rite-catch .9s cubic-bezier(.2,.8,.3,1) forwards,
+            rite-flicker 2.4s ease-in-out .9s infinite;
+}
+.rite-lit .rite-halo{ animation:rite-glow 1.2s ease forwards }
+@keyframes rite-catch{
+  0%{ transform:scale(.05); opacity:0 }
+  45%{ transform:scale(1.18); opacity:1 }
+  100%{ transform:scale(1); opacity:1 }
+}
+@keyframes rite-flicker{
+  0%,100%{ transform:scale(1) }
+  38%{ transform:scale(.96, 1.05) }
+  64%{ transform:scale(1.03, .97) }
+}
+@keyframes rite-glow{ to{ opacity:.85 } }
+
+/* The light the lantern throws on the page behind it. */
+.rite::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(34% 30% at 50% 36%, rgba(255,190,92,.22), transparent 70%);
+  opacity:0; transition:opacity 1.3s ease .3s;
+}
+.rite-lit::after{ opacity:1 }
+
+/* --- the words ----------------------------------------------------------- */
+
+.rite-eyebrow{
+  margin:0 0 8px;
+  font-family:var(--ui);
+  font-size:10px; font-weight:700;
+  letter-spacing:.26em; text-transform:uppercase;
+  color:rgba(255,206,122,.85);
+}
+.rite-name{
+  margin:0;
+  /* A global rule uppercases h2 in this app. A recognition's name is a
+     sentence, not a label, and shouting it reads as an error dialog. */
+  text-transform:none;
+  font-family:Georgia,"Libre Baskerville","Times New Roman",serif;
+  font-weight:400;
+  font-size:clamp(21px, 3.6vw, 30px);
+  line-height:1.2;
+  color:#f8f2e4;
+  text-wrap:balance;
+}
+.rite-where{
+  margin:7px 0 0;
+  font-family:Georgia,"Libre Baskerville","Times New Roman",serif;
+  font-size:14px; font-style:italic;
+  color:rgba(246,239,223,.72);
+}
+.rite-count{
+  margin:18px 0 7px;
+  font-family:var(--ui);
+  font-size:11.5px; letter-spacing:.06em;
+  color:rgba(246,239,223,.68);
+}
+.rite-rule{
+  display:block; height:2px; border-radius:2px;
+  background:rgba(246,239,223,.18);
+  max-width:230px; margin:0 auto;
+}
+.rite-rule i{
+  display:block; height:100%; border-radius:2px;
+  background:#d9a93f;
+  transition:width 1.1s cubic-bezier(.2,.8,.3,1) .35s;
+}
+
+.rite-go{
+  margin-top:24px;
+  font-family:var(--ui);
+  font-size:12px; font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase;
+  color:rgba(246,239,223,.82);
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(246,239,223,.3);
+  border-radius:999px;
+  padding:10px 20px;
+  cursor:pointer;
+}
+.rite-go:hover{ color:#fff; border-color:rgba(246,239,223,.65) }
+.rite-go:focus-visible{ outline:2px solid #fff; outline-offset:3px }
+
+/* A student who asked for less motion still gets the moment - the lamp is
+   simply already lit when it arrives. */
+@media (prefers-reduced-motion:reduce){
+  .rite, .rite-flame, .rite-halo, .rite-glass, .rite-rule i, .rite::after{
+    animation:none !important;
+    transition:none !important;
+  }
+  .rite-flame{ transform:none; opacity:1 }
+  .rite-halo{ opacity:.85 }
+  .rite::after{ opacity:1 }
+}
+
+@media (max-width:640px){
+  .rite-lamp{ width:62px; height:93px }
+}

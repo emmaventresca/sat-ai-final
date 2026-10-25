@@ -49,7 +49,11 @@ export function Journey({ exam }: { exam: Exam }) {
   const [bank, setBank] = useState<QuestionRef[]>([])
   const [skills, setSkills] = useState<SkillMeta[]>([])
   const [openRealm, setOpenRealm] = useState<string | null>(null)
-  type Pending = { leg: Leg; subtype: string | null; mode: StageMode }
+  type Pending = {
+    leg: Leg; subtype: string | null; mode: StageMode
+    /** The ground this stop stands on in its clearing, if it came from one. */
+    where?: string
+  }
   const [open, setOpen] = useState<Pending | null>(null)
   /**
    * A lesson that has been chosen but not arrived at yet.
@@ -86,6 +90,16 @@ export function Journey({ exam }: { exam: Exam }) {
   const [drill, setDrill] = useState<{ questions: Question[]; label: string } | null>(null)
   /** The land being adventured through, full-page. */
   const [inLand, setInLand] = useState<string | null>(null)
+  /**
+   * Where a student was standing when they left for a lesson.
+   *
+   * Without it, finishing a stop returned them to the top of the land -
+   * three clicks from the clearing they had just been in, with nothing
+   * showing them what they had done. Her brief asks for the opposite: come
+   * back to the clearing and see the lesson completed.
+   */
+  const [backTo, setBackTo] = useState<
+    { region: string; domain: string | null; skill: string | null } | null>(null)
 
   const regions = useMemo(
     () => (bank.length ? buildJourney(exam, bank, skills) : []),
@@ -119,7 +133,13 @@ export function Journey({ exam }: { exam: Exam }) {
       <>
         <StageView exam={exam} bank={bank}
           leg={open.leg} subtype={open.subtype} mode={open.mode}
-          onBack={() => { setOpen(null); setVersion((v) => v + 1) }} />
+          where={open.where}
+          onBack={() => {
+            setOpen(null)
+            setVersion((v) => v + 1)
+            // Back into the clearing they came from, not the top of the land.
+            if (backTo) setInLand(backTo.region)
+          }} />
         {/* Still lifting: the lesson is already mounted underneath it. */}
         {curtain}
       </>
@@ -233,10 +253,18 @@ export function Journey({ exam }: { exam: Exam }) {
         if (!region) return null
         return (
           <Land region={region} exam={exam}
-            onExit={() => setInLand(null)}
-            onPractise={(leg, subtype) => {
+            key={`${region.id}:${backTo?.domain ?? ''}:${backTo?.skill ?? ''}`}
+            atDomain={backTo?.region === region.id ? backTo.domain : null}
+            atSkill={backTo?.region === region.id ? backTo.skill : null}
+            onExit={() => { setBackTo(null); setInLand(null) }}
+            onPractise={(leg, subtype, _tier, at) => {
+              setBackTo({
+                region: region.id,
+                domain: at?.domainId ?? null,
+                skill: at?.skillId ?? null,
+              })
               setInLand(null)
-              enter({ leg, subtype, mode: 'stage' })
+              enter({ leg, subtype, mode: 'stage', where: at?.where })
             }} />
         )
       })()}

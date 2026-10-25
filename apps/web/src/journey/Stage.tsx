@@ -6,12 +6,13 @@ import { difficultyLabel } from '../lesson/types'
 import { renderBody } from '../lesson/math'
 import { Round } from '../practice/Round'
 import { accuracy, progress } from '../practice/mastery'
-import { quizRefs, trialRefs, type Leg } from './map'
+import { clearedNow, quizRefs, trialRefs, type Leg } from './map'
 import {
   challengeGate, lastTouched, promotionFor, remainingIn, serveOrder, streakNeeded,
 } from './promotion'
 import { gemFor, lastQuiz, QUIZ_PASS, recordQuiz } from './gems'
 import { worldOf } from './world'
+import { Rite } from './Rite'
 import './forest.css'
 import { resolved as resolvedIds } from '../errors/log'
 import { groupedBySection, passageRound, shapeOf } from './passages'
@@ -45,15 +46,26 @@ interface SubLesson {
 export type StageMode = 'stage' | 'trial' | 'quiz'
 
 export function StageView({
-  exam, bank, leg, subtype, mode, onBack,
+  exam, bank, leg, subtype, mode, where, onBack,
 }: {
   exam: Exam
   bank: QuestionRef[]
   leg: Leg
   subtype: string | null
   mode: StageMode
+  /** The ground this stop stands on in its clearing, for the rite. */
+  where?: string
   onBack: () => void
 }) {
+  /**
+   * A stop that just went from open to cleared.
+   *
+   * Held rather than fired-and-forgotten so the moment can be skipped
+   * without losing the navigation that follows it: the rite's own
+   * onDone is what calls back to the map.
+   */
+  const [rite, setRite] = useState<
+    { name: string; done: number; total: number } | null>(null)
   const [lesson, setLesson] = useState<SubLesson | null>(null)
   const [round, setRound] = useState<Question[] | null>(null)
   const [tier, setTier] = useState<Tier | null>(null)
@@ -195,6 +207,14 @@ export function StageView({
     return worldOf(exam, best)
   }, [exam, bank, pool, subtype, leg.skill])
 
+  if (rite) {
+    return (
+      <Rite name={rite.name} where={where} legName={leg.name}
+        done={rite.done} total={rite.total}
+        onDone={() => { setRite(null); onBack() }} />
+    )
+  }
+
   if (round) {
     const quiz = mode === 'quiz'
     return (
@@ -223,6 +243,21 @@ export function StageView({
               return
             }
             setRound(null)
+            // Fires on the STORE, not on the round. A good ten questions
+            // that leaves a recognition at four attempts lights nothing,
+            // because the map would still show that stop open - and a
+            // celebration the map contradicts is worse than none.
+            const was = stage?.cleared ?? false
+            if (!was && subtype && clearedNow(exam, subtype)) {
+              const now = leg.stages.filter(
+                (st) => st.subtype === subtype || st.cleared).length
+              setRite({
+                name: stage?.name ?? subtype,
+                done: now,
+                total: leg.stages.length,
+              })
+              return
+            }
             onBack()
           }} />
       </div>

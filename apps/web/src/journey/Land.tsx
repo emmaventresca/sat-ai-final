@@ -62,14 +62,31 @@ function anchor<T extends { key: string; name: string }>(
   })
 }
 
-export function Land({ region, exam, onExit, onPractise }: {
+export function Land({
+  region, exam, onExit, onPractise, atDomain = null, atSkill = null,
+}: {
   region: Region
   exam: Exam
   onExit: () => void
-  onPractise: (leg: Leg, subtype: string, tier: Tier | null) => void
+  /** `where` is the ground the stop stands on, for the rite to name. */
+  onPractise: (
+    leg: Leg, subtype: string, tier: Tier | null,
+    at?: { where?: string; domainId: string | null; skillId: string | null },
+  ) => void
+  /**
+   * Where to open, when a student is coming BACK.
+   *
+   * A lesson returns to the map, and until now that meant the top of the
+   * land - so a student who finished a stop at the log bridge was put
+   * three clicks from the clearing they had just been standing in, with
+   * nothing showing them it was done. Opening where they left closes the
+   * loop: they land in the clearing and the lamp they lit is lit.
+   */
+  atDomain?: string | null
+  atSkill?: string | null
 }) {
-  const [domainId, setDomainId] = useState<string | null>(null)
-  const [skillId, setSkillId] = useState<string | null>(null)
+  const [domainId, setDomainId] = useState<string | null>(atDomain)
+  const [skillId, setSkillId] = useState<string | null>(atSkill)
 
   const domain = region.chapters.find((c) => c.id === domainId) ?? null
   const skill = domain?.legs.find((l) => l.skill === skillId) ?? null
@@ -163,7 +180,12 @@ export function Land({ region, exam, onExit, onPractise }: {
   const [zoomAt, setZoomAt] = useState<{ x: number; y: number } | null>(null)
 
   function onPod(p: Pod) {
-    if (skill) { onPractise(skill, p.key, null); return }
+    if (skill) {
+      onPractise(skill, p.key, null, {
+        where: p.place || undefined, domainId, skillId,
+      })
+      return
+    }
     // Grow the picture toward the spot that was clicked, then arrive.
     setZoomAt({ x: p.x, y: p.y })
     window.setTimeout(() => {

@@ -1,8 +1,8 @@
 import type { Exam, Tier } from '../exams/types'
 import type { QuestionRef } from '../lib/bank'
-import { cellKey, progress } from '../practice/mastery'
-import { lastTouched, remainingIn } from './promotion'
-import { resolved as resolvedIds } from '../errors/log'
+import { cellKey, progress } from '../practice/mastery.ts'
+import { lastTouched, remainingIn } from './promotion.ts'
+import { resolved as resolvedIds } from '../errors/log.ts'
 
 /**
  * The bank, laid out as a route rather than a list.
@@ -134,8 +134,30 @@ export interface SkillMeta {
 // cannot distinguish luck from understanding; 80% because the point is to
 // move on when it is going in, not to grind to perfection on something the
 // exam asks four times.
-const CLEAR_SEEN = 5
-const CLEAR_ACC = 0.8
+export const CLEAR_SEEN = 5
+export const CLEAR_ACC = 0.8
+
+/**
+ * Is this recognition cleared, right now, according to the store?
+ *
+ * Exported so that nothing else has to restate the rule. A celebration
+ * that fires on its own idea of "finished" is worse than no celebration:
+ * it tells a student they have cleared something the map still shows as
+ * open. One definition, read straight from the store, used by both.
+ */
+export function clearedNow(exam: Exam, subtype: string): boolean {
+  const mastery = progress().mastery
+  let seen = 0
+  let correct = 0
+  for (const tier of ['F', 'E', 'M', 'H', 'X'] as Tier[]) {
+    const cell = mastery[cellKey(exam, subtype, tier)]
+    if (cell?.seen) {
+      seen += cell.seen
+      correct += cell.correct
+    }
+  }
+  return seen >= CLEAR_SEEN && (seen ? correct / seen : 0) >= CLEAR_ACC
+}
 
 /** Wording families worth setting a trial on. "direct" is the baseline. */
 const TRIAL_FAMILIES = [
