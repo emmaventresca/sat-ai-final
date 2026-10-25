@@ -1,5 +1,16 @@
 {
-  "description": "Impeccable design detector: immediate-tier checks after Edit/Write on UI files, full-rule deep pass on Stop.",
+  "permissions": {
+    "allow": [
+      "Bash(python3)",
+      "Bash(cp /private/tmp/claude-501/-Users-emmaventresca-sat-ai-final/cc65aed0-a709-46a9-b734-ddbd7f9a3331/scratchpad/view_clearings.html /Users/emmaventresca/sat-ai-final/apps/web/public/view-clearings.html)",
+      "Bash(npx tsc *)",
+      "Bash(node tests/clearings_test.mjs)",
+      "Bash(npm test *)",
+      "Bash(node --test tests/*.mjs)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'Build the Level 3 lesson clearings *)"
+    ]
+  },
   "hooks": {
     "SessionStart": [
       {
@@ -38,5 +49,6 @@
         ]
       }
     ]
-  }
+  },
+  "description": "Impeccable design detector: immediate-tier checks after Edit/Write on UI files, full-rule deep pass on Stop."
 }

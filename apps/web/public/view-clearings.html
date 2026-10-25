@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clearing Images Inspector</title>
+  <style>
+    body { font-family: sans-serif; background: #222; color: #fff; padding: 20px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    h1 { text-align: center; }
+    .clearings { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; }
+    .clearing { border: 1px solid #666; padding: 10px; background: #111; }
+    .clearing h2 { margin: 0 0 10px 0; font-size: 1.2em; }
+    .clearing img { max-width: 100%; height: auto; display: block; }
+    .clearing canvas { display: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Clearing Images Inspector</h1>
+    <p style="text-align: center; color: #aaa;">Click on the image to mark a feature location (coordinates will show below)</p>
+    <div class="clearings" id="clearings"></div>
+  </div>
+
+  <script>
+    const clearings = [
+      'cedar-lake', 'eagles-perch', 'mirewood-marsh', 'moonlit-lake', 
+      'northwatch-tower', 'old-chapel-ruins', 'raven-falls', 'stonefall-ridge', 
+      'the-hollow', 'trailhead', 'whispering-pines'
+    ];
+
+    const container = document.getElementById('clearings');
+    
+    clearings.forEach(slug => {
+      const div = document.createElement('div');
+      div.className = 'clearing';
+      div.innerHTML = `
+        <h2>${slug}</h2>
+        <img src="http://localhost:8770/art/clearings/${slug}.webp" alt="${slug}">
+        <div style="margin-top: 10px; font-size: 0.9em; color: #aaa;">
+          Click image to get coordinates (as 0-100)
+        </div>
+        <div style="margin-top: 5px; font-family: monospace; font-size: 0.85em; color: #0f0;">
+          <span id="${slug}-coords">Click to mark...</span>
+        </div>
+      `;
+      
+      const img = div.querySelector('img');
+      img.style.cursor = 'crosshair';
+      img.addEventListener('click', (e) => {
+        const rect = img.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        document.getElementById(`${slug}-coords`).textContent = 
+          `{ x: ${Math.round(x)}, y: ${Math.round(y)}, where: '' },`;
+      });
+      
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>

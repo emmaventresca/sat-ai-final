@@ -1,0 +1,193 @@
+/**
+ * Where a lesson stands in its clearing.
+ *
+ * Level three used to lay its recognitions out on a generic arc over the
+ * site plate: correct about how many there were, and wrong about the one
+ * thing this level is for. A stop should be ON something - the log bridge,
+ * the dock, the ruined arch - so that walking to it means walking to a
+ * place rather than clicking the third circle from the left.
+ *
+ * Coordinates are percentages of the CROPPED plate in art/clearings/,
+ * authored by looking at each picture. They cannot be derived. `where`
+ * names the thing that is actually at that point, and it is not decoration:
+ * it is the check. If the label says "the log bridge" and there is no
+ * bridge there, the anchor is wrong and the whole illusion goes with it.
+ *
+ * The plates carry their own cartography - a title, a compass rose, a
+ * legend and a scale bar, all painted in. Those are good and they stay,
+ * but nothing may be placed on top of them, which is what CHROME is for.
+ */
+
+export interface Anchor {
+  /** 0-100 across the cropped plate. */
+  x: number
+  /** 0-100 down it. */
+  y: number
+  /** The thing at that point, in this picture. */
+  where: string
+}
+
+/**
+ * Painted-in furniture, in the same 0-100 space. A marker landing in one of
+ * these sits on top of a compass rose or inside the legend box, which looks
+ * exactly like a bug because it is one. clearings_test.mjs fails on it.
+ */
+export const CHROME: { x1: number; y1: number; x2: number; y2: number; what: string }[] = [
+  { x1: 0, y1: 0, x2: 52, y2: 15, what: 'the title cartouche' },
+  { x1: 80, y1: 0, x2: 100, y2: 24, what: 'the compass rose' },
+  { x1: 0, y1: 68, x2: 36, y2: 100, what: 'the legend and scale bar' },
+]
+
+export function inChrome(x: number, y: number): string | null {
+  for (const c of CHROME) {
+    if (x >= c.x1 && x <= c.x2 && y >= c.y1 && y <= c.y2) return c.what
+  }
+  return null
+}
+
+export const CLEARINGS: Record<string, Anchor[]> = {
+  trailhead: [
+    { x: 43, y: 65, where: 'the log bridge' },
+    { x: 70, y: 60, where: 'the trailhead shelter' },
+    { x: 15, y: 42, where: 'the falls below the rocks' },
+    { x: 56, y: 51, where: 'the gate in the fence' },
+    { x: 64, y: 20, where: 'the fork in the upper trail' },
+    { x: 77, y: 75, where: 'the gravel apron' },
+    // Was at (40,15), which is inside the title cartouche. The test for
+    // that is why this moved, rather than a second look.
+    { x: 30, y: 26, where: 'the pines above the river' },
+  ],
+  'cedar-lake': [
+    { x: 66, y: 70, where: 'the dock and the rowboat' },
+    { x: 53, y: 47, where: 'the island in the lake' },
+    { x: 22, y: 62, where: 'the shore trail' },
+    { x: 84, y: 40, where: 'the rocky point' },
+    { x: 45, y: 22, where: 'the stones on the north shore' },
+    { x: 70, y: 88, where: 'the outflow stream' },
+    { x: 61, y: 30, where: 'the open water' },
+  ],
+  'eagles-perch': [
+    { x: 63, y: 38, where: 'the eagle on the outcrop' },
+    { x: 45, y: 58, where: 'the fence along the trail' },
+    { x: 10, y: 46, where: 'the great tree' },
+    { x: 53, y: 85, where: 'the trail down' },
+    { x: 74, y: 27, where: 'the far ranges' },
+    { x: 86, y: 50, where: 'the rocky bluff' },
+    { x: 33, y: 38, where: 'the mist over the valley' },
+  ],
+  'the-hollow': [
+    { x: 42, y: 37, where: 'the waterfall' },
+    { x: 53, y: 46, where: 'the tarn' },
+    { x: 46, y: 65, where: 'the path to the water' },
+    { x: 86, y: 43, where: 'the rock wall' },
+    { x: 74, y: 78, where: 'the mouth of the gorge' },
+    { x: 29, y: 52, where: 'the pines on the rim' },
+    { x: 62, y: 28, where: 'the upper cliff' },
+  ],
+  'mirewood-marsh': [
+    { x: 62, y: 63, where: 'the boardwalk' },
+    { x: 79, y: 48, where: 'the open pools' },
+    { x: 25, y: 58, where: 'the stand of pines' },
+    { x: 57, y: 83, where: 'the winding channel' },
+    { x: 55, y: 33, where: 'the mist on the far bank' },
+    { x: 89, y: 77, where: 'the reed beds' },
+    { x: 41, y: 48, where: 'the island of trees' },
+  ],
+  'moonlit-lake': [
+    { x: 61, y: 47, where: 'the ruin on the island' },
+    { x: 66, y: 72, where: "the moon's path on the water" },
+    { x: 58, y: 11, where: 'the moon' },
+    { x: 20, y: 44, where: 'the far shore pines' },
+    { x: 89, y: 57, where: 'the headland' },
+    { x: 37, y: 29, where: 'the mist on the hills' },
+    { x: 82, y: 80, where: 'the dark water' },
+  ],
+  'northwatch-tower': [
+    { x: 63, y: 30, where: 'the tower' },
+    { x: 55, y: 55, where: 'the crag beneath it' },
+    { x: 74, y: 83, where: 'the climbing trail' },
+    { x: 29, y: 53, where: 'the pines on the shoulder' },
+    { x: 20, y: 35, where: 'the far ranges' },
+    { x: 66, y: 19, where: 'the flag on the battlement' },
+    { x: 87, y: 62, where: 'the east slope' },
+  ],
+  'old-chapel-ruins': [
+    { x: 58, y: 47, where: 'the great window' },
+    { x: 76, y: 62, where: 'the fallen wall' },
+    { x: 44, y: 59, where: 'the standing stones' },
+    { x: 57, y: 88, where: 'the path through the grass' },
+    { x: 20, y: 51, where: 'the birches' },
+    { x: 53, y: 27, where: 'the ridge of trees' },
+    { x: 65, y: 73, where: 'the low doorway' },
+  ],
+  'raven-falls': [
+    { x: 44, y: 18, where: 'the head of the falls' },
+    { x: 54, y: 67, where: 'the lower cascade' },
+    { x: 57, y: 86, where: 'the plunge pool' },
+    { x: 42, y: 50, where: 'the middle ledge' },
+    { x: 86, y: 38, where: 'the trail on the far bank' },
+    { x: 26, y: 33, where: 'the cliff beside the water' },
+    { x: 75, y: 20, where: 'the pines on the rim' },
+  ],
+  'stonefall-ridge': [
+    { x: 57, y: 18, where: 'the summit' },
+    { x: 38, y: 58, where: 'the scree slope' },
+    { x: 75, y: 65, where: 'the trail to the ridge' },
+    { x: 20, y: 43, where: 'the pines on the shoulder' },
+    { x: 65, y: 42, where: 'the rock band' },
+    { x: 56, y: 91, where: 'the mist below' },
+    { x: 87, y: 53, where: 'the east buttress' },
+  ],
+  'whispering-pines': [
+    { x: 63, y: 53, where: 'the standing stones' },
+    { x: 57, y: 69, where: 'the ring trail' },
+    { x: 20, y: 39, where: 'the dense pines' },
+    { x: 87, y: 42, where: 'the eastern stand' },
+    { x: 61, y: 17, where: 'the ridge behind' },
+    { x: 38, y: 33, where: 'the lone tall pine' },
+    { x: 76, y: 85, where: 'the south path' },
+  ],
+}
+
+/**
+ * A clearing with no authored anchors yet.
+ *
+ * Still a place rather than a list: the stops curve across the open middle
+ * of the plate on a shallow arc, clear of the painted furniture. It is
+ * honestly generic - the names say nothing about the ground, because
+ * nobody has looked at that ground yet - but a student meets a scene with
+ * stops in it rather than an empty level while the art is authored.
+ */
+export function fallbackAnchors(n: number): Anchor[] {
+  const out: Anchor[] = []
+  for (let i = 0; i < n; i++) {
+    const t = n === 1 ? 0.5 : i / (n - 1)
+    out.push({
+      x: 24 + t * 54,
+      y: 54 - Math.sin(t * Math.PI) * 17,
+      where: '',
+    })
+  }
+  return out
+}
+
+export function anchorsFor(slug: string | null, n: number): Anchor[] {
+  const authored = slug ? CLEARINGS[slug] : undefined
+  if (!authored) return fallbackAnchors(n)
+  if (authored.length >= n) return authored.slice(0, n)
+  // More stops than authored ground. Keep every authored one - throwing
+  // away seven good anchors because an eighth is missing would put the
+  // whole clearing back on a generic arc - and give the remainder places
+  // on a lower sweep, clear of the furniture and of each other.
+  const out = [...authored]
+  const extra = n - authored.length
+  for (let i = 0; i < extra; i++) {
+    const t = extra === 1 ? 0.5 : i / (extra - 1)
+    out.push({ x: 40 + t * 34, y: 78 - Math.sin(t * Math.PI) * 6, where: '' })
+  }
+  return out
+}
+
+export function clearingArt(slug: string): string {
+  return `art/clearings/${slug}.webp`
+}

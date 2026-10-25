@@ -4,6 +4,8 @@ import type { Chapter, Leg, Region, Stage, Terrain } from './map'
 import { backdrop, realBackdrops } from './backdrops'
 import { fallbackSpot, HERO, ROUTE, SPOTS } from './places'
 import { innerMapFor, siteArt, type MapPlace } from './innermap'
+import { anchorsFor, clearingArt } from './clearings'
+import { CLEARING_SIZE } from './clearingSizes'
 import { VIBE, VIBE_NAME, type Vibe } from './Hubs'
 import './land.css'
 
@@ -86,14 +88,22 @@ export function Land({ region, exam, onExit, onPractise }: {
 
   const pods = useMemo<Pod[]>(() => {
     if (skill) {
-      return anchor(skill.stages.map((st: Stage) => ({
+      // The clearing. Each recognition stands ON something in this
+      // picture - the log bridge, the dock, the gate in the fence - rather
+      // than on a generic arc over it, which is the difference between
+      // walking to a place and clicking the third circle from the left.
+      const spots = anchorsFor(site?.slug ?? null, skill.stages.length)
+      return skill.stages.map((st: Stage, i: number) => ({
         key: st.subtype,
         name: st.name,
         sub: st.tests || `${st.total} questions`,
         cleared: st.cleared ? 1 : 0,
         total: 1,
         left: st.left,
-      })), region.terrain as Terrain, false)
+        x: spots[i].x,
+        y: spots[i].y,
+        place: spots[i].where,
+      }))
     }
     if (domain) {
       // On the drawn map the skills take its own named places, in walking
@@ -123,7 +133,7 @@ export function Land({ region, exam, onExit, onPractise }: {
       total: c.stages,
       left: c.left,
     })), region.terrain as Terrain, true)
-  }, [region, domain, skill])
+  }, [region, domain, skill, site])
 
   const art = useMemo(() => realBackdrops(region.terrain as Terrain), [region.terrain])
   /**
@@ -237,10 +247,19 @@ export function Land({ region, exam, onExit, onPractise }: {
         </p>
       </div>
 
-      <div className="land-stage">
+      {/* In a clearing the frame takes the plate's own aspect ratio.
+          The anchors are percentages OF THE PLATE, so a frame of a
+          different shape lets object-fit crop the picture and every
+          authored coordinate silently points somewhere else - the log
+          bridge ends up under a tree. */}
+      <div className={`land-stage${skill && site ? ' land-clearing' : ''}`}
+        style={skill && site && CLEARING_SIZE[site.slug]
+          ? { aspectRatio: `${CLEARING_SIZE[site.slug].w} / ${CLEARING_SIZE[site.slug].h}` }
+          : undefined}>
       {site ? (
         <img className={`land-bg land-drawn${zoomAt ? ' zooming' : ''}`}
-          src={`${import.meta.env.BASE_URL}${siteArt(site.slug)}`} alt={site.name}
+          src={`${import.meta.env.BASE_URL}${skill
+            ? clearingArt(site.slug) : siteArt(site.slug)}`} alt={site.name}
           key={site.slug}
           style={zoomAt ? { transformOrigin: `${zoomAt.x}% ${zoomAt.y}%` } : undefined} />
       ) : inner ? (
@@ -287,14 +306,24 @@ export function Land({ region, exam, onExit, onPractise }: {
             </span>
           </button>
         ) : (
-          <button key={p.key} className={`pod${p.cleared >= p.total ? ' done' : ''}`}
+          <button key={p.key}
+            className={`pod${p.cleared >= p.total ? ' done' : ''}`
+              + (skill && p.x > 54 ? ' pod-far' : '')}
             style={{ left: `${p.x}%`, top: `${p.y}%` }}
             onClick={() => onPod(p)}>
             <span className="pod-art"><Ring done={p.cleared} total={p.total} /></span>
+            {/* In a clearing the ground - "the log bridge" - sits OUTSIDE
+                the body, because it is the one thing always on the plate
+                while the recognition's own name waits for the stop to be
+                reached. Seven names open at once on one picture is the
+                collage this level exists to replace. */}
+            {skill && p.place && (
+              <span className="pod-ground">{p.place}</span>
+            )}
             <span className="pod-body">
               {/* The site first: on a map you go to Moonlit Lake, and the
                   work is what you do when you get there. */}
-              {!skill && p.place !== p.name && (
+              {!skill && p.place && p.place !== p.name && (
                 <span className="pod-place">{p.place}</span>
               )}
               <strong>{p.name}</strong>

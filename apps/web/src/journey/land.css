@@ -362,3 +362,125 @@
 /* (the .land-drawn rule lives once, above - a second copy here silently
    won on source order and held object-fit at contain) */
 .land-at{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
+
+/* ---------------------------------------------------------------------------
+   THE CLEARING — level three, where the lessons stand.
+
+   The frame takes the plate's own aspect ratio (set inline from
+   clearingSizes.ts) and the plate fills it exactly, so a stop authored at
+   "the log bridge" is ON the log bridge. With object-fit cropping a
+   near-square plate into a wide frame, every anchor moved and the whole
+   point of authoring them went with it.
+
+   The stops are engraved marks rather than the cards used one level up.
+   Seven cards on one picture is a collage; seven pins with their names
+   beside them is a map of a clearing.
+   --------------------------------------------------------------------------- */
+
+.land-clearing{
+  min-height:0;
+  max-height:none;
+}
+.land-clearing .land-drawn{ object-fit:fill }
+
+.land-clearing .pod{
+  background:none;
+  border:0;
+  box-shadow:none;
+  padding:0;
+  width:auto;
+  max-width:none;
+  display:block;
+}
+.land-clearing .pod-art{ display:none }
+
+/* The mark itself: a small ring on the feature. */
+.land-clearing .pod::before{
+  content:"";
+  position:absolute; left:50%; top:50%;
+  width:13px; height:13px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:#f3ead6;
+  box-shadow:0 0 0 2px rgba(10,14,12,.8), 0 0 12px 3px rgba(8,12,10,.55),
+             0 2px 6px rgba(0,0,0,.55);
+  transition:transform .22s cubic-bezier(.2,.7,.3,1), background .22s ease;
+}
+.land-clearing .pod:hover::before,
+.land-clearing .pod:focus::before{ transform:translate(-50%,-50%) scale(1.3) }
+.land-clearing .pod.done::before{ background:#d9a93f }
+
+/* The name, set beside the mark on a dark plate just wide enough to read.
+   Targets the real elements - `.pod-body strong` and `em` - rather than the
+   classes this first guessed at, which styled nothing at all. */
+/* The recognition's own name. Present only when the stop is reached, so
+   seven of them never sit open on one plate at the same time. */
+.land-clearing .pod-body{
+  display:block;
+  position:absolute; left:50%; top:50%;
+  transform:translate(16px, -50%);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s ease;
+  z-index:3;
+  width:max-content; max-width:196px;
+  padding:7px 10px;
+  background:rgba(10,15,12,.76);
+  border:1px solid rgba(243,234,214,.2);
+  border-radius:3px;
+  backdrop-filter:blur(7px) saturate(1.15);
+  text-align:left;
+}
+/* `:focus` as well as `:focus-visible`: a stop reached by tapping or
+   clicking should name itself too, not only one reached by keyboard. */
+.land-clearing .pod:hover .pod-body,
+.land-clearing .pod:focus .pod-body{ opacity:1 }
+/* Past the middle of the plate the label runs back toward it, so nothing
+   leaves the frame on the right-hand side. */
+.land-clearing .pod.pod-far .pod-body{
+  transform:translate(calc(-100% - 16px), -50%);
+}
+
+.land-clearing .pod-body strong{
+  display:block;
+  font-family:var(--serif);
+  font-size:12.5px; line-height:1.32; font-weight:400;
+  color:#f6efdf;
+  text-shadow:0 1px 3px rgba(0,0,0,.7);
+}
+/* The ground it stands on, always on the plate beside its mark. */
+.land-clearing .pod-ground{
+  position:absolute; left:50%; top:50%;
+  transform:translate(15px, -50%);
+  width:max-content; max-width:150px;
+  font-family:var(--ui);
+  font-size:9.5px; font-weight:700;
+  letter-spacing:.13em; text-transform:uppercase;
+  color:rgba(246,239,223,.92);
+  text-shadow:0 1px 3px rgba(0,0,0,.95), 0 2px 10px rgba(0,0,0,.8);
+  pointer-events:none;
+  transition:opacity .2s ease;
+}
+.land-clearing .pod.pod-far .pod-ground{
+  transform:translate(calc(-100% - 15px), -50%);
+  text-align:right;
+}
+.land-clearing .pod.done .pod-ground{ color:#e7c97e }
+/* Out of the way while its own card is open. */
+.land-clearing .pod:hover .pod-ground,
+.land-clearing .pod:focus .pod-ground{ opacity:0 }
+.land-clearing .pod-body em{ display:none }
+.land-clearing .pod-n{
+  display:block;
+  margin-top:4px;
+  font-family:var(--ui);
+  font-size:10px; letter-spacing:.06em;
+  color:rgba(243,234,214,.62);
+  font-style:normal;
+}
+.land-clearing .pod.done .pod-n{ color:#e7c97e }
+
+@media (max-width:760px){
+  .land-clearing .pod-body{ max-width:136px; padding:5px 8px }
+  .land-clearing .pod-body strong{ font-size:11px }
+}
