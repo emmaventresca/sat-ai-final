@@ -11,6 +11,7 @@ import { Threshold, type Crossing } from './Threshold'
 import { gemFor, gemHue, type GemState } from './gems'
 import { Gem } from './Gem'
 import { WorldMap } from './WorldMap'
+import { Overworld } from './Overworld'
 import {
   dailyGoal, GOAL_MAX, GOAL_MIN, rankOf, setDailyGoal, streakOf, todayCount,
 } from './quest'
@@ -244,6 +245,17 @@ export function Journey({ exam }: { exam: Exam }) {
           wants that, not a tour of the lands. */}
       <ResumeCard exam={exam} regions={regions}
         onResume={(leg, subtype) => enter({ leg, subtype, mode: 'stage' }, 'resume')} />
+
+      {/* The world, then the atlas under it.
+          
+          The atlas is not replaced: it is the index, and an index is the
+          right shape for "show me everything at once". But it is no longer
+          the way IN - a student arriving now sees a place with lands
+          standing in it and picks one by looking. Exams with no world
+          plate yet simply render nothing here and keep the atlas as their
+          entrance, so a section without art looks the way it did rather
+          than looking broken. */}
+      <Overworld exam={exam} regions={regions} onOpen={setInLand} />
 
       <Atlas regions={regions} exam={exam} onOpen={setInLand} />
 
