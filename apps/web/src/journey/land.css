@@ -377,12 +377,25 @@
    beside them is a map of a clearing.
    --------------------------------------------------------------------------- */
 
+/* The clearing frame. Global, because the plate and its shape are the
+   scene at every width. */
 .land-clearing{
   min-height:0;
   max-height:none;
 }
 .land-clearing .land-drawn{ object-fit:fill }
 
+/* Everything below dresses the stops as marks ON the plate, and is scoped
+   to screens with room for that.
+   
+   Under 720px land.css already turns the map into a list, deliberately,
+   and a clearing is where that decision earns its keep: seven unlabelled
+   dots on a 375px plate is a lottery, and seven labelled ones is an
+   unreadable pile - which is how it rendered when this tried to keep the
+   map. So phones keep the app's existing list and the plate sits behind it
+   as the scene. Scoping beats overriding here: the mobile rules already
+   work, and the ones fighting them were all mine. */
+@media (min-width:721px){
 .land-clearing .pod{
   background:none;
   border:0;
@@ -392,10 +405,10 @@
   max-width:none;
   display:block;
 }
-.land-clearing .pod-art{ display:none }
+  .land-clearing .pod-art{ display:none }
 
 /* The mark itself: a small ring on the feature. */
-.land-clearing .pod::before{
+  .land-clearing .pod::before{
   content:"";
   position:absolute; left:50%; top:50%;
   width:13px; height:13px;
@@ -406,16 +419,16 @@
              0 2px 6px rgba(0,0,0,.55);
   transition:transform .22s cubic-bezier(.2,.7,.3,1), background .22s ease;
 }
-.land-clearing .pod:hover::before,
-.land-clearing .pod:focus::before{ transform:translate(-50%,-50%) scale(1.3) }
-.land-clearing .pod.done::before{ background:#d9a93f }
+  .land-clearing .pod:hover::before,
+  .land-clearing .pod:focus::before{ transform:translate(-50%,-50%) scale(1.3) }
+  .land-clearing .pod.done::before{ background:#d9a93f }
 
 /* The name, set beside the mark on a dark plate just wide enough to read.
    Targets the real elements - `.pod-body strong` and `em` - rather than the
    classes this first guessed at, which styled nothing at all. */
 /* The recognition's own name. Present only when the stop is reached, so
    seven of them never sit open on one plate at the same time. */
-.land-clearing .pod-body{
+  .land-clearing .pod-body{
   display:block;
   position:absolute; left:50%; top:50%;
   transform:translate(16px, -50%);
@@ -433,15 +446,15 @@
 }
 /* `:focus` as well as `:focus-visible`: a stop reached by tapping or
    clicking should name itself too, not only one reached by keyboard. */
-.land-clearing .pod:hover .pod-body,
-.land-clearing .pod:focus .pod-body{ opacity:1 }
+  .land-clearing .pod:hover .pod-body,
+  .land-clearing .pod:focus .pod-body{ opacity:1 }
 /* Past the middle of the plate the label runs back toward it, so nothing
    leaves the frame on the right-hand side. */
-.land-clearing .pod.pod-far .pod-body{
+  .land-clearing .pod.pod-far .pod-body{
   transform:translate(calc(-100% - 16px), -50%);
 }
 
-.land-clearing .pod-body strong{
+  .land-clearing .pod-body strong{
   display:block;
   font-family:var(--serif);
   font-size:12.5px; line-height:1.32; font-weight:400;
@@ -449,7 +462,7 @@
   text-shadow:0 1px 3px rgba(0,0,0,.7);
 }
 /* The ground it stands on, always on the plate beside its mark. */
-.land-clearing .pod-ground{
+  .land-clearing .pod-ground{
   position:absolute; left:50%; top:50%;
   transform:translate(15px, -50%);
   width:max-content; max-width:150px;
@@ -461,16 +474,16 @@
   pointer-events:none;
   transition:opacity .2s ease;
 }
-.land-clearing .pod.pod-far .pod-ground{
+  .land-clearing .pod.pod-far .pod-ground{
   transform:translate(calc(-100% - 15px), -50%);
   text-align:right;
 }
-.land-clearing .pod.done .pod-ground{ color:#e7c97e }
+  .land-clearing .pod.done .pod-ground{ color:#e7c97e }
 /* Out of the way while its own card is open. */
-.land-clearing .pod:hover .pod-ground,
-.land-clearing .pod:focus .pod-ground{ opacity:0 }
-.land-clearing .pod-body em{ display:none }
-.land-clearing .pod-n{
+  .land-clearing .pod:hover .pod-ground,
+  .land-clearing .pod:focus .pod-ground{ opacity:0 }
+  .land-clearing .pod-body em{ display:none }
+  .land-clearing .pod-n{
   display:block;
   margin-top:4px;
   font-family:var(--ui);
@@ -478,9 +491,36 @@
   color:rgba(243,234,214,.62);
   font-style:normal;
 }
-.land-clearing .pod.done .pod-n{ color:#e7c97e }
+  .land-clearing .pod.done .pod-n{ color:#e7c97e }
+}
 
-@media (max-width:760px){
-  .land-clearing .pod-body{ max-width:136px; padding:5px 8px }
-  .land-clearing .pod-body strong{ font-size:11px }
+/* Phones: the plate is the backdrop, the stops are the app's own list. */
+@media (max-width:720px){
+  .land-clearing{
+    aspect-ratio:auto !important;
+    min-height:min(58vh, 340px);
+  }
+  .land-clearing .land-drawn{ object-fit:cover; opacity:.42 }
+  /* `.land-drawn ~ .land-field .pod` clamps a stop to 116-150px, which is
+     right for a pod sitting ON a map and wrong for a row in a list: every
+     recognition name wrapped to one word a line. Matched at (0,4,0). */
+  .land-clearing .land-drawn ~ .land-field .pod{
+    width:100%; max-width:none;
+    flex-direction:column; align-items:flex-start; gap:2px;
+    background:rgba(10,15,12,.8);
+    border:1px solid rgba(243,234,214,.2);
+    border-radius:3px;
+    padding:10px 12px;
+  }
+  .land-clearing .pod-art{ display:none }
+  .land-clearing .pod-body{ width:100%; text-align:left }
+  /* The ground still names itself, above the recognition. */
+  .land-clearing .pod-ground{
+    display:block; margin-bottom:2px;
+    font-family:var(--ui);
+    font-size:9px; font-weight:700;
+    letter-spacing:.12em; text-transform:uppercase;
+    color:rgba(217,169,63,.95);
+  }
+}
 }
