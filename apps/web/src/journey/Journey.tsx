@@ -10,7 +10,6 @@ import { StageView, type StageMode } from './Stage'
 import { Threshold, type Crossing } from './Threshold'
 import { gemFor, gemHue, type GemState } from './gems'
 import { Gem } from './Gem'
-import { WorldMap } from './WorldMap'
 import { Overworld } from './Overworld'
 import {
   dailyGoal, GOAL_MAX, GOAL_MIN, rankOf, setDailyGoal, streakOf, todayCount,
@@ -45,6 +44,38 @@ import { ResumeCard } from './ResumeCard'
  * Nothing is locked. The route says what the sensible order IS, which is a
  * different thing from refusing to let anyone leave it.
  */
+/**
+ * SAT/ACT selector tabs.
+ */
+function ExamTabs({ exam }: { exam: Exam }) {
+  return (
+    <div style={{
+      display: 'flex', gap: '1px', marginBottom: '24px', borderBottom: '2px solid #e0e0e0'
+    }}>
+      <Link to="/sat" style={{
+        padding: '12px 24px',
+        textDecoration: 'none',
+        fontWeight: exam === 'sat' ? 600 : 400,
+        color: exam === 'sat' ? '#1f2419' : '#999',
+        borderBottom: exam === 'sat' ? '3px solid #5d7444' : 'none',
+        marginBottom: '-2px',
+      }}>
+        SAT
+      </Link>
+      <Link to="/act" style={{
+        padding: '12px 24px',
+        textDecoration: 'none',
+        fontWeight: exam === 'act' ? 600 : 400,
+        color: exam === 'act' ? '#1f2419' : '#999',
+        borderBottom: exam === 'act' ? '3px solid #5d7444' : 'none',
+        marginBottom: '-2px',
+      }}>
+        ACT
+      </Link>
+    </div>
+  )
+}
+
 export function Journey({ exam }: { exam: Exam }) {
   const [bank, setBank] = useState<QuestionRef[]>([])
   const [skills, setSkills] = useState<SkillMeta[]>([])
@@ -150,12 +181,16 @@ export function Journey({ exam }: { exam: Exam }) {
   const all = regions.reduce((n, r) => n + r.stages, 0)
 
   return (
-    <div className="wrap wide journey">
-      <Ivy side="left" />
-      <Ivy side="right" />
-      <div className="top">
-        <div>
-          <h1>{examSpec(exam).label}: The Quest</h1>
+    <>
+      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 20px' }}>
+        <ExamTabs exam={exam} />
+      </div>
+      <div className="wrap wide journey">
+        <Ivy side="left" />
+        <Ivy side="right" />
+        <div className="top">
+          <div>
+            <h1>{examSpec(exam).label}: The Quest</h1>
           <p className="who">
             {cleared} of {all} stops behind you. Start anywhere &mdash; the
             route is advice, not a gate.
@@ -300,7 +335,8 @@ export function Journey({ exam }: { exam: Exam }) {
       ))}
 
       {curtain}
-    </div>
+      </div>
+    </>
   )
 }
 
@@ -324,20 +360,15 @@ function Region({
             </span>
           </div>
 
-          {/* Each world gets its own map, drawn in its own country. A
-              student moves between the two sections constantly, and the
-              colour says which one they are in before they read a word. */}
-          <WorldMap chapters={region.chapters} terrain={region.terrain}
-            openId={openRealm}
-            onPick={(id) => {
-              const next = openRealm === id ? null : id
-              setOpenRealm(next)
-              // Tapping a realm on the map should TAKE you there. Opening a
-              // card 2,000px further down and leaving the student looking at
-              // the map is the interaction answering a different question
-              // from the one they asked.
-              if (next) goTo(`realm-${next}`)
-            }} />
+          {/* The drawn SVG strip that used to sit here is gone.
+              
+              It was the app's first answer to "show this as a place", and
+              it was a good one before there was a world map, a land you
+              walk and a clearing you stand in. Now it is a third map of the
+              same four chapters, in a different style, directly above the
+              list of those chapters - which asks a student to learn two
+              drawings of one thing. The atlas below still lists them, and
+              the map above is the one to travel from. */}
 
           {/* The trail runs from the map down past every realm rather than
               stopping at the frame. The map was already drawing a road and
@@ -541,24 +572,6 @@ function StopList({ wide, children }: { wide: boolean; children: React.ReactNode
 }
 
 
-/**
- * Scroll to a realm after it opens.
- *
- * Deferred by two frames rather than one: the card has to mount AND lay out
- * its paths before its position is worth measuring, and scrolling to where
- * it used to be lands the student half a screen off.
- */
-function goTo(id: string): void {
-  requestAnimationFrame(() => requestAnimationFrame(() => {
-    const el = document.getElementById(id)
-    if (!el) return
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    el.scrollIntoView({
-      behavior: reduce ? 'auto' : 'smooth',
-      block: 'start',
-    })
-  }))
-}
 
 
 /** Misses in the window the mistakes tab draws from. */
