@@ -68,7 +68,32 @@ export function siteArt(slug: string): string {
   return `art/sites/${slug}.webp`
 }
 
-/** Every land opens into a drawn map; for now they share this one. */
-export function innerMapFor(_domain: string): InnerMap {
+/**
+ * The Misted Isles: ocean-themed inner map for SAT English domains.
+ *
+ * Four water-based locations with nautical names, ordered for coastal travel.
+ * Each clearing points to a voyage-themed site.
+ */
+export const MISTED_ISLES: InnerMap = {
+  src: 'art/voyage/the-misted-isles.webp',
+  title: 'The Misted Isles',
+  motto: 'Water runs deep. Some currents guide, others pull.',
+  entry: [5, 50],
+  places: [
+    { name: 'The Home Harbour', x: 22, y: 60, slug: 'the-home-harbour' },
+    { name: 'The Ship', x: 48, y: 48, slug: 'the-storm' },
+    { name: 'The Narrow Strait', x: 72, y: 55, slug: 'the-narrow-strait' },
+    { name: 'The Open Swell', x: 88, y: 45, slug: 'the-open-swell' },
+  ],
+  exit: [95, 50],
+}
+
+/** Every land opens into a drawn map; router picks by exam section. */
+export function innerMapFor(domain: string): InnerMap {
+  // Ocean domains (SAT English) use the Misted Isles
+  if (['Information and Ideas', 'Craft and Structure', 'Expression of Ideas', 'Standard English Conventions'].includes(domain)) {
+    return MISTED_ISLES
+  }
+  // All others use Emberwood (forest)
   return EMBERWOOD
 }

@@ -147,6 +147,33 @@ export const CLEARINGS: Record<string, Anchor[]> = {
     { x: 38, y: 33, where: 'the lone tall pine' },
     { x: 76, y: 85, where: 'the south path' },
   ],
+  'the-storm': [
+    { x: 45, y: 42, where: 'the ship at anchor' },
+    { x: 60, y: 55, where: 'the rough water' },
+    { x: 28, y: 65, where: 'the near waves' },
+    { x: 72, y: 28, where: 'the cloud bank' },
+    { x: 50, y: 18, where: 'the horizon line' },
+    { x: 85, y: 60, where: 'the far swell' },
+    { x: 35, y: 28, where: 'the mist' },
+  ],
+  'the-home-harbour': [
+    { x: 50, y: 52, where: 'the harbour dock' },
+    { x: 30, y: 65, where: 'the breakwater' },
+    { x: 65, y: 68, where: 'the beach shore' },
+    { x: 55, y: 25, where: 'the harbour mouth' },
+    { x: 75, y: 48, where: 'the lighthouse' },
+    { x: 25, y: 35, where: 'the tide pools' },
+    { x: 68, y: 30, where: 'the headland' },
+  ],
+  'the-narrow-strait': [
+    { x: 48, y: 45, where: 'the channel passage' },
+    { x: 62, y: 55, where: 'the far shore' },
+    { x: 35, y: 62, where: 'the near shore' },
+    { x: 70, y: 28, where: 'the open water' },
+    { x: 45, y: 20, where: 'the sky line' },
+    { x: 28, y: 35, where: 'the rocky point' },
+    { x: 58, y: 72, where: 'the deep water' },
+  ],
 }
 
 /**
@@ -189,5 +216,9 @@ export function anchorsFor(slug: string | null, n: number): Anchor[] {
 }
 
 export function clearingArt(slug: string): string {
+  // Ocean-themed clearings live in voyage folder
+  if (['the-storm', 'the-home-harbour', 'the-narrow-strait'].includes(slug)) {
+    return `art/voyage/${slug}.webp`
+  }
   return `art/clearings/${slug}.webp`
 }
