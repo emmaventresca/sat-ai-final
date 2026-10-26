@@ -15,6 +15,9 @@ export const CLEARING_SIZE: Record<string, { w: number; h: number }> = {
   'raven-falls': { w: 1287, h: 1143 },
   'stonefall-ridge': { w: 1281, h: 1140 },
   'the-hollow': { w: 1855, h: 1069 },
+  'the-home-harbour': { w: 1600, h: 2399 },
+  'the-narrow-strait': { w: 1600, h: 1053 },
+  'the-storm': { w: 1471, h: 981 },
   'trailhead': { w: 1282, h: 1139 },
   'whispering-pines': { w: 1277, h: 1140 },
 }

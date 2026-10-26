@@ -31,6 +31,16 @@ OUT = os.path.join(ROOT, "apps", "web", "public", "art", "clearings")
 # mistake where cutting through it looks like a crop.
 INSET = 0.012
 
+# Plates that are not cropped site cards but are still used as clearings.
+# clearings.ts routes three ocean recognitions to the voyage photographs,
+# and the frame showing one still has to carry its aspect ratio - so their
+# sizes are measured here rather than left out of the manifest.
+EXTRA = [
+    ("the-storm", "voyage/the-storm"),
+    ("the-home-harbour", "voyage/the-home-harbour"),
+    ("the-narrow-strait", "voyage/the-narrow-strait"),
+]
+
 
 def bounds(path: str) -> tuple[float, float, float, float]:
     im = Image.open(path).convert("L")
@@ -78,6 +88,15 @@ def main() -> int:
             small.thumbnail((1100, 1100), Image.LANCZOS)
             small.save(os.path.join(OUT, name[:-5] + "-sm.webp"), "WEBP",
                        quality=args.quality)
+    for slug, rel in EXTRA:
+        path = os.path.join(ROOT, "apps", "web", "public", "art", rel + ".webp")
+        if os.path.exists(path):
+            with Image.open(path) as im:
+                sizes[slug] = (im.width, im.height)
+            print(f"  {slug:20} (not cropped) {sizes[slug][0]}x{sizes[slug][1]}")
+        else:
+            print(f"  {slug:20} MISSING at art/{rel}.webp")
+
     if args.write:
         # The app has to know each plate's shape. Anchors are percentages of
         # the plate, so the frame showing it must have the plate's own
