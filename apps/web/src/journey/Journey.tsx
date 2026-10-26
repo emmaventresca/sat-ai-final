@@ -322,17 +322,16 @@ export function Journey({ exam }: { exam: Exam }) {
 
       <Atlas regions={regions} exam={exam} onOpen={setInLand} />
 
-      <NextPoints exam={exam} />
-
-      {/* The habit behind the misses, across every recognition. A drill
-          here mixes topics on purpose - the mistake is the subject. */}
-      <Traps exam={exam} onDrill={(questions, label) => setDrill({ questions, label })} />
-
-      {regions.map((region) => (
-        <Region key={region.id} region={region} exam={exam}
-          openRealm={openRealm} setOpenRealm={setOpenRealm}
-          onOpen={(leg, subtype, mode) => enter({ leg, subtype, mode })} />
-      ))}
+      {/* Domain list view hidden - map only */}
+      <div style={{ display: 'none' }}>
+        <NextPoints exam={exam} />
+        <Traps exam={exam} onDrill={(questions, label) => setDrill({ questions, label })} />
+        {regions.map((region) => (
+          <Region key={region.id} region={region} exam={exam}
+            openRealm={openRealm} setOpenRealm={setOpenRealm}
+            onOpen={(leg, subtype, mode) => enter({ leg, subtype, mode })} />
+        ))}
+      </div>
 
       {curtain}
       </div>
