@@ -10,15 +10,15 @@ export interface Figure {
 }
 
 export function ACTFigure({ figure }: { figure: Figure }) {
-  if (figure.type === 'graph') return <GraphFigure data={figure.data} />
+  if (figure.type === 'graph') return <GraphFigure />
   if (figure.type === 'triangle') return <TriangleFigure data={figure.data} />
   if (figure.type === 'circle') return <CircleFigure data={figure.data} />
   if (figure.type === 'chart') return <ChartFigure data={figure.data} />
-  if (figure.type === 'grid') return <GridFigure data={figure.data} />
+  if (figure.type === 'grid') return <GridFigure />
   return <div>Unknown figure type</div>
 }
 
-function GraphFigure({ data }: { data?: Record<string, unknown> }) {
+function GraphFigure() {
   const width = 300, height = 300, margin = 40
   const plotWidth = width - 2 * margin
   const plotHeight = height - 2 * margin
@@ -144,7 +144,7 @@ function ChartFigure({ data }: { data?: Record<string, unknown> }) {
   )
 }
 
-function GridFigure({ data }: { data?: Record<string, unknown> }) {
+function GridFigure() {
   const size = 280
   const gridSize = 10
 
