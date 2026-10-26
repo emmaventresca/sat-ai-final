@@ -22,6 +22,8 @@ on:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: ci-${{ github.ref }}
@@ -59,3 +61,23 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "SAT questions: $(python3 -c "import json;print(len(json.load(open('data/practice.json'))))" 2>/dev/null || echo '?')" >> $GITHUB_STEP_SUMMARY
           echo "ACT questions: $(python3 -c "import json;d=json.load(open('data/act/questions.json'));print(len(d.get('items',d)))" 2>/dev/null || echo '?')" >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/web/dist
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
