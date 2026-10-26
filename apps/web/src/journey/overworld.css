@@ -36,10 +36,14 @@
   width:100%; height:100%; object-fit:cover;
   display:block;
 }
-/* Weight at the corners so engraved marks hold against a bright sky. */
+/* Weight at the corners so engraved marks hold against a bright sky.
+   The top-left carries extra, because that is where the cartouche sits and
+   a world plate is as likely to put snow under it as sky - on The Four
+   Coasts the title was sitting on lit granite and all but vanished. */
 .ow-sky{
   position:absolute; inset:0;
   background:
+    radial-gradient(58% 48% at 2% 0%, rgba(6,10,9,.72) 0%, transparent 72%),
     linear-gradient(180deg, rgba(8,13,11,.42) 0%, transparent 24%),
     linear-gradient(0deg, rgba(8,13,11,.46) 0%, transparent 30%),
     radial-gradient(118% 84% at 50% 46%, transparent 52%, rgba(8,13,11,.44) 100%);
@@ -174,8 +178,10 @@
   font-family:var(--ui);
   font-size:9px; font-weight:700;
   letter-spacing:.24em; text-transform:uppercase;
-  color:rgba(243,234,214,.66);
-  text-shadow:0 1px 4px rgba(0,0,0,.7);
+  /* Measured at 3.73:1 against the composited plate at .66, under the 4.5
+     that 9px type needs. The title and standfirst already cleared. */
+  color:rgba(248,242,228,.93);
+  text-shadow:0 1px 4px rgba(0,0,0,.8);
 }
 .ow-cartouche h2{
   margin:0;
