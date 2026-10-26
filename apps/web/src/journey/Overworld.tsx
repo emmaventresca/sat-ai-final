@@ -51,10 +51,15 @@ export function Overworld({ exam, regions, onOpen }: {
   return (
     <section className={`ow ${flying ? 'ow-flying' : ''}`}
       aria-label={`${world.name}: the lands of the ${exam.toUpperCase()}`}>
+      {/* The frame takes the plate's own aspect ratio. The landmarks are
+          percentages OF THE PLATE, so a frame of another shape lets
+          object-fit crop it and moves every one of them - the same trap
+          the clearings fell into. */}
       <div className="ow-frame"
-        style={flying
-          ? { transformOrigin: `${flying.x}% ${flying.y}%` }
-          : undefined}>
+        style={{
+          aspectRatio: `${world.w} / ${world.h}`,
+          ...(flying ? { transformOrigin: `${flying.x}% ${flying.y}%` } : {}),
+        }}>
         <img className="ow-plate"
           src={`${import.meta.env.BASE_URL}${world.plate}`} alt="" />
         <div className="ow-sky" aria-hidden="true" />

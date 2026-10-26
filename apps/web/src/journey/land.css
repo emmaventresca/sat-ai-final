@@ -524,3 +524,42 @@
   }
 }
 }
+
+/* ---------------------------------------------------------------------------
+   TIER GEMS — Progress tracking for E/M/H/X tiers
+   
+   Shows student's progress toward 10 correct at each difficulty level.
+   When earned, gem fills with color. In progress, shows current count.
+   --------------------------------------------------------------------------- */
+
+.tier-gems {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  background: rgba(243, 234, 214, .06);
+  border-radius: 6px;
+  margin-top: 12px;
+}
+
+.tier-gem-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #666;
+}
+
+.tier-gem-progress {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.tier-gem-item .gem {
+  width: 20px;
+  height: 20px;
+}

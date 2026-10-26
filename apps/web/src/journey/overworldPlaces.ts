@@ -42,14 +42,21 @@ export interface Landmark {
 export interface World {
   /** Scene slug under public/art. */
   plate: string
+  /** The plate's own pixel size. The frame must take its aspect ratio, or
+   *  object-fit crops the picture and every landmark below moves. */
+  w: number
+  h: number
   /** The world's own name, engraved on it. */
   name: string
   lands: Partial<Record<Terrain, Landmark>>
+  /** Said under the title, where the plate needs explaining. */
+  note?: string
 }
 
 export const WORLDS: Record<string, World> = {
   sat: {
     plate: 'art/voyage/the-far-shore.webp',
+    w: 1470, h: 980,
     name: 'The Far Shore',
     lands: {
       // The headland filling the left of the frame: high ground, bracken,
@@ -66,6 +73,38 @@ export const WORLDS: Record<string, World> = {
         x: 74, y: 58, side: 'left',
         name: 'The Open Water',
         note: 'Out past the headland. Four chapters, and the horizon.',
+      },
+    },
+  },
+  act: {
+    // Composed from the ACT's own four land plates by tools/make_world.py,
+    // inland to sea so the geography is at least plausible. It is a
+    // composite and does not pretend otherwise - a trial plate so the ACT
+    // has a world to stand in, and one command to replace when there is
+    // art drawn for it.
+    plate: 'art/worlds/the-four-coasts.webp',
+    w: 2400, h: 900,
+    name: 'The Four Coasts',
+    lands: {
+      peaks: {
+        x: 13, y: 53, side: 'right',
+        name: 'The Cloud Peaks',
+        note: 'Thin air and long sightlines. Five chapters in the rock.',
+      },
+      park: {
+        x: 33, y: 60, side: 'right',
+        name: 'The Green Valley',
+        note: 'Old forest under the walls. Three chapters inland.',
+      },
+      fair: {
+        x: 60, y: 50, side: 'left',
+        name: 'The Long Pier',
+        note: 'Lamps and boards out over the water. Three chapters.',
+      },
+      tropic: {
+        x: 86, y: 58, side: 'left',
+        name: 'The Warm Shore',
+        note: 'Where the coast turns south. Six chapters on the sand.',
       },
     },
   },
