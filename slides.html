@@ -90,40 +90,75 @@
         </p>
       </section>
 
-      <!-- Slide 4: How It Works -->
+      <!-- Slide 4: Student Features -->
       <section>
-        <h2>How the Agents Work</h2>
+        <h2>Student Experience</h2>
         <section>
-          <h3>1. Error Analyzer</h3>
-          <p>Student answers wrong → AI classifies HOW (misconception, misread, calculation)</p>
+          <h3>🗺️ Hierarchical Journey</h3>
+          <p>World Map → Regional Land → Skill Clearing</p>
+          <p style="font-size: 0.9em; color: #aaa;">Each level deeper into a single problem. Forest-themed immersion, not a worksheet.</p>
         </section>
         <section>
-          <h3>2. Assignment Planner</h3>
-          <p>Teacher clicks "error practice" → finds 5 fresh questions at right tier in 30s</p>
+          <h3>💎 Gem Progression System</h3>
+          <p><strong>10 correct at Easy</strong> → Gold gem</p>
+          <p><strong>10 correct at Medium</strong> → Silver gem</p>
+          <p><strong>10 correct at Hard</strong> → Bronze gem</p>
+          <p><strong>10 correct at Challenge</strong> → Amethyst gem</p>
+          <p style="font-size: 0.9em; color: #aaa;">Shows "5/10 toward next gem" for clear milestones</p>
         </section>
         <section>
-          <h3>3. Gem Tracker</h3>
-          <p>10 correct at Easy → gold gem. 10 at Medium → silver. Shows "5/10 toward next gem"</p>
+          <h3>🔴 Error Log</h3>
+          <p>Every wrong answer is tracked, categorized by misconception</p>
+          <p>Students see trends: "You get this wrong in word problems"</p>
+          <p>Fix an error once → it leaves the list (gamified feedback)</p>
         </section>
       </section>
 
-      <!-- Slide 5: The Architecture -->
+      <!-- Slide 5: Teacher Features -->
       <section>
-        <h2>Architecture</h2>
+        <h2>Teacher Backend</h2>
+        <section>
+          <h3>👥 Student Roster</h3>
+          <p>Teacher generates codes → students register with codes</p>
+          <p>Roster shows all students + score summaries (SAT/ACT, Reading, Math)</p>
+          <p style="font-size: 0.9em; color: #aaa;">Row-level security: students can't see others' data</p>
+        </section>
+        <section>
+          <h3>📋 Assignment Creation</h3>
+          <p><strong>Targeted picking:</strong> Choose exam → domain → skill → tier</p>
+          <p><strong>Error-driven:</strong> Click "Assign mistakes" → auto-pulls 10 wrong questions from a student</p>
+          <p><strong>Fresh questions:</strong> Tool auto-generates variants at the right difficulty</p>
+        </section>
+        <section>
+          <h3>📊 Progress Tracking</h3>
+          <p>See per-student: gems earned, errors remaining, time invested</p>
+          <p>Export assignments by student to folders</p>
+          <p>Download lesson plans as PDF or worksheet</p>
+        </section>
+      </section>
+
+      <!-- Slide 6: The Architecture -->
+      <section>
+        <h2>System Architecture</h2>
         <pre style="width: 100%; font-size: 0.65em;"><code>
-Student/Teacher UI
-    ↓
-   ┌─────────────────────────────┐
-   │ Error Analyzer (Claude)     │
-   │ Assignment Planner          │
-   │ Gem Tracker (deterministic) │
-   └────────────┬────────────────┘
-                ↓
-   Question Bank (10K items)
-   Errors | Gems | Assignments
-   (localStorage)
+┌─ STUDENT FRONTEND ─────┐   ┌─ TEACHER FRONTEND ────┐
+│ World Map              │   │ Student Roster        │
+│ Clearings (Gems)       │   │ Assignment Creator    │
+│ Error Log              │   │ Progress Dashboard    │
+└───────────┬────────────┘   └───────────┬───────────┘
+            │                           │
+            └───────────────────┬───────┘
+                                ↓
+            ┌─ AI LAYER (Claude) ─┐
+            │ Error Analyzer      │
+            │ Lesson Planner      │
+            └─────────┬───────────┘
+                      ↓
+            Question Bank (10K+ items)
+            + Answers + Misconceptions
+            (localStorage, Supabase RLS)
         </code></pre>
-        <p style="font-size: 0.9em;">React 18 + TypeScript • HashRouter • No database for local mode</p>
+        <p style="font-size: 0.9em;">React 18 + TypeScript • HashRouter • Works offline (local) or with Supabase</p>
       </section>
 
       <!-- Slide 6: Cost to Run -->
