@@ -4,7 +4,10 @@ An SAT/ACT practice platform built around **recognitions** rather than topics,
 with a teacher portal that plans and assigns from the same evidence the
 student sees.
 
-**Live app:** not published (private by choice — see *Deployment* below).
+**Live app:** https://emmaventresca.github.io/sat-ai-final/
+**Design guide:** [See the visual system & clearing artwork](./DESIGN.md)
+**Final project report:** [View MGT 409 submission](./report.html)
+
 **Run it locally:** two commands, below. No API key is needed to run the app.
 
 ---
