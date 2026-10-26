@@ -88,12 +88,98 @@ export const MISTED_ISLES: InnerMap = {
   exit: [95, 50],
 }
 
-/** Every land opens into a drawn map; router picks by exam section. */
+/**
+ * The Tropical Isles: tropical/island inner map for ACT Math domains.
+ * Beach, resort, and island locations.
+ */
+export const TROPICAL_ISLES: InnerMap = {
+  src: 'art/maps/tropical-isles.webp',
+  title: 'The Tropical Isles',
+  motto: 'Where waters warm and trade winds blow.',
+  entry: [8, 72],
+  places: [
+    { name: 'The Coral Reef', x: 28, y: 68, slug: 'coral-reef' },
+    { name: 'The Beach Shack', x: 45, y: 75, slug: 'beach-shack' },
+    { name: 'The Island Peak', x: 62, y: 48, slug: 'island-peak' },
+    { name: 'The Palm Grove', x: 78, y: 65, slug: 'palm-grove' },
+    { name: 'The Lagoon', x: 52, y: 32, slug: 'lagoon' },
+    { name: 'The Sunset Point', x: 85, y: 42, slug: 'sunset-point' },
+  ],
+  exit: [95, 55],
+}
+
+/**
+ * The Boardwalk: pier/beach town inner map for ACT Reading domains.
+ * Amusement park, shops, and waterfront locations.
+ */
+export const BOARDWALK_MAP: InnerMap = {
+  src: 'art/maps/boardwalk.webp',
+  title: 'The Boardwalk',
+  motto: 'Where the town meets the sea.',
+  entry: [5, 52],
+  places: [
+    { name: 'The Carousel', x: 22, y: 60, slug: 'carousel' },
+    { name: 'The Game Arcade', x: 38, y: 65, slug: 'game-arcade' },
+    { name: 'The Ferris Wheel', x: 55, y: 55, slug: 'ferris-wheel' },
+    { name: 'The Pier Head', x: 72, y: 62, slug: 'pier-head' },
+  ],
+  exit: [92, 50],
+}
+
+/**
+ * The Alpine Peaks: mountain/alpine inner map for SAT Math & ACT English.
+ * Rocky peaks, trails, and mountain locations.
+ */
+export const ALPINE_PEAKS: InnerMap = {
+  src: 'art/maps/alpine-peaks.webp',
+  title: 'The Alpine Peaks',
+  motto: 'Thin air, high stone, and paths that teach.',
+  entry: [15, 85],
+  places: [
+    { name: 'The Base Camp', x: 25, y: 75, slug: 'base-camp' },
+    { name: 'The Ridge Trail', x: 45, y: 60, slug: 'ridge-trail' },
+    { name: 'The Summit', x: 65, y: 35, slug: 'summit' },
+    { name: 'The Glacier Pass', x: 55, y: 50, slug: 'glacier-pass' },
+  ],
+  exit: [78, 28],
+}
+
+/**
+ * The National Park: wilderness/park inner map for ACT Science.
+ * Canyon, forest, and wildlife locations.
+ */
+export const NATIONAL_PARK: InnerMap = {
+  src: 'art/maps/national-park.webp',
+  title: 'The National Park',
+  motto: 'Stone, water, sky—the earth speaks here.',
+  entry: [8, 68],
+  places: [
+    { name: 'The Visitor Center', x: 20, y: 62, slug: 'visitor-center' },
+    { name: 'The Canyon Rim', x: 42, y: 48, slug: 'canyon-rim' },
+    { name: 'The Forest Trail', x: 62, y: 65, slug: 'forest-trail' },
+    { name: 'The Waterfall', x: 75, y: 55, slug: 'waterfall' },
+  ],
+  exit: [88, 42],
+}
+
+/** Every land opens into a drawn map; router picks by exam section and domain. */
 export function innerMapFor(domain: string): InnerMap {
-  // Ocean domains (SAT English) use the Misted Isles
+  // SAT English (ocean) domains
   if (['Information and Ideas', 'Craft and Structure', 'Expression of Ideas', 'Standard English Conventions'].includes(domain)) {
     return MISTED_ISLES
   }
-  // All others use Emberwood (forest)
-  return EMBERWOOD
+  // ACT Math (tropical) domains
+  if (['Geometry', 'Functions', 'Statistics & Probability', 'Algebra', 'Integrating Essential Skills', 'Number & Quantity'].includes(domain)) {
+    return TROPICAL_ISLES
+  }
+  // ACT Reading (boardwalk) domains
+  if (['Key Ideas & Details', 'Craft & Structure', 'Integration of Knowledge & Ideas'].includes(domain)) {
+    return BOARDWALK_MAP
+  }
+  // ACT Science (park) domains
+  if (['Interpretation of Data', 'Scientific Investigation', 'Evaluation of Models & Results'].includes(domain)) {
+    return NATIONAL_PARK
+  }
+  // Default: alpine for SAT Math and other alpine domains
+  return ALPINE_PEAKS
 }

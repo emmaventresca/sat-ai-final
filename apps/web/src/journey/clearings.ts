@@ -174,6 +174,87 @@ export const CLEARINGS: Record<string, Anchor[]> = {
     { x: 28, y: 35, where: 'the rocky point' },
     { x: 58, y: 72, where: 'the deep water' },
   ],
+  'coral-reef': [
+    { x: 50, y: 50, where: 'the coral heads' },
+    { x: 35, y: 65, where: 'the shallow shelf' },
+    { x: 70, y: 60, where: 'the deep channel' },
+    { x: 45, y: 30, where: 'the open sea' },
+    { x: 65, y: 75, where: 'the beach break' },
+    { x: 25, y: 40, where: 'the reef edge' },
+    { x: 55, y: 20, where: 'the horizon' },
+  ],
+  'beach-shack': [
+    { x: 45, y: 55, where: 'the shack' },
+    { x: 60, y: 70, where: 'the beach' },
+    { x: 30, y: 60, where: 'the water line' },
+    { x: 50, y: 28, where: 'the palm trees' },
+    { x: 70, y: 45, where: 'the dunes' },
+    { x: 35, y: 40, where: 'the hammock grove' },
+    { x: 65, y: 20, where: 'the open sky' },
+  ],
+  'island-peak': [
+    { x: 55, y: 40, where: 'the summit' },
+    { x: 45, y: 65, where: 'the base trail' },
+    { x: 70, y: 55, where: 'the cliff face' },
+    { x: 35, y: 30, where: 'the ridge line' },
+    { x: 60, y: 20, where: 'the sky' },
+    { x: 50, y: 75, where: 'the jungle' },
+    { x: 75, y: 40, where: 'the overlook' },
+  ],
+  'carousel': [
+    { x: 48, y: 50, where: 'the carousel horses' },
+    { x: 30, y: 65, where: 'the ticket booth' },
+    { x: 65, y: 60, where: 'the boardwalk' },
+    { x: 45, y: 25, where: 'the open midway' },
+    { x: 70, y: 35, where: 'the game stands' },
+    { x: 35, y: 40, where: 'the cotton candy' },
+    { x: 55, y: 72, where: 'the funnel cakes' },
+  ],
+  'ferris-wheel': [
+    { x: 50, y: 45, where: 'the wheel hub' },
+    { x: 65, y: 55, where: 'the wheel cars' },
+    { x: 35, y: 60, where: 'the platform' },
+    { x: 55, y: 25, where: 'the sky' },
+    { x: 70, y: 70, where: 'the ground' },
+    { x: 30, y: 35, where: 'the pier rail' },
+    { x: 60, y: 75, where: 'the shoreline' },
+  ],
+  'base-camp': [
+    { x: 50, y: 60, where: 'the camp tents' },
+    { x: 35, y: 50, where: 'the trail head' },
+    { x: 65, y: 55, where: 'the cliff' },
+    { x: 48, y: 30, where: 'the peaks above' },
+    { x: 70, y: 75, where: 'the valley floor' },
+    { x: 25, y: 40, where: 'the rocky slope' },
+    { x: 60, y: 20, where: 'the sky' },
+  ],
+  'summit': [
+    { x: 50, y: 35, where: 'the peak' },
+    { x: 60, y: 55, where: 'the ridge' },
+    { x: 40, y: 65, where: 'the approach' },
+    { x: 70, y: 40, where: 'the far range' },
+    { x: 45, y: 20, where: 'the sky dome' },
+    { x: 55, y: 75, where: 'the valley below' },
+    { x: 30, y: 50, where: 'the scree field' },
+  ],
+  'visitor-center': [
+    { x: 45, y: 55, where: 'the building' },
+    { x: 60, y: 65, where: 'the parking area' },
+    { x: 35, y: 45, where: 'the map board' },
+    { x: 55, y: 25, where: 'the vista point' },
+    { x: 70, y: 50, where: 'the trail start' },
+    { x: 40, y: 35, where: 'the picnic area' },
+    { x: 65, y: 75, where: 'the road' },
+  ],
+  'waterfall': [
+    { x: 50, y: 42, where: 'the falls' },
+    { x: 60, y: 65, where: 'the pool below' },
+    { x: 35, y: 55, where: 'the trail' },
+    { x: 70, y: 30, where: 'the cliff top' },
+    { x: 45, y: 20, where: 'the sky' },
+    { x: 55, y: 75, where: 'the streambed' },
+    { x: 40, y: 40, where: 'the overlook' },
+  ],
 }
 
 /**
@@ -220,5 +301,7 @@ export function clearingArt(slug: string): string {
   if (['the-storm', 'the-home-harbour', 'the-narrow-strait'].includes(slug)) {
     return `art/voyage/${slug}.webp`
   }
-  return `art/clearings/${slug}.webp`
+  // Tropical, boardwalk, alpine, and park clearings use sites folder
+  // (images will be sourced and placed there)
+  return `art/sites/${slug}.webp`
 }
