@@ -1,14 +1,12 @@
-# Prep — adaptive SAT and ACT practice
+# Task and Compass — A Grand Quest Toward Mastery
 
-An SAT/ACT practice platform built around **recognitions** rather than topics,
-with a teacher portal that plans and assigns from the same evidence the
-student sees.
+An AI-powered adaptive SAT/ACT tutoring platform with immersive world-building, gamified gem progression, and intelligent error classification. Like Lord of the Rings meets college prep: students journey through themed fantasy realms, earning gems by mastering each skill tier.
 
 **Live app:** https://emmaventresca.github.io/sat-ai-final/
-**Design guide:** [See the visual system & clearing artwork](./DESIGN.md)
 **Final project report:** [View MGT 409 submission](./report.html)
+**Slides:** [10-slide presentation](./slides.html)
 
-**Run it locally:** two commands, below. No API key is needed to run the app.
+**Run it locally:** two commands, below. No API key needed.
 
 ---
 
