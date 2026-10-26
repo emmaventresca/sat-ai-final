@@ -88,22 +88,65 @@ export const MISTED_ISLES: InnerMap = {
   exit: [95, 50],
 }
 
-/**
- * Temporary: Use Emberwood for all themed maps until images are sourced.
- * Once IMAGE_SOURCING.md images are acquired, replace with proper maps.
- */
+/** The Tropical Isles: tropical/island theme for ACT Math */
+export const TROPICAL_ISLES: InnerMap = {
+  src: 'art/maps/tropical-isles.webp',
+  title: 'The Tropical Isles',
+  motto: 'Where palms sway and waters dance, knowledge grows.',
+  entry: [5, 50],
+  places: [
+    { name: 'Palm Shore', x: 20, y: 65, slug: 'palm-shore' },
+    { name: 'Coral Reef', x: 42, y: 52, slug: 'coral-reef' },
+    { name: 'Beach Shack', x: 68, y: 60, slug: 'beach-shack' },
+    { name: 'Island Summit', x: 85, y: 40, slug: 'island-summit' },
+  ],
+  exit: [95, 50],
+}
 
-/** The Tropical Isles: tropical/island theme for ACT Math (uses Emberwood until sourced) */
-export const TROPICAL_ISLES: InnerMap = { ...EMBERWOOD, title: 'The Tropical Isles' }
+/** The Boardwalk: pier/beach theme for ACT Reading */
+export const BOARDWALK_MAP: InnerMap = {
+  src: 'art/maps/boardwalk.webp',
+  title: 'The Boardwalk',
+  motto: 'The shore calls. The sea whispers.',
+  entry: [5, 50],
+  places: [
+    { name: 'Seaside Gate', x: 18, y: 60, slug: 'seaside-gate' },
+    { name: 'Carousel', x: 40, y: 48, slug: 'carousel' },
+    { name: 'Ferris Wheel', x: 65, y: 58, slug: 'ferris-wheel' },
+    { name: 'Pier End', x: 88, y: 45, slug: 'pier-end' },
+  ],
+  exit: [95, 50],
+}
 
-/** The Boardwalk: pier/beach theme for ACT Reading (uses Emberwood until sourced) */
-export const BOARDWALK_MAP: InnerMap = { ...EMBERWOOD, title: 'The Boardwalk' }
+/** The Alpine Peaks: mountain theme for SAT Math & ACT English */
+export const ALPINE_PEAKS: InnerMap = {
+  src: 'art/maps/alpine-peaks.webp',
+  title: 'The Alpine Peaks',
+  motto: 'The peaks challenge. The climb strengthens.',
+  entry: [5, 50],
+  places: [
+    { name: 'Base Camp', x: 22, y: 70, slug: 'base-camp' },
+    { name: 'Mountain Pass', x: 45, y: 55, slug: 'mountain-pass' },
+    { name: 'Summit', x: 68, y: 35, slug: 'summit' },
+    { name: 'Eagle Ridge', x: 85, y: 25, slug: 'eagle-ridge' },
+  ],
+  exit: [95, 50],
+}
 
-/** The Alpine Peaks: mountain theme for SAT Math & ACT English (uses Emberwood until sourced) */
-export const ALPINE_PEAKS: InnerMap = { ...EMBERWOOD, title: 'The Alpine Peaks' }
-
-/** The National Park: wilderness theme for ACT Science (uses Emberwood until sourced) */
-export const NATIONAL_PARK: InnerMap = { ...EMBERWOOD, title: 'The National Park' }
+/** The National Park: wilderness theme for ACT Science */
+export const NATIONAL_PARK: InnerMap = {
+  src: 'art/maps/national-park.webp',
+  title: 'The National Park',
+  motto: 'Wilderness teaches. Exploration unlocks.',
+  entry: [5, 50],
+  places: [
+    { name: 'Visitor Center', x: 20, y: 65, slug: 'visitor-center' },
+    { name: 'Forest Trail', x: 42, y: 48, slug: 'forest-trail' },
+    { name: 'Waterfall', x: 65, y: 55, slug: 'waterfall' },
+    { name: 'Overlook Peak', x: 85, y: 35, slug: 'overlook-peak' },
+  ],
+  exit: [95, 50],
+}
 
 /** Every land opens into a drawn map; router picks by exam section and domain. */
 export function innerMapFor(domain: string): InnerMap {
