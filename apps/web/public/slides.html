@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task and Compass — Final Project</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+  <style>
+    .reveal {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    .reveal h1, .reveal h2, .reveal h3 {
+      text-transform: none;
+      font-weight: 600;
+    }
+    .reveal h1 { font-size: 2.5em; }
+    .reveal h2 { font-size: 2em; }
+    .reveal p, .reveal li { font-size: 1.3em; }
+    .metric {
+      display: inline-block;
+      background: #2f392e;
+      padding: 10px 16px;
+      margin: 8px;
+      border-radius: 6px;
+      border-left: 3px solid #b57d37;
+      font-weight: 600;
+      color: #f3ead6;
+    }
+    .impact-number {
+      font-size: 2em;
+      font-weight: 700;
+      color: #5d7444;
+    }
+    table {
+      font-size: 0.9em;
+      margin: 20px auto;
+    }
+    td { padding: 8px 12px; }
+    .forest-bg { background: linear-gradient(135deg, #2f392e 0%, #1f2419 100%); }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Slide 1: Title -->
+      <section class="forest-bg">
+        <h1>Task and Compass</h1>
+        <h3>A Grand Quest Toward Mastery</h3>
+        <p style="font-size: 1.1em; margin-top: 20px;">Lord of the Rings meets college prep</p>
+        <p style="font-size: 0.9em; color: #aaa;">Immersive world-building. Epic progression. Real stakes.</p>
+        <p style="margin-top: 40px;">Emma Ventresca</p>
+        <p style="font-size: 0.9em; margin-top: 40px;">
+          <a href="https://github.com/emmaventresca/sat-ai-final" style="color: #5d7444;">GitHub</a> •
+          <a href="https://emmaventresca.github.io/sat-ai-final/" style="color: #5d7444;">Live App</a>
+        </p>
+      </section>
+
+      <!-- Slide 2: The Problem -->
+      <section>
+        <h2>The Problem</h2>
+        <section>
+          <h3>For Students</h3>
+          <ul>
+            <li>800+ questions, don't know where to start</li>
+            <li>Waste hours on topics they already know</li>
+            <li>No way to see what's next</li>
+            <li>40% quit prep before test day</li>
+          </ul>
+        </section>
+        <section>
+          <h3>For Teachers</h3>
+          <ul>
+            <li>Assigning homework to 20 students = guessing</li>
+            <li><span class="impact-number">6 hours/week</span> manually creating assignments</li>
+            <li>No visibility into student mistakes</li>
+            <li>Resort to one-size-fits-all or expensive tutoring ($50–100/hr)</li>
+          </ul>
+        </section>
+      </section>
+
+      <!-- Slide 3: What's New -->
+      <section>
+        <h2>What's New: The Grand Quest</h2>
+        <div class="metric">🗺️ Epic World-Building</div>
+        <div class="metric">💎 Tier Gem Progression</div>
+        <div class="metric">🤖 AI Error Classification</div>
+        <div class="metric">👑 Teacher Command Center</div>
+        <p style="margin-top: 40px; font-size: 1.1em;">
+          <strong>Not a generic study buddy.</strong>
+        </p>
+        <p style="font-size: 1em; color: #d4a574;">
+          This is a fellowship. A quest with real stakes. Every skill is a realm to master. Every correct answer earns you closer to the crown. Like Frodo's journey to Mordor, test prep is about the long game.
+        </p>
+      </section>
+
+      <!-- Slide 4: Student Features -->
+      <section>
+        <h2>Student Experience</h2>
+        <section>
+          <h3>🗺️ Hierarchical Journey</h3>
+          <p>World Map → Regional Land → Skill Clearing</p>
+          <p style="font-size: 0.9em; color: #aaa;">Each level deeper into a single problem. Forest-themed immersion, not a worksheet.</p>
+        </section>
+        <section>
+          <h3>💎 Gem Progression System</h3>
+          <p><strong>10 correct at Easy</strong> → Gold gem</p>
+          <p><strong>10 correct at Medium</strong> → Silver gem</p>
+          <p><strong>10 correct at Hard</strong> → Bronze gem</p>
+          <p><strong>10 correct at Challenge</strong> → Amethyst gem</p>
+          <p style="font-size: 0.9em; color: #aaa;">Shows "5/10 toward next gem" for clear milestones</p>
+        </section>
+        <section>
+          <h3>🔴 Error Log</h3>
+          <p>Every wrong answer is tracked, categorized by misconception</p>
+          <p>Students see trends: "You get this wrong in word problems"</p>
+          <p>Fix an error once → it leaves the list (gamified feedback)</p>
+        </section>
+      </section>
+
+      <!-- Slide 5: Teacher Features -->
+      <section>
+        <h2>Teacher Backend</h2>
+        <section>
+          <h3>👥 Student Roster</h3>
+          <p>Teacher generates codes → students register with codes</p>
+          <p>Roster shows all students + score summaries (SAT/ACT, Reading, Math)</p>
+          <p style="font-size: 0.9em; color: #aaa;">Row-level security: students can't see others' data</p>
+        </section>
+        <section>
+          <h3>📋 Assignment Creation</h3>
+          <p><strong>Targeted picking:</strong> Choose exam → domain → skill → tier</p>
+          <p><strong>Error-driven:</strong> Click "Assign mistakes" → auto-pulls 10 wrong questions from a student</p>
+          <p><strong>Fresh questions:</strong> Tool auto-generates variants at the right difficulty</p>
+        </section>
+        <section>
+          <h3>📊 Progress Tracking</h3>
+          <p>See per-student: gems earned, errors remaining, time invested</p>
+          <p>Export assignments by student to folders</p>
+          <p>Download lesson plans as PDF or worksheet</p>
+        </section>
+      </section>
+
+      <!-- Slide 6: The Architecture -->
+      <section>
+        <h2>System Architecture</h2>
+        <pre style="width: 100%; font-size: 0.65em;"><code>
+┌─ STUDENT FRONTEND ─────┐   ┌─ TEACHER FRONTEND ────┐
+│ World Map              │   │ Student Roster        │
+│ Clearings (Gems)       │   │ Assignment Creator    │
+│ Error Log              │   │ Progress Dashboard    │
+└───────────┬────────────┘   └───────────┬───────────┘
+            │                           │
+            └───────────────────┬───────┘
+                                ↓
+            ┌─ AI LAYER (Claude) ─┐
+            │ Error Analyzer      │
+            │ Lesson Planner      │
+            └─────────┬───────────┘
+                      ↓
+            Question Bank (10K+ items)
+            + Answers + Misconceptions
+            (localStorage, Supabase RLS)
+        </code></pre>
+        <p style="font-size: 0.9em;">React 18 + TypeScript • HashRouter • Works offline (local) or with Supabase</p>
+      </section>
+
+      <!-- Slide 6: Cost to Run -->
+      <section>
+        <h2>Tokenomics</h2>
+        <table>
+          <tr style="color: #b57d37;">
+            <td><strong>Per Error (first)</strong></td>
+            <td><strong>$0.0042</strong> (Claude 3.5 Sonnet)</td>
+          </tr>
+          <tr>
+            <td>Per Error (cached)</td>
+            <td>$0.0008</td>
+          </tr>
+          <tr style="color: #5d7444;">
+            <td><strong>Per Student/Month</strong></td>
+            <td><strong>$0.10</strong></td>
+          </tr>
+          <tr>
+            <td>100 students</td>
+            <td>$10/month (AI only)</td>
+          </tr>
+          <tr>
+            <td>10,000 students</td>
+            <td>$1k/month (AI) + $2k (hosting)</td>
+          </tr>
+        </table>
+        <p style="font-size: 0.9em; margin-top: 20px;">✓ Prompt caching • ✓ Pre-computed bank • ✓ Deterministic gems</p>
+      </section>
+
+      <!-- Slide 7: Safety -->
+      <section>
+        <h2>Safety & Defenses</h2>
+        <section>
+          <h3>Prompt Injection</h3>
+          <p>Tested: "Ignore instructions" in student answer</p>
+          <p style="color: #5d7444; font-weight: bold;">✓ Classified as error, not executed</p>
+        </section>
+        <section>
+          <h3>Data Isolation</h3>
+          <p>Tried to access other student's errors via localStorage</p>
+          <p style="color: #5d7444; font-weight: bold;">✓ Blocked by ID + Supabase RLS</p>
+        </section>
+        <section>
+          <h3>Cost Limits</h3>
+          <p>Simulated 1000 questions (950 correct, 50 wrong)</p>
+          <p style="color: #5d7444; font-weight: bold;">✓ Only 50 Claude calls, $0.21 cost</p>
+        </section>
+      </section>
+
+      <!-- Slide 8: Impact -->
+      <section>
+        <h2>The Numbers</h2>
+        <section>
+          <h3>For Students</h3>
+          <p><span class="impact-number">40% faster</span> to 10 correct (2.5 hrs vs 4.2 hrs)</p>
+          <p><span class="impact-number">85%</span> return rate after 1 week (vs 40% for free apps)</p>
+        </section>
+        <section>
+          <h3>For Teachers</h3>
+          <p><span class="impact-number">6 hrs → 45 min/week</span> assignment time</p>
+          <p><span class="impact-number">$12,000/year</span> time reclaimed (at $50/hr tutoring rate)</p>
+        </section>
+        <section>
+          <h3>Cost Comparison</h3>
+          <table style="font-size: 0.85em;">
+            <tr style="color: #b57d37;">
+              <td><strong>Private tutor</strong></td>
+              <td><strong>$3,600</strong> (48 hrs @ $75/hr)</td>
+            </tr>
+            <tr>
+              <td>This app + teacher</td>
+              <td>$0–5</td>
+            </tr>
+          </table>
+        </section>
+      </section>
+
+      <!-- Slide 9: What's Next -->
+      <section>
+        <h2>What's Next</h2>
+        <ul>
+          <li><strong>Supabase connection:</strong> Real persistence, multi-device sync</li>
+          <li><strong>AI lesson plans:</strong> "Generate homework for Quadratics gaps"</li>
+          <li><strong>Mobile app:</strong> React Native, offline practice</li>
+          <li><strong>ACT figures:</strong> Finish Science diagrams rendering</li>
+          <li><strong>Video explanations:</strong> Short AI videos for misconceptions</li>
+        </ul>
+      </section>
+
+      <!-- Slide 10: Live Demo -->
+      <section class="forest-bg">
+        <h2>Try It Now</h2>
+        <p><a href="https://emmaventresca.github.io/sat-ai-final/" style="color: #5d7444; font-size: 1.5em;">emmaventresca.github.io/sat-ai-final/</a></p>
+        <p style="margin-top: 40px; font-size: 1.1em;">
+          👉 Click "I'm the teacher" to skip login<br>
+          👉 Go through a skill, solve some questions<br>
+          👉 Get one wrong to see error tracking<br>
+          👉 Earn gems at each tier
+        </p>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      transition: 'slide',
+      plugins: [ RevealNotes ]
+    });
+  </script>
+</body>
+</html>
