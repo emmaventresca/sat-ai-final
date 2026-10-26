@@ -55,6 +55,7 @@ export function Overworld({ exam, regions, onOpen }: {
           percentages OF THE PLATE, so a frame of another shape lets
           object-fit crop it and moves every one of them - the same trap
           the clearings fell into. */}
+      <div className="ow-pan">
       <div className="ow-frame"
         style={{
           aspectRatio: `${world.w} / ${world.h}`,
@@ -80,7 +81,9 @@ export function Overworld({ exam, regions, onOpen }: {
               <span className="ow-pin" aria-hidden="true">
                 <i /><em />
               </span>
-              <span className="ow-label" aria-hidden="true">{at.name}</span>
+              {!world.named && (
+                <span className="ow-label" aria-hidden="true">{at.name}</span>
+              )}
               <span className={`ow-card ${reached === region.id ? 'on' : ''}`}>
                 <span className="ow-kind">{region.name}</span>
                 <span className="ow-name">{at.name}</span>
@@ -100,14 +103,44 @@ export function Overworld({ exam, regions, onOpen }: {
           )
         })}
 
-        {/* One docked panel for narrow screens.
+        {/* A plate that letters its own title does not want a second one
+            printed over it - "The Realm of Knowledge" was landing on top of
+            THE REALM OF KNOWLEDGE, which is the doubled-label mistake again,
+            one size up. The count moves to the foot where it is still
+            useful and is not competing with painted lettering. */}
+        {world.named ? (
+          <p className="ow-tally">
+            {here.length} land{here.length === 1 ? '' : 's'} here. Choose one and go in.
+          </p>
+        ) : (
+          <div className="ow-cartouche">
+            <p className="ow-eyebrow">The world</p>
+            <h2>{world.name}</h2>
+            <p className="ow-sub">
+              {here.length} lands. Choose one and go in.
+            </p>
+          </div>
+        )}
+
+        <svg className="ow-compass" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="38" />
+          <path d="M50 6 L57 47 L50 94 L43 47 Z" />
+          <path d="M6 50 L47 43 L94 50 L47 57 Z" className="ow-compass-dim" />
+          <text x="50" y="15" textAnchor="middle">N</text>
+        </svg>
+      </div>
+      </div>
+
+      {/* One docked panel for narrow screens.
             
             A card centred on its own pin overflows the frame as soon as
             the pin is near an edge - at 74% across, half of it is off the
             picture, which is where "0 of 72 stops · 3490 questions lef"
-            came from. Phones get a single panel docked to the frame, the
-            way a map application does it; the per-pin cards are desktop
-            only, where there is room beside the pin. */}
+            came from. Phones get one panel instead.
+            
+            It sits OUTSIDE the frame, because the frame is what pans: a
+            panel inside a scrolling map scrolls with it, and its text was
+            simply off to the left of whatever the student was looking at. */}
         {(() => {
           const sel = here.find((p) => p.region.id === reached) ?? here[0]
           if (!sel) return null
@@ -129,21 +162,6 @@ export function Overworld({ exam, regions, onOpen }: {
           )
         })()}
 
-        <div className="ow-cartouche">
-          <p className="ow-eyebrow">The world</p>
-          <h2>{world.name}</h2>
-          <p className="ow-sub">
-            {here.length} lands. Choose one and go in.
-          </p>
-        </div>
-
-        <svg className="ow-compass" viewBox="0 0 100 100" aria-hidden="true">
-          <circle cx="50" cy="50" r="38" />
-          <path d="M50 6 L57 47 L50 94 L43 47 Z" />
-          <path d="M6 50 L47 43 L94 50 L47 57 Z" className="ow-compass-dim" />
-          <text x="50" y="15" textAnchor="middle">N</text>
-        </svg>
-      </div>
     </section>
   )
 }

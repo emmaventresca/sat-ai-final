@@ -162,6 +162,19 @@
   color:rgba(243,234,214,.62);
 }
 
+/* The count, for a plate that titles itself. Bottom-left, small, out of
+   the way of both the painted lettering and the compass rose. */
+.ow-tally{
+  position:absolute; left:22px; bottom:16px;
+  margin:0;
+  font-family:Georgia,"Libre Baskerville","Times New Roman",serif;
+  font-size:12.5px;
+  color:rgba(246,239,223,.84);
+  text-shadow:0 1px 4px rgba(0,0,0,.9), 0 2px 12px rgba(0,0,0,.7);
+  transition:opacity .22s ease;
+}
+.ow-flying .ow-tally{ opacity:0 }
+
 /* The docked panel. Desktop has room for a card beside each pin; a phone
    does not, so there it gets one panel fixed to the frame instead. */
 .ow-detail{ display:none }
@@ -222,10 +235,19 @@
 /* --- small screens -------------------------------------------------------- */
 
 @media (max-width:760px){
-  /* A 3:2 landscape at phone width is a 180px strip, which is a banner
-     rather than a place. Taller crop, and the card goes under the pin
-     instead of beside it so it has room to be read. */
-  .ow-frame{ aspect-ratio:4 / 5 }
+  /* A wide world plate at phone width is a 161px strip - a banner rather
+     than a place - and it cannot simply be cropped taller, because the
+     landmarks are percentages of the plate and cropping moves every one of
+     them. So the plate keeps its shape and overflows, and the map pans the
+     way a map does. */
+  /* The MAP pans, not the section. Scrolling the section made the panel
+     under it 750px wide too, with its text off to the left of whatever
+     the student was looking at. */
+  .ow-pan{ overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch }
+  .ow-frame{ width:215%; }
+  /* The count collides with the docked panel on a narrow frame, and the
+     panel already carries the same information. */
+  .ow-tally{ display:none }
   /* The labels stay beside their dots rather than centred under them.
      Centring looked tidier and was wrong: `side` already points each label
      INWARD - the cliff's label runs right, the water's runs left - so the
@@ -237,10 +259,16 @@
   /* The per-pin card is the thing that cannot fit. */
   .ow-card{ display:none }
 
+  /* A compact bar, not a panel. Once the map has real height the panel
+     was covering half of it, which is the opposite of what the height was
+     for - so the note goes and the rest sits on one or two lines. */
   .ow-detail{
     display:block;
-    position:absolute; left:14px; right:14px; bottom:14px;
-    padding:13px 15px;
+    position:static;
+    margin:0;
+    padding:11px 14px;
+    border-radius:0;
+    border-left:0; border-right:0; border-bottom:0;
     background:rgba(10,15,12,.8);
     border:1px solid rgba(243,234,214,.22);
     border-radius:3px;
@@ -248,7 +276,10 @@
     opacity:.92;
     transition:opacity .22s ease;
   }
-  .ow-detail .ow-note{ margin-bottom:9px }
+  .ow-detail .ow-note{ display:none }
+  .ow-detail .ow-kind{ margin-bottom:2px }
+  .ow-detail .ow-name{ font-size:15px; margin-bottom:5px }
+  .ow-detail .ow-rule{ margin-bottom:4px }
   .ow-compass{ display:none }
   .ow-cartouche{ left:16px; top:14px; max-width:72% }
   .ow-compass{ width:40px; height:40px; right:14px; bottom:14px }

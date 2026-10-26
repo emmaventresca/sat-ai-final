@@ -51,63 +51,68 @@ export interface World {
   lands: Partial<Record<Terrain, Landmark>>
   /** Said under the title, where the plate needs explaining. */
   note?: string
+  /** The plate already letters its own places, so draw no text labels. */
+  named?: boolean
+}
+
+/**
+ * The six realms, as the board draws them.
+ *
+ * One plate serves both exams. Overworld only renders a landmark for a
+ * region the current exam actually has, so a student on the SAT sees two
+ * pins and a student on the ACT sees four - the map shows the whole world
+ * either way, which is what a world map is for, and neither can reach the
+ * other exam's work from it.
+ *
+ * Coordinates sit on the emblems the plate already paints. `named: true`
+ * turns this world's own text labels off: the picture names its realms in
+ * its own lettering, and printing them again beside each pin is the
+ * doubled-label mistake, not a belt-and-braces.
+ */
+const REALMS: Partial<Record<Terrain, Landmark>> = {
+  ocean: {
+    x: 23, y: 33, side: 'right',
+    name: 'SAT English',
+    note: 'The green country of words. Four chapters.',
+  },
+  cliffs: {
+    x: 59, y: 31, side: 'left',
+    name: 'SAT Math',
+    note: 'High rock and thin air. Four chapters.',
+  },
+  peaks: {
+    x: 17, y: 62, side: 'right',
+    name: 'ACT English',
+    note: 'The red hills. Five chapters.',
+  },
+  tropic: {
+    x: 42, y: 85, side: 'right',
+    name: 'ACT Math',
+    note: 'The golden lowlands. Six chapters.',
+  },
+  fair: {
+    x: 65, y: 62, side: 'left',
+    name: 'ACT Reading',
+    note: 'The violet coast. Three chapters.',
+  },
+  park: {
+    x: 84, y: 75, side: 'left',
+    name: 'ACT Science',
+    note: 'The far green isles. Three chapters.',
+  },
+}
+
+const PLATE = {
+  plate: 'art/worlds/the-realm-of-knowledge.webp',
+  w: 2060,
+  h: 950,
+  name: 'The Realm of Knowledge',
+  named: true,
 }
 
 export const WORLDS: Record<string, World> = {
-  sat: {
-    plate: 'art/voyage/the-far-shore.webp',
-    w: 1470, h: 980,
-    name: 'The Far Shore',
-    lands: {
-      // The headland filling the left of the frame: high ground, bracken,
-      // a cliff falling into the water. The maths land is already the
-      // green country, and this is the same country seen from the sea.
-      cliffs: {
-        x: 15, y: 46, side: 'right',
-        name: 'The Cliff Country',
-        note: 'High ground and long views. Four chapters inland.',
-      },
-      // Open water to the right, where the voyage goes. Reading and
-      // Writing is the sea world, and this is the water it sails.
-      ocean: {
-        x: 74, y: 58, side: 'left',
-        name: 'The Open Water',
-        note: 'Out past the headland. Four chapters, and the horizon.',
-      },
-    },
-  },
-  act: {
-    // Composed from the ACT's own four land plates by tools/make_world.py,
-    // inland to sea so the geography is at least plausible. It is a
-    // composite and does not pretend otherwise - a trial plate so the ACT
-    // has a world to stand in, and one command to replace when there is
-    // art drawn for it.
-    plate: 'art/worlds/the-four-coasts.webp',
-    w: 2400, h: 900,
-    name: 'The Four Coasts',
-    lands: {
-      peaks: {
-        x: 13, y: 53, side: 'right',
-        name: 'The Cloud Peaks',
-        note: 'Thin air and long sightlines. Five chapters in the rock.',
-      },
-      park: {
-        x: 33, y: 60, side: 'right',
-        name: 'The Green Valley',
-        note: 'Old forest under the walls. Three chapters inland.',
-      },
-      fair: {
-        x: 60, y: 50, side: 'left',
-        name: 'The Long Pier',
-        note: 'Lamps and boards out over the water. Three chapters.',
-      },
-      tropic: {
-        x: 86, y: 58, side: 'left',
-        name: 'The Warm Shore',
-        note: 'Where the coast turns south. Six chapters on the sand.',
-      },
-    },
-  },
+  sat: { ...PLATE, lands: REALMS },
+  act: { ...PLATE, lands: REALMS },
 }
 
 export function worldFor(exam: string): World | undefined {
