@@ -89,78 +89,21 @@ export const MISTED_ISLES: InnerMap = {
 }
 
 /**
- * The Tropical Isles: tropical/island inner map for ACT Math domains.
- * Beach, resort, and island locations.
+ * Temporary: Use Emberwood for all themed maps until images are sourced.
+ * Once IMAGE_SOURCING.md images are acquired, replace with proper maps.
  */
-export const TROPICAL_ISLES: InnerMap = {
-  src: 'art/maps/tropical-isles.webp',
-  title: 'The Tropical Isles',
-  motto: 'Where waters warm and trade winds blow.',
-  entry: [8, 72],
-  places: [
-    { name: 'The Coral Reef', x: 28, y: 68, slug: 'coral-reef' },
-    { name: 'The Beach Shack', x: 45, y: 75, slug: 'beach-shack' },
-    { name: 'The Island Peak', x: 62, y: 48, slug: 'island-peak' },
-    { name: 'The Palm Grove', x: 78, y: 65, slug: 'palm-grove' },
-    { name: 'The Lagoon', x: 52, y: 32, slug: 'lagoon' },
-    { name: 'The Sunset Point', x: 85, y: 42, slug: 'sunset-point' },
-  ],
-  exit: [95, 55],
-}
 
-/**
- * The Boardwalk: pier/beach town inner map for ACT Reading domains.
- * Amusement park, shops, and waterfront locations.
- */
-export const BOARDWALK_MAP: InnerMap = {
-  src: 'art/maps/boardwalk.webp',
-  title: 'The Boardwalk',
-  motto: 'Where the town meets the sea.',
-  entry: [5, 52],
-  places: [
-    { name: 'The Carousel', x: 22, y: 60, slug: 'carousel' },
-    { name: 'The Game Arcade', x: 38, y: 65, slug: 'game-arcade' },
-    { name: 'The Ferris Wheel', x: 55, y: 55, slug: 'ferris-wheel' },
-    { name: 'The Pier Head', x: 72, y: 62, slug: 'pier-head' },
-  ],
-  exit: [92, 50],
-}
+/** The Tropical Isles: tropical/island theme for ACT Math (uses Emberwood until sourced) */
+export const TROPICAL_ISLES: InnerMap = { ...EMBERWOOD, title: 'The Tropical Isles' }
 
-/**
- * The Alpine Peaks: mountain/alpine inner map for SAT Math & ACT English.
- * Rocky peaks, trails, and mountain locations.
- */
-export const ALPINE_PEAKS: InnerMap = {
-  src: 'art/maps/alpine-peaks.webp',
-  title: 'The Alpine Peaks',
-  motto: 'Thin air, high stone, and paths that teach.',
-  entry: [15, 85],
-  places: [
-    { name: 'The Base Camp', x: 25, y: 75, slug: 'base-camp' },
-    { name: 'The Ridge Trail', x: 45, y: 60, slug: 'ridge-trail' },
-    { name: 'The Summit', x: 65, y: 35, slug: 'summit' },
-    { name: 'The Glacier Pass', x: 55, y: 50, slug: 'glacier-pass' },
-  ],
-  exit: [78, 28],
-}
+/** The Boardwalk: pier/beach theme for ACT Reading (uses Emberwood until sourced) */
+export const BOARDWALK_MAP: InnerMap = { ...EMBERWOOD, title: 'The Boardwalk' }
 
-/**
- * The National Park: wilderness/park inner map for ACT Science.
- * Canyon, forest, and wildlife locations.
- */
-export const NATIONAL_PARK: InnerMap = {
-  src: 'art/maps/national-park.webp',
-  title: 'The National Park',
-  motto: 'Stone, water, sky—the earth speaks here.',
-  entry: [8, 68],
-  places: [
-    { name: 'The Visitor Center', x: 20, y: 62, slug: 'visitor-center' },
-    { name: 'The Canyon Rim', x: 42, y: 48, slug: 'canyon-rim' },
-    { name: 'The Forest Trail', x: 62, y: 65, slug: 'forest-trail' },
-    { name: 'The Waterfall', x: 75, y: 55, slug: 'waterfall' },
-  ],
-  exit: [88, 42],
-}
+/** The Alpine Peaks: mountain theme for SAT Math & ACT English (uses Emberwood until sourced) */
+export const ALPINE_PEAKS: InnerMap = { ...EMBERWOOD, title: 'The Alpine Peaks' }
+
+/** The National Park: wilderness theme for ACT Science (uses Emberwood until sourced) */
+export const NATIONAL_PARK: InnerMap = { ...EMBERWOOD, title: 'The National Park' }
 
 /** Every land opens into a drawn map; router picks by exam section and domain. */
 export function innerMapFor(domain: string): InnerMap {
@@ -168,18 +111,26 @@ export function innerMapFor(domain: string): InnerMap {
   if (['Information and Ideas', 'Craft and Structure', 'Expression of Ideas', 'Standard English Conventions'].includes(domain)) {
     return MISTED_ISLES
   }
+  // SAT Math (forest/Emberwood) domains
+  if (['Algebra', 'Advanced Math', 'Problem-Solving and Data Analysis', 'Geometry and Trigonometry'].includes(domain)) {
+    return EMBERWOOD
+  }
   // ACT Math (tropical) domains
-  if (['Geometry', 'Functions', 'Statistics & Probability', 'Algebra', 'Integrating Essential Skills', 'Number & Quantity'].includes(domain)) {
+  if (['Geometry', 'Functions', 'Statistics & Probability', 'Number & Quantity', 'Integrating Essential Skills'].includes(domain)) {
     return TROPICAL_ISLES
   }
   // ACT Reading (boardwalk) domains
   if (['Key Ideas & Details', 'Craft & Structure', 'Integration of Knowledge & Ideas'].includes(domain)) {
     return BOARDWALK_MAP
   }
+  // ACT English (alpine) domains
+  if (['Sentence Structure & Formation', 'Punctuation', 'Usage', 'Production of Writing', 'Knowledge of Language'].includes(domain)) {
+    return ALPINE_PEAKS
+  }
   // ACT Science (park) domains
   if (['Interpretation of Data', 'Scientific Investigation', 'Evaluation of Models & Results'].includes(domain)) {
     return NATIONAL_PARK
   }
-  // Default: alpine for SAT Math and other alpine domains
-  return ALPINE_PEAKS
+  // Fallback
+  return EMBERWOOD
 }
